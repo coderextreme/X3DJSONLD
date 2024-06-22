@@ -108,7 +108,7 @@ public class Humanoid0 implements X3DRoots {
               .setTexture(new ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new MFString20().getArray()))
               .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(new double[] {1,1,1}).setShininess(0.6).setTransparency(1))))
           .setSkinCoord(((Coordinate)new Coordinate().setContainerFieldOverride("skinCoord")).setUSE("TheSkinCoord"))
-          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_HAnim").setName("").setDEF("hanim_").setContainerFieldOverride("skeleton")))
+          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_HAnim").setName("").setDEF("hanim_").setUlimit(new MFFloat21().getArray()).setLlimit(new MFFloat22().getArray()).setContainerFieldOverride("skeleton")))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_"))))      ;
     return X3D0;
     }
@@ -215,6 +215,16 @@ private class MFColor19 {
 private class MFString20 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"});
+  }
+}
+private class MFFloat21 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+  }
+}
+private class MFFloat22 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
   }
 }
 }

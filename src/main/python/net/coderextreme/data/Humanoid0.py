@@ -214,6 +214,8 @@ HAnimHumanoid38.setSkinCoord(Coordinate46)
 HAnimJoint47 = x3d.HAnimJoint()
 HAnimJoint47.setName("")
 HAnimJoint47.setDEF("hanim_")
+HAnimJoint47.setUlimit([0,0,0])
+HAnimJoint47.setLlimit([0,0,0])
 
 HAnimHumanoid38.setSkeleton(HAnimJoint47)
 HAnimJoint48 = x3d.HAnimJoint()

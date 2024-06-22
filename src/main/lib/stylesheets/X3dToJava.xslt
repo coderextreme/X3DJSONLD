@@ -60,8 +60,9 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-		xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+		xmlns:saxon="http://saxon.sf.net/">
     <!--        
+                https://www.saxonica.com/html/documentation12/extensions/attributes
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
     

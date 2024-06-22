@@ -39,6 +39,7 @@ var HAnimHumanoid = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -213,7 +214,9 @@ var X3D0 =  new X3D({
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString(""),
-                  DEF : new SFString("hanim_")}),
+                  DEF : new SFString("hanim_"),
+                  ulimit : new MFFloat([0,0,0]),
+                  llimit : new MFFloat([0,0,0])}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_")})])})])}))});

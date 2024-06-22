@@ -175,7 +175,9 @@ var X3D0 =  X3D(
               joints_ : [
                 HAnimJoint(
                   name_ : SFString(''),
-                  DEF_ : SFString('hanim_')),
+                  DEF_ : SFString('hanim_'),
+                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_'))])]));

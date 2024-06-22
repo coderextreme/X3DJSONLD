@@ -14141,6 +14141,8 @@ HAnimHumanoid2326.Version := '2.0';
 HAnimJoint2327 := THAnimJointNode.Create;
 HAnimJoint2327.NameField := 'humanoid_root';
 HAnimJoint2327.Center := Vector3(0,0.77,0);
+HAnimJoint2327.SetLlimit([0,0,0]);
+HAnimJoint2327.SetUlimit([0,0,0]);
 HAnimSegment2328 := THAnimSegmentNode.Create;
 HAnimSegment2328.NameField := 'sacrum';
 { Shape USE='sacrum_Shape'/ }
@@ -14165,6 +14167,8 @@ HAnimJoint2327.AddChildren([HAnimSegment2328]);
 HAnimJoint2333 := THAnimJointNode.Create;
 HAnimJoint2333.NameField := 'sacroiliac';
 HAnimJoint2333.Center := Vector3(0,0.826,0.02);
+HAnimJoint2333.SetLlimit([0,0,0]);
+HAnimJoint2333.SetUlimit([0,0,0]);
 HAnimSegment2334 := THAnimSegmentNode.Create;
 HAnimSegment2334.NameField := 'pelvis';
 { Shape USE='pelvis_Shape'/ }
@@ -14315,6 +14319,8 @@ HAnimJoint2333.AddChildren([HAnimSegment2334]);
 HAnimJoint2368 := THAnimJointNode.Create;
 HAnimJoint2368.NameField := 'l_hip';
 HAnimJoint2368.Center := Vector3(0.095,0.8266,-0.0183);
+HAnimJoint2368.SetLlimit([0,0,0]);
+HAnimJoint2368.SetUlimit([0,0,0]);
 HAnimSegment2369 := THAnimSegmentNode.Create;
 HAnimSegment2369.NameField := 'l_thigh';
 { Shape USE='l_thigh_Shape'/ }
@@ -14383,6 +14389,8 @@ HAnimJoint2368.AddChildren([HAnimSegment2369]);
 HAnimJoint2384 := THAnimJointNode.Create;
 HAnimJoint2384.NameField := 'l_knee';
 HAnimJoint2384.Center := Vector3(0.0926,0.4088,-0.01944);
+HAnimJoint2384.SetLlimit([0,0,0]);
+HAnimJoint2384.SetUlimit([0,0,0]);
 HAnimSegment2385 := THAnimSegmentNode.Create;
 HAnimSegment2385.NameField := 'l_calf';
 { Shape USE='l_calf_Shape'/ }
@@ -14442,6 +14450,8 @@ HAnimJoint2384.AddChildren([HAnimSegment2385]);
 HAnimJoint2398 := THAnimJointNode.Create;
 HAnimJoint2398.NameField := 'l_talocrural';
 HAnimJoint2398.Center := Vector3(0.0888,0.09545,-0.01045);
+HAnimJoint2398.SetLlimit([0,0,0]);
+HAnimJoint2398.SetUlimit([0,0,0]);
 HAnimSegment2399 := THAnimSegmentNode.Create;
 HAnimSegment2399.NameField := 'l_talus';
 { Shape USE='l_talus_Shape'/ }
@@ -14488,6 +14498,8 @@ HAnimJoint2398.AddChildren([HAnimSegment2399]);
 HAnimJoint2409 := THAnimJointNode.Create;
 HAnimJoint2409.NameField := 'l_talocalcaneonavicular';
 HAnimJoint2409.Center := Vector3(0.0783,0.0369,0.0049);
+HAnimJoint2409.SetLlimit([0,0,0]);
+HAnimJoint2409.SetUlimit([0,0,0]);
 HAnimSegment2410 := THAnimSegmentNode.Create;
 HAnimSegment2410.NameField := 'l_navicular';
 { Shape USE='l_navicular_Shape'/ }
@@ -14512,6 +14524,8 @@ HAnimJoint2409.AddChildren([HAnimSegment2410]);
 HAnimJoint2415 := THAnimJointNode.Create;
 HAnimJoint2415.NameField := 'l_cuneonavicular_1';
 HAnimJoint2415.Center := Vector3(0.0674,0.0321,0.0184);
+HAnimJoint2415.SetLlimit([0,0,0]);
+HAnimJoint2415.SetUlimit([0,0,0]);
 HAnimSegment2416 := THAnimSegmentNode.Create;
 HAnimSegment2416.NameField := 'l_cuneiform_1';
 { Shape USE='l_cuneiform_1_Shape'/ }
@@ -14528,6 +14542,8 @@ HAnimJoint2415.AddChildren([HAnimSegment2416]);
 HAnimJoint2419 := THAnimJointNode.Create;
 HAnimJoint2419.NameField := 'l_tarsometatarsal_1';
 HAnimJoint2419.Center := Vector3(0.0646,0.02324,0.0442);
+HAnimJoint2419.SetLlimit([0,0,0]);
+HAnimJoint2419.SetUlimit([0,0,0]);
 HAnimSegment2420 := THAnimSegmentNode.Create;
 HAnimSegment2420.NameField := 'l_metatarsal_1';
 { Shape USE='l_metatarsal_1_Shape'/ }
@@ -14544,6 +14560,8 @@ HAnimJoint2419.AddChildren([HAnimSegment2420]);
 HAnimJoint2423 := THAnimJointNode.Create;
 HAnimJoint2423.NameField := 'l_metatarsophalangeal_1';
 HAnimJoint2423.Center := Vector3(0.0621,0.01442,0.0936);
+HAnimJoint2423.SetLlimit([0,0,0]);
+HAnimJoint2423.SetUlimit([0,0,0]);
 HAnimSegment2424 := THAnimSegmentNode.Create;
 HAnimSegment2424.NameField := 'l_tarsal_proximal_phalanx_1';
 { Shape USE='l_tarsal_proximal_phalanx_1_Shape'/ }
@@ -14573,6 +14591,8 @@ HAnimJoint2423.AddChildren([HAnimSegment2424]);
 HAnimJoint2430 := THAnimJointNode.Create;
 HAnimJoint2430.NameField := 'l_tarsal_interphalangeal_1';
 HAnimJoint2430.Center := Vector3(0.062,0.012,0.115);
+HAnimJoint2430.SetLlimit([0,0,0]);
+HAnimJoint2430.SetUlimit([0,0,0]);
 HAnimSegment2431 := THAnimSegmentNode.Create;
 HAnimSegment2431.NameField := 'l_tarsal_distal_phalanx_1';
 { Shape USE='l_tarsal_distal_phalanx_1_Shape'/ }
@@ -14610,6 +14630,8 @@ HAnimJoint2409.AddChildren([HAnimJoint2415]);
 HAnimJoint2437 := THAnimJointNode.Create;
 HAnimJoint2437.NameField := 'l_cuneonavicular_2';
 HAnimJoint2437.Center := Vector3(0.0814,0.0335,0.02143);
+HAnimJoint2437.SetLlimit([0,0,0]);
+HAnimJoint2437.SetUlimit([0,0,0]);
 HAnimSegment2438 := THAnimSegmentNode.Create;
 HAnimSegment2438.NameField := 'l_cuneiform_2';
 { Shape USE='l_cuneiform_2_Shape'/ }
@@ -14626,6 +14648,8 @@ HAnimJoint2437.AddChildren([HAnimSegment2438]);
 HAnimJoint2441 := THAnimJointNode.Create;
 HAnimJoint2441.NameField := 'l_tarsometatarsal_2';
 HAnimJoint2441.Center := Vector3(0.0802,0.0261,0.0411);
+HAnimJoint2441.SetLlimit([0,0,0]);
+HAnimJoint2441.SetUlimit([0,0,0]);
 HAnimSegment2442 := THAnimSegmentNode.Create;
 HAnimSegment2442.NameField := 'l_metatarsal_2';
 { Shape USE='l_metatarsal_2_Shape'/ }
@@ -14642,6 +14666,8 @@ HAnimJoint2441.AddChildren([HAnimSegment2442]);
 HAnimJoint2445 := THAnimJointNode.Create;
 HAnimJoint2445.NameField := 'l_metatarsophalangeal_2';
 HAnimJoint2445.Center := Vector3(0.0825,0.01497,0.09783);
+HAnimJoint2445.SetLlimit([0,0,0]);
+HAnimJoint2445.SetUlimit([0,0,0]);
 HAnimSegment2446 := THAnimSegmentNode.Create;
 HAnimSegment2446.NameField := 'l_tarsal_proximal_phalanx_2';
 { Shape USE='l_tarsal_proximal_phalanx_2_Shape'/ }
@@ -14658,6 +14684,8 @@ HAnimJoint2445.AddChildren([HAnimSegment2446]);
 HAnimJoint2449 := THAnimJointNode.Create;
 HAnimJoint2449.NameField := 'l_tarsal_proximal_interphalangeal_2';
 HAnimJoint2449.Center := Vector3(0.0843,0.01265,0.114);
+HAnimJoint2449.SetLlimit([0,0,0]);
+HAnimJoint2449.SetUlimit([0,0,0]);
 HAnimSegment2450 := THAnimSegmentNode.Create;
 HAnimSegment2450.NameField := 'l_tarsal_middle_phalanx_2';
 { Shape USE='l_tarsal_middle_phalanx_2_Shape'/ }
@@ -14674,6 +14702,8 @@ HAnimJoint2449.AddChildren([HAnimSegment2450]);
 HAnimJoint2453 := THAnimJointNode.Create;
 HAnimJoint2453.NameField := 'l_tarsal_distal_interphalangeal_2';
 HAnimJoint2453.Center := Vector3(0.0843,0.00982,0.123435);
+HAnimJoint2453.SetLlimit([0,0,0]);
+HAnimJoint2453.SetUlimit([0,0,0]);
 HAnimSegment2454 := THAnimSegmentNode.Create;
 HAnimSegment2454.NameField := 'l_tarsal_distal_phalanx_2';
 { Shape USE='l_tarsal_distal_phalanx_2_Shape'/ }
@@ -14713,6 +14743,8 @@ HAnimJoint2409.AddChildren([HAnimJoint2437]);
 HAnimJoint2460 := THAnimJointNode.Create;
 HAnimJoint2460.NameField := 'l_cuneonavicular_3';
 HAnimJoint2460.Center := Vector3(0.09297,0.0334,0.01982);
+HAnimJoint2460.SetLlimit([0,0,0]);
+HAnimJoint2460.SetUlimit([0,0,0]);
 HAnimSegment2461 := THAnimSegmentNode.Create;
 HAnimSegment2461.NameField := 'l_cuneiform_3';
 { Shape USE='l_cuneiform_3_Shape'/ }
@@ -14729,6 +14761,8 @@ HAnimJoint2460.AddChildren([HAnimSegment2461]);
 HAnimJoint2464 := THAnimJointNode.Create;
 HAnimJoint2464.NameField := 'l_tarsometatarsal_3';
 HAnimJoint2464.Center := Vector3(0.09459,0.0261,0.0394);
+HAnimJoint2464.SetLlimit([0,0,0]);
+HAnimJoint2464.SetUlimit([0,0,0]);
 HAnimSegment2465 := THAnimSegmentNode.Create;
 HAnimSegment2465.NameField := 'l_metatarsal_3';
 { Shape USE='l_metatarsal_3_Shape'/ }
@@ -14745,6 +14779,8 @@ HAnimJoint2464.AddChildren([HAnimSegment2465]);
 HAnimJoint2468 := THAnimJointNode.Create;
 HAnimJoint2468.NameField := 'l_metatarsophalangeal_3';
 HAnimJoint2468.Center := Vector3(0.0965,0.01505,0.0954);
+HAnimJoint2468.SetLlimit([0,0,0]);
+HAnimJoint2468.SetUlimit([0,0,0]);
 HAnimSegment2469 := THAnimSegmentNode.Create;
 HAnimSegment2469.NameField := 'l_tarsal_proximal_phalanx_3';
 { Shape USE='l_tarsal_proximal_phalanx_3_Shape'/ }
@@ -14761,6 +14797,8 @@ HAnimJoint2468.AddChildren([HAnimSegment2469]);
 HAnimJoint2472 := THAnimJointNode.Create;
 HAnimJoint2472.NameField := 'l_tarsal_proximal_interphalangeal_3';
 HAnimJoint2472.Center := Vector3(0.09886,0.01192,0.11047);
+HAnimJoint2472.SetLlimit([0,0,0]);
+HAnimJoint2472.SetUlimit([0,0,0]);
 HAnimSegment2473 := THAnimSegmentNode.Create;
 HAnimSegment2473.NameField := 'l_tarsal_middle_phalanx_3';
 { Shape USE='l_tarsal_middle_phalanx_3_Shape'/ }
@@ -14777,6 +14815,8 @@ HAnimJoint2472.AddChildren([HAnimSegment2473]);
 HAnimJoint2476 := THAnimJointNode.Create;
 HAnimJoint2476.NameField := 'l_tarsal_distal_interphalangeal_3';
 HAnimJoint2476.Center := Vector3(0.1004,0.00983,0.1197);
+HAnimJoint2476.SetLlimit([0,0,0]);
+HAnimJoint2476.SetUlimit([0,0,0]);
 HAnimSegment2477 := THAnimSegmentNode.Create;
 HAnimSegment2477.NameField := 'l_tarsal_distal_phalanx_3';
 { Shape USE='l_tarsal_distal_phalanx_3_Shape'/ }
@@ -14818,6 +14858,8 @@ HAnimJoint2398.AddChildren([HAnimJoint2409]);
 HAnimJoint2483 := THAnimJointNode.Create;
 HAnimJoint2483.NameField := 'l_calcaneocuboid';
 HAnimJoint2483.Center := Vector3(0.0891,0.05798,-0.0259);
+HAnimJoint2483.SetLlimit([0,0,0]);
+HAnimJoint2483.SetUlimit([0,0,0]);
 HAnimSegment2484 := THAnimSegmentNode.Create;
 HAnimSegment2484.NameField := 'l_calcaneus';
 { Shape USE='l_calcaneus_Shape'/ }
@@ -14834,6 +14876,8 @@ HAnimJoint2483.AddChildren([HAnimSegment2484]);
 HAnimJoint2487 := THAnimJointNode.Create;
 HAnimJoint2487.NameField := 'l_transversetarsal';
 HAnimJoint2487.Center := Vector3(0.11063,0.03528,0.0021);
+HAnimJoint2487.SetLlimit([0,0,0]);
+HAnimJoint2487.SetUlimit([0,0,0]);
 HAnimSegment2488 := THAnimSegmentNode.Create;
 HAnimSegment2488.NameField := 'l_cuboid';
 { Shape USE='l_cuboid_Shape'/ }
@@ -14854,6 +14898,8 @@ HAnimJoint2487.AddChildren([HAnimSegment2488]);
 HAnimJoint2492 := THAnimJointNode.Create;
 HAnimJoint2492.NameField := 'l_tarsometatarsal_4';
 HAnimJoint2492.Center := Vector3(0.10649,0.02454,0.03843);
+HAnimJoint2492.SetLlimit([0,0,0]);
+HAnimJoint2492.SetUlimit([0,0,0]);
 HAnimSegment2493 := THAnimSegmentNode.Create;
 HAnimSegment2493.NameField := 'l_metatarsal_4';
 { Shape USE='l_metatarsal_4_Shape'/ }
@@ -14870,6 +14916,8 @@ HAnimJoint2492.AddChildren([HAnimSegment2493]);
 HAnimJoint2496 := THAnimJointNode.Create;
 HAnimJoint2496.NameField := 'l_metatarsophalangeal_4';
 HAnimJoint2496.Center := Vector3(0.109867,0.01435,0.09117);
+HAnimJoint2496.SetLlimit([0,0,0]);
+HAnimJoint2496.SetUlimit([0,0,0]);
 HAnimSegment2497 := THAnimSegmentNode.Create;
 HAnimSegment2497.NameField := 'l_tarsal_proximal_phalanx_4';
 { Shape USE='l_tarsal_proximal_phalanx_4_Shape'/ }
@@ -14886,6 +14934,8 @@ HAnimJoint2496.AddChildren([HAnimSegment2497]);
 HAnimJoint2500 := THAnimJointNode.Create;
 HAnimJoint2500.NameField := 'l_tarsal_proximal_interphalangeal_4';
 HAnimJoint2500.Center := Vector3(0.11416,0.01224,0.10631);
+HAnimJoint2500.SetLlimit([0,0,0]);
+HAnimJoint2500.SetUlimit([0,0,0]);
 HAnimSegment2501 := THAnimSegmentNode.Create;
 HAnimSegment2501.NameField := 'l_tarsal_middle_phalanx_4';
 { Shape USE='l_tarsal_middle_phalanx_4_Shape'/ }
@@ -14902,6 +14952,8 @@ HAnimJoint2500.AddChildren([HAnimSegment2501]);
 HAnimJoint2504 := THAnimJointNode.Create;
 HAnimJoint2504.NameField := 'l_tarsal_distal_interphalangeal_4';
 HAnimJoint2504.Center := Vector3(0.11567,0.00936,0.11369);
+HAnimJoint2504.SetLlimit([0,0,0]);
+HAnimJoint2504.SetUlimit([0,0,0]);
 HAnimSegment2505 := THAnimSegmentNode.Create;
 HAnimSegment2505.NameField := 'l_tarsal_distal_phalanx_4';
 { Shape USE='l_tarsal_distal_phalanx_4_Shape'/ }
@@ -14939,6 +14991,8 @@ HAnimJoint2487.AddChildren([HAnimJoint2492]);
 HAnimJoint2511 := THAnimJointNode.Create;
 HAnimJoint2511.NameField := 'l_tarsometatarsal_5';
 HAnimJoint2511.Center := Vector3(0.1208,0.02094,0.03474);
+HAnimJoint2511.SetLlimit([0,0,0]);
+HAnimJoint2511.SetUlimit([0,0,0]);
 HAnimSegment2512 := THAnimSegmentNode.Create;
 HAnimSegment2512.NameField := 'l_metatarsal_5';
 { Shape USE='l_metatarsal_5_Shape'/ }
@@ -14955,6 +15009,8 @@ HAnimJoint2511.AddChildren([HAnimSegment2512]);
 HAnimJoint2515 := THAnimJointNode.Create;
 HAnimJoint2515.NameField := 'l_metatarsophalangeal_5';
 HAnimJoint2515.Center := Vector3(0.124065,0.01367,0.08656);
+HAnimJoint2515.SetLlimit([0,0,0]);
+HAnimJoint2515.SetUlimit([0,0,0]);
 HAnimSegment2516 := THAnimSegmentNode.Create;
 HAnimSegment2516.NameField := 'l_tarsal_proximal_phalanx_5';
 { Shape USE='l_tarsal_proximal_phalanx_5_Shape'/ }
@@ -14971,6 +15027,8 @@ HAnimJoint2515.AddChildren([HAnimSegment2516]);
 HAnimJoint2519 := THAnimJointNode.Create;
 HAnimJoint2519.NameField := 'l_tarsal_proximal_interphalangeal_5';
 HAnimJoint2519.Center := Vector3(0.12638,0.01086,0.09414);
+HAnimJoint2519.SetLlimit([0,0,0]);
+HAnimJoint2519.SetUlimit([0,0,0]);
 HAnimSegment2520 := THAnimSegmentNode.Create;
 HAnimSegment2520.NameField := 'l_tarsal_middle_phalanx_5';
 { Shape USE='l_tarsal_middle_phalanx_5_Shape'/ }
@@ -15000,6 +15058,8 @@ HAnimJoint2519.AddChildren([HAnimSegment2520]);
 HAnimJoint2526 := THAnimJointNode.Create;
 HAnimJoint2526.NameField := 'l_tarsal_distal_interphalangeal_5';
 HAnimJoint2526.Center := Vector3(0.12728,0.00856,0.10188);
+HAnimJoint2526.SetLlimit([0,0,0]);
+HAnimJoint2526.SetUlimit([0,0,0]);
 HAnimSegment2527 := THAnimSegmentNode.Create;
 HAnimSegment2527.NameField := 'l_tarsal_distal_phalanx_5';
 { Shape USE='l_tarsal_distal_phalanx_5_Shape'/ }
@@ -15047,6 +15107,8 @@ HAnimJoint2333.AddChildren([HAnimJoint2368]);
 HAnimJoint2533 := THAnimJointNode.Create;
 HAnimJoint2533.NameField := 'r_hip';
 HAnimJoint2533.Center := Vector3(-0.09466,0.82665,-0.01835);
+HAnimJoint2533.SetLlimit([0,0,0]);
+HAnimJoint2533.SetUlimit([0,0,0]);
 HAnimSegment2534 := THAnimSegmentNode.Create;
 HAnimSegment2534.NameField := 'r_thigh';
 { Shape USE='r_thigh_Shape'/ }
@@ -15115,6 +15177,8 @@ HAnimJoint2533.AddChildren([HAnimSegment2534]);
 HAnimJoint2549 := THAnimJointNode.Create;
 HAnimJoint2549.NameField := 'r_knee';
 HAnimJoint2549.Center := Vector3(-0.0926,0.408825,-0.01944);
+HAnimJoint2549.SetLlimit([0,0,0]);
+HAnimJoint2549.SetUlimit([0,0,0]);
 HAnimSegment2550 := THAnimSegmentNode.Create;
 HAnimSegment2550.NameField := 'r_calf';
 { Shape USE='r_calf_Shape'/ }
@@ -15170,6 +15234,8 @@ HAnimJoint2549.AddChildren([HAnimSegment2550]);
 HAnimJoint2562 := THAnimJointNode.Create;
 HAnimJoint2562.NameField := 'r_talocrural';
 HAnimJoint2562.Center := Vector3(-0.08845,0.09544,-0.01045);
+HAnimJoint2562.SetLlimit([0,0,0]);
+HAnimJoint2562.SetUlimit([0,0,0]);
 HAnimSegment2563 := THAnimSegmentNode.Create;
 HAnimSegment2563.NameField := 'r_talus';
 { Shape USE='r_talus_Shape'/ }
@@ -15216,6 +15282,8 @@ HAnimJoint2562.AddChildren([HAnimSegment2563]);
 HAnimJoint2573 := THAnimJointNode.Create;
 HAnimJoint2573.NameField := 'r_talocalcaneonavicular';
 HAnimJoint2573.Center := Vector3(-0.07794,0.0369,0.00486);
+HAnimJoint2573.SetLlimit([0,0,0]);
+HAnimJoint2573.SetUlimit([0,0,0]);
 HAnimSegment2574 := THAnimSegmentNode.Create;
 HAnimSegment2574.NameField := 'r_navicular';
 { Shape USE='r_navicular_Shape'/ }
@@ -15240,6 +15308,8 @@ HAnimJoint2573.AddChildren([HAnimSegment2574]);
 HAnimJoint2579 := THAnimJointNode.Create;
 HAnimJoint2579.NameField := 'r_cuneonavicular_1';
 HAnimJoint2579.Center := Vector3(-0.06698,0.032107,0.01839);
+HAnimJoint2579.SetLlimit([0,0,0]);
+HAnimJoint2579.SetUlimit([0,0,0]);
 HAnimSegment2580 := THAnimSegmentNode.Create;
 HAnimSegment2580.NameField := 'r_cuneiform_1';
 { Shape USE='r_cuneiform_1_Shape'/ }
@@ -15256,6 +15326,8 @@ HAnimJoint2579.AddChildren([HAnimSegment2580]);
 HAnimJoint2583 := THAnimJointNode.Create;
 HAnimJoint2583.NameField := 'r_tarsometatarsal_1';
 HAnimJoint2583.Center := Vector3(-0.064,0.02324,0.04419);
+HAnimJoint2583.SetLlimit([0,0,0]);
+HAnimJoint2583.SetUlimit([0,0,0]);
 HAnimSegment2584 := THAnimSegmentNode.Create;
 HAnimSegment2584.NameField := 'r_metatarsal_1';
 { Shape USE='r_metatarsal_1_Shape'/ }
@@ -15272,6 +15344,8 @@ HAnimJoint2583.AddChildren([HAnimSegment2584]);
 HAnimJoint2587 := THAnimJointNode.Create;
 HAnimJoint2587.NameField := 'r_metatarsophalangeal_1';
 HAnimJoint2587.Center := Vector3(-0.06176,0.014425,0.09362);
+HAnimJoint2587.SetLlimit([0,0,0]);
+HAnimJoint2587.SetUlimit([0,0,0]);
 HAnimSegment2588 := THAnimSegmentNode.Create;
 HAnimSegment2588.NameField := 'r_tarsal_proximal_phalanx_1';
 { Shape USE='r_tarsal_proximal_phalanx_1_Shape'/ }
@@ -15301,6 +15375,8 @@ HAnimJoint2587.AddChildren([HAnimSegment2588]);
 HAnimJoint2594 := THAnimJointNode.Create;
 HAnimJoint2594.NameField := 'r_tarsal_interphalangeal_1';
 HAnimJoint2594.Center := Vector3(-0.06174,0.0121,0.1153);
+HAnimJoint2594.SetLlimit([0,0,0]);
+HAnimJoint2594.SetUlimit([0,0,0]);
 HAnimSegment2595 := THAnimSegmentNode.Create;
 HAnimSegment2595.NameField := 'r_tarsal_distal_phalanx_1';
 { Shape USE='r_tarsal_distal_phalanx_1_Shape'/ }
@@ -15338,6 +15414,8 @@ HAnimJoint2573.AddChildren([HAnimJoint2579]);
 HAnimJoint2601 := THAnimJointNode.Create;
 HAnimJoint2601.NameField := 'r_cuneonavicular_2';
 HAnimJoint2601.Center := Vector3(-0.081,0.0335,0.02142);
+HAnimJoint2601.SetLlimit([0,0,0]);
+HAnimJoint2601.SetUlimit([0,0,0]);
 HAnimSegment2602 := THAnimSegmentNode.Create;
 HAnimSegment2602.NameField := 'r_cuneiform_2';
 { Shape USE='r_cuneiform_2_Shape'/ }
@@ -15354,6 +15432,8 @@ HAnimJoint2601.AddChildren([HAnimSegment2602]);
 HAnimJoint2605 := THAnimJointNode.Create;
 HAnimJoint2605.NameField := 'r_tarsometatarsal_2';
 HAnimJoint2605.Center := Vector3(-0.07983,0.0261,0.04106);
+HAnimJoint2605.SetLlimit([0,0,0]);
+HAnimJoint2605.SetUlimit([0,0,0]);
 HAnimSegment2606 := THAnimSegmentNode.Create;
 HAnimSegment2606.NameField := 'r_metatarsal_2';
 { Shape USE='r_metatarsal_2_Shape'/ }
@@ -15370,6 +15450,8 @@ HAnimJoint2605.AddChildren([HAnimSegment2606]);
 HAnimJoint2609 := THAnimJointNode.Create;
 HAnimJoint2609.NameField := 'r_metatarsophalangeal_2';
 HAnimJoint2609.Center := Vector3(-0.0821,0.01497,0.09783);
+HAnimJoint2609.SetLlimit([0,0,0]);
+HAnimJoint2609.SetUlimit([0,0,0]);
 HAnimSegment2610 := THAnimSegmentNode.Create;
 HAnimSegment2610.NameField := 'r_tarsal_proximal_phalanx_2';
 { Shape USE='r_tarsal_proximal_phalanx_2_Shape'/ }
@@ -15386,6 +15468,8 @@ HAnimJoint2609.AddChildren([HAnimSegment2610]);
 HAnimJoint2613 := THAnimJointNode.Create;
 HAnimJoint2613.NameField := 'r_tarsal_proximal_interphalangeal_2';
 HAnimJoint2613.Center := Vector3(-0.0839,0.012647,0.114);
+HAnimJoint2613.SetLlimit([0,0,0]);
+HAnimJoint2613.SetUlimit([0,0,0]);
 HAnimSegment2614 := THAnimSegmentNode.Create;
 HAnimSegment2614.NameField := 'r_tarsal_middle_phalanx_2';
 { Shape USE='r_tarsal_middle_phalanx_2_Shape'/ }
@@ -15402,6 +15486,8 @@ HAnimJoint2613.AddChildren([HAnimSegment2614]);
 HAnimJoint2617 := THAnimJointNode.Create;
 HAnimJoint2617.NameField := 'r_tarsal_distal_interphalangeal_2';
 HAnimJoint2617.Center := Vector3(-0.0839,0.009825,0.123435);
+HAnimJoint2617.SetLlimit([0,0,0]);
+HAnimJoint2617.SetUlimit([0,0,0]);
 HAnimSegment2618 := THAnimSegmentNode.Create;
 HAnimSegment2618.NameField := 'r_tarsal_distal_phalanx_2';
 { Shape USE='r_tarsal_distal_phalanx_2_Shape'/ }
@@ -15441,6 +15527,8 @@ HAnimJoint2573.AddChildren([HAnimJoint2601]);
 HAnimJoint2624 := THAnimJointNode.Create;
 HAnimJoint2624.NameField := 'r_cuneonavicular_3';
 HAnimJoint2624.Center := Vector3(-0.09261,0.03339,0.01982);
+HAnimJoint2624.SetLlimit([0,0,0]);
+HAnimJoint2624.SetUlimit([0,0,0]);
 HAnimSegment2625 := THAnimSegmentNode.Create;
 HAnimSegment2625.NameField := 'r_cuneiform_3';
 { Shape USE='r_cuneiform_3_Shape'/ }
@@ -15457,6 +15545,8 @@ HAnimJoint2624.AddChildren([HAnimSegment2625]);
 HAnimJoint2628 := THAnimJointNode.Create;
 HAnimJoint2628.NameField := 'r_tarsometatarsal_3';
 HAnimJoint2628.Center := Vector3(-0.09423,0.0261,0.0394);
+HAnimJoint2628.SetLlimit([0,0,0]);
+HAnimJoint2628.SetUlimit([0,0,0]);
 HAnimSegment2629 := THAnimSegmentNode.Create;
 HAnimSegment2629.NameField := 'r_metatarsal_3';
 { Shape USE='r_metatarsal_3_Shape'/ }
@@ -15473,6 +15563,8 @@ HAnimJoint2628.AddChildren([HAnimSegment2629]);
 HAnimJoint2632 := THAnimJointNode.Create;
 HAnimJoint2632.NameField := 'r_metatarsophalangeal_3';
 HAnimJoint2632.Center := Vector3(-0.0961,0.01505,0.09542);
+HAnimJoint2632.SetLlimit([0,0,0]);
+HAnimJoint2632.SetUlimit([0,0,0]);
 HAnimSegment2633 := THAnimSegmentNode.Create;
 HAnimSegment2633.NameField := 'r_tarsal_proximal_phalanx_3';
 { Shape USE='r_tarsal_proximal_phalanx_3_Shape'/ }
@@ -15489,6 +15581,8 @@ HAnimJoint2632.AddChildren([HAnimSegment2633]);
 HAnimJoint2636 := THAnimJointNode.Create;
 HAnimJoint2636.NameField := 'r_tarsal_proximal_interphalangeal_3';
 HAnimJoint2636.Center := Vector3(-0.0985,0.01192,0.11047);
+HAnimJoint2636.SetLlimit([0,0,0]);
+HAnimJoint2636.SetUlimit([0,0,0]);
 HAnimSegment2637 := THAnimSegmentNode.Create;
 HAnimSegment2637.NameField := 'r_tarsal_middle_phalanx_3';
 { Shape USE='r_tarsal_middle_phalanx_3_Shape'/ }
@@ -15505,6 +15599,8 @@ HAnimJoint2636.AddChildren([HAnimSegment2637]);
 HAnimJoint2640 := THAnimJointNode.Create;
 HAnimJoint2640.NameField := 'r_tarsal_distal_interphalangeal_3';
 HAnimJoint2640.Center := Vector3(-0.100035,0.00982,0.1197);
+HAnimJoint2640.SetLlimit([0,0,0]);
+HAnimJoint2640.SetUlimit([0,0,0]);
 HAnimSegment2641 := THAnimSegmentNode.Create;
 HAnimSegment2641.NameField := 'r_tarsal_distal_phalanx_3';
 { Shape USE='r_tarsal_distal_phalanx_3_Shape'/ }
@@ -15546,6 +15642,8 @@ HAnimJoint2562.AddChildren([HAnimJoint2573]);
 HAnimJoint2647 := THAnimJointNode.Create;
 HAnimJoint2647.NameField := 'r_calcaneocuboid';
 HAnimJoint2647.Center := Vector3(-0.088717,0.05798,-0.025965);
+HAnimJoint2647.SetLlimit([0,0,0]);
+HAnimJoint2647.SetUlimit([0,0,0]);
 HAnimSegment2648 := THAnimSegmentNode.Create;
 HAnimSegment2648.NameField := 'r_calcaneus';
 { Shape USE='r_calcaneus_Shape'/ }
@@ -15562,6 +15660,8 @@ HAnimJoint2647.AddChildren([HAnimSegment2648]);
 HAnimJoint2651 := THAnimJointNode.Create;
 HAnimJoint2651.NameField := 'r_transversetarsal';
 HAnimJoint2651.Center := Vector3(-0.11027,0.03528,0.0021);
+HAnimJoint2651.SetLlimit([0,0,0]);
+HAnimJoint2651.SetUlimit([0,0,0]);
 HAnimSegment2652 := THAnimSegmentNode.Create;
 HAnimSegment2652.NameField := 'r_cuboid';
 { Shape USE='r_cuboid_Shape'/ }
@@ -15578,6 +15678,8 @@ HAnimJoint2651.AddChildren([HAnimSegment2652]);
 HAnimJoint2655 := THAnimJointNode.Create;
 HAnimJoint2655.NameField := 'r_tarsometatarsal_4';
 HAnimJoint2655.Center := Vector3(-0.10613,0.02454,0.03843);
+HAnimJoint2655.SetLlimit([0,0,0]);
+HAnimJoint2655.SetUlimit([0,0,0]);
 HAnimSegment2656 := THAnimSegmentNode.Create;
 HAnimSegment2656.NameField := 'r_metatarsal_4';
 { Shape USE='r_metatarsal_4_Shape'/ }
@@ -15594,6 +15696,8 @@ HAnimJoint2655.AddChildren([HAnimSegment2656]);
 HAnimJoint2659 := THAnimJointNode.Create;
 HAnimJoint2659.NameField := 'r_metatarsophalangeal_4';
 HAnimJoint2659.Center := Vector3(-0.1095,0.01435,0.09117);
+HAnimJoint2659.SetLlimit([0,0,0]);
+HAnimJoint2659.SetUlimit([0,0,0]);
 HAnimSegment2660 := THAnimSegmentNode.Create;
 HAnimSegment2660.NameField := 'r_tarsal_proximal_phalanx_4';
 { Shape USE='r_tarsal_proximal_phalanx_4_Shape'/ }
@@ -15610,6 +15714,8 @@ HAnimJoint2659.AddChildren([HAnimSegment2660]);
 HAnimJoint2663 := THAnimJointNode.Create;
 HAnimJoint2663.NameField := 'r_tarsal_proximal_interphalangeal_4';
 HAnimJoint2663.Center := Vector3(-0.11378,0.01224,0.1063);
+HAnimJoint2663.SetLlimit([0,0,0]);
+HAnimJoint2663.SetUlimit([0,0,0]);
 HAnimSegment2664 := THAnimSegmentNode.Create;
 HAnimSegment2664.NameField := 'r_tarsal_middle_phalanx_4';
 { Shape USE='r_tarsal_middle_phalanx_4_Shape'/ }
@@ -15626,6 +15732,8 @@ HAnimJoint2663.AddChildren([HAnimSegment2664]);
 HAnimJoint2667 := THAnimJointNode.Create;
 HAnimJoint2667.NameField := 'r_tarsal_distal_interphalangeal_4';
 HAnimJoint2667.Center := Vector3(-0.1153,0.00937,0.11369);
+HAnimJoint2667.SetLlimit([0,0,0]);
+HAnimJoint2667.SetUlimit([0,0,0]);
 HAnimSegment2668 := THAnimSegmentNode.Create;
 HAnimSegment2668.NameField := 'r_tarsal_distal_phalanx_4';
 { Shape USE='r_tarsal_distal_phalanx_4_Shape'/ }
@@ -15663,6 +15771,8 @@ HAnimJoint2651.AddChildren([HAnimJoint2655]);
 HAnimJoint2674 := THAnimJointNode.Create;
 HAnimJoint2674.NameField := 'r_tarsometatarsal_5';
 HAnimJoint2674.Center := Vector3(-0.12044,0.020945,0.03474);
+HAnimJoint2674.SetLlimit([0,0,0]);
+HAnimJoint2674.SetUlimit([0,0,0]);
 HAnimSegment2675 := THAnimSegmentNode.Create;
 HAnimSegment2675.NameField := 'r_metatarsal_5';
 { Shape USE='r_metatarsal_5_Shape'/ }
@@ -15679,6 +15789,8 @@ HAnimJoint2674.AddChildren([HAnimSegment2675]);
 HAnimJoint2678 := THAnimJointNode.Create;
 HAnimJoint2678.NameField := 'r_metatarsophalangeal_5';
 HAnimJoint2678.Center := Vector3(-0.12368,0.01367,0.08656);
+HAnimJoint2678.SetLlimit([0,0,0]);
+HAnimJoint2678.SetUlimit([0,0,0]);
 HAnimSegment2679 := THAnimSegmentNode.Create;
 HAnimSegment2679.NameField := 'r_tarsal_proximal_phalanx_5';
 { Shape USE='r_tarsal_proximal_phalanx_5_Shape'/ }
@@ -15695,6 +15807,8 @@ HAnimJoint2678.AddChildren([HAnimSegment2679]);
 HAnimJoint2682 := THAnimJointNode.Create;
 HAnimJoint2682.NameField := 'r_tarsal_proximal_interphalangeal_5';
 HAnimJoint2682.Center := Vector3(-0.126,0.01086,0.09414);
+HAnimJoint2682.SetLlimit([0,0,0]);
+HAnimJoint2682.SetUlimit([0,0,0]);
 HAnimSegment2683 := THAnimSegmentNode.Create;
 HAnimSegment2683.NameField := 'r_tarsal_middle_phalanx_5';
 { Shape USE='r_tarsal_middle_phalanx_5_Shape'/ }
@@ -15724,6 +15838,8 @@ HAnimJoint2682.AddChildren([HAnimSegment2683]);
 HAnimJoint2689 := THAnimJointNode.Create;
 HAnimJoint2689.NameField := 'r_tarsal_distal_interphalangeal_5';
 HAnimJoint2689.Center := Vector3(-0.1269,0.00856,0.10188);
+HAnimJoint2689.SetLlimit([0,0,0]);
+HAnimJoint2689.SetUlimit([0,0,0]);
 HAnimSegment2690 := THAnimSegmentNode.Create;
 HAnimSegment2690.NameField := 'r_tarsal_distal_phalanx_5';
 { Shape USE='r_tarsal_distal_phalanx_5_Shape'/ }
@@ -15773,6 +15889,8 @@ HAnimJoint2327.AddChildren([HAnimJoint2333]);
 HAnimJoint2696 := THAnimJointNode.Create;
 HAnimJoint2696.NameField := 'vl5';
 HAnimJoint2696.Center := Vector3(0,0.9254,-0.01376);
+HAnimJoint2696.SetLlimit([0,0,0]);
+HAnimJoint2696.SetUlimit([0,0,0]);
 HAnimSegment2697 := THAnimSegmentNode.Create;
 HAnimSegment2697.NameField := 'l5';
 { Shape USE='l5_Shape'/ }
@@ -15854,6 +15972,8 @@ HAnimJoint2696.AddChildren([HAnimSegment2697]);
 HAnimJoint2715 := THAnimJointNode.Create;
 HAnimJoint2715.NameField := 'vl4';
 HAnimJoint2715.Center := Vector3(0,0.9497,-0.01376);
+HAnimJoint2715.SetLlimit([0,0,0]);
+HAnimJoint2715.SetUlimit([0,0,0]);
 HAnimSegment2716 := THAnimSegmentNode.Create;
 HAnimSegment2716.NameField := 'l4';
 { Shape USE='l4_Shape'/ }
@@ -15870,6 +15990,8 @@ HAnimJoint2715.AddChildren([HAnimSegment2716]);
 HAnimJoint2719 := THAnimJointNode.Create;
 HAnimJoint2719.NameField := 'vl3';
 HAnimJoint2719.Center := Vector3(0,0.9659,-0.01376);
+HAnimJoint2719.SetLlimit([0,0,0]);
+HAnimJoint2719.SetUlimit([0,0,0]);
 HAnimSegment2720 := THAnimSegmentNode.Create;
 HAnimSegment2720.NameField := 'l3';
 { Shape USE='l3_Shape'/ }
@@ -15886,6 +16008,8 @@ HAnimJoint2719.AddChildren([HAnimSegment2720]);
 HAnimJoint2723 := THAnimJointNode.Create;
 HAnimJoint2723.NameField := 'vl2';
 HAnimJoint2723.Center := Vector3(0,0.98235,-0.01376);
+HAnimJoint2723.SetLlimit([0,0,0]);
+HAnimJoint2723.SetUlimit([0,0,0]);
 HAnimSegment2724 := THAnimSegmentNode.Create;
 HAnimSegment2724.NameField := 'l2';
 { Shape USE='l2_Shape'/ }
@@ -15928,6 +16052,8 @@ HAnimJoint2723.AddChildren([HAnimSegment2724]);
 HAnimJoint2733 := THAnimJointNode.Create;
 HAnimJoint2733.NameField := 'vl1';
 HAnimJoint2733.Center := Vector3(0,0.99967,-0.01376);
+HAnimJoint2733.SetLlimit([0,0,0]);
+HAnimJoint2733.SetUlimit([0,0,0]);
 HAnimSegment2734 := THAnimSegmentNode.Create;
 HAnimSegment2734.NameField := 'l1';
 { Shape USE='l1_Shape'/ }
@@ -15944,6 +16070,8 @@ HAnimJoint2733.AddChildren([HAnimSegment2734]);
 HAnimJoint2737 := THAnimJointNode.Create;
 HAnimJoint2737.NameField := 'vt12';
 HAnimJoint2737.Center := Vector3(0,1.0231,-0.01376);
+HAnimJoint2737.SetLlimit([0,0,0]);
+HAnimJoint2737.SetUlimit([0,0,0]);
 HAnimSegment2738 := THAnimSegmentNode.Create;
 HAnimSegment2738.NameField := 't12';
 { Shape USE='t12_Shape'/ }
@@ -15960,6 +16088,8 @@ HAnimJoint2737.AddChildren([HAnimSegment2738]);
 HAnimJoint2741 := THAnimJointNode.Create;
 HAnimJoint2741.NameField := 'vt11';
 HAnimJoint2741.Center := Vector3(0,1.0467,-0.01376);
+HAnimJoint2741.SetLlimit([0,0,0]);
+HAnimJoint2741.SetUlimit([0,0,0]);
 HAnimSegment2742 := THAnimSegmentNode.Create;
 HAnimSegment2742.NameField := 't11';
 { Shape USE='t11_Shape'/ }
@@ -15976,6 +16106,8 @@ HAnimJoint2741.AddChildren([HAnimSegment2742]);
 HAnimJoint2745 := THAnimJointNode.Create;
 HAnimJoint2745.NameField := 'vt10';
 HAnimJoint2745.Center := Vector3(0,1.0638,-0.01378);
+HAnimJoint2745.SetLlimit([0,0,0]);
+HAnimJoint2745.SetUlimit([0,0,0]);
 HAnimSegment2746 := THAnimSegmentNode.Create;
 HAnimSegment2746.NameField := 't10';
 { Shape USE='t10_Shape'/ }
@@ -16018,6 +16150,8 @@ HAnimJoint2745.AddChildren([HAnimSegment2746]);
 HAnimJoint2755 := THAnimJointNode.Create;
 HAnimJoint2755.NameField := 'vt9';
 HAnimJoint2755.Center := Vector3(0,1.0784,-0.01376);
+HAnimJoint2755.SetLlimit([0,0,0]);
+HAnimJoint2755.SetUlimit([0,0,0]);
 HAnimSegment2756 := THAnimSegmentNode.Create;
 HAnimSegment2756.NameField := 't9';
 { Shape USE='t9_Shape'/ }
@@ -16099,6 +16233,8 @@ HAnimJoint2755.AddChildren([HAnimSegment2756]);
 HAnimJoint2774 := THAnimJointNode.Create;
 HAnimJoint2774.NameField := 'vt8';
 HAnimJoint2774.Center := Vector3(0,1.093,-0.01376);
+HAnimJoint2774.SetLlimit([0,0,0]);
+HAnimJoint2774.SetUlimit([0,0,0]);
 HAnimSegment2775 := THAnimSegmentNode.Create;
 HAnimSegment2775.NameField := 't8';
 { Shape USE='t8_Shape'/ }
@@ -16115,6 +16251,8 @@ HAnimJoint2774.AddChildren([HAnimSegment2775]);
 HAnimJoint2778 := THAnimJointNode.Create;
 HAnimJoint2778.NameField := 'vt7';
 HAnimJoint2778.Center := Vector3(0,1.1088,-0.01376);
+HAnimJoint2778.SetLlimit([0,0,0]);
+HAnimJoint2778.SetUlimit([0,0,0]);
 HAnimSegment2779 := THAnimSegmentNode.Create;
 HAnimSegment2779.NameField := 't7';
 { Shape USE='t7_Shape'/ }
@@ -16131,6 +16269,8 @@ HAnimJoint2778.AddChildren([HAnimSegment2779]);
 HAnimJoint2782 := THAnimJointNode.Create;
 HAnimJoint2782.NameField := 'vt6';
 HAnimJoint2782.Center := Vector3(0,1.1216,-0.01376);
+HAnimJoint2782.SetLlimit([0,0,0]);
+HAnimJoint2782.SetUlimit([0,0,0]);
 HAnimSegment2783 := THAnimSegmentNode.Create;
 HAnimSegment2783.NameField := 't6';
 { Shape USE='t6_Shape'/ }
@@ -16147,6 +16287,8 @@ HAnimJoint2782.AddChildren([HAnimSegment2783]);
 HAnimJoint2786 := THAnimJointNode.Create;
 HAnimJoint2786.NameField := 'vt5';
 HAnimJoint2786.Center := Vector3(0,1.137,-0.01376);
+HAnimJoint2786.SetLlimit([0,0,0]);
+HAnimJoint2786.SetUlimit([0,0,0]);
 HAnimSegment2787 := THAnimSegmentNode.Create;
 HAnimSegment2787.NameField := 't5';
 { Shape USE='t5_Shape'/ }
@@ -16163,6 +16305,8 @@ HAnimJoint2786.AddChildren([HAnimSegment2787]);
 HAnimJoint2790 := THAnimJointNode.Create;
 HAnimJoint2790.NameField := 'vt4';
 HAnimJoint2790.Center := Vector3(0,1.1524,-0.01376);
+HAnimJoint2790.SetLlimit([0,0,0]);
+HAnimJoint2790.SetUlimit([0,0,0]);
 HAnimSegment2791 := THAnimSegmentNode.Create;
 HAnimSegment2791.NameField := 't4';
 { Shape USE='t4_Shape'/ }
@@ -16179,6 +16323,8 @@ HAnimJoint2790.AddChildren([HAnimSegment2791]);
 HAnimJoint2794 := THAnimJointNode.Create;
 HAnimJoint2794.NameField := 'vt3';
 HAnimJoint2794.Center := Vector3(0,1.1709,-0.01376);
+HAnimJoint2794.SetLlimit([0,0,0]);
+HAnimJoint2794.SetUlimit([0,0,0]);
 HAnimSegment2795 := THAnimSegmentNode.Create;
 HAnimSegment2795.NameField := 't3';
 { Shape USE='t3_Shape'/ }
@@ -16195,6 +16341,8 @@ HAnimJoint2794.AddChildren([HAnimSegment2795]);
 HAnimJoint2798 := THAnimJointNode.Create;
 HAnimJoint2798.NameField := 'vt2';
 HAnimJoint2798.Center := Vector3(0,1.1956,-0.01378);
+HAnimJoint2798.SetLlimit([0,0,0]);
+HAnimJoint2798.SetUlimit([0,0,0]);
 HAnimSegment2799 := THAnimSegmentNode.Create;
 HAnimSegment2799.NameField := 't2';
 { Shape USE='t2_Shape'/ }
@@ -16211,6 +16359,8 @@ HAnimJoint2798.AddChildren([HAnimSegment2799]);
 HAnimJoint2802 := THAnimJointNode.Create;
 HAnimJoint2802.NameField := 'vt1';
 HAnimJoint2802.Center := Vector3(0,1.22,-0.0138);
+HAnimJoint2802.SetLlimit([0,0,0]);
+HAnimJoint2802.SetUlimit([0,0,0]);
 HAnimSegment2803 := THAnimSegmentNode.Create;
 HAnimSegment2803.NameField := 't1';
 { Shape USE='t1_Shape'/ }
@@ -16253,6 +16403,8 @@ HAnimJoint2802.AddChildren([HAnimSegment2803]);
 HAnimJoint2812 := THAnimJointNode.Create;
 HAnimJoint2812.NameField := 'vc7';
 HAnimJoint2812.Center := Vector3(0,1.2453,-0.01506);
+HAnimJoint2812.SetLlimit([0,0,0]);
+HAnimJoint2812.SetUlimit([0,0,0]);
 HAnimSegment2813 := THAnimSegmentNode.Create;
 HAnimSegment2813.NameField := 'c7';
 { Shape USE='c7_Shape'/ }
@@ -16303,6 +16455,8 @@ HAnimJoint2812.AddChildren([HAnimSegment2813]);
 HAnimJoint2824 := THAnimJointNode.Create;
 HAnimJoint2824.NameField := 'vc6';
 HAnimJoint2824.Center := Vector3(0,1.2575,-0.01506);
+HAnimJoint2824.SetLlimit([0,0,0]);
+HAnimJoint2824.SetUlimit([0,0,0]);
 HAnimSegment2825 := THAnimSegmentNode.Create;
 HAnimSegment2825.NameField := 'c6';
 { Shape USE='c6_Shape'/ }
@@ -16319,6 +16473,8 @@ HAnimJoint2824.AddChildren([HAnimSegment2825]);
 HAnimJoint2828 := THAnimJointNode.Create;
 HAnimJoint2828.NameField := 'vc5';
 HAnimJoint2828.Center := Vector3(0,1.2699,-0.01506);
+HAnimJoint2828.SetLlimit([0,0,0]);
+HAnimJoint2828.SetUlimit([0,0,0]);
 HAnimSegment2829 := THAnimSegmentNode.Create;
 HAnimSegment2829.NameField := 'c5';
 { Shape USE='c5_Shape'/ }
@@ -16335,6 +16491,8 @@ HAnimJoint2828.AddChildren([HAnimSegment2829]);
 HAnimJoint2832 := THAnimJointNode.Create;
 HAnimJoint2832.NameField := 'vc4';
 HAnimJoint2832.Center := Vector3(0,1.28227,-0.01506);
+HAnimJoint2832.SetLlimit([0,0,0]);
+HAnimJoint2832.SetUlimit([0,0,0]);
 HAnimSegment2833 := THAnimSegmentNode.Create;
 HAnimSegment2833.NameField := 'c4';
 { Shape USE='c4_Shape'/ }
@@ -16351,6 +16509,8 @@ HAnimJoint2832.AddChildren([HAnimSegment2833]);
 HAnimJoint2836 := THAnimJointNode.Create;
 HAnimJoint2836.NameField := 'vc3';
 HAnimJoint2836.Center := Vector3(0,1.2951,-0.01506);
+HAnimJoint2836.SetLlimit([0,0,0]);
+HAnimJoint2836.SetUlimit([0,0,0]);
 HAnimSegment2837 := THAnimSegmentNode.Create;
 HAnimSegment2837.NameField := 'c3';
 { Shape USE='c3_Shape'/ }
@@ -16367,6 +16527,8 @@ HAnimJoint2836.AddChildren([HAnimSegment2837]);
 HAnimJoint2840 := THAnimJointNode.Create;
 HAnimJoint2840.NameField := 'vc2';
 HAnimJoint2840.Center := Vector3(0,1.307,-0.015);
+HAnimJoint2840.SetLlimit([0,0,0]);
+HAnimJoint2840.SetUlimit([0,0,0]);
 HAnimSegment2841 := THAnimSegmentNode.Create;
 HAnimSegment2841.NameField := 'c2';
 { Shape USE='c2_Shape'/ }
@@ -16396,6 +16558,8 @@ HAnimJoint2840.AddChildren([HAnimSegment2841]);
 HAnimJoint2847 := THAnimJointNode.Create;
 HAnimJoint2847.NameField := 'vc1';
 HAnimJoint2847.Center := Vector3(0,1.3185,-0.0151);
+HAnimJoint2847.SetLlimit([0,0,0]);
+HAnimJoint2847.SetUlimit([0,0,0]);
 HAnimSegment2848 := THAnimSegmentNode.Create;
 HAnimSegment2848.NameField := 'c1';
 { Shape USE='c1_Shape'/ }
@@ -16412,6 +16576,8 @@ HAnimJoint2847.AddChildren([HAnimSegment2848]);
 HAnimJoint2851 := THAnimJointNode.Create;
 HAnimJoint2851.NameField := 'skullbase';
 HAnimJoint2851.Center := Vector3(0,1.3126,-0.0154);
+HAnimJoint2851.SetLlimit([0,0,0]);
+HAnimJoint2851.SetUlimit([0,0,0]);
 HAnimSegment2852 := THAnimSegmentNode.Create;
 HAnimSegment2852.NameField := 'skull';
 { Shape USE='skull_Shape'/ }
@@ -16596,6 +16762,8 @@ HAnimJoint2851.AddChildren([HAnimSegment2852]);
 HAnimJoint2894 := THAnimJointNode.Create;
 HAnimJoint2894.NameField := 'l_eyelid_joint';
 HAnimJoint2894.Center := Vector3(0.0505,1.42425,0.03294);
+HAnimJoint2894.SetLlimit([0,0,0]);
+HAnimJoint2894.SetUlimit([0,0,0]);
 HAnimSegment2895 := THAnimSegmentNode.Create;
 HAnimSegment2895.NameField := 'l_eyelid';
 { Shape USE='l_eyelid_Shape'/ }
@@ -16627,6 +16795,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2894]);
 HAnimJoint2901 := THAnimJointNode.Create;
 HAnimJoint2901.NameField := 'r_eyelid_joint';
 HAnimJoint2901.Center := Vector3(-0.0505,1.42425,0.03294);
+HAnimJoint2901.SetLlimit([0,0,0]);
+HAnimJoint2901.SetUlimit([0,0,0]);
 HAnimSegment2902 := THAnimSegmentNode.Create;
 HAnimSegment2902.NameField := 'r_eyelid';
 { Shape USE='r_eyelid_Shape'/ }
@@ -16658,6 +16828,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2901]);
 HAnimJoint2908 := THAnimJointNode.Create;
 HAnimJoint2908.NameField := 'l_eyeball_joint';
 HAnimJoint2908.Center := Vector3(0.048127,1.4049,0.08305);
+HAnimJoint2908.SetLlimit([0,0,0]);
+HAnimJoint2908.SetUlimit([0,0,0]);
 HAnimSegment2909 := THAnimSegmentNode.Create;
 HAnimSegment2909.NameField := 'l_eyeball';
 { Shape USE='l_eyeball_Shape'/ }
@@ -16689,6 +16861,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2908]);
 HAnimJoint2915 := THAnimJointNode.Create;
 HAnimJoint2915.NameField := 'r_eyeball_joint';
 HAnimJoint2915.Center := Vector3(-0.04813,1.4049,0.08305);
+HAnimJoint2915.SetLlimit([0,0,0]);
+HAnimJoint2915.SetUlimit([0,0,0]);
 HAnimSegment2916 := THAnimSegmentNode.Create;
 HAnimSegment2916.NameField := 'r_eyeball';
 { Shape USE='r_eyeball_Shape'/ }
@@ -16720,6 +16894,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2915]);
 HAnimJoint2922 := THAnimJointNode.Create;
 HAnimJoint2922.NameField := 'l_eyebrow_joint';
 HAnimJoint2922.Center := Vector3(0.02175,1.4139,0.1069);
+HAnimJoint2922.SetLlimit([0,0,0]);
+HAnimJoint2922.SetUlimit([0,0,0]);
 HAnimSegment2923 := THAnimSegmentNode.Create;
 HAnimSegment2923.NameField := 'l_eyebrow';
 { Shape USE='l_eyebrow_Shape'/ }
@@ -16751,6 +16927,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2922]);
 HAnimJoint2929 := THAnimJointNode.Create;
 HAnimJoint2929.NameField := 'r_eyebrow_joint';
 HAnimJoint2929.Center := Vector3(-0.02175,1.4139,0.10694);
+HAnimJoint2929.SetLlimit([0,0,0]);
+HAnimJoint2929.SetUlimit([0,0,0]);
 HAnimSegment2930 := THAnimSegmentNode.Create;
 HAnimSegment2930.NameField := 'r_eyebrow';
 { Shape USE='r_eyebrow_Shape'/ }
@@ -16782,6 +16960,8 @@ HAnimJoint2851.AddChildren([HAnimJoint2929]);
 HAnimJoint2936 := THAnimJointNode.Create;
 HAnimJoint2936.NameField := 'temporomandibular';
 HAnimJoint2936.Center := Vector3(0,1.3128,0.01538);
+HAnimJoint2936.SetLlimit([0,0,0]);
+HAnimJoint2936.SetUlimit([0,0,0]);
 HAnimSegment2937 := THAnimSegmentNode.Create;
 HAnimSegment2937.NameField := 'jaw';
 { Shape USE='jaw_Shape'/ }
@@ -16872,6 +17052,8 @@ HAnimJoint2802.AddChildren([HAnimJoint2812]);
 HAnimJoint2953 := THAnimJointNode.Create;
 HAnimJoint2953.NameField := 'l_sternoclavicular';
 HAnimJoint2953.Center := Vector3(0.03847,1.2087,-0.01378);
+HAnimJoint2953.SetLlimit([0,0,0]);
+HAnimJoint2953.SetUlimit([0,0,0]);
 HAnimSegment2954 := THAnimSegmentNode.Create;
 HAnimSegment2954.NameField := 'l_clavicle';
 { Shape USE='l_clavicle_Shape'/ }
@@ -16901,6 +17083,8 @@ HAnimJoint2953.AddChildren([HAnimSegment2954]);
 HAnimJoint2960 := THAnimJointNode.Create;
 HAnimJoint2960.NameField := 'l_acromioclavicular';
 HAnimJoint2960.Center := Vector3(0.12294,1.191825,-0.0129);
+HAnimJoint2960.SetLlimit([0,0,0]);
+HAnimJoint2960.SetUlimit([0,0,0]);
 HAnimSegment2961 := THAnimSegmentNode.Create;
 HAnimSegment2961.NameField := 'l_scapula';
 { Shape USE='l_scapula_Shape'/ }
@@ -16969,6 +17153,8 @@ HAnimJoint2960.AddChildren([HAnimSegment2961]);
 HAnimJoint2976 := THAnimJointNode.Create;
 HAnimJoint2976.NameField := 'l_shoulder';
 HAnimJoint2976.Center := Vector3(0.16506,1.17855,-0.00327);
+HAnimJoint2976.SetLlimit([0,0,0]);
+HAnimJoint2976.SetUlimit([0,0,0]);
 HAnimSegment2977 := THAnimSegmentNode.Create;
 HAnimSegment2977.NameField := 'l_upperarm';
 { Shape USE='l_upperarm_Shape'/ }
@@ -17037,6 +17223,8 @@ HAnimJoint2976.AddChildren([HAnimSegment2977]);
 HAnimJoint2992 := THAnimJointNode.Create;
 HAnimJoint2992.NameField := 'l_elbow';
 HAnimJoint2992.Center := Vector3(0.18209,0.9288,-0.00563);
+HAnimJoint2992.SetLlimit([0,0,0]);
+HAnimJoint2992.SetUlimit([0,0,0]);
 HAnimSegment2993 := THAnimSegmentNode.Create;
 HAnimSegment2993.NameField := 'l_forearm';
 { Shape USE='l_forearm_Shape'/ }
@@ -17079,6 +17267,8 @@ HAnimJoint2992.AddChildren([HAnimSegment2993]);
 HAnimJoint3002 := THAnimJointNode.Create;
 HAnimJoint3002.NameField := 'l_radiocarpal';
 HAnimJoint3002.Center := Vector3(0.1819,0.72427,-0.005);
+HAnimJoint3002.SetLlimit([0,0,0]);
+HAnimJoint3002.SetUlimit([0,0,0]);
 HAnimSegment3003 := THAnimSegmentNode.Create;
 HAnimSegment3003.NameField := 'l_carpal';
 { Shape USE='l_carpal_Shape'/ }
@@ -17120,6 +17310,8 @@ HAnimJoint3002.AddChildren([HAnimSegment3003]);
 HAnimJoint3012 := THAnimJointNode.Create;
 HAnimJoint3012.NameField := 'l_midcarpal_1';
 HAnimJoint3012.Center := Vector3(0.1813,0.706,0.0193);
+HAnimJoint3012.SetLlimit([0,0,0]);
+HAnimJoint3012.SetUlimit([0,0,0]);
 HAnimSegment3013 := THAnimSegmentNode.Create;
 HAnimSegment3013.NameField := 'l_trapezium';
 { Shape USE='l_trapezium_Shape'/ }
@@ -17140,6 +17332,8 @@ HAnimJoint3012.AddChildren([HAnimSegment3013]);
 HAnimJoint3017 := THAnimJointNode.Create;
 HAnimJoint3017.NameField := 'l_carpometacarpal_1';
 HAnimJoint3017.Center := Vector3(0.1805,0.69255,0.026);
+HAnimJoint3017.SetLlimit([0,0,0]);
+HAnimJoint3017.SetUlimit([0,0,0]);
 HAnimSegment3018 := THAnimSegmentNode.Create;
 HAnimSegment3018.NameField := 'l_metacarpal_1';
 { Shape USE='l_metacarpal_1_Shape'/ }
@@ -17169,6 +17363,8 @@ HAnimJoint3017.AddChildren([HAnimSegment3018]);
 HAnimJoint3024 := THAnimJointNode.Create;
 HAnimJoint3024.NameField := 'l_metacarpophalangeal_1';
 HAnimJoint3024.Center := Vector3(0.181,0.6727,0.03577);
+HAnimJoint3024.SetLlimit([0,0,0]);
+HAnimJoint3024.SetUlimit([0,0,0]);
 HAnimSegment3025 := THAnimSegmentNode.Create;
 HAnimSegment3025.NameField := 'l_carpal_proximal_phalanx_1';
 { Shape USE='l_carpal_proximal_phalanx_1_Shape'/ }
@@ -17185,6 +17381,8 @@ HAnimJoint3024.AddChildren([HAnimSegment3025]);
 HAnimJoint3028 := THAnimJointNode.Create;
 HAnimJoint3028.NameField := 'l_carpal_interphalangeal_1';
 HAnimJoint3028.Center := Vector3(0.1826,0.654,0.04966);
+HAnimJoint3028.SetLlimit([0,0,0]);
+HAnimJoint3028.SetUlimit([0,0,0]);
 HAnimSegment3029 := THAnimSegmentNode.Create;
 HAnimSegment3029.NameField := 'l_carpal_distal_phalanx_1';
 { Shape USE='l_carpal_distal_phalanx_1_Shape'/ }
@@ -17222,6 +17420,8 @@ HAnimJoint3002.AddChildren([HAnimJoint3012]);
 HAnimJoint3035 := THAnimJointNode.Create;
 HAnimJoint3035.NameField := 'l_midcarpal_2';
 HAnimJoint3035.Center := Vector3(0.18128,0.70695,0.00842);
+HAnimJoint3035.SetLlimit([0,0,0]);
+HAnimJoint3035.SetUlimit([0,0,0]);
 HAnimSegment3036 := THAnimSegmentNode.Create;
 HAnimSegment3036.NameField := 'l_trapezoid';
 { Shape USE='l_trapezoid_Shape'/ }
@@ -17238,6 +17438,8 @@ HAnimJoint3035.AddChildren([HAnimSegment3036]);
 HAnimJoint3039 := THAnimJointNode.Create;
 HAnimJoint3039.NameField := 'l_carpometacarpal_2';
 HAnimJoint3039.Center := Vector3(0.18128,0.6876,0.0098);
+HAnimJoint3039.SetLlimit([0,0,0]);
+HAnimJoint3039.SetUlimit([0,0,0]);
 HAnimSegment3040 := THAnimSegmentNode.Create;
 HAnimSegment3040.NameField := 'l_metacarpal_2';
 { Shape USE='l_metacarpal_2_Shape'/ }
@@ -17254,6 +17456,8 @@ HAnimJoint3039.AddChildren([HAnimSegment3040]);
 HAnimJoint3043 := THAnimJointNode.Create;
 HAnimJoint3043.NameField := 'l_metacarpophalangeal_2';
 HAnimJoint3043.Center := Vector3(0.1837,0.6372,0.01507);
+HAnimJoint3043.SetLlimit([0,0,0]);
+HAnimJoint3043.SetUlimit([0,0,0]);
 HAnimSegment3044 := THAnimSegmentNode.Create;
 HAnimSegment3044.NameField := 'l_carpal_proximal_phalanx_2';
 { Shape USE='l_carpal_proximal_phalanx_2_Shape'/ }
@@ -17270,6 +17474,8 @@ HAnimJoint3043.AddChildren([HAnimSegment3044]);
 HAnimJoint3047 := THAnimJointNode.Create;
 HAnimJoint3047.NameField := 'l_carpal_proximal_interphalangeal_2';
 HAnimJoint3047.Center := Vector3(0.18171,0.6068,0.01418);
+HAnimJoint3047.SetLlimit([0,0,0]);
+HAnimJoint3047.SetUlimit([0,0,0]);
 HAnimSegment3048 := THAnimSegmentNode.Create;
 HAnimSegment3048.NameField := 'l_carpal_middle_phalanx_2';
 { Shape USE='l_carpal_middle_phalanx_2_Shape'/ }
@@ -17286,6 +17492,8 @@ HAnimJoint3047.AddChildren([HAnimSegment3048]);
 HAnimJoint3051 := THAnimJointNode.Create;
 HAnimJoint3051.NameField := 'l_carpal_distal_interphalangeal_2';
 HAnimJoint3051.Center := Vector3(0.18067,0.5816,0.01338);
+HAnimJoint3051.SetLlimit([0,0,0]);
+HAnimJoint3051.SetUlimit([0,0,0]);
 HAnimSegment3052 := THAnimSegmentNode.Create;
 HAnimSegment3052.NameField := 'l_carpal_distal_phalanx_2';
 { Shape USE='l_carpal_distal_phalanx_2_Shape'/ }
@@ -17338,6 +17546,8 @@ HAnimJoint3002.AddChildren([HAnimJoint3035]);
 HAnimJoint3061 := THAnimJointNode.Create;
 HAnimJoint3061.NameField := 'l_midcarpal_3';
 HAnimJoint3061.Center := Vector3(0.18108,0.708525,-0.0048);
+HAnimJoint3061.SetLlimit([0,0,0]);
+HAnimJoint3061.SetUlimit([0,0,0]);
 HAnimSegment3062 := THAnimSegmentNode.Create;
 HAnimSegment3062.NameField := 'l_capitate';
 { Shape USE='l_capitate_Shape'/ }
@@ -17354,6 +17564,8 @@ HAnimJoint3061.AddChildren([HAnimSegment3062]);
 HAnimJoint3065 := THAnimJointNode.Create;
 HAnimJoint3065.NameField := 'l_carpometacarpal_3';
 HAnimJoint3065.Center := Vector3(0.18108,0.6858,-0.00625);
+HAnimJoint3065.SetLlimit([0,0,0]);
+HAnimJoint3065.SetUlimit([0,0,0]);
 HAnimSegment3066 := THAnimSegmentNode.Create;
 HAnimSegment3066.NameField := 'l_metacarpal_3';
 { Shape USE='l_metacarpal_3_Shape'/ }
@@ -17383,6 +17595,8 @@ HAnimJoint3065.AddChildren([HAnimSegment3066]);
 HAnimJoint3072 := THAnimJointNode.Create;
 HAnimJoint3072.NameField := 'l_metacarpophalangeal_3';
 HAnimJoint3072.Center := Vector3(0.18369,0.6349,-0.0039);
+HAnimJoint3072.SetLlimit([0,0,0]);
+HAnimJoint3072.SetUlimit([0,0,0]);
 HAnimSegment3073 := THAnimSegmentNode.Create;
 HAnimSegment3073.NameField := 'l_carpal_proximal_phalanx_3';
 { Shape USE='l_carpal_proximal_phalanx_3_Shape'/ }
@@ -17399,6 +17613,8 @@ HAnimJoint3072.AddChildren([HAnimSegment3073]);
 HAnimJoint3076 := THAnimJointNode.Create;
 HAnimJoint3076.NameField := 'l_carpal_proximal_interphalangeal_3';
 HAnimJoint3076.Center := Vector3(0.18171,0.6032,-0.0035);
+HAnimJoint3076.SetLlimit([0,0,0]);
+HAnimJoint3076.SetUlimit([0,0,0]);
 HAnimSegment3077 := THAnimSegmentNode.Create;
 HAnimSegment3077.NameField := 'l_carpal_middle_phalanx_3';
 { Shape USE='l_carpal_middle_phalanx_3_Shape'/ }
@@ -17415,6 +17631,8 @@ HAnimJoint3076.AddChildren([HAnimSegment3077]);
 HAnimJoint3080 := THAnimJointNode.Create;
 HAnimJoint3080.NameField := 'l_carpal_distal_interphalangeal_3';
 HAnimJoint3080.Center := Vector3(0.1807,0.5753,-0.0037);
+HAnimJoint3080.SetLlimit([0,0,0]);
+HAnimJoint3080.SetUlimit([0,0,0]);
 HAnimSegment3081 := THAnimSegmentNode.Create;
 HAnimSegment3081.NameField := 'l_carpal_distal_phalanx_3';
 { Shape USE='l_carpal_distal_phalanx_3_Shape'/ }
@@ -17454,6 +17672,8 @@ HAnimJoint3002.AddChildren([HAnimJoint3061]);
 HAnimJoint3087 := THAnimJointNode.Create;
 HAnimJoint3087.NameField := 'l_midcarpal_4_5';
 HAnimJoint3087.Center := Vector3(0.18108,0.70582,-0.02574);
+HAnimJoint3087.SetLlimit([0,0,0]);
+HAnimJoint3087.SetUlimit([0,0,0]);
 HAnimSegment3088 := THAnimSegmentNode.Create;
 HAnimSegment3088.NameField := 'l_hamate';
 { Shape USE='l_hamate_Shape'/ }
@@ -17474,6 +17694,8 @@ HAnimJoint3087.AddChildren([HAnimSegment3088]);
 HAnimJoint3092 := THAnimJointNode.Create;
 HAnimJoint3092.NameField := 'l_carpometacarpal_4';
 HAnimJoint3092.Center := Vector3(0.1811,0.68625,-0.0199);
+HAnimJoint3092.SetLlimit([0,0,0]);
+HAnimJoint3092.SetUlimit([0,0,0]);
 HAnimSegment3093 := THAnimSegmentNode.Create;
 HAnimSegment3093.NameField := 'l_metacarpal_4';
 { Shape USE='l_metacarpal_4_Shape'/ }
@@ -17490,6 +17712,8 @@ HAnimJoint3092.AddChildren([HAnimSegment3093]);
 HAnimJoint3096 := THAnimJointNode.Create;
 HAnimJoint3096.NameField := 'l_metacarpophalangeal_4';
 HAnimJoint3096.Center := Vector3(0.18369,0.63405,-0.02144);
+HAnimJoint3096.SetLlimit([0,0,0]);
+HAnimJoint3096.SetUlimit([0,0,0]);
 HAnimSegment3097 := THAnimSegmentNode.Create;
 HAnimSegment3097.NameField := 'l_carpal_proximal_phalanx_4';
 { Shape USE='l_carpal_proximal_phalanx_4_Shape'/ }
@@ -17506,6 +17730,8 @@ HAnimJoint3096.AddChildren([HAnimSegment3097]);
 HAnimJoint3100 := THAnimJointNode.Create;
 HAnimJoint3100.NameField := 'l_carpal_proximal_interphalangeal_4';
 HAnimJoint3100.Center := Vector3(0.1817,0.6066,-0.02064);
+HAnimJoint3100.SetLlimit([0,0,0]);
+HAnimJoint3100.SetUlimit([0,0,0]);
 HAnimSegment3101 := THAnimSegmentNode.Create;
 HAnimSegment3101.NameField := 'l_carpal_middle_phalanx_4';
 { Shape USE='l_carpal_middle_phalanx_4_Shape'/ }
@@ -17522,6 +17748,8 @@ HAnimJoint3100.AddChildren([HAnimSegment3101]);
 HAnimJoint3104 := THAnimJointNode.Create;
 HAnimJoint3104.NameField := 'l_carpal_distal_interphalangeal_4';
 HAnimJoint3104.Center := Vector3(0.18067,0.580725,-0.01977);
+HAnimJoint3104.SetLlimit([0,0,0]);
+HAnimJoint3104.SetUlimit([0,0,0]);
 HAnimSegment3105 := THAnimSegmentNode.Create;
 HAnimSegment3105.NameField := 'l_carpal_distal_phalanx_4';
 { Shape USE='l_carpal_distal_phalanx_4_Shape'/ }
@@ -17561,6 +17789,8 @@ HAnimJoint3002.AddChildren([HAnimJoint3087]);
 HAnimJoint3111 := THAnimJointNode.Create;
 HAnimJoint3111.NameField := 'l_carpometacarpal_5';
 HAnimJoint3111.Center := Vector3(0.18164,0.68827,-0.03278);
+HAnimJoint3111.SetLlimit([0,0,0]);
+HAnimJoint3111.SetUlimit([0,0,0]);
 HAnimSegment3112 := THAnimSegmentNode.Create;
 HAnimSegment3112.NameField := 'l_metacarpal_5';
 { Shape USE='l_metacarpal_5_Shape'/ }
@@ -17590,6 +17820,8 @@ HAnimJoint3111.AddChildren([HAnimSegment3112]);
 HAnimJoint3118 := THAnimJointNode.Create;
 HAnimJoint3118.NameField := 'l_metacarpophalangeal_5';
 HAnimJoint3118.Center := Vector3(0.1833,0.6381,-0.037);
+HAnimJoint3118.SetLlimit([0,0,0]);
+HAnimJoint3118.SetUlimit([0,0,0]);
 HAnimSegment3119 := THAnimSegmentNode.Create;
 HAnimSegment3119.NameField := 'l_carpal_proximal_phalanx_5';
 { Shape USE='l_carpal_proximal_phalanx_5_Shape'/ }
@@ -17606,6 +17838,8 @@ HAnimJoint3118.AddChildren([HAnimSegment3119]);
 HAnimJoint3122 := THAnimJointNode.Create;
 HAnimJoint3122.NameField := 'l_carpal_proximal_interphalangeal_5';
 HAnimJoint3122.Center := Vector3(0.18166,0.621,-0.03715);
+HAnimJoint3122.SetLlimit([0,0,0]);
+HAnimJoint3122.SetUlimit([0,0,0]);
 HAnimSegment3123 := THAnimSegmentNode.Create;
 HAnimSegment3123.NameField := 'l_carpal_middle_phalanx_5';
 { Shape USE='l_carpal_middle_phalanx_5_Shape'/ }
@@ -17622,6 +17856,8 @@ HAnimJoint3122.AddChildren([HAnimSegment3123]);
 HAnimJoint3126 := THAnimJointNode.Create;
 HAnimJoint3126.NameField := 'l_carpal_distal_interphalangeal_5';
 HAnimJoint3126.Center := Vector3(0.1808,0.6023,-0.0369);
+HAnimJoint3126.SetLlimit([0,0,0]);
+HAnimJoint3126.SetUlimit([0,0,0]);
 HAnimSegment3127 := THAnimSegmentNode.Create;
 HAnimSegment3127.NameField := 'l_carpal_distal_phalanx_5';
 { Shape USE='l_carpal_distal_phalanx_5_Shape'/ }
@@ -17669,6 +17905,8 @@ HAnimJoint2802.AddChildren([HAnimJoint2953]);
 HAnimJoint3133 := THAnimJointNode.Create;
 HAnimJoint3133.NameField := 'r_sternoclavicular';
 HAnimJoint3133.Center := Vector3(-0.03847,1.2087,-0.0138);
+HAnimJoint3133.SetLlimit([0,0,0]);
+HAnimJoint3133.SetUlimit([0,0,0]);
 HAnimSegment3134 := THAnimSegmentNode.Create;
 HAnimSegment3134.NameField := 'r_clavicle';
 { Shape USE='r_clavicle_Shape'/ }
@@ -17698,6 +17936,8 @@ HAnimJoint3133.AddChildren([HAnimSegment3134]);
 HAnimJoint3140 := THAnimJointNode.Create;
 HAnimJoint3140.NameField := 'r_acromioclavicular';
 HAnimJoint3140.Center := Vector3(-0.1229,1.19182,-0.0129);
+HAnimJoint3140.SetLlimit([0,0,0]);
+HAnimJoint3140.SetUlimit([0,0,0]);
 HAnimSegment3141 := THAnimSegmentNode.Create;
 HAnimSegment3141.NameField := 'r_scapula';
 { Shape USE='r_scapula_Shape'/ }
@@ -17766,6 +18006,8 @@ HAnimJoint3140.AddChildren([HAnimSegment3141]);
 HAnimJoint3156 := THAnimJointNode.Create;
 HAnimJoint3156.NameField := 'r_shoulder';
 HAnimJoint3156.Center := Vector3(-0.1647,1.17855,-0.00327);
+HAnimJoint3156.SetLlimit([0,0,0]);
+HAnimJoint3156.SetUlimit([0,0,0]);
 HAnimSegment3157 := THAnimSegmentNode.Create;
 HAnimSegment3157.NameField := 'r_upperarm';
 { Shape USE='r_upperarm_Shape'/ }
@@ -17834,6 +18076,8 @@ HAnimJoint3156.AddChildren([HAnimSegment3157]);
 HAnimJoint3172 := THAnimJointNode.Create;
 HAnimJoint3172.NameField := 'r_elbow';
 HAnimJoint3172.Center := Vector3(-0.1817,0.9288,-0.00564);
+HAnimJoint3172.SetLlimit([0,0,0]);
+HAnimJoint3172.SetUlimit([0,0,0]);
 HAnimSegment3173 := THAnimSegmentNode.Create;
 HAnimSegment3173.NameField := 'r_forearm';
 { Shape USE='r_forearm_Shape'/ }
@@ -17876,6 +18120,8 @@ HAnimJoint3172.AddChildren([HAnimSegment3173]);
 HAnimJoint3182 := THAnimJointNode.Create;
 HAnimJoint3182.NameField := 'r_radiocarpal';
 HAnimJoint3182.Center := Vector3(-0.1816,0.7242,-0.005);
+HAnimJoint3182.SetLlimit([0,0,0]);
+HAnimJoint3182.SetUlimit([0,0,0]);
 HAnimSegment3183 := THAnimSegmentNode.Create;
 HAnimSegment3183.NameField := 'r_carpal';
 { Shape USE='r_carpal_Shape'/ }
@@ -17917,6 +18163,8 @@ HAnimJoint3182.AddChildren([HAnimSegment3183]);
 HAnimJoint3192 := THAnimJointNode.Create;
 HAnimJoint3192.NameField := 'r_midcarpal_1';
 HAnimJoint3192.Center := Vector3(-0.18097,0.70605,0.0193);
+HAnimJoint3192.SetLlimit([0,0,0]);
+HAnimJoint3192.SetUlimit([0,0,0]);
 HAnimSegment3193 := THAnimSegmentNode.Create;
 HAnimSegment3193.NameField := 'r_trapezium';
 { Shape USE='r_trapezium_Shape'/ }
@@ -17937,6 +18185,8 @@ HAnimJoint3192.AddChildren([HAnimSegment3193]);
 HAnimJoint3197 := THAnimJointNode.Create;
 HAnimJoint3197.NameField := 'r_carpometacarpal_1';
 HAnimJoint3197.Center := Vector3(-0.18,0.69255,0.02598);
+HAnimJoint3197.SetLlimit([0,0,0]);
+HAnimJoint3197.SetUlimit([0,0,0]);
 HAnimSegment3198 := THAnimSegmentNode.Create;
 HAnimSegment3198.NameField := 'r_metacarpal_1';
 { Shape USE='r_metacarpal_1_Shape'/ }
@@ -17966,6 +18216,8 @@ HAnimJoint3197.AddChildren([HAnimSegment3198]);
 HAnimJoint3204 := THAnimJointNode.Create;
 HAnimJoint3204.NameField := 'r_metacarpophalangeal_1';
 HAnimJoint3204.Center := Vector3(-0.18065,0.67275,0.03577);
+HAnimJoint3204.SetLlimit([0,0,0]);
+HAnimJoint3204.SetUlimit([0,0,0]);
 HAnimSegment3205 := THAnimSegmentNode.Create;
 HAnimSegment3205.NameField := 'r_carpal_proximal_phalanx_1';
 { Shape USE='r_carpal_proximal_phalanx_1_Shape'/ }
@@ -17982,6 +18234,8 @@ HAnimJoint3204.AddChildren([HAnimSegment3205]);
 HAnimJoint3208 := THAnimJointNode.Create;
 HAnimJoint3208.NameField := 'r_carpal_interphalangeal_1';
 HAnimJoint3208.Center := Vector3(-0.18227,0.654,0.0496);
+HAnimJoint3208.SetLlimit([0,0,0]);
+HAnimJoint3208.SetUlimit([0,0,0]);
 HAnimSegment3209 := THAnimSegmentNode.Create;
 HAnimSegment3209.NameField := 'r_carpal_distal_phalanx_1';
 { Shape USE='r_carpal_distal_phalanx_1_Shape'/ }
@@ -18019,6 +18273,8 @@ HAnimJoint3182.AddChildren([HAnimJoint3192]);
 HAnimJoint3215 := THAnimJointNode.Create;
 HAnimJoint3215.NameField := 'r_midcarpal_2';
 HAnimJoint3215.Center := Vector3(-0.18097,0.70695,0.0084);
+HAnimJoint3215.SetLlimit([0,0,0]);
+HAnimJoint3215.SetUlimit([0,0,0]);
 HAnimSegment3216 := THAnimSegmentNode.Create;
 HAnimSegment3216.NameField := 'r_trapezoid';
 { Shape USE='r_trapezoid_Shape'/ }
@@ -18035,6 +18291,8 @@ HAnimJoint3215.AddChildren([HAnimSegment3216]);
 HAnimJoint3219 := THAnimJointNode.Create;
 HAnimJoint3219.NameField := 'r_carpometacarpal_2';
 HAnimJoint3219.Center := Vector3(-0.1809,0.6876,0.0097);
+HAnimJoint3219.SetLlimit([0,0,0]);
+HAnimJoint3219.SetUlimit([0,0,0]);
 HAnimSegment3220 := THAnimSegmentNode.Create;
 HAnimSegment3220.NameField := 'r_metacarpal_2';
 { Shape USE='r_metacarpal_2_Shape'/ }
@@ -18051,6 +18309,8 @@ HAnimJoint3219.AddChildren([HAnimSegment3220]);
 HAnimJoint3223 := THAnimJointNode.Create;
 HAnimJoint3223.NameField := 'r_metacarpophalangeal_2';
 HAnimJoint3223.Center := Vector3(-0.18335,0.6372,0.01507);
+HAnimJoint3223.SetLlimit([0,0,0]);
+HAnimJoint3223.SetUlimit([0,0,0]);
 HAnimSegment3224 := THAnimSegmentNode.Create;
 HAnimSegment3224.NameField := 'r_carpal_proximal_phalanx_2';
 { Shape USE='r_carpal_proximal_phalanx_2_Shape'/ }
@@ -18067,6 +18327,8 @@ HAnimJoint3223.AddChildren([HAnimSegment3224]);
 HAnimJoint3227 := THAnimJointNode.Create;
 HAnimJoint3227.NameField := 'r_carpal_proximal_interphalangeal_2';
 HAnimJoint3227.Center := Vector3(-0.1813,0.6068,0.01418);
+HAnimJoint3227.SetLlimit([0,0,0]);
+HAnimJoint3227.SetUlimit([0,0,0]);
 HAnimSegment3228 := THAnimSegmentNode.Create;
 HAnimSegment3228.NameField := 'r_carpal_middle_phalanx_2';
 { Shape USE='r_carpal_middle_phalanx_2_Shape'/ }
@@ -18083,6 +18345,8 @@ HAnimJoint3227.AddChildren([HAnimSegment3228]);
 HAnimJoint3231 := THAnimJointNode.Create;
 HAnimJoint3231.NameField := 'r_carpal_distal_interphalangeal_2';
 HAnimJoint3231.Center := Vector3(-0.1803,0.5816,0.01338);
+HAnimJoint3231.SetLlimit([0,0,0]);
+HAnimJoint3231.SetUlimit([0,0,0]);
 HAnimSegment3232 := THAnimSegmentNode.Create;
 HAnimSegment3232.NameField := 'r_carpal_distal_phalanx_2';
 { Shape USE='r_carpal_distal_phalanx_2_Shape'/ }
@@ -18135,6 +18399,8 @@ HAnimJoint3182.AddChildren([HAnimJoint3215]);
 HAnimJoint3241 := THAnimJointNode.Create;
 HAnimJoint3241.NameField := 'r_midcarpal_3';
 HAnimJoint3241.Center := Vector3(-0.18072,0.708525,-0.004797);
+HAnimJoint3241.SetLlimit([0,0,0]);
+HAnimJoint3241.SetUlimit([0,0,0]);
 HAnimSegment3242 := THAnimSegmentNode.Create;
 HAnimSegment3242.NameField := 'r_capitate';
 { Shape USE='r_capitate_Shape'/ }
@@ -18151,6 +18417,8 @@ HAnimJoint3241.AddChildren([HAnimSegment3242]);
 HAnimJoint3245 := THAnimJointNode.Create;
 HAnimJoint3245.NameField := 'r_carpometacarpal_3';
 HAnimJoint3245.Center := Vector3(-0.18072,0.6858,-0.00625);
+HAnimJoint3245.SetLlimit([0,0,0]);
+HAnimJoint3245.SetUlimit([0,0,0]);
 HAnimSegment3246 := THAnimSegmentNode.Create;
 HAnimSegment3246.NameField := 'r_metacarpal_3';
 { Shape USE='r_metacarpal_3_Shape'/ }
@@ -18180,6 +18448,8 @@ HAnimJoint3245.AddChildren([HAnimSegment3246]);
 HAnimJoint3252 := THAnimJointNode.Create;
 HAnimJoint3252.NameField := 'r_metacarpophalangeal_3';
 HAnimJoint3252.Center := Vector3(-0.1833,0.63495,-0.0039);
+HAnimJoint3252.SetLlimit([0,0,0]);
+HAnimJoint3252.SetUlimit([0,0,0]);
 HAnimSegment3253 := THAnimSegmentNode.Create;
 HAnimSegment3253.NameField := 'r_carpal_proximal_phalanx_3';
 { Shape USE='r_carpal_proximal_phalanx_3_Shape'/ }
@@ -18196,6 +18466,8 @@ HAnimJoint3252.AddChildren([HAnimSegment3253]);
 HAnimJoint3256 := THAnimJointNode.Create;
 HAnimJoint3256.NameField := 'r_carpal_proximal_interphalangeal_3';
 HAnimJoint3256.Center := Vector3(-0.1813,0.6032,-0.0035);
+HAnimJoint3256.SetLlimit([0,0,0]);
+HAnimJoint3256.SetUlimit([0,0,0]);
 HAnimSegment3257 := THAnimSegmentNode.Create;
 HAnimSegment3257.NameField := 'r_carpal_middle_phalanx_3';
 { Shape USE='r_carpal_middle_phalanx_3_Shape'/ }
@@ -18212,6 +18484,8 @@ HAnimJoint3256.AddChildren([HAnimSegment3257]);
 HAnimJoint3260 := THAnimJointNode.Create;
 HAnimJoint3260.NameField := 'r_carpal_distal_interphalangeal_3';
 HAnimJoint3260.Center := Vector3(-0.18029,0.5753,-0.00375);
+HAnimJoint3260.SetLlimit([0,0,0]);
+HAnimJoint3260.SetUlimit([0,0,0]);
 HAnimSegment3261 := THAnimSegmentNode.Create;
 HAnimSegment3261.NameField := 'r_carpal_distal_phalanx_3';
 { Shape USE='r_carpal_distal_phalanx_3_Shape'/ }
@@ -18251,6 +18525,8 @@ HAnimJoint3182.AddChildren([HAnimJoint3241]);
 HAnimJoint3267 := THAnimJointNode.Create;
 HAnimJoint3267.NameField := 'r_midcarpal_4_5';
 HAnimJoint3267.Center := Vector3(-0.18072,0.70583,-0.02574);
+HAnimJoint3267.SetLlimit([0,0,0]);
+HAnimJoint3267.SetUlimit([0,0,0]);
 HAnimSegment3268 := THAnimSegmentNode.Create;
 HAnimSegment3268.NameField := 'r_hamate';
 { Shape USE='r_hamate_Shape'/ }
@@ -18271,6 +18547,8 @@ HAnimJoint3267.AddChildren([HAnimSegment3268]);
 HAnimJoint3272 := THAnimJointNode.Create;
 HAnimJoint3272.NameField := 'r_carpometacarpal_4';
 HAnimJoint3272.Center := Vector3(-0.18072,0.68625,-0.01992);
+HAnimJoint3272.SetLlimit([0,0,0]);
+HAnimJoint3272.SetUlimit([0,0,0]);
 HAnimSegment3273 := THAnimSegmentNode.Create;
 HAnimSegment3273.NameField := 'r_metacarpal_4';
 { Shape USE='r_metacarpal_4_Shape'/ }
@@ -18287,6 +18565,8 @@ HAnimJoint3272.AddChildren([HAnimSegment3273]);
 HAnimJoint3276 := THAnimJointNode.Create;
 HAnimJoint3276.NameField := 'r_metacarpophalangeal_4';
 HAnimJoint3276.Center := Vector3(-0.1833,0.63405,-0.02144);
+HAnimJoint3276.SetLlimit([0,0,0]);
+HAnimJoint3276.SetUlimit([0,0,0]);
 HAnimSegment3277 := THAnimSegmentNode.Create;
 HAnimSegment3277.NameField := 'r_carpal_proximal_phalanx_4';
 { Shape USE='r_carpal_proximal_phalanx_4_Shape'/ }
@@ -18303,6 +18583,8 @@ HAnimJoint3276.AddChildren([HAnimSegment3277]);
 HAnimJoint3280 := THAnimJointNode.Create;
 HAnimJoint3280.NameField := 'r_carpal_proximal_interphalangeal_4';
 HAnimJoint3280.Center := Vector3(-0.1813,0.6066,-0.02064);
+HAnimJoint3280.SetLlimit([0,0,0]);
+HAnimJoint3280.SetUlimit([0,0,0]);
 HAnimSegment3281 := THAnimSegmentNode.Create;
 HAnimSegment3281.NameField := 'r_carpal_middle_phalanx_4';
 { Shape USE='r_carpal_middle_phalanx_4_Shape'/ }
@@ -18319,6 +18601,8 @@ HAnimJoint3280.AddChildren([HAnimSegment3281]);
 HAnimJoint3284 := THAnimJointNode.Create;
 HAnimJoint3284.NameField := 'r_carpal_distal_interphalangeal_4';
 HAnimJoint3284.Center := Vector3(-0.18029,0.5807,-0.01978);
+HAnimJoint3284.SetLlimit([0,0,0]);
+HAnimJoint3284.SetUlimit([0,0,0]);
 HAnimSegment3285 := THAnimSegmentNode.Create;
 HAnimSegment3285.NameField := 'r_carpal_distal_phalanx_4';
 { Shape USE='r_carpal_distal_phalanx_4_Shape'/ }
@@ -18358,6 +18642,8 @@ HAnimJoint3182.AddChildren([HAnimJoint3267]);
 HAnimJoint3291 := THAnimJointNode.Create;
 HAnimJoint3291.NameField := 'r_carpometacarpal_5';
 HAnimJoint3291.Center := Vector3(-0.18126,0.68827,-0.03278);
+HAnimJoint3291.SetLlimit([0,0,0]);
+HAnimJoint3291.SetUlimit([0,0,0]);
 HAnimSegment3292 := THAnimSegmentNode.Create;
 HAnimSegment3292.NameField := 'r_metacarpal_5';
 { Shape USE='r_metacarpal_5_Shape'/ }
@@ -18387,6 +18673,8 @@ HAnimJoint3291.AddChildren([HAnimSegment3292]);
 HAnimJoint3298 := THAnimJointNode.Create;
 HAnimJoint3298.NameField := 'r_metacarpophalangeal_5';
 HAnimJoint3298.Center := Vector3(-0.18297,0.6381,-0.0371);
+HAnimJoint3298.SetLlimit([0,0,0]);
+HAnimJoint3298.SetUlimit([0,0,0]);
 HAnimSegment3299 := THAnimSegmentNode.Create;
 HAnimSegment3299.NameField := 'r_carpal_proximal_phalanx_5';
 { Shape USE='r_carpal_proximal_phalanx_5_Shape'/ }
@@ -18403,6 +18691,8 @@ HAnimJoint3298.AddChildren([HAnimSegment3299]);
 HAnimJoint3302 := THAnimJointNode.Create;
 HAnimJoint3302.NameField := 'r_carpal_proximal_interphalangeal_5';
 HAnimJoint3302.Center := Vector3(-0.1813,0.621,-0.03715);
+HAnimJoint3302.SetLlimit([0,0,0]);
+HAnimJoint3302.SetUlimit([0,0,0]);
 HAnimSegment3303 := THAnimSegmentNode.Create;
 HAnimSegment3303.NameField := 'r_carpal_middle_phalanx_5';
 { Shape USE='r_carpal_middle_phalanx_5_Shape'/ }
@@ -18419,6 +18709,8 @@ HAnimJoint3302.AddChildren([HAnimSegment3303]);
 HAnimJoint3306 := THAnimJointNode.Create;
 HAnimJoint3306.NameField := 'r_carpal_distal_interphalangeal_5';
 HAnimJoint3306.Center := Vector3(-0.18045,0.602325,-0.03697);
+HAnimJoint3306.SetLlimit([0,0,0]);
+HAnimJoint3306.SetUlimit([0,0,0]);
 HAnimSegment3307 := THAnimSegmentNode.Create;
 HAnimSegment3307.NameField := 'r_carpal_distal_phalanx_5';
 { Shape USE='r_carpal_distal_phalanx_5_Shape'/ }

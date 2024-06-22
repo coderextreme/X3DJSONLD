@@ -13,9 +13,11 @@
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
-	            xmlns:fn ="http://www.w3.org/2005/xpath-functions"
-                xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+	        xmlns:fn ="http://www.w3.org/2005/xpath-functions"
+                xmlns:ds ="http://www.w3.org/2000/09/xmldsig#"
+		xmlns:saxon="http://saxon.sf.net/"
+>
+    <!-- https://www.saxonica.com/html/documentation12/extensions/attributes -->
 
     <xsl:param name="defaultModelPrefix"><xsl:text></xsl:text></xsl:param>
         
@@ -1385,7 +1387,7 @@
                             <xsl:value-of select="lower-case(@name)"/>
                         </xsl:when>
                         <!-- note correct capitalization in following terms -->
-                        <xsl:when test="(lower-case(@name) = 'accessrights')">
+                        <xsl:when test="(lower-case(@name) = 'accessRights')">
                             <xsl:text>accessRights</xsl:text>
                         </xsl:when>
                         <xsl:when test="(lower-case(@name) = 'image')">
@@ -1397,11 +1399,11 @@
                         <xsl:when test="(lower-case(@name) = 'sound')">
                             <xsl:text>Sound</xsl:text>
                         </xsl:when>
-                        <xsl:when test="(lower-case(@name) = 'hint') or (lower-case(@name) = 'info') or (lower-case(@name) = 'TODO')">
+                        <xsl:when test="(lower-case(@name) = 'hint') or (lower-case(@name) = 'info') or (@name = 'TODO')">
                             <!-- permitted without comment, ignored -->
                         </xsl:when>
-                        <xsl:when test="(lower-case(@name) = 'TODO') or
-                                        (lower-case(@name) = 'specificationSection')   or (lower-case(@name) = 'specificationUrl')">
+                        <xsl:when test="(@name = 'TODO') or
+                                        (@name = 'specificationSection')   or (@name = 'specificationUrl')">
                             <!-- permitted without comment, ignored -->
                         </xsl:when>
                         <xsl:otherwise>
@@ -1905,7 +1907,7 @@
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='linearDampingFactor') or
 					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='mass')             or
 					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or

@@ -30,12 +30,12 @@
    <meta name="created"     content="14 July 2002" />
    <meta name="description" content="XSL stylesheet to convert X3D XML Schema to XHTML files for X3D specification." />
    <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt" />
-   <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?revision=9169&view=markup" />
+   <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?revision=9169&view=markup" />
    <meta name="reference"   content="BuildX3dSceneAccessInterfacesJava.xslt" />
   </head>
 
 Recommended tool:
--  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+-  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
    Especially necessary since this stylesheet uses saxon-specific extensions for file handling
 - Netbeans 7.*
 
@@ -373,7 +373,7 @@ Invocation:
 <xsl:variable name="todaysDate">
     <xsl:value-of select="fn:day-from-date(current-date())"/>
     <xsl:text> </xsl:text>
-    <!-- adapted from http://www.xsltfunctions.com/xsl/functx_month-name-en.html -->
+    <!-- adapted from https://www.xsltfunctions.com/xsl/functx_month-name-en.html -->
     <xsl:sequence select="
         ('January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December')
@@ -390,9 +390,10 @@ Invocation:
   
 <xsl:result-document href="{$nameX3dEncodingOfNodes}" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
-<xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">]]></xsl:text>
+<!-- <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html>]]></xsl:text> -->
+<!-- <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">]]></xsl:text> -->
 <!-- <xsl:text><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></xsl:text> -->
-<xsl:text>&#10;</xsl:text>
+<!-- <xsl:text>&#10;</xsl:text> -->
 
 <xsl:element name="html">
   <xsl:attribute name="lang"><xsl:text>en</xsl:text></xsl:attribute>
@@ -411,7 +412,6 @@ Invocation:
       <xsl:attribute name="http-equiv"><xsl:text>Content-Type</xsl:text></xsl:attribute>
       <xsl:attribute name="content"><xsl:text>text/html; charset=utf-8</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
-    <xsl:text>&#10;</xsl:text>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>created</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
@@ -468,7 +468,7 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://x3d.svn.sourceforge.net/viewvc/x3d/www.web3d.org/specifications/x3d-</xsl:text>
+        <xsl:text>https://x3d.svn.sourceforge.net/viewvc/x3d/www.web3d.org/specifications/x3d-</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>.xsd?view=log</xsl:text>
       </xsl:attribute>
@@ -479,7 +479,7 @@ Invocation:
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?view=log</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?view=log</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
   </xsl:element> <!-- head -->
   <xsl:text>&#10;</xsl:text>
@@ -570,7 +570,7 @@ Invocation:
       <xsl:text>This clause provides a detailed specification of the XML encoding for each node defined in </xsl:text>
       <xsl:text>&#10;</xsl:text>
       <xsl:element name="a">
-	<xsl:attribute name="href"><xsl:text>references.html#[I19775_1]</xsl:text></xsl:attribute>
+	<xsl:attribute name="href"><xsl:text>references.html#I19775_1</xsl:text></xsl:attribute>
 	<xsl:text>ISO/IEC&#160;19775-1</xsl:text>
       </xsl:element> <!-- a-->
       <xsl:text>.</xsl:text>
@@ -753,7 +753,7 @@ Invocation:
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
         <xsl:text>The well-formed syntax of an XML file is governed by the Extensible Markup Language (</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[XML]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#XML</xsl:text></xsl:attribute>
             <xsl:text>XML</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>).</xsl:text>
@@ -767,12 +767,12 @@ Invocation:
         <xsl:text> Content models indicate the node and statement elements that can be contained by a given statement element.</xsl:text>
         <xsl:text> The validity of these parent-child element relationships can be checked using the </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[DTD]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#DTD</xsl:text></xsl:attribute>
             <xsl:text>X3D DTD</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> and </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[Schema]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#Schema</xsl:text></xsl:attribute>
             <xsl:text>X3D XML Schema</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>.</xsl:text>
@@ -784,7 +784,7 @@ Invocation:
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
         <xsl:text>Simple-type X3D fields (meaning other than SFNode and MFNode) are represented by </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[XML]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#XML</xsl:text></xsl:attribute>
             <xsl:text>XML</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> attributes.</xsl:text>
@@ -800,13 +800,13 @@ Invocation:
         </xsl:element>  <!-- a -->
         <xsl:text>, </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[Schematron]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#Schematron</xsl:text></xsl:attribute>
             <xsl:text>X3D Schematron</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>, </xsl:text>
         <xsl:text> and X3D Regular Expressions (</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DREGEX]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DREGEX</xsl:text></xsl:attribute>
             <xsl:text>regexes</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>).</xsl:text>
@@ -953,7 +953,7 @@ Invocation:
       <xsl:element name="code">class</xsl:element>
       <xsl:text> attribute is also implicitly available throughout for all elements, enabling the use of X3D-aware Cascading Style Sheets </xsl:text>
       <xsl:element name="a">
-	<xsl:attribute name="href"><xsl:text>references.html#[W3C-CSS-Snapshot]</xsl:text></xsl:attribute>
+	<xsl:attribute name="href"><xsl:text>references.html#W3C-CSS-Snapshot</xsl:text></xsl:attribute>
 	<xsl:text>[W3C-CSS-Snapshot]</xsl:text>
       </xsl:element> <!-- a -->
       <xsl:text>.  The </xsl:text>
@@ -962,28 +962,31 @@ Invocation:
     </xsl:element> <!-- p -->
     <xsl:text>&#10;</xsl:text>
     
+    <xsl:element name="div">
+        <xsl:attribute name="class"><xsl:text>note</xsl:text></xsl:attribute>
     <xsl:element name="p">
         <xsl:attribute name="class"><xsl:text>proposed</xsl:text></xsl:attribute>
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
-        <xsl:text>Additional information about X3D XML scene structure, allowed field values, </xsl:text>
+        <xsl:text>Note&#160; Additional information about X3D XML scene structure, allowed field values, </xsl:text>
         <xsl:text> data type restrictions, authoring hints, warnings, and errors can be found in X3D&#160;Tooltips </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DTOOLTIPS]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DTOOLTIPS</xsl:text></xsl:attribute>
             <xsl:text>[X3DTOOLTIPS]</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> and X3D Unified Object Model [</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DUOM]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DUOM</xsl:text></xsl:attribute>
             <xsl:text>X3DUOM</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>].</xsl:text>
         <xsl:text> Validation assets are maintained in human-readable and machine-readable forms, in version control, and with corresponding documentation at [</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DVALIDATION]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DVALIDATION</xsl:text></xsl:attribute>
             <xsl:text>X3DVALIDATION</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>].</xsl:text>
     </xsl:element>  <!-- p -->
+    </xsl:element>  <!-- div -->
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
                      
@@ -1891,8 +1894,8 @@ Invocation:
 <xsl:result-document href="{$nameX3dEncodingOfStatements}" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 <!-- <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">]]></xsl:text> -->
-<!-- <xsl:text><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></xsl:text> -->
-<xsl:text>&#10;</xsl:text>
+<!-- <xsl:text><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></xsl:text> -->
+<!-- <xsl:text>&#10;</xsl:text> -->
 
 <xsl:element name="html">
   <xsl:attribute name="lang"><xsl:text>en</xsl:text></xsl:attribute>
@@ -1911,8 +1914,6 @@ Invocation:
       <xsl:attribute name="http-equiv"><xsl:text>Content-Type</xsl:text></xsl:attribute>
       <xsl:attribute name="content"><xsl:text>text/html; charset=utf-8</xsl:text></xsl:attribute>
     </xsl:element>
-    <xsl:text>&#10;</xsl:text>
-
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>created</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
@@ -1969,7 +1970,7 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://x3d.svn.sourceforge.net/viewvc/x3d/www.web3d.org/specifications/x3d-</xsl:text>
+        <xsl:text>https://x3d.svn.sourceforge.net/viewvc/x3d/www.web3d.org/specifications/x3d-</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>.xsd?view=log</xsl:text>
       </xsl:attribute>
@@ -1980,7 +1981,7 @@ Invocation:
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?view=log</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?view=log</xsl:text></xsl:attribute>
     </xsl:element>
 
   </xsl:element> <!-- head -->
@@ -2072,7 +2073,7 @@ Invocation:
       <xsl:text>This clause provides a detailed specification of the XML encoding for each structure statement defined in </xsl:text>
       <xsl:text>&#10;</xsl:text>
       <xsl:element name="a">
-	<xsl:attribute name="href"><xsl:text>references.html#[I19775_1]</xsl:text></xsl:attribute>
+	<xsl:attribute name="href"><xsl:text>references.html#I19775_1</xsl:text></xsl:attribute>
 	<xsl:text>ISO/IEC&#160;19775-1</xsl:text>
       </xsl:element>
       <xsl:text>.</xsl:text>
@@ -2197,7 +2198,7 @@ Invocation:
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
         <xsl:text>The well-formed syntax of an XML file is governed by the Extensible Markup Language (</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[XML]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#XML</xsl:text></xsl:attribute>
             <xsl:text>XML</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>).</xsl:text>
@@ -2211,12 +2212,12 @@ Invocation:
         <xsl:text> Content models indicate the node and statement elements that can be contained by a given statement element.</xsl:text>
         <xsl:text> The validity of these parent-child element relationships can be checked using the </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[DTD]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#DTD</xsl:text></xsl:attribute>
             <xsl:text>X3D DTD</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> and </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[Schema]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#Schema</xsl:text></xsl:attribute>
             <xsl:text>X3D XML Schema</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>.</xsl:text>
@@ -2228,7 +2229,7 @@ Invocation:
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
         <xsl:text>Simple-type X3D fields (meaning other than SFNode and MFNode) are represented by </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>references.html#[XML]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>references.html#XML</xsl:text></xsl:attribute>
             <xsl:text>XML</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> attributes.</xsl:text>
@@ -2244,13 +2245,13 @@ Invocation:
         </xsl:element>  <!-- a -->
         <xsl:text>, </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[Schematron]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#Schematron</xsl:text></xsl:attribute>
             <xsl:text>X3D Schematron</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>, </xsl:text>
         <xsl:text> and X3D Regular Expressions (</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DREGEX]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DREGEX</xsl:text></xsl:attribute>
             <xsl:text>regexes</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>).</xsl:text>
@@ -2322,26 +2323,29 @@ Invocation:
     
     <xsl:element name="p">
         <xsl:attribute name="class"><xsl:text>proposed</xsl:text></xsl:attribute>
+    <xsl:element name="p">
+        <xsl:attribute name="class"><xsl:text>proposed</xsl:text></xsl:attribute>
         <xsl:attribute name="title"><xsl:text>editorial</xsl:text></xsl:attribute>
-        <xsl:text>Additional information about X3D XML scene structure, allowed field values, </xsl:text>
+        <xsl:text>Note&#160; Additional information about X3D XML scene structure, allowed field values, </xsl:text>
         <xsl:text> data type restrictions, authoring hints, warnings, and errors can be found in X3D&#160;Tooltips </xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DTOOLTIPS]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DTOOLTIPS</xsl:text></xsl:attribute>
             <xsl:text>[X3DTOOLTIPS]</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text> and X3D Unified Object Model&#160;[</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DUOM]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DUOM</xsl:text></xsl:attribute>
             <xsl:text>X3DUOM</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>].</xsl:text>
         <xsl:text> Validation assets are maintained in human-readable and machine-readable forms, in version control, and with corresponding documentation at [</xsl:text>
         <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:text>bibliography.html#[X3DVALIDATION]</xsl:text></xsl:attribute>
+            <xsl:attribute name="href"><xsl:text>bibliography.html#X3DVALIDATION</xsl:text></xsl:attribute>
             <xsl:text>X3DVALIDATION</xsl:text>
         </xsl:element>  <!-- a -->
         <xsl:text>].</xsl:text>
     </xsl:element>  <!-- p -->
+    </xsl:element>  <!-- div -->
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
 

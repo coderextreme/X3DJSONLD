@@ -549,7 +549,7 @@ Additional references of interest:
                 <!-- debug diagnostic -->
                 <xsl:if test="(string-length($xmlValue) = 0)">
                     <xsl:message>
-                        <xsl:text>[warning] SFNode default $xmlValue='</xsl:text>
+                        <xsl:text>Warning: SFNode default $xmlValue='</xsl:text>
                         <xsl:value-of select="$xmlValue"/>
                         <xsl:text>' instead of 'NULL'</xsl:text>
                     </xsl:message>
@@ -1379,10 +1379,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:if test="doc-available($x3d.tooltips.path)">
 				<xsl:variable name="tooltipText" select="replace(replace($x3d.tooltips.document//element[@name = $name]/@tooltip,'&#8734;','infinity'),'&#960;','pi')"/>
 				
-				<xsl:variable name="containsHintWarning" select="contains($tooltipText,'[hint]') or contains($tooltipText,'[warning]')"/>
+				<xsl:variable name="containsHintWarning" select="contains($tooltipText,'Hint:') or contains($tooltipText,'Warning:')"/>
 				<xsl:if test="(string-length($tooltipText) > 0)">
 					<xsl:text> * </xsl:text>
-					<xsl:text disable-output-escaping="yes">&lt;i&gt;X3D </xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                                        <xsl:value-of select="@name"/>
+					<xsl:text disable-output-escaping="yes"> </xsl:text>
 					<xsl:choose>
 						<xsl:when test="($isX3dStatement = 'true')">
 							<xsl:text>statement</xsl:text>
@@ -1408,7 +1410,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							<xsl:with-param name="tooltipText">
 								<xsl:call-template name="wrap-hyperlinks">
 									<xsl:with-param name="string">
-										<!-- xsl:text> debug: escape-javadoc-characters6 </xsl:text -->
+										<!-- xsl:text> debug: escape-javadoc-characters </xsl:text -->
 										<xsl:call-template name="escape-javadoc-characters">
 											<xsl:with-param name="inputValue">
 												<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
@@ -1427,7 +1429,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						</xsl:message>
 					</xsl:if>
 					-->
-					<xsl:value-of select="$tooltipHTML" disable-output-escaping="yes"/>
+                                        <xsl:choose>
+                                            <!-- statement tooltips themselves start with '[X3D statement]' -->
+                                            <xsl:when test="starts-with($tooltipHTML,'[X3D statement] ')">
+                                                <xsl:value-of select="substring-after($tooltipHTML,'[X3D statement] ')" disable-output-escaping="yes"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$tooltipHTML" disable-output-escaping="yes"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+					
 					<xsl:if test="not($containsHintWarning)">
 						<xsl:text> * </xsl:text>
 						<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
@@ -3842,7 +3853,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimSite')">
-												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimMotion')">
 												<xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
@@ -4697,7 +4708,6 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 			String currentX3dJsailJarName = "(unlocated)";
 			boolean foundX3dJsailJar = false;
-	 /*
 			if    ( systemClassPath.contains("X3DJSAIL"))
 			{
 					 currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
@@ -4709,14 +4719,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				{
 					if (currentX3dJsailJarName.equals(nextX3dJsailJar))
 					{
-	 */
 						 foundX3dJsailJar = true;
-	 /*
 						 break;
 					}
 				}
 			}
-	 */
 			if (!foundX3dJsailJar)
 			{
 				errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL .jar archive " + currentX3dJsailJarName 
@@ -4895,7 +4902,6 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         String currentX3dJsailJarName = new String();
         String errorNotice        = new String();
         boolean foundX3dJsailJar = false;
-	 /*
         if    ( systemClassPath.contains("X3DJSAIL"))
         {
                  currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
@@ -4907,14 +4913,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             {
                 if (currentX3dJsailJarName.equals(nextX3dJsailJar))
                 {
-	 */
                      foundX3dJsailJar = true;
-	 /*
                      break;
                 }
             }
         }
-	 */
         if (!foundX3dJsailJar)
         {
             errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL jar archive \"" + currentX3dJsailJarName 
@@ -7684,7 +7687,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:choose>
 
 								<xsl:if test="((@type='MFNode') or (@type='MFString') or (@type='MFBool') or (@type = 'MFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type='MFFloat') or (@type='MFDouble') or (@type='MFTime'))
-											   and not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true')">
+											   and (not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true') or 
+                                                                                                (($name = 'ExternProtoDeclare') and (@name = 'url')))">
 									<xsl:text>	/**</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * Utility method to get ArrayList </xsl:text>
@@ -8141,7 +8145,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * </xsl:text>
 									<xsl:text disable-output-escaping="yes">&lt;i&gt;Tooltip:&lt;/i&gt; </xsl:text>
-									<!-- TODO recurse to insert line breaks for each [hint] -->
+									<!-- TODO recurse to insert line breaks for each Hint: -->
 									<!-- TODO regular expression to insert links for url text -->
 									<!-- don't escape apostrophes, that makes javadoc unhappy -->
 									<!-- xsl:text> debug: escape-javadoc-characters2 </xsl:text -->
@@ -9337,7 +9341,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(</xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> " + newValue + ") when </xsl:text>
+			String errorNotice = "*** Illegal type: cannot appendValue(</xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> " + newValue + ") when </xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -9366,7 +9370,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(boolean " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(boolean " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9391,7 +9395,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(int " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(int " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9416,7 +9420,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(float " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(float " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9441,7 +9445,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(double " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(double " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9502,7 +9506,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(String " + newValue + ") when ]]></xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(String " + newValue + ") when ]]></xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9524,7 +9528,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(MFString " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(MFString " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9545,7 +9549,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         else
 		{
-			String errorNotice = "Illegal type: cannot appendValue(MFString " + newValue + ") when fieldValue type='" + getType() + "'";
+			String errorNotice = "*** Illegal type: cannot appendValue(MFString " + newValue + ") when fieldValue type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
@@ -9571,7 +9575,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(</xsl:text>
 									<xsl:value-of select="$javaPrimitiveType" disable-output-escaping="yes"/>
-									<xsl:text>)}. // #0.e</xsl:text>
+									<xsl:text>)}.</xsl:text><!-- // #0.e -->
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * @param </xsl:text>
 									<xsl:value-of select="$newValue"/>
@@ -11367,7 +11371,9 @@ setAttribute method invocations).]]></xsl:text>
 										<xsl:text>value of </xsl:text>
 									</xsl:if>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
-									<xsl:text disable-output-escaping="yes"><![CDATA[ field.
+									<xsl:text disable-output-escaping="yes"><![CDATA[ field.  This method does not initialize with]]></xsl:text>
+                                                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                                                        <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE.
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -12472,7 +12478,7 @@ setAttribute method invocations).
 	{
 		if (DEFnode.getDEF().isEmpty())
 		{
-			String errorNotice = "setUSE(DEFnode) invoked on ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[" +
+			String errorNotice = "*** setUSE(DEFnode) invoked on ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[" +
 				" that has no DEF name defined, thus a copy cannot be referenced as a USE node";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
@@ -13262,17 +13268,19 @@ setAttribute method invocations).	 */
 	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String newComment)
 	{</xsl:text>
+        <!-- it is OK to append a comment to a USE node
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
 		if (hasUSE())
 		{
-			String errorNotice = "addComments(\"" + newComment + "\")" + "\n" +
+			String errorNotice = "*** addComments(\"" + newComment + "\")" + "\n" +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}
 								</xsl:text>
 							</xsl:if>
+        -->
 								<xsl:text>
 		commentsList.add(newComment);
 		return this;
@@ -13286,17 +13294,19 @@ setAttribute method invocations).
 	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String[] newComments)
 	{</xsl:text>
+                <!-- it is OK to append a comment to a USE node
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
 		if (hasUSE())
 		{
-			String errorNotice = "addComments(" + Arrays.toString(newComments) + ")" + "\n" +
+			String errorNotice = "*** addComments(" + Arrays.toString(newComments) + ")" + "\n" +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}
 								</xsl:text>
 							</xsl:if>
+                -->
 								<xsl:text>
 		commentsList.addAll(Arrays.asList(newComments));
 		return this;
@@ -13310,17 +13320,19 @@ setAttribute method invocations).
 	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (CommentsBlock newCommentsBlock)
 	{</xsl:text>
+        <!-- it is OK to append a comment to a USE node
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
 		if (hasUSE())
 		{
-			String errorNotice = "addComments(CommentsBlock) " +
+			String errorNotice = "*** addComments(CommentsBlock) " +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}
 								</xsl:text>
 							</xsl:if>
+        -->
 								<xsl:text>
 		commentsList.addAll(newCommentsBlock.toStringList());
 		return this;
@@ -13698,9 +13710,13 @@ setAttribute method invocations).
 					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple type */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($javaType, 'ArrayList')">
-					<xsl:text><![CDATA[(get]]></xsl:text>
-					<xsl:value-of select="$CamelCaseName"/>
-					<xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) || !ConfigurationProperties.getStripDefaultAttributes()) /* ArrayList */]]></xsl:text>
+                                            <xsl:text><![CDATA[((get]]></xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[List().equals(]]></xsl:text>
+                                            <xsl:value-of select="upper-case($fieldName)"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* ArrayList .x3d compare */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'LayerSet') and ($fieldName = 'order')">
 					<xsl:text><![CDATA[!(get]]></xsl:text>
@@ -13724,9 +13740,13 @@ setAttribute method invocations).
 					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes()) /* (string-length(@default) > 0) */]]></xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:text><![CDATA[get]]></xsl:text>
-					<xsl:value-of select="$CamelCaseName"/>
-					<xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) || !ConfigurationProperties.getStripDefaultAttributes() /* otherwise */]]></xsl:text>
+                                    <xsl:text><![CDATA[((get]]></xsl:text>
+                                    <xsl:value-of select="$CamelCaseName"/>
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
+                                    <xsl:value-of select="$CamelCaseName"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[().equals(]]></xsl:text>
+                                    <xsl:value-of select="upper-case($fieldName)"/>
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* otherwise */]]></xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="not($isX3dStatement = 'true')">
@@ -13790,7 +13810,19 @@ setAttribute method invocations).
 			</xsl:choose>
 			
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-		}
+		}]]></xsl:text>
+			
+                <xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
+                                           not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
+                        <xsl:text><![CDATA[
+                if (!commentsList.isEmpty())
+                {
+                        CommentsBlock commentsBlock = new CommentsBlock(commentsList);
+                        stringX3D.append(commentsBlock.toStringX3D(indentLevel + indentIncrement));
+                }]]></xsl:text>
+                </xsl:if>
+		
+                <xsl:text disable-output-escaping="yes"><![CDATA[
 		if ((hasChild]]></xsl:text>
                         <xsl:choose>
                             <xsl:when test="($name = 'Script')">
@@ -13822,34 +13854,31 @@ setAttribute method invocations).
 				<xsl:text>s</xsl:text>
 			</xsl:if>
 			
-			<xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
-						   not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
-				<xsl:text><![CDATA[
-			if (!commentsList.isEmpty())
-			{
-				CommentsBlock commentsBlock = new CommentsBlock(commentsList);
-				stringX3D.append(commentsBlock.toStringX3D(indentLevel + indentIncrement));
-			}]]></xsl:text>
-			</xsl:if>
-			
 			<xsl:for-each select="InterfaceDefinition/field[(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and 
-															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
-                                                            not(@name = 'meta')]">
-				<!-- order is essential for elements, xsl:sort results in reverse order -->
-				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'skinCoord') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
-				<!-- special order for head elements: meta comes last -->
+									((@accessType='initializeOnly') or (@accessType='inputOutput')) and
+                                                                        not(@name = 'meta')]">
+				<!-- order is essential for elements, note that xsl:sort results in reverse order -->
+				<!-- sort by statement/field @name, all other child nodes last -->
+				<xsl:sort select="@name[not((. = 'Scene') or (. = 'head') or (. = 'meta') or (. = 'unit') or (. = 'component') or 
+                                                            (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'fieldValue') or
+                                                            (. = 'metadata'))]"/>
 				<!-- sort head before Scene in X3D -->
 				<xsl:sort select="(@name = 'Scene')"/>
 				<xsl:sort select="(@name = 'head')"/>
-				<xsl:sort select="(@name = 'skeleton')"/>
-				<xsl:sort select="(@name = 'skinCoord')"/>
+				<!-- special order within head elements: component, unit, meta -->
+				<xsl:sort select="(@name = 'meta')"/>
+				<xsl:sort select="(@name = 'unit')"/>
+				<xsl:sort select="(@name = 'component')"/>
 				<!-- sort ProtoInterface before ProtoBody in ProtoDeclare -->
 				<xsl:sort select="(@name = 'ProtoBody')"/>
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
 				<!-- necessary order for model validation: field/IS/metadata before all other nodes/statements -->
-				<!-- sort field before IS in ProtoInstance -->
+				<!-- sort field, fieldValue before IS in ProtoInstance, Script -->
 				<xsl:sort select="(@name = 'IS')"/>
 				<xsl:sort select="(@name = 'field')"/>
+				<xsl:sort select="(@name = 'fieldValue')"/>
+				<!-- sort single Metadata* node before anything else
+				<xsl:sort select="@name[starts-with(., 'Metadata')]"/> -->
 				<xsl:sort select="(@name = 'metadata')"/>
 				
 				<xsl:variable name="isX3dStatement">
@@ -14093,10 +14122,10 @@ setAttribute method invocations).
 			hasChild      = false; // USE nodes include no other fields
 		}]]></xsl:text><!-- append to member name -->
 	</xsl:if>
-    <!-- handle field synonyms, TODO do not perform if serializing VRML97 -->
+        <!-- handle field synonyms, TODO do not perform if serializing VRML97 -->
 	<xsl:text>
-        if (!serializingVRML97output)
-            handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
+                if (!serializingVRML97output)
+                    handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
 	<xsl:if test="not((@name = 'X3D') or (@name = 'head') or (@name = 'meta') or (@name = 'unit') or (@name = 'component') or (@name = 'Scene'))">
 		<!-- toDO in progress, ignore: avoid defining indentCharacter for nodes with no indentation, helps to ensure that consistent logic follows -->
 	</xsl:if>
@@ -14113,7 +14142,8 @@ setAttribute method invocations).
 			<xsl:when test="($name = 'X3D')">
 				<!-- header needed for serialization toStringClassicVRML -->
 				<xsl:text>
-		stringClassicVRML.append("#X3D V").append(version).append(" utf8").append("\n");
+		stringClassicVRML.append("#X3D V") // V for version
+                                 .append(version).append(" utf8").append("\n");
 		stringClassicVRML.append("PROFILE").append(" ").append(profile).append("\n");</xsl:text>
 			</xsl:when>
 			<xsl:when test="(@name = 'head') or (@name = 'Scene')">
@@ -14229,7 +14259,7 @@ setAttribute method invocations).
 			CommentsBlock commentsBlock = new CommentsBlock(commentsList);
 			stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 		}
-		stringClassicVRML.append("] {").append("\n").append(indent);
+		stringClassicVRML.append(" ] {").append("\n").append(indent);
 					
 		if (ProtoBody != null)
 		{
@@ -14259,11 +14289,6 @@ setAttribute method invocations).
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter);
 			stringClassicVRML.append("# [documentation] ").append("\"").append(SFString.toString(getDocumentation())).append("\"").append("\n").append(indent).append(indentCharacter);
 		}
-		if (getUrl().length > 0)
-		{
-			stringClassicVRML.append("\n").append(indent).append(indentCharacter);
-			stringClassicVRML.append("url ").append("[ ").append(MFString.toString(getUrl())).append(" ]");
-		}
 				
 		// recursively iterate over child elements
 		for (field element : fieldList)
@@ -14275,7 +14300,16 @@ setAttribute method invocations).
 			CommentsBlock commentsBlock = new CommentsBlock(commentsList);
 			stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 		}
-		stringClassicVRML.append("]").append("\n").append(indent);]]></xsl:text>
+		stringClassicVRML.append("]").append("\n").append(indent);
+                                    
+		if (getUrl().length > 0)
+		{
+			stringClassicVRML.append("\n").append(indent).append(indentCharacter);
+		//	stringClassicVRML.append("url "); // explicit 'url' is not included in ClassicVRML syntax for EXTERNPROTO
+                //	https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#EXTERNPROTOURLSemantics
+			stringClassicVRML.append("[ ").append(MFString.toString(getUrl())).append(" ]");
+		}]]></xsl:text>
+                
 			</xsl:when>
 			<xsl:when test="(@name = 'ProtoInterface') or (@name = 'ProtoBody')">
 				<!-- special output provided separately by ProtoDeclare, only mention name as a comment here -->
@@ -14333,6 +14367,10 @@ setAttribute method invocations).
 			</xsl:if>
 			<xsl:choose>
 				<!-- special handling -->
+				<xsl:when test="($name = 'connect')">
+                                    <!-- no output here, IS/connect handled following field definiton in ClassicVRML encoding -->
+                                </xsl:when>
+				<!-- special handling -->
 				<xsl:when test="($name = 'field') or ($name = 'fieldValue')">
 					<xsl:text>
 		// </xsl:text>
@@ -14344,13 +14382,42 @@ setAttribute method invocations).
 					</xsl:if>
 					<!-- getType() defined for both field and fieldValue -->
 					<xsl:text disable-output-escaping="yes"><![CDATA[.append(name);
-		if (value.length() > 0)
+                String  parentName   = "fieldParentNotKnown";
+                boolean hasISconnect = false;
+                IS      parentIS     = null;
+                                            
+                if      ((getParent() !=  null) && (getParent() instanceof X3DConcreteNode))
+                {
+                          parentName   = ((X3DConcreteNode)getParent()).getElementName();
+                          parentIS     = ((X3DConcreteNode)getParent()).getIS();
+                          hasISconnect = (parentIS != null) && !parentIS.getConnectList().isEmpty();
+                }
+                else if ((getParent() !=  null) && (getParent() instanceof X3DConcreteStatement))
+                          parentName = ((X3DConcreteStatement)getParent()).getElementName();
+                
+                // first case: field IS/connect
+                if (hasISconnect)
+                {
+                    for (connect element : parentIS.getConnectList())
+                    {
+                        if (element.getNodeField().equals(name))
+                        {
+                            stringClassicVRML.append(indentCharacter).append("IS").append(indentCharacter).append(element.getProtoField()); // found matching connect
+                        }
+                    }
+                }
+                // additional case: default value, if any is provided
+		else if (((value.length() > 0) || getType().equals(field.TYPE_SFSTRING)) && 
+                     !parentName.equals(ExternProtoDeclare.NAME) && !hasISconnect)
 		{
+                        // no value for EXTERNPROTODECLARE fields since default values are found in the original prototype
 			stringClassicVRML.append(" ");
 			if (getType().equals(field.TYPE_SFSTRING))
-				 stringClassicVRML.append("\"").append(value).append("\"");
-			else stringClassicVRML             .append(value);
-		}]]></xsl:text>
+			     stringClassicVRML.append("\"").append(value).append("\""); // might be empty string
+			else stringClassicVRML.append(value);
+		}
+                // TODO possible additional case: default value for this type, if none is provided by field in Script/ProtoInterface
+                //      perhaps best to let that fail so that author intent is explicitly declared]]></xsl:text>
 					<xsl:if test="($name = 'field')">
 						<!-- append field [appinfo], add field [documentation] -->
 						<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -14449,6 +14516,9 @@ setAttribute method invocations).
 					<xsl:when test="($name = 'X3D')">
 						<xsl:text><![CDATA[false) // attribute handled separately]]></xsl:text>
 					</xsl:when>
+					<xsl:when test="($name = 'ProtoInstance') and ($fieldName = 'name')">
+						<xsl:text><![CDATA[false) // attribute handled separately]]></xsl:text>
+					</xsl:when>
 					<!-- required attributes -->
 					<xsl:when test="(($name = 'X3D') and (($fieldName = 'profile') or ($fieldName = 'version'))) or
 									(($name = 'HAnimHumanoid') and ($fieldName = 'version')) or
@@ -14464,9 +14534,13 @@ setAttribute method invocations).
 						<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="contains($javaType, 'ArrayList')">
-						<xsl:text><![CDATA[(get]]></xsl:text>
-						<xsl:value-of select="$CamelCaseName"/>
-						<xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
+                                            <xsl:text><![CDATA[((get]]></xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[List().equals(]]></xsl:text>
+                                            <xsl:value-of select="upper-case($fieldName)"/>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* ArrayList .x3dv compare */]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="($isSingleValueType = 'true')">
 						<xsl:text><![CDATA[!get]]></xsl:text>
@@ -14567,25 +14641,32 @@ setAttribute method invocations).
 				</xsl:if>
 
 			<xsl:for-each select="InterfaceDefinition/field[(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and 
-															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
-                                                            not(@name = 'meta')]">
-				<!-- order is essential for elements, xsl:sort results in reverse order -->
-				<xsl:sort select="@name[not((. = 'head') or (. = 'skeleton') or (. = 'skinCoord') or (. = 'Scene') or (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'metadata'))]"/>
-				<!-- special order for head elements: meta comes last -->
+									((@accessType='initializeOnly') or (@accessType='inputOutput')) and
+                                                                        not(@name = 'meta')]">
+				<!-- order is essential for elements, note that xsl:sort results in reverse order -->
+				<!-- sort by statement/field @name, all other child nodes last -->
+				<xsl:sort select="@name[not((. = 'Scene') or (. = 'head') or (. = 'meta') or (. = 'unit') or (. = 'component') or 
+                                                            (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'fieldValue') or
+                                                            (. = 'metadata'))]"/>
 				<!-- sort head before Scene in X3D -->
 				<xsl:sort select="(@name = 'Scene')"/>
 				<xsl:sort select="(@name = 'head')"/>
-				<xsl:sort select="(@name = 'skeleton')"/>
-				<xsl:sort select="(@name = 'skinCoord')"/>
+				<!-- special order within head elements: component, unit, meta -->
+				<xsl:sort select="(@name = 'meta')"/>
+				<xsl:sort select="(@name = 'unit')"/>
+				<xsl:sort select="(@name = 'component')"/>
 				<!-- sort ProtoInterface before ProtoBody in ProtoDeclare -->
 				<xsl:sort select="(@name = 'ProtoBody')"/>
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
 				<!-- necessary order for model validation: field/IS/metadata before all other nodes/statements -->
-				<!-- sort field before IS in ProtoInstance -->
+				<!-- sort field, fieldValue before IS in ProtoInstance, Script -->
 				<xsl:sort select="(@name = 'IS')"/>
 				<xsl:sort select="(@name = 'field')"/>
+				<xsl:sort select="(@name = 'fieldValue')"/>
+				<!-- sort single Metadata* node before anything else
+				<xsl:sort select="@name[starts-with(., 'Metadata')]"/> -->
 				<xsl:sort select="(@name = 'metadata')"/>
-				
+
 				<xsl:variable name="javaType">
 					<xsl:call-template name="javaType">
 						<xsl:with-param name="x3dType" select="@type"/>
@@ -14617,7 +14698,7 @@ setAttribute method invocations).
 				</xsl:variable>
 
 				<xsl:choose>
-					<xsl:when test="(@type = 'X3D') or (@type = 'head') or (@type = 'Scene')">
+					<xsl:when test="(@type = 'X3D') or (@type = 'head')">
 						<!-- already handled -->
 					</xsl:when>
 					<xsl:when test="(@type = 'SFNode')">
@@ -14670,27 +14751,32 @@ setAttribute method invocations).
 						<xsl:choose>
 							<xsl:when test="not($isX3dStatement = 'true') or (@name = 'ROUTE')">
 								<xsl:text>
-			if (</xsl:text>
+			if (!</xsl:text>
 								<xsl:value-of select="@name"/>
 								<xsl:if test="($isFieldX3dStatement = 'true') and (@type='MFNode')">
 									<xsl:text>List</xsl:text><!-- append to member name -->
 								</xsl:if>
-								 <xsl:text disable-output-escaping="yes"><![CDATA[.size() > 0)
-			{
+								 <xsl:text disable-output-escaping="yes"><![CDATA[.isEmpty())
+			{]]></xsl:text>
+                                                                <xsl:if test="not($name = 'Scene')">
+                                                                    <!-- note no field name precedes root nodes at top level of Scene -->
+                                                                    <xsl:text disable-output-escaping="yes"><![CDATA[
 				stringClassicVRML.append(indentCharacter).append(indentCharacter).append("]]></xsl:text>
-								<!-- TODO containerField name alternatives -->
-								<xsl:value-of select="@name"/>
-								<xsl:if test="($isFieldX3dStatement = 'true') and (@type='MFNode')">
+                                                                    <!-- TODO containerField name alternatives -->
+                                                                    <xsl:value-of select="@name"/>
+                                                                    <xsl:if test="($isFieldX3dStatement = 'true') and (@type='MFNode')">
 									<xsl:text>List</xsl:text><!-- append to member name -->
-								</xsl:if>
-								<xsl:text>").append(" [").append("\n")
+                                                                    </xsl:if>
+                                                                    <xsl:text>").append(" [").append("\n")
 					.append(indent).append(indentCharacter).append(indentCharacter); // containerField for MFNode array</xsl:text>
+                                                                </xsl:if>
 							</xsl:when>
 							<xsl:otherwise>
+                                                            <!-- empty -->
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:text>
-			for (</xsl:text>
+                            for (</xsl:text>
 						<xsl:value-of select="$javaReferenceType"/>
 						<xsl:text> element : </xsl:text>
 						<xsl:value-of select="@name"/>
@@ -14698,7 +14784,7 @@ setAttribute method invocations).
 							<xsl:text>List</xsl:text><!-- append to member name -->
 						</xsl:if>
 						<xsl:text>)
-			{</xsl:text>
+                            {</xsl:text>
 						<!-- cast abstract element to concrete type -->
 						<xsl:text>
 				stringClassicVRML.append(((X3DConcreteElement</xsl:text>
@@ -14712,19 +14798,23 @@ setAttribute method invocations).
 						</xsl:choose>
 						<xsl:text>;</xsl:text>
 						
-						<xsl:if test="not((@type = 'X3D') or (@type = 'head') or (@type = 'Scene'))">
+						<xsl:if test="not((@name = 'X3D') or (@name = 'head'))">
+							<xsl:text>
+                            }</xsl:text>
+						</xsl:if>
+                                                <xsl:choose>
+                                                    <xsl:when test="($name = 'Scene')">
+                                                        <!-- note no field name precedes root nodes at top level of Scene, so no closing ] square bracket at end -->
 							<xsl:text>
 			}</xsl:text>
-						</xsl:if>
-			
-						<xsl:if test="not($isX3dStatement = 'true') or (@name = 'ROUTE') or (@name = 'IMPORT') or (@name = 'EXPORT')">
+                                                    </xsl:when>
+                                                    <xsl:when test="not($isX3dStatement = 'true') or (@name = 'ROUTE') or (@name = 'IMPORT') or (@name = 'EXPORT')">
 							<xsl:text>
-				stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter).append("]").append("\n")
-					.append(indent); // end MFNode array
-			}
-</xsl:text>
-						</xsl:if>
-			
+                            stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter).append("]").append("\n")
+				.append(indent); // end MFNode array
+			}</xsl:text>
+                                                    </xsl:when>
+                                                </xsl:choose>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:for-each>
@@ -14752,10 +14842,10 @@ setAttribute method invocations).
 				<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram')">
 <!--
 
-			for (field element : fieldList)
-			{
-				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
-			}
+                    for (field element : fieldList)
+                    {
+                        stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
+                    }
 -->
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (sourceCode.trim().length() > 0)
@@ -14772,7 +14862,7 @@ setAttribute method invocations).
 
 			for (field element : fieldList)
 			{
-				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
+				stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
 			}
 ]]></xsl:text>
 -->
@@ -14815,18 +14905,19 @@ setAttribute method invocations).
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		}]]></xsl:text>
 			<xsl:if test="not($isX3dStatement = 'true')">
-				<xsl:text>
-		if (hasAttributes || hasChild)
+				<xsl:text disable-output-escaping="yes"><![CDATA[
+		if (getUSE().isEmpty() && (hasAttributes || hasChild))
 		{
 			stringClassicVRML.append("}").append("\n"); // finish node content
-		}</xsl:text>
+		}]]></xsl:text>
 			</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
 
 		<xsl:if test="($name = 'ProtoInstance')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-		stringClassicVRML.append(indent).append("}").append("\n"); // finish closing tag]]></xsl:text>
+                if (getUSE().isEmpty())
+                    stringClassicVRML.append(indent).append("}").append("\n"); // finish closing tag]]></xsl:text>
 		</xsl:if>
 			
 		<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -14853,11 +14944,11 @@ setAttribute method invocations).
 	@Override
 	public String toStringVRML97(int indentLevel)
 	{
-        serializingVRML97output = true;
-        String result = toStringClassicVRML(indentLevel);
-        serializingVRML97output = false;
+            serializingVRML97output = true;
+            String result = toStringClassicVRML(indentLevel);
+            serializingVRML97output = false;
                                 
-		return result]]></xsl:text>
+            return result]]></xsl:text>
 	<xsl:choose>
 		<xsl:when test="($name = 'X3D')">
 			<!-- TODO fix this hack more thoroughly, possibly via ConfigurationProperties or else by optional parameter in method signature -->
@@ -15043,7 +15134,7 @@ setAttribute method invocations).
 	{
 		if ((nameValue == null) || nameValue.isEmpty())
 		{
-			String errorNotice = "findElementByNameValue(\"\", " + elementName + ") cannot use empty string to find a name attribute";
+			String errorNotice = "*** findElementByNameValue(\"\", " + elementName + ") cannot use empty string to find a name attribute";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}]]></xsl:text>
@@ -15181,7 +15272,7 @@ setAttribute method invocations).
 	{
 		if ((DEFvalue == null) || DEFvalue.isEmpty())
 		{
-			String errorNotice = "findNodeByDEF(\"\") cannot use empty string to find a name";
+			String errorNotice = "*** findNodeByDEF(\"\") cannot use empty string to find a name";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}]]></xsl:text>
@@ -15481,7 +15572,7 @@ setAttribute method invocations).
 		if ((</xsl:text>   <xsl:value-of select="@name"/><xsl:text disable-output-escaping="yes"><![CDATA[ != null) && (]]></xsl:text>
 						   <xsl:value-of select="@name"/><xsl:text>ProtoInstance != null))
 		{
-			String errorNotice = "Internal X3DJSAIL error: incorrect handling of contained SFNode field, both </xsl:text><xsl:value-of select="@name"/><xsl:text> and </xsl:text>
+			String errorNotice = "*** Internal X3DJSAIL error: incorrect handling of contained SFNode field, both </xsl:text><xsl:value-of select="@name"/><xsl:text> and </xsl:text>
 				<xsl:value-of select="@name"/><xsl:text>ProtoInstance are set simultaneously";
 			validationResult.append(errorNotice);
 			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
@@ -15598,13 +15689,13 @@ setAttribute method invocations).
                                         <xsl:text disable-output-escaping="yes"><![CDATA[
         if (getName().isEmpty() && !hasUSE())
         {
-            String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
+            String errorNotice = "*** ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
             validationResult.append(errorNotice);
             throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 	if (!getName().isEmpty() && hasUSE())
         {
-            String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
+            String errorNotice = "*** ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
             validationResult.append(errorNotice);
             throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
@@ -15652,28 +15743,30 @@ setAttribute method invocations).
 										<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (hasUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
 		{
-			String errorNotice = "</xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
+			String errorNotice = "*** </xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
 				<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text>";
 			validationResult.append(errorNotice);
 			throw new InvalidFieldValueException(errorNotice); // report error
 		}
 		</xsl:text>
 									<xsl:if test="not($hasChildrenField = 'true') and not(starts-with($name, 'X3DConcrete'))">
+                <!-- it is OK to append a comment to a USE node
 										<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (hasUSE() && !commentsList.isEmpty())// test USE restrictions
 		{
-			String errorNotice = "]]></xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained comments";
+			String errorNotice = "*** ]]></xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained comments";
 			validationResult.append(errorNotice);
 			throw new InvalidFieldValueException(errorNotice); // report error		
 		}
 </xsl:text>
+		-->
 									</xsl:if>
-										</xsl:when>
+                								</xsl:when>
 										<xsl:when test="(@type = 'MFNode')">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (hasUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
 		{
-			String errorNotice = "</xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
+			String errorNotice = "*** </xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
 				<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text>";
 			validationResult.append(errorNotice);
 			throw new InvalidFieldValueException(errorNotice); // report error		
@@ -15763,7 +15856,7 @@ setAttribute method invocations).
                 (SFString.isX3dNodeName(getContent()) || SFString.isX3dNodeName(contentPrefix)))
                             warningMessage += "WARNING:avoid duplicating a built-in X3D node name as model title, <meta name='" + getName() + "' content='" + getContent() + "'/>";
             if ((getName().equalsIgnoreCase(meta.NAME_TITLE) || getName().equalsIgnoreCase("filename") || getName().equalsIgnoreCase("name")) &&
-                (SFString.isX3dStatementName(getContent()) || SFString.isX3dStatementName(getContent().substring(0,getContent().lastIndexOf(".")))))
+                (SFString.isX3dStatementName(getContent()) || SFString.isX3dStatementName(contentPrefix)))
                             warningMessage += "WARNING:avoid duplicating a built-in X3D statement name as model title, <meta name='" + getName() + "' content='" + getContent() + "'/>";
         }
                                                                             
@@ -16208,7 +16301,7 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (image.size() != (getWidth() * getHeight()) + NUMBER_PARAMETERS) // validity check
 		{
-			String errorNotice = "Illegal length of PixelTexture image integer array (" + image.size() + 
+			String errorNotice = "*** Illegal length of PixelTexture image integer array (" + image.size() + 
 				") while ((width=" + getWidth() + " * height=" + getHeight() + " expects number of pixels=" + (getWidth() * getHeight());
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -16219,7 +16312,7 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (image.size() != (getWidth() * getHeight() * getDepth())) // validity check
 		{
-			String errorNotice = "Illegal length of PixelTexture3D integer array (" + image.size() + 
+			String errorNotice = "*** Illegal length of PixelTexture3D integer array (" + image.size() + 
 				") while ((width=" + getWidth() + " * height=" + getHeight() + " * depth=" + getDepth() + " expects number of pixels=" + (getWidth() * getHeight() * getDepth());
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -16234,7 +16327,7 @@ setAttribute method invocations).
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
-				String errorNotice = "ProtoDeclare name='" + getName() + "' must first be connected to Scene scene graph in order to get checked.";
+				String errorNotice = "*** ProtoDeclare name='" + getName() + "' must first be connected to Scene scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 			}
 			return "PrototypeNotFoundWhenNotConnectedToSceneGraph"; // not found
@@ -16263,7 +16356,7 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 		if ((primaryNode == null) && !getChildren().isEmpty()) // must have primaryNode if any children are present
 		{
-			String errorNotice = "ProtoBody primaryNode is null, but getChildren() has" + getChildren().size() + " entries";
+			String errorNotice = "*** ProtoBody primaryNode is null, but getChildren() has" + getChildren().size() + " entries";
 			validationResult.append(errorNotice).append("\n");
 			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 		}
@@ -16277,7 +16370,7 @@ setAttribute method invocations).
 		{
 			if (getIS().getConnectList().isEmpty())
 			{
-				String errorNotice = "IS statement present, but contains no connect statements";
+				String errorNotice = "*** IS statement present, but contains no connect statements";
 				validationResult.append(errorNotice).append("\n");
 				throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 			}				
@@ -16422,7 +16515,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (field newField)
 	{
-		String errorNotice = "Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (newField == null)
         {
@@ -16458,7 +16551,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeField (field fieldToRemove)
 	{
-		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (fieldToRemove == null)
         {
@@ -16482,7 +16575,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeField (String fieldName)
 	{
-		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if ((fieldName == null) || fieldName.isEmpty())
         {
@@ -16613,13 +16706,13 @@ setAttribute method invocations).
 	{
 		if (newSourceCode == null)
 		{
-			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceCode is null";
+			String errorNotice = "*** Illegal setSourceCode() invocation, StringBuilder newSourceCode is null";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		else if (!newSourceCode.toString().trim().startsWith("ecmascript:") && (newSourceCode.toString().trim().length() > 0))
 		{
-			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceCode must start with \"ecmascript:\"";
+			String errorNotice = "*** Illegal setSourceCode() invocation, StringBuilder newSourceCode must start with \"ecmascript:\"";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -16649,7 +16742,7 @@ setAttribute method invocations).
 	{
 		if (newSourceCode == null)
 		{
-			String errorNotice = "Illegal appendSourceCode() invocation, StringBuilder newSourceCode is null";
+			String errorNotice = "*** Illegal appendSourceCode() invocation, StringBuilder newSourceCode is null";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -16683,7 +16776,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (field newField)
 	{
-		String errorNotice = "Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> </xsl:text>
+		String errorNotice = "*** Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> </xsl:text>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ name='" + getName() + "', ";
         if (newField == null)
         {
@@ -16734,7 +16827,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeField (field fieldToRemove)
 	{
-		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
                 <xsl:choose>
                     <xsl:when test="($name = 'ProtoInterface')">
                         <xsl:text> parent ProtoDeclare name='" + getName() + "', ";</xsl:text>
@@ -16766,7 +16859,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeField (String fieldName)
 	{
-		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
                 <xsl:choose>
                     <xsl:when test="($name = 'ProtoInterface')">
                         <xsl:text> parent ProtoDeclare name='" + getName() + "', ";</xsl:text>
@@ -16832,7 +16925,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addFieldValue (fieldValue newFieldValue)
 	{
-		String errorNotice = "Illegal addFieldValue() invocation for ProtoInstance name='" + getName() +
+		String errorNotice = "*** Illegal addFieldValue() invocation for ProtoInstance name='" + getName() +
 					"' fieldValue name='" + newFieldValue.getName() + "', ";
         if (newFieldValue == null)
         {
@@ -16884,7 +16977,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeFieldValue (fieldValue fieldValueToRemove)
 	{
-		String errorNotice = "Illegal removeFieldValue() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeFieldValue() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (fieldValueToRemove == null)
         {
@@ -16908,7 +17001,7 @@ setAttribute method invocations).
 	 */
 	public boolean removeFieldValue (String fieldValueName)
 	{
-		String errorNotice = "Illegal removeFieldValue() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
+		String errorNotice = "*** Illegal removeFieldValue() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if ((fieldValueName == null) || fieldValueName.isEmpty())
         {
@@ -17160,7 +17253,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
             depth = image.get(DEPTH_INDEX);
             if ((depth < 0) || (depth > image.size()))
             {
-                String errorNotice = "erroneous image depth=" + depth + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
+                String errorNotice = "*** erroneous image depth=" + depth + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
                 validationResult.append(errorNotice).append("\n");
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
             }
@@ -17196,7 +17289,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
             width = image.get(WIDTH_INDEX);
             if ((width < 0) || (width > image.size()))
             {
-                String errorNotice = "erroneous image width=" + width + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
+                String errorNotice = "*** erroneous image width=" + width + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
                 validationResult.append(errorNotice).append("\n");
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
             }
@@ -17215,7 +17308,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
             height = image.get(HEIGHT_INDEX);
             if ((height < 0) || (height > image.size()))
             {
-                String errorNotice = "erroneous image height=" + height + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
+                String errorNotice = "*** erroneous image height=" + height + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
                 validationResult.append(errorNotice).append("\n");
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
             }
@@ -17234,7 +17327,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
             numberComponents = image.get(NUMBER_COMPONENTS_INDEX);
             if ((numberComponents < 0) || (numberComponents > 4))
             {
-                String errorNotice = "erroneous image numberComponents=" + numberComponents + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
+                String errorNotice = "*** erroneous image numberComponents=" + numberComponents + " for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[";
                 validationResult.append(errorNotice).append("\n");
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
             }
@@ -17511,7 +17604,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
 				<xsl:text>
 			else // hopefully this case cannot occur, possible internal library error
 			{
-				String errorNotice = "Invalid invocation of field.getValue</xsl:text>
+				String errorNotice = "*** Invalid invocation of field.getValue</xsl:text>
 					<xsl:if test="not(@type = 'SFString') and not(@type = 'MFString')">
 						<xsl:value-of select="@type"/>
 					</xsl:if>
@@ -17524,7 +17617,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
 		}
 		else
 		{
-			String errorNotice = "Invalid invocation of field.getValue</xsl:text>
+			String errorNotice = "*** Invalid invocation of field.getValue</xsl:text>
 					<xsl:if test="not(@type = 'SFString') and not(@type = 'MFString')">
 						<xsl:value-of select="@type"/>
 					</xsl:if>
@@ -17549,7 +17642,7 @@ return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYL
 		}
 		else
 		{
-			String errorNotice = "Invalid invocation of field.getValue</xsl:text>
+			String errorNotice = "*** Invalid invocation of field.getValue</xsl:text>
 					<xsl:if test="not(@type = 'SFString') and not(@type = 'MFString')">
 						<xsl:value-of select="@type"/>
 					</xsl:if>
@@ -17638,7 +17731,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFBOOL) && !getType().equals(field.TYPE_MFBOOL) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(boolean " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(boolean " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17663,7 +17756,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFBOOL) && !getType().equals(field.TYPE_MFBOOL) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(boolean[] " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(boolean[] " + newValue + ") when ]]></xsl:text>
 							<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17707,7 +17800,7 @@ method invocations on the same node object).
 		if (!getType().equals(field.TYPE_SFINT32) && !getType().equals(field.TYPE_MFINT32) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(int " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(int " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17733,7 +17826,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFIMAGE) && !getType().equals(field.TYPE_MFIMAGE) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(int[] " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(int[] " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17771,7 +17864,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(float " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(float " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17806,7 +17899,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFMATRIX4F) && !getType().equals(field.TYPE_MFMATRIX4F)  &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(float[] " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(float[] " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17814,7 +17907,7 @@ method invocations on the same node object).
 		if (!getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) &&
             (newValue.length % X3DConcreteField.getTupleSize(getType())) != 0) // tupleSize modulus check
 		{
-			String errorNotice = "illegal number of values (" + newValue.length + ")" +
+			String errorNotice = "*** illegal number of values (" + newValue.length + ")" +
 				" in initialization string, must be multiple of " + X3DConcreteField.getTupleSize(getType());
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -17845,7 +17938,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFINT32)    && !getType().equals(field.TYPE_MFINT32)  &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(double " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(double " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text> type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17878,7 +17971,7 @@ method invocations on the same node object).
 			!getType().equals(field.TYPE_SFMATRIX4D) && !getType().equals(field.TYPE_MFMATRIX4D) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
-			String errorNotice = "Illegal type: cannot setValue(double[] " + newValue + ") when ]]></xsl:text>
+			String errorNotice = "*** Illegal type: cannot setValue(double[] " + newValue + ") when ]]></xsl:text>
 								<xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ type='" + getType() + "'";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice); // report error
@@ -17886,7 +17979,7 @@ method invocations on the same node object).
 		if (!getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) &&
             (newValue.length % X3DConcreteField.getTupleSize(getType())) != 0) // tupleSize modulus check
 		{
-			String errorNotice = "illegal number of values (" + newValue.length + ")" +
+			String errorNotice = "*** illegal number of values (" + newValue.length + ")" +
 				" in initialization string, must be multiple of " + X3DConcreteField.getTupleSize(getType());
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -20933,7 +21026,7 @@ method invocations on the same node object).
         <xsl:if test="($fieldName = 'SFImage')">
             <xsl:text>if (SFImage.length != (getWidth() * getHeight() + 3)) // validity check
 		{
-			String errorNotice = "Illegal length of SFImage integer array (" + SFImage.length + 
+			String errorNotice = "*** Illegal length of SFImage integer array (" + SFImage.length + 
 				") while ((width=" + getWidth() + " * height=" + getHeight() + " + 3)=" + (getWidth() * getHeight() + 3);
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -20973,7 +21066,7 @@ method invocations on the same node object).
             java.util.regex.Matcher m = PATTERN.matcher(toString());
             if (!m.matches())
             {
-			String errorNotice = "[error] Regular expression (regex) failure, new ]]></xsl:text>
+			String errorNotice = "*** [error] Regular expression (regex) failure, new ]]></xsl:text>
 <xsl:value-of select="$fieldName"/>
 <xsl:value-of select="$jsaiClassSuffix"/>
 <xsl:text disable-output-escaping="yes"> PATTERN mismatch (\"" + toString() + "\")";
@@ -21065,7 +21158,7 @@ method invocations on the same node object).
 		java.util.regex.Matcher m = patternBboxValue.matcher(toString());
 		if (!m.matches())
 		{
-			String errorNotice = "[error] Regular expression (regex) failure, new SFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ pattern mismatch (\"" + toString() + "\")";
+			String errorNotice = "*** [error] Regular expression (regex) failure, new SFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ pattern mismatch (\"" + toString() + "\")";
 			return errorNotice;
 		}
 		else return "";
@@ -21155,7 +21248,7 @@ method invocations on the same node object).
 -->
 <xsl:text>matches(newValue)) // regex test
 		{
-			String errorNotice = "[error] Regular expression (regex) failure, new </xsl:text>
+			String errorNotice = "*** [error] Regular expression (regex) failure, new </xsl:text>
 <xsl:value-of select="$fieldName"/>
 <xsl:value-of select="$jsaiClassSuffix"/>
 <xsl:text>(" + newValue + ")";
@@ -21179,7 +21272,7 @@ method invocations on the same node object).
 				<xsl:when test="($fieldName = 'SFBool')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[if (!newValue.equals("true") && !newValue.equals("false"))
 		{
-			String errorNotice = "illegal boolean value, must be 'true' or 'false' (case sensitive), new ]]></xsl:text>
+			String errorNotice = "*** illegal boolean value, must be 'true' or 'false' (case sensitive), new ]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 			validationResult.append(errorNotice).append("\n");
@@ -21224,7 +21317,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 2)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21237,7 +21330,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 2)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21250,7 +21343,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 3)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21264,7 +21357,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 3)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21278,7 +21371,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 3)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21292,7 +21385,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 4)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21307,7 +21400,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 4)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21322,7 +21415,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 4)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21337,7 +21430,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 4)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21352,7 +21445,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 9)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21372,7 +21465,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 9)
 			{
-				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
@@ -21392,7 +21485,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 16)
 			{
-				String errorNotice = "illegal number of values in initialization string";
+				String errorNotice = "*** illegal number of values in initialization string";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -21417,7 +21510,7 @@ method invocations on the same node object).
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 16)
 			{
-				String errorNotice = "illegal number of values in initialization string";
+				String errorNotice = "*** illegal number of values in initialization string";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -21449,7 +21542,7 @@ method invocations on the same node object).
 			{
 				if (!value.equals("true") && !value.equals("false"))
 				{
-					String errorNotice = "illegal boolean value for ]]></xsl:text>
+					String errorNotice = "*** illegal boolean value for ]]></xsl:text>
 					<xsl:value-of select="$fieldName"/>
 					<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>() initialization, newValue[" + i + "]='" + value + "' but must be 'true' or 'false' (case sensitive)";
  					validationResult.append(errorNotice).append("\n");
@@ -21508,7 +21601,7 @@ method invocations on the same node object).
 						<xsl:text>
 			if ((newValues.length % </xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) != 0) // tupleSize modulus check
 			{
-				String errorNotice = "illegal number of values (" + newValues.length + ")" +
+				String errorNotice = "*** illegal number of values (" + newValues.length + ")" +
 					" in initialization string, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
@@ -21552,7 +21645,7 @@ method invocations on the same node object).
 						<xsl:text>
 			if ((newValues.length % </xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) != 0) // tupleSize modulus check
 			{
-				String errorNotice = "illegal number of values (" + newValues.length + ")" +
+				String errorNotice = "*** illegal number of values (" + newValues.length + ")" +
 					" in initialization string, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
@@ -21599,7 +21692,7 @@ method invocations on the same node object).
 		</xsl:choose>
 			<xsl:text>Exception e)
 		{
-			String errorNotice = "new </xsl:text>
+			String errorNotice = "*** new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ") " + e.getMessage();
 			validationResult.append(errorNotice).append("\n");
@@ -21759,7 +21852,7 @@ method invocations on the same node object).
 				<xsl:value-of select="$tupleSize"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[-tuple check
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 				<xsl:value-of select="@type"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ newValue array length=" + newValue.length +
 				", must be multiple of ]]></xsl:text>
@@ -21778,7 +21871,7 @@ method invocations on the same node object).
 				<xsl:value-of select="$tupleSize"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[)
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 				<xsl:value-of select="@type"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ newValue array length=" + newValue.length +
 				", must equal ]]></xsl:text>
@@ -21830,7 +21923,7 @@ method invocations on the same node object).
 		float  blue = newValue[2];
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue +
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue +
 				"), all values must be in numeric range [0..1]";
 			throw new InvalidFieldValueException(errorNotice);
 		}]]></xsl:text>
@@ -21844,7 +21937,7 @@ method invocations on the same node object).
 		float alpha = newValue[3];	
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
+			String errorNotice = "*** Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -21996,7 +22089,7 @@ method invocations on the same node object).
 	{
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22033,7 +22126,7 @@ method invocations on the same node object).
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22061,7 +22154,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22089,7 +22182,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal ;SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal ;SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22127,7 +22220,7 @@ TODO: also MFColor.
 	{
 		if (scaleFactor < 0.0f)
 		{
-			String errorNotice = "Illegal scaleFactor value (" + scaleFactor + "), must be nonnegative";
+			String errorNotice = "*** Illegal scaleFactor value (" + scaleFactor + "), must be nonnegative";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -22259,7 +22352,7 @@ TODO: also MFColor.
 	{
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
+			String errorNotice = "*** Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22297,7 +22390,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22325,7 +22418,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + "," + alpha + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + "," + alpha + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22408,13 +22501,13 @@ TODO: also MFColor.
 	{
 		if (index < 0)
 		{
-			String errorNotice = "Index value is negative, thus cannot set1Value at index=" + index + ".";
+			String errorNotice = "*** Index value is negative, thus cannot set1Value at index=" + index + ".";
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
 		if (index >= MFColor.length / TUPLE_SIZE) // tupleSize factor
 		{
-			String errorNotice = "Provided array index=" + index + " (for 3-tuples) must be less than MFColor array length=" + MFColor.length / TUPLE_SIZE;
+			String errorNotice = "*** Provided array index=" + index + " (for 3-tuples) must be less than MFColor array length=" + MFColor.length / TUPLE_SIZE;
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
@@ -22426,7 +22519,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22501,13 +22594,13 @@ TODO: also MFColor.
 	{
 		if (index < 0)
 		{
-			String errorNotice = "Index value is negative, thus cannot set1Value at index=" + index + ".";
+			String errorNotice = "*** Index value is negative, thus cannot set1Value at index=" + index + ".";
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
 		if (index >= MFColorRGBA.length / TUPLE_SIZE) // tupleSize factor
 		{
-			String errorNotice = "Provided array index=" + index + " (for 4-tuples) must be less than MFColor array length=" + MFColorRGBA.length / TUPLE_SIZE;
+			String errorNotice = "*** Provided array index=" + index + " (for 4-tuples) must be less than MFColor array length=" + MFColorRGBA.length / TUPLE_SIZE;
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
@@ -22520,7 +22613,7 @@ TODO: also MFColor.
 						 
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha +
+			String errorNotice = "*** Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha +
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22651,7 +22744,7 @@ TODO: also MFColor.
 	{
 		if ((x == 0.0f) && (y == 0.0f) && (z == 0.0f))
 		{
-			String errorNotice = "Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
+			String errorNotice = "*** Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
 				") since (x,y,z) axis vector must have a direction and cannot be (0,0,0)";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22676,7 +22769,7 @@ TODO: also MFColor.
 	{
 		if ((x == 0.0) && (y == 0.0) && (z == 0.0))
 		{
-			String errorNotice = "Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
+			String errorNotice = "*** Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
 				") since (x,y,z) axis vector must have a direction and cannot be (0,0,0)";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -22701,7 +22794,7 @@ TODO: also MFColor.
 	{
 		if ((x == 0) && (y == 0) && (z == 0))
 		{
-			String errorNotice = "Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
+			String errorNotice = "*** Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
 				") since (x,y,z) axis vector must have a direction and cannot be (0,0,0)";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -23776,7 +23869,7 @@ TODO: also MFColor.
 				<xsl:value-of select="$tupleSize"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[-tuple check
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 				<xsl:value-of select="@type"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ newValue array length=" + newValue.length +
 				", must be multiple of ]]></xsl:text>
@@ -23796,7 +23889,7 @@ TODO: also MFColor.
 				<xsl:value-of select="$tupleSize"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[)
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 				<xsl:value-of select="@type"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ newValue array length=" + newValue.length +
 				", must equal ]]></xsl:text>
@@ -23827,7 +23920,7 @@ TODO: also MFColor.
 		float angleRadians = newValue[3];
 		if ((x == 0.0f) && (y == 0.0f) && (z == 0.0f))
 		{
-			String errorNotice = "Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
+			String errorNotice = "*** Illegal SFRotation value (" + x + "," + y + "," + z + "," + angleRadians + 
 				") since (x,y,z) axis vector must have a direction and cannot be (0,0,0)";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -23844,7 +23937,7 @@ TODO: also MFColor.
 		float  blue = newValue[2];
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -23860,7 +23953,7 @@ TODO: also MFColor.
 		float alpha = newValue[3];	
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
+			String errorNotice = "*** Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -23884,7 +23977,7 @@ TODO: also MFColor.
 		<xsl:value-of select="$tupleSize"/>
 		<xsl:text><![CDATA[)
 		{
-			String errorNotice = "newValue.length=" + newValue.length + " is not equal to ]]></xsl:text>
+			String errorNotice = "*** newValue.length=" + newValue.length + " is not equal to ]]></xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ tuple size=" + ]]></xsl:text>
 		<xsl:value-of select="$tupleSize"/><xsl:text disable-output-escaping="yes"><![CDATA[;
 			validationResult.append(errorNotice).append("\n");
@@ -24047,13 +24140,13 @@ public ]]></xsl:text>
 {
 	if (index < 0)
 	{
-		String errorNotice = "Index value is negative, thus cannot get1Value at index=" + index + ".";
+		String errorNotice = "*** Index value is negative, thus cannot get1Value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
 	if (]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ == 0)
 	{
-		String errorNotice = "Value array is empty, thus cannot get1Value at index=" + index + ".";
+		String errorNotice = "*** Value array is empty, thus cannot get1Value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
@@ -24064,7 +24157,7 @@ public ]]></xsl:text>
 	<xsl:value-of select="$tupleSize"/>
 	<xsl:text disable-output-escaping="yes"><![CDATA[) // tupleSize factor
 	{
-		String errorNotice = "Provided array index=" + index + " must be less than ]]></xsl:text>
+		String errorNotice = "*** Provided array index=" + index + " must be less than ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ array length=" + ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/>
 	<xsl:text> / </xsl:text>
@@ -24411,13 +24504,13 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 {
 	if (index < 0)
 	{
-		String errorNotice = "Index value is negative, thus cannot set1Value at index=" + index + ".";
+		String errorNotice = "*** Index value is negative, thus cannot set1Value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
 	if (]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ == 0)
 	{
-		String errorNotice = "Value array is empty, thus cannot set1Value at index=" + index + ".";
+		String errorNotice = "*** Value array is empty, thus cannot set1Value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}]]></xsl:text>
@@ -24429,7 +24522,7 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 				<xsl:value-of select="$tupleSize"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[)
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 				<xsl:value-of select="@type"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ newValue array length=" + newValue.length +
 				", must equal ]]></xsl:text>
@@ -24445,7 +24538,7 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 	<xsl:value-of select="$tupleSize"/>
 	<xsl:text disable-output-escaping="yes"><![CDATA[) // tupleSize factor
 	{
-		String errorNotice = "Provided array index=" + index + " must be less than ]]></xsl:text>
+		String errorNotice = "*** Provided array index=" + index + " must be less than ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ array length=" + ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/>
 	<xsl:text> / </xsl:text>
@@ -24508,7 +24601,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl
 					<xsl:text>
 	if ((newValue.length % </xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) != 0) // tupleSize modulus check
 	{
-		String errorNotice = "illegal number of values (" + newValue.length + ")" +
+		String errorNotice = "*** illegal number of values (" + newValue.length + ")" +
 			" in initialization array, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 					<xsl:value-of select="$fieldName"/>
@@ -24583,7 +24676,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 {
 	if ((newValue.length % ]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) != 0) // tupleSize modulus check
 	{
-		String errorNotice = "illegal number of values (" + newValue.length + ")" +
+		String errorNotice = "*** illegal number of values (" + newValue.length + ")" +
 			" in initialization array, must be multiple of 4 when declaring new MFVec4f(" + newValue + ")";
 		validationResult.append(errorNotice).append("\n");
 		throw new InvalidFieldValueException (errorNotice);
@@ -24679,7 +24772,7 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 {
 	if (index < 0)
 	{
-		String errorNotice = "Index value is negative, thus cannot insertValue at index=" + index + ".";
+		String errorNotice = "*** Index value is negative, thus cannot insertValue at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}]]></xsl:text>
@@ -24693,7 +24786,7 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 					<xsl:text>
 	if (newValue.length != </xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) // array size check, account for tupleSize
 	{
-		String errorNotice = "illegal number of values (" + newValue.length + ")" +
+		String errorNotice = "*** illegal number of values (" + newValue.length + ")" +
 			" for insertValue newValue array, must equal </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> for </xsl:text>
 					<xsl:value-of select="$fieldName"/>
@@ -24708,7 +24801,7 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 			<xsl:text><![CDATA[
 	if (index >= ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.length)
 	{
-		String errorNotice = "Provided array index=" + index + " must be less than ]]></xsl:text>
+		String errorNotice = "*** Provided array index=" + index + " must be less than ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ array length=" + ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.length;
 		validationResult.append(errorNotice).append("\n");
@@ -24886,19 +24979,19 @@ public void remove(int index)
 {
 	if (index < 0)
 	{
-		String errorNotice = "Index value is negative, thus cannot remove() value at index=" + index + ".";
+		String errorNotice = "*** Index value is negative, thus cannot remove() value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
 	if (]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ == 0)
 	{
-		String errorNotice = "Value array is empty, thus cannot remove value at index=" + index + ".";
+		String errorNotice = "*** Value array is empty, thus cannot remove value at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
 	if (index >= ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.length)
 	{
-		String errorNotice = "Provided array index=" + index + " must be less than ]]></xsl:text>
+		String errorNotice = "*** Provided array index=" + index + " must be less than ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ array length=" + ]]></xsl:text>
 	<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.length;
 		validationResult.append(errorNotice).append("\n");
@@ -24966,7 +25059,7 @@ public long get1JavaValue(int index)
 {
 	if (index < 0)
 	{
-		String errorNotice = "Index value is negative, thus cannot get1JavaValue at index=" + index + ".";
+		String errorNotice = "*** Index value is negative, thus cannot get1JavaValue at index=" + index + ".";
 		validationResult.append(errorNotice).append("\n");
 		throw new ArrayIndexOutOfBoundsException(errorNotice);
 	}
@@ -25044,7 +25137,7 @@ public void setValue(long[] newValue)
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
 		{
-			String errorNotice = "Null array or illegal data length for SFImage field type";
+			String errorNotice = "*** Null array or illegal data length for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
@@ -25052,7 +25145,7 @@ public void setValue(long[] newValue)
 		int     height = getHeight();
 		if ((width < 0) || (height < 0))
 		{
-			String errorNotice = "Illegal negative value: width=" + width + ", height=" + height + 
+			String errorNotice = "*** Illegal negative value: width=" + width + ", height=" + height + 
 				" for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -25070,7 +25163,7 @@ public void setValue(long[] newValue)
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
 		{
-			String errorNotice = "Null array or illegal data length for SFImage field type";
+			String errorNotice = "*** Null array or illegal data length for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
@@ -25078,7 +25171,7 @@ public void setValue(long[] newValue)
 		int     height = SFImage[1];
 		if ((width < 0) || (height < 0))
 		{
-			String errorNotice = "Illegal negative value: width=" + width + ", height=" + height + 
+			String errorNotice = "*** Illegal negative value: width=" + width + ", height=" + height + 
 				" for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -25098,14 +25191,14 @@ public void setValue(long[] newValue)
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
 		{
-			String errorNotice = "Null array or illegal data length for SFImage field type";
+			String errorNotice = "*** Null array or illegal data length for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
 		int components = SFImage[2];
 		if ((components < 0) || (components > 4))
 		{
-			String errorNotice = "Illegal value, must be in range [0..4]: number of components=" + components + 
+			String errorNotice = "*** Illegal value, must be in range [0..4]: number of components=" + components + 
 				" for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -25187,7 +25280,7 @@ public void setValue(long[] newValue)
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
 		{
-			String errorNotice = "Null array or illegal data length for SFImage field type";
+			String errorNotice = "*** Null array or illegal data length for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
@@ -25206,7 +25299,7 @@ public void setValue(long[] newValue)
 		}
 		else
 		{
-			String errorNotice = "Illegal value for SFImage field type, getPixels() cannot get pixel array";
+			String errorNotice = "*** Illegal value for SFImage field type, getPixels() cannot get pixel array";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -25374,21 +25467,21 @@ public void setValue(long[] newValue)
 	{
 		if ((width < 0) || (height < 0))
 		{
-			String errorNotice = "Illegal negative value: width=" + width + ", height=" + height + 
+			String errorNotice = "*** Illegal negative value: width=" + width + ", height=" + height + 
 				" for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
 		if ((components < 0) || (components > 4))
 		{
-			String errorNotice = "Illegal value, must be in range [0..4]: number of components=" + components + 
+			String errorNotice = "*** Illegal value, must be in range [0..4]: number of components=" + components + 
 				" for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
 		if (((width * height * components) > 0) && (pixels.length < (width * height)))
 		{
-			String errorNotice = "Illegal number of pixels: pixels.length=" + pixels.length +
+			String errorNotice = "*** Illegal number of pixels: pixels.length=" + pixels.length +
 				", (width * height * components) = " + width + " * " + components + " * " + components + ") = " + 
 				(width * height * components) + " for SFImage field type";
 			validationResult.append(errorNotice).append("\n");
@@ -25409,13 +25502,13 @@ public void setValue(long[] newValue)
 	{
 		if (sfImageArray == null)
 		{
-			String errorNotice = "Illegal sfImageArray, cannot be null.";
+			String errorNotice = "*** Illegal sfImageArray, cannot be null.";
 			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
 		else if (sfImageArray.length < 3)
 		{
-			String errorNotice = "Illegal sfImageArray.length=" + sfImageArray.length + ", must be at least 3.";
+			String errorNotice = "*** Illegal sfImageArray.length=" + sfImageArray.length + ", must be at least 3.";
 			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
@@ -25447,7 +25540,7 @@ public void setValue(long[] newValue)
             case 4:  return "0x%08X";
             default:
             {
-                String errorNotice = "erroneous image numberComponents=" + numberComponents + " for SFImage, unable to compute getPixelHexFormat()";
+                String errorNotice = "*** erroneous image numberComponents=" + numberComponents + " for SFImage, unable to compute getPixelHexFormat()";
                 validationResult.append(errorNotice).append("\n");
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
             }
@@ -25739,7 +25832,7 @@ public void setValue(long[] newValue)
 	{
 		if (index < 0)
 		{
-			String errorNotice = "Index value is negative, thus cannot insertValue at index=" + index + ".";
+			String errorNotice = "*** Index value is negative, thus cannot insertValue at index=" + index + ".";
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
@@ -25757,14 +25850,14 @@ public void setValue(long[] newValue)
 	{
 		if (index < 0)
 		{
-			String errorNotice = "Index value is negative, thus cannot remove value at index=" + index + ".";
+			String errorNotice = "*** Index value is negative, thus cannot remove value at index=" + index + ".";
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
 		// TODO compute offset factor
 		if (index >= ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>.length)
 		{
-				String errorNotice = "Provided array index=" + index + " must be less than </xsl:text>
+				String errorNotice = "*** Provided array index=" + index + " must be less than </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text> array length=" + </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>.length;
 			validationResult.append(errorNotice).append("\n");
@@ -25830,7 +25923,7 @@ public void setValue(long[] newValue)
         </xsl:choose>
         <xsl:text>
 		{
-			String errorNotice = "Illegal array newValue=" + newValue + " must have base length 9 for setValue() on </xsl:text>
+			String errorNotice = "*** Illegal array newValue=" + newValue + " must have base length 9 for setValue() on </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -25857,7 +25950,7 @@ public void setValue(long[] newValue)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[row=" + row + ",column=" + column + "] access, " +
 				"all values must be in numeric range [0..4]";
 			validationResult.append(errorNotice).append("\n");
@@ -25954,7 +26047,7 @@ public void setValue(long[] newValue)
         </xsl:choose>
         <xsl:text>
 		{
-			String errorNotice = "Illegal array newValue=" + newValue + " must have base length 9 for setValue() on </xsl:text>
+			String errorNotice = "*** Illegal array newValue=" + newValue + " must have base length 9 for setValue() on </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -25981,7 +26074,7 @@ public void setValue(long[] newValue)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[row=" + row + ",column=" + column + "] access, " +
 				"all values must be in numeric range [0..4]";
 			validationResult.append(errorNotice).append("\n");
@@ -26078,7 +26171,7 @@ public void setValue(long[] newValue)
         </xsl:choose>
         <xsl:text>
 		{
-			String errorNotice = "Illegal array newValue=" + newValue + " must have base length 16 for setValue() on </xsl:text>
+			String errorNotice = "*** Illegal array newValue=" + newValue + " must have base length 16 for setValue() on </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -26105,7 +26198,7 @@ public void setValue(long[] newValue)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[row=" + row + ",column=" + column + "] access, " +
 				"all values must be in numeric range [0..4]";
 			validationResult.append(errorNotice).append("\n");
@@ -26202,7 +26295,7 @@ public void setValue(long[] newValue)
         </xsl:choose>
         <xsl:text>
 		{
-			String errorNotice = "Illegal array newValue=" + newValue + " must base have length 16 for setValue() on </xsl:text>
+			String errorNotice = "*** Illegal array newValue=" + newValue + " must base have length 16 for setValue() on </xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -26229,7 +26322,7 @@ public void setValue(long[] newValue)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
 		{
-			String errorNotice = "Illegal ]]></xsl:text>
+			String errorNotice = "*** Illegal ]]></xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[row=" + row + ",column=" + column + "] access, " +
 				"all values must be in numeric range [0..4]";
 			validationResult.append(errorNotice).append("\n");
@@ -26688,7 +26781,7 @@ setAttribute method invocations).
 	{
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f))
 		{
-			String errorNotice = "Illegal SFColor value (" + red + "," + green + "," + blue + 
+			String errorNotice = "*** Illegal SFColor value (" + red + "," + green + "," + blue + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -26737,7 +26830,7 @@ setAttribute method invocations).
 	{
 		if ((red < 0.0f) || (red > 1.0f) || (green < 0.0f) || (green > 1.0f) || (blue < 0.0f) || (blue > 1.0f) || (alpha < 0.0f) || (alpha > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
+			String errorNotice = "*** Illegal SFColorRGBA value (" + red + "," + green + "," + blue + "," + alpha + 
 				"), all values must be in numeric range [0..1]";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -26779,7 +26872,7 @@ setAttribute method invocations).
 	{
 		if ((newTransparency < 0.0f) || (newTransparency > 1.0f))
 		{
-			String errorNotice = "Illegal SFColorRGBA transparency value=" + newTransparency + 
+			String errorNotice = "*** Illegal SFColorRGBA transparency value=" + newTransparency + 
 												 ", must be within numeric range [0..1] inclusive";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -27212,7 +27305,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 		}
 		else
 		{
-			String errorNotice = "Invalid fieldType provided for getTupleSize(" + fieldType + ")";
+			String errorNotice = "*** Invalid fieldType provided for getTupleSize(" + fieldType + ")";
 			throw new InvalidFieldValueException(errorNotice);
 		}
 	}
@@ -27343,7 +27436,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 			accessType = newValue;
 		else
 		{
-			String errorNotice = "Illegal value " + newValue + " for field type";
+			String errorNotice = "*** Illegal value " + newValue + " for field type";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -27378,7 +27471,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 			fieldType = newValue;
 		else
 		{
-			String errorNotice = "Illegal value " + newValue + " for field type";
+			String errorNotice = "*** Illegal value " + newValue + " for field type";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -29512,14 +29605,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
         if (browser == null)
 		{
-			String errorNotice = "Null browser reference";
+			String errorNotice = "*** Null browser reference";
 //			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
 
         if (action < 0)
 		{
-            String errorNotice = "Invalid event action type " + action;
+            String errorNotice = "*** Invalid event action type " + action;
 //			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
@@ -31779,7 +31872,7 @@ browser instance or there is some other problem.]]></xsl:text>
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
@@ -31828,7 +31921,7 @@ package org.web3d.x3d.sai.]]></xsl:text>
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
@@ -31851,14 +31944,14 @@ package org.web3d.x3d.sai;
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
  * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
  */
 
-package org.web3d.x3d.jsail.tests;
+package org.web3d.x3d.tests;
 
 ]]></xsl:text>
 		</xsl:result-document>
@@ -31983,7 +32076,7 @@ package org.web3d.x3d.jsail.tests;
 				<!-- X3D statements are not defined in specification abstract org.web3d.x3d.sai but are listed in X3DUOM as Statement elements -->
 				<xsl:choose>
 					<xsl:when test="($name = 'ROUTE') or ($name = 'IMPORT') or ($name = 'EXPORT') or 
-									($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare') or ($name = 'ProtoInstance')">
+							($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare') or ($name = 'ProtoInstance')">
 						<xsl:text>org.web3d.x3d.sai.Core.X3DChildNode</xsl:text>
 					</xsl:when>
 				</xsl:choose>
@@ -32073,7 +32166,7 @@ package org.web3d.x3d.jsail.tests;
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
@@ -32100,13 +32193,13 @@ package org.web3d.x3d.jsail.]]></xsl:text>
  * <p> The X3D Java Scene Access Interface Library (X3DJSAIL) provides a
  * comprehensive set of strongly typed X3D Java interfaces for
  * concrete implementation classes.
- * This package also contains several library utility classe and
+ * This package also contains several library utility classes and
  * abstract interfaces that are used for all X3D nodes and statements.</p>
  *
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
@@ -32133,7 +32226,7 @@ package org.web3d.x3d.jsail;
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
@@ -32161,7 +32254,7 @@ package org.web3d.x3d.jsail.fields;
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see <a href="https://openexi.sourceforge.net">Nagasena for EXI</a>
  * @see <a href="https://exificient.github.io">EXIficient for EXI</a>
@@ -32191,7 +32284,7 @@ package org.web3d.x3d.util.exi;
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>.
  * </p>
  * @see <a href="https://www.web3d.org/specifications/X3DUOM.html">X3D Unified Object Model (X3DUOM)</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
@@ -32995,7 +33088,7 @@ import javax.script.ScriptException;</xsl:text>
                 Path outputFilePath = Paths.get(resultFileName);
                 if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
                 {
-                    String errorNotice = "[diagnostic] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                    String errorNotice = "*** [diagnostic] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
                     System.out.println (errorNotice);
                 }
                 String outputSceneText = x3dCanonicalizer.getFinalC14nScene();
@@ -34329,7 +34422,7 @@ showing default attribute values, and other custom settings.</p>
 	 */
         // https://stackoverflow.com/questions/21696784/how-to-declare-an-arraylist-with-values
         public static final ArrayList<String> X3DJSAIL_JAR_RELEASE_VERSIONS = 
-            new ArrayList<>(Arrays.asList("X3DJSAIL-4.0.classes.jar", "X3DJSAIL.4.0.classes.jar", "X3DJSAIL-4.0.full.jar", "X3DJSAIL.4.0.full.jar", "X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
+            new ArrayList<>(Arrays.asList("X3DJSAIL.4.0.classes.jar", "X3DJSAIL.4.0.full.jar","X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
 
     // ==========================================================================================
 				
@@ -34409,7 +34502,7 @@ showing default attribute values, and other custom settings.</p>
 			xsltEngine = newValue;
 		else
 		{
-			String errorNotice = "Invalid setXsltEngine(String newValue) invocation, newValue='" + newValue + 
+			String errorNotice = "*** Invalid setXsltEngine(String newValue) invocation, newValue='" + newValue + 
 								 "', legal values are ConfigurationProperties.XSLT_ENGINE_SAXON or ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -34462,7 +34555,7 @@ showing default attribute values, and other custom settings.</p>
 			exiEngine = newValue;
 		else
 		{
-			String errorNotice = "Invalid setExiEngine(String newValue) invocation, newValue='" + newValue + 
+			String errorNotice = "*** Invalid setExiEngine(String newValue) invocation, newValue='" + newValue + 
 								 "', legal values are ConfigurationProperties.EXI_ENGINE_EXIFICIENT or ConfigurationProperties.EXI_ENGINE_OPENEXI";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -34650,7 +34743,7 @@ showing default attribute values, and other custom settings.</p>
 			 indentCharacter = newIndentCharacter;
 		else 
 		{
-			String errorNotice = "Invalid indentCharacter='" + newIndentCharacter + 
+			String errorNotice = "*** Invalid indentCharacter='" + newIndentCharacter + 
 								 "' provided to ConfigurationProperties, expected indentCharacter_SPACE or indentCharacter_TAB";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
@@ -34676,7 +34769,7 @@ showing default attribute values, and other custom settings.</p>
 		else
 		{
 			indentIncrement = 0;
-			String errorNotice = "Invalid indentIncrement=" + indentIncrement + " provided to ConfigurationProperties";
+			String errorNotice = "*** Invalid indentIncrement=" + indentIncrement + " provided to ConfigurationProperties";
 //			validationResult.append(errorNotice).append("\n");
 			throw new IllegalArgumentException(errorNotice);
 		}
@@ -35496,7 +35589,7 @@ ProtoBody nodes.
 		}
 		else
 		{
-			String errorNotice = "Invalid setContainerFieldOverride() value='" + value + 
+			String errorNotice = "*** Invalid setContainerFieldOverride() value='" + value + 
 				"', legal values for " + getElementName() + " are containerField_ALTERNATE_VALUES='" + 
 				new org.web3d.x3d.jsail.fields.MFString(containerField_ALTERNATE_VALUES).toStringX3D() + "'";
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
@@ -37456,7 +37549,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 3.5"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 4.1"; // escape \
 	
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -37490,7 +37583,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	{
             if ((newValue == null) || newValue.isEmpty())
             {
-                String errorNotice = "Invalid setBlenderPath(String newValue) invocation, newValue='" + newValue + 
+                String errorNotice = "*** Invalid setBlenderPath(String newValue) invocation, newValue='" + newValue + 
                                      "', " + getBlenderExecutableName() + " not found at this location";
 //		validationResult.append(errorNotice).append("\n");
                 throw new InvalidFieldValueException(errorNotice);
@@ -37512,7 +37605,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 
             if (!blenderServerFile.exists())
             {
-                String errorNotice = "Invalid setBlenderPath(String newValue) invocation, newValue='" + newValue + 
+                String errorNotice = "*** Invalid setBlenderPath(String newValue) invocation, newValue='" + newValue + 
                                      "', " + blenderPath + getBlenderExecutableName() + " not found at this location";
 //		validationResult.append(errorNotice).append("\n");
                 throw new InvalidFieldValueException(errorNotice);
@@ -38012,7 +38105,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
         InputStream pythonScriptInputStream = BlenderLauncher.class.getResourceAsStream("/" + BLENDER_PYTHON_SCRIPT_STL_TO_X3D);
         if (pythonScriptInputStream == null)
         {
-            String errorNotice = "File not found: " + BLENDER_PYTHON_SCRIPT_STL_TO_X3D;
+            String errorNotice = "*** File not found: " + BLENDER_PYTHON_SCRIPT_STL_TO_X3D;
         }
         // test file extension, determine if binary stl, add any metadata
         return null;
@@ -38315,7 +38408,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
             File meshLabServerFile = new File(meshLabPath, getMeshLabServerExecutableName());
             if (!meshLabServerFile.exists())
             {
-                String errorNotice = "Invalid setMeshLabPath(String newValue) invocation, newValue='" + newValue + 
+                String errorNotice = "*** Invalid setMeshLabPath(String newValue) invocation, newValue='" + newValue + 
                                      "', " + getMeshLabServerExecutableName() + " program not found at this location";
                 errorNotice += MESHLABSERVER_ERROR_NOTICE;
                 System.out.println(errorNotice);
@@ -39269,7 +39362,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 
             if (!x3duomXmlFile.exists())
             {
-				String errorNotice = "[error] X3DUnifiedObjectModel40." +
+				String errorNotice = "*** [error] X3DUnifiedObjectModel40." +
 								     "X3dUnifiedObjectModel40_XML_FILE=\"" + X3dUnifiedObjectModel40_XML_FILE + "\" not found";
 				System.out.println(errorNotice);
                 return;
@@ -40094,12 +40187,12 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 			</xsl:text><xsl:value-of select="$newValue"/><xsl:text> = </xsl:text><xsl:value-of select="$newValue"/><xsl:text>.substring(0,</xsl:text><xsl:value-of select="$newValue"/><xsl:text>.lastIndexOf("_pt"));
 		else
 		{
-			</xsl:text>
+		//	</xsl:text>
 			<xsl:value-of select="$newValue"/>
 			<xsl:text> = ""; // missing necessary suffix
 			if (!namingMessage.isEmpty())
 				 namingMessage += "\n";
-            namingMessage += "[warning] HAnimSite name must end in \"_tip\" \"_view\" or \"_pt\".";
+            namingMessage += "[warning] HAnimSite name='</xsl:text><xsl:value-of select="$newValue"/><xsl:text>' is required to end in \"_tip\" \"_view\" or \"_pt\".";
         }
 </xsl:text>
 				</xsl:if>
@@ -40513,7 +40606,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>                             </xsl:text>
                         <!-- Sound and Text component names are overloaded and match a corresponding node name -->
-                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_SOUND) && !newValue.equals(NAME_TEXT) && ]]></xsl:text>     
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_SHAPE) && !newValue.equals(NAME_PARTICLESYSTEMS) && !newValue.equals(NAME_SOUND) && ]]></xsl:text>     
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>                             </xsl:text>
                         <!-- Text component is overloaded and matches a node name -->
@@ -40937,14 +41030,14 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 		<xsl:value-of select="$inputString" disable-output-escaping="yes"/>
     </xsl:when>
     <xsl:when test="starts-with(normalize-space($inputString),$breakText1)">
-		<!-- starts with [hint] -->
+		<!-- starts with Hint: -->
 		<!-- insert javadoc line break -->
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text> * </xsl:text>	
 		<xsl:text disable-output-escaping="yes"> &lt;li&gt; </xsl:text>
-		<!-- skip initial [hint] or [warning] and determine what is next -->
-		<xsl:variable name="preambleHint"    select="normalize-space(substring-before(substring-after($inputString,$breakText1),'[hint]'))"/>
-		<xsl:variable name="preambleWarning" select="normalize-space(substring-before(substring-after($inputString,$breakText1),'[warning]'))"/>
+		<!-- skip initial Hint: or Warning: and determine what is next -->
+		<xsl:variable name="preambleHint"    select="normalize-space(substring-before(substring-after($inputString,$breakText1),'Hint:'))"/>
+		<xsl:variable name="preambleWarning" select="normalize-space(substring-before(substring-after($inputString,$breakText1),'Warning:'))"/>
 		<xsl:choose>
 			<xsl:when test="(string-length($preambleHint) = 0) and (string-length($preambleWarning) = 0)">
 				<!-- this is last substring, no preamble -->
@@ -40991,9 +41084,9 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text> * </xsl:text>
 		<xsl:text disable-output-escaping="yes"> &lt;li&gt; </xsl:text>
-		<!-- skip initial [hint] or [warning] and determine what is next -->
-		<xsl:variable name="preambleHint"    select="normalize-space(substring-before(substring-after($inputString,$breakText2),'[hint]'))"/>
-		<xsl:variable name="preambleWarning" select="normalize-space(substring-before(substring-after($inputString,$breakText2),'[warning]'))"/>
+		<!-- skip initial Hint: or Warning: and determine what is next -->
+		<xsl:variable name="preambleHint"    select="normalize-space(substring-before(substring-after($inputString,$breakText2),'Hint:'))"/>
+		<xsl:variable name="preambleWarning" select="normalize-space(substring-before(substring-after($inputString,$breakText2),'Warning:'))"/>
 		<xsl:choose>
 			<xsl:when test="(string-length($preambleHint) = 0) and (string-length($preambleWarning) = 0)">
 				<!-- this is last substring, no preamble -->
@@ -41004,7 +41097,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 			</xsl:when>
 			<xsl:when test="(string-length($preambleHint) > 0) and 
-							 ((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
+					((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
 				<!-- Hint next follows this preamble -->
 				<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
 				<xsl:value-of select="$breakText2"/>
@@ -41156,14 +41249,14 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 								</xsl:with-param>
 						</xsl:call-template>
 						-->
-                            <xsl:call-template name="escape-tilde-characters">
-                                <xsl:with-param name="inputValue">
-									<!-- NOTE keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
-									<xsl:call-template name="escape-ampersand-characters">
-										<xsl:with-param name="inputValue" select="$inputString"/>
-									</xsl:call-template>
-								</xsl:with-param>
-                            </xsl:call-template>
+                                            <xsl:call-template name="escape-tilde-characters">
+                                                <xsl:with-param name="inputValue">
+                                                        <!-- NOTE keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
+                                                        <xsl:call-template name="escape-ampersand-characters">
+                                                                <xsl:with-param name="inputValue" select="$inputString"/>
+                                                        </xsl:call-template>
+                                                </xsl:with-param>
+                                            </xsl:call-template>
 					</xsl:with-param>
 				</xsl:call-template>
 			</xsl:with-param>
@@ -41350,15 +41443,15 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     <xsl:template name="bulletize-hints-warnings">
         <xsl:param name="tooltipText"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
 		
-		<xsl:variable name="containsHintWarning" select="contains($tooltipText,'[hint]') or contains($tooltipText,'[warning]')"/>
+		<xsl:variable name="containsHintWarning" select="contains($tooltipText,'Hint:') or contains($tooltipText,'Warning:')"/>
 		<xsl:if test="(string-length($tooltipText) > 0)">
 			<xsl:choose>
 				<xsl:when test="$containsHintWarning">
-					<xsl:variable name="preambleHint"    select="normalize-space(substring-before($tooltipText,'[hint]'))"/>
-					<xsl:variable name="preambleWarning" select="normalize-space(substring-before($tooltipText,'[warning]'))"/>
+					<xsl:variable name="preambleHint"    select="normalize-space(substring-before($tooltipText,'Hint:'))"/>
+					<xsl:variable name="preambleWarning" select="normalize-space(substring-before($tooltipText,'Warning:'))"/>
 					<xsl:choose>
 						<xsl:when test="(string-length($preambleHint) > 0) and 
-										 ((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
+								((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
 							<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
 							<xsl:text>&#10;</xsl:text>
 							<xsl:text> * </xsl:text>
@@ -41367,8 +41460,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 								<xsl:with-param name="inputValue">
 									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleHint)" disable-output-escaping="yes"/>
 								</xsl:with-param>
-								<xsl:with-param name="breakText1"><xsl:text>[hint]</xsl:text></xsl:with-param>
-								<xsl:with-param name="breakText2"><xsl:text>[warning]</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
 							</xsl:call-template>
 							<xsl:text>&#10;</xsl:text>
 							<xsl:text> * </xsl:text>
@@ -41383,8 +41476,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 								<xsl:with-param name="inputValue">
 									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleWarning)" disable-output-escaping="yes"/>
 								</xsl:with-param>
-								<xsl:with-param name="breakText1"><xsl:text>[hint]</xsl:text></xsl:with-param>
-								<xsl:with-param name="breakText2"><xsl:text>[warning]</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
 							</xsl:call-template>
 							<xsl:text>&#10;</xsl:text>
 							<xsl:text> * </xsl:text>

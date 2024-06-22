@@ -594,7 +594,7 @@ PascalSerializer.prototype = {
 							// console.log("Found USE with value:", strval);
 						}
 						str += ' := '+this.DEFs[strval]+";\n";
-					} else	if (attrType.startsWith("MF") && attr !== "justify" && attr !== "family" 
+					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MF") && attr !== "justify" && attr !== "family" 
 						/*
 						attr === "info" ||
 						attr === "string" ||
@@ -618,7 +618,7 @@ PascalSerializer.prototype = {
 						) {
 						str += element.nodeName+stack[0];
 						str += '.Set'+method+"("+strval+");\n";
-					} else	if (attrType.startsWith("MFString") && attr === "justify") {
+					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MFString") && attr === "justify") {
 						str += element.nodeName+stack[0];
 						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+element.nodeName+stack[0]+"."+method+"Minor := $1"))+";\n";
 					} else {
