@@ -17,7 +17,7 @@
 <NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint description="Tour Views" position="0 0 12"></Viewpoint>
 <Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
-<Transform><ParticleSystem maxParticles="20" geometryType="GEOMETRY"><!--values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values--><VariationPhysicsModel values="2 2 5 5 0 0" variations="0.2 0.1 0.3 0.3 0.01 0.01"></VariationPhysicsModel>
+<Transform><ParticleSystem maxParticles="20" geometryType="GEOMETRY"><!--* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values--><VariationPhysicsModel values="2 2 5 5 0 0" variations="0.2 0.1 0.3 0.3 0.01 0.01"></VariationPhysicsModel>
 <ExplosionEmitter containerField="emitter" speed="1" variation="0.75"></ExplosionEmitter>
 <Sphere></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>

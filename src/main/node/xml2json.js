@@ -15,6 +15,8 @@ function isEmpty(obj) {
 	return true;
 }
 
+ProtoDeclareInterfaces = {}
+
 xml2json = (xml, par, fieldTypes) => {
   let el = xml.nodeType === 9 ? xml.documentElement : xml;
   if (el !== null) {
@@ -27,15 +29,20 @@ xml2json = (xml, par, fieldTypes) => {
 			  let field = a.value;
 			  if (h.tag === "field" && a.name === "value") {
 	  			  for (let anum2 in el.attributes) {
-					  // console.error(el.attributes[anum2].name);
 					  if (el.attributes[anum2].name === "type") {
 						attrType = el.attributes[anum2].value;
-						console.error(attrType);
-					  } else {
-						// console.error("No type");
 					  }
 				  }
 		  	  }
+			  // TODO do fieldValue.value attribute type. See ProtoDeclare
+			  if (h.tag === "fieldValue" && a.name === "value") {
+				if (typeof par !== 'undefined') {
+					console.error("parent", par.nodeName.name);
+				}
+				console.error("AttrType", attrType);
+		  	  } else {
+				  // console.error("AttrValue", a.name, a.value);
+			  }
 			  if (typeof attrType !== 'undefined' && (
 				  (attrType.startsWith("MF") && attrType !== "MFString") ||
 				  attrType.indexOf("Vec") > 0 ||
