@@ -1,0 +1,363 @@
+#X3D V4.0 utf8
+PROFILE Immersive
+# head
+COMPONENT HAnim:1
+META "title" "takes..x3dv"
+META "creator" "John Carlson, Joe Williams and Andreas Plesch"
+META "translator" "X3DJSAIL"
+META "version" "3.0"
+META "description" "Create Chaining animation from a JSON file"
+META "generator" "Jaminate, V3.0, https://github.com/coderextreme/jaminate/tree/main/Jaminate/app/src/main/resources/takesX3DJSAIL.js"
+META "license" "https://github.com/coderextreme/jaminate/blob/main/LICENSE"
+# Scene
+  children [
+  WorldInfo { 
+     title "takes..x3dv"
+     }
+DEF DefaultBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ true false false false false false false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF DefaultSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF DefaultFINALEBooleanFilter BooleanFilter { 
+     }
+DEF DefaultNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF DefaultOffTimeTrigger TimeTrigger { 
+     }
+DEF DefaultOnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.isActive TO DefaultSPLITTERBooleanFilter.set_boolean
+    ROUTE z100sTimer.fraction_changed TO DefaultBooleanSequencer.set_fraction
+    ROUTE DefaultBooleanSequencer.value_changed TO DefaultSPLITTERBooleanFilter.set_boolean
+    ROUTE DefaultSPLITTERBooleanFilter.inputTrue TO DefaultOnTimeTrigger.set_boolean
+    ROUTE DefaultSPLITTERBooleanFilter.inputFalse TO DefaultOffTimeTrigger.set_boolean
+    ROUTE DefaultSPLITTERBooleanFilter.inputTrue TO DefaultTimer.set_enabled
+    ROUTE DefaultSPLITTERBooleanFilter.inputFalse TO DefaultTimer.set_enabled
+    ROUTE DefaultOffTimeTrigger.triggerTime TO DefaultTimer.set_stopTime
+    ROUTE DefaultOnTimeTrigger.triggerTime TO DefaultTimer.set_startTime
+    DEF TestBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false true false false false false false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF TestSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF TestFINALEBooleanFilter BooleanFilter { 
+     }
+DEF TestNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF TestOffTimeTrigger TimeTrigger { 
+     }
+DEF TestOnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO TestBooleanSequencer.set_fraction
+    ROUTE TestBooleanSequencer.value_changed TO TestSPLITTERBooleanFilter.set_boolean
+    ROUTE TestSPLITTERBooleanFilter.inputTrue TO TestOnTimeTrigger.set_boolean
+    ROUTE TestSPLITTERBooleanFilter.inputFalse TO TestOffTimeTrigger.set_boolean
+    ROUTE TestSPLITTERBooleanFilter.inputTrue TO TestTimer.set_enabled
+    ROUTE TestSPLITTERBooleanFilter.inputFalse TO TestTimer.set_enabled
+    ROUTE TestOffTimeTrigger.triggerTime TO TestTimer.set_stopTime
+    ROUTE TestOnTimeTrigger.triggerTime TO TestTimer.set_startTime
+    DEF Pitch1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false true false false false false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Pitch1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Pitch1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Pitch1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Pitch1OffTimeTrigger TimeTrigger { 
+     }
+DEF Pitch1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Pitch1BooleanSequencer.set_fraction
+    ROUTE Pitch1BooleanSequencer.value_changed TO Pitch1SPLITTERBooleanFilter.set_boolean
+    ROUTE Pitch1SPLITTERBooleanFilter.inputTrue TO Pitch1OnTimeTrigger.set_boolean
+    ROUTE Pitch1SPLITTERBooleanFilter.inputFalse TO Pitch1OffTimeTrigger.set_boolean
+    ROUTE Pitch1SPLITTERBooleanFilter.inputTrue TO Pitch1Timer.set_enabled
+    ROUTE Pitch1SPLITTERBooleanFilter.inputFalse TO Pitch1Timer.set_enabled
+    ROUTE Pitch1OffTimeTrigger.triggerTime TO Pitch1Timer.set_stopTime
+    ROUTE Pitch1OnTimeTrigger.triggerTime TO Pitch1Timer.set_startTime
+    DEF Pitch2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false true false false false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Pitch2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Pitch2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Pitch2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Pitch2OffTimeTrigger TimeTrigger { 
+     }
+DEF Pitch2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Pitch2BooleanSequencer.set_fraction
+    ROUTE Pitch2BooleanSequencer.value_changed TO Pitch2SPLITTERBooleanFilter.set_boolean
+    ROUTE Pitch2SPLITTERBooleanFilter.inputTrue TO Pitch2OnTimeTrigger.set_boolean
+    ROUTE Pitch2SPLITTERBooleanFilter.inputFalse TO Pitch2OffTimeTrigger.set_boolean
+    ROUTE Pitch2SPLITTERBooleanFilter.inputTrue TO Pitch2Timer.set_enabled
+    ROUTE Pitch2SPLITTERBooleanFilter.inputFalse TO Pitch2Timer.set_enabled
+    ROUTE Pitch2OffTimeTrigger.triggerTime TO Pitch2Timer.set_stopTime
+    ROUTE Pitch2OnTimeTrigger.triggerTime TO Pitch2Timer.set_startTime
+    DEF Yaw1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false true false false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Yaw1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Yaw1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Yaw1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Yaw1OffTimeTrigger TimeTrigger { 
+     }
+DEF Yaw1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Yaw1BooleanSequencer.set_fraction
+    ROUTE Yaw1BooleanSequencer.value_changed TO Yaw1SPLITTERBooleanFilter.set_boolean
+    ROUTE Yaw1SPLITTERBooleanFilter.inputTrue TO Yaw1OnTimeTrigger.set_boolean
+    ROUTE Yaw1SPLITTERBooleanFilter.inputFalse TO Yaw1OffTimeTrigger.set_boolean
+    ROUTE Yaw1SPLITTERBooleanFilter.inputTrue TO Yaw1Timer.set_enabled
+    ROUTE Yaw1SPLITTERBooleanFilter.inputFalse TO Yaw1Timer.set_enabled
+    ROUTE Yaw1OffTimeTrigger.triggerTime TO Yaw1Timer.set_stopTime
+    ROUTE Yaw1OnTimeTrigger.triggerTime TO Yaw1Timer.set_startTime
+    DEF Yaw2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false true false false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Yaw2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Yaw2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Yaw2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Yaw2OffTimeTrigger TimeTrigger { 
+     }
+DEF Yaw2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Yaw2BooleanSequencer.set_fraction
+    ROUTE Yaw2BooleanSequencer.value_changed TO Yaw2SPLITTERBooleanFilter.set_boolean
+    ROUTE Yaw2SPLITTERBooleanFilter.inputTrue TO Yaw2OnTimeTrigger.set_boolean
+    ROUTE Yaw2SPLITTERBooleanFilter.inputFalse TO Yaw2OffTimeTrigger.set_boolean
+    ROUTE Yaw2SPLITTERBooleanFilter.inputTrue TO Yaw2Timer.set_enabled
+    ROUTE Yaw2SPLITTERBooleanFilter.inputFalse TO Yaw2Timer.set_enabled
+    ROUTE Yaw2OffTimeTrigger.triggerTime TO Yaw2Timer.set_stopTime
+    ROUTE Yaw2OnTimeTrigger.triggerTime TO Yaw2Timer.set_startTime
+    DEF Roll1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false true false false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Roll1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Roll1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Roll1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Roll1OffTimeTrigger TimeTrigger { 
+     }
+DEF Roll1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Roll1BooleanSequencer.set_fraction
+    ROUTE Roll1BooleanSequencer.value_changed TO Roll1SPLITTERBooleanFilter.set_boolean
+    ROUTE Roll1SPLITTERBooleanFilter.inputTrue TO Roll1OnTimeTrigger.set_boolean
+    ROUTE Roll1SPLITTERBooleanFilter.inputFalse TO Roll1OffTimeTrigger.set_boolean
+    ROUTE Roll1SPLITTERBooleanFilter.inputTrue TO Roll1Timer.set_enabled
+    ROUTE Roll1SPLITTERBooleanFilter.inputFalse TO Roll1Timer.set_enabled
+    ROUTE Roll1OffTimeTrigger.triggerTime TO Roll1Timer.set_stopTime
+    ROUTE Roll1OnTimeTrigger.triggerTime TO Roll1Timer.set_startTime
+    DEF Roll2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false true false false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Roll2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Roll2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Roll2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Roll2OffTimeTrigger TimeTrigger { 
+     }
+DEF Roll2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Roll2BooleanSequencer.set_fraction
+    ROUTE Roll2BooleanSequencer.value_changed TO Roll2SPLITTERBooleanFilter.set_boolean
+    ROUTE Roll2SPLITTERBooleanFilter.inputTrue TO Roll2OnTimeTrigger.set_boolean
+    ROUTE Roll2SPLITTERBooleanFilter.inputFalse TO Roll2OffTimeTrigger.set_boolean
+    ROUTE Roll2SPLITTERBooleanFilter.inputTrue TO Roll2Timer.set_enabled
+    ROUTE Roll2SPLITTERBooleanFilter.inputFalse TO Roll2Timer.set_enabled
+    ROUTE Roll2OffTimeTrigger.triggerTime TO Roll2Timer.set_stopTime
+    ROUTE Roll2OnTimeTrigger.triggerTime TO Roll2Timer.set_startTime
+    DEF WalkBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false true false false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF WalkSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF WalkFINALEBooleanFilter BooleanFilter { 
+     }
+DEF WalkNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF WalkOffTimeTrigger TimeTrigger { 
+     }
+DEF WalkOnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO WalkBooleanSequencer.set_fraction
+    ROUTE WalkBooleanSequencer.value_changed TO WalkSPLITTERBooleanFilter.set_boolean
+    ROUTE WalkSPLITTERBooleanFilter.inputTrue TO WalkOnTimeTrigger.set_boolean
+    ROUTE WalkSPLITTERBooleanFilter.inputFalse TO WalkOffTimeTrigger.set_boolean
+    ROUTE WalkSPLITTERBooleanFilter.inputTrue TO WalkTimer.set_enabled
+    ROUTE WalkSPLITTERBooleanFilter.inputFalse TO WalkTimer.set_enabled
+    ROUTE WalkOffTimeTrigger.triggerTime TO WalkTimer.set_stopTime
+    ROUTE WalkOnTimeTrigger.triggerTime TO WalkTimer.set_startTime
+    DEF RunBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false true false false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF RunSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF RunFINALEBooleanFilter BooleanFilter { 
+     }
+DEF RunNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF RunOffTimeTrigger TimeTrigger { 
+     }
+DEF RunOnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO RunBooleanSequencer.set_fraction
+    ROUTE RunBooleanSequencer.value_changed TO RunSPLITTERBooleanFilter.set_boolean
+    ROUTE RunSPLITTERBooleanFilter.inputTrue TO RunOnTimeTrigger.set_boolean
+    ROUTE RunSPLITTERBooleanFilter.inputFalse TO RunOffTimeTrigger.set_boolean
+    ROUTE RunSPLITTERBooleanFilter.inputTrue TO RunTimer.set_enabled
+    ROUTE RunSPLITTERBooleanFilter.inputFalse TO RunTimer.set_enabled
+    ROUTE RunOffTimeTrigger.triggerTime TO RunTimer.set_stopTime
+    ROUTE RunOnTimeTrigger.triggerTime TO RunTimer.set_startTime
+    DEF JumpBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false true false false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF JumpSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF JumpFINALEBooleanFilter BooleanFilter { 
+     }
+DEF JumpNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF JumpOffTimeTrigger TimeTrigger { 
+     }
+DEF JumpOnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO JumpBooleanSequencer.set_fraction
+    ROUTE JumpBooleanSequencer.value_changed TO JumpSPLITTERBooleanFilter.set_boolean
+    ROUTE JumpSPLITTERBooleanFilter.inputTrue TO JumpOnTimeTrigger.set_boolean
+    ROUTE JumpSPLITTERBooleanFilter.inputFalse TO JumpOffTimeTrigger.set_boolean
+    ROUTE JumpSPLITTERBooleanFilter.inputTrue TO JumpTimer.set_enabled
+    ROUTE JumpSPLITTERBooleanFilter.inputFalse TO JumpTimer.set_enabled
+    ROUTE JumpOffTimeTrigger.triggerTime TO JumpTimer.set_stopTime
+    ROUTE JumpOnTimeTrigger.triggerTime TO JumpTimer.set_startTime
+    DEF Kick1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false false true false ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Kick1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Kick1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Kick1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Kick1OffTimeTrigger TimeTrigger { 
+     }
+DEF Kick1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.fraction_changed TO Kick1BooleanSequencer.set_fraction
+    ROUTE Kick1BooleanSequencer.value_changed TO Kick1SPLITTERBooleanFilter.set_boolean
+    ROUTE Kick1SPLITTERBooleanFilter.inputTrue TO Kick1OnTimeTrigger.set_boolean
+    ROUTE Kick1SPLITTERBooleanFilter.inputFalse TO Kick1OffTimeTrigger.set_boolean
+    ROUTE Kick1SPLITTERBooleanFilter.inputTrue TO Kick1Timer.set_enabled
+    ROUTE Kick1SPLITTERBooleanFilter.inputFalse TO Kick1Timer.set_enabled
+    ROUTE Kick1OffTimeTrigger.triggerTime TO Kick1Timer.set_stopTime
+    ROUTE Kick1OnTimeTrigger.triggerTime TO Kick1Timer.set_startTime
+    DEF Kick2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false false false true ]
+     }
+# [ Default0 Test0 Pitch1 Pitch2 Yaw1 Yaw2 Roll1 Roll2 Walk0 Run0 Jump0 Kick1 Kick2 ]
+    DEF Kick2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Kick2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Kick2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Kick2OffTimeTrigger TimeTrigger { 
+     }
+DEF Kick2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE z100sTimer.cycleTime TO Kick2Timer.set_stopTime
+    ROUTE z100sTimer.isActive TO Kick2Timer.set_enabled
+    DEF Kick2FINALETimeTrigger TimeTrigger { 
+     }
+ROUTE Kick2FINALEBooleanFilter.inputFalse TO Kick2FINALETimeTrigger.set_boolean
+    ROUTE Kick2FINALETimeTrigger.triggerTime TO Kick2Timer.set_stopTime
+    ROUTE z100sTimer.fraction_changed TO Kick2BooleanSequencer.set_fraction
+    ROUTE Kick2BooleanSequencer.value_changed TO Kick2SPLITTERBooleanFilter.set_boolean
+    ROUTE Kick2SPLITTERBooleanFilter.inputTrue TO Kick2OnTimeTrigger.set_boolean
+    ROUTE Kick2SPLITTERBooleanFilter.inputFalse TO Kick2OffTimeTrigger.set_boolean
+    ROUTE Kick2SPLITTERBooleanFilter.inputTrue TO Kick2Timer.set_enabled
+    ROUTE Kick2SPLITTERBooleanFilter.inputFalse TO Kick2Timer.set_enabled
+    ROUTE Kick2OffTimeTrigger.triggerTime TO Kick2Timer.set_stopTime
+    ROUTE Kick2OnTimeTrigger.triggerTime TO Kick2Timer.set_startTime
+    # ###########################################################################################
+    ROUTE DefaultTimer.stopTime TO TestTimer.set_startTime
+    ROUTE DefaultTimer.isActive TO TestNEGATERBooleanFilter.set_boolean
+    ROUTE TestNEGATERBooleanFilter.inputNegate TO DefaultBooleanSequencer.next
+    ROUTE TestTimer.stopTime TO Pitch1Timer.set_startTime
+    ROUTE TestTimer.isActive TO Pitch1NEGATERBooleanFilter.set_boolean
+    ROUTE Pitch1NEGATERBooleanFilter.inputNegate TO TestBooleanSequencer.next
+    ROUTE Pitch1Timer.stopTime TO Pitch2Timer.set_startTime
+    ROUTE Pitch1Timer.isActive TO Pitch2NEGATERBooleanFilter.set_boolean
+    ROUTE Pitch2NEGATERBooleanFilter.inputNegate TO Pitch1BooleanSequencer.next
+    ROUTE Pitch2Timer.stopTime TO Yaw1Timer.set_startTime
+    ROUTE Pitch2Timer.isActive TO Yaw1NEGATERBooleanFilter.set_boolean
+    ROUTE Yaw1NEGATERBooleanFilter.inputNegate TO Pitch2BooleanSequencer.next
+    ROUTE Yaw1Timer.stopTime TO Yaw2Timer.set_startTime
+    ROUTE Yaw1Timer.isActive TO Yaw2NEGATERBooleanFilter.set_boolean
+    ROUTE Yaw2NEGATERBooleanFilter.inputNegate TO Yaw1BooleanSequencer.next
+    ROUTE Yaw2Timer.stopTime TO Roll1Timer.set_startTime
+    ROUTE Yaw2Timer.isActive TO Roll1NEGATERBooleanFilter.set_boolean
+    ROUTE Roll1NEGATERBooleanFilter.inputNegate TO Yaw2BooleanSequencer.next
+    ROUTE Roll1Timer.stopTime TO Roll2Timer.set_startTime
+    ROUTE Roll1Timer.isActive TO Roll2NEGATERBooleanFilter.set_boolean
+    ROUTE Roll2NEGATERBooleanFilter.inputNegate TO Roll1BooleanSequencer.next
+    ROUTE Roll2Timer.stopTime TO WalkTimer.set_startTime
+    ROUTE Roll2Timer.isActive TO WalkNEGATERBooleanFilter.set_boolean
+    ROUTE WalkNEGATERBooleanFilter.inputNegate TO Roll2BooleanSequencer.next
+    ROUTE WalkTimer.stopTime TO RunTimer.set_startTime
+    ROUTE WalkTimer.isActive TO RunNEGATERBooleanFilter.set_boolean
+    ROUTE RunNEGATERBooleanFilter.inputNegate TO WalkBooleanSequencer.next
+    ROUTE RunTimer.stopTime TO JumpTimer.set_startTime
+    ROUTE RunTimer.isActive TO JumpNEGATERBooleanFilter.set_boolean
+    ROUTE JumpNEGATERBooleanFilter.inputNegate TO RunBooleanSequencer.next
+    ROUTE JumpTimer.stopTime TO Kick1Timer.set_startTime
+    ROUTE JumpTimer.isActive TO Kick1NEGATERBooleanFilter.set_boolean
+    ROUTE Kick1NEGATERBooleanFilter.inputNegate TO JumpBooleanSequencer.next
+    ROUTE Kick1Timer.stopTime TO Kick2Timer.set_startTime
+    ROUTE Kick1Timer.isActive TO Kick2NEGATERBooleanFilter.set_boolean
+    ROUTE Kick2NEGATERBooleanFilter.inputNegate TO Kick1BooleanSequencer.next
+    ROUTE Kick2Timer.stopTime TO DefaultTimer.set_startTime
+    ROUTE Kick2Timer.isActive TO DefaultNEGATERBooleanFilter.set_boolean
+    ROUTE DefaultNEGATERBooleanFilter.inputNegate TO Kick2BooleanSequencer.next
+      ]
