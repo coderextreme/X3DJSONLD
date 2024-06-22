@@ -97,11 +97,11 @@ ParticleSystem20.maxParticles = 20;
 ParticleSystem20.geometryType = "GEOMETRY";
 //* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
 let VariationPhysicsModel21 = browser.currentScene.createNode("VariationPhysicsModel");
-VariationPhysicsModel21.values = new MFFloat(new float[2,2,5,5,0,0]);
-VariationPhysicsModel21.variations = new MFFloat(new float[0.2,0.1,0.3,0.3,0.01,0.01]);
-ParticleSystem20.physics = new MFNode();
+VariationPhysicsModel21.values = "2 2 5 5 0 0";
+VariationPhysicsModel21.variations = "0.2 0.1 0.3 0.3 0.01 0.01";
+ParticleSystem20.variationPhysicsModel = new undefined();
 
-ParticleSystem20.physics[0] = VariationPhysicsModel21;
+ParticleSystem20.variationPhysicsModel[0] = VariationPhysicsModel21;
 
 let ExplosionEmitter22 = browser.currentScene.createNode("ExplosionEmitter");
 ExplosionEmitter22.speed = 1;

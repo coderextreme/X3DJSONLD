@@ -350,7 +350,7 @@ function doubleToFloat(d) {
         .addChild(new Transform()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
             .addComments(new CommentsBlock("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values"))
-            .addPhysics(new VariationPhysicsModel().setValues(Java.to(doubleToFloat([2,2,5,5,0,0]), Java.type("float[]"))).setVariations(Java.to(doubleToFloat([0.2,0.1,0.3,0.3,0.01,0.01]), Java.type("float[]"))))
+            .addVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
             .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()

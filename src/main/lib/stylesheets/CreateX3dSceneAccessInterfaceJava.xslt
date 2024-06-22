@@ -3853,7 +3853,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimSite')">
-												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+												<xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with($name,'HAnimMotion')">
 												<xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
@@ -13811,16 +13811,6 @@ setAttribute method invocations).
 			
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		}]]></xsl:text>
-			
-                <xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
-                                           not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
-                        <xsl:text><![CDATA[
-                if (!commentsList.isEmpty())
-                {
-                        CommentsBlock commentsBlock = new CommentsBlock(commentsList);
-                        stringX3D.append(commentsBlock.toStringX3D(indentLevel + indentIncrement));
-                }]]></xsl:text>
-                </xsl:if>
 		
                 <xsl:text disable-output-escaping="yes"><![CDATA[
 		if ((hasChild]]></xsl:text>
@@ -13847,6 +13837,16 @@ setAttribute method invocations).
                     stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement));</xsl:text>
             </xsl:if> 
             -->
+			
+                        <xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
+                                                   not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
+                                <xsl:text><![CDATA[
+                        if (!commentsList.isEmpty())
+                        {
+                                CommentsBlock commentsBlock = new CommentsBlock(commentsList);
+                                stringX3D.append(commentsBlock.toStringX3D(indentLevel + indentIncrement));
+                        }]]></xsl:text>
+                        </xsl:if>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 			// recursively iterate over child element]]></xsl:text>
 			<xsl:if test="InterfaceDefinition/field[(@type = 'MFNode')] or
