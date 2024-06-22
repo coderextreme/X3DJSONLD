@@ -310,6 +310,8 @@
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
                     "@center":[0.0000,0.8240,0.0277],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "-children":[
                       { "HAnimSegment":
                         {
@@ -399,6 +401,8 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0.0000,0.9149,0.0016],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -897,6 +901,8 @@
                                 "@name":"l_hip",
                                 "@DEF":"hanim_l_hip",
                                 "@center":[0.0961,0.9124,-0.0001],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -1122,6 +1128,8 @@
                                       "@name":"l_knee",
                                       "@DEF":"hanim_l_knee",
                                       "@center":[0.1040,0.4867,0.0308],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -1306,6 +1314,8 @@
                                             "@name":"l_talocrural",
                                             "@DEF":"hanim_l_talocrural",
                                             "@center":[0.1101,0.0656,-0.0736],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -1454,7 +1464,9 @@
                                                 {
                                                   "@name":"l_metatarsophalangeal_2",
                                                   "@DEF":"hanim_l_metatarsophalangeal_2",
-                                                  "@center":[0.0824,0.0064,-0.0040]
+                                                  "@center":[0.0824,0.0064,-0.0040],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0]
                                                 }
                                               }
                                             ]
@@ -1471,6 +1483,8 @@
                                 "@name":"r_hip",
                                 "@DEF":"hanim_r_hip",
                                 "@center":[-0.0950,0.9171,0.0029],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -1696,6 +1710,8 @@
                                       "@name":"r_knee",
                                       "@DEF":"hanim_r_knee",
                                       "@center":[-0.0867,0.4913,0.0318],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -1880,6 +1896,8 @@
                                             "@name":"r_talocrural",
                                             "@DEF":"hanim_r_talocrural",
                                             "@center":[-0.0801,0.0712,-0.0766],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -2028,7 +2046,9 @@
                                                 {
                                                   "@name":"r_metatarsophalangeal_2",
                                                   "@DEF":"hanim_r_metatarsophalangeal_2",
-                                                  "@center":[-0.0823,0.0064,-0.0040]
+                                                  "@center":[-0.0823,0.0064,-0.0040],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0]
                                                 }
                                               }
                                             ]
@@ -2048,6 +2068,8 @@
                           "@name":"vl5",
                           "@DEF":"hanim_vl5",
                           "@center":[0.0028,1.0568,-0.0776],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -3342,7 +3364,9 @@
                               {
                                 "@name":"skullbase",
                                 "@DEF":"hanim_skullbase",
-                                "@center":[0.0044,1.6209,0.0236]
+                                "@center":[0.0044,1.6209,0.0236],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0]
                               }
                             },
                             { "HAnimJoint":
@@ -3350,6 +3374,8 @@
                                 "@name":"l_shoulder",
                                 "@DEF":"hanim_l_shoulder",
                                 "@center":[0.2029,1.4376,-0.0387],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -3493,6 +3519,8 @@
                                       "@name":"l_elbow",
                                       "@DEF":"hanim_l_elbow",
                                       "@center":[0.2014,1.1357,-0.0682],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -3718,7 +3746,9 @@
                                           {
                                             "@name":"l_radiocarpal",
                                             "@DEF":"hanim_l_radiocarpal",
-                                            "@center":[0.1984,0.8663,-0.0583]
+                                            "@center":[0.1984,0.8663,-0.0583],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0]
                                           }
                                         }
                                       ]
@@ -3732,6 +3762,8 @@
                                 "@name":"r_shoulder",
                                 "@DEF":"hanim_r_shoulder",
                                 "@center":[-0.1907,1.4407,-0.0325],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -3875,6 +3907,8 @@
                                       "@name":"r_elbow",
                                       "@DEF":"hanim_r_elbow",
                                       "@center":[-0.1949,1.1388,-0.0620],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -4100,7 +4134,9 @@
                                           {
                                             "@name":"r_radiocarpal",
                                             "@DEF":"hanim_r_radiocarpal",
-                                            "@center":[-0.1959,0.8694,-0.0521]
+                                            "@center":[-0.1959,0.8694,-0.0521],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0]
                                           }
                                         }
                                       ]

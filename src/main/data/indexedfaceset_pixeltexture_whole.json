@@ -148,7 +148,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE"]
+              "@type":"\"EXAMINE\""
             }
           },
           { "Shape":

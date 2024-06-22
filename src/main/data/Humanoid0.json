@@ -308,7 +308,9 @@
                 { "HAnimJoint":
                   {
                     "@name":"",
-                    "@DEF":"hanim_"
+                    "@DEF":"hanim_",
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0]
                   }
                 }
               ],

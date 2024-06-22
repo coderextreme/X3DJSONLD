@@ -114,7 +114,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"ANY\""
             }
           },
           { "ExternProtoDeclare":

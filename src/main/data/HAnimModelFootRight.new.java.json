@@ -102,7 +102,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 April 2024"
+            "@content":"22 June 2024"
           },
           {
             "@name":"generator",
@@ -147,6 +147,275 @@
                     ]
                   }
                 },
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_humanoid_root"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_calcaneocuboid"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_cuneonavicular_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocalcaneonavicular"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_3"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsometatarsal_5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_transversetarsal"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calcaneus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuboid"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_cuneiform_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_metatarsal_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_navicular"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_talus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_3"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_5"
+                  }
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {
@@ -1846,275 +2115,6 @@
                         }
                       }
                     ]
-                  }
-                }
-              ],
-              "-joints":[
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_humanoid_root"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_calcaneocuboid"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_cuneonavicular_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_talocalcaneonavicular"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_talocrural"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsometatarsal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_transversetarsal"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calcaneus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuboid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_navicular"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_5"
                   }
                 }
               ]

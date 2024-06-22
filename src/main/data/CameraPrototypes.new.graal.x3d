@@ -63,7 +63,7 @@
           </IS>
         </Viewpoint>
         <!-- NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation -->
-        <NavigationInfo DEF='CameraNavInfo' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'>
+        <NavigationInfo DEF='CameraNavInfo' type='"EXAMINE" "FLY" "ANY"'>
           <IS>
             <!-- No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. -->
             <connect nodeField='set_bind' protoField='set_bind'/>
@@ -914,7 +914,7 @@ function alwaysPrint (outputValue)
             <Material diffuseColor='1 1 0.2'/>
           </Appearance>
           <Text string='"CameraPrototypes.x3d" "defines multiple prototype nodes" "" "Click on this text to see" "CameraExamples.x3d scene"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>

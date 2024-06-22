@@ -74,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 April 2024"
+            "@content":"22 June 2024"
           },
           {
             "@name":"generator",
@@ -198,12 +198,492 @@
                           ]
                         }
                       },
-                    "-skinCoord":
-                      { "Coordinate":
+                    "-joints":[
+                      { "HAnimJoint":
                         {
-                          "@USE":"Joe_SkinCoord"
+                          "@USE":"Joe_humanoid_root"
                         }
                       },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_sacroiliac"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_skullbase"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_temporomandibular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt10"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt11"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt12"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt8"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt9"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_acromioclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_acromioclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_distal_interphalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_distal_interphalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_distal_interphalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_distal_interphalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_distal_interphalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_distal_interphalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_interphalangeal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_interphalangeal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_proximal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_proximal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_proximal_interphalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_proximal_interphalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_proximal_interphalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_proximal_interphalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpal_proximal_interphalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpal_proximal_interphalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpometacarpal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpometacarpal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpometacarpal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpometacarpal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpometacarpal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpometacarpal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpometacarpal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpometacarpal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_carpometacarpal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_carpometacarpal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_elbow"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_elbow"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyeball_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyeball_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyebrow_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyebrow_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyelid_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyelid_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_hip"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_hip"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_knee"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_knee"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metacarpophalangeal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metacarpophalangeal_1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metacarpophalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metacarpophalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metacarpophalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metacarpophalangeal_3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metacarpophalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metacarpophalangeal_4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metacarpophalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metacarpophalangeal_5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metatarsophalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metatarsophalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_radiocarpal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_radiocarpal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_shoulder"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_shoulder"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_sternoclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_sternoclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_talocrural"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_talocrural"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_tarsal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_tarsal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_tarsometatarsal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_tarsometatarsal_2"
+                        }
+                      }
+                    ],
+                    "-segments":[
+                      { "HAnimSegment":
+                        {
+                          "@USE":"Joe_sacrum"
+                        }
+                      }
+                    ],
+                    "-sites":[
+                      { "HAnimSite":
+                        {
+                          "@USE":"Joe_RootFront_view"
+                        }
+                      }
+                    ],
                     "-skeleton":[
                       { "HAnimJoint":
                         {
@@ -1409,492 +1889,6 @@
                         }
                       }
                     ],
-                    "-joints":[
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_humanoid_root"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_sacroiliac"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_skullbase"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_temporomandibular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc6"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc7"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt10"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt11"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt12"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt6"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt7"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt8"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt9"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_acromioclavicular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_acromioclavicular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_distal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_distal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_distal_interphalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_distal_interphalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_distal_interphalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_distal_interphalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_distal_interphalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_distal_interphalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_interphalangeal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_interphalangeal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_proximal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_proximal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_proximal_interphalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_proximal_interphalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_proximal_interphalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_proximal_interphalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpal_proximal_interphalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpal_proximal_interphalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpometacarpal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpometacarpal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpometacarpal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpometacarpal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpometacarpal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpometacarpal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpometacarpal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpometacarpal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_carpometacarpal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_carpometacarpal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_elbow"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_elbow"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_eyeball_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_eyeball_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_eyebrow_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_eyebrow_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_eyelid_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_eyelid_joint"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_hip"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_hip"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_knee"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_knee"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metacarpophalangeal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metacarpophalangeal_1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metacarpophalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metacarpophalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metacarpophalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metacarpophalangeal_3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metacarpophalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metacarpophalangeal_4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metacarpophalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metacarpophalangeal_5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_metatarsophalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_metatarsophalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_radiocarpal"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_radiocarpal"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_shoulder"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_shoulder"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_sternoclavicular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_sternoclavicular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_talocrural"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_talocrural"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_tarsal_distal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_tarsal_distal_interphalangeal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_tarsometatarsal_2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_tarsometatarsal_2"
-                        }
-                      }
-                    ],
-                    "-segments":[
-                      { "HAnimSegment":
-                        {
-                          "@USE":"Joe_sacrum"
-                        }
-                      }
-                    ],
-                    "-sites":[
-                      { "HAnimSite":
-                        {
-                          "@USE":"Joe_RootFront_view"
-                        }
-                      }
-                    ],
                     "-skin":[
                       { "Shape":
                         {
@@ -1949,7 +1943,13 @@
                             }
                         }
                       }
-                    ]
+                    ],
+                    "-skinCoord":
+                      { "Coordinate":
+                        {
+                          "@USE":"Joe_SkinCoord"
+                        }
+                      }
                   }
                 }
               ]

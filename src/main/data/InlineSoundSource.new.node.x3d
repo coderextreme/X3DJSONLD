@@ -17,7 +17,7 @@
   </head>
   <Scene>
     <WorldInfo title='InlineSoundSource.x3d'/>
-    <NavigationInfo DEF='NAV' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo DEF='NAV'/>
     <Background backUrl='"images/generic/BK1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"' bottomUrl='"images/generic/DN1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"' frontUrl='"images/generic/FR1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"' leftUrl='"images/generic/LF1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"' rightUrl='"images/generic/RT1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"' topUrl='"images/generic/UP1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"'/>
     <Viewpoint DEF='Camera001' description='Camera001' farDistance='0.0' nearDistance='1.0' orientation='1 0 0 -0.523599' position='0 2000 3500'/>
     <Transform DEF='Floor' translation='1.241 0 0.358'>

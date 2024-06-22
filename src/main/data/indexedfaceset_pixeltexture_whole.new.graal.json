@@ -103,7 +103,7 @@ of the cube."
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"22 June 2024"
 },
 {
 "@name":"generator",
@@ -175,7 +175,6 @@ of the cube."
 "-texture":
 { "PixelTexture":
 {
-"@image":[2,2,4,-16776961,16711935,-1,-65281]
 }
 }
 }

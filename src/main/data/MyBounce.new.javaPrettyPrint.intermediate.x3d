@@ -9,7 +9,7 @@
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d' name='identifier'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Transform DEF='transform'>
       <Shape>
         <Appearance>

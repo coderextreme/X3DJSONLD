@@ -103,7 +103,7 @@ attaching this appendage to a body"
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"22 June 2024"
 },
 {
 "@name":"generator",
@@ -149,1709 +149,6 @@ Joe Williams\"'"
 ]
 }
 },
-"-skeleton":[
-{ "HAnimJoint":
-{
-"@name":"humanoid_root",
-"@DEF":"hanim_humanoid_root",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{
-"#comment":"Might consider putting a HAnimSegment here, but that doesn't help with
-re-use of this foot model"
-},
-{ "HAnimJoint":
-{
-"@name":"r_talocrural",
-"@DEF":"hanim_r_talocrural",
-"@description":"connection joint of foot to leg above",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_talus",
-"@DEF":"hanim_r_talus",
-"-children":[
-{ "Transform":
-{
-"-children":[
-{ "Shape":
-{
-"@DEF":"HAnimJointShape",
-"-appearance":
-{ "Appearance":
-{
-"@DEF":"HAnimJointAppearance",
-"-material":
-{ "Material":
-{
-"@diffuseColor":[0,0,1]
-}
-}
-}
-},
-"-geometry":
-{ "Sphere":
-{
-"@radius":0.025
-}
-}
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TCtoTCN",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,0,0,0,-0.3,0]
-}
-}
-}
-}
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TCtoCC",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,0,0,-0.2,0.3,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{
-"#comment":"TCN"
-},
-{ "HAnimJoint":
-{
-"@name":"r_talocalcaneonavicular",
-"@DEF":"hanim_r_talocalcaneonavicular",
-"@center":[0,-0.3,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_navicular",
-"@DEF":"hanim_r_navicular",
-"-children":[
-{ "Transform":
-{
-"@translation":[0,-0.3,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TCNtoCN1",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,-0.3,0,0.1,-0.45,0]
-}
-}
-}
-}
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TCNtoCN2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,-0.3,0,0,-0.45,0]
-}
-}
-}
-}
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TCNtoCN3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,-0.3,0,-0.1,-0.4,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{
-"#comment":"CN1"
-},
-{ "HAnimJoint":
-{
-"@name":"r_cuneonavicular_1",
-"@DEF":"hanim_r_cuneonavicular_1",
-"@center":[0.1,-0.45,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_cuneiform_1",
-"@DEF":"hanim_r_cuneiform_1",
-"-children":[
-{ "Transform":
-{
-"@translation":[0.1,-0.45,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"CN1toTMT1",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0.1,-0.45,0,0.1,-0.6,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsometatarsal_1",
-"@DEF":"hanim_r_tarsometatarsal_1",
-"@center":[0.1,-0.6,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_metatarsal_1",
-"@DEF":"hanim_r_metatarsal_1",
-"-children":[
-{ "Transform":
-{
-"@translation":[0.1,-0.6,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TMT1toMTP1",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0.1,-0.6,0,0.1,-0.9,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_metatarsophalangeal_1",
-"@DEF":"hanim_r_metatarsophalangeal_1",
-"@center":[0.1,-0.9,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_proximal_phalanx_1",
-"@DEF":"hanim_r_tarsal_proximal_phalanx_1",
-"-children":[
-{ "Transform":
-{
-"@translation":[0.1,-0.9,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"MTP1toIP1",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0.1,-0.9,0,0.1,-1.05,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_interphalangeal_1",
-"@DEF":"hanim_r_tarsal_interphalangeal_1",
-"@center":[0.1,-1.05,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_distal_phalanx_1",
-"@DEF":"hanim_r_tarsal_distal_phalanx_1",
-"-children":[
-{ "Transform":
-{
-"@translation":[0.1,-1.05,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"tiptoe_r_interphalangeal_",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0.1,-1.05,0,0.1,-1.1,0]
-}
-}
-}
-}
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-},
-{
-"#comment":"CN2"
-},
-{ "HAnimJoint":
-{
-"@name":"r_cuneonavicular_2",
-"@DEF":"hanim_r_cuneonavicular_2",
-"@center":[0,-0.45,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_cuneiform_2",
-"@DEF":"hanim_r_cuneiform_2",
-"-children":[
-{ "Transform":
-{
-"@translation":[0,-0.45,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"CN2toTMT2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[0,-0.45,0,-0.05,-0.6,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsometatarsal_2",
-"@DEF":"hanim_r_tarsometatarsal_2",
-"@center":[-0.05,-0.6,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_metatarsal_2",
-"@DEF":"hanim_r_metatarsal_2",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.05,-0.6,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TMT2toMTP2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.05,-0.6,0,-0.05,-0.9,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_metatarsophalangeal_2",
-"@DEF":"hanim_r_metatarsophalangeal_2",
-"@center":[-0.05,-0.9,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_proximal_phalanx_2",
-"@DEF":"hanim_r_tarsal_proximal_phalanx_2",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.05,-0.9,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"MTP2toPIP2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.05,-0.9,0,-0.05,-1.05,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_proximal_interphalangeal_2",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
-"@center":[-0.05,-1.05,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_middle_phalanx_2",
-"@DEF":"hanim_r_tarsal_middle_phalanx_2",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.05,-1.05,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"PIP2toDIP2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.05,-1.05,0,-0.05,-1.12,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_distal_interphalangeal_2",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
-"@center":[-0.05,-1.12,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_distal_phalanx_2",
-"@DEF":"hanim_r_tarsal_distal_phalanx_2",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.05,-1.12,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_2",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.05,-1.12,0,-0.05,-1.16,0]
-}
-}
-}
-}
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-},
-{
-"#comment":"CN3"
-},
-{ "HAnimJoint":
-{
-"@name":"r_cuneonavicular_3",
-"@DEF":"hanim_r_cuneonavicular_3",
-"@center":[-0.1,-0.4,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_cuneiform_3",
-"@DEF":"hanim_r_cuneiform_3",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.1,-0.4,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"CN3toTMT3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.1,-0.4,0,-0.15,-0.6,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsometatarsal_3",
-"@DEF":"hanim_r_tarsometatarsal_3",
-"@center":[-0.15,-0.6,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_metatarsal_3",
-"@DEF":"hanim_r_metatarsal_3",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.15,-0.6,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TMT3toMTP3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.15,-0.6,0,-0.15,-0.9,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_metatarsophalangeal_3",
-"@DEF":"hanim_r_metatarsophalangeal_3",
-"@center":[-0.15,-0.9,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_proximal_phalanx_3",
-"@DEF":"hanim_r_tarsal_proximal_phalanx_3",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.15,-0.9,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"MTP3toPIP3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.15,-0.9,0,-0.15,-1.05,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_proximal_interphalangeal_3",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
-"@center":[-0.15,-1.05,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_middle_phalanx_3",
-"@DEF":"hanim_r_tarsal_middle_phalanx_3",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.15,-1.05,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"PIP3toDIP3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.15,-1.05,0,-0.15,-1.13,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_distal_interphalangeal_3",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
-"@center":[-0.15,-1.13,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_distal_phalanx_3",
-"@DEF":"hanim_r_tarsal_distal_phalanx_3",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.15,-1.13,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_3",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.15,-1.13,0,-0.15,-1.16,0]
-}
-}
-}
-}
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-},
-{
-"#comment":"CC"
-},
-{ "HAnimJoint":
-{
-"@name":"r_calcaneocuboid",
-"@DEF":"hanim_r_calcaneocuboid",
-"@center":[-0.2,0.3,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_calcaneus",
-"@DEF":"hanim_r_calcaneus",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.2,0.3,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"CCtoTT",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.2,0.3,0,-0.21,-0.3,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{
-"#comment":"TT"
-},
-{ "HAnimJoint":
-{
-"@name":"r_transversetarsal",
-"@DEF":"hanim_r_transversetarsal",
-"@center":[-0.21,-0.3,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_cuboid",
-"@DEF":"hanim_r_cuboid",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.21,-0.3,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TTtoTMT4",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.21,-0.3,0,-0.25,-0.58,0]
-}
-}
-}
-}
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TTtoTMT5",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.21,-0.3,0,-0.33,-0.52,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{
-"#comment":"TMT4"
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsometatarsal_4",
-"@DEF":"hanim_r_tarsometatarsal_4",
-"@center":[-0.25,-0.58,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_metatarsal_4",
-"@DEF":"hanim_r_metatarsal_4",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.25,-0.58,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TMT4toMTP4",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.25,-0.58,0,-0.25,-0.87,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_metatarsophalangeal_4",
-"@DEF":"hanim_r_metatarsophalangeal_4",
-"@center":[-0.25,-0.87,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_proximal_phalanx_4",
-"@DEF":"hanim_r_tarsal_proximal_phalanx_4",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.25,-0.87,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"MTP4toPIP4",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.25,-0.87,0,-0.25,-1,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_proximal_interphalangeal_4",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
-"@center":[-0.25,-1,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_middle_phalanx_4",
-"@DEF":"hanim_r_tarsal_middle_phalanx_4",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.25,-1,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"PIP4toDIP4",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.25,-1,0,-0.25,-1.1,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_distal_interphalangeal_4",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
-"@center":[-0.25,-1.1,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_distal_phalanx_4",
-"@DEF":"hanim_r_tarsal_distal_phalanx_4",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.25,-1.1,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_4",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.25,-1.1,0,-0.25,-1.15,0]
-}
-}
-}
-}
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-},
-{
-"#comment":"TMT5"
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsometatarsal_5",
-"@DEF":"hanim_r_tarsometatarsal_5",
-"@center":[-0.33,-0.52,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_metatarsal_5",
-"@DEF":"hanim_r_metatarsal_5",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.33,-0.52,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"TMT5toMTP5",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.33,-0.52,0,-0.34,-0.8,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_metatarsophalangeal_5",
-"@DEF":"hanim_r_metatarsophalangeal_5",
-"@center":[-0.34,-0.8,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_proximal_phalanx_5",
-"@DEF":"hanim_r_tarsal_proximal_phalanx_5",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.34,-0.8,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"MTP5toPIP5",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.34,-0.8,0,-0.34,-0.95,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_proximal_interphalangeal_5",
-"@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
-"@center":[-0.34,-0.95,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_middle_phalanx_5",
-"@DEF":"hanim_r_tarsal_middle_phalanx_5",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.34,-0.95,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"PIP5toDIP5",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.34,-0.95,0,-0.34,-1.05,0]
-}
-}
-}
-}
-}
-}
-]
-}
-},
-{ "HAnimJoint":
-{
-"@name":"r_tarsal_distal_interphalangeal_5",
-"@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
-"@center":[-0.34,-1.05,0],
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0],
-"-children":[
-{ "HAnimSegment":
-{
-"@name":"r_tarsal_distal_phalanx_5",
-"@DEF":"hanim_r_tarsal_distal_phalanx_5",
-"-children":[
-{ "Transform":
-{
-"@translation":[-0.34,-1.05,0],
-"-children":[
-{ "Shape":
-{
-"@USE":"HAnimJointShape"
-}
-}
-]
-}
-},
-{ "Shape":
-{
-"-appearance":
-{ "Appearance":
-{
-"-material":
-{ "Material":
-{
-"@emissiveColor":[1,1,1]
-}
-}
-}
-},
-"-geometry":
-{ "IndexedLineSet":
-{
-"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_5",
-"@coordIndex":[0,1],
-"-coord":
-{ "Coordinate":
-{
-"@point":[-0.34,-1.05,0,-0.34,-1.08,0]
-}
-}
-}
-}
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-]
-}
-}
-],
 "-joints":[
 { "HAnimJoint":
 {
@@ -2118,6 +415,1709 @@ re-use of this foot model"
 { "HAnimSegment":
 {
 "@USE":"hanim_r_tarsal_proximal_phalanx_5"
+}
+}
+],
+"-skeleton":[
+{ "HAnimJoint":
+{
+"@name":"humanoid_root",
+"@DEF":"hanim_humanoid_root",
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{
+"#comment":"Might consider putting a HAnimSegment here, but that doesn't help with
+re-use of this foot model"
+},
+{ "HAnimJoint":
+{
+"@name":"r_talocrural",
+"@DEF":"hanim_r_talocrural",
+"@description":"connection joint of foot to leg above",
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_talus",
+"@DEF":"hanim_r_talus",
+"-children":[
+{ "Transform":
+{
+"-children":[
+{ "Shape":
+{
+"@DEF":"HAnimJointShape",
+"-appearance":
+{ "Appearance":
+{
+"@DEF":"HAnimJointAppearance",
+"-material":
+{ "Material":
+{
+"@diffuseColor":[0,0,1]
+}
+}
+}
+},
+"-geometry":
+{ "Sphere":
+{
+"@radius":0.025
+}
+}
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TCtoTCN",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,0,0,0,-0.3,0]
+}
+}
+}
+}
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TCtoCC",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,0,0,-0.2,0.3,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{
+"#comment":"TCN"
+},
+{ "HAnimJoint":
+{
+"@name":"r_talocalcaneonavicular",
+"@DEF":"hanim_r_talocalcaneonavicular",
+"@center":[0,-0.3,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_navicular",
+"@DEF":"hanim_r_navicular",
+"-children":[
+{ "Transform":
+{
+"@translation":[0,-0.3,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TCNtoCN1",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,-0.3,0,0.1,-0.45,0]
+}
+}
+}
+}
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TCNtoCN2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,-0.3,0,0,-0.45,0]
+}
+}
+}
+}
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TCNtoCN3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,-0.3,0,-0.1,-0.4,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{
+"#comment":"CN1"
+},
+{ "HAnimJoint":
+{
+"@name":"r_cuneonavicular_1",
+"@DEF":"hanim_r_cuneonavicular_1",
+"@center":[0.1,-0.45,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_cuneiform_1",
+"@DEF":"hanim_r_cuneiform_1",
+"-children":[
+{ "Transform":
+{
+"@translation":[0.1,-0.45,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"CN1toTMT1",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0.1,-0.45,0,0.1,-0.6,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsometatarsal_1",
+"@DEF":"hanim_r_tarsometatarsal_1",
+"@center":[0.1,-0.6,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_metatarsal_1",
+"@DEF":"hanim_r_metatarsal_1",
+"-children":[
+{ "Transform":
+{
+"@translation":[0.1,-0.6,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TMT1toMTP1",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0.1,-0.6,0,0.1,-0.9,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_metatarsophalangeal_1",
+"@DEF":"hanim_r_metatarsophalangeal_1",
+"@center":[0.1,-0.9,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_proximal_phalanx_1",
+"@DEF":"hanim_r_tarsal_proximal_phalanx_1",
+"-children":[
+{ "Transform":
+{
+"@translation":[0.1,-0.9,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"MTP1toIP1",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0.1,-0.9,0,0.1,-1.05,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_interphalangeal_1",
+"@DEF":"hanim_r_tarsal_interphalangeal_1",
+"@center":[0.1,-1.05,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_distal_phalanx_1",
+"@DEF":"hanim_r_tarsal_distal_phalanx_1",
+"-children":[
+{ "Transform":
+{
+"@translation":[0.1,-1.05,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"tiptoe_r_interphalangeal_",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0.1,-1.05,0,0.1,-1.1,0]
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+},
+{
+"#comment":"CN2"
+},
+{ "HAnimJoint":
+{
+"@name":"r_cuneonavicular_2",
+"@DEF":"hanim_r_cuneonavicular_2",
+"@center":[0,-0.45,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_cuneiform_2",
+"@DEF":"hanim_r_cuneiform_2",
+"-children":[
+{ "Transform":
+{
+"@translation":[0,-0.45,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"CN2toTMT2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[0,-0.45,0,-0.05,-0.6,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsometatarsal_2",
+"@DEF":"hanim_r_tarsometatarsal_2",
+"@center":[-0.05,-0.6,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_metatarsal_2",
+"@DEF":"hanim_r_metatarsal_2",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.05,-0.6,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TMT2toMTP2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.05,-0.6,0,-0.05,-0.9,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_metatarsophalangeal_2",
+"@DEF":"hanim_r_metatarsophalangeal_2",
+"@center":[-0.05,-0.9,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_proximal_phalanx_2",
+"@DEF":"hanim_r_tarsal_proximal_phalanx_2",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.05,-0.9,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"MTP2toPIP2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.05,-0.9,0,-0.05,-1.05,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_proximal_interphalangeal_2",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
+"@center":[-0.05,-1.05,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_middle_phalanx_2",
+"@DEF":"hanim_r_tarsal_middle_phalanx_2",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.05,-1.05,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"PIP2toDIP2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.05,-1.05,0,-0.05,-1.12,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_distal_interphalangeal_2",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
+"@center":[-0.05,-1.12,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_distal_phalanx_2",
+"@DEF":"hanim_r_tarsal_distal_phalanx_2",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.05,-1.12,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_2",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.05,-1.12,0,-0.05,-1.16,0]
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+},
+{
+"#comment":"CN3"
+},
+{ "HAnimJoint":
+{
+"@name":"r_cuneonavicular_3",
+"@DEF":"hanim_r_cuneonavicular_3",
+"@center":[-0.1,-0.4,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_cuneiform_3",
+"@DEF":"hanim_r_cuneiform_3",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.1,-0.4,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"CN3toTMT3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.1,-0.4,0,-0.15,-0.6,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsometatarsal_3",
+"@DEF":"hanim_r_tarsometatarsal_3",
+"@center":[-0.15,-0.6,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_metatarsal_3",
+"@DEF":"hanim_r_metatarsal_3",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.15,-0.6,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TMT3toMTP3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.15,-0.6,0,-0.15,-0.9,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_metatarsophalangeal_3",
+"@DEF":"hanim_r_metatarsophalangeal_3",
+"@center":[-0.15,-0.9,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_proximal_phalanx_3",
+"@DEF":"hanim_r_tarsal_proximal_phalanx_3",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.15,-0.9,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"MTP3toPIP3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.15,-0.9,0,-0.15,-1.05,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_proximal_interphalangeal_3",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
+"@center":[-0.15,-1.05,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_middle_phalanx_3",
+"@DEF":"hanim_r_tarsal_middle_phalanx_3",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.15,-1.05,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"PIP3toDIP3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.15,-1.05,0,-0.15,-1.13,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_distal_interphalangeal_3",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
+"@center":[-0.15,-1.13,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_distal_phalanx_3",
+"@DEF":"hanim_r_tarsal_distal_phalanx_3",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.15,-1.13,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_3",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.15,-1.13,0,-0.15,-1.16,0]
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+},
+{
+"#comment":"CC"
+},
+{ "HAnimJoint":
+{
+"@name":"r_calcaneocuboid",
+"@DEF":"hanim_r_calcaneocuboid",
+"@center":[-0.2,0.3,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_calcaneus",
+"@DEF":"hanim_r_calcaneus",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.2,0.3,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"CCtoTT",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.2,0.3,0,-0.21,-0.3,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{
+"#comment":"TT"
+},
+{ "HAnimJoint":
+{
+"@name":"r_transversetarsal",
+"@DEF":"hanim_r_transversetarsal",
+"@center":[-0.21,-0.3,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_cuboid",
+"@DEF":"hanim_r_cuboid",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.21,-0.3,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TTtoTMT4",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.21,-0.3,0,-0.25,-0.58,0]
+}
+}
+}
+}
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TTtoTMT5",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.21,-0.3,0,-0.33,-0.52,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{
+"#comment":"TMT4"
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsometatarsal_4",
+"@DEF":"hanim_r_tarsometatarsal_4",
+"@center":[-0.25,-0.58,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_metatarsal_4",
+"@DEF":"hanim_r_metatarsal_4",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.25,-0.58,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TMT4toMTP4",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.25,-0.58,0,-0.25,-0.87,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_metatarsophalangeal_4",
+"@DEF":"hanim_r_metatarsophalangeal_4",
+"@center":[-0.25,-0.87,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_proximal_phalanx_4",
+"@DEF":"hanim_r_tarsal_proximal_phalanx_4",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.25,-0.87,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"MTP4toPIP4",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.25,-0.87,0,-0.25,-1,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_proximal_interphalangeal_4",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
+"@center":[-0.25,-1,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_middle_phalanx_4",
+"@DEF":"hanim_r_tarsal_middle_phalanx_4",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.25,-1,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"PIP4toDIP4",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.25,-1,0,-0.25,-1.1,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_distal_interphalangeal_4",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
+"@center":[-0.25,-1.1,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_distal_phalanx_4",
+"@DEF":"hanim_r_tarsal_distal_phalanx_4",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.25,-1.1,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_4",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.25,-1.1,0,-0.25,-1.15,0]
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+},
+{
+"#comment":"TMT5"
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsometatarsal_5",
+"@DEF":"hanim_r_tarsometatarsal_5",
+"@center":[-0.33,-0.52,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_metatarsal_5",
+"@DEF":"hanim_r_metatarsal_5",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.33,-0.52,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"TMT5toMTP5",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.33,-0.52,0,-0.34,-0.8,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_metatarsophalangeal_5",
+"@DEF":"hanim_r_metatarsophalangeal_5",
+"@center":[-0.34,-0.8,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_proximal_phalanx_5",
+"@DEF":"hanim_r_tarsal_proximal_phalanx_5",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.34,-0.8,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"MTP5toPIP5",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.34,-0.8,0,-0.34,-0.95,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_proximal_interphalangeal_5",
+"@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
+"@center":[-0.34,-0.95,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_middle_phalanx_5",
+"@DEF":"hanim_r_tarsal_middle_phalanx_5",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.34,-0.95,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"PIP5toDIP5",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.34,-0.95,0,-0.34,-1.05,0]
+}
+}
+}
+}
+}
+}
+]
+}
+},
+{ "HAnimJoint":
+{
+"@name":"r_tarsal_distal_interphalangeal_5",
+"@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
+"@center":[-0.34,-1.05,0],
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0],
+"-children":[
+{ "HAnimSegment":
+{
+"@name":"r_tarsal_distal_phalanx_5",
+"@DEF":"hanim_r_tarsal_distal_phalanx_5",
+"-children":[
+{ "Transform":
+{
+"@translation":[-0.34,-1.05,0],
+"-children":[
+{ "Shape":
+{
+"@USE":"HAnimJointShape"
+}
+}
+]
+}
+},
+{ "Shape":
+{
+"-appearance":
+{ "Appearance":
+{
+"-material":
+{ "Material":
+{
+"@emissiveColor":[1,1,1]
+}
+}
+}
+},
+"-geometry":
+{ "IndexedLineSet":
+{
+"@DEF":"tiptoe_r_tarsal_distal_interphalangeal_5",
+"@coordIndex":[0,1],
+"-coord":
+{ "Coordinate":
+{
+"@point":[-0.34,-1.05,0,-0.34,-1.08,0]
+}
+}
+}
+}
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
+}
+}
+]
 }
 }
 ]

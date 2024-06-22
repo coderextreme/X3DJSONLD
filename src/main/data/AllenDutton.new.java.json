@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 April 2024"
+            "@content":"22 June 2024"
           },
           {
             "@name":"generator",
@@ -105,6 +105,175 @@
               "@name":"Humanoid",
               "@DEF":"hanim_Humanoid",
               "@version":"2.0",
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_humanoid_root"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_sacroiliac"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_skullbase"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vc4"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_ankle"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_ankle"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_wrist"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_wrist"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_c4"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_pelvis"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_skull"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_hand"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_hand"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_upperarm"
+                  }
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {
@@ -1118,175 +1287,6 @@
                   }
                 }
               ],
-              "-joints":[
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_humanoid_root"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_sacroiliac"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_skullbase"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vc4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_ankle"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_ankle"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_wrist"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_wrist"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_pelvis"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_skull"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_hand"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_hand"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_hindfoot"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_hindfoot"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_upperarm"
-                  }
-                }
-              ],
               "-viewpoints":[
                 { "HAnimSite":
                   {
@@ -1332,7 +1332,6 @@
           },
           { "NavigationInfo":
             {
-              "@avatarSize":[0.15,1.53,0.75],
               "@speed":0.5,
               "@type":"\"EXAMINE\""
             }

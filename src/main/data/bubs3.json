@@ -44,7 +44,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["EXAMINE"]
+              "@type":"\"EXAMINE\""
             }
           },
           { "Viewpoint":

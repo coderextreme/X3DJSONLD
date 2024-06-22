@@ -92,7 +92,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","WALK","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
             }
           },
           { "Viewpoint":

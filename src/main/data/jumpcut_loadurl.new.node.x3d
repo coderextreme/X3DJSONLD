@@ -20,7 +20,7 @@
   <Scene>
     <WorldInfo title='jumpcut_loadurl.x3d'/>
     <Background groundAngle='1.57' groundColor='0 0.5 0 0 0.5 0' skyColor='0 0 1'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "WALK" "FLY" "ANY"'/>
+    <NavigationInfo type='"EXAMINE" "WALK" "FLY" "ANY"'/>
     <Viewpoint DEF='Front_View' description='Front View'/>
     <Viewpoint DEF='Top_View' description='Top View' orientation='1 0 0 -1.57' position='0 10 0'/>
     <TouchSensor DEF='STARTER' description='touch to activate'/>
