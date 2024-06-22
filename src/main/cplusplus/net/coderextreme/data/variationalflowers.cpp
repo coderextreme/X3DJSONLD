@@ -98,7 +98,7 @@ Transform& Transform19 =  Transform();
 ParticleSystem& ParticleSystem20 =  ParticleSystem();
 ParticleSystem20.setMaxParticles(100);
 ParticleSystem20.setGeometryType(CString("GEOMETRY"));
-//values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values lastFrame - last frame that was rendered (0 for default) updateRate - update rate is amount of time between frames
+//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values * lastFrame - last frame that was rendered (0 for default) * updateRate - update rate is amount of time between frames
 //<VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'> </VariationPhysicsModel>
 ExplosionEmitter& ExplosionEmitter21 =  ExplosionEmitter();
 ExplosionEmitter21.setSpeed(1);
