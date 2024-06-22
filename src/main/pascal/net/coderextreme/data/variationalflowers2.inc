@@ -83,10 +83,10 @@ ParticleSystem20.MaxParticles := 20;
 ParticleSystem20.GeometryType := 'GEOMETRY';
 { * values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values }
 VariationPhysicsModel21 := TVariationPhysicsModelNode.Create;
-VariationPhysicsModel21.SetValues([2,2,5,5,0,0]);
-VariationPhysicsModel21.SetVariations([0.2,0.1,0.3,0.3,0.01,0.01]);
-{ .AddPhysics }
-ParticleSystem20.Physics := VariationPhysicsModel21;
+VariationPhysicsModel21.Values := '2 2 5 5 0 0';
+VariationPhysicsModel21.Variations := '0.2 0.1 0.3 0.3 0.01 0.01';
+{ .AddVariationPhysicsModel }
+ParticleSystem20.VariationPhysicsModel := VariationPhysicsModel21;
 ExplosionEmitter22 := TExplosionEmitterNode.Create;
 ExplosionEmitter22.Speed := 1;
 ExplosionEmitter22.Variation := 0.75;

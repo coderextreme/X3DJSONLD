@@ -14,7 +14,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('description'),
-              content_ : SFString('Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.')),
+              content_ : SFString('Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.')),
 
             meta(
               name_ : SFString('creator'),
@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('16 February 2016')),
+              content_ : SFString('20 October 2019')),
 
             meta(
               name_ : SFString('reference'),
@@ -38,7 +38,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d')),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d')),
 
             meta(
               name_ : SFString('generator'),
@@ -50,6 +50,9 @@ var X3D0 =  X3D(
       Scene_ : 
         Scene(
           children_ : [
+            WorldInfo(
+              title_ : SFString('ArchHalf.x3d')),
+
             Shape(
               DEF_ : SFString('Arch'),
               /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/

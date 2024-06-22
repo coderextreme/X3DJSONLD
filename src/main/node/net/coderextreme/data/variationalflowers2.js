@@ -36,7 +36,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addChild(new autoclass.Transform()
           .addChild(new autoclass.ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
             .addComments((new autoclass.CommentsBlock("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values")))
-            .addPhysics(new autoclass.VariationPhysicsModel().setValues(java.newArray("float", [java.newFloat(2), java.newFloat(2), java.newFloat(5), java.newFloat(5), java.newFloat(0), java.newFloat(0)])).setVariations(java.newArray("float", [java.newFloat(0.2), java.newFloat(0.1), java.newFloat(0.3), java.newFloat(0.3), java.newFloat(0.01), java.newFloat(0.01)])))
+            .addVariationPhysicsModel(new autoclass.VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
             .setEmitter(new autoclass.ExplosionEmitter().setSpeed(java.newFloat(1)).setVariation(java.newFloat(0.75)))
             .setGeometry(new autoclass.Sphere())
             .setAppearance(new autoclass.Appearance()

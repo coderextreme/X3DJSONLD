@@ -94,10 +94,10 @@ ParticleSystem20.setMaxParticles(20)
 ParticleSystem20.setGeometryType("GEOMETRY")
 #* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
 VariationPhysicsModel21 = x3d.VariationPhysicsModel()
-VariationPhysicsModel21.setValues([2,2,5,5,0,0])
-VariationPhysicsModel21.setVariations([0.2,0.1,0.3,0.3,0.01,0.01])
+VariationPhysicsModel21.setValues("2 2 5 5 0 0")
+VariationPhysicsModel21.setVariations("0.2 0.1 0.3 0.3 0.01 0.01")
 
-ParticleSystem20.addPhysics(VariationPhysicsModel21)
+ParticleSystem20.addVariationPhysicsModel(VariationPhysicsModel21)
 ExplosionEmitter22 = x3d.ExplosionEmitter()
 ExplosionEmitter22.setSpeed(1)
 ExplosionEmitter22.setVariation(0.75)
