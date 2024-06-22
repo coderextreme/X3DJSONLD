@@ -82,10 +82,10 @@ var X3D0 =  X3D(
                   maxParticles_ : 20,
                   geometryType_ : SFString('GEOMETRY'),
                   /** values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values*/
-                  physics_ : 
+                  variationPhysicsModel_ : 
                     VariationPhysicsModel(
-                      values_ : MFFloat([SFFloat(2), SFFloat(2), SFFloat(5), SFFloat(5), SFFloat(0), SFFloat(0)]),
-                      variations_ : MFFloat([SFFloat(0.2), SFFloat(0.1), SFFloat(0.3), SFFloat(0.3), SFFloat(0.01), SFFloat(0.01)])),
+                      values_ : SFString('2 2 5 5 0 0'),
+                      variations_ : SFString('0.2 0.1 0.3 0.3 0.01 0.01')),
                   emitter_ : 
                     ExplosionEmitter(
                       speed_ : 1,

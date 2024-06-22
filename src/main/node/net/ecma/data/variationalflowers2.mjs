@@ -22,7 +22,6 @@ var MFString = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var ParticleSystem = require('./x3d.mjs');
 var VariationPhysicsModel = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var ExplosionEmitter = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var Sphere = require('./x3d.mjs');
@@ -120,10 +119,10 @@ var X3D0 =  new X3D({
                   maxParticles : new SFInt32(20),
                   geometryType : new SFString("GEOMETRY"),
                   /** values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values*/
-                  physics : new SFNode(
+                  variationPhysicsModel : new SFNode(
                     new VariationPhysicsModel({
-                      values : new MFFloat([2,2,5,5,0,0]),
-                      variations : new MFFloat([0.2,0.1,0.3,0.3,0.01,0.01])})),
+                      values : new SFString("2 2 5 5 0 0"),
+                      variations : new SFString("0.2 0.1 0.3 0.3 0.01 0.01")})),
                   emitter : new SFNode(
                     new ExplosionEmitter({
                       speed : new SFFloat(1),

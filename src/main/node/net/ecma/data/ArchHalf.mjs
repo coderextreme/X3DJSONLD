@@ -11,6 +11,7 @@ var head = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
@@ -33,7 +34,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.")}),
+              content : new SFString("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.")}),
 
             new meta({
               name : new SFString("creator"),
@@ -45,7 +46,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("16 February 2016")}),
+              content : new SFString("20 October 2019")}),
 
             new meta({
               name : new SFString("reference"),
@@ -57,7 +58,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -69,6 +70,9 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("ArchHalf.x3d")}),
+
             new Shape({
               DEF : new SFString("Arch"),
               /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/

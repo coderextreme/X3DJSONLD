@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2024/05/23 10:41:53",
+  "title": "X3D V4.0 JSON Schema, generated 2024/06/22 04:03:40",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -9722,8 +9722,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString initializeOnly",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@numComponents": {
               "maximum": 4,
@@ -15067,31 +15070,6 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@bboxCenter": {
-              "$comment": "SFVec3f initializeOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@bboxSize": {
-              "$comment": "SFVec3f initializeOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": -1,
-                "type": "number"
-              }
-            },
-            "@bboxDisplay": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
@@ -15545,31 +15523,6 @@
           "properties": {
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "@bboxCenter": {
-              "$comment": "SFVec3f initializeOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@bboxSize": {
-              "$comment": "SFVec3f initializeOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": -1,
-                "type": "number"
-              }
-            },
-            "@bboxDisplay": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
@@ -16670,8 +16623,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString initializeOnly",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@value": {
               "$comment": "MFMatrix3f inputOutput",
@@ -16748,8 +16704,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString initializeOnly",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@value": {
               "$comment": "MFMatrix4f inputOutput",
@@ -31300,94 +31259,6 @@
         }
       ]
     },
-    "VariationPhysicsModel": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@class": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@USE": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string",
-                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
-            "@enabled": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@values": {
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "default": 0,
-                "type": "number"
-              }
-            },
-            "@variations": {
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "default": 1,
-                "type": "number"
-              }
-            },
-            "@DEF": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@class": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@id": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@style": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "Viewpoint": {
       "type": "object",
       "oneOf": [
@@ -33740,14 +33611,8 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -34668,14 +34533,8 @@
         "HAnimSite": {
           "$ref": "#/$defs/HAnimSite"
         },
-        "Layer": {
-          "$ref": "#/$defs/Layer"
-        },
         "LayoutGroup": {
           "$ref": "#/$defs/LayoutGroup"
-        },
-        "LayoutLayer": {
-          "$ref": "#/$defs/LayoutLayer"
         },
         "LOD": {
           "$ref": "#/$defs/LOD"
@@ -35524,14 +35383,8 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -35998,6 +35851,12 @@
           "TriangleSet2D": {
             "$ref": "#/$defs/TriangleSet2D"
           },
+          "Layer": {
+            "$ref": "#/$defs/Layer"
+          },
+          "LayoutLayer": {
+            "$ref": "#/$defs/LayoutLayer"
+          },
           "CollisionSpace": {
             "$ref": "#/$defs/CollisionSpace"
           },
@@ -36030,9 +35889,6 @@
           },
           "ForcePhysicsModel": {
             "$ref": "#/$defs/ForcePhysicsModel"
-          },
-          "VariationPhysicsModel": {
-            "$ref": "#/$defs/VariationPhysicsModel"
           },
           "WindPhysicsModel": {
             "$ref": "#/$defs/WindPhysicsModel"
@@ -36518,14 +36374,8 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"
@@ -36927,9 +36777,6 @@
           "ForcePhysicsModel": {
             "$ref": "#/$defs/ForcePhysicsModel"
           },
-          "VariationPhysicsModel": {
-            "$ref": "#/$defs/VariationPhysicsModel"
-          },
           "WindPhysicsModel": {
             "$ref": "#/$defs/WindPhysicsModel"
           },
@@ -37156,14 +37003,8 @@
         "HAnimSite": {
           "$ref": "#/$defs/HAnimSite"
         },
-        "Layer": {
-          "$ref": "#/$defs/Layer"
-        },
         "LayoutGroup": {
           "$ref": "#/$defs/LayoutGroup"
-        },
-        "LayoutLayer": {
-          "$ref": "#/$defs/LayoutLayer"
         },
         "LOD": {
           "$ref": "#/$defs/LOD"
@@ -37387,14 +37228,8 @@
           "HAnimSite": {
             "$ref": "#/$defs/HAnimSite"
           },
-          "Layer": {
-            "$ref": "#/$defs/Layer"
-          },
           "LayoutGroup": {
             "$ref": "#/$defs/LayoutGroup"
-          },
-          "LayoutLayer": {
-            "$ref": "#/$defs/LayoutLayer"
           },
           "LOD": {
             "$ref": "#/$defs/LOD"

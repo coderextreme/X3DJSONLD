@@ -78,18 +78,18 @@ public class variationalflowers2 implements X3DRoots {
         .addChild(new Transform()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
             .addComments("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values")
-            .addPhysics(new VariationPhysicsModel().setValues(new MFFloat6().getArray()).setVariations(new MFFloat7().getArray()))
+            .addVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
             .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                .setBackTexture(new ImageTexture().setUrl(new MFString8().getArray()))
-                .setBottomTexture(new ImageTexture().setUrl(new MFString9().getArray()))
-                .setFrontTexture(new ImageTexture().setUrl(new MFString10().getArray()))
-                .setLeftTexture(new ImageTexture().setUrl(new MFString11().getArray()))
-                .setRightTexture(new ImageTexture().setUrl(new MFString12().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString13().getArray())))
+                .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
+                .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
+                .setFrontTexture(new ImageTexture().setUrl(new MFString8().getArray()))
+                .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
+                .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
+                .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
               .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
                 .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
@@ -98,8 +98,8 @@ public class variationalflowers2 implements X3DRoots {
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
                 .addField(new field().setType("MFFloat").setName("x3d_ParticleValues").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2 1 4 4 0 0"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray())))))
+                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString13().getArray())))))
           .addChild(new Script().setDEF("Animate")
             .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("MFFloat").setName("values").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2 2 5 5 0 0"))
@@ -150,52 +150,42 @@ private class MFString5 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
-private class MFFloat6 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {2,2,5,5,0,0});
-  }
-}
-private class MFFloat7 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.2,0.1,0.3,0.3,0.01,0.01});
-  }
-}
-private class MFString8 {
+private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
-private class MFString9 {
+private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
-private class MFString10 {
+private class MFString8 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
-private class MFString11 {
+private class MFString9 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
-private class MFString12 {
+private class MFString10 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
-private class MFString13 {
+private class MFString11 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
-private class MFString14 {
+private class MFString12 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite_variations.vs"});
   }
 }
-private class MFString15 {
+private class MFString13 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/commonnew.fs"});
   }
