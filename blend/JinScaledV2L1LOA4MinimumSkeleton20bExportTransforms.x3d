@@ -1,0 +1,2750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D version="3.0" profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+	<head>
+		<component level="1" name="HAnim"/>
+		<meta name="filename" content="JinScaledV2L1LOA4MinimumSkeleton20bExportTransforms.x3d" />
+		<meta name="generator" content="Blender 4.1.1" />
+	</head>
+	<Scene>
+		<NavigationInfo headlight="false"
+		                visibilityLimit="0.0"
+		                type='"EXAMINE", "ANY"'
+		                avatarSize="0.25, 1.75, 0.75"
+		                />
+		<Background DEF="WO_World"
+		            groundColor="0.051 0.051 0.051"
+		            skyColor="0.051 0.051 0.051"
+		            />
+		<Transform DEF="Light_TRANSFORM"
+		           translation="-4.076245 5.903862 1.005454"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.498085 -0.762016 -0.413815 1.513875"
+		           >
+			<PointLight DEF="LA_Light"
+			            ambientIntensity="0.0000"
+			            color="1.0000 1.0000 1.0000"
+			            intensity="1.0000"
+			            radius="40.0000" 
+			            location="-0.0000 -0.0000 0.0000"
+			            />
+		</Transform>
+		<Transform DEF="Camera_TRANSFORM"
+		           translation="-7.358891 4.958309 -6.925791"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.098233 -0.968789 -0.227591 2.349487"
+		           >
+			<Viewpoint DEF="CA_Camera"
+			           centerOfRotation="0 0 0"
+			           position="-0.00 -0.00 0.00"
+			           orientation="-0.00 -0.47 -0.88 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="hanim_JinLOA4S_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Transform DEF="hanim_humanoid_root_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Transform DEF="hanim_sacrum_TRANSFORM"
+				           translation="0.000000 0.000000 0.000000"
+				           scale="1.000000 1.000000 1.000000"
+				           rotation="0.000000 1.000000 0.000000 0.000000"
+				           >
+				</Transform>
+				<Transform DEF="hanim_sacroiliac_TRANSFORM"
+				           translation="0.000000 0.000000 0.000000"
+				           scale="1.000000 1.000000 1.000000"
+				           rotation="0.000000 1.000000 0.000000 0.000000"
+				           >
+					<Transform DEF="hanim_pelvis_TRANSFORM"
+					           translation="0.000000 0.000000 0.000000"
+					           scale="1.000000 1.000000 1.000000"
+					           rotation="0.000000 1.000000 0.000000 0.000000"
+					           >
+						<Transform DEF="hanim_l_iliocristale_pt_TRANSFORM"
+						           translation="0.130000 0.920000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_r_iliocristale_pt_TRANSFORM"
+						           translation="-0.130000 0.920000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_l_trochanterion_pt_TRANSFORM"
+						           translation="0.140000 0.800000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_r_trochanterion_pt_TRANSFORM"
+						           translation="-0.140000 0.800000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_l_asis_pt_TRANSFORM"
+						           translation="0.100000 0.860000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_r_asis_pt_TRANSFORM"
+						           translation="-0.100000 0.860000 0.003500"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_l_psis_pt_TRANSFORM"
+						           translation="0.050000 0.840000 -0.110000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_r_psis_pt_TRANSFORM"
+						           translation="-0.050000 0.840000 -0.110000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_crotch_pt_TRANSFORM"
+						           translation="0.000000 0.703000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_buttocks_standing_wall_contact_point_pt_TRANSFORM"
+						           translation="0.000000 0.800000 -0.150000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+					</Transform>
+					<Transform DEF="hanim_l_hip_TRANSFORM"
+					           translation="0.000000 0.000000 0.000000"
+					           scale="1.000000 1.000000 1.000000"
+					           rotation="0.000000 1.000000 0.000000 0.000000"
+					           >
+						<Transform DEF="hanim_l_thigh_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+							<Transform DEF="hanim_l_knee_crease_pt_TRANSFORM"
+							           translation="0.090000 0.410000 -0.056000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_l_femoral_medial_epicondyles_pt_TRANSFORM"
+							           translation="0.039000 0.410000 -0.010000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_l_femoral_lateral_epicondyles_pt_TRANSFORM"
+							           translation="0.127000 0.410000 -0.010000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_l_suprapatella_pt_TRANSFORM"
+							           translation="0.085000 0.410000 0.042000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+						</Transform>
+						<Transform DEF="hanim_l_knee_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+							<Transform DEF="hanim_l_calf_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+								<Transform DEF="hanim_l_tibiale_pt_TRANSFORM"
+								           translation="0.090000 0.310000 0.038000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+								<Transform DEF="hanim_l_medial_malleolus_pt_TRANSFORM"
+								           translation="0.061000 0.095000 -0.020000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+								<Transform DEF="hanim_l_lateral_malleolus_pt_TRANSFORM"
+								           translation="0.120000 0.095000 -0.020000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+							</Transform>
+							<Transform DEF="hanim_l_talocrural_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+								<Transform DEF="hanim_l_talus_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_l_sphyrion_pt_TRANSFORM"
+									           translation="0.054000 0.065000 -0.020000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_l_calcaneus_posterior_pt_TRANSFORM"
+									           translation="0.090000 0.030000 -0.060000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+								</Transform>
+								<Transform DEF="hanim_l_talocalcaneonavicular_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_l_navicular_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_l_cuneonavicular_1_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_l_cuneiform_1_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_l_tarsometatarsal_1_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_l_metatarsal_1_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_l_metatarsophalangeal_1_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_l_tarsal_proximal_phalanx_1_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_metatarsal_phalanx_1_pt_TRANSFORM"
+													           translation="0.062000 0.012000 0.100000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+												</Transform>
+												<Transform DEF="hanim_l_tarsal_interphalangeal_1_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_tarsal_distal_phalanx_1_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_tarsal_distal_phalanx_1_tip_TRANSFORM"
+														           translation="0.062000 0.012000 0.134000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+									<Transform DEF="hanim_l_cuneonavicular_2_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_l_cuneiform_2_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_l_tarsometatarsal_2_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_l_metatarsal_2_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_l_metatarsophalangeal_2_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_l_tarsal_proximal_phalanx_2_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_l_tarsal_proximal_interphalangeal_2_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_tarsal_middle_phalanx_2_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_l_tarsal_distal_interphalangeal_2_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_tarsal_distal_phalanx_2_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_l_tarsal_distal_phalanx_2_tip_TRANSFORM"
+															           translation="0.080000 0.016000 0.140000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+									<Transform DEF="hanim_l_cuneonavicular_3_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_l_cuneiform_3_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_l_tarsometatarsal_3_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_l_metatarsal_3_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_l_metatarsophalangeal_3_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_l_tarsal_proximal_phalanx_3_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_l_tarsal_proximal_interphalangeal_3_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_tarsal_middle_phalanx_3_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_l_tarsal_distal_interphalangeal_3_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_tarsal_distal_phalanx_3_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_l_tarsal_distal_phalanx_3_tip_TRANSFORM"
+															           translation="0.100000 0.016000 0.140000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+								</Transform>
+								<Transform DEF="hanim_l_calcaneocuboid_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_l_calcaneus_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_l_transversetarsal_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_l_cuboid_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_l_tarsometatarsal_4_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_l_metatarsal_4_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_l_metatarsophalangeal_4_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_l_tarsal_proximal_phalanx_4_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_l_tarsal_proximal_interphalangeal_4_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_tarsal_middle_phalanx_4_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_l_tarsal_distal_interphalangeal_4_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_tarsal_distal_phalanx_4_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_l_tarsal_distal_phalanx_4_tip_TRANSFORM"
+															           translation="0.115000 0.016000 0.130000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+										<Transform DEF="hanim_l_tarsometatarsal_5_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_l_metatarsal_5_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_l_metatarsophalangeal_5_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_l_tarsal_proximal_phalanx_5_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_l_tarsal_proximal_interphalangeal_5_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_l_tarsal_middle_phalanx_5_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_metatarsal_phalanx_5_pt_TRANSFORM"
+														           translation="0.120000 0.020000 0.040000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+													</Transform>
+													<Transform DEF="hanim_l_tarsal_distal_interphalangeal_5_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_tarsal_distal_phalanx_5_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_l_tarsal_distal_phalanx_5_tip_TRANSFORM"
+															           translation="0.125000 0.016000 0.115000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+					<Transform DEF="hanim_r_hip_TRANSFORM"
+					           translation="0.000000 0.000000 0.000000"
+					           scale="1.000000 1.000000 1.000000"
+					           rotation="0.000000 1.000000 0.000000 0.000000"
+					           >
+						<Transform DEF="hanim_r_thigh_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+							<Transform DEF="hanim_r_knee_crease_pt_TRANSFORM"
+							           translation="-0.090000 0.410000 -0.056000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_r_femoral_medial_epicondyles_pt_TRANSFORM"
+							           translation="-0.039000 0.410000 -0.010000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_r_femoral_lateral_epicondyles_pt_TRANSFORM"
+							           translation="-0.127000 0.410000 -0.010000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_r_suprapatella_pt_TRANSFORM"
+							           translation="-0.085000 0.410000 0.042000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+						</Transform>
+						<Transform DEF="hanim_r_knee_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+							<Transform DEF="hanim_r_calf_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+								<Transform DEF="hanim_r_tibiale_pt_TRANSFORM"
+								           translation="-0.090000 0.310000 0.038000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+								<Transform DEF="hanim_r_medial_malleolus_pt_TRANSFORM"
+								           translation="-0.061000 0.095000 -0.020000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+								<Transform DEF="hanim_r_lateral_malleolus_pt_TRANSFORM"
+								           translation="-0.120000 0.095000 -0.020000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+								</Transform>
+							</Transform>
+							<Transform DEF="hanim_r_talocrural_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+								<Transform DEF="hanim_r_talus_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_r_sphyrion_pt_TRANSFORM"
+									           translation="-0.054000 0.065000 -0.020000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_r_calcaneus_posterior_pt_TRANSFORM"
+									           translation="-0.090000 0.030000 -0.060000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+								</Transform>
+								<Transform DEF="hanim_r_talocalcaneonavicular_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_r_navicular_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_r_cuneonavicular_1_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_r_cuneiform_1_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_r_tarsometatarsal_1_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_r_metatarsal_1_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_r_metatarsophalangeal_1_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_r_tarsal_proximal_phalanx_1_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_metatarsal_phalanx_1_pt_TRANSFORM"
+													           translation="-0.062000 0.012000 0.100000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+												</Transform>
+												<Transform DEF="hanim_r_tarsal_interphalangeal_1_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_tarsal_distal_phalanx_1_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_tarsal_distal_phalanx_1_tip_TRANSFORM"
+														           translation="-0.060000 0.012000 0.140000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+									<Transform DEF="hanim_r_cuneonavicular_2_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_r_cuneiform_2_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_r_tarsometatarsal_2_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_r_metatarsal_2_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_r_metatarsophalangeal_2_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_r_tarsal_proximal_phalanx_2_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_r_tarsal_proximal_interphalangeal_2_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_tarsal_middle_phalanx_2_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_r_tarsal_distal_interphalangeal_2_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_tarsal_distal_phalanx_2_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_r_tarsal_distal_phalanx_2_tip_TRANSFORM"
+															           translation="-0.080000 0.016000 0.140000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+									<Transform DEF="hanim_r_cuneonavicular_3_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_r_cuneiform_3_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_r_tarsometatarsal_3_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_r_metatarsal_3_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_r_metatarsophalangeal_3_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_r_tarsal_proximal_phalanx_3_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_r_tarsal_proximal_interphalangeal_3_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_tarsal_middle_phalanx_3_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_r_tarsal_distal_interphalangeal_3_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_tarsal_distal_phalanx_3_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_r_tarsal_distal_phalanx_3_tip_TRANSFORM"
+															           translation="-0.100000 0.016000 0.140000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+								</Transform>
+								<Transform DEF="hanim_r_calcaneocuboid_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_r_calcaneus_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_r_transversetarsal_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_r_cuboid_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_r_tarsometatarsal_4_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_r_metatarsal_4_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_r_metatarsophalangeal_4_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_r_tarsal_proximal_phalanx_4_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_r_tarsal_proximal_interphalangeal_4_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_tarsal_middle_phalanx_4_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_r_tarsal_distal_interphalangeal_4_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_tarsal_distal_phalanx_4_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_r_tarsal_distal_phalanx_4_tip_TRANSFORM"
+															           translation="-0.115000 0.016000 0.130000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+										<Transform DEF="hanim_r_tarsometatarsal_5_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_r_metatarsal_5_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_r_metatarsophalangeal_5_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_r_tarsal_proximal_phalanx_5_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+												</Transform>
+												<Transform DEF="hanim_r_tarsal_proximal_interphalangeal_5_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_r_tarsal_middle_phalanx_5_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_metatarsal_phalanx_5_pt_TRANSFORM"
+														           translation="-0.120000 0.020000 0.040000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+													</Transform>
+													<Transform DEF="hanim_r_tarsal_distal_interphalangeal_5_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_r_tarsal_distal_phalanx_5_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim__TRANSFORM"
+															           translation="-0.125000 0.016000 0.115000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+				<Transform DEF="hanim_vl5_TRANSFORM"
+				           translation="0.000000 0.000000 0.000000"
+				           scale="1.000000 1.000000 1.000000"
+				           rotation="0.000000 1.000000 0.000000 0.000000"
+				           >
+					<Transform DEF="hanim_l5_TRANSFORM"
+					           translation="0.000000 0.000000 0.000000"
+					           scale="1.000000 1.000000 1.000000"
+					           rotation="0.000000 1.000000 0.000000 0.000000"
+					           >
+						<Transform DEF="hanim_spine_1_middle_back_pt_TRANSFORM"
+						           translation="0.000000 1.000000 -0.100000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_spine_2_lower_back_pt_TRANSFORM"
+						           translation="0.000000 0.950000 -0.100000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_waist_preferred_anterior_pt_TRANSFORM"
+						           translation="0.000000 0.900000 0.100000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_waist_preferred_posterior_pt_TRANSFORM"
+						           translation="0.000000 0.900000 -0.100000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_navel_pt_TRANSFORM"
+						           translation="0.000000 0.900000 -0.100000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+					</Transform>
+					<Transform DEF="hanim_vl4_TRANSFORM"
+					           translation="0.000000 0.000000 0.000000"
+					           scale="1.000000 1.000000 1.000000"
+					           rotation="0.000000 1.000000 0.000000 0.000000"
+					           >
+						<Transform DEF="hanim_l4_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+						</Transform>
+						<Transform DEF="hanim_vl3_TRANSFORM"
+						           translation="0.000000 0.000000 0.000000"
+						           scale="1.000000 1.000000 1.000000"
+						           rotation="0.000000 1.000000 0.000000 0.000000"
+						           >
+							<Transform DEF="hanim_l3_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+							</Transform>
+							<Transform DEF="hanim_vl2_TRANSFORM"
+							           translation="0.000000 0.000000 0.000000"
+							           scale="1.000000 1.000000 1.000000"
+							           rotation="0.000000 1.000000 0.000000 0.000000"
+							           >
+								<Transform DEF="hanim_l2_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_l_rib_10_pt_TRANSFORM"
+									           translation="0.090000 1.000000 0.040000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_r_rib_10_pt_TRANSFORM"
+									           translation="-0.090000 1.000000 0.040000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+								</Transform>
+								<Transform DEF="hanim_vl1_TRANSFORM"
+								           translation="0.000000 0.000000 0.000000"
+								           scale="1.000000 1.000000 1.000000"
+								           rotation="0.000000 1.000000 0.000000 0.000000"
+								           >
+									<Transform DEF="hanim_l1_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+									</Transform>
+									<Transform DEF="hanim_vt12_TRANSFORM"
+									           translation="0.000000 0.000000 0.000000"
+									           scale="1.000000 1.000000 1.000000"
+									           rotation="0.000000 1.000000 0.000000 0.000000"
+									           >
+										<Transform DEF="hanim_t12_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+										</Transform>
+										<Transform DEF="hanim_vt11_TRANSFORM"
+										           translation="0.000000 0.000000 0.000000"
+										           scale="1.000000 1.000000 1.000000"
+										           rotation="0.000000 1.000000 0.000000 0.000000"
+										           >
+											<Transform DEF="hanim_t11_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+											</Transform>
+											<Transform DEF="hanim_vt10_TRANSFORM"
+											           translation="0.000000 0.000000 0.000000"
+											           scale="1.000000 1.000000 1.000000"
+											           rotation="0.000000 1.000000 0.000000 0.000000"
+											           >
+												<Transform DEF="hanim_t10_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_substernale_pt_TRANSFORM"
+													           translation="0.000000 1.080000 0.076000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+													<Transform DEF="hanim_mesosternale_pt_TRANSFORM"
+													           translation="0.000000 1.150000 0.076000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+													</Transform>
+												</Transform>
+												<Transform DEF="hanim_vt9_TRANSFORM"
+												           translation="0.000000 0.000000 0.000000"
+												           scale="1.000000 1.000000 1.000000"
+												           rotation="0.000000 1.000000 0.000000 0.000000"
+												           >
+													<Transform DEF="hanim_t9_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_l_thelion_pt_TRANSFORM"
+														           translation="0.070000 1.120000 0.090000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+														<Transform DEF="hanim_r_thelion_pt_TRANSFORM"
+														           translation="-0.070000 1.120000 0.090000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+														<Transform DEF="hanim_rear_center_midsagittal_plane_pt_TRANSFORM"
+														           translation="0.000000 1.100000 -0.100000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+														<Transform DEF="hanim_l_chest_midsagittal_plane_pt_TRANSFORM"
+														           translation="0.130000 1.120000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+														<Transform DEF="hanim_r_chest_midsagittal_plane_pt_TRANSFORM"
+														           translation="-0.130000 1.120000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+													</Transform>
+													<Transform DEF="hanim_vt8_TRANSFORM"
+													           translation="0.000000 0.000000 0.000000"
+													           scale="1.000000 1.000000 1.000000"
+													           rotation="0.000000 1.000000 0.000000 0.000000"
+													           >
+														<Transform DEF="hanim_t8_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+														</Transform>
+														<Transform DEF="hanim_vt7_TRANSFORM"
+														           translation="0.000000 0.000000 0.000000"
+														           scale="1.000000 1.000000 1.000000"
+														           rotation="0.000000 1.000000 0.000000 0.000000"
+														           >
+															<Transform DEF="hanim_t7_TRANSFORM"
+															           translation="0.000000 0.000000 0.000000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+															</Transform>
+															<Transform DEF="hanim_vt6_TRANSFORM"
+															           translation="0.000000 0.000000 0.000000"
+															           scale="1.000000 1.000000 1.000000"
+															           rotation="0.000000 1.000000 0.000000 0.000000"
+															           >
+																<Transform DEF="hanim_t6_TRANSFORM"
+																           translation="0.000000 0.000000 0.000000"
+																           scale="1.000000 1.000000 1.000000"
+																           rotation="0.000000 1.000000 0.000000 0.000000"
+																           >
+																</Transform>
+																<Transform DEF="hanim_vt5_TRANSFORM"
+																           translation="0.000000 0.000000 0.000000"
+																           scale="1.000000 1.000000 1.000000"
+																           rotation="0.000000 1.000000 0.000000 0.000000"
+																           >
+																	<Transform DEF="hanim_t5_TRANSFORM"
+																	           translation="0.000000 0.000000 0.000000"
+																	           scale="1.000000 1.000000 1.000000"
+																	           rotation="0.000000 1.000000 0.000000 0.000000"
+																	           >
+																	</Transform>
+																	<Transform DEF="hanim_vt4_TRANSFORM"
+																	           translation="0.000000 0.000000 0.000000"
+																	           scale="1.000000 1.000000 1.000000"
+																	           rotation="0.000000 1.000000 0.000000 0.000000"
+																	           >
+																		<Transform DEF="hanim_t4_TRANSFORM"
+																		           translation="0.000000 0.000000 0.000000"
+																		           scale="1.000000 1.000000 1.000000"
+																		           rotation="0.000000 1.000000 0.000000 0.000000"
+																		           >
+																		</Transform>
+																		<Transform DEF="hanim_vt3_TRANSFORM"
+																		           translation="0.000000 0.000000 0.000000"
+																		           scale="1.000000 1.000000 1.000000"
+																		           rotation="0.000000 1.000000 0.000000 0.000000"
+																		           >
+																			<Transform DEF="hanim_t3_TRANSFORM"
+																			           translation="0.000000 0.000000 0.000000"
+																			           scale="1.000000 1.000000 1.000000"
+																			           rotation="0.000000 1.000000 0.000000 0.000000"
+																			           >
+																			</Transform>
+																			<Transform DEF="hanim_vt2_TRANSFORM"
+																			           translation="0.000000 0.000000 0.000000"
+																			           scale="1.000000 1.000000 1.000000"
+																			           rotation="0.000000 1.000000 0.000000 0.000000"
+																			           >
+																				<Transform DEF="hanim_t2_TRANSFORM"
+																				           translation="0.000000 0.000000 0.000000"
+																				           scale="1.000000 1.000000 1.000000"
+																				           rotation="0.000000 1.000000 0.000000 0.000000"
+																				           >
+																				</Transform>
+																				<Transform DEF="hanim_vt1_TRANSFORM"
+																				           translation="0.000000 0.000000 0.000000"
+																				           scale="1.000000 1.000000 1.000000"
+																				           rotation="0.000000 1.000000 0.000000 0.000000"
+																				           >
+																					<Transform DEF="hanim_t1_TRANSFORM"
+																					           translation="0.000000 0.000000 0.000000"
+																					           scale="1.000000 1.000000 1.000000"
+																					           rotation="0.000000 1.000000 0.000000 0.000000"
+																					           >
+																						<Transform DEF="hanim_suprasternale_pt_TRANSFORM"
+																						           translation="0.000000 1.220000 0.080000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																						</Transform>
+																						<Transform DEF="hanim_cervicale_pt_TRANSFORM"
+																						           translation="0.000000 1.220000 -0.080000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																						</Transform>
+																					</Transform>
+																					<Transform DEF="hanim_vc7_TRANSFORM"
+																					           translation="0.000000 0.000000 0.000000"
+																					           scale="1.000000 1.000000 1.000000"
+																					           rotation="0.000000 1.000000 0.000000 0.000000"
+																					           >
+																						<Transform DEF="hanim_c7_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_l_neck_base_pt_TRANSFORM"
+																							           translation="0.060000 1.260000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																							</Transform>
+																							<Transform DEF="hanim_r_neck_base_pt_TRANSFORM"
+																							           translation="-0.060000 1.260000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																							</Transform>
+																						</Transform>
+																						<Transform DEF="hanim_vc6_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_c6_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																							</Transform>
+																							<Transform DEF="hanim_vc5_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																								<Transform DEF="hanim_c5_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_vc4_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																									<Transform DEF="hanim_c4_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_vc3_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																										<Transform DEF="hanim_c3_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																										</Transform>
+																										<Transform DEF="hanim_vc2_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_c2_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_adams_apple_pt_TRANSFORM"
+																												           translation="0.000000 1.290000 0.040000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																											</Transform>
+																											<Transform DEF="hanim_vc1_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_c1_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_skullbase_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_skull_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_skull_vertex_pt_TRANSFORM"
+																														           translation="0.000000 1.612000 -0.030000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_glabella_pt_TRANSFORM"
+																														           translation="0.000000 1.454000 0.128000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_sellion_pt_TRANSFORM"
+																														           translation="0.000000 1.400000 0.120000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_infraorbitale_pt_TRANSFORM"
+																														           translation="0.039000 1.380000 0.090000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_tragion_pt_TRANSFORM"
+																														           translation="0.100000 1.380000 0.028200"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_infraorbitale_pt_TRANSFORM"
+																														           translation="-0.039000 1.380000 0.090000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_tragion_pt_TRANSFORM"
+																														           translation="-0.100000 1.380000 0.028200"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_nuchale_pt_TRANSFORM"
+																														           translation="0.003900 1.350000 -0.160000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_opisthocranion_pt_TRANSFORM"
+																														           translation="0.003900 1.458800 -0.180000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_ectocanthus_pt_TRANSFORM"
+																														           translation="0.086000 1.399000 0.074000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_ectocanthus_pt_TRANSFORM"
+																														           translation="-0.086000 1.399000 0.074000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_l_eyelid_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_eyelid_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_eyelid_tip_TRANSFORM"
+																															           translation="0.000000 2.640000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_r_eyelid_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_eyelid_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_eyelid_tip_TRANSFORM"
+																															           translation="0.000000 2.680000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_l_eyeball_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_eyeball_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_eyeball_tip_TRANSFORM"
+																															           translation="0.000000 2.720000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_r_eyeball_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_eyeball_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_eyeball_tip_TRANSFORM"
+																															           translation="0.000000 2.760000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_l_eyebrow_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_eyebrow_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_eyebrow_tip_TRANSFORM"
+																															           translation="0.000000 2.800000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_r_eyebrow_joint_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_eyebrow_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_eyebrow_tip_TRANSFORM"
+																															           translation="0.000000 2.840000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																													<Transform DEF="hanim_temporomandibular_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_jaw_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_gonion_pt_TRANSFORM"
+																															           translation="0.068000 1.346000 0.033000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																															<Transform DEF="hanim_r_gonion_pt_TRANSFORM"
+																															           translation="-0.068000 1.346000 0.033000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																															<Transform DEF="hanim_supramenton_pt_TRANSFORM"
+																															           translation="0.000000 1.320000 0.086000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																															<Transform DEF="hanim_menton_pt_TRANSFORM"
+																															           translation="0.000000 1.300000 0.080000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																									</Transform>
+																								</Transform>
+																							</Transform>
+																						</Transform>
+																					</Transform>
+																					<Transform DEF="hanim_l_sternoclavicular_TRANSFORM"
+																					           translation="0.000000 0.000000 0.000000"
+																					           scale="1.000000 1.000000 1.000000"
+																					           rotation="0.000000 1.000000 0.000000 0.000000"
+																					           >
+																						<Transform DEF="hanim_l_clavicle_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_l_clavicale_pt_TRANSFORM"
+																							           translation="0.030000 1.200000 0.040000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																							</Transform>
+																						</Transform>
+																						<Transform DEF="hanim_l_acromioclavicular_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_l_scapula_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																								<Transform DEF="hanim_l_acromion_pt_TRANSFORM"
+																								           translation="0.150000 1.222000 -0.020000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_l_axilla_proximal_pt_TRANSFORM"
+																								           translation="0.150000 1.160000 0.040000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_l_axilla_distal_pt_TRANSFORM"
+																								           translation="0.170000 1.140000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_l_axilla_posterior_folds_pt_TRANSFORM"
+																								           translation="0.150000 1.145000 -0.040000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																							</Transform>
+																							<Transform DEF="hanim_l_shoulder_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																								<Transform DEF="hanim_l_upperarm_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																									<Transform DEF="hanim_l_humeral_lateral_epicondyles_pt_TRANSFORM"
+																									           translation="0.200000 0.950000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_l_humeral_medial_epicondyles_pt_TRANSFORM"
+																									           translation="0.180000 0.930000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_l_radiale_pt_TRANSFORM"
+																									           translation="0.200000 0.910000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_l_bideltoid_pt_TRANSFORM"
+																									           translation="0.225000 1.185000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																								</Transform>
+																								<Transform DEF="hanim_l_elbow_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																									<Transform DEF="hanim_l_forearm_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																										<Transform DEF="hanim_l_radial_styloid_pt_TRANSFORM"
+																										           translation="0.180000 0.725000 0.025000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																										</Transform>
+																										<Transform DEF="hanim_l_olecranon_pt_TRANSFORM"
+																										           translation="0.200000 0.920000 -0.030000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																										</Transform>
+																									</Transform>
+																									<Transform DEF="hanim_l_radiocarpal_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																										<Transform DEF="hanim_l_carpal_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_ulnar_styloid_pt_TRANSFORM"
+																											           translation="0.200000 0.725000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_l_midcarpal_1_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_trapezium_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_l_carpometacarpal_1_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_metacarpal_1_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_metacarpal_phalanx_2_pt_TRANSFORM"
+																													           translation="0.200000 0.665000 0.012000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																												</Transform>
+																												<Transform DEF="hanim_l_metacarpophalangeal_1_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_carpal_proximal_phalanx_1_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_l_carpal_interphalangeal_1_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_carpal_distal_phalanx_1_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_carpal_distal_phalanx_1_tip_TRANSFORM"
+																															           translation="0.180000 0.640000 0.060000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_l_midcarpal_2_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_trapezoid_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_l_carpometacarpal_2_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_metacarpal_2_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_l_metacarpophalangeal_2_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_carpal_proximal_phalanx_2_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_l_carpal_proximal_interphalangeal_2_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_carpal_middle_phalanx_2_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_carpal_distal_interphalangeal_2_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_carpal_distal_phalanx_2_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_l_dactylion_pt_TRANSFORM"
+																																           translation="0.170000 0.558000 0.017000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																																<Transform DEF="hanim_l_carpal_distal_phalanx_2_tip_TRANSFORM"
+																																           translation="0.172000 0.558000 0.017000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_l_midcarpal_3_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_capitate_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_l_carpometacarpal_3_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_metacarpal_3_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_metacarpal_phalanx_3_pt_TRANSFORM"
+																													           translation="0.200000 0.665000 -0.039000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																												</Transform>
+																												<Transform DEF="hanim_l_metacarpophalangeal_3_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_carpal_proximal_phalanx_3_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_l_carpal_proximal_interphalangeal_3_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_carpal_middle_phalanx_3_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_carpal_distal_interphalangeal_3_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_carpal_distal_phalanx_3_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_l_carpal_distal_phalanx_3_tip_TRANSFORM"
+																																           translation="0.172000 0.555000 -0.006000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_l_midcarpal_4_5_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_hamate_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_l_carpometacarpal_4_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_metacarpal_4_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_l_metacarpophalangeal_4_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_carpal_proximal_phalanx_4_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_l_carpal_proximal_interphalangeal_4_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_carpal_middle_phalanx_4_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_l_carpal_distal_interphalangeal_4_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_carpal_distal_phalanx_4_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_l_carpal_distal_phalanx_4_tip_TRANSFORM"
+																																           translation="0.172000 0.559000 -0.024000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_l_carpometacarpal_5_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_l_metacarpal_5_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_metacarpal_phalanx_5_pt_TRANSFORM"
+																												           translation="0.200000 0.665000 -0.036000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																											</Transform>
+																											<Transform DEF="hanim_l_metacarpophalangeal_5_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_l_carpal_proximal_phalanx_5_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_l_carpal_proximal_interphalangeal_5_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_l_carpal_middle_phalanx_5_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_l_carpal_distal_interphalangeal_5_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_l_carpal_distal_phalanx_5_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_l_carpal_distal_phalanx_5_tip_TRANSFORM"
+																															           translation="0.172000 0.580000 -0.039000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																									</Transform>
+																								</Transform>
+																							</Transform>
+																						</Transform>
+																					</Transform>
+																					<Transform DEF="hanim_r_sternoclavicular_TRANSFORM"
+																					           translation="0.000000 0.000000 0.000000"
+																					           scale="1.000000 1.000000 1.000000"
+																					           rotation="0.000000 1.000000 0.000000 0.000000"
+																					           >
+																						<Transform DEF="hanim_r_clavicle_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_r_clavicale_pt_TRANSFORM"
+																							           translation="-0.030000 1.200000 0.040000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																							</Transform>
+																						</Transform>
+																						<Transform DEF="hanim_r_acromioclavicular_TRANSFORM"
+																						           translation="0.000000 0.000000 0.000000"
+																						           scale="1.000000 1.000000 1.000000"
+																						           rotation="0.000000 1.000000 0.000000 0.000000"
+																						           >
+																							<Transform DEF="hanim_r_scapula_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																								<Transform DEF="hanim_r_acromion_pt_TRANSFORM"
+																								           translation="-0.150000 1.222000 -0.020000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_r_axilla_proximal_pt_TRANSFORM"
+																								           translation="-0.150000 1.160000 0.040000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_r_axilla_distal_pt_TRANSFORM"
+																								           translation="-0.170000 1.140000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																								<Transform DEF="hanim_r_axilla_posterior_folds_pt_TRANSFORM"
+																								           translation="-0.150000 1.145000 -0.040000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																								</Transform>
+																							</Transform>
+																							<Transform DEF="hanim_r_shoulder_TRANSFORM"
+																							           translation="0.000000 0.000000 0.000000"
+																							           scale="1.000000 1.000000 1.000000"
+																							           rotation="0.000000 1.000000 0.000000 0.000000"
+																							           >
+																								<Transform DEF="hanim_r_upperarm_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																									<Transform DEF="hanim_r_humeral_lateral_epicondyles_pt_TRANSFORM"
+																									           translation="-0.200000 0.950000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_r_humeral_medial_epicondyles_pt_TRANSFORM"
+																									           translation="-0.180000 0.930000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_r_radiale_pt_TRANSFORM"
+																									           translation="-0.200000 0.910000 -0.030000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																									<Transform DEF="hanim_r_bideltoid_pt_TRANSFORM"
+																									           translation="-0.225000 1.185000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																									</Transform>
+																								</Transform>
+																								<Transform DEF="hanim_r_elbow_TRANSFORM"
+																								           translation="0.000000 0.000000 0.000000"
+																								           scale="1.000000 1.000000 1.000000"
+																								           rotation="0.000000 1.000000 0.000000 0.000000"
+																								           >
+																									<Transform DEF="hanim_r_forearm_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																										<Transform DEF="hanim_r_radial_styloid_pt_TRANSFORM"
+																										           translation="-0.180000 0.725000 0.025000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																										</Transform>
+																										<Transform DEF="hanim_r_olecranon_pt_TRANSFORM"
+																										           translation="-0.200000 0.920000 -0.030000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																										</Transform>
+																									</Transform>
+																									<Transform DEF="hanim_r_radiocarpal_TRANSFORM"
+																									           translation="0.000000 0.000000 0.000000"
+																									           scale="1.000000 1.000000 1.000000"
+																									           rotation="0.000000 1.000000 0.000000 0.000000"
+																									           >
+																										<Transform DEF="hanim_r_carpal_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_ulnar_styloid_pt_TRANSFORM"
+																											           translation="-0.200000 0.725000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_r_midcarpal_1_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_trapezium_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_r_carpometacarpal_1_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_metacarpal_1_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_metacarpal_phalanx_2_pt_TRANSFORM"
+																													           translation="-0.200000 0.665000 0.012000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																												</Transform>
+																												<Transform DEF="hanim_r_metacarpophalangeal_1_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_carpal_proximal_phalanx_1_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_r_carpal_interphalangeal_1_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_carpal_distal_phalanx_1_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_carpal_distal_phalanx_1_tip_TRANSFORM"
+																															           translation="-0.180000 0.640000 0.060000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_r_midcarpal_2_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_trapezoid_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_r_carpometacarpal_2_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_metacarpal_2_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_r_metacarpophalangeal_2_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_carpal_proximal_phalanx_2_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_r_carpal_proximal_interphalangeal_2_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_carpal_middle_phalanx_2_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_carpal_distal_interphalangeal_2_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_carpal_distal_phalanx_2_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_r_dactylion_pt_TRANSFORM"
+																																           translation="-0.170000 0.558000 0.017000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																																<Transform DEF="hanim_r_carpal_distal_phalanx_2_tip_TRANSFORM"
+																																           translation="-0.172000 0.558000 0.017000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_r_midcarpal_3_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_capitate_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_r_carpometacarpal_3_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_metacarpal_3_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_metacarpal_phalanx_3_pt_TRANSFORM"
+																													           translation="-0.200000 0.665000 0.016000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																												</Transform>
+																												<Transform DEF="hanim_r_metacarpophalangeal_3_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_carpal_proximal_phalanx_3_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_r_carpal_proximal_interphalangeal_3_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_carpal_middle_phalanx_3_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_carpal_distal_interphalangeal_3_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_carpal_distal_phalanx_3_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_r_carpal_distal_phalanx_3_tip_TRANSFORM"
+																																           translation="-0.170000 0.555000 -0.006000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_r_midcarpal_4_5_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_hamate_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																											</Transform>
+																											<Transform DEF="hanim_r_carpometacarpal_4_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_metacarpal_4_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_r_metacarpophalangeal_4_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_carpal_proximal_phalanx_4_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_r_carpal_proximal_interphalangeal_4_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_carpal_middle_phalanx_4_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																														</Transform>
+																														<Transform DEF="hanim_r_carpal_distal_interphalangeal_4_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_carpal_distal_phalanx_4_TRANSFORM"
+																															           translation="0.000000 0.000000 0.000000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																																<Transform DEF="hanim_r_carpal_distal_phalanx_4_tip_TRANSFORM"
+																																           translation="-0.172000 0.559000 -0.024000"
+																																           scale="1.000000 1.000000 1.000000"
+																																           rotation="0.000000 1.000000 0.000000 0.000000"
+																																           >
+																																</Transform>
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																										<Transform DEF="hanim_r_carpometacarpal_5_TRANSFORM"
+																										           translation="0.000000 0.000000 0.000000"
+																										           scale="1.000000 1.000000 1.000000"
+																										           rotation="0.000000 1.000000 0.000000 0.000000"
+																										           >
+																											<Transform DEF="hanim_r_metacarpal_5_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_metacarpal_phalanx_5_pt_TRANSFORM"
+																												           translation="-0.200000 0.665000 -0.036000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																											</Transform>
+																											<Transform DEF="hanim_r_metacarpophalangeal_5_TRANSFORM"
+																											           translation="0.000000 0.000000 0.000000"
+																											           scale="1.000000 1.000000 1.000000"
+																											           rotation="0.000000 1.000000 0.000000 0.000000"
+																											           >
+																												<Transform DEF="hanim_r_carpal_proximal_phalanx_5_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																												</Transform>
+																												<Transform DEF="hanim_r_carpal_proximal_interphalangeal_5_TRANSFORM"
+																												           translation="0.000000 0.000000 0.000000"
+																												           scale="1.000000 1.000000 1.000000"
+																												           rotation="0.000000 1.000000 0.000000 0.000000"
+																												           >
+																													<Transform DEF="hanim_r_carpal_middle_phalanx_5_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																													</Transform>
+																													<Transform DEF="hanim_r_carpal_distal_interphalangeal_5_TRANSFORM"
+																													           translation="0.000000 0.000000 0.000000"
+																													           scale="1.000000 1.000000 1.000000"
+																													           rotation="0.000000 1.000000 0.000000 0.000000"
+																													           >
+																														<Transform DEF="hanim_r_carpal_distal_phalanx_5_TRANSFORM"
+																														           translation="0.000000 0.000000 0.000000"
+																														           scale="1.000000 1.000000 1.000000"
+																														           rotation="0.000000 1.000000 0.000000 0.000000"
+																														           >
+																															<Transform DEF="hanim_r_carpal_distal_phalanx_5_tip_TRANSFORM"
+																															           translation="-0.172000 0.580000 -0.039000"
+																															           scale="1.000000 1.000000 1.000000"
+																															           rotation="0.000000 1.000000 0.000000 0.000000"
+																															           >
+																															</Transform>
+																														</Transform>
+																													</Transform>
+																												</Transform>
+																											</Transform>
+																										</Transform>
+																									</Transform>
+																								</Transform>
+																							</Transform>
+																						</Transform>
+																					</Transform>
+																				</Transform>
+																			</Transform>
+																		</Transform>
+																	</Transform>
+																</Transform>
+															</Transform>
+														</Transform>
+													</Transform>
+												</Transform>
+											</Transform>
+										</Transform>
+									</Transform>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+			</Transform>
+		</Transform>
+		<Transform DEF="DirectLight_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<DirectionalLight DEF="LA_DirectLight"
+			                  ambientIntensity="0.0000"
+			                  color="1.0000 1.0000 1.0000"
+			                  intensity="0.5714"
+			                  direction="0.0000 0.0000 -1.0000"
+			                  />
+		</Transform>
+		<Transform DEF="DirectLight_001_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<DirectionalLight DEF="LA_DirectLight_001"
+			                  ambientIntensity="0.0000"
+			                  color="1.0000 1.0000 1.0000"
+			                  intensity="0.4286"
+			                  direction="0.0000 0.0000 -1.0000"
+			                  />
+		</Transform>
+		<Transform DEF="DirectLight_002_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<DirectionalLight DEF="LA_DirectLight_002"
+			                  ambientIntensity="0.0000"
+			                  color="1.0000 1.0000 1.0000"
+			                  intensity="0.5714"
+			                  direction="0.0000 0.0000 -1.0000"
+			                  />
+		</Transform>
+		<Transform DEF="SceneViewpoints_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Transform DEF="Viewpoint_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_001_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_001"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_002_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_002"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_003_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_003"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_004_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_004"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_005_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_005"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_006_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_006"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_007_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_007"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_008_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_008"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+			<Transform DEF="Viewpoint_009_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Viewpoint DEF="CA_Viewpoint_009"
+				           centerOfRotation="0 0 0"
+				           position="0.00 0.00 0.00"
+				           orientation="0.00 1.00 0.00 0.00"
+				           fieldOfView="0.785"
+				           />
+			</Transform>
+		</Transform>
+		<Transform DEF="Landmark000_TRANSFORM"
+		           translation="0.000000 0.000000 0.000000"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Transform DEF="HAnim000Landmark_Sphere_TRANSFORM"
+			           translation="0.000000 0.000000 0.000000"
+			           scale="1.000000 1.000000 1.000000"
+			           rotation="0.000000 1.000000 0.000000 0.000000"
+			           >
+				<Transform DEF="HAnim000Landmark_Sphere_ifs_TRANSFORM"
+				           translation="0.000000 0.000000 0.000000"
+				           scale="1.000000 1.000000 1.000000"
+				           rotation="0.000000 1.000000 0.000000 0.000000"
+				           >
+					<Group DEF="group_ME_HAnim000Landmark_Sphere">
+						<Shape>
+							<Appearance>
+								<Material DEF="MA_HAnim000Landmark"
+								          diffuseColor="0.000 1.000 0.000"
+								          specularColor="0.401 0.401 0.401"
+								          emissiveColor="0.000 0.000 0.000"
+								          ambientIntensity="0.000"
+								          shininess="0.500"
+								          transparency="0.0"
+								          />
+							</Appearance>
+							<IndexedFaceSet solid="false"
+							                texCoordIndex="0 1 2 -1 3 4 5 -1 6 7 8 -1 9 10 11 -1 12 13 14 -1 15 16 17 -1 18 19 20 -1 21 22 23 -1 24 25 26 -1 27 28 29 -1 30 31 32 -1 33 34 35 -1 36 37 38 -1 39 40 41 -1 42 43 44 -1 45 46 47 -1 48 49 50 51 -1 52 53 54 55 -1 56 57 58 59 -1 60 61 62 63 -1 64 65 66 67 -1 68 69 70 71 -1 72 73 74 75 -1 76 77 78 79 -1 80 81 82 83 -1 84 85 86 87 -1 88 89 90 91 -1 92 93 94 95 -1 96 97 98 99 -1 100 101 102 103 -1 104 105 106 107 -1 108 109 110 111 -1 112 113 114 115 -1 116 117 118 119 -1 120 121 122 123 -1 124 125 126 127 -1 128 129 130 131 -1 132 133 134 135 -1 136 137 138 139 -1 140 141 142 143 -1 144 145 146 147 -1 148 149 150 151 -1 152 153 154 155 -1 156 157 158 159 -1 160 161 162 163 -1 164 165 166 167 -1 168 169 170 171 -1 172 173 174 175 -1 176 177 178 179 -1 180 181 182 183 -1 184 185 186 187 -1 188 189 190 191 -1 192 193 194 195 -1 196 197 198 199 -1 200 201 202 203 -1 204 205 206 207 -1 208 209 210 211 -1 212 213 214 215 -1 216 217 218 219 -1 220 221 222 223 -1 224 225 226 227 -1 228 229 230 231 -1 232 233 234 235 -1 236 237 238 239 -1 240 241 242 243 -1 244 245 246 247 -1 248 249 250 251 -1 252 253 254 255 -1 256 257 258 259 -1 260 261 262 263 -1 264 265 266 267 -1 268 269 270 271 -1 272 273 274 275 -1 276 277 278 279 -1 280 281 282 283 -1 284 285 286 287 -1 288 289 290 291 -1 292 293 294 295 -1 296 297 298 299 -1 300 301 302 303 -1 304 305 306 307 -1 308 309 310 311 -1 312 313 314 315 -1 316 317 318 319 -1 320 321 322 323 -1 324 325 326 327 -1 328 329 330 331 -1 332 333 334 335 -1 336 337 338 339 -1 340 341 342 343 -1 344 345 346 347 -1 348 349 350 351 -1 352 353 354 355 -1 356 357 358 359 -1 360 361 362 363 -1 364 365 366 367 -1 368 369 370 371 -1 372 373 374 375 -1 376 377 378 379 -1 380 381 382 383 -1 384 385 386 387 -1 388 389 390 391 -1 392 393 394 395 -1 396 397 398 399 -1 400 401 402 403 -1 404 405 406 407 -1 408 409 410 411 -1 412 413 414 415 -1 416 417 418 419 -1 420 421 422 423 -1 424 425 426 427 -1 428 429 430 431 -1 432 433 434 435 -1 436 437 438 439 -1 440 441 442 443 -1 444 445 446 447 -1 448 449 450 451 -1 452 453 454 455 -1 456 457 458 459 -1 460 461 462 463 -1 464 465 466 467 -1 468 469 470 471 -1 472 473 474 475 -1 476 477 478 479 -1 480 481 482 483 -1 484 485 486 487 -1 488 489 490 491 -1 492 493 494 495 -1 496 497 498 499 -1 500 501 502 503 -1 504 505 506 507 -1 508 509 510 511 -1 512 513 514 515 -1 516 517 518 519 -1 520 521 522 523 -1 524 525 526 527 -1 528 529 530 531 -1 532 533 534 535 -1 536 537 538 539 -1 540 541 542 543 -1 544 545 546 547 -1 548 549 550 551 -1 552 553 554 555 -1 556 557 558 559 -1 560 561 562 563 -1 564 565 566 567 -1 568 569 570 571 -1 572 573 574 575 -1 576 577 578 579 -1 580 581 582 583 -1 584 585 586 587 -1 588 589 590 591 -1 592 593 594 595 -1 596 597 598 599 -1 600 601 602 603 -1 604 605 606 607 -1 608 609 610 611 -1 612 613 614 615 -1 616 617 618 619 -1 620 621 622 623 -1 624 625 626 627 -1 628 629 630 631 -1 632 633 634 635 -1 636 637 638 639 -1 640 641 642 643 -1 644 645 646 647 -1 648 649 650 651 -1 652 653 654 655 -1 656 657 658 659 -1 660 661 662 663 -1 664 665 666 667 -1 668 669 670 671 -1 672 673 674 675 -1 676 677 678 679 -1 680 681 682 683 -1 684 685 686 687 -1 688 689 690 691 -1 692 693 694 695 -1 696 697 698 699 -1 700 701 702 703 -1 704 705 706 707 -1 708 709 710 711 -1 712 713 714 715 -1 716 717 718 719 -1 720 721 722 723 -1 724 725 726 727 -1 728 729 730 731 -1 732 733 734 735 -1 736 737 738 739 -1 740 741 742 743 -1 744 745 746 747 -1 748 749 750 751 -1 752 753 754 755 -1 756 757 758 759 -1 760 761 762 763 -1 764 765 766 767 -1 768 769 770 771 -1 772 773 774 775 -1 776 777 778 779 -1 780 781 782 783 -1 784 785 786 787 -1 788 789 790 791 -1 792 793 794 795 -1 796 797 798 799 -1 800 801 802 803 -1 804 805 806 807 -1 808 809 810 811 -1 812 813 814 815 -1 816 817 818 819 -1 820 821 822 823 -1 824 825 826 827 -1 828 829 830 831 -1 832 833 834 835 -1 836 837 838 839 -1 840 841 842 843 -1 844 845 846 847 -1 848 849 850 851 -1 852 853 854 855 -1 856 857 858 859 -1 860 861 862 863 -1 864 865 866 867 -1 868 869 870 871 -1 872 873 874 875 -1 876 877 878 879 -1 880 881 882 883 -1 884 885 886 887 -1 888 889 890 891 -1 892 893 894 895 -1 896 897 898 899 -1 900 901 902 903 -1 904 905 906 907 -1 908 909 910 911 -1 912 913 914 915 -1 916 917 918 919 -1 920 921 922 923 -1 924 925 926 927 -1 928 929 930 931 -1 932 933 934 935 -1 936 937 938 939 -1 940 941 942 943 -1 944 945 946 -1 947 948 949 -1 950 951 952 -1 953 954 955 -1 956 957 958 -1 959 960 961 -1 962 963 964 -1 965 966 967 -1 968 969 970 -1 971 972 973 -1 974 975 976 -1 977 978 979 -1 980 981 982 -1 983 984 985 -1 986 987 988 -1 989 990 991 -1 "
+							                coordIndex="0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 13 -1 0 13 14 -1 0 14 15 -1 0 15 16 -1 0 16 17 -1 0 17 2 -1 2 18 19 3 -1 3 19 20 4 -1 4 20 21 5 -1 5 21 22 6 -1 6 22 23 7 -1 7 23 24 8 -1 8 24 25 9 -1 9 25 26 10 -1 10 26 27 11 -1 11 27 28 12 -1 12 28 29 13 -1 13 29 30 14 -1 14 30 31 15 -1 15 31 32 16 -1 16 32 33 17 -1 17 33 18 2 -1 18 34 35 19 -1 19 35 36 20 -1 20 36 37 21 -1 21 37 38 22 -1 22 38 39 23 -1 23 39 40 24 -1 24 40 41 25 -1 25 41 42 26 -1 26 42 43 27 -1 27 43 44 28 -1 28 44 45 29 -1 29 45 46 30 -1 30 46 47 31 -1 31 47 48 32 -1 32 48 49 33 -1 33 49 34 18 -1 34 50 51 35 -1 35 51 52 36 -1 36 52 53 37 -1 37 53 54 38 -1 38 54 55 39 -1 39 55 56 40 -1 40 56 57 41 -1 41 57 58 42 -1 42 58 59 43 -1 43 59 60 44 -1 44 60 61 45 -1 45 61 62 46 -1 46 62 63 47 -1 47 63 64 48 -1 48 64 65 49 -1 49 65 50 34 -1 50 66 67 51 -1 51 67 68 52 -1 52 68 69 53 -1 53 69 70 54 -1 54 70 71 55 -1 55 71 72 56 -1 56 72 73 57 -1 57 73 74 58 -1 58 74 75 59 -1 59 75 76 60 -1 60 76 77 61 -1 61 77 78 62 -1 62 78 79 63 -1 63 79 80 64 -1 64 80 81 65 -1 65 81 66 50 -1 66 82 83 67 -1 67 83 84 68 -1 68 84 85 69 -1 69 85 86 70 -1 70 86 87 71 -1 71 87 88 72 -1 72 88 89 73 -1 73 89 90 74 -1 74 90 91 75 -1 75 91 92 76 -1 76 92 93 77 -1 77 93 94 78 -1 78 94 95 79 -1 79 95 96 80 -1 80 96 97 81 -1 81 97 82 66 -1 82 98 99 83 -1 83 99 100 84 -1 84 100 101 85 -1 85 101 102 86 -1 86 102 103 87 -1 87 103 104 88 -1 88 104 105 89 -1 89 105 106 90 -1 90 106 107 91 -1 91 107 108 92 -1 92 108 109 93 -1 93 109 110 94 -1 94 110 111 95 -1 95 111 112 96 -1 96 112 113 97 -1 97 113 98 82 -1 98 114 115 99 -1 99 115 116 100 -1 100 116 117 101 -1 101 117 118 102 -1 102 118 119 103 -1 103 119 120 104 -1 104 120 121 105 -1 105 121 122 106 -1 106 122 123 107 -1 107 123 124 108 -1 108 124 125 109 -1 109 125 126 110 -1 110 126 127 111 -1 111 127 128 112 -1 112 128 129 113 -1 113 129 114 98 -1 114 130 131 115 -1 115 131 132 116 -1 116 132 133 117 -1 117 133 134 118 -1 118 134 135 119 -1 119 135 136 120 -1 120 136 137 121 -1 121 137 138 122 -1 122 138 139 123 -1 123 139 140 124 -1 124 140 141 125 -1 125 141 142 126 -1 126 142 143 127 -1 127 143 144 128 -1 128 144 145 129 -1 129 145 130 114 -1 130 146 147 131 -1 131 147 148 132 -1 132 148 149 133 -1 133 149 150 134 -1 134 150 151 135 -1 135 151 152 136 -1 136 152 153 137 -1 137 153 154 138 -1 138 154 155 139 -1 139 155 156 140 -1 140 156 157 141 -1 141 157 158 142 -1 142 158 159 143 -1 143 159 160 144 -1 144 160 161 145 -1 145 161 146 130 -1 146 162 163 147 -1 147 163 164 148 -1 148 164 165 149 -1 149 165 166 150 -1 150 166 167 151 -1 151 167 168 152 -1 152 168 169 153 -1 153 169 170 154 -1 154 170 171 155 -1 155 171 172 156 -1 156 172 173 157 -1 157 173 174 158 -1 158 174 175 159 -1 159 175 176 160 -1 160 176 177 161 -1 161 177 162 146 -1 162 178 179 163 -1 163 179 180 164 -1 164 180 181 165 -1 165 181 182 166 -1 166 182 183 167 -1 167 183 184 168 -1 168 184 185 169 -1 169 185 186 170 -1 170 186 187 171 -1 171 187 188 172 -1 172 188 189 173 -1 173 189 190 174 -1 174 190 191 175 -1 175 191 192 176 -1 176 192 193 177 -1 177 193 178 162 -1 178 194 195 179 -1 179 195 196 180 -1 180 196 197 181 -1 181 197 198 182 -1 182 198 199 183 -1 183 199 200 184 -1 184 200 201 185 -1 185 201 202 186 -1 186 202 203 187 -1 187 203 204 188 -1 188 204 205 189 -1 189 205 206 190 -1 190 206 207 191 -1 191 207 208 192 -1 192 208 209 193 -1 193 209 194 178 -1 194 210 211 195 -1 195 211 212 196 -1 196 212 213 197 -1 197 213 214 198 -1 198 214 215 199 -1 199 215 216 200 -1 200 216 217 201 -1 201 217 218 202 -1 202 218 219 203 -1 203 219 220 204 -1 204 220 221 205 -1 205 221 222 206 -1 206 222 223 207 -1 207 223 224 208 -1 208 224 225 209 -1 209 225 210 194 -1 210 226 227 211 -1 211 227 228 212 -1 212 228 229 213 -1 213 229 230 214 -1 214 230 231 215 -1 215 231 232 216 -1 216 232 233 217 -1 217 233 234 218 -1 218 234 235 219 -1 219 235 236 220 -1 220 236 237 221 -1 221 237 238 222 -1 222 238 239 223 -1 223 239 240 224 -1 224 240 241 225 -1 225 241 226 210 -1 1 227 226 -1 1 228 227 -1 1 229 228 -1 1 230 229 -1 1 231 230 -1 1 232 231 -1 1 233 232 -1 1 234 233 -1 1 235 234 -1 1 236 235 -1 1 237 236 -1 1 238 237 -1 1 239 238 -1 1 240 239 -1 1 241 240 -1 1 226 241 -1 "
+							                >
+								<Coordinate DEF="coords_ME_HAnim000Landmark_Sphere"
+								            point="0.000000 0.010000 0.000000 0.000000 -0.010000 0.000000 -0.000000 0.009808 -0.001951 -0.000747 0.009808 -0.001802 -0.001379 0.009808 -0.001379 -0.001802 0.009808 -0.000747 -0.001951 0.009808 -0.000000 -0.001802 0.009808 0.000747 -0.001379 0.009808 0.001379 -0.000747 0.009808 0.001802 -0.000000 0.009808 0.001951 0.000747 0.009808 0.001802 0.001379 0.009808 0.001379 0.001802 0.009808 0.000747 0.001951 0.009808 0.000000 0.001802 0.009808 -0.000747 0.001379 0.009808 -0.001379 0.000747 0.009808 -0.001802 -0.000000 0.009239 -0.003827 -0.001464 0.009239 -0.003536 -0.002706 0.009239 -0.002706 -0.003536 0.009239 -0.001464 -0.003827 0.009239 -0.000000 -0.003536 0.009239 0.001464 -0.002706 0.009239 0.002706 -0.001464 0.009239 0.003536 -0.000000 0.009239 0.003827 0.001464 0.009239 0.003536 0.002706 0.009239 0.002706 0.003536 0.009239 0.001464 0.003827 0.009239 0.000000 0.003536 0.009239 -0.001464 0.002706 0.009239 -0.002706 0.001464 0.009239 -0.003536 -0.000000 0.008315 -0.005556 -0.002126 0.008315 -0.005133 -0.003928 0.008315 -0.003928 -0.005133 0.008315 -0.002126 -0.005556 0.008315 -0.000000 -0.005133 0.008315 0.002126 -0.003928 0.008315 0.003928 -0.002126 0.008315 0.005133 -0.000000 0.008315 0.005556 0.002126 0.008315 0.005133 0.003928 0.008315 0.003928 0.005133 0.008315 0.002126 0.005556 0.008315 0.000000 0.005133 0.008315 -0.002126 0.003928 0.008315 -0.003928 0.002126 0.008315 -0.005133 -0.000000 0.007071 -0.007071 -0.002706 0.007071 -0.006533 -0.005000 0.007071 -0.005000 -0.006533 0.007071 -0.002706 -0.007071 0.007071 -0.000000 -0.006533 0.007071 0.002706 -0.005000 0.007071 0.005000 -0.002706 0.007071 0.006533 -0.000000 0.007071 0.007071 0.002706 0.007071 0.006533 0.005000 0.007071 0.005000 0.006533 0.007071 0.002706 0.007071 0.007071 0.000000 0.006533 0.007071 -0.002706 0.005000 0.007071 -0.005000 0.002706 0.007071 -0.006533 -0.000000 0.005556 -0.008315 -0.003182 0.005556 -0.007682 -0.005879 0.005556 -0.005879 -0.007682 0.005556 -0.003182 -0.008315 0.005556 -0.000000 -0.007682 0.005556 0.003182 -0.005879 0.005556 0.005879 -0.003182 0.005556 0.007682 -0.000000 0.005556 0.008315 0.003182 0.005556 0.007682 0.005879 0.005556 0.005879 0.007682 0.005556 0.003182 0.008315 0.005556 0.000000 0.007682 0.005556 -0.003182 0.005879 0.005556 -0.005879 0.003182 0.005556 -0.007682 -0.000000 0.003827 -0.009239 -0.003536 0.003827 -0.008536 -0.006533 0.003827 -0.006533 -0.008536 0.003827 -0.003536 -0.009239 0.003827 -0.000000 -0.008536 0.003827 0.003536 -0.006533 0.003827 0.006533 -0.003536 0.003827 0.008536 -0.000000 0.003827 0.009239 0.003536 0.003827 0.008536 0.006533 0.003827 0.006533 0.008536 0.003827 0.003536 0.009239 0.003827 0.000000 0.008536 0.003827 -0.003536 0.006533 0.003827 -0.006533 0.003536 0.003827 -0.008536 -0.000000 0.001951 -0.009808 -0.003753 0.001951 -0.009061 -0.006935 0.001951 -0.006935 -0.009061 0.001951 -0.003753 -0.009808 0.001951 -0.000000 -0.009061 0.001951 0.003753 -0.006935 0.001951 0.006935 -0.003753 0.001951 0.009061 -0.000000 0.001951 0.009808 0.003753 0.001951 0.009061 0.006935 0.001951 0.006935 0.009061 0.001951 0.003753 0.009808 0.001951 0.000000 0.009061 0.001951 -0.003753 0.006935 0.001951 -0.006935 0.003753 0.001951 -0.009061 -0.000000 0.000000 -0.010000 -0.003827 0.000000 -0.009239 -0.007071 0.000000 -0.007071 -0.009239 0.000000 -0.003827 -0.010000 0.000000 -0.000000 -0.009239 0.000000 0.003827 -0.007071 0.000000 0.007071 -0.003827 0.000000 0.009239 -0.000000 0.000000 0.010000 0.003827 0.000000 0.009239 0.007071 0.000000 0.007071 0.009239 0.000000 0.003827 0.010000 0.000000 0.000000 0.009239 0.000000 -0.003827 0.007071 0.000000 -0.007071 0.003827 0.000000 -0.009239 -0.000000 -0.001951 -0.009808 -0.003753 -0.001951 -0.009061 -0.006935 -0.001951 -0.006935 -0.009061 -0.001951 -0.003753 -0.009808 -0.001951 -0.000000 -0.009061 -0.001951 0.003753 -0.006935 -0.001951 0.006935 -0.003753 -0.001951 0.009061 -0.000000 -0.001951 0.009808 0.003753 -0.001951 0.009061 0.006935 -0.001951 0.006935 0.009061 -0.001951 0.003753 0.009808 -0.001951 0.000000 0.009061 -0.001951 -0.003753 0.006935 -0.001951 -0.006935 0.003753 -0.001951 -0.009061 -0.000000 -0.003827 -0.009239 -0.003536 -0.003827 -0.008536 -0.006533 -0.003827 -0.006533 -0.008536 -0.003827 -0.003536 -0.009239 -0.003827 -0.000000 -0.008536 -0.003827 0.003536 -0.006533 -0.003827 0.006533 -0.003536 -0.003827 0.008536 -0.000000 -0.003827 0.009239 0.003536 -0.003827 0.008536 0.006533 -0.003827 0.006533 0.008536 -0.003827 0.003536 0.009239 -0.003827 0.000000 0.008536 -0.003827 -0.003536 0.006533 -0.003827 -0.006533 0.003536 -0.003827 -0.008536 -0.000000 -0.005556 -0.008315 -0.003182 -0.005556 -0.007682 -0.005879 -0.005556 -0.005879 -0.007682 -0.005556 -0.003182 -0.008315 -0.005556 -0.000000 -0.007682 -0.005556 0.003182 -0.005879 -0.005556 0.005879 -0.003182 -0.005556 0.007682 -0.000000 -0.005556 0.008315 0.003182 -0.005556 0.007682 0.005879 -0.005556 0.005879 0.007682 -0.005556 0.003182 0.008315 -0.005556 0.000000 0.007682 -0.005556 -0.003182 0.005879 -0.005556 -0.005879 0.003182 -0.005556 -0.007682 -0.000000 -0.007071 -0.007071 -0.002706 -0.007071 -0.006533 -0.005000 -0.007071 -0.005000 -0.006533 -0.007071 -0.002706 -0.007071 -0.007071 -0.000000 -0.006533 -0.007071 0.002706 -0.005000 -0.007071 0.005000 -0.002706 -0.007071 0.006533 -0.000000 -0.007071 0.007071 0.002706 -0.007071 0.006533 0.005000 -0.007071 0.005000 0.006533 -0.007071 0.002706 0.007071 -0.007071 0.000000 0.006533 -0.007071 -0.002706 0.005000 -0.007071 -0.005000 0.002706 -0.007071 -0.006533 -0.000000 -0.008315 -0.005556 -0.002126 -0.008315 -0.005133 -0.003928 -0.008315 -0.003928 -0.005133 -0.008315 -0.002126 -0.005556 -0.008315 -0.000000 -0.005133 -0.008315 0.002126 -0.003928 -0.008315 0.003928 -0.002126 -0.008315 0.005133 -0.000000 -0.008315 0.005556 0.002126 -0.008315 0.005133 0.003928 -0.008315 0.003928 0.005133 -0.008315 0.002126 0.005556 -0.008315 0.000000 0.005133 -0.008315 -0.002126 0.003928 -0.008315 -0.003928 0.002126 -0.008315 -0.005133 -0.000000 -0.009239 -0.003827 -0.001464 -0.009239 -0.003536 -0.002706 -0.009239 -0.002706 -0.003536 -0.009239 -0.001464 -0.003827 -0.009239 -0.000000 -0.003536 -0.009239 0.001464 -0.002706 -0.009239 0.002706 -0.001464 -0.009239 0.003536 -0.000000 -0.009239 0.003827 0.001464 -0.009239 0.003536 0.002706 -0.009239 0.002706 0.003536 -0.009239 0.001464 0.003827 -0.009239 0.000000 0.003536 -0.009239 -0.001464 0.002706 -0.009239 -0.002706 0.001464 -0.009239 -0.003536 -0.000000 -0.009808 -0.001951 -0.000747 -0.009808 -0.001802 -0.001379 -0.009808 -0.001379 -0.001802 -0.009808 -0.000747 -0.001951 -0.009808 -0.000000 -0.001802 -0.009808 0.000747 -0.001379 -0.009808 0.001379 -0.000747 -0.009808 0.001802 -0.000000 -0.009808 0.001951 0.000747 -0.009808 0.001802 0.001379 -0.009808 0.001379 0.001802 -0.009808 0.000747 0.001951 -0.009808 0.000000 0.001802 -0.009808 -0.000747 0.001379 -0.009808 -0.001379 0.000747 -0.009808 -0.001802 "
+								            />
+								<TextureCoordinate point="0.0312 1.0000 0.0000 0.9375 0.0625 0.9375 0.0938 1.0000 0.0625 0.9375 0.1250 0.9375 0.1562 1.0000 0.1250 0.9375 0.1875 0.9375 0.2188 1.0000 0.1875 0.9375 0.2500 0.9375 0.2812 1.0000 0.2500 0.9375 0.3125 0.9375 0.3438 1.0000 0.3125 0.9375 0.3750 0.9375 0.4062 1.0000 0.3750 0.9375 0.4375 0.9375 0.4688 1.0000 0.4375 0.9375 0.5000 0.9375 0.5312 1.0000 0.5000 0.9375 0.5625 0.9375 0.5938 1.0000 0.5625 0.9375 0.6250 0.9375 0.6562 1.0000 0.6250 0.9375 0.6875 0.9375 0.7188 1.0000 0.6875 0.9375 0.7500 0.9375 0.7812 1.0000 0.7500 0.9375 0.8125 0.9375 0.8438 1.0000 0.8125 0.9375 0.8750 0.9375 0.9062 1.0000 0.8750 0.9375 0.9375 0.9375 0.9688 1.0000 0.9375 0.9375 1.0000 0.9375 0.0000 0.9375 0.0000 0.8750 0.0625 0.8750 0.0625 0.9375 0.0625 0.9375 0.0625 0.8750 0.1250 0.8750 0.1250 0.9375 0.1250 0.9375 0.1250 0.8750 0.1875 0.8750 0.1875 0.9375 0.1875 0.9375 0.1875 0.8750 0.2500 0.8750 0.2500 0.9375 0.2500 0.9375 0.2500 0.8750 0.3125 0.8750 0.3125 0.9375 0.3125 0.9375 0.3125 0.8750 0.3750 0.8750 0.3750 0.9375 0.3750 0.9375 0.3750 0.8750 0.4375 0.8750 0.4375 0.9375 0.4375 0.9375 0.4375 0.8750 0.5000 0.8750 0.5000 0.9375 0.5000 0.9375 0.5000 0.8750 0.5625 0.8750 0.5625 0.9375 0.5625 0.9375 0.5625 0.8750 0.6250 0.8750 0.6250 0.9375 0.6250 0.9375 0.6250 0.8750 0.6875 0.8750 0.6875 0.9375 0.6875 0.9375 0.6875 0.8750 0.7500 0.8750 0.7500 0.9375 0.7500 0.9375 0.7500 0.8750 0.8125 0.8750 0.8125 0.9375 0.8125 0.9375 0.8125 0.8750 0.8750 0.8750 0.8750 0.9375 0.8750 0.9375 0.8750 0.8750 0.9375 0.8750 0.9375 0.9375 0.9375 0.9375 0.9375 0.8750 1.0000 0.8750 1.0000 0.9375 0.0000 0.8750 0.0000 0.8125 0.0625 0.8125 0.0625 0.8750 0.0625 0.8750 0.0625 0.8125 0.1250 0.8125 0.1250 0.8750 0.1250 0.8750 0.1250 0.8125 0.1875 0.8125 0.1875 0.8750 0.1875 0.8750 0.1875 0.8125 0.2500 0.8125 0.2500 0.8750 0.2500 0.8750 0.2500 0.8125 0.3125 0.8125 0.3125 0.8750 0.3125 0.8750 0.3125 0.8125 0.3750 0.8125 0.3750 0.8750 0.3750 0.8750 0.3750 0.8125 0.4375 0.8125 0.4375 0.8750 0.4375 0.8750 0.4375 0.8125 0.5000 0.8125 0.5000 0.8750 0.5000 0.8750 0.5000 0.8125 0.5625 0.8125 0.5625 0.8750 0.5625 0.8750 0.5625 0.8125 0.6250 0.8125 0.6250 0.8750 0.6250 0.8750 0.6250 0.8125 0.6875 0.8125 0.6875 0.8750 0.6875 0.8750 0.6875 0.8125 0.7500 0.8125 0.7500 0.8750 0.7500 0.8750 0.7500 0.8125 0.8125 0.8125 0.8125 0.8750 0.8125 0.8750 0.8125 0.8125 0.8750 0.8125 0.8750 0.8750 0.8750 0.8750 0.8750 0.8125 0.9375 0.8125 0.9375 0.8750 0.9375 0.8750 0.9375 0.8125 1.0000 0.8125 1.0000 0.8750 0.0000 0.8125 0.0000 0.7500 0.0625 0.7500 0.0625 0.8125 0.0625 0.8125 0.0625 0.7500 0.1250 0.7500 0.1250 0.8125 0.1250 0.8125 0.1250 0.7500 0.1875 0.7500 0.1875 0.8125 0.1875 0.8125 0.1875 0.7500 0.2500 0.7500 0.2500 0.8125 0.2500 0.8125 0.2500 0.7500 0.3125 0.7500 0.3125 0.8125 0.3125 0.8125 0.3125 0.7500 0.3750 0.7500 0.3750 0.8125 0.3750 0.8125 0.3750 0.7500 0.4375 0.7500 0.4375 0.8125 0.4375 0.8125 0.4375 0.7500 0.5000 0.7500 0.5000 0.8125 0.5000 0.8125 0.5000 0.7500 0.5625 0.7500 0.5625 0.8125 0.5625 0.8125 0.5625 0.7500 0.6250 0.7500 0.6250 0.8125 0.6250 0.8125 0.6250 0.7500 0.6875 0.7500 0.6875 0.8125 0.6875 0.8125 0.6875 0.7500 0.7500 0.7500 0.7500 0.8125 0.7500 0.8125 0.7500 0.7500 0.8125 0.7500 0.8125 0.8125 0.8125 0.8125 0.8125 0.7500 0.8750 0.7500 0.8750 0.8125 0.8750 0.8125 0.8750 0.7500 0.9375 0.7500 0.9375 0.8125 0.9375 0.8125 0.9375 0.7500 1.0000 0.7500 1.0000 0.8125 0.0000 0.7500 0.0000 0.6875 0.0625 0.6875 0.0625 0.7500 0.0625 0.7500 0.0625 0.6875 0.1250 0.6875 0.1250 0.7500 0.1250 0.7500 0.1250 0.6875 0.1875 0.6875 0.1875 0.7500 0.1875 0.7500 0.1875 0.6875 0.2500 0.6875 0.2500 0.7500 0.2500 0.7500 0.2500 0.6875 0.3125 0.6875 0.3125 0.7500 0.3125 0.7500 0.3125 0.6875 0.3750 0.6875 0.3750 0.7500 0.3750 0.7500 0.3750 0.6875 0.4375 0.6875 0.4375 0.7500 0.4375 0.7500 0.4375 0.6875 0.5000 0.6875 0.5000 0.7500 0.5000 0.7500 0.5000 0.6875 0.5625 0.6875 0.5625 0.7500 0.5625 0.7500 0.5625 0.6875 0.6250 0.6875 0.6250 0.7500 0.6250 0.7500 0.6250 0.6875 0.6875 0.6875 0.6875 0.7500 0.6875 0.7500 0.6875 0.6875 0.7500 0.6875 0.7500 0.7500 0.7500 0.7500 0.7500 0.6875 0.8125 0.6875 0.8125 0.7500 0.8125 0.7500 0.8125 0.6875 0.8750 0.6875 0.8750 0.7500 0.8750 0.7500 0.8750 0.6875 0.9375 0.6875 0.9375 0.7500 0.9375 0.7500 0.9375 0.6875 1.0000 0.6875 1.0000 0.7500 0.0000 0.6875 0.0000 0.6250 0.0625 0.6250 0.0625 0.6875 0.0625 0.6875 0.0625 0.6250 0.1250 0.6250 0.1250 0.6875 0.1250 0.6875 0.1250 0.6250 0.1875 0.6250 0.1875 0.6875 0.1875 0.6875 0.1875 0.6250 0.2500 0.6250 0.2500 0.6875 0.2500 0.6875 0.2500 0.6250 0.3125 0.6250 0.3125 0.6875 0.3125 0.6875 0.3125 0.6250 0.3750 0.6250 0.3750 0.6875 0.3750 0.6875 0.3750 0.6250 0.4375 0.6250 0.4375 0.6875 0.4375 0.6875 0.4375 0.6250 0.5000 0.6250 0.5000 0.6875 0.5000 0.6875 0.5000 0.6250 0.5625 0.6250 0.5625 0.6875 0.5625 0.6875 0.5625 0.6250 0.6250 0.6250 0.6250 0.6875 0.6250 0.6875 0.6250 0.6250 0.6875 0.6250 0.6875 0.6875 0.6875 0.6875 0.6875 0.6250 0.7500 0.6250 0.7500 0.6875 0.7500 0.6875 0.7500 0.6250 0.8125 0.6250 0.8125 0.6875 0.8125 0.6875 0.8125 0.6250 0.8750 0.6250 0.8750 0.6875 0.8750 0.6875 0.8750 0.6250 0.9375 0.6250 0.9375 0.6875 0.9375 0.6875 0.9375 0.6250 1.0000 0.6250 1.0000 0.6875 0.0000 0.6250 0.0000 0.5625 0.0625 0.5625 0.0625 0.6250 0.0625 0.6250 0.0625 0.5625 0.1250 0.5625 0.1250 0.6250 0.1250 0.6250 0.1250 0.5625 0.1875 0.5625 0.1875 0.6250 0.1875 0.6250 0.1875 0.5625 0.2500 0.5625 0.2500 0.6250 0.2500 0.6250 0.2500 0.5625 0.3125 0.5625 0.3125 0.6250 0.3125 0.6250 0.3125 0.5625 0.3750 0.5625 0.3750 0.6250 0.3750 0.6250 0.3750 0.5625 0.4375 0.5625 0.4375 0.6250 0.4375 0.6250 0.4375 0.5625 0.5000 0.5625 0.5000 0.6250 0.5000 0.6250 0.5000 0.5625 0.5625 0.5625 0.5625 0.6250 0.5625 0.6250 0.5625 0.5625 0.6250 0.5625 0.6250 0.6250 0.6250 0.6250 0.6250 0.5625 0.6875 0.5625 0.6875 0.6250 0.6875 0.6250 0.6875 0.5625 0.7500 0.5625 0.7500 0.6250 0.7500 0.6250 0.7500 0.5625 0.8125 0.5625 0.8125 0.6250 0.8125 0.6250 0.8125 0.5625 0.8750 0.5625 0.8750 0.6250 0.8750 0.6250 0.8750 0.5625 0.9375 0.5625 0.9375 0.6250 0.9375 0.6250 0.9375 0.5625 1.0000 0.5625 1.0000 0.6250 0.0000 0.5625 0.0000 0.5000 0.0625 0.5000 0.0625 0.5625 0.0625 0.5625 0.0625 0.5000 0.1250 0.5000 0.1250 0.5625 0.1250 0.5625 0.1250 0.5000 0.1875 0.5000 0.1875 0.5625 0.1875 0.5625 0.1875 0.5000 0.2500 0.5000 0.2500 0.5625 0.2500 0.5625 0.2500 0.5000 0.3125 0.5000 0.3125 0.5625 0.3125 0.5625 0.3125 0.5000 0.3750 0.5000 0.3750 0.5625 0.3750 0.5625 0.3750 0.5000 0.4375 0.5000 0.4375 0.5625 0.4375 0.5625 0.4375 0.5000 0.5000 0.5000 0.5000 0.5625 0.5000 0.5625 0.5000 0.5000 0.5625 0.5000 0.5625 0.5625 0.5625 0.5625 0.5625 0.5000 0.6250 0.5000 0.6250 0.5625 0.6250 0.5625 0.6250 0.5000 0.6875 0.5000 0.6875 0.5625 0.6875 0.5625 0.6875 0.5000 0.7500 0.5000 0.7500 0.5625 0.7500 0.5625 0.7500 0.5000 0.8125 0.5000 0.8125 0.5625 0.8125 0.5625 0.8125 0.5000 0.8750 0.5000 0.8750 0.5625 0.8750 0.5625 0.8750 0.5000 0.9375 0.5000 0.9375 0.5625 0.9375 0.5625 0.9375 0.5000 1.0000 0.5000 1.0000 0.5625 0.0000 0.5000 0.0000 0.4375 0.0625 0.4375 0.0625 0.5000 0.0625 0.5000 0.0625 0.4375 0.1250 0.4375 0.1250 0.5000 0.1250 0.5000 0.1250 0.4375 0.1875 0.4375 0.1875 0.5000 0.1875 0.5000 0.1875 0.4375 0.2500 0.4375 0.2500 0.5000 0.2500 0.5000 0.2500 0.4375 0.3125 0.4375 0.3125 0.5000 0.3125 0.5000 0.3125 0.4375 0.3750 0.4375 0.3750 0.5000 0.3750 0.5000 0.3750 0.4375 0.4375 0.4375 0.4375 0.5000 0.4375 0.5000 0.4375 0.4375 0.5000 0.4375 0.5000 0.5000 0.5000 0.5000 0.5000 0.4375 0.5625 0.4375 0.5625 0.5000 0.5625 0.5000 0.5625 0.4375 0.6250 0.4375 0.6250 0.5000 0.6250 0.5000 0.6250 0.4375 0.6875 0.4375 0.6875 0.5000 0.6875 0.5000 0.6875 0.4375 0.7500 0.4375 0.7500 0.5000 0.7500 0.5000 0.7500 0.4375 0.8125 0.4375 0.8125 0.5000 0.8125 0.5000 0.8125 0.4375 0.8750 0.4375 0.8750 0.5000 0.8750 0.5000 0.8750 0.4375 0.9375 0.4375 0.9375 0.5000 0.9375 0.5000 0.9375 0.4375 1.0000 0.4375 1.0000 0.5000 0.0000 0.4375 0.0000 0.3750 0.0625 0.3750 0.0625 0.4375 0.0625 0.4375 0.0625 0.3750 0.1250 0.3750 0.1250 0.4375 0.1250 0.4375 0.1250 0.3750 0.1875 0.3750 0.1875 0.4375 0.1875 0.4375 0.1875 0.3750 0.2500 0.3750 0.2500 0.4375 0.2500 0.4375 0.2500 0.3750 0.3125 0.3750 0.3125 0.4375 0.3125 0.4375 0.3125 0.3750 0.3750 0.3750 0.3750 0.4375 0.3750 0.4375 0.3750 0.3750 0.4375 0.3750 0.4375 0.4375 0.4375 0.4375 0.4375 0.3750 0.5000 0.3750 0.5000 0.4375 0.5000 0.4375 0.5000 0.3750 0.5625 0.3750 0.5625 0.4375 0.5625 0.4375 0.5625 0.3750 0.6250 0.3750 0.6250 0.4375 0.6250 0.4375 0.6250 0.3750 0.6875 0.3750 0.6875 0.4375 0.6875 0.4375 0.6875 0.3750 0.7500 0.3750 0.7500 0.4375 0.7500 0.4375 0.7500 0.3750 0.8125 0.3750 0.8125 0.4375 0.8125 0.4375 0.8125 0.3750 0.8750 0.3750 0.8750 0.4375 0.8750 0.4375 0.8750 0.3750 0.9375 0.3750 0.9375 0.4375 0.9375 0.4375 0.9375 0.3750 1.0000 0.3750 1.0000 0.4375 0.0000 0.3750 0.0000 0.3125 0.0625 0.3125 0.0625 0.3750 0.0625 0.3750 0.0625 0.3125 0.1250 0.3125 0.1250 0.3750 0.1250 0.3750 0.1250 0.3125 0.1875 0.3125 0.1875 0.3750 0.1875 0.3750 0.1875 0.3125 0.2500 0.3125 0.2500 0.3750 0.2500 0.3750 0.2500 0.3125 0.3125 0.3125 0.3125 0.3750 0.3125 0.3750 0.3125 0.3125 0.3750 0.3125 0.3750 0.3750 0.3750 0.3750 0.3750 0.3125 0.4375 0.3125 0.4375 0.3750 0.4375 0.3750 0.4375 0.3125 0.5000 0.3125 0.5000 0.3750 0.5000 0.3750 0.5000 0.3125 0.5625 0.3125 0.5625 0.3750 0.5625 0.3750 0.5625 0.3125 0.6250 0.3125 0.6250 0.3750 0.6250 0.3750 0.6250 0.3125 0.6875 0.3125 0.6875 0.3750 0.6875 0.3750 0.6875 0.3125 0.7500 0.3125 0.7500 0.3750 0.7500 0.3750 0.7500 0.3125 0.8125 0.3125 0.8125 0.3750 0.8125 0.3750 0.8125 0.3125 0.8750 0.3125 0.8750 0.3750 0.8750 0.3750 0.8750 0.3125 0.9375 0.3125 0.9375 0.3750 0.9375 0.3750 0.9375 0.3125 1.0000 0.3125 1.0000 0.3750 0.0000 0.3125 0.0000 0.2500 0.0625 0.2500 0.0625 0.3125 0.0625 0.3125 0.0625 0.2500 0.1250 0.2500 0.1250 0.3125 0.1250 0.3125 0.1250 0.2500 0.1875 0.2500 0.1875 0.3125 0.1875 0.3125 0.1875 0.2500 0.2500 0.2500 0.2500 0.3125 0.2500 0.3125 0.2500 0.2500 0.3125 0.2500 0.3125 0.3125 0.3125 0.3125 0.3125 0.2500 0.3750 0.2500 0.3750 0.3125 0.3750 0.3125 0.3750 0.2500 0.4375 0.2500 0.4375 0.3125 0.4375 0.3125 0.4375 0.2500 0.5000 0.2500 0.5000 0.3125 0.5000 0.3125 0.5000 0.2500 0.5625 0.2500 0.5625 0.3125 0.5625 0.3125 0.5625 0.2500 0.6250 0.2500 0.6250 0.3125 0.6250 0.3125 0.6250 0.2500 0.6875 0.2500 0.6875 0.3125 0.6875 0.3125 0.6875 0.2500 0.7500 0.2500 0.7500 0.3125 0.7500 0.3125 0.7500 0.2500 0.8125 0.2500 0.8125 0.3125 0.8125 0.3125 0.8125 0.2500 0.8750 0.2500 0.8750 0.3125 0.8750 0.3125 0.8750 0.2500 0.9375 0.2500 0.9375 0.3125 0.9375 0.3125 0.9375 0.2500 1.0000 0.2500 1.0000 0.3125 0.0000 0.2500 0.0000 0.1875 0.0625 0.1875 0.0625 0.2500 0.0625 0.2500 0.0625 0.1875 0.1250 0.1875 0.1250 0.2500 0.1250 0.2500 0.1250 0.1875 0.1875 0.1875 0.1875 0.2500 0.1875 0.2500 0.1875 0.1875 0.2500 0.1875 0.2500 0.2500 0.2500 0.2500 0.2500 0.1875 0.3125 0.1875 0.3125 0.2500 0.3125 0.2500 0.3125 0.1875 0.3750 0.1875 0.3750 0.2500 0.3750 0.2500 0.3750 0.1875 0.4375 0.1875 0.4375 0.2500 0.4375 0.2500 0.4375 0.1875 0.5000 0.1875 0.5000 0.2500 0.5000 0.2500 0.5000 0.1875 0.5625 0.1875 0.5625 0.2500 0.5625 0.2500 0.5625 0.1875 0.6250 0.1875 0.6250 0.2500 0.6250 0.2500 0.6250 0.1875 0.6875 0.1875 0.6875 0.2500 0.6875 0.2500 0.6875 0.1875 0.7500 0.1875 0.7500 0.2500 0.7500 0.2500 0.7500 0.1875 0.8125 0.1875 0.8125 0.2500 0.8125 0.2500 0.8125 0.1875 0.8750 0.1875 0.8750 0.2500 0.8750 0.2500 0.8750 0.1875 0.9375 0.1875 0.9375 0.2500 0.9375 0.2500 0.9375 0.1875 1.0000 0.1875 1.0000 0.2500 0.0000 0.1875 0.0000 0.1250 0.0625 0.1250 0.0625 0.1875 0.0625 0.1875 0.0625 0.1250 0.1250 0.1250 0.1250 0.1875 0.1250 0.1875 0.1250 0.1250 0.1875 0.1250 0.1875 0.1875 0.1875 0.1875 0.1875 0.1250 0.2500 0.1250 0.2500 0.1875 0.2500 0.1875 0.2500 0.1250 0.3125 0.1250 0.3125 0.1875 0.3125 0.1875 0.3125 0.1250 0.3750 0.1250 0.3750 0.1875 0.3750 0.1875 0.3750 0.1250 0.4375 0.1250 0.4375 0.1875 0.4375 0.1875 0.4375 0.1250 0.5000 0.1250 0.5000 0.1875 0.5000 0.1875 0.5000 0.1250 0.5625 0.1250 0.5625 0.1875 0.5625 0.1875 0.5625 0.1250 0.6250 0.1250 0.6250 0.1875 0.6250 0.1875 0.6250 0.1250 0.6875 0.1250 0.6875 0.1875 0.6875 0.1875 0.6875 0.1250 0.7500 0.1250 0.7500 0.1875 0.7500 0.1875 0.7500 0.1250 0.8125 0.1250 0.8125 0.1875 0.8125 0.1875 0.8125 0.1250 0.8750 0.1250 0.8750 0.1875 0.8750 0.1875 0.8750 0.1250 0.9375 0.1250 0.9375 0.1875 0.9375 0.1875 0.9375 0.1250 1.0000 0.1250 1.0000 0.1875 0.0000 0.1250 0.0000 0.0625 0.0625 0.0625 0.0625 0.1250 0.0625 0.1250 0.0625 0.0625 0.1250 0.0625 0.1250 0.1250 0.1250 0.1250 0.1250 0.0625 0.1875 0.0625 0.1875 0.1250 0.1875 0.1250 0.1875 0.0625 0.2500 0.0625 0.2500 0.1250 0.2500 0.1250 0.2500 0.0625 0.3125 0.0625 0.3125 0.1250 0.3125 0.1250 0.3125 0.0625 0.3750 0.0625 0.3750 0.1250 0.3750 0.1250 0.3750 0.0625 0.4375 0.0625 0.4375 0.1250 0.4375 0.1250 0.4375 0.0625 0.5000 0.0625 0.5000 0.1250 0.5000 0.1250 0.5000 0.0625 0.5625 0.0625 0.5625 0.1250 0.5625 0.1250 0.5625 0.0625 0.6250 0.0625 0.6250 0.1250 0.6250 0.1250 0.6250 0.0625 0.6875 0.0625 0.6875 0.1250 0.6875 0.1250 0.6875 0.0625 0.7500 0.0625 0.7500 0.1250 0.7500 0.1250 0.7500 0.0625 0.8125 0.0625 0.8125 0.1250 0.8125 0.1250 0.8125 0.0625 0.8750 0.0625 0.8750 0.1250 0.8750 0.1250 0.8750 0.0625 0.9375 0.0625 0.9375 0.1250 0.9375 0.1250 0.9375 0.0625 1.0000 0.0625 1.0000 0.1250 0.0312 0.0000 0.0625 0.0625 0.0000 0.0625 0.0938 0.0000 0.1250 0.0625 0.0625 0.0625 0.1562 0.0000 0.1875 0.0625 0.1250 0.0625 0.2188 0.0000 0.2500 0.0625 0.1875 0.0625 0.2812 0.0000 0.3125 0.0625 0.2500 0.0625 0.3438 0.0000 0.3750 0.0625 0.3125 0.0625 0.4062 0.0000 0.4375 0.0625 0.3750 0.0625 0.4688 0.0000 0.5000 0.0625 0.4375 0.0625 0.5312 0.0000 0.5625 0.0625 0.5000 0.0625 0.5938 0.0000 0.6250 0.0625 0.5625 0.0625 0.6562 0.0000 0.6875 0.0625 0.6250 0.0625 0.7188 0.0000 0.7500 0.0625 0.6875 0.0625 0.7812 0.0000 0.8125 0.0625 0.7500 0.0625 0.8438 0.0000 0.8750 0.0625 0.8125 0.0625 0.9062 0.0000 0.9375 0.0625 0.8750 0.0625 0.9688 0.0000 1.0000 0.0625 0.9375 0.0625 " />
+							</IndexedFaceSet>
+						</Shape>
+					</Group>
+				</Transform>
+			</Transform>
+		</Transform>
+	</Scene>
+</X3D>

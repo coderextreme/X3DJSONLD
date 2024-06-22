@@ -1,0 +1,51 @@
+#X3D V4.0 utf8
+PROFILE Immersive
+# head
+COMPONENT HAnim:1
+META "title" "takes.Jin.timers.x3dv"
+META "creator" "John Carlson, Joe Williams and Andreas Plesch"
+META "translator" "X3DJSAIL"
+META "version" "3.0"
+META "description" "Create Chaining animation from a JSON file"
+META "generator" "Jaminate, V3.0, https://github.com/coderextreme/jaminate/tree/main/Jaminate/app/src/main/resources/takesX3DJSAIL.js"
+META "license" "https://github.com/coderextreme/jaminate/blob/main/LICENSE"
+# Scene
+  children [
+  WorldInfo { 
+     title "takes.Jin.timers.x3dv"
+     }
+# 0.3 - 0.2 = 0.1, times 10 is 1
+    DEF Jin_Pitch10Timer TimeSensor { 
+     loop true
+     }
+# 0.4 - 0.3 = 0.1, times 10 is 1
+    DEF Jin_Pitch21Timer TimeSensor { 
+     loop true
+     }
+# 0.5 - 0.4 = 0.1, times 10 is 1
+    DEF Jin_Yaw12Timer TimeSensor { 
+     loop true
+     }
+# 0.6 - 0.5 = 0.1, times 10 is 1
+    DEF Jin_Yaw23Timer TimeSensor { 
+     loop true
+     }
+# 0.7 - 0.6 = 0.1, times 10 is 1
+    DEF Jin_Roll14Timer TimeSensor { 
+     loop true
+     }
+# 1.1 - 0.7 = 0.4, times 10 is 4
+    DEF Jin_Roll25Timer TimeSensor { 
+     cycleInterval 4.0
+     loop true
+     }
+# 1.2 - 1.1 = 0.1, times 10 is 1
+    DEF Jin_Kick16Timer TimeSensor { 
+     loop true
+     }
+# 0.2 - 1.2 = 0.001, times 10 is 0.01
+    DEF Jin_Kick27Timer TimeSensor { 
+     cycleInterval 0.01
+     loop true
+     }
+  ]

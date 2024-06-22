@@ -1,0 +1,363 @@
+#X3D V4.0 utf8
+PROFILE Immersive
+# head
+COMPONENT HAnim:1
+META "title" "takes.Jin.x3dv"
+META "creator" "John Carlson, Joe Williams and Andreas Plesch"
+META "translator" "X3DJSAIL"
+META "version" "3.0"
+META "description" "Create Chaining animation from a JSON file"
+META "generator" "Jaminate, V3.0, https://github.com/coderextreme/jaminate/tree/main/Jaminate/app/src/main/resources/takesX3DJSAIL.js"
+META "license" "https://github.com/coderextreme/jaminate/blob/main/LICENSE"
+# Scene
+  children [
+  WorldInfo { 
+     title "takes.Jin.x3dv"
+     }
+DEF Jin_DefaultBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ true false false false false false false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_DefaultSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_DefaultFINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_DefaultNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_DefaultOffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_DefaultOnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.isActive TO Jin_DefaultSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_z100sTimer.fraction_changed TO Jin_DefaultBooleanSequencer.set_fraction
+    ROUTE Jin_DefaultBooleanSequencer.value_changed TO Jin_DefaultSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_DefaultSPLITTERBooleanFilter.inputTrue TO Jin_DefaultOnTimeTrigger.set_boolean
+    ROUTE Jin_DefaultSPLITTERBooleanFilter.inputFalse TO Jin_DefaultOffTimeTrigger.set_boolean
+    ROUTE Jin_DefaultSPLITTERBooleanFilter.inputTrue TO Jin_DefaultTimer.set_enabled
+    ROUTE Jin_DefaultSPLITTERBooleanFilter.inputFalse TO Jin_DefaultTimer.set_enabled
+    ROUTE Jin_DefaultOffTimeTrigger.triggerTime TO Jin_DefaultTimer.set_stopTime
+    ROUTE Jin_DefaultOnTimeTrigger.triggerTime TO Jin_DefaultTimer.set_startTime
+    DEF Jin_TestBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false true false false false false false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_TestSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_TestFINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_TestNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_TestOffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_TestOnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_TestBooleanSequencer.set_fraction
+    ROUTE Jin_TestBooleanSequencer.value_changed TO Jin_TestSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_TestSPLITTERBooleanFilter.inputTrue TO Jin_TestOnTimeTrigger.set_boolean
+    ROUTE Jin_TestSPLITTERBooleanFilter.inputFalse TO Jin_TestOffTimeTrigger.set_boolean
+    ROUTE Jin_TestSPLITTERBooleanFilter.inputTrue TO Jin_TestTimer.set_enabled
+    ROUTE Jin_TestSPLITTERBooleanFilter.inputFalse TO Jin_TestTimer.set_enabled
+    ROUTE Jin_TestOffTimeTrigger.triggerTime TO Jin_TestTimer.set_stopTime
+    ROUTE Jin_TestOnTimeTrigger.triggerTime TO Jin_TestTimer.set_startTime
+    DEF Jin_Pitch1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false true false false false false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Pitch1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch1OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Pitch1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Pitch1BooleanSequencer.set_fraction
+    ROUTE Jin_Pitch1BooleanSequencer.value_changed TO Jin_Pitch1SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Pitch1SPLITTERBooleanFilter.inputTrue TO Jin_Pitch1OnTimeTrigger.set_boolean
+    ROUTE Jin_Pitch1SPLITTERBooleanFilter.inputFalse TO Jin_Pitch1OffTimeTrigger.set_boolean
+    ROUTE Jin_Pitch1SPLITTERBooleanFilter.inputTrue TO Jin_Pitch1Timer.set_enabled
+    ROUTE Jin_Pitch1SPLITTERBooleanFilter.inputFalse TO Jin_Pitch1Timer.set_enabled
+    ROUTE Jin_Pitch1OffTimeTrigger.triggerTime TO Jin_Pitch1Timer.set_stopTime
+    ROUTE Jin_Pitch1OnTimeTrigger.triggerTime TO Jin_Pitch1Timer.set_startTime
+    DEF Jin_Pitch2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false true false false false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Pitch2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Pitch2OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Pitch2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Pitch2BooleanSequencer.set_fraction
+    ROUTE Jin_Pitch2BooleanSequencer.value_changed TO Jin_Pitch2SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Pitch2SPLITTERBooleanFilter.inputTrue TO Jin_Pitch2OnTimeTrigger.set_boolean
+    ROUTE Jin_Pitch2SPLITTERBooleanFilter.inputFalse TO Jin_Pitch2OffTimeTrigger.set_boolean
+    ROUTE Jin_Pitch2SPLITTERBooleanFilter.inputTrue TO Jin_Pitch2Timer.set_enabled
+    ROUTE Jin_Pitch2SPLITTERBooleanFilter.inputFalse TO Jin_Pitch2Timer.set_enabled
+    ROUTE Jin_Pitch2OffTimeTrigger.triggerTime TO Jin_Pitch2Timer.set_stopTime
+    ROUTE Jin_Pitch2OnTimeTrigger.triggerTime TO Jin_Pitch2Timer.set_startTime
+    DEF Jin_Yaw1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false true false false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Yaw1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw1OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Yaw1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Yaw1BooleanSequencer.set_fraction
+    ROUTE Jin_Yaw1BooleanSequencer.value_changed TO Jin_Yaw1SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Yaw1SPLITTERBooleanFilter.inputTrue TO Jin_Yaw1OnTimeTrigger.set_boolean
+    ROUTE Jin_Yaw1SPLITTERBooleanFilter.inputFalse TO Jin_Yaw1OffTimeTrigger.set_boolean
+    ROUTE Jin_Yaw1SPLITTERBooleanFilter.inputTrue TO Jin_Yaw1Timer.set_enabled
+    ROUTE Jin_Yaw1SPLITTERBooleanFilter.inputFalse TO Jin_Yaw1Timer.set_enabled
+    ROUTE Jin_Yaw1OffTimeTrigger.triggerTime TO Jin_Yaw1Timer.set_stopTime
+    ROUTE Jin_Yaw1OnTimeTrigger.triggerTime TO Jin_Yaw1Timer.set_startTime
+    DEF Jin_Yaw2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false true false false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Yaw2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Yaw2OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Yaw2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Yaw2BooleanSequencer.set_fraction
+    ROUTE Jin_Yaw2BooleanSequencer.value_changed TO Jin_Yaw2SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Yaw2SPLITTERBooleanFilter.inputTrue TO Jin_Yaw2OnTimeTrigger.set_boolean
+    ROUTE Jin_Yaw2SPLITTERBooleanFilter.inputFalse TO Jin_Yaw2OffTimeTrigger.set_boolean
+    ROUTE Jin_Yaw2SPLITTERBooleanFilter.inputTrue TO Jin_Yaw2Timer.set_enabled
+    ROUTE Jin_Yaw2SPLITTERBooleanFilter.inputFalse TO Jin_Yaw2Timer.set_enabled
+    ROUTE Jin_Yaw2OffTimeTrigger.triggerTime TO Jin_Yaw2Timer.set_stopTime
+    ROUTE Jin_Yaw2OnTimeTrigger.triggerTime TO Jin_Yaw2Timer.set_startTime
+    DEF Jin_Roll1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false true false false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Roll1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll1OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Roll1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Roll1BooleanSequencer.set_fraction
+    ROUTE Jin_Roll1BooleanSequencer.value_changed TO Jin_Roll1SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Roll1SPLITTERBooleanFilter.inputTrue TO Jin_Roll1OnTimeTrigger.set_boolean
+    ROUTE Jin_Roll1SPLITTERBooleanFilter.inputFalse TO Jin_Roll1OffTimeTrigger.set_boolean
+    ROUTE Jin_Roll1SPLITTERBooleanFilter.inputTrue TO Jin_Roll1Timer.set_enabled
+    ROUTE Jin_Roll1SPLITTERBooleanFilter.inputFalse TO Jin_Roll1Timer.set_enabled
+    ROUTE Jin_Roll1OffTimeTrigger.triggerTime TO Jin_Roll1Timer.set_stopTime
+    ROUTE Jin_Roll1OnTimeTrigger.triggerTime TO Jin_Roll1Timer.set_startTime
+    DEF Jin_Roll2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false true false false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Roll2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Roll2OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Roll2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Roll2BooleanSequencer.set_fraction
+    ROUTE Jin_Roll2BooleanSequencer.value_changed TO Jin_Roll2SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Roll2SPLITTERBooleanFilter.inputTrue TO Jin_Roll2OnTimeTrigger.set_boolean
+    ROUTE Jin_Roll2SPLITTERBooleanFilter.inputFalse TO Jin_Roll2OffTimeTrigger.set_boolean
+    ROUTE Jin_Roll2SPLITTERBooleanFilter.inputTrue TO Jin_Roll2Timer.set_enabled
+    ROUTE Jin_Roll2SPLITTERBooleanFilter.inputFalse TO Jin_Roll2Timer.set_enabled
+    ROUTE Jin_Roll2OffTimeTrigger.triggerTime TO Jin_Roll2Timer.set_stopTime
+    ROUTE Jin_Roll2OnTimeTrigger.triggerTime TO Jin_Roll2Timer.set_startTime
+    DEF Jin_WalkBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false true false false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_WalkSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_WalkFINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_WalkNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_WalkOffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_WalkOnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_WalkBooleanSequencer.set_fraction
+    ROUTE Jin_WalkBooleanSequencer.value_changed TO Jin_WalkSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_WalkSPLITTERBooleanFilter.inputTrue TO Jin_WalkOnTimeTrigger.set_boolean
+    ROUTE Jin_WalkSPLITTERBooleanFilter.inputFalse TO Jin_WalkOffTimeTrigger.set_boolean
+    ROUTE Jin_WalkSPLITTERBooleanFilter.inputTrue TO Jin_WalkTimer.set_enabled
+    ROUTE Jin_WalkSPLITTERBooleanFilter.inputFalse TO Jin_WalkTimer.set_enabled
+    ROUTE Jin_WalkOffTimeTrigger.triggerTime TO Jin_WalkTimer.set_stopTime
+    ROUTE Jin_WalkOnTimeTrigger.triggerTime TO Jin_WalkTimer.set_startTime
+    DEF Jin_RunBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false true false false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_RunSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_RunFINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_RunNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_RunOffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_RunOnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_RunBooleanSequencer.set_fraction
+    ROUTE Jin_RunBooleanSequencer.value_changed TO Jin_RunSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_RunSPLITTERBooleanFilter.inputTrue TO Jin_RunOnTimeTrigger.set_boolean
+    ROUTE Jin_RunSPLITTERBooleanFilter.inputFalse TO Jin_RunOffTimeTrigger.set_boolean
+    ROUTE Jin_RunSPLITTERBooleanFilter.inputTrue TO Jin_RunTimer.set_enabled
+    ROUTE Jin_RunSPLITTERBooleanFilter.inputFalse TO Jin_RunTimer.set_enabled
+    ROUTE Jin_RunOffTimeTrigger.triggerTime TO Jin_RunTimer.set_stopTime
+    ROUTE Jin_RunOnTimeTrigger.triggerTime TO Jin_RunTimer.set_startTime
+    DEF Jin_JumpBooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false true false false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_JumpSPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_JumpFINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_JumpNEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_JumpOffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_JumpOnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_JumpBooleanSequencer.set_fraction
+    ROUTE Jin_JumpBooleanSequencer.value_changed TO Jin_JumpSPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_JumpSPLITTERBooleanFilter.inputTrue TO Jin_JumpOnTimeTrigger.set_boolean
+    ROUTE Jin_JumpSPLITTERBooleanFilter.inputFalse TO Jin_JumpOffTimeTrigger.set_boolean
+    ROUTE Jin_JumpSPLITTERBooleanFilter.inputTrue TO Jin_JumpTimer.set_enabled
+    ROUTE Jin_JumpSPLITTERBooleanFilter.inputFalse TO Jin_JumpTimer.set_enabled
+    ROUTE Jin_JumpOffTimeTrigger.triggerTime TO Jin_JumpTimer.set_stopTime
+    ROUTE Jin_JumpOnTimeTrigger.triggerTime TO Jin_JumpTimer.set_startTime
+    DEF Jin_Kick1BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false false true false ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Kick1SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick1FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick1NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick1OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Kick1OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.fraction_changed TO Jin_Kick1BooleanSequencer.set_fraction
+    ROUTE Jin_Kick1BooleanSequencer.value_changed TO Jin_Kick1SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Kick1SPLITTERBooleanFilter.inputTrue TO Jin_Kick1OnTimeTrigger.set_boolean
+    ROUTE Jin_Kick1SPLITTERBooleanFilter.inputFalse TO Jin_Kick1OffTimeTrigger.set_boolean
+    ROUTE Jin_Kick1SPLITTERBooleanFilter.inputTrue TO Jin_Kick1Timer.set_enabled
+    ROUTE Jin_Kick1SPLITTERBooleanFilter.inputFalse TO Jin_Kick1Timer.set_enabled
+    ROUTE Jin_Kick1OffTimeTrigger.triggerTime TO Jin_Kick1Timer.set_stopTime
+    ROUTE Jin_Kick1OnTimeTrigger.triggerTime TO Jin_Kick1Timer.set_startTime
+    DEF Jin_Kick2BooleanSequencer BooleanSequencer { 
+     key [ 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 ]
+     keyValue [ false false false false false false false false false false false false true ]
+     }
+# [ Jin_Default0 Jin_Test0 Jin_Pitch1 Jin_Pitch2 Jin_Yaw1 Jin_Yaw2 Jin_Roll1 Jin_Roll2 Jin_Walk0 Jin_Run0 Jin_Jump0 Jin_Kick1 Jin_Kick2 ]
+    DEF Jin_Kick2SPLITTERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick2FINALEBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick2NEGATERBooleanFilter BooleanFilter { 
+     }
+DEF Jin_Kick2OffTimeTrigger TimeTrigger { 
+     }
+DEF Jin_Kick2OnTimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_z100sTimer.cycleTime TO Jin_Kick2Timer.set_stopTime
+    ROUTE Jin_z100sTimer.isActive TO Jin_Kick2Timer.set_enabled
+    DEF Jin_Kick2FINALETimeTrigger TimeTrigger { 
+     }
+ROUTE Jin_Kick2FINALEBooleanFilter.inputFalse TO Jin_Kick2FINALETimeTrigger.set_boolean
+    ROUTE Jin_Kick2FINALETimeTrigger.triggerTime TO Jin_Kick2Timer.set_stopTime
+    ROUTE Jin_z100sTimer.fraction_changed TO Jin_Kick2BooleanSequencer.set_fraction
+    ROUTE Jin_Kick2BooleanSequencer.value_changed TO Jin_Kick2SPLITTERBooleanFilter.set_boolean
+    ROUTE Jin_Kick2SPLITTERBooleanFilter.inputTrue TO Jin_Kick2OnTimeTrigger.set_boolean
+    ROUTE Jin_Kick2SPLITTERBooleanFilter.inputFalse TO Jin_Kick2OffTimeTrigger.set_boolean
+    ROUTE Jin_Kick2SPLITTERBooleanFilter.inputTrue TO Jin_Kick2Timer.set_enabled
+    ROUTE Jin_Kick2SPLITTERBooleanFilter.inputFalse TO Jin_Kick2Timer.set_enabled
+    ROUTE Jin_Kick2OffTimeTrigger.triggerTime TO Jin_Kick2Timer.set_stopTime
+    ROUTE Jin_Kick2OnTimeTrigger.triggerTime TO Jin_Kick2Timer.set_startTime
+    # ###########################################################################################
+    ROUTE Jin_DefaultTimer.stopTime TO Jin_TestTimer.set_startTime
+    ROUTE Jin_DefaultTimer.isActive TO Jin_TestNEGATERBooleanFilter.set_boolean
+    ROUTE Jin_TestNEGATERBooleanFilter.inputNegate TO Jin_DefaultBooleanSequencer.next
+    ROUTE Jin_TestTimer.stopTime TO Jin_Pitch1Timer.set_startTime
+    ROUTE Jin_TestTimer.isActive TO Jin_Pitch1NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Pitch1NEGATERBooleanFilter.inputNegate TO Jin_TestBooleanSequencer.next
+    ROUTE Jin_Pitch1Timer.stopTime TO Jin_Pitch2Timer.set_startTime
+    ROUTE Jin_Pitch1Timer.isActive TO Jin_Pitch2NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Pitch2NEGATERBooleanFilter.inputNegate TO Jin_Pitch1BooleanSequencer.next
+    ROUTE Jin_Pitch2Timer.stopTime TO Jin_Yaw1Timer.set_startTime
+    ROUTE Jin_Pitch2Timer.isActive TO Jin_Yaw1NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Yaw1NEGATERBooleanFilter.inputNegate TO Jin_Pitch2BooleanSequencer.next
+    ROUTE Jin_Yaw1Timer.stopTime TO Jin_Yaw2Timer.set_startTime
+    ROUTE Jin_Yaw1Timer.isActive TO Jin_Yaw2NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Yaw2NEGATERBooleanFilter.inputNegate TO Jin_Yaw1BooleanSequencer.next
+    ROUTE Jin_Yaw2Timer.stopTime TO Jin_Roll1Timer.set_startTime
+    ROUTE Jin_Yaw2Timer.isActive TO Jin_Roll1NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Roll1NEGATERBooleanFilter.inputNegate TO Jin_Yaw2BooleanSequencer.next
+    ROUTE Jin_Roll1Timer.stopTime TO Jin_Roll2Timer.set_startTime
+    ROUTE Jin_Roll1Timer.isActive TO Jin_Roll2NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Roll2NEGATERBooleanFilter.inputNegate TO Jin_Roll1BooleanSequencer.next
+    ROUTE Jin_Roll2Timer.stopTime TO Jin_WalkTimer.set_startTime
+    ROUTE Jin_Roll2Timer.isActive TO Jin_WalkNEGATERBooleanFilter.set_boolean
+    ROUTE Jin_WalkNEGATERBooleanFilter.inputNegate TO Jin_Roll2BooleanSequencer.next
+    ROUTE Jin_WalkTimer.stopTime TO Jin_RunTimer.set_startTime
+    ROUTE Jin_WalkTimer.isActive TO Jin_RunNEGATERBooleanFilter.set_boolean
+    ROUTE Jin_RunNEGATERBooleanFilter.inputNegate TO Jin_WalkBooleanSequencer.next
+    ROUTE Jin_RunTimer.stopTime TO Jin_JumpTimer.set_startTime
+    ROUTE Jin_RunTimer.isActive TO Jin_JumpNEGATERBooleanFilter.set_boolean
+    ROUTE Jin_JumpNEGATERBooleanFilter.inputNegate TO Jin_RunBooleanSequencer.next
+    ROUTE Jin_JumpTimer.stopTime TO Jin_Kick1Timer.set_startTime
+    ROUTE Jin_JumpTimer.isActive TO Jin_Kick1NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Kick1NEGATERBooleanFilter.inputNegate TO Jin_JumpBooleanSequencer.next
+    ROUTE Jin_Kick1Timer.stopTime TO Jin_Kick2Timer.set_startTime
+    ROUTE Jin_Kick1Timer.isActive TO Jin_Kick2NEGATERBooleanFilter.set_boolean
+    ROUTE Jin_Kick2NEGATERBooleanFilter.inputNegate TO Jin_Kick1BooleanSequencer.next
+    ROUTE Jin_Kick2Timer.stopTime TO Jin_DefaultTimer.set_startTime
+    ROUTE Jin_Kick2Timer.isActive TO Jin_DefaultNEGATERBooleanFilter.set_boolean
+    ROUTE Jin_DefaultNEGATERBooleanFilter.inputNegate TO Jin_Kick2BooleanSequencer.next
+      ]
