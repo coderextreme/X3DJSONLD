@@ -231,6 +231,8 @@ HAnimHumanoid38.skinCoord = Coordinate46;
 let HAnimJoint47 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint47.name = "";
 HAnimJoint47.DEF = "hanim_";
+HAnimJoint47.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint47.llimit = new MFFloat(new float[0,0,0]);
 HAnimHumanoid38.joints[1] = HAnimJoint47;
 
 let HAnimJoint48 = browser.currentScene.createNode("HAnimJoint");

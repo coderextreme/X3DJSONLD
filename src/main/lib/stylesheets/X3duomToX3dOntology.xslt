@@ -11,7 +11,7 @@
 -->
 
 <!--
-Copyright (c) 2001-2023 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -214,8 +214,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 :X3DStatement a owl:Class ;
   rdfs:label "X3DStatement is the abstract type from which all non-node statements are derived." ;
-  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/concepts.html" ;
-  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/core.html#AbstractX3DStructure" .
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html" ;
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#AbstractX3DStructure" .
 #:class :id and :style connected via X3D definitions
 
 </xsl:text>
