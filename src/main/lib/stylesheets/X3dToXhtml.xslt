@@ -49,14 +49,14 @@ Recommended tools:
 -->
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
-<!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
-
 
 <xsl:stylesheet version="2.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="yes">
+                xmlns:saxon="http://saxon.sf.net/">
+    
+    <!--	https://www.saxonica.com/html/documentation12/extensions/attributes/index.html -->
     <!--        xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
     <!-- <xsl:import href="X3dExtrusionToSvgViaXslt1.1.xslt"/> -->
     <!-- default parameter values can be overridden when invoking this stylesheet -->
@@ -529,7 +529,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:variable name="fromFieldName" select="@fromField"/>
                         
                         <!-- check for missing DEF definitions in current ROUTE -->
-                        <xsl:if test="(count(//*[@DEF = $fromNodeDEF]) = 0) and not(local-name() = 'TouchSensor')">
+                        <xsl:if test="(count(//*[@DEF = $fromNodeDEF]) = 0) and (count(//IMPORT[(@AS = $fromNodeDEF) or @importedDEF = $fromNodeDEF]) = 0) and not(local-name() = 'TouchSensor')">
                             <xsl:message>
                                 <xsl:text>[error] no node found with origination DEF='</xsl:text>
                                 <xsl:value-of select="$fromNodeDEF"/>
@@ -548,7 +548,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>)</xsl:text>
                             </xsl:message>
                         </xsl:if>
-                        <xsl:if test="(count(//*[@DEF = $toNodeDEF]) = 0) and not(local-name() = 'TouchSensor')">
+                        <xsl:if test="(count(//*[@DEF = $toNodeDEF]) = 0) and (count(//IMPORT[(@AS = $toNodeDEF) or @importedDEF = $toNodeDEF]) = 0) and not(local-name() = 'TouchSensor')">
                             <xsl:message>
                                 <xsl:text>[error] no node found with destination DEF='</xsl:text>
                                 <xsl:value-of select="$toNodeDEF"/>
@@ -1475,7 +1475,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <span class="element">
                         <xsl:text>X3dNode</xsl:text>
                     </span>
-                    <xsl:if test="//*[@DEF]">
+                    <xsl:if test="(count(//*[@DEF]) > 0)">
                         <span class="idName">
                             <xsl:text> DEF</xsl:text>
                         </span>
@@ -2252,7 +2252,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             
         <!-- break to new line if needed -->
         <xsl:if test="(position() > 1) and not(local-name()='X3D') and ($lineBreaks='true')"><xsl:text disable-output-escaping="yes">&lt;br /&gt;&#10;</xsl:text></xsl:if>
-        <xsl:if test="@DEF or local-name()='ProtoDeclare' or local-name()='ExternProtoDeclare' or (local-name(..)='ProtoInterface' and local-name()='field') or local-name()='ROUTE' or local-name()='Viewpoint'">
+        <!-- anchor id bookmark for this element -->
+        <xsl:if test="@DEF or local-name()='ProtoDeclare' or local-name()='ExternProtoDeclare' or (local-name(..)='ProtoInterface' and local-name()='field') or
+                      local-name()='IMPORT' or local-name()='ROUTE' or local-name()='Viewpoint'">
             <!-- add bookmarks -->
             <xsl:element name="a">
                 <xsl:attribute name="name">
@@ -2272,6 +2274,23 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:value-of select="../../@name"/>
                             <xsl:text>ProtoField_</xsl:text>
                             <xsl:value-of select="@name"/>
+                        </xsl:when>
+                        <xsl:when test="local-name()='IMPORT'">
+                            <xsl:choose>
+                                <xsl:when test="(string-length(@AS) > 0)">
+                                    <xsl:value-of select="@AS"/>
+                                </xsl:when>
+                                <xsl:when test="(string-length(@importedDEF) > 0)">
+                                    <xsl:value-of select="@importedDEF"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:message>
+                                        <xsl:text>[error] statement IMPORT localDEF='</xsl:text>
+                                        <xsl:value-of select="@localDEF"/>
+                                        <xsl:text>' is missing attribute @importedDEF</xsl:text>
+                                    </xsl:message>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:when>
                         <xsl:when test="local-name()='ROUTE'">
                             <xsl:text>ROUTE_</xsl:text>
@@ -2338,9 +2357,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>to</xsl:text>
                             <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
                             <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="attribute">
-                                <xsl:value-of select="@toField"/>
-                        </span></xsl:element><xsl:text>]&#10;</xsl:text>
+                            <span class="attribute"><xsl:value-of select="@toField"/></span></xsl:element><xsl:text>]&#10;</xsl:text>
                     </xsl:for-each>
                     <xsl:for-each select="$OutgoingRoutes">
                         <xsl:text>[</xsl:text>
@@ -2368,9 +2385,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:value-of select="@toNode"/>
                             </span>
                             <xsl:text>.</xsl:text>
-                            <span class="attribute">
-                                <xsl:value-of select="@toField"/>
-                        </span></xsl:element><xsl:text>]&#10;</xsl:text>
+                            <span class="attribute"><xsl:value-of select="@toField"/></span></xsl:element><xsl:text>]&#10;</xsl:text>
                     </xsl:for-each>
                     <xsl:for-each select="$SelfRoutes">
                         <xsl:text>[</xsl:text>
@@ -3130,8 +3145,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <!-- TODO identify type mismatches -->
                 <xsl:variable name="fromNodeDEF" select="@fromNode"/>
                 <xsl:variable name=  "toNodeDEF" select=  "@toNode"/>
-                <xsl:variable name="fromNodeType" select="local-name(//*[@DEF = $fromNodeDEF][1])"/>
-                <xsl:variable name=  "toNodeType" select="local-name(//*[@DEF =   $toNodeDEF][1])"/>
+                <xsl:variable name="fromNodeType" select="local-name(//*[(@DEF = $fromNodeDEF) or (@importedDEF = $fromNodeDEF) or (@AS = $fromNodeDEF)][1])"/>
+                <xsl:variable name=  "toNodeType" select="local-name(//*[(@DEF =   $toNodeDEF) or (@importedDEF =   $toNodeDEF) or (@AS =   $toNodeDEF)][1])"/>
                 <xsl:variable name="fromFieldType">
                     <xsl:call-template name="attribute-type">
                         <xsl:with-param name="parentElementDEF" ><xsl:value-of select="@fromNode"/></xsl:with-param>
@@ -4438,11 +4453,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="."/>
                     </xsl:element>
                 </xsl:when>
-                <xsl:when test="local-name()='USE' or (local-name(..)='ROUTE' and contains(local-name(),'Node'))">
+                <xsl:when test="((local-name(..)='IMPORT') and (local-name()='importedDEF') and (string-length(../@AS) > 0)) or 
+                                (local-name()='AS')">
+                    <!-- not linked, informational color-code only -->
+                    <span class="idName">
+                        <xsl:value-of select="."></xsl:value-of>
+                    </span>
+                </xsl:when>
+                <xsl:when test="((local-name()='importedDEF') or (local-name()='AS'))">
+                    <!-- link to IMPORT statement -->
+                    <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>bookmark link to </xsl:text>
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>#</xsl:text>
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            <xsl:text>idName</xsl:text>
+                        </xsl:attribute>
+                        <xsl:value-of select="."/>
+                    </xsl:element>
+                </xsl:when>
+                <xsl:when test="local-name()='USE' or local-name()='localDEF' or 
+                                (local-name(..)='ROUTE' and contains(local-name(),'Node'))">
                     <xsl:variable name="refName" select="."/>
-                    <xsl:text>&#10;</xsl:text>
                     <xsl:choose>
-                        <xsl:when test="//*[@DEF=$refName]">
+                        <xsl:when test="//*[(@DEF=$refName) or (@AS=$refName) or (@importedDEF=$refName)]">
                             <xsl:element name="a">
                                 <xsl:attribute name="title">
                                     <xsl:text>go to the original DEF node definition</xsl:text>
@@ -5193,6 +5232,55 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:attribute>
                             <!-- visible part of anchor -->
                             <xsl:value-of select="@DEF"/>
+                        </xsl:element>
+                        <xsl:if test="not(position()=last())">
+                            <xsl:text>,</xsl:text>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:if>
+                <xsl:if test="//IMPORT">
+                    <b><i>
+                        <xsl:choose>
+                            <xsl:when test="//*[@DEF]">
+                                <xsl:text>with </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>Index for </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:text>IMPORT statement</xsl:text>
+                        <xsl:if test="count(//IMPORT) > 1">
+                            <xsl:text>s</xsl:text>
+                        </xsl:if>
+                        <xsl:text>: </xsl:text>
+                    </i></b>
+                    <xsl:for-each select="//IMPORT[((string-length(@importedDEF) > 0) and (string-length(@AS) = 0)) or 
+                                                    (string-length(@AS) > 0)]">
+                        <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
+                        <xsl:variable name="importName">
+                            <xsl:choose>
+                                <xsl:when test="(string-length(@importedDEF) > 0) and (string-length(@AS) = 0)">
+                                    <xsl:value-of select="@importedDEF"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@AS"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>go to this IMPORT statement</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>#</xsl:text>
+                                <xsl:value-of select="$importName"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="class">
+                                <xsl:text>idName</xsl:text>
+                            </xsl:attribute>
+                            <!-- visible part of anchor -->
+                                <xsl:value-of select="$importName"/>
                         </xsl:element>
                         <xsl:if test="not(position()=last())">
                             <xsl:text>,</xsl:text>
@@ -7302,6 +7390,20 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>'</xsl:text>
                         </xsl:message>
                 </xsl:when>
+                <xsl:when test="(count(//*[@importedDEF = $parentElementDEF]) gt 0)">
+                        <xsl:message>
+                            <xsl:text>[hint] author must ensure correct node type for Inline importedDEF='</xsl:text>
+                            <xsl:value-of select="$parentElementDEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                </xsl:when>
+                <xsl:when test="(count(//*[@AS = $parentElementDEF]) gt 0)">
+                        <xsl:message>
+                            <xsl:text>[hint] author must ensure correct node type for Inline AS='</xsl:text>
+                            <xsl:value-of select="$parentElementDEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>NodeNotFound</xsl:text>
                         <xsl:message>
@@ -7339,7 +7441,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:value-of select="$parentElementName"/>
         </xsl:message>
         -->
-	
         <!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
 
         <xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
@@ -7763,7 +7864,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='linearDampingFactor') or
 					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='mass')             or
 					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or

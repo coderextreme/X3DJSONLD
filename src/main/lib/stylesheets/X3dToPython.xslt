@@ -15,7 +15,9 @@
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	        xmlns:fn ="http://www.w3.org/2005/xpath-functions"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-		xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+		xmlns:saxon="http://saxon.sf.net/">
+    
+    <!-- https://www.saxonica.com/html/documentation12/extensions/attributes -->
     
     <!-- "pythonic" configuration: whether or not to insertPackagePrefix, i.e. x3d.X3D, x3d.head, x3d.Scene, x3d.Group etc. -->
     <!-- terse seems better for most programming tasks, certainly clearer for debugging too -->
@@ -2293,7 +2295,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='linearDampingFactor') or
 					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='mass')             or
 					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or

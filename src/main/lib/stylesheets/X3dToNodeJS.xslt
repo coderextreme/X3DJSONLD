@@ -3139,7 +3139,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
-					($attributeName='linearDampingFactor') or ($attributeName='linearVelocity') or
+					($attributeName='linearDampingFactor') or
 					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='mass')             or
 					($attributeName='maxAngle1')        or ($attributeName='maxAngle2')       or

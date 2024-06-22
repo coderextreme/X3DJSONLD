@@ -380,7 +380,7 @@ function doubleToFloat(d) {
               .setTexture(new ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(Java.to(["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"], Java.type("java.lang.String[]"))))
               .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))).setShininess(0.6).setTransparency(1))))
           .setSkinCoord(new Coordinate().setContainerFieldOverride("skinCoord").setUSE("TheSkinCoord"))
-          .addSkeleton(new HAnimJoint().setName("").setDEF("hanim_").setContainerFieldOverride("skeleton"))
+          .addSkeleton(new HAnimJoint().setName("").setDEF("hanim_").setUlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]"))).setLlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]"))).setContainerFieldOverride("skeleton"))
           .addJoints(new HAnimJoint().setContainerFieldOverride("joints").setUSE("hanim_"))))      ;
     X3D0.toFileX3D("../data/Humanoid0.new.graal.x3d");
     X3D0.toFileJSON("../data/Humanoid0.new.graal.json");

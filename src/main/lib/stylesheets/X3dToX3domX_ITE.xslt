@@ -21,6 +21,7 @@ X3DOM references
 - documentation https://doc.x3dom.org
 - Download      https://doc.x3dom.org/gettingStarted
 - Node support  https://doc.x3dom.org/author/nodes.html
+-               https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html
 
 --> 
 <!--
@@ -1052,10 +1053,11 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text disable-output-escaping="yes"> &#160;&#160;&#160; </xsl:text>
                                 <!-- anchor target attribute replaced as shown below -->
                                 <xsl:text>References: </xsl:text>
-                                <a href="https://doc.x3dom.org/tutorials/basics/sound/example.html" onclick="target='_blank';">X3DOM browser check</a>,
-                                <a href="https://www.x3dom.org"                                     onclick="target='_blank';">X3DOM home</a>,
-                                <a href="https://doc.x3dom.org"                                     onclick="target='_blank';">X3DOM documentation</a>,
-                                <a href="https://doc.x3dom.org/author/nodes.html"                   onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                                <a href="https://doc.x3dom.org/tutorials/basics/sound/example.html"        onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="https://www.x3dom.org"                                            onclick="target='_blank';">X3DOM home</a>,
+                                <a href="https://doc.x3dom.org"                                            onclick="target='_blank';">X3DOM documentation</a>,
+                            <!--<a href="https://doc.x3dom.org/author/nodes.html"                          onclick="target='_blank';">X3DOM list of supported nodes</a>,-->
+                                <a href="https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
                                 <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
                                 <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
@@ -2330,12 +2332,12 @@ function toggleShowDebugLogs()
  ($nodename='BallJoint') or
  ($nodename='Billboard') or
  ($nodename='BlendedVolumeStyle') or
- ($nodename='BoundaryEnhancementVolumeStyle') or
- ($nodename='Box') or
  ($nodename='BooleanFilter') or
  ($nodename='BooleanSequencer') or
  ($nodename='BooleanToggle') or
  ($nodename='BooleanTrigger') or
+ ($nodename='BoundaryEnhancementVolumeStyle') or
+ ($nodename='Box') or
  ($nodename='CADAssembly') or 
  ($nodename='CADFace') or
  ($nodename='CADLayer') or
@@ -2360,6 +2362,7 @@ function toggleShowDebugLogs()
  ($nodename='Cone') or
  ($nodename='Coordinate') or
  ($nodename='CoordinateDamper') or
+ ($nodename='CoordinateDouble') or
  ($nodename='CoordinateInterpolator') or
  ($nodename='Cylinder') or
  ($nodename='CylinderSensor') or
@@ -2394,12 +2397,12 @@ function toggleShowDebugLogs()
  ($nodename='ImageTexture3D') or
  ($nodename='IndexedFaceSet') or
  ($nodename='IndexedLineSet') or
- ($nodename='IndexedQuadSet ') or
+ ($nodename='IndexedQuadSet') or
  ($nodename='IndexedTriangleSet') or
  ($nodename='IndexedTriangleStripSet') or
+ ($nodename='Inline') or
  ($nodename='IntegerSequencer') or
  ($nodename='IntegerTrigger') or
- ($nodename='Inline') or
  ($nodename='IsoSurfaceVolumeData') or
  ($nodename='LineProperties') or
  ($nodename='LineSet') or
@@ -2424,10 +2427,13 @@ function toggleShowDebugLogs()
  ($nodename='OrientationDamper') or
  ($nodename='OrientationInterpolator') or
  ($nodename='OrthoViewpoint') or
+ ($nodename='ParticleSet') or
+ ($nodename='PhysicalMaterial') or
  ($nodename='PixelTexture') or
  ($nodename='PixelTexture3D') or
  ($nodename='PlaneSensor') or
  ($nodename='PointLight') or
+ ($nodename='PointProperties ') or
  ($nodename='PointSet') or
  ($nodename='Polyline2D') or
  ($nodename='Polypoint2D') or
@@ -2436,8 +2442,9 @@ function toggleShowDebugLogs()
  ($nodename='PositionDamper') or
  ($nodename='PositionDamper2D') or
  ($nodename='PositionInterpolator') or
+ ($nodename='PositionInterpolator2D') or
  ($nodename='ProjectionVolumeStyle') or
- ($nodename='QuadSet ') or
+ ($nodename='QuadSet') or
  ($nodename='Rectangle2D') or
  ($nodename='RigidBody') or
  ($nodename='RigidBodyCollection') or

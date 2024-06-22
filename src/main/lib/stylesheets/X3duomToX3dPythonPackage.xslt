@@ -3260,7 +3260,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                 <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
                 <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
 
@@ -3347,7 +3349,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                 <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
                 <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
                 
@@ -3422,7 +3426,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:sort select="(@name = 'USE')"/>
             <xsl:sort select="(@name = 'DEF')"/>
             <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
             <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
             <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
             <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')  and not(@name = 'id') and not(@name = 'style')"/>
 
@@ -3479,7 +3485,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                 <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
                 <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
 
@@ -3824,7 +3832,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- TODO hasComment -->
                 <xsl:for-each select="$allFields[contains(@type,'Node')]">
                     <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                    <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                     <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                    <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                     <xsl:sort select="(@type = 'SFNode')"/>
                     
                     <xsl:variable name="fieldName">
@@ -4265,7 +4275,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             result += self.XMLforNodeFields(fields=self.callerargs, indentLevel=indentLevel, syntax=syntax)</xsl:text>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
                             <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                             <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>
@@ -4539,7 +4551,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
                             <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                             <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>
@@ -4824,7 +4838,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:if>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
                             <xsl:sort select="(@type='MFNode') and (@name = 'skeleton')" order="descending"/>
+                            <xsl:sort select="(@type='MFNode') and (@name = 'skin')" order="descending"/>
                             <xsl:sort select="(@type='MFNode') and not(@name = 'skeleton')"/>
+                            <xsl:sort select="(@type='MFNode') and not(@name = 'skin')"/>
                             <xsl:sort select="(@type='SFNode')"/>
                             <xsl:sort select="(@name = 'ProtoBody')"/>
                             <xsl:sort select="(@name = 'ProtoInterface')"/>

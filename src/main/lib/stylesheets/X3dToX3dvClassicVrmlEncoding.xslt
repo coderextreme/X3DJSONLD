@@ -1,7 +1,12 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
-<!--
+<xsl:stylesheet version="2.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:saxon="http://saxon.sf.net/"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+    
+<!--    https://www.saxonica.com/html/documentation12/extensions/attributes
   <head>
    <meta name="filename"    content="X3dToX3dvClassicVrmlEncoding.xslt" />
    <meta name="author"      content="Don Brutzman, Duane Davis" />
