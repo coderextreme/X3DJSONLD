@@ -27,7 +27,7 @@
         </Shape>
       </Transform>
     </Group>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo speed='1.5'/>
     <Viewpoint description='default'/>
   </Scene>
 </X3D>

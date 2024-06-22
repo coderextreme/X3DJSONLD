@@ -9,7 +9,7 @@
     <meta content='a kind of ThreeDTexture cube with spheres' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <NavigationInfo type='"EXAMINE"'/>
     <Viewpoint description='Rubiks Cube' position='0 0 12'/>
     <ProtoDeclare name='sphereproto'>
       <ProtoInterface>

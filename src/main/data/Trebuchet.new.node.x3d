@@ -36,7 +36,7 @@
           <Material diffuseColor='1 0 0' emissiveColor='1 1 0'/>
         </Appearance>
         <Text string='"Click Sling to Select Projectile"'>
-          <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+          <FontStyle/>
         </Text>
       </Shape>
     </Transform>
@@ -85,7 +85,7 @@
               <Material diffuseColor='1 0 0'/>
             </Appearance>
             <Text string='"LAUNCH"'>
-              <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+              <FontStyle/>
             </Text>
           </Shape>
           <Transform translation='2 0.3 0'>
@@ -117,7 +117,7 @@
             <Shape>
               <Appearance USE='TextAppearance'/>
               <Text string='"Bowling Ball (10 lbs)"'>
-                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+                <FontStyle size='0.5'/>
               </Text>
             </Shape>
             <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>
@@ -128,7 +128,7 @@
             <Shape>
               <Appearance USE='TextAppearance'/>
               <Text string='"Cow (1000 lbs)"'>
-                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+                <FontStyle size='0.5'/>
               </Text>
             </Shape>
             <Sound maxBack='1000.0' maxFront='1000.0'>
@@ -139,7 +139,7 @@
             <Shape>
               <Appearance USE='TextAppearance'/>
               <Text string='"Chicken (5 lbs)"'>
-                <FontStyle family='"SERIF"' justify='"BEGIN"' size='0.5'/>
+                <FontStyle size='0.5'/>
               </Text>
             </Shape>
             <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>

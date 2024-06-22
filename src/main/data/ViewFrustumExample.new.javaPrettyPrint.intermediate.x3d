@@ -24,7 +24,7 @@
     <Viewpoint description='ViewFrustum from point of view'/>
     <Viewpoint description='ViewFrustum behind point of view' position='0 0 15'/>
     <Viewpoint description='ViewFrustum oblique side view' orientation='0.8005 0.5926 0.0898 -0.3743' position='-5 5 20'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'/>
+    <NavigationInfo type='"EXAMINE" "FLY" "ANY"'/>
     <ExternProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' url='"ViewFrustumPrototype.x3d#ViewFrustum"'>
       <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'/>
       <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'/>
@@ -42,7 +42,7 @@
         <Viewpoint description='ViewFrustum ViewpointNode'/>
       </fieldValue>
       <fieldValue name='NavigationInfoNode'>
-        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='15.0'/>
+        <NavigationInfo visibilityLimit='15.0'/>
       </fieldValue>
       <fieldValue name='visible' value='true'/>
       <fieldValue name='lineColor' value='0.9 0.9 0.9'/>

@@ -9,7 +9,7 @@
     <meta content='a white rubik cube' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <NavigationInfo type='"EXAMINE"'/>
     <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
@@ -47,22 +47,22 @@
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
           <ProtoInstance name='anyShape'>
-            <IS>
-              <connect nodeField='myShape' protoField='myShape'/>
-            </IS>
             <fieldValue name='xtranslation' value='0 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='anyShape'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
             <fieldValue name='xtranslation' value='2 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='anyShape'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
             <fieldValue name='xtranslation' value='-2 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
@@ -80,22 +80,22 @@
             <connect nodeField='translation' protoField='ztranslation'/>
           </IS>
           <ProtoInstance name='three'>
-            <IS>
-              <connect nodeField='myShape' protoField='myShape'/>
-            </IS>
             <fieldValue name='ytranslation' value='0 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='three'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 2 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='three'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 -2 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
@@ -113,22 +113,22 @@
             <connect nodeField='translation' protoField='ttranslation'/>
           </IS>
           <ProtoInstance name='nine'>
-            <IS>
-              <connect nodeField='myShape' protoField='myShape'/>
-            </IS>
             <fieldValue name='ztranslation' value='0 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='nine'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 2'/>
-          </ProtoInstance>
-          <ProtoInstance name='nine'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 -2'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
           </ProtoInstance>
         </Transform>
       </ProtoBody>

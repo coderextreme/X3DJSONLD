@@ -17,7 +17,7 @@
   </head>
   <Scene>
     <WorldInfo title='SpatialAudioCameraAnimation.x3d'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Background backUrl='"images/generic/BK1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"' bottomUrl='"images/generic/DN1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"' frontUrl='"images/generic/FR1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"' leftUrl='"images/generic/LF1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"' rightUrl='"images/generic/RT1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"' topUrl='"images/generic/UP1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"'/>
     <Viewpoint DEF='Camera001' description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view' orientation='1 0 0 -0.523599' position='0 2000 3500'/>
     <TimeSensor DEF='TIMER' cycleInterval='33.333332' loop='true'/>
@@ -49,7 +49,7 @@
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
             <Text string='"Violin"'>
-              <FontStyle DEF='ModelFontStyle' family='"Times" "SERIF"' justify='"BEGIN"' style='BOLD'/>
+              <FontStyle DEF='ModelFontStyle' family='"Times" "SERIF"' style='BOLD'/>
             </Text>
           </Shape>
         </Transform>

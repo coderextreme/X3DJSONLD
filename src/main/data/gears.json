@@ -64,7 +64,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","FLY","WALK","ANY"]
+              "@type":"\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\""
             }
           },
           { "Group":

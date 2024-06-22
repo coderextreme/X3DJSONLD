@@ -9,7 +9,7 @@
     <meta content='3 boxes' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <NavigationInfo type='"EXAMINE"'/>
     <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
@@ -50,22 +50,22 @@
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
           <ProtoInstance name='anyShape'>
-            <IS>
-              <connect nodeField='myShape' protoField='myShape'/>
-            </IS>
             <fieldValue name='xtranslation' value='0 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='anyShape'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
             <fieldValue name='xtranslation' value='2 0 0'/>
-          </ProtoInstance>
-          <ProtoInstance name='anyShape'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
             <fieldValue name='xtranslation' value='-2 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
           </ProtoInstance>
         </Transform>
       </ProtoBody>

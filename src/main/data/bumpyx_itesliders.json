@@ -177,7 +177,7 @@
                       },
                       { "NavigationInfo":
                         {
-                          "@type":["EXAMINE"],
+                          "@type":"\"EXAMINE\"",
                           "@avatarSize":[0.25,1.75,0.75]
                         }
                       },

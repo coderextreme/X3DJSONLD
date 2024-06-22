@@ -16,7 +16,7 @@
   </head>
   <Scene>
     <WorldInfo title='MainStage.x3d'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='false' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo headlight='false'/>
     <DirectionalLight ambientIntensity='1.0' direction='-0.5 -0.5 -0.5' global='true'/>
     <DirectionalLight ambientIntensity='1.0' direction='-1 -1 -1' global='true'/>
     <DirectionalLight ambientIntensity='1.0' direction='1 1 -1' global='true' intensity='0.5'/>

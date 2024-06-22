@@ -20,7 +20,7 @@
           <Material diffuseColor='0.1 0.7 0.7'/>
         </Appearance>
         <Text string='"Compare special character escaping"'>
-          <FontStyle DEF='testFontStyle' family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
+          <FontStyle DEF='testFontStyle' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
         </Text>
       </Shape>
     </Transform>

@@ -83,7 +83,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["ANY","EXAMINE","FLY","LOOKAT"]
+              "@type":"\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""
             }
           },
           { "Viewpoint":

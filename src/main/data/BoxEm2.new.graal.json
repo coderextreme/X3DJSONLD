@@ -28,7 +28,7 @@
 },
 {
 "@name":"translated",
-"@content":"29 April 2024"
+"@content":"22 June 2024"
 },
 {
 "@name":"generator",
@@ -171,25 +171,12 @@
 { "ProtoInstance":
 {
 "@name":"anyShape",
-"IS": {
-"connect": [
-{
-"@nodeField":"myShape",
-"@protoField":"myShape"
-}
-]
-},
 "fieldValue": [
 {
 "@name":"xtranslation",
 "@value":[0,0,0]
 }
-]
-}
-},
-{ "ProtoInstance":
-{
-"@name":"anyShape",
+],
 "IS": {
 "connect": [
 {
@@ -197,18 +184,18 @@
 "@protoField":"myShape"
 }
 ]
+}
+}
 },
+{ "ProtoInstance":
+{
+"@name":"anyShape",
 "fieldValue": [
 {
 "@name":"xtranslation",
 "@value":[2,0,0]
 }
-]
-}
-},
-{ "ProtoInstance":
-{
-"@name":"anyShape",
+],
 "IS": {
 "connect": [
 {
@@ -216,13 +203,26 @@
 "@protoField":"myShape"
 }
 ]
+}
+}
 },
+{ "ProtoInstance":
+{
+"@name":"anyShape",
 "fieldValue": [
 {
 "@name":"xtranslation",
 "@value":[-2,0,0]
 }
+],
+"IS": {
+"connect": [
+{
+"@nodeField":"myShape",
+"@protoField":"myShape"
+}
 ]
+}
 }
 }
 ]
