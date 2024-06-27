@@ -304,6 +304,7 @@ magic("/src/main/node/*.mjs", "text/javascript");
 magic("*.js.map", "application/json");
 magic("*.csv", "text/csv");
 magic("/*.xhtml", "application/xhtml+xml");
+magic("/*.xsd", "application/xml");
 magic("/*.html", "text/html");
 magic("*.xslt", "text/xsl");
 magic("*.css", "text/css");
