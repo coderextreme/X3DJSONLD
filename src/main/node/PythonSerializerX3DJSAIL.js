@@ -130,6 +130,10 @@ PythonSerializerX3DJSAIL.prototype = {
 			method = "Joints"
 			addpre = "add";
 		}
+		if (addpre+method === "setSegments") {
+			method = "Segments"
+			addpre = "add";
+		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";
