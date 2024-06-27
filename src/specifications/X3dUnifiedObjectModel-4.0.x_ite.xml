@@ -7,7 +7,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="anisotropyStrength"
@@ -26,14 +26,13 @@
 <field name="anisotropyTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *anisotropyTextureMapping*."
 ></field>
 <field name="anisotropyTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The anisotropy texture. Red and green channels represent the anisotropy direction in tangent, bitangent space to be rotated by the anisotropy rotation. The blue channel contains strength as to be multiplied by the anisotropy strength."
 ></field>
 <containerField default="blendMode" type="xs:NMTOKEN"/>
@@ -48,7 +47,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="blendColor"
@@ -107,7 +106,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="clearcoat"
@@ -120,14 +119,13 @@
 <field name="clearcoatTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *clearcoatTextureMapping*."
 ></field>
 <field name="clearcoatTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The clearcoat layer intensity texture."
 ></field>
 <field name="clearcoatRoughness"
@@ -140,27 +138,25 @@
 <field name="clearcoatRoughnessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *clearcoatRoughnessTextureMapping*."
 ></field>
 <field name="clearcoatRoughnessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The clearcoat layer roughness texture."
 ></field>
 <field name="clearcoatNormalTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *clearcoatNormalTextureMapping*."
 ></field>
 <field name="clearcoatNormalTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The clearcoat normal map texture."
 ></field>
 <containerField default="depthMode" type="xs:NMTOKEN"/>
@@ -175,7 +171,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="polygonOffset"
@@ -195,7 +191,7 @@
 <field name="depthTest"
 	type="SFBool"
 	accessType="inputOutput"
-	default="true"
+	default="TRUE"
 	description="Activates depth comparisons and updates to the depth buffer."
 ></field>
 <field name="depthFunction"
@@ -214,7 +210,7 @@
 <field name="depthMask"
 	type="SFBool"
 	accessType="inputOutput"
-	default="true"
+	default="TRUE"
 	description="Sets whether writing into the depth buffer is enabled or disabled."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -229,7 +225,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="dispersion"
@@ -251,7 +247,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="emissiveStrength"
@@ -273,7 +269,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="translations"
@@ -295,25 +291,25 @@
 <field name="pointerEvents"
 	type="SFBool"
 	accessType="inputOutput"
-	default="true"
+	default="TRUE"
 	description="*pointerEvents* defines whether this Shape becomes target for pointer events."
 ></field>
 <field name="castShadow"
 	type="SFBool"
 	accessType="inputOutput"
-	default="true"
+	default="TRUE"
 	description="Input/Output field *castShadow*."
 ></field>
 <field name="visible"
 	type="SFBool"
 	accessType="inputOutput"
-	default="true"
+	default="TRUE"
 	description="Whether or not renderable content within this node is visually displayed."
 ></field>
 <field name="bboxDisplay"
 	type="SFBool"
 	accessType="inputOutput"
-	default="false"
+	default="FALSE"
 	description="Whether to display bounding box for associated geometry, aligned with world coordinates."
 ></field>
 <field name="bboxSize"
@@ -333,14 +329,14 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DAppearanceNode"
+	acceptableNodeTypes="X3DAppearanceNode"
 	description="Input/Output field *appearance*."
 ></field>
 <field name="geometry"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DGeometryNode"
+	acceptableNodeTypes="X3DGeometryNode"
 	description="Input/Output field *geometry*."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -355,7 +351,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="indexOfRefraction"
@@ -377,7 +373,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="iridescence"
@@ -390,14 +386,13 @@
 <field name="iridescenceTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *iridescenceTextureMapping*."
 ></field>
 <field name="iridescenceTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The iridescence intensity texture."
 ></field>
 <field name="iridescenceIndexOfRefraction"
@@ -424,14 +419,13 @@
 <field name="iridescenceThicknessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *iridescenceThicknessTextureMapping*."
 ></field>
 <field name="iridescenceThicknessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The thickness texture of the thin-film layer."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -446,7 +440,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="sheenColor"
@@ -460,14 +454,13 @@
 <field name="sheenColorTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *sheenColorTextureMapping*."
 ></field>
 <field name="sheenColorTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The sheen color (RGB). The sheen color is in sRGB transfer function."
 ></field>
 <field name="sheenRoughness"
@@ -480,14 +473,13 @@
 <field name="sheenRoughnessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *sheenRoughnessTextureMapping*."
 ></field>
 <field name="sheenRoughnessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The sheen roughness (Alpha) texture."
 ></field>
 <containerField default="material" type="xs:NMTOKEN"/>
@@ -502,7 +494,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="diffuseColor"
@@ -516,14 +508,13 @@
 <field name="diffuseTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *diffuseTextureMapping*."
 ></field>
 <field name="diffuseTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The diffuse texture."
 ></field>
 <field name="specularColor"
@@ -545,14 +536,13 @@
 <field name="specularGlossinessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *specularGlossinessTextureMapping*."
 ></field>
 <field name="specularGlossinessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="The specular-glossiness texture."
 ></field>
 <field name="emissiveColor"
@@ -566,14 +556,13 @@
 <field name="emissiveTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="emissiveTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="When applying emissiveColor for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."
 ></field>
 <field name="occlusionStrength"
@@ -587,14 +576,13 @@
 <field name="occlusionTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="occlusionTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="When applying occlusionStrength for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."
 ></field>
 <field name="normalScale"
@@ -607,14 +595,13 @@
 <field name="normalTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="normalTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="When applying normalScale for this material node, the contained texture modulates the texture across the surface."
 ></field>
 <field name="transparency"
@@ -628,7 +615,7 @@
 <field name="extensions"
 	type="MFNode"
 	accessType="inputOutput"
-	inheritedFrom="X3DMaterialExtensionNode"
+	acceptableNodeTypes="X3DMaterialExtensionNode"
 	description="Input/Output field *extensions*."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -643,7 +630,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="specular"
@@ -656,14 +643,13 @@
 <field name="specularTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *specularTextureMapping*."
 ></field>
 <field name="specularTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="texture that defines the strength of the specular reflection, stored in the alpha (A) channel. This will be multiplied by specularFactor."
 ></field>
 <field name="specularColor"
@@ -677,14 +663,13 @@
 <field name="specularColorTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *specularColorTextureMapping*."
 ></field>
 <field name="specularColorTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="A texture that defines the F0 color of the specular reflection, stored in the RGB channels and encoded in sRGB. This texture will be multiplied by specularColorFactor."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -699,7 +684,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="transmission"
@@ -712,14 +697,13 @@
 <field name="transmissionTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *transmissionTextureMapping*."
 ></field>
 <field name="transmissionTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="A texture that defines the transmission percentage of the surface, stored in the R channel. This will be multiplied by transmissionFactor."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -734,7 +718,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -749,7 +733,7 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DMetadataObject"
+	acceptableNodeTypes="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="thickness"
@@ -762,14 +746,13 @@
 <field name="thicknessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
-	default=""
 	description="Input/Output field *thicknessTextureMapping*."
 ></field>
 <field name="thicknessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	inheritedFrom="X3DSingleTextureNode"
+	acceptableNodeTypes="X3DSingleTextureNode"
 	description="A texture that defines the thickness, stored in the G channel. This will be multiplied by thicknessFactor."
 ></field>
 <field name="attenuationDistance"

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-  "title": "X3D V3.3 JSON Schema, generated 2024/06/27 12:09:41",
+  "title": "X3D V3.3 JSON Schema, generated 2024/06/27 13:30:30",
   "description": "Experimental JSON Schema for X3D V3.3",
   "type": "object",
   "properties": {
@@ -942,9 +942,6 @@
         "-children": {
           "$ref": "#/$defs/-childStatements"
         },
-        "IS": {
-          "$ref": "#/$defs/IS"
-        },
         "@class": {
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -989,9 +986,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -1018,6 +1012,9 @@
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -1091,11 +1088,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-fillProperties": {
               "$ref": "#/$defs/-FillPropertiesSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-lineProperties": {
               "$ref": "#/$defs/-LinePropertiesSFNode"
@@ -1168,15 +1165,15 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@endAngle": {
               "exclusiveMaximum": 6.2832,
               "exclusiveMinimum": -6.2832,
               "default": 1.570796,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -1247,9 +1244,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closureType": {
               "enum": [
                 "PIE",
@@ -1265,6 +1259,9 @@
               "default": 1.570796,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -1340,12 +1337,12 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@loop": {
               "default": false,
@@ -1443,9 +1440,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@backUrl": {
               "$comment": "MFString inputOutput",
               "type": "array",
@@ -1491,6 +1485,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@leftUrl": {
               "$comment": "MFString inputOutput",
@@ -1602,9 +1599,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@anchorPoint": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -1639,6 +1633,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -1693,9 +1690,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@axisOfRotation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -1739,6 +1733,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -1796,13 +1793,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2172,9 +2169,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@boundaryOpacity": {
               "maximum": 1,
               "minimum": 0,
@@ -2186,6 +2180,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2256,9 +2253,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -2266,6 +2260,9 @@
             },
             "-geometry": {
               "$ref": "#/$defs/-X3DGeometryNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2394,9 +2391,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -2419,6 +2413,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2480,9 +2477,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -2502,6 +2496,9 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2563,9 +2560,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -2588,6 +2582,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2653,9 +2650,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -2688,6 +2682,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-CADFaceMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -2819,9 +2816,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@colorSteps": {
               "maximum": 64,
               "minimum": 1,
@@ -2833,6 +2827,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3007,13 +3004,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3106,9 +3103,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3136,6 +3130,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3228,9 +3225,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3255,6 +3249,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3347,9 +3344,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3377,6 +3371,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3436,9 +3433,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@appliedParameters": {
               "$comment": "MFString inputOutput",
@@ -3505,6 +3499,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3602,9 +3599,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-collider": {
               "$ref": "#/$defs/-CollisionCollectionSFNode"
             },
@@ -3618,6 +3612,9 @@
             },
             "-intersections": {
               "$ref": "#/$defs/-X3DNBodyCollidableNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3675,9 +3672,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3705,6 +3699,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3767,9 +3764,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@color": {
               "$comment": "MFColor inputOutput",
               "type": "array",
@@ -3779,6 +3773,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3836,9 +3833,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -3872,6 +3866,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -3929,9 +3926,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "maximum": 1,
               "minimum": 0,
@@ -3959,6 +3953,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -4110,9 +4107,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@color": {
               "$comment": "MFColorRGBA inputOutput",
               "type": "array",
@@ -4122,6 +4116,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -4146,9 +4143,6 @@
         "properties": {
           "-children": {
             "$ref": "#/$defs/-childStatements"
-          },
-          "IS": {
-            "$ref": "#/$defs/IS"
           },
           "@class": {
             "$comment": "SFString inputOutput",
@@ -4251,9 +4245,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-back": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
             },
@@ -4262,6 +4253,9 @@
             },
             "-front": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-left": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
@@ -4489,13 +4483,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -4556,9 +4550,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bottom": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -4575,6 +4566,9 @@
               "default": 2,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -4642,9 +4636,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@angle": {
               "maximum": 3.1416,
               "minimum": 0,
@@ -4680,6 +4671,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@mass": {
               "minimum": 0,
@@ -4738,9 +4732,6 @@
         "properties": {
           "-children": {
             "$ref": "#/$defs/-childStatements"
-          },
-          "IS": {
-            "$ref": "#/$defs/IS"
           },
           "@class": {
             "$comment": "SFString inputOutput",
@@ -4801,9 +4792,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@appliedParameters": {
               "$comment": "MFString inputOutput",
@@ -4901,6 +4889,9 @@
             },
             "-geometry2": {
               "$ref": "#/$defs/-X3DNBodyCollidableNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5005,11 +4996,11 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-children": {
               "$ref": "#/$defs/-NurbsCurve2D-ContourPolyline2DMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5067,9 +5058,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@controlPoint": {
               "$comment": "MFVec2d inputOutput",
               "type": "array",
@@ -5077,6 +5065,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5201,9 +5192,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -5227,6 +5215,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5284,9 +5275,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "$comment": "MFVec3f initializeOnly",
               "type": "array",
@@ -5304,6 +5292,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5594,9 +5585,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bottom": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -5607,6 +5595,9 @@
               "default": 2,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5685,9 +5676,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@autoOffset": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -5733,6 +5721,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@maxAngle": {
               "exclusiveMaximum": 6.2832,
@@ -5809,9 +5800,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ambientIntensity": {
               "maximum": 1,
               "minimum": 0,
@@ -5865,6 +5853,9 @@
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -5927,9 +5918,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@address": {
               "default": "localhost",
               "$comment": "SFString inputOutput",
@@ -5939,6 +5927,9 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-mapping": {
               "$ref": "#/$defs/-DISEntityTypeMappingMFNode"
@@ -6009,9 +6000,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@category": {
               "maximum": 255,
               "minimum": 0,
@@ -6039,6 +6027,9 @@
               "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@kind": {
               "maximum": 255,
@@ -6126,14 +6117,14 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@innerRadius": {
               "minimum": 0,
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -6202,9 +6193,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@anchorPoint": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -6269,6 +6257,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@maxAngle1": {
               "default": 3.141592653,
@@ -6371,9 +6362,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@easeInEaseOut": {
               "$comment": "MFVec2f inputOutput",
               "type": "array",
@@ -6381,6 +6369,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@key": {
               "$comment": "MFFloat inputOutput",
@@ -6445,9 +6436,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@edgeColor": {
               "maximum": 1,
               "minimum": 0,
@@ -6494,6 +6482,9 @@
               "default": 0.4,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -6554,9 +6545,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -6588,6 +6576,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -6682,9 +6673,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@address": {
               "default": "localhost",
               "$comment": "SFString inputOutput",
@@ -6915,6 +6903,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@linearAcceleration": {
               "$comment": "SFVec3f inputOutput",
@@ -7216,9 +7207,6 @@
         "-children": {
           "$ref": "#/$defs/-childStatements"
         },
-        "IS": {
-          "$ref": "#/$defs/IS"
-        },
         "@AS": {
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -7245,9 +7233,6 @@
         },
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@appinfo": {
           "$comment": "SFString inputOutput",
@@ -7350,9 +7335,6 @@
       "items": {
         "type": "object",
         "properties": {
-          "IS": {
-            "$ref": "#/$defs/IS"
-          },
           "@accessType": {
             "enum": [
               "initializeOnly",
@@ -7445,9 +7427,6 @@
       "items": {
         "type": "object",
         "properties": {
-          "IS": {
-            "$ref": "#/$defs/IS"
-          },
           "-children": {
             "$ref": "#/$defs/-X3DNodeMFNode"
           },
@@ -7507,9 +7486,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@filled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -7538,6 +7514,9 @@
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -7672,9 +7651,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@color": {
               "maximum": 1,
               "minimum": 0,
@@ -7697,6 +7673,9 @@
               "default": "LINEAR",
               "$comment": "SFString inputOutput",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -7760,9 +7739,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@depth": {
               "$comment": "MFFloat inputOutput",
               "type": "array",
@@ -7771,6 +7747,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -7828,9 +7807,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@family": {
               "$comment": "MFString initializeOnly",
               "type": "array",
@@ -7855,6 +7831,9 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@justify": {
               "$comment": "MFString initializeOnly",
@@ -7979,9 +7958,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -8007,6 +7983,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8142,14 +8121,14 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-geoOrigin": {
               "$ref": "#/$defs/-GeoOriginSFNode"
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8215,9 +8194,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ccw": {
               "default": true,
               "$comment": "SFBool initializeOnly",
@@ -8260,6 +8236,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8360,9 +8339,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -8401,6 +8377,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8455,9 +8434,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -8533,6 +8509,9 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -8607,11 +8586,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-data": {
               "$ref": "#/$defs/-X3DNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8685,9 +8664,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@geoCoords": {
               "$comment": "SFVec3d inputOutput",
               "type": "array",
@@ -8700,6 +8676,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8762,14 +8741,14 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-geoOrigin": {
               "$ref": "#/$defs/-GeoOriginSFNode"
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@key": {
               "$comment": "MFFloat inputOutput",
@@ -8842,9 +8821,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3d inputOutput",
               "type": "array",
@@ -8875,6 +8851,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -8942,9 +8921,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -8959,6 +8935,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -9013,9 +8992,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -9054,6 +9030,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -9183,9 +9162,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@centerOfRotation": {
               "$comment": "SFVec3d inputOutput",
               "type": "array",
@@ -9212,6 +9188,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@jump": {
               "default": true,
@@ -9328,9 +9307,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -9353,6 +9329,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -9410,9 +9389,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@coordIndex": {
               "$comment": "MFInt32 inputOutput",
               "type": "array",
@@ -9427,6 +9403,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -9578,9 +9557,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -9617,6 +9593,9 @@
               "items": {
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-joints": {
               "$ref": "#/$defs/-HAnimJointMFNode"
@@ -9780,9 +9759,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -9818,6 +9794,9 @@
             },
             "-displacers": {
               "$ref": "#/$defs/-HAnimDisplacerMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@limitOrientation": {
               "$comment": "SFRotation inputOutput",
@@ -10117,9 +10096,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -10158,6 +10134,9 @@
             },
             "-displacers": {
               "$ref": "#/$defs/-HAnimDisplacerMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@mass": {
               "minimum": 0,
@@ -10334,9 +10313,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -10369,6 +10345,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -10552,9 +10531,6 @@
       "properties": {
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@class": {
           "$comment": "SFString inputOutput",
@@ -10816,9 +10792,6 @@
         "-children": {
           "$ref": "#/$defs/-childStatements"
         },
-        "IS": {
-          "$ref": "#/$defs/IS"
-        },
         "@AS": {
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -10882,9 +10855,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -10933,6 +10903,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11022,9 +10995,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -11057,6 +11027,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11114,9 +11087,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -11146,6 +11116,9 @@
                 "minimum": 0,
                 "type": "integer"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11219,9 +11192,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -11251,6 +11221,9 @@
                 "minimum": -1,
                 "type": "integer"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11324,9 +11297,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -11356,6 +11326,9 @@
                 "minimum": 0,
                 "type": "integer"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11429,9 +11402,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -11461,6 +11431,9 @@
                 "minimum": -1,
                 "type": "integer"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11534,9 +11507,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -11556,6 +11526,9 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@load": {
               "default": true,
@@ -11700,13 +11673,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@integerKey": {
               "default": -1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11729,9 +11702,6 @@
       "properties": {
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@class": {
           "$comment": "SFString inputOutput",
@@ -11783,9 +11753,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -11825,6 +11792,9 @@
             },
             "-gradients": {
               "$ref": "#/$defs/-X3DTexture3DNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11901,13 +11871,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -11962,11 +11932,11 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@isPickable": {
               "default": true,
@@ -12032,14 +12002,14 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@activeLayer": {
               "minimum": 0,
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-layers": {
               "$ref": "#/$defs/-X3DLayerNodeMFNode"
@@ -12109,9 +12079,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@align": {
               "$comment": "MFString inputOutput",
               "type": "array",
@@ -12130,6 +12097,9 @@
                 "default": "CENTER",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -12264,9 +12234,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -12289,6 +12256,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-layout": {
               "$ref": "#/$defs/-X3DLayoutNodeSFNode"
@@ -12349,11 +12319,11 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@isPickable": {
               "default": true,
@@ -12422,9 +12392,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -12445,6 +12412,9 @@
               "default": "BOUNDS",
               "$comment": "SFString initializeOnly",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@matchCriterion": {
               "enum": [
@@ -12559,13 +12529,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@applied": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@linetype": {
               "minimum": 1,
@@ -12634,9 +12604,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -12648,6 +12615,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -12713,13 +12683,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -12786,9 +12756,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@color": {
               "maximum": 1,
               "minimum": 0,
@@ -12816,6 +12783,9 @@
               "default": "LINEAR",
               "$comment": "SFString inputOutput",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -12876,9 +12846,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -12916,6 +12883,9 @@
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -12980,9 +12950,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ambientIntensity": {
               "maximum": 1,
               "minimum": 0,
@@ -13017,6 +12984,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -13209,9 +13179,6 @@
         "properties": {
           "-children": {
             "$ref": "#/$defs/-childStatements"
-          },
-          "IS": {
-            "$ref": "#/$defs/IS"
           },
           "@class": {
             "$comment": "SFString inputOutput",
@@ -13784,9 +13751,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@autoCalc": {
               "default": false,
               "$comment": "SFBool initializeOnly",
@@ -13853,6 +13817,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -13970,12 +13937,12 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@loop": {
               "default": false,
@@ -14091,9 +14058,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@alpha": {
               "maximum": 1,
               "minimum": 0,
@@ -14133,6 +14097,9 @@
                 ],
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -14373,9 +14340,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@avatarSize": {
               "$comment": "MFFloat inputOutput",
               "type": "array",
@@ -14405,6 +14369,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -14678,9 +14645,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closed": {
               "default": false,
               "$comment": "SFBool initializeOnly",
@@ -14688,6 +14652,9 @@
             },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -14771,9 +14738,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closed": {
               "default": false,
               "$comment": "SFBool initializeOnly",
@@ -14786,6 +14750,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -14869,11 +14836,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@knot": {
               "$comment": "MFDouble inputOutput",
@@ -14951,11 +14918,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15087,11 +15054,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@knot": {
               "$comment": "MFDouble inputOutput",
@@ -15169,9 +15136,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -15194,6 +15158,9 @@
             },
             "-geometry": {
               "$ref": "#/$defs/-X3DNurbsSurfaceGeometryNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15257,11 +15224,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15364,9 +15331,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ccw": {
               "default": true,
               "$comment": "SFBool initializeOnly",
@@ -15374,6 +15338,9 @@
             },
             "-crossSectionCurve": {
               "$ref": "#/$defs/-X3DNurbsControlCurveNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15439,13 +15406,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ccw": {
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15514,9 +15481,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@controlPoint": {
               "$comment": "MFVec2f inputOutput",
               "type": "array",
@@ -15524,6 +15488,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15627,11 +15594,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-controlPoint": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15766,13 +15733,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15833,9 +15800,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -15891,6 +15855,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -15948,9 +15915,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "$comment": "SFRotation initializeOnly",
               "type": "array",
@@ -16000,6 +15964,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -16149,9 +16116,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@centerOfRotation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -16190,6 +16154,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@jump": {
               "default": true,
@@ -16390,9 +16357,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-appearance": {
               "$ref": "#/$defs/-X3DAppearanceNodeSFNode"
             },
@@ -16462,6 +16426,9 @@
               "default": "QUAD",
               "$comment": "SFString initializeOnly",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@lifetimeVariation": {
               "maximum": 1,
@@ -16561,9 +16528,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -16586,6 +16550,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -16668,9 +16635,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@image": {
               "$comment": "SFImage inputOutput",
               "type": "array",
@@ -16678,6 +16642,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -16748,9 +16715,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@image": {
               "$comment": "MFInt32 inputOutput",
               "type": "array",
@@ -16758,6 +16722,9 @@
                 "default": 0,
                 "type": "integer"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -16833,9 +16800,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@autoOffset": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -16874,6 +16838,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@maxPosition": {
               "$comment": "SFVec2f inputOutput",
@@ -16961,9 +16928,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@direction": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -16984,6 +16948,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@mass": {
               "minimum": 0,
@@ -17075,9 +17042,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@ambientIntensity": {
               "maximum": 1,
               "minimum": 0,
@@ -17135,6 +17099,9 @@
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@location": {
               "$comment": "SFVec3f inputOutput",
@@ -17213,9 +17180,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -17236,6 +17200,9 @@
               "default": "BOUNDS",
               "$comment": "SFString initializeOnly",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@matchCriterion": {
               "enum": [
@@ -17350,9 +17317,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -17364,6 +17328,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -17488,9 +17455,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-coord": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
             },
@@ -17531,6 +17495,9 @@
                 }
               ],
               "items": false
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@mass": {
               "minimum": 0,
@@ -17679,9 +17646,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -17707,6 +17671,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -17764,9 +17731,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -17792,6 +17756,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -17849,9 +17816,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -17871,6 +17835,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -17946,9 +17913,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "$comment": "SFVec2f initializeOnly",
               "type": "array",
@@ -17968,6 +17932,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18191,9 +18158,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -18214,6 +18178,9 @@
               "default": "BOUNDS",
               "$comment": "SFString initializeOnly",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@matchCriterion": {
               "enum": [
@@ -18406,9 +18373,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -18420,6 +18384,9 @@
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18450,9 +18417,6 @@
     "ProtoBody": {
       "type": "object",
       "properties": {
-        "IS": {
-          "$ref": "#/$defs/IS"
-        },
         "-children": {
           "$ref": "#/$defs/-X3DNodeMFNode"
         },
@@ -18468,9 +18432,6 @@
       "properties": {
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@appinfo": {
           "$comment": "SFString inputOutput",
@@ -18554,11 +18515,11 @@
                 "additionalProperties": false
               }
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "fieldValue": {
               "$ref": "#/$defs/fieldValue"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18588,9 +18549,6 @@
         },
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@class": {
           "$comment": "SFString inputOutput",
@@ -18639,9 +18597,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -18656,6 +18611,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18723,9 +18681,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -18747,6 +18702,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18820,9 +18778,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@address": {
               "default": "localhost",
               "$comment": "SFString inputOutput",
@@ -18875,6 +18830,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -19092,9 +19050,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@angularDampingFactor": {
               "default": 0.001,
               "$comment": "SFFloat inputOutput",
@@ -19231,6 +19186,9 @@
               ],
               "items": false
             },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
             "@linearDampingFactor": {
               "default": 0.001,
               "$comment": "SFFloat inputOutput",
@@ -19363,9 +19321,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@autoDisable": {
               "default": false,
               "$comment": "SFBool inputOutput",
@@ -19434,6 +19389,9 @@
               ],
               "items": false
             },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
             "@iterations": {
               "default": 10,
               "$comment": "SFInt32 inputOutput",
@@ -19476,9 +19434,6 @@
       "properties": {
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@class": {
           "$comment": "SFString inputOutput",
@@ -19549,9 +19504,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -19567,6 +19519,9 @@
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -19624,9 +19579,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "default": 0,
               "$comment": "SFFloat initializeOnly",
@@ -19636,6 +19588,9 @@
               "default": 0,
               "$comment": "SFFloat initializeOnly",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -19747,9 +19702,6 @@
     "Scene": {
       "type": "object",
       "properties": {
-        "IS": {
-          "$ref": "#/$defs/IS"
-        },
         "-children": {
           "$ref": "#/$defs/-X3DChildNode-X3DMetadataObject-LayerSetMFNode"
         },
@@ -19800,9 +19752,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@family": {
               "$comment": "MFString initializeOnly",
               "type": "array",
@@ -19827,6 +19776,9 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@justify": {
               "$comment": "MFString initializeOnly",
@@ -19948,9 +19900,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -19973,6 +19922,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20040,13 +19992,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@directOutput": {
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20118,9 +20070,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -20152,6 +20101,9 @@
                 "exclusiveMinimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20225,13 +20177,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@lighting": {
               "default": false,
@@ -20506,9 +20458,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-appearance": {
               "$ref": "#/$defs/-X3DAppearanceNodeSFNode"
             },
@@ -20534,6 +20483,9 @@
             },
             "-geometry": {
               "$ref": "#/$defs/-X3DGeometryNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20590,9 +20542,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@address": {
               "default": "localhost",
@@ -20663,6 +20612,9 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20791,13 +20743,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -20878,9 +20830,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@anchorPoint": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -20925,6 +20874,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@maxAngle": {
               "default": 3.141592653,
@@ -21002,9 +20954,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@axis": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -21050,6 +20999,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@maxSeparation": {
               "default": 1,
@@ -21132,9 +21084,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@direction": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -21162,6 +21111,9 @@
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@location": {
               "$comment": "SFVec3f inputOutput",
@@ -21338,9 +21290,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@autoOffset": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -21354,6 +21303,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -21436,13 +21388,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closed": {
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@key": {
               "$comment": "MFFloat inputOutput",
@@ -21528,13 +21480,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closed": {
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@key": {
               "$comment": "MFFloat inputOutput",
@@ -21620,13 +21572,13 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@closed": {
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@key": {
               "$comment": "MFFloat inputOutput",
@@ -21709,9 +21661,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -21805,6 +21754,9 @@
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@location": {
               "$comment": "SFVec3f inputOutput",
@@ -21959,9 +21911,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -21984,6 +21933,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22041,9 +21993,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@deletionAllowed": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -22053,6 +22002,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22193,9 +22145,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -22218,6 +22167,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22281,9 +22233,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@duration": {
               "minimum": 0,
               "default": 1,
@@ -22305,6 +22254,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22362,9 +22314,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@initialDestination": {
               "$comment": "MFVec2f initializeOnly",
               "type": "array",
@@ -22380,6 +22329,9 @@
               "items": {
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22455,11 +22407,11 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-fontStyle": {
               "$ref": "#/$defs/-X3DFontStyleNodeSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@length": {
               "$comment": "MFFloat inputOutput",
@@ -22543,9 +22495,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-backTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
             },
@@ -22573,6 +22522,9 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-leftTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
@@ -22951,9 +22903,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@anisotropicDegree": {
               "minimum": 1,
               "default": 1,
@@ -23020,6 +22969,9 @@
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@magnificationFilter": {
               "enum": [
@@ -23125,9 +23077,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec2f inputOutput",
               "type": "array",
@@ -23137,6 +23086,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -23219,9 +23171,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -23231,6 +23180,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -23463,9 +23415,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@cycleInterval": {
               "minimum": 0,
               "default": 1,
@@ -23476,6 +23425,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@loop": {
               "default": false,
@@ -23617,9 +23569,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@coolColor": {
               "maximum": 1,
               "minimum": 0,
@@ -23659,6 +23608,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -23754,9 +23706,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -23765,6 +23714,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -23819,9 +23771,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -23854,6 +23803,9 @@
             },
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -23981,9 +23933,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -23998,6 +23947,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -24067,9 +24019,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@address": {
               "default": "localhost",
@@ -24163,6 +24112,9 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@lengthOfModulationParameters": {
               "default": 0,
@@ -24356,9 +24308,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -24388,6 +24337,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -24461,9 +24413,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -24485,6 +24434,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -24630,9 +24582,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-attrib": {
               "$ref": "#/$defs/-X3DVertexAttributeNodeMFNode"
             },
@@ -24654,6 +24603,9 @@
             },
             "-fogCoord": {
               "$ref": "#/$defs/-FogCoordinateSFNode"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -24734,9 +24686,6 @@
           "properties": {
             "-children": {
               "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
             },
             "@ambientIntensity": {
               "maximum": 1,
@@ -24836,6 +24785,9 @@
                 "type": "number"
               }
             },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -24892,9 +24844,6 @@
         "properties": {
           "-children": {
             "$ref": "#/$defs/-childStatements"
-          },
-          "IS": {
-            "$ref": "#/$defs/IS"
           },
           "@category": {
             "enum": [
@@ -24969,9 +24918,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@anchorPoint": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -25026,6 +24972,9 @@
                 "default": "NONE",
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -25111,9 +25060,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@centerOfRotation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -25134,6 +25080,9 @@
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@jump": {
               "default": true,
@@ -25244,9 +25193,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -25268,6 +25214,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -25337,9 +25286,6 @@
         {
           "type": "object",
           "properties": {
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -25398,6 +25344,9 @@
                 "type": "number"
               }
             },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -25454,9 +25403,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@center": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -25471,6 +25417,9 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -25538,9 +25487,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -25572,6 +25518,9 @@
                 "exclusiveMinimum": 0,
                 "type": "number"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -25635,9 +25584,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "-coord": {
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
             },
@@ -25683,6 +25629,9 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@mass": {
               "minimum": 0,
@@ -25764,9 +25713,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -25787,6 +25733,9 @@
               "default": "BOUNDS",
               "$comment": "SFString initializeOnly",
               "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "@matchCriterion": {
               "enum": [
@@ -25901,9 +25850,6 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@direction": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -25935,6 +25881,9 @@
               "default": 0.1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -26005,15 +25954,15 @@
             "-children": {
               "$ref": "#/$defs/-childStatements"
             },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
             "@info": {
               "$comment": "MFString inputOutput",
               "type": "array",
               "items": {
                 "type": "string"
               }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -26055,9 +26004,6 @@
         },
         "-children": {
           "$ref": "#/$defs/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/$defs/IS"
         },
         "@class": {
           "$comment": "SFString inputOutput",
