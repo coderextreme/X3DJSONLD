@@ -36,6 +36,7 @@
     "url": "^0.11.0",
     "xml2js": "^0.6.2",
     "xmlhttprequest": "*",
+    "xsd-schema-validator": "*",
     "xslt3": "*"
   },
   "scripts": {
