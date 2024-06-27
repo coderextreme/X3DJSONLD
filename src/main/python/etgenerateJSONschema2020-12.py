@@ -189,7 +189,12 @@ class ClassPrinter:
                     if field.get("type") == "SFString":
                         str += '\t\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
                     elif field.get("type") == "SFBool":
-                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        if field.get("default") == "TRUE":
+                            str += '\t\t\t\t\t\t"default":true,\n'
+                        elif field.get("default") == "FALSE":
+                            str += '\t\t\t\t\t\t"default":false,\n'
+                        else:
+                            str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFDouble":
                         str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFTime":
@@ -606,12 +611,12 @@ class ClassPrinter:
         if self.node is not None:
             fields = self.node.iter("field")
             required = []
-            if self.hasIS:
-                str += '''\
-                                    "IS": {
-                                            "$ref": "#/$defs/IS"
-                                    },
-'''
+#            if self.hasIS:
+#                str += '''\
+#                                    "IS": {
+#                                            "$ref": "#/$defs/IS"
+#                                    },
+#'''
 
             for field in fields:
                 if not field.get("name").startswith("X3D") or field.get("name") == "X3D" or field.get("name") == "USE":
