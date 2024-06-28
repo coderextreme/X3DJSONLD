@@ -7,12 +7,12 @@ def parse_transform(transform):
     rotation = transform.get('rotation', '0 0 1 0')
     scale = transform.get('scale', '1 1 1')
     center = transform.get('center', '0 0 0')
-    
+
     tx, ty, tz = map(float, translation.split())
     rx, ry, rz, angle = map(float, rotation.split())
     sx, sy, sz = map(float, scale.split())
     cx, cy, cz = map(float, center.split())
-    
+
     return (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz)
 
 def create_empty(name, matrix):
@@ -34,23 +34,23 @@ def process_node(node, parent_object=None):
     animated_objects = {}
     if node.tag == 'Transform':
         (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
-        
+
         translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
         rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
         scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
-        
+
         transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
-        
+
         name = node.get('DEF', 'Transform')
         empty = create_empty(name, transform_matrix)
         empty['x3dlocation'] = (cx, cy, cz)
         animated_objects[name] = empty
-        
+
         if parent_object:
             empty.parent = parent_object
-        
+
         current_object = empty
-        
+
         for child in node:
             if child.tag == 'Shape':
                 box = child.find('Box')
@@ -68,26 +68,25 @@ def process_node(node, parent_object=None):
 
     return animated_objects
 
-def create_animation_center(obj, keyframes):
-    if not obj.animation_data:
-        obj.animation_data_create()
-    action = bpy.data.actions.new(name=f"{obj.name}_Action")
-    obj.animation_data.action = action
-
-    # center = obj.matrix_world.to_translation()
-    center = obj['x3dlocation']
-
-    for i in range(3):  # x, y, z
-        fc = action.fcurves.new(data_path="rotation_euler", index=i)
-        for frame, value in keyframes:
-            fc.keyframe_points.insert(frame, value[i])
-
-    # Add keyframes for location to compensate for rotation around center
-    for i in range(3):  # x, y, z
-        fc = action.fcurves.new(data_path="location", index=i)
-        for frame, rotation in keyframes:
-            offset = center - rotation.to_matrix() @ center
-            fc.keyframe_points.insert(frame, offset[i])
+#def create_animation_center(obj, keyframes):
+#    if not obj.animation_data:
+#        obj.animation_data_create()
+#    action = bpy.data.actions.new(name=f"{obj.name}_Action")
+#    obj.animation_data.action = action
+#
+#    center = Vector(obj['x3dlocation'][:])
+#
+#    for i in range(3):  # x, y, z
+#        fc = action.fcurves.new(data_path="rotation_euler", index=i)
+#        for frame, value in keyframes:
+#            fc.keyframe_points.insert(frame, value[i])
+#
+#    # Add keyframes for location to compensate for rotation around center
+#    for i in range(3):  # x, y, z
+#        fc = action.fcurves.new(data_path="location", index=i)
+#        for frame, rotation in keyframes:
+#            offset = center - rotation.to_matrix() @ center
+#            fc.keyframe_points.insert(frame, offset[i])
 
 def create_animation(obj, keyframes):
     if not obj.animation_data:
@@ -106,7 +105,7 @@ def main(file_path):
 
     tree = ET.parse(file_path)
     root = tree.getroot()
-    
+
     scene = root.find('Scene')
     if scene is not None:
         animated_objects = process_node(scene)
@@ -116,7 +115,7 @@ def main(file_path):
     if orientationInterpolator is not None:
         keys = list(map(float, orientationInterpolator.get('key').split()))
         keyValues = list(map(float, orientationInterpolator.get('keyValue').split()))
-        
+
         keyframes = []
         for i, key in enumerate(keys):
             frame = int(key * 100)  # Assuming 100 frames for full animation
@@ -154,3 +153,4 @@ def main(file_path):
 # Choose which file to load
 file_path = "localrotation.x3d"  # Replace with your X3D file path
 main(file_path)
+
