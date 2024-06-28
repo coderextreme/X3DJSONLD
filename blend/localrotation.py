@@ -32,7 +32,7 @@ def create_box(name, size, matrix):
 
 def process_node(node, parent_object=None):
     animated_objects = {}
-    if node.tag == 'Transform':
+    if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid'):
         (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
 
         translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
@@ -41,9 +41,9 @@ def process_node(node, parent_object=None):
 
         transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
 
-        name = node.get('DEF', 'Transform')
+        name = node.get('DEF', node.tag)
         empty = create_empty(name, transform_matrix)
-        empty['x3dlocation'] = (cx, cy, cz)
+        # empty['x3dlocation'] = (cx, cy, cz)
         animated_objects[name] = empty
 
         if parent_object:
