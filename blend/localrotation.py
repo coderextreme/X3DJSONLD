@@ -31,7 +31,7 @@ def create_box(name, size, matrix):
     return box
 
 def process_node(node, parent_object=None):
-    animation_objects = {}
+    animated_objects = {}
     if node.tag == 'Transform':
         (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
         
@@ -43,7 +43,7 @@ def process_node(node, parent_object=None):
         
         name = node.get('DEF', 'Transform')
         empty = create_empty(name, transform_matrix)
-        animation_objects[name] = empty
+        animated_objects[name] = empty
         
         if parent_object:
             empty.parent = parent_object
@@ -58,14 +58,14 @@ def process_node(node, parent_object=None):
                     size = tuple(map(float, box.get('size', '1 1 1').split()))
                     box_object = create_box(box_name, size, Matrix.Identity(4))
                     box_object.parent = current_object
-                    animation_objects[box_name] = box_object
+                    animated_objects[box_name] = box_object
             else:
-                animation_objects.update(process_node(child, current_object))
+                animated_objects.update(process_node(child, current_object))
     else:
         for child in node:
-            animation_objects.update(process_node(child, parent_object))
+            animated_objects.update(process_node(child, parent_object))
 
-    return animation_objects
+    return animated_objects
 
 def create_animation(obj, keyframes):
     if not obj.animation_data:
@@ -89,6 +89,12 @@ def main(file_path):
     if scene is not None:
         animated_objects = process_node(scene)
 
+    # Determine which objects to animate based on ROUTEs
+    route_targets = set()
+    for route in root.findall(".//ROUTE"):
+        if route.get('toField') == 'rotation':
+            route_targets.add(route.get('toNode'))
+
     # Animation setup
     orientationInterpolator = root.find(".//OrientationInterpolator[@DEF='Rotater']")
     if orientationInterpolator is not None:
@@ -103,10 +109,9 @@ def main(file_path):
             rotation = Quaternion(axis, angle).to_euler()
             keyframes.append((frame, rotation))
 
-        # Find all objects that should be animated and apply the animation only once
-        animated_object_names = {'TransformTargetParent', 'TransformTargetChild'}
+        # Apply animation only to the target objects
         for obj_name, obj in animated_objects.items():
-            if obj_name in animated_object_names:
+            if obj_name in route_targets:
                 create_animation(obj, keyframes)
                 print(f"Animating {obj.name}")
 
@@ -126,4 +131,3 @@ def main(file_path):
 # Choose which file to load
 file_path = "localrotation.x3d"  # Replace with your X3D file path
 main(file_path)
-
