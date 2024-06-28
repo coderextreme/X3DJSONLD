@@ -43,7 +43,6 @@ def process_node(node, parent_object=None):
         
         name = node.get('DEF', 'Transform')
         empty = create_empty(name, transform_matrix)
-        empty['x3dlocation'] = (cx, cy, cz)
         animated_objects[name] = empty
         
         if parent_object:
@@ -68,14 +67,13 @@ def process_node(node, parent_object=None):
 
     return animated_objects
 
-def create_animation_center(obj, keyframes):
+def create_animation(obj, keyframes):
     if not obj.animation_data:
         obj.animation_data_create()
     action = bpy.data.actions.new(name=f"{obj.name}_Action")
     obj.animation_data.action = action
 
-    # center = obj.matrix_world.to_translation()
-    center = obj['x3dlocation']
+    center = obj.matrix_world.to_translation()
 
     for i in range(3):  # x, y, z
         fc = action.fcurves.new(data_path="rotation_euler", index=i)
@@ -88,17 +86,6 @@ def create_animation_center(obj, keyframes):
         for frame, rotation in keyframes:
             offset = center - rotation.to_matrix() @ center
             fc.keyframe_points.insert(frame, offset[i])
-
-def create_animation(obj, keyframes):
-    if not obj.animation_data:
-        obj.animation_data_create()
-    action = bpy.data.actions.new(name=f"{obj.name}_Action")
-    obj.animation_data.action = action
-
-    for i in range(3):  # x, y, z
-        fc = action.fcurves.new(data_path="rotation_euler", index=i)
-        for frame, value in keyframes:
-            fc.keyframe_points.insert(frame, value[i])
 
 def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
@@ -137,7 +124,6 @@ def main(file_path):
                 create_animation(obj, keyframes)
                 print(f"Animating {obj.name}")
 
-
     # Set up animation playback
     bpy.context.scene.frame_start = 0
     bpy.context.scene.frame_end = 100
@@ -152,5 +138,5 @@ def main(file_path):
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
 # Choose which file to load
-file_path = "localrotation.x3d"  # Replace with your X3D file path
+file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
 main(file_path)
