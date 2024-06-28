@@ -31,6 +31,7 @@ def create_box(name, size, matrix):
     return box
 
 def process_node(node, parent_object=None):
+    animation_objects = {}
     if node.tag == 'Transform':
         (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
         
@@ -42,6 +43,7 @@ def process_node(node, parent_object=None):
         
         name = node.get('DEF', 'Transform')
         empty = create_empty(name, transform_matrix)
+        animation_objects[name] = empty
         
         if parent_object:
             empty.parent = parent_object
@@ -56,11 +58,14 @@ def process_node(node, parent_object=None):
                     size = tuple(map(float, box.get('size', '1 1 1').split()))
                     box_object = create_box(box_name, size, Matrix.Identity(4))
                     box_object.parent = current_object
+                    animation_objects[box_name] = box_object
             else:
-                process_node(child, current_object)
+                animation_objects.update(process_node(child, current_object))
     else:
         for child in node:
-            process_node(child, parent_object)
+            animation_objects.update(process_node(child, parent_object))
+
+    return animation_objects
 
 def create_animation(obj, keyframes):
     if not obj.animation_data:
@@ -71,7 +76,7 @@ def create_animation(obj, keyframes):
     for i in range(3):  # x, y, z
         fc = action.fcurves.new(data_path="rotation_euler", index=i)
         for frame, value in keyframes:
-            fc.keyframe_points.insert(frame, value[i], options={'FAST'})
+            fc.keyframe_points.insert(frame, value[i])
 
 def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
@@ -82,7 +87,7 @@ def main(file_path):
     
     scene = root.find('Scene')
     if scene is not None:
-        process_node(scene)
+        animated_objects = process_node(scene)
 
     # Animation setup
     orientationInterpolator = root.find(".//OrientationInterpolator[@DEF='Rotater']")
@@ -100,10 +105,10 @@ def main(file_path):
 
         # Find all objects that should be animated and apply the animation only once
         animated_object_names = {'TransformTargetParent', 'TransformTargetChild'}
-        animated_objects = [obj for obj in bpy.data.objects if obj.name in animated_object_names]
-        
-        for obj in animated_objects:
-            create_animation(obj, keyframes)
+        for obj_name, obj in animated_objects.items():
+            if obj_name in animated_object_names:
+                create_animation(obj, keyframes)
+                print(f"Animating {obj.name}")
 
     # Set up animation playback
     bpy.context.scene.frame_start = 0
