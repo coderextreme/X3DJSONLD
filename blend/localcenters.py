@@ -138,5 +138,5 @@ def main(file_path):
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
 # Choose which file to load
-file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
+file_path = "localcenters.x3d"  # Replace with your X3D file path
 main(file_path)
