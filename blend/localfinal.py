@@ -30,12 +30,29 @@ def create_box(name, size, matrix):
     box.matrix_world = matrix
     return box
 
-def process_node(node, parent_object=None):
+def process_node(node, parent_object=None, def_nodes=None):
     animated_objects = {}
     cx = 0
     cy = 0
     cz = 0
-    if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
+
+    # Check if this is a USE node
+    use_name = node.get('USE')
+    if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
+        pass
+    elif use_name and def_nodes and use_name in def_nodes:
+        # If it's a USE node, retrieve the corresponding DEF node
+        def_node = def_nodes[use_name]
+        # Create a copy of the DEF node's Blender object
+        new_object = def_node.copy()
+        new_object.parent = parent_object
+        bpy.context.scene.collection.objects.link(new_object)
+        animated_objects[use_name] = new_object
+        return animated_objects
+
+    if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
+        pass # no children
+    elif node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
         if not node.tag in ('Group', 'HAnimSegment'):
             (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
 
@@ -56,6 +73,11 @@ def process_node(node, parent_object=None):
             empty['x3dtranslation'] = None
         animated_objects[name] = empty
 
+        # If this is a DEF node, add it to the def_nodes dictionary
+        def_name = node.get('DEF')
+        if def_name and def_nodes is not None:
+            def_nodes[def_name] = empty
+
         if parent_object:
             empty.parent = parent_object
 
@@ -71,10 +93,10 @@ def process_node(node, parent_object=None):
                     box_object.parent = current_object
                     animated_objects[box_name] = box_object
             else:
-                animated_objects.update(process_node(child, current_object))
+                animated_objects.update(process_node(child, current_object, def_nodes=def_nodes))
     else:
         for child in node:
-            animated_objects.update(process_node(child, parent_object))
+            animated_objects.update(process_node(child, parent_object, def_nodes=def_nodes))
 
     return animated_objects
 
@@ -128,9 +150,11 @@ def main(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
+    def_nodes = {}
+
     scene = root.find('Scene')
     if scene is not None:
-        animated_objects = process_node(scene)
+        animated_objects = process_node(scene, def_nodes=def_nodes)
 
     # Animation setup
     orientationInterpolator = root.find(".//OrientationInterpolator[@DEF='Rotater']")
@@ -173,7 +197,7 @@ def main(file_path):
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
 # Choose which file to load
-file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
+file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
 
 main(file_path)
 
