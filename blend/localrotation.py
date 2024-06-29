@@ -43,7 +43,10 @@ def process_node(node, parent_object=None):
 
         name = node.get('DEF', node.tag)
         empty = create_empty(name, transform_matrix)
-        # empty['x3dlocation'] = (cx, cy, cz)
+        if cx != 0 or cy != 0 or cz != 0:
+            empty['x3dtranslation'] = translation_matrix
+        else:
+            empty['x3dtranslation'] = None
         animated_objects[name] = empty
 
         if parent_object:
@@ -99,6 +102,18 @@ def create_animation(obj, keyframes):
         for frame, value in keyframes:
             fc.keyframe_points.insert(frame, value[i])
 
+    if obj['x3dtranslation']:
+        center = Matrix(obj['x3dtranslation']).to_translation()
+        print(f"center {center}")
+        # if center[0] == 0 and center[1] == 0 and center[2] == 0:
+        # center = matrix.to_translation()
+        # Add keyframes for location to compensate for rotation around center
+        for i in range(3):  # x, y, z
+            fc = action.fcurves.new(data_path="location", index=i)
+            for frame, rotation in keyframes:
+                offset = center - rotation.to_matrix() @ center
+                fc.keyframe_points.insert(frame, offset[i])
+
 def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete()
@@ -151,6 +166,6 @@ def main(file_path):
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
 # Choose which file to load
-file_path = "localrotation.x3d"  # Replace with your X3D file path
+file_path = "localcenters.x3d"  # Replace with your X3D file path
 main(file_path)
 
