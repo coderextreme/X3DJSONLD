@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+      <head>
+	<meta name='title' content='localcenters.x3d'></meta>
+	<meta name='creator' content='John Carlson'></meta>
+	<meta name='generator' content='manual'></meta>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/personal/localcenters.x3d'></meta>
+	<meta name='description' content='chained boxes'></meta>
+     </head>
+     <Scene>
+        <WorldInfo title='localcenters.x3d'/>
+        <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+        <Viewpoint description='Tour Views' position="2 0 20"/>
+
+  <Transform DEF="CenterRoot1" center="0 0 0">
+    <Shape>
+      <Box size='0.5 0.5 0.5'/>
+    </Shape>
+    <Transform DEF="CenterParent1" center="4 0 0">
+      <Shape>
+        <Box size='0.5 0.5 0.5'/>
+      </Shape>
+      <Transform DEF="CenterChild1" center="8 0 0">
+        <Shape>
+          <Box size='0.5 0.5 0.5'/>
+        </Shape>
+      </Transform>
+    </Transform>
+  </Transform>
+
+  <Transform DEF="CenterRoot2" center="0 2 0" translation='0 2 0'>
+    <Transform DEF="MoveToCenterRoot" translation="0 0 0">
+      <Shape>
+        <Box size='0.5 0.5 0.5'/>
+      </Shape>
+    </Transform>
+    <Transform DEF="CenterParent2" center="4 0 0">
+      <Transform DEF="TranslateTargetParent2" translation="4 0 0">
+        <Shape>
+          <Box size='0.5 0.5 0.5'/>
+        </Shape>
+      </Transform>
+      <Transform DEF="CenterChild2" center="8 0 0">
+        <Transform DEF="TranslateTargetChild2" translation="8 0 0">
+          <Shape>
+            <Box size='0.5 0.5 0.5'/>
+          </Shape>
+        </Transform>
+      </Transform>
+    </Transform>
+  </Transform>
+
+
+	<ProximitySensor DEF="ActivateSensor" size="100 100 100" />
+	<TimeSensor DEF="Clock" cycleInterval='2' loop='true'/>
+	<ROUTE fromNode="ActivateSensor" fromField="enterTime" toNode="Clock" toField="set_startTime" />
+
+	<OrientationInterpolator DEF="Rotater" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0.785 0 0 1 1.57"/>
+	<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="Rotater" toField="set_fraction"/>
+
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="CenterParent1" toField="rotation"/>
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="CenterChild1" toField="rotation"/>
+
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="CenterParent2" toField="rotation"/>
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="CenterChild2" toField="rotation"/>
+      </Scene>
+</X3D>
