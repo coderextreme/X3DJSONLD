@@ -45,30 +45,6 @@ def create_lineset(name, coordinates, matrix):
     mesh.update()
     return obj
 
-def create_indexedfaceset(name, coordinates, coord_indices, matrix, max_faces_per_mesh=1000):
-    """Creates an IndexedFaceSet, splitting it into multiple meshes if needed."""
-    vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(coordinates)]*3)]
-
-    num_faces = len(coord_indices) // 4
-    num_meshes = num_faces // max_faces_per_mesh + 1
-
-    for mesh_index in range(num_meshes):
-        start_index = mesh_index * max_faces_per_mesh * 4
-        end_index = min((mesh_index + 1) * max_faces_per_mesh * 4, num_faces * 4)
-        mesh_faces = coord_indices[start_index:end_index]
-
-        mesh_name = f"{name}_{mesh_index}"
-        mesh = bpy.data.meshes.new(mesh_name)
-        obj = bpy.data.objects.new(mesh_name, mesh)
-        bpy.context.collection.objects.link(obj)
-        obj.matrix_world = matrix
-
-        faces = [tuple(map(int, mesh_faces[i:i+4])) for i in range(0, len(mesh_faces), 4) if -1 not in mesh_faces[i:i+4]]
-        mesh.from_pydata(vertices, [], faces)
-        mesh.update()
-
-    return obj
-
 def create_sphere(name, radius, matrix):
     bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
     sphere = bpy.context.active_object
@@ -144,16 +120,6 @@ def process_node(node, parent_object=None, def_nodes=None):
                         lineset_object.parent = current_object
                         animated_objects[f"{name}_lineset"] = lineset_object
 
-                indexedfaceset = child.find('IndexedFaceSet')
-                if indexedfaceset is not None:
-                    coordinate = indexedfaceset.find('Coordinate')
-                    if coordinate is not None:
-                        points = coordinate.get('point').split()
-                        coord_index = indexedfaceset.get('coordIndex').split()
-                        indexedfaceset_object = create_indexedfaceset(f"{name}_indexedfaceset", points, coord_index, Matrix.Identity(4))
-                        indexedfaceset_object.parent = current_object
-                        animated_objects[f"{name}_indexedfaceset"] = indexedfaceset_object
-                
                 # Handle Sphere
                 sphere = child.find('Sphere')
                 if sphere is not None:
@@ -161,6 +127,27 @@ def process_node(node, parent_object=None, def_nodes=None):
                     sphere_object = create_sphere(f"{name}_sphere", radius, Matrix.Identity(4))
                     sphere_object.parent = current_object
                     animated_objects[f"{name}_sphere"] = sphere_object
+
+                # Handle IndexedFaceSet
+                indexed_face_set = child.find('IndexedFaceSet')
+                if indexed_face_set is not None:
+                    # Parse Coordinate data
+                    coordinate = indexed_face_set.find('Coordinate')
+                    if coordinate is not None:
+                        points = coordinate.get('point').split()
+                        vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(points)]*3)]
+
+                    # Parse CoordIndex data
+                    coord_index = indexed_face_set.get('coordIndex')
+                    if coord_index is not None:
+                        faces = [int(x) for x in coord_index.split() if x != "-1"]
+                        mesh = bpy.data.meshes.new(f"{name}_mesh")
+                        obj = bpy.data.objects.new(f"{name}_mesh", mesh)
+                        bpy.context.collection.objects.link(obj)
+                        obj.matrix_world = transform_matrix
+                        mesh.from_pydata(vertices, [], [faces[i:i+3] for i in range(0, len(faces), 3)])
+                        mesh.update()
+                        animated_objects[f"{name}_mesh"] = obj
             else:
                 animated_objects.update(process_node(child, current_object, def_nodes=def_nodes))
     else:
@@ -260,5 +247,5 @@ def main(file_path):
 
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
-file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
 main(file_path)
