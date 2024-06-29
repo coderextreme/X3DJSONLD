@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import bpy
-from mathutils import Matrix, Vector, Quaternion
+from mathutils import Matrix, Vector, Quaternion, Euler
 
 def parse_transform(transform):
     translation = transform.get('translation', '0 0 0')
@@ -247,5 +247,40 @@ def main(file_path):
 
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
-file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
+def set_view_to_positive_z():
+    # Get the 3D view area
+    # area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
+    for area in bpy.context.screen.areas:
+        # Get the 3D view space
+        #space = area.spaces.active
+        for space in area.spaces:
+
+            # Turn off the grid floor
+            # space.overlay.show_floor = False
+
+            # If you also want to turn off the axes
+            #space.overlay.show_axis_x = False
+            #space.overlay.show_axis_y = False
+            #space.overlay.show_axis_z = False
+
+            if hasattr(space, "region_3d"):
+                # Set the view to orthographic
+                space.region_3d.view_perspective = 'ORTHO'
+
+                # Set the view rotation
+                rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
+                space.region_3d.view_rotation = rotation.to_quaternion()
+
+                # Optionally, you can set the view distance
+                space.region_3d.view_distance = 10
+
+    # Update the view
+    bpy.context.view_layer.update()
+
+# Call the function to set the view
+set_view_to_positive_z()
+
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
+file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+
 main(file_path)
