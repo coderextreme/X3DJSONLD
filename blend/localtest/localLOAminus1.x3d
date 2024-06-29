@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+      <head>
+    	<component name='HAnim' level='3'/>
+	<meta name='title' content='localLOAminus1.x3d'></meta>
+	<meta name='creator' content='John Carlson'></meta>
+	<meta name='generator' content='manual'></meta>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/personal/localLOAminus1.x3d'></meta>
+	<meta name='description' content='chained boxes'></meta>
+     </head>
+     <Scene>
+        <WorldInfo title='localLOAminus1.x3d'/>
+        <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+        <Viewpoint description='Tour Views' position="0 0 20"/>
+    	<HAnimHumanoid DEF='hanim_LOAminus1' name='LOAminus1' version='2.0'>
+        <HAnimJoint DEF="hanim_humanoid_root" name="humanoid_root" containerField="skeleton" center="0 0 0">
+        	<HAnimSegment DEF='hanim_sacrum' name='sacrum'>
+			<Transform>
+				<Shape>
+					<Box/>
+				</Shape>
+			</Transform>
+        	</HAnimSegment>
+        	<HAnimJoint DEF="hanim_vl5" name="vl5" center="4 0 0">
+          		<HAnimSegment DEF='hanim_l5' name='l5'>
+				<Transform translation="4 0 0">
+					<Shape>
+						<Box/>
+					</Shape>
+				</Transform>
+        		</HAnimSegment>
+			<HAnimJoint DEF="hanim_vl4" name="vl4" center="8 0 0">
+            			<HAnimSegment DEF='hanim_l4' name='l4'>
+					<Transform translation="8 0 0">
+						<Shape>
+							<Box/>
+						</Shape>
+					</Transform>
+        			</HAnimSegment>
+			</HAnimJoint>
+        	</HAnimJoint>
+	</HAnimJoint>
+	<HAnimJoint USE="hanim_humanoid_root" containerField="joints"/>
+	<HAnimJoint USE="hanim_vl5" containerField="joints"/>
+	<HAnimJoint USE="hanim_vl4" containerField="joints"/>
+
+	</HAnimHumanoid>
+	<ProximitySensor DEF="ActivateSensor" size="1000000 1000000 1000000" />
+	<TimeSensor DEF="Clock"/>
+	<ROUTE fromNode="ActivateSensor" fromField="enterTime" toNode="Clock" toField="set_startTime" />
+	<OrientationInterpolator DEF="Rotater" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0.785 0 0 1 1.57"/>
+	<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="Rotater" toField="set_fraction"/>
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="hanim_vl5" toField="rotation"/>
+	<ROUTE fromNode="Rotater" fromField="value_changed" toNode="hanim_vl4" toField="rotation"/>
+      </Scene>
+</X3D>
