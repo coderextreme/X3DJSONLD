@@ -173,7 +173,7 @@ def main(file_path):
     bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
 
 # Choose which file to load
-file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
+file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
 
 main(file_path)
 
