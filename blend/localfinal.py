@@ -365,6 +365,6 @@ def set_view_to_positive_z():
 set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
-file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
+file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
 
 main(file_path)
