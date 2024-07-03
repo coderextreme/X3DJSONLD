@@ -22,6 +22,34 @@ def create_empty(name, matrix):
     empty.matrix_world = matrix
     return empty
 
+def create_empty_hanim(name, transform_data, parent=None):
+    (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
+    
+    bpy.ops.object.empty_add(type='ARROWS')
+    empty = bpy.context.active_object
+    empty.name = name
+    
+    translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
+    rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
+    scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
+    transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
+    
+    if parent:
+        empty.parent = parent
+        # Convert the global coordinates to local coordinates
+        local_matrix = parent.matrix_world.inverted() @ transform_matrix
+        empty.matrix_local = local_matrix
+    else:
+        empty.matrix_world = transform_matrix
+    
+    if cx != 0 or cy != 0 or cz != 0:
+        empty['x3dtranslation'] = translation_matrix
+    else:
+        empty['x3dtranslation'] = None
+    
+    print(f"Created empty object '{name}' at global {transform_matrix.to_translation()}, local {empty.location}")
+    return empty
+
 def create_box(name, size, matrix):
     bpy.ops.mesh.primitive_cube_add(size=1)
     box = bpy.context.active_object
@@ -53,6 +81,9 @@ def create_sphere(name, radius, matrix):
     return sphere
 
 def process_node(node, parent_object=None, def_nodes=None):
+    if node.tag in ('HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+        return process_node_hanim(node, parent_object, def_nodes)
+
     animated_objects = {}
     cx, cy, cz = 0, 0, 0
 
@@ -97,6 +128,54 @@ def process_node(node, parent_object=None, def_nodes=None):
 
         if parent_object:
             empty.parent = parent_object
+
+        current_object = empty
+
+        for child in node:
+            if child.tag == 'Shape':
+                shape_object = process_shape(child, current_object)
+                if shape_object:
+                    animated_objects.update(shape_object)
+            else:
+                child_objects = process_node(child, current_object, def_nodes)
+                animated_objects.update(child_objects)
+    else:
+        current_object = parent_object
+        for child in node:
+            child_objects = process_node(child, current_object, def_nodes)
+            animated_objects.update(child_objects)
+
+    return animated_objects
+
+def process_node_hanim(node, parent_object=None, def_nodes=None):
+    if node.tag in ('Transform', 'Group'):
+        return process_node(node, parent_object, def_nodes)
+
+    animated_objects = {}
+    
+    use_name = node.get('USE')
+    if node.tag in ('HAnimJoint', 'HAnimSegment') and node.get('containerField') in ('joints', 'segments'):
+        return animated_objects
+    elif use_name and def_nodes and use_name in def_nodes:
+        new_object = def_nodes[use_name].copy()
+        new_object.parent = parent_object
+        bpy.context.scene.collection.objects.link(new_object)
+        animated_objects[use_name] = new_object
+        return animated_objects
+
+    if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
+        if node.tag not in ('Group', 'HAnimSegment'):
+            transform_data = parse_transform(node)
+        else:
+            transform_data = ((0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0))
+
+        name = node.get('DEF', node.tag)
+        empty = create_empty_hanim(name, transform_data, parent_object)
+        animated_objects[name] = empty
+
+        def_name = node.get('DEF')
+        if def_name and def_nodes is not None:
+            def_nodes[def_name] = empty
 
         current_object = empty
 
@@ -286,6 +365,6 @@ def set_view_to_positive_z():
 set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
-file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
 
 main(file_path)
