@@ -9,3 +9,4 @@ castle-model-viewer.exe localLOAminus1.x3d
 blender.exe --python localLOAminus1.py
 castle-model-viewer.exe localrotation.x3d
 blender.exe --python localrotation.py
+blender.exe --python localJinLOA1qtr.py
