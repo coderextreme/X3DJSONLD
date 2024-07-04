@@ -27,7 +27,8 @@ def parse_transform(transform):
 
 def create_empty(name, matrix):
     try:
-        bpy.ops.object.empty_add(type='ARROWS')
+        bpy.ops.object.empty_add(type='PLAIN_AXES')
+        bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
         empty = bpy.context.active_object
         empty.name = name
         empty.matrix_world = matrix
@@ -36,10 +37,43 @@ def create_empty(name, matrix):
         print(f"Error creating empty object: {e}")
         return None
 
+def create_text_shape(text_node, parent_object):
+    string = text_node.get('string', '')
+    font_style = text_node.find('FontStyle')
+
+    # Create text object
+    bpy.ops.object.text_add()
+    text_object = bpy.context.active_object
+    text_object.data.body = string
+
+    # Set font properties if FontStyle is present
+    if font_style is not None:
+        family = font_style.get('family', 'SERIF')
+        style = font_style.get('style', 'PLAIN')
+        size = float(font_style.get('size', '1.0'))
+
+        # Set font (you may need to adjust this based on available fonts)
+        # For now, we'll use the default font
+
+        # Set style
+        if 'ITALIC' in style.upper():
+            text_object.data.shear = 0.2  # Simulate italic
+        if 'BOLD' in style.upper():
+            text_object.data.extrude = 0.1  # Simulate bold
+
+        # Set size
+        text_object.scale = Vector((size, size, size))
+
+    # Parent the text object
+    text_object.parent = parent_object
+
+    return text_object
+
 def create_empty_hanim(name, transform_data, parent=None):
     (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
     
-    bpy.ops.object.empty_add(type='ARROWS')
+    bpy.ops.object.empty_add(type='PLAIN_AXES')
+    bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
     empty = bpy.context.active_object
     empty.name = name
     
@@ -117,6 +151,8 @@ def process_node(node, parent_object=None, def_nodes=None):
         pass
     elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
         pass
+    elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
+        pass
     elif use_name and def_nodes and use_name in def_nodes:
         new_object = def_nodes[use_name].copy()
         new_object.parent = parent_object
@@ -127,6 +163,8 @@ def process_node(node, parent_object=None, def_nodes=None):
     if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
         pass
     elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
+        pass
+    elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
         pass
     elif node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
         if not node.tag in ('Group', 'HAnimSegment'):
@@ -179,7 +217,7 @@ def process_node_hanim(node, parent_object=None, def_nodes=None):
     animated_objects = {}
     
     use_name = node.get('USE')
-    if node.tag in ('HAnimJoint', 'HAnimSegment') and node.get('containerField') in ('joints', 'segments'):
+    if node.tag in ('HAnimJoint', 'HAnimSegment', 'HAnimSite') and node.get('containerField') in ('joints', 'segments', 'sites'):
         return animated_objects
     elif use_name and def_nodes and use_name in def_nodes:
         new_object = def_nodes[use_name].copy()
@@ -220,14 +258,60 @@ def process_node_hanim(node, parent_object=None, def_nodes=None):
 
     return animated_objects
 
+def create_material(material_node):
+    material = bpy.data.materials.new(name="X3DMaterial")
+    material.use_nodes = True
+    nodes = material.node_tree.nodes
+    principled = nodes["Principled BSDF"]
+
+    diffuse_color = list(map(float, material_node.get('diffuseColor', '0.8 0.8 0.8').split()))
+    specular_color = list(map(float, material_node.get('specularColor', '0.2 0.2 0.2').split()))
+    emissive_color = list(map(float, material_node.get('emissiveColor', '0 0 0').split()))
+    ambient_intensity = float(material_node.get('ambientIntensity', '0.2'))
+    shininess = float(material_node.get('shininess', '0.2'))
+    transparency = float(material_node.get('transparency', '0'))
+
+    # Helper function to safely set input values
+    def set_input(name, value):
+        if name in principled.inputs:
+            if principled.inputs[name].type == 'RGBA':
+                principled.inputs[name].default_value = (*value, 1)
+            elif principled.inputs[name].type == 'VALUE':
+                principled.inputs[name].default_value = value if isinstance(value, float) else sum(value) / len(value)
+
+    set_input('Base Color', diffuse_color)
+    set_input('Specular', specular_color)
+    set_input('Specular Tint', specular_color)
+    set_input('Emission', emissive_color)
+    set_input('Emission Color', emissive_color)
+
+    # Convert shininess to roughness (Blender uses roughness instead of shininess)
+    roughness = 1 - (shininess / 1)  # Assuming shininess is in [0, 1] range
+    set_input('Roughness', roughness)
+
+    set_input('Alpha', 1 - transparency)
+    set_input('Transmission', transparency)
+
+    return material
+
 def process_shape(shape_node, parent_object):
     shape_objects = {}
+    material = None
+    
+    appearance = shape_node.find('Appearance')
+    if appearance is not None:
+        material_node = appearance.find('Material')
+        if material_node is not None:
+            material = create_material(material_node)
+
     for child in shape_node:
         if child.tag == 'Box':
             box_name = f"{parent_object.name}_box"
             size = tuple(map(float, child.get('size', '1 1 1').split()))
             box_object = create_box(box_name, size, Matrix.Identity(4))
             box_object.parent = parent_object
+            if material:
+                box_object.data.materials.append(material)
             shape_objects[box_name] = box_object
         elif child.tag == 'LineSet':
             coordinate = child.find('Coordinate')
@@ -235,35 +319,70 @@ def process_shape(shape_node, parent_object):
                 points = strip_commas_and_split(coordinate.get('point'))
                 lineset_object = create_lineset(f"{parent_object.name}_lineset", points, Matrix.Identity(4))
                 lineset_object.parent = parent_object
+                if material:
+                    lineset_object.data.materials.append(material)
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
         elif child.tag == 'Sphere':
             radius = float(child.get('radius', '1'))
             sphere_object = create_sphere(f"{parent_object.name}_sphere", radius, Matrix.Identity(4))
             sphere_object.parent = parent_object
+            if material:
+                sphere_object.data.materials.append(material)
             shape_objects[f"{parent_object.name}_sphere"] = sphere_object
         elif child.tag == 'IndexedFaceSet':
-            indexed_face_set_object = process_indexed_face_set(child, parent_object)
-            if indexed_face_set_object:
-                shape_objects.update(indexed_face_set_object)
+            coord_element = child.find('Coordinate')
+            if coord_element is not None:
+                indexed_face_set_object = process_indexed_face_set(child, coord_element)
+                indexed_face_set_object.parent = parent_object
+                if material:
+                    indexed_face_set_object.data.materials.append(material)
+                shape_objects[f"{parent_object.name}_mesh"] = indexed_face_set_object
+        elif child.tag == 'Text':
+            text_object = create_text_shape(child, parent_object)
+            if material:
+                text_object.data.materials.append(material)
+            shape_objects[f"{parent_object.name}_text"] = text_object
+
     return shape_objects
 
-def process_indexed_face_set(indexed_face_set, parent_object):
-    coordinate = indexed_face_set.find('Coordinate')
-    if coordinate is not None:
-        points = strip_commas_and_split(coordinate.get('point'))
-        vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(points)]*3)]
+def triangulate_face(indices):
+    if len(indices) < 3:
+        return []
+    if len(indices) == 3:
+        return [indices]
+    triangles = []
+    for i in range(1, len(indices) - 1):
+        triangles.append([indices[0], indices[i], indices[i + 1]])
+    return triangles
 
-        coord_index = strip_commas_and_split(indexed_face_set.get('coordIndex'))
-        if coord_index is not None:
-            faces = [int(x) for x in coord_index if x != "-1"]
-            mesh = bpy.data.meshes.new(f"{parent_object.name}_mesh")
-            obj = bpy.data.objects.new(f"{parent_object.name}_mesh", mesh)
-            bpy.context.collection.objects.link(obj)
-            obj.parent = parent_object
-            mesh.from_pydata(vertices, [], [faces[i:i+3] for i in range(0, len(faces), 3)])
-            mesh.update()
-            return {f"{parent_object.name}_mesh": obj}
-    return None
+def process_indexed_face_set(face_set, coordinates):
+    coord_index = list(map(int, strip_commas_and_split(face_set.get('coordIndex', ''))))
+    vertices = list(map(float, strip_commas_and_split(coordinates.get('point', ''))))
+    vertex_tuples = list(zip(*[iter(vertices)]*3))
+
+    faces = []
+    current_face = []
+
+    for index in coord_index:
+        if index == -1:
+            if len(current_face) > 2:
+                faces.extend(triangulate_face(current_face))
+            current_face = []
+        else:
+            current_face.append(index)
+
+    if current_face:
+        if len(current_face) > 2:
+            faces.extend(triangulate_face(current_face))
+
+    mesh = bpy.data.meshes.new("mesh")
+    obj = bpy.data.objects.new("object", mesh)
+    bpy.context.collection.objects.link(obj)
+
+    mesh.from_pydata(vertex_tuples, [], faces)
+    mesh.update()
+
+    return obj
 
 def create_animation(obj, keyframes, data_path):
     if not obj.animation_data:
@@ -402,10 +521,9 @@ set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
-#file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
-#file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
-#file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
+#file_path = "localrotation.x3d"  # Replace with your X3D file path
+file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
 
 main(file_path)
