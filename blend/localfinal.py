@@ -2,20 +2,23 @@ import xml.etree.ElementTree as ET
 import bpy
 from mathutils import Matrix, Vector, Quaternion, Euler
 
-def replace_commas_with_spaces(value):
-    return value.replace(',', ' ')
+
+def strip_commas_and_split(value):
+    #if not value:
+    #    return []
+    return value.replace(',', ' ').split()
 
 def parse_transform(transform):
     try:
-        translation = replace_commas_with_spaces(transform.get('translation', '0 0 0'))
-        rotation = replace_commas_with_spaces(transform.get('rotation', '0 0 1 0'))
-        scale = replace_commas_with_spaces(transform.get('scale', '1 1 1'))
-        center = replace_commas_with_spaces(transform.get('center', '0 0 0'))
+        translation = strip_commas_and_split(transform.get('translation', '0 0 0'))
+        rotation = strip_commas_and_split(transform.get('rotation', '0 0 1 0'))
+        scale = strip_commas_and_split(transform.get('scale', '1 1 1'))
+        center = strip_commas_and_split(transform.get('center', '0 0 0'))
 
-        tx, ty, tz = map(float, translation.split())
-        rx, ry, rz, angle = map(float, rotation.split())
-        sx, sy, sz = map(float, scale.split())
-        cx, cy, cz = map(float, center.split())
+        tx, ty, tz = map(float, translation)
+        rx, ry, rz, angle = map(float, rotation)
+        sx, sy, sz = map(float, scale)
+        cx, cy, cz = map(float, center)
 
         return (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz)
     except ValueError as e:
@@ -229,7 +232,7 @@ def process_shape(shape_node, parent_object):
         elif child.tag == 'LineSet':
             coordinate = child.find('Coordinate')
             if coordinate is not None:
-                points = replace_commas_with_spaces(coordinate.get('point')).split()
+                points = strip_commas_and_split(coordinate.get('point'))
                 lineset_object = create_lineset(f"{parent_object.name}_lineset", points, Matrix.Identity(4))
                 lineset_object.parent = parent_object
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
@@ -247,12 +250,12 @@ def process_shape(shape_node, parent_object):
 def process_indexed_face_set(indexed_face_set, parent_object):
     coordinate = indexed_face_set.find('Coordinate')
     if coordinate is not None:
-        points = replace_commas_with_spaces(coordinate.get('point')).split()
+        points = strip_commas_and_split(coordinate.get('point'))
         vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(points)]*3)]
 
-        coord_index = replace_commas_with_spaces(indexed_face_set.get('coordIndex'))
+        coord_index = strip_commas_and_split(indexed_face_set.get('coordIndex'))
         if coord_index is not None:
-            faces = [int(x) for x in coord_index.split() if x != "-1"]
+            faces = [int(x) for x in coord_index if x != "-1"]
             mesh = bpy.data.meshes.new(f"{parent_object.name}_mesh")
             obj = bpy.data.objects.new(f"{parent_object.name}_mesh", mesh)
             bpy.context.collection.objects.link(obj)
@@ -293,8 +296,8 @@ def parse_interpolators(root):
     for interp in root.findall(".//OrientationInterpolator") + root.findall(".//PositionInterpolator"):
         interp_type = interp.tag
         interp_def = interp.get('DEF')
-        keys = list(map(float, replace_commas_with_spaces(interp.get('key')).split()))
-        key_values = list(map(float, replace_commas_with_spaces(interp.get('keyValue')).split()))
+        keys = list(map(float, strip_commas_and_split(interp.get('key'))))
+        key_values = list(map(float, strip_commas_and_split(interp.get('keyValue'))))
 
         keyframes = []
         for i, key in enumerate(keys):
@@ -346,12 +349,12 @@ def main(file_path):
     interpolators = parse_interpolators(root)
     apply_interpolations(root, animated_objects, interpolators)
 
-    hanim_humanoid = animated_objects.get('hanim_JinLOA1')
-    if hanim_humanoid:
-        hanim_humanoid.scale = Vector((1.0, 1.0, 1.0))
-        bpy.ops.object.select_all(action='DESELECT')  # Deselect all to avoid accidentally applying scale to other objects
-        hanim_humanoid.select_set(True)
-        bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    #hanim_humanoid = animated_objects.get('hanim_JinLOA1')
+    #if hanim_humanoid:
+    #    hanim_humanoid.scale = Vector((1.0, 1.0, 1.0))
+    #    bpy.ops.object.select_all(action='DESELECT')  # Deselect all to avoid accidentally applying scale to other objects
+    #    hanim_humanoid.select_set(True)
+    #    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
 
     bpy.context.scene.frame_start = 0
     bpy.context.scene.frame_end = 100
@@ -399,6 +402,10 @@ set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+#file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
+#file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
+#file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+#file_path = "localLOAminus1.x3d"  # Replace with your X3D file path
 
 main(file_path)
