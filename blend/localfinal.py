@@ -2,25 +2,36 @@ import xml.etree.ElementTree as ET
 import bpy
 from mathutils import Matrix, Vector, Quaternion, Euler
 
+def replace_commas_with_spaces(value):
+    return value.replace(',', ' ')
+
 def parse_transform(transform):
-    translation = transform.get('translation', '0 0 0')
-    rotation = transform.get('rotation', '0 0 1 0')
-    scale = transform.get('scale', '1 1 1')
-    center = transform.get('center', '0 0 0')
+    try:
+        translation = replace_commas_with_spaces(transform.get('translation', '0 0 0'))
+        rotation = replace_commas_with_spaces(transform.get('rotation', '0 0 1 0'))
+        scale = replace_commas_with_spaces(transform.get('scale', '1 1 1'))
+        center = replace_commas_with_spaces(transform.get('center', '0 0 0'))
 
-    tx, ty, tz = map(float, translation.split())
-    rx, ry, rz, angle = map(float, rotation.split())
-    sx, sy, sz = map(float, scale.split())
-    cx, cy, cz = map(float, center.split())
+        tx, ty, tz = map(float, translation.split())
+        rx, ry, rz, angle = map(float, rotation.split())
+        sx, sy, sz = map(float, scale.split())
+        cx, cy, cz = map(float, center.split())
 
-    return (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz)
+        return (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz)
+    except ValueError as e:
+        print(f"Error parsing transform: {e}")
+        return (0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0)
 
 def create_empty(name, matrix):
-    bpy.ops.object.empty_add(type='ARROWS')
-    empty = bpy.context.active_object
-    empty.name = name
-    empty.matrix_world = matrix
-    return empty
+    try:
+        bpy.ops.object.empty_add(type='ARROWS')
+        empty = bpy.context.active_object
+        empty.name = name
+        empty.matrix_world = matrix
+        return empty
+    except RuntimeError as e:
+        print(f"Error creating empty object: {e}")
+        return None
 
 def create_empty_hanim(name, transform_data, parent=None):
     (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
@@ -61,16 +72,27 @@ def create_box(name, size, matrix):
 def create_lineset(name, coordinates, matrix):
     print(f"Creating LineSet: {name}")
     print(f"Coordinates: {coordinates}")
+
+    if len(coordinates) < 6:  # At least two points (6 coordinates) are needed
+        print(f"Not enough coordinates for LineSet {name}")
+        return None
+
     mesh = bpy.data.meshes.new(name)
     obj = bpy.data.objects.new(name, mesh)
     bpy.context.collection.objects.link(obj)
     obj.matrix_world = matrix
 
-    vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(coordinates)]*3)]
-    edges = [(i, i + 1) for i in range(0, len(vertices) - 1, 2)]
+    try:
+        vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(coordinates)]*3)]
+        edges = [(i, i + 1) for i in range(0, len(vertices) - 1, 2)]
 
-    mesh.from_pydata(vertices, edges, [])
-    mesh.update()
+        mesh.from_pydata(vertices, edges, [])
+        mesh.update()
+    except ValueError as e:
+        print(f"Error creating LineSet {name}: {e}")
+        bpy.data.objects.remove(obj)
+        return None
+
     return obj
 
 def create_sphere(name, radius, matrix):
@@ -207,7 +229,7 @@ def process_shape(shape_node, parent_object):
         elif child.tag == 'LineSet':
             coordinate = child.find('Coordinate')
             if coordinate is not None:
-                points = coordinate.get('point').split()
+                points = replace_commas_with_spaces(coordinate.get('point')).split()
                 lineset_object = create_lineset(f"{parent_object.name}_lineset", points, Matrix.Identity(4))
                 lineset_object.parent = parent_object
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
@@ -225,10 +247,10 @@ def process_shape(shape_node, parent_object):
 def process_indexed_face_set(indexed_face_set, parent_object):
     coordinate = indexed_face_set.find('Coordinate')
     if coordinate is not None:
-        points = coordinate.get('point').split()
+        points = replace_commas_with_spaces(coordinate.get('point')).split()
         vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(points)]*3)]
 
-        coord_index = indexed_face_set.get('coordIndex')
+        coord_index = replace_commas_with_spaces(indexed_face_set.get('coordIndex'))
         if coord_index is not None:
             faces = [int(x) for x in coord_index.split() if x != "-1"]
             mesh = bpy.data.meshes.new(f"{parent_object.name}_mesh")
@@ -249,24 +271,30 @@ def create_animation(obj, keyframes, data_path):
     for i in range(3):  # x, y, z
         fc = action.fcurves.new(data_path=data_path, index=i)
         for frame, value in keyframes:
-            fc.keyframe_points.insert(frame, value[i])
+            try:
+                fc.keyframe_points.insert(frame, value[i])
+            except (IndexError, TypeError) as e:
+                print(f"Error inserting keyframe for {obj.name}: {e}")
 
-    if obj['x3dtranslation'] and data_path == "rotation_euler":
-        center = Matrix(obj['x3dtranslation']).to_translation()
-        print(f"center {center}")
-        for i in range(3):  # x, y, z
-            fc = action.fcurves.new(data_path="location", index=i)
-            for frame, rotation in keyframes:
-                offset = center - rotation.to_matrix() @ center
-                fc.keyframe_points.insert(frame, offset[i])
+    if obj.get('x3dtranslation') and data_path == "rotation_euler":
+        try:
+            center = Matrix(obj['x3dtranslation']).to_translation()
+            print(f"center {center}")
+            for i in range(3):  # x, y, z
+                fc = action.fcurves.new(data_path="location", index=i)
+                for frame, rotation in keyframes:
+                    offset = center - rotation.to_matrix() @ center
+                    fc.keyframe_points.insert(frame, offset[i])
+        except Exception as e:
+            print(f"Error creating animation for {obj.name}: {e}")
 
 def parse_interpolators(root):
     interpolators = {}
     for interp in root.findall(".//OrientationInterpolator") + root.findall(".//PositionInterpolator"):
         interp_type = interp.tag
         interp_def = interp.get('DEF')
-        keys = list(map(float, interp.get('key').split()))
-        key_values = list(map(float, interp.get('keyValue').split()))
+        keys = list(map(float, replace_commas_with_spaces(interp.get('key')).split()))
+        key_values = list(map(float, replace_commas_with_spaces(interp.get('keyValue')).split()))
 
         keyframes = []
         for i, key in enumerate(keys):
@@ -302,8 +330,12 @@ def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete()
 
-    tree = ET.parse(file_path)
-    root = tree.getroot()
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+    except ET.ParseError as e:
+        print(f"Error parsing X3D file: {e}")
+        return
 
     def_nodes = {}
 
@@ -339,24 +371,25 @@ def set_view_to_positive_z():
         #space = area.spaces.active
         for space in area.spaces:
 
-            # Turn off the grid floor
-            # space.overlay.show_floor = False
+            if space.type == 'VIEW_3D':
+                # Turn off the grid floor
+                # space.overlay.show_floor = False
 
-            # If you also want to turn off the axes
-            #space.overlay.show_axis_x = False
-            #space.overlay.show_axis_y = False
-            #space.overlay.show_axis_z = False
+                # If you also want to turn off the axes
+                #space.overlay.show_axis_x = False
+                #space.overlay.show_axis_y = False
+                #space.overlay.show_axis_z = False
 
-            if hasattr(space, "region_3d"):
-                # Set the view to orthographic
-                space.region_3d.view_perspective = 'ORTHO'
+                if hasattr(space, "region_3d"):
+                    # Set the view to orthographic
+                    space.region_3d.view_perspective = 'ORTHO'
 
-                # Set the view rotation
-                rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
-                space.region_3d.view_rotation = rotation.to_quaternion()
+                    # Set the view rotation
+                    rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
+                    space.region_3d.view_rotation = rotation.to_quaternion()
 
-                # Optionally, you can set the view distance
-                space.region_3d.view_distance = 20
+                    # Optionally, you can set the view distance
+                    space.region_3d.view_distance = 20
 
     # Update the view
     bpy.context.view_layer.update()
@@ -365,6 +398,7 @@ def set_view_to_positive_z():
 set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
-file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
+file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
 
 main(file_path)
