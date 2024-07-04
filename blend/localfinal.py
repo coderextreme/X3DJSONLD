@@ -521,9 +521,9 @@ set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
 #file_path = "localrotation.x3d"  # Replace with your X3D file path
-file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+#file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
 
 main(file_path)
