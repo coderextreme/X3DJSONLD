@@ -31,6 +31,7 @@ def create_empty(name, matrix):
         bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
         empty = bpy.context.active_object
         empty.name = name
+        #empty.hide_viewport = True
         empty.matrix_world = matrix
         return empty
     except RuntimeError as e:
@@ -76,6 +77,7 @@ def create_empty_hanim(name, transform_data, parent=None):
     bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
     empty = bpy.context.active_object
     empty.name = name
+    #empty.hide_viewport = True
     
     translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
     rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
@@ -87,8 +89,8 @@ def create_empty_hanim(name, transform_data, parent=None):
         # Convert the global coordinates to local coordinates
         local_matrix = parent.matrix_world.inverted() @ transform_matrix
         empty.matrix_local = local_matrix
-    else:
-        empty.matrix_world = transform_matrix
+    #else:
+    empty.matrix_world = transform_matrix
     
     if cx != 0 or cy != 0 or cz != 0:
         empty['x3dtranslation'] = translation_matrix
@@ -106,31 +108,140 @@ def create_box(name, size, matrix):
     box.matrix_world = matrix
     return box
 
-def create_lineset(name, coordinates, matrix):
-    print(f"Creating LineSet: {name}")
-    print(f"Coordinates: {coordinates}")
-
-    if len(coordinates) < 6:  # At least two points (6 coordinates) are needed
+def create_lineset(name, coordinates, colors, matrix):
+    if len(coordinates) % 3 != 0:
         print(f"Not enough coordinates for LineSet {name}")
         return None
 
-    mesh = bpy.data.meshes.new(name)
-    obj = bpy.data.objects.new(name, mesh)
-    bpy.context.collection.objects.link(obj)
-    obj.matrix_world = matrix
+    # Create a new curve object
+    curve_data = bpy.data.curves.new(name=name, type='CURVE')
+    curve_data.dimensions = '3D'
+    curve_object = bpy.data.objects.new(name, curve_data)
+    bpy.context.collection.objects.link(curve_object)
+    curve_object.matrix_world = matrix
 
-    try:
-        vertices = [Vector((float(x), float(y), float(z))) for x, y, z in zip(*[iter(coordinates)]*3)]
-        edges = [(i, i + 1) for i in range(0, len(vertices) - 1, 2)]
+    # Create a new spline in the curve
+    polyline = curve_data.splines.new('POLY')
+    polyline.points.add(len(coordinates) // 3 - 1)
 
-        mesh.from_pydata(vertices, edges, [])
-        mesh.update()
-    except ValueError as e:
-        print(f"Error creating LineSet {name}: {e}")
-        bpy.data.objects.remove(obj)
-        return None
+    # Set coordinates for the points
+    for i, point in enumerate(zip(*[iter(coordinates)]*3)):
+        polyline.points[i].co = (*point, 1)  # W-component is 1 for linear interpolation
 
-    return obj
+    # Set up the material
+    material = bpy.data.materials.new(name=f"{name}_material")
+    material.use_nodes = True
+    curve_object.data.materials.append(material)
+
+    # Set up nodes for gradient coloring
+    nodes = material.node_tree.nodes
+    links = material.node_tree.links
+    nodes.clear()
+
+    node_output = nodes.new(type='ShaderNodeOutputMaterial')
+    node_emission = nodes.new(type='ShaderNodeEmission')
+    node_gradient = nodes.new(type='ShaderNodeTexGradient')
+    node_coord = nodes.new(type='ShaderNodeTexCoord')
+    node_mapping = nodes.new(type='ShaderNodeMapping')
+    
+    links.new(node_emission.outputs['Emission'], node_output.inputs['Surface'])
+    links.new(node_coord.outputs['Generated'], node_mapping.inputs['Vector'])
+    links.new(node_mapping.outputs['Vector'], node_gradient.inputs['Vector'])
+    links.new(node_gradient.outputs['Color'], node_emission.inputs['Color'])
+
+    # Configure gradient
+    node_mapping.inputs['Location'].default_value[2] = 0
+    node_mapping.inputs['Rotation'].default_value[2] = 1.5708  # Rotate 90 degrees to align gradient with curve
+
+    # Configure colors
+    if colors:
+        color_ramp = nodes.new(type='ShaderNodeValToRGB')
+        links.new(node_gradient.outputs['Fac'], color_ramp.inputs['Fac'])
+        links.new(color_ramp.outputs['Color'], node_emission.inputs['Color'])
+        
+        color_ramp.color_ramp.elements.remove(color_ramp.color_ramp.elements[1])
+        color_ramp.color_ramp.elements[0].color = colors[0]
+
+        for i, color in enumerate(colors[1:], start=1):
+            color_element = color_ramp.color_ramp.elements.new(i / (len(colors) - 1))
+            color_element.color = color
+    else:
+        # Default to a white gradient if no colors are provided
+        node_emission.inputs['Color'].default_value = (1, 1, 1, 1)
+
+    # Set curve appearance
+    curve_data.bevel_depth = 0.01  # Adjust this value to change the thickness of the line
+    curve_data.use_fill_caps = True
+
+    return curve_object
+
+#def create_lineset(name, coordinates, colors, matrix):
+#    print(f"colors {colors}")
+#    if len(coordinates) % 3 != 0:
+#        print(f"Not enough coordinates for LineSet {name}")
+#        return None
+#
+#    # Create a new curve object
+#    curve_data = bpy.data.curves.new(name=name, type='CURVE')
+#    curve_data.dimensions = '3D'
+#    curve_object = bpy.data.objects.new(name, curve_data)
+#    bpy.context.collection.objects.link(curve_object)
+#    curve_object.matrix_world = matrix
+#
+#    # Create a new spline in the curve
+#    polyline = curve_data.splines.new('POLY')
+#    polyline.points.add(len(coordinates) // 3 - 1)
+#
+#    # Set coordinates for the points
+#    for i, point in enumerate(zip(*[iter(coordinates)]*3)):
+#        polyline.points[i].co = (*point, 1)  # W-component is 1 for linear interpolation
+#
+#    # Set up the material
+#    material = bpy.data.materials.new(name=f"{name}_material")
+#    material.use_nodes = True
+#    curve_object.data.materials.append(material)
+#
+#    # Set up nodes for gradient coloring
+#    nodes = material.node_tree.nodes
+#    links = material.node_tree.links
+#    nodes.clear()
+#
+#    node_output = nodes.new(type='ShaderNodeOutputMaterial')
+#    node_emission = nodes.new(type='ShaderNodeEmission')
+#    node_gradient = nodes.new(type='ShaderNodeTexGradient')
+#    node_coord = nodes.new(type='ShaderNodeTexCoord')
+#    node_mapping = nodes.new(type='ShaderNodeMapping')
+#    
+#    links.new(node_emission.outputs['Emission'], node_output.inputs['Surface'])
+#    links.new(node_coord.outputs['Generated'], node_mapping.inputs['Vector'])
+#    links.new(node_mapping.outputs['Vector'], node_gradient.inputs['Vector'])
+#    links.new(node_gradient.outputs['Color'], node_emission.inputs['Color'])
+#
+#    # Configure gradient
+#    node_mapping.inputs['Location'].default_value[2] = 0
+#    node_mapping.inputs['Rotation'].default_value[2] = 1.5708  # Rotate 90 degrees to align gradient with curve
+#
+#    # Configure colors
+#    if colors:
+#        color_ramp = nodes.new(type='ShaderNodeValToRGB')
+#        links.new(node_gradient.outputs['Fac'], color_ramp.inputs['Fac'])
+#        links.new(color_ramp.outputs['Color'], node_emission.inputs['Color'])
+#        
+#        color_ramp.color_ramp.elements.remove(color_ramp.color_ramp.elements[1])
+#        color_ramp.color_ramp.elements[0].color = colors[0]
+#
+#        for i, color in enumerate(colors[1:], start=1):
+#            color_element = color_ramp.color_ramp.elements.new(i / (len(colors) - 1))
+#            color_element.color = color
+#    else:
+#        # Default to a white gradient if no colors are provided
+#        node_emission.inputs['Color'].default_value = (1, 1, 1, 1)
+#
+#    # Set curve appearance
+#    curve_data.bevel_depth = 0.01  # Adjust this value to change the thickness of the line
+#    curve_data.use_fill_caps = True
+#
+#    return curve_object
 
 def create_sphere(name, radius, matrix):
     bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
@@ -140,34 +251,26 @@ def create_sphere(name, radius, matrix):
     return sphere
 
 def process_node(node, parent_object=None, def_nodes=None):
-    if node.tag in ('HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
-        return process_node_hanim(node, parent_object, def_nodes)
-
     animated_objects = {}
     cx, cy, cz = 0, 0, 0
 
     use_name = node.get('USE')
     if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
-        pass
+        return animated_objects
     elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
-        pass
+        return animated_objects
     elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
-        pass
+        return animated_objects
     elif use_name and def_nodes and use_name in def_nodes:
         new_object = def_nodes[use_name].copy()
         new_object.parent = parent_object
         bpy.context.scene.collection.objects.link(new_object)
         animated_objects[use_name] = new_object
+        print(f"copy of object {use_name} in process_node")
         return animated_objects
 
-    if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
-        pass
-    elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
-        pass
-    elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
-        pass
-    elif node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
-        if not node.tag in ('Group', 'HAnimSegment'):
+    if node.tag in ('Transform', 'Group'):
+        if not node.tag in ('Group'):
             (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = parse_transform(node)
             translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
             rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
@@ -195,39 +298,29 @@ def process_node(node, parent_object=None, def_nodes=None):
         current_object = empty
 
         for child in node:
-            if child.tag == 'Shape':
-                shape_object = process_shape(child, current_object)
+            use_name = child.get('USE')
+            if child.tag in ('HAnimJoint') and child.get('containerField') == 'joints':
+                continue
+            elif child.tag in ('HAnimSegment') and child.get('containerField') == 'segments':
+                continue
+            elif child.tag in ('HAnimSite') and child.get('containerField') == 'sites':
+                continue
+            if use_name and def_nodes and use_name in def_nodes:
+                new_object = def_nodes[use_name].copy()
+                new_object.parent = current_object
+                bpy.context.scene.collection.objects.link(new_object)
+                animated_objects[use_name] = new_object
+            elif child.tag == 'Shape':
+                shape_object = process_shape(child, current_object, def_nodes, animated_objects)
+                print(f"called process_shape, returned {shape_object}")
                 if shape_object:
                     animated_objects.update(shape_object)
             else:
                 child_objects = process_node(child, current_object, def_nodes)
                 animated_objects.update(child_objects)
-    else:
-        current_object = parent_object
-        for child in node:
-            child_objects = process_node(child, current_object, def_nodes)
-            animated_objects.update(child_objects)
 
-    return animated_objects
-
-def process_node_hanim(node, parent_object=None, def_nodes=None):
-    if node.tag in ('Transform', 'Group'):
-        return process_node(node, parent_object, def_nodes)
-
-    animated_objects = {}
-    
-    use_name = node.get('USE')
-    if node.tag in ('HAnimJoint', 'HAnimSegment', 'HAnimSite') and node.get('containerField') in ('joints', 'segments', 'sites'):
-        return animated_objects
-    elif use_name and def_nodes and use_name in def_nodes:
-        new_object = def_nodes[use_name].copy()
-        new_object.parent = parent_object
-        bpy.context.scene.collection.objects.link(new_object)
-        animated_objects[use_name] = new_object
-        return animated_objects
-
-    if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'Group', 'HAnimSegment'):
-        if node.tag not in ('Group', 'HAnimSegment'):
+    elif node.tag in ('HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+        if node.tag not in ('HAnimSegment'):
             transform_data = parse_transform(node)
         else:
             transform_data = ((0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0))
@@ -243,8 +336,21 @@ def process_node_hanim(node, parent_object=None, def_nodes=None):
         current_object = empty
 
         for child in node:
-            if child.tag == 'Shape':
-                shape_object = process_shape(child, current_object)
+            use_name = child.get('USE')
+            if child.tag in ('HAnimJoint') and child.get('containerField') == 'joints':
+                continue
+            elif child.tag in ('HAnimSegment') and child.get('containerField') == 'segments':
+                continue
+            elif child.tag in ('HAnimSite') and child.get('containerField') == 'sites':
+                continue
+            if use_name and def_nodes and use_name in def_nodes:
+                new_object = def_nodes[use_name].copy()
+                new_object.parent = current_object
+                bpy.context.scene.collection.objects.link(new_object)
+                animated_objects[use_name] = new_object
+            elif child.tag == 'Shape':
+                shape_object = process_shape(child, current_object, def_nodes, animated_objects)
+                print(f"called process_shape (in hanim), returned {shape_object}")
                 if shape_object:
                     animated_objects.update(shape_object)
             else:
@@ -294,10 +400,20 @@ def create_material(material_node):
 
     return material
 
-def process_shape(shape_node, parent_object):
+def process_shape(shape_node, parent_object, def_nodes, animated_objects):
     shape_objects = {}
     material = None
     
+    use_name = shape_node.get('USE')
+    if use_name and def_nodes and use_name in def_nodes:
+        new_object = def_nodes[use_name].copy()
+        new_object.parent = parent_object
+        bpy.context.scene.collection.objects.link(new_object)
+        animated_objects[new_object.name] = new_object
+        shape_objects[new_object.name] = new_object
+        print(f"copy of shape {new_object.name} in process_shape")
+        return shape_objects
+
     appearance = shape_node.find('Appearance')
     if appearance is not None:
         material_node = appearance.find('Material')
@@ -305,26 +421,60 @@ def process_shape(shape_node, parent_object):
             material = create_material(material_node)
 
     for child in shape_node:
+        use_name = child.get('USE')
+        if use_name and def_nodes and use_name in def_nodes:
+            new_object = def_nodes[use_name].copy()
+            new_object.parent = parent_object
+            bpy.context.scene.collection.objects.link(new_object)
+            animated_objects[new_object.name] = new_object
+            shape_objects[new_object.name] = new_object
+            print(f"copy of object {new_object.name} in process_shape")
+            continue
         if child.tag == 'Box':
             box_name = f"{parent_object.name}_box"
             size = tuple(map(float, child.get('size', '1 1 1').split()))
             box_object = create_box(box_name, size, Matrix.Identity(4))
+            obj = box_object
             box_object.parent = parent_object
             if material:
                 box_object.data.materials.append(material)
             shape_objects[box_name] = box_object
         elif child.tag == 'LineSet':
             coordinate = child.find('Coordinate')
+            color = child.find('Color')
+            if not color:
+                color = child.find('ColorRGBA')
             if coordinate is not None:
-                points = strip_commas_and_split(coordinate.get('point'))
-                lineset_object = create_lineset(f"{parent_object.name}_lineset", points, Matrix.Identity(4))
+                # points = strip_commas_and_split(coordinate.get('point'))
+                points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+                colors = None
+                if color is not None:
+                    if color.get('color'):
+                        color_values = strip_commas_and_split(color.get('color'))
+                    else:
+                        color_use = color.get('USE')
+                        if color_use:
+                            color_values = def_nodes[color_use]
+                    print(f"color_values {color_values}")
+                    if child.find('ColorRGBA'):
+                        # For ColorRGBA, we need to group every 4 values
+                        colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
+                    elif child.find('Color'):
+                        # For Color, we need to group every 3 values and add alpha=1
+                        colors = [tuple(map(float, color_values[i:i+3]) + [1.0]) for i in range(0, len(color_values), 3)]
+                    color_def = color.get('DEF')
+                    if color_def:
+                        def_nodes[color_def] = color_values
+                lineset_object = create_lineset(f"{parent_object.name}_lineset", points, colors, Matrix.Identity(4))
+                obj = lineset_object
                 lineset_object.parent = parent_object
-                if material:
-                    lineset_object.data.materials.append(material)
+                #if material:
+                #    lineset_object.data.materials.append(material)
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
         elif child.tag == 'Sphere':
             radius = float(child.get('radius', '1'))
             sphere_object = create_sphere(f"{parent_object.name}_sphere", radius, Matrix.Identity(4))
+            obj = sphere_object
             sphere_object.parent = parent_object
             if material:
                 sphere_object.data.materials.append(material)
@@ -333,15 +483,24 @@ def process_shape(shape_node, parent_object):
             coord_element = child.find('Coordinate')
             if coord_element is not None:
                 indexed_face_set_object = process_indexed_face_set(child, coord_element)
+                obj = indexed_face_set_object 
                 indexed_face_set_object.parent = parent_object
                 if material:
                     indexed_face_set_object.data.materials.append(material)
                 shape_objects[f"{parent_object.name}_mesh"] = indexed_face_set_object
         elif child.tag == 'Text':
             text_object = create_text_shape(child, parent_object)
+            obj = text_object 
             if material:
                 text_object.data.materials.append(material)
             shape_objects[f"{parent_object.name}_text"] = text_object
+        else:
+            print(f"Unknown shape in process_shape, {child.tag}, not handled")
+            obj = None
+
+        def_name = child.get('DEF')
+        if obj and def_name and def_nodes is not None:
+            def_nodes[def_name] = obj
 
     return shape_objects
 
@@ -444,7 +603,11 @@ def apply_interpolations(root, animated_objects, interpolators):
             interp_type, keyframes = interpolators[from_node]
             if interp_type == 'OrientationInterpolator' and to_field == 'rotation':
                 create_animation(obj, keyframes, "rotation_euler")
+            elif interp_type == 'OrientationInterpolator' and to_field == 'set_rotation':
+                create_animation(obj, keyframes, "rotation_euler")
             elif interp_type == 'PositionInterpolator' and to_field == 'translation':
+                create_animation(obj, keyframes, "location")
+            elif interp_type == 'PositionInterpolator' and to_field == 'set_translation':
                 create_animation(obj, keyframes, "location")
             print(f"Animating {obj.name} for {to_field}")
 
@@ -466,24 +629,17 @@ def main(file_path):
         animated_objects = process_node(scene, def_nodes=def_nodes)
 
     interpolators = parse_interpolators(root)
-    apply_interpolations(root, animated_objects, interpolators)
-
-    #hanim_humanoid = animated_objects.get('hanim_JinLOA1')
-    #if hanim_humanoid:
-    #    hanim_humanoid.scale = Vector((1.0, 1.0, 1.0))
-    #    bpy.ops.object.select_all(action='DESELECT')  # Deselect all to avoid accidentally applying scale to other objects
-    #    hanim_humanoid.select_set(True)
-    #    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    # apply_interpolations(root, animated_objects, interpolators)
 
     bpy.context.scene.frame_start = 0
     bpy.context.scene.frame_end = 100
     bpy.context.scene.render.fps = 30
 
-    bpy.ops.object.camera_add(location=(0, -20, 20))
+    bpy.ops.object.camera_add(location=(0, 10, 20))
     camera = bpy.context.active_object
     bpy.context.scene.camera = camera
 
-    bpy.ops.object.light_add(type='SUN', location=(5, 5, 5))
+    bpy.ops.object.light_add(type='SUN', location=(0, 10, 20))
 
 def set_view_to_positive_z():
     # Get the 3D view area
@@ -520,10 +676,20 @@ def set_view_to_positive_z():
 set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat11f.x3d"  # Replace with your X3D file path
+#file_path = "JinConcat10h.x3d"  # Replace with your X3D file path
 #file_path = "localrotation.x3d"  # Replace with your X3D file path
-#file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+#file_path = "localcenters.x3d"  # Replace with your X3D file path
+#file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
+# file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+#file_path = "HAnim2SpecificationLOA3Illustrated.x3d"
+file_path = "Humanoid4.x3d"
 
 main(file_path)
+
+bpy.ops.export_scene.x3dv(filepath="Humanoid4Export.x3d", export_hanim_prefix='hanim_', export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
+#bpy.ops.export_scene.x3dv(filepath="JinLOA1scaled1Export.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
+#bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
