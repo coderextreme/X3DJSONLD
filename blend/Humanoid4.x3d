@@ -60,22 +60,6 @@
           </Appearance>
         </Shape>
       </Transform>
-      <Transform DEF='JointLandmark' translation='0 0 0'>
-        <Shape DEF='HAnimJointLandmark'>
-          <Box size='0.016 0.016 0.016'/>
-            <Appearance>
-              <Material diffuseColor='0 0 1' emissiveColor='0 0 1' transparency='0'/>
-          </Appearance>
-        </Shape>
-      </Transform>
-      <Transform DEF='JointShapeB' translation='0 0 0'>
-        <Shape DEF='HAnimJointShapeB'>
-          <Box size='0.016 0.016 0.016'/>
-            <Appearance>
-              <Material diffuseColor='1 0 1' emissiveColor='1 0 1' transparency='0'/>
-            </Appearance>
-        </Shape>
-      </Transform>
     </Group>
 
     <Transform DEF='ContainerScene000'>
