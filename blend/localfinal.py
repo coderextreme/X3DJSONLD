@@ -690,6 +690,6 @@ file_path = "Humanoid4.x3d"
 
 main(file_path)
 
-bpy.ops.export_scene.x3dv(filepath="Humanoid4Export.x3d", export_hanim_prefix='hanim_', export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
+bpy.ops.export_scene.x3dv(filepath="Humanoid4Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinLOA1scaled1Export.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
