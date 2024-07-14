@@ -9,7 +9,7 @@ export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
-# py ../python/classes.py
+# ${PYTHON} ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 

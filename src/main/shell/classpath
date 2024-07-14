@@ -12,8 +12,8 @@ export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.4.jar;${GRAALX3DJSONLD}/
 export PYTHONPATH="{PYTHONPATH};C:\\Python311\\Lib;c:\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\python"
 export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
 
-export PYTHON=py
-alias python=py
+export PYTHON=python
+alias python=python
 export PIP=pip3
 export NODE=node.exe
 export NODEDIR=${HOMESFOLDER}/$USERNAME/X3DJSONLD/src/main/node
