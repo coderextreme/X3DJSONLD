@@ -106,16 +106,19 @@ PythonSerializer.prototype = {
 				var attr = attrsa.nodeName;
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					if (attr === "containerField") {
-						method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
-						if (method === "Shaders") {
-							addpre = "add";
-							method = "Child";
+						if (method === "setShaders") {
+							method = "addShaders"
+							addpre = "";
 						} else {
 							if (attrs[a].nodeValue === "joints" 
 								|| attrs[a].nodeValue === "sites" 
+								|| attrs[a].nodeValue === "skin" 
+								|| attrs[a].nodeValue === "viewpoints" 
+								|| attrs[a].nodeValue === "skeleton" 
 								|| attrs[a].nodeValue === "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							} else if (method === "addValue") {
 							} else {
 								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							}
@@ -252,7 +255,16 @@ PythonSerializer.prototype = {
 				var attrsa = attrs[a];
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					var attr = attrsa.nodeName;
-					if (attr === "xmlns:xsd") {
+					if (attr === 'containerField' && (
+						attrs[a].nodeValue === "joints" ||
+						attrs[a].nodeValue === "skeleton" ||
+						attrs[a].nodeValue === "segments" ||
+						attrs[a].nodeValue === "viewpoints" ||
+						attrs[a].nodeValue === "skin" ||
+						attrs[a].nodeValue === "skinCoord" ||
+						attrs[a].nodeValue === "sites")) {
+						attr = "containerFieldOverride";
+					} else if (attr === "xmlns:xsd") {
 						continue;
 					} else if (attr === "xsd:noNamespaceSchemaLocation" ) {
 						continue;
@@ -289,6 +301,9 @@ PythonSerializer.prototype = {
 					}
 					str += element.nodeName+stack[0];
 					str += '.set'+method+"("+strval+")\n";
+					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+						// str += ")"; // for cast
+					}
 				}
 			} catch (e) {
 				// console.error(e);
