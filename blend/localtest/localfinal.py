@@ -31,7 +31,7 @@ def create_empty(name, matrix):
         bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
         empty = bpy.context.active_object
         empty.name = name
-        empty.hide_viewport = True
+        #empty.hide_viewport = True
         empty.matrix_world = matrix
         return empty
     except RuntimeError as e:
@@ -77,7 +77,7 @@ def create_empty_hanim(name, transform_data, parent=None):
     bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
     empty = bpy.context.active_object
     empty.name = name
-    empty.hide_viewport = True
+    #empty.hide_viewport = True
     
     translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
     rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
