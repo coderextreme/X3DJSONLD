@@ -9,7 +9,7 @@ export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
-# py ../python/classes.py
+# ${PYTHON} ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
 

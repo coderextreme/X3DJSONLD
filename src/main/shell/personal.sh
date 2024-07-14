@@ -9,7 +9,7 @@ export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
-# py ../python/classes.py
+# ${PYTHON} ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
 
@@ -147,8 +147,8 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d$/.${JSONEX
 do
 	PY=`echo "$i" | sed -e "$EXTTOPYTHON" -e "$PERSONALTOPYTHON" -e "$ROOTTOPYTHON" -e "s/.${JSONEXT}$/.py/"`
 	#X3D=`echo "$i" | sed -e "s/.${JSONEXT}$/.new.python.x3d/"`
-	#echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
-	#py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
+	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
+	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 	echo "${PYTHON}" "$PY"
 	"${PYTHON}" "$PY"
 done

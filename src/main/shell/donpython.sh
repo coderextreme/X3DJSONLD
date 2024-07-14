@@ -17,5 +17,5 @@ echo running python
 pushd ../../../x3d-code/www.web3d.org/x3d/content/examples/HumanoidAnimation
 for i in `find . -name '*.py'`
 	echo "$i"
-	python "$i"
+	${PYTHON} "$i"
 popd
