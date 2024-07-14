@@ -34,15 +34,15 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('23 December 2021')),
-
-            meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('rescale smaller than 30m! convert inches to meters? what about motion scaling?')),
+              content_ : SFString('17 February 2024')),
 
             meta(
               name_ : SFString('description'),
               content_ : SFString('Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.')),
+
+            meta(
+              name_ : SFString('TODO'),
+              content_ : SFString('rescale all contained length values from inches to meters')),
 
             meta(
               name_ : SFString('reference'),
@@ -55,6 +55,10 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('reference'),
               content_ : SFString('KoreanCharactersIllustrated.pdf')),
+
+            meta(
+              name_ : SFString('reference'),
+              content_ : SFString('JinOriginalLOA1.x3d')),
 
             meta(
               name_ : SFString('identifier'),
@@ -74,7 +78,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
