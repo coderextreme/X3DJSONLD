@@ -18,9 +18,9 @@ https://www.web3d.org/documents/specifications/19774/V2.0/index.html-->
       +x to model left, +y up, 
       right-hand rule. -->
 
-    <WorldInfo title='20b Jin v2 loa4 Level 1, Only Minimum Joints, Segments, Sites'/>
+    <WorldInfo title='20c Jin v2 loa4 Level 1, Only Minimum Joints, Segments, Sites'/>
 
-    <HAnimHumanoid DEF='hanim_humanoid' name='humanoid' loa='4' version='2.0'>
+    <HAnimHumanoid DEF='hanim_JinLOA4S' name='JinLOA4S' loa='4' version='2.0'>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' 
         center='0 0.77 0'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
@@ -1131,21 +1131,8 @@ https://www.web3d.org/documents/specifications/19774/V2.0/index.html-->
     <Background DEF='Background1' skyColor='0.4 0.4 0.4' groundColor='0.5 0.5 0.5'/> 
 
     <DirectionalLight direction='0 0 -1' global='true' intensity='1'/>
-    <DirectionalLight direction='0 0.5 0' global='true' intensity='0.75'/>
-    <DirectionalLight direction='0 0 1' global='true' intensity='1' />
 
-    <Group DEF='SceneViewpoints'> 
-      <Viewpoint centerOfRotation='0 1 0' description='JinLOA4' position='0 1 3'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Front' position='0 0.4 4'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Front Close' position='0 0.8 2'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Front Closer' position='0 1.2 1'/>
-      <Viewpoint centerOfRotation='0 1.5 0.0016' description='JinLOA4 Front Face' position='0 1.63 1'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Right Side' orientation='0 1 0 1.57' position='2.6 0.8 0'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Right Side Close' orientation='0 1 0 1.2' position='1 0.8 0.5'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Left Side Close' orientation='0 1 0 -1.2' position='-1 0.8 0.5'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Left Side' orientation='0 1 0 -1.57' position='-2.6 0.8 0'/>
-      <Viewpoint centerOfRotation='0 0.9 0.0016' description='JinLOA4 Top' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
-    </Group>
+    <Viewpoint centerOfRotation='0 1 0' description='JinLOA4' position='0 1 3'/>
 
       <Transform DEF='Landmark000' translation='0 0 0'>
         <Shape DEF='HAnim000Landmark'>

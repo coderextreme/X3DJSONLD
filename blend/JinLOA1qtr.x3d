@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+  </head>
+  <Scene>
+    <Viewpoint centerOfRotation='0 1 0' description='JinLOA1' position='0 1 3'/>
+    <HAnimHumanoid DEF='hanim_JinLOA1' name='JinLOA1' loa='1' version='2.0'>
+      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.68692505 -0.015921'>
+        <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0 0.80550003 -0.015921'>
+          <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-0.094657496 0.72045004 -0.018348752'>
+            <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-0.09261001 0.38835 -0.01943775'>
+              <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-0.086715005 0.0886275 -0.015835501'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.086715005 0.08190001 0.0166545'>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+      </HAnimJoint>
+    </HAnimHumanoid>
+  </Scene>
+</X3D>
