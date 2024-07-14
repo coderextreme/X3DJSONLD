@@ -51,7 +51,7 @@ def main():
     context = bpy.context
 
     # Load bone mapping
-    bone_mapping = load_bone_mapping('C:/Users/john/Documents/bonemapping.json')
+    bone_mapping = load_bone_mapping('C:/Users/jcarl/Documents/bonemapping.json')
 
 
     # Set up bone mapping for all armatures
