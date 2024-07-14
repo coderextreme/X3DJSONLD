@@ -205,8 +205,8 @@
                                           "-parts":[
                                             { "ShaderPart":
                                               {
-                                                "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
-                                                "@type":"VERTEX"
+                                                "@type":"VERTEX",
+                                                "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
                                               }
                                             },
                                             { "ShaderPart":

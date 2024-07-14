@@ -196,8 +196,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"],
-                                      "@type":"VERTEX"
+                                      "@type":"VERTEX",
+                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"]
                                     }
                                   },
                                   { "ShaderPart":
