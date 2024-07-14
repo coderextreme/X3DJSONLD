@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+   <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+   <script type="text/javascript" src="node_modules/xmlschema.js/dist/xmlschema.js"></script>
+</head>
+
+<body>
+   <div class="col-xs-12" style="text-align: center">
+      <h1>X3D XML validate</h1>
+      <button id="validate">Validate</button>
+      <div><a href="validate.html">validate X3D XML demo</a></div>
+   </div>
+   <div class="col-xs-6 col-xs-offset-1"><textarea style="width: 100%; height: 500px" id="xml"></textarea></div>
+   <div class="col-xs-4"><textarea style="width: 100%; height: 500px" id="xsd"></textarea></div>
+   <div class="col-xs-10 col-xs-offset-1" style="text-align: center">
+      <textarea style="width: 100%; height: 300px" id="log"></textarea>
+   </div>
+<script type="text/javascript">
+   var xsdjs = xmlschema(['https://localhost:3000/src/specifications/x3d-4.0.xsd']);
+
+   function validate(xml, callback) {
+      xsdjs.validate(xml).then(function(result) {
+         if (result.valid) {
+		 alert("It worked!");
+            $("#log").text(result.message);
+         } else {
+            var output = "";
+            result.errors.forEach(function (error) {
+               output += "ERROR: " + error + "\n";
+            });
+            result.warnings.forEach(function (warn) {
+               output += "WARNING: " + warn + "\n";
+            });
+            $("#log").text(output);
+         }
+         if (callback) {
+            callback(result);
+         }
+      }).catch(function (message) {
+         $("#log").text(message);
+      });
+   }
+
+   $("#validate").click(function () {
+      $("#log").text("");
+      validate($("#xml").val());
+   });
+
+   validate('src/main/data/abox.x3d', function (result) {
+      $("#xml").text(result.xml.str);
+      $("#xsd").text(result.xsd.str);
+   })
+</script>
+</body>
+</html>
