@@ -990,6 +990,8 @@ public class KoreanCharacter01Jin
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new KoreanCharacter01Jin().getX3dModel();
+        thisExampleX3dModel.toFileX3D("test.x3d");
+        thisExampleX3dModel.toFileJSON("test.json");
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
