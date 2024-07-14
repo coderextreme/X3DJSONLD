@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene smiley2. </p>
+ * <p> Example scene . </p>
  <p> Related links:  source smiley2.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<p>
 		This program uses the
@@ -127,6 +127,15 @@ public class smiley2
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./smiley2_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./smiley2_JavaExport.x3d"; 
+                String filenameX3DV = "./smiley2_JavaExport.x3dv"; 
+                String filenameJSON = "./smiley2_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

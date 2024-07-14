@@ -140,7 +140,7 @@ public class DesignPatternsApparelMedicalSkinLayers
       .setMetadata(new MetadataString().setName("HAnimArchitecture").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile").setValue(new String[] {"E.4 Multiple humanoids per file"}))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("a_SimpleSkeleton").setName("SimpleSkeleton").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")
             .addChild(new Shape("JointVisualization"))
             .addChild(new Shape("SegmentVisualization"))
@@ -148,24 +148,24 @@ public class DesignPatternsApparelMedicalSkinLayers
               .addChild(new Shape("SiteVisualization"))))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("b_SimpleSkeletonMesh").setName("SimpleSkeletonMesh").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")
             .addChild(new Shape()
               .setGeometry(new IndexedFaceSet("SegmentBoneMesh").setDEF("SegmentBoneMesh"))))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("c_SkinIndexedGeometry").setName("SkinIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new IndexedFaceSet("SkinMeshIFS").setDEF("SkinMeshIFS")))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("d_SkinShapeIndexedGeometry").setName("SkinShapeIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape()
           .setGeometry(new IndexedFaceSet().setUSE("SkinMeshIFS"))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("e_SkinSwitchShapeIndexedGeometry").setName("SkinSwitchShapeIndexedGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addComments(" TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> ")
         .addSkin(new Shape()
@@ -174,21 +174,21 @@ public class DesignPatternsApparelMedicalSkinLayers
       .addComments(" similarly for LOD ")
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("f_SynthesizedSkinShapeIndexedTwoPartGeometry").setName("SynthesizedSkinShapeIndexedTwoPartGeometry").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape()
           .setGeometry(new IndexedFaceSet("TwoPartIndexedSkinMesh").setDEF("TwoPartIndexedSkinMesh")
             .setCoord(new Coordinate("TwoPartSkinMesh")))))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("g_ApparelSkinIndexedGeometryMultipleShapes").setName("ApparelSkinIndexedGeometryMultipleShapes").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addSkin(new Shape())
         .addComments(" allow multiple Shape nodes with containerField='apparel', one for each layer of clothing ")
         .addComments(" TODO proposed for X3D4.1 <Shape containerField='apparel'/> "))
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("h_AnatomySkinIndexedGeometryMultipleShapes").setName("AnatomySkinIndexedGeometryMultipleShapes").setVersion("2.0")
-        .addSkeleton(new HAnimJoint().setName("humanoid_root")
+        .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addComments(" allow multiple Shape nodes with containerField='skin', one for each layer of skin ")
         .addSkin(new Shape()))
@@ -290,6 +290,15 @@ public class DesignPatternsApparelMedicalSkinLayers
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./DesignPatternsApparelMedicalSkinLayers_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./DesignPatternsApparelMedicalSkinLayers_JavaExport.x3d"; 
+                String filenameX3DV = "./DesignPatternsApparelMedicalSkinLayers_JavaExport.x3dv"; 
+                String filenameJSON = "./DesignPatternsApparelMedicalSkinLayers_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

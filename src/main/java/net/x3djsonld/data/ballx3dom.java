@@ -196,6 +196,15 @@ public class ballx3dom
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./ballx3dom_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./ballx3dom_JavaExport.x3d"; 
+                String filenameX3DV = "./ballx3dom_JavaExport.x3dv"; 
+                String filenameJSON = "./ballx3dom_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

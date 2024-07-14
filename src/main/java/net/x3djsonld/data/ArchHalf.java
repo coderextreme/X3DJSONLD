@@ -238,7 +238,15 @@ public class ArchHalf
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./ArchHalf_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./ArchHalf_JavaExport.x3d"; 
+                String filenameX3DV = "./ArchHalf_JavaExport.x3dv"; 
+                String filenameJSON = "./ArchHalf_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
-	thisExampleX3dModel.toFileX3D("TestThisOutput.x3d");
     }
 }
