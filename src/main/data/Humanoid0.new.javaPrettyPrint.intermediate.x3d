@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='1'/>
@@ -60,8 +61,8 @@
     <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
       <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
       <!-- </LOD> -->
-      <HAnimJoint USE='hanim_' containerField='joints'/>
       <HAnimJoint DEF='hanim_' containerField='skeleton'/>
+      <HAnimJoint USE='hanim_' containerField='joints'/>
       <Shape DEF='SkinShape' containerField='skin'>
         <Appearance DEF='SkinAppearance'>
           <Material DEF='SkinMaterial' ambientIntensity='0.6' diffuseColor='1 1 1' shininess='0.6' transparency='1.0'/>

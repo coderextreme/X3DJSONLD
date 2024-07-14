@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 June 2024"
+            "@content":"14 July 2024"
           },
           {
             "@name":"generator",
@@ -245,512 +245,6 @@
                 },
                 {
                   "#comment":"</LOD>"
-                }
-              ],
-              "-joints":[
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_humanoid_root"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_sacroiliac"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_talocrural"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_metatarsophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_talocrural"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_vl5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_skullbase"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_radiocarpal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_radiocarpal"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_sacrum"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_pelvis"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_forearm"
-                  }
-                }
-              ],
-              "-sites":[
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_buttocks_standing_wall_contact_point"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_crotch"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_asis"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_iliocristale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_psis"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_trochanterion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_asis"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_iliocristale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_psis"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_trochanterion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_femoral_lateral_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_femoral_medial_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_knee_crease"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_suprapatella"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_lateral_malleolus"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_medial_malleolus"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_tibiale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_calcaneus_posterior"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_sphyrion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_femoral_lateral_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_femoral_medial_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_knee_crease"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_suprapatella"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_lateral_malleolus"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_medial_malleolus"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_tibiale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_calcaneus_posterior"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_sphyrion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_adams_apple"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_cervicale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_acromion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_axilla_distal"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_axilla_posterior_folds"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_axilla_proximal"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_chest_midsagittal_plane"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_clavicale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_neck_base"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_rib10"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_thelion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_mesosternale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_navel"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_acromion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_axilla_distal"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_axilla_posterior_folds"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_axilla_proximal"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_chest_midsagittal_plane"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_clavicale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_neck_base"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_rib10"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_thelion"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_rear_center_midsagittal_plane"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_spine_1_middle_back"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_spine_2_middle_back"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_substernale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_suprasternale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_waist_preferred_anterior"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_waist_preferred_posterior"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_bideltoid"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_humeral_lateral_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_humeral_medial_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_olecranon"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_radial_styloid"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_radiale"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_bideltoid"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_humeral_lateral_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_humeral_medial_epicondyles"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_olecranon"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_radial_styloid"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_radiale"
-                  }
                 }
               ],
               "-skeleton":[
@@ -4598,6 +4092,512 @@
                         }
                       }
                     ]
+                  }
+                }
+              ],
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_humanoid_root"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_sacroiliac"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_skullbase"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_radiocarpal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_radiocarpal"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_sacrum"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_pelvis"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_talus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_talus"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_forearm"
+                  }
+                }
+              ],
+              "-sites":[
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_buttocks_standing_wall_contact_point"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_crotch"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_asis"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_iliocristale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_psis"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_trochanterion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_asis"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_iliocristale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_psis"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_trochanterion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_femoral_lateral_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_femoral_medial_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_knee_crease"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_suprapatella"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_lateral_malleolus"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_medial_malleolus"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_tibiale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_calcaneus_posterior"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_sphyrion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_femoral_lateral_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_femoral_medial_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_knee_crease"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_suprapatella"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_lateral_malleolus"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_medial_malleolus"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_tibiale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_calcaneus_posterior"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_sphyrion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_adams_apple"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_cervicale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_acromion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_axilla_distal"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_axilla_posterior_folds"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_axilla_proximal"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_chest_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_clavicale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_neck_base"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_rib10"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_thelion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_mesosternale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_navel"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_acromion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_axilla_distal"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_axilla_posterior_folds"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_axilla_proximal"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_chest_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_clavicale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_neck_base"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_rib10"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_thelion"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_rear_center_midsagittal_plane"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_spine_1_middle_back"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_spine_2_middle_back"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_substernale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_suprasternale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_waist_preferred_anterior"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_waist_preferred_posterior"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_bideltoid"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_humeral_lateral_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_humeral_medial_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_olecranon"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_radial_styloid"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_radiale"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_bideltoid"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_humeral_lateral_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_humeral_medial_epicondyles"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_olecranon"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_radial_styloid"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_radiale"
                   }
                 }
               ],

@@ -3127,7 +3127,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']"/><!-- safety net -->
                 
                 <!-- unwrap hover help -->
-                <xsl:if test="(@name='image') or (@name='Image')">
+                <xsl:if test="((@name='image') or (@name='Image')) and not(contains(@content, '.vsdx'))">
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text disable-output-escaping="yes">&lt;img src="</xsl:text>
                     <xsl:value-of select="@content"/>
