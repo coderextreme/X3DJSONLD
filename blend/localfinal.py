@@ -25,29 +25,74 @@ def parse_transform(transform):
         print(f"Error parsing transform: {e}")
         return (0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0)
 
-def create_empty(name, transform_data, parent_object, matrix):
+def create_empty(name, transform_data, parent_object):
     try:
+        (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
+
+        translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
+        rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
+        scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
+        transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
+    
+
         bpy.ops.object.empty_add(type='PLAIN_AXES')
         bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
         empty = bpy.context.active_object
         empty.name = name
-        # empty.hide_viewport = True
-        #if cx != 0 or cy != 0 or cz != 0:
-        #    empty['x3dtranslation'] = translation_matrix
-        #else:
-        #    empty['x3dtranslation'] = None
+        if cx != 0 or cy != 0 or cz != 0:
+            empty['x3dtranslation'] = translation_matrix
+        else:
+            empty['x3dtranslation'] = None
         if parent_object:
             empty.parent = parent_object
-            local_matrix = parent_object.matrix_world.inverted() @ matrix
-            empty.matrix_local = local_matrix
-        else:
-            empty.matrix_world = matrix
+        #    local_matrix = parent_object.matrix_world.inverted() @ matrix
+        #    empty.matrix_local = local_matrix
+        #else:
+        empty.matrix_world = transform_matrix
         #empty.matrix_local = matrix
 
         return empty
     except RuntimeError as e:
         print(f"Error creating empty object: {e}")
         return None
+
+def create_empty_hanimsite(name, transform_data, parent=None):
+    (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES')
+    bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
+    empty = bpy.context.active_object
+    empty.name = name
+    
+    translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
+    rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
+    scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
+    transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
+    
+    if parent:
+        empty.parent = parent
+        empty.matrix_world = transform_matrix
+    
+    if cx != 0 or cy != 0 or cz != 0:
+        empty['x3dtranslation'] = translation_matrix
+    else:
+        empty['x3dtranslation'] = None
+    
+    # print(f"Created empty object '{name}' at global {transform_matrix.to_translation()}, local {empty.location}")
+    return empty
+
+def create_empty_hanimsegment(name, parent=None):
+    
+    bpy.ops.object.empty_add(type='PLAIN_AXES')
+    bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
+    empty = bpy.context.active_object
+    empty.name = name
+    
+    if parent:
+        empty.parent = parent
+        # empty.matrix_world = parent.matrix_world.copy()
+    
+    return empty
 
 def create_text_shape(text_node, parent_object):
     string = text_node.get('string', '')
@@ -81,16 +126,16 @@ def create_text_shape(text_node, parent_object):
 
     return text_object
 
-def create_box(name, size, matrix):
+def create_box(name, size):
     bpy.ops.mesh.primitive_cube_add(size=1)
     box = bpy.context.active_object
     box.name = name
     box.scale = size
-    box.matrix_world = matrix
+    # box.matrix_local = matrix.copy()
     # box.matrix_local = matrix
     return box
 
-def create_lineset(name, coordinates, colors, matrix):
+def create_lineset(name, coordinates, colors):
     if len(coordinates) % 3 != 0:
         print(f"Not enough coordinates for LineSet {name}")
         return None
@@ -100,7 +145,7 @@ def create_lineset(name, coordinates, colors, matrix):
     curve_data.dimensions = '3D'
     curve_object = bpy.data.objects.new(name, curve_data)
     bpy.context.collection.objects.link(curve_object)
-    curve_object.matrix_world = matrix
+    # curve_object.matrix_local = matrix.copy()
     # curve_object.matrix_local = matrix
 
     # Create a new spline in the curve
@@ -158,15 +203,15 @@ def create_lineset(name, coordinates, colors, matrix):
 
     return curve_object
 
-def create_sphere(name, radius, matrix):
+def create_sphere(name, radius):
     bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
     sphere = bpy.context.active_object
     sphere.name = name
-    # sphere.matrix_world = matrix
-    sphere.matrix_local = matrix
+    # sphere.matrix_local = matrix.copy()
+    # sphere.matrix_local = matrix
     return sphere
 
-def process_node(node, parent_transform_matrix, parent_object=None, def_nodes=None):
+def process_node(node, parent_object=None, def_nodes=None):
     animated_objects = {}
     cx, cy, cz = 0, 0, 0
 
@@ -190,16 +235,14 @@ def process_node(node, parent_transform_matrix, parent_object=None, def_nodes=No
         else:
             transform_data = ((0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0))
 
-        (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
-
-        translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
-        rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
-        scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
-        transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
-    
-
         name = node.get('DEF', node.tag)
-        empty = create_empty(name, transform_data, parent_object, parent_transform_matrix @ transform_matrix)
+        if node.tag in ('HAnimSegment'):
+            empty = create_empty_hanimsegment(name, parent_object)
+        elif node.tag in ('HAnimSite'):
+            empty = create_empty_hanimsite(name, transform_data, parent_object)
+        else:
+            empty = create_empty(name, transform_data, parent_object)
+        empty.hide_viewport = True
         animated_objects[name] = empty
 
         def_name = node.get('DEF')
@@ -223,11 +266,11 @@ def process_node(node, parent_transform_matrix, parent_object=None, def_nodes=No
                 bpy.context.scene.collection.objects.link(new_object)
                 animated_objects[use_name] = new_object
             elif child.tag == 'Shape':
-                shape_object = process_shape(child, current_object, def_nodes, animated_objects, parent_transform_matrix @ transform_matrix)
+                shape_object = process_shape(child, current_object, def_nodes, animated_objects)
                 if shape_object:
                     animated_objects.update(shape_object)
             else:
-                child_objects = process_node(child, parent_transform_matrix @ transform_matrix, current_object, def_nodes)
+                child_objects = process_node(child, current_object, def_nodes)
                 animated_objects.update(child_objects)
     else:
         current_object = parent_object
@@ -238,7 +281,7 @@ def process_node(node, parent_transform_matrix, parent_object=None, def_nodes=No
                 continue
             elif child.tag in ('HAnimSite') and child.get('containerField') == 'sites':
                 continue
-            child_objects = process_node(child, parent_transform_matrix, current_object, def_nodes)
+            child_objects = process_node(child, current_object, def_nodes)
             animated_objects.update(child_objects)
 
     return animated_objects
@@ -279,7 +322,7 @@ def create_material(material_node):
 
     return material
 
-def process_shape(shape_node, parent_object, def_nodes, animated_objects, transform_matrix):
+def process_shape(shape_node, parent_object, def_nodes, animated_objects):
     shape_objects = {}
     material = None
     
@@ -310,7 +353,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects, transf
         if child.tag == 'Box':
             box_name = f"{parent_object.name}_box"
             size = tuple(map(float, child.get('size', '1 1 1').split()))
-            box_object = create_box(box_name, size, transform_matrix)
+            box_object = create_box(box_name, size)
             obj = box_object
             box_object.parent = parent_object
             if material:
@@ -342,7 +385,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects, transf
                     color_def = color.get('DEF')
                     if color_def:
                         def_nodes[color_def] = color_values
-                lineset_object = create_lineset(f"{parent_object.name}_lineset", points, colors, transform_matrix)
+                lineset_object = create_lineset(f"{parent_object.name}_lineset", points, colors)
                 obj = lineset_object
                 lineset_object.parent = parent_object
                 #if material:
@@ -350,7 +393,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects, transf
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
         elif child.tag == 'Sphere':
             radius = float(child.get('radius', '1'))
-            sphere_object = create_sphere(f"{parent_object.name}_sphere", radius, transform_matrix)
+            sphere_object = create_sphere(f"{parent_object.name}_sphere", radius)
             obj = sphere_object
             sphere_object.parent = parent_object
             if material:
@@ -436,7 +479,7 @@ def create_animation(obj, keyframes, data_path):
             except (IndexError, TypeError) as e:
                 print(f"Error inserting keyframe for {obj.name}: {e}")
 
-    if False and obj.get('x3dtranslation') and data_path == "rotation_euler":
+    if obj.get('x3dtranslation') and data_path == "rotation_euler":
         try:
             center = Matrix(obj['x3dtranslation']).to_translation()
             print(f"center {center}")
@@ -488,7 +531,7 @@ def apply_interpolations(root, animated_objects, interpolators):
                 create_animation(obj, keyframes, "location")
             elif interp_type == 'PositionInterpolator' and to_field == 'set_translation':
                 create_animation(obj, keyframes, "location")
-            print(f"Animating {obj.name} for {to_field}")
+            # print(f"Animating {obj.name} for {to_field}")
 
 def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
@@ -505,10 +548,10 @@ def main(file_path):
 
     scene = root.find('Scene')
     if scene is not None:
-        animated_objects = process_node(scene, Matrix.Identity(4), def_nodes=def_nodes)
+        animated_objects = process_node(scene, def_nodes=def_nodes)
 
     interpolators = parse_interpolators(root)
-    # apply_interpolations(root, animated_objects, interpolators)
+    apply_interpolations(root, animated_objects, interpolators)
 
     bpy.context.scene.frame_start = 0
     bpy.context.scene.frame_end = 250
@@ -555,9 +598,10 @@ def set_view_to_positive_z():
 set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
-#file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"  # Replace with your X3D file path
+# file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
+file_path = "Jin11gNoUSE.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat11g.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat10h.x3d"  # Replace with your X3D file path
 #file_path = "localrotation.x3d"  # Replace with your X3D file path
@@ -565,12 +609,13 @@ file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file 
 #file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
 # file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
 #file_path = "HAnim2SpecificationLOA3Illustrated.x3d"
-# file_path = "Humanoid4.1.x3d"
+#file_path = "Humanoid4.1.x3d"
 
 main(file_path)
 
-bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4OnlyMarkers11gExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+# bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4OnlyMarkers11gExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+# bpy.ops.export_scene.x3dv(filepath="Jin11gNoUSEExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinConcat11gExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-# bpy.ops.export_scene.x3dv(filepath="Humanoid4.1Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+#bpy.ops.export_scene.x3dv(filepath="Humanoid4.1Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinLOA1scaled1Export.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
-#bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+# bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
