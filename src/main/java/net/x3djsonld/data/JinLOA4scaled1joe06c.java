@@ -19,12 +19,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an loa4 X3D HAnim model, then this Scaled version drawn directly in default HAnim coordinate space, and added Sites. </p>
- <p> Related links:  source JinLOA4scaled1joe06c.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source JinLOA4Scaled1joe6b.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JinLOA4scaled1joe06c&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JinLOA4Scaled1joe6b&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -121,10 +121,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class JinLOA4scaled1joe06c
+public class JinLOA4Scaled1joe6b
 {
 	/** Default constructor to create this object. */
-	public JinLOA4scaled1joe06c ()
+	public JinLOA4Scaled1joe6b ()
 	{
 	  initialize();
 	}
@@ -171,7 +171,7 @@ public class JinLOA4scaled1joe06c
         .setMetadata(new MetadataString().setName("gender").setValue(new String[] {"female"}))
         .setMetadata(new MetadataFloat().setName("height").setValue(new double[] {1.5}))
         .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new String[] {"2.0"})))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.826,-0.016)
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.826,-0.016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addChild(new Shape("sacrum_Shape")
             .setAppearance(new Appearance()
@@ -183,7 +183,7 @@ public class JinLOA4scaled1joe06c
           .addChild(new HAnimSite("sacrum_Sites")
             .addComments(new String[] {" ",
 "None "})))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.707,-0.016)
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.707,-0.016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Shape("pelvis_Shape")
               .setAppearance(new Appearance()
@@ -203,7 +203,7 @@ public class JinLOA4scaled1joe06c
 "(r_psis  -0.0716 1.0190 -0.1138)",
 "(l_psis  0.0774 1.0190 -0.1151)",
 "(crotch  0.0034 0.8266 0.0257) "})))
-          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.095,0.8266,-0.0183)
+          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.095,0.8266,-0.0183).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l_thigh").setName("l_thigh")
               .addChild(new Shape("l_thigh_Shape")
                 .setAppearance(new Appearance()
@@ -218,7 +218,7 @@ public class JinLOA4scaled1joe06c
 "(l_femoral_medial_epicondyles  0.0398 0.4946 0.0303)",
 "(l_femoral_lateral_epicondyles  0.1598 0.4967 0.0297)",
 "(l_suprapatella  x y z) "})))
-            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.09261001,0.408825,-0.01943775)
+            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.09261001,0.408825,-0.01943775).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l_calf").setName("l_calf")
                 .addChild(new Shape("l_calf_Shape")
                   .setAppearance(new Appearance()
@@ -232,7 +232,7 @@ public class JinLOA4scaled1joe06c
 "(l_tibiale  x y z)",
 "(l_medial_malleolus  0.0890 0.0716 -0.0881)",
 "(l_lateral_malleolus  0.1308 0.0597 -0.1032)"})))
-              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.08883,0.09544501,-0.010451251)
+              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.08883,0.09544501,-0.010451251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_l_talus").setName("l_talus")
                   .addChild(new Shape("l_talus_Shape")
                     .setAppearance(new Appearance()
@@ -245,7 +245,7 @@ public class JinLOA4scaled1joe06c
                     .addComments(new String[] {" ",
 "(l_sphyrion  0.0890 0.0575 -0.0943)",
 "(l_calcaneous_posterior  0.0974 0.0259 -0.1171)"})))
-                .addChild(new HAnimJoint("hanim_l_talocalcaneonavicular").setName("l_talocalcaneonavicular").setCenter(0.07830001,0.036900003,0.0048645)
+                .addChild(new HAnimJoint("hanim_l_talocalcaneonavicular").setName("l_talocalcaneonavicular").setCenter(0.07830001,0.036900003,0.0048645).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_l_navicular").setName("l_navicular")
                     .addChild(new Shape("l_navicular_Shape")
                       .setAppearance(new Appearance()
@@ -257,7 +257,7 @@ public class JinLOA4scaled1joe06c
                     .addChild(new HAnimSite("l_navicular_Sites")
                       .addComments(new String[] {" ",
 "None "})))
-                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_1").setName("l_cuneonavicular_1").setCenter(0.067365,0.032107502,0.018391501)
+                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_1").setName("l_cuneonavicular_1").setCenter(0.067365,0.032107502,0.018391501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_1").setName("l_cuneiform_1")
                       .addChild(new Shape("l_cuneiform_1_Shape")
                         .setAppearance(new Appearance()
@@ -269,7 +269,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("l_cuneiform_1_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_1").setName("l_tarsometatarsal_1").setCenter(0.06462,0.023242502,0.04419)
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_1").setName("l_tarsometatarsal_1").setCenter(0.06462,0.023242502,0.04419).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_1").setName("l_metatarsal_1")
                         .addChild(new Shape("l_metatarsal_1_Shape")
                           .setAppearance(new Appearance()
@@ -281,7 +281,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("l_metatarsal_1_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_1").setName("l_metatarsophalangeal_1").setCenter(0.0621225,0.014424751,0.0936225)
+                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_1").setName("l_metatarsophalangeal_1").setCenter(0.0621225,0.014424751,0.0936225).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_1").setName("l_tarsal_proximal_phalanx_1")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_1_Shape")
                             .setAppearance(new Appearance()
@@ -293,7 +293,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("l_tarsal_proximal_phalanx_1_Sites")
                             .addComments(new String[] {" ",
 "(l_metatarsal_phalanx_1  0.0816 0.0232 0.0106)"})))
-                        .addChild(new HAnimJoint("hanim_l_tarsal_interphalangeal_1").setName("l_tarsal_interphalangeal_1").setCenter(0.0621225,0.0121365,0.1153125)
+                        .addChild(new HAnimJoint("hanim_l_tarsal_interphalangeal_1").setName("l_tarsal_interphalangeal_1").setCenter(0.0621225,0.0121365,0.1153125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_1").setName("l_tarsal_distal_phalanx_1")
                             .addChild(new Shape("l_tarsal_distal_phalanx_1_Shape")
                               .setAppearance(new Appearance()
@@ -305,7 +305,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("l_tarsal_distal_phalanx_1_Sites")
                               .addComments(new String[] {" ",
 "(l_tarsal_distal_phalanx_1_tip  0.090 0.012 0.188)  "})))))))
-                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_2").setName("l_cuneonavicular_2").setCenter(0.0814275,0.033525,0.02142675)
+                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_2").setName("l_cuneonavicular_2").setCenter(0.0814275,0.033525,0.02142675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l_cuneiform_2").setName("l_cuneiform_2")
                       .addChild(new Shape("l_cuneiform_2_Shape")
                         .setAppearance(new Appearance()
@@ -317,7 +317,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("l_cuneiform_2_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_tarsometatarsal_2").setCenter(0.08019,0.0261,0.041062504)
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_tarsometatarsal_2").setCenter(0.08019,0.0261,0.041062504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_2").setName("l_metatarsal_2")
                         .addChild(new Shape("l_metatarsal_2_Shape")
                           .setAppearance(new Appearance()
@@ -329,7 +329,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("l_metatarsal_2_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.08253,0.014976,0.097830005)
+                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.08253,0.014976,0.097830005).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_proximal_phalanx_2")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_2_Shape")
                             .setAppearance(new Appearance()
@@ -341,7 +341,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("l_tarsal_proximal_phalanx_2_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_2").setName("l_tarsal_proximal_interphalangeal_2").setCenter(0.0843075,0.012647251,0.1140075)
+                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_2").setName("l_tarsal_proximal_interphalangeal_2").setCenter(0.0843075,0.012647251,0.1140075).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_2").setName("l_tarsal_middle_phalanx_2")
                             .addChild(new Shape("l_tarsal_middle_phalanx_2_Shape")
                               .setAppearance(new Appearance()
@@ -353,7 +353,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("l_tarsal_middle_phalanx_2_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0843075,0.00982575,0.123435006)
+                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0843075,0.00982575,0.123435006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_2").setName("l_tarsal_distal_phalanx_2")
                               .addChild(new Shape("l_tarsal_distal_phalanx_2_Shape")
                                 .setAppearance(new Appearance()
@@ -365,7 +365,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("l_tarsal_distal_phalanx_2")
                                 .addComments(new String[] {" ",
 "(l_tarsal_distal_phalanx_2_tip  0.110 0.011 0.19) "}))))))))
-                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_3").setName("l_cuneonavicular_3").setCenter(0.092970006,0.03339,0.019818)
+                  .addChild(new HAnimJoint("hanim_l_cuneonavicular_3").setName("l_cuneonavicular_3").setCenter(0.092970006,0.03339,0.019818).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l_cuneiform_3").setName("l_cuneiform_3")
                       .addChild(new Shape("l_cuneiform_3_Shape")
                         .setAppearance(new Appearance()
@@ -377,7 +377,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("l_cuneiform_3_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_3").setName("l_tarsometatarsal_3").setCenter(0.09459,0.0261,0.039397504)
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_3").setName("l_tarsometatarsal_3").setCenter(0.09459,0.0261,0.039397504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_3").setName("l_metatarsal_3")
                         .addChild(new Shape("l_metatarsal_3_Shape")
                           .setAppearance(new Appearance()
@@ -389,7 +389,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("l_metatarsal_3_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_3").setName("l_metatarsophalangeal_3").setCenter(0.096480004,0.015057,0.09542251)
+                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_3").setName("l_metatarsophalangeal_3").setCenter(0.096480004,0.015057,0.09542251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_3").setName("l_tarsal_proximal_phalanx_3")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_3_Shape")
                             .setAppearance(new Appearance()
@@ -401,7 +401,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("l_tarsal_proximal_phalanx_3_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_3").setName("l_tarsal_proximal_interphalangeal_3").setCenter(0.098865,0.011922751,0.110475)
+                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_3").setName("l_tarsal_proximal_interphalangeal_3").setCenter(0.098865,0.011922751,0.110475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_3").setName("l_tarsal_middle_phalanx_3")
                             .addChild(new Shape("l_tarsal_middle_phalanx_3_Shape")
                               .setAppearance(new Appearance()
@@ -413,7 +413,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("l_tarsal_middle_phalanx_3_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_3").setName("l_tarsal_distal_interphalangeal_3").setCenter(0.1004175,0.00982575,0.11970001)
+                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_3").setName("l_tarsal_distal_interphalangeal_3").setCenter(0.1004175,0.00982575,0.11970001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_3").setName("l_tarsal_distal_phalanx_3")
                               .addChild(new Shape("l_tarsal_distal_phalanx_3_Shape")
                                 .setAppearance(new Appearance()
@@ -425,7 +425,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("l_tarsal_distal_phalanx_3_Sites")
                                 .addComments(new String[] {" ",
 " (l_tarsal_distal_phalanx_3_tip  0.128 0.011 0.185)   "})))))))))
-                .addChild(new HAnimJoint("hanim_l_calcaneocuboid").setName("l_calcaneocuboid").setCenter(0.0891,0.0579825,-0.025965001)
+                .addChild(new HAnimJoint("hanim_l_calcaneocuboid").setName("l_calcaneocuboid").setCenter(0.0891,0.0579825,-0.025965001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_l_calcaneus").setName("l_calcaneus")
                     .addChild(new Shape("l_calcaneus_Shape")
                       .setAppearance(new Appearance()
@@ -437,7 +437,7 @@ public class JinLOA4scaled1joe06c
                     .addChild(new HAnimSite("l_calcaneus_Sites")
                       .addComments(new String[] {" ",
 "None "})))
-                  .addChild(new HAnimJoint("hanim_l_transversetarsal").setName("l_transversetarsal").setCenter(0.1106325,0.03528,0.002089125)
+                  .addChild(new HAnimJoint("hanim_l_transversetarsal").setName("l_transversetarsal").setCenter(0.1106325,0.03528,0.002089125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l_cuboid").setName("l_cuboid")
                       .addChild(new Shape("l_cuboid_Shape")
                         .setAppearance(new Appearance()
@@ -449,7 +449,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("l_cuboid_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_4").setName("l_tarsometatarsal_4").setCenter(0.1064925,0.0245475,0.03843)
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_4").setName("l_tarsometatarsal_4").setCenter(0.1064925,0.0245475,0.03843).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_4").setName("l_metatarsal_4")
                         .addChild(new Shape("l_metatarsal_4_Shape")
                           .setAppearance(new Appearance()
@@ -461,7 +461,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("l_metatarsal_4_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_4").setName("l_metatarsophalangeal_4").setCenter(0.109867506,0.01435275,0.091170006)
+                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_4").setName("l_metatarsophalangeal_4").setCenter(0.109867506,0.01435275,0.091170006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_4").setName("l_tarsal_proximal_phalanx_4")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_4_Shape")
                             .setAppearance(new Appearance()
@@ -473,7 +473,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("l_tarsal_proximal_phalanx_4_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_4").setName("l_tarsal_proximal_interphalangeal_4").setCenter(0.114165,0.0122445,0.1063125)
+                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_4").setName("l_tarsal_proximal_interphalangeal_4").setCenter(0.114165,0.0122445,0.1063125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_4").setName("l_tarsal_middle_phalanx_4")
                             .addChild(new Shape("l_tarsal_middle_phalanx_4_Shape")
                               .setAppearance(new Appearance()
@@ -485,7 +485,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("l_tarsal_middle_phalanx_4_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_4").setName("l_tarsal_distal_interphalangeal_4").setCenter(0.1156725,0.009369,0.11369251)
+                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_4").setName("l_tarsal_distal_interphalangeal_4").setCenter(0.1156725,0.009369,0.11369251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_4").setName("l_tarsal_distal_phalanx_4")
                               .addChild(new Shape("l_tarsal_distal_phalanx_4_Shape")
                                 .setAppearance(new Appearance()
@@ -497,7 +497,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("l_tarsal_distal_phalanx_4_Sites")
                                 .addComments(new String[] {" ",
 "(l_tarsal_distal_phalanx_4_tip  0.142 0.011 0.178)"})))))))
-                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_5").setName("l_tarsometatarsal_5").setCenter(0.120825,0.020945251,0.03474)
+                    .addChild(new HAnimJoint("hanim_l_tarsometatarsal_5").setName("l_tarsometatarsal_5").setCenter(0.120825,0.020945251,0.03474).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_5").setName("l_metatarsal_5")
                         .addChild(new Shape("l_metatarsal_5_Shape")
                           .setAppearance(new Appearance()
@@ -509,7 +509,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("l_metatarsal_5_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_5").setName("l_metatarsophalangeal_5").setCenter(0.124065004,0.013671,0.0865575)
+                      .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_5").setName("l_metatarsophalangeal_5").setCenter(0.124065004,0.013671,0.0865575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_5").setName("l_tarsal_proximal_phalanx_5")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_5_Shape")
                             .setAppearance(new Appearance()
@@ -521,7 +521,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("l_tarsal_proximal_phalanx_5_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_5").setName("l_tarsal_proximal_interphalangeal_5").setCenter(0.1263825,0.01085625,0.09414)
+                        .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_5").setName("l_tarsal_proximal_interphalangeal_5").setCenter(0.1263825,0.01085625,0.09414).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_5").setName("l_tarsal_middle_phalanx_5")
                             .addChild(new Shape("l_tarsal_middle_phalanx_5_Shape")
                               .setAppearance(new Appearance()
@@ -533,7 +533,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("l_tarsal_middle_phalanx_5_Sites")
                               .addComments(new String[] {" ",
 "(l_metatarsal_phalanx_5  0.1825 0.0070 0.0928) "})))
-                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_5").setName("l_tarsal_distal_interphalangeal_5").setCenter(0.1272825,0.008563501,0.10188)
+                          .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_5").setName("l_tarsal_distal_interphalangeal_5").setCenter(0.1272825,0.008563501,0.10188).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_5").setName("l_tarsal_distal_phalanx_5")
                               .addChild(new Shape("l_tarsal_distal_phalanx_5_Shape")
                                 .setAppearance(new Appearance()
@@ -545,7 +545,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("l_tarsal_distal_phalanx_5_Sites")
                                 .addComments(new String[] {" ",
 " (l_tarsal_distal_phalanx_5_tip  0.154 0.010 0.168) "}))))))))))))
-          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.094657496,0.8266501,-0.018348752)
+          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.094657496,0.8266501,-0.018348752).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_r_thigh").setName("r_thigh")
               .addChild(new Shape("r_thigh_Shape")
                 .setAppearance(new Appearance()
@@ -560,7 +560,7 @@ public class JinLOA4scaled1joe06c
 "(r_femoral_lateral_epicn  -0.1421 0.4992 0.0310)",
 "(r_femoral_medial_epicn  -0.0221 0.5014 0.0289)",
 "(r_suprapatella  x y z) "})))
-            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.09261001,0.408825,-0.01943775)
+            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.09261001,0.408825,-0.01943775).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_r_calf").setName("r_calf")
                 .addChild(new Shape("r_calf_Shape")
                   .setAppearance(new Appearance()
@@ -574,7 +574,7 @@ public class JinLOA4scaled1joe06c
 "(r_tibiale  x y z) ",
 "(r_medial_malleolus  -0.0591 0.0760 -0.0928) ",
 "(r_lateral_malleolus  -0.1006 0.0658 -0.1075)"})))
-              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.088447504,0.09544501,-0.010451251)
+              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.088447504,0.09544501,-0.010451251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_r_talus").setName("r_talus")
                   .addChild(new Shape("r_talus_Shape")
                     .setAppearance(new Appearance()
@@ -587,7 +587,7 @@ public class JinLOA4scaled1joe06c
                     .addComments(new String[] {" ",
 "(r_sphyrion  -0.0603 0.0610 -0.1002) ",
 "(r_calcaneous_posterior  -0.0692 0.0297 -0.1221) "})))
-                .addChild(new HAnimJoint("hanim_r_talocalcaneonavicular").setName("r_talocalcaneonavicular").setCenter(-0.07794,0.036900003,0.0048645)
+                .addChild(new HAnimJoint("hanim_r_talocalcaneonavicular").setName("r_talocalcaneonavicular").setCenter(-0.07794,0.036900003,0.0048645).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_r_navicular").setName("r_navicular")
                     .addChild(new Shape("r_navicular_Shape")
                       .setAppearance(new Appearance()
@@ -599,7 +599,7 @@ public class JinLOA4scaled1joe06c
                     .addChild(new HAnimSite("r_navicular_Sites")
                       .addComments(new String[] {" ",
 "None"})))
-                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_1").setName("r_cuneonavicular_1").setCenter(-0.0669825,0.032107502,0.018391501)
+                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_1").setName("r_cuneonavicular_1").setCenter(-0.0669825,0.032107502,0.018391501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuneiform_1").setName("r_cuneiform_1")
                       .addChild(new Shape("r_cuneiform_1_Shape")
                         .setAppearance(new Appearance()
@@ -611,7 +611,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("r_cuneiform_1_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_1").setName("r_tarsometatarsal_1").setCenter(-0.06426,0.023242502,0.04419)
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_1").setName("r_tarsometatarsal_1").setCenter(-0.06426,0.023242502,0.04419).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_1").setName("r_metatarsal_1")
                         .addChild(new Shape("r_metatarsal_1_Shape")
                           .setAppearance(new Appearance()
@@ -623,7 +623,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("r_metatarsal_1_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_1").setName("r_metatarsophalangeal_1").setCenter(-0.0617625,0.014424751,0.0936225)
+                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_1").setName("r_metatarsophalangeal_1").setCenter(-0.0617625,0.014424751,0.0936225).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_1").setName("r_tarsal_proximal_phalanx_1")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_1_Shape")
                             .setAppearance(new Appearance()
@@ -635,7 +635,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("r_tarsal_proximal_phalanx_1_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_r_tarsal_interphalangeal_1").setName("r_tarsal_interphalangeal_1").setCenter(-0.06174,0.0121365,0.1153125)
+                        .addChild(new HAnimJoint("hanim_r_tarsal_interphalangeal_1").setName("r_tarsal_interphalangeal_1").setCenter(-0.06174,0.0121365,0.1153125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_1").setName("r_tarsal_distal_phalanx_1")
                             .addChild(new Shape("r_tarsal_distal_phalanx_1_Shape")
                               .setAppearance(new Appearance()
@@ -648,7 +648,7 @@ public class JinLOA4scaled1joe06c
                               .addComments(new String[] {" ",
 "(r_metatarsal_phalanx_1  x y z) ",
 "(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) "})))))))
-                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_2").setName("r_cuneonavicular_2").setCenter(-0.081045,0.033525,0.02142675)
+                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_2").setName("r_cuneonavicular_2").setCenter(-0.081045,0.033525,0.02142675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuneiform_2").setName("r_cuneiform_2")
                       .addChild(new Shape("r_cuneiform_2_Shape")
                         .setAppearance(new Appearance()
@@ -660,7 +660,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("r_cuneiform_2_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_tarsometatarsal_2").setCenter(-0.079830006,0.0261,0.041062504)
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_tarsometatarsal_2").setCenter(-0.079830006,0.0261,0.041062504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_2").setName("r_metatarsal_2")
                         .addChild(new Shape("r_metatarsal_2_Shape")
                           .setAppearance(new Appearance()
@@ -672,7 +672,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("r_metatarsal_2_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0821475,0.014976,0.097830005)
+                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0821475,0.014976,0.097830005).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_proximal_phalanx_2")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_2_Shape")
                             .setAppearance(new Appearance()
@@ -684,7 +684,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("r_tarsal_proximal_phalanx_2_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2").setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.083925,0.012647251,0.1140075)
+                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2").setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.083925,0.012647251,0.1140075).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_2").setName("r_tarsal_middle_phalanx_2")
                             .addChild(new Shape("r_tarsal_middle_phalanx_2_Shape")
                               .setAppearance(new Appearance()
@@ -696,7 +696,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("r_tarsal_middle_phalanx_2_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.083925,0.00982575,0.123435006)
+                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.083925,0.00982575,0.123435006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_2").setName("r_tarsal_distal_phalanx_2")
                               .addChild(new Shape("r_tarsal_distal_phalanx_2_Shape")
                                 .setAppearance(new Appearance()
@@ -708,7 +708,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("r_tarsal_distal_phalanx_2_Sites")
                                 .addComments(new String[] {" ",
 "(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19) "}))))))))
-                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_3").setName("r_cuneonavicular_3").setCenter(-0.09261001,0.03339,0.019818)
+                  .addChild(new HAnimJoint("hanim_r_cuneonavicular_3").setName("r_cuneonavicular_3").setCenter(-0.09261001,0.03339,0.019818).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuneiform_3").setName("r_cuneiform_3")
                       .addChild(new Shape("r_cuneiform_3_Shape")
                         .setAppearance(new Appearance()
@@ -720,7 +720,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("r_cuneiform_3_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_3").setName("r_tarsometatarsal_3").setCenter(-0.09423001,0.0261,0.039397504)
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_3").setName("r_tarsometatarsal_3").setCenter(-0.09423001,0.0261,0.039397504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_3").setName("r_metatarsal_3")
                         .addChild(new Shape("r_metatarsal_3_Shape")
                           .setAppearance(new Appearance()
@@ -732,7 +732,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("r_metatarsal_3_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_3").setName("r_metatarsophalangeal_3").setCenter(-0.0960975,0.015057,0.09542251)
+                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_3").setName("r_metatarsophalangeal_3").setCenter(-0.0960975,0.015057,0.09542251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_3").setName("r_tarsal_proximal_phalanx_3")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_3_Shape")
                             .setAppearance(new Appearance()
@@ -744,7 +744,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("r_tarsal_proximal_phalanx_3_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3").setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.098505,0.011922751,0.110475)
+                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3").setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.098505,0.011922751,0.110475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_3").setName("r_tarsal_middle_phalanx_3")
                             .addChild(new Shape("r_tarsal_middle_phalanx_3_Shape")
                               .setAppearance(new Appearance()
@@ -756,7 +756,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("r_tarsal_middle_phalanx_3_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3").setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.100035004,0.00982575,0.11970001)
+                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3").setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.100035004,0.00982575,0.11970001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_3").setName("r_tarsal_distal_phalanx_3")
                               .addChild(new Shape("r_tarsal_distal_phalanx_3_Shape")
                                 .setAppearance(new Appearance()
@@ -768,7 +768,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("r_tarsal_distal_phalanx_3_Sites")
                                 .addComments(new String[] {" ",
 " (r_tarsal_distal_phalanx_3_tip  -0.128 0.011 0.185)"})))))))))
-                .addChild(new HAnimJoint("hanim_r_calcaneocuboid").setName("r_calcaneocuboid").setCenter(-0.088717505,0.0579825,-0.025965001)
+                .addChild(new HAnimJoint("hanim_r_calcaneocuboid").setName("r_calcaneocuboid").setCenter(-0.088717505,0.0579825,-0.025965001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_r_calcaneus").setName("r_calcaneus")
                     .addChild(new Shape("r_calcaneus_Shape")
                       .setAppearance(new Appearance()
@@ -780,7 +780,7 @@ public class JinLOA4scaled1joe06c
                     .addChild(new HAnimSite("r_calcaneus_Sites")
                       .addComments(new String[] {" ",
 "None "})))
-                  .addChild(new HAnimJoint("hanim_r_transversetarsal").setName("r_transversetarsal").setCenter(-0.110272504,0.03528,0.002089125)
+                  .addChild(new HAnimJoint("hanim_r_transversetarsal").setName("r_transversetarsal").setCenter(-0.110272504,0.03528,0.002089125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuboid").setName("r_cuboid")
                       .addChild(new Shape("r_cuboid_Shape")
                         .setAppearance(new Appearance()
@@ -792,7 +792,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("r_cuboid_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_4").setName("r_tarsometatarsal_4").setCenter(-0.10613251,0.0245475,0.03843)
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_4").setName("r_tarsometatarsal_4").setCenter(-0.10613251,0.0245475,0.03843).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_4").setName("r_metatarsal_4")
                         .addChild(new Shape("r_metatarsal_4_Shape")
                           .setAppearance(new Appearance()
@@ -804,7 +804,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("r_metatarsal_4_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_4").setName("r_metatarsophalangeal_4").setCenter(-0.10950751,0.01435275,0.091170006)
+                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_4").setName("r_metatarsophalangeal_4").setCenter(-0.10950751,0.01435275,0.091170006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_4").setName("r_tarsal_proximal_phalanx_4")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_4_Shape")
                             .setAppearance(new Appearance()
@@ -816,7 +816,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("r_tarsal_proximal_phalanx_4_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_4").setName("r_tarsal_proximal_interphalangeal_4").setCenter(-0.11378251,0.0122445,0.1063125)
+                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_4").setName("r_tarsal_proximal_interphalangeal_4").setCenter(-0.11378251,0.0122445,0.1063125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_4").setName("r_tarsal_middle_phalanx_4")
                             .addChild(new Shape("r_tarsal_middle_phalanx_4_Shape")
                               .setAppearance(new Appearance()
@@ -828,7 +828,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("r_tarsal_middle_phalanx_4_Sites")
                               .addComments(new String[] {" ",
 "None "})))
-                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_4").setName("r_tarsal_distal_interphalangeal_4").setCenter(-0.1153125,0.009369,0.11369251)
+                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_4").setName("r_tarsal_distal_interphalangeal_4").setCenter(-0.1153125,0.009369,0.11369251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_4").setName("r_tarsal_distal_phalanx_4")
                               .addChild(new Shape("r_tarsal_distal_phalanx_4_Shape")
                                 .setAppearance(new Appearance()
@@ -840,7 +840,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("r_tarsal_distal_phalanx_4_Sites")
                                 .addComments(new String[] {" ",
 " (r_tarsal_distal_phalanx_4_tip  -0.142 0.011 0.178)  "})))))))
-                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_5").setName("r_tarsometatarsal_5").setCenter(-0.12044251,0.020945251,0.03474)
+                    .addChild(new HAnimJoint("hanim_r_tarsometatarsal_5").setName("r_tarsometatarsal_5").setCenter(-0.12044251,0.020945251,0.03474).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_5").setName("r_metatarsal_5")
                         .addChild(new Shape("r_metatarsal_5_Shape")
                           .setAppearance(new Appearance()
@@ -852,7 +852,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("r_metatarsal__Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_5").setName("r_metatarsophalangeal_5").setCenter(-0.12368251,0.013671,0.0865575)
+                      .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_5").setName("r_metatarsophalangeal_5").setCenter(-0.12368251,0.013671,0.0865575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_5").setName("r_tarsal_proximal_phalanx_5")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_5_Shape")
                             .setAppearance(new Appearance()
@@ -864,7 +864,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("r_tarsal_proximal_phalanx_5_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_5").setName("r_tarsal_proximal_interphalangeal_5").setCenter(-0.126,0.01085625,0.09414)
+                        .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_5").setName("r_tarsal_proximal_interphalangeal_5").setCenter(-0.126,0.01085625,0.09414).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_5").setName("r_tarsal_middle_phalanx_5")
                             .addChild(new Shape("r_tarsal_middle_phalanx_5_Shape")
                               .setAppearance(new Appearance()
@@ -876,7 +876,7 @@ public class JinLOA4scaled1joe06c
                             .addChild(new HAnimSite("r_tarsal_middle_phalanx_5_Sites")
                               .addComments(new String[] {" ",
 "(r_metatarsal_phalanx_5  x y z)"})))
-                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_5").setName("r_tarsal_distal_interphalangeal_5").setCenter(-0.1269225,0.008563501,0.10188)
+                          .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_5").setName("r_tarsal_distal_interphalangeal_5").setCenter(-0.1269225,0.008563501,0.10188).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_5").setName("r_tarsal_distal_phalanx_5")
                               .addChild(new Shape("r_tarsal_distal_phalanx_5_Shape")
                                 .setAppearance(new Appearance()
@@ -888,7 +888,7 @@ public class JinLOA4scaled1joe06c
                               .addChild(new HAnimSite("r_tarsal_distal_phalanx_5_Sites")
                                 .addComments(new String[] {" ",
 "(r_tarsal_distal_phalanx_5_tip  -0.154 0.010 0.168)"}))))))))))))
-          .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,0.92542505,-0.013763251)
+          .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,0.92542505,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l5").setName("l5")
               .addChild(new Shape("l5_Shape")
                 .setAppearance(new Appearance()
@@ -902,7 +902,7 @@ public class JinLOA4scaled1joe06c
 "(spine_2_lower_back  x y z)",
 "(waist_preferred_anterior  x y z)",
 "(waist_preferred_posterior  0.2900 1.0915 -0.1091) "})))
-            .addChild(new HAnimJoint("hanim_vl4").setName("vl4").setCenter(0.0,0.94972503,-0.013763251)
+            .addChild(new HAnimJoint("hanim_vl4").setName("vl4").setCenter(0.0,0.94972503,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l4").setName("l4")
                 .addChild(new Shape("l4_Shape")
                   .setAppearance(new Appearance()
@@ -914,7 +914,7 @@ public class JinLOA4scaled1joe06c
                 .addChild(new HAnimSite("l4_Sites")
                   .addComments(new String[] {" ",
 "None "})))
-              .addChild(new HAnimJoint("hanim_vl3").setName("vl3").setCenter(0.0,0.96592504,-0.013763251)
+              .addChild(new HAnimJoint("hanim_vl3").setName("vl3").setCenter(0.0,0.96592504,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_l3").setName("l3")
                   .addChild(new Shape("l3_Shape")
                     .setAppearance(new Appearance()
@@ -926,7 +926,7 @@ public class JinLOA4scaled1joe06c
                   .addChild(new HAnimSite("l3_Sites")
                     .addComments(new String[] {" ",
 "None "})))
-                .addChild(new HAnimJoint("hanim_vl2").setName("vl2").setCenter(0.0,0.98235005,-0.013763251)
+                .addChild(new HAnimJoint("hanim_vl2").setName("vl2").setCenter(0.0,0.98235005,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_l2").setName("l2")
                     .addChild(new Shape("l2_Shape")
                       .setAppearance(new Appearance()
@@ -940,7 +940,7 @@ public class JinLOA4scaled1joe06c
 "(l_rib_10  0.0871 1.1925 0.0992) ",
 "(r_rib_10  -0.0711 1.1941 0.1016)",
 "(rib_10_midspine  0.0049 1.1908 -0.1113)"})))
-                  .addChild(new HAnimJoint("hanim_vl1").setName("vl1").setCenter(0.0,0.99967504,-0.013763251)
+                  .addChild(new HAnimJoint("hanim_vl1").setName("vl1").setCenter(0.0,0.99967504,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l1").setName("l1")
                       .addChild(new Shape("l1_Shape")
                         .setAppearance(new Appearance()
@@ -952,7 +952,7 @@ public class JinLOA4scaled1joe06c
                       .addChild(new HAnimSite("l1_Sites")
                         .addComments(new String[] {" ",
 "None "})))
-                    .addChild(new HAnimJoint("hanim_vt12").setName("vt12").setCenter(0.0,1.0230751,-0.013763251)
+                    .addChild(new HAnimJoint("hanim_vt12").setName("vt12").setCenter(0.0,1.0230751,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_t12").setName("t12")
                         .addChild(new Shape("t12_Shape")
                           .setAppearance(new Appearance()
@@ -964,7 +964,7 @@ public class JinLOA4scaled1joe06c
                         .addChild(new HAnimSite("t12_Sites")
                           .addComments(new String[] {" ",
 "None "})))
-                      .addChild(new HAnimJoint("hanim_vt11").setName("vt11").setCenter(0.0,1.0467,-0.013763251)
+                      .addChild(new HAnimJoint("hanim_vt11").setName("vt11").setCenter(0.0,1.0467,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_t11").setName("t11")
                           .addChild(new Shape("t11_Shape")
                             .setAppearance(new Appearance()
@@ -976,7 +976,7 @@ public class JinLOA4scaled1joe06c
                           .addChild(new HAnimSite("t11_Sites")
                             .addComments(new String[] {" ",
 "None "})))
-                        .addChild(new HAnimJoint("hanim_vt10").setName("vt10").setCenter(0.0,1.0638,-0.013785751)
+                        .addChild(new HAnimJoint("hanim_vt10").setName("vt10").setCenter(0.0,1.0638,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_t10").setName("t10")
                             .addChild(new Shape("t10_Shape")
                               .setAppearance(new Appearance()
@@ -989,7 +989,7 @@ public class JinLOA4scaled1joe06c
                               .addComments(new String[] {" ",
 "(substernale  0.0085 1.2995 0.1147) ",
 "(mesosternale x y z) "})))
-                          .addChild(new HAnimJoint("hanim_vt9").setName("vt9").setCenter(0.0,1.078425,-0.013763251)
+                          .addChild(new HAnimJoint("hanim_vt9").setName("vt9").setCenter(0.0,1.078425,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_t9").setName("t9")
                               .addChild(new Shape("t9_Shape")
                                 .setAppearance(new Appearance()
@@ -1005,7 +1005,7 @@ public class JinLOA4scaled1joe06c
 "(rear_center_midsagittal_plane  x y z)",
 "(l_chest_midsagittal_plane  x y z)",
 "(r_chest_midsagittal_plane  x y z)  "})))
-                            .addChild(new HAnimJoint("hanim_vt8").setName("vt8").setCenter(0.0,1.0930501,-0.013763251)
+                            .addChild(new HAnimJoint("hanim_vt8").setName("vt8").setCenter(0.0,1.0930501,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                               .addChild(new HAnimSegment("hanim_t8").setName("t8")
                                 .addChild(new Shape("t8_Shape")
                                   .setAppearance(new Appearance()
@@ -1017,7 +1017,7 @@ public class JinLOA4scaled1joe06c
                                 .addChild(new HAnimSite("t8_Sites")
                                   .addComments(new String[] {" ",
 "None "})))
-                              .addChild(new HAnimJoint("hanim_vt7").setName("vt7").setCenter(0.0,1.1088,-0.013763251)
+                              .addChild(new HAnimJoint("hanim_vt7").setName("vt7").setCenter(0.0,1.1088,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_t7").setName("t7")
                                   .addChild(new Shape("t7_Shape")
                                     .setAppearance(new Appearance()
@@ -1029,7 +1029,7 @@ public class JinLOA4scaled1joe06c
                                   .addChild(new HAnimSite("t7_Sites")
                                     .addComments(new String[] {" ",
 "None "})))
-                                .addChild(new HAnimJoint("hanim_vt6").setName("vt6").setCenter(0.0,1.1216251,-0.013763251)
+                                .addChild(new HAnimJoint("hanim_vt6").setName("vt6").setCenter(0.0,1.1216251,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_t6").setName("t6")
                                     .addChild(new Shape("t6_Shape")
                                       .setAppearance(new Appearance()
@@ -1041,7 +1041,7 @@ public class JinLOA4scaled1joe06c
                                     .addChild(new HAnimSite("t6_Sites")
                                       .addComments(new String[] {" ",
 "None "})))
-                                  .addChild(new HAnimJoint("hanim_vt5").setName("vt5").setCenter(0.0,1.13715,-0.013763251)
+                                  .addChild(new HAnimJoint("hanim_vt5").setName("vt5").setCenter(0.0,1.13715,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_t5").setName("t5")
                                       .addChild(new Shape("t5_Shape")
                                         .setAppearance(new Appearance()
@@ -1053,7 +1053,7 @@ public class JinLOA4scaled1joe06c
                                       .addChild(new HAnimSite("t5_Sites")
                                         .addComments(new String[] {" ",
 "None "})))
-                                    .addChild(new HAnimJoint("hanim_vt4").setName("vt4").setCenter(0.0,1.1524501,-0.013763251)
+                                    .addChild(new HAnimJoint("hanim_vt4").setName("vt4").setCenter(0.0,1.1524501,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                       .addChild(new HAnimSegment("hanim_t4").setName("t4")
                                         .addChild(new Shape("t4_Shape")
                                           .setAppearance(new Appearance()
@@ -1065,7 +1065,7 @@ public class JinLOA4scaled1joe06c
                                         .addChild(new HAnimSite("t4_Sites")
                                           .addComments(new String[] {" ",
 "None "})))
-                                      .addChild(new HAnimJoint("hanim_vt3").setName("vt3").setCenter(0.0,1.1709001,-0.013763251)
+                                      .addChild(new HAnimJoint("hanim_vt3").setName("vt3").setCenter(0.0,1.1709001,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                         .addChild(new HAnimSegment("hanim_t3").setName("t3")
                                           .addChild(new Shape("t3_Shape")
                                             .setAppearance(new Appearance()
@@ -1077,7 +1077,7 @@ public class JinLOA4scaled1joe06c
                                           .addChild(new HAnimSite("t3_Sites")
                                             .addComments(new String[] {" ",
 "None "})))
-                                        .addChild(new HAnimJoint("hanim_vt2").setName("vt2").setCenter(0.0,1.19565,-0.013785751)
+                                        .addChild(new HAnimJoint("hanim_vt2").setName("vt2").setCenter(0.0,1.19565,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                           .addChild(new HAnimSegment("hanim_t2").setName("t2")
                                             .addChild(new Shape("t2_Shape")
                                               .setAppearance(new Appearance()
@@ -1089,7 +1089,7 @@ public class JinLOA4scaled1joe06c
                                             .addChild(new HAnimSite("t2_Sites")
                                               .addComments(new String[] {" ",
 "None "})))
-                                          .addChild(new HAnimJoint("hanim_vt1").setName("vt1").setCenter(0.0,1.2195001,-0.013763251)
+                                          .addChild(new HAnimJoint("hanim_vt1").setName("vt1").setCenter(0.0,1.2195001,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                             .addChild(new HAnimSegment("hanim_t1").setName("t1")
                                               .addChild(new Shape("t1_Shape")
                                                 .setAppearance(new Appearance()
@@ -1102,7 +1102,7 @@ public class JinLOA4scaled1joe06c
                                                 .addComments(new String[] {" ",
 "(suprasternale  0.0084 1.4714 0.0551) ",
 "(cervicale  0.0064 1.520 -0.0815) "})))
-                                            .addChild(new HAnimJoint("hanim_vc7").setName("vc7").setCenter(0.0,1.245375,-0.015063751)
+                                            .addChild(new HAnimJoint("hanim_vc7").setName("vc7").setCenter(0.0,1.245375,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                               .addChild(new HAnimSegment("hanim_c7").setName("c7")
                                                 .addChild(new Shape("c7_Shape")
                                                   .setAppearance(new Appearance()
@@ -1115,7 +1115,7 @@ public class JinLOA4scaled1joe06c
                                                   .addComments(new String[] {" ",
 "(l_neck_base  0.0646 1.5141 -0.0380)",
 "(r_neck_base  -0.0419 1.5149 -0.0220) "})))
-                                              .addChild(new HAnimJoint("hanim_vc6").setName("vc6").setCenter(0.0,1.2575251,-0.015063751)
+                                              .addChild(new HAnimJoint("hanim_vc6").setName("vc6").setCenter(0.0,1.2575251,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                 .addChild(new HAnimSegment("hanim_c6").setName("c6")
                                                   .addChild(new Shape("c6_Shape")
                                                     .setAppearance(new Appearance()
@@ -1127,7 +1127,7 @@ public class JinLOA4scaled1joe06c
                                                   .addChild(new HAnimSite("c6_Sites")
                                                     .addComments(new String[] {" ",
 "None "})))
-                                                .addChild(new HAnimJoint("hanim_vc5").setName("vc5").setCenter(0.0,1.2699,-0.015063751)
+                                                .addChild(new HAnimJoint("hanim_vc5").setName("vc5").setCenter(0.0,1.2699,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                   .addChild(new HAnimSegment("hanim_c5").setName("c5")
                                                     .addChild(new Shape("c5_Shape")
                                                       .setAppearance(new Appearance()
@@ -1139,7 +1139,7 @@ public class JinLOA4scaled1joe06c
                                                     .addChild(new HAnimSite("c5_Sites")
                                                       .addComments(new String[] {" ",
 "None "})))
-                                                  .addChild(new HAnimJoint("hanim_vc4").setName("vc4").setCenter(0.0,1.2822751,-0.015063751)
+                                                  .addChild(new HAnimJoint("hanim_vc4").setName("vc4").setCenter(0.0,1.2822751,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                     .addChild(new HAnimSegment("hanim_c4").setName("c4")
                                                       .addChild(new Shape("c4_Shape")
                                                         .setAppearance(new Appearance()
@@ -1151,7 +1151,7 @@ public class JinLOA4scaled1joe06c
                                                       .addChild(new HAnimSite("c4_Sites")
                                                         .addComments(new String[] {" ",
 "None "})))
-                                                    .addChild(new HAnimJoint("hanim_vc3").setName("vc3").setCenter(0.0,1.2951001,-0.015063751)
+                                                    .addChild(new HAnimJoint("hanim_vc3").setName("vc3").setCenter(0.0,1.2951001,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                       .addChild(new HAnimSegment("hanim_c3").setName("c3")
                                                         .addChild(new Shape("c3_Shape")
                                                           .setAppearance(new Appearance()
@@ -1163,7 +1163,7 @@ public class JinLOA4scaled1joe06c
                                                         .addChild(new HAnimSite("c3_Sites")
                                                           .addComments(new String[] {" ",
 "None "})))
-                                                      .addChild(new HAnimJoint("hanim_vc2").setName("vc2").setCenter(0.0,1.3068001,-0.015063751)
+                                                      .addChild(new HAnimJoint("hanim_vc2").setName("vc2").setCenter(0.0,1.3068001,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_c2").setName("c2")
                                                           .addChild(new Shape("c2_Shape")
                                                             .setAppearance(new Appearance()
@@ -1175,7 +1175,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("c2_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_vc1").setName("vc1").setCenter(0.0,1.3185,-0.015063751)
+                                                        .addChild(new HAnimJoint("hanim_vc1").setName("vc1").setCenter(0.0,1.3185,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_c1").setName("c1")
                                                             .addChild(new Shape("c1_Shape")
                                                               .setAppearance(new Appearance()
@@ -1187,7 +1187,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("c1_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,1.3126501,-0.01544175)
+                                                          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,1.3126501,-0.01544175).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_skull").setName("skull")
                                                               .addChild(new Shape("skull_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1209,7 +1209,7 @@ public class JinLOA4scaled1joe06c
 "(glabella  x y z)",
 "(l_ectocanthus  x y z)",
 "(r_ectocanthus  x y z)  "})))
-                                                            .addChild(new HAnimJoint("hanim_l_eyelid_joint").setName("l_eyelid_joint").setCenter(0.0505125,1.42425,0.03294)
+                                                            .addChild(new HAnimJoint("hanim_l_eyelid_joint").setName("l_eyelid_joint").setCenter(0.0505125,1.42425,0.03294).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_eyelid").setName("l_eyelid")
                                                                 .addChild(new Shape("l_eyelid_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1221,7 +1221,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_eyelid_Sites")
                                                                   .addComments(new String[] {" ",
 "(l_eyelid_tip  x y z)  "}))))
-                                                            .addChild(new HAnimJoint("hanim_r_eyelid_joint").setName("r_eyelid_joint").setCenter(-0.0505125,1.42425,0.03294)
+                                                            .addChild(new HAnimJoint("hanim_r_eyelid_joint").setName("r_eyelid_joint").setCenter(-0.0505125,1.42425,0.03294).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyelid").setName("r_eyelid")
                                                                 .addChild(new Shape("r_eyelid_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1233,7 +1233,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_eyelid_Sites")
                                                                   .addComments(new String[] {" ",
 "(r_eyelid_tip  x y z) "}))))
-                                                            .addChild(new HAnimJoint("hanim_l_eyeball_joint").setName("l_eyeball_joint").setCenter(0.048127502,1.4049001,0.0830475)
+                                                            .addChild(new HAnimJoint("hanim_l_eyeball_joint").setName("l_eyeball_joint").setCenter(0.048127502,1.4049001,0.0830475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_eyeball").setName("l_eyeball")
                                                                 .addChild(new Shape("l_eyeball_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1245,7 +1245,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_eyeball_Sites")
                                                                   .addComments(new String[] {" ",
 "(l_eyeball_tip  x y z) "}))))
-                                                            .addChild(new HAnimJoint("hanim_r_eyeball_joint").setName("r_eyeball_joint").setCenter(-0.048127502,1.4049001,0.0830475)
+                                                            .addChild(new HAnimJoint("hanim_r_eyeball_joint").setName("r_eyeball_joint").setCenter(-0.048127502,1.4049001,0.0830475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyeball").setName("r_eyeball")
                                                                 .addChild(new Shape("r_eyeball_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1257,7 +1257,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_eyeball_Sites")
                                                                   .addComments(new String[] {" ",
 "(r_eyeball_tip  x y z)"}))))
-                                                            .addChild(new HAnimJoint("hanim_l_eyebrow_joint").setName("l_eyebrow_joint").setCenter(0.021748502,1.4139,0.1069425)
+                                                            .addChild(new HAnimJoint("hanim_l_eyebrow_joint").setName("l_eyebrow_joint").setCenter(0.021748502,1.4139,0.1069425).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_eyebrow").setName("l_eyebrow")
                                                                 .addChild(new Shape("l_eyebrow_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1269,7 +1269,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_eyebrow_Sites")
                                                                   .addComments(new String[] {" ",
 "(l_eyebrow_tip  x y z) "}))))
-                                                            .addChild(new HAnimJoint("hanim_r_eyebrow_joint").setName("r_eyebrow_joint").setCenter(-0.021748502,1.4139,0.1069425)
+                                                            .addChild(new HAnimJoint("hanim_r_eyebrow_joint").setName("r_eyebrow_joint").setCenter(-0.021748502,1.4139,0.1069425).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyebrow").setName("r_eyebrow")
                                                                 .addChild(new Shape("r_eyebrow_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1281,7 +1281,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_eyebrow_Sites")
                                                                   .addComments(new String[] {" ",
 "(r_eyebrow_tip  x y z)"}))))
-                                                            .addChild(new HAnimJoint("hanim_temporomandibular").setName("temporomandibular").setCenter(0.0,1.312875,0.015378751)
+                                                            .addChild(new HAnimJoint("hanim_temporomandibular").setName("temporomandibular").setCenter(0.0,1.312875,0.015378751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_jaw").setName("jaw")
                                                                 .addChild(new Shape("jaw_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1296,7 +1296,7 @@ public class JinLOA4scaled1joe06c
 "(l_gonion  0.0631 1.5530 0.0330)",
 "(supramenton  0.0061 1.5410 0.0805) ",
 "(menton  x y z)  "}))))))))))))
-                                            .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_sternoclavicular").setCenter(0.038475003,1.2087001,-0.013785751)
+                                            .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_sternoclavicular").setCenter(0.038475003,1.2087001,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                               .addChild(new HAnimSegment("hanim_l_clavicle").setName("l_clavicle")
                                                 .addChild(new Shape("l_clavicle_Shape")
                                                   .setAppearance(new Appearance()
@@ -1308,7 +1308,7 @@ public class JinLOA4scaled1joe06c
                                                 .addChild(new HAnimSite("l_clavicle_Sites")
                                                   .addComments(new String[] {" ",
 "(l_clavicale  0.0271 1.4943 0.0394)  "})))
-                                              .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_acromioclavicular").setCenter(0.12294001,1.191825,-0.012897001)
+                                              .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_acromioclavicular").setCenter(0.12294001,1.191825,-0.012897001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                 .addChild(new HAnimSegment("hanim_l_scapula").setName("l_scapula")
                                                   .addChild(new Shape("l_scapula_Shape")
                                                     .setAppearance(new Appearance()
@@ -1323,7 +1323,7 @@ public class JinLOA4scaled1joe06c
 "(l_axilla_proximal  0.1777 1.4065 -0.0075) ",
 "(l_axilla_distal  0.1706 1.4072 -0.0875)  ",
 "(l_axilla_posterior_folds  x y z)"})))
-                                                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.16506,1.1785501,-0.0032670002)
+                                                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.16506,1.1785501,-0.0032670002).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                   .addChild(new HAnimSegment("hanim_l_upperarm").setName("l_upperarm")
                                                     .addChild(new Shape("l_upperarm_Shape")
                                                       .setAppearance(new Appearance()
@@ -1338,7 +1338,7 @@ public class JinLOA4scaled1joe06c
 "(l_humeral_medial_epicondyles  0.1735 1.1272 -0.1113) ",
 "(l_radiale  0.2182 1.1212 -0.1167) ",
 "(l_bideltoid  x y z) "})))
-                                                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.18209252,0.9288,-0.0056295004)
+                                                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.18209252,0.9288,-0.0056295004).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                     .addChild(new HAnimSegment("hanim_l_forearm").setName("l_forearm")
                                                       .addChild(new Shape("l_forearm_Shape")
                                                         .setAppearance(new Appearance()
@@ -1351,7 +1351,7 @@ public class JinLOA4scaled1joe06c
                                                         .addComments(new String[] {" ",
 "(l_radial_styloid  0.1901 0.8645 -0.0415) ",
 "(l_olecranon  -0.1962 1.1375 -0.1123)"})))
-                                                    .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.18193501,0.724275,-0.00502425)
+                                                    .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.18193501,0.724275,-0.00502425).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                       .addChild(new HAnimSegment("hanim_l_carpal").setName("l_carpal")
                                                         .addChild(new Shape("l_carpal_Shape")
                                                           .setAppearance(new Appearance()
@@ -1363,7 +1363,7 @@ public class JinLOA4scaled1joe06c
                                                         .addChild(new HAnimSite("l_carpal_Sites")
                                                           .addComments(new String[] {" ",
 "(l_ulnar_styloid  -0.2142 0.8529 -0.0648)  "})))
-                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_1").setName("l_midcarpal_1").setCenter(0.1812825,0.70605004,0.0193275)
+                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_1").setName("l_midcarpal_1").setCenter(0.1812825,0.70605004,0.0193275).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_l_trapezium").setName("l_trapezium")
                                                           .addChild(new Shape("l_trapezium_Shape")
                                                             .setAppearance(new Appearance()
@@ -1375,7 +1375,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("l_trapezium_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.18049501,0.69255006,0.0259875)
+                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.18049501,0.69255006,0.0259875).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_1").setName("l_metacarpal_1")
                                                             .addChild(new Shape("l_metacarpal_1_Shape")
                                                               .setAppearance(new Appearance()
@@ -1387,7 +1387,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("l_metacarpal_1_Sites")
                                                               .addComments(new String[] {" ",
 "(l_metacarpal_phalanx_2  0.2009 0.8139 -0.0237)  "})))
-                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_metacarpophalangeal_1").setCenter(0.181035,0.67275,0.035775002)
+                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_metacarpophalangeal_1").setCenter(0.181035,0.67275,0.035775002).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_1").setName("l_carpal_proximal_phalanx_1")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_1_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1399,7 +1399,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("l_carpal_proximal_phalanx_1_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_l_carpal_interphalangeal_1").setName("l_carpal_interphalangeal_1").setCenter(0.182655,0.654075,0.0496575)
+                                                            .addChild(new HAnimJoint("hanim_l_carpal_interphalangeal_1").setName("l_carpal_interphalangeal_1").setCenter(0.182655,0.654075,0.0496575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_1").setName("l_carpal_distal_phalanx_1")
                                                                 .addChild(new Shape("l_carpal_distal_phalanx_1_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1411,7 +1411,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_carpal_distal_phalanx_1_Sites")
                                                                   .addComments(new String[] {" ",
 "(l_carpal_distal_phalanx_1_tip  0.1982 0.8061 0.0759)"})))))))
-                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_2").setName("l_midcarpal_2").setCenter(0.1812825,0.70695,0.008417251)
+                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_2").setName("l_midcarpal_2").setCenter(0.1812825,0.70695,0.008417251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_l_trapezoid").setName("l_trapezoid")
                                                           .addChild(new Shape("l_trapezoid_Shape")
                                                             .setAppearance(new Appearance()
@@ -1423,7 +1423,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("l_trapezoid_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1812825,0.6876,0.009729)
+                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1812825,0.6876,0.009729).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_2").setName("l_metacarpal_2")
                                                             .addChild(new Shape("l_metacarpal_2_Shape")
                                                               .setAppearance(new Appearance()
@@ -1435,7 +1435,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("l_metacarpal_2_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_metacarpophalangeal_2").setCenter(0.18373501,0.6372,0.015075001)
+                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_metacarpophalangeal_2").setCenter(0.18373501,0.6372,0.015075001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_2").setName("l_carpal_proximal_phalanx_2")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_2_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1447,7 +1447,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("l_carpal_proximal_phalanx_2_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setCenter(0.18171,0.606825,0.014184001)
+                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setCenter(0.18171,0.606825,0.014184001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_2").setName("l_carpal_middle_phalanx_2")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_2_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1459,7 +1459,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_carpal_middle_phalanx_2_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setCenter(0.180675,0.58162504,0.013385251)
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setCenter(0.180675,0.58162504,0.013385251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_2").setName("l_carpal_distal_phalanx_2")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_2_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1471,7 +1471,7 @@ public class JinLOA4scaled1joe06c
                                                                   .addChild(new HAnimSite("l_carpal_distal_phalanx_2_Sites")
                                                                     .addComments(new String[] {" ",
 "(l_carpal_distal_phalanx_2_tip  0.2089 0.6858 -0.0245)  "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_3").setName("l_midcarpal_3").setCenter(0.18108001,0.708525,-0.0047970004)
+                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_3").setName("l_midcarpal_3").setCenter(0.18108001,0.708525,-0.0047970004).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_l_capitate").setName("l_capitate")
                                                           .addChild(new Shape("l_capitate_Shape")
                                                             .setAppearance(new Appearance()
@@ -1483,7 +1483,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("l_capitate_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_carpometacarpal_3").setCenter(0.18108001,0.6858,-0.0062527503)
+                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_carpometacarpal_3").setCenter(0.18108001,0.6858,-0.0062527503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_3").setName("l_metacarpal_3")
                                                             .addChild(new Shape("l_metacarpal_3_Shape")
                                                               .setAppearance(new Appearance()
@@ -1495,7 +1495,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("l_metacarpal_3_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_metacarpophalangeal_3").setCenter(0.18369,0.63495,-0.00391725)
+                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_metacarpophalangeal_3").setCenter(0.18369,0.63495,-0.00391725).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_3").setName("l_carpal_proximal_phalanx_3")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_3_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1507,7 +1507,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("l_carpal_proximal_phalanx_3_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setCenter(0.18171,0.603225,-0.003537)
+                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setCenter(0.18171,0.603225,-0.003537).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_3").setName("l_carpal_middle_phalanx_3")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_3_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1519,7 +1519,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_carpal_middle_phalanx_3_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setCenter(0.180675,0.575325,-0.0037597502)
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setCenter(0.180675,0.575325,-0.0037597502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_3").setName("l_carpal_distal_phalanx_3")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_3_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1532,7 +1532,7 @@ public class JinLOA4scaled1joe06c
                                                                     .addComments(new String[] {" ",
 "(l_dactylion  0.2056 0.6743 -0.0482)",
 "(l_carpal_distal_phalanx_3_tip  0.2080 0.6731 -0.0491)  "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_4_5").setName("l_midcarpal_4_5").setCenter(0.18108001,0.70582503,-0.025740001)
+                                                      .addChild(new HAnimJoint("hanim_l_midcarpal_4_5").setName("l_midcarpal_4_5").setCenter(0.18108001,0.70582503,-0.025740001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_l_hamate").setName("l_hamate")
                                                           .addChild(new Shape("l_hamate_Shape")
                                                             .setAppearance(new Appearance()
@@ -1544,7 +1544,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("l_hamate_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_carpometacarpal_4").setCenter(0.18108001,0.68625003,-0.01991925)
+                                                        .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_carpometacarpal_4").setCenter(0.18108001,0.68625003,-0.01991925).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_4").setName("l_metacarpal_4")
                                                             .addChild(new Shape("l_metacarpal_4_Shape")
                                                               .setAppearance(new Appearance()
@@ -1556,7 +1556,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("l_metacarpal_4_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_metacarpophalangeal_4").setCenter(0.18369,0.63405,-0.02144025)
+                                                          .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_metacarpophalangeal_4").setCenter(0.18369,0.63405,-0.02144025).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_4").setName("l_carpal_proximal_phalanx_4")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_4_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1568,7 +1568,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("l_carpal_proximal_phalanx_4_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setCenter(0.18171,0.6066,-0.020646)
+                                                            .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setCenter(0.18171,0.6066,-0.020646).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_4").setName("l_carpal_middle_phalanx_4")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_4_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1580,7 +1580,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_carpal_middle_phalanx_4_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setCenter(0.180675,0.580725,-0.019777501)
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setCenter(0.180675,0.580725,-0.019777501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_4").setName("l_carpal_distal_phalanx_4")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_4_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1592,7 +1592,7 @@ public class JinLOA4scaled1joe06c
                                                                   .addChild(new HAnimSite("l_carpal_distal_phalanx_4_Sites")
                                                                     .addComments(new String[] {" ",
 "(l_carpal_distal_phalanx_4_tip  0.2035 0.6750 -0.0756) "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_carpometacarpal_5").setCenter(0.1816425,0.68827504,-0.032782502)
+                                                      .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_carpometacarpal_5").setCenter(0.1816425,0.68827504,-0.032782502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_l_metacarpal_5").setName("l_metacarpal_5")
                                                           .addChild(new Shape("l_metacarpal_5_Shape")
                                                             .setAppearance(new Appearance()
@@ -1604,7 +1604,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("l_metacarpal_5_Sites")
                                                             .addComments(new String[] {" ",
 "(l_metacarpal_phalanx_5  0.1929 0.7860 -0.1122)"})))
-                                                        .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_metacarpophalangeal_5").setCenter(0.18333,0.6381,-0.0370575)
+                                                        .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_metacarpophalangeal_5").setCenter(0.18333,0.6381,-0.0370575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_5").setName("l_carpal_proximal_phalanx_5")
                                                             .addChild(new Shape("l_carpal_proximal_phalanx_5_Shape")
                                                               .setAppearance(new Appearance()
@@ -1616,7 +1616,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("l_carpal_proximal_phalanx_5_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setCenter(0.18166502,0.62100005,-0.037147503)
+                                                          .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setCenter(0.18166502,0.62100005,-0.037147503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_5").setName("l_carpal_middle_phalanx_5")
                                                               .addChild(new Shape("l_carpal_middle_phalanx_5_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1628,7 +1628,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("l_carpal_middle_phalanx_5_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setCenter(0.18081002,0.602325,-0.0369675)
+                                                            .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setCenter(0.18081002,0.602325,-0.0369675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_5").setName("l_carpal_distal_phalanx_5")
                                                                 .addChild(new Shape("l_carpal_distal_phalanx_5_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1640,7 +1640,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("l_carpal_distal_phalanx_5_Sites")
                                                                   .addComments(new String[] {" ",
 "(l_carpal_distal_phalanx_5_tip  0.2014 0.7009 -0.1012)"}))))))))))))
-                                            .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_sternoclavicular").setCenter(-0.038475003,1.2087001,-0.013785751)
+                                            .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_sternoclavicular").setCenter(-0.038475003,1.2087001,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                               .addChild(new HAnimSegment("hanim_r_clavicle").setName("r_clavicle")
                                                 .addChild(new Shape("r_clavicle_Shape")
                                                   .setAppearance(new Appearance()
@@ -1652,7 +1652,7 @@ public class JinLOA4scaled1joe06c
                                                 .addChild(new HAnimSite("r_clavicle_Sites")
                                                   .addComments(new String[] {" ",
 "(r_clavicale  -0.0115 1.4943 0.0400) "})))
-                                              .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_acromioclavicular").setCenter(-0.12294001,1.191825,-0.012897001)
+                                              .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_acromioclavicular").setCenter(-0.12294001,1.191825,-0.012897001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                 .addChild(new HAnimSegment("hanim_r_scapula").setName("r_scapula")
                                                   .addChild(new Shape("r_scapula_Shape")
                                                     .setAppearance(new Appearance()
@@ -1667,7 +1667,7 @@ public class JinLOA4scaled1joe06c
 "(r_axilla_proximal  -0.1626 1.4072 -0.0031) ",
 "(r_axilla_distal  -0.1603 1.4098 -0.0826) ",
 "(r_axilla_posterior_folds  x y z) "})))
-                                                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.16470002,1.1785501,-0.0032670002)
+                                                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.16470002,1.1785501,-0.0032670002).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                   .addChild(new HAnimSegment("hanim_r_upperarm").setName("r_upperarm")
                                                     .addChild(new Shape("r_upperarm_Shape")
                                                       .setAppearance(new Appearance()
@@ -1682,7 +1682,7 @@ public class JinLOA4scaled1joe06c
 "(r_humeral_medial_epicondyles  -0.1680 1.1298 -0.1062)",
 "(r_radiale  -0.2130 1.1305 -0.1091)",
 "(r_bideltoid  x y z) "})))
-                                                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1817325,0.9288,-0.0056295004)
+                                                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1817325,0.9288,-0.0056295004).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                     .addChild(new HAnimSegment("hanim_r_forearm").setName("r_forearm")
                                                       .addChild(new Shape("r_forearm_Shape")
                                                         .setAppearance(new Appearance()
@@ -1695,7 +1695,7 @@ public class JinLOA4scaled1joe06c
                                                         .addComments(new String[] {" ",
 "(r_radial_styloid  -0.1884 0.8676 -0.0360) ",
 "(r_olecranon  -0.1907 1.1405 -0.1065)"})))
-                                                    .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.181575,0.724275,-0.005022)
+                                                    .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.181575,0.724275,-0.005022).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                       .addChild(new HAnimSegment("hanim_r_carpal").setName("r_carpal")
                                                         .addChild(new Shape("r_carpal_Shape")
                                                           .setAppearance(new Appearance()
@@ -1707,7 +1707,7 @@ public class JinLOA4scaled1joe06c
                                                         .addChild(new HAnimSite("r_carpal_Sites")
                                                           .addComments(new String[] {" ",
 "(r_ulnar_styloid  -0.2117 0.8562 -0.0584) "})))
-                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_1").setName("r_midcarpal_1").setCenter(-0.18096751,0.70605004,0.0193275)
+                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_1").setName("r_midcarpal_1").setCenter(-0.18096751,0.70605004,0.0193275).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_r_trapezium").setName("r_trapezium")
                                                           .addChild(new Shape("r_trapezium_Shape")
                                                             .setAppearance(new Appearance()
@@ -1719,7 +1719,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("r_trapezium_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_carpometacarpal_1").setCenter(-0.180135,0.69255006,0.0259875)
+                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_carpometacarpal_1").setCenter(-0.180135,0.69255006,0.0259875).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_1").setName("r_metacarpal_1")
                                                             .addChild(new Shape("r_metacarpal_1_Shape")
                                                               .setAppearance(new Appearance()
@@ -1731,7 +1731,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("r_metacarpal_1_Sites")
                                                               .addComments(new String[] {" ",
 "(r_metacarpal_phalanx_2  -0.1977 0.8169 -0.0177)"})))
-                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_metacarpophalangeal_1").setCenter(-0.18065251,0.67275,0.035775002)
+                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_metacarpophalangeal_1").setCenter(-0.18065251,0.67275,0.035775002).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_1").setName("r_carpal_proximal_phalanx_1")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_1_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1743,7 +1743,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("r_carpal_proximal_phalanx_1_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-0.18227251,0.654075,0.0496575)
+                                                            .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-0.18227251,0.654075,0.0496575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_1").setName("r_carpal_distal_phalanx_1")
                                                                 .addChild(new Shape("r_carpal_distal_phalanx_1_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1755,7 +1755,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_carpal_distal_phalanx_1_Sites")
                                                                   .addComments(new String[] {" ",
 "(r_carpal_distal_phalanx_1_tip  -0.1869 0.8090 0.0820)"})))))))
-                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_2").setName("r_midcarpal_2").setCenter(-0.18096751,0.70695,0.008417251)
+                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_2").setName("r_midcarpal_2").setCenter(-0.18096751,0.70695,0.008417251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_r_trapezoid").setName("r_trapezoid")
                                                           .addChild(new Shape("r_trapezoid_Shape")
                                                             .setAppearance(new Appearance()
@@ -1767,7 +1767,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("r_trapezoid_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_carpometacarpal_2").setCenter(-0.18090001,0.6876,0.009729)
+                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_carpometacarpal_2").setCenter(-0.18090001,0.6876,0.009729).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_2").setName("r_metacarpal_2")
                                                             .addChild(new Shape("r_metacarpal_2_Shape")
                                                               .setAppearance(new Appearance()
@@ -1779,7 +1779,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("r_metacarpal_2_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_metacarpophalangeal_2").setCenter(-0.18335252,0.6372,0.015075001)
+                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_metacarpophalangeal_2").setCenter(-0.18335252,0.6372,0.015075001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_2").setName("r_carpal_proximal_phalanx_2")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_2_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1791,7 +1791,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("r_carpal_proximal_phalanx_2_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setCenter(-0.1813275,0.606825,0.014184001)
+                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setCenter(-0.1813275,0.606825,0.014184001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_2").setName("r_carpal_middle_phalanx_2")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_2_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1803,7 +1803,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_carpal_middle_phalanx_2_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setCenter(-0.1802925,0.58162504,0.013385251)
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setCenter(-0.1802925,0.58162504,0.013385251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_2").setName("r_carpal_distal_phalanx_2")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_2_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1815,7 +1815,7 @@ public class JinLOA4scaled1joe06c
                                                                   .addChild(new HAnimSite("r_carpal_distal_phalanx_2_Sites")
                                                                     .addComments(new String[] {" ",
 "(r_carpal_distal_phalanx_2_tip  -0.1980 0.6883 -0.0180) "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_3").setName("r_midcarpal_3").setCenter(-0.18072,0.708525,-0.0047970004)
+                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_3").setName("r_midcarpal_3").setCenter(-0.18072,0.708525,-0.0047970004).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_r_capitate").setName("r_capitate")
                                                           .addChild(new Shape("r_capitate_Shape")
                                                             .setAppearance(new Appearance()
@@ -1827,7 +1827,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("r_capitate_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_carpometacarpal_3").setCenter(-0.18072,0.6858,-0.0062527503)
+                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_carpometacarpal_3").setCenter(-0.18072,0.6858,-0.0062527503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_3").setName("r_metacarpal_3")
                                                             .addChild(new Shape("r_metacarpal_3_Shape")
                                                               .setAppearance(new Appearance()
@@ -1839,7 +1839,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("r_metacarpal_3_Sites")
                                                               .addComments(new String[] {" ",
 "(r_metacarpal_phalanx_3  x y z) "})))
-                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_metacarpophalangeal_3").setCenter(-0.18330751,0.63495,-0.00391725)
+                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_metacarpophalangeal_3").setCenter(-0.18330751,0.63495,-0.00391725).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_3").setName("r_carpal_proximal_phalanx_3")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_3_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1851,7 +1851,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("r_carpal_proximal_phalanx_3_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setCenter(-0.1813275,0.603225,-0.003537)
+                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setCenter(-0.1813275,0.603225,-0.003537).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_3").setName("r_carpal_middle_phalanx_3")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_3_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1863,7 +1863,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_carpal_middle_phalanx_3_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setCenter(-0.1802925,0.575325,-0.0037597502)
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setCenter(-0.1802925,0.575325,-0.0037597502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_3").setName("r_carpal_distal_phalanx_3")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_3_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1876,7 +1876,7 @@ public class JinLOA4scaled1joe06c
                                                                     .addComments(new String[] {" ",
 "(r_carpal_distal_phalanx_3_tip  -0.1969 0.6758 -0.0427) ",
 "(r_dactylion  -0.1941 0.6772 -0.0423 "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_4_5").setName("r_midcarpal_4_5").setCenter(-0.18072,0.70582503,-0.025740001)
+                                                      .addChild(new HAnimJoint("hanim_r_midcarpal_4_5").setName("r_midcarpal_4_5").setCenter(-0.18072,0.70582503,-0.025740001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_r_hamate").setName("r_hamate")
                                                           .addChild(new Shape("r_hamate_Shape")
                                                             .setAppearance(new Appearance()
@@ -1888,7 +1888,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("r_hamate_Sites")
                                                             .addComments(new String[] {" ",
 "None "})))
-                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_carpometacarpal_4").setCenter(-0.18072,0.68625003,-0.01991925)
+                                                        .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_carpometacarpal_4").setCenter(-0.18072,0.68625003,-0.01991925).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_4").setName("r_metacarpal_4")
                                                             .addChild(new Shape("r_metacarpal_4_Shape")
                                                               .setAppearance(new Appearance()
@@ -1900,7 +1900,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("r_metacarpal_4_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_metacarpophalangeal_4").setCenter(-0.18330751,0.63405,-0.02144025)
+                                                          .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_metacarpophalangeal_4").setCenter(-0.18330751,0.63405,-0.02144025).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_4").setName("r_carpal_proximal_phalanx_4")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_4_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1912,7 +1912,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("r_carpal_proximal_phalanx_4_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setCenter(-0.1813275,0.6066,-0.020646)
+                                                            .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setCenter(-0.1813275,0.6066,-0.020646).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_4").setName("r_carpal_middle_phalanx_4")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_4_Shape")
                                                                   .setAppearance(new Appearance()
@@ -1924,7 +1924,7 @@ public class JinLOA4scaled1joe06c
                                                                 .addChild(new HAnimSite("r_carpal_middle_phalanx_4_Sites")
                                                                   .addComments(new String[] {" ",
 "None "})))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setCenter(-0.1802925,0.580725,-0.019777501)
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setCenter(-0.1802925,0.580725,-0.019777501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_4").setName("r_carpal_distal_phalanx_4")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_4_Shape")
                                                                     .setAppearance(new Appearance()
@@ -1936,7 +1936,7 @@ public class JinLOA4scaled1joe06c
                                                                   .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_4_Sites")
                                                                     .addComments(new String[] {" ",
 "(r_carpal_distal_phalanx_4_tip  -0.1934 0.6778 -0.0693)  "}))))))))
-                                                      .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_carpometacarpal_5").setCenter(-0.18126,0.68827504,-0.032782502)
+                                                      .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_carpometacarpal_5").setCenter(-0.18126,0.68827504,-0.032782502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_r_metacarpal_5").setName("r_metacarpal_5")
                                                           .addChild(new Shape("r_metacarpal_5_Shape")
                                                             .setAppearance(new Appearance()
@@ -1948,7 +1948,7 @@ public class JinLOA4scaled1joe06c
                                                           .addChild(new HAnimSite("r_metacarpal_5_Sites")
                                                             .addComments(new String[] {" ",
 "(r_metacarpal_phalanx_5  -0.1929 0.7890 -0.1064)  "})))
-                                                        .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_metacarpophalangeal_5").setCenter(-0.18297,0.6381,-0.0370575)
+                                                        .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_metacarpophalangeal_5").setCenter(-0.18297,0.6381,-0.0370575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_5").setName("r_carpal_proximal_phalanx_5")
                                                             .addChild(new Shape("r_carpal_proximal_phalanx_5_Shape")
                                                               .setAppearance(new Appearance()
@@ -1960,7 +1960,7 @@ public class JinLOA4scaled1joe06c
                                                             .addChild(new HAnimSite("r_carpal_proximal_phalanx_5_Sites")
                                                               .addComments(new String[] {" ",
 "None "})))
-                                                          .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setCenter(-0.18130499,0.62100005,-0.037147503)
+                                                          .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setCenter(-0.18130499,0.62100005,-0.037147503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_5").setName("r_carpal_middle_phalanx_5")
                                                               .addChild(new Shape("r_carpal_middle_phalanx_5_Shape")
                                                                 .setAppearance(new Appearance()
@@ -1972,7 +1972,7 @@ public class JinLOA4scaled1joe06c
                                                               .addChild(new HAnimSite("r_carpal_middle_phalanx_5_Sites")
                                                                 .addComments(new String[] {" ",
 "None "})))
-                                                            .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setCenter(-0.18045002,0.602325,-0.0369675)
+                                                            .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setCenter(-0.18045002,0.602325,-0.0369675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_5").setName("r_carpal_distal_phalanx_5")
                                                                 .addChild(new Shape("r_carpal_distal_phalanx_5_Shape")
                                                                   .setAppearance(new Appearance()
@@ -6303,7 +6303,7 @@ public class JinLOA4scaled1joe06c
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JinLOA4scaled1joe06c model
+	 * @return JinLOA4Scaled1joe6b model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -6322,7 +6322,7 @@ public class JinLOA4scaled1joe06c
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new JinLOA4scaled1joe06c().getX3dModel();
+        X3D thisExampleX3dModel = new JinLOA4Scaled1joe6b().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -6355,7 +6355,7 @@ public class JinLOA4scaled1joe06c
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JinLOA4scaled1joe06c\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JinLOA4Scaled1joe6b\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -6364,10 +6364,19 @@ public class JinLOA4scaled1joe06c
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.JinLOA4scaled1joe06c self-validation test results: ");
+                System.out.print("net.x3djsonld.data.JinLOA4Scaled1joe6b self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./JinLOA4Scaled1joe6b_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JinLOA4Scaled1joe6b_JavaExport.x3d"; 
+                String filenameX3DV = "./JinLOA4Scaled1joe6b_JavaExport.x3dv"; 
+                String filenameJSON = "./JinLOA4Scaled1joe6b_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

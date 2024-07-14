@@ -141,24 +141,24 @@ public class Humanoid1NoSegSite
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})))))
-          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}))))))
-        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}))
-          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}))))
-          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0})
-              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}))))))
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
+        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))
+          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
       .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
       .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
@@ -389,6 +389,15 @@ public class Humanoid1NoSegSite
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./Humanoid1NoSegSite_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./Humanoid1NoSegSite_JavaExport.x3d"; 
+                String filenameX3DV = "./Humanoid1NoSegSite_JavaExport.x3dv"; 
+                String filenameJSON = "./Humanoid1NoSegSite_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

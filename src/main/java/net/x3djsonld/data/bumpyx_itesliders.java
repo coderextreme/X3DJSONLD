@@ -178,7 +178,7 @@ public class bumpyx_itesliders
     .addComments(" LayerSet with two layers, navigation happens in layer 1 ")
     .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new int[] {1,2})
       .addComments(" the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\" ")
-      .addLayers(new Layer()
+      .addLayers(new Layer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" basic nodes, which might be present in any scene ")
         .addChild(new NavigationInfo().setAvatarSize(new double[] {0.25,1.75,0.75}).setType("\"EXAMINE\""))
         .addChild(new DirectionalLight().setAmbientIntensity(.2).setDirection(0.0,-1.0,-0.0))
@@ -265,7 +265,7 @@ public class bumpyx_itesliders
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("removedEntities").setToNode("AvatarHolder").setToField("removeChildren")))
       .addComments(new String[] {" the second layer contains the sliders that are moved with the user's display",
 "         like a HUD (heads up display) "})
-      .addLayers(new LayoutLayer()
+      .addLayers(new LayoutLayer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" positioning the LayoutLayer ")
         .setLayout(new Layout().setAlign(new String[] {"RIGHT","BOTTOM"}).setOffset(new double[] {0.0,0.2}).setOffsetUnits(new String[] {"WORLD","WORLD"}).setScaleMode(new String[] {"NONE","NONE"}).setSize(new double[] {0.4,0.6}).setSizeUnits(new String[] {"WORLD","WORLD"}))
         .addComments(" clipping the LayoutLayer ")
@@ -522,6 +522,15 @@ ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./bumpyx_itesliders_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./bumpyx_itesliders_JavaExport.x3d"; 
+                String filenameX3DV = "./bumpyx_itesliders_JavaExport.x3dv"; 
+                String filenameJSON = "./bumpyx_itesliders_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

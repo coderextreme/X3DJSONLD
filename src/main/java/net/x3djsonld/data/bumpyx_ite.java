@@ -207,6 +207,15 @@ public class bumpyx_ite
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./bumpyx_ite_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./bumpyx_ite_JavaExport.x3d"; 
+                String filenameX3DV = "./bumpyx_ite_JavaExport.x3dv"; 
+                String filenameJSON = "./bumpyx_ite_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

@@ -70,7 +70,7 @@ newModel=X3D(profile='Full',version='4.0',
     LayerSet(activeLayer=1,order=[1,2],
       #  the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" 
       layers=[
-      Layer(
+      Layer(pickable=True,objectType=["ALL"],
         #  basic nodes, which might be present in any scene 
         children=[
         NavigationInfo(type='"EXAMINE"',avatarSize=[0.25,1.75,0.75]),
@@ -169,7 +169,7 @@ newModel=X3D(profile='Full',version='4.0',
         ROUTE(fromField='removedEntities',fromNode='EntityManager',toField='removeChildren',toNode='AvatarHolder')]),
       #  the second layer contains the sliders that are moved with the user's display
          like a HUD (heads up display) 
-      LayoutLayer(
+      LayoutLayer(pickable=True,objectType=["ALL"],
         #  positioning the LayoutLayer 
         layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.0],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,1.0],sizeUnits=["WORLD","WORLD"]),
         #  clipping the LayoutLayer 

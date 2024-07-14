@@ -14,12 +14,12 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links:  source Humanoid0.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source JohnBoy.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Humanoid0&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnBoy&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -72,10 +72,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author John Carlson
  */
 
-public class Humanoid0
+public class JohnBoy
 {
 	/** Default constructor to create this object. */
-	public Humanoid0 ()
+	public JohnBoy ()
 	{
 	  initialize();
 	}
@@ -136,7 +136,7 @@ public class Humanoid0
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(1))))
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-      .addSkeleton(new HAnimJoint("hanim_").setName(""))
+      .addSkeleton(new HAnimJoint("hanim_").setName("").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
       .addJoints(new HAnimJoint().setUSE("hanim_"))));
             }
             catch (Exception ex)
@@ -285,7 +285,7 @@ public class Humanoid0
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return Humanoid0 model
+	 * @return JohnBoy model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -304,7 +304,7 @@ public class Humanoid0
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new Humanoid0().getX3dModel();
+        X3D thisExampleX3dModel = new JohnBoy().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -337,7 +337,7 @@ public class Humanoid0
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.Humanoid0\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JohnBoy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -346,10 +346,19 @@ public class Humanoid0
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.Humanoid0 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.JohnBoy self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./JohnBoy_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JohnBoy_JavaExport.x3d"; 
+                String filenameX3DV = "./JohnBoy_JavaExport.x3dv"; 
+                String filenameJSON = "./JohnBoy_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

@@ -16,12 +16,12 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links:  source Humanoid1.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source JohnBoy.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Humanoid1&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnBoy&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -74,10 +74,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author John Carlson
  */
 
-public class Humanoid1
+public class JohnBoy
 {
 	/** Default constructor to create this object. */
-	public Humanoid1 ()
+	public JohnBoy ()
 	{
 	  initialize();
 	}
@@ -138,7 +138,7 @@ public class Humanoid1
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(1))))
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277)
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0000,0.8240,0.0277)
             .addChild(new Transform()
@@ -154,7 +154,7 @@ public class Humanoid1
               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0000,0.8240,0.0277,0.0028,1.0568,-0.0776})))
               .addComments(" from humanoid_root to vl5 vertices 2")
               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016)
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(0.0000,0.9149,0.0016)
               .addChild(new Transform()
@@ -240,7 +240,7 @@ public class Humanoid1
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0000,0.9149,0.0016,-0.0950,0.9171,0.0029})))
                 .addComments(" from sacroiliac to r_hip vertices 2")
                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001)
+          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l_thigh").setName("l_thigh")
               .addChild(new Transform().setTranslation(0.0961,0.9124,-0.0001)
                 .addChild(new Transform()
@@ -279,7 +279,7 @@ public class Humanoid1
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"41"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308)
+            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l_calf").setName("l_calf")
                 .addChild(new Transform().setTranslation(0.1040,0.4867,0.0308)
                   .addChild(new Transform()
@@ -311,7 +311,7 @@ public class Humanoid1
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"47"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736)
+              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_l_talus").setName("l_talus")
                   .addChild(new Transform().setRotation(1.0,0.0,0.0,-1.57).setScale(0.15,0.15,0.15).setTranslation(0.08,0.06,-0.025)
                     .addComments(" Transform left foot ")
@@ -337,8 +337,8 @@ public class Humanoid1
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new String[] {"50"})
                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040)))))
-          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029)
+                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_r_thigh").setName("r_thigh")
               .addChild(new Transform().setTranslation(-0.0950,0.9171,0.0029)
                 .addChild(new Transform()
@@ -377,7 +377,7 @@ public class Humanoid1
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"45"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318)
+            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_r_calf").setName("r_calf")
                 .addChild(new Transform().setTranslation(-0.0867,0.4913,0.0318)
                   .addChild(new Transform()
@@ -409,7 +409,7 @@ public class Humanoid1
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"51"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766)
+              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_r_talus").setName("r_talus")
                   .addChild(new Transform().setRotation(1.0,0.0,0.0,-1.57).setScale(0.15,0.15,0.15).setTranslation(-0.05,0.06,-0.025)
                     .addComments(" Transform right foot ")
@@ -435,8 +435,8 @@ public class Humanoid1
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new String[] {"54"})
                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040))))))
-        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776)
+                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
+        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_l5").setName("l5")
             .addChild(new Transform().setTranslation(0.0028,1.0568,-0.0776)
               .addChild(new Transform()
@@ -660,8 +660,8 @@ public class Humanoid1
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0028,1.0568,-0.0776,-0.1907,1.4407,-0.0325})))
                 .addComments(" from vl5 to r_shoulder vertices 2")
                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236))
-          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387)
+          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l_upperarm").setName("l_upperarm")
               .addChild(new Transform().setTranslation(0.2029,1.4376,-0.0387)
                 .addChild(new Transform()
@@ -686,7 +686,7 @@ public class Humanoid1
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"63"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682)
+            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l_forearm").setName("l_forearm")
                 .addChild(new Transform().setTranslation(0.2014,1.1357,-0.0682)
                   .addChild(new Transform()
@@ -725,8 +725,8 @@ public class Humanoid1
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"69"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583))))
-          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325)
+              .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))
+          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_r_upperarm").setName("r_upperarm")
               .addChild(new Transform().setTranslation(-0.1907,1.4407,-0.0325)
                 .addChild(new Transform()
@@ -751,7 +751,7 @@ public class Humanoid1
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"66"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620)
+            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_r_forearm").setName("r_forearm")
                 .addChild(new Transform().setTranslation(-0.1949,1.1388,-0.0620)
                   .addChild(new Transform()
@@ -790,7 +790,7 @@ public class Humanoid1
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"72"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521))))))
+              .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
       .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
       .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
@@ -1038,7 +1038,7 @@ public class Humanoid1
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return Humanoid1 model
+	 * @return JohnBoy model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1057,7 +1057,7 @@ public class Humanoid1
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new Humanoid1().getX3dModel();
+        X3D thisExampleX3dModel = new JohnBoy().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -1090,7 +1090,7 @@ public class Humanoid1
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.Humanoid1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JohnBoy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -1099,10 +1099,19 @@ public class Humanoid1
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.Humanoid1 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.JohnBoy self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./JohnBoy_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JohnBoy_JavaExport.x3d"; 
+                String filenameX3DV = "./JohnBoy_JavaExport.x3dv"; 
+                String filenameJSON = "./JohnBoy_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

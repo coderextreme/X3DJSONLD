@@ -245,6 +245,15 @@ public class Filters
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./Filters_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./Filters_JavaExport.x3d"; 
+                String filenameX3DV = "./Filters_JavaExport.x3dv"; 
+                String filenameJSON = "./Filters_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }
