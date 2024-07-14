@@ -71,15 +71,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 December 2021")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("rescale smaller than 30m! convert inches to meters? what about motion scaling?")}),
+              content : new SFString("17 February 2024")}),
 
             new meta({
               name : new SFString("description"),
               content : new SFString("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("rescale all contained length values from inches to meters")}),
 
             new meta({
               name : new SFString("reference"),
@@ -92,6 +92,10 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("reference"),
               content : new SFString("KoreanCharactersIllustrated.pdf")}),
+
+            new meta({
+              name : new SFString("reference"),
+              content : new SFString("JinOriginalLOA1.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -111,7 +115,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
