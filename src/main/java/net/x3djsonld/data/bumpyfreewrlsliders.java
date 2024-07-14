@@ -20,12 +20,12 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> *enter description here, short-sentence summaries preferred*. </p>
- <p> Related links:  source bumpyfreewrlsliders.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source bumpfreewrlsliders.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.bumpyfreewrlsliders&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.bumpfreewrlsliders&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -126,10 +126,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Doug Sanden, Christoph Valentin, John Carlson
  */
 
-public class bumpyfreewrlsliders
+public class bumpfreewrlsliders
 {
 	/** Default constructor to create this object. */
-	public bumpyfreewrlsliders ()
+	public bumpfreewrlsliders ()
 	{
 	  initialize();
 	}
@@ -178,7 +178,7 @@ public class bumpyfreewrlsliders
     .addComments(" LayerSet with two layers, navigation happens in layer 1 ")
     .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new int[] {1,2})
       .addComments(" the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\" ")
-      .addLayers(new Layer()
+      .addLayers(new Layer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" basic nodes, which might be present in any scene ")
         .addChild(new NavigationInfo().setAvatarSize(new double[] {0.25,1.75,0.75}).setType("\"EXAMINE\""))
         .addChild(new DirectionalLight().setAmbientIntensity(.2).setDirection(0.0,-1.0,-0.0))
@@ -262,7 +262,7 @@ public class bumpyfreewrlsliders
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("removedEntities").setToNode("AvatarHolder").setToField("removeChildren")))
       .addComments(new String[] {" the second layer contains the sliders that are moved with the user's display",
 "         like a HUD (heads up display) "})
-      .addLayers(new LayoutLayer()
+      .addLayers(new LayoutLayer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" positioning the LayoutLayer ")
         .setLayout(new Layout().setAlign(new String[] {"RIGHT","BOTTOM"}).setOffset(new double[] {0.0,0.0}).setOffsetUnits(new String[] {"WORLD","WORLD"}).setScaleMode(new String[] {"NONE","NONE"}).setSize(new double[] {0.4,1.0}).setSizeUnits(new String[] {"WORLD","WORLD"}))
         .addComments(" clipping the LayoutLayer ")
@@ -454,7 +454,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return bumpyfreewrlsliders model
+	 * @return bumpfreewrlsliders model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -473,7 +473,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new bumpyfreewrlsliders().getX3dModel();
+        X3D thisExampleX3dModel = new bumpfreewrlsliders().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -506,7 +506,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.bumpyfreewrlsliders\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.bumpfreewrlsliders\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -515,10 +515,19 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.bumpyfreewrlsliders self-validation test results: ");
+                System.out.print("net.x3djsonld.data.bumpfreewrlsliders self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./bumpfreewrlsliders_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./bumpfreewrlsliders_JavaExport.x3d"; 
+                String filenameX3DV = "./bumpfreewrlsliders_JavaExport.x3dv"; 
+                String filenameJSON = "./bumpfreewrlsliders_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

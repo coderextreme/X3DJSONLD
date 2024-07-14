@@ -316,6 +316,15 @@ public class LOA1_SwimmingFlutterKickAnimation
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./LOA1_SwimmingFlutterKickAnimation_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./LOA1_SwimmingFlutterKickAnimation_JavaExport.x3d"; 
+                String filenameX3DV = "./LOA1_SwimmingFlutterKickAnimation_JavaExport.x3dv"; 
+                String filenameJSON = "./LOA1_SwimmingFlutterKickAnimation_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

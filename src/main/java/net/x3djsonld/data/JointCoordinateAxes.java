@@ -10,7 +10,7 @@ import org.web3d.x3d.jsail.Text.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene JointCoordinateAxes. </p>
+ * <p> Example scene . </p>
  <p> Related links:  source JointCoordinateAxes.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -182,6 +182,15 @@ public class JointCoordinateAxes
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./JointCoordinateAxes_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JointCoordinateAxes_JavaExport.x3d"; 
+                String filenameX3DV = "./JointCoordinateAxes_JavaExport.x3dv"; 
+                String filenameJSON = "./JointCoordinateAxes_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

@@ -16,12 +16,12 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links:  source Humanoid2.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source JohnBoy.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Humanoid2&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnBoy&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -74,10 +74,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author John Carlson
  */
 
-public class Humanoid2
+public class JohnBoy
 {
 	/** Default constructor to create this object. */
-	public Humanoid2 ()
+	public JohnBoy ()
 	{
 	  initialize();
 	}
@@ -138,7 +138,7 @@ public class Humanoid2
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(1))))
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277)
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0000,0.8240,0.0277)
             .addChild(new Transform()
@@ -154,7 +154,7 @@ public class Humanoid2
               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0000,0.8240,0.0277,0.0028,1.0568,-0.0776})))
               .addComments(" from humanoid_root to vl5 vertices 2")
               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016)
+        .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0000,0.9149,0.0016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(0.0000,0.9149,0.0016)
               .addChild(new Transform()
@@ -240,7 +240,7 @@ public class Humanoid2
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0000,0.9149,0.0016,-0.0950,0.9171,0.0029})))
                 .addComments(" from sacroiliac to r_hip vertices 2")
                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001)
+          .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0961,0.9124,-0.0001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l_thigh").setName("l_thigh")
               .addChild(new Transform().setTranslation(0.0961,0.9124,-0.0001)
                 .addChild(new Transform()
@@ -279,7 +279,7 @@ public class Humanoid2
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"41"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308)
+            .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.1040,0.4867,0.0308).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l_calf").setName("l_calf")
                 .addChild(new Transform().setTranslation(0.1040,0.4867,0.0308)
                   .addChild(new Transform()
@@ -311,7 +311,7 @@ public class Humanoid2
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"47"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736)
+              .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_talocrural").setCenter(0.1101,0.0656,-0.0736).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_l_talus").setName("l_talus")
                   .addChild(new Transform().setRotation(1.0,0.0,0.0,-1.57).setScale(0.15,0.15,0.15).setTranslation(0.08,0.06,-0.025)
                     .addComments(" Transform left foot ")
@@ -337,7 +337,7 @@ public class Humanoid2
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new String[] {"50"})
                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_tarsometatarsal_2").setCenter(0.0800,0.0175,-0.0608)
+                .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_tarsometatarsal_2").setCenter(0.0800,0.0175,-0.0608).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_l_metatarsal_2").setName("l_metatarsal_2")
                     .addChild(new Transform().setTranslation(0.0800,0.0175,-0.0608)
                       .addChild(new Transform()
@@ -348,7 +348,7 @@ public class Humanoid2
                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0800,0.0175,-0.0608,0.0824,0.0064,-0.0040})))
                         .addComments(" from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2")
                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040)
+                  .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.0824,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_proximal_phalanx_2")
                       .addChild(new Transform().setTranslation(0.0824,0.0064,-0.0040)
                         .addChild(new Transform()
@@ -408,8 +408,8 @@ public class Humanoid2
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new String[] {""})
                               .setFontStyle(new FontStyle().setSize(0.035)))))))
-                    .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0841,0.0013,0.0216)))))))
-          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029)
+                    .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0841,0.0013,0.0216).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))))
+          .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0950,0.9171,0.0029).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_r_thigh").setName("r_thigh")
               .addChild(new Transform().setTranslation(-0.0950,0.9171,0.0029)
                 .addChild(new Transform()
@@ -448,7 +448,7 @@ public class Humanoid2
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {"45"})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318)
+            .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0867,0.4913,0.0318).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_r_calf").setName("r_calf")
                 .addChild(new Transform().setTranslation(-0.0867,0.4913,0.0318)
                   .addChild(new Transform()
@@ -480,7 +480,7 @@ public class Humanoid2
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new String[] {"51"})
                         .setFontStyle(new FontStyle().setSize(0.035)))))))
-              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766)
+              .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_talocrural").setCenter(-0.0801,0.0712,-0.0766).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_r_talus").setName("r_talus")
                   .addChild(new Transform().setRotation(1.0,0.0,0.0,-1.57).setScale(0.15,0.15,0.15).setTranslation(-0.05,0.06,-0.025)
                     .addComments(" Transform right foot ")
@@ -506,7 +506,7 @@ public class Humanoid2
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new String[] {"54"})
                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_tarsometatarsal_2").setCenter(-0.0800,0.0175,-0.0608)
+                .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_tarsometatarsal_2").setCenter(-0.0800,0.0175,-0.0608).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_r_metatarsal_2").setName("r_metatarsal_2")
                     .addChild(new Transform().setTranslation(-0.0800,0.0175,-0.0608)
                       .addChild(new Transform()
@@ -517,7 +517,7 @@ public class Humanoid2
                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.0800,0.0175,-0.0608,-0.0823,0.0064,-0.0040})))
                         .addComments(" from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2")
                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040)
+                  .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0823,0.0064,-0.0040).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_proximal_phalanx_2")
                       .addChild(new Transform().setTranslation(-0.0823,0.0064,-0.0040)
                         .addChild(new Transform()
@@ -577,8 +577,8 @@ public class Humanoid2
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new String[] {""})
                               .setFontStyle(new FontStyle().setSize(0.035)))))))
-                    .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.0841,0.0013,0.0216))))))))
-        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776)
+                    .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.0841,0.0013,0.0216).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))))
+        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0028,1.0568,-0.0776).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_l5").setName("l5")
             .addChild(new Transform().setTranslation(0.0028,1.0568,-0.0776)
               .addChild(new Transform()
@@ -610,7 +610,7 @@ public class Humanoid2
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(new String[] {"27"})
                     .setFontStyle(new FontStyle().setSize(0.035)))))))
-          .addChild(new HAnimJoint("hanim_vl3").setName("vl3").setCenter(0.0041,1.1276,-0.0796)
+          .addChild(new HAnimJoint("hanim_vl3").setName("vl3").setCenter(0.0041,1.1276,-0.0796).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("hanim_l3").setName("l3")
               .addChild(new Transform().setTranslation(0.0041,1.1276,-0.0796)
                 .addChild(new Transform()
@@ -649,7 +649,7 @@ public class Humanoid2
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new String[] {""})
                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-            .addChild(new HAnimJoint("hanim_vl1").setName("vl1").setCenter(0.0048,1.1912,-0.0805)
+            .addChild(new HAnimJoint("hanim_vl1").setName("vl1").setCenter(0.0048,1.1912,-0.0805).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimSegment("hanim_l1").setName("l1")
                 .addChild(new Transform().setTranslation(0.0048,1.1912,-0.0805)
                   .addChild(new Transform()
@@ -660,7 +660,7 @@ public class Humanoid2
                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0048,1.1912,-0.0805,0.0056,1.2848,-0.0822})))
                     .addComments(" from vl1 to vt10 vertices 2")
                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-              .addChild(new HAnimJoint("hanim_vt10").setName("vt10").setCenter(0.0056,1.2848,-0.0822)
+              .addChild(new HAnimJoint("hanim_vt10").setName("vt10").setCenter(0.0056,1.2848,-0.0822).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_t10").setName("t10")
                   .addChild(new Transform().setTranslation(0.0056,1.2848,-0.0822)
                     .addChild(new Transform()
@@ -692,7 +692,7 @@ public class Humanoid2
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new String[] {"13"})
                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                .addChild(new HAnimJoint("hanim_vt6").setName("vt6").setCenter(0.0059,1.3866,-0.0800)
+                .addChild(new HAnimJoint("hanim_vt6").setName("vt6").setCenter(0.0059,1.3866,-0.0800).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_t6").setName("t6")
                     .addChild(new Transform().setTranslation(0.0059,1.3866,-0.0800)
                       .addChild(new Transform()
@@ -731,7 +731,7 @@ public class Humanoid2
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new String[] {"92"})
                             .setFontStyle(new FontStyle().setSize(0.035)))))))
-                  .addChild(new HAnimJoint("hanim_vt1").setName("vt1").setCenter(0.0065,1.4951,-0.0387)
+                  .addChild(new HAnimJoint("hanim_vt1").setName("vt1").setCenter(0.0065,1.4951,-0.0387).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_t1").setName("t1")
                       .addChild(new Transform().setTranslation(0.0065,1.4951,-0.0387)
                         .addChild(new Transform()
@@ -780,7 +780,7 @@ public class Humanoid2
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0065,1.4951,-0.0387,-0.0694,1.4600,-0.0330})))
                           .addComments(" from vt1 to r_sternoclavicular vertices 2")
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild(new HAnimJoint("hanim_vc4").setName("vc4").setCenter(0.0066,1.5662,-0.0084)
+                    .addChild(new HAnimJoint("hanim_vc4").setName("vc4").setCenter(0.0066,1.5662,-0.0084).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_c4").setName("c4")
                         .addChild(new Transform().setTranslation(0.0066,1.5662,-0.0084)
                           .addChild(new Transform()
@@ -791,7 +791,7 @@ public class Humanoid2
                             .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0066,1.5662,-0.0084,0.0066,1.5928,-0.0103})))
                             .addComments(" from vc4 to vc2 vertices 2")
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint("hanim_vc2").setName("vc2").setCenter(0.0066,1.5928,-0.0103)
+                      .addChild(new HAnimJoint("hanim_vc2").setName("vc2").setCenter(0.0066,1.5928,-0.0103).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_c2").setName("c2")
                           .addChild(new Transform().setTranslation(0.0066,1.5928,-0.0103)
                             .addChild(new Transform()
@@ -809,8 +809,8 @@ public class Humanoid2
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new String[] {"11"})
                                   .setFontStyle(new FontStyle().setSize(0.035)))))))
-                        .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236))))
-                    .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_sternoclavicular").setCenter(0.0820,1.4488,-0.0353)
+                        .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0044,1.6209,0.0236).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))
+                    .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_sternoclavicular").setCenter(0.0820,1.4488,-0.0353).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_clavicle").setName("l_clavicle")
                         .addChild(new Transform().setTranslation(0.0820,1.4488,-0.0353)
                           .addChild(new Transform()
@@ -856,7 +856,7 @@ public class Humanoid2
                             .addChild(new Shape()
                               .setGeometry(new Text().setString(new String[] {"14"})
                                 .setFontStyle(new FontStyle().setSize(0.035)))))))
-                      .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_acromioclavicular").setCenter(0.0962,1.4269,-0.0424)
+                      .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_acromioclavicular").setCenter(0.0962,1.4269,-0.0424).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_scapula").setName("l_scapula")
                           .addChild(new Transform().setTranslation(0.0962,1.4269,-0.0424)
                             .addChild(new Transform()
@@ -867,7 +867,7 @@ public class Humanoid2
                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387})))
                               .addComments(" from l_acromioclavicular to l_shoulder vertices 2")
                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                        .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387)
+                        .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_upperarm").setName("l_upperarm")
                             .addChild(new Transform().setTranslation(0.2029,1.4376,-0.0387)
                               .addChild(new Transform()
@@ -892,7 +892,7 @@ public class Humanoid2
                                 .addChild(new Shape()
                                   .setGeometry(new Text().setString(new String[] {"63"})
                                     .setFontStyle(new FontStyle().setSize(0.035)))))))
-                          .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682)
+                          .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.2014,1.1357,-0.0682).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_forearm").setName("l_forearm")
                               .addChild(new Transform().setTranslation(0.2014,1.1357,-0.0682)
                                 .addChild(new Transform()
@@ -931,7 +931,7 @@ public class Humanoid2
                                   .addChild(new Shape()
                                     .setGeometry(new Text().setString(new String[] {"69"})
                                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-                            .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583)
+                            .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(0.1984,0.8663,-0.0583).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                               .addChild(new HAnimSegment("hanim_l_carpal").setName("l_carpal")
                                 .addChild(new Transform().setRotation(0.0,0.0,1.0,-3.14).setScale(0.2,0.2,0.2).setTranslation(0.20,0.85,-0.05)
                                   .addComments(" Transform left hand ")
@@ -970,7 +970,7 @@ public class Humanoid2
                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1984,0.8663,-0.0583,0.1925,0.8066,-0.1036})))
                                     .addComments(" from l_radiocarpal to l_carpometacarpal_5 vertices 2")
                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.1924,0.8472,-0.0534)
+                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.1924,0.8472,-0.0534).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_l_metacarpal_1").setName("l_metacarpal_1")
                                   .addChild(new Transform().setTranslation(0.1924,0.8472,-0.0534)
                                     .addChild(new Transform()
@@ -981,7 +981,7 @@ public class Humanoid2
                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246})))
                                       .addComments(" from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2")
                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_metacarpophalangeal_1").setCenter(0.1951,0.8226,0.0246)
+                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_metacarpophalangeal_1").setCenter(0.1951,0.8226,0.0246).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_1").setName("l_carpal_proximal_phalanx_1")
                                     .addChild(new Transform().setTranslation(0.1951,0.8226,0.0246)
                                       .addChild(new Transform()
@@ -992,8 +992,8 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1951,0.8226,0.0246,0.1955,0.8159,0.0464})))
                                         .addComments(" from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_l_carpal_interphalangeal_1").setName("l_carpal_interphalangeal_1").setCenter(0.1955,0.8159,0.0464))))
-                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1983,0.8024,-0.0280)
+                                  .addChild(new HAnimJoint("hanim_l_carpal_interphalangeal_1").setName("l_carpal_interphalangeal_1").setCenter(0.1955,0.8159,0.0464).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))
+                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1983,0.8024,-0.0280).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_l_metacarpal_2").setName("l_metacarpal_2")
                                   .addChild(new Transform().setTranslation(0.1983,0.8024,-0.0280)
                                     .addChild(new Transform()
@@ -1011,7 +1011,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"75"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_metacarpophalangeal_2").setCenter(0.1983,0.7815,-0.0280)
+                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_metacarpophalangeal_2").setCenter(0.1983,0.7815,-0.0280).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_2").setName("l_carpal_proximal_phalanx_2")
                                     .addChild(new Transform().setTranslation(0.1983,0.7815,-0.0280)
                                       .addChild(new Transform()
@@ -1022,7 +1022,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1983,0.7815,-0.0280,0.2017,0.7363,-0.0248})))
                                         .addComments(" from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setCenter(0.2017,0.7363,-0.0248)
+                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setCenter(0.2017,0.7363,-0.0248).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_2").setName("l_carpal_middle_phalanx_2")
                                       .addChild(new Transform().setTranslation(0.2017,0.7363,-0.0248)
                                         .addChild(new Transform()
@@ -1033,8 +1033,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236})))
                                           .addComments(" from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setCenter(0.2028,0.7139,-0.0236)))))
-                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_carpometacarpal_3").setCenter(0.1987,0.8029,-0.0530)
+                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setCenter(0.2028,0.7139,-0.0236).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_carpometacarpal_3").setCenter(0.1987,0.8029,-0.0530).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_l_metacarpal_3").setName("l_metacarpal_3")
                                   .addChild(new Transform().setTranslation(0.1987,0.8029,-0.0530)
                                     .addChild(new Transform()
@@ -1052,7 +1052,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"76"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_metacarpophalangeal_3").setCenter(0.1987,0.7818,-0.0530)
+                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_metacarpophalangeal_3").setCenter(0.1987,0.7818,-0.0530).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_3").setName("l_carpal_proximal_phalanx_3")
                                     .addChild(new Transform().setTranslation(0.1987,0.7818,-0.0530)
                                       .addChild(new Transform()
@@ -1063,7 +1063,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1987,0.7818,-0.0530,0.2013,0.7273,-0.0503})))
                                         .addComments(" from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setCenter(0.2013,0.7273,-0.0503)
+                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setCenter(0.2013,0.7273,-0.0503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_3").setName("l_carpal_middle_phalanx_3")
                                       .addChild(new Transform().setTranslation(0.2013,0.7273,-0.0503)
                                         .addChild(new Transform()
@@ -1074,8 +1074,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494})))
                                           .addComments(" from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setCenter(0.2026,0.7011,-0.0494)))))
-                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_carpometacarpal_4").setCenter(0.1956,0.8019,-0.0794)
+                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setCenter(0.2026,0.7011,-0.0494).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_carpometacarpal_4").setCenter(0.1956,0.8019,-0.0794).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_l_metacarpal_4").setName("l_metacarpal_4")
                                   .addChild(new Transform().setTranslation(0.1956,0.8019,-0.0794)
                                     .addChild(new Transform()
@@ -1086,7 +1086,7 @@ public class Humanoid2
                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794})))
                                       .addComments(" from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2")
                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_metacarpophalangeal_4").setCenter(0.1956,0.7815,-0.0794)
+                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_metacarpophalangeal_4").setCenter(0.1956,0.7815,-0.0794).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_4").setName("l_carpal_proximal_phalanx_4")
                                     .addChild(new Transform().setTranslation(0.1956,0.7815,-0.0794)
                                       .addChild(new Transform()
@@ -1097,7 +1097,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777})))
                                         .addComments(" from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setCenter(0.1973,0.7287,-0.0777)
+                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setCenter(0.1973,0.7287,-0.0777).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_4").setName("l_carpal_middle_phalanx_4")
                                       .addChild(new Transform().setTranslation(0.1973,0.7287,-0.0777)
                                         .addChild(new Transform()
@@ -1108,8 +1108,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767})))
                                           .addComments(" from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setCenter(0.1983,0.7045,-0.0767)))))
-                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_carpometacarpal_5").setCenter(0.1925,0.8066,-0.1036)
+                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setCenter(0.1983,0.7045,-0.0767).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_carpometacarpal_5").setCenter(0.1925,0.8066,-0.1036).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_l_metacarpal_5").setName("l_metacarpal_5")
                                   .addChild(new Transform().setTranslation(0.1925,0.8066,-0.1036)
                                     .addChild(new Transform()
@@ -1127,7 +1127,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"77"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_metacarpophalangeal_5").setCenter(0.1925,0.7866,-0.1036)
+                                .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_metacarpophalangeal_5").setCenter(0.1925,0.7866,-0.1036).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_5").setName("l_carpal_proximal_phalanx_5")
                                     .addChild(new Transform().setTranslation(0.1925,0.7866,-0.1036)
                                       .addChild(new Transform()
@@ -1138,7 +1138,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024})))
                                         .addComments(" from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setCenter(0.1938,0.7452,-0.1024)
+                                  .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setCenter(0.1938,0.7452,-0.1024).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_5").setName("l_carpal_middle_phalanx_5")
                                       .addChild(new Transform().setTranslation(0.1938,0.7452,-0.1024)
                                         .addChild(new Transform()
@@ -1149,8 +1149,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017})))
                                           .addComments(" from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setCenter(0.1948,0.7277,-0.1017))))))))))
-                    .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_sternoclavicular").setCenter(-0.0694,1.4600,-0.0330)
+                                    .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setCenter(0.1948,0.7277,-0.1017).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))))))
+                    .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_sternoclavicular").setCenter(-0.0694,1.4600,-0.0330).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_clavicle").setName("r_clavicle")
                         .addChild(new Transform().setTranslation(-0.0694,1.4600,-0.0330)
                           .addChild(new Transform()
@@ -1196,7 +1196,7 @@ public class Humanoid2
                             .addChild(new Shape()
                               .setGeometry(new Text().setString(new String[] {"19"})
                                 .setFontStyle(new FontStyle().setSize(0.035)))))))
-                      .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_acromioclavicular").setCenter(-0.0836,1.4281,-0.0401)
+                      .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_acromioclavicular").setCenter(-0.0836,1.4281,-0.0401).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_scapula").setName("r_scapula")
                           .addChild(new Transform().setTranslation(-0.0836,1.4281,-0.0401)
                             .addChild(new Transform()
@@ -1207,7 +1207,7 @@ public class Humanoid2
                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.0836,1.4281,-0.0401,-0.1907,1.4407,-0.0325})))
                               .addComments(" from r_acromioclavicular to r_shoulder vertices 2")
                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                        .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325)
+                        .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_upperarm").setName("r_upperarm")
                             .addChild(new Transform().setTranslation(-0.1907,1.4407,-0.0325)
                               .addChild(new Transform()
@@ -1232,7 +1232,7 @@ public class Humanoid2
                                 .addChild(new Shape()
                                   .setGeometry(new Text().setString(new String[] {"66"})
                                     .setFontStyle(new FontStyle().setSize(0.035)))))))
-                          .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620)
+                          .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_forearm").setName("r_forearm")
                               .addChild(new Transform().setTranslation(-0.1949,1.1388,-0.0620)
                                 .addChild(new Transform()
@@ -1271,7 +1271,7 @@ public class Humanoid2
                                   .addChild(new Shape()
                                     .setGeometry(new Text().setString(new String[] {"72"})
                                       .setFontStyle(new FontStyle().setSize(0.035)))))))
-                            .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521)
+                            .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                               .addChild(new HAnimSegment("hanim_r_carpal").setName("r_carpal")
                                 .addChild(new Transform().setRotation(0.0,0.0,1.0,-3.14).setScale(0.2,0.2,0.2).setTranslation(-0.20,0.85,-0.05)
                                   .addComments(" Transform right hand ")
@@ -1310,7 +1310,7 @@ public class Humanoid2
                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1959,0.8694,-0.0521,-0.1926,0.8096,-0.0975})))
                                     .addComments(" from r_radiocarpal to r_carpometacarpal_5 vertices 2")
                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_carpometacarpal_1").setCenter(-0.1899,0.8502,-0.0473)
+                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_carpometacarpal_1").setCenter(-0.1899,0.8502,-0.0473).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_r_metacarpal_1").setName("r_metacarpal_1")
                                   .addChild(new Transform().setTranslation(-0.1899,0.8502,-0.0473)
                                     .addChild(new Transform()
@@ -1321,7 +1321,7 @@ public class Humanoid2
                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1899,0.8502,-0.0473,-0.1874,0.8256,0.0306})))
                                       .addComments(" from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2")
                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_metacarpophalangeal_1").setCenter(-0.1874,0.8256,0.0306)
+                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_metacarpophalangeal_1").setCenter(-0.1874,0.8256,0.0306).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_1").setName("r_carpal_proximal_phalanx_1")
                                     .addChild(new Transform().setTranslation(-0.1874,0.8256,0.0306)
                                       .addChild(new Transform()
@@ -1332,8 +1332,8 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1874,0.8256,0.0306,-0.1864,0.8190,0.0506})))
                                         .addComments(" from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-0.1864,0.8190,0.0506))))
-                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_carpometacarpal_2").setCenter(-0.1961,0.8055,-0.0218)
+                                  .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-0.1864,0.8190,0.0506).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))
+                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_carpometacarpal_2").setCenter(-0.1961,0.8055,-0.0218).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_r_metacarpal_2").setName("r_metacarpal_2")
                                   .addChild(new Transform().setTranslation(-0.1961,0.8055,-0.0218)
                                     .addChild(new Transform()
@@ -1351,7 +1351,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"78"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_metacarpophalangeal_2").setCenter(-0.1961,0.7846,-0.0218)
+                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_metacarpophalangeal_2").setCenter(-0.1961,0.7846,-0.0218).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_2").setName("r_carpal_proximal_phalanx_2")
                                     .addChild(new Transform().setTranslation(-0.1961,0.7846,-0.0218)
                                       .addChild(new Transform()
@@ -1362,7 +1362,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1961,0.7846,-0.0218,-0.1954,0.7393,-0.0185})))
                                         .addComments(" from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setCenter(-0.1954,0.7393,-0.0185)
+                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setCenter(-0.1954,0.7393,-0.0185).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_2").setName("r_carpal_middle_phalanx_2")
                                       .addChild(new Transform().setTranslation(-0.1954,0.7393,-0.0185)
                                         .addChild(new Transform()
@@ -1373,8 +1373,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1954,0.7393,-0.0185,-0.1945,0.7169,-0.0173})))
                                           .addComments(" from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setCenter(-0.1945,0.7169,-0.0173)))))
-                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_carpometacarpal_3").setCenter(-0.1972,0.8060,-0.0468)
+                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setCenter(-0.1945,0.7169,-0.0173).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_carpometacarpal_3").setCenter(-0.1972,0.8060,-0.0468).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_r_metacarpal_3").setName("r_metacarpal_3")
                                   .addChild(new Transform().setTranslation(-0.1972,0.8060,-0.0468)
                                     .addChild(new Transform()
@@ -1392,7 +1392,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"79"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_metacarpophalangeal_3").setCenter(-0.1972,0.7849,-0.0468)
+                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_metacarpophalangeal_3").setCenter(-0.1972,0.7849,-0.0468).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_3").setName("r_carpal_proximal_phalanx_3")
                                     .addChild(new Transform().setTranslation(-0.1972,0.7849,-0.0468)
                                       .addChild(new Transform()
@@ -1403,7 +1403,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1972,0.7849,-0.0468,-0.1950,0.7304,-0.0441})))
                                         .addComments(" from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setCenter(-0.1950,0.7304,-0.0441)
+                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setCenter(-0.1950,0.7304,-0.0441).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_3").setName("r_carpal_middle_phalanx_3")
                                       .addChild(new Transform().setTranslation(-0.1950,0.7304,-0.0441)
                                         .addChild(new Transform()
@@ -1414,8 +1414,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1950,0.7304,-0.0441,-0.1939,0.7042,-0.0432})))
                                           .addComments(" from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setCenter(-0.1939,0.7042,-0.0432)))))
-                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_carpometacarpal_4").setCenter(-0.1951,0.8049,-0.0732)
+                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setCenter(-0.1939,0.7042,-0.0432).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_carpometacarpal_4").setCenter(-0.1951,0.8049,-0.0732).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_r_metacarpal_4").setName("r_metacarpal_4")
                                   .addChild(new Transform().setTranslation(-0.1951,0.8049,-0.0732)
                                     .addChild(new Transform()
@@ -1426,7 +1426,7 @@ public class Humanoid2
                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1951,0.8049,-0.0732,-0.1951,0.7845,-0.0732})))
                                       .addComments(" from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2")
                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_metacarpophalangeal_4").setCenter(-0.1951,0.7845,-0.0732)
+                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_metacarpophalangeal_4").setCenter(-0.1951,0.7845,-0.0732).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_4").setName("r_carpal_proximal_phalanx_4")
                                     .addChild(new Transform().setTranslation(-0.1951,0.7845,-0.0732)
                                       .addChild(new Transform()
@@ -1437,7 +1437,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1951,0.7845,-0.0732,-0.1920,0.7318,-0.0716})))
                                         .addComments(" from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setCenter(-0.1920,0.7318,-0.0716)
+                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setCenter(-0.1920,0.7318,-0.0716).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_4").setName("r_carpal_middle_phalanx_4")
                                       .addChild(new Transform().setTranslation(-0.1920,0.7318,-0.0716)
                                         .addChild(new Transform()
@@ -1448,8 +1448,8 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1920,0.7318,-0.0716,-0.1908,0.7077,-0.0706})))
                                           .addComments(" from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setCenter(-0.1908,0.7077,-0.0706)))))
-                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_carpometacarpal_5").setCenter(-0.1926,0.8096,-0.0975)
+                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setCenter(-0.1908,0.7077,-0.0706).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))
+                              .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_carpometacarpal_5").setCenter(-0.1926,0.8096,-0.0975).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_r_metacarpal_5").setName("r_metacarpal_5")
                                   .addChild(new Transform().setTranslation(-0.1926,0.8096,-0.0975)
                                     .addChild(new Transform()
@@ -1467,7 +1467,7 @@ public class Humanoid2
                                       .addChild(new Shape()
                                         .setGeometry(new Text().setString(new String[] {"80"})
                                           .setFontStyle(new FontStyle().setSize(0.035)))))))
-                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_metacarpophalangeal_5").setCenter(-0.1926,0.7896,-0.0975)
+                                .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_metacarpophalangeal_5").setCenter(-0.1926,0.7896,-0.0975).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_5").setName("r_carpal_proximal_phalanx_5")
                                     .addChild(new Transform().setTranslation(-0.1926,0.7896,-0.0975)
                                       .addChild(new Transform()
@@ -1478,7 +1478,7 @@ public class Humanoid2
                                         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1926,0.7896,-0.0975,-0.1902,0.7483,-0.0963})))
                                         .addComments(" from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2")
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setCenter(-0.1902,0.7483,-0.0963)
+                                  .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setCenter(-0.1902,0.7483,-0.0963).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_5").setName("r_carpal_middle_phalanx_5")
                                       .addChild(new Transform().setTranslation(-0.1902,0.7483,-0.0963)
                                         .addChild(new Transform()
@@ -1489,7 +1489,7 @@ public class Humanoid2
                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1902,0.7483,-0.0963,-0.1908,0.7540,-0.0960})))
                                           .addComments(" from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2")
                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setCenter(-0.1908,0.7540,-0.0960)))))))))))))))))
+                                    .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setCenter(-0.1908,0.7540,-0.0960).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})))))))))))))))))
       .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
       .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
@@ -1857,7 +1857,7 @@ public class Humanoid2
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return Humanoid2 model
+	 * @return JohnBoy model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1876,7 +1876,7 @@ public class Humanoid2
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new Humanoid2().getX3dModel();
+        X3D thisExampleX3dModel = new JohnBoy().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -1909,7 +1909,7 @@ public class Humanoid2
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.Humanoid2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JohnBoy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -1918,10 +1918,19 @@ public class Humanoid2
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.Humanoid2 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.JohnBoy self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./JohnBoy_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JohnBoy_JavaExport.x3d"; 
+                String filenameX3DV = "./JohnBoy_JavaExport.x3dv"; 
+                String filenameJSON = "./JohnBoy_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

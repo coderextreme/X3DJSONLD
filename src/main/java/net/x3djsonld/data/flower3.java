@@ -265,6 +265,15 @@ function set_fraction(fraction, eventTime) {
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./flower3_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./flower3_JavaExport.x3d"; 
+                String filenameX3DV = "./flower3_JavaExport.x3dv"; 
+                String filenameJSON = "./flower3_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

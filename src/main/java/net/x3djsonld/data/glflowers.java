@@ -176,6 +176,15 @@ public class glflowers
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./glflowers_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./glflowers_JavaExport.x3d"; 
+                String filenameX3DV = "./glflowers_JavaExport.x3dv"; 
+                String filenameJSON = "./glflowers_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }
