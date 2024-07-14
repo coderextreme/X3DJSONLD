@@ -118,8 +118,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"a_SimpleSkeleton",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -170,8 +170,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"b_SimpleSkeletonMesh",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -209,8 +209,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"c_SkinIndexedGeometry",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -243,8 +243,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"d_SkinShapeIndexedGeometry",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -287,8 +287,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"e_SkinSwitchShapeIndexedGeometry",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -335,8 +335,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -388,8 +388,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -426,8 +426,8 @@
                         {
                           "@name":"humanoid_root",
                           "@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes",
-                          "@ulimit":[0,0,0],
                           "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {

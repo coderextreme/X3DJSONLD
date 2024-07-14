@@ -69,6 +69,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- Default parameter values can be overridden when invoking this stylesheet -->
     <xsl:param name="packageName"			  ><xsl:text></xsl:text></xsl:param>
     <xsl:param name="className"				  ><xsl:text><!-- necessary input, otherwise will use meta title if available --></xsl:text></xsl:param>
+    <xsl:param name="subdirectoryPath"		          ><xsl:text>./</xsl:text></xsl:param>
     <xsl:param name="tupleSplitSize"			  ><xsl:text>100</xsl:text></xsl:param> <!-- tuples -->
     <xsl:param name="attributeSplitSize"		  ><xsl:text>1000</xsl:text></xsl:param><!-- characters -->
     <xsl:param name="includeLicense"		          ><xsl:text>false</xsl:text></xsl:param>
@@ -386,10 +387,32 @@ POSSIBILITY OF SUCH DAMAGE.
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+]]></xsl:text>
+                <xsl:variable name="localPath">
+                    <xsl:value-of select="replace($subdirectoryPath,'//','/')"/><!-- cleanup after Ant -->
+                    <xsl:value-of select="$newClassName"/>
+                </xsl:variable>
+                <xsl:text>
+                // experimental: test X3DJSAIL output files
+                // </xsl:text>
+                <xsl:value-of select="$localPath"/>
+                <xsl:text>_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "</xsl:text>
+                <xsl:value-of select="$localPath"/>
+                <xsl:text>_JavaExport.x3d"; 
+                String filenameX3DV = "</xsl:text>
+                <xsl:value-of select="$localPath"/>
+                <xsl:text>_JavaExport.x3dv"; 
+                String filenameJSON = "</xsl:text>
+                <xsl:value-of select="$localPath"/>
+                <xsl:text>_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }
-]]></xsl:text><!-- class complete -->
+</xsl:text><!-- class complete -->
 
     </xsl:template>
 
@@ -459,7 +482,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:variable>
 		<xsl:variable name="subdirectoryPath" 
 					select="substring-before(substring-after(//meta[@name='identifier'][1]/@content,$archiveName),
-															 //meta[@name='title']/@content)"/>
+						                 //meta[@name='title']/@content)"/>
 		<xsl:variable name="archiveRelativeDirectory">
 			<xsl:choose>
 				<xsl:when test="contains($archiveName,'ConformanceNist') or
@@ -1560,36 +1583,36 @@ POSSIBILITY OF SUCH DAMAGE.
                             </xsl:if>
                             -->
                         </xsl:when>
-						<xsl:otherwise>
-							<!-- upper camel case $fieldName -->
-							<xsl:value-of select="translate(substring($fieldName,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-							<xsl:value-of select="substring($fieldName,2)"/>
-						</xsl:otherwise>
-					</xsl:choose>
-					<xsl:text>(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:otherwise>
-			</xsl:choose>
+                        <xsl:otherwise>
+                                <!-- upper camel case $fieldName -->
+                                <xsl:value-of select="translate(substring($fieldName,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                                <xsl:value-of select="substring($fieldName,2)"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:text>(</xsl:text>
+                            <xsl:apply-templates select="."/><!-- handle this node -->
+                            <xsl:text>)</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:if test="(local-name() = 'head')">
+                        <xsl:for-each select="meta[(@name='error') or (@name = 'warning') or (@name = 'info') or (@name = 'TODO')]">
+                            <xsl:message>
+                                <xsl:text disable-output-escaping="yes">[</xsl:text><!-- &lt; -->
+                                <xsl:text>meta</xsl:text>
+                                <xsl:text disable-output-escaping="yes">]</xsl:text><!-- &gt; -->
+                                <xsl:text> name='</xsl:text>
+                                <xsl:value-of select="@name"/>
+                                <xsl:text>' content='</xsl:text>
+                                <xsl:value-of select="@content"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:for-each>
+                    </xsl:if>
 		</xsl:for-each>
 		
 		<xsl:if test="(local-name() = 'X3D')">
 			<xsl:text>;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
-		</xsl:if>
-		<xsl:if test="(local-name() = 'head')">
-			<xsl:for-each select="meta[(@name='error') or (@name = 'warning') or (@name = 'info') or (@name = 'TODO')]">
-				<xsl:message>
-					<xsl:text disable-output-escaping="yes">[</xsl:text><!-- &lt; -->
-					<xsl:text>meta</xsl:text>
-					<xsl:text disable-output-escaping="yes">]</xsl:text><!-- &gt; -->
-					<xsl:text> name='</xsl:text>
-					<xsl:value-of select="@name"/>
-					<xsl:text>' content='</xsl:text>
-					<xsl:value-of select="@content"/>
-					<xsl:text>'</xsl:text>
-				</xsl:message>
-			</xsl:for-each>
 		</xsl:if>
 		
     </xsl:template>
@@ -2414,8 +2437,6 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='llimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='ulimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -4069,7 +4090,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
 		  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
-					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
+				  ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 			  <xsl:text>xs:string</xsl:text> 
 		  </xsl:when>

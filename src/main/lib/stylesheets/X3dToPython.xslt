@@ -560,9 +560,6 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
                     <xsl:text>segments</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'MetadataSet')">
-                    <xsl:text>metadata</xsl:text>
-                </xsl:when>
                 <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                 <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                 <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
@@ -1527,8 +1524,6 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='ulimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='llimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
