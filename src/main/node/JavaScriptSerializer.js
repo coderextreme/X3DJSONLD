@@ -414,7 +414,6 @@ JavaScriptSerializer.prototype = {
 					
 					str += '.'+method+"("+strval+")";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
-					// console.log("################## FOUND", method, attrs[a].nodeValue);
 						// str += ")"; // for cast
 					}
 				}
