@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import bpy
+import os
 from mathutils import Matrix, Vector, Quaternion, Euler
 
 
@@ -96,12 +97,14 @@ def create_empty_hanimsegment(name, parent=None):
 
 def create_text_shape(text_node, parent_object):
     string = text_node.get('string', '')
+    body = [w.strip('"') for w in string.split('" "')]
+
     font_style = text_node.find('FontStyle')
 
     # Create text object
     bpy.ops.object.text_add()
     text_object = bpy.context.active_object
-    text_object.data.body = string
+    text_object.data.body =  "\n".join(body)
 
     # Set font properties if FontStyle is present
     if font_style is not None:
@@ -120,6 +123,7 @@ def create_text_shape(text_node, parent_object):
 
         # Set size
         text_object.scale = Vector((size, size, size))
+        # text_object.data.size = size
 
     # Parent the text object
     text_object.parent = parent_object
@@ -229,8 +233,10 @@ def process_node(node, parent_object=None, def_nodes=None):
         animated_objects[use_name] = new_object
         return animated_objects
 
-    if node.tag in ('Transform', 'Group', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
-        if not node.tag in ('Group', 'HAnimSegment'):
+    if node.tag in ('Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+        if node.tag in ('Billboard', 'TouchSensor'):
+            pass
+        elif not node.tag in ('Group', 'HAnimSegment'):
             transform_data = parse_transform(node)
         else:
             transform_data = ((0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0))
@@ -240,9 +246,13 @@ def process_node(node, parent_object=None, def_nodes=None):
             empty = create_empty_hanimsegment(name, parent_object)
         elif node.tag in ('HAnimSite'):
             empty = create_empty_hanimsite(name, transform_data, parent_object)
+        elif node.tag in ('Billboard'):
+            empty = create_billboard_empty(name, parent_object)
+        elif node.tag in ('TouchSensor'):
+            empty = create_touchsensor_empty(node.get('description'), parent_object)
         else:
             empty = create_empty(name, transform_data, parent_object)
-        empty.hide_viewport = True
+        # empty.hide_viewport = True
         animated_objects[name] = empty
 
         def_name = node.get('DEF')
@@ -436,6 +446,32 @@ def triangulate_face(indices):
         triangles.append([indices[0], indices[i], indices[i + 1]])
     return triangles
 
+def create_billboard_empty(name, parent_object):
+    try:
+        billboard_empty = bpy.data.objects.new(name, None)
+        bpy.context.collection.objects.link(billboard_empty)
+
+        if parent_object:
+            billboard_empty.parent = parent_object
+
+        return billboard_empty
+    except Exception as ex:
+        print(f"Error handling Billboard node: {ex}")
+        return None
+
+def create_touchsensor_empty(description, parent_object):
+    try:
+        touchsensor_empty = bpy.data.objects.new("TouchSensor."+description, None)
+        bpy.context.collection.objects.link(touchsensor_empty)
+
+        if parent_object:
+            touchsensor_empty.parent = parent_object
+
+        return touchsensor_empty
+    except Exception as ex:
+        print(f"Error handling Touchsensor node: {ex}")
+        return None
+
 def process_indexed_face_set(face_set, coordinates):
     coord_index = list(map(int, strip_commas_and_split(face_set.get('coordIndex', ''))))
     vertices = list(map(float, strip_commas_and_split(coordinates.get('point', ''))))
@@ -561,7 +597,10 @@ def main(file_path):
     camera = bpy.context.active_object
     bpy.context.scene.camera = camera
 
-    bpy.ops.object.light_add(type='SUN', location=(0, 10, 20))
+    bpy.ops.object.light_add(type='SUN', location=(0, 0, 0))
+    light = bpy.context.active_object
+    #direction = Vector((0,0,-1))
+    #light.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
 
 def set_view_to_positive_z():
     # Get the 3D view area
@@ -599,9 +638,11 @@ set_view_to_positive_z()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
 # file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"  # Replace with your X3D file path
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20f.x3d"  # Replace with your X3D file path
+file_path = "Jin20fBillboarded5.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
 #file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
-file_path = "Jin11gNoUSE.x3d"  # Replace with your X3D file path
+# file_path = "Jin11gNoUSE.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat11g.x3d"  # Replace with your X3D file path
 #file_path = "JinConcat10h.x3d"  # Replace with your X3D file path
 #file_path = "localrotation.x3d"  # Replace with your X3D file path
@@ -619,3 +660,12 @@ main(file_path)
 #bpy.ops.export_scene.x3dv(filepath="Humanoid4.1Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinLOA1scaled1Export.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+bpy.ops.export_scene.x3dv(filepath="Jin20fBillboarded5Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+filepath = "."
+bpy.ops.export_scene.gltf(
+    filepath=os.path.join(filepath, f"Jin20fBillboarded5_2.gltf"),
+    export_yup=True,
+    export_format="GLTF_SEPARATE",
+    # export_format="GLB",
+    use_active_collection=True
+)
