@@ -664,7 +664,7 @@ bpy.ops.export_scene.x3dv(filepath="Jin20fBillboarded5Export.x3d", export_hanim_
 filepath = "."
 bpy.ops.export_scene.gltf(
     filepath=os.path.join(filepath, f"Jin20fBillboarded5_2.gltf"),
-    export_yup=True,
+    export_yup=False,
     export_format="GLTF_SEPARATE",
     # export_format="GLB",
     use_active_collection=True
