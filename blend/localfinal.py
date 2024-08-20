@@ -3,6 +3,46 @@ import bpy
 import os
 from mathutils import Matrix, Vector, Quaternion, Euler
 
+#############################################################
+objs = bpy.data.objects
+bpy.context.view_layer.objects.active = objs["Cube"]
+objs.remove(objs["Cube"], do_unlink=True)
+#############################################################
+
+#############################################################
+# Get the default camera
+camera = bpy.data.objects["Camera"]
+
+# Remove the camera from all collections
+for collection in bpy.data.collections:
+    if camera.name in collection.objects:
+        collection.objects.unlink(camera)
+
+# Remove the camera from the scene
+if camera.name in bpy.context.scene.collection.objects:
+    bpy.context.scene.collection.objects.unlink(camera)
+
+# Delete the camera object
+bpy.data.objects.remove(camera, do_unlink=True)
+#############################################################
+
+
+#############################################################
+# Get the default light
+light = bpy.data.objects["Light"]
+
+# Remove the light from all collections
+for collection in bpy.data.collections:
+    if light.name in collection.objects:
+        collection.objects.unlink(light)
+
+# Remove the light from the scene
+if light.name in bpy.context.scene.collection.objects:
+    bpy.context.scene.collection.objects.unlink(light)
+
+# Delete the light object
+bpy.data.objects.remove(light, do_unlink=True)
+#############################################################
 
 def strip_commas_and_split(value):
     #if not value:
@@ -138,6 +178,60 @@ def create_box(name, size):
     # box.matrix_local = matrix.copy()
     # box.matrix_local = matrix
     return box
+
+def process_indexed_lineset(name, coord_index, points, color_index, colors):
+    if not coord_index or not points:
+        print(f"Invalid data for IndexedLineSet {name}: coord_index or points are missing")
+        return None
+
+    if len(points) % 3 != 0:
+        print(f"Points array length {len(points)} is not a multiple of 3 for IndexedLineSet {name}")
+        return None
+
+    # Convert points to tuples of coordinates
+    vertices = [(points[i], points[i+1], points[i+2]) for i in range(0, len(points), 3)]
+
+    # Ensure coord_index is properly aligned
+    if max(coord_index) >= len(vertices):
+        print(f"coord_index contains values outside the range of vertices in IndexedLineSet {name}")
+        return None
+
+    print(f"vertices {vertices}")
+    # Split the coord_index into separate segments by detecting -1, which usually indicates the end of a segment
+    segments = [vertices[idx] for idx in coord_index if idx != -1]
+    print(f"segments {segments}")
+
+    # Validate and process color information
+    expanded_colors = [(colors[i], colors[i]) for i in color_index]
+    return create_indexed_lineset(name, segments, expanded_colors)
+
+def create_indexed_lineset(name, segments, colors):
+    if not segments:
+        print(f"No valid segments to create LineSet {name}")
+        return None
+
+    curve_data = bpy.data.curves.new(name, 'CURVE')
+    curve_data.dimensions = '3D'
+    curve_object = bpy.data.objects.new(name, curve_data)
+    bpy.context.collection.objects.link(curve_object)
+
+    polyline = curve_data.splines.new('POLY')
+    polyline.points.add(len(segments)-1)
+    for i in range(len(segments)):
+        if i % 2 == 0:
+            polyline.points[i].co = (*segments[i], 1)
+            polyline.points[i+1].co = (*segments[i+1], 1)
+
+        # Create a material and assign the colors
+    for color in colors:
+        print(f"create color {color[:]}")
+        for end_color in color:
+            material = bpy.data.materials.new(name=f"{name}_segment_{color.index(end_color)}_material")
+            material.use_nodes = True
+            material.diffuse_color = end_color
+            curve_data.materials.append(material)
+
+    return curve_object
 
 def create_lineset(name, coordinates, colors):
     if len(coordinates) % 3 != 0:
@@ -302,7 +396,7 @@ def create_material(material_node):
     nodes = material.node_tree.nodes
     principled = nodes["Principled BSDF"]
 
-    diffuse_color = list(map(float, material_node.get('diffuseColor', '0.8 0.8 0.8').split()))
+    diffuse_color = list(map(float, material_node.get('diffuseColor', '0.8 0.8 0.8 1.0').split()))
     specular_color = list(map(float, material_node.get('specularColor', '0.2 0.2 0.2').split()))
     emissive_color = list(map(float, material_node.get('emissiveColor', '0 0 0').split()))
     ambient_intensity = float(material_node.get('ambientIntensity', '0.2'))
@@ -329,6 +423,9 @@ def create_material(material_node):
 
     set_input('Alpha', 1 - transparency)
     set_input('Transmission', transparency)
+
+    material.diffuse_color = diffuse_color + [1.0]
+    material.specular_color = specular_color
 
     return material
 
@@ -391,7 +488,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
                         colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
                     elif child.find('Color'):
                         # For Color, we need to group every 3 values and add alpha=1
-                        colors = [tuple(map(float, color_values[i:i+3]) + [1.0]) for i in range(0, len(color_values), 3)]
+                        colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
                     color_def = color.get('DEF')
                     if color_def:
                         def_nodes[color_def] = color_values
@@ -401,6 +498,54 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
                 #if material:
                 #    lineset_object.data.materials.append(material)
                 shape_objects[f"{parent_object.name}_lineset"] = lineset_object
+        elif child.tag == 'IndexedLineSet':
+            coordinate = child.find('Coordinate')
+            coord_index = list(map(int, strip_commas_and_split(child.get('coordIndex', ''))))
+            color_index = list(map(int, strip_commas_and_split(child.get('colorIndex', ''))))
+            colorRGBA = child.find('ColorRGBA')
+            color = child.find('Color')
+            print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
+            if coordinate is not None:
+                points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+                if colorRGBA is not None:
+                    if colorRGBA.get('color'):
+                        color_values = strip_commas_and_split(color.get('color'))
+                    color_def = color.get('DEF')
+                    if color_def:
+                        def_nodes[color_def] = color_values
+                    else:
+                        color_use = colorRGBA.get('USE')
+                        if color_use:
+                            color_values = def_nodes[color_use]
+                    # For ColorRGBA, we need to group every 4 values
+                    print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
+                    colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
+                    print(f"colors {colors}")
+                elif color is not None:
+                    if color.get('color'):
+                        color_values = strip_commas_and_split(color.get('color'))
+                    color_def = color.get('DEF')
+                    if color_def:
+                        def_nodes[color_def] = color_values
+                    else:
+                        color_use = color.get('USE')
+                        if color_use:
+                            color_values = def_nodes[color_use]
+                    # For Color, we need to group every 3 values and add alpha=1
+                    print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
+                    colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
+                    print(f"colors {colors}")
+                else:
+                    print(child)
+
+                indexed_lineset_object = process_indexed_lineset(f"{parent_object.name}_indexed_lineset", coord_index, points, color_index, colors)
+                obj = indexed_lineset_object
+                if indexed_lineset_object:
+                    indexed_lineset_object.parent = parent_object
+                    shape_objects[f"{parent_object.name}_indexed_lineset"] = indexed_lineset_object
+                else:
+                    print(f"process_indexed_lineset didn't return an object")
+
         elif child.tag == 'Sphere':
             radius = float(child.get('radius', '1'))
             sphere_object = create_sphere(f"{parent_object.name}_sphere", radius)
@@ -593,12 +738,17 @@ def main(file_path):
     bpy.context.scene.frame_end = 250
     bpy.context.scene.render.fps = 30
 
-    bpy.ops.object.camera_add(location=(0, 10, 20))
+    bpy.ops.object.camera_add(location=(0, 1, 2))
     camera = bpy.context.active_object
     bpy.context.scene.camera = camera
+    camera.location = Vector((0, 1, 2))
+    camera.matrix_world = Matrix.Translation(Vector((0, 1, 2)))
+    camera.matrix_local = Matrix.Translation(Vector((0, 1, 2)))
+    print(f"Camera location2 {camera.location[:]}")
 
-    bpy.ops.object.light_add(type='SUN', location=(0, 0, 0))
+    bpy.ops.object.light_add(type='SUN', location=(0, 0, 1))
     light = bpy.context.active_object
+    light.matrix_world = Matrix.Rotation(3.1416, 4, Vector((0, 0, 1)))
     #direction = Vector((0,0,-1))
     #light.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
 
