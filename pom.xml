@@ -144,13 +144,7 @@
 								<include>**/*.x3d</include>
 							</includes>
 							<excludes>
-								<exclude>**/*.intermediate.x3d</exclude>
-								<exclude>**/*.don.x3d</exclude>
-								<exclude>**/*.john.x3d</exclude>
-								<exclude>**/*.new.john.x3d</exclude>
-								<exclude>**/*.new</exclude>
-								<exclude>**/*.new.x3d</exclude>
-								<exclude>**/*.new.graal.x3d</exclude>
+								<exclude>**/*.new.*</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<outputDir>src/main/data</outputDir>
@@ -169,13 +163,7 @@
 								<include>**/*.x3d</include>
 							</includes>
 							<excludes>
-								<exclude>**/*.intermediate.x3d</exclude>
-								<exclude>**/*.don.x3d</exclude>
-								<exclude>**/*.john.x3d</exclude>
-								<exclude>**/*.new.john.x3d</exclude>
-								<exclude>**/*.new</exclude>
-								<exclude>**/*.new.x3d</exclude>
-								<exclude>**/*.new.graal.x3d</exclude>
+								<exclude>**/*.new.*</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -199,13 +187,7 @@
 								<include>**/*.x3d</include>
 							</includes>
 							<excludes>
-								<exclude>**/*.intermediate.x3d</exclude>
-								<exclude>**/*.don.x3d</exclude>
-								<exclude>**/*.john.x3d</exclude>
-								<exclude>**/*.new.john.x3d</exclude>
-								<exclude>**/*.new</exclude>
-								<exclude>**/*.new.x3d</exclude>
-								<exclude>**/*.new.graal.x3d</exclude>
+								<exclude>**/*.new.*</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -229,13 +211,7 @@
 								<include>**/*.x3d</include>
 							</includes>
 							<excludes>
-								<exclude>**/*.intermediate.x3d</exclude>
-								<exclude>**/*.don.x3d</exclude>
-								<exclude>**/*.john.x3d</exclude>
-								<exclude>**/*.new.john.x3d</exclude>
-								<exclude>**/*.new</exclude>
-								<exclude>**/*.new.x3d</exclude>
-								<exclude>**/*.new.graal.x3d</exclude>
+								<exclude>**/*.new.*</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -260,13 +236,7 @@
 								<include>**/*.x3d</include>
 							</includes>
 							<excludes>
-								<exclude>**/*.intermediate.x3d</exclude>
-								<exclude>**/*.don.x3d</exclude>
-								<exclude>**/*.john.x3d</exclude>
-								<exclude>**/*.new.john.x3d</exclude>
-								<exclude>**/*.new</exclude>
-								<exclude>**/*.new.x3d</exclude>
-								<exclude>**/*.new.graal.x3d</exclude>
+								<exclude>**/*.new.*</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
