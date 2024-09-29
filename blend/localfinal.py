@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import bpy
 import os
+import sys
 from mathutils import Matrix, Vector, Quaternion, Euler
 
 #############################################################
@@ -49,6 +50,99 @@ def strip_commas_and_split(value):
     #    return []
     return value.replace(',', ' ').split()
 
+def compose_name(node):
+    node_def = node.get('DEF')
+    node_use = node.get('USE')
+    if node.tag.startswith("HAnim"):
+        return "hanim_"+node.get('name')
+    elif node_def is not None:
+        return node.tag+"."+node_def
+    elif node_use is not None:
+        return node.tag+"."+node_use
+    else:
+        return node.tag
+
+def compose_use(node):
+    return compose_name(node)+"."+str(unique.getNext())
+
+def put_value(name, def_nodes, obj):
+    # print('PUT', name)
+    if obj is not None and name is not None and def_nodes is not None :
+        def_nodes[name] = obj
+    # print(f"def_nodes node {node} obj {obj} def_name {def_name} {def_nodes} node.tag {node.tag}")
+
+def get_value(name, def_nodes):
+    # print('GET', name)
+    if name is not None and def_nodes is not None and name in def_nodes:
+        return def_nodes[name]
+    return None
+
+def color_lookup(color, def_nodes):
+    color_values = None
+    if color is not None:
+        if color.get('color'):
+            color_values = strip_commas_and_split(color.get('color'))
+        color_def = color.get('DEF')
+        color_use = color.get('USE')
+        color_name = compose_name(color)
+        if color_def is not None:
+            put_value(color_name, def_nodes, color_values)
+        elif color_use is not None:
+            color_values = get_value(color_name, def_nodes)
+    return color_values
+
+def def_lookup(node, def_nodes, value, parent_object, animated_objects):
+    if node is not None:
+        node_def = node.get('DEF')
+        node_use = node.get('USE')
+        name = compose_name(node)
+        if node_use is not None:
+            value = get_value(name, def_nodes)
+        if value is None:
+            # print('NEW', name)
+            value = bpy.data.objects.new(name, None)
+            # bpy.ops.object.empty_add(type='PLAIN_AXES')
+            # value = bpy.context.active_object
+            bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
+            value.name = name
+            bpy.context.collection.objects.link(value)
+            if node_def is not None:
+                animated_objects[node_def] = value
+                put_value(name, def_nodes, value)
+        else:
+            # print('FOUND', name)
+            pass
+    if hasattr(value, "parent") and parent_object is not None:
+        value.parent = parent_object
+    return value
+
+
+class uniqueClass:
+    uniqueIdCounter = 0
+    def getNext(self):
+        self.uniqueIdCounter += 1
+        return self.uniqueIdCounter
+    def copy(self, node, def_nodes, parent_object, animated_objects):
+        use_name = node.get('USE')
+        name = compose_name(node) 
+        # print('COPY?', name)
+        if use_name is not None:
+            old_obj = get_value(name, def_nodes)
+            if old_obj is not None:
+                # print('COPYING', name)
+                new_obj = old_obj.copy()
+                if hasattr(new_obj, "name"):
+                    new_obj.name = compose_use(node)
+                    # print(f"COPYED {new_obj.name}")
+                if hasattr(new_obj, "parent"):
+                    new_obj.parent = parent_object
+                    bpy.context.scene.collection.objects.link(new_obj)
+                animated_objects[use_name] = new_obj
+                return new_obj
+        return None
+
+unique = uniqueClass()
+
 def parse_transform(transform):
     try:
         translation = strip_commas_and_split(transform.get('translation', '0 0 0'))
@@ -66,7 +160,9 @@ def parse_transform(transform):
         print(f"Error parsing transform: {e}")
         return (0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0)
 
-def create_empty(name, transform_data, parent_object):
+def create_transform(node, def_nodes, parent_object, animated_objects):
+    # print('CREATE', node.tag)
+    transform_data = parse_transform(node)
     try:
         (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
 
@@ -76,75 +172,56 @@ def create_empty(name, transform_data, parent_object):
         transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
     
 
-        bpy.ops.object.empty_add(type='PLAIN_AXES')
-        bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
-        empty = bpy.context.active_object
-        empty.name = name
+        empty = def_lookup(node, def_nodes, None, parent_object, animated_objects)
         if cx != 0 or cy != 0 or cz != 0:
             empty['x3dtranslation'] = translation_matrix
         else:
             empty['x3dtranslation'] = None
+
         if parent_object:
-            empty.parent = parent_object
-        #    local_matrix = parent_object.matrix_world.inverted() @ matrix
-        #    empty.matrix_local = local_matrix
-        #else:
-        empty.matrix_world = transform_matrix
-        #empty.matrix_local = matrix
+            # empty.matrix_world = parent_object.matrix_world @ transform_matrix
+            empty.matrix_world = transform_matrix
+        else:
+            empty.matrix_world = transform_matrix
 
         return empty
     except RuntimeError as e:
-        print(f"Error creating empty object: {e}")
+        print(f"Error creating transform object: {e}")
         return None
 
-def create_empty_hanimsite(name, transform_data, parent=None):
-    (tx, ty, tz), (rx, ry, rz, angle), (sx, sy, sz), (cx, cy, cz) = transform_data
-    
-    bpy.ops.object.empty_add(type='PLAIN_AXES')
-    bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
-    empty = bpy.context.active_object
-    empty.name = name
-    
-    translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
-    rotation_matrix = Matrix.Rotation(angle, 4, Vector((rx, ry, rz)))
-    scale_matrix = Matrix.Scale(sx, 4, (1, 0, 0)) @ Matrix.Scale(sy, 4, (0, 1, 0)) @ Matrix.Scale(sz, 4, (0, 0, 1))
-    transform_matrix = translation_matrix @ rotation_matrix @ scale_matrix
-    
-    if parent:
-        empty.parent = parent
-        empty.matrix_world = transform_matrix
-    
-    if cx != 0 or cy != 0 or cz != 0:
-        empty['x3dtranslation'] = translation_matrix
-    else:
-        empty['x3dtranslation'] = None
-    
-    # print(f"Created empty object '{name}' at global {transform_matrix.to_translation()}, local {empty.location}")
-    return empty
+def create_empty(node, def_nodes, parent_object, animated_objects):
+    # print('CREATE', node.tag)
+    try:
+        empty = def_lookup(node, def_nodes, None, parent_object, animated_objects)
+        if node.tag == "TouchSensor":
+            node_def = node.get('DEF')
+            node_use = node.get('USE')
+            if node_def is not None:
+                empty.name = node.tag+"."+node.get('description')+"."+node_def
+            elif node_use is not None:
+                empty.name = node.tag+"."+node.get('description')+"."+node_use
+            else:
+                empty.name = node.tag+"."+node.get('description')
+        return empty
+    except Exception as ex:
+        print(f"Error handling empty node: {ex}")
+        return None
 
-def create_empty_hanimsegment(name, parent=None):
     
-    bpy.ops.object.empty_add(type='PLAIN_AXES')
-    bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
-    empty = bpy.context.active_object
-    empty.name = name
-    
-    if parent:
-        empty.parent = parent
-        # empty.matrix_world = parent.matrix_world.copy()
-    
-    return empty
 
-def create_text_shape(text_node, parent_object):
-    string = text_node.get('string', '')
+def create_text(name, node):
+    # print('CREATE', node.tag)
+    string = node.get('string', '')
     body = [w.strip('"') for w in string.split('" "')]
 
-    font_style = text_node.find('FontStyle')
+    font_style = node.find('FontStyle')
 
     # Create text object
-    bpy.ops.object.text_add()
-    text_object = bpy.context.active_object
-    text_object.data.body =  "\n".join(body)
+    font_curve = bpy.data.curves.new(type="FONT", name=name+"_data")
+    font_curve.body = "\n".join(body)
+    font_obj = bpy.data.objects.new(name=name, object_data=font_curve)
+    bpy.context.scene.collection.objects.link(font_obj)
+
 
     # Set font properties if FontStyle is present
     if font_style is not None:
@@ -153,33 +230,62 @@ def create_text_shape(text_node, parent_object):
         size = float(font_style.get('size', '1.0'))
 
         # Set font (you may need to adjust this based on available fonts)
-        # For now, we'll use the default font
+        font_obj.data.family = family
 
         # Set style
         if 'ITALIC' in style.upper():
-            text_object.data.shear = 0.2  # Simulate italic
+            font_obj.data.shear = 0.2  # Simulate italic
         if 'BOLD' in style.upper():
-            text_object.data.extrude = 0.1  # Simulate bold
+            font_obj.data.extrude = 0.1  # Simulate bold
+
 
         # Set size
-        text_object.scale = Vector((size, size, size))
+        font_obj.scale = Vector((size, size, size))
         # text_object.data.size = size
 
-    # Parent the text object
-    text_object.parent = parent_object
+    return font_obj
 
-    return text_object
-
-def create_box(name, size):
-    bpy.ops.mesh.primitive_cube_add(size=1)
+def create_box(name, node):
+    # print('CREATE', node.tag)
+    size = tuple(map(float, node.get('size', '1 1 1').split()))
+    # print(f"box size {size}")
+    bpy.ops.mesh.primitive_cube_add(size=(size[0] + size[1] + size[2])/3)  # sorry, no prisms
     box = bpy.context.active_object
-    box.name = name
     box.scale = size
     # box.matrix_local = matrix.copy()
     # box.matrix_local = matrix
     return box
 
-def process_indexed_lineset(name, coord_index, points, color_index, colors):
+def coordinate_lookup(set_node, def_nodes):
+    coordinate = set_node.find('Coordinate')
+    if coordinate is not None:
+        name = compose_name(coordinate) 
+        if coordinate.get('DEF'):
+            put_value(name, def_nodes, coordinate)
+        elif coordinate.get('USE'):
+            coordinate = get_value(name, def_nodes)
+        return coordinate
+    else:
+        print(f"No valid Coordinate for {set_node.tag}")
+        return None
+
+def create_indexed_line_set(name, node, def_nodes):
+    # print('CREATE', node.tag)
+    coordinate = coordinate_lookup(node, def_nodes)
+    if coordinate is not None:
+        coord_index = list(map(int, strip_commas_and_split(node.get('coordIndex', ''))))
+        color_index = list(map(int, strip_commas_and_split(node.get('colorIndex', ''))))
+        colorRGBA = node.find('ColorRGBA')
+        color = node.find('Color')
+        points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+        if colorRGBA is not None:
+            color_values = color_lookup(colorRGBA, def_nodes)
+            # For ColorRGBA, we need to group every 4 values
+            colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
+        elif color is not None:
+            color_values = color_lookup(color, def_nodes)
+            # For Color, we need to group every 3 values and add alpha=1
+            colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
     if not coord_index or not points:
         print(f"Invalid data for IndexedLineSet {name}: coord_index or points are missing")
         return None
@@ -196,22 +302,47 @@ def process_indexed_lineset(name, coord_index, points, color_index, colors):
         print(f"coord_index contains values outside the range of vertices in IndexedLineSet {name}")
         return None
 
-    print(f"vertices {vertices}")
+    #print(f"vertices {vertices}")
     # Split the coord_index into separate segments by detecting -1, which usually indicates the end of a segment
     segments = [vertices[idx] for idx in coord_index if idx != -1]
-    print(f"segments {segments}")
+    #print(f"segments {segments}")
 
     # Validate and process color information
     expanded_colors = [(colors[i], colors[i]) for i in color_index]
-    return create_indexed_lineset(name, segments, expanded_colors)
+    return create_common_line_set(name, segments, expanded_colors)
 
-def create_indexed_lineset(name, segments, colors):
+def create_line_set(name, node, def_nodes):
+    # print('CREATE', node.tag)
+    coordinate = coordinate_lookup(node, def_nodes)
+    if coordinate is not None:
+        colorRGBA = node.find('ColorRGBA')
+        color = node.find('Color')
+        # points = strip_commas_and_split(coordinate.get('point'))
+        points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+        if colorRGBA is not None:
+            color_values = color_lookup(colorRGBA, def_nodes)
+            colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
+        elif color is not None:
+            color_values = color_lookup(color, def_nodes)
+            # For Color, we need to group every 3 values and add alpha=1
+            colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
+        #print(f"color {color} colorRGBA {colorRGBA}")
+        #print(f"colors {colors}")
+        vertices = [(points[i], points[i+1], points[i+2]) for i in range(0, len(points), 3)]
+        expanded_colors = [(col, col) for col in colors]
+        #print(f"expanded_colors {expanded_colors}")
+        obj = create_common_line_set(name, vertices, expanded_colors)
+        return obj
+
+def create_common_line_set(name, segments, colors):
+    print(f"COLOR {name} {colors}")
     if not segments:
         print(f"No valid segments to create LineSet {name}")
         return None
 
-    curve_data = bpy.data.curves.new(name, 'CURVE')
+    curve_data = bpy.data.curves.new(name+"_data", 'CURVE')
     curve_data.dimensions = '3D'
+    # print('NEW', name)
     curve_object = bpy.data.objects.new(name, curve_data)
     bpy.context.collection.objects.link(curve_object)
 
@@ -224,7 +355,7 @@ def create_indexed_lineset(name, segments, colors):
 
         # Create a material and assign the colors
     for color in colors:
-        print(f"create color {color[:]}")
+        # print(f"create color {color[:]}")
         for end_color in color:
             material = bpy.data.materials.new(name=f"{name}_segment_{color.index(end_color)}_material")
             material.use_nodes = True
@@ -233,78 +364,79 @@ def create_indexed_lineset(name, segments, colors):
 
     return curve_object
 
-def create_lineset(name, coordinates, colors):
-    if len(coordinates) % 3 != 0:
-        print(f"Not enough coordinates for LineSet {name}")
-        return None
+#def create_old_line_set(name, coordinate, colors):
+#    if len(coordinate) % 3 != 0:
+#        print(f"Not enough coordinates for LineSet {name}")
+#        return None
+#
+#    # Create a new curve object
+#    curve_data = bpy.data.curves.new(name=name, type='CURVE')
+#    curve_data.dimensions = '3D'
+#    curve_object = bpy.data.objects.new(name, curve_data)
+#    bpy.context.collection.objects.link(curve_object)
+#    # curve_object.matrix_local = matrix.copy()
+#    # curve_object.matrix_local = matrix
+#
+#    # Create a new spline in the curve
+#    polyline = curve_data.splines.new('POLY')
+#    polyline.points.add(len(coordinate) // 3 - 1)
+#
+#    # Set coordinate for the points
+#    for i, point in enumerate(zip(*[iter(coordinate)]*3)):
+#        polyline.points[i].co = (*point, 1)  # W-component is 1 for linear interpolation
+#
+#    # Set up the material
+#    material = bpy.data.materials.new(name=f"{name}_material")
+#    material.use_nodes = True
+#    curve_object.data.materials.append(material)
+#
+#    # Set up nodes for gradient coloring
+#    nodes = material.node_tree.nodes
+#    links = material.node_tree.links
+#    nodes.clear()
+#
+#    node_output = nodes.new(type='ShaderNodeOutputMaterial')
+#    node_emission = nodes.new(type='ShaderNodeEmission')
+#    node_gradient = nodes.new(type='ShaderNodeTexGradient')
+#    node_coord = nodes.new(type='ShaderNodeTexCoord')
+#    node_mapping = nodes.new(type='ShaderNodeMapping')
+#    
+#    links.new(node_emission.outputs['Emission'], node_output.inputs['Surface'])
+#    links.new(node_coord.outputs['Generated'], node_mapping.inputs['Vector'])
+#    links.new(node_mapping.outputs['Vector'], node_gradient.inputs['Vector'])
+#    links.new(node_gradient.outputs['Color'], node_emission.inputs['Color'])
+#
+#    # Configure gradient
+#    node_mapping.inputs['Location'].default_value[2] = 0
+#    node_mapping.inputs['Rotation'].default_value[2] = 1.5708  # Rotate 90 degrees to align gradient with curve
+#
+#    # Configure colors
+#    if colors:
+#        color_ramp = nodes.new(type='ShaderNodeValToRGB')
+#        links.new(node_gradient.outputs['Fac'], color_ramp.inputs['Fac'])
+#        links.new(color_ramp.outputs['Color'], node_emission.inputs['Color'])
+#        
+#        color_ramp.color_ramp.elements.remove(color_ramp.color_ramp.elements[1])
+#        color_ramp.color_ramp.elements[0].color = colors[0]
+#
+#        for i, color in enumerate(colors[1:], start=1):
+#            color_element = color_ramp.color_ramp.elements.new(i / (len(colors) - 1))
+#            color_element.color = color
+#    else:
+#        # Default to a white gradient if no colors are provided
+#        node_emission.inputs['Color'].default_value = (1, 1, 1, 1)
+#
+#    # Set curve appearance
+#    curve_data.bevel_depth = 0.01  # Adjust this value to change the thickness of the line
+#    curve_data.use_fill_caps = True
+#
+#    return curve_object
 
-    # Create a new curve object
-    curve_data = bpy.data.curves.new(name=name, type='CURVE')
-    curve_data.dimensions = '3D'
-    curve_object = bpy.data.objects.new(name, curve_data)
-    bpy.context.collection.objects.link(curve_object)
-    # curve_object.matrix_local = matrix.copy()
-    # curve_object.matrix_local = matrix
-
-    # Create a new spline in the curve
-    polyline = curve_data.splines.new('POLY')
-    polyline.points.add(len(coordinates) // 3 - 1)
-
-    # Set coordinates for the points
-    for i, point in enumerate(zip(*[iter(coordinates)]*3)):
-        polyline.points[i].co = (*point, 1)  # W-component is 1 for linear interpolation
-
-    # Set up the material
-    material = bpy.data.materials.new(name=f"{name}_material")
-    material.use_nodes = True
-    curve_object.data.materials.append(material)
-
-    # Set up nodes for gradient coloring
-    nodes = material.node_tree.nodes
-    links = material.node_tree.links
-    nodes.clear()
-
-    node_output = nodes.new(type='ShaderNodeOutputMaterial')
-    node_emission = nodes.new(type='ShaderNodeEmission')
-    node_gradient = nodes.new(type='ShaderNodeTexGradient')
-    node_coord = nodes.new(type='ShaderNodeTexCoord')
-    node_mapping = nodes.new(type='ShaderNodeMapping')
-    
-    links.new(node_emission.outputs['Emission'], node_output.inputs['Surface'])
-    links.new(node_coord.outputs['Generated'], node_mapping.inputs['Vector'])
-    links.new(node_mapping.outputs['Vector'], node_gradient.inputs['Vector'])
-    links.new(node_gradient.outputs['Color'], node_emission.inputs['Color'])
-
-    # Configure gradient
-    node_mapping.inputs['Location'].default_value[2] = 0
-    node_mapping.inputs['Rotation'].default_value[2] = 1.5708  # Rotate 90 degrees to align gradient with curve
-
-    # Configure colors
-    if colors:
-        color_ramp = nodes.new(type='ShaderNodeValToRGB')
-        links.new(node_gradient.outputs['Fac'], color_ramp.inputs['Fac'])
-        links.new(color_ramp.outputs['Color'], node_emission.inputs['Color'])
-        
-        color_ramp.color_ramp.elements.remove(color_ramp.color_ramp.elements[1])
-        color_ramp.color_ramp.elements[0].color = colors[0]
-
-        for i, color in enumerate(colors[1:], start=1):
-            color_element = color_ramp.color_ramp.elements.new(i / (len(colors) - 1))
-            color_element.color = color
-    else:
-        # Default to a white gradient if no colors are provided
-        node_emission.inputs['Color'].default_value = (1, 1, 1, 1)
-
-    # Set curve appearance
-    curve_data.bevel_depth = 0.01  # Adjust this value to change the thickness of the line
-    curve_data.use_fill_caps = True
-
-    return curve_object
-
-def create_sphere(name, radius):
+def create_sphere(name, node):
+    # print('CREATE', node.tag)
+    radius = float(node.get('radius', '1'))
     bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
     sphere = bpy.context.active_object
-    sphere.name = name
     # sphere.matrix_local = matrix.copy()
     # sphere.matrix_local = matrix
     return sphere
@@ -313,95 +445,51 @@ def process_node(node, parent_object=None, def_nodes=None):
     animated_objects = {}
     cx, cy, cz = 0, 0, 0
 
-    use_name = node.get('USE')
-    if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
-        return animated_objects
-    elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
-        return animated_objects
-    elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
-        return animated_objects
-    elif use_name and def_nodes and use_name in def_nodes:
-        new_object = def_nodes[use_name].copy()
-        new_object.parent = parent_object
-        bpy.context.scene.collection.objects.link(new_object)
-        animated_objects[use_name] = new_object
+    #if node.tag in ('HAnimJoint') and node.get('containerField') == 'joints':
+    #    return animated_objects
+    #elif node.tag in ('HAnimSegment') and node.get('containerField') == 'segments':
+    #    return animated_objects
+    #elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
+    #    return animated_objects
+    #el
+    if def_nodes is not None:
+        new_object = unique.copy(node, def_nodes, parent_object, animated_objects)
+    if new_object is not None:
         return animated_objects
 
-    if node.tag in ('Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
-        if node.tag in ('Billboard', 'TouchSensor'):
-            pass
-        elif not node.tag in ('Group', 'HAnimSegment'):
-            transform_data = parse_transform(node)
+    if node.tag in ('Shape', 'Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+        if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid'):
+            parent_object = create_transform(node, def_nodes, parent_object, animated_objects)
         else:
-            transform_data = ((0, 0, 0), (0, 0, 1, 0), (1, 1, 1), (0, 0, 0))
+            parent_object = create_empty(node, def_nodes, parent_object, animated_objects)
 
-        name = node.get('DEF', node.tag)
-        if node.tag in ('HAnimSegment'):
-            empty = create_empty_hanimsegment(name, parent_object)
-        elif node.tag in ('HAnimSite'):
-            empty = create_empty_hanimsite(name, transform_data, parent_object)
-        elif node.tag in ('Billboard'):
-            empty = create_billboard_empty(name, parent_object)
-        elif node.tag in ('TouchSensor'):
-            empty = create_touchsensor_empty(node.get('description'), parent_object)
-        else:
-            empty = create_empty(name, transform_data, parent_object)
-        # empty.hide_viewport = True
-        animated_objects[name] = empty
+        # current_object.hide_viewport = True
 
-        def_name = node.get('DEF')
-        if def_name and def_nodes is not None:
-            def_nodes[def_name] = empty
+        if node.tag in ('Shape'):
+            shape_objects = process_shape(node, parent_object, def_nodes, animated_objects)
+            for name in shape_objects:
+                shape = shape_objects[name]
+                shape = def_lookup(node, def_nodes, shape, parent_object, animated_objects)
+                animated_objects.update(shape)
 
-        current_object = empty
-
-        for child in node:
-            use_name = child.get('USE')
-            if child.tag in ('HAnimJoint') and child.get('containerField') == 'joints':
-                continue
-            elif child.tag in ('HAnimSegment') and child.get('containerField') == 'segments':
-                continue
-            elif child.tag in ('HAnimSite') and child.get('containerField') == 'sites':
-                continue
-            if use_name and def_nodes and use_name in def_nodes:
-                print(f"Copying {child.tag} {use_name}")
-                new_object = def_nodes[use_name].copy()
-                new_object.parent = current_object
-                bpy.context.scene.collection.objects.link(new_object)
-                animated_objects[use_name] = new_object
-            elif child.tag == 'Shape':
-                shape_object = process_shape(child, current_object, def_nodes, animated_objects)
-                if shape_object:
-                    animated_objects.update(shape_object)
-            else:
-                child_objects = process_node(child, current_object, def_nodes)
-                animated_objects.update(child_objects)
-    else:
-        current_object = parent_object
-        for child in node:
-            if child.tag in ('HAnimJoint') and child.get('containerField') == 'joints':
-                continue
-            elif child.tag in ('HAnimSegment') and child.get('containerField') == 'segments':
-                continue
-            elif child.tag in ('HAnimSite') and child.get('containerField') == 'sites':
-                continue
-            child_objects = process_node(child, current_object, def_nodes)
-            animated_objects.update(child_objects)
-
+    for child in node:
+        child_objects = process_node(child, parent_object=parent_object, def_nodes=def_nodes)
+        animated_objects.update(child_objects)
     return animated_objects
 
-def create_material(material_node):
-    material = bpy.data.materials.new(name="X3DMaterial")
+def create_material(node):
+    # print('CREATE', node.tag)
+    material = bpy.data.materials.new(name="X3DMaterial."+compose_name(node))
     material.use_nodes = True
     nodes = material.node_tree.nodes
     principled = nodes["Principled BSDF"]
 
-    diffuse_color = list(map(float, material_node.get('diffuseColor', '0.8 0.8 0.8 1.0').split()))
-    specular_color = list(map(float, material_node.get('specularColor', '0.2 0.2 0.2').split()))
-    emissive_color = list(map(float, material_node.get('emissiveColor', '0 0 0').split()))
-    ambient_intensity = float(material_node.get('ambientIntensity', '0.2'))
-    shininess = float(material_node.get('shininess', '0.2'))
-    transparency = float(material_node.get('transparency', '0'))
+    diffuse_color = list(map(float, node.get('diffuseColor', '0.8 0.8 0.8').split()))
+    specular_color = list(map(float, node.get('specularColor', '0.2 0.2 0.2').split()))
+    emissive_color = list(map(float, node.get('emissiveColor', '0 0 0').split()))
+    ambient_intensity = float(node.get('ambientIntensity', '0.2'))
+    shininess = float(node.get('shininess', '0.2'))
+    transparency = float(node.get('transparency', '0'))
 
     # Helper function to safely set input values
     def set_input(name, value):
@@ -433,151 +521,70 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
     shape_objects = {}
     material = None
     
-    use_name = shape_node.get('USE')
-    if use_name and def_nodes and use_name in def_nodes:
-        new_object = def_nodes[use_name].copy()
-        new_object.parent = parent_object
-        bpy.context.scene.collection.objects.link(new_object)
-        animated_objects[new_object.name] = new_object
-        shape_objects[new_object.name] = new_object
-        return shape_objects
-
-    appearance = shape_node.find('Appearance')
-    if appearance is not None:
-        material_node = appearance.find('Material')
-        if material_node is not None:
-            material = create_material(material_node)
+    #print('S', shape_node.tag)
+    name = compose_name(shape_node)
+    #print(name)
+    if def_nodes:
+        new_object = unique.copy(shape_node, def_nodes, parent_object, animated_objects)
+        if new_object is not None:
+            # print('NEW', name, new_object)
+            shape_objects[new_object.name] = new_object
+            return shape_objects
 
     for child in shape_node:
-        use_name = child.get('USE')
-        if use_name and def_nodes and use_name in def_nodes:
-            new_object = def_nodes[use_name].copy()
-            new_object.parent = parent_object
-            bpy.context.scene.collection.objects.link(new_object)
-            animated_objects[new_object.name] = new_object
-            shape_objects[new_object.name] = new_object
-            continue
-        if child.tag == 'Box':
-            box_name = f"{parent_object.name}_box"
-            size = tuple(map(float, child.get('size', '1 1 1').split()))
-            box_object = create_box(box_name, size)
-            obj = box_object
-            box_object.parent = parent_object
-            if material:
-                box_object.data.materials.append(material)
-            shape_objects[box_name] = box_object
-        elif child.tag == 'LineSet':
-            coordinate = child.find('Coordinate')
-            color = child.find('Color')
-            if not color:
-                color = child.find('ColorRGBA')
-            if coordinate is not None:
-                # points = strip_commas_and_split(coordinate.get('point'))
-                points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
-                colors = None
-                if color is not None:
-                    if color.get('color'):
-                        color_values = strip_commas_and_split(color.get('color'))
-                    else:
-                        color_use = color.get('USE')
-                        if color_use:
-                            color_values = def_nodes[color_use]
-                    # print(f"color_values {color_values}")
-                    if child.find('ColorRGBA'):
-                        # For ColorRGBA, we need to group every 4 values
-                        colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
-                    elif child.find('Color'):
-                        # For Color, we need to group every 3 values and add alpha=1
-                        colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
-                    color_def = color.get('DEF')
-                    if color_def:
-                        def_nodes[color_def] = color_values
-                lineset_object = create_lineset(f"{parent_object.name}_lineset", points, colors)
-                obj = lineset_object
-                lineset_object.parent = parent_object
-                #if material:
-                #    lineset_object.data.materials.append(material)
-                shape_objects[f"{parent_object.name}_lineset"] = lineset_object
-        elif child.tag == 'IndexedLineSet':
-            coordinate = child.find('Coordinate')
-            coord_index = list(map(int, strip_commas_and_split(child.get('coordIndex', ''))))
-            color_index = list(map(int, strip_commas_and_split(child.get('colorIndex', ''))))
-            colorRGBA = child.find('ColorRGBA')
-            color = child.find('Color')
-            print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
-            if coordinate is not None:
-                points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
-                if colorRGBA is not None:
-                    if colorRGBA.get('color'):
-                        color_values = strip_commas_and_split(color.get('color'))
-                    color_def = color.get('DEF')
-                    if color_def:
-                        def_nodes[color_def] = color_values
-                    else:
-                        color_use = colorRGBA.get('USE')
-                        if color_use:
-                            color_values = def_nodes[color_use]
-                    # For ColorRGBA, we need to group every 4 values
-                    print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
-                    colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
-                    print(f"colors {colors}")
-                elif color is not None:
-                    if color.get('color'):
-                        color_values = strip_commas_and_split(color.get('color'))
-                    color_def = color.get('DEF')
-                    if color_def:
-                        def_nodes[color_def] = color_values
-                    else:
-                        color_use = color.get('USE')
-                        if color_use:
-                            color_values = def_nodes[color_use]
-                    # For Color, we need to group every 3 values and add alpha=1
-                    print(f"colorIndex {color_index} color {color} colorRGBA {colorRGBA}")
-                    colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
-                    print(f"colors {colors}")
+        #print('CH3', child.tag)
+        name = compose_name(child)
+        #print(name)
+        if def_nodes:
+            new_object = unique.copy(child, def_nodes, parent_object, animated_objects)
+            if new_object is not None:
+                shape_objects[new_object.name] = new_object
+                continue
+        if child.tag in ('Box', 'LineSet', 'IndexedLineSet', 'Sphere', 'IndexedFaceSet', 'Text'):
+            if child.tag == 'Box':
+                obj = create_box(name, child)
+            elif child.tag == 'LineSet':
+                obj = create_line_set(name, child, def_nodes)
+            elif child.tag == 'IndexedLineSet':
+                obj = create_indexed_line_set(name, child, def_nodes)
+            elif child.tag == 'Sphere':
+                obj = create_sphere(name, child)
+            elif child.tag == 'IndexedFaceSet':
+                obj = create_indexed_face_set(name, child, def_nodes)
+            elif child.tag == 'Text':
+                obj = create_text(name, child)
+            else:
+                obj = None
+                print(f"{name} didn't get created")
+
+            if obj is not None:
+                if parent_object is None:
+                    print(f"Couldn't find parent object")
                 else:
-                    print(child)
+                    obj.parent = parent_object
+                    print(f"Could find object {obj.name} parent {parent_object.name} grand {parent_object.parent.name}")
+                obj.name = name
+                shape_objects[name] = obj
+                obj = def_lookup(child, def_nodes, obj, parent_object, animated_objects)
 
-                indexed_lineset_object = process_indexed_lineset(f"{parent_object.name}_indexed_lineset", coord_index, points, color_index, colors)
-                obj = indexed_lineset_object
-                if indexed_lineset_object:
-                    indexed_lineset_object.parent = parent_object
-                    shape_objects[f"{parent_object.name}_indexed_lineset"] = indexed_lineset_object
+                appearance = shape_node.find('Appearance')
+                if appearance is not None:
+                    material_node = appearance.find('Material')
+                    if material_node is not None:
+                        material = create_material(material_node)
+                        if material is not None:
+                            obj.data.materials.append(material)
+                        else:
+                            print(f"Couldn't create material")
+                    else:
+                        print(f"Couldn't find material")
                 else:
-                    print(f"process_indexed_lineset didn't return an object")
-
-        elif child.tag == 'Sphere':
-            radius = float(child.get('radius', '1'))
-            sphere_object = create_sphere(f"{parent_object.name}_sphere", radius)
-            obj = sphere_object
-            sphere_object.parent = parent_object
-            if material:
-                sphere_object.data.materials.append(material)
-            shape_objects[f"{parent_object.name}_sphere"] = sphere_object
-        elif child.tag == 'IndexedFaceSet':
-            coord_element = child.find('Coordinate')
-            if coord_element is not None:
-                indexed_face_set_object = process_indexed_face_set(child, coord_element)
-                obj = indexed_face_set_object 
-                indexed_face_set_object.parent = parent_object
-                if material:
-                    indexed_face_set_object.data.materials.append(material)
-                shape_objects[f"{parent_object.name}_mesh"] = indexed_face_set_object
-        elif child.tag == 'Text':
-            text_object = create_text_shape(child, parent_object)
-            obj = text_object 
-            if material:
-                text_object.data.materials.append(material)
-            shape_objects[f"{parent_object.name}_text"] = text_object
-        elif not child.tag in ('Appearance', 'Material'):
-            print(f"Unknown shape in process_shape, {child.tag}, not handled")
-            obj = None
-        else:
-            obj = None
-
-        def_name = child.get('DEF')
-        if obj and def_name and def_nodes is not None:
-            def_nodes[def_name] = obj
+                    # get defaults
+                    material = create_material(shape_node)
+                    if material is not None:
+                        obj.data.materials.append(material)
+                    else:
+                        print(f"Couldn't create material for shape_node")
 
     return shape_objects
 
@@ -591,60 +598,38 @@ def triangulate_face(indices):
         triangles.append([indices[0], indices[i], indices[i + 1]])
     return triangles
 
-def create_billboard_empty(name, parent_object):
-    try:
-        billboard_empty = bpy.data.objects.new(name, None)
-        bpy.context.collection.objects.link(billboard_empty)
+def create_indexed_face_set(name, node, def_nodes):
+    # print('CREATE', node.tag)
+    coordinate = coordinate_lookup(node, def_nodes)
+    if coordinate is not None:
+        coord_index = list(map(int, strip_commas_and_split(node.get('coordIndex', ''))))
+        vertices = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+        vertex_tuples = list(zip(*[iter(vertices)]*3))
 
-        if parent_object:
-            billboard_empty.parent = parent_object
+        faces = []
+        current_face = []
 
-        return billboard_empty
-    except Exception as ex:
-        print(f"Error handling Billboard node: {ex}")
-        return None
+        for index in coord_index:
+            if index == -1:
+                if len(current_face) > 2:
+                    faces.extend(triangulate_face(current_face))
+                current_face = []
+            else:
+                current_face.append(index)
 
-def create_touchsensor_empty(description, parent_object):
-    try:
-        touchsensor_empty = bpy.data.objects.new("TouchSensor."+description, None)
-        bpy.context.collection.objects.link(touchsensor_empty)
-
-        if parent_object:
-            touchsensor_empty.parent = parent_object
-
-        return touchsensor_empty
-    except Exception as ex:
-        print(f"Error handling Touchsensor node: {ex}")
-        return None
-
-def process_indexed_face_set(face_set, coordinates):
-    coord_index = list(map(int, strip_commas_and_split(face_set.get('coordIndex', ''))))
-    vertices = list(map(float, strip_commas_and_split(coordinates.get('point', ''))))
-    vertex_tuples = list(zip(*[iter(vertices)]*3))
-
-    faces = []
-    current_face = []
-
-    for index in coord_index:
-        if index == -1:
+        if current_face:
             if len(current_face) > 2:
                 faces.extend(triangulate_face(current_face))
-            current_face = []
-        else:
-            current_face.append(index)
 
-    if current_face:
-        if len(current_face) > 2:
-            faces.extend(triangulate_face(current_face))
+        # print('NEW', name)
+        mesh = bpy.data.meshes.new(name+"_data")
+        obj = bpy.data.objects.new(name, mesh)
+        bpy.context.collection.objects.link(obj)
 
-    mesh = bpy.data.meshes.new("mesh")
-    obj = bpy.data.objects.new("object", mesh)
-    bpy.context.collection.objects.link(obj)
+        mesh.from_pydata(vertex_tuples, [], faces)
+        mesh.update()
 
-    mesh.from_pydata(vertex_tuples, [], faces)
-    mesh.update()
-
-    return obj
+        return obj
 
 def create_animation(obj, keyframes, data_path):
     if not obj.animation_data:
@@ -663,7 +648,7 @@ def create_animation(obj, keyframes, data_path):
     if obj.get('x3dtranslation') and data_path == "rotation_euler":
         try:
             center = Matrix(obj['x3dtranslation']).to_translation()
-            print(f"center {center}")
+            # print(f"center {center}")
             for i in range(3):  # x, y, z
                 fc = action.fcurves.new(data_path="location", index=i)
                 for frame, rotation in keyframes:
@@ -676,7 +661,9 @@ def parse_interpolators(root):
     interpolators = {}
     for interp in root.findall(".//OrientationInterpolator") + root.findall(".//PositionInterpolator"):
         interp_type = interp.tag
-        interp_def = interp.get('DEF')
+        #print('I', interp.tag)
+        name = compose_name(interp)
+        #print(name)
         keys = list(map(float, strip_commas_and_split(interp.get('key'))))
         key_values = list(map(float, strip_commas_and_split(interp.get('keyValue'))))
 
@@ -692,7 +679,7 @@ def parse_interpolators(root):
                 position = Vector(key_values[i*3:i*3+3])
                 keyframes.append((frame, position))
         
-        interpolators[interp_def] = (interp_type, keyframes)
+        interpolators[name] = (interp_type, keyframes)
     return interpolators
 
 def apply_interpolations(root, animated_objects, interpolators):
@@ -744,11 +731,11 @@ def main(file_path):
     camera.location = Vector((0, 1, 2))
     camera.matrix_world = Matrix.Translation(Vector((0, 1, 2)))
     camera.matrix_local = Matrix.Translation(Vector((0, 1, 2)))
-    print(f"Camera location2 {camera.location[:]}")
+    # print(f"Camera location2 {camera.location[:]}")
 
     bpy.ops.object.light_add(type='SUN', location=(0, 0, 1))
     light = bpy.context.active_object
-    light.matrix_world = Matrix.Rotation(3.1416, 4, Vector((0, 0, 1)))
+    light.matrix_world = Matrix.Rotation(3.1416, 4, Vector((0, 1, 0)))
     #direction = Vector((0,0,-1))
     #light.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
 
@@ -786,34 +773,36 @@ def set_view_to_positive_z():
 # Call the function to set the view
 set_view_to_positive_z()
 
-#file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"  # Replace with your X3D file path
-# file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"  # Replace with your X3D file path
-#file_path = "JinScaledV2L1LOA4MinimumSkeleton20f.x3d"  # Replace with your X3D file path
-file_path = "Jin20fBillboarded5.x3d"  # Replace with your X3D file path
-#file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"  # Replace with your X3D file path
-#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"  # Replace with your X3D file path
-# file_path = "Jin11gNoUSE.x3d"  # Replace with your X3D file path
-#file_path = "JinConcat11g.x3d"  # Replace with your X3D file path
-#file_path = "JinConcat10h.x3d"  # Replace with your X3D file path
-#file_path = "localrotation.x3d"  # Replace with your X3D file path
-#file_path = "localcenters.x3d"  # Replace with your X3D file path
-#file_path = "localcentersjoe.x3d"  # Replace with your X3D file path
-# file_path = "JinLOA1scaled1.x3d"  # Replace with your X3D file path
+
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"
+#file_path = "JinScaledV2L1LOA4MinimumSkeleton20f.x3d"
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11f.x3d"
+#file_path = "JinScaledV2L1LOA4OnlyMarkers11g.x3d"
+#file_path = "Jin11gNoUSE.x3d"
+#file_path = "JinConcat11g.x3d"
+#file_path = "JinConcat10h.x3d"
+#file_path = "localrotation.x3d"
+#file_path = "localcenters.x3d"
+#file_path = "localcentersjoe.x3d"
+#file_path = "JinLOA1scaled1.x3d"
 #file_path = "HAnim2SpecificationLOA3Illustrated.x3d"
 #file_path = "Humanoid4.1.x3d"
 
+
+# file_path = 'Jin11gNoAnimation.x3d'
+file_path = 'Jin20fBillboarded5.x3d'
+
+print(f"Opening {file_path}")
+
 main(file_path)
 
-# bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4OnlyMarkers11gExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-# bpy.ops.export_scene.x3dv(filepath="Jin11gNoUSEExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-#bpy.ops.export_scene.x3dv(filepath="JinConcat11gExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-#bpy.ops.export_scene.x3dv(filepath="Humanoid4.1Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-#bpy.ops.export_scene.x3dv(filepath="JinLOA1scaled1Export.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
-# bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-bpy.ops.export_scene.x3dv(filepath="Jin20fBillboarded5Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-filepath = "."
+bpy.ops.export_scene.x3dv(filepath=file_path[0:-4]+"Export.x3d", export_hanim_prefix='hanim_', export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+# bpy.ops.export_scene.x3d(filepath=file_path[0:-4]+"Export.x3d", export_yup=True, export_normals=True, export_format="X3D")
+
+dirpath = "."
 bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"Jin20fBillboarded5_2.gltf"),
+    filepath=os.path.join(dirpath, file_path[0:-4]+"Export.gltf"),
     export_yup=False,
     export_format="GLTF_SEPARATE",
     # export_format="GLB",
