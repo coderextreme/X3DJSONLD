@@ -126,12 +126,12 @@
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture containerField="backTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-			<ImageTexture containerField="bottomTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-			<ImageTexture containerField="frontTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-			<ImageTexture containerField="leftTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-			<ImageTexture containerField="rightTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-			<ImageTexture containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
                 <ComposedShader DEF="freewrlShader" language="GLSL">
                   <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
@@ -172,32 +172,37 @@ function initialize() {
      var phi = 0.0;
      var delta = (2 * 3.141592653) / (resolution-1);
      var crds = new MFVec3f();
+     var vecCount = 0;
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
-		crds.push(new SFVec3f(
+		crds[vecCount] = new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
 			rho * Math.sin(phi)
-		));
+		);
+		vecCount++;
 		theta += delta;
 	}
 	phi += delta;
      }
      coordinates = crds;
+     // coordinates = new MFVec3f(...crds);
 
 
      var cis = new MFInt32();
+     var intCount = 0;
      for ( i = 0; i < resolution-1; i++) {
      	for ( j = 0; j < resolution-1; j++) {
-	     cis.push(i*resolution+j);
-	     cis.push(i*resolution+j+1);
-	     cis.push((i+1)*resolution+j+1);
-	     cis.push((i+1)*resolution+j);
-	     cis.push(-1);
+	     cis[intCount++] = i*resolution+j;
+	     cis[intCount++] = i*resolution+j+1;
+	     cis[intCount++] = (i+1)*resolution+j+1;
+	     cis[intCount++] = (i+1)*resolution+j;
+	     cis[intCount++] = -1;
 	}
     }
     coordIndexes = cis;
+    // coordIndexes = new MFInt32(...cis);
 }
 
       ]]></Script>
@@ -207,10 +212,10 @@ function initialize() {
                toField="set_point" toNode="OrbitCoordinates"/>
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager' networkMode='networkReader' >
-	      <DISEntityTypeMapping category='77' containerField='children' specific='1' url='"../data/Leif8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' containerField='children' specific='2' url='"../data/Lily8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' containerField='children' specific='3' url='"../data/Tufani8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"'/>
-	      <DISEntityTypeMapping category='77' containerField='children' specific='4' url='"../data/Gramps8Final.x3dv" "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='1' url='"../data/Gramps8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='2' url='"../data/Leif8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='3' url='"../data/Lily8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"'/>
+	      <DISEntityTypeMapping category='77' containerField='children' specific='4' url='"../data/Tufani8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"'/>
       </DISEntityManager>
       <Collision enabled='false'>
         <Group DEF='AvatarHolder'/>
@@ -255,7 +260,6 @@ function initialize() {
 	      <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
 	      <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30'/>
 	      <field accessType='inputOutput' name='parameterName' type='SFString' value='a'/>
-	      <field accessType='inputOutput' name='petNames' type='MFString'/>
 	      <field accessType='inputOutput' name='shaderNode' type='SFNode'/>
 	  </ProtoInterface>
 	  <ProtoBody>
@@ -292,7 +296,6 @@ function initialize() {
 	      </Transform>
 	      <Script DEF='protoValueTransformerScript' directOutput="true" mustEvaluate="true">
 		  <field accessType='inputOutput' name='protoScale' type='SFFloat' value='30'/>
-		  <field accessType='inputOutput' name='petNames' type='MFString'/>
 		  <field accessType='inputOutput' name='protoParameterName' type='SFString' value='a'/>
 		  <field accessType='inputOutput' name='shader' type='SFNode'/>
 
@@ -300,438 +303,15 @@ function initialize() {
 		  <field accessType='outputOnly' name='protoValue_changed' type='SFFloat' value='1.0'/>
 		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='1.0'/>
 <![CDATA[ecmascript:
-class Sessions {
-	static LOG () {
-	    console.log('SESSIONS', ...arguments);
-	}
-	get user() {
-	    return this._user;
-	}
-	set user(value) {
-	    this._user = value;
-	}
-	get sockets() {
-	    return this._sockets;
-	}
-	set sockets(value) {
-	    this._sockets = value;
-	}
-	constructor() {
-	      this._user = this;
-	      this._sockets = {};
-	      this.reconnect();
-
-	}
-	operateOnSessions(callback) {
-		let UserGlobalSessions = JSON.parse($('#sessionjson').val());
-		if (UserGlobalSessions !== null && (typeof UserGlobalSessions === 'object') && UserGlobalSessions.length > 0 && typeof this._user !== 'undefined') {
-			for (let g in UserGlobalSessions) {
-				if (UserGlobalSessions.hasOwnProperty(g) && parseInt(g, 10) >= 0) {
-					let session = UserGlobalSessions[g];
-					let sessionname = session['Session Petname'];
-					callback(sessionname, session, this);
-				}
-			}
-		}
-	}
-	updateSessions() {
-		// try {
-			let UserGlobalSessions = JSON.parse($('#sessionjson').val());
-			this.operateOnSessions(function (sessionname, session, user) {
-				let socket = user._sockets[sessionname];
-				if (socket) {
-					Sessions.LOG("Loading", UserGlobalSessions);
-					socket.emit('clientsessions', UserGlobalSessions);
-				}
-			});
-			return UserGlobalSessions;
-		/*
-		} catch (e) {
-			Sessions.LOG(e);
-		}
-		*/
-	}
-	disconnect() {
-	    // try {
-		for (let sn in this._sockets) {
-			Sessions.LOG("disconnecting "+sn);
-			let socket = this._sockets[sn];
-			if (socket !== null) {
-				socket.disconnect();
-				delete this._sockets[sn];
-			}
-		}
-		this._sockets = {};
-		/*
-            } catch (e) {
-		    Sessions.LOG(e);
-		    alert(e);
-	    }
-	    */
-	}
-	reconnect() {
-		'use strict';
-		// try {
-			Sessions.LOG("Reconnecting");
-			let username = $('#username').val();
-			while (username.trim() === "") {
-				username = prompt("Please specify a username:");
-				$('#username').val(username);
-			}
-			this.disconnect();
-			this.operateOnSessions(function (sessionname, session, user) {
-				let sessiontoken = session['Session Token'];
-				let sessionlink = session['Session Link'];
-				let socket = user._sockets[sessionname];
-				if (!socket) {
-					if (sessionlink && typeof sessionlink === 'string') {
-						// try {
-							socket = null;
-							socket = io(sessionlink, {
-								maxHttpBufferSize: 1e8, pingTimeout: 60000,
-								transports: [ "polling" ]
-							});
-							Sessions.LOG('Connected to remote scene server', sessionlink);
-						/*
-						} catch (e) {
-							Sessions.LOG(e);
-						}
-						*/
-					} else {
-						// Sessions.LOG('Session Link must be specificed in Session Description for scene collaboration');
-					}
-					if (socket === null || typeof socket === 'undefined') {
-					     // if all else fails, connect back to same host
-					     // try {
-						 socket = io({
-							maxHttpBufferSize: 1e8, pingTimeout: 60000,
-							transports: [ "polling" ]
-						});
-						Sessions.LOG('Connected to chat server');
-						/*
-						} catch (e) {
-							Sessions.LOG(e);
-						}
-						*/
-					}
-					if (socket !== null) {
-						user._sockets[sessionname] = socket;
-						socket.on('servermessage', user.servermessage);
-						socket.on('serverpeers', user.serverpeers);
-						socket.on('serversessions', user.serversessions);
-						socket.on('serverupdate', user.serverupdate);
-						socket.on('servercapability', user.servercapability);
-						socket.emit('clientjoin');
-						// socket.emit("clientsessions", UserGlobalSessions);
-						// socket.emit('clientrejoin', location.href);
-						socket.emit("clientactivesession", sessiontoken);
-						socket.emit('clientactivename', username);
-						// socket.emit('clientmove', [0,0,0], [0,0,0]);
-					} else {
-						Sessions.LOG("Couldn't connect to", sessionlink);
-					}
-				}
-			});
-		/*
-		} catch (e) {
-			Sessions.LOG("ERROR RECONNECTING", e);
-		}
-		*/
-	}
-	serversessions(msg) {
-		let oldsession = $('#session').val();
-		$('#session').empty();
-		let sessions = msg;
-		HTMLUser.LOG(sessions);
-		let noop = $("<option>", {
-		  value: "common room",
-		  text: "common room"
-		});
-		$('#session').append(noop);
-
-		for (let g in sessions) {
-		    if (sessions.hasOwnProperty(g) && parseInt(g, 10) >= 0) {
-			let session = sessions[g];
-			HTMLUser.LOG(session);
-			let option = $("<option>", {
-			  value: session['Session Petname'],  // could be token
-			  text: session['Session Petname'] 
-			});
-
-			$('#session').append(option);
-		    }
-		}
-		$('#session').val(oldsession);
-	}
-	servermessage (msg) {
-		$('#messages').append($('<li>').text(msg));
-		HTMLUser.LOG("message from server", msg);
-		scrollToBottom();
-	}
-	serverpeers(msg) {
-		$('#score').empty();
-		$('#score').append($('<li>').text("Session members:"));
-		if (typeof msg === 'object') {
-			for (let m in msg) {
-				if (!msg[m].startsWith("x3dbot#")) {
-					$('#score').append($('<li>').text(msg[m]));
-				}
-			}
-		} else {
-			$('#score').append($('<li>').text(msg));
-		}
-	}
-	serverupdate(p) {
-		if (p) {
-			this.servermessage(p.username+"#"+p.usernumber+" at "+p.position+" turns "+p.orientation);
-		}
-	}
-	servercapability() {
-		if ( history.pushState ) {
-			var href = location.href;
-			var i = href.indexOf("?");
-			if (i >= 0) {
-				href = href.substring(0, i);
-			}
-			history.pushState( {}, document.title, href+"?"+arguments[0].id );
-		}
-	}
-}
-
-var usersessions = new Sessions();
-
-function LOG () {
-    Browser.print('X3D Scene', ...arguments);
-}
-
-class X3DUser {
-	static LOG () {
-	    Browser.print('X3D Browser', ...arguments);
-	}
-	get sockets() {
-	    return this._sockets;
-	}
-	set sockets(value) {
-	    this._sockets = value;
-	}
-	constructor(sessions) {
-		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='1.0'/>	      let x3duser = this;
-	      this._x3duser = this;
-	      this._sessions = sessions;
-	      this._sockets = this._sessions._sockets;
-	}
-	emit(api, UserGlobalSessions) {
-        	this.socket.emit(api, UserGlobalSessions);
-	}
-	updateSessions() {
-		try {
-			let UserGlobalSessions = JSON.parse($('#sessionjson').val());
-			return UserGlobalSessions;
-		} catch (e) {
-			X3DUser.LOG(e);
-		}
-	}
-	loadX3D(selector, x3d) {
-        try {
-            if (typeof Browser !== 'undefined') {
-			   // Import the X3D scene and handle the Promise
-			   Browser.createX3DFromString(x3d)
-			       .then(function(importedScene) {
-					   // Replace the current world with the imported scene
-					   Browser.replaceWorld(importedScene);
-			       })
-			       .catch(function(error) {
-				 	   X3DUser.LOG('Error importing X3D scene:', error);
-			       });
-			} else {
-				alert("X_ITE could not replaceWorld in loadX3D()");
-				X3DUser.LOG("X_ITE could not replaceWorld in loadX3D()", selector, x3d);
-			}
-		} catch (e) {
-			X3DUser.LOG(e);
-		}
-	}
-
-	loadURL(selector, url) {
-		try {
-			/*
-			document.querySelector("#scene").setAttribute("url", "\""+url+"\"");
-			*/
-			if (typeof Browser !== 'undefined') {
-				   // Import the X3D scene and handle the Promise
-				   X3DUser.LOG("url type", typeof url, url);
-				   Browser.loadURL(new X3D.MFString (url))
-				       .then(() => {
-					       X3DUser.LOG('Success importing URL:', url);
-					   })
-					   .catch(function(error) {
-					       X3DUser.LOG('Error importing URL:', error);
-					   });
-			} else {
-				X3DUser.LOG("X_ITE could not load URL in loadURL()", selector, url);
-			}
-		} catch (e) {
-			X3DUser.LOG(e);
-		}
-	}
-	serverpublish(msg) {
-		x3duser = new X3DUser(usersessions);
-		X3DUser.LOG("Receiving publish", msg);
-		if (msg[0].startsWith("http://") || msg[0].startsWith("https://")) {
-			x3duser.loadURL("#scene", msg[0]);
-		} else {
-			x3duser.loadX3D("#scene", msg[0]);
-		}
-		reconnect(x3duser);
-	}
-	servercapability() {
-		if ( history.pushState ) {
-			var href = location.href;
-			var i = href.indexOf("?");
-			if (i >= 0) {
-				href = href.substring(0, i);
-			}
-			history.pushState( {}, document.title, href+"?"+arguments[0].id );
-		}
-	}
-}
-
-
-const x3d_serverupdate =  function (usernumber, position, orientation, allowedToken) {
-    'use strict';
-    X3DUser.LOG("Called x3d_serverupdate with", usernumber, position, orientation, allowedToken);
-    X3DUser.LOG("Relevant extra info", allowedToken, token_test(allowedToken));
-    if (position !== null && orientation !== null && token_test(allowedToken) && position[0] ===  protoParameterName) {
-        orientation[0] = parseFloat(orientation[0]);
-        let ps = Browser.currentScene.getNamedNode("protoSensor");
-        let t = Browser.currentScene.getNamedNode("protoTransform");
-        let txt = Browser.currentScene.getNamedNode("protoText");
-        if (shader) {
-            X3DUser.LOG("old", shader.getField(protoParameterName).getValue());
-            shader.getField(protoParameterName).setValue(orientation[0] * protoScale);
-            X3DUser.LOG("new", shader.getField(protoParameterName).getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
-        }
-        if (txt) {
-            let stringField = txt.getField("string");
-            X3DUser.LOG("old", stringField.getValue());
-            let label = protoParameterName;
-            stringField.setValue(new MFString(label+"="+(orientation[0] * protoScale).toFixed(2)));
-            X3DUser.LOG("new", stringField.getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
-        }
-        if (ps) {
-            ps.offset = new SFVec3f(orientation[0], ps.offset[1], ps.offset[2]);
-        } else {
-            X3DUser.LOG("Not found protoSensor");
-        }
-        if (t) {
-            t.translation = new SFVec3f(orientation[0], t.translation[1], t.translation[2]);
-        } else {
-            X3DUser.LOG("Not found protoTransform");
-        }
-    }
-};
-
-const reconnect = function (x3duser) {
-    'use strict';
-	try {
-	        x3duser._sockets = x3duser._sessions._sockets;
-		X3DUser.LOG("reconnect!");
-		let UserGlobalSessions = x3duser.updateSessions();
-		if (UserGlobalSessions && UserGlobalSessions.length > 0) {
-			for (let g in UserGlobalSessions) {
-				let session = UserGlobalSessions[g];
-				let sessionname = session['Session Petname'];
-				let sessiontoken = session['Session Token'];
-				let socket = x3duser._sockets[sessionname];
-				LOG(".x3duser", x3duser);
-				LOG(".sessionname", sessionname);
-				LOG(".x3duser._sockets", x3duser._sockets);
-				LOG(".x3duser._sockets[petName]", x3duser._sockets[sessionname]);
-				if (socket !== null) {
-					// socket.emit('x3d_clientjoin');
-					socket.emit("x3d_clientsessions", UserGlobalSessions);
-					socket.emit("x3d_clientactivesession", sessiontoken);
-					if (x3d_serverupdate !== null) {
-						X3DUser.LOG("Found x3d_serverupdate", sessionname, sessiontoken, UserGlobalSessions);
-						x3duser._sockets[sessionname].on('x3d_serverupdate', x3d_serverupdate);
-					} else {
-						X3DUser.LOG("reconnect Can't service x3d_serverupdate", sessionname, sessiontoken);
-					}
-					$('#session').on("change",function(){
-						reconnect(x3duser);
-					 });
-					 socket.on('serverpublish', X3DUser.prototype.serverpublish);
-					 socket.on('servercapability', X3DUser.prototype.servercapability);
-					 // No need to rejoin, since Sessions.js does
-					 // socket.emit('clientrejoin', location.href);
-					 // socket.emit('clientmove', [0,0,0], [0,0,0]);
-					 // socket.emit('clientjoin');
-				} else {
-					X3DUser.LOG("Couldn't connect to", sessionlink);
-				}
-			}
-		}
-	} catch (e) {
-		X3DUser.LOG("ERROR RECONNECTING", e);
-	}
-};
-
-const token_test = function(test_token) {
-    'use strict';
-    let UserGlobalSessions = x3duser.updateSessions();
-    if (UserGlobalSessions && UserGlobalSessions.length > 0) {
-        for (let g in UserGlobalSessions) {
-            let session = UserGlobalSessions[g];
-            let sessiontoken = session['Session Token'];
-            if (test_token === sessiontoken) {
-                return true;
-            }
-        }
-	x3duser.emit("x3d_clientsessions", UserGlobalSessions);
-    } else {
-        X3DUser.LOG("UserGlobalSessions is not set right", UserGlobaSessions);
-    }
-    return false;
-};
-
-const initialize = function () {
-    'use strict';
-    X3DUser.LOG("Called intialize");
-    reconnect(x3duser);
-};
-
 const newTranslation = function(Value) {
     'use strict';
-    X3DUser.LOG("newTranslation", petNames);
-    for (let p in petNames) {
-        let petName = petNames[p];
-	LOG("x3duser", x3duser);
-	LOG("petName", petName);
-	LOG("x3duser._sockets", x3duser._sockets);
-	LOG("x3duser._sockets[petName]", x3duser._sockets[petName]);
-        if (x3duser._sockets[petName] !== null && typeof x3duser._sockets[petName] !== 'undefined') {
-            protoValue_changed = Value.x * protoScale;
-            protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));
-            X3DUser.LOG("update", petName, protoText_changed, protoValue_changed);
-            X3DUser.LOG("x3d_clientmove", petName, [protoParameterName],[Value.x]);
-            x3duser._sockets[petName].emit("x3d_clientmove", [protoParameterName],[Value.x]);
-        } else {
-            X3DUser.LOG("No socket for ", petName);
-        }
-    }
-};
-
-let x3duser = new X3DUser(usersessions);
-reconnect(x3duser);
+    protoValue_changed = Value.x * protoScale;
+    protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));
+}
 ]]>
 
 				<IS>
 					<connect nodeField="protoScale" protoField="parameterScale"/>
-					<connect nodeField="petNames" protoField="petNames"/>
 					<connect nodeField="protoParameterName" protoField="parameterName"/>
 					<connect nodeField="shader" protoField="shaderNode"/>
 				</IS>
@@ -750,7 +330,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"a="'/>
 	      <fieldValue name='parameterScale' value='30'/>
 	      <fieldValue name='parameterName' value='a'/>
-	      <fieldValue name='petNames' value='"yottzumm" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
@@ -763,7 +342,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"b="'/>
 	      <fieldValue name='parameterScale' value='30'/>
 	      <fieldValue name='parameterName' value='b'/>
-	      <fieldValue name='petNames' value='"yottzumm" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
@@ -775,7 +353,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"c="'/>
 	      <fieldValue name='parameterScale' value='20'/>
 	      <fieldValue name='parameterName' value='c'/>
-	      <fieldValue name='petNames' value='"yottzumm" "yottzumm2" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
@@ -787,7 +364,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"d="'/>
 	      <fieldValue name='parameterScale' value='20'/>
 	      <fieldValue name='parameterName' value='d'/>
-	      <fieldValue name='petNames' value='"yottzumm" "yottzumm2" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
@@ -799,7 +375,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"tdelta="'/>
 	      <fieldValue name='parameterScale' value='6.28'/>
 	      <fieldValue name='parameterName' value='tdelta'/>
-	      <fieldValue name='petNames' value='"yottzumm2" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
@@ -811,7 +386,6 @@ reconnect(x3duser);
 	      <fieldValue name='textString' value='"pdelta="'/>
 	      <fieldValue name='parameterScale' value='6.28'/>
 	      <fieldValue name='parameterName' value='pdelta'/>
-	      <fieldValue name='petNames' value='"yottzumm2" "group1-petname"'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
 	      </fieldValue>
