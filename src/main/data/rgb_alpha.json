@@ -80,7 +80,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 July 2024"
+            "@content":"20 July 2024"
           },
           {
             "@name":"generator",
@@ -96,7 +96,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":"\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
+              "@type":["EXAMINE","WALK","FLY","ANY"]
             }
           },
           { "Group":

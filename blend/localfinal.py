@@ -54,16 +54,22 @@ def compose_name(node):
     node_def = node.get('DEF')
     node_use = node.get('USE')
     if node.tag.startswith("HAnim"):
-        return "hanim_"+node.get('name')
+        if node_def is not None:
+            name = node.tag+"."+node_def+".0"
+        elif node_use is not None:
+            name = node.tag+"."+node_use+".0"
+        else:
+            name = node.tag+"."+node.get('name')+".0"
     elif node_def is not None:
-        return node.tag+"."+node_def
+        name = node.tag+"."+node_def+".0"
     elif node_use is not None:
-        return node.tag+"."+node_use
+        name = node.tag+"."+node_use+".0"
     else:
-        return node.tag
+        name = node.tag+".0"
+    return name
 
 def compose_use(node):
-    return compose_name(node)+"."+str(unique.getNext())
+    return compose_name(node)+str(unique.getNext())
 
 def put_value(name, def_nodes, obj):
     # print('PUT', name)
@@ -77,7 +83,21 @@ def get_value(name, def_nodes):
         return def_nodes[name]
     return None
 
-def color_lookup(color, def_nodes):
+def child_lookup(parent_node, def_nodes, child_tag):
+    child_node = parent_node.find(child_tag)
+    if child_node is not None:
+        name = compose_name(child_node) 
+        if child_node.get('DEF'):
+            put_value(name, def_nodes, child_node)
+        elif child_node.get('USE'):
+            child_node = get_value(name, def_nodes)
+        return child_node
+    elif child_tag != 'Appearance':
+        print(f"No valid {child_tag} for {parent_node.tag}")
+        return None
+
+def color_lookup(parent_node, def_nodes, child_tag):
+    color = parent_node.find(child_tag)
     color_values = None
     if color is not None:
         if color.get('color'):
@@ -101,7 +121,7 @@ def def_lookup(node, def_nodes, value, parent_object, animated_objects):
         if value is None:
             # print('NEW', name)
             value = bpy.data.objects.new(name, None)
-            # bpy.ops.object.empty_add(type='PLAIN_AXES')
+            # bpy.ops.object.empty_add(type='SINGLE_ARROW')
             # value = bpy.context.active_object
             bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
             value.name = name
@@ -109,6 +129,7 @@ def def_lookup(node, def_nodes, value, parent_object, animated_objects):
             if node_def is not None:
                 animated_objects[node_def] = value
                 put_value(name, def_nodes, value)
+                # print('PUT', name)
         else:
             # print('FOUND', name)
             pass
@@ -121,6 +142,9 @@ class uniqueClass:
     uniqueIdCounter = 0
     def getNext(self):
         self.uniqueIdCounter += 1
+        if self.uniqueIdCounter % 25 == 0:
+            print(f"{self.uniqueIdCounter}")
+
         return self.uniqueIdCounter
     def copy(self, node, def_nodes, parent_object, animated_objects):
         use_name = node.get('USE')
@@ -133,7 +157,7 @@ class uniqueClass:
                 new_obj = old_obj.copy()
                 if hasattr(new_obj, "name"):
                     new_obj.name = compose_use(node)
-                    # print(f"COPYED {new_obj.name}")
+                    print(f"COPYED {new_obj.name}")
                 if hasattr(new_obj, "parent"):
                     new_obj.parent = parent_object
                     bpy.context.scene.collection.objects.link(new_obj)
@@ -196,12 +220,17 @@ def create_empty(node, def_nodes, parent_object, animated_objects):
         if node.tag == "TouchSensor":
             node_def = node.get('DEF')
             node_use = node.get('USE')
-            if node_def is not None:
-                empty.name = node.tag+"."+node.get('description')+"."+node_def
-            elif node_use is not None:
-                empty.name = node.tag+"."+node.get('description')+"."+node_use
+            description = node.get('description')
+            if description is not None:
+                description = "."+(description.replace(' ', '\$'))
             else:
-                empty.name = node.tag+"."+node.get('description')
+                description = ""
+            if node_def is not None:
+                empty.name = node.tag+description+"."+node_def
+            elif node_use is not None:
+                empty.name = node.tag+description+"."+node_use
+            else:
+                empty.name = node.tag+description
         return empty
     except Exception as ex:
         print(f"Error handling empty node: {ex}")
@@ -209,20 +238,16 @@ def create_empty(node, def_nodes, parent_object, animated_objects):
 
     
 
-def create_text(name, node):
+def create_text(name, node, def_nodes):
     # print('CREATE', node.tag)
     string = node.get('string', '')
     body = [w.strip('"') for w in string.split('" "')]
-
-    font_style = node.find('FontStyle')
-
-    # Create text object
     font_curve = bpy.data.curves.new(type="FONT", name=name+"_data")
     font_curve.body = "\n".join(body)
     font_obj = bpy.data.objects.new(name=name, object_data=font_curve)
     bpy.context.scene.collection.objects.link(font_obj)
 
-
+    font_style = child_lookup(node, def_nodes, "FontStyle")
     # Set font properties if FontStyle is present
     if font_style is not None:
         family = font_style.get('family', 'SERIF')
@@ -245,47 +270,38 @@ def create_text(name, node):
 
     return font_obj
 
-def create_box(name, node):
+def create_box(name, node, def_nodes):
     # print('CREATE', node.tag)
-    size = tuple(map(float, node.get('size', '1 1 1').split()))
+    scale = tuple(map(float, node.get('size', '1 1 1').split()))
     # print(f"box size {size}")
-    bpy.ops.mesh.primitive_cube_add(size=(size[0] + size[1] + size[2])/3)  # sorry, no prisms
+    # bpy.ops.mesh.primitive_cube_add(size=(size[0] + size[1] + size[2])/3)  # sorry, no prisms
+    bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', scale=scale)
     box = bpy.context.active_object
-    box.scale = size
     # box.matrix_local = matrix.copy()
     # box.matrix_local = matrix
     return box
 
-def coordinate_lookup(set_node, def_nodes):
-    coordinate = set_node.find('Coordinate')
-    if coordinate is not None:
-        name = compose_name(coordinate) 
-        if coordinate.get('DEF'):
-            put_value(name, def_nodes, coordinate)
-        elif coordinate.get('USE'):
-            coordinate = get_value(name, def_nodes)
-        return coordinate
+def get_color_values(node, def_nodes):
+    colorRGBA = node.find('ColorRGBA')
+    color = node.find('Color')
+    colorRGBA_values = color_lookup(node, def_nodes, "ColorRGBA")
+    color_values = color_lookup(node, def_nodes, "Color")
+    if colorRGBA_values is not None:
+        colors = [tuple(map(float, colorRGBA_values[i:i+4])) for i in range(0, len(colorRGBA_values), 4)]
+        return colors
+    elif color_values is not None:
+        colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
+        return colors
     else:
-        print(f"No valid Coordinate for {set_node.tag}")
         return None
 
 def create_indexed_line_set(name, node, def_nodes):
     # print('CREATE', node.tag)
-    coordinate = coordinate_lookup(node, def_nodes)
+    coordinate = child_lookup(node, def_nodes, "Coordinate")
     if coordinate is not None:
         coord_index = list(map(int, strip_commas_and_split(node.get('coordIndex', ''))))
         color_index = list(map(int, strip_commas_and_split(node.get('colorIndex', ''))))
-        colorRGBA = node.find('ColorRGBA')
-        color = node.find('Color')
         points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
-        if colorRGBA is not None:
-            color_values = color_lookup(colorRGBA, def_nodes)
-            # For ColorRGBA, we need to group every 4 values
-            colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
-        elif color is not None:
-            color_values = color_lookup(color, def_nodes)
-            # For Color, we need to group every 3 values and add alpha=1
-            colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
     if not coord_index or not points:
         print(f"Invalid data for IndexedLineSet {name}: coord_index or points are missing")
         return None
@@ -308,34 +324,24 @@ def create_indexed_line_set(name, node, def_nodes):
     #print(f"segments {segments}")
 
     # Validate and process color information
+    colors = get_color_values(node, def_nodes)
     expanded_colors = [(colors[i], colors[i]) for i in color_index]
     return create_common_line_set(name, segments, expanded_colors)
 
 def create_line_set(name, node, def_nodes):
     # print('CREATE', node.tag)
-    coordinate = coordinate_lookup(node, def_nodes)
+    coordinate = child_lookup(node, def_nodes, "Coordinate")
     if coordinate is not None:
-        colorRGBA = node.find('ColorRGBA')
-        color = node.find('Color')
-        # points = strip_commas_and_split(coordinate.get('point'))
         points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
-        if colorRGBA is not None:
-            color_values = color_lookup(colorRGBA, def_nodes)
-            colors = [tuple(map(float, color_values[i:i+4])) for i in range(0, len(color_values), 4)]
-        elif color is not None:
-            color_values = color_lookup(color, def_nodes)
-            # For Color, we need to group every 3 values and add alpha=1
-            colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
-        #print(f"color {color} colorRGBA {colorRGBA}")
-        #print(f"colors {colors}")
         vertices = [(points[i], points[i+1], points[i+2]) for i in range(0, len(points), 3)]
+        colors = get_color_values(node, def_nodes)
         expanded_colors = [(col, col) for col in colors]
         #print(f"expanded_colors {expanded_colors}")
         obj = create_common_line_set(name, vertices, expanded_colors)
         return obj
 
 def create_common_line_set(name, segments, colors):
-    print(f"COLOR {name} {colors}")
+    # print(f"COLOR {name} {colors}")
     if not segments:
         print(f"No valid segments to create LineSet {name}")
         return None
@@ -432,10 +438,11 @@ def create_common_line_set(name, segments, colors):
 #
 #    return curve_object
 
-def create_sphere(name, node):
+def create_sphere(name, node, def_nodes):
     # print('CREATE', node.tag)
     radius = float(node.get('radius', '1'))
-    bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
+    # bpy.ops.mesh.primitive_uv_sphere_add(radius=radius)
+    bpy.ops.surface.primitive_nurbs_surface_sphere_add(radius=radius, enter_editmode=False, align='WORLD')
     sphere = bpy.context.active_object
     # sphere.matrix_local = matrix.copy()
     # sphere.matrix_local = matrix
@@ -452,18 +459,19 @@ def process_node(node, parent_object=None, def_nodes=None):
     #elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
     #    return animated_objects
     #el
-    if def_nodes is not None:
-        new_object = unique.copy(node, def_nodes, parent_object, animated_objects)
-    if new_object is not None:
-        return animated_objects
-
     if node.tag in ('Shape', 'Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+        if def_nodes is not None:
+            new_object = unique.copy(node, def_nodes, parent_object, animated_objects)
+        if new_object is not None:
+            # print(f"Created new copy of  {new_object}")
+            return animated_objects
+
         if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid'):
             parent_object = create_transform(node, def_nodes, parent_object, animated_objects)
         else:
             parent_object = create_empty(node, def_nodes, parent_object, animated_objects)
 
-        # current_object.hide_viewport = True
+        # parent_object.hide_viewport = True
 
         if node.tag in ('Shape'):
             shape_objects = process_shape(node, parent_object, def_nodes, animated_objects)
@@ -479,7 +487,7 @@ def process_node(node, parent_object=None, def_nodes=None):
 
 def create_material(node):
     # print('CREATE', node.tag)
-    material = bpy.data.materials.new(name="X3DMaterial."+compose_name(node))
+    material = bpy.data.materials.new(name=compose_name(node))
     material.use_nodes = True
     nodes = material.node_tree.nodes
     principled = nodes["Principled BSDF"]
@@ -527,7 +535,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
     if def_nodes:
         new_object = unique.copy(shape_node, def_nodes, parent_object, animated_objects)
         if new_object is not None:
-            # print('NEW', name, new_object)
+            print(f"Created new copy of {new_object.name} {new_object}")
             shape_objects[new_object.name] = new_object
             return shape_objects
 
@@ -535,24 +543,25 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
         #print('CH3', child.tag)
         name = compose_name(child)
         #print(name)
-        if def_nodes:
-            new_object = unique.copy(child, def_nodes, parent_object, animated_objects)
-            if new_object is not None:
-                shape_objects[new_object.name] = new_object
-                continue
         if child.tag in ('Box', 'LineSet', 'IndexedLineSet', 'Sphere', 'IndexedFaceSet', 'Text'):
+            if def_nodes:
+                new_object = unique.copy(child, def_nodes, parent_object, animated_objects)
+                if new_object is not None:
+                    print(f"Created new copy of {new_object.name} {new_object}")
+                    shape_objects[new_object.name] = new_object
+                    continue
             if child.tag == 'Box':
-                obj = create_box(name, child)
+                obj = create_box(name, child, def_nodes)
             elif child.tag == 'LineSet':
                 obj = create_line_set(name, child, def_nodes)
             elif child.tag == 'IndexedLineSet':
                 obj = create_indexed_line_set(name, child, def_nodes)
             elif child.tag == 'Sphere':
-                obj = create_sphere(name, child)
+                obj = create_sphere(name, child, def_nodes)
             elif child.tag == 'IndexedFaceSet':
                 obj = create_indexed_face_set(name, child, def_nodes)
             elif child.tag == 'Text':
-                obj = create_text(name, child)
+                obj = create_text(name, child, def_nodes)
             else:
                 obj = None
                 print(f"{name} didn't get created")
@@ -562,14 +571,14 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
                     print(f"Couldn't find parent object")
                 else:
                     obj.parent = parent_object
-                    print(f"Could find object {obj.name} parent {parent_object.name} grand {parent_object.parent.name}")
+                    # print(f"Could find object {obj.name} parent {parent_object.name} grand {parent_object.parent.name}")
                 obj.name = name
                 shape_objects[name] = obj
                 obj = def_lookup(child, def_nodes, obj, parent_object, animated_objects)
 
-                appearance = shape_node.find('Appearance')
+                appearance = child_lookup(shape_node, def_nodes, 'Appearance')
                 if appearance is not None:
-                    material_node = appearance.find('Material')
+                    material_node = child_lookup(appearance, def_nodes, 'Material')
                     if material_node is not None:
                         material = create_material(material_node)
                         if material is not None:
@@ -577,7 +586,7 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
                         else:
                             print(f"Couldn't create material")
                     else:
-                        print(f"Couldn't find material")
+                        print(f"Couldn't find material {appearance}")
                 else:
                     # get defaults
                     material = create_material(shape_node)
@@ -600,7 +609,7 @@ def triangulate_face(indices):
 
 def create_indexed_face_set(name, node, def_nodes):
     # print('CREATE', node.tag)
-    coordinate = coordinate_lookup(node, def_nodes)
+    coordinate = child_lookup(node, def_nodes, "Coordinate")
     if coordinate is not None:
         coord_index = list(map(int, strip_commas_and_split(node.get('coordIndex', ''))))
         vertices = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
@@ -790,8 +799,10 @@ set_view_to_positive_z()
 #file_path = "Humanoid4.1.x3d"
 
 
-# file_path = 'Jin11gNoAnimation.x3d'
-file_path = 'Jin20fBillboarded5.x3d'
+#file_path = 'Jin11gNoAnimation.x3d'
+#file_path = 'Jin20fBillboarded5.x3d'
+#file_path = 'Jin20fSegmented.x3d'
+file_path = 'Jin20fOneAnimation.x3d'
 
 print(f"Opening {file_path}")
 

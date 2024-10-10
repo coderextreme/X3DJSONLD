@@ -16,6 +16,8 @@ var Scene = require('./x3d.mjs');
 var LayerSet = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
 var Layer = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var MFFloat = require('./x3d.mjs');
 var DirectionalLight = require('./x3d.mjs');
@@ -32,7 +34,6 @@ var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var Cone = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
-var MFString = require('./x3d.mjs');
 var Sphere = require('./x3d.mjs');
 var ComposedCubeMapTexture = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
@@ -43,7 +44,6 @@ var DISEntityManager = require('./x3d.mjs');
 var undefined = require('./x3d.mjs');
 var DISEntityTypeMapping = require('./x3d.mjs');
 var Collision = require('./x3d.mjs');
-var SFBool = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var LayoutLayer = require('./x3d.mjs');
 var Box = require('./x3d.mjs');
@@ -189,6 +189,8 @@ var X3D0 =  new X3D({
               /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
               layers : new SFNode(
                 new Layer({
+                  pickable : new SFBool(true),
+                  objectType : new MFString(["ALL"]),
                   /*basic nodes, which might be present in any scene*/
                   children : new MFNode([
                     new NavigationInfo({
@@ -323,7 +325,7 @@ var X3D0 =  new X3D({
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({
-                              radius : new SFFloat(40)})),
+                              radius : new SFFloat(0.01)})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -438,22 +440,22 @@ var X3D0 =  new X3D({
                         new DISEntityTypeMapping({
                           category : new SFInt32(77),
                           specific : new SFInt32(1),
-                          url : new MFString(["../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"])}),
+                          url : new MFString(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
                           category : new SFInt32(77),
                           specific : new SFInt32(2),
-                          url : new MFString(["../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"])}),
+                          url : new MFString(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
                           category : new SFInt32(77),
                           specific : new SFInt32(3),
-                          url : new MFString(["../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"])}),
+                          url : new MFString(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
                           category : new SFInt32(77),
                           specific : new SFInt32(4),
-                          url : new MFString(["../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"])})])}),
+                          url : new MFString(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])})])}),
 
                     new Collision({
                       enabled : new SFBool(false),
@@ -474,6 +476,8 @@ var X3D0 =  new X3D({
                       toNode : new SFString("AvatarHolder")})])})),
               layers : new SFNode(
                 new LayoutLayer({
+                  pickable : new SFBool(true),
+                  objectType : new MFString(["ALL"]),
                   /*positioning the LayoutLayer*/
                   /*clipping the LayoutLayer*/
                   /*the content (children) of the LayoutLayer*/

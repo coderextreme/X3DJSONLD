@@ -167,6 +167,8 @@ LayerSet32.setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer& Layer33 =  Layer();
+Layer33.setPickable(True);
+Layer33.setObjectType(new CString[]{CString("ALL")}, 1);
 //basic nodes, which might be present in any scene
 NavigationInfo& NavigationInfo34 =  NavigationInfo();
 NavigationInfo34.setType(new CString[]{CString("EXAMINE")}, 1);
@@ -519,6 +521,8 @@ Layer33.addChild(&ROUTE104);
 LayerSet32.addChild(&Layer33);
 
 LayoutLayer& LayoutLayer105 =  LayoutLayer();
+LayoutLayer105.setPickable(True);
+LayoutLayer105.setObjectType(new CString[]{CString("ALL")}, 1);
 //positioning the LayoutLayer
 //clipping the LayoutLayer
 //the content (children) of the LayoutLayer

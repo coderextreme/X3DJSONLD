@@ -205,9 +205,9 @@ MetadataSet45.setDEF("nodes")
 MetadataSet45.setReference("http://titania.create3000.de")
 #NULL
 
-MetadataSet44.setValue(MetadataSet45)
+MetadataSet44.addValue(MetadataSet45)
 
-MetadataSet43.setValue(MetadataSet44)
+MetadataSet43.addValue(MetadataSet44)
 MetadataSet46 = x3d.MetadataSet()
 MetadataSet46.setName("NavigationInfo")
 MetadataSet46.setDEF("NavigationInfo")
@@ -218,9 +218,9 @@ MetadataString47.setDEF("type")
 MetadataString47.setReference("http://titania.create3000.de")
 MetadataString47.setValue(["EXAMINE"])
 
-MetadataSet46.setValue(MetadataString47)
+MetadataSet46.addValue(MetadataString47)
 
-MetadataSet43.setValue(MetadataSet46)
+MetadataSet43.addValue(MetadataSet46)
 MetadataSet48 = x3d.MetadataSet()
 MetadataSet48.setName("Viewpoint")
 MetadataSet48.setDEF("Viewpoint")
@@ -231,23 +231,23 @@ MetadataDouble49.setDEF("position")
 MetadataDouble49.setReference("http://titania.create3000.de")
 MetadataDouble49.setValue([6.24067728185014,0.00250837343276661,2.92117542307615])
 
-MetadataSet48.setValue(MetadataDouble49)
+MetadataSet48.addValue(MetadataDouble49)
 MetadataDouble50 = x3d.MetadataDouble()
 MetadataDouble50.setName("orientation")
 MetadataDouble50.setDEF("orientation")
 MetadataDouble50.setReference("http://titania.create3000.de")
 MetadataDouble50.setValue([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])
 
-MetadataSet48.setValue(MetadataDouble50)
+MetadataSet48.addValue(MetadataDouble50)
 MetadataDouble51 = x3d.MetadataDouble()
 MetadataDouble51.setName("centerOfRotation")
 MetadataDouble51.setDEF("centerOfRotation")
 MetadataDouble51.setReference("http://titania.create3000.de")
 MetadataDouble51.setValue([-0.808320198626341,-0.358072370409949,0.22817191560906])
 
-MetadataSet48.setValue(MetadataDouble51)
+MetadataSet48.addValue(MetadataDouble51)
 
-MetadataSet43.setValue(MetadataSet48)
+MetadataSet43.addValue(MetadataSet48)
 
 WorldInfo42.setMetadata(MetadataSet43)
 

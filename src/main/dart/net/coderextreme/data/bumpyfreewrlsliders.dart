@@ -137,6 +137,8 @@ var X3D0 =  X3D(
               /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
               layers_ : 
                 Layer(
+                  pickable_ : true,
+                  objectType_ : MFString([SFString("ALL")]),
                   /*basic nodes, which might be present in any scene*/
                   children_ : [
                     NavigationInfo(
@@ -271,7 +273,7 @@ var X3D0 =  X3D(
                         Shape(
                           geometry_ : 
                             Sphere(
-                              radius_ : 40),
+                              radius_ : 0.01),
                           appearance_ : 
                             Appearance(
                               material_ : 
@@ -386,22 +388,22 @@ var X3D0 =  X3D(
                         DISEntityTypeMapping(
                           category_ : 77,
                           specific_ : 1,
-                          url_ : MFString([SFString("../data/Leif8Final.x3dv"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv")])),
+                          url_ : MFString([SFString("../data/Leif8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")])),
 
                         DISEntityTypeMapping(
                           category_ : 77,
                           specific_ : 2,
-                          url_ : MFString([SFString("../data/Lily8Final.x3dv"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv")])),
+                          url_ : MFString([SFString("../data/Lily8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")])),
 
                         DISEntityTypeMapping(
                           category_ : 77,
                           specific_ : 3,
-                          url_ : MFString([SFString("../data/Tufani8Final.x3dv"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv")])),
+                          url_ : MFString([SFString("../data/Tufani8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")])),
 
                         DISEntityTypeMapping(
                           category_ : 77,
                           specific_ : 4,
-                          url_ : MFString([SFString("../data/Gramps8Final.x3dv"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv")]))]),
+                          url_ : MFString([SFString("../data/Gramps8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")]))]),
 
                     Collision(
                       enabled_ : false,
@@ -422,6 +424,8 @@ var X3D0 =  X3D(
                       toNode_ : SFString('AvatarHolder'))]),
               layers_ : 
                 LayoutLayer(
+                  pickable_ : true,
+                  objectType_ : MFString([SFString("ALL")]),
                   /*positioning the LayoutLayer*/
                   /*clipping the LayoutLayer*/
                   /*the content (children) of the LayoutLayer*/

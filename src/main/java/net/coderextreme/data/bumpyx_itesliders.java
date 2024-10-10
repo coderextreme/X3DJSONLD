@@ -95,9 +95,9 @@ public class bumpyx_itesliders implements X3DRoots {
         .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new MFInt320().getArray())
           .addComments("the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"")
           .addComments("the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)")
-          .addLayers(new Layer()
+          .addLayers(new Layer().setPickable(true).setObjectType(new MFString1().getArray())
             .addComments("basic nodes, which might be present in any scene")
-            .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat1().getArray()))
+            .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat2().getArray()))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2).setDirection(new double[] {0,-1,0}))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2).setDirection(new double[] {-1,-0.1,-1}))
             .addChild(new Viewpoint().setDescription("My Overview").setFieldOfView(1.570796).setPosition(new double[] {0,1.75,60}))
@@ -140,19 +140,19 @@ public class bumpyx_itesliders implements X3DRoots {
             .addChild(new Transform().setDEF("FlowerTransform")
               .addComments("<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />")
               .addComments("Images courtesy of Paul Debevec's Light Probe Image Gallery")
-              .addChild(new Background().setBackUrl(new MFString2().getArray()).setBottomUrl(new MFString3().getArray()).setFrontUrl(new MFString4().getArray()).setLeftUrl(new MFString5().getArray()).setRightUrl(new MFString6().getArray()).setTopUrl(new MFString7().getArray()))
+              .addChild(new Background().setBackUrl(new MFString3().getArray()).setBottomUrl(new MFString4().getArray()).setFrontUrl(new MFString5().getArray()).setLeftUrl(new MFString6().getArray()).setRightUrl(new MFString7().getArray()).setTopUrl(new MFString8().getArray()))
               .addChild(new Transform()
                 .addChild(new Shape()
                   .setGeometry(new Sphere().setRadius(40))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
                     .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                      .setBackTexture(new ImageTexture().setUrl(new MFString8().getArray()))
-                      .setBottomTexture(new ImageTexture().setUrl(new MFString9().getArray()))
-                      .setFrontTexture(new ImageTexture().setUrl(new MFString10().getArray()))
-                      .setLeftTexture(new ImageTexture().setUrl(new MFString11().getArray()))
-                      .setRightTexture(new ImageTexture().setUrl(new MFString12().getArray()))
-                      .setTopTexture(new ImageTexture().setUrl(new MFString13().getArray())))
+                      .setBackTexture(new ImageTexture().setUrl(new MFString9().getArray()))
+                      .setBottomTexture(new ImageTexture().setUrl(new MFString10().getArray()))
+                      .setFrontTexture(new ImageTexture().setUrl(new MFString11().getArray()))
+                      .setLeftTexture(new ImageTexture().setUrl(new MFString12().getArray()))
+                      .setRightTexture(new ImageTexture().setUrl(new MFString13().getArray()))
+                      .setTopTexture(new ImageTexture().setUrl(new MFString14().getArray())))
                     .addShaders(new ComposedShader().setDEF("x_iteShader").setLanguage("GLSL")
                       .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0.98 1 1.033"))
                       .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INPUTONLY)
@@ -166,18 +166,18 @@ public class bumpyx_itesliders implements X3DRoots {
                       .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                       .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                       .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                      .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                      .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray()))
+                      .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString15().getArray()))
+                      .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString16().getArray()))
                       .addComments("TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))))))
             .addComments("DIS multiuser facilities")
             .addChild(new DISEntityManager().setDEF("EntityManager").setNetworkMode("networkReader")
-              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new MFString16().getArray()))
-              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString17().getArray())))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new MFString17().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString18().getArray())))
             .addChild(new Collision().setEnabled(false)
               .addChild(new Group().setDEF("AvatarHolder")))
             .addChild(new ROUTE().setFromField("addedEntities").setFromNode("EntityManager").setToField("addChildren").setToNode("AvatarHolder"))
             .addChild(new ROUTE().setFromField("removedEntities").setFromNode("EntityManager").setToField("removeChildren").setToNode("AvatarHolder")))
-          .addLayers(new LayoutLayer()
+          .addLayers(new LayoutLayer().setPickable(true).setObjectType(new MFString19().getArray())
             .addComments("positioning the LayoutLayer")
             .addComments("clipping the LayoutLayer")
             .addComments("the content (children) of the LayoutLayer")
@@ -343,8 +343,8 @@ public class bumpyx_itesliders implements X3DRoots {
             .addChild(new ROUTE().setFromField("dValue_changed").setFromNode("dValueTransformerScript").setToField("d").setToNode("x_iteShader"))
             .addChild(new ROUTE().setFromField("pdeltaValue_changed").setFromNode("pdeltaValueTransformerScript").setToField("pdelta").setToNode("x_iteShader"))
             .addChild(new ROUTE().setFromField("tdeltaValue_changed").setFromNode("tdeltaValueTransformerScript").setToField("tdelta").setToNode("x_iteShader"))
-            .setLayout(new Layout().setAlign(new MFString18().getArray()).setOffset(new MFFloat19().getArray()).setOffsetUnits(new MFString20().getArray()).setScaleMode(new MFString21().getArray()).setSize(new MFFloat22().getArray()).setSizeUnits(new MFString23().getArray()))
-            .setViewport(new Viewport().setClipBoundary(new MFFloat24().getArray())))))      ;
+            .setLayout(new Layout().setAlign(new MFString20().getArray()).setOffset(new MFFloat21().getArray()).setOffsetUnits(new MFString22().getArray()).setScaleMode(new MFString23().getArray()).setSize(new MFFloat24().getArray()).setSizeUnits(new MFString25().getArray()))
+            .setViewport(new Viewport().setClipBoundary(new MFFloat26().getArray())))))      ;
     return X3D0;
     }
 private class MFInt320 {
@@ -352,122 +352,132 @@ private class MFInt320 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,2});
   }
 }
-private class MFFloat1 {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ALL"});
+  }
+}
+private class MFFloat2 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.25,1.75,0.75});
   }
 }
-private class MFString2 {
-  private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
-  }
-}
 private class MFString3 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 private class MFString5 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 private class MFString8 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 private class MFString9 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 private class MFString10 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 private class MFString11 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 private class MFString12 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 private class MFString13 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 private class MFString14 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 private class MFString15 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"});
   }
 }
 private class MFString16 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Leif8Final.x3d"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"});
   }
 }
 private class MFString17 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Lily8Final.x3d"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Leif8Final.x3d"});
   }
 }
 private class MFString18 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"RIGHT","BOTTOM"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Lily8Final.x3d"});
   }
 }
-private class MFFloat19 {
-  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2});
+private class MFString19 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ALL"});
   }
 }
 private class MFString20 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"RIGHT","BOTTOM"});
   }
 }
-private class MFString21 {
-  private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"NONE","NONE"});
-  }
-}
-private class MFFloat22 {
+private class MFFloat21 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.4,0.6});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.2});
+  }
+}
+private class MFString22 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
   }
 }
 private class MFString23 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"NONE","NONE"});
   }
 }
 private class MFFloat24 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.4,0.6});
+  }
+}
+private class MFString25 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"WORLD","WORLD"});
+  }
+}
+private class MFFloat26 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1,0,1});
   }
