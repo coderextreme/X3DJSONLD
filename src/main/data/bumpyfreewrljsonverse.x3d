@@ -38,15 +38,15 @@
      It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
      open for their "discussion about the teapot" -->
 <Scene>
+  <!-- basic nodes, which might be present in any scene -->
+  <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
+  <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
+  <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
+  <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
   <!-- LayerSet with two layers, navigation happens in layer 1 -->
   <LayerSet activeLayer='1' order='1 2' >
     <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
     <Layer isPickable='true'>
-      <!-- basic nodes, which might be present in any scene -->
-      <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
-      <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
-      <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
-      <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
       <!-- this group contains the red/green/blue 3D crosshair -->
       <Group>
         <!-- Arrow X -->
@@ -304,9 +304,41 @@ function initialize() {
 		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='1.0'/>
 <![CDATA[ecmascript:
 const newTranslation = function(Value) {
-    'use strict';
-    protoValue_changed = Value.x * protoScale;
-    protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));
+	'use strict';
+	protoValue_changed = Value.x * protoScale;
+	protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));
+
+        var orientation = Value.x;
+
+        var ps = Browser.currentScene.getNamedNode("protoSensor");
+        var t = Browser.currentScene.getNamedNode("protoTransform");
+        var txt = Browser.currentScene.getNamedNode("protoText");
+        if (shader) {
+            X3DUser.LOG("old", shader.getField(protoParameterName).getValue());
+            shader.getField(protoParameterName).setValue(orientation * protoScale);
+            X3DUser.LOG("new", shader.getField(protoParameterName).getValue());
+        } else {
+            X3DUser.LOG('ComposedShader not found');
+        }
+        if (txt) {
+            var stringField = txt.getField("string");
+            X3DUser.LOG("old", stringField.getValue());
+            var label = protoParameterName;
+            stringField.setValue(new MFString(label+"="+(orientation * protoScale).toFixed(2)));
+            X3DUser.LOG("new", stringField.getValue());
+        } else {
+            X3DUser.LOG('ComposedShader not found');
+        }
+        if (ps) {
+            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);
+        } else {
+            X3DUser.LOG("Not found protoSensor");
+        }
+        if (t) {
+            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);
+        } else {
+            X3DUser.LOG("Not found protoTransform");
+        }
 }
 ]]>
 
