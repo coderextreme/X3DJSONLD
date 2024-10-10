@@ -56,7 +56,7 @@ public class JoeSkinTexcoordDisplacerKickUpdate2 implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("H-Anim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JoeSkinTexcoordDisplacerKick.x3d"))
@@ -68,8 +68,8 @@ public class JoeSkinTexcoordDisplacerKickUpdate2 implements X3DRoots {
         .addMeta(new meta().setName("modified").setContent("09 July 2020"))
         .addMeta(new meta().setName("TODO").setContent("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"))
         .addMeta(new meta().setName("translators").setContent("Roy Walmsley and Don Brutzman"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html"))
         .addComments("BS studio translation from .x3dv by Joe using BS Contact"))
       .setScene(new Scene()

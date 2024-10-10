@@ -162,6 +162,8 @@ LayerSet32.order = new MFInt32(new int[1,2]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 let Layer33 = browser.currentScene.createNode("Layer");
+Layer33.pickable = True;
+Layer33.objectType = new MFString(new java.lang.String["ALL"]);
 //basic nodes, which might be present in any scene
 let NavigationInfo34 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo34.type = new MFString(new java.lang.String["EXAMINE"]);
@@ -347,7 +349,7 @@ Transform69.children[0] = Background70;
 
 let Shape71 = browser.currentScene.createNode("Shape");
 let Sphere72 = browser.currentScene.createNode("Sphere");
-Sphere72.radius = 40;
+Sphere72.radius = 0.01;
 Shape71.geometry = Sphere72;
 
 let Appearance73 = browser.currentScene.createNode("Appearance");
@@ -493,7 +495,7 @@ DISEntityManager96.networkMode = "networkReader";
 let DISEntityTypeMapping97 = browser.currentScene.createNode("DISEntityTypeMapping");
 DISEntityTypeMapping97.category = 77;
 DISEntityTypeMapping97.specific = 1;
-DISEntityTypeMapping97.url = new MFString(new java.lang.String["../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"]);
+DISEntityTypeMapping97.url = new MFString(new java.lang.String["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]);
 DISEntityManager96.children = new MFNode();
 
 DISEntityManager96.children[0] = DISEntityTypeMapping97;
@@ -501,19 +503,19 @@ DISEntityManager96.children[0] = DISEntityTypeMapping97;
 let DISEntityTypeMapping98 = browser.currentScene.createNode("DISEntityTypeMapping");
 DISEntityTypeMapping98.category = 77;
 DISEntityTypeMapping98.specific = 2;
-DISEntityTypeMapping98.url = new MFString(new java.lang.String["../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"]);
+DISEntityTypeMapping98.url = new MFString(new java.lang.String["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]);
 DISEntityManager96.children[1] = DISEntityTypeMapping98;
 
 let DISEntityTypeMapping99 = browser.currentScene.createNode("DISEntityTypeMapping");
 DISEntityTypeMapping99.category = 77;
 DISEntityTypeMapping99.specific = 3;
-DISEntityTypeMapping99.url = new MFString(new java.lang.String["../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"]);
+DISEntityTypeMapping99.url = new MFString(new java.lang.String["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]);
 DISEntityManager96.children[2] = DISEntityTypeMapping99;
 
 let DISEntityTypeMapping100 = browser.currentScene.createNode("DISEntityTypeMapping");
 DISEntityTypeMapping100.category = 77;
 DISEntityTypeMapping100.specific = 4;
-DISEntityTypeMapping100.url = new MFString(new java.lang.String["../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"]);
+DISEntityTypeMapping100.url = new MFString(new java.lang.String["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]);
 DISEntityManager96.children[3] = DISEntityTypeMapping100;
 
 Layer33.children[6] = DISEntityManager96;
@@ -545,6 +547,8 @@ LayerSet32.layers = new MFNode();
 LayerSet32.layers[0] = Layer33;
 
 let LayoutLayer105 = browser.currentScene.createNode("LayoutLayer");
+LayoutLayer105.pickable = True;
+LayoutLayer105.objectType = new MFString(new java.lang.String["ALL"]);
 //positioning the LayoutLayer
 //clipping the LayoutLayer
 //the content (children) of the LayoutLayer

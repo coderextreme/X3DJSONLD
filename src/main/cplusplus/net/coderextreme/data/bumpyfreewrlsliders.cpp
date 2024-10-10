@@ -167,6 +167,8 @@ LayerSet32.setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer& Layer33 =  Layer();
+Layer33.setPickable(True);
+Layer33.setObjectType(new CString[]{CString("ALL")}, 1);
 //basic nodes, which might be present in any scene
 NavigationInfo& NavigationInfo34 =  NavigationInfo();
 NavigationInfo34.setType(new CString[]{CString("EXAMINE")}, 1);
@@ -334,7 +336,7 @@ Transform69.addChild(&Background70);
 
 Shape& Shape71 =  Shape();
 Sphere& Sphere72 =  Sphere();
-Sphere72.setRadius(40);
+Sphere72.setRadius(0.01);
 Shape71.setGeometry(&Sphere72);
 
 Appearance& Appearance73 =  Appearance();
@@ -476,25 +478,25 @@ DISEntityManager96.setNetworkMode("networkReader");
 DISEntityTypeMapping& DISEntityTypeMapping97 =  DISEntityTypeMapping();
 DISEntityTypeMapping97.setCategory(77);
 DISEntityTypeMapping97.setSpecific(1);
-DISEntityTypeMapping97.setUrl(new CString[]{CString("../data/Leif8Final.x3dv"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv")}, 2);
+DISEntityTypeMapping97.setUrl(new CString[]{CString("../data/Leif8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")}, 2);
 DISEntityManager96.setMapping(&DISEntityTypeMapping97);
 
 DISEntityTypeMapping& DISEntityTypeMapping98 =  DISEntityTypeMapping();
 DISEntityTypeMapping98.setCategory(77);
 DISEntityTypeMapping98.setSpecific(2);
-DISEntityTypeMapping98.setUrl(new CString[]{CString("../data/Lily8Final.x3dv"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv")}, 2);
+DISEntityTypeMapping98.setUrl(new CString[]{CString("../data/Lily8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")}, 2);
 DISEntityManager96.setMapping(&DISEntityTypeMapping98);
 
 DISEntityTypeMapping& DISEntityTypeMapping99 =  DISEntityTypeMapping();
 DISEntityTypeMapping99.setCategory(77);
 DISEntityTypeMapping99.setSpecific(3);
-DISEntityTypeMapping99.setUrl(new CString[]{CString("../data/Tufani8Final.x3dv"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv")}, 2);
+DISEntityTypeMapping99.setUrl(new CString[]{CString("../data/Tufani8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")}, 2);
 DISEntityManager96.setMapping(&DISEntityTypeMapping99);
 
 DISEntityTypeMapping& DISEntityTypeMapping100 =  DISEntityTypeMapping();
 DISEntityTypeMapping100.setCategory(77);
 DISEntityTypeMapping100.setSpecific(4);
-DISEntityTypeMapping100.setUrl(new CString[]{CString("../data/Gramps8Final.x3dv"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv")}, 2);
+DISEntityTypeMapping100.setUrl(new CString[]{CString("../data/Gramps8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")}, 2);
 DISEntityManager96.setMapping(&DISEntityTypeMapping100);
 
 Layer33.addChild(&DISEntityManager96);
@@ -524,6 +526,8 @@ Layer33.addChild(&ROUTE104);
 LayerSet32.addChild(&Layer33);
 
 LayoutLayer& LayoutLayer105 =  LayoutLayer();
+LayoutLayer105.setPickable(True);
+LayoutLayer105.setObjectType(new CString[]{CString("ALL")}, 1);
 //positioning the LayoutLayer
 //clipping the LayoutLayer
 //the content (children) of the LayoutLayer

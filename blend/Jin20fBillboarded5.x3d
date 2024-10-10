@@ -31,7 +31,7 @@
               <TouchSensor description='HAnimSite 33 hanim_l_iliocristale_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -50,7 +50,7 @@
               <TouchSensor description='HAnimSite 36 hanim_r_iliocristale_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -69,7 +69,7 @@
               <TouchSensor description='HAnimSite 42 hanim_l_trochanterion_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -88,7 +88,7 @@
               <TouchSensor description='HAnimSite 46 hanim_r_trochanterion_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -107,7 +107,7 @@
               <TouchSensor description='HAnimSite 32 hanim_l_asis_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -126,7 +126,7 @@
               <TouchSensor description='HAnimSite 35 hanim_r_asis_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -145,7 +145,7 @@
               <TouchSensor description='HAnimSite 34 hanim_l_psis_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -164,7 +164,7 @@
               <TouchSensor description='HAnimSite 37 hanim_r_psis_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -183,7 +183,7 @@
               <TouchSensor description='HAnimSite 38 hanim_crotch_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -202,7 +202,7 @@
               <TouchSensor description='HAnimSite 93 hanim_buttocks_standing_wall_contact_point_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -224,7 +224,7 @@
                 <TouchSensor description='HAnimSite 90 hanim_l_knee_crease_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -239,11 +239,11 @@
                   </Shape>
                 </Billboard>
               </HAnimSite>
-              <HAnimSite DEF='hanim_l_femoral_medial_epicondyle_pt' name='l_femoral_medial_epicondyle' translation='0.039 0.41 -0.01'>
-                <TouchSensor description='HAnimSite 40 hanim_l_femoral_medial_epicondyle_pt'/>
+              <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles' translation='0.039 0.41 -0.01'>
+                <TouchSensor description='HAnimSite 40 hanim_l_femoral_medial_epicondyles_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -258,11 +258,11 @@
                   </Shape>
                 </Billboard>
               </HAnimSite>
-              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyle_pt' name='l_femoral_lateral_epicondyle' translation='0.127 0.41 -0.01'>
-                <TouchSensor description='HAnimSite 39 hanim_l_femoral_lateral_epicondyle_pt'/>
+              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles' translation='0.127 0.41 -0.01'>
+                <TouchSensor description='HAnimSite 39 hanim_l_femoral_lateral_epicondyles_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -281,7 +281,7 @@
                 <TouchSensor description='HAnimSite 41 hanim_l_suprapatella_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -303,7 +303,7 @@
                   <TouchSensor description='HAnimSite 47 hanim_l_tibiale_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -322,7 +322,7 @@
                   <TouchSensor description='HAnimSite 48 hanim_l_medial_malleolus_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -341,7 +341,7 @@
                   <TouchSensor description='HAnimSite 49 hanim_l_lateral_malleolus_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -363,7 +363,7 @@
                     <TouchSensor description='HAnimSite 50 hanim_l_sphyrion_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -382,7 +382,7 @@
                     <TouchSensor description='HAnimSite 58 hanim_l_calcaneus_posterior_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -410,7 +410,7 @@
                             <TouchSensor description='HAnimSite 55 hanim_l_metatarsal_phalanx_1_pt'/>
                             <Shape>
                               <Appearance>
-                                <Material diffuseColor='1 1 1'/>
+                                <Material diffuseColor='1 1 0'/>
                               </Appearance>
                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -432,7 +432,7 @@
                               <TouchSensor description='HAnimSite 111 hanim_l_tarsal_distal_phalanx_1_tip'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -466,7 +466,7 @@
                                 <TouchSensor description='HAnimSite 112 hanim_l_tarsal_distal_phalanx_2_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -501,7 +501,7 @@
                                 <TouchSensor description='HAnimSite 113 hanim_l_tarsal_distal_phalanx_3_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -539,7 +539,7 @@
                                 <TouchSensor description='HAnimSite 114 hanim_l_tarsal_distal_phalanx_4_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -569,7 +569,7 @@
                               <TouchSensor description='HAnimSite 56 hanim_l_metatarsal_phalanx_5_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -591,7 +591,7 @@
                                 <TouchSensor description='HAnimSite 115 hanim_l_tarsal_distal_phalanx_5_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -622,7 +622,7 @@
                 <TouchSensor description='HAnimSite 91 hanim_r_knee_crease_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -637,11 +637,11 @@
                   </Shape>
                 </Billboard>
               </HAnimSite>
-              <HAnimSite DEF='hanim_r_femoral_medial_epicondyle_pt' name='r_femoral_medial_epicondyle' translation='-0.039 0.41 -0.01'>
-                <TouchSensor description='HAnimSite 44 hanim_r_femoral_medial_epicondyle_pt'/>
+              <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles' translation='-0.039 0.41 -0.01'>
+                <TouchSensor description='HAnimSite 44 hanim_r_femoral_medial_epicondyles_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -656,11 +656,11 @@
                   </Shape>
                 </Billboard>
               </HAnimSite>
-              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyle_pt' name='r_femoral_lateral_epicondyle' translation='-0.127 0.41 -0.01'>
-                <TouchSensor description='HAnimSite 43 hanim_r_femoral_lateral_epicondyle_pt'/>
+              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles' translation='-0.127 0.41 -0.01'>
+                <TouchSensor description='HAnimSite 43 hanim_r_femoral_lateral_epicondyles_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -679,7 +679,7 @@
                 <TouchSensor description='HAnimSite 45 hanim_r_suprapatella_pt'/>
                 <Shape>
                   <Appearance>
-                    <Material diffuseColor='1 1 1'/>
+                    <Material diffuseColor='1 1 0'/>
                   </Appearance>
                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -701,7 +701,7 @@
                   <TouchSensor description='HAnimSite 51 hanim_r_tibiale_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -720,7 +720,7 @@
                   <TouchSensor description='HAnimSite 52 hanim_r_medial_malleolus_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -739,7 +739,7 @@
                   <TouchSensor description='HAnimSite 53 hanim_r_lateral_malleolus_pt'/>
                   <Shape>
                     <Appearance>
-                      <Material diffuseColor='1 1 1'/>
+                      <Material diffuseColor='1 1 0'/>
                     </Appearance>
                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -761,7 +761,7 @@
                     <TouchSensor description='HAnimSite 54 hanim_r_sphyrion_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -780,7 +780,7 @@
                     <TouchSensor description='HAnimSite 62 hanim_r_calcaneus_posterior_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -808,7 +808,7 @@
                             <TouchSensor description='HAnimSite 59 hanim_r_metatarsal_phalanx_1_pt'/>
                             <Shape>
                               <Appearance>
-                                <Material diffuseColor='1 1 1'/>
+                                <Material diffuseColor='1 1 0'/>
                               </Appearance>
                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -830,7 +830,7 @@
                               <TouchSensor description='HAnimSite 116 hanim_r_tarsal_distal_phalanx_1_tip'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -864,7 +864,7 @@
                                 <TouchSensor description='HAnimSite 117 hanim_r_tarsal_distal_phalanx_2_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -899,7 +899,7 @@
                                 <TouchSensor description='HAnimSite 118 hanim_r_tarsal_distal_phalanx_3_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -937,7 +937,7 @@
                                 <TouchSensor description='HAnimSite 119 hanim_r_tarsal_distal_phalanx_4_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -967,7 +967,7 @@
                               <TouchSensor description='HAnimSite 60 hanim_r_metatarsal_phalanx_5_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -989,7 +989,7 @@
                                 <TouchSensor description='HAnimSite 120 hanim_r_tarsal_distal_phalanx_5_tip'/>
                                 <Shape>
                                   <Appearance>
-                                    <Material diffuseColor='1 1 1'/>
+                                    <Material diffuseColor='1 1 0'/>
                                   </Appearance>
                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1021,7 +1021,7 @@
               <TouchSensor description='HAnimSite 24 hanim_spine_1_middle_back_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1040,7 +1040,7 @@
               <TouchSensor description='HAnimSite 25 hanim_spine_2_lower_back_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1059,7 +1059,7 @@
               <TouchSensor description='HAnimSite 26 hanim_waist_preferred_anterior_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1078,7 +1078,7 @@
               <TouchSensor description='HAnimSite 27 hanim_waist_preferred_posterior_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1097,7 +1097,7 @@
               <TouchSensor description='HAnimSite 84 hanim_navel_pt'/>
               <Shape>
                 <Appearance>
-                  <Material diffuseColor='1 1 1'/>
+                  <Material diffuseColor='1 1 0'/>
                 </Appearance>
                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1123,7 +1123,7 @@
                     <TouchSensor description='HAnimSite 28 hanim_l_rib10_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1142,7 +1142,7 @@
                     <TouchSensor description='HAnimSite 30 hanim_r_rib10_pt'/>
                     <Shape>
                       <Appearance>
-                        <Material diffuseColor='1 1 1'/>
+                        <Material diffuseColor='1 1 0'/>
                       </Appearance>
                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1170,7 +1170,7 @@
                             <TouchSensor description='HAnimSite 13 hanim_substernale_pt'/>
                             <Shape>
                               <Appearance>
-                                <Material diffuseColor='1 1 1'/>
+                                <Material diffuseColor='1 1 0'/>
                               </Appearance>
                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1189,7 +1189,7 @@
                             <TouchSensor description='HAnimSite 88 hanim_mesosternale_pt'/>
                             <Shape>
                               <Appearance>
-                                <Material diffuseColor='1 1 1'/>
+                                <Material diffuseColor='1 1 0'/>
                               </Appearance>
                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1211,7 +1211,7 @@
                               <TouchSensor description='HAnimSite 29 hanim_l_thelion_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1230,7 +1230,7 @@
                               <TouchSensor description='HAnimSite 31 hanim_r_thelion_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1249,7 +1249,7 @@
                               <TouchSensor description='HAnimSite 92 hanim_rear_center_midsagittal_plane_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1268,7 +1268,7 @@
                               <TouchSensor description='HAnimSite 94 hanim_l_chest_midsagittal_plane_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1287,7 +1287,7 @@
                               <TouchSensor description='HAnimSite 95 hanim_r_chest_midsagittal_plane_pt'/>
                               <Shape>
                                 <Appearance>
-                                  <Material diffuseColor='1 1 1'/>
+                                  <Material diffuseColor='1 1 0'/>
                                 </Appearance>
                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1323,7 +1323,7 @@
                                               <TouchSensor description='HAnimSite 12 hanim_suprasternale_pt'/>
                                               <Shape>
                                                 <Appearance>
-                                                  <Material diffuseColor='1 1 1'/>
+                                                  <Material diffuseColor='1 1 0'/>
                                                 </Appearance>
                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1342,7 +1342,7 @@
                                               <TouchSensor description='HAnimSite 10 hanim_cervicale_pt'/>
                                               <Shape>
                                                 <Appearance>
-                                                  <Material diffuseColor='1 1 1'/>
+                                                  <Material diffuseColor='1 1 0'/>
                                                 </Appearance>
                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1364,7 +1364,7 @@
                                                 <TouchSensor description='HAnimSite 82 hanim_l_neck_base_pt'/>
                                                 <Shape>
                                                   <Appearance>
-                                                    <Material diffuseColor='1 1 1'/>
+                                                    <Material diffuseColor='1 1 0'/>
                                                   </Appearance>
                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1383,7 +1383,7 @@
                                                 <TouchSensor description='HAnimSite 83 hanim_r_neck_base_pt'/>
                                                 <Shape>
                                                   <Appearance>
-                                                    <Material diffuseColor='1 1 1'/>
+                                                    <Material diffuseColor='1 1 0'/>
                                                   </Appearance>
                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1413,7 +1413,7 @@
                                                           <TouchSensor description='HAnimSite 11 hanim_adams_apple_pt'/>
                                                           <Shape>
                                                             <Appearance>
-                                                              <Material diffuseColor='1 1 1'/>
+                                                              <Material diffuseColor='1 1 0'/>
                                                             </Appearance>
                                                             <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                               <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1437,7 +1437,7 @@
                                                               <TouchSensor description='HAnimSite 0 hanim_skull_vertex_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1456,7 +1456,7 @@
                                                               <TouchSensor description='HAnimSite 1 hanim_glabella_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1475,7 +1475,7 @@
                                                               <TouchSensor description='HAnimSite 2 hanim_sellion_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1494,7 +1494,7 @@
                                                               <TouchSensor description='HAnimSite 3 hanim_l_infraorbitale_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1513,7 +1513,7 @@
                                                               <TouchSensor description='HAnimSite 4 hanim_l_tragion_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1532,7 +1532,7 @@
                                                               <TouchSensor description='HAnimSite 6 hanim_r_infraorbitale_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1551,7 +1551,7 @@
                                                               <TouchSensor description='HAnimSite 7 hanim_r_tragion_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1570,7 +1570,7 @@
                                                               <TouchSensor description='HAnimSite 81 hanim_nuchale_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1589,7 +1589,7 @@
                                                               <TouchSensor description='HAnimSite 89 hanim_opisthocranion_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1608,7 +1608,7 @@
                                                               <TouchSensor description='HAnimSite 85 hanim_l_ectocanthus_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1627,7 +1627,7 @@
                                                               <TouchSensor description='HAnimSite 86 hanim_r_ectocanthus_pt'/>
                                                               <Shape>
                                                                 <Appearance>
-                                                                  <Material diffuseColor='1 1 1'/>
+                                                                  <Material diffuseColor='1 1 0'/>
                                                                 </Appearance>
                                                                 <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                   <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1649,7 +1649,7 @@
                                                                 <TouchSensor description='HAnimSite l_eyelid_tip hanim_l_eyelid_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1672,7 +1672,7 @@
                                                                 <TouchSensor description='HAnimSite r_eyelid_tip hanim_r_eyelid_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1695,7 +1695,7 @@
                                                                 <TouchSensor description='HAnimSite l_eyeball_tip hanim_l_eyeball_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1718,7 +1718,7 @@
                                                                 <TouchSensor description='HAnimSite r_eyeball_tip hanim_r_eyeball_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1741,7 +1741,7 @@
                                                                 <TouchSensor description='HAnimSite l_eyebrow_tip hanim_l_eyebrow_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1764,7 +1764,7 @@
                                                                 <TouchSensor description='HAnimSite r_eyebrow_tip hanim_r_eyebrow_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1787,7 +1787,7 @@
                                                                 <TouchSensor description='HAnimSite 5 hanim_l_gonion_pt'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1806,7 +1806,7 @@
                                                                 <TouchSensor description='HAnimSite 8 hanim_r_gonion_pt'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1825,7 +1825,7 @@
                                                                 <TouchSensor description='HAnimSite 9 hanim_supramenton_pt'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1844,7 +1844,7 @@
                                                                 <TouchSensor description='HAnimSite 87 hanim_menton_pt'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1875,7 +1875,7 @@
                                                 <TouchSensor description='HAnimSite l_clavicale hanim_l_clavicale_pt'/>
                                                 <Shape>
                                                   <Appearance>
-                                                    <Material diffuseColor='1 1 1'/>
+                                                    <Material diffuseColor='1 1 0'/>
                                                   </Appearance>
                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1897,7 +1897,7 @@
                                                   <TouchSensor description='HAnimSite 15 hanim_l_acromion_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1916,7 +1916,7 @@
                                                   <TouchSensor description='HAnimSite 16 hanim_l_axilla_proximal_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1935,7 +1935,7 @@
                                                   <TouchSensor description='HAnimSite 17 hanim_l_axilla_distal_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1954,7 +1954,7 @@
                                                   <TouchSensor description='HAnimSite 18 hanim_l_axilla_posterior_folds_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1972,11 +1972,11 @@
                                               </HAnimSegment>
                                               <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='0.16506 1.17855 -0.00327'>
                                                 <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
-                                                  <HAnimSite DEF='hanim_l_humeral_lateral_epicondyle_pt' name='l_humeral_lateral_epicondyle' translation='0.2 0.95 -0.03'>
-                                                    <TouchSensor description='HAnimSite 63 hanim_l_humeral_lateral_epicondyle_pt'/>
+                                                  <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles' translation='0.2 0.95 -0.03'>
+                                                    <TouchSensor description='HAnimSite 63 hanim_l_humeral_lateral_epicondyles_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -1991,11 +1991,11 @@
                                                       </Shape>
                                                     </Billboard>
                                                   </HAnimSite>
-                                                  <HAnimSite DEF='hanim_l_humeral_medial_epicondyle_pt' name='l_humeral_medial_epicondyle' translation='0.18 0.93 -0.03'>
-                                                    <TouchSensor description='HAnimSite 64 hanim_l_humeral_medial_epicondyle_pt'/>
+                                                  <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles' translation='0.18 0.93 -0.03'>
+                                                    <TouchSensor description='HAnimSite 64 hanim_l_humeral_medial_epicondyles_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2014,7 +2014,7 @@
                                                     <TouchSensor description='HAnimSite 69 hanim_l_radiale_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2033,7 +2033,7 @@
                                                     <TouchSensor description='HAnimSite 96 hanim_l_bideltoid_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2055,7 +2055,7 @@
                                                       <TouchSensor description='HAnimSite 71 hanim_l_radial_styloid_pt'/>
                                                       <Shape>
                                                         <Appearance>
-                                                          <Material diffuseColor='1 1 1'/>
+                                                          <Material diffuseColor='1 1 0'/>
                                                         </Appearance>
                                                         <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                           <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2074,7 +2074,7 @@
                                                       <TouchSensor description='HAnimSite 65 hanim_l_olecranon_pt'/>
                                                       <Shape>
                                                         <Appearance>
-                                                          <Material diffuseColor='1 1 1'/>
+                                                          <Material diffuseColor='1 1 0'/>
                                                         </Appearance>
                                                         <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                           <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2096,7 +2096,7 @@
                                                         <TouchSensor description='HAnimSite 70 hanim_l_ulnar_styloid_pt'/>
                                                         <Shape>
                                                           <Appearance>
-                                                            <Material diffuseColor='1 1 1'/>
+                                                            <Material diffuseColor='1 1 0'/>
                                                           </Appearance>
                                                           <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                             <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2120,7 +2120,7 @@
                                                             <TouchSensor description='HAnimSite 75 hanim_l_metacarpal_phalanx_2_pt'/>
                                                             <Shape>
                                                               <Appearance>
-                                                                <Material diffuseColor='1 1 1'/>
+                                                                <Material diffuseColor='1 1 0'/>
                                                               </Appearance>
                                                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2144,7 +2144,7 @@
                                                                 <TouchSensor description='HAnimSite 101 hanim_l_carpal_distal_phalanx_1_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2178,7 +2178,7 @@
                                                                   <TouchSensor description='HAnimSite 57 hanim_l_dactylion_pt'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2197,7 +2197,7 @@
                                                                   <TouchSensor description='HAnimSite 102 hanim_l_carpal_distal_phalanx_2_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2226,7 +2226,7 @@
                                                             <TouchSensor description='HAnimSite 76 hanim_l_metacarpal_phalanx_3_pt'/>
                                                             <Shape>
                                                               <Appearance>
-                                                                <Material diffuseColor='1 1 1'/>
+                                                                <Material diffuseColor='1 1 0'/>
                                                               </Appearance>
                                                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2252,7 +2252,7 @@
                                                                   <TouchSensor description='HAnimSite 103 hanim_l_carpal_distal_phalanx_3_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2287,7 +2287,7 @@
                                                                   <TouchSensor description='HAnimSite 104 hanim_l_carpal_distal_phalanx_4_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2314,7 +2314,7 @@
                                                           <TouchSensor description='HAnimSite 77 hanim_l_metacarpal_phalanx_5_pt'/>
                                                           <Shape>
                                                             <Appearance>
-                                                              <Material diffuseColor='1 1 1'/>
+                                                              <Material diffuseColor='1 1 0'/>
                                                             </Appearance>
                                                             <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                               <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2340,7 +2340,7 @@
                                                                 <TouchSensor description='HAnimSite 105 hanim_l_carpal_distal_phalanx_5_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2371,7 +2371,7 @@
                                                 <TouchSensor description='HAnimSite r_clavicale hanim_r_clavicale_pt'/>
                                                 <Shape>
                                                   <Appearance>
-                                                    <Material diffuseColor='1 1 1'/>
+                                                    <Material diffuseColor='1 1 0'/>
                                                   </Appearance>
                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2393,7 +2393,7 @@
                                                   <TouchSensor description='HAnimSite 20 hanim_r_acromion_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2412,7 +2412,7 @@
                                                   <TouchSensor description='HAnimSite 21 hanim_r_axilla_proximal_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2431,7 +2431,7 @@
                                                   <TouchSensor description='HAnimSite 22 hanim_r_axilla_distal_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2450,7 +2450,7 @@
                                                   <TouchSensor description='HAnimSite 23 hanim_r_axilla_posterior_folds_pt'/>
                                                   <Shape>
                                                     <Appearance>
-                                                      <Material diffuseColor='1 1 1'/>
+                                                      <Material diffuseColor='1 1 0'/>
                                                     </Appearance>
                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2468,11 +2468,11 @@
                                               </HAnimSegment>
                                               <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-0.1647 1.17855 -0.00327'>
                                                 <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
-                                                  <HAnimSite DEF='hanim_r_humeral_lateral_epicondyle_pt' name='r_humeral_lateral_epicondyle' translation='-0.2 0.95 -0.03'>
-                                                    <TouchSensor description='HAnimSite 66 hanim_r_humeral_lateral_epicondyle_pt'/>
+                                                  <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles' translation='-0.2 0.95 -0.03'>
+                                                    <TouchSensor description='HAnimSite 66 hanim_r_humeral_lateral_epicondyles_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2487,11 +2487,11 @@
                                                       </Shape>
                                                     </Billboard>
                                                   </HAnimSite>
-                                                  <HAnimSite DEF='hanim_r_humeral_medial_epicondyle_pt' name='r_humeral_medial_epicondyle' translation='-0.18 0.93 -0.03'>
-                                                    <TouchSensor description='HAnimSite 67 hanim_r_humeral_medial_epicondyle_pt'/>
+                                                  <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles' translation='-0.18 0.93 -0.03'>
+                                                    <TouchSensor description='HAnimSite 67 hanim_r_humeral_medial_epicondyles_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2510,7 +2510,7 @@
                                                     <TouchSensor description='HAnimSite 72 hanim_r_radiale_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2529,7 +2529,7 @@
                                                     <TouchSensor description='HAnimSite 97 hanim_r_bideltoid_pt'/>
                                                     <Shape>
                                                       <Appearance>
-                                                        <Material diffuseColor='1 1 1'/>
+                                                        <Material diffuseColor='1 1 0'/>
                                                       </Appearance>
                                                       <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                         <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2551,7 +2551,7 @@
                                                       <TouchSensor description='HAnimSite 74 hanim_r_radial_styloid_pt'/>
                                                       <Shape>
                                                         <Appearance>
-                                                          <Material diffuseColor='1 1 1'/>
+                                                          <Material diffuseColor='1 1 0'/>
                                                         </Appearance>
                                                         <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                           <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2570,7 +2570,7 @@
                                                       <TouchSensor description='HAnimSite 68 hanim_r_olecranon_pt'/>
                                                       <Shape>
                                                         <Appearance>
-                                                          <Material diffuseColor='1 1 1'/>
+                                                          <Material diffuseColor='1 1 0'/>
                                                         </Appearance>
                                                         <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                           <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2592,7 +2592,7 @@
                                                         <TouchSensor description='HAnimSite 73 hanim_r_ulnar_styloid_pt'/>
                                                         <Shape>
                                                           <Appearance>
-                                                            <Material diffuseColor='1 1 1'/>
+                                                            <Material diffuseColor='1 1 0'/>
                                                           </Appearance>
                                                           <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                             <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2616,7 +2616,7 @@
                                                             <TouchSensor description='HAnimSite 78 hanim_r_metacarpal_phalanx_2_pt'/>
                                                             <Shape>
                                                               <Appearance>
-                                                                <Material diffuseColor='1 1 1'/>
+                                                                <Material diffuseColor='1 1 0'/>
                                                               </Appearance>
                                                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2640,7 +2640,7 @@
                                                                 <TouchSensor description='HAnimSite 106 hanim_r_carpal_distal_phalanx_1_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2674,7 +2674,7 @@
                                                                   <TouchSensor description='HAnimSite 61 hanim_r_dactylion_pt'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2693,7 +2693,7 @@
                                                                   <TouchSensor description='HAnimSite 107 hanim_r_carpal_distal_phalanx_2_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2722,7 +2722,7 @@
                                                             <TouchSensor description='HAnimSite 79 hanim_r_metacarpal_phalanx_3_pt'/>
                                                             <Shape>
                                                               <Appearance>
-                                                                <Material diffuseColor='1 1 1'/>
+                                                                <Material diffuseColor='1 1 0'/>
                                                               </Appearance>
                                                               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                 <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2748,7 +2748,7 @@
                                                                   <TouchSensor description='HAnimSite 108 hanim_r_carpal_distal_phalanx_3_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2783,7 +2783,7 @@
                                                                   <TouchSensor description='HAnimSite 109 hanim_r_carpal_distal_phalanx_4_tip'/>
                                                                   <Shape>
                                                                     <Appearance>
-                                                                      <Material diffuseColor='1 1 1'/>
+                                                                      <Material diffuseColor='1 1 0'/>
                                                                     </Appearance>
                                                                     <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                       <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2810,7 +2810,7 @@
                                                           <TouchSensor description='HAnimSite 80 hanim_r_metacarpal_phalanx_5_pt'/>
                                                           <Shape>
                                                             <Appearance>
-                                                              <Material diffuseColor='1 1 1'/>
+                                                              <Material diffuseColor='1 1 0'/>
                                                             </Appearance>
                                                             <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                               <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>
@@ -2836,7 +2836,7 @@
                                                                 <TouchSensor description='HAnimSite 110 hanim_r_carpal_distal_phalanx_5_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
-                                                                    <Material diffuseColor='1 1 1'/>
+                                                                    <Material diffuseColor='1 1 0'/>
                                                                   </Appearance>
                                                                   <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
                                                                     <ColorRGBA color='1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1 1 1 0 1 1 1 0 0.1'/>

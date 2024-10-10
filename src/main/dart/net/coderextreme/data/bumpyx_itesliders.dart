@@ -137,6 +137,8 @@ var X3D0 =  X3D(
               /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
               layers_ : 
                 Layer(
+                  pickable_ : true,
+                  objectType_ : MFString([SFString("ALL")]),
                   /*basic nodes, which might be present in any scene*/
                   children_ : [
                     NavigationInfo(
@@ -417,6 +419,8 @@ var X3D0 =  X3D(
                       toNode_ : SFString('AvatarHolder'))]),
               layers_ : 
                 LayoutLayer(
+                  pickable_ : true,
+                  objectType_ : MFString([SFString("ALL")]),
                   /*positioning the LayoutLayer*/
                   /*clipping the LayoutLayer*/
                   /*the content (children) of the LayoutLayer*/

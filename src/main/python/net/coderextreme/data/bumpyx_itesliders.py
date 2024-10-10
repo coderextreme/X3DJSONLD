@@ -161,6 +161,8 @@ LayerSet32.setOrder([1,2])
 #the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 #the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer33 = x3d.Layer()
+Layer33.setPickable(True)
+Layer33.setObjectType(["ALL"])
 #basic nodes, which might be present in any scene
 NavigationInfo34 = x3d.NavigationInfo()
 NavigationInfo34.setType(["EXAMINE"])
@@ -513,6 +515,8 @@ Layer33.addChildren(ROUTE104)
 
 LayerSet32.addLayers(Layer33)
 LayoutLayer105 = x3d.LayoutLayer()
+LayoutLayer105.setPickable(True)
+LayoutLayer105.setObjectType(["ALL"])
 #positioning the LayoutLayer
 #clipping the LayoutLayer
 #the content (children) of the LayoutLayer

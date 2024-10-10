@@ -114,6 +114,7 @@ HAnimJoint26.setName("Armature")
 HAnimJoint26.setDEF("hanim_Armature")
 HAnimJoint26.setUlimit([0,0,0])
 HAnimJoint26.setLlimit([0,0,0])
+HAnimJoint26.setContainerFieldOverride("skeleton")
 HAnimSegment27 = x3d.HAnimSegment()
 HAnimSegment27.setName("SEGMENT_FOR_Armature")
 HAnimSegment27.setDEF("hanim_SEGMENT_FOR_Armature")
@@ -5685,588 +5686,734 @@ HAnimJoint34.addChildren(HAnimJoint498)
 
 HAnimJoint26.addChildren(HAnimJoint34)
 
-HAnimHumanoid25.setSkeleton(HAnimJoint26)
+HAnimHumanoid25.addSkeleton(HAnimJoint26)
 HAnimJoint1202 = x3d.HAnimJoint()
+HAnimJoint1202.setContainerFieldOverride("joints")
 HAnimJoint1202.setUSE("hanim_sacrum")
 
 HAnimHumanoid25.addJoints(HAnimJoint1202)
 HAnimJoint1203 = x3d.HAnimJoint()
+HAnimJoint1203.setContainerFieldOverride("joints")
 HAnimJoint1203.setUSE("hanim_pelvis")
 
 HAnimHumanoid25.addJoints(HAnimJoint1203)
 HAnimJoint1204 = x3d.HAnimJoint()
+HAnimJoint1204.setContainerFieldOverride("joints")
 HAnimJoint1204.setUSE("hanim_l_thigh")
 
 HAnimHumanoid25.addJoints(HAnimJoint1204)
 HAnimJoint1205 = x3d.HAnimJoint()
+HAnimJoint1205.setContainerFieldOverride("joints")
 HAnimJoint1205.setUSE("hanim_l_calf")
 
 HAnimHumanoid25.addJoints(HAnimJoint1205)
 HAnimJoint1206 = x3d.HAnimJoint()
+HAnimJoint1206.setContainerFieldOverride("joints")
 HAnimJoint1206.setUSE("hanim_l_talus")
 
 HAnimHumanoid25.addJoints(HAnimJoint1206)
 HAnimJoint1207 = x3d.HAnimJoint()
+HAnimJoint1207.setContainerFieldOverride("joints")
 HAnimJoint1207.setUSE("hanim_l_navicular")
 
 HAnimHumanoid25.addJoints(HAnimJoint1207)
 HAnimJoint1208 = x3d.HAnimJoint()
+HAnimJoint1208.setContainerFieldOverride("joints")
 HAnimJoint1208.setUSE("hanim_l_cuneiform_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1208)
 HAnimJoint1209 = x3d.HAnimJoint()
+HAnimJoint1209.setContainerFieldOverride("joints")
 HAnimJoint1209.setUSE("hanim_l_metatarsal_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1209)
 HAnimJoint1210 = x3d.HAnimJoint()
+HAnimJoint1210.setContainerFieldOverride("joints")
 HAnimJoint1210.setUSE("hanim_l_tarsal_proximal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1210)
 HAnimJoint1211 = x3d.HAnimJoint()
+HAnimJoint1211.setContainerFieldOverride("joints")
 HAnimJoint1211.setUSE("hanim_l_tarsal_distal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1211)
 HAnimJoint1212 = x3d.HAnimJoint()
+HAnimJoint1212.setContainerFieldOverride("joints")
 HAnimJoint1212.setUSE("hanim_l_cuneiform_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1212)
 HAnimJoint1213 = x3d.HAnimJoint()
+HAnimJoint1213.setContainerFieldOverride("joints")
 HAnimJoint1213.setUSE("hanim_l_metatarsal_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1213)
 HAnimJoint1214 = x3d.HAnimJoint()
+HAnimJoint1214.setContainerFieldOverride("joints")
 HAnimJoint1214.setUSE("hanim_l_tarsal_proximal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1214)
 HAnimJoint1215 = x3d.HAnimJoint()
+HAnimJoint1215.setContainerFieldOverride("joints")
 HAnimJoint1215.setUSE("hanim_l_tarsal_middle_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1215)
 HAnimJoint1216 = x3d.HAnimJoint()
+HAnimJoint1216.setContainerFieldOverride("joints")
 HAnimJoint1216.setUSE("hanim_l_tarsal_distal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1216)
 HAnimJoint1217 = x3d.HAnimJoint()
+HAnimJoint1217.setContainerFieldOverride("joints")
 HAnimJoint1217.setUSE("hanim_l_cuneiform_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1217)
 HAnimJoint1218 = x3d.HAnimJoint()
+HAnimJoint1218.setContainerFieldOverride("joints")
 HAnimJoint1218.setUSE("hanim_l_metatarsal_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1218)
 HAnimJoint1219 = x3d.HAnimJoint()
+HAnimJoint1219.setContainerFieldOverride("joints")
 HAnimJoint1219.setUSE("hanim_l_tarsal_proximal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1219)
 HAnimJoint1220 = x3d.HAnimJoint()
+HAnimJoint1220.setContainerFieldOverride("joints")
 HAnimJoint1220.setUSE("hanim_l_tarsal_middle_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1220)
 HAnimJoint1221 = x3d.HAnimJoint()
+HAnimJoint1221.setContainerFieldOverride("joints")
 HAnimJoint1221.setUSE("hanim_l_tarsal_distal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1221)
 HAnimJoint1222 = x3d.HAnimJoint()
+HAnimJoint1222.setContainerFieldOverride("joints")
 HAnimJoint1222.setUSE("hanim_l_calcaneus")
 
 HAnimHumanoid25.addJoints(HAnimJoint1222)
 HAnimJoint1223 = x3d.HAnimJoint()
+HAnimJoint1223.setContainerFieldOverride("joints")
 HAnimJoint1223.setUSE("hanim_l_cuboid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1223)
 HAnimJoint1224 = x3d.HAnimJoint()
+HAnimJoint1224.setContainerFieldOverride("joints")
 HAnimJoint1224.setUSE("hanim_l_metatarsal_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1224)
 HAnimJoint1225 = x3d.HAnimJoint()
+HAnimJoint1225.setContainerFieldOverride("joints")
 HAnimJoint1225.setUSE("hanim_l_tarsal_proximal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1225)
 HAnimJoint1226 = x3d.HAnimJoint()
+HAnimJoint1226.setContainerFieldOverride("joints")
 HAnimJoint1226.setUSE("hanim_l_tarsal_middle_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1226)
 HAnimJoint1227 = x3d.HAnimJoint()
+HAnimJoint1227.setContainerFieldOverride("joints")
 HAnimJoint1227.setUSE("hanim_l_tarsal_distal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1227)
 HAnimJoint1228 = x3d.HAnimJoint()
+HAnimJoint1228.setContainerFieldOverride("joints")
 HAnimJoint1228.setUSE("hanim_l_metatarsal_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1228)
 HAnimJoint1229 = x3d.HAnimJoint()
+HAnimJoint1229.setContainerFieldOverride("joints")
 HAnimJoint1229.setUSE("hanim_l_tarsal_proximal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1229)
 HAnimJoint1230 = x3d.HAnimJoint()
+HAnimJoint1230.setContainerFieldOverride("joints")
 HAnimJoint1230.setUSE("hanim_l_tarsal_middle_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1230)
 HAnimJoint1231 = x3d.HAnimJoint()
+HAnimJoint1231.setContainerFieldOverride("joints")
 HAnimJoint1231.setUSE("hanim_l_tarsal_distal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1231)
 HAnimJoint1232 = x3d.HAnimJoint()
+HAnimJoint1232.setContainerFieldOverride("joints")
 HAnimJoint1232.setUSE("hanim_r_thigh")
 
 HAnimHumanoid25.addJoints(HAnimJoint1232)
 HAnimJoint1233 = x3d.HAnimJoint()
+HAnimJoint1233.setContainerFieldOverride("joints")
 HAnimJoint1233.setUSE("hanim_r_calf")
 
 HAnimHumanoid25.addJoints(HAnimJoint1233)
 HAnimJoint1234 = x3d.HAnimJoint()
+HAnimJoint1234.setContainerFieldOverride("joints")
 HAnimJoint1234.setUSE("hanim_r_talus")
 
 HAnimHumanoid25.addJoints(HAnimJoint1234)
 HAnimJoint1235 = x3d.HAnimJoint()
+HAnimJoint1235.setContainerFieldOverride("joints")
 HAnimJoint1235.setUSE("hanim_r_navicular")
 
 HAnimHumanoid25.addJoints(HAnimJoint1235)
 HAnimJoint1236 = x3d.HAnimJoint()
+HAnimJoint1236.setContainerFieldOverride("joints")
 HAnimJoint1236.setUSE("hanim_r_cuneiform_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1236)
 HAnimJoint1237 = x3d.HAnimJoint()
+HAnimJoint1237.setContainerFieldOverride("joints")
 HAnimJoint1237.setUSE("hanim_r_metatarsal_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1237)
 HAnimJoint1238 = x3d.HAnimJoint()
+HAnimJoint1238.setContainerFieldOverride("joints")
 HAnimJoint1238.setUSE("hanim_r_tarsal_proximal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1238)
 HAnimJoint1239 = x3d.HAnimJoint()
+HAnimJoint1239.setContainerFieldOverride("joints")
 HAnimJoint1239.setUSE("hanim_r_tarsal_distal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1239)
 HAnimJoint1240 = x3d.HAnimJoint()
+HAnimJoint1240.setContainerFieldOverride("joints")
 HAnimJoint1240.setUSE("hanim_r_cuneiform_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1240)
 HAnimJoint1241 = x3d.HAnimJoint()
+HAnimJoint1241.setContainerFieldOverride("joints")
 HAnimJoint1241.setUSE("hanim_r_metatarsal_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1241)
 HAnimJoint1242 = x3d.HAnimJoint()
+HAnimJoint1242.setContainerFieldOverride("joints")
 HAnimJoint1242.setUSE("hanim_r_tarsal_proximal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1242)
 HAnimJoint1243 = x3d.HAnimJoint()
+HAnimJoint1243.setContainerFieldOverride("joints")
 HAnimJoint1243.setUSE("hanim_r_tarsal_middle_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1243)
 HAnimJoint1244 = x3d.HAnimJoint()
+HAnimJoint1244.setContainerFieldOverride("joints")
 HAnimJoint1244.setUSE("hanim_r_tarsal_distal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1244)
 HAnimJoint1245 = x3d.HAnimJoint()
+HAnimJoint1245.setContainerFieldOverride("joints")
 HAnimJoint1245.setUSE("hanim_r_cuneiform_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1245)
 HAnimJoint1246 = x3d.HAnimJoint()
+HAnimJoint1246.setContainerFieldOverride("joints")
 HAnimJoint1246.setUSE("hanim_r_metatarsal_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1246)
 HAnimJoint1247 = x3d.HAnimJoint()
+HAnimJoint1247.setContainerFieldOverride("joints")
 HAnimJoint1247.setUSE("hanim_r_tarsal_proximal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1247)
 HAnimJoint1248 = x3d.HAnimJoint()
+HAnimJoint1248.setContainerFieldOverride("joints")
 HAnimJoint1248.setUSE("hanim_r_tarsal_middle_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1248)
 HAnimJoint1249 = x3d.HAnimJoint()
+HAnimJoint1249.setContainerFieldOverride("joints")
 HAnimJoint1249.setUSE("hanim_r_tarsal_distal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1249)
 HAnimJoint1250 = x3d.HAnimJoint()
+HAnimJoint1250.setContainerFieldOverride("joints")
 HAnimJoint1250.setUSE("hanim_r_calcaneus")
 
 HAnimHumanoid25.addJoints(HAnimJoint1250)
 HAnimJoint1251 = x3d.HAnimJoint()
+HAnimJoint1251.setContainerFieldOverride("joints")
 HAnimJoint1251.setUSE("hanim_r_cuboid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1251)
 HAnimJoint1252 = x3d.HAnimJoint()
+HAnimJoint1252.setContainerFieldOverride("joints")
 HAnimJoint1252.setUSE("hanim_r_metatarsal_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1252)
 HAnimJoint1253 = x3d.HAnimJoint()
+HAnimJoint1253.setContainerFieldOverride("joints")
 HAnimJoint1253.setUSE("hanim_r_tarsal_proximal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1253)
 HAnimJoint1254 = x3d.HAnimJoint()
+HAnimJoint1254.setContainerFieldOverride("joints")
 HAnimJoint1254.setUSE("hanim_r_tarsal_middle_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1254)
 HAnimJoint1255 = x3d.HAnimJoint()
+HAnimJoint1255.setContainerFieldOverride("joints")
 HAnimJoint1255.setUSE("hanim_r_tarsal_distal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1255)
 HAnimJoint1256 = x3d.HAnimJoint()
+HAnimJoint1256.setContainerFieldOverride("joints")
 HAnimJoint1256.setUSE("hanim_r_metatarsal_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1256)
 HAnimJoint1257 = x3d.HAnimJoint()
+HAnimJoint1257.setContainerFieldOverride("joints")
 HAnimJoint1257.setUSE("hanim_r_tarsal_proximal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1257)
 HAnimJoint1258 = x3d.HAnimJoint()
+HAnimJoint1258.setContainerFieldOverride("joints")
 HAnimJoint1258.setUSE("hanim_r_tarsal_middle_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1258)
 HAnimJoint1259 = x3d.HAnimJoint()
+HAnimJoint1259.setContainerFieldOverride("joints")
 HAnimJoint1259.setUSE("hanim_r_tarsal_distal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1259)
 HAnimJoint1260 = x3d.HAnimJoint()
+HAnimJoint1260.setContainerFieldOverride("joints")
 HAnimJoint1260.setUSE("hanim_l5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1260)
 HAnimJoint1261 = x3d.HAnimJoint()
+HAnimJoint1261.setContainerFieldOverride("joints")
 HAnimJoint1261.setUSE("hanim_l4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1261)
 HAnimJoint1262 = x3d.HAnimJoint()
+HAnimJoint1262.setContainerFieldOverride("joints")
 HAnimJoint1262.setUSE("hanim_l3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1262)
 HAnimJoint1263 = x3d.HAnimJoint()
+HAnimJoint1263.setContainerFieldOverride("joints")
 HAnimJoint1263.setUSE("hanim_l2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1263)
 HAnimJoint1264 = x3d.HAnimJoint()
+HAnimJoint1264.setContainerFieldOverride("joints")
 HAnimJoint1264.setUSE("hanim_l1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1264)
 HAnimJoint1265 = x3d.HAnimJoint()
+HAnimJoint1265.setContainerFieldOverride("joints")
 HAnimJoint1265.setUSE("hanim_t12")
 
 HAnimHumanoid25.addJoints(HAnimJoint1265)
 HAnimJoint1266 = x3d.HAnimJoint()
+HAnimJoint1266.setContainerFieldOverride("joints")
 HAnimJoint1266.setUSE("hanim_t11")
 
 HAnimHumanoid25.addJoints(HAnimJoint1266)
 HAnimJoint1267 = x3d.HAnimJoint()
+HAnimJoint1267.setContainerFieldOverride("joints")
 HAnimJoint1267.setUSE("hanim_t10")
 
 HAnimHumanoid25.addJoints(HAnimJoint1267)
 HAnimJoint1268 = x3d.HAnimJoint()
+HAnimJoint1268.setContainerFieldOverride("joints")
 HAnimJoint1268.setUSE("hanim_t9")
 
 HAnimHumanoid25.addJoints(HAnimJoint1268)
 HAnimJoint1269 = x3d.HAnimJoint()
+HAnimJoint1269.setContainerFieldOverride("joints")
 HAnimJoint1269.setUSE("hanim_t8")
 
 HAnimHumanoid25.addJoints(HAnimJoint1269)
 HAnimJoint1270 = x3d.HAnimJoint()
+HAnimJoint1270.setContainerFieldOverride("joints")
 HAnimJoint1270.setUSE("hanim_t7")
 
 HAnimHumanoid25.addJoints(HAnimJoint1270)
 HAnimJoint1271 = x3d.HAnimJoint()
+HAnimJoint1271.setContainerFieldOverride("joints")
 HAnimJoint1271.setUSE("hanim_t6")
 
 HAnimHumanoid25.addJoints(HAnimJoint1271)
 HAnimJoint1272 = x3d.HAnimJoint()
+HAnimJoint1272.setContainerFieldOverride("joints")
 HAnimJoint1272.setUSE("hanim_t5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1272)
 HAnimJoint1273 = x3d.HAnimJoint()
+HAnimJoint1273.setContainerFieldOverride("joints")
 HAnimJoint1273.setUSE("hanim_t4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1273)
 HAnimJoint1274 = x3d.HAnimJoint()
+HAnimJoint1274.setContainerFieldOverride("joints")
 HAnimJoint1274.setUSE("hanim_t3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1274)
 HAnimJoint1275 = x3d.HAnimJoint()
+HAnimJoint1275.setContainerFieldOverride("joints")
 HAnimJoint1275.setUSE("hanim_t2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1275)
 HAnimJoint1276 = x3d.HAnimJoint()
+HAnimJoint1276.setContainerFieldOverride("joints")
 HAnimJoint1276.setUSE("hanim_t1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1276)
 HAnimJoint1277 = x3d.HAnimJoint()
+HAnimJoint1277.setContainerFieldOverride("joints")
 HAnimJoint1277.setUSE("hanim_c7")
 
 HAnimHumanoid25.addJoints(HAnimJoint1277)
 HAnimJoint1278 = x3d.HAnimJoint()
+HAnimJoint1278.setContainerFieldOverride("joints")
 HAnimJoint1278.setUSE("hanim_c6")
 
 HAnimHumanoid25.addJoints(HAnimJoint1278)
 HAnimJoint1279 = x3d.HAnimJoint()
+HAnimJoint1279.setContainerFieldOverride("joints")
 HAnimJoint1279.setUSE("hanim_c5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1279)
 HAnimJoint1280 = x3d.HAnimJoint()
+HAnimJoint1280.setContainerFieldOverride("joints")
 HAnimJoint1280.setUSE("hanim_c4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1280)
 HAnimJoint1281 = x3d.HAnimJoint()
+HAnimJoint1281.setContainerFieldOverride("joints")
 HAnimJoint1281.setUSE("hanim_c3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1281)
 HAnimJoint1282 = x3d.HAnimJoint()
+HAnimJoint1282.setContainerFieldOverride("joints")
 HAnimJoint1282.setUSE("hanim_c2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1282)
 HAnimJoint1283 = x3d.HAnimJoint()
+HAnimJoint1283.setContainerFieldOverride("joints")
 HAnimJoint1283.setUSE("hanim_c1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1283)
 HAnimJoint1284 = x3d.HAnimJoint()
+HAnimJoint1284.setContainerFieldOverride("joints")
 HAnimJoint1284.setUSE("hanim_skull")
 
 HAnimHumanoid25.addJoints(HAnimJoint1284)
 HAnimJoint1285 = x3d.HAnimJoint()
+HAnimJoint1285.setContainerFieldOverride("joints")
 HAnimJoint1285.setUSE("hanim_l_eyelid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1285)
 HAnimJoint1286 = x3d.HAnimJoint()
+HAnimJoint1286.setContainerFieldOverride("joints")
 HAnimJoint1286.setUSE("hanim_r_eyelid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1286)
 HAnimJoint1287 = x3d.HAnimJoint()
+HAnimJoint1287.setContainerFieldOverride("joints")
 HAnimJoint1287.setUSE("hanim_l_eyeball")
 
 HAnimHumanoid25.addJoints(HAnimJoint1287)
 HAnimJoint1288 = x3d.HAnimJoint()
+HAnimJoint1288.setContainerFieldOverride("joints")
 HAnimJoint1288.setUSE("hanim_r_eyeball")
 
 HAnimHumanoid25.addJoints(HAnimJoint1288)
 HAnimJoint1289 = x3d.HAnimJoint()
+HAnimJoint1289.setContainerFieldOverride("joints")
 HAnimJoint1289.setUSE("hanim_l_eyebrow")
 
 HAnimHumanoid25.addJoints(HAnimJoint1289)
 HAnimJoint1290 = x3d.HAnimJoint()
+HAnimJoint1290.setContainerFieldOverride("joints")
 HAnimJoint1290.setUSE("hanim_r_eyebrow")
 
 HAnimHumanoid25.addJoints(HAnimJoint1290)
 HAnimJoint1291 = x3d.HAnimJoint()
+HAnimJoint1291.setContainerFieldOverride("joints")
 HAnimJoint1291.setUSE("hanim_jaw")
 
 HAnimHumanoid25.addJoints(HAnimJoint1291)
 HAnimJoint1292 = x3d.HAnimJoint()
+HAnimJoint1292.setContainerFieldOverride("joints")
 HAnimJoint1292.setUSE("hanim_l_clavicle")
 
 HAnimHumanoid25.addJoints(HAnimJoint1292)
 HAnimJoint1293 = x3d.HAnimJoint()
+HAnimJoint1293.setContainerFieldOverride("joints")
 HAnimJoint1293.setUSE("hanim_l_scapula")
 
 HAnimHumanoid25.addJoints(HAnimJoint1293)
 HAnimJoint1294 = x3d.HAnimJoint()
+HAnimJoint1294.setContainerFieldOverride("joints")
 HAnimJoint1294.setUSE("hanim_l_upperarm")
 
 HAnimHumanoid25.addJoints(HAnimJoint1294)
 HAnimJoint1295 = x3d.HAnimJoint()
+HAnimJoint1295.setContainerFieldOverride("joints")
 HAnimJoint1295.setUSE("hanim_l_forearm")
 
 HAnimHumanoid25.addJoints(HAnimJoint1295)
 HAnimJoint1296 = x3d.HAnimJoint()
+HAnimJoint1296.setContainerFieldOverride("joints")
 HAnimJoint1296.setUSE("hanim_l_carpal")
 
 HAnimHumanoid25.addJoints(HAnimJoint1296)
 HAnimJoint1297 = x3d.HAnimJoint()
+HAnimJoint1297.setContainerFieldOverride("joints")
 HAnimJoint1297.setUSE("hanim_l_trapezium")
 
 HAnimHumanoid25.addJoints(HAnimJoint1297)
 HAnimJoint1298 = x3d.HAnimJoint()
+HAnimJoint1298.setContainerFieldOverride("joints")
 HAnimJoint1298.setUSE("hanim_l_metacarpal_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1298)
 HAnimJoint1299 = x3d.HAnimJoint()
+HAnimJoint1299.setContainerFieldOverride("joints")
 HAnimJoint1299.setUSE("hanim_l_carpal_proximal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1299)
 HAnimJoint1300 = x3d.HAnimJoint()
+HAnimJoint1300.setContainerFieldOverride("joints")
 HAnimJoint1300.setUSE("hanim_l_carpal_distal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1300)
 HAnimJoint1301 = x3d.HAnimJoint()
+HAnimJoint1301.setContainerFieldOverride("joints")
 HAnimJoint1301.setUSE("hanim_l_trapezoid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1301)
 HAnimJoint1302 = x3d.HAnimJoint()
+HAnimJoint1302.setContainerFieldOverride("joints")
 HAnimJoint1302.setUSE("hanim_l_metacarpal_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1302)
 HAnimJoint1303 = x3d.HAnimJoint()
+HAnimJoint1303.setContainerFieldOverride("joints")
 HAnimJoint1303.setUSE("hanim_l_carpal_proximal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1303)
 HAnimJoint1304 = x3d.HAnimJoint()
+HAnimJoint1304.setContainerFieldOverride("joints")
 HAnimJoint1304.setUSE("hanim_l_carpal_middle_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1304)
 HAnimJoint1305 = x3d.HAnimJoint()
+HAnimJoint1305.setContainerFieldOverride("joints")
 HAnimJoint1305.setUSE("hanim_l_carpal_distal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1305)
 HAnimJoint1306 = x3d.HAnimJoint()
+HAnimJoint1306.setContainerFieldOverride("joints")
 HAnimJoint1306.setUSE("hanim_l_capitate")
 
 HAnimHumanoid25.addJoints(HAnimJoint1306)
 HAnimJoint1307 = x3d.HAnimJoint()
+HAnimJoint1307.setContainerFieldOverride("joints")
 HAnimJoint1307.setUSE("hanim_l_metacarpal_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1307)
 HAnimJoint1308 = x3d.HAnimJoint()
+HAnimJoint1308.setContainerFieldOverride("joints")
 HAnimJoint1308.setUSE("hanim_l_carpal_proximal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1308)
 HAnimJoint1309 = x3d.HAnimJoint()
+HAnimJoint1309.setContainerFieldOverride("joints")
 HAnimJoint1309.setUSE("hanim_l_carpal_middle_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1309)
 HAnimJoint1310 = x3d.HAnimJoint()
+HAnimJoint1310.setContainerFieldOverride("joints")
 HAnimJoint1310.setUSE("hanim_l_carpal_distal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1310)
 HAnimJoint1311 = x3d.HAnimJoint()
+HAnimJoint1311.setContainerFieldOverride("joints")
 HAnimJoint1311.setUSE("hanim_l_hamate")
 
 HAnimHumanoid25.addJoints(HAnimJoint1311)
 HAnimJoint1312 = x3d.HAnimJoint()
+HAnimJoint1312.setContainerFieldOverride("joints")
 HAnimJoint1312.setUSE("hanim_l_metacarpal_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1312)
 HAnimJoint1313 = x3d.HAnimJoint()
+HAnimJoint1313.setContainerFieldOverride("joints")
 HAnimJoint1313.setUSE("hanim_l_carpal_proximal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1313)
 HAnimJoint1314 = x3d.HAnimJoint()
+HAnimJoint1314.setContainerFieldOverride("joints")
 HAnimJoint1314.setUSE("hanim_l_carpal_middle_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1314)
 HAnimJoint1315 = x3d.HAnimJoint()
+HAnimJoint1315.setContainerFieldOverride("joints")
 HAnimJoint1315.setUSE("hanim_l_carpal_distal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1315)
 HAnimJoint1316 = x3d.HAnimJoint()
+HAnimJoint1316.setContainerFieldOverride("joints")
 HAnimJoint1316.setUSE("hanim_l_metacarpal_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1316)
 HAnimJoint1317 = x3d.HAnimJoint()
+HAnimJoint1317.setContainerFieldOverride("joints")
 HAnimJoint1317.setUSE("hanim_l_carpal_proximal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1317)
 HAnimJoint1318 = x3d.HAnimJoint()
+HAnimJoint1318.setContainerFieldOverride("joints")
 HAnimJoint1318.setUSE("hanim_l_carpal_middle_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1318)
 HAnimJoint1319 = x3d.HAnimJoint()
+HAnimJoint1319.setContainerFieldOverride("joints")
 HAnimJoint1319.setUSE("hanim_l_carpal_distal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1319)
 HAnimJoint1320 = x3d.HAnimJoint()
+HAnimJoint1320.setContainerFieldOverride("joints")
 HAnimJoint1320.setUSE("hanim_r_clavicle")
 
 HAnimHumanoid25.addJoints(HAnimJoint1320)
 HAnimJoint1321 = x3d.HAnimJoint()
+HAnimJoint1321.setContainerFieldOverride("joints")
 HAnimJoint1321.setUSE("hanim_r_scapula")
 
 HAnimHumanoid25.addJoints(HAnimJoint1321)
 HAnimJoint1322 = x3d.HAnimJoint()
+HAnimJoint1322.setContainerFieldOverride("joints")
 HAnimJoint1322.setUSE("hanim_r_upperarm")
 
 HAnimHumanoid25.addJoints(HAnimJoint1322)
 HAnimJoint1323 = x3d.HAnimJoint()
+HAnimJoint1323.setContainerFieldOverride("joints")
 HAnimJoint1323.setUSE("hanim_r_forearm")
 
 HAnimHumanoid25.addJoints(HAnimJoint1323)
 HAnimJoint1324 = x3d.HAnimJoint()
+HAnimJoint1324.setContainerFieldOverride("joints")
 HAnimJoint1324.setUSE("hanim_r_carpal")
 
 HAnimHumanoid25.addJoints(HAnimJoint1324)
 HAnimJoint1325 = x3d.HAnimJoint()
+HAnimJoint1325.setContainerFieldOverride("joints")
 HAnimJoint1325.setUSE("hanim_r_trapezium")
 
 HAnimHumanoid25.addJoints(HAnimJoint1325)
 HAnimJoint1326 = x3d.HAnimJoint()
+HAnimJoint1326.setContainerFieldOverride("joints")
 HAnimJoint1326.setUSE("hanim_r_metacarpal_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1326)
 HAnimJoint1327 = x3d.HAnimJoint()
+HAnimJoint1327.setContainerFieldOverride("joints")
 HAnimJoint1327.setUSE("hanim_r_carpal_proximal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1327)
 HAnimJoint1328 = x3d.HAnimJoint()
+HAnimJoint1328.setContainerFieldOverride("joints")
 HAnimJoint1328.setUSE("hanim_r_carpal_distal_phalanx_1")
 
 HAnimHumanoid25.addJoints(HAnimJoint1328)
 HAnimJoint1329 = x3d.HAnimJoint()
+HAnimJoint1329.setContainerFieldOverride("joints")
 HAnimJoint1329.setUSE("hanim_r_trapezoid")
 
 HAnimHumanoid25.addJoints(HAnimJoint1329)
 HAnimJoint1330 = x3d.HAnimJoint()
+HAnimJoint1330.setContainerFieldOverride("joints")
 HAnimJoint1330.setUSE("hanim_r_metacarpal_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1330)
 HAnimJoint1331 = x3d.HAnimJoint()
+HAnimJoint1331.setContainerFieldOverride("joints")
 HAnimJoint1331.setUSE("hanim_r_carpal_proximal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1331)
 HAnimJoint1332 = x3d.HAnimJoint()
+HAnimJoint1332.setContainerFieldOverride("joints")
 HAnimJoint1332.setUSE("hanim_r_carpal_middle_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1332)
 HAnimJoint1333 = x3d.HAnimJoint()
+HAnimJoint1333.setContainerFieldOverride("joints")
 HAnimJoint1333.setUSE("hanim_r_carpal_distal_phalanx_2")
 
 HAnimHumanoid25.addJoints(HAnimJoint1333)
 HAnimJoint1334 = x3d.HAnimJoint()
+HAnimJoint1334.setContainerFieldOverride("joints")
 HAnimJoint1334.setUSE("hanim_r_capitate")
 
 HAnimHumanoid25.addJoints(HAnimJoint1334)
 HAnimJoint1335 = x3d.HAnimJoint()
+HAnimJoint1335.setContainerFieldOverride("joints")
 HAnimJoint1335.setUSE("hanim_r_metacarpal_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1335)
 HAnimJoint1336 = x3d.HAnimJoint()
+HAnimJoint1336.setContainerFieldOverride("joints")
 HAnimJoint1336.setUSE("hanim_r_carpal_proximal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1336)
 HAnimJoint1337 = x3d.HAnimJoint()
+HAnimJoint1337.setContainerFieldOverride("joints")
 HAnimJoint1337.setUSE("hanim_r_carpal_middle_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1337)
 HAnimJoint1338 = x3d.HAnimJoint()
+HAnimJoint1338.setContainerFieldOverride("joints")
 HAnimJoint1338.setUSE("hanim_r_carpal_distal_phalanx_3")
 
 HAnimHumanoid25.addJoints(HAnimJoint1338)
 HAnimJoint1339 = x3d.HAnimJoint()
+HAnimJoint1339.setContainerFieldOverride("joints")
 HAnimJoint1339.setUSE("hanim_r_hamate")
 
 HAnimHumanoid25.addJoints(HAnimJoint1339)
 HAnimJoint1340 = x3d.HAnimJoint()
+HAnimJoint1340.setContainerFieldOverride("joints")
 HAnimJoint1340.setUSE("hanim_r_metacarpal_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1340)
 HAnimJoint1341 = x3d.HAnimJoint()
+HAnimJoint1341.setContainerFieldOverride("joints")
 HAnimJoint1341.setUSE("hanim_r_carpal_proximal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1341)
 HAnimJoint1342 = x3d.HAnimJoint()
+HAnimJoint1342.setContainerFieldOverride("joints")
 HAnimJoint1342.setUSE("hanim_r_carpal_middle_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1342)
 HAnimJoint1343 = x3d.HAnimJoint()
+HAnimJoint1343.setContainerFieldOverride("joints")
 HAnimJoint1343.setUSE("hanim_r_carpal_distal_phalanx_4")
 
 HAnimHumanoid25.addJoints(HAnimJoint1343)
 HAnimJoint1344 = x3d.HAnimJoint()
+HAnimJoint1344.setContainerFieldOverride("joints")
 HAnimJoint1344.setUSE("hanim_r_metacarpal_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1344)
 HAnimJoint1345 = x3d.HAnimJoint()
+HAnimJoint1345.setContainerFieldOverride("joints")
 HAnimJoint1345.setUSE("hanim_r_carpal_proximal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1345)
 HAnimJoint1346 = x3d.HAnimJoint()
+HAnimJoint1346.setContainerFieldOverride("joints")
 HAnimJoint1346.setUSE("hanim_r_carpal_middle_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1346)
 HAnimJoint1347 = x3d.HAnimJoint()
+HAnimJoint1347.setContainerFieldOverride("joints")
 HAnimJoint1347.setUSE("hanim_r_carpal_distal_phalanx_5")
 
 HAnimHumanoid25.addJoints(HAnimJoint1347)

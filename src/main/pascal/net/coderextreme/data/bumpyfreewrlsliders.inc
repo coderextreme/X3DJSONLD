@@ -257,6 +257,8 @@ LayerSet32.SetOrder([1,2]);
 { the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" }
 { the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) }
 Layer33 := TLayerNode.Create;
+Layer33.Pickable := True;
+Layer33.SetObjectType(['ALL']);
 { basic nodes, which might be present in any scene }
 NavigationInfo34 := TNavigationInfoNode.Create;
 NavigationInfo34.SetType(['EXAMINE']);
@@ -418,7 +420,7 @@ Background70.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_
 Transform69.AddChildren([Background70]);
 Shape71 := TShapeNode.Create;
 Sphere72 := TSphereNode.Create;
-Sphere72.Radius := 40;
+Sphere72.Radius := 0.01;
 { .SetGeometry }
 Shape71.Geometry := Sphere72;
 Appearance73 := TAppearanceNode.Create;
@@ -557,25 +559,25 @@ DISEntityManager96.NetworkMode := 'networkReader';
 DISEntityTypeMapping97 := TDISEntityTypeMappingNode.Create;
 DISEntityTypeMapping97.Category := 77;
 DISEntityTypeMapping97.Specific := 1;
-DISEntityTypeMapping97.SetUrl(['../data/Leif8Final.x3dv','https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv']);
+DISEntityTypeMapping97.SetUrl(['../data/Leif8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d']);
 { .AddChildren }
 DISEntityManager96.AddChildren([DISEntityTypeMapping97]);
 DISEntityTypeMapping98 := TDISEntityTypeMappingNode.Create;
 DISEntityTypeMapping98.Category := 77;
 DISEntityTypeMapping98.Specific := 2;
-DISEntityTypeMapping98.SetUrl(['../data/Lily8Final.x3dv','https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv']);
+DISEntityTypeMapping98.SetUrl(['../data/Lily8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d']);
 { .AddChildren }
 DISEntityManager96.AddChildren([DISEntityTypeMapping98]);
 DISEntityTypeMapping99 := TDISEntityTypeMappingNode.Create;
 DISEntityTypeMapping99.Category := 77;
 DISEntityTypeMapping99.Specific := 3;
-DISEntityTypeMapping99.SetUrl(['../data/Tufani8Final.x3dv','https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv']);
+DISEntityTypeMapping99.SetUrl(['../data/Tufani8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d']);
 { .AddChildren }
 DISEntityManager96.AddChildren([DISEntityTypeMapping99]);
 DISEntityTypeMapping100 := TDISEntityTypeMappingNode.Create;
 DISEntityTypeMapping100.Category := 77;
 DISEntityTypeMapping100.Specific := 4;
-DISEntityTypeMapping100.SetUrl(['../data/Gramps8Final.x3dv','https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv']);
+DISEntityTypeMapping100.SetUrl(['../data/Gramps8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d']);
 { .AddChildren }
 DISEntityManager96.AddChildren([DISEntityTypeMapping100]);
 { .AddChildren }
@@ -594,6 +596,8 @@ Layer33.AddRoute(DISEntityManager96.FdRemovedentities, Group102.FdRemovechildren
 { .AddLayers }
 LayerSet32.Layers := Layer33;
 LayoutLayer105 := TLayoutLayerNode.Create;
+LayoutLayer105.Pickable := True;
+LayoutLayer105.SetObjectType(['ALL']);
 { positioning the LayoutLayer }
 { clipping the LayoutLayer }
 { the content (children) of the LayoutLayer }

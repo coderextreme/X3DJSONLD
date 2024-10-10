@@ -218,11 +218,6 @@ POSSIBILITY OF SUCH DAMAGE.
     this.initialize();
     return this;
   }
-  function doubleToFloat(d) {
-    if (Float32Array) {
-        return new Float32Array([d])[0];
-    }
-  }
 ]]></xsl:text>
   <xsl:value-of select="$newClassName"/>
   <xsl:text><![CDATA[.prototype = {
@@ -277,14 +272,14 @@ POSSIBILITY OF SUCH DAMAGE.
 		// first list informational meta elements of interest
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
-			var metaObject = metaList[m];
-			if (metaObject.getName() === metaObject.NAME_ERROR ||
-				metaObject.getName() === metaObject.NAME_WARNING ||
-				metaObject.getName() === metaObject.NAME_HINT ||
-				metaObject.getName() === metaObject.NAME_INFO ||
-				metaObject.getName() === metaObject.NAME_TODO)
+			meta = metaList[m];
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
-				metaResult += metaObject.toStringX3D();
+				metaResult += meta.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
@@ -696,7 +691,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>(</xsl:text>
+		<xsl:text>Object(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -713,11 +708,6 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 		</xsl:choose>
 		<xsl:text>)</xsl:text>
-		<xsl:if test="(string-length(@USE) > 0) and not(local-name() = 'ProtoInstance')">
-			<xsl:text>.setUSE("</xsl:text>
-			<xsl:value-of select="@USE"/>
-			<xsl:text>")</xsl:text>
-		</xsl:if>
 		
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">
@@ -825,11 +815,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'metadata')">
-					<xsl:text>.setMetadata(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
 				<xsl:when test="(local-name(..) = 'LoadSensor') and (@containerField = 'watchList')">
 					<xsl:text>.addWatchList(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -924,10 +909,10 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:when test="(local-name(..) = 'field') or (local-name(..) = 'fieldValue')">
 							<xsl:text>Child</xsl:text>
 						</xsl:when>
-                        <xsl:when test="(string-length(@containerField) > 0)">
+                        <xsl:when test="(string-length($containerField) > 0)">
                             <!-- upper camel case containerField -->
-                            <xsl:value-of select="translate(substring(@containerField,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-                            <xsl:value-of select="substring(@containerField,2)"/>
+                            <xsl:value-of select="translate(substring($containerField,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                            <xsl:value-of select="substring($containerField,2)"/>
                         </xsl:when>
 						<xsl:otherwise>
 							<!-- upper camel case $fieldName -->
@@ -1751,8 +1736,6 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='llimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='ulimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -2470,7 +2453,6 @@ POSSIBILITY OF SUCH DAMAGE.
 		<!-- change space characters to commas to support the recursion algorithm -->
 		<xsl:variable name="arrayString" select="translate(normalize-space($inputString),' ',',')"/>
 		
-        <xsl:text>doubleToFloat(</xsl:text>
         <xsl:choose>
             <xsl:when test="not(contains($arrayString,','))">
 				<!-- last number, all done -->
@@ -2479,7 +2461,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
                 <xsl:text></xsl:text><!-- indicate that this number is a float; added after exponential form also -->
-        	<xsl:text>)</xsl:text>
             </xsl:when>
             <xsl:when test="contains($arrayString,',')">
 				<xsl:variable name="firstNumber">
@@ -2490,7 +2471,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
                 <xsl:text></xsl:text><!-- indicate that this number is a float -->
-                <xsl:text>)</xsl:text>
                 <xsl:text>,</xsl:text>
                 <xsl:call-template name="java-float-numbers"> <!-- tail recursion -->
                     <xsl:with-param name="inputValue" select="substring-after($arrayString,',')"/>
@@ -2500,7 +2480,6 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:otherwise>
 				<!-- safety net, should be unreachable -->
                 <xsl:value-of select="$arrayString" disable-output-escaping="yes"/>
-        	<xsl:text>)</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -3456,7 +3435,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="quotedValue">
 				<xsl:choose>
 					<xsl:when test="not(contains(string(.),'&quot;'))">
-						<!-- MFString is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
 						<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 						<xsl:message>
 							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
@@ -3482,7 +3461,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:text>new MFString(</xsl:text>
+			<xsl:text>new MFStringObject(</xsl:text>
 			<xsl:text>"</xsl:text>
 			<xsl:call-template name="escape-quote-characters">
 				<xsl:with-param name="inputValue">
@@ -3559,7 +3538,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 			<xsl:text>new </xsl:text>
 			<xsl:value-of select="$attributeType"/>
-			<xsl:text>(</xsl:text>
+			<xsl:text>Object(</xsl:text>
 			<xsl:choose>
 				<xsl:when test="($tupleCount > $tupleSplitSize)">
 					<xsl:message>
@@ -3587,7 +3566,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>.append(</xsl:text>
 								<xsl:text>new </xsl:text>
 								<xsl:value-of select="$attributeType"/>
-								<xsl:text>(</xsl:text>
+								<xsl:text>Object(</xsl:text>
 								<xsl:text>Java.to([</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputValue">
@@ -3632,7 +3611,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>(</xsl:text>
+				<xsl:text>Object(</xsl:text>
 				<xsl:text>Java.to([</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputValue">
@@ -3778,7 +3757,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not($includesFieldTypeObject)">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>(</xsl:text>
+					<xsl:text>Object(</xsl:text>
 				</xsl:if>
 				<xsl:call-template name="output-attribute-value">
 					<xsl:with-param name="inputValue"   select="."/>

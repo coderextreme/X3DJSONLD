@@ -257,6 +257,8 @@ LayerSet32.SetOrder([1,2]);
 { the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" }
 { the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) }
 Layer33 := TLayerNode.Create;
+Layer33.Pickable := True;
+Layer33.SetObjectType(['ALL']);
 { basic nodes, which might be present in any scene }
 NavigationInfo34 := TNavigationInfoNode.Create;
 NavigationInfo34.SetType(['EXAMINE']);
@@ -589,6 +591,8 @@ Layer33.AddRoute(DISEntityManager98.FdRemovedentities, Group102.FdRemovechildren
 { .AddLayers }
 LayerSet32.Layers := Layer33;
 LayoutLayer105 := TLayoutLayerNode.Create;
+LayoutLayer105.Pickable := True;
+LayoutLayer105.SetObjectType(['ALL']);
 { positioning the LayoutLayer }
 { clipping the LayoutLayer }
 { the content (children) of the LayoutLayer }

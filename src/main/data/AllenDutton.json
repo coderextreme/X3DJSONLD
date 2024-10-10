@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 July 2024"
+            "@content":"20 July 2024"
           },
           {
             "@name":"generator",
@@ -1334,7 +1334,7 @@
             {
               "@avatarSize":[0.15,1.53,0.75],
               "@speed":0.5,
-              "@type":"\"EXAMINE\""
+              "@type":["EXAMINE"]
             }
           },
           { "Group":

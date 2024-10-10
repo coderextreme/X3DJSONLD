@@ -123,6 +123,7 @@ HAnimJoint25.setDEF("hanim_HumanoidRoot")
 HAnimJoint25.setCenter([0,30.53,-0.7076])
 HAnimJoint25.setUlimit([0,0,0])
 HAnimJoint25.setLlimit([0,0,0])
+HAnimJoint25.setContainerFieldOverride("skeleton")
 HAnimSegment26 = x3d.HAnimSegment()
 HAnimSegment26.setName("sacrum")
 HAnimSegment26.setDEF("hanim_sacrum")
@@ -927,7 +928,7 @@ HAnimJoint35.addChildren(HAnimJoint125)
 
 HAnimJoint25.addChildren(HAnimJoint35)
 
-HAnimHumanoid24.setSkeleton(HAnimJoint25)
+HAnimHumanoid24.addSkeleton(HAnimJoint25)
 
 Scene21.addChildren(HAnimHumanoid24)
 Group205 = x3d.Group()
