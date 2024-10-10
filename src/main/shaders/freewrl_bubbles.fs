@@ -12,11 +12,11 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 */
 uniform samplerCube fw_textureCoordGenType;
 
-in vec3 t;
-in vec3 tr;
-in vec3 tg;
-in vec3 tb;
-in float rfac;
+varying vec3 t;
+varying vec3 tr;
+varying vec3 tg;
+varying vec3 tb;
+varying float rfac;
 
 void main()
 {
