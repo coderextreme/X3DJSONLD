@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addComponent(new autoclass.component().setName("H-Anim").setLevel(1))
         .addMeta(new autoclass.meta().setName("title").setContent("JoeSkinTexcoordDisplacerKick.x3d"))
@@ -26,8 +26,8 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("modified").setContent("09 July 2020"))
         .addMeta(new autoclass.meta().setName("TODO").setContent("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"))
         .addMeta(new autoclass.meta().setName("translators").setContent("Roy Walmsley and Don Brutzman"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
-        .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new autoclass.meta().setName("license").setContent("../license.html"))
         .addComments((new autoclass.CommentsBlock("BS studio translation from .x3dv by Joe using BS Contact"))))
       .setScene(new autoclass.Scene()

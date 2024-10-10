@@ -188,7 +188,8 @@ Contents as follows:
       </Transform>
       <Transform DEF='JointLandmark' translation='0 0 0'>
         <Shape DEF='HAnimJointLandmark'>
-          <Box size='0.016 0.016 0.016'/>
+          <Sphere radius='0.0075'/>
+          <!--Box size='0.016 0.016 0.016'/-->
             <Appearance>
               <Material diffuseColor='0 0 1' emissiveColor='0 0 1' transparency='0'/>
           </Appearance>

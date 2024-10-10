@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "H-Anim";
@@ -59,12 +59,12 @@ head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
 meta12.name = "identifier";
-meta12.content = "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d";
+meta12.content = "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
 meta13.name = "generator";
-meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta13.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");

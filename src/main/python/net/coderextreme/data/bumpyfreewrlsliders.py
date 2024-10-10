@@ -161,6 +161,8 @@ LayerSet32.setOrder([1,2])
 #the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 #the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer33 = x3d.Layer()
+Layer33.setPickable(True)
+Layer33.setObjectType(["ALL"])
 #basic nodes, which might be present in any scene
 NavigationInfo34 = x3d.NavigationInfo()
 NavigationInfo34.setType(["EXAMINE"])
@@ -328,7 +330,7 @@ Background70.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_
 Transform69.addChildren(Background70)
 Shape71 = x3d.Shape()
 Sphere72 = x3d.Sphere()
-Sphere72.setRadius(40)
+Sphere72.setRadius(0.01)
 
 Shape71.setGeometry(Sphere72)
 Appearance73 = x3d.Appearance()
@@ -470,25 +472,25 @@ DISEntityManager96.setNetworkMode("networkReader")
 DISEntityTypeMapping97 = x3d.DISEntityTypeMapping()
 DISEntityTypeMapping97.setCategory(77)
 DISEntityTypeMapping97.setSpecific(1)
-DISEntityTypeMapping97.setUrl(["../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"])
+DISEntityTypeMapping97.setUrl(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])
 
 DISEntityManager96.addChildren(DISEntityTypeMapping97)
 DISEntityTypeMapping98 = x3d.DISEntityTypeMapping()
 DISEntityTypeMapping98.setCategory(77)
 DISEntityTypeMapping98.setSpecific(2)
-DISEntityTypeMapping98.setUrl(["../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"])
+DISEntityTypeMapping98.setUrl(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])
 
 DISEntityManager96.addChildren(DISEntityTypeMapping98)
 DISEntityTypeMapping99 = x3d.DISEntityTypeMapping()
 DISEntityTypeMapping99.setCategory(77)
 DISEntityTypeMapping99.setSpecific(3)
-DISEntityTypeMapping99.setUrl(["../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"])
+DISEntityTypeMapping99.setUrl(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])
 
 DISEntityManager96.addChildren(DISEntityTypeMapping99)
 DISEntityTypeMapping100 = x3d.DISEntityTypeMapping()
 DISEntityTypeMapping100.setCategory(77)
 DISEntityTypeMapping100.setSpecific(4)
-DISEntityTypeMapping100.setUrl(["../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"])
+DISEntityTypeMapping100.setUrl(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])
 
 DISEntityManager96.addChildren(DISEntityTypeMapping100)
 
@@ -518,6 +520,8 @@ Layer33.addChildren(ROUTE104)
 
 LayerSet32.addLayers(Layer33)
 LayoutLayer105 = x3d.LayoutLayer()
+LayoutLayer105.setPickable(True)
+LayoutLayer105.setObjectType(["ALL"])
 #positioning the LayoutLayer
 #clipping the LayoutLayer
 #the content (children) of the LayoutLayer

@@ -106,6 +106,7 @@ HAnimJoint23 = x3d.HAnimJoint()
 HAnimJoint23.setName("humanoid_root")
 HAnimJoint23.setUlimit([0,0,0])
 HAnimJoint23.setLlimit([0,0,0])
+HAnimJoint23.setContainerFieldOverride("skeleton")
 HAnimSegment24 = x3d.HAnimSegment()
 HAnimSegment24.setName("sacrum")
 Shape25 = x3d.Shape()
@@ -128,7 +129,7 @@ HAnimSegment24.addChildren(HAnimSite27)
 
 HAnimJoint23.addChildren(HAnimSegment24)
 
-HAnimHumanoid22.setSkeleton(HAnimJoint23)
+HAnimHumanoid22.addSkeleton(HAnimJoint23)
 
 Group20.addChildren(HAnimHumanoid22)
 #==============================
@@ -140,6 +141,7 @@ HAnimJoint30 = x3d.HAnimJoint()
 HAnimJoint30.setName("humanoid_root")
 HAnimJoint30.setUlimit([0,0,0])
 HAnimJoint30.setLlimit([0,0,0])
+HAnimJoint30.setContainerFieldOverride("skeleton")
 HAnimSegment31 = x3d.HAnimSegment()
 HAnimSegment31.setName("sacrum")
 Shape32 = x3d.Shape()
@@ -152,7 +154,7 @@ HAnimSegment31.addChildren(Shape32)
 
 HAnimJoint30.addChildren(HAnimSegment31)
 
-HAnimHumanoid29.setSkeleton(HAnimJoint30)
+HAnimHumanoid29.addSkeleton(HAnimJoint30)
 
 Group20.addChildren(HAnimHumanoid29)
 #==============================
@@ -164,16 +166,18 @@ HAnimJoint35 = x3d.HAnimJoint()
 HAnimJoint35.setName("humanoid_root")
 HAnimJoint35.setUlimit([0,0,0])
 HAnimJoint35.setLlimit([0,0,0])
+HAnimJoint35.setContainerFieldOverride("skeleton")
 HAnimSegment36 = x3d.HAnimSegment()
 HAnimSegment36.setName("sacrum")
 
 HAnimJoint35.addChildren(HAnimSegment36)
 
-HAnimHumanoid34.setSkeleton(HAnimJoint35)
+HAnimHumanoid34.addSkeleton(HAnimJoint35)
 IndexedFaceSet37 = x3d.IndexedFaceSet()
 IndexedFaceSet37.setDEF("SkinMeshIFS")
+IndexedFaceSet37.setContainerFieldOverride("skin")
 
-HAnimHumanoid34.setSkin(IndexedFaceSet37)
+HAnimHumanoid34.addSkin(IndexedFaceSet37)
 
 Group20.addChildren(HAnimHumanoid34)
 #==============================
@@ -185,19 +189,21 @@ HAnimJoint39 = x3d.HAnimJoint()
 HAnimJoint39.setName("humanoid_root")
 HAnimJoint39.setUlimit([0,0,0])
 HAnimJoint39.setLlimit([0,0,0])
+HAnimJoint39.setContainerFieldOverride("skeleton")
 HAnimSegment40 = x3d.HAnimSegment()
 HAnimSegment40.setName("sacrum")
 
 HAnimJoint39.addChildren(HAnimSegment40)
 
-HAnimHumanoid38.setSkeleton(HAnimJoint39)
+HAnimHumanoid38.addSkeleton(HAnimJoint39)
 Shape41 = x3d.Shape()
+Shape41.setContainerFieldOverride("skin")
 IndexedFaceSet42 = x3d.IndexedFaceSet()
 IndexedFaceSet42.setUSE("SkinMeshIFS")
 
 Shape41.setGeometry(IndexedFaceSet42)
 
-HAnimHumanoid38.setSkin(Shape41)
+HAnimHumanoid38.addSkin(Shape41)
 
 Group20.addChildren(HAnimHumanoid38)
 #==============================
@@ -209,14 +215,16 @@ HAnimJoint44 = x3d.HAnimJoint()
 HAnimJoint44.setName("humanoid_root")
 HAnimJoint44.setUlimit([0,0,0])
 HAnimJoint44.setLlimit([0,0,0])
+HAnimJoint44.setContainerFieldOverride("skeleton")
 HAnimSegment45 = x3d.HAnimSegment()
 HAnimSegment45.setName("sacrum")
 
 HAnimJoint44.addChildren(HAnimSegment45)
 
-HAnimHumanoid43.setSkeleton(HAnimJoint44)
+HAnimHumanoid43.addSkeleton(HAnimJoint44)
 #TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
 Shape46 = x3d.Shape()
+Shape46.setContainerFieldOverride("skin")
 IndexedFaceSet47 = x3d.IndexedFaceSet()
 IndexedFaceSet47.setDEF("IndexedSkinMeshIFS")
 Coordinate48 = x3d.Coordinate()
@@ -226,7 +234,7 @@ IndexedFaceSet47.setCoord(Coordinate48)
 
 Shape46.setGeometry(IndexedFaceSet47)
 
-HAnimHumanoid43.setSkin(Shape46)
+HAnimHumanoid43.addSkin(Shape46)
 
 Group20.addChildren(HAnimHumanoid43)
 #similarly for LOD
@@ -239,13 +247,15 @@ HAnimJoint50 = x3d.HAnimJoint()
 HAnimJoint50.setName("humanoid_root")
 HAnimJoint50.setUlimit([0,0,0])
 HAnimJoint50.setLlimit([0,0,0])
+HAnimJoint50.setContainerFieldOverride("skeleton")
 HAnimSegment51 = x3d.HAnimSegment()
 HAnimSegment51.setName("sacrum")
 
 HAnimJoint50.addChildren(HAnimSegment51)
 
-HAnimHumanoid49.setSkeleton(HAnimJoint50)
+HAnimHumanoid49.addSkeleton(HAnimJoint50)
 Shape52 = x3d.Shape()
+Shape52.setContainerFieldOverride("skin")
 IndexedFaceSet53 = x3d.IndexedFaceSet()
 IndexedFaceSet53.setDEF("TwoPartIndexedSkinMesh")
 Coordinate54 = x3d.Coordinate()
@@ -255,7 +265,7 @@ IndexedFaceSet53.setCoord(Coordinate54)
 
 Shape52.setGeometry(IndexedFaceSet53)
 
-HAnimHumanoid49.setSkin(Shape52)
+HAnimHumanoid49.addSkin(Shape52)
 
 Group20.addChildren(HAnimHumanoid49)
 #==============================
@@ -267,15 +277,17 @@ HAnimJoint56 = x3d.HAnimJoint()
 HAnimJoint56.setName("humanoid_root")
 HAnimJoint56.setUlimit([0,0,0])
 HAnimJoint56.setLlimit([0,0,0])
+HAnimJoint56.setContainerFieldOverride("skeleton")
 HAnimSegment57 = x3d.HAnimSegment()
 HAnimSegment57.setName("sacrum")
 
 HAnimJoint56.addChildren(HAnimSegment57)
 
-HAnimHumanoid55.setSkeleton(HAnimJoint56)
+HAnimHumanoid55.addSkeleton(HAnimJoint56)
 Shape58 = x3d.Shape()
+Shape58.setContainerFieldOverride("skin")
 
-HAnimHumanoid55.setSkin(Shape58)
+HAnimHumanoid55.addSkin(Shape58)
 #allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
 #TODO proposed for X3D4.1 <Shape containerField='apparel'/>
 
@@ -289,16 +301,18 @@ HAnimJoint60 = x3d.HAnimJoint()
 HAnimJoint60.setName("humanoid_root")
 HAnimJoint60.setUlimit([0,0,0])
 HAnimJoint60.setLlimit([0,0,0])
+HAnimJoint60.setContainerFieldOverride("skeleton")
 HAnimSegment61 = x3d.HAnimSegment()
 HAnimSegment61.setName("sacrum")
 
 HAnimJoint60.addChildren(HAnimSegment61)
 
-HAnimHumanoid59.setSkeleton(HAnimJoint60)
+HAnimHumanoid59.addSkeleton(HAnimJoint60)
 #allow multiple Shape nodes with containerField='skin', one for each layer of skin
 Shape62 = x3d.Shape()
+Shape62.setContainerFieldOverride("skin")
 
-HAnimHumanoid59.setSkin(Shape62)
+HAnimHumanoid59.addSkin(Shape62)
 
 Group20.addChildren(HAnimHumanoid59)
 #==============================

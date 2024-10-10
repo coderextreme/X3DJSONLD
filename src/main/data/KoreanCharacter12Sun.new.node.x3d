@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='1'/>
@@ -34,42 +35,6 @@
         <MetadataFloat name='height' value='1.5'/>
         <MetadataString name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
-      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
-      <HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
-      <HAnimJoint USE='hanim_skullbase' containerField='joints'/>
-      <HAnimJoint USE='hanim_vl5' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_elbow' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_elbow' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_hip' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_hip' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_knee' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_knee' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
-      <HAnimSegment USE='hanim_l5' containerField='segments'/>
-      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
-      <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
-      <HAnimSegment USE='hanim_skull' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 29.86 -0.4567'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
           <Transform translation='0 29.86 -0.4567'>
@@ -358,6 +323,42 @@
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
+      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
+      <HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
+      <HAnimJoint USE='hanim_skullbase' containerField='joints'/>
+      <HAnimJoint USE='hanim_vl5' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_elbow' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_elbow' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_hip' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_hip' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_knee' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_knee' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
+      <HAnimSegment USE='hanim_l5' containerField='segments'/>
+      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
+      <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
+      <HAnimSegment USE='hanim_skull' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_calf' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_calf' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>

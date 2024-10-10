@@ -7,7 +7,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("H-Anim"));
@@ -61,12 +61,12 @@ head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
 meta12.setName(CString("identifier"));
-meta12.setContent(CString("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"));
+meta12.setContent(CString("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"));
 head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
 meta13.setName(CString("generator"));
-meta13.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta13.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();

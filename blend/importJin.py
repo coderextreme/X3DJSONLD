@@ -51,8 +51,10 @@ bpy.data.objects.remove(light, do_unlink=True)
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20b.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20c.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20e.x3d", axis_forward='Z', axis_up='Y')
+#bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20f.x3d", axis_forward='Z', axis_up='Y')
+bpy.ops.import_scene.x3d(filepath="Jin20fBillboarded5.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="Humanoid4.x3d", axis_forward='Z', axis_up='Y')
-bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4OnlyMarkers11f.x3d", axis_forward='Z', axis_up='Y')
+#bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4OnlyMarkers11f.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinNoMove10h.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4Sites10h.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4Sites09x.x3d", axis_forward='Y', axis_up='Z')
@@ -67,20 +69,20 @@ bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4OnlyMarkers11f.x3d", axis_fo
 #bpy.ops.export_scene.x3d(filepath="JinConcat11cExportTransforms.x3d")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20bExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20cExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
-bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4OnlyMarkers11fExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
+#bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4OnlyMarkers11fExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinConcat11fExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
 
 
 #
-#filepath = "."
-#bpy.ops.export_scene.gltf(
-#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4OnlyMarkers11fExport.gltf"),
-#    export_yup=True,
-#    export_format="GLTF_SEPARATE",
-#    # export_format="GLB",
-#    use_active_collection=True
-#)
+filepath = "."
+bpy.ops.export_scene.gltf(
+    filepath=os.path.join(filepath, f"Jin20fBillboarded5.gltf"),
+    export_yup=False,
+    export_format="GLTF_SEPARATE",
+    # export_format="GLB",
+    use_active_collection=True
+)
 #
 #filepath = "."
 #bpy.ops.export_scene.vrm(

@@ -164,6 +164,8 @@ LayerSet32.order = new MFInt32(new int[1,2]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
 Layer Layer33 = createNode("Layer");
+Layer33.pickable = True;
+Layer33.objectType = new MFString(new java.lang.String["ALL"]);
 //basic nodes, which might be present in any scene
 NavigationInfo NavigationInfo34 = createNode("NavigationInfo");
 NavigationInfo34.type = new MFString(new java.lang.String["EXAMINE"]);
@@ -349,7 +351,7 @@ Transform69.children[0] = Background70;
 
 Shape Shape71 = createNode("Shape");
 Sphere Sphere72 = createNode("Sphere");
-Sphere72.radius = 40;
+Sphere72.radius = 0.01;
 Shape71.geometry = Sphere72;
 
 Appearance Appearance73 = createNode("Appearance");
@@ -495,7 +497,7 @@ DISEntityManager96.networkMode = "networkReader";
 DISEntityTypeMapping DISEntityTypeMapping97 = createNode("DISEntityTypeMapping");
 DISEntityTypeMapping97.category = 77;
 DISEntityTypeMapping97.specific = 1;
-DISEntityTypeMapping97.url = new MFString(new java.lang.String["../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"]);
+DISEntityTypeMapping97.url = new MFString(new java.lang.String["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]);
 DISEntityManager96.children = new MFNode();
 
 DISEntityManager96.children[0] = DISEntityTypeMapping97;
@@ -503,19 +505,19 @@ DISEntityManager96.children[0] = DISEntityTypeMapping97;
 DISEntityTypeMapping DISEntityTypeMapping98 = createNode("DISEntityTypeMapping");
 DISEntityTypeMapping98.category = 77;
 DISEntityTypeMapping98.specific = 2;
-DISEntityTypeMapping98.url = new MFString(new java.lang.String["../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"]);
+DISEntityTypeMapping98.url = new MFString(new java.lang.String["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]);
 DISEntityManager96.children[1] = DISEntityTypeMapping98;
 
 DISEntityTypeMapping DISEntityTypeMapping99 = createNode("DISEntityTypeMapping");
 DISEntityTypeMapping99.category = 77;
 DISEntityTypeMapping99.specific = 3;
-DISEntityTypeMapping99.url = new MFString(new java.lang.String["../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"]);
+DISEntityTypeMapping99.url = new MFString(new java.lang.String["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]);
 DISEntityManager96.children[2] = DISEntityTypeMapping99;
 
 DISEntityTypeMapping DISEntityTypeMapping100 = createNode("DISEntityTypeMapping");
 DISEntityTypeMapping100.category = 77;
 DISEntityTypeMapping100.specific = 4;
-DISEntityTypeMapping100.url = new MFString(new java.lang.String["../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"]);
+DISEntityTypeMapping100.url = new MFString(new java.lang.String["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]);
 DISEntityManager96.children[3] = DISEntityTypeMapping100;
 
 Layer33.children[6] = DISEntityManager96;
@@ -547,6 +549,8 @@ LayerSet32.layers = new MFNode();
 LayerSet32.layers[0] = Layer33;
 
 LayoutLayer LayoutLayer105 = createNode("LayoutLayer");
+LayoutLayer105.pickable = True;
+LayoutLayer105.objectType = new MFString(new java.lang.String["ALL"]);
 //positioning the LayoutLayer
 //clipping the LayoutLayer
 //the content (children) of the LayoutLayer
