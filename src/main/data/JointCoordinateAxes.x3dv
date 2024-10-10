@@ -1,0 +1,108 @@
+#X3D V4.0 utf8
+
+PROFILE Immersive
+
+COMPONENT Texturing:3
+COMPONENT Text:1
+
+DEF _1 NavigationInfo {
+  headlight FALSE 
+  type ["EXAMINE","ANY"]
+}
+DEF _2 Group {
+  children [
+    DEF ARROW Group {
+      children [
+        DEF _3 Shape {
+          appearance DEF ARROW_APPEARANCE Appearance {
+            material DEF _4 Material {
+            diffuseColor 0.3 0.3 1
+            emissiveColor 0.3 0.3 0.33
+          }}
+          geometry Cylinder {
+            bottom FALSE 
+            radius 0.025
+            top FALSE 
+          }
+        }
+        DEF _5 Transform {
+          translation 0 1 0 children [ 
+          DEF ARROW_POINTER Shape {
+            appearance USE ARROW_APPEARANCE
+            geometry Cone {
+              bottomRadius 0.05
+              height 0.1
+            }
+          }]
+        }
+        DEF _6 Transform {
+          rotation 1 0 0 3.1416
+          translation 0 -1 0
+          children [ USE ARROW_POINTER ]
+        }
+      ]
+    }
+    DEF _7 Transform {
+      translation 0 1.08 0
+      children[DEF _8 Billboard {
+        children[ DEF _9 Shape {
+          appearance DEF LABEL_APPEARANCE Appearance { 
+            material DEF _10 Material {
+             diffuseColor 1 1 0.3
+             emissiveColor 0.33 0.33 0.1
+          } }
+          geometry DEF _11 Text {
+            string "Y"
+            fontStyle DEF LABEL_FONT FontStyle {
+              family [ "SANS" ]
+              justify "MIDDLE"
+              size 0.2
+            }
+          }
+        }]
+      }]
+    }
+  ]
+}
+DEF _12 Transform {
+  rotation 0 0 1 -1.5708
+  children[DEF _13 Group {
+    children [
+      USE ARROW 
+      DEF _14 Transform {
+        rotation 0 0 1 1.5708
+        translation 0.072 1.1 0
+        children[DEF _15 Billboard {
+          children[DEF _16 Shape {
+            appearance USE LABEL_APPEARANCE
+            geometry DEF _17 Text {
+              string "X"
+              fontStyle USE LABEL_FONT
+            }
+          }]
+        }]
+      }
+    ]
+  }]
+}
+DEF _18 Transform {
+  rotation 1 0 0 1.5708
+  children[DEF _19 Group {
+    children [
+      USE ARROW
+      DEF _20 Transform {
+        rotation 1 0 0 -1.5708
+        translation 0 1.1 0.072
+        children[DEF _21 Billboard {
+          children[DEF _22 Shape {
+            appearance USE LABEL_APPEARANCE
+            geometry DEF _23 Text {
+              string "Z"
+              fontStyle USE LABEL_FONT
+            }
+          }]
+        }]
+      }
+    ]
+  }]
+}
