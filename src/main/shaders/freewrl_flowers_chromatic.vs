@@ -1,9 +1,9 @@
 precision highp float;
 
-in vec3 chromaticDispertion;
-in float bias;
-in float scale;
-in float power;
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
 uniform float a;
 uniform float b;
 uniform float c;
