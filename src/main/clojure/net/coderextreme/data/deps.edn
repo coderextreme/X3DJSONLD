@@ -1,0 +1,7 @@
+{:deps
+  {;; example local dep
+  x3djsonld/project {:local/root "."}
+
+  ;; example local jar
+  x3djsail/jar {:local/root "../../../../../../../pythonSAI/X3DJSAIL.4.0.full.jar"}
+ }}

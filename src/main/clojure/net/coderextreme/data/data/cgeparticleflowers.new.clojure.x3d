@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='EnvironmentalEffects' level='3'/>
+    <component name='Shaders' level='1'/>
+    <component name='CubeMapTexturing' level='1'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Grouping' level='3'/>
+    <component name='Core' level='1'/>
+    <component name='ParticleSystems' level='3'/>
+    <meta content='particleflowers.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='A flower proto with configurable shaders' name='description'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
+  </head>
+  <Scene>
+    <WorldInfo title='particleflowers.x3d'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Tour Views' position='0 0 12'/>
+    <Background backUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Transform>
+      <ParticleSystem geometryType='GEOMETRY' maxParticles='20'>
+        <Appearance>
+          <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+          <ComposedShader DEF='shader' language='GLSL'>
+            <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+            <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+            <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+            <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+            <field name='a' accessType='inputOutput' type='SFFloat' value='2.0'/>
+            <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
+            <field name='c' accessType='inputOutput' type='SFFloat' value='5.0'/>
+            <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
+            <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/>
+          </ComposedShader>
+          <ComposedCubeMapTexture DEF='texture'>
+            <ImageTexture containerField='backTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+            <ImageTexture containerField='bottomTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+            <ImageTexture containerField='frontTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+            <ImageTexture containerField='leftTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+            <ImageTexture containerField='rightTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+            <ImageTexture containerField='topTexture' url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+          </ComposedCubeMapTexture>
+        </Appearance>
+        <ExplosionEmitter speed='2.0' variation='0.75'/>
+        <Sphere/>
+        <BoundedPhysicsModel>
+          <Sphere radius='100.0'/>
+        </BoundedPhysicsModel>
+      </ParticleSystem>
+      <Script DEF='Animate'>
+        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+        <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
+        <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
+        <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
+        <field name='d' accessType='inputOutput' type='SFFloat' value='3.0'/>
+        <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+        <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+<![CDATA[
+\newline\newline			function initialize() {\newline			    translation = new SFVec3f(0, 0, 0);\newline			    velocity = new SFVec3f(\newline			    	Math.random() - 0.5,\newline				Math.random() - 0.5,\newline				Math.random() - 0.5);\newline			}\newline			function set_fraction() {\newline			    translation = new SFVec3f(\newline			    	translation.x + velocity.x,\newline				translation.y + velocity.y,\newline				translation.z + velocity.z);\newline			    for (var j = 0; j <= 2; j++) {\newline				    if (Math.abs(translation.x) > 10) {\newline					initialize();\newline				    } else if (Math.abs(translation.y) > 10) {\newline					initialize();\newline				    } else if (Math.abs(translation.z) > 10) {\newline					initialize();\newline				    } else {\newline					velocity.x += Math.random() * 0.2 - 0.1;\newline					velocity.y += Math.random() * 0.2 - 0.1;\newline					velocity.z += Math.random() * 0.2 - 0.1;\newline				    }\newline			    }\newline			    animate_flowers();\newline			}\newline\newline			function animate_flowers(fraction, eventTime) {\newline				var choice = Math.floor(Math.random() * 4);\newline				switch (choice) {\newline				case 0:\newline					a += Math.random() * 0.2 - 0.1;\newline					break;\newline				case 1:\newline					b += Math.random() * 0.2 - 0.1;\newline					break;\newline				case 2:\newline					c += Math.random() * 2 - 1;\newline					break;\newline				case 3:\newline					d += Math.random() * 2 - 1;\newline					break;\newline				}\newline				tdelta = tdelta + 0.05;\newline				pdelta = pdelta + 0.05;\newline				if (a > 1) {\newline					a =  0.5;\newline				}\newline				if (b > 1) {\newline					b =  0.5;\newline				}\newline				if (c < 1) {\newline					c =  4;\newline				}\newline				if (d < 1) {\newline					d =  4;\newline				}\newline				if (c > 10) {\newline					c = 4;\newline				}\newline				if (d > 10) {\newline					d = 4;\newline				}\newline			}\newline
+]]>
+      </Script>
+      <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+      <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+      <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
+      <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
+      <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
+      <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
+      <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+      <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
+    </Transform>
+  </Scene>
+</X3D>
