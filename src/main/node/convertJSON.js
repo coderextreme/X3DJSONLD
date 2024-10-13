@@ -93,9 +93,10 @@ function convertJSON(options) {
 					console.error(e);
 				}
 				if (typeof str !== 'undefined') {
-					// console.error("basefile", basefile);
 					var outfile = options[ser].folder+basefile+options[ser].extension
-					// console.error("outfile", outfile);
+					if (options[ser].extension === ".clj") {
+						outfile = options[ser].folder+basefile+"/"+basefile+options[ser].extension
+					}
 					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 					fs.writeFileSync(outfile, str);
 				} else {

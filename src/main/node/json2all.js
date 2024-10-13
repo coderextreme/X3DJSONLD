@@ -76,6 +76,12 @@ convertJSON.convertJSON([
 	codeOutput : "../"
 	},
 	{ 
+	serializer : './ClojureSerializer.js',
+	folder : "../clojure/net/coderextreme/",
+	extension : ".clj",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : './JavaScriptSerializerNew.js',
 	folder : "../graaljs/net/remove/",
 	extension : ".js",
