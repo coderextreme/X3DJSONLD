@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='bubble.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='Tour around a prismatic sphere' name='description'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' name='identifier'/>
+  </head>
+  <Scene>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Bubble in action' orientation='1 0 0 0' position='0 0 4'/>
+    <ProtoDeclare name='Bubble'>
+      <ProtoBody>
+        <Transform DEF='transform'>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='1 0 0' transparency='0.2'/>
+            </Appearance>
+            <Sphere radius='0.25'/>
+          </Shape>
+          <Script DEF='bounce'>
+            <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
+            <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='scalvel' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+<![CDATA[
+\newlinefunction initialize() {\newline    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\newline\newline    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\newline}\newline\newlinefunction set_fraction(value) {\newline	translation = new SFVec3f(\newline		translation.x + velocity.x,\newline		translation.y + velocity.y,\newline		translation.z + velocity.z);\newline	scale = new SFVec3f(\newline		scale.x + scalvel.x,\newline		scale.y + scalvel.y,\newline		scale.z + scalvel.z);\newline        // if you get to far away or too big, explode\newline        if ( Math.abs(translation.x) > 256) {\newline		translation.x = 0;\newline		initialize();\newline	}\newline        if ( Math.abs(translation.y) > 256) {\newline		translation.y = 0;\newline		initialize();\newline	}\newline        if ( Math.abs(translation.z) > 256) {\newline		translation.z = 0;\newline		initialize();\newline	}\newline	if (Math.abs(scale.x) > 20) {\newline		scale.x = scale.x/2;\newline		translation.x = 0;\newline		initialize();\newline	}\newline	if (Math.abs(scale.y) > 20) {\newline		scale.y = scale.y/2;\newline		translation.y = 0;\newline		initialize();\newline	}\newline	if (Math.abs(scale.z) > 20) {\newline		scale.z = scale.z/2;\newline		translation.z = 0;\newline		initialize();\newline	}\newline}\newline
+]]>
+          </Script>
+          <TimeSensor DEF='bubbleClock' cycleInterval='10.0' loop='true'/>
+          <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
+          <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
+          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoInstance DEF='bubbleA' name='Bubble'/>
+  </Scene>
+</X3D>
