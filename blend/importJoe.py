@@ -1,5 +1,6 @@
 import bpy
 import os
+from mathutils import Matrix, Vector, Quaternion, Euler
 
 #############################################################
 objs = bpy.data.objects
@@ -44,8 +45,8 @@ bpy.data.objects.remove(light, do_unlink=True)
 
 
 bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d", axis_forward='Y', axis_up='Z')
-# bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d")
-# bpy.ops.import_scene.x3d(filepath="JoeKick.x3d", axis_forward='Y', axis_up='Z')
+#bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d")
+#bpy.ops.import_scene.x3d(filepath="JoeKick.x3d", axis_forward='Y', axis_up='Z')
 # bpy.ops.export_scene.x3dv(filepath="JoeBlender.x3d", export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3d", export_hanim_prefix='Joe_',export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3d", export_round_precision=6, export_normals=True, export_format="X3D")
@@ -59,3 +60,39 @@ bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d", axi
 #    # export_format="GLB",
 #    use_active_collection=True
 #)
+
+def set_view_to_positive_z():
+    # Get the 3D view area
+    # area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
+    for area in bpy.context.screen.areas:
+        # Get the 3D view space
+        #space = area.spaces.active
+        for space in area.spaces:
+
+            if space.type == 'VIEW_3D':
+                # Turn off the grid floor
+                # space.overlay.show_floor = False
+
+                # If you also want to turn off the axes
+                #space.overlay.show_axis_x = False
+                #space.overlay.show_axis_y = False
+                #space.overlay.show_axis_z = False
+
+                if hasattr(space, "region_3d"):
+                    # Set the view to orthographic
+                    space.region_3d.view_perspective = 'ORTHO'
+
+                    # Set the view rotation
+                    rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
+                    space.region_3d.view_rotation = rotation.to_quaternion()
+
+                    # Optionally, you can set the view distance
+                    space.region_3d.view_distance = 20
+
+    # Update the view
+    bpy.context.view_layer.update()
+
+# Call the function to set the view
+set_view_to_positive_z()
+
+
