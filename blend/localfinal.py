@@ -802,7 +802,8 @@ set_view_to_positive_z()
 #file_path = 'Jin11gNoAnimation.x3d'
 #file_path = 'Jin20fBillboarded5.x3d'
 #file_path = 'Jin20fSegmented.x3d'
-file_path = 'Jin20fOneAnimation.x3d'
+#file_path = 'Jin20fOneAnimation.x3d'
+file_path = 'JinLOA4.x3d'
 
 print(f"Opening {file_path}")
 
