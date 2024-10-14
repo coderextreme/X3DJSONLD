@@ -62,6 +62,7 @@ bpy.ops.import_scene.x3d(filepath="JinLOA4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinSample.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", axis_forward='Y', axis_up='Z')
 
+# bpy.ops.export_scene.x3dv(filepath="JinLOA4Export.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3d(filepath="JinBlender.x3d")
 # bpy.ops.export_scene.x3dv(filepath="JinBlender.x3d", export_format="X3D")
 # bpy.ops.export_scene.x3dv(filepath="JinConcat10hExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
@@ -132,6 +133,6 @@ def set_view_to_positive_z():
     bpy.context.view_layer.update()
 
 # Call the function to set the view
-set_view_to_positive_z()
+# set_view_to_positive_z()
 
 
