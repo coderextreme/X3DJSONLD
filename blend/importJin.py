@@ -52,7 +52,8 @@ bpy.data.objects.remove(light, do_unlink=True)
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20c.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20e.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20f.x3d", axis_forward='Z', axis_up='Y')
-bpy.ops.import_scene.x3d(filepath="Jin20fBillboarded5.x3d", axis_forward='Z', axis_up='Y')
+#bpy.ops.import_scene.x3d(filepath="Jin20fBillboarded5.x3d", axis_forward='Z', axis_up='Y')
+bpy.ops.import_scene.x3d(filepath="JinLOA4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="Humanoid4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4OnlyMarkers11f.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinNoMove10h.x3d", axis_forward='Y', axis_up='Z')
@@ -77,7 +78,7 @@ bpy.ops.import_scene.x3d(filepath="Jin20fBillboarded5.x3d", axis_forward='Z', ax
 #
 filepath = "."
 bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"Jin20fBillboarded5.gltf"),
+    filepath=os.path.join(filepath, f"JinLOA4.gltf"),
     export_yup=False,
     export_format="GLTF_SEPARATE",
     # export_format="GLB",
@@ -132,4 +133,5 @@ def set_view_to_positive_z():
 
 # Call the function to set the view
 set_view_to_positive_z()
+
 
