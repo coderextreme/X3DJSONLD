@@ -75,32 +75,6 @@ bpy.ops.import_scene.x3d(filepath="JinLOA4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.export_scene.x3dv(filepath="JinConcat11fExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
 
-
-#
-filepath = "."
-bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"JinLOA4.gltf"),
-    export_yup=False,
-    export_format="GLTF_SEPARATE",
-    # export_format="GLB",
-    use_active_collection=True
-)
-#
-#filepath = "."
-#bpy.ops.export_scene.vrm(
-#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4OnlyMarkers11fExport.vrm")
-#)
-
-#filepath = "."
-#bpy.ops.wm.usd_export(
-#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4OnlyMarkers11fExport.usda")
-#)
-
-#destination_folder = "."
-#filename = "JinConcat11c.blend"
-#filepath = os.path.join(destination_folder, filename)
-#bpy.ops.wm.save_as_mainfile(filepath=filepath)
-
 def set_view_to_positive_z():
     # Get the 3D view area
     # area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
@@ -133,6 +107,32 @@ def set_view_to_positive_z():
     bpy.context.view_layer.update()
 
 # Call the function to set the view
-# set_view_to_positive_z()
+set_view_to_positive_z()
 
 
+
+
+#
+filepath = "."
+bpy.ops.export_scene.gltf(
+    filepath=os.path.join(filepath, f"JinLOA4.gltf"),
+    export_yup=False,
+    export_format="GLTF_SEPARATE",
+    # export_format="GLB",
+    use_active_collection=True
+)
+#
+#filepath = "."
+#bpy.ops.export_scene.vrm(
+#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4OnlyMarkers11fExport.vrm")
+#)
+
+#filepath = "."
+#bpy.ops.wm.usd_export(
+#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4OnlyMarkers11fExport.usda")
+#)
+
+#destination_folder = "."
+#filename = "JinConcat11c.blend"
+#filepath = os.path.join(destination_folder, filename)
+#bpy.ops.wm.save_as_mainfile(filepath=filepath)
