@@ -44,22 +44,22 @@ bpy.data.objects.remove(light, do_unlink=True)
 #############################################################
 
 
-#bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d", axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate2.x3d")
-bpy.ops.import_scene.x3d(filepath="JoeKick.x3d", axis_forward='Y', axis_up='Z')
-# bpy.ops.export_scene.x3dv(filepath="JoeBlender.x3d", export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+#bpy.ops.import_scene.x3d(filepath="JoeKick.x3dv", axis_forward='Y', axis_up='Z')
+#bpy.ops.export_scene.x3dv(filepath="JoeBlender.x3d", export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3d", export_hanim_prefix='Joe_',export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3d", export_round_precision=6, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.gltf(filepath="JoeKick.gltf", export_normals=True, export_format="GLTF_SEPARATE", export_texture_dir="./textures/")
 #filepath = "C:/Temp"
 #
-#bpy.ops.export_scene.gltf(
-#    filepath=os.path.join(filepath, f"JoeKick.gltf"),
-#    export_yup=False,
-#    export_format="GLTF_SEPARATE",
-#    # export_format="GLB",
-#    use_active_collection=True
-#)
+bpy.ops.export_scene.gltf(
+    filepath=os.path.join(".", f"JoeSkinTexcoordDisplacerKickUpdate2Export.glb"),
+    export_yup=False,
+    # export_format="GLTF_SEPARATE",
+    export_format="GLB",
+    use_active_collection=True
+)
 
 def set_view_to_positive_z():
     # Get the 3D view area
@@ -94,5 +94,3 @@ def set_view_to_positive_z():
 
 # Call the function to set the view
 set_view_to_positive_z()
-
-
