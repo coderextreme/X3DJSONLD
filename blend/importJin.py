@@ -47,13 +47,13 @@ bpy.data.objects.remove(light, do_unlink=True)
 # bpy.ops.import_scene.x3d(filepath="JinConcat08o.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat10h.x3d")
 #bpy.ops.import_scene.x3d(filepath="JinConcat11c.x3d")
-#bpy.ops.import_scene.x3d(filepath="JinConcat11f.x3d")
+bpy.ops.import_scene.x3d(filepath="JinConcat11g.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20b.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20c.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20e.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20f.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="Jin20fBillboarded5.x3d", axis_forward='Z', axis_up='Y')
-bpy.ops.import_scene.x3d(filepath="JinLOA4.x3dv", axis_forward='Y', axis_up='Z')
+# bpy.ops.import_scene.x3d(filepath="JinLOA4.x3dv", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="Humanoid4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4OnlyMarkers11f.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinNoMove10h.x3d", axis_forward='Y', axis_up='Z')
@@ -115,10 +115,14 @@ set_view_to_positive_z()
 #
 filepath = "."
 bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"JinLOA4.gltf"),
+    filepath=os.path.join(filepath, f"JinLOA4.glb"),
     export_yup=False,
-    export_format="GLTF_SEPARATE",
-    # export_format="GLB",
+    # export_format="GLTF_SEPARATE",
+    export_format="GLB",
+    export_nla_strips_merged_animation_name='Animation',
+    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
+    export_influence_nb=40,
+    export_all_influences=True,
     use_active_collection=True
 )
 #
