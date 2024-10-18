@@ -45,6 +45,17 @@ if light.name in bpy.context.scene.collection.objects:
 bpy.data.objects.remove(light, do_unlink=True)
 #############################################################
 
+
+for c in bpy.context.scene.collection.children:
+    bpy.context.scene.collection.children.unlink(c)
+
+for c in bpy.data.collections:
+    if not c.users:
+        bpy.data.collections.remove(c)
+#############################################################
+
+x3d_collection = bpy.data.collections.new("X3DCollection")
+
 def strip_commas_and_split(value):
     #if not value:
     #    return []
@@ -84,6 +95,10 @@ def get_value(name, def_nodes):
     return None
 
 def child_lookup(parent_node, def_nodes, child_tag):
+    #if parent_node is None:
+    #    print(f"No valid {child_tag} for None!")
+    #    return None
+    #else:
     child_node = parent_node.find(child_tag)
     if child_node is not None:
         name = compose_name(child_node) 
@@ -91,6 +106,7 @@ def child_lookup(parent_node, def_nodes, child_tag):
             put_value(name, def_nodes, child_node)
         elif child_node.get('USE'):
             child_node = get_value(name, def_nodes)
+            print(f"child_node {child_tag} is {child_node}")
         return child_node
     elif child_tag != 'Appearance':
         print(f"No valid {child_tag} for {parent_node.tag}")
@@ -122,6 +138,9 @@ def def_lookup(node, def_nodes, value, parent_object, animated_objects):
             # print('NEW', name)
             value = bpy.data.objects.new(name, None)
             # bpy.ops.object.empty_add(type='SINGLE_ARROW')
+            if value.type == 'EMPTY' and node.tag not in ('Transform', 'Group', 'Shape'):
+                value.hide_viewport = True
+                value.hide_render = True
             # value = bpy.context.active_object
             bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
             value.name = name
@@ -131,10 +150,13 @@ def def_lookup(node, def_nodes, value, parent_object, animated_objects):
                 put_value(name, def_nodes, value)
                 # print('PUT', name)
         else:
-            # print('FOUND', name)
+            print('FOUND', name)
             pass
     if hasattr(value, "parent") and parent_object is not None:
         value.parent = parent_object
+    else:
+        print(f"WARNING:  Couldn't set parent for {value.name}")
+    animated_objects.update(value)
     return value
 
 
@@ -148,9 +170,9 @@ class uniqueClass:
         return self.uniqueIdCounter
     def copy(self, node, def_nodes, parent_object, animated_objects):
         use_name = node.get('USE')
-        name = compose_name(node) 
-        # print('COPY?', name)
         if use_name is not None:
+            name = compose_name(node) 
+            print('LOOKING UP', name)
             old_obj = get_value(name, def_nodes)
             if old_obj is not None:
                 # print('COPYING', name)
@@ -163,6 +185,8 @@ class uniqueClass:
                     bpy.context.scene.collection.objects.link(new_obj)
                 animated_objects[use_name] = new_obj
                 return new_obj
+            else:
+                print('DID NOT FIND', name)
         return None
 
 unique = uniqueClass()
@@ -236,8 +260,99 @@ def create_empty(node, def_nodes, parent_object, animated_objects):
         print(f"Error handling empty node: {ex}")
         return None
 
+def create_point_light(node, def_nodes, parent_object, animated_objects):
+    """Create a point light from X3D PointLight node."""
+    name = compose_name(node)
+    light_data = bpy.data.lights.new(name=name, type='POINT')
+    light_obj = bpy.data.objects.new(name=name, object_data=light_data)
+    bpy.context.scene.collection.objects.link(light_obj)
+    light_obj = def_lookup(node, def_nodes, light_obj, parent_object, animated_objects)
     
+    # Set location
+    location = node.get('location', '0 0 0').split()
+    light_obj.location = Vector([float(x) for x in location])
+    
+    # Set intensity
+    intensity = float(node.get('intensity', '1.0'))
+    light_data.energy = 100 * intensity  # Scale factor for Blender
+    
+    # Set color
+    color = node.get('color', '1 1 1').split()
+    light_data.color = [float(x) for x in color]
+    
+    # Set attenuation
+    radius = float(node.get('radius', '100'))
+    light_data.distance = radius
+    
+    return light_obj
 
+def create_directional_light(node, def_nodes, parent_object, animated_objects):
+    """Create a directional light from X3D DirectionalLight node."""
+    name = compose_name(node)
+    light_data = bpy.data.lights.new(name=name, type='SUN')
+    light_obj = bpy.data.objects.new(name=name, object_data=light_data)
+    bpy.context.scene.collection.objects.link(light_obj)
+    light_obj = def_lookup(node, def_nodes, light_obj, parent_object, animated_objects)
+    
+    # Set direction
+    direction = node.get('direction', '0 -1 0').split()
+    dir_vector = Vector([float(x) for x in direction])
+    
+    # Convert direction to rotation
+    rot = dir_vector.to_track_quat('-Z', 'Y').to_euler()
+    light_obj.rotation_euler = rot
+    
+    # Set intensity
+    intensity = float(node.get('intensity', '1.0'))
+    light_data.energy = 100 * intensity
+    
+    # Set color
+    color = node.get('color', '1 1 1').split()
+    light_data.color = [float(x) for x in color]
+    
+    return light_obj
+
+def create_spot_light(node, def_nodes, parent_object, animated_objects):
+    """Create a spot light from X3D SpotLight node."""
+    name = compose_name(node)
+    light_data = bpy.data.lights.new(name=name, type='SPOT')
+    light_obj = bpy.data.objects.new(name=name, object_data=light_data)
+    bpy.context.scene.collection.objects.link(light_obj)
+    light_obj = def_lookup(node, def_nodes, light_obj, parent_object, animated_objects)
+    
+    # Set location
+    location = node.get('location', '0 0 0').split()
+    light_obj.location = Vector([float(x) for x in location])
+    
+    # Set direction
+    direction = node.get('direction', '0 -1 0').split()
+    dir_vector = Vector([float(x) for x in direction])
+    rot = dir_vector.to_track_quat('-Z', 'Y').to_euler()
+    light_obj.rotation_euler = rot
+    
+    # Set intensity
+    intensity = float(node.get('intensity', '1.0'))
+    light_data.energy = 100 * intensity
+    
+    # Set color
+    color = node.get('color', '1 1 1').split()
+    light_data.color = [float(x) for x in color]
+    
+    # Set spot angle
+    cutoff_angle = float(node.get('cutOffAngle', '0.785398'))  # Default is PI/4
+    light_data.spot_size = 2 * cutoff_angle
+    
+    # Set beam width
+    beam_width = float(node.get('beamWidth', cutoff_angle))
+    light_data.spot_blend = 1 - (beam_width / cutoff_angle)
+    
+    # Set attenuation
+    radius = float(node.get('radius', '100'))
+    light_data.distance = radius
+    
+    return light_obj
+
+        
 def create_text(name, node, def_nodes):
     # print('CREATE', node.tag)
     string = node.get('string', '')
@@ -296,12 +411,16 @@ def get_color_values(node, def_nodes):
         return None
 
 def create_indexed_line_set(name, node, def_nodes):
-    # print('CREATE', node.tag)
+    print('CREATE', compose_name(node))
     coordinate = child_lookup(node, def_nodes, "Coordinate")
     if coordinate is not None:
         coord_index = list(map(int, strip_commas_and_split(node.get('coordIndex', ''))))
         color_index = list(map(int, strip_commas_and_split(node.get('colorIndex', ''))))
         points = list(map(float, strip_commas_and_split(coordinate.get('point', ''))))
+    else:
+        coord_index = None
+        color_index = None
+        points = None
     if not coord_index or not points:
         print(f"Invalid data for IndexedLineSet {name}: coord_index or points are missing")
         return None
@@ -355,9 +474,9 @@ def create_common_line_set(name, segments, colors):
     polyline = curve_data.splines.new('POLY')
     polyline.points.add(len(segments)-1)
     for i in range(len(segments)):
-        if i % 2 == 0:
+        if i % 2 == 1:
+            polyline.points[i-1].co = (*segments[i-1], 1)
             polyline.points[i].co = (*segments[i], 1)
-            polyline.points[i+1].co = (*segments[i+1], 1)
 
         # Create a material and assign the colors
     for color in colors:
@@ -367,6 +486,7 @@ def create_common_line_set(name, segments, colors):
             material.use_nodes = True
             material.diffuse_color = end_color
             curve_data.materials.append(material)
+    print(f"Here's common line set {name}");
 
     return curve_object
 
@@ -459,15 +579,23 @@ def process_node(node, parent_object=None, def_nodes=None):
     #elif node.tag in ('HAnimSite') and node.get('containerField') == 'sites':
     #    return animated_objects
     #el
-    if node.tag in ('Shape', 'Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
+    if node.tag in ('Shape', 'Viewpoint', 'Transform', 'Group', 'TouchSensor', 'Billboard', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid', 'HAnimSegment'):
         if def_nodes is not None:
             new_object = unique.copy(node, def_nodes, parent_object, animated_objects)
         if new_object is not None:
             # print(f"Created new copy of  {new_object}")
             return animated_objects
 
-        if node.tag in ('Transform', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid'):
+        if node.tag in ('Transform', 'Group', 'HAnimJoint', 'HAnimSite', 'HAnimHumanoid'):
             parent_object = create_transform(node, def_nodes, parent_object, animated_objects)
+        elif node.tag in ('Viewpoint'):
+            camera = create_camera(node, def_nodes, parent_object, animated_objects)
+        elif node.tag == 'PointLight':
+            light = create_point_light(node, def_nodes, parent_object, animated_objects)
+        elif node.tag == 'DirectionalLight':
+            light = create_directional_light(node, def_nodes, parent_object, animated_objects)
+        elif node.tag == 'SpotLight':
+            light = create_spot_light(node, def_nodes, parent_object, animated_objects)
         else:
             parent_object = create_empty(node, def_nodes, parent_object, animated_objects)
 
@@ -478,7 +606,6 @@ def process_node(node, parent_object=None, def_nodes=None):
             for name in shape_objects:
                 shape = shape_objects[name]
                 shape = def_lookup(node, def_nodes, shape, parent_object, animated_objects)
-                animated_objects.update(shape)
 
     for child in node:
         child_objects = process_node(child, parent_object=parent_object, def_nodes=def_nodes)
@@ -544,18 +671,22 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
         name = compose_name(child)
         #print(name)
         if child.tag in ('Box', 'LineSet', 'IndexedLineSet', 'Sphere', 'IndexedFaceSet', 'Text'):
-            if def_nodes:
+            if def_nodes is not None:
+                # print(f"def_nodes is not None")
                 new_object = unique.copy(child, def_nodes, parent_object, animated_objects)
                 if new_object is not None:
                     print(f"Created new copy of {new_object.name} {new_object}")
                     shape_objects[new_object.name] = new_object
                     continue
+            else:
+                print(f"def_nodes is None")
             if child.tag == 'Box':
                 obj = create_box(name, child, def_nodes)
             elif child.tag == 'LineSet':
                 obj = create_line_set(name, child, def_nodes)
             elif child.tag == 'IndexedLineSet':
                 obj = create_indexed_line_set(name, child, def_nodes)
+                print(f"Here's indexed line set {obj.name}");
             elif child.tag == 'Sphere':
                 obj = create_sphere(name, child, def_nodes)
             elif child.tag == 'IndexedFaceSet':
@@ -575,6 +706,9 @@ def process_shape(shape_node, parent_object, def_nodes, animated_objects):
                 obj.name = name
                 shape_objects[name] = obj
                 obj = def_lookup(child, def_nodes, obj, parent_object, animated_objects)
+                if obj is not None:
+                    print(f"Found def_lookup {obj.name}")
+                    put_value(obj.name, def_nodes, obj)
 
                 appearance = child_lookup(shape_node, def_nodes, 'Appearance')
                 if appearance is not None:
@@ -710,6 +844,47 @@ def apply_interpolations(root, animated_objects, interpolators):
                 create_animation(obj, keyframes, "location")
             # print(f"Animating {obj.name} for {to_field}")
 
+def create_camera(node, def_nodes, parent_object, animated_objects):
+    position = strip_commas_and_split(node.get('position', '0 0 0'))
+    orientation = strip_commas_and_split(node.get('orientation', '0 0 1 0'))
+    centerOfRotation = strip_commas_and_split(node.get('centerOfRotation', '0 0 0'))
+    nearDistance = node.get('nearDistance', '-1')
+    farDistance = node.get('farDistance', '-1')
+
+    tx, ty, tz = map(float, position)
+    rx, ry, rz, angle = map(float, orientation)
+    cx, cy, cz = map(float, centerOfRotation)
+    nd = float(nearDistance)
+    fd = float(farDistance)
+    rot = Vector((rx, ry, rz))
+    pos = Vector(map(float, position))
+    translation_matrix = Matrix.Translation(Vector((tx + cx, ty + cy, tz + cz)))
+    rotation_matrix = Matrix.Rotation(angle, 4, rot)
+    transform_matrix = translation_matrix @ rotation_matrix
+
+    name = compose_name(node)
+
+    camera_data = bpy.data.cameras.new(name)
+    camera_data.clip_start = nd
+    camera_data.clip_end = fd
+
+    camera_object = bpy.data.objects.new(name, camera_data)
+
+    # TODO pick right Viewpoint
+    bpy.context.scene.camera = camera_object
+
+    cam = def_lookup(node, def_nodes, camera_object, parent_object, animated_objects)
+    camera_object.location = Vector(pos)
+    camera_object.rotation_quaternion = rotation_matrix.to_quaternion()
+    if parent_object:
+        camera_object.matrix_world = parent_object.matrix_world @ transform_matrix
+    else:
+        camera_object.matrix_world = transform_matrix
+    camera_object.matrix_local = transform_matrix
+    bpy.context.scene.collection.objects.link(camera_object)
+
+    return camera_object
+
 def main(file_path):
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete()
@@ -734,54 +909,13 @@ def main(file_path):
     bpy.context.scene.frame_end = 250
     bpy.context.scene.render.fps = 30
 
-    bpy.ops.object.camera_add(location=(0, 1, 2))
-    camera = bpy.context.active_object
-    bpy.context.scene.camera = camera
-    camera.location = Vector((0, 1, 2))
-    camera.matrix_world = Matrix.Translation(Vector((0, 1, 2)))
-    camera.matrix_local = Matrix.Translation(Vector((0, 1, 2)))
-    # print(f"Camera location2 {camera.location[:]}")
-
-    bpy.ops.object.light_add(type='SUN', location=(0, 0, 1))
-    light = bpy.context.active_object
-    light.matrix_world = Matrix.Rotation(3.1416, 4, Vector((0, 1, 0)))
-    #direction = Vector((0,0,-1))
-    #light.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
-
-def set_view_to_positive_z():
-    # Get the 3D view area
-    # area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
-    for area in bpy.context.screen.areas:
-        # Get the 3D view space
-        #space = area.spaces.active
-        for space in area.spaces:
-
-            if space.type == 'VIEW_3D':
-                # Turn off the grid floor
-                # space.overlay.show_floor = False
-
-                # If you also want to turn off the axes
-                #space.overlay.show_axis_x = False
-                #space.overlay.show_axis_y = False
-                #space.overlay.show_axis_z = False
-
-                if hasattr(space, "region_3d"):
-                    # Set the view to orthographic
-                    space.region_3d.view_perspective = 'ORTHO'
-
-                    # Set the view rotation
-                    rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
-                    space.region_3d.view_rotation = rotation.to_quaternion()
-
-                    # Optionally, you can set the view distance
-                    space.region_3d.view_distance = 20
-
-    # Update the view
-    bpy.context.view_layer.update()
-
-# Call the function to set the view
-set_view_to_positive_z()
-
+for screen in bpy.data.screens:
+    for area in screen.areas:
+        if area.type == 'VIEW_3D':
+            space_3d = area.spaces[0]
+            rv3d = space_3d.region_3d
+            rv3d.view_rotation = Quaternion((1.0, 0.0, 0.0, 0.0))
+            rv3d.update()
 
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20c.x3d"
 #file_path = "JinScaledV2L1LOA4MinimumSkeleton20e.x3d"
@@ -803,7 +937,8 @@ set_view_to_positive_z()
 #file_path = 'Jin20fBillboarded5.x3d'
 #file_path = 'Jin20fSegmented.x3d'
 #file_path = 'Jin20fOneAnimation.x3d'
-file_path = 'JinLOA4.x3d'
+file_path = 'JoeSkinTexcoordDisplacerKickUpdate2.x3d'
+
 
 print(f"Opening {file_path}")
 
