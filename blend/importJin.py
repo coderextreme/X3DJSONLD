@@ -47,7 +47,7 @@ bpy.data.objects.remove(light, do_unlink=True)
 # bpy.ops.import_scene.x3d(filepath="JinConcat08o.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat10h.x3d")
 #bpy.ops.import_scene.x3d(filepath="JinConcat11c.x3d")
-bpy.ops.import_scene.x3d(filepath="JinConcat11g.x3d", axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JinLOA4.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20b.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20c.x3d", axis_forward='Z', axis_up='Y')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20e.x3d", axis_forward='Z', axis_up='Y')
@@ -75,42 +75,13 @@ bpy.ops.import_scene.x3d(filepath="JinConcat11g.x3d", axis_forward='Y', axis_up=
 #bpy.ops.export_scene.x3dv(filepath="JinConcat11fExport.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JinScaledV2L1LOA4MinimumSkeleton20eExport.x3d", export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
 
-def set_view_to_positive_z():
-    # Get the 3D view area
-    # area = next(area for area in bpy.context.screen.areas if area.type == 'VIEW_3D')
-    for area in bpy.context.screen.areas:
-        # Get the 3D view space
-        #space = area.spaces.active
-        for space in area.spaces:
-
-            if space.type == 'VIEW_3D':
-                # Turn off the grid floor
-                # space.overlay.show_floor = False
-
-                # If you also want to turn off the axes
-                #space.overlay.show_axis_x = False
-                #space.overlay.show_axis_y = False
-                #space.overlay.show_axis_z = False
-
-                if hasattr(space, "region_3d"):
-                    # Set the view to orthographic
-                    space.region_3d.view_perspective = 'ORTHO'
-
-                    # Set the view rotation
-                    rotation = Euler((0, 0, 0), 'XYZ')  # no rotation
-                    space.region_3d.view_rotation = rotation.to_quaternion()
-
-                    # Optionally, you can set the view distance
-                    space.region_3d.view_distance = 20
-
-    # Update the view
-    bpy.context.view_layer.update()
-
-# Call the function to set the view
-set_view_to_positive_z()
-
-
-
+for screen in bpy.data.screens:
+    for area in screen.areas:
+        if area.type == 'VIEW_3D':
+            space_3d = area.spaces[0]
+            rv3d = space_3d.region_3d
+            rv3d.view_rotation = Quaternion((1.0, 0.0, 0.0, 0.0))
+            rv3d.update()
 
 #
 filepath = "."
