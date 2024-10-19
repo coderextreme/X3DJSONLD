@@ -55,8 +55,6 @@ for c in bpy.data.collections:
 #############################################################
 
 active_object = None
-active_material = None
-active_data = None
 
 def strip_commas_and_split(value):
     #if not value:
@@ -141,7 +139,6 @@ def materials_lookup(node, def_nodes, value, parent_object, animated_objects):
         if value is None:
             print('NEW', name)
             value = bpy.data.materials.new(name=name)
-            active_material = value
             if node_def is not None:
                 animated_objects[node_def] = value
                 put_value(name, def_nodes, value)
@@ -162,17 +159,16 @@ def object_lookup(node, def_nodes, value, parent_object, animated_objects, data)
             print('GET2', name, value)
         if value is None:
             # print('NEW', name)
-            value = bpy.data.objects.new(name, object_data=data)
+            value = bpy.data.objects.new(name=name, object_data=data)
             # bpy.ops.object.empty_add(type='SINGLE_ARROW')
             if value.type == 'EMPTY' and node.tag not in ('Transform', 'Group', 'Shape', 'HAnimHumanoid'):
                 value.hide_viewport = True
                 value.hide_render = True
-            active_data = data
             bpy.ops.transform.resize(value=(0.01, 0.01, 0.01))
             value.name = name
             bpy.context.scene.collection.objects.link(value)
             bpy.context.view_layer.objects.active = value
-            active_object = value
+            active_object = bpy.context.active_object
             if node_def is not None:
                 animated_objects[node_def] = value
                 put_value(name, def_nodes, value)
@@ -212,7 +208,7 @@ class uniqueClass:
                     new_obj.parent = parent_object
                     bpy.context.scene.collection.objects.link(new_obj)
                     bpy.context.view_layer.objects.active = new_obj
-                    active_object = new_obj
+                    active_object = bpy.context.active_object
                 animated_objects[use_name] = new_obj
                 return new_obj
             else:
@@ -757,11 +753,12 @@ def create_material(node, def_nodes, parent_object, animated_objects):
         material.specular_color = specular_color
 
         if material is not None:
-            if active_data:
-                if active_data.materials:
-                    active_data.materials[0] = material
+            active_object = bpy.context.active_object
+            if active_object.data:
+                if active_object.data.materials:
+                    active_object.data.materials[0] = material
                 else:
-                    active_data.materials.append(material)
+                    active_object.data.materials.append(material)
             else:
                 print(f"WARNING: No active object")
 
@@ -771,11 +768,12 @@ def create_material(node, def_nodes, parent_object, animated_objects):
         if image_texture is not None:
             it_material = create_image_texture(image_texture, def_nodes, node, animated_objects)
             if it_material is not None:
-                if active_data:
-                    if active_data.materials:
-                        active_data.materials[0] = it_material
+                active_object = bpy.context.active_object
+                if active_object.data:
+                    if active_object.data.materials:
+                        active_object.data.materials[0] = it_material
                     else:
-                        active_data.materials.append(it_material)
+                        active_object.data.materials.append(it_material)
                 else:
                     print(f"WARNING: No active object for image texture")
             else:
