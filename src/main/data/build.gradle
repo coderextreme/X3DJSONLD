@@ -1,0 +1,26 @@
+plugins {
+    id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta4'
+    // id 'com.github.eerohele.saxon-gradle' version '1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    saxon
+}
+
+dependencies {
+    saxon 'net.sf.saxon:Saxon-HE:12.5'
+}
+
+xslt {
+    classpath.from(configurations.saxon)
+    stylesheet '../lib/stylesheets/X3dToJson.xslt'
+    input fileTree(dir: '.', include: '*.x3d', exclude: '*new*')
+    outputFileExtension 'json'
+    outputDirectoryLayout 'nested'
+}
+
+buildDir = "."
