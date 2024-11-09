@@ -153,7 +153,7 @@ bubs2.prototype = {
             .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
             .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
             .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
-          .addChild((new autoclass.TimeSensor("bubbleClock")).setCycleInterval(10).setLoop(true))
+          .addChild((new autoclass.TimeSensor("bubbleClock")).setCycleInterval(10.0).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
           .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
@@ -216,7 +216,6 @@ bubs2.prototype = {
     {
 		var testObject = new bubs2();
 		console.log ("bubs2 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new bubs2().main();

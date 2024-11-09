@@ -94,7 +94,7 @@ function set_fraction(value) {
     }
 }
 """),
-      TimeSensor(DEF='DECLBubble_bubbleA_bubbleClock',cycleInterval=10,loop=True),
+      TimeSensor(DEF='DECLBubble_bubbleA_bubbleClock',cycleInterval=10.0,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
       ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleA_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleA_bounce',toField='set_fraction')]),
@@ -153,7 +153,7 @@ function set_fraction(value) {
     }
 }
 """),
-      TimeSensor(DEF='DECLBubble_bubbleB_bubbleClock',cycleInterval=10,loop=True),
+      TimeSensor(DEF='DECLBubble_bubbleB_bubbleClock',cycleInterval=10.0,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
       ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleB_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleB_bounce',toField='set_fraction')]),
@@ -212,7 +212,7 @@ function set_fraction(value) {
     }
 }
 """),
-      TimeSensor(DEF='DECLBubble_bubbleC_bubbleClock',cycleInterval=10,loop=True),
+      TimeSensor(DEF='DECLBubble_bubbleC_bubbleClock',cycleInterval=10.0,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
       ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleC_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleC_bounce',toField='set_fraction')]),
@@ -271,7 +271,7 @@ function set_fraction(value) {
     }
 }
 """),
-      TimeSensor(DEF='DECLBubble_bubbleD_bubbleClock',cycleInterval=10,loop=True),
+      TimeSensor(DEF='DECLBubble_bubbleD_bubbleClock',cycleInterval=10.0,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
       ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleD_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleD_bounce',toField='set_fraction')])])

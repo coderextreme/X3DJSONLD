@@ -265,7 +265,6 @@ flowerproto.prototype = {
     {
 		var testObject = new flowerproto();
 		console.log ("flowerproto execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flowerproto().main();

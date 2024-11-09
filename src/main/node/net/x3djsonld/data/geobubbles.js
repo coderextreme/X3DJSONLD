@@ -167,7 +167,6 @@ geobubbles.prototype = {
     {
 		var testObject = new geobubbles();
 		console.log ("geobubbles execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new geobubbles().main();

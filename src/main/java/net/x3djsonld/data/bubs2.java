@@ -158,7 +158,7 @@ function set_fraction(value) {
             .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("scalvel").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY)))
-          .addChild(new TimeSensor("bubbleClock").setCycleInterval(10).setLoop(true))
+          .addChild(new TimeSensor("bubbleClock").setCycleInterval(10.0).setLoop(true))
           .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
           .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))

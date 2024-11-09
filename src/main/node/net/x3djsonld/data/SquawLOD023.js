@@ -467,7 +467,7 @@ SquawLOD023.prototype = {
           .setMaterial((new autoclass.Material()).setAmbientIntensity(0.9).setDiffuseColor(1.0,1.0,1.0).setShininess(1.0))
           .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"images/squaw011.jpg\" \"https://www.web3d.org/x3d/content/examples/Basic/Geospatial/images/squaw011.jpg\""))))
         .setGeometry((new autoclass.GeoElevationGrid()).setCcw(false).setCreaseAngle(0.5).setGeoGridOrigin(4343332.077840,741212.999947,0.0).setGeoSystem(new autoclass.MFString("\"UTM\" \"Z10\" \"N\"")).setSolid(false).setXDimension(51).setXSpacing(24.360000).setZDimension(67).setZSpacing(24.444444).setHeight(this.GeoElevationGrid_5_20_height)
-          .setGeoOrigin((new autoclass.GeoOrigin()).setUSE("ORIGIN"))
+          .setGeoOrigin((new autoclass.GeoOrigin()))
           .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_6_21_point))))));
   },
   // end of initialize() method
@@ -524,7 +524,6 @@ SquawLOD023.prototype = {
     {
 		var testObject = new SquawLOD023();
 		console.log ("SquawLOD023 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new SquawLOD023().main();

@@ -133,7 +133,6 @@ app.prototype = {
     {
 		var testObject = new app();
 		console.log ("app execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new app().main();

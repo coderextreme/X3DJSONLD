@@ -193,36 +193,36 @@ CameraShape.prototype = {
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.IndexedFaceSet("pCylinder1_0Geo")).setDEF("pCylinder1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pCylinder1_0Geo_6_22_coordIndex)
             .setCoord((new autoclass.Coordinate("pCylinder1GeoPoints")).setPoint(this.pCylinder1GeoPoints_7_22_point)))
-          .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance")))
+          .setAppearance((new autoclass.Appearance())))
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.IndexedFaceSet("pCube1_0Geo")).setDEF("pCube1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pCube1_0Geo_6_26_coordIndex)
             .setCoord((new autoclass.Coordinate("pCube1GeoPoints")).setPoint(this.pCube1GeoPoints_7_26_point)))
-          .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance")))
+          .setAppearance((new autoclass.Appearance())))
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.IndexedFaceSet("pPipe1_0Geo")).setDEF("pPipe1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pPipe1_0Geo_6_30_coordIndex)
             .setCoord((new autoclass.Coordinate("pPipe1GeoPoints")).setPoint(this.pPipe1GeoPoints_7_30_point)))
-          .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance")))
+          .setAppearance((new autoclass.Appearance())))
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.IndexedFaceSet("pSphere1_0Geo")).setDEF("pSphere1_0Geo").setConvex(false).setCreaseAngle(0.7854).setCoordIndex(this.pSphere1_0Geo_6_34_coordIndex)
             .setCoord((new autoclass.Coordinate("pSphere1GeoPoints")).setPoint(this.pSphere1GeoPoints_7_34_point)))
-          .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))))
+          .setAppearance((new autoclass.Appearance()))))
       .addChild((new autoclass.Group())
         .addChild((new autoclass.Transform("pCylinder1")).setRotation(-1.0,0.0,0.0,0.373518).setTranslation(-0.038462,3.596312,3.297562)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))
-            .setGeometry((new autoclass.IndexedFaceSet()).setUSE("pCylinder1_0Geo"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedFaceSet()))))
         .addChild((new autoclass.Transform("pCube1")).setScale(1.0,0.727134,0.801457).setTranslation(-0.030769,1.738461,1.4436)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))
-            .setGeometry((new autoclass.IndexedFaceSet()).setUSE("pCube1_0Geo"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedFaceSet()))))
         .addChild((new autoclass.Transform("pPipe1")).setScale(1.0,1.0,0.569444).setTranslation(0.015385,1.630769,-1.973274)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))
-            .setGeometry((new autoclass.IndexedFaceSet()).setUSE("pPipe1_0Geo"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedFaceSet()))))
         .addChild((new autoclass.Transform("pSphere1")).setScale(1.1,1.1,0.1).setTranslation(-0.015385,1.628515,-2.569231)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))
-            .setGeometry((new autoclass.IndexedFaceSet()).setUSE("pSphere1_0Geo")))))));
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedFaceSet())))))));
   },
   // end of initialize() method
 
@@ -278,7 +278,6 @@ CameraShape.prototype = {
     {
 		var testObject = new CameraShape();
 		console.log ("CameraShape execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new CameraShape().main();

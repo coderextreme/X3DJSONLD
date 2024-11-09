@@ -338,7 +338,7 @@ Marine.prototype = {
                 .addChild((new autoclass.Transform("dad_HEAD_FACES01_FACES")).setRotation(1.0,0.0,0.0,1.571).setScale(.4132,.4132,.4132).setTranslation(-.02468,1.03432,-.09053)
                   .addChild((new autoclass.Shape("HEAD_FACES01_FACES"))
                     .setAppearance((new autoclass.Appearance())
-                      .setTexture((new autoclass.ImageTexture()).setUSE("marine_camo"))
+                      .setTexture((new autoclass.ImageTexture()))
                       .setMaterial((new autoclass.Material("material2_mat")).setAmbientIntensity(1.000).setDiffuseColor(.1255,.1843,.09804).setShininess(0.056)))
                     .setGeometry((new autoclass.IndexedFaceSet()).setCcw(false).setCreaseAngle(2.094).setCoordIndex(this.IndexedFaceSet_11_25_coordIndex).setTexCoordIndex(this.IndexedFaceSet_11_25_texCoordIndex)
                       .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_12_25_point))
@@ -346,7 +346,7 @@ Marine.prototype = {
                 .addChild((new autoclass.Transform("dad_BODY_FACES01_FACES")).setRotation(1.0,0.0,0.0,1.571).setScale(.4132,.4132,.4132).setTranslation(-.02585,1.03714,-.09053)
                   .addChild((new autoclass.Shape("BODY_FACES01_FACES"))
                     .setAppearance((new autoclass.Appearance())
-                      .setTexture((new autoclass.ImageTexture()).setUSE("marine_camo"))
+                      .setTexture((new autoclass.ImageTexture()))
                       .setMaterial((new autoclass.Material("material1_mat")).setAmbientIntensity(1.000).setDiffuseColor(.1255,.1843,.09804).setShininess(0.056)))
                     .setGeometry((new autoclass.IndexedFaceSet()).setCcw(false).setCreaseAngle(3.142).setCoordIndex(this.IndexedFaceSet_11_33_coordIndex).setTexCoordIndex(this.IndexedFaceSet_11_33_texCoordIndex)
                       .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_12_33_point))
@@ -408,7 +408,6 @@ Marine.prototype = {
     {
 		var testObject = new Marine();
 		console.log ("Marine execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Marine().main();

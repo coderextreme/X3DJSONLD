@@ -111,27 +111,27 @@ ComposedCubeMapTexture25.setDEF("texture")
 ImageTexture26 = x3d.ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture25.setBack(ImageTexture26)
+ComposedCubeMapTexture25.setBackTexture(ImageTexture26)
 ImageTexture27 = x3d.ImageTexture()
 ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture25.setBottom(ImageTexture27)
+ComposedCubeMapTexture25.setBottomTexture(ImageTexture27)
 ImageTexture28 = x3d.ImageTexture()
 ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture25.setFront(ImageTexture28)
+ComposedCubeMapTexture25.setFrontTexture(ImageTexture28)
 ImageTexture29 = x3d.ImageTexture()
 ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture25.setLeft(ImageTexture29)
+ComposedCubeMapTexture25.setLeftTexture(ImageTexture29)
 ImageTexture30 = x3d.ImageTexture()
 ImageTexture30.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture25.setRight(ImageTexture30)
+ComposedCubeMapTexture25.setRightTexture(ImageTexture30)
 ImageTexture31 = x3d.ImageTexture()
 ImageTexture31.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture25.setTop(ImageTexture31)
+ComposedCubeMapTexture25.setTopTexture(ImageTexture31)
 
 Appearance23.setTexture(ComposedCubeMapTexture25)
 ComposedShader32 = x3d.ComposedShader()

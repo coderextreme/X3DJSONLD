@@ -142,7 +142,7 @@ pp3.prototype = {
             .addChild((new autoclass.Transform()).setTranslation(-0.5,2.0,0.0)
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))
+                  .setMaterial((new autoclass.Material())))
                 .setGeometry((new autoclass.Text("UpString")).setString(new autoclass.MFString("\"u\"")))))
             .addChild((new autoclass.StringSensor("UpSensor")).setEnabled(false))
             .addChild((new autoclass.TouchSensor("UpTouch")).setDescription("touch to activate")))
@@ -162,7 +162,7 @@ pp3.prototype = {
             .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5).setTranslation(-0.5,0.0,1.0)
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))
+                  .setMaterial((new autoclass.Material())))
                 .setGeometry((new autoclass.Text("CenterString")))))
             .addChild((new autoclass.StringSensor("CenterSensor")).setEnabled(false))
             .addChild((new autoclass.TouchSensor("CenterTouch")).setDescription("touch to activate"))))
@@ -274,7 +274,6 @@ pp3.prototype = {
     {
 		var testObject = new pp3();
 		console.log ("pp3 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new pp3().main();

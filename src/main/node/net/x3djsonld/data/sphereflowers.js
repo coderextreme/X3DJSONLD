@@ -170,7 +170,6 @@ sphereflowers.prototype = {
     {
 		var testObject = new sphereflowers();
 		console.log ("sphereflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new sphereflowers().main();

@@ -271,7 +271,6 @@ flowers2.prototype = {
     {
 		var testObject = new flowers2();
 		console.log ("flowers2 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flowers2().main();

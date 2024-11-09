@@ -353,7 +353,6 @@ LOA1_WalkAnimation.prototype = {
     {
 		var testObject = new LOA1_WalkAnimation();
 		console.log ("LOA1_WalkAnimation execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new LOA1_WalkAnimation().main();

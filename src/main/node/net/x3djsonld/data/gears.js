@@ -448,7 +448,6 @@ gears.prototype = {
     {
 		var testObject = new gears();
 		console.log ("gears execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new gears().main();

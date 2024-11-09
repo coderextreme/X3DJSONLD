@@ -6416,7 +6416,6 @@ Pathway.prototype = {
     {
 		var testObject = new Pathway();
 		console.log ("Pathway execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Pathway().main();

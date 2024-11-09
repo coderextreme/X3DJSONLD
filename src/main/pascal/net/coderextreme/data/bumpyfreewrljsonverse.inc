@@ -417,28 +417,28 @@ Appearance75.Material := Material76;
 ComposedCubeMapTexture77 := TComposedCubeMapTextureNode.Create;
 ImageTexture78 := TImageTextureNode.Create;
 ImageTexture78.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBack }
-ComposedCubeMapTexture77.Back := ImageTexture78;
+{ .SetBackTexture }
+ComposedCubeMapTexture77.BackTexture := ImageTexture78;
 ImageTexture79 := TImageTextureNode.Create;
 ImageTexture79.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottom }
-ComposedCubeMapTexture77.Bottom := ImageTexture79;
+{ .SetBottomTexture }
+ComposedCubeMapTexture77.BottomTexture := ImageTexture79;
 ImageTexture80 := TImageTextureNode.Create;
 ImageTexture80.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFront }
-ComposedCubeMapTexture77.Front := ImageTexture80;
+{ .SetFrontTexture }
+ComposedCubeMapTexture77.FrontTexture := ImageTexture80;
 ImageTexture81 := TImageTextureNode.Create;
 ImageTexture81.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeft }
-ComposedCubeMapTexture77.Left := ImageTexture81;
+{ .SetLeftTexture }
+ComposedCubeMapTexture77.LeftTexture := ImageTexture81;
 ImageTexture82 := TImageTextureNode.Create;
 ImageTexture82.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRight }
-ComposedCubeMapTexture77.Right := ImageTexture82;
+{ .SetRightTexture }
+ComposedCubeMapTexture77.RightTexture := ImageTexture82;
 ImageTexture83 := TImageTextureNode.Create;
 ImageTexture83.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTop }
-ComposedCubeMapTexture77.Top := ImageTexture83;
+{ .SetTopTexture }
+ComposedCubeMapTexture77.TopTexture := ImageTexture83;
 { .SetTexture }
 Appearance75.Texture := ComposedCubeMapTexture77;
 ComposedShader84 := TComposedShaderNode.Create;
@@ -644,7 +644,6 @@ Layer37.AddRoute(Script98.FdCoordinates, Coordinate74.EventSet_point);
 { .AddX3DRoute }
 { DIS multiuser facilities }
 DISEntityManager109 := TDISEntityManagerNode.Create;
-DISEntityManager109.ReadInterval := '3';
 DISEntityManager109.NetworkMode := 'networkReader';
 DISEntityTypeMapping110 := TDISEntityTypeMappingNode.Create;
 DISEntityTypeMapping110.ReadInterval := '3';
@@ -933,30 +932,18 @@ Script159.SetSourceCode('''ecmascript:\n"+
 "        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\n"+
 "        var txt = Browser.currentScene.getNamedNode(\"protoText\");\n"+
 "        if (shader) {\n"+
-"            X3DUser.LOG(\"old\", shader.getField(protoParameterName).getValue());\n"+
 "            shader.getField(protoParameterName).setValue(orientation * protoScale);\n"+
-"            X3DUser.LOG(\"new\", shader.getField(protoParameterName).getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (txt) {\n"+
 "            var stringField = txt.getField(\"string\");\n"+
-"            X3DUser.LOG(\"old\", stringField.getValue());\n"+
 "            var label = protoParameterName;\n"+
 "            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\n"+
-"            X3DUser.LOG(\"new\", stringField.getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (ps) {\n"+
 "            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoSensor\");\n"+
 "        }\n"+
 "        if (t) {\n"+
 "            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoTransform\");\n"+
 "        }\n"+
 "}''');
 { .AddChildren }

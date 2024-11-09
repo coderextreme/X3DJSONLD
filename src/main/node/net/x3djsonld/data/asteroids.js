@@ -140,7 +140,6 @@ asteroids.prototype = {
     {
 		var testObject = new asteroids();
 		console.log ("asteroids execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new asteroids().main();

@@ -102,7 +102,7 @@ ballx3dom.prototype = {
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
-              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+              .addChild((new autoclass.ComposedCubeMapTexture())))
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
@@ -163,7 +163,6 @@ ballx3dom.prototype = {
     {
 		var testObject = new ballx3dom();
 		console.log ("ballx3dom execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ballx3dom().main();

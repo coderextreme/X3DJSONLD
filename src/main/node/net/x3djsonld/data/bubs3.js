@@ -129,7 +129,7 @@ bubs3.prototype = {
         .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
-      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleA_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleA_bubbleClock")).setCycleInterval(10.0).setLoop(true))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleA_bounce").setToField("set_fraction")))
@@ -184,7 +184,7 @@ bubs3.prototype = {
         .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
-      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleB_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleB_bubbleClock")).setCycleInterval(10.0).setLoop(true))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleB_bounce").setToField("set_fraction")))
@@ -239,7 +239,7 @@ bubs3.prototype = {
         .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
-      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleC_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleC_bubbleClock")).setCycleInterval(10.0).setLoop(true))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleC_bounce").setToField("set_fraction")))
@@ -294,7 +294,7 @@ bubs3.prototype = {
         .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
         .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
-      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleD_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleD_bubbleClock")).setCycleInterval(10.0).setLoop(true))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
       .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
@@ -353,7 +353,6 @@ bubs3.prototype = {
     {
 		var testObject = new bubs3();
 		console.log ("bubs3 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new bubs3().main();

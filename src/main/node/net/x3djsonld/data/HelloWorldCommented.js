@@ -144,7 +144,7 @@ HelloWorldCommented.prototype = {
           .addComments(" Text complete, Appearance begin ")
           .setAppearance((new autoclass.Appearance())
             .addComments(" Material begin ")
-            .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue"))
+            .setMaterial((new autoclass.Material()))
             .addComments(" Material complete "))
           .addComments(" Appearance complete "))
         .addComments(" Shape complete "))
@@ -205,7 +205,6 @@ HelloWorldCommented.prototype = {
     {
 		var testObject = new HelloWorldCommented();
 		console.log ("HelloWorldCommented execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new HelloWorldCommented().main();

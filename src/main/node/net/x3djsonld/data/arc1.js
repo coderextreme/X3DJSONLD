@@ -183,13 +183,13 @@ arc1.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
     .addChild((new autoclass.ProtoInstance("connector1", "x3dconnector"))
       .addFieldValue((new autoclass.fieldValue()).setName("startnode")
-        .addChild((new autoclass.Transform()).setUSE("G1")))
+        .addChild((new autoclass.Transform())))
       .addFieldValue((new autoclass.fieldValue()).setName("endnode")
-        .addChild((new autoclass.Transform()).setUSE("G2")))
+        .addChild((new autoclass.Transform())))
       .addFieldValue((new autoclass.fieldValue()).setName("transnode")
-        .addChild((new autoclass.Transform()).setUSE("transC1")))
+        .addChild((new autoclass.Transform())))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
-        .addChild((new autoclass.Transform()).setUSE("rotscaleC1")))
+        .addChild((new autoclass.Transform())))
       .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"))
       .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint")))
     .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
@@ -249,7 +249,6 @@ arc1.prototype = {
     {
 		var testObject = new arc1();
 		console.log ("arc1 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new arc1().main();

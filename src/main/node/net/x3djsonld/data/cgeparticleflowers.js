@@ -256,7 +256,6 @@ cgeparticleflowers.prototype = {
     {
 		var testObject = new cgeparticleflowers();
 		console.log ("cgeparticleflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new cgeparticleflowers().main();

@@ -307,7 +307,6 @@ LOA1_StopAnimation.prototype = {
     {
 		var testObject = new LOA1_StopAnimation();
 		console.log ("LOA1_StopAnimation execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new LOA1_StopAnimation().main();

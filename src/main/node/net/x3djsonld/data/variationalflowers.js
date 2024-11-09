@@ -128,7 +128,7 @@ variationalflowers.prototype = {
           .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("initializeOnly")
-              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+              .addChild((new autoclass.ComposedCubeMapTexture())))
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("initializeOnly").setValue("2"))
@@ -209,7 +209,6 @@ variationalflowers.prototype = {
     {
 		var testObject = new variationalflowers();
 		console.log ("variationalflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new variationalflowers().main();

@@ -249,13 +249,13 @@ RotationTests.prototype = {
     .addComments(" *Expected rotation values for initial rotations* in Interpolator2 ")
     .addChild((new autoclass.Transform("Transform2")).setRotation(-0.96458,0.07774,0.25206,2.59674)
       .addComments(" RotationCalculator composed rotation: 0.0 0.0 1.0 2.832229, 1.0 0.0 0.0 5.801149, 0.0 1.0 0.0 2.55377 ")
-      .addChild((new autoclass.Shape()).setUSE("BoxShape"))
-      .addChild((new autoclass.Shape()).setUSE("AxisLinesShape")))
+      .addChild((new autoclass.Shape()))
+      .addChild((new autoclass.Shape())))
     .addComments(" *Expected rotation values for initial rotations* in Interpolator3 ")
     .addChild((new autoclass.Transform("Transform3")).setRotation(0.40758,-0.49149,-0.76962,1.12862).setTranslation(3.0,0.0,0.0)
       .addComments(" RotationCalculator composed rotation: 0.0 0.0 1.0 -3.939975, 1.0 0.0 0.0 -3.766201, 0.0 1.0 0.0 -3.474078 ")
-      .addChild((new autoclass.Shape()).setUSE("BoxShape"))
-      .addChild((new autoclass.Shape()).setUSE("AxisLinesShape")))
+      .addChild((new autoclass.Shape()))
+      .addChild((new autoclass.Shape())))
     .addComments(" Animation playback: enable ClockTimer for continuous motion at 60.000 frames/second (fps) ")
     .addChild((new autoclass.TimeSensor("ClockTimer")).setCycleInterval(4.767).setEnabled(false).setLoop(true))
     .addComments(" Alternative replay: enable ClockStepper for discrete time-step motion at 1 fps ")
@@ -333,7 +333,6 @@ RotationTests.prototype = {
     {
 		var testObject = new RotationTests();
 		console.log ("RotationTests execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new RotationTests().main();

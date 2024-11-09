@@ -351,27 +351,27 @@ ComposedCubeMapTexture77.setDEF("texture")
 ImageTexture78 = x3d.ImageTexture()
 ImageTexture78.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture77.setBack(ImageTexture78)
+ComposedCubeMapTexture77.setBackTexture(ImageTexture78)
 ImageTexture79 = x3d.ImageTexture()
 ImageTexture79.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture77.setBottom(ImageTexture79)
+ComposedCubeMapTexture77.setBottomTexture(ImageTexture79)
 ImageTexture80 = x3d.ImageTexture()
 ImageTexture80.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture77.setFront(ImageTexture80)
+ComposedCubeMapTexture77.setFrontTexture(ImageTexture80)
 ImageTexture81 = x3d.ImageTexture()
 ImageTexture81.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture77.setLeft(ImageTexture81)
+ComposedCubeMapTexture77.setLeftTexture(ImageTexture81)
 ImageTexture82 = x3d.ImageTexture()
 ImageTexture82.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture77.setRight(ImageTexture82)
+ComposedCubeMapTexture77.setRightTexture(ImageTexture82)
 ImageTexture83 = x3d.ImageTexture()
 ImageTexture83.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture77.setTop(ImageTexture83)
+ComposedCubeMapTexture77.setTopTexture(ImageTexture83)
 
 Appearance75.setTexture(ComposedCubeMapTexture77)
 ComposedShader84 = x3d.ComposedShader()
@@ -589,7 +589,6 @@ ROUTE108.setToNode("OrbitCoordinates")
 Layer37.addChildren(ROUTE108)
 #DIS multiuser facilities
 DISEntityManager109 = x3d.DISEntityManager()
-DISEntityManager109.setReadInterval("3")
 DISEntityManager109.setDEF("EntityManager")
 DISEntityManager109.setNetworkMode("networkReader")
 DISEntityTypeMapping110 = x3d.DISEntityTypeMapping()
@@ -898,30 +897,18 @@ Script159.setSourceCode('''ecmascript:\n"+
 "        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\n"+
 "        var txt = Browser.currentScene.getNamedNode(\"protoText\");\n"+
 "        if (shader) {\n"+
-"            X3DUser.LOG(\"old\", shader.getField(protoParameterName).getValue());\n"+
 "            shader.getField(protoParameterName).setValue(orientation * protoScale);\n"+
-"            X3DUser.LOG(\"new\", shader.getField(protoParameterName).getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (txt) {\n"+
 "            var stringField = txt.getField(\"string\");\n"+
-"            X3DUser.LOG(\"old\", stringField.getValue());\n"+
 "            var label = protoParameterName;\n"+
 "            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\n"+
-"            X3DUser.LOG(\"new\", stringField.getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (ps) {\n"+
 "            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoSensor\");\n"+
 "        }\n"+
 "        if (t) {\n"+
 "            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoTransform\");\n"+
 "        }\n"+
 "}''')
 

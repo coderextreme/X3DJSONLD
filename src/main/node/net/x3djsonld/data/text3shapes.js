@@ -155,7 +155,6 @@ text3shapes.prototype = {
     {
 		var testObject = new text3shapes();
 		console.log ("text3shapes execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new text3shapes().main();

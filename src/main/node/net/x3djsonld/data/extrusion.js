@@ -163,7 +163,6 @@ extrusion.prototype = {
     {
 		var testObject = new extrusion();
 		console.log ("extrusion execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new extrusion().main();

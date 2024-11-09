@@ -152,19 +152,19 @@ rgb_alpha.prototype = {
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Sphere()))))
       .addChild((new autoclass.Transform()).setTranslation(-1.47341,0.036672,-0.00175095)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Cone()))))
       .addChild((new autoclass.Transform()).setTranslation(2.31094,0.0694206,-0.00187683)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Cylinder()))))));
   },
   // end of initialize() method
@@ -221,7 +221,6 @@ rgb_alpha.prototype = {
     {
 		var testObject = new rgb_alpha();
 		console.log ("rgb_alpha execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new rgb_alpha().main();

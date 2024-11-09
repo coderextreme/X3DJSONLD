@@ -122,7 +122,7 @@ flowers.prototype = {
 "			      </ComposedShader>"]))
               .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
                 .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
-                  .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+                  .addChild((new autoclass.ComposedCubeMapTexture())))
                 .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
                 .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
                 .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
@@ -288,7 +288,6 @@ flowers.prototype = {
     {
 		var testObject = new flowers();
 		console.log ("flowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flowers().main();

@@ -553,7 +553,6 @@ ecmascript:eval (0
                   /*DIS multiuser facilities*/
 
                     new DISEntityManager({
-                      readInterval : new undefined("3"),
                       DEF : new SFString("EntityManager"),
                       networkMode : new undefined("networkReader"),
                       children : new MFNode([
@@ -808,30 +807,18 @@ const newTranslation = , function(Value) {
         var t = Browser.currentScene.getNamedNode("protoTransform");
         var txt = Browser.currentScene.getNamedNode("protoText");
         if (shader) {
-            X3DUser.LOG("old", shader.getField(protoParameterName).getValue());
             shader.getField(protoParameterName).setValue(orientation * protoScale);
-            X3DUser.LOG("new", shader.getField(protoParameterName).getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (txt) {
             var stringField = txt.getField("string");
-            X3DUser.LOG("old", stringField.getValue());
             var label = protoParameterName;
             stringField.setValue(new MFString(label+"="+(orientation * protoScale).toFixed(2)));
-            X3DUser.LOG("new", stringField.getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (ps) {
             ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);
-        } else {
-            X3DUser.LOG("Not found protoSensor");
         }
         if (t) {
             t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);
-        } else {
-            X3DUser.LOG("Not found protoTransform");
         }
 })}),
 
