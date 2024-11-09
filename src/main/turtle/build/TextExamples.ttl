@@ -1,0 +1,132 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'TextExamples.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Show different escape-character text examples for embedded quotation marks.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '7 April 2001' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '26 April 2016' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control.' ;
+  x3do:name 'warning' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations.' ;
+  x3do:name 'warning' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "TextExamples.x3d" .
+:meta dcterms:description "Show different escape-character text examples for embedded quotation marks." .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:created "7 April 2001" .
+:meta dcterms:modified "26 April 2016" .
+:meta dcterms:warning "Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control." .
+:meta dcterms:warning "Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations." .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Transform_2_1, :Transform_2_2, :Transform_2_3 .
+:Transform_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_1_1 ;
+  x3do:translation ( 0 2 0 ) .
+:Shape_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasGeometry :Text_2_1_1_1 ;
+  x3do:hasAppearance :LightBlueAppearance .
+:Text_2_1_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasFontStyle :testFontStyle ;
+  x3do:string '"Compare special character escaping"' .
+:testFontStyle a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_1_1_1 ;
+  x3do:DEF 'testFontStyle' ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size 0.8 .
+:LightBlueAppearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasMaterial :Material_2_1_1_2_1 ;
+  x3do:DEF 'LightBlueAppearance' .
+:Material_2_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :LightBlueAppearance ;
+  x3do:diffuseColor ( 0.1 0.7 0.7 ) .
+:Transform_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_2_1 ;
+  x3do:translation ( -3 0 0 ) .
+:Shape_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2 ;
+  x3do:hasGeometry :Text_2_2_1_1 ;
+  x3do:hasAppearance :LightBlueAppearance-USE-1 .
+:Text_2_2_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_2_1 ;
+  x3do:hasFontStyle :testFontStyle-USE-1 ;
+  x3do:string '"I don&apos;t think so" "" "he said \"Hi\""' .
+:testFontStyle-USE-1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_2_1_1 ;
+  owl:sameAs :testFontStyle . # DEF matching this USE
+:LightBlueAppearance-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1 ;
+  owl:sameAs :LightBlueAppearance . # DEF matching this USE
+:Transform_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 ;
+  x3do:translation ( 3 0 0 ) .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:hasGeometry :Text_2_3_1_1 ;
+  x3do:hasAppearance :LightBlueAppearance-USE-2 .
+:Text_2_3_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasFontStyle :testFontStyle-USE-2 ;
+  x3do:string '"I don&apos;t think so" "" "he said \"Hi\""' .
+:testFontStyle-USE-2 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_1_1 ;
+  owl:sameAs :testFontStyle . # DEF matching this USE
+:LightBlueAppearance-USE-2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  owl:sameAs :LightBlueAppearance . # DEF matching this USE

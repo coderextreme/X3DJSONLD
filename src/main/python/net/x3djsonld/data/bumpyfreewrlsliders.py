@@ -84,13 +84,13 @@ newModel=X3D(profile='Full',version='4.0',
           Transform(translation=(25,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cylinder(DEF='Shaft',radius=.35,height=50),
+              geometry=Cylinder(DEF='Shaft',radius=.35,height=50.0),
               appearance=Appearance(
                 material=Material(DEF='RED',diffuseColor=(1,0,0),emissiveColor=(1,0,0))))]),
           Transform(translation=(50,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3),
+              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3.0),
               appearance=Appearance(
                 material=Material(USE='RED')))]),
           #  Arrow Y 
@@ -128,7 +128,7 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
           Shape(
-            geometry=Sphere(radius=40),
+            geometry=Sphere(radius=0.01),
             appearance=Appearance(
               material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
               texture=ComposedCubeMapTexture(DEF='texture',
@@ -158,10 +158,10 @@ newModel=X3D(profile='Full',version='4.0',
         #  DIS multiuser facilities 
         DISEntityManager(DEF='EntityManager',networkMode='networkReader',
           children=[
-          DISEntityTypeMapping(category=77,specific=1,url=["../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"]),
-          DISEntityTypeMapping(category=77,specific=2,url=["../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"]),
-          DISEntityTypeMapping(category=77,specific=3,url=["../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"]),
-          DISEntityTypeMapping(category=77,specific=4,url=["../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"])]),
+          DISEntityTypeMapping(category=77,specific=1,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=2,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=3,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=4,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])]),
         Collision(enabled=False,
           children=[
           Group(DEF='AvatarHolder')]),

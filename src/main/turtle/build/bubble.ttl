@@ -1,0 +1,189 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/bubble.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'bubble.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'Tour around a prismatic sphere' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'X3D-Edit, https://savage.nps.edu/X3D-Edit' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' .
+:meta dcterms:title "bubble.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:description "Tour around a prismatic sphere" .
+:meta dcterms:generator "X3D-Edit, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Viewpoint_2_2, :bubbleA ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_3 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE"' .
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:position ( 0 0 4 ) ;
+  x3do:orientation ( 1 0 0 0 ) ;
+  x3do:description 'Bubble in action' .
+:ProtoDeclare_2_3 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoBody :ProtoBody_2_3_1 ;
+  x3do:name 'Bubble' .
+:ProtoBody_2_3_1 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_3 ;
+  x3do:hasChildren :transform .
+:transform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_3_1 ;
+  x3do:hasChildren :Shape_2_3_1_1_1, :bounce, :bubbleClock ;
+  x3do:hasROUTE :ROUTE_2_3_1_1_4, :ROUTE_2_3_1_1_5, :ROUTE_2_3_1_1_6 ;
+  x3do:DEF 'transform' .
+:Shape_2_3_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :transform ;
+  x3do:hasGeometry :Sphere_2_3_1_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_3_1_1_1_2 .
+:Sphere_2_3_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_3_1_1_1 ;
+  x3do:radius 0.25 .
+:Appearance_2_3_1_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1_1_1 ;
+  x3do:hasMaterial :Material_2_3_1_1_1_2_1 .
+:Material_2_3_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:transparency 0.2 .
+:bounce a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :transform ;
+  x3do:hasField :field_2_3_1_1_2_1, :field_2_3_1_1_2_2, :field_2_3_1_1_2_3, :field_2_3_1_1_2_4, :field_2_3_1_1_2_5 ;
+  x3do:DEF 'bounce' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+	translation = new SFVec3f(
+		translation.x + velocity.x,
+		translation.y + velocity.y,
+		translation.z + velocity.z);
+	scale = new SFVec3f(
+		scale.x + scalvel.x,
+		scale.y + scalvel.y,
+		scale.z + scalvel.z);
+        // if you get to far away or too big, explode
+        if ( Math.abs(translation.x) > 256) {
+		translation.x = 0;
+		initialize();
+	}
+        if ( Math.abs(translation.y) > 256) {
+		translation.y = 0;
+		initialize();
+	}
+        if ( Math.abs(translation.z) > 256) {
+		translation.z = 0;
+		initialize();
+	}
+	if (Math.abs(scale.x) > 20) {
+		scale.x = scale.x/2;
+		translation.x = 0;
+		initialize();
+	}
+	if (Math.abs(scale.y) > 20) {
+		scale.y = scale.y/2;
+		translation.y = 0;
+		initialize();
+	}
+	if (Math.abs(scale.z) > 20) {
+		scale.z = scale.z/2;
+		translation.z = 0;
+		initialize();
+	}
+}
+""" .
+:field_2_3_1_1_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bounce ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_3_1_1_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bounce ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_3_1_1_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bounce ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_3_1_1_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bounce ;
+  x3do:name 'scalvel' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_3_1_1_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bounce ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:bubbleClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :transform ;
+  x3do:DEF 'bubbleClock' ;
+  x3do:cycleInterval '10.0' ;
+  x3do:loop true .
+:ROUTE_2_3_1_1_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :transform ;
+  x3do:fromNode 'bounce' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'transform' ;
+  x3do:toField 'set_translation' .
+:ROUTE_2_3_1_1_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :transform ;
+  x3do:fromNode 'bounce' ;
+  x3do:fromField 'scale_changed' ;
+  x3do:toNode 'transform' ;
+  x3do:toField 'set_scale' .
+:ROUTE_2_3_1_1_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :transform ;
+  x3do:fromNode 'bubbleClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'bounce' ;
+  x3do:toField 'set_fraction' .
+:bubbleA a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:name 'Bubble' ;
+  x3do:DEF 'bubbleA' .

@@ -87,7 +87,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataFloat(name='height',value=[1.5]),
         MetadataString(name='humanoidVersion',value=["2.0"])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.826,-0.016),
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.826,-0.016),ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -109,7 +109,7 @@ None
 </HAnimSite>
 
             )]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.707,-0.016),
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.707,-0.016),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -174,7 +174,7 @@ None
                 children=[
                 TouchSensor(description='HAnimSite buttocks_standing_wall_contact_point_pt 93'),
                 Shape(USE='HAnimSiteShape')])])]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -209,7 +209,7 @@ None
                   children=[
                   TouchSensor(description='HAnimSite l_suprapatella_pt 41'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.09261001,0.408825,-0.01943775),
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.09261001,0.408825,-0.01943775),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
@@ -239,7 +239,7 @@ None
                     children=[
                     TouchSensor(description='HAnimSite l_lateral_malleolus_pt 49'),
                     Shape(USE='HAnimSiteShape')])])]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.08883,0.09544501,-0.010451251),
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.08883,0.09544501,-0.010451251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -264,7 +264,7 @@ None
                       children=[
                       TouchSensor(description='HAnimSite l_calcaneus_posterior_pt 58'),
                       Shape(USE='HAnimSiteShape')])])]),
-                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.07830001,0.036900003,0.0048645),
+                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.07830001,0.036900003,0.0048645),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_navicular',name='l_navicular',
                     children=[
@@ -280,7 +280,7 @@ None
 None 
 
                       )]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.067365,0.032107502,0.018391501),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.067365,0.032107502,0.018391501),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_1',name='l_cuneiform_1',
                       children=[
@@ -296,7 +296,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.06462,0.023242502,0.04419),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.06462,0.023242502,0.04419),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_1',name='l_metatarsal_1',
                         children=[
@@ -312,7 +312,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621225,0.014424751,0.0936225),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621225,0.014424751,0.0936225),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_1',name='l_tarsal_proximal_phalanx_1',
                           children=[
@@ -332,7 +332,7 @@ None
                               children=[
                               TouchSensor(description='HAnimSite l_metatarsal_phalanx_1_pt 55'),
                               Shape(USE='HAnimSiteShapeB')])])]),
-                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),
+                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_1',name='l_tarsal_distal_phalanx_1',
                             children=[
@@ -352,7 +352,7 @@ None
                                 children=[
                                 TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_1_tip 111'),
                                 Shape(USE='HAnimSiteShape')])])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814275,0.033525,0.02142675),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814275,0.033525,0.02142675),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_2',name='l_cuneiform_2',
                       children=[
@@ -368,7 +368,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.08019,0.0261,0.041062504),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.08019,0.0261,0.041062504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                         children=[
@@ -384,7 +384,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.08253,0.014976,0.097830005),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.08253,0.014976,0.097830005),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                           children=[
@@ -400,7 +400,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843075,0.012647251,0.1140075),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843075,0.012647251,0.1140075),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_2',name='l_tarsal_middle_phalanx_2',
                             children=[
@@ -416,7 +416,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843075,0.00982575,0.123435006),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843075,0.00982575,0.123435006),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
                               children=[
@@ -436,7 +436,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_2_tip 112'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.092970006,0.03339,0.019818),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.092970006,0.03339,0.019818),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_3',name='l_cuneiform_3',
                       children=[
@@ -452,7 +452,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.039397504),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.039397504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_3',name='l_metatarsal_3',
                         children=[
@@ -468,7 +468,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.096480004,0.015057,0.09542251),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.096480004,0.015057,0.09542251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_3',name='l_tarsal_proximal_phalanx_3',
                           children=[
@@ -484,7 +484,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.098865,0.011922751,0.110475),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.098865,0.011922751,0.110475),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_3',name='l_tarsal_middle_phalanx_3',
                             children=[
@@ -500,7 +500,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004175,0.00982575,0.11970001),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004175,0.00982575,0.11970001),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_3',name='l_tarsal_distal_phalanx_3',
                               children=[
@@ -520,7 +520,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_3_tip 113'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])]),
-                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.0579825,-0.025965001),
+                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.0579825,-0.025965001),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_calcaneus',name='l_calcaneus',
                     children=[
@@ -536,7 +536,7 @@ None
 None 
 
                       )]),
-                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.1106325,0.03528,0.002089125),
+                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.1106325,0.03528,0.002089125),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuboid',name='l_cuboid',
                       children=[
@@ -552,7 +552,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.1064925,0.0245475,0.03843),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.1064925,0.0245475,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_4',name='l_metatarsal_4',
                         children=[
@@ -568,7 +568,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867506,0.01435275,0.091170006),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867506,0.01435275,0.091170006),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_4',name='l_tarsal_proximal_phalanx_4',
                           children=[
@@ -584,7 +584,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.114165,0.0122445,0.1063125),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.114165,0.0122445,0.1063125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_4',name='l_tarsal_middle_phalanx_4',
                             children=[
@@ -600,7 +600,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.1156725,0.009369,0.11369251),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.1156725,0.009369,0.11369251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_4',name='l_tarsal_distal_phalanx_4',
                               children=[
@@ -620,7 +620,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_4_tip 114'),
                                   Shape(USE='HAnimSiteShape')])])])])])])]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.120825,0.020945251,0.03474),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.120825,0.020945251,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_5',name='l_metatarsal_5',
                         children=[
@@ -636,7 +636,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065004,0.013671,0.0865575),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065004,0.013671,0.0865575),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_5',name='l_tarsal_proximal_phalanx_5',
                           children=[
@@ -652,7 +652,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.1263825,0.01085625,0.09414),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.1263825,0.01085625,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_5',name='l_tarsal_middle_phalanx_5',
                             children=[
@@ -672,7 +672,7 @@ None
                                 children=[
                                 TouchSensor(description='HAnimSite l_metatarsal_phalanx_5_pt 56'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.1272825,0.008563501,0.10188),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.1272825,0.008563501,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_5',name='l_tarsal_distal_phalanx_5',
                               children=[
@@ -692,7 +692,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_5_tip 115'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.094657496,0.8266501,-0.018348752),
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.094657496,0.8266501,-0.018348752),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -727,7 +727,7 @@ None
                   children=[
                   TouchSensor(description='HAnimSite r_suprapatella_pt 45'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.09261001,0.408825,-0.01943775),
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.09261001,0.408825,-0.01943775),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
@@ -757,7 +757,7 @@ None
                     children=[
                     TouchSensor(description='HAnimSite r_lateral_malleolus_pt 53'),
                     Shape(USE='HAnimSiteShape')])])]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.088447504,0.09544501,-0.010451251),
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.088447504,0.09544501,-0.010451251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -782,7 +782,7 @@ None
                       children=[
                       TouchSensor(description='HAnimSite r_calcaneus_posterior_pt 62'),
                       Shape(USE='HAnimSiteShape')])])]),
-                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.036900003,0.0048645),
+                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.036900003,0.0048645),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_navicular',name='r_navicular',
                     children=[
@@ -798,7 +798,7 @@ None
 None
 
                       )]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.0669825,0.032107502,0.018391501),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.0669825,0.032107502,0.018391501),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_1',name='r_cuneiform_1',
                       children=[
@@ -814,7 +814,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.06426,0.023242502,0.04419),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.06426,0.023242502,0.04419),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_1',name='r_metatarsal_1',
                         children=[
@@ -830,7 +830,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.0617625,0.014424751,0.0936225),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.0617625,0.014424751,0.0936225),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_1',name='r_tarsal_proximal_phalanx_1',
                           children=[
@@ -850,7 +850,7 @@ None
                               children=[
                               TouchSensor(description='HAnimSite r_metatarsal_phalanx_1_pt 59'),
                               Shape(USE='HAnimSiteShape')])])]),
-                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121365,0.1153125),
+                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121365,0.1153125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_1',name='r_tarsal_distal_phalanx_1',
                             children=[
@@ -870,7 +870,7 @@ None
                                 children=[
                                 TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_1_tip 116'),
                                 Shape(USE='HAnimSiteShape')])])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081045,0.033525,0.02142675),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081045,0.033525,0.02142675),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_2',name='r_cuneiform_2',
                       children=[
@@ -886,7 +886,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.079830006,0.0261,0.041062504),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.079830006,0.0261,0.041062504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
                         children=[
@@ -902,7 +902,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821475,0.014976,0.097830005),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821475,0.014976,0.097830005),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                           children=[
@@ -918,7 +918,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.083925,0.012647251,0.1140075),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.083925,0.012647251,0.1140075),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_2',name='r_tarsal_middle_phalanx_2',
                             children=[
@@ -934,7 +934,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.083925,0.00982575,0.123435006),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.083925,0.00982575,0.123435006),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_2',name='r_tarsal_distal_phalanx_2',
                               children=[
@@ -954,7 +954,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_2_tip 117'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261001,0.03339,0.019818),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261001,0.03339,0.019818),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_3',name='r_cuneiform_3',
                       children=[
@@ -970,7 +970,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423001,0.0261,0.039397504),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423001,0.0261,0.039397504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_3',name='r_metatarsal_3',
                         children=[
@@ -986,7 +986,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0960975,0.015057,0.09542251),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0960975,0.015057,0.09542251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_3',name='r_tarsal_proximal_phalanx_3',
                           children=[
@@ -1002,7 +1002,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.098505,0.011922751,0.110475),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.098505,0.011922751,0.110475),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_3',name='r_tarsal_middle_phalanx_3',
                             children=[
@@ -1018,7 +1018,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035004,0.00982575,0.11970001),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035004,0.00982575,0.11970001),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_3',name='r_tarsal_distal_phalanx_3',
                               children=[
@@ -1038,7 +1038,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_3_tip 118'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])]),
-                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717505,0.0579825,-0.025965001),
+                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717505,0.0579825,-0.025965001),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_calcaneus',name='r_calcaneus',
                     children=[
@@ -1054,7 +1054,7 @@ None
 None 
 
                       )]),
-                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.110272504,0.03528,0.002089125),
+                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.110272504,0.03528,0.002089125),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuboid',name='r_cuboid',
                       children=[
@@ -1070,7 +1070,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613251,0.0245475,0.03843),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613251,0.0245475,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_4',name='r_metatarsal_4',
                         children=[
@@ -1086,7 +1086,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.10950751,0.01435275,0.091170006),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.10950751,0.01435275,0.091170006),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_4',name='r_tarsal_proximal_phalanx_4',
                           children=[
@@ -1102,7 +1102,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378251,0.0122445,0.1063125),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378251,0.0122445,0.1063125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_4',name='r_tarsal_middle_phalanx_4',
                             children=[
@@ -1118,7 +1118,7 @@ None
 None 
 
                               )]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153125,0.009369,0.11369251),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153125,0.009369,0.11369251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_4',name='r_tarsal_distal_phalanx_4',
                               children=[
@@ -1138,7 +1138,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_4_tip 119'),
                                   Shape(USE='HAnimSiteShape')])])])])])])]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044251,0.020945251,0.03474),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044251,0.020945251,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_5',name='r_metatarsal_5',
                         children=[
@@ -1154,7 +1154,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368251,0.013671,0.0865575),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368251,0.013671,0.0865575),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_5',name='r_tarsal_proximal_phalanx_5',
                           children=[
@@ -1170,7 +1170,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01085625,0.09414),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01085625,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_5',name='r_tarsal_middle_phalanx_5',
                             children=[
@@ -1190,7 +1190,7 @@ None
                                 children=[
                                 TouchSensor(description='HAnimSite r_metatarsal_phalanx_5_pt 60'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269225,0.008563501,0.10188),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269225,0.008563501,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',
                               children=[
@@ -1210,7 +1210,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_5_tip 120'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.92542505,-0.013763251),
+          HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.92542505,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l5',name='l5',
               children=[
@@ -1250,7 +1250,7 @@ None
                   children=[
                   TouchSensor(description='HAnimSite navel 84'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.94972503,-0.013763251),
+            HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.94972503,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l4',name='l4',
                 children=[
@@ -1266,7 +1266,7 @@ None
 None 
 
                   )]),
-              HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.96592504,-0.013763251),
+              HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.96592504,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l3',name='l3',
                   children=[
@@ -1282,7 +1282,7 @@ None
 None 
 
                     )]),
-                HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235005,-0.013763251),
+                HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235005,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l2',name='l2',
                     children=[
@@ -1307,7 +1307,7 @@ None
                         children=[
                         TouchSensor(description='HAnimSite r_rib_10_pt 30'),
                         Shape(USE='HAnimSiteShape')])])]),
-                  HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967504,-0.013763251),
+                  HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967504,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l1',name='l1',
                       children=[
@@ -1323,7 +1323,7 @@ None
 None 
 
                         )]),
-                    HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0230751,-0.013763251),
+                    HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0230751,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_t12',name='t12',
                         children=[
@@ -1339,7 +1339,7 @@ None
 None 
 
                           )]),
-                      HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.013763251),
+                      HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_t11',name='t11',
                           children=[
@@ -1355,7 +1355,7 @@ None
 None 
 
                             )]),
-                        HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.013785751),
+                        HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_t10',name='t10',
                             children=[
@@ -1380,7 +1380,7 @@ None
                                 children=[
                                 TouchSensor(description='HAnimSite mesosternale_pt 88'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.078425,-0.013763251),
+                          HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.078425,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_t9',name='t9',
                               children=[
@@ -1420,7 +1420,7 @@ None
                                   children=[
                                   TouchSensor(description='HAnimSite r_chest_midsagittal_plane_pt 95'),
                                   Shape(USE='HAnimSiteShape')])])]),
-                            HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930501,-0.013763251),
+                            HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930501,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                               children=[
                               HAnimSegment(DEF='hanim_t8',name='t8',
                                 children=[
@@ -1436,7 +1436,7 @@ None
 None 
 
                                   )]),
-                              HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.013763251),
+                              HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                 children=[
                                 HAnimSegment(DEF='hanim_t7',name='t7',
                                   children=[
@@ -1452,7 +1452,7 @@ None
 None 
 
                                     )]),
-                                HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216251,-0.013763251),
+                                HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216251,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                   children=[
                                   HAnimSegment(DEF='hanim_t6',name='t6',
                                     children=[
@@ -1468,7 +1468,7 @@ None
 None 
 
                                       )]),
-                                  HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.13715,-0.013763251),
+                                  HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.13715,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                     children=[
                                     HAnimSegment(DEF='hanim_t5',name='t5',
                                       children=[
@@ -1484,7 +1484,7 @@ None
 None 
 
                                         )]),
-                                    HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524501,-0.013763251),
+                                    HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524501,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                       children=[
                                       HAnimSegment(DEF='hanim_t4',name='t4',
                                         children=[
@@ -1500,7 +1500,7 @@ None
 None 
 
                                           )]),
-                                      HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709001,-0.013763251),
+                                      HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709001,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                         children=[
                                         HAnimSegment(DEF='hanim_t3',name='t3',
                                           children=[
@@ -1516,7 +1516,7 @@ None
 None 
 
                                             )]),
-                                        HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.19565,-0.013785751),
+                                        HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.19565,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                           children=[
                                           HAnimSegment(DEF='hanim_t2',name='t2',
                                             children=[
@@ -1532,7 +1532,7 @@ None
 None 
 
                                               )]),
-                                          HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),
+                                          HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_t1',name='t1',
                                               children=[
@@ -1557,7 +1557,7 @@ None
                                                   children=[
                                                   TouchSensor(description='HAnimSite cervicale_pt 10'),
                                                   Shape(USE='HAnimSiteShape')])])]),
-                                            HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.245375,-0.015063751),
+                                            HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.245375,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_c7',name='c7',
                                                 children=[
@@ -1582,7 +1582,7 @@ None
                                                     children=[
                                                     TouchSensor(description='HAnimSite r_neck_base_pt 83'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575251,-0.015063751),
+                                              HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575251,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c6',name='c6',
                                                   children=[
@@ -1598,7 +1598,7 @@ None
 None 
 
                                                     )]),
-                                                HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.015063751),
+                                                HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c5',name='c5',
                                                     children=[
@@ -1614,7 +1614,7 @@ None
 None 
 
                                                       )]),
-                                                  HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.2822751,-0.015063751),
+                                                  HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.2822751,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c4',name='c4',
                                                       children=[
@@ -1630,7 +1630,7 @@ None
 None 
 
                                                         )]),
-                                                    HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951001,-0.015063751),
+                                                    HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951001,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c3',name='c3',
                                                         children=[
@@ -1646,7 +1646,7 @@ None
 None 
 
                                                           )]),
-                                                      HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),
+                                                      HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c2',name='c2',
                                                           children=[
@@ -1666,7 +1666,7 @@ None
                                                               children=[
                                                               TouchSensor(description='HAnimSite adams_apple_pt 11'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.015063751),
+                                                        HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_c1',name='c1',
                                                             children=[
@@ -1682,7 +1682,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126501,-0.01544175),
+                                                          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126501,-0.01544175),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_skull',name='skull',
                                                               children=[
@@ -1752,7 +1752,7 @@ None
                                                                   children=[
                                                                   TouchSensor(description='HAnimSite r_ectocanthus_pt 86'),
                                                                   Shape(USE='HAnimSiteShape')])])]),
-                                                            HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505125,1.42425,0.03294),
+                                                            HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505125,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyelid',name='l_eyelid',
                                                                 children=[
@@ -1773,7 +1773,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505125,1.42425,0.03294),
+                                                            HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505125,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyelid',name='r_eyelid',
                                                                 children=[
@@ -1794,7 +1794,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127502,1.4049001,0.0830475),
+                                                            HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127502,1.4049001,0.0830475),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyeball',name='l_eyeball',
                                                                 children=[
@@ -1815,7 +1815,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.048127502,1.4049001,0.0830475),
+                                                            HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.048127502,1.4049001,0.0830475),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyeball',name='r_eyeball',
                                                                 children=[
@@ -1836,7 +1836,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.021748502,1.4139,0.1069425),
+                                                            HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.021748502,1.4139,0.1069425),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyebrow',name='l_eyebrow',
                                                                 children=[
@@ -1857,7 +1857,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.021748502,1.4139,0.1069425),
+                                                            HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.021748502,1.4139,0.1069425),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyebrow',name='r_eyebrow',
                                                                 children=[
@@ -1878,7 +1878,7 @@ None
 </HAnimSite>
 
                                                                   )])]),
-                                                            HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.312875,0.015378751),
+                                                            HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.312875,0.015378751),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_jaw',name='jaw',
                                                                 children=[
@@ -1913,7 +1913,7 @@ None
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite menton_pt 87'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-                                            HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.038475003,1.2087001,-0.013785751),
+                                            HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.038475003,1.2087001,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
                                                 children=[
@@ -1933,7 +1933,7 @@ None
                                                     children=[
                                                     TouchSensor(description='HAnimSite l_clavicale_pt 14'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294001,1.191825,-0.012897001),
+                                              HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294001,1.191825,-0.012897001),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
                                                   children=[
@@ -1968,7 +1968,7 @@ None
                                                       children=[
                                                       TouchSensor(description='HAnimSite l_axilla_posterior_folds_pt 18'),
                                                       Shape(USE='HAnimSiteShape')])])]),
-                                                HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.1785501,-0.0032670002),
+                                                HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.1785501,-0.0032670002),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
                                                     children=[
@@ -2003,7 +2003,7 @@ None
                                                         children=[
                                                         TouchSensor(description='HAnimSite l_bideltoid_pt 96'),
                                                         Shape(USE='HAnimSiteShape')])])]),
-                                                  HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209252,0.9288,-0.0056295004),
+                                                  HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209252,0.9288,-0.0056295004),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                                                       children=[
@@ -2028,7 +2028,7 @@ None
                                                           children=[
                                                           TouchSensor(description='HAnimSite l_olecranon_pt 65'),
                                                           Shape(USE='HAnimSiteShape')])])]),
-                                                    HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.18193501,0.724275,-0.00502425),
+                                                    HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.18193501,0.724275,-0.00502425),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                                                         children=[
@@ -2048,7 +2048,7 @@ None
                                                             children=[
                                                             TouchSensor(description='HAnimSite l_ulnar_styloid_pt 70'),
                                                             Shape(USE='HAnimSiteShape')])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1812825,0.70605004,0.0193275),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1812825,0.70605004,0.0193275),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_trapezium',name='l_trapezium',
                                                           children=[
@@ -2064,7 +2064,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.18049501,0.69255006,0.0259875),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.18049501,0.69255006,0.0259875),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                                                             children=[
@@ -2084,7 +2084,7 @@ None
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_metacarpal_phalanx_2_pt 75'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181035,0.67275,0.035775002),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181035,0.67275,0.035775002),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                                                               children=[
@@ -2100,7 +2100,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.182655,0.654075,0.0496575),
+                                                            HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.182655,0.654075,0.0496575),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
                                                                 children=[
@@ -2120,7 +2120,7 @@ None
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite l_carpal_distal_phalanx_1_tip 101'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.1812825,0.70695,0.008417251),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.1812825,0.70695,0.008417251),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_trapezoid',name='l_trapezoid',
                                                           children=[
@@ -2136,7 +2136,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1812825,0.6876,0.009729),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1812825,0.6876,0.009729),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                                                             children=[
@@ -2152,7 +2152,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.18373501,0.6372,0.015075001),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.18373501,0.6372,0.015075001),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                                                               children=[
@@ -2168,7 +2168,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.606825,0.014184001),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.606825,0.014184001),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                                                                 children=[
@@ -2184,7 +2184,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.180675,0.58162504,0.013385251),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.180675,0.58162504,0.013385251),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
                                                                   children=[
@@ -2204,7 +2204,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_2_tip 102'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108001,0.708525,-0.0047970004),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108001,0.708525,-0.0047970004),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_capitate',name='l_capitate',
                                                           children=[
@@ -2220,7 +2220,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108001,0.6858,-0.0062527503),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108001,0.6858,-0.0062527503),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                                                             children=[
@@ -2240,7 +2240,7 @@ None
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_metacarpal_phalanx_3 76'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.63495,-0.00391725),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.63495,-0.00391725),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                                                               children=[
@@ -2256,7 +2256,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.603225,-0.003537),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.603225,-0.003537),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                                                                 children=[
@@ -2272,7 +2272,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.180675,0.575325,-0.0037597502),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.180675,0.575325,-0.0037597502),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
                                                                   children=[
@@ -2297,7 +2297,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_3_tip 103'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108001,0.70582503,-0.025740001),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108001,0.70582503,-0.025740001),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_hamate',name='l_hamate',
                                                           children=[
@@ -2313,7 +2313,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.18108001,0.68625003,-0.01991925),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.18108001,0.68625003,-0.01991925),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                                                             children=[
@@ -2329,7 +2329,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144025),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144025),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                                                               children=[
@@ -2345,7 +2345,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.18171,0.6066,-0.020646),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.18171,0.6066,-0.020646),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                                                                 children=[
@@ -2361,7 +2361,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.180675,0.580725,-0.019777501),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.180675,0.580725,-0.019777501),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
                                                                   children=[
@@ -2381,7 +2381,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_4_tip 104'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1816425,0.68827504,-0.032782502),
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1816425,0.68827504,-0.032782502),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                                                           children=[
@@ -2401,7 +2401,7 @@ None
                                                               children=[
                                                               TouchSensor(description='HAnimSite l_metacarpal_phalanx_5_pt 77'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.18333,0.6381,-0.0370575),
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.18333,0.6381,-0.0370575),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                                                             children=[
@@ -2417,7 +2417,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166502,0.62100005,-0.037147503),
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166502,0.62100005,-0.037147503),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                                                               children=[
@@ -2433,7 +2433,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.18081002,0.602325,-0.0369675),
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.18081002,0.602325,-0.0369675),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
                                                                 children=[
@@ -2453,7 +2453,7 @@ None
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite l_carpal_distal_phalanx_5_tip 105'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-                                            HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.038475003,1.2087001,-0.013785751),
+                                            HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.038475003,1.2087001,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
                                                 children=[
@@ -2473,7 +2473,7 @@ None
                                                     children=[
                                                     TouchSensor(description='HAnimSite r_clavicale_pt 19'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.12294001,1.191825,-0.012897001),
+                                              HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.12294001,1.191825,-0.012897001),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
                                                   children=[
@@ -2508,7 +2508,7 @@ None
                                                       children=[
                                                       TouchSensor(description='HAnimSite r_axilla_posterior_folds_pt 23'),
                                                       Shape(USE='HAnimSiteShape')])])]),
-                                                HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.16470002,1.1785501,-0.0032670002),
+                                                HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.16470002,1.1785501,-0.0032670002),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
                                                     children=[
@@ -2543,7 +2543,7 @@ None
                                                         children=[
                                                         TouchSensor(description='HAnimSite r_bideltoid_pt 97'),
                                                         Shape(USE='HAnimSiteShape')])])]),
-                                                  HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817325,0.9288,-0.0056295004),
+                                                  HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817325,0.9288,-0.0056295004),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                                                       children=[
@@ -2568,7 +2568,7 @@ None
                                                           children=[
                                                           TouchSensor(description='HAnimSite r_olecranon_pt 68'),
                                                           Shape(USE='HAnimSiteShape')])])]),
-                                                    HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.181575,0.724275,-0.005022),
+                                                    HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.181575,0.724275,-0.005022),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                                                         children=[
@@ -2588,7 +2588,7 @@ None
                                                             children=[
                                                             TouchSensor(description='HAnimSite r_ulnar_styloid_pt 73'),
                                                             Shape(USE='HAnimSiteShape')])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18096751,0.70605004,0.0193275),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18096751,0.70605004,0.0193275),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_trapezium',name='r_trapezium',
                                                           children=[
@@ -2604,7 +2604,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.180135,0.69255006,0.0259875),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.180135,0.69255006,0.0259875),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                                                             children=[
@@ -2624,7 +2624,7 @@ None
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_metacarpal_phalanx_2_pt 78'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065251,0.67275,0.035775002),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065251,0.67275,0.035775002),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                                                               children=[
@@ -2640,7 +2640,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227251,0.654075,0.0496575),
+                                                            HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227251,0.654075,0.0496575),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
                                                                 children=[
@@ -2660,7 +2660,7 @@ None
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite r_carpal_distal_phalanx_1_tip 106'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18096751,0.70695,0.008417251),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18096751,0.70695,0.008417251),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_trapezoid',name='r_trapezoid',
                                                           children=[
@@ -2676,7 +2676,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.18090001,0.6876,0.009729),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.18090001,0.6876,0.009729),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                                                             children=[
@@ -2692,7 +2692,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335252,0.6372,0.015075001),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335252,0.6372,0.015075001),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                                                               children=[
@@ -2708,7 +2708,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813275,0.606825,0.014184001),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813275,0.606825,0.014184001),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                                                                 children=[
@@ -2724,7 +2724,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1802925,0.58162504,0.013385251),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1802925,0.58162504,0.013385251),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
                                                                   children=[
@@ -2744,7 +2744,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_carpal_distal_phalanx_2_tip 107'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.0047970004),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.0047970004),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_capitate',name='r_capitate',
                                                           children=[
@@ -2760,7 +2760,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.0062527503),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.0062527503),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                                                             children=[
@@ -2780,7 +2780,7 @@ None
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_metacarpal_phalanx_3 79'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.18330751,0.63495,-0.00391725),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.18330751,0.63495,-0.00391725),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                                                               children=[
@@ -2796,7 +2796,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813275,0.603225,-0.003537),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813275,0.603225,-0.003537),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                                                                 children=[
@@ -2812,7 +2812,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1802925,0.575325,-0.0037597502),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1802925,0.575325,-0.0037597502),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
                                                                   children=[
@@ -2837,7 +2837,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_dactylion_pt 61'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70582503,-0.025740001),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70582503,-0.025740001),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_hamate',name='r_hamate',
                                                           children=[
@@ -2853,7 +2853,7 @@ None
 None 
 
                                                             )]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625003,-0.01991925),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625003,-0.01991925),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                                                             children=[
@@ -2869,7 +2869,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.18330751,0.63405,-0.02144025),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.18330751,0.63405,-0.02144025),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                                                               children=[
@@ -2885,7 +2885,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813275,0.6066,-0.020646),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813275,0.6066,-0.020646),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                                                                 children=[
@@ -2901,7 +2901,7 @@ None
 None 
 
                                                                   )]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1802925,0.580725,-0.019777501),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1802925,0.580725,-0.019777501),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
                                                                   children=[
@@ -2921,7 +2921,7 @@ None
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_carpal_distal_phalanx_4_tip 109'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827504,-0.032782502),
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827504,-0.032782502),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                                                           children=[
@@ -2941,7 +2941,7 @@ None
                                                               children=[
                                                               TouchSensor(description='HAnimSite r_metacarpal_phalanx_5_pt 80'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0370575),
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0370575),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                                                             children=[
@@ -2957,7 +2957,7 @@ None
 None 
 
                                                               )]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.18130499,0.62100005,-0.037147503),
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.18130499,0.62100005,-0.037147503),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                                                               children=[
@@ -2973,7 +2973,7 @@ None
 None 
 
                                                                 )]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045002,0.602325,-0.0369675),
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045002,0.602325,-0.0369675),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
                                                                 children=[

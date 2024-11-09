@@ -1,0 +1,29 @@
+plugins {
+    id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta4'
+    // id 'com.github.eerohele.saxon-gradle' version '1.0-SNAPSHOT'
+}
+
+tasks.register("allprojects") {
+        dependsOn ":graaljs:xslt"
+        dependsOn ":java:xslt"
+        dependsOn ":json:xslt"
+        dependsOn ":nodejs:xslt"
+        dependsOn ":python:xslt"
+        dependsOn ":turtle:xslt"
+}
+
+tasks.withType(Project) {
+
+    defaultTasks "allprojects"
+
+}
+/*
+task allxslt {
+    task graaljs xslt
+    task java xslt
+    task json xslt
+    task nodejs xslt
+    task python xslt
+    task turtle xslt
+}
+*/

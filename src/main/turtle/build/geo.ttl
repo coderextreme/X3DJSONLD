@@ -1,0 +1,231 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/geo.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2, :component_1_3, :component_1_4, :component_1_5, :component_1_6, :component_1_7, :component_1_8 ;
+  x3do:hasMeta :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'Scripting' .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'EnvironmentalEffects' ;
+  x3do:level 3 .
+:component_1_3 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shaders' ;
+  x3do:level 1 .
+:component_1_4 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'CubeMapTexturing' ;
+  x3do:level 1 .
+:component_1_5 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Texturing' ;
+  x3do:level 1 .
+:component_1_6 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Rendering' ;
+  x3do:level 1 .
+:component_1_7 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Grouping' ;
+  x3do:level 3 .
+:component_1_8 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Core' ;
+  x3do:level 1 .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'geo.x3d' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'a sphere' .
+:meta dcterms:title "geo.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d" .
+:meta dcterms:description "a sphere" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Tour, :Background_2_3, :Transform_2_4 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"ANY" "EXAMINE" "FLY" "LOOKAT"' .
+:Tour a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Tour' ;
+  x3do:description 'Tour Views' .
+:Background_2_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' ;
+  x3do:bottomUrl '"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' ;
+  x3do:frontUrl '"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' ;
+  x3do:leftUrl '"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' ;
+  x3do:rightUrl '"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' ;
+  x3do:topUrl '"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"' .
+:Transform_2_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_4_1 .
+:Shape_2_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_4 ;
+  x3do:hasGeometry :Sphere_2_4_1_1 ;
+  x3do:hasAppearance :Appearance_2_4_1_2 .
+:Sphere_2_4_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_4_1 .
+:Appearance_2_4_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1 ;
+  x3do:hasMaterial :Material_2_4_1_2_1 ;
+  x3do:hasTexture :texture ;
+  x3do:hasShaders :ComposedShader_2_4_1_2_3, :ComposedShader_2_4_1_2_4 .
+:Material_2_4_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_4_1_2 ;
+  x3do:diffuseColor ( 0.7 0.7 0.7 ) ;
+  x3do:specularColor ( 0.5 0.5 0.5 ) .
+:texture a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :Appearance_2_4_1_2 ;
+  x3do:hasBackTexture :ImageTexture_2_4_1_2_2_1 ;
+  x3do:hasBottomTexture :ImageTexture_2_4_1_2_2_2 ;
+  x3do:hasFrontTexture :ImageTexture_2_4_1_2_2_3 ;
+  x3do:hasLeftTexture :ImageTexture_2_4_1_2_2_4 ;
+  x3do:hasRightTexture :ImageTexture_2_4_1_2_2_5 ;
+  x3do:hasTopTexture :ImageTexture_2_4_1_2_2_6 ;
+  x3do:DEF 'texture' .
+:ImageTexture_2_4_1_2_2_1 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' .
+:ImageTexture_2_4_1_2_2_2 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' .
+:ImageTexture_2_4_1_2_2_3 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' .
+:ImageTexture_2_4_1_2_2_4 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' .
+:ImageTexture_2_4_1_2_2_5 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' .
+:ImageTexture_2_4_1_2_2_6 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"' .
+:ComposedShader_2_4_1_2_3 a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_4_1_2 ;
+  x3do:hasField :field_2_4_1_2_3_1, :field_2_4_1_2_3_2, :field_2_4_1_2_3_3, :field_2_4_1_2_3_4, :field_2_4_1_2_3_5 ;
+  x3do:hasParts :ShaderPart_2_4_1_2_3_6, :common ;
+  x3do:language 'GLSL' .
+:field_2_4_1_2_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:name 'chromaticDispertion' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.98 1 1.033 ) .
+:field_2_4_1_2_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:hasTexture :texture-USE-1 ;
+  x3do:name 'cube' ;
+  x3do:type 'SFNode' ;
+  x3do:accessType 'inputOutput' .
+:texture-USE-1 a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :field_2_4_1_2_3_2 ;
+  owl:sameAs :texture . # DEF matching this USE
+:field_2_4_1_2_3_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:name 'bias' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_4_1_2_3_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_4_1_2_3_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:name 'power' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 2 .
+:ShaderPart_2_4_1_2_3_6 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:url '"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' .
+:common a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :ComposedShader_2_4_1_2_3 ;
+  x3do:DEF 'common' ;
+  x3do:url '"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' ;
+  x3do:type 'FRAGMENT' .
+:ComposedShader_2_4_1_2_4 a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_4_1_2 ;
+  x3do:hasField :field_2_4_1_2_4_1, :field_2_4_1_2_4_2, :field_2_4_1_2_4_3, :field_2_4_1_2_4_4, :field_2_4_1_2_4_5 ;
+  x3do:hasParts :ShaderPart_2_4_1_2_4_6, :ShaderPart_2_4_1_2_4_7 ;
+  x3do:language 'GLSL' .
+:field_2_4_1_2_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:name 'chromaticDispertion' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.98 1 1.033 ) .
+:field_2_4_1_2_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:hasTexture :texture-USE-2 ;
+  x3do:name 'cube' ;
+  x3do:type 'SFNode' ;
+  x3do:accessType 'initializeOnly' .
+:texture-USE-2 a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :field_2_4_1_2_4_2 ;
+  owl:sameAs :texture . # DEF matching this USE
+:field_2_4_1_2_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:name 'bias' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_4_1_2_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:name 'scale' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_4_1_2_4_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:name 'power' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 2 .
+:ShaderPart_2_4_1_2_4_6 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:url '"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' .
+:ShaderPart_2_4_1_2_4_7 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :ComposedShader_2_4_1_2_4 ;
+  x3do:url '"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' ;
+  x3do:type 'FRAGMENT' .

@@ -1,0 +1,57 @@
+Blender achievements
+
+	* Joints and skin animation import and export in Blender (Joe kicks a ball).  Overcome by events.
+
+	* Gramps export from Blender (presented last year)
+
+	* Gramps import into Blender (skin was deformed).
+
+	* Loading HAnimSite geometry into Blender and exporting to glTF and X3D. (pictures present already, Jin 20f)
+
+	* Working simple box animation imports to Blender, especially with X3D XML. (video possible)
+
+	* Loading HAnim objects as Blender objects of type EMPTY.  Also Transform, Group, Billboard, TouchSensor, Shape, etc. (can show Blender hierarchy)
+
+	* Creating a naming schema for X3D object inside blender.  We hope this will allow us to retain the X3D structure on import/export.
+
+THREE.js achievements
+
+	* JoeKick mesh and circles loaded.
+
+Just Humans/Jaminate achievements
+
+	* Appending an LOA4 skeleton, Jin20f, consisting of HAnimJoints, HAnimSegments and HAnimSites, with HAnimSite geometry.  (No DEF/USE)
+
+	* Prototype animation concatenator.
+
+	* Prototype de-USE-ifier.
+
+Lessons learned, and learning
+
+	* It's difficult to attach anything to Blender bones.  The correct approach is to attach both to the armature and the Blender bone.
+
+	* Try to use EMPTY objects instead of Blender bones.  We're not sure if this actually works well or not yet.
+
+	* glTF exporter uses Blender bones when exporting skin and joints.
+
+	* building up from simple box examples to full HAnim animation with Blender empties isn't easy.
+
+Goals
+
+	* Further development of DEF/USE import export in Blender.
+
+	* Adding LineSets and IndexedFaceSets to Humanoid (skin, skeleton geometry).
+
+	* Importing Spheres and Boxes into Blender (only one Sphere shows with DEF/USE).
+
+	* Add Sphere and Boxes without DEF/USE to Jin20f.  Try to import and export.
+
+	* Attempt to attach skin to empties, not armature.  Alternatively, add armature without Blender bones.
+
+	* Load skin weight information into vertex groups indexed by HAnimJoint empty (not Blender bone).
+
+	* Extend the <XML Tag>.<DEF/USE>.<id> naming structure to all objects loaded into Blender.
+
+	* Blender implemation of HAnimDisplacer.
+
+	* Leveraging parts of VRMLLoader in Three.JS when loading HAnim.

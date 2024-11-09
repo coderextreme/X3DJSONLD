@@ -20,12 +20,12 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> *enter description here, short-sentence summaries preferred*. </p>
- <p> Related links:  source bumpfreewrlsliders.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source bumpyfreewrlsliders.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.bumpfreewrlsliders&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.bumpyfreewrlsliders&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -126,10 +126,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Doug Sanden, Christoph Valentin, John Carlson
  */
 
-public class bumpfreewrlsliders
+public class bumpyfreewrlsliders
 {
 	/** Default constructor to create this object. */
-	public bumpfreewrlsliders ()
+	public bumpyfreewrlsliders ()
 	{
 	  initialize();
 	}
@@ -189,12 +189,12 @@ public class bumpfreewrlsliders
           .addComments(" Arrow X ")
           .addChild(new Transform().setRotation(0.0,0.0,-1.0,1.57).setTranslation(25.0,0.0,0.0)
             .addChild(new Shape()
-              .setGeometry(new Cylinder("Shaft").setHeight(50).setRadius(.35))
+              .setGeometry(new Cylinder("Shaft").setHeight(50.0).setRadius(.35))
               .setAppearance(new Appearance()
                 .setMaterial(new Material("RED").setDiffuseColor(1.0,0.0,0.0).setEmissiveColor(1.0,0.0,0.0)))))
           .addChild(new Transform().setRotation(0.0,0.0,-1.0,1.57).setTranslation(50.0,0.0,0.0)
             .addChild(new Shape()
-              .setGeometry(new Cone("Tip").setBottomRadius(.8).setHeight(3))
+              .setGeometry(new Cone("Tip").setBottomRadius(.8).setHeight(3.0))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("RED")))))
           .addComments(" Arrow Y ")
@@ -226,7 +226,7 @@ public class bumpfreewrlsliders
           .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
           .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(40))
+            .setGeometry(new Sphere().setRadius(0.01))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
               .setTexture(new ComposedCubeMapTexture("texture")
@@ -252,10 +252,10 @@ public class bumpfreewrlsliders
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/freewrl_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"}))))))
         .addComments(" DIS multiuser facilities ")
         .addChild(new DISEntityManager("EntityManager").setNetworkMode("networkReader")
-          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new String[] {"../data/Leif8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3dv"}))
-          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new String[] {"../data/Lily8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3dv"}))
-          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(new String[] {"../data/Tufani8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3dv"}))
-          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(new String[] {"../data/Gramps8Final.x3dv","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3dv"})))
+          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new String[] {"../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"}))
+          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new String[] {"../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"}))
+          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(new String[] {"../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"}))
+          .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(new String[] {"../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"})))
         .addChild(new Collision().setEnabled(false)
           .addChild(new Group("AvatarHolder")))
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("addedEntities").setToNode("AvatarHolder").setToField("addChildren"))
@@ -454,7 +454,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return bumpfreewrlsliders model
+	 * @return bumpyfreewrlsliders model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -473,7 +473,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new bumpfreewrlsliders().getX3dModel();
+        X3D thisExampleX3dModel = new bumpyfreewrlsliders().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -506,7 +506,7 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.bumpfreewrlsliders\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.bumpyfreewrlsliders\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -515,16 +515,16 @@ ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.bumpfreewrlsliders self-validation test results: ");
+                System.out.print("net.x3djsonld.data.bumpyfreewrlsliders self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./bumpfreewrlsliders_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./bumpfreewrlsliders_JavaExport.x3d"; 
-                String filenameX3DV = "./bumpfreewrlsliders_JavaExport.x3dv"; 
-                String filenameJSON = "./bumpfreewrlsliders_JavaExport.json";
+                // ./bumpyfreewrlsliders_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./bumpyfreewrlsliders_JavaExport.x3d"; 
+                String filenameX3DV = "./bumpyfreewrlsliders_JavaExport.x3dv"; 
+                String filenameJSON = "./bumpyfreewrlsliders_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

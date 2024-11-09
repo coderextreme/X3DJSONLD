@@ -1,0 +1,24 @@
+plugins {
+    id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta4'
+    // id 'com.github.eerohele.saxon-gradle' version '1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    saxon
+}
+
+dependencies {
+    saxon 'net.sf.saxon:Saxon-HE:12.5'
+}
+
+xslt {
+    classpath.from(configurations.saxon)
+    stylesheet '../../src/main/lib/stylesheets/X3dToPython.xslt'
+    input fileTree(dir: '../../src/main/data', include: '*.x3d', exclude: '*new*')
+    outputFileExtension 'py'
+    outputDirectoryLayout 'nested'
+}

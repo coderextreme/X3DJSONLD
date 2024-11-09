@@ -8,7 +8,7 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='17 February 2024' name='modified'/>
+    <meta content='27 October 2024' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
     <meta content='rescale all contained length values from inches to meters' name='TODO'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
@@ -24,6 +24,7 @@
   </head>
   <Scene>
     <WorldInfo title='JinLOA1.x3d'/>
+    <Background skyColor='1 1 1'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='JinLOA1' position='0 1 3'/>
     <HAnimHumanoid DEF='hanim_JinLOA1' loa='1' name='JinLOA1' scale='0.0225 0.0225 0.0225' version='2.0'>

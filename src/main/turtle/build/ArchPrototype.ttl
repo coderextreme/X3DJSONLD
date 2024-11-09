@@ -1,0 +1,431 @@
+@prefix :        <http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ArchPrototype.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.' ;
+  x3do:name 'description' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Michele Foti, Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '15 December 2014' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '27 November 2015' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ArchModelingDiagrams.pdf' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://en.wikipedia.org/wiki/Arch' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "ArchPrototype.x3d" .
+:meta dcterms:description "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js." .
+:meta dcterms:description "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information." .
+:meta dcterms:creator "Michele Foti, Don Brutzman" .
+:meta dcterms:created "15 December 2014" .
+:meta dcterms:modified "27 November 2015" .
+:meta dcterms:reference "ArchModelingDiagrams.pdf" .
+:meta dcterms:reference "https://en.wikipedia.org/wiki/Arch" .
+:meta dcterms:identifier "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1 ;
+  x3do:hasChildren :ArchInstance, :CoordinateAxes .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:appinfo 'Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.' ;
+  x3do:name 'ArchPrototype' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1, :field_2_1_1_2, :field_2_1_1_3, :field_2_1_1_4, :field_2_1_1_5, :field_2_1_1_6, :field_2_1_1_7, :field_2_1_1_8, :field_2_1_1_9, :field_2_1_1_10, :field_2_1_1_11, :field_2_1_1_12, :field_2_1_1_13, :field_2_1_1_14 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'color of arch' ;
+  x3do:name 'diffuseColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 0.2 0.8 0.8 ) .
+:field_2_1_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'color of arch' ;
+  x3do:name 'emissiveColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 0.2 0.8 0.8 ) .
+:field_2_1_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference' ;
+  x3do:name 'clearSpanWidth' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 4 .
+:field_2_1_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference' ;
+  x3do:name 'riseHeight' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 2 .
+:field_2_1_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'depth' ;
+  x3do:name 'depth' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 3 .
+:field_2_1_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'topAbutmentHeight:topAbutmentHeight=0 means no topAbutment' ;
+  x3do:name 'topAbutmentHeight' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_1_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'pierWidth:pierWidtht=0 means no pierWidth' ;
+  x3do:name 'pierWidth' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_1_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'pierHeight: pierHeight=0 means no pierHeight' ;
+  x3do:name 'pierHeight' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1 .
+:field_2_1_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width' ;
+  x3do:name 'archHalf' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.' ;
+  x3do:name 'archHalfExtensionWidth' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0 .
+:field_2_1_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.' ;
+  x3do:name 'onlyIntrados' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.' ;
+  x3do:name 'archFilled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_1_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.' ;
+  x3do:name 'archHalfFilled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_1_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.' ;
+  x3do:name 'lintel' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :ArchTransform, :ArchPrototypeScript ;
+  x3do:hasROUTE :ROUTE_2_1_2_3, :ROUTE_2_1_2_4, :ROUTE_2_1_2_5 .
+:ArchTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasChildren :Arch ;
+  x3do:DEF 'ArchTransform' .
+:Arch a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :ArchTransform ;
+  x3do:hasGeometry :ArchIndex ;
+  x3do:hasAppearance :Appearance_2_1_2_1_1_2 ;
+  x3do:DEF 'Arch' .
+:ArchIndex a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Arch ;
+  x3do:hasCoord :ArchChord ;
+  x3do:DEF 'ArchIndex' ;
+  x3do:convex false ;
+  x3do:solid false .
+:ArchChord a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :ArchIndex ;
+  x3do:DEF 'ArchChord' .
+:Appearance_2_1_2_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Arch ;
+  x3do:hasMaterial :MaterialNode .
+:MaterialNode a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_1_1_2 ;
+  x3do:hasIS :IS_2_1_2_1_1_2_1_1 ;
+  x3do:DEF 'MaterialNode' .
+:IS_2_1_2_1_1_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :MaterialNode ;
+  x3do:hasConnect :connect_2_1_2_1_1_2_1_1_1, :connect_2_1_2_1_1_2_1_1_2 .
+:connect_2_1_2_1_1_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1_2_1_1 ;
+  x3do:nodeField 'emissiveColor' ;
+  x3do:protoField 'emissiveColor' .
+:connect_2_1_2_1_1_2_1_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1_2_1_1 ;
+  x3do:nodeField 'diffuseColor' ;
+  x3do:protoField 'diffuseColor' .
+:ArchPrototypeScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasField :field_2_1_2_2_1, :field_2_1_2_2_2, :field_2_1_2_2_3, :field_2_1_2_2_4, :field_2_1_2_2_5, :field_2_1_2_2_6, :field_2_1_2_2_7, :field_2_1_2_2_8, :field_2_1_2_2_9, :field_2_1_2_2_10, :field_2_1_2_2_11, :field_2_1_2_2_12, :field_2_1_2_2_13, :field_2_1_2_2_14, :field_2_1_2_2_15 ;
+  x3do:hasIS :IS_2_1_2_2_16 ;
+  x3do:DEF 'ArchPrototypeScript' ;
+  x3do:url '"../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"' .
+:field_2_1_2_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for clearSpanWidth parameter' ;
+  x3do:name 'clearSpanWidth' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for riseHeight parameter' ;
+  x3do:name 'riseHeight' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for depth parameter' ;
+  x3do:name 'depth' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for topAbutmentHeight parameter' ;
+  x3do:name 'topAbutmentHeight' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for pierWidth parameter' ;
+  x3do:name 'pierWidth' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for pierHeight parameter' ;
+  x3do:name 'pierHeight' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for archHalf parameter' ;
+  x3do:name 'archHalf' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_2_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for archHalfExtensionWidth parameter' ;
+  x3do:name 'archHalfExtensionWidth' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_2_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for onlyIntrados parameter' ;
+  x3do:name 'onlyIntrados' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_2_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for archFilled parameter' ;
+  x3do:name 'archFilled' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_2_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for archHalfFilled parameter' ;
+  x3do:name 'archHalfFilled' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_2_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'user or default input for lintel parameter' ;
+  x3do:name 'lintel' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_2_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth' ;
+  x3do:name 'computedScale' ;
+  x3do:type 'SFVec3f' .
+:field_2_1_2_2_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'send computed points to the Coordinate node' ;
+  x3do:name 'pointOut' ;
+  x3do:type 'MFVec3f' .
+:field_2_1_2_2_15 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'send computed indices to the IndexedFaceSet node' ;
+  x3do:name 'indexOut' ;
+  x3do:type 'MFInt32' .
+:IS_2_1_2_2_16 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :ArchPrototypeScript ;
+  x3do:hasConnect :connect_2_1_2_2_16_1, :connect_2_1_2_2_16_2, :connect_2_1_2_2_16_3, :connect_2_1_2_2_16_4, :connect_2_1_2_2_16_5, :connect_2_1_2_2_16_6, :connect_2_1_2_2_16_7, :connect_2_1_2_2_16_8, :connect_2_1_2_2_16_9, :connect_2_1_2_2_16_10, :connect_2_1_2_2_16_11, :connect_2_1_2_2_16_12 .
+:connect_2_1_2_2_16_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'clearSpanWidth' ;
+  x3do:protoField 'clearSpanWidth' .
+:connect_2_1_2_2_16_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'riseHeight' ;
+  x3do:protoField 'riseHeight' .
+:connect_2_1_2_2_16_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'depth' ;
+  x3do:protoField 'depth' .
+:connect_2_1_2_2_16_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'pierWidth' ;
+  x3do:protoField 'pierWidth' .
+:connect_2_1_2_2_16_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'topAbutmentHeight' ;
+  x3do:protoField 'topAbutmentHeight' .
+:connect_2_1_2_2_16_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'pierHeight' ;
+  x3do:protoField 'pierHeight' .
+:connect_2_1_2_2_16_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'archHalf' ;
+  x3do:protoField 'archHalf' .
+:connect_2_1_2_2_16_8 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'archHalfExtensionWidth' ;
+  x3do:protoField 'archHalfExtensionWidth' .
+:connect_2_1_2_2_16_9 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'onlyIntrados' ;
+  x3do:protoField 'onlyIntrados' .
+:connect_2_1_2_2_16_10 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'archFilled' ;
+  x3do:protoField 'archFilled' .
+:connect_2_1_2_2_16_11 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'archHalfFilled' ;
+  x3do:protoField 'archHalfFilled' .
+:connect_2_1_2_2_16_12 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_16 ;
+  x3do:nodeField 'lintel' ;
+  x3do:protoField 'lintel' .
+:ROUTE_2_1_2_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'computedScale' ;
+  x3do:fromNode 'ArchPrototypeScript' ;
+  x3do:toField 'scale' ;
+  x3do:toNode 'ArchTransform' .
+:ROUTE_2_1_2_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'pointOut' ;
+  x3do:fromNode 'ArchPrototypeScript' ;
+  x3do:toField 'point' ;
+  x3do:toNode 'ArchChord' .
+:ROUTE_2_1_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'indexOut' ;
+  x3do:fromNode 'ArchPrototypeScript' ;
+  x3do:toField 'set_coordIndex' ;
+  x3do:toNode 'ArchIndex' .
+:ArchInstance a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_2_1, :fieldValue_2_2_2, :fieldValue_2_2_3, :fieldValue_2_2_4, :fieldValue_2_2_5, :fieldValue_2_2_6, :fieldValue_2_2_7, :fieldValue_2_2_8 ;
+  x3do:DEF 'ArchInstance' ;
+  x3do:name 'ArchPrototype' .
+:fieldValue_2_2_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'diffuseColor' ;
+  x3do:value '0.5 0.3 0.6' .
+:fieldValue_2_2_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'emissiveColor' ;
+  x3do:value '0.5 0.3 0.6' .
+:fieldValue_2_2_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'clearSpanWidth' ;
+  x3do:value '5' .
+:fieldValue_2_2_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'riseHeight' ;
+  x3do:value '2.5' .
+:fieldValue_2_2_5 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'depth' ;
+  x3do:value '2' .
+:fieldValue_2_2_6 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'topAbutmentHeight' ;
+  x3do:value '0.6' .
+:fieldValue_2_2_7 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'pierWidth' ;
+  x3do:value '1' .
+:fieldValue_2_2_8 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ArchInstance ;
+  x3do:name 'pierHeight' ;
+  x3do:value '2' .
+:CoordinateAxes a owl:NamedIndividual, x3do:Inline ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'CoordinateAxes' ;
+  x3do:url '"../data/CoordinateAxes.x3d"' .

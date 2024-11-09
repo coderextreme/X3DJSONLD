@@ -1,0 +1,367 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'Scripting' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'flowers2.x3d' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'transcriber' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 January 2005' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '21 March 2018' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)' ;
+  x3do:name 'description' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'manually written' ;
+  x3do:name 'generator' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "flowers2.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:created "23 January 2005" .
+:meta dcterms:modified "21 March 2018" .
+:meta dcterms:description "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d" .
+:meta dcterms:generator "manually written" .
+:meta dcterms:license "https://www.web3d.org/x3d/content/examples/license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Viewpoint_2_2, :Group_2_3 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Two mathematical orbitals' ;
+  x3do:position ( 0 0 50 ) .
+:Group_2_3 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :DirectionalLight_2_3_1, :ProtoInstance_2_3_3, :ProtoInstance_2_3_4 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_3_2 .
+:DirectionalLight_2_3_1 a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:direction ( 1 1 1 ) .
+:ProtoDeclare_2_3_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:hasProtoInterface :ProtoInterface_2_3_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_3_2_2 ;
+  x3do:name 'orbit' .
+:ProtoInterface_2_3_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_3_2 ;
+  x3do:hasField :field_2_3_2_1_1, :field_2_3_2_1_2, :field_2_3_2_1_3, :field_2_3_2_1_4 .
+:field_2_3_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_2_1 ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( -8 0 0 ) .
+:field_2_3_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_2_1 ;
+  x3do:name 'diffuseColor' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 1 0.5 0 ) .
+:field_2_3_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_2_1 ;
+  x3do:name 'specularColor' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 1 0.5 0 ) .
+:field_2_3_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_2_1 ;
+  x3do:name 'transparency' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.75 .
+:ProtoBody_2_3_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_3_2 ;
+  x3do:hasChildren :Group_2_3_2_2_1 .
+:Group_2_3_2_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_3_2_2 ;
+  x3do:hasChildren :Clock, :OrbitPath, :OrbitTransform, :OrbitScript ;
+  x3do:hasROUTE :ROUTE_2_3_2_2_1_5, :ROUTE_2_3_2_2_1_6, :ROUTE_2_3_2_2_1_7, :ROUTE_2_3_2_2_1_8, :ROUTE_2_3_2_2_1_9 .
+:Clock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:DEF 'Clock' ;
+  x3do:cycleInterval '16' ;
+  x3do:loop true .
+:OrbitPath a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:DEF 'OrbitPath' ;
+  x3do:key ( 0.0 0.50 1.0 ) ;
+  x3do:keyValue ( 1.0 0.0 0.0 0.0 1.0 0.0 0.0 3.14 1.0 0.0 0.0 6.28 ) .
+:OrbitTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:hasIS :IS_2_3_2_2_1_3_1 ;
+  x3do:hasChildren :Shape_2_3_2_2_1_3_2 ;
+  x3do:DEF 'OrbitTransform' .
+:IS_2_3_2_2_1_3_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :OrbitTransform ;
+  x3do:hasConnect :connect_2_3_2_2_1_3_1_1 .
+:connect_2_3_2_2_1_3_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_2_1_3_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'translation' .
+:Shape_2_3_2_2_1_3_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrbitTransform ;
+  x3do:hasAppearance :Appearance_2_3_2_2_1_3_2_1 ;
+  x3do:hasGeometry :Orbit .
+:Appearance_2_3_2_2_1_3_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_2_2_1_3_2 ;
+  x3do:hasMaterial :Material_2_3_2_2_1_3_2_1_1 .
+:Material_2_3_2_2_1_3_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_2_2_1_3_2_1 ;
+  x3do:hasIS :IS_2_3_2_2_1_3_2_1_1_1 .
+:IS_2_3_2_2_1_3_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Material_2_3_2_2_1_3_2_1_1 ;
+  x3do:hasConnect :connect_2_3_2_2_1_3_2_1_1_1_1, :connect_2_3_2_2_1_3_2_1_1_1_2, :connect_2_3_2_2_1_3_2_1_1_1_3 .
+:connect_2_3_2_2_1_3_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_2_1_3_2_1_1_1 ;
+  x3do:nodeField 'diffuseColor' ;
+  x3do:protoField 'diffuseColor' .
+:connect_2_3_2_2_1_3_2_1_1_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_2_1_3_2_1_1_1 ;
+  x3do:nodeField 'specularColor' ;
+  x3do:protoField 'specularColor' .
+:connect_2_3_2_2_1_3_2_1_1_1_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_2_1_3_2_1_1_1 ;
+  x3do:nodeField 'transparency' ;
+  x3do:protoField 'transparency' .
+:Orbit a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_2_2_1_3_2 ;
+  x3do:hasCoord :OrbitCoordinates ;
+  x3do:ccw false ;
+  x3do:convex false ;
+  x3do:coordIndex ( 0 1 2 -1 ) ;
+  x3do:DEF 'Orbit' .
+:OrbitCoordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Orbit ;
+  x3do:DEF 'OrbitCoordinates' ;
+  x3do:point ( 0 0 1 0 1 0 1 0 0 ) .
+:OrbitScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:hasField :field_2_3_2_2_1_4_1, :field_2_3_2_2_1_4_2, :field_2_3_2_2_1_4_3, :field_2_3_2_2_1_4_4, :field_2_3_2_2_1_4_5, :field_2_3_2_2_1_4_6, :field_2_3_2_2_1_4_7, :field_2_3_2_2_1_4_8 ;
+  x3do:DEF 'OrbitScript' ;
+  x3do:sourceCode """
+ecmascript:
+
+			function initialize() {
+			     generateCoordinates();
+			     var arrIndex = 0;
+			     for (var i = 0; i < resolution-1; i++) {
+				for (var j = 0; j < resolution-1; j++) {
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
+				}
+			    }
+			}
+
+			function generateCoordinates() {
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (resolution-1);
+			     var arrIndex = 0;
+			     for (var i = 0; i < resolution; i++) {
+				for (var j = 0; j < resolution; j++) {
+					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+					coordinates[arrIndex++] = new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					);
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			}
+
+			function set_fraction(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					e += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 1:
+					f += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 2:
+					g += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 3:
+					h += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				}
+				if (e < 1) {
+					f = 10;
+				}
+				if (f < 1) {
+					f = 10;
+				}
+				if (g < 1) {
+					g = 4;
+				}
+				if (h < 1) {
+					h = 4;
+				}
+				generateCoordinates();
+			}
+""" .
+:field_2_3_2_2_1_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_2_3_2_2_1_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'coordinates' ;
+  x3do:type 'MFVec3f' .
+:field_2_3_2_2_1_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'coordIndexes' ;
+  x3do:type 'MFInt32' .
+:field_2_3_2_2_1_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'e' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5 .
+:field_2_3_2_2_1_4_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'f' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5 .
+:field_2_3_2_2_1_4_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'g' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5 .
+:field_2_3_2_2_1_4_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'h' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5 .
+:field_2_3_2_2_1_4_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'resolution' ;
+  x3do:type 'SFInt32' ;
+  x3do:value 50 .
+:ROUTE_2_3_2_2_1_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordIndexes' ;
+  x3do:toNode 'Orbit' ;
+  x3do:toField 'set_coordIndex' .
+:ROUTE_2_3_2_2_1_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordinates' ;
+  x3do:toNode 'OrbitCoordinates' ;
+  x3do:toField 'point' .
+:ROUTE_2_3_2_2_1_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:fromNode 'Clock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'OrbitScript' ;
+  x3do:toField 'set_fraction' .
+:ROUTE_2_3_2_2_1_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:fromNode 'OrbitPath' ;
+  x3do:fromField 'value_changed' ;
+  x3do:toNode 'OrbitTransform' ;
+  x3do:toField 'rotation' .
+:ROUTE_2_3_2_2_1_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_3_2_2_1 ;
+  x3do:fromNode 'Clock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'OrbitPath' ;
+  x3do:toField 'set_fraction' .
+:ProtoInstance_2_3_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:hasFieldValue :fieldValue_2_3_3_1, :fieldValue_2_3_3_2, :fieldValue_2_3_3_3, :fieldValue_2_3_3_4 ;
+  x3do:name 'orbit' .
+:fieldValue_2_3_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_3 ;
+  x3do:name 'translation' ;
+  x3do:value '-8 0 0' .
+:fieldValue_2_3_3_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_3 ;
+  x3do:name 'diffuseColor' ;
+  x3do:value '1 0.5 0' .
+:fieldValue_2_3_3_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_3 ;
+  x3do:name 'specularColor' ;
+  x3do:value '1 0.5 0' .
+:fieldValue_2_3_3_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_3 ;
+  x3do:name 'transparency' ;
+  x3do:value '0.75' .
+:ProtoInstance_2_3_4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:hasFieldValue :fieldValue_2_3_4_1, :fieldValue_2_3_4_2, :fieldValue_2_3_4_3, :fieldValue_2_3_4_4 ;
+  x3do:name 'orbit' .
+:fieldValue_2_3_4_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_4 ;
+  x3do:name 'translation' ;
+  x3do:value '8 0 0' .
+:fieldValue_2_3_4_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_4 ;
+  x3do:name 'diffuseColor' ;
+  x3do:value '0 0.5 1' .
+:fieldValue_2_3_4_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_4 ;
+  x3do:name 'specularColor' ;
+  x3do:value '0 0.5 1' .
+:fieldValue_2_3_4_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_4 ;
+  x3do:name 'transparency' ;
+  x3do:value '0.5' .

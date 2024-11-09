@@ -1,0 +1,325 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2, :component_1_3, :component_1_4, :component_1_5, :component_1_6, :component_1_7, :component_1_8, :component_1_9 ;
+  x3do:hasMeta :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'Scripting' .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'EnvironmentalEffects' ;
+  x3do:level 3 .
+:component_1_3 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shaders' ;
+  x3do:level 1 .
+:component_1_4 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'CubeMapTexturing' ;
+  x3do:level 1 .
+:component_1_5 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Texturing' ;
+  x3do:level 1 .
+:component_1_6 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Rendering' ;
+  x3do:level 1 .
+:component_1_7 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shape' ;
+  x3do:level 4 .
+:component_1_8 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Grouping' ;
+  x3do:level 3 .
+:component_1_9 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Core' ;
+  x3do:level 1 .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'flowers4.x3d' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'an animated flower' .
+:meta dcterms:title "flowers4.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d" .
+:meta dcterms:description "an animated flower" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Background_2_2, :transform, :OrbitScript, :Clock ;
+  x3do:hasROUTE :ROUTE_2_6, :ROUTE_2_7, :ROUTE_2_8 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ;
+  x3do:bottomUrl '"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ;
+  x3do:frontUrl '"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ;
+  x3do:leftUrl '"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ;
+  x3do:rightUrl '"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ;
+  x3do:topUrl '"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:transform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 ;
+  x3do:DEF 'transform' .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :transform ;
+  x3do:hasAppearance :Appearance_2_3_1_1 ;
+  x3do:hasGeometry :Orbit .
+:Appearance_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasMaterial :Material_2_3_1_1_1 ;
+  x3do:hasTexture :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:hasShaders :shader .
+:Material_2_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1 ;
+  x3do:diffuseColor ( .7 .7 .7 ) ;
+  x3do:specularColor ( .5 .5 .5 ) .
+:ComposedCubeMapTexture_2_3_1_1_2 a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :Appearance_2_3_1_1 ;
+  x3do:hasBackTexture :ImageTexture_2_3_1_1_2_1 ;
+  x3do:hasBottomTexture :ImageTexture_2_3_1_1_2_2 ;
+  x3do:hasFrontTexture :ImageTexture_2_3_1_1_2_3 ;
+  x3do:hasLeftTexture :ImageTexture_2_3_1_1_2_4 ;
+  x3do:hasRightTexture :ImageTexture_2_3_1_1_2_5 ;
+  x3do:hasTopTexture :ImageTexture_2_3_1_1_2_6 .
+:ImageTexture_2_3_1_1_2_1 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' .
+:ImageTexture_2_3_1_1_2_2 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' .
+:ImageTexture_2_3_1_1_2_3 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' .
+:ImageTexture_2_3_1_1_2_4 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' .
+:ImageTexture_2_3_1_1_2_5 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' .
+:ImageTexture_2_3_1_1_2_6 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ComposedCubeMapTexture_2_3_1_1_2 ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:shader a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_3_1_1 ;
+  x3do:hasField :field_2_3_1_1_3_1, :field_2_3_1_1_3_2, :field_2_3_1_1_3_3, :field_2_3_1_1_3_4, :field_2_3_1_1_3_5 ;
+  x3do:hasParts :ShaderPart_2_3_1_1_3_6, :ShaderPart_2_3_1_1_3_7 ;
+  x3do:DEF 'shader' ;
+  x3do:language 'GLSL' .
+:field_2_3_1_1_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :shader ;
+  x3do:name 'cube' ;
+  x3do:type 'SFInt32' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0 .
+:field_2_3_1_1_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :shader ;
+  x3do:name 'chromaticDispertion' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.98 1.0 1.033 ) .
+:field_2_3_1_1_3_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :shader ;
+  x3do:name 'bias' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:field_2_3_1_1_3_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :shader ;
+  x3do:name 'scale' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:field_2_3_1_1_3_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :shader ;
+  x3do:name 'power' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 2 .
+:ShaderPart_2_3_1_1_3_6 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :shader ;
+  x3do:url '"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' .
+:ShaderPart_2_3_1_1_3_7 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :shader ;
+  x3do:url '"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' ;
+  x3do:type 'FRAGMENT' .
+:Orbit a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasCoord :OrbitCoordinates ;
+  x3do:convex false ;
+  x3do:DEF 'Orbit' .
+:OrbitCoordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Orbit ;
+  x3do:DEF 'OrbitCoordinates' .
+:OrbitScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_4_1, :field_2_4_2, :field_2_4_3, :field_2_4_4, :field_2_4_5, :field_2_4_6, :field_2_4_7 ;
+  x3do:DEF 'OrbitScript' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+     var resolution = 100;
+     updateCoordinates(resolution);
+     var cis = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     cis.push(i*resolution+j);
+	     cis.push(i*resolution+j+1);
+	     cis.push((i+1)*resolution+j+1);
+	     cis.push((i+1)*resolution+j);
+	     cis.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(...cis);
+}
+
+function updateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var crds = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		crds.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(...crds);
+}
+
+function set_fraction(fraction, eventTime) {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (e < 1) {
+		e = 10;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	var resolution = 100;
+	updateCoordinates(resolution);
+}
+""" .
+:field_2_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_2_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'coordinates' ;
+  x3do:type 'MFVec3f' .
+:field_2_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'coordIndexes' ;
+  x3do:type 'MFInt32' .
+:field_2_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:name 'e' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_4_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:name 'f' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_4_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:name 'g' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_4_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:name 'h' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:Clock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Clock' ;
+  x3do:cycleInterval '16' ;
+  x3do:loop true .
+:ROUTE_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'coordIndexes' ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:toField 'set_coordIndex' ;
+  x3do:toNode 'Orbit' .
+:ROUTE_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'coordinates' ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:toField 'set_point' ;
+  x3do:toNode 'OrbitCoordinates' .
+:ROUTE_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'Clock' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'OrbitScript' .

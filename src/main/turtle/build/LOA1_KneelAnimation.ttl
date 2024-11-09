@@ -1,0 +1,557 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'LOA1_KneelAnimation.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Humanoid animation prototype reusable by any Humanoid.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Tom Miller' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Curt Blais' ;
+  x3do:name 'translator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '1 December 2001' ;
+  x3do:name 'translated' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 May 2020' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.HAnim.org' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://HAnim.org/Models' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://HAnim.org/Nodes' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Nancy kneel Animation HAnim 2001' ;
+  x3do:name 'subject' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "LOA1_KneelAnimation.x3d" .
+:meta dcterms:description "Humanoid animation prototype reusable by any Humanoid." .
+:meta dcterms:creator "Tom Miller" .
+:meta dcterms:translator "Curt Blais" .
+:meta dcterms:translated "1 December 2001" .
+:meta dcterms:modified "23 May 2020" .
+:meta dcterms:reference "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl" .
+:meta dcterms:reference "http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl" .
+:meta dcterms:reference "http://www.HAnim.org" .
+:meta dcterms:reference "http://HAnim.org/Models" .
+:meta dcterms:reference "http://HAnim.org/Nodes" .
+:meta dcterms:subject "Nancy kneel Animation HAnim 2001" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Anchor_2_3 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_2 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'LOA1_KneelAnimation.x3d' .
+:ProtoDeclare_2_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_2_2 ;
+  x3do:name 'LOA1_KneelAnimation' .
+:ProtoInterface_2_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasField :field_2_2_1_1, :field_2_2_1_2, :field_2_2_1_3, :field_2_2_1_4, :field_2_2_1_5, :field_2_2_1_6, :field_2_2_1_7, :field_2_2_1_8, :field_2_2_1_9, :field_2_2_1_10, :field_2_2_1_11, :field_2_2_1_12, :field_2_2_1_13, :field_2_2_1_14, :field_2_2_1_15, :field_2_2_1_16, :field_2_2_1_17, :field_2_2_1_18, :field_2_2_1_19, :field_2_2_1_20, :field_2_2_1_21, :field_2_2_1_22, :field_2_2_1_23, :field_2_2_1_24, :field_2_2_1_25, :field_2_2_1_26 .
+:field_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'cycleInterval' ;
+  x3do:type 'SFTime' ;
+  x3do:value '2' .
+:field_2_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'loop' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'startTime' ;
+  x3do:type 'SFTime' ;
+  x3do:value '0' .
+:field_2_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'stopTime' ;
+  x3do:type 'SFTime' ;
+  x3do:value '-1' .
+:field_2_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'fraction_changed' ;
+  x3do:type 'SFFloat' .
+:field_2_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'HumanoidRoot_translation_changed' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'HumanoidRoot_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'lower_body_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_hip_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_knee_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_ankle_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_midtarsal_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_15 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_hip_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_16 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_knee_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_17 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_ankle_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_18 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_midtarsal_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_19 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'vl5_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_20 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'skullbase_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_21 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_shoulder_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_22 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_elbow_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_23 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'l_wrist_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_24 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_shoulder_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_25 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_elbow_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_1_26 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'r_wrist_rotation_changed' ;
+  x3do:type 'SFRotation' .
+:ProtoBody_2_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasChildren :Group_2_2_2_1 ;
+  x3do:hasROUTE :ROUTE_2_2_2_2, :ROUTE_2_2_2_3, :ROUTE_2_2_2_4, :ROUTE_2_2_2_5, :ROUTE_2_2_2_6, :ROUTE_2_2_2_7, :ROUTE_2_2_2_8, :ROUTE_2_2_2_9, :ROUTE_2_2_2_10, :ROUTE_2_2_2_11, :ROUTE_2_2_2_12, :ROUTE_2_2_2_13, :ROUTE_2_2_2_14 .
+:Group_2_2_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasChildren :TIMER, :HUMANOIDROOT_POSITION_ANIMATOR, :HUMANOIDROOT_ANIMATOR, :L_HIP_ANIMATOR, :L_KNEE_ANIMATOR, :L_ANKLE_ANIMATOR, :R_HIP_ANIMATOR, :R_KNEE_ANIMATOR, :R_ANKLE_ANIMATOR, :VL5_ANIMATOR, :L_SHOULDER_ANIMATOR, :L_ELBOW_ANIMATOR, :R_SHOULDER_ANIMATOR, :R_ELBOW_ANIMATOR .
+:TIMER a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_1_1 ;
+  x3do:DEF 'TIMER' .
+:IS_2_2_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :TIMER ;
+  x3do:hasConnect :connect_2_2_2_1_1_1_1, :connect_2_2_2_1_1_1_2, :connect_2_2_2_1_1_1_3, :connect_2_2_2_1_1_1_4, :connect_2_2_2_1_1_1_5, :connect_2_2_2_1_1_1_6, :connect_2_2_2_1_1_1_7 .
+:connect_2_2_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'cycleInterval' ;
+  x3do:protoField 'cycleInterval' .
+:connect_2_2_2_1_1_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'enabled' ;
+  x3do:protoField 'enabled' .
+:connect_2_2_2_1_1_1_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'loop' ;
+  x3do:protoField 'loop' .
+:connect_2_2_2_1_1_1_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'startTime' ;
+  x3do:protoField 'startTime' .
+:connect_2_2_2_1_1_1_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'stopTime' ;
+  x3do:protoField 'stopTime' .
+:connect_2_2_2_1_1_1_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'fraction_changed' ;
+  x3do:protoField 'fraction_changed' .
+:connect_2_2_2_1_1_1_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'isActive' ;
+  x3do:protoField 'isActive' .
+:HUMANOIDROOT_POSITION_ANIMATOR a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_2_1 ;
+  x3do:DEF 'HUMANOIDROOT_POSITION_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 0 0 0 0 -0.049999 0 0 -0.195 0 0 -0.439997 0 ) .
+:IS_2_2_2_1_2_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :HUMANOIDROOT_POSITION_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_2_1_1 .
+:connect_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_2_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'HumanoidRoot_translation_changed' .
+:HUMANOIDROOT_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_3_1 ;
+  x3do:DEF 'HUMANOIDROOT_ANIMATOR' ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0 1 0 0 0 1 0 0 ) .
+:IS_2_2_2_1_3_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :HUMANOIDROOT_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_3_1_1 .
+:connect_2_2_2_1_3_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_3_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'HumanoidRoot_rotation_changed' .
+:L_HIP_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_4_1 ;
+  x3do:DEF 'L_HIP_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .619393 -1 0 0 1.069302 -1 0 0 1.937315 ) .
+:IS_2_2_2_1_4_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :L_HIP_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_4_1_1 .
+:connect_2_2_2_1_4_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_4_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'l_hip_rotation_changed' .
+:L_KNEE_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_5_1 ;
+  x3do:DEF 'L_KNEE_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 1 0 0 .615228 1 0 0 .984524 1 0 0 2.076941 ) .
+:IS_2_2_2_1_5_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :L_KNEE_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_5_1_1 .
+:connect_2_2_2_1_5_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_5_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'l_knee_rotation_changed' .
+:L_ANKLE_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_6_1 ;
+  x3do:DEF 'L_ANKLE_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .017453 -1 0 0 .069812 1 0 0 .261799 ) .
+:IS_2_2_2_1_6_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :L_ANKLE_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_6_1_1 .
+:connect_2_2_2_1_6_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_6_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'l_ankle_rotation_changed' .
+:R_HIP_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_7_1 ;
+  x3do:DEF 'R_HIP_ANIMATOR' ;
+  x3do:key ( 0 .3125 1 ) ;
+  x3do:keyValue ( 1 0 0 0 1 0 0 .523598 -1 0 0 .157079 ) .
+:IS_2_2_2_1_7_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :R_HIP_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_7_1_1 .
+:connect_2_2_2_1_7_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_7_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'r_hip_rotation_changed' .
+:R_KNEE_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_8_1 ;
+  x3do:DEF 'R_KNEE_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 1 0 0 .349065 1 0 0 1.023397 .999934 .008043 .008185 1.727938 ) .
+:IS_2_2_2_1_8_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :R_KNEE_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_8_1_1 .
+:connect_2_2_2_1_8_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_8_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'r_knee_rotation_changed' .
+:R_ANKLE_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_9_1 ;
+  x3do:DEF 'R_ANKLE_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -0.991692 -0.072372 .106338 .205053 -0.981083 -0.103267 .163741 .272231 -1 0 0 .349065 ) .
+:IS_2_2_2_1_9_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :R_ANKLE_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_9_1_1 .
+:connect_2_2_2_1_9_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_9_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'r_ankle_rotation_changed' .
+:VL5_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_10_1 ;
+  x3do:DEF 'VL5_ANIMATOR' ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 1 0 0 0 1 0 0 .174533 ) .
+:IS_2_2_2_1_10_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :VL5_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_10_1_1 .
+:connect_2_2_2_1_10_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_10_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'vl5_rotation_changed' .
+:L_SHOULDER_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_11_1 ;
+  x3do:DEF 'L_SHOULDER_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .279252 -1 0 0 .506145 -1 0 0 .191986 ) .
+:IS_2_2_2_1_11_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :L_SHOULDER_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_11_1_1 .
+:connect_2_2_2_1_11_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_11_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'l_shoulder_rotation_changed' .
+:L_ELBOW_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_12_1 ;
+  x3do:DEF 'L_ELBOW_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .052359 -1 0 0 .296706 -1 0 0 1.431169 ) .
+:IS_2_2_2_1_12_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :L_ELBOW_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_12_1_1 .
+:connect_2_2_2_1_12_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_12_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'l_elbow_rotation_changed' .
+:R_SHOULDER_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_13_1 ;
+  x3do:DEF 'R_SHOULDER_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .104719 -1 0 0 .157079 1 0 0 .314159 ) .
+:IS_2_2_2_1_13_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :R_SHOULDER_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_13_1_1 .
+:connect_2_2_2_1_13_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_13_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'r_shoulder_rotation_changed' .
+:R_ELBOW_ANIMATOR a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_14_1 ;
+  x3do:DEF 'R_ELBOW_ANIMATOR' ;
+  x3do:key ( 0 .3125 .625 1 ) ;
+  x3do:keyValue ( 1 0 0 0 -1 0 0 .837757 -1 0 0 1.239183 -1 0 0 1.500983 ) .
+:IS_2_2_2_1_14_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :R_ELBOW_ANIMATOR ;
+  x3do:hasConnect :connect_2_2_2_1_14_1_1 .
+:connect_2_2_2_1_14_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_14_1 ;
+  x3do:nodeField 'value_changed' ;
+  x3do:protoField 'r_elbow_rotation_changed' .
+:ROUTE_2_2_2_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'HUMANOIDROOT_POSITION_ANIMATOR' .
+:ROUTE_2_2_2_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'HUMANOIDROOT_ANIMATOR' .
+:ROUTE_2_2_2_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'L_HIP_ANIMATOR' .
+:ROUTE_2_2_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'L_KNEE_ANIMATOR' .
+:ROUTE_2_2_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'L_ANKLE_ANIMATOR' .
+:ROUTE_2_2_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'R_HIP_ANIMATOR' .
+:ROUTE_2_2_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'R_KNEE_ANIMATOR' .
+:ROUTE_2_2_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'R_ANKLE_ANIMATOR' .
+:ROUTE_2_2_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'VL5_ANIMATOR' .
+:ROUTE_2_2_2_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'L_SHOULDER_ANIMATOR' .
+:ROUTE_2_2_2_12 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'L_ELBOW_ANIMATOR' .
+:ROUTE_2_2_2_13 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'R_SHOULDER_ANIMATOR' .
+:ROUTE_2_2_2_14 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'R_ELBOW_ANIMATOR' .
+:Anchor_2_3 a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 ;
+  x3do:description 'InterchangableActorsViaDynamicRouting' ;
+  x3do:parameter '"target=_blank"' ;
+  x3do:url '"InterchangableActorsViaDynamicRouting.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d" "InterchangableActorsViaDynamicRouting.wrl" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"' .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Anchor_2_3 ;
+  x3do:hasGeometry :Text_2_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_3_1_2 .
+:Text_2_3_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_3_1_1_1 ;
+  x3do:string '"LOA1_KneelAnimation.x3d" "defines a prototype" "for animating a humanoid." "" "Click this text to see" "InterchangableActorsViaDynamicRouting example."' .
+:FontStyle_2_3_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_1_1 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size 0.8 .
+:Appearance_2_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasMaterial :Material_2_3_1_2_1 .
+:Material_2_3_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_2 ;
+  x3do:diffuseColor ( 1 1 0.2 ) .

@@ -1,0 +1,186 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'CADInterchange' ;
+  x3do:version '3.1' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.1.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2 ;
+  x3do:hasMeta :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 2 ;
+  x3do:name 'CADGeometry' .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'EnvironmentalEffects' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'CADPartChildNoTransformation.x3d' ;
+  x3do:name 'title' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children.' ;
+  x3do:name 'description' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk' ;
+  x3do:name 'creator' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Vince Marchetti bushing generation using python scripts' ;
+  x3do:name 'translator' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/member-only/mantis/view.php?id=528' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'This scene is intended for specification development only.' ;
+  x3do:name 'warning' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '29 June 2012' ;
+  x3do:name 'created' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "CADPartChildNoTransformation.x3d" .
+:meta dcterms:description "Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children." .
+:meta dcterms:creator "Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk" .
+:meta dcterms:translator "Vince Marchetti bushing generation using python scripts" .
+:meta dcterms:reference "https://www.web3d.org/member-only/mantis/view.php?id=528" .
+:meta dcterms:warning "This scene is intended for specification development only." .
+:meta dcterms:created "29 June 2012" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Background_2_2, :Viewpoint_2_3, :CADAssembly_2_4 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'CADPartChildNoTransformation.x3d' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0.9607843 1 0.9607843 ) .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Hello CAD bushing' ;
+  x3do:orientation ( 1 0 0 -0.321751 ) ;
+  x3do:position ( 0 5 15 ) .
+:CADAssembly_2_4 a owl:NamedIndividual, x3do:CADAssembly ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :CADPart_2_4_1 ;
+  x3do:name 'DesignPatternAssembly' .
+:CADPart_2_4_1 a owl:NamedIndividual, x3do:CADPart ;
+  x3do:hasParent :CADAssembly_2_4 ;
+  x3do:hasChildren :CADFace_2_4_1_1, :CADFace_2_4_1_2, :CADFace_2_4_1_3, :CADFace_2_4_1_4 ;
+  x3do:name 'CADPartExample' .
+:CADFace_2_4_1_1 a owl:NamedIndividual, x3do:CADFace ;
+  x3do:hasParent :CADPart_2_4_1 ;
+  x3do:hasShape :Shape_2_4_1_1_1 ;
+  x3do:name 'outerSurface' .
+:Shape_2_4_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :CADFace_2_4_1_1 ;
+  x3do:hasGeometry :Cylinder_2_4_1_1_1_1 ;
+  x3do:hasAppearance :AppearanceGrey .
+:Cylinder_2_4_1_1_1_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_4_1_1_1 ;
+  x3do:bottom false ;
+  x3do:height 3 ;
+  x3do:radius 2 ;
+  x3do:top false .
+:AppearanceGrey a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_1_1 ;
+  x3do:hasMaterial :Material_2_4_1_1_1_2_1 ;
+  x3do:DEF 'AppearanceGrey' .
+:Material_2_4_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :AppearanceGrey .
+:CADFace_2_4_1_2 a owl:NamedIndividual, x3do:CADFace ;
+  x3do:hasParent :CADPart_2_4_1 ;
+  x3do:hasShape :Shape_2_4_1_2_1 ;
+  x3do:name 'innerSurface' .
+:Shape_2_4_1_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :CADFace_2_4_1_2 ;
+  x3do:hasGeometry :Cylinder_2_4_1_2_1_1 ;
+  x3do:hasAppearance :AppearanceGrey-USE-1 .
+:Cylinder_2_4_1_2_1_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_4_1_2_1 ;
+  x3do:bottom false ;
+  x3do:height 3 ;
+  x3do:solid false ;
+  x3do:top false .
+:AppearanceGrey-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_2_1 ;
+  owl:sameAs :AppearanceGrey . # DEF matching this USE
+:CADFace_2_4_1_3 a owl:NamedIndividual, x3do:CADFace ;
+  x3do:hasParent :CADPart_2_4_1 ;
+  x3do:hasShape :Shape_2_4_1_3_1 ;
+  x3do:name 'topCap' .
+:Shape_2_4_1_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :CADFace_2_4_1_3 ;
+  x3do:hasGeometry :IndexedTriangleSet_2_4_1_3_1_1 ;
+  x3do:hasAppearance :AppearanceGrey-USE-2 .
+:IndexedTriangleSet_2_4_1_3_1_1 a owl:NamedIndividual, x3do:IndexedTriangleSet ;
+  x3do:hasParent :Shape_2_4_1_3_1 ;
+  x3do:hasCoord :Coordinate_2_4_1_3_1_1_1 ;
+  x3do:ccw true ;
+  x3do:colorPerVertex true ;
+  x3do:index ( 0 1 2 2 1 3 2 3 4 4 3 5 4 5 6 6 5 7 6 7 8 8 7 9 8 9 10 10 9 11 10 11 12 12 11 13 12 13 14 14 13 15 14 15 16 16 15 17 16 17 18 18 17 19 18 19 20 20 19 21 20 21 22 22 21 23 22 23 24 24 23 25 24 25 26 26 25 27 26 27 28 28 27 29 28 29 30 30 29 31 30 31 32 32 31 33 32 33 34 34 33 35 34 35 36 36 35 37 36 37 38 38 37 39 38 39 40 40 39 41 40 41 42 42 41 43 42 43 44 44 43 45 44 45 46 46 45 47 46 47 48 48 47 49 48 49 50 50 49 51 50 51 52 52 51 53 52 53 54 54 53 55 54 55 56 56 55 57 56 57 58 58 57 59 58 59 60 60 59 61 60 61 62 62 61 63 62 63 64 64 63 65 ) ;
+  x3do:normalPerVertex true ;
+  x3do:solid true .
+:Coordinate_2_4_1_3_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedTriangleSet_2_4_1_3_1_1 ;
+  x3do:point ( 2.0000 1.5000 0.0000 1.0000 1.5000 0.0000 1.9616 1.5000 0.3902 0.9808 1.5000 0.1951 1.8478 1.5000 0.7654 0.9239 1.5000 0.3827 1.6629 1.5000 1.1111 0.8315 1.5000 0.5556 1.4142 1.5000 1.4142 0.7071 1.5000 0.7071 1.1111 1.5000 1.6629 0.5556 1.5000 0.8315 0.7654 1.5000 1.8478 0.3827 1.5000 0.9239 0.3902 1.5000 1.9616 0.1951 1.5000 0.9808 0.0000 1.5000 2.0000 0.0000 1.5000 1.0000 -0.3902 1.5000 1.9616 -0.1951 1.5000 0.9808 -0.7654 1.5000 1.8478 -0.3827 1.5000 0.9239 -1.1111 1.5000 1.6629 -0.5556 1.5000 0.8315 -1.4142 1.5000 1.4142 -0.7071 1.5000 0.7071 -1.6629 1.5000 1.1111 -0.8315 1.5000 0.5556 -1.8478 1.5000 0.7654 -0.9239 1.5000 0.3827 -1.9616 1.5000 0.3902 -0.9808 1.5000 0.1951 -2.0000 1.5000 0.0000 -1.0000 1.5000 0.0000 -1.9616 1.5000 -0.3902 -0.9808 1.5000 -0.1951 -1.8478 1.5000 -0.7654 -0.9239 1.5000 -0.3827 -1.6629 1.5000 -1.1111 -0.8315 1.5000 -0.5556 -1.4142 1.5000 -1.4142 -0.7071 1.5000 -0.7071 -1.1111 1.5000 -1.6629 -0.5556 1.5000 -0.8315 -0.7654 1.5000 -1.8478 -0.3827 1.5000 -0.9239 -0.3902 1.5000 -1.9616 -0.1951 1.5000 -0.9808 -0.0000 1.5000 -2.0000 -0.0000 1.5000 -1.0000 0.3902 1.5000 -1.9616 0.1951 1.5000 -0.9808 0.7654 1.5000 -1.8478 0.3827 1.5000 -0.9239 1.1111 1.5000 -1.6629 0.5556 1.5000 -0.8315 1.4142 1.5000 -1.4142 0.7071 1.5000 -0.7071 1.6629 1.5000 -1.1111 0.8315 1.5000 -0.5556 1.8478 1.5000 -0.7654 0.9239 1.5000 -0.3827 1.9616 1.5000 -0.3902 0.9808 1.5000 -0.1951 2.0000 1.5000 -0.0000 1.0000 1.5000 -0.0000 ) .
+:AppearanceGrey-USE-2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_3_1 ;
+  owl:sameAs :AppearanceGrey . # DEF matching this USE
+:CADFace_2_4_1_4 a owl:NamedIndividual, x3do:CADFace ;
+  x3do:hasParent :CADPart_2_4_1 ;
+  x3do:hasShape :Shape_2_4_1_4_1 ;
+  x3do:name 'bottomCap' .
+:Shape_2_4_1_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :CADFace_2_4_1_4 ;
+  x3do:hasGeometry :IndexedTriangleSet_2_4_1_4_1_1 ;
+  x3do:hasAppearance :AppearanceGrey-USE-3 .
+:IndexedTriangleSet_2_4_1_4_1_1 a owl:NamedIndividual, x3do:IndexedTriangleSet ;
+  x3do:hasParent :Shape_2_4_1_4_1 ;
+  x3do:hasCoord :Coordinate_2_4_1_4_1_1_1 ;
+  x3do:ccw true ;
+  x3do:colorPerVertex true ;
+  x3do:index ( 0 1 2 2 1 3 2 3 4 4 3 5 4 5 6 6 5 7 6 7 8 8 7 9 8 9 10 10 9 11 10 11 12 12 11 13 12 13 14 14 13 15 14 15 16 16 15 17 16 17 18 18 17 19 18 19 20 20 19 21 20 21 22 22 21 23 22 23 24 24 23 25 24 25 26 26 25 27 26 27 28 28 27 29 28 29 30 30 29 31 30 31 32 32 31 33 32 33 34 34 33 35 34 35 36 36 35 37 36 37 38 38 37 39 38 39 40 40 39 41 40 41 42 42 41 43 42 43 44 44 43 45 44 45 46 46 45 47 46 47 48 48 47 49 48 49 50 50 49 51 50 51 52 52 51 53 52 53 54 54 53 55 54 55 56 56 55 57 56 57 58 58 57 59 58 59 60 60 59 61 60 61 62 62 61 63 62 63 64 64 63 65 ) ;
+  x3do:normalPerVertex true ;
+  x3do:solid true .
+:Coordinate_2_4_1_4_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedTriangleSet_2_4_1_4_1_1 ;
+  x3do:point ( 2.0000 -1.5000 -0.0000 1.0000 -1.5000 -0.0000 1.9616 -1.5000 -0.3902 0.9808 -1.5000 -0.1951 1.8478 -1.5000 -0.7654 0.9239 -1.5000 -0.3827 1.6629 -1.5000 -1.1111 0.8315 -1.5000 -0.5556 1.4142 -1.5000 -1.4142 0.7071 -1.5000 -0.7071 1.1111 -1.5000 -1.6629 0.5556 -1.5000 -0.8315 0.7654 -1.5000 -1.8478 0.3827 -1.5000 -0.9239 0.3902 -1.5000 -1.9616 0.1951 -1.5000 -0.9808 0.0000 -1.5000 -2.0000 0.0000 -1.5000 -1.0000 -0.3902 -1.5000 -1.9616 -0.1951 -1.5000 -0.9808 -0.7654 -1.5000 -1.8478 -0.3827 -1.5000 -0.9239 -1.1111 -1.5000 -1.6629 -0.5556 -1.5000 -0.8315 -1.4142 -1.5000 -1.4142 -0.7071 -1.5000 -0.7071 -1.6629 -1.5000 -1.1111 -0.8315 -1.5000 -0.5556 -1.8478 -1.5000 -0.7654 -0.9239 -1.5000 -0.3827 -1.9616 -1.5000 -0.3902 -0.9808 -1.5000 -0.1951 -2.0000 -1.5000 -0.0000 -1.0000 -1.5000 -0.0000 -1.9616 -1.5000 0.3902 -0.9808 -1.5000 0.1951 -1.8478 -1.5000 0.7654 -0.9239 -1.5000 0.3827 -1.6629 -1.5000 1.1111 -0.8315 -1.5000 0.5556 -1.4142 -1.5000 1.4142 -0.7071 -1.5000 0.7071 -1.1111 -1.5000 1.6629 -0.5556 -1.5000 0.8315 -0.7654 -1.5000 1.8478 -0.3827 -1.5000 0.9239 -0.3902 -1.5000 1.9616 -0.1951 -1.5000 0.9808 -0.0000 -1.5000 2.0000 -0.0000 -1.5000 1.0000 0.3902 -1.5000 1.9616 0.1951 -1.5000 0.9808 0.7654 -1.5000 1.8478 0.3827 -1.5000 0.9239 1.1111 -1.5000 1.6629 0.5556 -1.5000 0.8315 1.4142 -1.5000 1.4142 0.7071 -1.5000 0.7071 1.6629 -1.5000 1.1111 0.8315 -1.5000 0.5556 1.8478 -1.5000 0.7654 0.9239 -1.5000 0.3827 1.9616 -1.5000 0.3902 0.9808 -1.5000 0.1951 2.0000 -1.5000 0.0000 1.0000 -1.5000 0.0000 ) .
+:AppearanceGrey-USE-3 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_4_1 ;
+  owl:sameAs :AppearanceGrey . # DEF matching this USE

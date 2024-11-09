@@ -1,0 +1,3258 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'HAnim' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'JoeSkinTexcoordDisplacerKick.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim' ;
+  x3do:name 'info' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations.' ;
+  x3do:name 'description' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '15 January 2004' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '12 January 2017' ;
+  x3do:name 'translated' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '27 January 2023' ;
+  x3do:name 'modified' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Joe D Williams' ;
+  x3do:name 'creator' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Roy Walmsley and Don Brutzman' ;
+  x3do:name 'translators' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Transcoding from .vrml to .x3dv by Joe using BS studio circa 2012' ;
+  x3do:name 'info' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'translated from .x3dv to .xml for web3d archive' ;
+  x3do:name 'info' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Record information relating a certain skin coordinate to a V1 Annex A Site name and location is now found in comment at end of this scene where each # number name string appears in the order of coordinate points in the skin mesh user code. Best organized to provide author data naming important HAnim humanoid skeletonspace to skinspace relations using structured MetadataSet containing MetadataString nodes' ;
+  x3do:name 'TODO' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'modified to correct root and vc7 hierarchies' ;
+  x3do:name 'info' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BS studio translation from .x3dv by Joe using BS Contact' ;
+  x3do:name 'generator' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "JoeSkinTexcoordDisplacerKick.x3d" .
+:meta dcterms:description "This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations." .
+:meta dcterms:created "15 January 2004" .
+:meta dcterms:translated "12 January 2017" .
+:meta dcterms:modified "27 January 2023" .
+:meta dcterms:creator "Joe D Williams" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d" .
+:meta dcterms:generator "BS studio translation from .x3dv by Joe using BS Contact" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Start_NavigationInfo, :blue_Background, :light1, :light2, :Scene_InclinedView, :Scene_FrontView, :Scene_SideView, :Scene_BackView, :Scene_TopView, :Joe_Humanoid, :Group_2_12, :DisplacersAnimationGroup, :SkinTextureTransformAnimationGroup, :Group_2_205, :Group_2_206 ;
+  x3do:hasROUTE :ROUTE_2_13, :ROUTE_2_14, :ROUTE_2_15, :ROUTE_2_16, :ROUTE_2_17, :ROUTE_2_18, :ROUTE_2_19, :ROUTE_2_20, :ROUTE_2_21, :ROUTE_2_22, :ROUTE_2_23, :ROUTE_2_24, :ROUTE_2_25, :ROUTE_2_26, :ROUTE_2_27, :ROUTE_2_28, :ROUTE_2_29, :ROUTE_2_30, :ROUTE_2_31, :ROUTE_2_32, :ROUTE_2_33, :ROUTE_2_34, :ROUTE_2_35, :ROUTE_2_36, :ROUTE_2_37, :ROUTE_2_38, :ROUTE_2_39, :ROUTE_2_40, :ROUTE_2_41, :ROUTE_2_42, :ROUTE_2_43, :ROUTE_2_44, :ROUTE_2_45, :ROUTE_2_46, :ROUTE_2_47, :ROUTE_2_48, :ROUTE_2_49, :ROUTE_2_50, :ROUTE_2_51, :ROUTE_2_52, :ROUTE_2_53, :ROUTE_2_54, :ROUTE_2_55, :ROUTE_2_56, :ROUTE_2_57, :ROUTE_2_58, :ROUTE_2_59, :ROUTE_2_60, :ROUTE_2_61, :ROUTE_2_62, :ROUTE_2_63, :ROUTE_2_64, :ROUTE_2_65, :ROUTE_2_66, :ROUTE_2_67, :ROUTE_2_68, :ROUTE_2_69, :ROUTE_2_70, :ROUTE_2_71, :ROUTE_2_72, :ROUTE_2_73, :ROUTE_2_74, :ROUTE_2_75, :ROUTE_2_76, :ROUTE_2_77, :ROUTE_2_78, :ROUTE_2_79, :ROUTE_2_80, :ROUTE_2_81, :ROUTE_2_82, :ROUTE_2_83, :ROUTE_2_84, :ROUTE_2_85, :ROUTE_2_86, :ROUTE_2_87, :ROUTE_2_88, :ROUTE_2_89, :ROUTE_2_90, :ROUTE_2_91, :ROUTE_2_92, :ROUTE_2_93, :ROUTE_2_94, :ROUTE_2_95, :ROUTE_2_96, :ROUTE_2_97, :ROUTE_2_98, :ROUTE_2_99, :ROUTE_2_100, :ROUTE_2_101, :ROUTE_2_102, :ROUTE_2_103, :ROUTE_2_104, :ROUTE_2_105, :ROUTE_2_106, :ROUTE_2_107, :ROUTE_2_108, :ROUTE_2_109, :ROUTE_2_110, :ROUTE_2_111, :ROUTE_2_112, :ROUTE_2_113, :ROUTE_2_114, :ROUTE_2_115, :ROUTE_2_116, :ROUTE_2_117, :ROUTE_2_118, :ROUTE_2_119, :ROUTE_2_120, :ROUTE_2_121, :ROUTE_2_122, :ROUTE_2_123, :ROUTE_2_124, :ROUTE_2_125, :ROUTE_2_126, :ROUTE_2_127, :ROUTE_2_128, :ROUTE_2_129, :ROUTE_2_130, :ROUTE_2_131, :ROUTE_2_132, :ROUTE_2_133, :ROUTE_2_134, :ROUTE_2_135, :ROUTE_2_136, :ROUTE_2_137, :ROUTE_2_138, :ROUTE_2_139, :ROUTE_2_140, :ROUTE_2_141, :ROUTE_2_142, :ROUTE_2_143, :ROUTE_2_144, :ROUTE_2_145, :ROUTE_2_146, :ROUTE_2_147, :ROUTE_2_148, :ROUTE_2_149, :ROUTE_2_150, :ROUTE_2_151, :ROUTE_2_152, :ROUTE_2_153, :ROUTE_2_154, :ROUTE_2_155, :ROUTE_2_156, :ROUTE_2_157, :ROUTE_2_158, :ROUTE_2_159, :ROUTE_2_160, :ROUTE_2_161, :ROUTE_2_162, :ROUTE_2_163, :ROUTE_2_164, :ROUTE_2_165, :ROUTE_2_166, :ROUTE_2_167, :ROUTE_2_168, :ROUTE_2_169, :ROUTE_2_170, :ROUTE_2_171, :ROUTE_2_172, :ROUTE_2_173, :ROUTE_2_174, :ROUTE_2_175, :ROUTE_2_176, :ROUTE_2_177, :ROUTE_2_178, :ROUTE_2_179, :ROUTE_2_180, :ROUTE_2_181, :ROUTE_2_182, :ROUTE_2_183, :ROUTE_2_184, :ROUTE_2_185, :ROUTE_2_186, :ROUTE_2_187, :ROUTE_2_188, :ROUTE_2_189, :ROUTE_2_190, :ROUTE_2_191, :ROUTE_2_192, :ROUTE_2_193, :ROUTE_2_194, :ROUTE_2_195, :ROUTE_2_196, :ROUTE_2_197, :ROUTE_2_198, :ROUTE_2_199, :ROUTE_2_200, :ROUTE_2_201, :ROUTE_2_202 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:info '"X3D Humanoid V1 LOA3 skeleton" "skin from hanim sites, surface features, and some added points" "390 points"' ;
+  x3do:title 'X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe' .
+:Start_NavigationInfo a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Start_NavigationInfo' ;
+  x3do:headlight false ;
+  x3do:speed 2.5 .
+:blue_Background a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'blue_Background' .
+:light1 a owl:NamedIndividual, x3do:SpotLight ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'light1' ;
+  x3do:ambientIntensity 0.7 ;
+  x3do:beamWidth 1.5 ;
+  x3do:color ( 0.8 0.8 1 ) ;
+  x3do:cutOffAngle 0.6 ;
+  x3do:direction ( 0 0 0 ) ;
+  x3do:location ( 0 3 3 ) ;
+  x3do:radius 10 .
+:light2 a owl:NamedIndividual, x3do:PointLight ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'light2' ;
+  x3do:ambientIntensity 0.7 ;
+  x3do:color ( 0.8 0.8 1 ) ;
+  x3do:location ( 0 10 -7 ) .
+:Scene_InclinedView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Scene_InclinedView' ;
+  x3do:centerOfRotation ( 0 0.85 0 ) ;
+  x3do:description 'Scene_Inclined View' ;
+  x3do:orientation ( -0.113 0.993 0.0347 0.671 ) ;
+  x3do:position ( 1.62 1.05 3.06 ) .
+:Scene_FrontView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Scene_FrontView' ;
+  x3do:centerOfRotation ( 0 0.8 0 ) ;
+  x3do:description 'Scene Front View' ;
+  x3do:position ( 0 0.8 2.58 ) .
+:Scene_SideView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Scene_SideView' ;
+  x3do:centerOfRotation ( 0 0.8 0 ) ;
+  x3do:description 'Scene Side View' ;
+  x3do:orientation ( 0 1 0 1.5708 ) ;
+  x3do:position ( 2.6 0.5 0 ) .
+:Scene_BackView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Scene_BackView' ;
+  x3do:centerOfRotation ( 0 1.5 0 ) ;
+  x3do:description 'Scene Back View' ;
+  x3do:orientation ( 0 1 0 3.14 ) ;
+  x3do:position ( 0 2.5 -3 ) .
+:Scene_TopView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Scene_TopView' ;
+  x3do:centerOfRotation ( 0 1.5 0 ) ;
+  x3do:description 'Scene Top View' ;
+  x3do:orientation ( 1 0 0 -1.5708 ) ;
+  x3do:position ( 0 3.5 0 ) .
+:Joe_Humanoid a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Joe_Human ;
+  x3do:DEF 'Joe_Humanoid' .
+:Joe_Human a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :Joe_Humanoid ;
+  x3do:hasSkeleton :Joe_HumanoidRoot ;
+  x3do:hasSkin :Joe_Shape ;
+  x3do:hasSkinCoord :Joe_SkinCoord-USE-1 ;
+  x3do:hasJoints :Joe_HumanoidRoot-USE-1, :Joe_sacroiliac-USE-1, :Joe_vl5-USE-1, :Joe_vl4-USE-1, :Joe_vl3-USE-1, :Joe_vl2-USE-1, :Joe_vl1-USE-1, :Joe_vt12-USE-1, :Joe_vt11-USE-1, :Joe_vt10-USE-1, :Joe_vt9-USE-1, :Joe_vt8-USE-1, :Joe_vt7-USE-1, :Joe_vt6-USE-1, :Joe_vt5-USE-1, :Joe_vt4-USE-1, :Joe_vt3-USE-1, :Joe_vt2-USE-1, :Joe_vt1-USE-1, :Joe_vc7-USE-1, :Joe_vc6-USE-1, :Joe_vc5-USE-1, :Joe_vc4-USE-1, :Joe_vc3-USE-1, :Joe_vc2-USE-1, :Joe_vc1-USE-1, :Joe_skullbase-USE-1, :Joe_temporomandibular-USE-1, :Joe_l_acromioclavicular-USE-1, :Joe_r_acromioclavicular-USE-1, :Joe_l_ankle-USE-1, :Joe_r_ankle-USE-1, :Joe_l_elbow-USE-1, :Joe_r_elbow-USE-1, :Joe_l_eyeball_joint-USE-1, :Joe_r_eyeball_joint-USE-1, :Joe_l_eyebrow_joint-USE-1, :Joe_r_eyebrow_joint-USE-1, :Joe_l_eyelid_joint-USE-1, :Joe_r_eyelid_joint-USE-1, :Joe_l_hip-USE-1, :Joe_r_hip-USE-1, :Joe_l_index0-USE-1, :Joe_r_index0-USE-1, :Joe_l_index1-USE-1, :Joe_r_index1-USE-1, :Joe_l_index2-USE-1, :Joe_r_index2-USE-1, :Joe_l_index3-USE-1, :Joe_r_index3-USE-1, :Joe_l_knee-USE-1, :Joe_r_knee-USE-1, :Joe_l_metatarsal-USE-1, :Joe_r_metatarsal-USE-1, :Joe_l_middle0-USE-1, :Joe_r_middle0-USE-1, :Joe_l_middle1-USE-1, :Joe_r_middle1-USE-1, :Joe_l_middle2-USE-1, :Joe_r_middle2-USE-1, :Joe_l_middle3-USE-1, :Joe_r_middle3-USE-1, :Joe_l_midtarsal-USE-1, :Joe_r_midtarsal-USE-1, :Joe_l_pinky0-USE-1, :Joe_r_pinky0-USE-1, :Joe_l_pinky1-USE-1, :Joe_r_pinky1-USE-1, :Joe_l_pinky2-USE-1, :Joe_r_pinky2-USE-1, :Joe_l_pinky3-USE-1, :Joe_r_pinky3-USE-1, :Joe_l_ring0-USE-1, :Joe_r_ring0-USE-1, :Joe_l_ring1-USE-1, :Joe_r_ring1-USE-1, :Joe_l_ring2-USE-1, :Joe_r_ring2-USE-1, :Joe_l_ring3-USE-1, :Joe_r_ring3-USE-1, :Joe_l_shoulder-USE-1, :Joe_r_shoulder-USE-1, :Joe_l_sternoclavicular-USE-1, :Joe_r_sternoclavicular-USE-1, :Joe_l_subtalar-USE-1, :Joe_r_subtalar-USE-1, :Joe_l_thumb1-USE-1, :Joe_r_thumb1-USE-1, :Joe_l_thumb2-USE-1, :Joe_r_thumb2-USE-1, :Joe_l_thumb3-USE-1, :Joe_r_thumb3-USE-1, :Joe_l_wrist-USE-1, :Joe_r_wrist-USE-1 ;
+  x3do:hasSegments :Joe_sacrum-USE-1 ;
+  x3do:hasSites :Joe_RootFront_view-USE-1 ;
+  x3do:DEF 'Joe_Human' ;
+  x3do:name 'Human' ;
+  x3do:version '2.0' .
+:Joe_HumanoidRoot a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  x3do:hasMetadata :MetadataSet_2_11_1_1_1 ;
+  x3do:hasChildren :Joe_sacrum, :Joe_sacroiliac, :Joe_vl5 ;
+  x3do:DEF 'Joe_HumanoidRoot' ;
+  x3do:center ( 0 0.875 0 ) ;
+  x3do:name 'HumanoidRoot' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:MetadataSet_2_11_1_1_1 a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :Joe_HumanoidRoot ;
+  x3do:hasValue :MetadataString_2_11_1_1_1_1 ;
+  x3do:name 'warnings' ;
+  x3do:reference 'HAnim' .
+:MetadataString_2_11_1_1_1_1 a owl:NamedIndividual, x3do:MetadataString ;
+  x3do:hasParent :MetadataSet_2_11_1_1_1 ;
+  x3do:name 'SymmetricalLeftRight' ;
+  x3do:reference 'correction options: ignore, warn, average, left, right, largest, smallest' ;
+  x3do:value '"ignore"' .
+:Joe_sacrum a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :Joe_HumanoidRoot ;
+  x3do:hasChildren :Joe_RootFront_view ;
+  x3do:DEF 'Joe_sacrum' ;
+  x3do:name 'sacrum' .
+:Joe_RootFront_view a owl:NamedIndividual, x3do:HAnimSite ;
+  x3do:hasParent :Joe_sacrum ;
+  x3do:hasChildren :hanimcordsys ;
+  x3do:DEF 'Joe_RootFront_view' ;
+  x3do:name 'RootFront_view' .
+:hanimcordsys a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Joe_RootFront_view ;
+  x3do:hasChildren :ViewBodyRootAxes, :AxisLinesShape ;
+  x3do:DEF 'hanimcordsys' ;
+  x3do:scale ( 0.175 0.175 0.175 ) .
+:ViewBodyRootAxes a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :hanimcordsys ;
+  x3do:DEF 'ViewBodyRootAxes' ;
+  x3do:description 'Joe_HAnim Root HAnimSite Coordinate Axes View' .
+:AxisLinesShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanimcordsys ;
+  x3do:hasGeometry :IndexedLineSet_2_11_1_1_2_1_1_2_1 ;
+  x3do:DEF 'AxisLinesShape' .
+:IndexedLineSet_2_11_1_1_2_1_1_2_1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :AxisLinesShape ;
+  x3do:hasCoord :Coordinate_2_11_1_1_2_1_1_2_1_1 ;
+  x3do:hasColor :Color_2_11_1_1_2_1_1_2_1_2 ;
+  x3do:colorIndex ( 0 1 2 ) ;
+  x3do:colorPerVertex false ;
+  x3do:coordIndex ( 0 1 -1 0 2 -1 0 3 -1 ) .
+:Coordinate_2_11_1_1_2_1_1_2_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedLineSet_2_11_1_1_2_1_1_2_1 ;
+  x3do:point ( 0 0 0 1.0 0 0 0 1.0 0 0 0 1.0 ) .
+:Color_2_11_1_1_2_1_1_2_1_2 a owl:NamedIndividual, x3do:Color ;
+  x3do:hasParent :IndexedLineSet_2_11_1_1_2_1_1_2_1 ;
+  x3do:color ( 1 0 0 0 0.6 0 0 0 1 ) .
+:Joe_sacroiliac a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_HumanoidRoot ;
+  x3do:hasChildren :Joe_l_hip, :Joe_r_hip ;
+  x3do:DEF 'Joe_sacroiliac' ;
+  x3do:center ( 0 0.92 0 ) ;
+  x3do:name 'sacroiliac' ;
+  x3do:skinCoordIndex ( 17 19 20 21 22 23 26 27 73 82 89 91 93 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 1 0.35 0.35 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_hip a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_sacroiliac ;
+  x3do:hasChildren :Joe_l_knee ;
+  x3do:DEF 'Joe_l_hip' ;
+  x3do:center ( 0.1 0.92 0 ) ;
+  x3do:name 'l_hip' ;
+  x3do:skinCoordIndex ( 89 90 94 95 96 97 ) ;
+  x3do:skinCoordWeight ( 0.65 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_knee a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_hip ;
+  x3do:hasChildren :Joe_l_ankle ;
+  x3do:DEF 'Joe_l_knee' ;
+  x3do:center ( 0.115 0.466 0 ) ;
+  x3do:name 'l_knee' ;
+  x3do:skinCoordIndex ( 334 335 336 337 338 339 340 341 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_ankle a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_knee ;
+  x3do:hasChildren :Joe_l_subtalar ;
+  x3do:DEF 'Joe_l_ankle' ;
+  x3do:center ( 0.115 0.069 0 ) ;
+  x3do:name 'l_ankle' ;
+  x3do:skinCoordIndex ( 342 343 344 345 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_subtalar a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_ankle ;
+  x3do:hasChildren :Joe_l_midtarsal ;
+  x3do:DEF 'Joe_l_subtalar' ;
+  x3do:center ( 0.115 0.031 0.03 ) ;
+  x3do:name 'l_subtalar' ;
+  x3do:skinCoordIndex ( 346 347 348 71 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_midtarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_subtalar ;
+  x3do:hasChildren :Joe_l_metatarsal ;
+  x3do:DEF 'Joe_l_midtarsal' ;
+  x3do:center ( 0.115 0.037 0.09 ) ;
+  x3do:name 'l_midtarsal' ;
+  x3do:skinCoordIndex ( 349 350 351 352 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_metatarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_midtarsal ;
+  x3do:DEF 'Joe_l_metatarsal' ;
+  x3do:center ( 0.115 0.02 0.122 ) ;
+  x3do:name 'l_metatarsal' ;
+  x3do:skinCoordIndex ( 353 354 355 356 357 358 359 360 361 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_hip a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_sacroiliac ;
+  x3do:hasChildren :Joe_r_knee ;
+  x3do:DEF 'Joe_r_hip' ;
+  x3do:center ( -0.1 0.92 0 ) ;
+  x3do:name 'r_hip' ;
+  x3do:skinCoordIndex ( 91 92 98 99 100 101 362 363 ) ;
+  x3do:skinCoordWeight ( 0.65 1 0.8 1 1 1 0.4 0.8 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_knee a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_hip ;
+  x3do:hasChildren :Joe_r_ankle ;
+  x3do:DEF 'Joe_r_knee' ;
+  x3do:center ( -0.05 0.466 0 ) ;
+  x3do:name 'r_knee' ;
+  x3do:skinCoordIndex ( 362 363 364 365 366 367 368 369 98 ) ;
+  x3do:skinCoordWeight ( 0.6 0.2 1 1 1 1 1 1 0.2 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_ankle a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_knee ;
+  x3do:hasChildren :Joe_r_subtalar ;
+  x3do:DEF 'Joe_r_ankle' ;
+  x3do:center ( -0.115 0.069 0 ) ;
+  x3do:name 'r_ankle' ;
+  x3do:skinCoordIndex ( 370 371 372 373 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_subtalar a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_ankle ;
+  x3do:hasChildren :Joe_r_midtarsal ;
+  x3do:DEF 'Joe_r_subtalar' ;
+  x3do:center ( -0.1 0.015 -0.01 ) ;
+  x3do:name 'r_subtalar' ;
+  x3do:skinCoordIndex ( 374 375 376 ) ;
+  x3do:skinCoordWeight ( 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_midtarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_subtalar ;
+  x3do:hasChildren :Joe_r_metatarsal ;
+  x3do:DEF 'Joe_r_midtarsal' ;
+  x3do:center ( -0.115 0.037 0.09 ) ;
+  x3do:name 'r_midtarsal' ;
+  x3do:skinCoordIndex ( 377 378 379 380 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_metatarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_midtarsal ;
+  x3do:DEF 'Joe_r_metatarsal' ;
+  x3do:center ( -0.1 0.01 0.14 ) ;
+  x3do:name 'r_metatarsal' ;
+  x3do:skinCoordIndex ( 381 382 383 384 385 386 387 388 389 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vl5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_HumanoidRoot ;
+  x3do:hasChildren :Joe_vl4 ;
+  x3do:DEF 'Joe_vl5' ;
+  x3do:center ( 0 1.045 -0.095 ) ;
+  x3do:name 'vl5' ;
+  x3do:skinCoordIndex ( 28 76 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vl4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vl5 ;
+  x3do:hasChildren :Joe_vl3 ;
+  x3do:DEF 'Joe_vl4' ;
+  x3do:center ( 0 1.068 -0.085 ) ;
+  x3do:name 'vl4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vl3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vl4 ;
+  x3do:hasChildren :Joe_vl2 ;
+  x3do:DEF 'Joe_vl3' ;
+  x3do:center ( 0 1.092 -0.0725 ) ;
+  x3do:name 'vl3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vl2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vl3 ;
+  x3do:hasChildren :Joe_vl1 ;
+  x3do:DEF 'Joe_vl2' ;
+  x3do:center ( 0 1.12 -0.065 ) ;
+  x3do:name 'vl2' ;
+  x3do:skinCoordIndex ( 16 18 25 83 84 85 86 87 88 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 0.7 1 0.8 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vl1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vl2 ;
+  x3do:hasChildren :Joe_vt12 ;
+  x3do:DEF 'Joe_vl1' ;
+  x3do:center ( 0 1.1459 -0.0625 ) ;
+  x3do:name 'vl1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt12 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vl1 ;
+  x3do:hasChildren :Joe_vt11 ;
+  x3do:DEF 'Joe_vt12' ;
+  x3do:center ( 0 1.179 -0.068 ) ;
+  x3do:name 'vt12' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt11 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt12 ;
+  x3do:hasChildren :Joe_vt10 ;
+  x3do:DEF 'Joe_vt11' ;
+  x3do:center ( 0 1.2679 -0.081 ) ;
+  x3do:name 'vt11' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt10 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt11 ;
+  x3do:hasChildren :Joe_vt9 ;
+  x3do:DEF 'Joe_vt10' ;
+  x3do:center ( 0 1.242 -0.09 ) ;
+  x3do:name 'vt10' ;
+  x3do:skinCoordIndex ( 15 ) ;
+  x3do:skinCoordWeight ( 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt9 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt10 ;
+  x3do:hasChildren :Joe_vt8 ;
+  x3do:DEF 'Joe_vt9' ;
+  x3do:center ( 0 1.268 -0.1 ) ;
+  x3do:name 'vt9' ;
+  x3do:skinCoordIndex ( 13 14 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt8 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt9 ;
+  x3do:hasChildren :Joe_vt7 ;
+  x3do:DEF 'Joe_vt8' ;
+  x3do:center ( 0 1.294 -0.11 ) ;
+  x3do:name 'vt8' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt7 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt8 ;
+  x3do:hasChildren :Joe_vt6 ;
+  x3do:DEF 'Joe_vt7' ;
+  x3do:center ( 0 1.323 -0.1155 ) ;
+  x3do:name 'vt7' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt6 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt7 ;
+  x3do:hasChildren :Joe_vt5 ;
+  x3do:DEF 'Joe_vt6' ;
+  x3do:center ( 0 1.352 -0.12 ) ;
+  x3do:name 'vt6' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt6 ;
+  x3do:hasChildren :Joe_vt4 ;
+  x3do:DEF 'Joe_vt5' ;
+  x3do:center ( 0 1.381 -0.1235 ) ;
+  x3do:name 'vt5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt5 ;
+  x3do:hasChildren :Joe_vt3 ;
+  x3do:DEF 'Joe_vt4' ;
+  x3do:center ( 0 1.41 -0.1235 ) ;
+  x3do:name 'vt4' ;
+  x3do:skinCoordIndex ( 81 ) ;
+  x3do:skinCoordWeight ( 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt4 ;
+  x3do:hasChildren :Joe_vt2 ;
+  x3do:DEF 'Joe_vt3' ;
+  x3do:center ( 0 1.438 -0.12 ) ;
+  x3do:name 'vt3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt3 ;
+  x3do:hasChildren :Joe_vt1 ;
+  x3do:DEF 'Joe_vt2' ;
+  x3do:center ( 0 1.468 -0.105 ) ;
+  x3do:name 'vt2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vt1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt2 ;
+  x3do:hasChildren :Joe_vc7, :Joe_l_sternoclavicular, :Joe_r_sternoclavicular ;
+  x3do:DEF 'Joe_vt1' ;
+  x3do:center ( 0 1.497 -0.09 ) ;
+  x3do:name 'vt1' ;
+  x3do:skinCoordIndex ( 11 24 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc7 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt1 ;
+  x3do:hasChildren :Joe_vc6 ;
+  x3do:DEF 'Joe_vc7' ;
+  x3do:center ( 0 1.525 -0.072 ) ;
+  x3do:name 'vc7' ;
+  x3do:skinCoordIndex ( 74 75 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc6 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc7 ;
+  x3do:hasChildren :Joe_vc5 ;
+  x3do:DEF 'Joe_vc6' ;
+  x3do:center ( 0 1.54 -0.05 ) ;
+  x3do:name 'vc6' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc6 ;
+  x3do:hasChildren :Joe_vc4 ;
+  x3do:DEF 'Joe_vc5' ;
+  x3do:center ( 0 1.552 -0.035 ) ;
+  x3do:name 'vc5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc5 ;
+  x3do:hasChildren :Joe_vc3 ;
+  x3do:DEF 'Joe_vc4' ;
+  x3do:center ( 0 1.5675 -0.0256 ) ;
+  x3do:name 'vc4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc4 ;
+  x3do:hasChildren :Joe_vc2 ;
+  x3do:DEF 'Joe_vc3' ;
+  x3do:center ( 0 1.58225 -0.0185 ) ;
+  x3do:name 'vc3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc3 ;
+  x3do:hasChildren :Joe_vc1 ;
+  x3do:DEF 'Joe_vc2' ;
+  x3do:center ( 0 1.595 -0.0175 ) ;
+  x3do:name 'vc2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_vc1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc2 ;
+  x3do:hasChildren :Joe_skullbase ;
+  x3do:DEF 'Joe_vc1' ;
+  x3do:center ( 0 1.61 -0.015 ) ;
+  x3do:name 'vc1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_skullbase a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vc1 ;
+  x3do:hasDisplacers :Joe_skull_tip_raiser_action ;
+  x3do:hasChildren :Joe_l_eyelid_joint, :Joe_l_eyeball_joint, :Joe_l_eyebrow_joint, :Joe_r_eyelid_joint, :Joe_r_eyeball_joint, :Joe_r_eyebrow_joint, :Joe_temporomandibular ;
+  x3do:DEF 'Joe_skullbase' ;
+  x3do:center ( 0 1.63 -0.01 ) ;
+  x3do:name 'skullbase' ;
+  x3do:skinCoordIndex ( 0 1 2 3 4 5 6 7 8 9 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_skull_tip_raiser_action a owl:NamedIndividual, x3do:HAnimDisplacer ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_skull_tip_raiser_action' ;
+  x3do:coordIndex ( 0 1 2 3 4 5 6 7 8 9 ) ;
+  x3do:displacements ( 0 0.15 0 0 0 0.15 -0.1 0 0.15 0.1 0 0.05 0 -0.02 0.05 -0.15 0 0 -0.05 0 0 0.15 0 0 0.05 0 0 0 0 -0.15 ) ;
+  x3do:name 'skull_tip_raiser_action' .
+:Joe_l_eyelid_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_l_eyelid_joint' ;
+  x3do:center ( 0.034 1.659 0.06 ) ;
+  x3do:name 'l_eyelid_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_eyeball_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_l_eyeball_joint' ;
+  x3do:center ( 0.034 1.659 0.06 ) ;
+  x3do:name 'l_eyeball_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_eyebrow_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_l_eyebrow_joint' ;
+  x3do:center ( 0.034 1.659 0.06 ) ;
+  x3do:name 'l_eyebrow_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_eyelid_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_r_eyelid_joint' ;
+  x3do:center ( -0.034 1.659 0.06 ) ;
+  x3do:name 'r_eyelid_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_eyeball_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_r_eyeball_joint' ;
+  x3do:center ( -0.034 1.659 0.06 ) ;
+  x3do:name 'r_eyeball_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_eyebrow_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_r_eyebrow_joint' ;
+  x3do:center ( -0.034 1.659 0.06 ) ;
+  x3do:name 'r_eyebrow_joint' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_temporomandibular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_skullbase ;
+  x3do:DEF 'Joe_temporomandibular' ;
+  x3do:center ( 0.034 1.659 0.06 ) ;
+  x3do:name 'temporomandibular' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_sternoclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt1 ;
+  x3do:hasChildren :Joe_l_acromioclavicular ;
+  x3do:DEF 'Joe_l_sternoclavicular' ;
+  x3do:center ( 0.082 1.4488 -0.0353 ) ;
+  x3do:name 'l_sternoclavicular' ;
+  x3do:skinCoordIndex ( 12 ) ;
+  x3do:skinCoordWeight ( 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_acromioclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_sternoclavicular ;
+  x3do:hasChildren :Joe_l_shoulder ;
+  x3do:DEF 'Joe_l_acromioclavicular' ;
+  x3do:center ( 0.0962 1.4269 -0.0424 ) ;
+  x3do:name 'l_acromioclavicular' ;
+  x3do:skinCoordIndex ( 79 ) ;
+  x3do:skinCoordWeight ( 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_shoulder a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_acromioclavicular ;
+  x3do:hasChildren :Joe_l_elbow ;
+  x3do:DEF 'Joe_l_shoulder' ;
+  x3do:center ( 0.2 1.44 -0.04 ) ;
+  x3do:name 'l_shoulder' ;
+  x3do:skinCoordIndex ( 41 42 44 80 102 103 104 105 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_elbow a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_shoulder ;
+  x3do:hasChildren :Joe_l_wrist ;
+  x3do:DEF 'Joe_l_elbow' ;
+  x3do:center ( 0.2 1.1388 -0.04 ) ;
+  x3do:name 'l_elbow' ;
+  x3do:skinCoordIndex ( 45 46 47 109 110 111 112 113 115 116 117 118 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_wrist a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_elbow ;
+  x3do:hasChildren :Joe_l_thumb1, :Joe_l_index0, :Joe_l_middle0, :Joe_l_ring0, :Joe_l_pinky0 ;
+  x3do:DEF 'Joe_l_wrist' ;
+  x3do:center ( 0.2 0.87 -0.04 ) ;
+  x3do:name 'l_wrist' ;
+  x3do:skinCoordIndex ( 119 120 121 122 123 124 125 126 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_thumb1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_wrist ;
+  x3do:hasChildren :Joe_l_thumb2 ;
+  x3do:DEF 'Joe_l_thumb1' ;
+  x3do:center ( 0.1924 0.8472 -0.0534 ) ;
+  x3do:name 'l_thumb1' ;
+  x3do:skinCoordIndex ( 127 128 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_thumb2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_thumb1 ;
+  x3do:hasChildren :Joe_l_thumb3 ;
+  x3do:DEF 'Joe_l_thumb2' ;
+  x3do:center ( 0.1951 0.8226 0.0246 ) ;
+  x3do:name 'l_thumb2' ;
+  x3do:skinCoordIndex ( 138 139 140 141 142 143 ) ;
+  x3do:skinCoordWeight ( 0.5 0.5 0.5 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_thumb3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_thumb2 ;
+  x3do:DEF 'Joe_l_thumb3' ;
+  x3do:center ( 0.1955 0.8159 0.0464 ) ;
+  x3do:name 'l_thumb3' ;
+  x3do:skinCoordIndex ( 144 145 146 147 148 149 150 151 152 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_index0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_wrist ;
+  x3do:hasChildren :Joe_l_index1 ;
+  x3do:DEF 'Joe_l_index0' ;
+  x3do:center ( 0.1983 0.8024 -0.028 ) ;
+  x3do:name 'l_index0' ;
+  x3do:skinCoordIndex ( 129 130 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_index1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_index0 ;
+  x3do:hasChildren :Joe_l_index2 ;
+  x3do:DEF 'Joe_l_index1' ;
+  x3do:center ( 0.1983 0.7815 -0.028 ) ;
+  x3do:name 'l_index1' ;
+  x3do:skinCoordIndex ( 138 139 140 153 154 155 163 ) ;
+  x3do:skinCoordWeight ( 0.5 0.5 0.5 1 1 1 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_index2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_index1 ;
+  x3do:hasChildren :Joe_l_index3 ;
+  x3do:DEF 'Joe_l_index2' ;
+  x3do:center ( 0.2017 0.7363 -0.0248 ) ;
+  x3do:name 'l_index2' ;
+  x3do:skinCoordIndex ( 166 167 168 169 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_index3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_index2 ;
+  x3do:DEF 'Joe_l_index3' ;
+  x3do:center ( 0.2028 0.7139 -0.0236 ) ;
+  x3do:name 'l_index3' ;
+  x3do:skinCoordIndex ( 170 171 172 173 174 175 176 177 178 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_middle0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_wrist ;
+  x3do:hasChildren :Joe_l_middle1 ;
+  x3do:DEF 'Joe_l_middle0' ;
+  x3do:center ( 0.1987 0.8029 -0.053 ) ;
+  x3do:name 'l_middle0' ;
+  x3do:skinCoordIndex ( 131 132 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_middle1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_middle0 ;
+  x3do:hasChildren :Joe_l_middle2 ;
+  x3do:DEF 'Joe_l_middle1' ;
+  x3do:center ( 0.1987 0.7818 -0.053 ) ;
+  x3do:name 'l_middle1' ;
+  x3do:skinCoordIndex ( 156 157 163 164 ) ;
+  x3do:skinCoordWeight ( 1 1 0.5 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_middle2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_middle1 ;
+  x3do:hasChildren :Joe_l_middle3 ;
+  x3do:DEF 'Joe_l_middle2' ;
+  x3do:center ( 0.2013 0.7273 -0.0503 ) ;
+  x3do:name 'l_middle2' ;
+  x3do:skinCoordIndex ( 179 180 181 182 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_middle3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_middle2 ;
+  x3do:DEF 'Joe_l_middle3' ;
+  x3do:center ( 0.2026 0.7011 -0.0494 ) ;
+  x3do:name 'l_middle3' ;
+  x3do:skinCoordIndex ( 183 184 185 186 187 188 189 190 191 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_ring0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_wrist ;
+  x3do:hasChildren :Joe_l_ring1 ;
+  x3do:DEF 'Joe_l_ring0' ;
+  x3do:center ( 0.1956 0.8019 -0.0794 ) ;
+  x3do:name 'l_ring0' ;
+  x3do:skinCoordIndex ( 133 134 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_ring1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_ring0 ;
+  x3do:hasChildren :Joe_l_ring2 ;
+  x3do:DEF 'Joe_l_ring1' ;
+  x3do:center ( 0.1956 0.7815 -0.0794 ) ;
+  x3do:name 'l_ring1' ;
+  x3do:skinCoordIndex ( 158 159 164 165 ) ;
+  x3do:skinCoordWeight ( 1 1 0.5 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_ring2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_ring1 ;
+  x3do:hasChildren :Joe_l_ring3 ;
+  x3do:DEF 'Joe_l_ring2' ;
+  x3do:center ( 0.1973 0.7287 -0.0777 ) ;
+  x3do:name 'l_ring2' ;
+  x3do:skinCoordIndex ( 192 193 194 195 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_ring3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_ring2 ;
+  x3do:DEF 'Joe_l_ring3' ;
+  x3do:center ( 0.1983 0.7045 -0.0767 ) ;
+  x3do:name 'l_ring3' ;
+  x3do:skinCoordIndex ( 196 197 198 199 200 201 202 203 204 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_pinky0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_wrist ;
+  x3do:hasChildren :Joe_l_pinky1 ;
+  x3do:DEF 'Joe_l_pinky0' ;
+  x3do:center ( 0.1925 0.8066 -0.1036 ) ;
+  x3do:name 'l_pinky0' ;
+  x3do:skinCoordIndex ( 135 136 137 165 ) ;
+  x3do:skinCoordWeight ( 1 1 1 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_pinky1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_pinky0 ;
+  x3do:hasChildren :Joe_l_pinky2 ;
+  x3do:DEF 'Joe_l_pinky1' ;
+  x3do:center ( 0.1925 0.7866 -0.1036 ) ;
+  x3do:name 'l_pinky1' ;
+  x3do:skinCoordIndex ( 160 161 162 ) ;
+  x3do:skinCoordWeight ( 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_pinky2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_pinky1 ;
+  x3do:hasChildren :Joe_l_pinky3 ;
+  x3do:DEF 'Joe_l_pinky2' ;
+  x3do:center ( 0.1938 0.7452 -0.1024 ) ;
+  x3do:name 'l_pinky2' ;
+  x3do:skinCoordIndex ( 205 206 207 208 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_l_pinky3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_l_pinky2 ;
+  x3do:DEF 'Joe_l_pinky3' ;
+  x3do:center ( 0.1948 0.7277 -0.1017 ) ;
+  x3do:name 'l_pinky3' ;
+  x3do:skinCoordIndex ( 209 210 211 212 213 214 215 216 217 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_sternoclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_vt1 ;
+  x3do:hasChildren :Joe_r_acromioclavicular ;
+  x3do:DEF 'Joe_r_sternoclavicular' ;
+  x3do:center ( -0.03 1.46 0 ) ;
+  x3do:name 'r_sternoclavicular' ;
+  x3do:skinCoordIndex ( 10 ) ;
+  x3do:skinCoordWeight ( 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_acromioclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_sternoclavicular ;
+  x3do:hasChildren :Joe_r_shoulder ;
+  x3do:DEF 'Joe_r_acromioclavicular' ;
+  x3do:center ( -0.09 1.41 -0.11 ) ;
+  x3do:name 'r_acromioclavicular' ;
+  x3do:skinCoordIndex ( 77 29 ) ;
+  x3do:skinCoordWeight ( 1 0.9 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_shoulder a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_acromioclavicular ;
+  x3do:hasChildren :Joe_r_elbow ;
+  x3do:DEF 'Joe_r_shoulder' ;
+  x3do:center ( -0.2 1.44 -0.04 ) ;
+  x3do:name 'r_shoulder' ;
+  x3do:skinCoordIndex ( 29 30 32 78 218 219 220 221 86 88 ) ;
+  x3do:skinCoordWeight ( 0.1 1 1 1 1 1 1 1 0.3 0.2 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_elbow a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_shoulder ;
+  x3do:hasChildren :Joe_r_wrist ;
+  x3do:DEF 'Joe_r_elbow' ;
+  x3do:center ( -0.2 1.1388 -0.04 ) ;
+  x3do:name 'r_elbow' ;
+  x3do:skinCoordIndex ( 33 34 35 225 226 227 228 229 231 232 233 234 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_wrist a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_elbow ;
+  x3do:hasChildren :Joe_r_thumb1, :Joe_r_index0, :Joe_r_middle0, :Joe_r_ring0, :Joe_r_pinky0 ;
+  x3do:DEF 'Joe_r_wrist' ;
+  x3do:center ( -0.2 0.89 -0.04 ) ;
+  x3do:name 'r_wrist' ;
+  x3do:skinCoordIndex ( 235 236 237 238 239 240 241 242 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_thumb1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_wrist ;
+  x3do:hasChildren :Joe_r_thumb2 ;
+  x3do:DEF 'Joe_r_thumb1' ;
+  x3do:center ( -0.2 0.85 0 ) ;
+  x3do:name 'r_thumb1' ;
+  x3do:skinCoordIndex ( 243 244 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_thumb2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_thumb1 ;
+  x3do:hasChildren :Joe_r_thumb3 ;
+  x3do:DEF 'Joe_r_thumb2' ;
+  x3do:center ( -0.2 0.82 0.03 ) ;
+  x3do:name 'r_thumb2' ;
+  x3do:skinCoordIndex ( 254 255 256 257 258 259 ) ;
+  x3do:skinCoordWeight ( 0.5 0.5 0.5 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_thumb3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_thumb2 ;
+  x3do:DEF 'Joe_r_thumb3' ;
+  x3do:center ( -0.2 0.8 0.05 ) ;
+  x3do:name 'r_thumb3' ;
+  x3do:skinCoordIndex ( 260 261 262 263 264 265 266 267 268 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_index0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_wrist ;
+  x3do:hasChildren :Joe_r_index1 ;
+  x3do:DEF 'Joe_r_index0' ;
+  x3do:center ( -0.2 0.84 -0.015 ) ;
+  x3do:name 'r_index0' ;
+  x3do:skinCoordIndex ( 245 246 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_index1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_index0 ;
+  x3do:hasChildren :Joe_r_index2 ;
+  x3do:DEF 'Joe_r_index1' ;
+  x3do:center ( -0.2 0.793 -0.015 ) ;
+  x3do:name 'r_index1' ;
+  x3do:skinCoordIndex ( 254 255 256 269 270 271 279 ) ;
+  x3do:skinCoordWeight ( 0.5 0.5 0.5 1 1 1 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_index2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_index1 ;
+  x3do:hasChildren :Joe_r_index3 ;
+  x3do:DEF 'Joe_r_index2' ;
+  x3do:center ( -0.2 0.745 -0.015 ) ;
+  x3do:name 'r_index2' ;
+  x3do:skinCoordIndex ( 282 283 284 285 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_index3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_index2 ;
+  x3do:DEF 'Joe_r_index3' ;
+  x3do:center ( -0.2 0.72 -0.015 ) ;
+  x3do:name 'r_index3' ;
+  x3do:skinCoordIndex ( 286 287 288 289 290 291 292 293 294 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_middle0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_wrist ;
+  x3do:hasChildren :Joe_r_middle1 ;
+  x3do:DEF 'Joe_r_middle0' ;
+  x3do:center ( -0.2 0.835 -0.04 ) ;
+  x3do:name 'r_middle0' ;
+  x3do:skinCoordIndex ( 247 248 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_middle1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_middle0 ;
+  x3do:hasChildren :Joe_r_middle2 ;
+  x3do:DEF 'Joe_r_middle1' ;
+  x3do:center ( -0.2 0.788 -0.04 ) ;
+  x3do:name 'r_middle1' ;
+  x3do:skinCoordIndex ( 272 273 279 280 ) ;
+  x3do:skinCoordWeight ( 1 1 0.5 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_middle2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_middle1 ;
+  x3do:hasChildren :Joe_r_middle3 ;
+  x3do:DEF 'Joe_r_middle2' ;
+  x3do:center ( -0.2 0.74 -0.04 ) ;
+  x3do:name 'r_middle2' ;
+  x3do:skinCoordIndex ( 295 296 297 298 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_middle3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_middle2 ;
+  x3do:DEF 'Joe_r_middle3' ;
+  x3do:center ( -0.2 0.7142 -0.04 ) ;
+  x3do:name 'r_middle3' ;
+  x3do:skinCoordIndex ( 299 300 301 302 303 304 305 306 307 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_ring0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_wrist ;
+  x3do:hasChildren :Joe_r_ring1 ;
+  x3do:DEF 'Joe_r_ring0' ;
+  x3do:center ( -0.2 0.835 -0.065 ) ;
+  x3do:name 'r_ring0' ;
+  x3do:skinCoordIndex ( 249 250 ) ;
+  x3do:skinCoordWeight ( 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_ring1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_ring0 ;
+  x3do:hasChildren :Joe_r_ring2 ;
+  x3do:DEF 'Joe_r_ring1' ;
+  x3do:center ( -0.2 0.793 -0.065 ) ;
+  x3do:name 'r_ring1' ;
+  x3do:skinCoordIndex ( 274 275 280 281 ) ;
+  x3do:skinCoordWeight ( 1 1 0.5 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_ring2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_ring1 ;
+  x3do:hasChildren :Joe_r_ring3 ;
+  x3do:DEF 'Joe_r_ring2' ;
+  x3do:center ( -0.2 0.74 -0.065 ) ;
+  x3do:name 'r_ring2' ;
+  x3do:skinCoordIndex ( 308 309 310 311 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_ring3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_ring2 ;
+  x3do:DEF 'Joe_r_ring3' ;
+  x3do:center ( -0.2 0.7177 -0.065 ) ;
+  x3do:name 'r_ring3' ;
+  x3do:skinCoordIndex ( 312 313 314 315 316 317 318 319 320 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_pinky0 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_wrist ;
+  x3do:hasChildren :Joe_r_pinky1 ;
+  x3do:DEF 'Joe_r_pinky0' ;
+  x3do:center ( -0.2 0.84 -0.085 ) ;
+  x3do:name 'r_pinky0' ;
+  x3do:skinCoordIndex ( 251 252 253 281 ) ;
+  x3do:skinCoordWeight ( 1 1 1 0.5 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_pinky1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_pinky0 ;
+  x3do:hasChildren :Joe_r_pinky2 ;
+  x3do:DEF 'Joe_r_pinky1' ;
+  x3do:center ( -0.2 0.79 -0.085 ) ;
+  x3do:name 'r_pinky1' ;
+  x3do:skinCoordIndex ( 276 277 278 ) ;
+  x3do:skinCoordWeight ( 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_pinky2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_pinky1 ;
+  x3do:hasChildren :Joe_r_pinky3 ;
+  x3do:DEF 'Joe_r_pinky2' ;
+  x3do:center ( -0.2 0.755 -0.085 ) ;
+  x3do:name 'r_pinky2' ;
+  x3do:skinCoordIndex ( 321 322 323 324 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_r_pinky3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_r_pinky2 ;
+  x3do:DEF 'Joe_r_pinky3' ;
+  x3do:center ( -0.2 0.735 -0.09 ) ;
+  x3do:name 'r_pinky3' ;
+  x3do:skinCoordIndex ( 325 326 327 328 329 330 331 332 333 ) ;
+  x3do:skinCoordWeight ( 1 1 1 1 1 1 1 1 1 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:Joe_Shape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Joe_Human ;
+  x3do:hasAppearance :Joe_skin_Appearance ;
+  x3do:hasGeometry :Joe_skin_IndexedFaceSet ;
+  x3do:DEF 'Joe_Shape' .
+:Joe_skin_Appearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Joe_Shape ;
+  x3do:hasMaterial :Joe_skin_Material ;
+  x3do:hasTexture :JoeSkinImageTexture ;
+  x3do:hasTextureTransform :KickTextureTransform ;
+  x3do:DEF 'Joe_skin_Appearance' .
+:Joe_skin_Material a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Joe_skin_Appearance ;
+  x3do:DEF 'Joe_skin_Material' ;
+  x3do:diffuseColor ( 0.3 0.3 0.6 ) ;
+  x3do:emissiveColor ( 0.3 0.3 0.6 ) .
+:JoeSkinImageTexture a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :Joe_skin_Appearance ;
+  x3do:DEF 'JoeSkinImageTexture' ;
+  x3do:url '"JoeBodyTexture29.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeBodyTexture29.png"' .
+:KickTextureTransform a owl:NamedIndividual, x3do:TextureTransform ;
+  x3do:hasParent :Joe_skin_Appearance ;
+  x3do:DEF 'KickTextureTransform' .
+:Joe_skin_IndexedFaceSet a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Joe_Shape ;
+  x3do:hasCoord :Joe_SkinCoord ;
+  x3do:hasTexCoord :TextureCoordinate_2_11_1_2_2_2 ;
+  x3do:DEF 'Joe_skin_IndexedFaceSet' ;
+  x3do:coordIndex ( 0 9 5 -1 0 7 9 -1 0 5 1 -1 1 5 2 -1 1 3 7 -1 2 4 3 -1 0 1 7 -1 1 2 3 -1 5 6 2 -1 7 3 8 -1 6 4 2 -1 3 4 8 -1 9 6 5 -1 9 7 8 -1 4 6 10 -1 4 10 12 -1 4 12 8 -1 10 11 12 -1 9 75 24 -1 9 24 74 -1 9 8 75 -1 9 74 6 -1 10 6 74 -1 12 75 8 -1 74 24 29 -1 24 77 29 -1 10 74 29 -1 77 32 29 -1 32 78 29 -1 78 30 29 -1 30 10 29 -1 41 24 75 -1 41 75 12 -1 41 12 42 -1 41 42 80 -1 41 80 44 -1 41 44 79 -1 41 79 24 -1 81 24 79 -1 81 77 24 -1 81 25 77 -1 81 79 25 -1 25 79 44 -1 25 32 77 -1 25 83 32 -1 25 26 83 -1 25 27 26 -1 25 84 27 -1 25 44 84 -1 11 10 30 -1 11 30 13 -1 11 13 15 -1 11 15 14 -1 11 14 42 -1 11 42 12 -1 15 13 16 -1 15 18 14 -1 15 16 76 -1 15 76 18 -1 76 16 17 -1 76 17 82 -1 76 82 19 -1 76 19 18 -1 22 18 19 -1 22 87 18 -1 22 27 84 -1 22 84 87 -1 87 84 85 -1 85 84 44 -1 85 42 14 -1 87 14 18 -1 87 85 14 -1 20 83 26 -1 20 17 16 -1 20 16 88 -1 20 88 83 -1 88 16 13 -1 88 13 86 -1 88 86 83 -1 86 13 30 -1 86 32 83 -1 23 89 22 -1 89 27 22 -1 89 91 27 -1 91 26 27 -1 91 20 26 -1 21 20 91 -1 21 17 20 -1 21 92 17 -1 82 17 92 -1 82 90 19 -1 23 22 19 -1 23 19 90 -1 82 92 101 -1 82 101 99 -1 82 99 93 -1 82 93 95 -1 82 95 97 -1 82 97 90 -1 23 90 97 -1 23 97 94 -1 23 94 89 -1 89 94 96 -1 89 96 95 -1 89 95 93 -1 89 93 91 -1 91 93 99 -1 91 99 100 -1 91 100 98 -1 21 91 98 -1 21 98 101 -1 21 101 92 -1 85 105 42 -1 85 103 105 -1 85 44 103 -1 103 44 104 -1 80 42 105 -1 80 105 102 -1 80 102 104 -1 80 104 44 -1 105 109 102 -1 102 109 47 -1 47 104 102 -1 104 47 45 -1 104 45 103 -1 103 45 46 -1 103 46 109 -1 103 109 105 -1 109 112 110 -1 109 110 47 -1 47 110 111 -1 47 111 45 -1 45 111 113 -1 113 46 45 -1 46 113 112 -1 112 109 46 -1 112 118 110 -1 110 118 115 -1 110 115 111 -1 111 115 117 -1 111 117 113 -1 113 117 116 -1 113 116 112 -1 112 116 118 -1 115 118 119 -1 119 118 122 -1 118 116 122 -1 122 116 120 -1 116 117 120 -1 120 117 121 -1 117 115 121 -1 115 119 121 -1 119 127 123 -1 119 122 127 -1 122 126 127 -1 122 128 126 -1 122 120 128 -1 120 124 128 -1 120 121 124 -1 121 125 124 -1 121 119 125 -1 119 123 125 -1 127 129 123 -1 127 126 129 -1 129 126 141 -1 141 126 143 -1 126 142 143 -1 126 128 142 -1 128 124 130 -1 142 128 130 -1 124 132 130 -1 124 134 132 -1 125 134 124 -1 125 136 134 -1 125 137 136 -1 125 135 137 -1 125 133 135 -1 125 123 133 -1 123 131 133 -1 123 129 131 -1 131 129 138 -1 129 141 138 -1 138 141 144 -1 141 143 144 -1 143 146 144 -1 142 146 143 -1 142 145 146 -1 139 145 142 -1 130 139 142 -1 139 130 132 -1 139 132 154 -1 132 157 154 -1 132 159 157 -1 132 134 159 -1 134 136 159 -1 136 161 159 -1 136 137 161 -1 137 162 161 -1 160 162 137 -1 135 160 137 -1 133 160 135 -1 133 158 160 -1 131 158 133 -1 156 158 131 -1 153 156 131 -1 131 138 153 -1 138 155 153 -1 140 155 138 -1 138 144 140 -1 144 147 140 -1 140 147 145 -1 140 145 139 -1 139 155 140 -1 154 155 139 -1 146 149 144 -1 146 151 149 -1 145 151 146 -1 150 151 145 -1 145 152 150 -1 147 152 145 -1 147 149 152 -1 147 144 149 -1 148 149 151 -1 148 152 149 -1 148 150 152 -1 148 151 150 -1 160 207 162 -1 160 205 207 -1 165 208 205 -1 160 165 205 -1 158 165 160 -1 161 162 207 -1 161 207 206 -1 165 206 208 -1 206 165 161 -1 161 165 159 -1 207 209 211 -1 205 209 207 -1 205 212 209 -1 205 208 212 -1 206 212 208 -1 206 210 212 -1 206 207 210 -1 207 211 210 -1 209 212 213 -1 212 216 213 -1 212 214 216 -1 210 214 212 -1 210 215 214 -1 210 211 215 -1 209 215 211 -1 209 213 215 -1 217 213 216 -1 217 215 213 -1 217 214 215 -1 217 216 214 -1 158 194 165 -1 192 194 158 -1 164 195 192 -1 158 164 192 -1 156 164 158 -1 159 194 165 -1 159 194 193 -1 159 193 195 -1 159 195 164 -1 159 164 157 -1 157 164 180 -1 192 198 194 -1 192 196 198 -1 192 195 196 -1 195 199 196 -1 196 199 200 -1 199 203 200 -1 193 199 195 -1 193 197 199 -1 193 198 197 -1 193 194 198 -1 199 201 203 -1 197 201 199 -1 197 198 201 -1 198 202 201 -1 196 202 198 -1 200 202 196 -1 204 202 200 -1 204 201 202 -1 204 203 201 -1 204 200 203 -1 156 181 164 -1 156 179 181 -1 156 182 179 -1 156 163 182 -1 163 180 182 -1 157 180 163 -1 164 181 180 -1 179 182 183 -1 182 186 183 -1 182 184 186 -1 180 184 182 -1 180 181 184 -1 181 185 184 -1 179 185 181 -1 183 185 179 -1 183 186 187 -1 186 190 187 -1 184 190 186 -1 184 188 190 -1 184 185 188 -1 185 189 188 -1 185 183 189 -1 183 187 189 -1 191 189 187 -1 191 188 189 -1 191 190 188 -1 191 187 190 -1 153 163 156 -1 153 168 163 -1 153 166 168 -1 153 169 166 -1 155 169 153 -1 155 167 169 -1 154 167 155 -1 154 163 167 -1 154 157 163 -1 163 168 167 -1 166 169 170 -1 169 173 170 -1 169 171 173 -1 169 167 171 -1 167 168 171 -1 168 172 171 -1 168 170 172 -1 170 168 166 -1 170 173 174 -1 173 177 174 -1 173 175 177 -1 173 171 175 -1 171 172 175 -1 172 176 175 -1 172 174 176 -1 170 174 172 -1 178 176 174 -1 178 175 176 -1 178 177 175 -1 178 174 177 -1 86 30 221 -1 86 221 219 -1 86 219 32 -1 32 219 220 -1 78 32 220 -1 78 220 218 -1 78 218 221 -1 78 221 30 -1 221 225 219 -1 219 225 35 -1 35 33 219 -1 33 220 219 -1 33 34 220 -1 220 34 218 -1 221 218 34 -1 34 225 221 -1 225 226 228 -1 225 228 35 -1 35 228 229 -1 35 229 33 -1 33 229 227 -1 33 227 34 -1 34 227 226 -1 34 226 225 -1 226 234 228 -1 228 234 232 -1 232 229 228 -1 232 233 229 -1 229 233 227 -1 227 233 231 -1 227 231 226 -1 226 231 234 -1 231 235 234 -1 235 238 234 -1 234 238 232 -1 238 236 232 -1 232 236 233 -1 236 237 233 -1 233 237 231 -1 231 237 235 -1 235 239 243 -1 235 243 238 -1 238 243 242 -1 238 242 244 -1 238 244 236 -1 236 244 240 -1 236 240 237 -1 237 240 241 -1 237 241 235 -1 235 241 239 -1 243 239 245 -1 243 245 242 -1 245 257 242 -1 257 259 242 -1 242 259 258 -1 242 258 244 -1 244 246 240 -1 258 246 244 -1 240 246 248 -1 240 248 250 -1 241 240 250 -1 241 250 252 -1 241 252 253 -1 241 253 251 -1 241 251 249 -1 241 249 239 -1 239 249 247 -1 239 247 245 -1 247 254 245 -1 245 254 257 -1 254 260 257 -1 257 260 259 -1 259 260 262 -1 258 259 262 -1 258 262 261 -1 255 258 261 -1 246 258 255 -1 255 248 246 -1 255 270 248 -1 248 270 273 -1 248 273 275 -1 248 275 250 -1 250 275 252 -1 252 275 277 -1 252 277 253 -1 253 277 278 -1 276 253 278 -1 251 253 276 -1 249 251 276 -1 249 276 274 -1 247 249 274 -1 272 247 274 -1 269 247 272 -1 247 269 254 -1 254 269 271 -1 256 254 271 -1 254 256 260 -1 260 256 263 -1 256 261 263 -1 256 255 261 -1 255 256 271 -1 270 255 271 -1 262 260 265 -1 262 265 267 -1 261 262 267 -1 266 261 267 -1 261 266 268 -1 263 261 268 -1 263 268 265 -1 263 265 260 -1 264 267 265 -1 264 265 268 -1 264 268 266 -1 264 266 267 -1 276 278 323 -1 276 323 321 -1 281 321 324 -1 276 321 281 -1 274 276 281 -1 277 323 278 -1 277 322 323 -1 281 324 322 -1 322 277 281 -1 277 275 281 -1 323 327 325 -1 321 323 325 -1 321 325 328 -1 321 328 324 -1 322 324 328 -1 322 328 326 -1 322 326 323 -1 323 326 327 -1 325 329 328 -1 328 329 332 -1 328 332 330 -1 326 328 330 -1 326 330 331 -1 326 331 327 -1 325 327 331 -1 325 331 329 -1 333 332 329 -1 333 329 331 -1 333 331 330 -1 333 330 332 -1 274 281 310 -1 308 274 310 -1 280 308 311 -1 274 308 280 -1 272 274 280 -1 275 310 281 -1 275 309 310 -1 275 311 309 -1 275 280 311 -1 275 273 280 -1 273 296 280 -1 308 310 314 -1 308 314 312 -1 308 312 311 -1 311 312 315 -1 312 316 315 -1 315 316 319 -1 309 311 315 -1 309 315 313 -1 309 313 314 -1 309 314 310 -1 315 319 317 -1 313 315 317 -1 313 317 314 -1 314 317 318 -1 312 314 318 -1 316 312 318 -1 320 316 318 -1 320 318 317 -1 320 317 319 -1 320 319 316 -1 272 280 297 -1 272 297 295 -1 272 295 298 -1 272 298 279 -1 279 298 296 -1 273 279 296 -1 280 296 297 -1 295 299 298 -1 298 299 302 -1 298 302 300 -1 296 298 300 -1 296 300 297 -1 297 300 301 -1 295 297 301 -1 299 295 301 -1 299 303 302 -1 302 303 306 -1 300 302 306 -1 300 306 304 -1 300 304 301 -1 301 304 305 -1 301 305 299 -1 299 305 303 -1 307 303 305 -1 307 305 304 -1 307 304 306 -1 307 306 303 -1 269 272 279 -1 269 279 284 -1 269 284 282 -1 269 282 285 -1 271 269 285 -1 271 285 283 -1 270 271 283 -1 270 283 279 -1 270 279 273 -1 279 283 284 -1 282 286 285 -1 285 286 289 -1 285 289 287 -1 285 287 283 -1 283 287 284 -1 284 287 288 -1 284 288 286 -1 286 282 284 -1 286 290 289 -1 289 290 293 -1 289 293 291 -1 289 291 287 -1 287 291 288 -1 288 291 292 -1 288 292 290 -1 286 288 290 -1 294 290 292 -1 294 292 291 -1 294 291 293 -1 294 293 290 -1 97 334 336 -1 97 336 94 -1 94 336 96 -1 336 335 96 -1 96 335 95 -1 95 335 337 -1 95 337 334 -1 95 334 97 -1 334 341 336 -1 336 341 338 -1 336 338 335 -1 335 338 340 -1 335 340 337 -1 337 340 339 -1 337 339 334 -1 334 339 341 -1 341 345 342 -1 341 342 338 -1 338 342 340 -1 340 342 344 -1 340 344 339 -1 339 344 343 -1 339 343 345 -1 339 345 341 -1 345 349 342 -1 342 349 351 -1 342 351 346 -1 342 346 344 -1 71 346 348 -1 71 344 346 -1 71 348 347 -1 71 347 344 -1 344 347 343 -1 343 347 352 -1 343 352 349 -1 343 349 345 -1 349 352 356 -1 349 356 353 -1 349 353 355 -1 349 355 351 -1 354 356 352 -1 354 352 350 -1 354 350 351 -1 354 351 355 -1 353 356 357 -1 353 357 358 -1 353 358 359 -1 353 359 360 -1 353 360 361 -1 353 361 355 -1 354 357 356 -1 350 346 351 -1 348 346 347 -1 350 347 346 -1 350 352 347 -1 354 358 357 -1 354 359 358 -1 354 360 359 -1 354 361 360 -1 354 355 361 -1 101 362 365 -1 101 365 99 -1 99 365 100 -1 100 365 363 -1 100 363 98 -1 98 363 364 -1 98 364 101 -1 101 364 362 -1 362 369 367 -1 362 367 365 -1 365 367 363 -1 363 367 368 -1 363 367 368 -1 363 368 366 -1 363 366 364 -1 364 366 362 -1 362 366 369 -1 369 373 371 -1 369 371 367 -1 367 371 368 -1 368 371 372 -1 368 372 366 -1 366 372 370 -1 366 370 369 -1 369 370 373 -1 373 377 380 -1 373 380 375 -1 373 375 371 -1 371 375 372 -1 372 375 376 -1 372 376 374 -1 372 374 370 -1 370 374 379 -1 373 370 379 -1 373 379 377 -1 377 379 383 -1 377 383 381 -1 377 381 384 -1 377 384 380 -1 381 383 389 -1 381 389 388 -1 381 388 387 -1 381 387 386 -1 381 386 385 -1 381 385 384 -1 376 375 374 -1 378 379 374 -1 378 374 375 -1 378 375 380 -1 382 386 387 -1 382 387 388 -1 382 388 389 -1 382 389 383 -1 382 383 379 -1 382 379 378 -1 382 378 380 -1 382 380 384 -1 382 384 385 -1 382 385 386 -1 ) ;
+  x3do:creaseAngle 3.14 .
+:Joe_SkinCoord a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Joe_skin_IndexedFaceSet ;
+  x3do:DEF 'Joe_SkinCoord' ;
+  x3do:point ( 0.0 1.77 0.0 0.0 1.665 0.09 -0.033 1.62 0.087 0.033 1.62 0.087 0.0 1.55 0.097 -0.077 1.64 -0.01 -0.0527 1.58 0.015 0.077 1.64 -0.01 0.0527 1.58 0.015 0.0 1.625 -0.0925 -0.03 1.46 0.035 0.0 1.44 0.03 0.03 1.46 0.035 -0.1135 1.318 0.095 0.1135 1.318 0.095 0.0 1.25 0.113 -0.087 1.19 0.09 -0.0935 1.03 0.075 0.087 1.19 0.09 0.0935 1.03 0.075 -0.1425 1.065 0.0033 -0.15 0.9 -0.01 0.1425 1.065 0.0033 0.15 0.9 -0.01 0.0 1.53 -0.084 0.0049 1.1908 -0.1113 -0.0773 1.019 -0.12 0.0773 1.019 -0.12 0.005 1.0915 -0.1091 -0.178 1.4825 -0.0625 -0.17 1.38 0.007 -0.1884 0.8676 -0.036 -0.16 1.38 -0.127 -0.2 1.1388 -0.08 -0.244 1.1388 -0.04 -0.165 1.1388 -0.04 -0.23 1.133 -0.055 -0.1977 0.8169 -0.0177 -0.1941 0.6772 -0.0423 -0.2117 0.8562 -0.0584 -0.1929 0.7890 -0.1064 0.175 1.4825 -0.06 0.17 1.38 0.007 0.1901 0.8645 -0.0415 0.16 1.38 -0.125 0.2 1.1388 -0.08 0.165 1.1388 -0.04 0.244 1.1388 -0.04 0.23 1.133 -0.055 0.2009 0.8139 -0.0237 0.2056 0.6743 -0.0482 0.2142 0.8529 -0.0648 0.1929 0.7860 -0.1122 -0.1 0.4913 -0.03 -0.17 0.466 0.0 -0.05 0.466 0.0 -0.165 0.01 0.12 -0.15 0.07 0.0 -0.085 0.086 0.0125 -0.09 0.056 0.0125 -0.115 0.02 0.122 -0.115 0.04 -0.055 -0.110 0.011 0.19 0.0993 0.4881 -0.0309 0.17 0.466 0.0 0.05 0.4867 0.0 0.165 0.01 0.12 0.15 0.07 0.0 0.085 0.086 0.0125 0.09 0.056 0.0125 0.115 0.02 0.122 0.115 0.04 -0.055 0.110 0.011 0.19 0.0 0.875 0.0 -0.0646 1.5149 -0.038 0.0646 1.5149 -0.038 0.0 1.07225 0.09 -0.11 1.427 -0.1375 -0.235 1.42 -0.0625 0.11 1.427 -0.1375 0.235 1.42 -0.0625 0.0 1.41 -0.145 0.0 0.925 0.08 -0.087 1.19 -0.09 0.087 1.19 -0.09 0.172 1.32 -0.03 -0.172 1.32 -0.03 0.15 1.23 -0.015 -0.15 1.23 -0.015 0.079 0.92 -0.14 0.1 0.90 0.077 -0.079 0.92 -0.14 -0.1 0.90 0.075 0.0 0.87 0.0 0.171 0.65 0.0 0.02 0.65 0.0 0.1 0.65 -0.08 0.1 0.65 0.07 -0.171 0.65 0.0 -0.02 0.65 0.0 -0.1 0.65 -0.08 -0.1 0.65 0.07 0.25 1.27 -0.04 0.17 1.27 -0.04 0.2 1.27 -0.09 0.2 1.27 0.02 0.244 1.1388 -0.04 0.165 1.1388 -0.04 0.2 1.1388 -0.08 0.2 1.1388 -0.013 0.225 1.0 -0.01 0.225 1.0 -0.07 0.185 1.0 -0.01 0.185 1.0 -0.07 0.2 1.1388 -0.04 0.225 0.92 -0.04 0.175 0.92 -0.04 0.2 0.92 -0.065 0.2 0.92 -0.015 0.225 0.89 -0.04 0.175 0.89 -0.04 0.2 0.89 -0.065 0.2 0.89 -0.015 0.218 0.86 -0.04 0.184 0.86 -0.04 0.2 0.87 -0.07 0.2 0.87 0.0 0.21 0.85 0.0 0.1854 0.85 0.0 0.212 0.84 -0.015 0.183 0.84 -0.015 0.213 0.835 -0.04 0.190 0.835 -0.04 0.211 0.835 -0.065 0.192 0.835 -0.065 0.208 0.84 -0.085 0.190 0.84 -0.085 0.2 0.84 -0.095 0.215 0.82 0.0 0.193 0.815 0.005 0.198 0.80 0.012 0.21 0.82 0.03 0.19 0.82 0.03 0.2 0.835 0.039 0.212 0.8 0.05 0.188 0.8 0.05 0.2 0.807 0.057 0.2 0.793 0.035 0.2 0.774 0.076 0.212 0.78 0.07 0.188 0.78 0.07 0.2 0.785 0.075 0.2 0.77 0.062 0.215 0.793 -0.015 0.187 0.793 -0.015 0.2 0.793 -0.005 0.215 0.788 -0.04 0.187 0.788 -0.04 0.215 0.793 -0.065 0.187 0.793 -0.065 0.21 0.79 -0.085 0.19 0.79 -0.085 0.2 0.79 -0.095 0.19 0.77 -0.0275 0.19 0.77 -0.0525 0.19 0.78 -0.0775 0.212 0.745 -0.015 0.188 0.745 -0.02 0.2 0.745 -0.0255 0.2 0.745 -0.0045 0.211 0.72 -0.015 0.189 0.72 -0.015 0.2 0.72 -0.0252 0.2 0.72 -0.0048 0.21 0.695 -0.015 0.19 0.695 -0.015 0.2 0.695 -0.025 0.2 0.695 -0.005 0.2 0.685 -0.015 0.215 0.74 -0.04 0.185 0.74 -0.04 0.2 0.74 -0.055 0.2 0.74 -0.025 0.21 0.7142 -0.04 0.19 0.7142 -0.04 0.2 0.7142 -0.053 0.2 0.7142 -0.027 0.21 0.68 -0.04 0.19 0.68 -0.04 0.2 0.68 -0.05 0.2 0.68 -0.03 0.2 0.67 -0.04 0.212 0.74 -0.065 0.188 0.74 -0.065 0.2 0.74 -0.0756 0.2 0.74 -0.0542 0.21 0.7177 -0.065 0.19 0.7177 -0.065 0.2 0.7177 -0.0751 0.2 0.7177 -0.0549 0.21 0.695 -0.065 0.19 0.695 -0.065 0.2 0.695 -0.075 0.2 0.695 -0.055 0.2 0.685 -0.065 0.211 0.755 -0.085 0.189 0.755 -0.085 0.2 0.755 -0.0952 0.2 0.755 -0.0748 0.21 0.735 -0.085 0.19 0.735 -0.085 0.2 0.735 -0.0951 0.2 0.735 -0.0749 0.21 0.72 -0.085 0.19 0.72 -0.085 0.2 0.72 -0.095 0.2 0.72 -0.075 0.2 0.71 -0.085 -0.23 1.23 -0.04 -0.16 1.23 -0.04 -0.2 1.235 -0.105 -0.2 1.255 0.02 -0.244 1.1388 -0.04 -0.165 1.1388 -0.04 -0.2 1.1388 -0.08 -0.2 1.1388 0.013 -0.225 1.0 -0.01 -0.225 1.0 -0.07 -0.185 1.0 -0.01 -0.185 1.0 -0.07 -0.2 1.1388 -0.04 -0.225 0.92 -0.04 -0.175 0.92 -0.04 -0.2 0.92 -0.065 -0.2 0.92 -0.015 -0.225 0.89 -0.04 -0.175 0.89 -0.04 -0.2 0.89 -0.065 -0.2 0.89 -0.015 -0.218 0.86 -0.04 -0.184 0.86 -0.04 -0.2 0.87 -0.07 -0.2 0.87 0.0 -0.21 0.85 0.0 -0.1854 0.85 0.0 -0.212 0.84 -0.015 -0.183 0.84 -0.015 -0.213 0.835 -0.04 -0.190 0.835 -0.04 -0.211 0.835 -0.065 -0.192 0.835 -0.065 -0.208 0.84 -0.085 -0.190 0.84 -0.085 -0.2 0.84 -0.095 -0.215 0.82 0.0 -0.193 0.815 0.005 -0.198 0.80 0.012 -0.21 0.82 0.03 -0.19 0.82 0.03 -0.2 0.835 0.039 -0.212 0.8 0.05 -0.188 0.8 0.05 -0.2 0.807 0.057 -0.2 0.793 0.035 -0.2 0.774 0.076 -0.212 0.78 0.07 -0.188 0.78 0.07 -0.2 0.785 0.075 -0.2 0.77 0.062 -0.215 0.793 -0.015 -0.187 0.793 -0.015 -0.2 0.793 -0.005 -0.215 0.788 -0.04 -0.187 0.788 -0.04 -0.215 0.793 -0.065 -0.187 0.793 -0.065 -0.21 0.79 -0.085 -0.19 0.79 -0.085 -0.2 0.79 -0.095 -0.19 0.77 -0.0275 -0.19 0.77 -0.0525 -0.19 0.78 -0.0775 -0.212 0.745 -0.015 -0.188 0.745 -0.02 -0.2 0.745 -0.0255 -0.2 0.745 -0.0045 -0.211 0.72 -0.015 -0.189 0.72 -0.015 -0.2 0.72 -0.0252 -0.2 0.72 -0.0048 -0.21 0.695 -0.015 -0.19 0.695 -0.015 -0.2 0.695 -0.025 -0.2 0.695 -0.005 -0.2 0.685 -0.015 -0.215 0.74 -0.04 -0.185 0.74 -0.04 -0.2 0.74 -0.055 -0.2 0.74 -0.025 -0.21 0.7142 -0.04 -0.19 0.7142 -0.04 -0.2 0.7142 -0.053 -0.2 0.7142 -0.027 -0.21 0.68 -0.04 -0.19 0.68 -0.04 -0.2 0.68 -0.05 -0.2 0.68 -0.03 -0.2 0.67 -0.04 -0.212 0.74 -0.065 -0.188 0.74 -0.065 -0.2 0.74 -0.0756 -0.2 0.74 -0.0542 -0.21 0.7177 -0.065 -0.19 0.7177 -0.065 -0.2 0.7177 -0.0751 -0.2 0.7177 -0.0549 -0.21 0.695 -0.065 -0.19 0.695 -0.065 -0.2 0.695 -0.075 -0.2 0.695 -0.055 -0.2 0.685 -0.065 -0.211 0.755 -0.085 -0.189 0.755 -0.085 -0.2 0.755 -0.0952 -0.2 0.755 -0.0748 -0.21 0.735 -0.085 -0.19 0.735 -0.085 -0.2 0.735 -0.0951 -0.2 0.735 -0.0749 -0.21 0.72 -0.085 -0.19 0.72 -0.085 -0.2 0.72 -0.095 -0.2 0.72 -0.075 -0.2 0.71 -0.085 0.115 0.466 0.06 0.115 0.466 -0.055 0.15 0.466 0.0 0.05 0.466 0.0 0.17 0.3 0.0 0.06 0.3 0.0 0.1 0.3 -0.05 0.1 0.3 0.05 0.15 0.07 0.0 0.085 0.086 0.0125 0.115 0.069 -0.045 0.117 0.0975 0.0615 0.1375 0.006 -0.03 0.095 0.006 -0.03 0.115 0.015 -0.045 0.115 0.06 0.1 0.115 0.0 0.07 0.165 0.0 0.07 0.095 0.0 0.07 0.115 0.04 0.13 0.125 0.0 0.12 0.165 0.0 0.12 0.087 0.0 0.122 0.090 0.012 0.188 0.110 0.011 0.19 0.128 0.011 0.185 0.142 0.011 0.178 0.154 0.010 0.168 -0.115 0.466 0.06 -0.115 0.466 -0.055 -0.17 0.466 0.0 -0.05 0.466 0.0 -0.17 0.3 0.0 -0.06 0.3 0.0 -0.1 0.3 -0.05 -0.1 0.3 0.05 -0.15 0.07 0.0 -0.085 0.086 0.0125 -0.115 0.069 -0.045 -0.117 0.0975 0.0615 -0.1375 0.006 -0.03 -0.095 0.006 -0.03 -0.095 0.006 -0.03 -0.115 0.06 0.1 -0.115 0.0 0.07 -0.165 0.0 0.07 -0.095 0.0 0.07 -0.115 0.04 0.13 -0.125 0.0 0.12 -0.165 0.0 0.12 -0.087 0.0 0.122 -0.090 0.012 0.188 -0.110 0.011 0.19 -0.128 0.011 0.185 -0.142 0.011 0.178 -0.154 0.010 0.168 ) .
+:TextureCoordinate_2_11_1_2_2_2 a owl:NamedIndividual, x3do:TextureCoordinate ;
+  x3do:hasParent :Joe_skin_IndexedFaceSet ;
+  x3do:point ( 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 0.5 0 0 0.5 0 0 0.5 0.5 ) .
+:Joe_SkinCoord-USE-1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_SkinCoord . # DEF matching this USE
+:Joe_HumanoidRoot-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_HumanoidRoot . # DEF matching this USE
+:Joe_sacroiliac-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_sacroiliac . # DEF matching this USE
+:Joe_vl5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vl5 . # DEF matching this USE
+:Joe_vl4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vl4 . # DEF matching this USE
+:Joe_vl3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vl3 . # DEF matching this USE
+:Joe_vl2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vl2 . # DEF matching this USE
+:Joe_vl1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vl1 . # DEF matching this USE
+:Joe_vt12-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt12 . # DEF matching this USE
+:Joe_vt11-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt11 . # DEF matching this USE
+:Joe_vt10-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt10 . # DEF matching this USE
+:Joe_vt9-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt9 . # DEF matching this USE
+:Joe_vt8-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt8 . # DEF matching this USE
+:Joe_vt7-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt7 . # DEF matching this USE
+:Joe_vt6-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt6 . # DEF matching this USE
+:Joe_vt5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt5 . # DEF matching this USE
+:Joe_vt4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt4 . # DEF matching this USE
+:Joe_vt3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt3 . # DEF matching this USE
+:Joe_vt2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt2 . # DEF matching this USE
+:Joe_vt1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vt1 . # DEF matching this USE
+:Joe_vc7-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc7 . # DEF matching this USE
+:Joe_vc6-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc6 . # DEF matching this USE
+:Joe_vc5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc5 . # DEF matching this USE
+:Joe_vc4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc4 . # DEF matching this USE
+:Joe_vc3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc3 . # DEF matching this USE
+:Joe_vc2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc2 . # DEF matching this USE
+:Joe_vc1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_vc1 . # DEF matching this USE
+:Joe_skullbase-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_skullbase . # DEF matching this USE
+:Joe_temporomandibular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_temporomandibular . # DEF matching this USE
+:Joe_l_acromioclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_acromioclavicular . # DEF matching this USE
+:Joe_r_acromioclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_acromioclavicular . # DEF matching this USE
+:Joe_l_ankle-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_ankle . # DEF matching this USE
+:Joe_r_ankle-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_ankle . # DEF matching this USE
+:Joe_l_elbow-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_elbow . # DEF matching this USE
+:Joe_r_elbow-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_elbow . # DEF matching this USE
+:Joe_l_eyeball_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_eyeball_joint . # DEF matching this USE
+:Joe_r_eyeball_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_eyeball_joint . # DEF matching this USE
+:Joe_l_eyebrow_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_eyebrow_joint . # DEF matching this USE
+:Joe_r_eyebrow_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_eyebrow_joint . # DEF matching this USE
+:Joe_l_eyelid_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_eyelid_joint . # DEF matching this USE
+:Joe_r_eyelid_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_eyelid_joint . # DEF matching this USE
+:Joe_l_hip-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_hip . # DEF matching this USE
+:Joe_r_hip-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_hip . # DEF matching this USE
+:Joe_l_index0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_index0 . # DEF matching this USE
+:Joe_r_index0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_index0 . # DEF matching this USE
+:Joe_l_index1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_index1 . # DEF matching this USE
+:Joe_r_index1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_index1 . # DEF matching this USE
+:Joe_l_index2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_index2 . # DEF matching this USE
+:Joe_r_index2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_index2 . # DEF matching this USE
+:Joe_l_index3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_index3 . # DEF matching this USE
+:Joe_r_index3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_index3 . # DEF matching this USE
+:Joe_l_knee-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_knee . # DEF matching this USE
+:Joe_r_knee-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_knee . # DEF matching this USE
+:Joe_l_metatarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_metatarsal . # DEF matching this USE
+:Joe_r_metatarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_metatarsal . # DEF matching this USE
+:Joe_l_middle0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_middle0 . # DEF matching this USE
+:Joe_r_middle0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_middle0 . # DEF matching this USE
+:Joe_l_middle1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_middle1 . # DEF matching this USE
+:Joe_r_middle1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_middle1 . # DEF matching this USE
+:Joe_l_middle2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_middle2 . # DEF matching this USE
+:Joe_r_middle2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_middle2 . # DEF matching this USE
+:Joe_l_middle3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_middle3 . # DEF matching this USE
+:Joe_r_middle3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_middle3 . # DEF matching this USE
+:Joe_l_midtarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_midtarsal . # DEF matching this USE
+:Joe_r_midtarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_midtarsal . # DEF matching this USE
+:Joe_l_pinky0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_pinky0 . # DEF matching this USE
+:Joe_r_pinky0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_pinky0 . # DEF matching this USE
+:Joe_l_pinky1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_pinky1 . # DEF matching this USE
+:Joe_r_pinky1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_pinky1 . # DEF matching this USE
+:Joe_l_pinky2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_pinky2 . # DEF matching this USE
+:Joe_r_pinky2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_pinky2 . # DEF matching this USE
+:Joe_l_pinky3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_pinky3 . # DEF matching this USE
+:Joe_r_pinky3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_pinky3 . # DEF matching this USE
+:Joe_l_ring0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_ring0 . # DEF matching this USE
+:Joe_r_ring0-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_ring0 . # DEF matching this USE
+:Joe_l_ring1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_ring1 . # DEF matching this USE
+:Joe_r_ring1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_ring1 . # DEF matching this USE
+:Joe_l_ring2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_ring2 . # DEF matching this USE
+:Joe_r_ring2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_ring2 . # DEF matching this USE
+:Joe_l_ring3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_ring3 . # DEF matching this USE
+:Joe_r_ring3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_ring3 . # DEF matching this USE
+:Joe_l_shoulder-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_shoulder . # DEF matching this USE
+:Joe_r_shoulder-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_shoulder . # DEF matching this USE
+:Joe_l_sternoclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_sternoclavicular . # DEF matching this USE
+:Joe_r_sternoclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_sternoclavicular . # DEF matching this USE
+:Joe_l_subtalar-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_subtalar . # DEF matching this USE
+:Joe_r_subtalar-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_subtalar . # DEF matching this USE
+:Joe_l_thumb1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_thumb1 . # DEF matching this USE
+:Joe_r_thumb1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_thumb1 . # DEF matching this USE
+:Joe_l_thumb2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_thumb2 . # DEF matching this USE
+:Joe_r_thumb2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_thumb2 . # DEF matching this USE
+:Joe_l_thumb3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_thumb3 . # DEF matching this USE
+:Joe_r_thumb3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_thumb3 . # DEF matching this USE
+:Joe_l_wrist-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_l_wrist . # DEF matching this USE
+:Joe_r_wrist-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_r_wrist . # DEF matching this USE
+:Joe_sacrum-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_sacrum . # DEF matching this USE
+:Joe_RootFront_view-USE-1 a owl:NamedIndividual, x3do:HAnimSite ;
+  x3do:hasParent :Joe_Human ;
+  owl:sameAs :Joe_RootFront_view . # DEF matching this USE
+:Group_2_12 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :KickTimer, :HumanoidRoot_RotationInterpolator, :HumanoidRoot_TranslationInterpolator, :sacroiliac_RotationInterpolator, :l_hip_RotationInterpolator, :l_knee_RotationInterpolator, :l_ankle_RotationInterpolator, :l_subtalar_RotationInterpolator, :l_midtarsal_RotationInterpolator, :l_metatarsal_RotationInterpolator, :r_hip_RotationInterpolator, :r_knee_RotationInterpolator, :r_ankle_RotationInterpolator, :r_subtalar_RotationInterpolator, :r_midtarsal_RotationInterpolator, :r_metatarsal_RotationInterpolator, :vl5_RotationInterpolator, :vl4_RotationInterpolator, :vl3_RotationInterpolator, :vl2_RotationInterpolator, :vl1_RotationInterpolator, :vt12_RotationInterpolator, :vt11_RotationInterpolator, :vt10_RotationInterpolator, :vt9_RotationInterpolator, :vt8_RotationInterpolator, :vt7_RotationInterpolator, :vt6_RotationInterpolator, :vt5_RotationInterpolator, :vt4_RotationInterpolator, :vt3_RotationInterpolator, :vt2_RotationInterpolator, :vt1_RotationInterpolator, :vc7_RotationInterpolator, :vc6_RotationInterpolator, :vc5_RotationInterpolator, :vc4_RotationInterpolator, :vc3_RotationInterpolator, :vc2_RotationInterpolator, :vc1_RotationInterpolator, :skullbase_RotationInterpolator, :l_eyelid_joint_RotationInterpolator, :l_eyeball_joint_RotationInterpolator, :l_eyebrow_joint_RotationInterpolator, :r_eyelid_joint_RotationInterpolator, :r_eyeball_joint_RotationInterpolator, :r_eyebrow_joint_RotationInterpolator, :temporomandibular_RotationInterpolator, :l_sternoclavicular_RotationInterpolator, :l_acromioclavicular_RotationInterpolator, :l_shoulder_RotationInterpolator, :l_elbow_RotationInterpolator, :l_wrist_RotationInterpolator, :l_thumb1_RotationInterpolator, :l_thumb2_RotationInterpolator, :l_thumb3_RotationInterpolator, :l_index0_RotationInterpolator, :l_index1_RotationInterpolator, :l_index2_RotationInterpolator, :l_index3_RotationInterpolator, :l_middle0_RotationInterpolator, :l_middle1_RotationInterpolator, :l_middle2_RotationInterpolator, :l_middle3_RotationInterpolator, :l_ring0_RotationInterpolator, :l_ring1_RotationInterpolator, :l_ring2_RotationInterpolator, :l_ring3_RotationInterpolator, :l_pinky0_RotationInterpolator, :l_pinky1_RotationInterpolator, :l_pinky2_RotationInterpolator, :l_pinky3_RotationInterpolator, :r_sternoclavicular_RotationInterpolator, :r_acromioclavicular_RotationInterpolator, :r_shoulder_RotationInterpolator, :r_elbow_RotationInterpolator, :r_wrist_RotationInterpolator, :r_thumb1_RotationInterpolator, :r_thumb2_RotationInterpolator, :r_thumb3_RotationInterpolator, :r_index0_RotationInterpolator, :r_index1_RotationInterpolator, :r_index2_RotationInterpolator, :r_index3_RotationInterpolator, :r_middle0_RotationInterpolator, :r_middle1_RotationInterpolator, :r_middle2_RotationInterpolator, :r_middle3_RotationInterpolator, :r_ring0_RotationInterpolator, :r_ring1_RotationInterpolator, :r_ring2_RotationInterpolator, :r_ring3_RotationInterpolator, :r_pinky0_RotationInterpolator, :r_pinky1_RotationInterpolator, :r_pinky2_RotationInterpolator, :r_pinky3_RotationInterpolator .
+:KickTimer a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'KickTimer' ;
+  x3do:cycleInterval '3.73' ;
+  x3do:loop true .
+:HumanoidRoot_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'HumanoidRoot_RotationInterpolator' ;
+  x3do:key ( 0 0.1 0.4 0.6 1 ) ;
+  x3do:keyValue ( 1 0 0 0.5 1 0 0 0.5 -1 0 0 0.1 -1 0 0 0.5 -1 0 0 0.5 ) .
+:HumanoidRoot_TranslationInterpolator a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'HumanoidRoot_TranslationInterpolator' ;
+  x3do:key ( 0 0.2 0.6 1 ) ;
+  x3do:keyValue ( 1 0.3 -1 0.4 -0.04 -0.4 -0.18 0.1 0 -0.2 0.15 0.15 ) .
+:sacroiliac_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'sacroiliac_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_hip_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_hip_RotationInterpolator' ;
+  x3do:key ( 0 0.1 0.3 0.45 1 ) ;
+  x3do:keyValue ( -1 0 0 1.5 -1 0 0 1 0 0 1 0 1 0 0 0.5 1 0 0 1 ) .
+:l_knee_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_knee_RotationInterpolator' ;
+  x3do:key ( 0 0.2 0.35 0.5 1 ) ;
+  x3do:keyValue ( 1 0 0 1 0 0 1 0 0 0 1 0.2 1 0 1 0.5 1 0 0 1.4 ) .
+:l_ankle_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_ankle_RotationInterpolator' ;
+  x3do:key ( 0 0.25 1 ) ;
+  x3do:keyValue ( -1 0 0 1 0 0 1 0 1 0 0 1 ) .
+:l_subtalar_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_subtalar_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_midtarsal_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_midtarsal_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_metatarsal_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_metatarsal_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_hip_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_hip_RotationInterpolator' ;
+  x3do:key ( 0 0.25 0.5 0.75 1 ) ;
+  x3do:keyValue ( 1 0 0 1 1 0 0 1 -1 0 0 1 -1 0 0 1 -1 0 0 1 ) .
+:r_knee_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_knee_RotationInterpolator' ;
+  x3do:key ( 0 0.25 0.5 0.75 1 ) ;
+  x3do:keyValue ( 1 0 0 0.1 0 0 1 0 1 0 0 1 1 0 0 1 1 0 0 1.5 ) .
+:r_ankle_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_ankle_RotationInterpolator' ;
+  x3do:key ( 0 0.25 0.5 0.75 1 ) ;
+  x3do:keyValue ( -1 0 0 1 0 0 1 0 1 0 0 1 1 0 0 1 1 0 0 0.5 ) .
+:r_subtalar_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_subtalar_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_midtarsal_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_midtarsal_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_metatarsal_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_metatarsal_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vl5_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vl5_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vl4_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vl4_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vl3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vl3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vl2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vl2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vl1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vl1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt12_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt12_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt11_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt11_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt10_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt10_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt9_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt9_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt8_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt8_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt7_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt7_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt6_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt6_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt5_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt5_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt4_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt4_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vt1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vt1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc7_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc7_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc6_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc6_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc5_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc5_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc4_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc4_RotationInterpolator' ;
+  x3do:key ( 0 0.3 0.4 1 ) ;
+  x3do:keyValue ( 1 0 1 0.25 -1 0 -1 0.35 1 0 0 0.75 1 0 1 0.5 ) .
+:vc3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:vc1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'vc1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:skullbase_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'skullbase_RotationInterpolator' ;
+  x3do:key ( 0 0.2 0.75 1 ) ;
+  x3do:keyValue ( 0 -1 0 0.5 0 0 1 0 0 0 1 0 0 1 0 0.35 ) .
+:l_eyelid_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_eyelid_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_eyeball_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_eyeball_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_eyebrow_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_eyebrow_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_eyelid_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_eyelid_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_eyeball_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_eyeball_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_eyebrow_joint_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_eyebrow_joint_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:temporomandibular_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'temporomandibular_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_sternoclavicular_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_sternoclavicular_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_acromioclavicular_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_acromioclavicular_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_shoulder_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_shoulder_RotationInterpolator' ;
+  x3do:key ( 0 0.4 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 1.5 -1 0 1 1.75 ) .
+:l_elbow_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_elbow_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( -1 0 0 3 -1 0 0 0.75 -1 -1 0 0.5 ) .
+:l_wrist_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_wrist_RotationInterpolator' ;
+  x3do:key ( 0 0.4 0.8 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 1 0 1.3 0 -0.5 1 1.3 0 0 1 0 ) .
+:l_thumb1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_thumb1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_thumb2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_thumb2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_thumb3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_thumb3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_index0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_index0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_index1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_index1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_index2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_index2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_index3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_index3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_middle0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_middle0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_middle1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_middle1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_middle2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_middle2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_middle3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_middle3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_ring0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_ring0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_ring1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_ring1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_ring2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_ring2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_ring3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_ring3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_pinky0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_pinky0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_pinky1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_pinky1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_pinky2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_pinky2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:l_pinky3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'l_pinky3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_sternoclavicular_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_sternoclavicular_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_acromioclavicular_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_acromioclavicular_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_shoulder_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_shoulder_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 -1 2.5 0 0 -1 1.5 0 0 -1 1.75 ) .
+:r_elbow_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_elbow_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( -1 0 0 3 -1 0 0 0.75 -1 -1 0 0.5 ) .
+:r_wrist_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_wrist_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.7 1 ) ;
+  x3do:keyValue ( 0 1 0 0.3 0 0 1 0 0 0 -1 1 0 -1 0 0.3 ) .
+:r_thumb1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_thumb1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_thumb2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_thumb2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_thumb3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_thumb3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 0 ) .
+:r_index0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_index0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 ) .
+:r_index1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_index1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_index2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_index2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_index3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_index3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_middle0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_middle0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 ) .
+:r_middle1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_middle1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_middle2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_middle2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_middle3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_middle3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_ring0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_ring0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 ) .
+:r_ring1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_ring1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_ring2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_ring2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_ring3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_ring3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_pinky0_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_pinky0_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 ) .
+:r_pinky1_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_pinky1_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_pinky2_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_pinky2_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:r_pinky3_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_12 ;
+  x3do:DEF 'r_pinky3_RotationInterpolator' ;
+  x3do:key ( 0 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 0 1 0 0 0 1 0 0 0 1 1.5 0 0 1 0 ) .
+:ROUTE_2_13 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'HumanoidRoot_RotationInterpolator' .
+:ROUTE_2_14 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'HumanoidRoot_TranslationInterpolator' .
+:ROUTE_2_15 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'sacroiliac_RotationInterpolator' .
+:ROUTE_2_16 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_hip_RotationInterpolator' .
+:ROUTE_2_17 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_knee_RotationInterpolator' .
+:ROUTE_2_18 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_ankle_RotationInterpolator' .
+:ROUTE_2_19 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_subtalar_RotationInterpolator' .
+:ROUTE_2_20 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_midtarsal_RotationInterpolator' .
+:ROUTE_2_21 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_metatarsal_RotationInterpolator' .
+:ROUTE_2_22 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_hip_RotationInterpolator' .
+:ROUTE_2_23 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_knee_RotationInterpolator' .
+:ROUTE_2_24 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_ankle_RotationInterpolator' .
+:ROUTE_2_25 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_subtalar_RotationInterpolator' .
+:ROUTE_2_26 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_midtarsal_RotationInterpolator' .
+:ROUTE_2_27 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_metatarsal_RotationInterpolator' .
+:ROUTE_2_28 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vl5_RotationInterpolator' .
+:ROUTE_2_29 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vl4_RotationInterpolator' .
+:ROUTE_2_30 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vl3_RotationInterpolator' .
+:ROUTE_2_31 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vl2_RotationInterpolator' .
+:ROUTE_2_32 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vl1_RotationInterpolator' .
+:ROUTE_2_33 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt12_RotationInterpolator' .
+:ROUTE_2_34 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt11_RotationInterpolator' .
+:ROUTE_2_35 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt10_RotationInterpolator' .
+:ROUTE_2_36 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt9_RotationInterpolator' .
+:ROUTE_2_37 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt8_RotationInterpolator' .
+:ROUTE_2_38 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt7_RotationInterpolator' .
+:ROUTE_2_39 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt6_RotationInterpolator' .
+:ROUTE_2_40 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt5_RotationInterpolator' .
+:ROUTE_2_41 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt4_RotationInterpolator' .
+:ROUTE_2_42 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt3_RotationInterpolator' .
+:ROUTE_2_43 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt2_RotationInterpolator' .
+:ROUTE_2_44 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vt1_RotationInterpolator' .
+:ROUTE_2_45 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc7_RotationInterpolator' .
+:ROUTE_2_46 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc6_RotationInterpolator' .
+:ROUTE_2_47 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc5_RotationInterpolator' .
+:ROUTE_2_48 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc4_RotationInterpolator' .
+:ROUTE_2_49 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc3_RotationInterpolator' .
+:ROUTE_2_50 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc2_RotationInterpolator' .
+:ROUTE_2_51 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'vc1_RotationInterpolator' .
+:ROUTE_2_52 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'skullbase_RotationInterpolator' .
+:ROUTE_2_53 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_eyelid_joint_RotationInterpolator' .
+:ROUTE_2_54 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_eyeball_joint_RotationInterpolator' .
+:ROUTE_2_55 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_eyebrow_joint_RotationInterpolator' .
+:ROUTE_2_56 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_eyelid_joint_RotationInterpolator' .
+:ROUTE_2_57 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_eyeball_joint_RotationInterpolator' .
+:ROUTE_2_58 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_eyebrow_joint_RotationInterpolator' .
+:ROUTE_2_59 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'temporomandibular_RotationInterpolator' .
+:ROUTE_2_60 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_sternoclavicular_RotationInterpolator' .
+:ROUTE_2_61 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_acromioclavicular_RotationInterpolator' .
+:ROUTE_2_62 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_shoulder_RotationInterpolator' .
+:ROUTE_2_63 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_elbow_RotationInterpolator' .
+:ROUTE_2_64 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_wrist_RotationInterpolator' .
+:ROUTE_2_65 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_thumb1_RotationInterpolator' .
+:ROUTE_2_66 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_thumb2_RotationInterpolator' .
+:ROUTE_2_67 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_thumb3_RotationInterpolator' .
+:ROUTE_2_68 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_index0_RotationInterpolator' .
+:ROUTE_2_69 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_index1_RotationInterpolator' .
+:ROUTE_2_70 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_index2_RotationInterpolator' .
+:ROUTE_2_71 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_index3_RotationInterpolator' .
+:ROUTE_2_72 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_middle0_RotationInterpolator' .
+:ROUTE_2_73 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_middle1_RotationInterpolator' .
+:ROUTE_2_74 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_middle2_RotationInterpolator' .
+:ROUTE_2_75 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_middle3_RotationInterpolator' .
+:ROUTE_2_76 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_ring0_RotationInterpolator' .
+:ROUTE_2_77 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_ring1_RotationInterpolator' .
+:ROUTE_2_78 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_ring2_RotationInterpolator' .
+:ROUTE_2_79 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_ring3_RotationInterpolator' .
+:ROUTE_2_80 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_pinky0_RotationInterpolator' .
+:ROUTE_2_81 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_pinky1_RotationInterpolator' .
+:ROUTE_2_82 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_pinky2_RotationInterpolator' .
+:ROUTE_2_83 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'l_pinky3_RotationInterpolator' .
+:ROUTE_2_84 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_sternoclavicular_RotationInterpolator' .
+:ROUTE_2_85 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_acromioclavicular_RotationInterpolator' .
+:ROUTE_2_86 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_shoulder_RotationInterpolator' .
+:ROUTE_2_87 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_elbow_RotationInterpolator' .
+:ROUTE_2_88 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_wrist_RotationInterpolator' .
+:ROUTE_2_89 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_thumb1_RotationInterpolator' .
+:ROUTE_2_90 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_thumb2_RotationInterpolator' .
+:ROUTE_2_91 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_thumb3_RotationInterpolator' .
+:ROUTE_2_92 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_index0_RotationInterpolator' .
+:ROUTE_2_93 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_index1_RotationInterpolator' .
+:ROUTE_2_94 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_index2_RotationInterpolator' .
+:ROUTE_2_95 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_index3_RotationInterpolator' .
+:ROUTE_2_96 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_middle0_RotationInterpolator' .
+:ROUTE_2_97 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_middle1_RotationInterpolator' .
+:ROUTE_2_98 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_middle2_RotationInterpolator' .
+:ROUTE_2_99 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_middle3_RotationInterpolator' .
+:ROUTE_2_100 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_ring0_RotationInterpolator' .
+:ROUTE_2_101 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_ring1_RotationInterpolator' .
+:ROUTE_2_102 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_ring2_RotationInterpolator' .
+:ROUTE_2_103 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_ring3_RotationInterpolator' .
+:ROUTE_2_104 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_pinky0_RotationInterpolator' .
+:ROUTE_2_105 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_pinky1_RotationInterpolator' .
+:ROUTE_2_106 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_pinky2_RotationInterpolator' .
+:ROUTE_2_107 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'r_pinky3_RotationInterpolator' .
+:ROUTE_2_108 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'HumanoidRoot_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_HumanoidRoot' .
+:ROUTE_2_109 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'HumanoidRoot_TranslationInterpolator' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'Joe_HumanoidRoot' .
+:ROUTE_2_110 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'sacroiliac_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_sacroiliac' .
+:ROUTE_2_111 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_hip_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_hip' .
+:ROUTE_2_112 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_knee_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_knee' .
+:ROUTE_2_113 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_ankle_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_ankle' .
+:ROUTE_2_114 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_subtalar_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_subtalar' .
+:ROUTE_2_115 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_midtarsal_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_midtarsal' .
+:ROUTE_2_116 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_metatarsal_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_metatarsal' .
+:ROUTE_2_117 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_hip_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_hip' .
+:ROUTE_2_118 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_knee_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_knee' .
+:ROUTE_2_119 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_ankle_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_ankle' .
+:ROUTE_2_120 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_subtalar_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_subtalar' .
+:ROUTE_2_121 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_midtarsal_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_midtarsal' .
+:ROUTE_2_122 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_metatarsal_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_metatarsal' .
+:ROUTE_2_123 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vl5_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vl5' .
+:ROUTE_2_124 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vl4_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vl4' .
+:ROUTE_2_125 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vl3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vl3' .
+:ROUTE_2_126 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vl2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vl2' .
+:ROUTE_2_127 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vl1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vl1' .
+:ROUTE_2_128 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt12_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt12' .
+:ROUTE_2_129 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt11_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt11' .
+:ROUTE_2_130 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt10_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt10' .
+:ROUTE_2_131 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt9_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt9' .
+:ROUTE_2_132 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt8_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt8' .
+:ROUTE_2_133 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt7_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt7' .
+:ROUTE_2_134 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt6_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt6' .
+:ROUTE_2_135 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt5_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt5' .
+:ROUTE_2_136 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt4_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt4' .
+:ROUTE_2_137 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt3' .
+:ROUTE_2_138 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt2' .
+:ROUTE_2_139 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vt1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vt1' .
+:ROUTE_2_140 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc7_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc7' .
+:ROUTE_2_141 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc6_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc6' .
+:ROUTE_2_142 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc5_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc5' .
+:ROUTE_2_143 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc4_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc4' .
+:ROUTE_2_144 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc3' .
+:ROUTE_2_145 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc2' .
+:ROUTE_2_146 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'vc1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_vc1' .
+:ROUTE_2_147 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'skullbase_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_skullbase' .
+:ROUTE_2_148 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_eyelid_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_eyelid_joint' .
+:ROUTE_2_149 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_eyeball_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_eyeball_joint' .
+:ROUTE_2_150 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_eyebrow_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_eyebrow_joint' .
+:ROUTE_2_151 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_eyelid_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_eyelid_joint' .
+:ROUTE_2_152 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_eyeball_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_eyeball_joint' .
+:ROUTE_2_153 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_eyebrow_joint_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_eyebrow_joint' .
+:ROUTE_2_154 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'temporomandibular_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_temporomandibular' .
+:ROUTE_2_155 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_sternoclavicular_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_sternoclavicular' .
+:ROUTE_2_156 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_acromioclavicular_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_acromioclavicular' .
+:ROUTE_2_157 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_shoulder_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_shoulder' .
+:ROUTE_2_158 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_elbow_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_elbow' .
+:ROUTE_2_159 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_wrist_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_wrist' .
+:ROUTE_2_160 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_thumb1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_thumb1' .
+:ROUTE_2_161 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_thumb2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_thumb2' .
+:ROUTE_2_162 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_thumb3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_thumb3' .
+:ROUTE_2_163 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_index0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_index0' .
+:ROUTE_2_164 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_index1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_index1' .
+:ROUTE_2_165 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_index2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_index2' .
+:ROUTE_2_166 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_index3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_index3' .
+:ROUTE_2_167 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_middle0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_middle0' .
+:ROUTE_2_168 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_middle1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_middle1' .
+:ROUTE_2_169 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_middle2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_middle2' .
+:ROUTE_2_170 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_middle3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_middle3' .
+:ROUTE_2_171 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_ring0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_ring0' .
+:ROUTE_2_172 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_ring1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_ring1' .
+:ROUTE_2_173 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_ring2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_ring2' .
+:ROUTE_2_174 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_ring3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_ring3' .
+:ROUTE_2_175 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_pinky0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_pinky0' .
+:ROUTE_2_176 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_pinky1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_pinky1' .
+:ROUTE_2_177 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_pinky2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_pinky2' .
+:ROUTE_2_178 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'l_pinky3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_l_pinky3' .
+:ROUTE_2_179 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_sternoclavicular_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_sternoclavicular' .
+:ROUTE_2_180 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_acromioclavicular_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_acromioclavicular' .
+:ROUTE_2_181 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_shoulder_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_shoulder' .
+:ROUTE_2_182 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_elbow_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_elbow' .
+:ROUTE_2_183 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_wrist_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_wrist' .
+:ROUTE_2_184 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_thumb1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_thumb1' .
+:ROUTE_2_185 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_thumb2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_thumb2' .
+:ROUTE_2_186 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_thumb3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_thumb3' .
+:ROUTE_2_187 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_index0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_index0' .
+:ROUTE_2_188 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_index1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_index1' .
+:ROUTE_2_189 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_index2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_index2' .
+:ROUTE_2_190 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_index3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_index3' .
+:ROUTE_2_191 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_middle0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_middle0' .
+:ROUTE_2_192 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_middle1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_middle1' .
+:ROUTE_2_193 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_middle2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_middle2' .
+:ROUTE_2_194 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_middle3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_middle3' .
+:ROUTE_2_195 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_ring0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_ring0' .
+:ROUTE_2_196 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_ring1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_ring1' .
+:ROUTE_2_197 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_ring2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_ring2' .
+:ROUTE_2_198 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_ring3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_ring3' .
+:ROUTE_2_199 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_pinky0_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_pinky0' .
+:ROUTE_2_200 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_pinky1_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_pinky1' .
+:ROUTE_2_201 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_pinky2_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_pinky2' .
+:ROUTE_2_202 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'r_pinky3_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'Joe_r_pinky3' .
+:DisplacersAnimationGroup a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :skull_tipInterpolator ;
+  x3do:hasROUTE :ROUTE_2_203_2, :ROUTE_2_203_3 ;
+  x3do:DEF 'DisplacersAnimationGroup' .
+:skull_tipInterpolator a owl:NamedIndividual, x3do:ScalarInterpolator ;
+  x3do:hasParent :DisplacersAnimationGroup ;
+  x3do:DEF 'skull_tipInterpolator' ;
+  x3do:key ( 0 0.1 0.2 0.35 0.6 0.7 0.85 0.88 0.94 0.97 1 ) ;
+  x3do:keyValue ( 0 0 0 0 0.2 0.4 1 0 1 0.4 0 ) .
+:ROUTE_2_203_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DisplacersAnimationGroup ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'skull_tipInterpolator' .
+:ROUTE_2_203_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DisplacersAnimationGroup ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'skull_tipInterpolator' ;
+  x3do:toField 'weight' ;
+  x3do:toNode 'Joe_skull_tip_raiser_action' .
+:SkinTextureTransformAnimationGroup a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :SkinTextureTransformInterpolator ;
+  x3do:hasROUTE :ROUTE_2_204_2, :ROUTE_2_204_3 ;
+  x3do:DEF 'SkinTextureTransformAnimationGroup' .
+:SkinTextureTransformInterpolator a owl:NamedIndividual, x3do:ScalarInterpolator ;
+  x3do:hasParent :SkinTextureTransformAnimationGroup ;
+  x3do:DEF 'SkinTextureTransformInterpolator' ;
+  x3do:key ( 0 0.2 0.4 0.5 0.6 0.7 0.8 1 ) ;
+  x3do:keyValue ( 0 0 0 0 0 1 2 0 ) .
+:ROUTE_2_204_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :SkinTextureTransformAnimationGroup ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'SkinTextureTransformInterpolator' .
+:ROUTE_2_204_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :SkinTextureTransformAnimationGroup ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'SkinTextureTransformInterpolator' ;
+  x3do:toField 'rotation' ;
+  x3do:toNode 'KickTextureTransform' .
+:Group_2_205 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :SBall, :ball_TranslationInterpolator, :ball_RotationInterpolator ;
+  x3do:hasROUTE :ROUTE_2_205_4, :ROUTE_2_205_5, :ROUTE_2_205_6, :ROUTE_2_205_7 .
+:SBall a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:hasChildren :ball_Shape, :ballView_1 ;
+  x3do:DEF 'SBall' ;
+  x3do:rotation ( 0.7 0 0.7 0.1 ) ;
+  x3do:scale ( 0.23 0.23 0.23 ) ;
+  x3do:translation ( -0.916 0.37 -0.92 ) .
+:ball_Shape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :SBall ;
+  x3do:hasAppearance :ball_Appearance ;
+  x3do:hasGeometry :ball_IndexedFaceSet ;
+  x3do:DEF 'ball_Shape' .
+:ball_Appearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :ball_Shape ;
+  x3do:hasMaterial :ball_Material ;
+  x3do:hasTexture :JoeSkinImageTexture-USE-1 ;
+  x3do:DEF 'ball_Appearance' .
+:ball_Material a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :ball_Appearance ;
+  x3do:DEF 'ball_Material' ;
+  x3do:diffuseColor ( 0.3 0.3 1 ) ;
+  x3do:emissiveColor ( 0.3 0.3 0.33 ) .
+:JoeSkinImageTexture-USE-1 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :ball_Appearance ;
+  owl:sameAs :JoeSkinImageTexture . # DEF matching this USE
+:ball_IndexedFaceSet a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :ball_Shape ;
+  x3do:hasCoord :Ball_Coordinates ;
+  x3do:DEF 'ball_IndexedFaceSet' ;
+  x3do:coordIndex ( 0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1 ) .
+:Ball_Coordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :ball_IndexedFaceSet ;
+  x3do:DEF 'Ball_Coordinates' ;
+  x3do:point ( 0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0 ) .
+:ballView_1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :SBall ;
+  x3do:DEF 'ballView_1' ;
+  x3do:description 'Ball View' .
+:ball_TranslationInterpolator a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:DEF 'ball_TranslationInterpolator' ;
+  x3do:key ( 0 0.4 0.409 1 ) ;
+  x3do:keyValue ( -1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10 ) .
+:ball_RotationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:DEF 'ball_RotationInterpolator' ;
+  x3do:key ( 0 0.4 0.41 0.71 1 ) ;
+  x3do:keyValue ( 1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3 ) .
+:ROUTE_2_205_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'ball_TranslationInterpolator' .
+:ROUTE_2_205_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'ball_TranslationInterpolator' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'SBall' .
+:ROUTE_2_205_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'KickTimer' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'ball_RotationInterpolator' .
+:ROUTE_2_205_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_205 ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'ball_RotationInterpolator' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'SBall' .
+:Group_2_206 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_206_1, :Circle0, :Circle1, :Circle2 .
+:Transform_2_206_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_206 ;
+  x3do:hasChildren :AxisLinesShape-USE-1 ;
+  x3do:scale ( 0.2 0.2 0.2 ) .
+:AxisLinesShape-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_206_1 ;
+  owl:sameAs :AxisLinesShape . # DEF matching this USE
+:Circle0 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_206 ;
+  x3do:hasChildren :circle_Shape ;
+  x3do:DEF 'Circle0' ;
+  x3do:scale ( 1.175 1 1.175 ) .
+:circle_Shape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Circle0 ;
+  x3do:hasAppearance :circle0_Appearance ;
+  x3do:hasGeometry :Orbit1 ;
+  x3do:DEF 'circle_Shape' .
+:circle0_Appearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :circle_Shape ;
+  x3do:hasMaterial :circle0_Material ;
+  x3do:DEF 'circle0_Appearance' .
+:circle0_Material a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :circle0_Appearance ;
+  x3do:DEF 'circle0_Material' ;
+  x3do:ambientIntensity 0.9 ;
+  x3do:diffuseColor ( 0.9 0 0.7 ) ;
+  x3do:emissiveColor ( 0.425 0.486 1 ) .
+:Orbit1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :circle_Shape ;
+  x3do:hasCoord :circle_Coordinates ;
+  x3do:DEF 'Orbit1' ;
+  x3do:coordIndex ( 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 -1 ) .
+:circle_Coordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Orbit1 ;
+  x3do:DEF 'circle_Coordinates' ;
+  x3do:point ( 1 0 0 0.995 0 -0.105 0.979 0 -0.208 0.951 0 -0.309 0.914 0 -0.407 0.866 0 -0.5 0.809 0 -0.588 0.743 0 -0.669 0.669 0 -0.743 0.588 0 -0.809 0.5 0 -0.866 0.407 0 -0.914 0.309 0 -0.951 0.208 0 -0.978 0.105 0 -0.995 0 0 -1 -0.105 0 -0.994522 -0.208 0 -0.978 -0.309 0 -0.951 -0.407 0 -0.914 -0.5 0 -0.866 -0.588 0 -0.809 -0.669 0 -0.743 -0.743 0 -0.669 -0.809 0 -0.588 -0.866 0 -0.5 -0.914 0 -0.407 -0.951 0 -0.309 -0.978 0 -0.208 -0.995 0 -0.105 -1 0 0 -0.995 0 0.105 -0.978 0 0.208 -0.951 0 0.309 -0.914 0 0.407 -0.866 0 0.5 -0.809 0 0.588 -0.743 0 0.669 -0.669 0 0.743 -0.588 0 0.809 -0.5 0 0.866 -0.407 0 0.914 -0.309 0 0.951 -0.208 0 0.978 -0.105 0 0.995 0 0 1 0.105 0 0.995 0.208 0 0.978 0.309 0 0.951 0.407 0 0.914 0.5 0 0.866 0.588 0 0.809 0.669 0 0.743 0.743 0 0.669 0.809 0 0.588 0.866 0 0.5 0.914 0 0.407 0.951 0 0.309 0.978 0 0.208 0.995 0 0.104 1 0 0 ) .
+:Circle1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_206 ;
+  x3do:hasChildren :circle1_Shape ;
+  x3do:DEF 'Circle1' ;
+  x3do:scale ( 0.5 1 0.5 ) .
+:circle1_Shape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Circle1 ;
+  x3do:hasAppearance :circle1_Appearance ;
+  x3do:hasGeometry :Orbit1-USE-1 ;
+  x3do:DEF 'circle1_Shape' .
+:circle1_Appearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :circle1_Shape ;
+  x3do:hasMaterial :circle1_Material ;
+  x3do:DEF 'circle1_Appearance' .
+:circle1_Material a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :circle1_Appearance ;
+  x3do:DEF 'circle1_Material' ;
+  x3do:diffuseColor ( 0.9 0 0.7 ) ;
+  x3do:emissiveColor ( 0.424956 0.483976 1 ) .
+:Orbit1-USE-1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :circle1_Shape ;
+  owl:sameAs :Orbit1 . # DEF matching this USE
+:Circle2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_206 ;
+  x3do:hasChildren :circle2_Shape ;
+  x3do:DEF 'Circle2' ;
+  x3do:scale ( 0.25 1 0.25 ) .
+:circle2_Shape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Circle2 ;
+  x3do:hasAppearance :circle2_Appearance ;
+  x3do:hasGeometry :Orbit1-USE-2 ;
+  x3do:DEF 'circle2_Shape' .
+:circle2_Appearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :circle2_Shape ;
+  x3do:hasMaterial :circle2_Material ;
+  x3do:DEF 'circle2_Appearance' .
+:circle2_Material a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :circle2_Appearance ;
+  x3do:DEF 'circle2_Material' ;
+  x3do:diffuseColor ( 0.9 0 0.7 ) ;
+  x3do:emissiveColor ( 0.424956 0.483976 1 ) .
+:Orbit1-USE-2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :circle2_Shape ;
+  owl:sameAs :Orbit1 . # DEF matching this USE
