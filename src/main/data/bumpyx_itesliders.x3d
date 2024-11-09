@@ -52,7 +52,7 @@
         <!-- Arrow X -->
         <Transform translation="25 0 0" rotation="0 0 -1 1.57">
           <Shape>
-            <Cylinder DEF="Shaft" radius=".35" height="50" />
+            <Cylinder DEF="Shaft" radius=".35" height="50.0" />
             <Appearance>
               <Material DEF="RED" diffuseColor="1 0 0" emissiveColor="1 0 0" />
             </Appearance>
@@ -60,7 +60,7 @@
         </Transform>
         <Transform translation="50 0 0" rotation="0 0 -1 1.57">
           <Shape>
-            <Cone DEF="Tip" bottomRadius=".8" height="3" />
+            <Cone DEF="Tip" bottomRadius=".8" height="3.0" />
             <Appearance>
               <Material USE="RED" />
             </Appearance>
