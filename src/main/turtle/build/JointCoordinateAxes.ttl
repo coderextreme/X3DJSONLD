@@ -1,0 +1,174 @@
+@prefix :        <https://www.web3d.org/semantics/scenes/UnnamedX3dModel.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'converter' ;
+  x3do:content 'x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'converted' ;
+  x3do:content 'Mon, 31 Jul 2023 03:48:04 GMT' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Group_2_2, :Transform_2_3, :Transform_2_4 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:headlight false .
+:Group_2_2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ARROW, :Transform_2_2_2 .
+:ARROW a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_1_1, :Transform_2_2_1_2, :Transform_2_2_1_3 ;
+  x3do:DEF 'ARROW' .
+:Shape_2_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :ARROW ;
+  x3do:hasAppearance :ARROW_APPEARANCE ;
+  x3do:hasGeometry :Cylinder_2_2_1_1_2 .
+:ARROW_APPEARANCE a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1_1 ;
+  x3do:hasMaterial :Material_2_2_1_1_1_1 ;
+  x3do:DEF 'ARROW_APPEARANCE' .
+:Material_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :ARROW_APPEARANCE ;
+  x3do:diffuseColor ( 0.3 0.3 1 ) ;
+  x3do:emissiveColor ( 0.3 0.3 0.33 ) .
+:Cylinder_2_2_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_2_1_1 ;
+  x3do:top false ;
+  x3do:bottom false ;
+  x3do:radius 0.025 .
+:Transform_2_2_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ARROW ;
+  x3do:hasChildren :ARROW_POINTER ;
+  x3do:translation ( 0 1 0 ) .
+:ARROW_POINTER a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1_2 ;
+  x3do:hasAppearance :ARROW_APPEARANCE-USE-1 ;
+  x3do:hasGeometry :Cone_2_2_1_2_1_2 ;
+  x3do:DEF 'ARROW_POINTER' .
+:ARROW_APPEARANCE-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :ARROW_POINTER ;
+  owl:sameAs :ARROW_APPEARANCE . # DEF matching this USE
+:Cone_2_2_1_2_1_2 a owl:NamedIndividual, x3do:Cone ;
+  x3do:hasParent :ARROW_POINTER ;
+  x3do:height 0.1 ;
+  x3do:bottomRadius 0.05 .
+:Transform_2_2_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ARROW ;
+  x3do:hasChildren :ARROW_POINTER-USE-1 ;
+  x3do:translation ( 0 -1 0 ) ;
+  x3do:rotation ( 1 0 0 3.1416 ) .
+:ARROW_POINTER-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1_3 ;
+  owl:sameAs :ARROW_POINTER . # DEF matching this USE
+:Transform_2_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Billboard_2_2_2_1 ;
+  x3do:translation ( 0 1.08 0 ) .
+:Billboard_2_2_2_1 a owl:NamedIndividual, x3do:Billboard ;
+  x3do:hasParent :Transform_2_2_2 ;
+  x3do:hasChildren :Shape_2_2_2_1_1 .
+:Shape_2_2_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Billboard_2_2_2_1 ;
+  x3do:hasAppearance :LABEL_APPEARANCE ;
+  x3do:hasGeometry :Text_2_2_2_1_1_2 .
+:LABEL_APPEARANCE a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1_1 ;
+  x3do:DEF 'LABEL_APPEARANCE' .
+:Material_2_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :LABEL_APPEARANCE ;
+  x3do:diffuseColor ( 1 1 0.3 ) ;
+  x3do:emissiveColor ( 0.33 0.33 0.1 ) .
+:Text_2_2_2_1_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_2_2_1_1 ;
+  x3do:hasFontStyle :LABEL_FONT ;
+  x3do:string '"Y"' .
+:LABEL_FONT a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_2_2_1_1_2 ;
+  x3do:DEF 'LABEL_FONT' ;
+  x3do:family '"SANS"' ;
+  x3do:size 0.2 ;
+  x3do:justify '"MIDDLE"' .
+:Transform_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Group_2_3_1 ;
+  x3do:rotation ( 0 0 1 -1.5708 ) .
+:Group_2_3_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:hasChildren :ARROW-USE-1, :Transform_2_3_1_2 .
+:ARROW-USE-1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Group_2_3_1 ;
+  owl:sameAs :ARROW . # DEF matching this USE
+:Transform_2_3_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_3_1 ;
+  x3do:hasChildren :Billboard_2_3_1_2_1 ;
+  x3do:translation ( 0.072 1.1 0 ) ;
+  x3do:rotation ( 0 0 1 1.5708 ) .
+:Billboard_2_3_1_2_1 a owl:NamedIndividual, x3do:Billboard ;
+  x3do:hasParent :Transform_2_3_1_2 ;
+  x3do:hasChildren :Shape_2_3_1_2_1_1 .
+:Shape_2_3_1_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Billboard_2_3_1_2_1 ;
+  x3do:hasAppearance :LABEL_APPEARANCE-USE-1 ;
+  x3do:hasGeometry :Text_2_3_1_2_1_1_2 .
+:LABEL_APPEARANCE-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1_2_1_1 ;
+  owl:sameAs :LABEL_APPEARANCE . # DEF matching this USE
+:Text_2_3_1_2_1_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_1_2_1_1 ;
+  x3do:hasFontStyle :LABEL_FONT-USE-1 ;
+  x3do:string '"X"' .
+:LABEL_FONT-USE-1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_1_2_1_1_2 ;
+  owl:sameAs :LABEL_FONT . # DEF matching this USE
+:Transform_2_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Group_2_4_1 ;
+  x3do:rotation ( 1 0 0 1.5708 ) .
+:Group_2_4_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Transform_2_4 ;
+  x3do:hasChildren :ARROW-USE-2, :Transform_2_4_1_2 .
+:ARROW-USE-2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Group_2_4_1 ;
+  owl:sameAs :ARROW . # DEF matching this USE
+:Transform_2_4_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_4_1 ;
+  x3do:hasChildren :Billboard_2_4_1_2_1 ;
+  x3do:translation ( 0 1.1 0.072 ) ;
+  x3do:rotation ( 1 0 0 -1.5708 ) .
+:Billboard_2_4_1_2_1 a owl:NamedIndividual, x3do:Billboard ;
+  x3do:hasParent :Transform_2_4_1_2 ;
+  x3do:hasChildren :Shape_2_4_1_2_1_1 .
+:Shape_2_4_1_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Billboard_2_4_1_2_1 ;
+  x3do:hasAppearance :LABEL_APPEARANCE-USE-2 ;
+  x3do:hasGeometry :Text_2_4_1_2_1_1_2 .
+:LABEL_APPEARANCE-USE-2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_2_1_1 ;
+  owl:sameAs :LABEL_APPEARANCE . # DEF matching this USE
+:Text_2_4_1_2_1_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_4_1_2_1_1 ;
+  x3do:hasFontStyle :LABEL_FONT-USE-2 ;
+  x3do:string '"Z"' .
+:LABEL_FONT-USE-2 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_4_1_2_1_1_2 ;
+  owl:sameAs :LABEL_FONT . # DEF matching this USE

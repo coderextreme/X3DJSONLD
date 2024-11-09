@@ -1,0 +1,194 @@
+@prefix :        <http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20, :meta_1_21, :meta_1_22, :meta_1_23 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Simple X3D model example: Hello World!' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '30 October 2000' ;
+  x3do:name 'created' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.tall.png' ;
+  x3do:name 'Image' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://en.wikipedia.org/wiki/Hello_world' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://en.wikipedia.org/wiki/"Hello,_World!"_program' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.HelloWorldExample.net' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org' ;
+  x3do:name 'reference' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/realtime-3d/news/internationalization-x3d' ;
+  x3do:name 'reference' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HelloWorld.x3d' ;
+  x3do:name 'reference' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d' ;
+  x3do:name 'reference' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/license.html' ;
+  x3do:name 'license' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.wrl' ;
+  x3do:name 'reference' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.x3dv' ;
+  x3do:name 'reference' .
+:meta_1_21 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.x3db' ;
+  x3do:name 'reference' .
+:meta_1_22 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.xhtml' ;
+  x3do:name 'reference' .
+:meta_1_23 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorld.json' ;
+  x3do:name 'reference' .
+:meta dcterms:title "HelloWorld.x3d" .
+:meta dcterms:description "Simple X3D model example: Hello World!" .
+:meta dcterms:created "30 October 2000" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:Image "HelloWorld.tall.png" .
+:meta dcterms:reference "http://en.wikipedia.org/wiki/Hello_world" .
+:meta dcterms:reference "https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program" .
+:meta dcterms:reference "https://en.wikipedia.org/wiki/\"Hello,_World!\"_program" .
+:meta dcterms:reference "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world" .
+:meta dcterms:reference "http://www.HelloWorldExample.net" .
+:meta dcterms:reference "https://www.web3d.org" .
+:meta dcterms:reference "https://www.web3d.org/realtime-3d/news/internationalization-x3d" .
+:meta dcterms:reference "https://www.web3d.org/x3d/content/examples/HelloWorld.x3d" .
+:meta dcterms:reference "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" .
+:meta dcterms:identifier "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d" .
+:meta dcterms:license "https://www.web3d.org/x3d/content/examples/license.html" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:reference "HelloWorld.wrl" .
+:meta dcterms:reference "HelloWorld.x3dv" .
+:meta dcterms:reference "HelloWorld.x3db" .
+:meta dcterms:reference "HelloWorld.xhtml" .
+:meta dcterms:reference "HelloWorld.json" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Group_2_2 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:info '"Example scene to illustrate a simple X3D model"' ;
+  x3do:title 'Hello World!' .
+:Group_2_2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ViewUpClose, :Transform_2_2_2, :Transform_2_2_3 .
+:ViewUpClose a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:DEF 'ViewUpClose' ;
+  x3do:centerOfRotation ( 0 -1 0 ) ;
+  x3do:description 'Hello world!' ;
+  x3do:position ( 0 -1 7 ) .
+:Transform_2_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_2_1 ;
+  x3do:rotation ( 0 1 0 3 ) .
+:Shape_2_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2 .
+:Sphere_2_2_2_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2_2_1 .
+:Appearance_2_2_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1 ;
+  x3do:hasMaterial :MaterialLightBlue ;
+  x3do:hasTexture :ImageCloudlessEarth .
+:MaterialLightBlue a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2 ;
+  x3do:DEF 'MaterialLightBlue' ;
+  x3do:diffuseColor ( 0.1 0.5 1 ) .
+:ImageCloudlessEarth a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :Appearance_2_2_2_1_2 ;
+  x3do:DEF 'ImageCloudlessEarth' ;
+  x3do:url '"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"' .
+:Transform_2_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_3_1 ;
+  x3do:translation ( 0 -2 0 ) .
+:Shape_2_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_3 ;
+  x3do:hasGeometry :TextMessage ;
+  x3do:hasAppearance :Appearance_2_2_3_1_2 .
+:TextMessage a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_2_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_2_3_1_1_1 ;
+  x3do:DEF 'TextMessage' ;
+  x3do:string '"Hello" "world!"' .
+:FontStyle_2_2_3_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :TextMessage ;
+  x3do:justify '"MIDDLE" "MIDDLE"' .
+:Appearance_2_2_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_3_1 ;
+  x3do:hasMaterial :MaterialLightBlue-USE-1 .
+:MaterialLightBlue-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_3_1_2 ;
+  owl:sameAs :MaterialLightBlue . # DEF matching this USE

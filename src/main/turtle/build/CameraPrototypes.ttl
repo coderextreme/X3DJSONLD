@@ -1,0 +1,1978 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.2' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.2.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'CameraPrototypes.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman and Jeff Weekley' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '16 March 2009' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '25 October 2016' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Schematron rules, backed up by initialize() checks' ;
+  x3do:name 'TODO' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BeyondViewpointCameraNodesWeb3D2009.pdf' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Camera nodes for Viewpoint navigation control' ;
+  x3do:name 'subject' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'CameraExamples.x3d' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' ;
+  x3do:name 'reference' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "CameraPrototypes.x3d" .
+:meta dcterms:description "Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement." .
+:meta dcterms:creator "Don Brutzman and Jeff Weekley" .
+:meta dcterms:created "16 March 2009" .
+:meta dcterms:modified "25 October 2016" .
+:meta dcterms:reference "BeyondViewpointCameraNodesWeb3D2009.pdf" .
+:meta dcterms:reference "https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" .
+:meta dcterms:subject "Camera nodes for Viewpoint navigation control" .
+:meta dcterms:reference "CameraExamples.x3d" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" .
+:meta dcterms:reference "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1, :ProtoDeclare_2_2, :ProtoDeclare_2_3, :ProtoDeclare_2_4 ;
+  x3do:hasChildren :Background_2_5, :Anchor_2_6 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:appinfo 'Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.' ;
+  x3do:name 'Camera' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1, :field_2_1_1_2, :field_2_1_1_3, :field_2_1_1_4, :field_2_1_1_5, :field_2_1_1_6, :field_2_1_1_7, :field_2_1_1_8, :field_2_1_1_9, :field_2_1_1_10, :field_2_1_1_11, :field_2_1_1_12, :field_2_1_1_13, :field_2_1_1_14, :field_2_1_1_15, :field_2_1_1_16, :field_2_1_1_17, :field_2_1_1_18, :field_2_1_1_19, :field_2_1_1_20, :field_2_1_1_21, :field_2_1_1_22, :field_2_1_1_23 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this Camera' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_1_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' ;
+  x3do:name 'position' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 10 ) .
+:field_2_1_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' ;
+  x3do:name 'orientation' ;
+  x3do:type 'SFRotation' ;
+  x3do:value ( 0 0 1 0 ) .
+:field_2_1_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'pi/4' ;
+  x3do:name 'fieldOfView' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.7854 .
+:field_2_1_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'input fraction drives interpolators' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_2_1_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'input event binds or unbinds this Camera' ;
+  x3do:name 'set_bind' ;
+  x3do:type 'SFBool' .
+:field_2_1_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'output event indicates when this Camera is bound' ;
+  x3do:name 'bindTime' ;
+  x3do:type 'SFTime' .
+:field_2_1_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'output event indicates whether this Camera is bound or unbound' ;
+  x3do:name 'isBound' ;
+  x3do:type 'SFBool' .
+:field_2_1_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]' ;
+  x3do:name 'nearClipPlane' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.25 .
+:field_2_1_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit' ;
+  x3do:name 'farClipPlane' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.0 .
+:field_2_1_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Array of CameraShot nodes which in turn contain CameraMovement nodes' ;
+  x3do:name 'shots' ;
+  x3do:type 'MFNode' .
+:field_2_1_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether camera headlight is on or off' ;
+  x3do:name 'headlight' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_1_1_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera headlight color' ;
+  x3do:name 'headlightColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_1_1_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera headlight intensity' ;
+  x3do:name 'headlightIntensity' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1 .
+:field_2_1_1_15 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera filter color that modifies virtual lens capture' ;
+  x3do:name 'filterColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_1_1_16 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera filter transparency that modifies virtual lens capture' ;
+  x3do:name 'filterTransparency' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1 .
+:field_2_1_1_17 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'upVector changes modify camera orientation (and possibly vice versa)' ;
+  x3do:name 'upVector' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 1 0 ) .
+:field_2_1_1_18 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'fStop' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5.6 .
+:field_2_1_1_19 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'focusDistance' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 10 .
+:field_2_1_1_20 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_1_1_21 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' ;
+  x3do:name 'totalDuration' ;
+  x3do:type 'SFTime' .
+:field_2_1_1_22 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'OfflineRender node' ;
+  x3do:name 'offlineRender' ;
+  x3do:type 'SFNode' .
+:field_2_1_1_23 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :CameraViewpoint, :CameraNavInfo, :CameraDirectionalLight, :CameraPositionInterpolator, :CameraOrientationInterpolator, :CameraScript ;
+  x3do:hasROUTE :ROUTE_2_1_2_6, :ROUTE_2_1_2_7, :ROUTE_2_1_2_9, :ROUTE_2_1_2_10, :ROUTE_2_1_2_11, :ROUTE_2_1_2_12, :ROUTE_2_1_2_13 .
+:CameraViewpoint a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_1_1 ;
+  x3do:DEF 'CameraViewpoint' .
+:IS_2_1_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraViewpoint ;
+  x3do:hasConnect :connect_2_1_2_1_1_1, :connect_2_1_2_1_1_2, :connect_2_1_2_1_1_3, :connect_2_1_2_1_1_4, :connect_2_1_2_1_1_5, :connect_2_1_2_1_1_6, :connect_2_1_2_1_1_7 .
+:connect_2_1_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'description' ;
+  x3do:protoField 'description' .
+:connect_2_1_2_1_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'position' ;
+  x3do:protoField 'position' .
+:connect_2_1_2_1_1_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'orientation' ;
+  x3do:protoField 'orientation' .
+:connect_2_1_2_1_1_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'fieldOfView' ;
+  x3do:protoField 'fieldOfView' .
+:connect_2_1_2_1_1_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'set_bind' ;
+  x3do:protoField 'set_bind' .
+:connect_2_1_2_1_1_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'bindTime' ;
+  x3do:protoField 'bindTime' .
+:connect_2_1_2_1_1_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'isBound' ;
+  x3do:protoField 'isBound' .
+:CameraNavInfo a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_2_1 ;
+  x3do:DEF 'CameraNavInfo' ;
+  x3do:type '"EXAMINE" "FLY" "ANY"' .
+:IS_2_1_2_2_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraNavInfo ;
+  x3do:hasConnect :connect_2_1_2_2_1_1, :connect_2_1_2_2_1_2, :connect_2_1_2_2_1_3 .
+:connect_2_1_2_2_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_1 ;
+  x3do:nodeField 'set_bind' ;
+  x3do:protoField 'set_bind' .
+:connect_2_1_2_2_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_1 ;
+  x3do:nodeField 'headlight' ;
+  x3do:protoField 'headlight' .
+:connect_2_1_2_2_1_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_2_1 ;
+  x3do:nodeField 'visibilityLimit' ;
+  x3do:protoField 'farClipPlane' .
+:CameraDirectionalLight a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_3_1 ;
+  x3do:DEF 'CameraDirectionalLight' ;
+  x3do:global true .
+:IS_2_1_2_3_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraDirectionalLight ;
+  x3do:hasConnect :connect_2_1_2_3_1_1, :connect_2_1_2_3_1_2, :connect_2_1_2_3_1_3 .
+:connect_2_1_2_3_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_3_1 ;
+  x3do:nodeField 'on' ;
+  x3do:protoField 'headlight' .
+:connect_2_1_2_3_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_3_1 ;
+  x3do:nodeField 'color' ;
+  x3do:protoField 'headlightColor' .
+:connect_2_1_2_3_1_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_3_1 ;
+  x3do:nodeField 'intensity' ;
+  x3do:protoField 'headlightIntensity' .
+:CameraPositionInterpolator a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_4_1 ;
+  x3do:DEF 'CameraPositionInterpolator' ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0 0 0 0 0 0 ) .
+:IS_2_1_2_4_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraPositionInterpolator ;
+  x3do:hasConnect :connect_2_1_2_4_1_1 .
+:connect_2_1_2_4_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_4_1 ;
+  x3do:nodeField 'set_fraction' ;
+  x3do:protoField 'set_fraction' .
+:CameraOrientationInterpolator a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_5_1 ;
+  x3do:DEF 'CameraOrientationInterpolator' ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0 1 0 0 0 1 0 0 ) .
+:IS_2_1_2_5_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraOrientationInterpolator ;
+  x3do:hasConnect :connect_2_1_2_5_1_1 .
+:connect_2_1_2_5_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_5_1 ;
+  x3do:nodeField 'set_fraction' ;
+  x3do:protoField 'set_fraction' .
+:ROUTE_2_1_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'CameraPositionInterpolator' ;
+  x3do:toField 'position' ;
+  x3do:toNode 'CameraViewpoint' .
+:ROUTE_2_1_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'CameraOrientationInterpolator' ;
+  x3do:toField 'orientation' ;
+  x3do:toNode 'CameraViewpoint' .
+:CameraScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasField :field_2_1_2_8_1, :field_2_1_2_8_2, :field_2_1_2_8_3, :field_2_1_2_8_4, :field_2_1_2_8_5, :field_2_1_2_8_6, :field_2_1_2_8_7, :field_2_1_2_8_8, :field_2_1_2_8_9, :field_2_1_2_8_10, :field_2_1_2_8_11, :field_2_1_2_8_12, :field_2_1_2_8_13, :field_2_1_2_8_14, :field_2_1_2_8_15, :field_2_1_2_8_16, :field_2_1_2_8_17, :field_2_1_2_8_18, :field_2_1_2_8_19, :field_2_1_2_8_20, :field_2_1_2_8_21, :field_2_1_2_8_22, :field_2_1_2_8_23, :field_2_1_2_8_24, :field_2_1_2_8_25, :field_2_1_2_8_26, :field_2_1_2_8_27, :field_2_1_2_8_28, :field_2_1_2_8_29, :field_2_1_2_8_30, :field_2_1_2_8_31, :field_2_1_2_8_32 ;
+  x3do:hasIS :IS_2_1_2_8_33 ;
+  x3do:DEF 'CameraScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript:
+function initialize () // CameraScript
+{
+//  tracePrint ('initialize start...');
+
+    NavInfoNode.avatarSize[0]   = nearClipPlane;
+
+    // remaining setups deferred to invocation of checkShots() method
+    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization
+    alwaysPrint ('initialize complete');
+}
+
+function checkShots (eventValue)
+{
+    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');
+
+    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes
+    totalDuration= 0;
+    shotCount  = shots.length;
+    movesCount = 0;
+    for (i = 0; i < shotCount; i++) // shots index
+    {
+       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);
+       movesCount   += shots[i].moves.length;
+       totalDuration = totalDuration + shots[i].shotDuration;
+       if (shots[i].moves.length == 0)
+       {
+          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');
+       }
+    }
+    // size checks before proceeding
+    if (shotCount == 0)
+    {
+       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');
+       return;
+    }
+    else if (movesCount == 0)
+    {
+       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');
+       return;
+    }
+    else if (totalDuration == 0)
+    {
+       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');
+       return;
+    }
+    tracePrint ('number of contained CameraShot nodes=' + shotCount);
+    tracePrint ('number of contained CameraMove nodes=' + movesCount);
+    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');
+
+    // compute interpolators
+    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation
+    for (i = 0; i < shotCount; i++) // shots index
+    {
+        if (i==0) // initial entries
+        {
+           key[0]                   = 0.0; // no previous move
+           keyValuePosition[0]      = shots[i].initialPosition;
+           keyValueOrientation[0]   = shots[i].initialOrientation;
+        }
+        else     // new shot repositions, reorients camera as clean break from preceding shot/move
+        {
+           key[k+1]                 = key[k]; // start from end from previous move
+           keyValuePosition[k+1]    = shots[i].initialPosition;
+           keyValueOrientation[k+1] = shots[i].initialOrientation;
+           k++;
+        }
+        tracePrint (shots[i].description);
+        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);
+
+        for (j = 0; j < shots[i].moves.length; j++) // moves index
+        {
+            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime
+            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime
+            //  tracePrint ('durationFloat=' + durationFloat);
+            key[k+1]               = key[k] + (durationFloat / totalDuration);
+            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;
+            if (!animated)
+            {
+                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;
+            }
+            else
+            {
+                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)
+                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions
+
+                // test if difference vector is zero, if so maintain previous rotation
+                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();
+                if (shotVector.length() >= 0)
+                {
+                    // default view direction is along -Z axis
+                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);
+                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;
+                }
+                else // note (k > 0)
+                {
+                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change
+                }
+
+                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());
+                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());
+                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());
+                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());
+                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());
+                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\n');
+            }
+            k++; // update index to match latest key, keyValuePosition, keyValueOrientation
+
+            // check animated parameter:  set true if any of moves are tracking moves
+            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true
+         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);
+
+            // intermediate trace
+            tracePrint ('                key=' + key);
+            tracePrint ('   keyValuePosition=' + keyValuePosition);
+            tracePrint ('keyValueOrientation=' + keyValueOrientation);
+            tracePrint ('- ' + shots[i].moves[j].description);
+        }
+    }
+    tracePrint ('                key=' + key);
+    tracePrint ('   keyValuePosition=' + keyValuePosition);
+    tracePrint ('keyValueOrientation=' + keyValueOrientation);
+    if (key.length != keyValuePosition.length)
+    {
+      alwaysPrint ('warning: internal error during array construction, ' +
+                  'key.length=' + key.length + ' must equal ' +
+                  'keyValuePosition.length=' + keyValuePosition.length);
+    }
+    if (key.length != keyValueOrientation.length)
+    {
+      alwaysPrint ('warning: internal error during array construction, ' +
+                  'key.length=' + key.length + ' must equal ' +
+                  'keyValueOrientation.length=' + keyValueOrientation.length);
+    }
+    if (key.length != (shotCount + movesCount))
+    {
+      alwaysPrint ('warning: internal error during array construction, ' +
+                  'key.length=' + key.length + ' must equal ' +
+                  '(shotCount + movesCount)=' + (shotCount + movesCount));
+    }
+    tracePrint ('           animated=' + animated);
+    // set node values
+    CameraPI.key      = key;
+    CameraOI.key      = key;
+    CameraPI.keyValue = keyValuePosition;
+    CameraOI.keyValue = keyValueOrientation;
+
+    if (!animated) // output results
+    {
+        tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
+    }
+    tracePrint ('checkShots() complete');
+}
+
+function stripBrackets (fieldArray)
+{
+    // some browsers add brackets to array output strings, this function strips them
+    outputString = '';
+    for (i = 0; i < fieldArray.length; i++)
+    {
+       outputString += fieldArray[i].toString();
+       if (i < fieldArray.length - 1) outputString += ' ';
+    }
+    return outputString;
+}
+
+function set_fraction (eventValue, timestamp) // input event received for inputOnly field
+{
+   // traceEnabled = false;  // for testing purposes
+
+   // if Camera is being animated, immediately recompute interpolator settings
+   if (animated) checkShots (true);
+
+   // trace progress on console with reduced output frequency
+   if (frameCount == 0)
+   {
+      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
+      startTime      = timestamp;
+      priorTraceTime = timestamp;
+      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+
+      if (animated) // output results
+      {
+        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
+      }
+   }
+   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval
+   {
+      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+      priorTraceTime = timestamp;
+
+      if (animated) // output results
+      {
+        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
+      }
+   }
+   if (eventValue == 0)
+   {
+      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored
+      frameCount++;
+   }
+   else if (eventValue == 1)
+   {
+      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+      if (animated) // output results
+      {
+        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+      }
+      alwaysPrint ('Animation loop complete.');
+      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally
+   }
+   else
+   {
+      frameCount++;
+   }
+}
+
+function set_bind (eventValue) // input event received for inputOnly field
+{
+   // need to ensure CameraShot nodes are properly initialized
+   if (initialized == false)
+   {
+      checkShots (true);
+      initialized = true;
+   }
+   if (eventValue)
+   {
+       tracePrint ('Camera has been bound');
+   }
+   else
+   {
+       tracePrint ('Camera has been unbound');
+   }
+}
+
+function set_description (eventValue) // input event received for inputOutput field
+{
+    description = eventValue;
+}
+
+function set_position (eventValue) // input event received for inputOutput field
+{
+    position = eventValue;
+}
+
+function set_orientation (eventValue) // input event received for inputOutput field
+{
+    orientation = eventValue;
+}
+
+function set_fieldOfView (eventValue) // input event received for inputOutput field
+{
+    fieldOfView = eventValue;
+}
+
+function set_nearClipPlane (eventValue) // input event received for inputOutput field
+{
+    nearClipPlane = eventValue;
+}
+
+function set_farClipPlane (eventValue) // input event received for inputOutput field
+{
+    farClipPlane = eventValue;
+}
+
+function set_shots (eventValue) // input event received for inputOutput field
+{
+    shots = eventValue;
+}
+
+function set_filterColor (eventValue) // input event received for inputOutput field
+{
+    filterColor = eventValue;
+}
+
+function set_filterTransparency (eventValue) // input event received for inputOutput field
+{
+    filterTransparency = eventValue;
+}
+
+function set_upVector (eventValue) // input event received for inputOutput field
+{
+    upVector = eventValue;
+}
+
+function set_fStop (eventValue) // input event received for inputOutput field
+{
+    fStop = eventValue;
+}
+
+function set_focusDistance (eventValue) // input event received for inputOutput field
+{
+    focusDistance = eventValue;
+}
+
+function set_offlineRender (eventValue) // input event received for inputOutput field
+{
+    offlineRender = eventValue;
+}
+
+function set_key (eventValue) // input event received for inputOutput field
+{
+    key = eventValue;
+}
+
+function set_keyValuePosition (eventValue) // input event received for inputOutput field
+{
+    keyValuePosition = eventValue;
+}
+
+function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+{
+    keyValueOrientation = eventValue;
+}
+
+function set_animated (eventValue) // input event received for inputOutput field
+{
+    animated = eventValue;
+}
+
+function tracePrint (outputValue)
+{
+	if (traceEnabled) alwaysPrint (outputValue);
+}
+function alwaysPrint (outputValue)
+{
+    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies
+    var outputString = outputValue.toString(); // utility function according to spec
+    if (outputString == null) outputString = outputValue; // direct cast
+
+    if  (description.length > 0)
+         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');
+    else
+         Browser.print ('[Camera] ' + outputString + '\n');
+}
+""" .
+:field_2_1_2_8_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this Camera' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_1_2_8_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera position in local transformation frame' ;
+  x3do:name 'position' ;
+  x3do:type 'SFVec3f' .
+:field_2_1_2_8_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera rotation in local transformation frame' ;
+  x3do:name 'orientation' ;
+  x3do:type 'SFRotation' .
+:field_2_1_2_8_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'input fraction drives interpolators' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'input event binds or unbinds this Camera' ;
+  x3do:name 'set_bind' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_8_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'pi/4' ;
+  x3do:name 'fieldOfView' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Vector distance to near clipping plane' ;
+  x3do:name 'nearClipPlane' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Vector distance to far clipping plane' ;
+  x3do:name 'farClipPlane' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Array of CameraShot nodes which in turn contain CameraMovement nodes' ;
+  x3do:name 'shots' ;
+  x3do:type 'MFNode' .
+:field_2_1_2_8_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera filter color that modifies virtual lens capture' ;
+  x3do:name 'filterColor' ;
+  x3do:type 'SFColor' .
+:field_2_1_2_8_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Camera filter transparency that modifies virtual lens capture' ;
+  x3do:name 'filterTransparency' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'upVector changes modify camera orientation (and possibly vice versa)' ;
+  x3do:name 'upVector' ;
+  x3do:type 'SFVec3f' .
+:field_2_1_2_8_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'fStop' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'focusDistance' ;
+  x3do:type 'SFFloat' .
+:field_2_1_2_8_15 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_8_16 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' ;
+  x3do:name 'totalDuration' ;
+  x3do:type 'SFTime' .
+:field_2_1_2_8_17 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'OfflineRender node' ;
+  x3do:name 'offlineRender' ;
+  x3do:type 'SFNode' .
+:field_2_1_2_8_18 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:hasChildren :CameraViewpoint-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'node reference to permit getting setting fields from within Script' ;
+  x3do:name 'ViewpointNode' ;
+  x3do:type 'SFNode' .
+:CameraViewpoint-USE-1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :field_2_1_2_8_18 ;
+  owl:sameAs :CameraViewpoint . # DEF matching this USE
+:field_2_1_2_8_19 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:hasChildren :CameraNavInfo-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'node reference to permit getting setting fields from within Script' ;
+  x3do:name 'NavInfoNode' ;
+  x3do:type 'SFNode' .
+:CameraNavInfo-USE-1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :field_2_1_2_8_19 ;
+  owl:sameAs :CameraNavInfo . # DEF matching this USE
+:field_2_1_2_8_20 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:hasChildren :CameraPositionInterpolator-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'node reference to permit getting setting fields from within Script' ;
+  x3do:name 'CameraPI' ;
+  x3do:type 'SFNode' .
+:CameraPositionInterpolator-USE-1 a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :field_2_1_2_8_20 ;
+  owl:sameAs :CameraPositionInterpolator . # DEF matching this USE
+:field_2_1_2_8_21 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:hasChildren :CameraOrientationInterpolator-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'node reference to permit getting setting fields from within Script' ;
+  x3do:name 'CameraOI' ;
+  x3do:type 'SFNode' .
+:CameraOrientationInterpolator-USE-1 a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :field_2_1_2_8_21 ;
+  owl:sameAs :CameraOrientationInterpolator . # DEF matching this USE
+:field_2_1_2_8_22 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'key array for interpolators' ;
+  x3do:name 'key' ;
+  x3do:type 'MFFloat' .
+:field_2_1_2_8_23 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'keyValue array for PositionInterpolator' ;
+  x3do:name 'keyValuePosition' ;
+  x3do:type 'MFVec3f' .
+:field_2_1_2_8_24 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'keyValue array for OrientationInterpolator' ;
+  x3do:name 'keyValueOrientation' ;
+  x3do:type 'MFRotation' .
+:field_2_1_2_8_25 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events' ;
+  x3do:name 'animated' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_2_8_26 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'perform checkShots() function once immediately after initialization' ;
+  x3do:name 'initialized' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_1_2_8_27 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'how many CameraShot nodes are contained in shots array' ;
+  x3do:name 'shotCount' ;
+  x3do:type 'SFInt32' ;
+  x3do:value 0 .
+:field_2_1_2_8_28 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'how many CameraMove nodes are contained in moves array' ;
+  x3do:name 'movesCount' ;
+  x3do:type 'SFInt32' ;
+  x3do:value 0 .
+:field_2_1_2_8_29 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'how many frames were created in current loop' ;
+  x3do:name 'frameCount' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0 .
+:field_2_1_2_8_30 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'holding variable' ;
+  x3do:name 'startTime' ;
+  x3do:type 'SFTime' ;
+  x3do:value '0' .
+:field_2_1_2_8_31 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'holding variable' ;
+  x3do:name 'priorTraceTime' ;
+  x3do:type 'SFTime' ;
+  x3do:value '0' .
+:field_2_1_2_8_32 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' .
+:IS_2_1_2_8_33 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraScript ;
+  x3do:hasConnect :connect_2_1_2_8_33_1, :connect_2_1_2_8_33_2, :connect_2_1_2_8_33_3, :connect_2_1_2_8_33_4, :connect_2_1_2_8_33_5, :connect_2_1_2_8_33_6, :connect_2_1_2_8_33_7, :connect_2_1_2_8_33_8, :connect_2_1_2_8_33_9, :connect_2_1_2_8_33_10, :connect_2_1_2_8_33_11, :connect_2_1_2_8_33_12, :connect_2_1_2_8_33_13, :connect_2_1_2_8_33_14, :connect_2_1_2_8_33_15, :connect_2_1_2_8_33_16, :connect_2_1_2_8_33_17, :connect_2_1_2_8_33_18 .
+:connect_2_1_2_8_33_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'description' ;
+  x3do:protoField 'description' .
+:connect_2_1_2_8_33_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'position' ;
+  x3do:protoField 'position' .
+:connect_2_1_2_8_33_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'orientation' ;
+  x3do:protoField 'orientation' .
+:connect_2_1_2_8_33_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'set_fraction' ;
+  x3do:protoField 'set_fraction' .
+:connect_2_1_2_8_33_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'set_bind' ;
+  x3do:protoField 'set_bind' .
+:connect_2_1_2_8_33_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'fieldOfView' ;
+  x3do:protoField 'fieldOfView' .
+:connect_2_1_2_8_33_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'nearClipPlane' ;
+  x3do:protoField 'nearClipPlane' .
+:connect_2_1_2_8_33_8 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'farClipPlane' ;
+  x3do:protoField 'farClipPlane' .
+:connect_2_1_2_8_33_9 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'shots' ;
+  x3do:protoField 'shots' .
+:connect_2_1_2_8_33_10 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'filterColor' ;
+  x3do:protoField 'filterColor' .
+:connect_2_1_2_8_33_11 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'filterTransparency' ;
+  x3do:protoField 'filterTransparency' .
+:connect_2_1_2_8_33_12 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'upVector' ;
+  x3do:protoField 'upVector' .
+:connect_2_1_2_8_33_13 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'fStop' ;
+  x3do:protoField 'fStop' .
+:connect_2_1_2_8_33_14 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'focusDistance' ;
+  x3do:protoField 'focusDistance' .
+:connect_2_1_2_8_33_15 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'isActive' ;
+  x3do:protoField 'isActive' .
+:connect_2_1_2_8_33_16 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'totalDuration' ;
+  x3do:protoField 'totalDuration' .
+:connect_2_1_2_8_33_17 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'offlineRender' ;
+  x3do:protoField 'offlineRender' .
+:connect_2_1_2_8_33_18 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_8_33 ;
+  x3do:nodeField 'traceEnabled' ;
+  x3do:protoField 'traceEnabled' .
+:ROUTE_2_1_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'position' ;
+  x3do:fromNode 'CameraScript' ;
+  x3do:toField 'position' ;
+  x3do:toNode 'CameraViewpoint' .
+:ROUTE_2_1_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'orientation' ;
+  x3do:fromNode 'CameraScript' ;
+  x3do:toField 'orientation' ;
+  x3do:toNode 'CameraViewpoint' .
+:ROUTE_2_1_2_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'CameraScript' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'CameraViewpoint' .
+:ROUTE_2_1_2_12 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'CameraScript' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'CameraNavInfo' .
+:ROUTE_2_1_2_13 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'CameraScript' ;
+  x3do:toField 'on' ;
+  x3do:toNode 'CameraDirectionalLight' .
+:ProtoDeclare_2_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_2_2 ;
+  x3do:appinfo 'CameraShot collects a specific set of CameraMovement animations that make up an individual shot.' ;
+  x3do:name 'CameraShot' .
+:ProtoInterface_2_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasField :field_2_2_1_1, :field_2_2_1_2, :field_2_2_1_3, :field_2_2_1_4, :field_2_2_1_5, :field_2_2_1_6, :field_2_2_1_7, :field_2_2_1_8, :field_2_2_1_9, :field_2_2_1_10, :field_2_2_1_11, :field_2_2_1_12 .
+:field_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this CameraShot' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this CameraShot can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Set of CameraMovement nodes' ;
+  x3do:name 'moves' ;
+  x3do:type 'MFNode' .
+:field_2_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize camera position for this shot' ;
+  x3do:name 'initialPosition' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 10 ) .
+:field_2_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize camera rotation for this shot' ;
+  x3do:name 'initialOrientation' ;
+  x3do:type 'SFRotation' ;
+  x3do:value ( 0 0 1 0 ) .
+:field_2_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot' ;
+  x3do:name 'initialAimPoint' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'pi/4' ;
+  x3do:name 'initialFieldOfView' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.7854 .
+:field_2_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'initialFStop' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5.6 .
+:field_2_2_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'initialFocusDistance' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 10 .
+:field_2_2_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Subtotal duration of contained CameraMovement move durations' ;
+  x3do:name 'shotDuration' ;
+  x3do:type 'SFTime' .
+:field_2_2_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_2_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasChildren :CameraShotScript .
+:CameraShotScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasField :field_2_2_2_1_1, :field_2_2_2_1_2, :field_2_2_2_1_3, :field_2_2_2_1_4, :field_2_2_2_1_5, :field_2_2_2_1_6, :field_2_2_2_1_7, :field_2_2_2_1_8, :field_2_2_2_1_9, :field_2_2_2_1_10, :field_2_2_2_1_11, :field_2_2_2_1_12, :field_2_2_2_1_13, :field_2_2_2_1_14, :field_2_2_2_1_15 ;
+  x3do:hasIS :IS_2_2_2_1_16 ;
+  x3do:DEF 'CameraShotScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript:
+function initialize () // CameraShotScript
+{
+//  tracePrint ('initialize start...');
+
+    // compute shotDuration by summing durations from contained CameraMovement nodes
+    shotDuration = 0;
+    for (i = 0; i < moves.length; i++)
+    {
+        shotDuration = shotDuration + moves[i].duration;
+    }
+    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');
+
+//  tracePrint ('... initialize() complete');
+}
+
+function set_description (eventValue) // input event received for inputOutput field
+{
+    description = eventValue;
+}
+
+function set_enabled (eventValue) // input event received for inputOutput field
+{
+    enabled = eventValue;
+}
+
+function set_moves (eventValue) // input event received for inputOutput field
+{
+    moves = eventValue;
+}
+
+function set_initialPosition (eventValue) // input event received for inputOutput field
+{
+    initialPosition = eventValue;
+}
+
+function set_initialOrientation (eventValue) // input event received for inputOutput field
+{
+    initialOrientation = eventValue;
+}
+
+function set_initialAimPoint (eventValue) // input event received for inputOutput field
+{
+    initialAimPoint = eventValue;
+}
+
+function set_initialFieldOfView (eventValue) // input event received for inputOutput field
+{
+    initialFieldOfView = eventValue;
+}
+
+function set_initialFStop (eventValue) // input event received for inputOutput field
+{
+    initialFStop = eventValue;
+}
+
+function set_initialFocusDistance (eventValue) // input event received for inputOutput field
+{
+    initialFocusDistance = eventValue;
+}
+
+function set_key (eventValue) // input event received for inputOutput field
+{
+    key = eventValue;
+}
+
+function set_keyValuePosition (eventValue) // input event received for inputOutput field
+{
+    keyValuePosition = eventValue;
+}
+
+function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+{
+    keyValueOrientation = eventValue;
+}
+
+// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
+
+function tracePrint (outputValue)
+{
+	if (traceEnabled) alwaysPrint (outputValue);
+}
+function alwaysPrint (outputValue)
+{
+	// try to ensure outputValue is converted to string despite browser idiosyncracies
+    var outputString = outputValue.toString(); // utility function according to spec
+    if (outputString == null) outputString = outputValue; // direct cast
+
+    if  (description.length > 0)
+         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');
+    else
+         Browser.print ('[CameraShot] ' + outputString + '\n');
+}
+""" .
+:field_2_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this CameraShot' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_2_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this CameraShot can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' .
+:field_2_2_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Set of CameraMovement nodes' ;
+  x3do:name 'moves' ;
+  x3do:type 'MFNode' .
+:field_2_2_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize camera position for this shot' ;
+  x3do:name 'initialPosition' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize camera rotation for this shot' ;
+  x3do:name 'initialOrientation' ;
+  x3do:type 'SFRotation' .
+:field_2_2_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot' ;
+  x3do:name 'initialAimPoint' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'pi/4' ;
+  x3do:name 'initialFieldOfView' ;
+  x3do:type 'SFFloat' .
+:field_2_2_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'initialFStop' ;
+  x3do:type 'SFFloat' .
+:field_2_2_2_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'initialFocusDistance' ;
+  x3do:type 'SFFloat' .
+:field_2_2_2_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Subtotal duration of contained CameraMovement move durations' ;
+  x3do:name 'shotDuration' ;
+  x3do:type 'SFTime' .
+:field_2_2_2_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_2_2_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' .
+:field_2_2_2_1_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'key array for interpolators' ;
+  x3do:name 'key' ;
+  x3do:type 'MFFloat' .
+:field_2_2_2_1_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'keyValue array for PositionInterpolator' ;
+  x3do:name 'keyValuePosition' ;
+  x3do:type 'MFVec3f' .
+:field_2_2_2_1_15 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'keyValue array for OrientationInterpolator' ;
+  x3do:name 'keyValueOrientation' ;
+  x3do:type 'MFRotation' .
+:IS_2_2_2_1_16 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraShotScript ;
+  x3do:hasConnect :connect_2_2_2_1_16_1, :connect_2_2_2_1_16_2, :connect_2_2_2_1_16_3, :connect_2_2_2_1_16_4, :connect_2_2_2_1_16_5, :connect_2_2_2_1_16_6, :connect_2_2_2_1_16_7, :connect_2_2_2_1_16_8, :connect_2_2_2_1_16_9, :connect_2_2_2_1_16_10, :connect_2_2_2_1_16_11, :connect_2_2_2_1_16_12 .
+:connect_2_2_2_1_16_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'description' ;
+  x3do:protoField 'description' .
+:connect_2_2_2_1_16_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'enabled' ;
+  x3do:protoField 'enabled' .
+:connect_2_2_2_1_16_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'moves' ;
+  x3do:protoField 'moves' .
+:connect_2_2_2_1_16_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialPosition' ;
+  x3do:protoField 'initialPosition' .
+:connect_2_2_2_1_16_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialOrientation' ;
+  x3do:protoField 'initialOrientation' .
+:connect_2_2_2_1_16_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialAimPoint' ;
+  x3do:protoField 'initialAimPoint' .
+:connect_2_2_2_1_16_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialFieldOfView' ;
+  x3do:protoField 'initialFieldOfView' .
+:connect_2_2_2_1_16_8 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialFStop' ;
+  x3do:protoField 'initialFStop' .
+:connect_2_2_2_1_16_9 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'initialFocusDistance' ;
+  x3do:protoField 'initialFocusDistance' .
+:connect_2_2_2_1_16_10 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'shotDuration' ;
+  x3do:protoField 'shotDuration' .
+:connect_2_2_2_1_16_11 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'isActive' ;
+  x3do:protoField 'isActive' .
+:connect_2_2_2_1_16_12 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_16 ;
+  x3do:nodeField 'traceEnabled' ;
+  x3do:protoField 'traceEnabled' .
+:ProtoDeclare_2_3 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_3_1 ;
+  x3do:hasProtoBody :ProtoBody_2_3_2 ;
+  x3do:appinfo 'CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.' ;
+  x3do:name 'CameraMovement' .
+:ProtoInterface_2_3_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_3 ;
+  x3do:hasField :field_2_3_1_1, :field_2_3_1_2, :field_2_3_1_3, :field_2_3_1_4, :field_2_3_1_5, :field_2_3_1_6, :field_2_3_1_7, :field_2_3_1_8, :field_2_3_1_9, :field_2_3_1_10, :field_2_3_1_11, :field_2_3_1_12 .
+:field_2_3_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this CameraMovement' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_3_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this CameraMovement can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_3_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Duration in seconds for this move' ;
+  x3do:name 'duration' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0 .
+:field_2_3_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal camera position for this move' ;
+  x3do:name 'goalPosition' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 10 ) .
+:field_2_3_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal camera rotation for this move' ;
+  x3do:name 'goalOrientation' ;
+  x3do:type 'SFRotation' ;
+  x3do:value ( 0 0 1 0 ) .
+:field_2_3_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether or not camera direction is tracking towards the aimPoint' ;
+  x3do:name 'tracking' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:field_2_3_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal aimPoint for this move, ignored if tracking=false' ;
+  x3do:name 'goalAimPoint' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_3_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal fieldOfView for this move' ;
+  x3do:name 'goalFieldOfView' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.7854 .
+:field_2_3_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'goalFStop' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 5.6 .
+:field_2_3_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'goalFocusDistance' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 10 .
+:field_2_3_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_3_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_3_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_3 ;
+  x3do:hasChildren :CameraMovementScript .
+:CameraMovementScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_3_2 ;
+  x3do:hasField :field_2_3_2_1_1, :field_2_3_2_1_2, :field_2_3_2_1_3, :field_2_3_2_1_4, :field_2_3_2_1_5, :field_2_3_2_1_6, :field_2_3_2_1_7, :field_2_3_2_1_8, :field_2_3_2_1_9, :field_2_3_2_1_10, :field_2_3_2_1_11, :field_2_3_2_1_12 ;
+  x3do:hasIS :IS_2_3_2_1_13 ;
+  x3do:DEF 'CameraMovementScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript:
+function initialize () // CameraMovementScript
+{
+//  tracePrint ('initialize start...');
+    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +
+                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()
+                           );
+    if (duration < 0)
+    {
+       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');
+       duration = 0;
+    }
+    else if (duration == 0)
+    {
+       alwaysPrint ('warning: duration=0, nothing to do!');
+    }
+    tracePrint ('... initialize complete');
+}
+
+function set_goalAimPoint (eventValue) // input event received for inputOutput field
+{
+    goalAimPoint_changed = eventValue;
+    tracePrint ('goalAimPoint=' + goalAimPoint.toString());
+
+    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator
+}
+
+function set_description (eventValue) // input event received for inputOutput field
+{
+    description = eventValue;
+}
+
+function set_enabled (eventValue) // input event received for inputOutput field
+{
+    enabled = eventValue;
+}
+
+function set_duration (eventValue) // input event received for inputOutput field
+{
+    duration = eventValue;
+}
+
+function set_goalPosition (eventValue) // input event received for inputOutput field
+{
+    goalPosition = eventValue;
+}
+
+function set_goalOrientation (eventValue) // input event received for inputOutput field
+{
+    goalOrientation = eventValue;
+}
+
+function set_tracking (eventValue) // input event received for inputOutput field
+{
+    tracking = eventValue;
+}
+
+function set_goalFieldOfView (eventValue) // input event received for inputOutput field
+{
+    goalFieldOfView = eventValue;
+}
+
+function set_goalFStop (eventValue) // input event received for inputOutput field
+{
+    goalFStop = eventValue;
+}
+
+function set_goalFocusDistance (eventValue) // input event received for inputOutput field
+{
+    goalFocusDistance = eventValue;
+}
+
+// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
+
+function tracePrint (outputValue)
+{
+	if (traceEnabled) alwaysPrint (outputValue);
+}
+
+function alwaysPrint (outputValue)
+{
+	// try to ensure outputValue is converted to string despite browser idiosyncracies
+    var outputString = outputValue.toString(); // utility function according to spec
+    if (outputString == null) outputString = outputValue; // direct cast
+
+    if  (description.length > 0)
+         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');
+    else
+         Browser.print ('[CameraMovement] ' + outputString + '\n');
+}
+""" .
+:field_2_3_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this CameraMovement' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_3_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this CameraMovement can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' .
+:field_2_3_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Duration in seconds for this move' ;
+  x3do:name 'duration' ;
+  x3do:type 'SFFloat' .
+:field_2_3_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal camera position for this move' ;
+  x3do:name 'goalPosition' ;
+  x3do:type 'SFVec3f' .
+:field_2_3_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal camera rotation for this move' ;
+  x3do:name 'goalOrientation' ;
+  x3do:type 'SFRotation' .
+:field_2_3_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether or not camera direction is tracking towards the aimPoint' ;
+  x3do:name 'tracking' ;
+  x3do:type 'SFBool' .
+:field_2_3_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal aimPoint for this move, ignored if tracking=false' ;
+  x3do:name 'goalAimPoint' ;
+  x3do:type 'SFVec3f' .
+:field_2_3_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Goal fieldOfView for this move' ;
+  x3do:name 'goalFieldOfView' ;
+  x3do:type 'SFFloat' .
+:field_2_3_2_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Focal length divided effective aperture diameter indicating width of focal plane' ;
+  x3do:name 'goalFStop' ;
+  x3do:type 'SFFloat' .
+:field_2_3_2_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Distance to focal plane of sharpest focus' ;
+  x3do:name 'goalFocusDistance' ;
+  x3do:type 'SFFloat' .
+:field_2_3_2_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Mark start/stop with true/false output respectively useful to trigger external animations' ;
+  x3do:name 'isActive' ;
+  x3do:type 'SFBool' .
+:field_2_3_2_1_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' .
+:IS_2_3_2_1_13 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :CameraMovementScript ;
+  x3do:hasConnect :connect_2_3_2_1_13_1, :connect_2_3_2_1_13_2, :connect_2_3_2_1_13_3, :connect_2_3_2_1_13_4, :connect_2_3_2_1_13_5, :connect_2_3_2_1_13_6, :connect_2_3_2_1_13_7, :connect_2_3_2_1_13_8, :connect_2_3_2_1_13_9, :connect_2_3_2_1_13_10, :connect_2_3_2_1_13_11, :connect_2_3_2_1_13_12 .
+:connect_2_3_2_1_13_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'description' ;
+  x3do:protoField 'description' .
+:connect_2_3_2_1_13_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'enabled' ;
+  x3do:protoField 'enabled' .
+:connect_2_3_2_1_13_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'duration' ;
+  x3do:protoField 'duration' .
+:connect_2_3_2_1_13_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalPosition' ;
+  x3do:protoField 'goalPosition' .
+:connect_2_3_2_1_13_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalOrientation' ;
+  x3do:protoField 'goalOrientation' .
+:connect_2_3_2_1_13_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'tracking' ;
+  x3do:protoField 'tracking' .
+:connect_2_3_2_1_13_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalAimPoint' ;
+  x3do:protoField 'goalAimPoint' .
+:connect_2_3_2_1_13_8 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalFieldOfView' ;
+  x3do:protoField 'goalFieldOfView' .
+:connect_2_3_2_1_13_9 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalFStop' ;
+  x3do:protoField 'goalFStop' .
+:connect_2_3_2_1_13_10 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'goalFocusDistance' ;
+  x3do:protoField 'goalFocusDistance' .
+:connect_2_3_2_1_13_11 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'isActive' ;
+  x3do:protoField 'isActive' .
+:connect_2_3_2_1_13_12 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_13 ;
+  x3do:nodeField 'traceEnabled' ;
+  x3do:protoField 'traceEnabled' .
+:ProtoDeclare_2_4 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_4_1 ;
+  x3do:hasProtoBody :ProtoBody_2_4_2 ;
+  x3do:appinfo 'OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).' ;
+  x3do:name 'OfflineRender' .
+:ProtoInterface_2_4_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_4 ;
+  x3do:hasField :field_2_4_1_1, :field_2_4_1_2, :field_2_4_1_3, :field_2_4_1_4, :field_2_4_1_5, :field_2_4_1_6, :field_2_4_1_7, :field_2_4_1_8, :field_2_4_1_9, :field_2_4_1_10, :field_2_4_1_11 .
+:field_2_4_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this OfflineRender' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_4_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this OfflineRender can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_4_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Frames per second recorded for this rendering' ;
+  x3do:name 'frameRate' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 30 .
+:field_2_4_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Size of frame in number of pixels width and height' ;
+  x3do:name 'frameSize' ;
+  x3do:type 'SFVec2f' ;
+  x3do:value ( 640 480 ) .
+:field_2_4_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Relative dimensions of pixel height/width typically 1.33 or 1' ;
+  x3do:name 'pixelAspectRatio' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.33 .
+:field_2_4_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'Begin render operation' ;
+  x3do:name 'set_startTime' ;
+  x3do:type 'SFTime' .
+:field_2_4_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Progress performing render operation (0..1)' ;
+  x3do:name 'progress' ;
+  x3do:type 'SFFloat' .
+:field_2_4_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Render operation complete' ;
+  x3do:name 'renderCompleteTime' ;
+  x3do:type 'SFTime' .
+:field_2_4_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Format of rendered output movie (mpeg mp4 etc.), use first supported format' ;
+  x3do:name 'movieFormat' ;
+  x3do:type 'MFString' ;
+  x3do:value '"mpeg"' .
+:field_2_4_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Format of rendered output images (png jpeg gif tiff etc.) use first supported format' ;
+  x3do:name 'imageFormat' ;
+  x3do:type 'MFString' ;
+  x3do:value '"png"' .
+:field_2_4_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_4_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_4 ;
+  x3do:hasChildren :OfflineRenderScript .
+:OfflineRenderScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_4_2 ;
+  x3do:hasField :field_2_4_2_1_1, :field_2_4_2_1_2, :field_2_4_2_1_3, :field_2_4_2_1_4, :field_2_4_2_1_5, :field_2_4_2_1_6, :field_2_4_2_1_7, :field_2_4_2_1_8, :field_2_4_2_1_9, :field_2_4_2_1_10, :field_2_4_2_1_11 ;
+  x3do:hasIS :IS_2_4_2_1_12 ;
+  x3do:DEF 'OfflineRenderScript' ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript:
+function initialize () // OfflineRenderScript
+{
+//  tracePrint ('initialize start...');
+
+    tracePrint ('... initialize complete');
+}
+
+function set_description (eventValue) // input event received for inputOutput field
+{
+    description = eventValue;
+}
+
+function set_enabled (eventValue) // input event received for inputOutput field
+{
+    enabled = eventValue;
+}
+
+function set_frameRate (eventValue) // input event received for inputOutput field
+{
+    frameRate = eventValue;
+}
+
+function set_frameSize (eventValue) // input event received for inputOutput field
+{
+    frameSize = eventValue;
+}
+
+function set_pixelAspectRatio (eventValue) // input event received for inputOutput field
+{
+    pixelAspectRatio = eventValue;
+}
+
+function set_startTime (eventValue) // input event received for inputOnly field
+{
+   // do something with input eventValue;
+}
+
+function tracePrint (outputValue)
+{
+	if (traceEnabled) alwaysPrint (outputValue);
+}
+
+function alwaysPrint (outputValue)
+{
+	// try to ensure outputValue is converted to string despite browser idiosyncracies
+    var outputString = outputValue.toString(); // utility function according to spec
+    if (outputString == null) outputString = outputValue; // direct cast
+
+    if  (description.length > 0)
+         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');
+    else
+         Browser.print ('[OfflineRender] ' + outputString + '\n');
+}
+""" .
+:field_2_4_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Text description to be displayed for this OfflineRender' ;
+  x3do:name 'description' ;
+  x3do:type 'SFString' .
+:field_2_4_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether this OfflineRender can be activated' ;
+  x3do:name 'enabled' ;
+  x3do:type 'SFBool' .
+:field_2_4_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Frames per second recorded for this rendering' ;
+  x3do:name 'frameRate' ;
+  x3do:type 'SFFloat' .
+:field_2_4_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Size of frame in number of pixels width and height' ;
+  x3do:name 'frameSize' ;
+  x3do:type 'SFVec2f' .
+:field_2_4_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Relative dimensions of pixel height/width typically 1.33 or 1' ;
+  x3do:name 'pixelAspectRatio' ;
+  x3do:type 'SFFloat' .
+:field_2_4_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:appinfo 'Begin render operation' ;
+  x3do:name 'set_startTime' ;
+  x3do:type 'SFTime' .
+:field_2_4_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Progress performing render operation (0..1)' ;
+  x3do:name 'progress' ;
+  x3do:type 'SFFloat' .
+:field_2_4_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Render operation complete' ;
+  x3do:name 'renderCompleteTime' ;
+  x3do:type 'SFTime' .
+:field_2_4_2_1_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Format of rendered output movie (mpeg mp4 etc.)' ;
+  x3do:name 'movieFormat' ;
+  x3do:type 'MFString' .
+:field_2_4_2_1_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Format of rendered output images (png jpeg gif tiff etc.)' ;
+  x3do:name 'imageFormat' ;
+  x3do:type 'MFString' .
+:field_2_4_2_1_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'enable console output to trace script computations and prototype progress' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' .
+:IS_2_4_2_1_12 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :OfflineRenderScript ;
+  x3do:hasConnect :connect_2_4_2_1_12_1, :connect_2_4_2_1_12_2, :connect_2_4_2_1_12_3, :connect_2_4_2_1_12_4, :connect_2_4_2_1_12_5, :connect_2_4_2_1_12_6, :connect_2_4_2_1_12_7, :connect_2_4_2_1_12_8, :connect_2_4_2_1_12_9, :connect_2_4_2_1_12_10, :connect_2_4_2_1_12_11 .
+:connect_2_4_2_1_12_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'description' ;
+  x3do:protoField 'description' .
+:connect_2_4_2_1_12_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'enabled' ;
+  x3do:protoField 'enabled' .
+:connect_2_4_2_1_12_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'frameRate' ;
+  x3do:protoField 'frameRate' .
+:connect_2_4_2_1_12_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'frameSize' ;
+  x3do:protoField 'frameSize' .
+:connect_2_4_2_1_12_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'pixelAspectRatio' ;
+  x3do:protoField 'pixelAspectRatio' .
+:connect_2_4_2_1_12_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'set_startTime' ;
+  x3do:protoField 'set_startTime' .
+:connect_2_4_2_1_12_7 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'progress' ;
+  x3do:protoField 'progress' .
+:connect_2_4_2_1_12_8 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'renderCompleteTime' ;
+  x3do:protoField 'renderCompleteTime' .
+:connect_2_4_2_1_12_9 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'movieFormat' ;
+  x3do:protoField 'movieFormat' .
+:connect_2_4_2_1_12_10 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'imageFormat' ;
+  x3do:protoField 'imageFormat' .
+:connect_2_4_2_1_12_11 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_12 ;
+  x3do:nodeField 'traceEnabled' ;
+  x3do:protoField 'traceEnabled' .
+:Background_2_5 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0.282353 0.380392 0.470588 ) .
+:Anchor_2_6 a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_6_1 ;
+  x3do:description 'launch CameraExample scene' ;
+  x3do:url '"CameraExamples.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" "CameraExamples.wrl" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"' .
+:Transform_2_6_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Anchor_2_6 ;
+  x3do:hasChildren :Shape_2_6_1_1 .
+:Shape_2_6_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_6_1 ;
+  x3do:hasGeometry :Text_2_6_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_6_1_1_2 .
+:Text_2_6_1_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_6_1_1 ;
+  x3do:hasFontStyle :FontStyle_2_6_1_1_1_1 ;
+  x3do:string '"CameraPrototypes.x3d" "defines multiple prototype nodes" "" "Click on this text to see" "CameraExamples.x3d scene"' .
+:FontStyle_2_6_1_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_6_1_1_1 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' .
+:Appearance_2_6_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_1_1 ;
+  x3do:hasMaterial :Material_2_6_1_1_2_1 .
+:Material_2_6_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_1_1_2 ;
+  x3do:diffuseColor ( 1 1 0.2 ) .

@@ -1,0 +1,107 @@
+@prefix :        <http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'HAnim' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'IFS.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'An attempt at a standard LOA-4 skeleton' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'h2.pl' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'modified' ;
+  x3do:content '18 Jan 2023' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'creator' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '9 November 2020' ;
+  x3do:name 'created' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "IFS.x3d" .
+:meta dcterms:identifier "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d" .
+:meta dcterms:description "An attempt at a standard LOA-4 skeleton" .
+:meta dcterms:generator "h2.pl" .
+:meta dcterms:modified "18 Jan 2023" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:created "9 November 2020" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Group_2_1, :NavigationInfo_2_2, :Viewpoint_2_3 .
+:Group_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_1_1 .
+:Transform_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1 ;
+  x3do:hasChildren :HAnimSiteShape ;
+  x3do:translation ( 0 2.1 0 ) .
+:HAnimSiteShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1 ;
+  x3do:hasGeometry :DiamondIFS ;
+  x3do:hasAppearance :Appearance_2_1_1_1_2 ;
+  x3do:DEF 'HAnimSiteShape' .
+:DiamondIFS a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :HAnimSiteShape ;
+  x3do:hasColor :HAnimSiteColorRGBA ;
+  x3do:hasCoord :Coordinate_2_1_1_1_1_2 ;
+  x3do:DEF 'DiamondIFS' ;
+  x3do:creaseAngle 0.5 ;
+  x3do:solid false ;
+  x3do:coordIndex ( 0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1 ) .
+:HAnimSiteColorRGBA a owl:NamedIndividual, x3do:ColorRGBA ;
+  x3do:hasParent :DiamondIFS ;
+  x3do:DEF 'HAnimSiteColorRGBA' ;
+  x3do:color ( 1 1 0 1 1 1 0 0.1 ) .
+:Coordinate_2_1_1_1_1_2 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :DiamondIFS ;
+  x3do:point ( 0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0 ) .
+:Appearance_2_1_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HAnimSiteShape ;
+  x3do:hasMaterial :Material_2_1_1_1_2_1 .
+:Material_2_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_2 ;
+  x3do:diffuseColor ( 1 1 0 ) ;
+  x3do:transparency 0.3 .
+:NavigationInfo_2_2 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:speed 1.5 .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'default' .

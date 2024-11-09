@@ -1,0 +1,225 @@
+@prefix :        <http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumExample.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '16 August 2008' ;
+  x3do:name 'translated' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumPrototype.x3d' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumComputation.png' ;
+  x3do:name 'drawing' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumOverheadView.png' ;
+  x3do:name 'Image' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumObliqueView.png' ;
+  x3do:name 'Image' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewpointCalculator.png' ;
+  x3do:name 'Image' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewpointCalculatorComposed.png' ;
+  x3do:name 'Image' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'view culling frustum' ;
+  x3do:name 'subject' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "ViewFrustumExample.x3d" .
+:meta dcterms:description "Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype." .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:translated "16 August 2008" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:reference "ViewFrustumPrototype.x3d" .
+:meta dcterms:drawing "ViewFrustumComputation.png" .
+:meta dcterms:Image "ViewFrustumOverheadView.png" .
+:meta dcterms:Image "ViewFrustumObliqueView.png" .
+:meta dcterms:Image "ViewpointCalculator.png" .
+:meta dcterms:Image "ViewpointCalculatorComposed.png" .
+:meta dcterms:subject "view culling frustum" .
+:meta dcterms:identifier "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Viewpoint_2_2, :Viewpoint_2_3, :Viewpoint_2_4, :Viewpoint_2_5, :NavigationInfo_2_6, :ProtoInstance_2_8, :GridXZ, :Transform_2_10 ;
+  x3do:hasExternProtoDeclare :ExternProtoDeclare_2_7 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'ViewFrustumExample.x3d' .
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'ViewFrustum from above, looking down' ;
+  x3do:orientation ( 1 0 0 -1.57 ) ;
+  x3do:position ( 0 40 0 ) .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'ViewFrustum from point of view' .
+:Viewpoint_2_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'ViewFrustum behind point of view' ;
+  x3do:position ( 0 0 15 ) .
+:Viewpoint_2_5 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'ViewFrustum oblique side view' ;
+  x3do:orientation ( 0.8005 0.5926 0.0898 -0.3743 ) ;
+  x3do:position ( -5 5 20 ) .
+:NavigationInfo_2_6 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE" "FLY" "ANY"' .
+:ExternProtoDeclare_2_7 a owl:NamedIndividual, x3do:ExternProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_7_1, :field_2_7_2, :field_2_7_3, :field_2_7_4, :field_2_7_5, :field_2_7_6, :field_2_7_7, :field_2_7_8 ;
+  x3do:appinfo 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' ;
+  x3do:name 'ViewFrustum' ;
+  x3do:url '"ViewFrustumPrototype.x3d#ViewFrustum"' .
+:field_2_7_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'required: insert Viewpoint DEF or USE node for view of interest' ;
+  x3do:name 'ViewpointNode' ;
+  x3do:type 'SFNode' .
+:field_2_7_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'required: insert NavigationInfo DEF or USE node of interest' ;
+  x3do:name 'NavigationInfoNode' ;
+  x3do:type 'SFNode' .
+:field_2_7_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'whether or not frustum geometry is rendered' ;
+  x3do:name 'visible' ;
+  x3do:type 'SFBool' .
+:field_2_7_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'RGB color of ViewFrustum outline, default value 0.9 0.9 0.9' ;
+  x3do:name 'lineColor' ;
+  x3do:type 'SFColor' .
+:field_2_7_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8' ;
+  x3do:name 'frustumColor' ;
+  x3do:type 'SFColor' .
+:field_2_7_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'transparency of ViewFrustum hull geometry, default value 0.5' ;
+  x3do:name 'transparency' ;
+  x3do:type 'SFFloat' .
+:field_2_7_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'assumed ratio height/width, default value 0.75' ;
+  x3do:name 'aspectRatio' ;
+  x3do:type 'SFFloat' .
+:field_2_7_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_7 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'debug support, default false' ;
+  x3do:name 'trace' ;
+  x3do:type 'SFBool' .
+:ProtoInstance_2_8 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_8_1, :fieldValue_2_8_2, :fieldValue_2_8_3, :fieldValue_2_8_4, :fieldValue_2_8_5, :fieldValue_2_8_6, :fieldValue_2_8_7 ;
+  x3do:name 'ViewFrustum' .
+:fieldValue_2_8_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:hasChildren :Viewpoint_2_8_1_1 ;
+  x3do:name 'ViewpointNode' .
+:Viewpoint_2_8_1_1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :fieldValue_2_8_1 ;
+  x3do:description 'ViewFrustum ViewpointNode' .
+:fieldValue_2_8_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:hasChildren :NavigationInfo_2_8_2_1 ;
+  x3do:name 'NavigationInfoNode' .
+:NavigationInfo_2_8_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :fieldValue_2_8_2 ;
+  x3do:visibilityLimit 15 .
+:fieldValue_2_8_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:name 'visible' ;
+  x3do:value 'true' .
+:fieldValue_2_8_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:name 'lineColor' ;
+  x3do:value '0.9 0.9 0.9' .
+:fieldValue_2_8_5 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:name 'frustumColor' ;
+  x3do:value '0.8 0.8 0.8' .
+:fieldValue_2_8_6 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:name 'transparency' ;
+  x3do:value '0.75' .
+:fieldValue_2_8_7 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_8 ;
+  x3do:name 'trace' ;
+  x3do:value 'true' .
+:GridXZ a owl:NamedIndividual, x3do:Inline ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'GridXZ' ;
+  x3do:url '"GridXZ_20x20Fixed.x3d"' .
+:Transform_2_10 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :CoordinateAxes ;
+  x3do:scale ( 5 5 5 ) .
+:CoordinateAxes a owl:NamedIndividual, x3do:Inline ;
+  x3do:hasParent :Transform_2_10 ;
+  x3do:DEF 'CoordinateAxes' ;
+  x3do:url '"CoordinateAxes.x3d"' .

@@ -1,0 +1,113 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John W Carlson' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'created' ;
+  x3do:content 'December 13 2015' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'text3shapes.x3d' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content '3 text shapes' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' .
+:meta dcterms:creator "John W Carlson" .
+:meta dcterms:created "December 13 2015" .
+:meta dcterms:title "text3shapes.x3d" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d" .
+:meta dcterms:description "3 text shapes" .
+:meta dcterms:generator "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Transform_2_1 .
+:Transform_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_1_1, :Shape_2_1_2, :Shape_2_1_3, :Script_2_1_4 .
+:Shape_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasGeometry :Text_2_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_1_1_2 .
+:Text_2_1_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasFontStyle :FontStyle_2_1_1_1_1 ;
+  x3do:string '"Node\"\"\""' .
+:FontStyle_2_1_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_1_1_1 .
+:Appearance_2_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasMaterial :Material_2_1_1_2_1 .
+:Material_2_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_2 .
+:Shape_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasGeometry :Text_2_1_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_2 .
+:Text_2_1_2_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_2 ;
+  x3do:hasFontStyle :FontStyle_2_1_2_1_1 ;
+  x3do:string '"Node2" "\\" "\\\\" "Node2"' .
+:FontStyle_2_1_2_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_1_2_1 .
+:Appearance_2_1_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2 ;
+  x3do:hasMaterial :Material_2_1_2_2_1 .
+:Material_2_1_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_2 .
+:Shape_2_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasGeometry :Text_2_1_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_3_2 .
+:Text_2_1_3_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_3 ;
+  x3do:hasFontStyle :FontStyle_2_1_3_1_1 ;
+  x3do:string '"Node3 \\\\ \\ " "Node3\"\"\""' .
+:FontStyle_2_1_3_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_1_3_1 .
+:Appearance_2_1_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_3 ;
+  x3do:hasMaterial :Material_2_1_3_2_1 .
+:Material_2_1_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_3_2 .
+:Script_2_1_4 a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasField :field_2_1_4_1 ;
+  x3do:sourceCode """
+ecmascript:
+			    var me = '"1" "\"2" "\n3"';
+""" .
+:field_2_1_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Script_2_1_4 ;
+  x3do:name 'frontUrls' ;
+  x3do:type 'MFString' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:value '"rnl_front.png" "uffizi_front.png"' .

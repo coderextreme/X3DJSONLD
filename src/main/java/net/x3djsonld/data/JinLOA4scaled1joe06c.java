@@ -19,12 +19,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an loa4 X3D HAnim model, then this Scaled version drawn directly in default HAnim coordinate space, and added Sites. </p>
- <p> Related links:  source JinLOA4Scaled1joe6b.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source JinLOA4scaled1joe06c.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JinLOA4Scaled1joe6b&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JinLOA4scaled1joe06c&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -121,10 +121,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class JinLOA4Scaled1joe6b
+public class JinLOA4scaled1joe06c
 {
 	/** Default constructor to create this object. */
-	public JinLOA4Scaled1joe6b ()
+	public JinLOA4scaled1joe06c ()
 	{
 	  initialize();
 	}
@@ -6303,7 +6303,7 @@ public class JinLOA4Scaled1joe6b
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JinLOA4Scaled1joe6b model
+	 * @return JinLOA4scaled1joe06c model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -6322,7 +6322,7 @@ public class JinLOA4Scaled1joe6b
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new JinLOA4Scaled1joe6b().getX3dModel();
+        X3D thisExampleX3dModel = new JinLOA4scaled1joe06c().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -6355,7 +6355,7 @@ public class JinLOA4Scaled1joe6b
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JinLOA4Scaled1joe6b\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JinLOA4scaled1joe06c\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -6364,16 +6364,16 @@ public class JinLOA4Scaled1joe6b
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.JinLOA4Scaled1joe6b self-validation test results: ");
+                System.out.print("net.x3djsonld.data.JinLOA4scaled1joe06c self-validation test results: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./JinLOA4Scaled1joe6b_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./JinLOA4Scaled1joe6b_JavaExport.x3d"; 
-                String filenameX3DV = "./JinLOA4Scaled1joe6b_JavaExport.x3dv"; 
-                String filenameJSON = "./JinLOA4Scaled1joe6b_JavaExport.json";
+                // ./JinLOA4scaled1joe06c_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JinLOA4scaled1joe06c_JavaExport.x3d"; 
+                String filenameX3DV = "./JinLOA4scaled1joe06c_JavaExport.x3dv"; 
+                String filenameJSON = "./JinLOA4scaled1joe06c_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

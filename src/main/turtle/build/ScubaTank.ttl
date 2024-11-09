@@ -1,0 +1,241 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Interchange' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ScubaTank.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Scuba gear used by Nancy Diving example.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Etsuko Lippi' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '24 January 2001' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 May 2020' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "ScubaTank.x3d" .
+:meta dcterms:description "Scuba gear used by Nancy Diving example." .
+:meta dcterms:creator "Etsuko Lippi" .
+:meta dcterms:created "24 January 2001" .
+:meta dcterms:modified "23 May 2020" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :ScubaTank, :Background_2_3 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'ScubaTank.x3d' .
+:ScubaTank a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_2_1, :Transform_2_2_2, :Transform_2_2_3, :tankNozzle, :Transform_2_2_5 ;
+  x3do:DEF 'ScubaTank' .
+:Transform_2_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ScubaTank ;
+  x3do:hasChildren :Shape_2_2_1_1 .
+:Shape_2_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_2_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_1_1_2 .
+:Appearance_2_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1_1 ;
+  x3do:hasMaterial :tank .
+:tank a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_1_1_1 ;
+  x3do:DEF 'tank' ;
+  x3do:ambientIntensity 0.3 ;
+  x3do:diffuseColor ( 0.3 0.3 0.5 ) ;
+  x3do:shininess 0.10 ;
+  x3do:specularColor ( 0.7 0.7 0.8 ) .
+:Cylinder_2_2_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_2_1_1 ;
+  x3do:height 0.7 ;
+  x3do:radius 0.1 .
+:Transform_2_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ScubaTank ;
+  x3do:hasChildren :Shape_2_2_2_1 ;
+  x3do:translation ( 0 0.35 0 ) .
+:Shape_2_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_2 .
+:Appearance_2_2_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1 ;
+  x3do:hasMaterial :tank-USE-1 .
+:tank-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1 ;
+  owl:sameAs :tank . # DEF matching this USE
+:Sphere_2_2_2_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2_2_1 ;
+  x3do:radius 0.098 .
+:Transform_2_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ScubaTank ;
+  x3do:hasChildren :tankBottom ;
+  x3do:translation ( 0 -0.35 0 ) .
+:tankBottom a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_3 ;
+  x3do:hasAppearance :Appearance_2_2_3_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_3_1_2 ;
+  x3do:DEF 'tankBottom' .
+:Appearance_2_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :tankBottom ;
+  x3do:hasMaterial :black .
+:black a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_3_1_1 ;
+  x3do:DEF 'black' ;
+  x3do:ambientIntensity 0.3 ;
+  x3do:diffuseColor ( 0 0 0 ) .
+:Cylinder_2_2_3_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :tankBottom ;
+  x3do:height 0.06 ;
+  x3do:radius 0.115 .
+:tankNozzle a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ScubaTank ;
+  x3do:hasChildren :Transform_2_2_4_1 ;
+  x3do:DEF 'tankNozzle' .
+:Transform_2_2_4_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :tankNozzle ;
+  x3do:hasChildren :Transform_2_2_4_1_1, :Transform_2_2_4_1_2, :Transform_2_2_4_1_3 .
+:Transform_2_2_4_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_4_1 ;
+  x3do:hasChildren :pressure ;
+  x3do:translation ( 0 0.45 0 ) .
+:pressure a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_4_1_1 ;
+  x3do:hasAppearance :Appearance_2_2_4_1_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_4_1_1_1_2 ;
+  x3do:DEF 'pressure' .
+:Appearance_2_2_4_1_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :pressure ;
+  x3do:hasMaterial :pressureColor .
+:pressureColor a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_4_1_1_1_1 ;
+  x3do:DEF 'pressureColor' ;
+  x3do:ambientIntensity 0.4 ;
+  x3do:diffuseColor ( 0.91 0.91 0.91 ) ;
+  x3do:shininess 0.16 ;
+  x3do:specularColor ( 0.91 0.90 0.91 ) .
+:Cylinder_2_2_4_1_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :pressure ;
+  x3do:height 0.1 ;
+  x3do:radius 0.015 .
+:Transform_2_2_4_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_4_1 ;
+  x3do:hasChildren :pressureTop ;
+  x3do:translation ( 0 0.50 0 ) .
+:pressureTop a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_4_1_2 ;
+  x3do:hasAppearance :Appearance_2_2_4_1_2_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_4_1_2_1_2 ;
+  x3do:DEF 'pressureTop' .
+:Appearance_2_2_4_1_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :pressureTop ;
+  x3do:hasMaterial :black-USE-1 .
+:black-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_4_1_2_1_1 ;
+  owl:sameAs :black . # DEF matching this USE
+:Cylinder_2_2_4_1_2_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :pressureTop ;
+  x3do:height 0.02 ;
+  x3do:radius 0.025 .
+:Transform_2_2_4_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_4_1 ;
+  x3do:hasChildren :Transform_2_2_4_1_3_1, :Transform_2_2_4_1_3_2 ;
+  x3do:rotation ( 0 0 1 1.57 ) ;
+  x3do:translation ( -0.028 0.462 0 ) .
+:Transform_2_2_4_1_3_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_4_1_3 ;
+  x3do:hasChildren :connectorToRegulator .
+:connectorToRegulator a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_4_1_3_1 ;
+  x3do:hasAppearance :Appearance_2_2_4_1_3_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_4_1_3_1_1_2 ;
+  x3do:DEF 'connectorToRegulator' .
+:Appearance_2_2_4_1_3_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :connectorToRegulator ;
+  x3do:hasMaterial :pressureColor-USE-1 .
+:pressureColor-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_4_1_3_1_1_1 ;
+  owl:sameAs :pressureColor . # DEF matching this USE
+:Cylinder_2_2_4_1_3_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :connectorToRegulator ;
+  x3do:height 0.03 ;
+  x3do:radius 0.01 .
+:Transform_2_2_4_1_3_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_4_1_3 ;
+  x3do:hasChildren :connectorToRegulatorTop ;
+  x3do:translation ( 0 0.02 0 ) .
+:connectorToRegulatorTop a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_4_1_3_2 ;
+  x3do:hasAppearance :Appearance_2_2_4_1_3_2_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_4_1_3_2_1_2 ;
+  x3do:DEF 'connectorToRegulatorTop' .
+:Appearance_2_2_4_1_3_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :connectorToRegulatorTop ;
+  x3do:hasMaterial :black-USE-2 .
+:black-USE-2 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_4_1_3_2_1_1 ;
+  owl:sameAs :black . # DEF matching this USE
+:Cylinder_2_2_4_1_3_2_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :connectorToRegulatorTop ;
+  x3do:height 0.02 ;
+  x3do:radius 0.02 .
+:Transform_2_2_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ScubaTank ;
+  x3do:hasChildren :tankHoldBelt ;
+  x3do:translation ( 0 0.2 0 ) .
+:tankHoldBelt a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_5 ;
+  x3do:hasAppearance :Appearance_2_2_5_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_5_1_2 ;
+  x3do:DEF 'tankHoldBelt' .
+:Appearance_2_2_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :tankHoldBelt ;
+  x3do:hasMaterial :black-USE-3 .
+:black-USE-3 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_5_1_1 ;
+  owl:sameAs :black . # DEF matching this USE
+:Cylinder_2_2_5_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :tankHoldBelt ;
+  x3do:height 0.1 ;
+  x3do:radius 0.115 .
+:Background_2_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0.6 0.6 0.6 ) .

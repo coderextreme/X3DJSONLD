@@ -1,0 +1,1379 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'HAnim' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HAnimModelFootLeft.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Left foot, using high-fidelity definitions for HAnim version 2.0' ;
+  x3do:name 'description' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Kwan-Hee YOO, Don Brutzman and Joe Williams' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '26 January 2015' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 December 2021' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'not yet to scale' ;
+  x3do:name 'warning' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'TODO will X3D HAnim component add a new level to support LOA-4 functionality?' ;
+  x3do:name 'warning' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body' ;
+  x3do:name 'info' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/working-groups/humanoid-animation-HAnim' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet' ;
+  x3do:name 'reference' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints' ;
+  x3do:name 'reference' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4' ;
+  x3do:name 'reference' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html' ;
+  x3do:name 'reference' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D HAnim humanoid animation' ;
+  x3do:name 'subject' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Integrate and confirm Segment/Joint names, Viewpoints.' ;
+  x3do:name 'TODO' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "HAnimModelFootLeft.x3d" .
+:meta dcterms:description "Left foot, using high-fidelity definitions for HAnim version 2.0" .
+:meta dcterms:creator "Kwan-Hee YOO, Don Brutzman and Joe Williams" .
+:meta dcterms:created "26 January 2015" .
+:meta dcterms:modified "23 December 2021" .
+:meta dcterms:warning "not yet to scale" .
+:meta dcterms:warning "TODO will X3D HAnim component add a new level to support LOA-4 functionality?" .
+:meta dcterms:reference "https://www.web3d.org/working-groups/humanoid-animation-HAnim" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4" .
+:meta dcterms:reference "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html" .
+:meta dcterms:subject "X3D HAnim humanoid animation" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :hanim_Foot_Left .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'HAnimModelFootLeft.x3d' .
+:hanim_Foot_Left a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :Scene ;
+  x3do:hasMetadata :MetadataSet_2_2_1 ;
+  x3do:hasSkeleton :hanim_humanoid_root ;
+  x3do:hasJoints :hanim_humanoid_root-USE-1, :hanim_l_calcaneocuboid-USE-1, :hanim_l_cuneonavicular_1-USE-1, :hanim_l_cuneonavicular_2-USE-1, :hanim_l_cuneonavicular_3-USE-1, :hanim_l_metatarsophalangeal_1-USE-1, :hanim_l_metatarsophalangeal_2-USE-1, :hanim_l_metatarsophalangeal_3-USE-1, :hanim_l_metatarsophalangeal_4-USE-1, :hanim_l_metatarsophalangeal_5-USE-1, :hanim_l_talocalcaneonavicular-USE-1, :hanim_l_talocrural-USE-1, :hanim_l_tarsal_distal_interphalangeal_2-USE-1, :hanim_l_tarsal_distal_interphalangeal_3-USE-1, :hanim_l_tarsal_distal_interphalangeal_4-USE-1, :hanim_l_tarsal_distal_interphalangeal_5-USE-1, :hanim_l_tarsal_interphalangeal_1-USE-1, :hanim_l_tarsal_proximal_interphalangeal_2-USE-1, :hanim_l_tarsal_proximal_interphalangeal_3-USE-1, :hanim_l_tarsal_proximal_interphalangeal_4-USE-1, :hanim_l_tarsal_proximal_interphalangeal_5-USE-1, :hanim_l_tarsometatarsal_1-USE-1, :hanim_l_tarsometatarsal_2-USE-1, :hanim_l_tarsometatarsal_3-USE-1, :hanim_l_tarsometatarsal_4-USE-1, :hanim_l_tarsometatarsal_5-USE-1, :hanim_l_transversetarsal-USE-1 ;
+  x3do:hasSegments :hanim_l_calcaneus-USE-1, :hanim_l_cuboid-USE-1, :hanim_l_cuneiform_1-USE-1, :hanim_l_cuneiform_2-USE-1, :hanim_l_cuneiform_3-USE-1, :hanim_l_metatarsal_1-USE-1, :hanim_l_metatarsal_2-USE-1, :hanim_l_metatarsal_3-USE-1, :hanim_l_metatarsal_4-USE-1, :hanim_l_metatarsal_5-USE-1, :hanim_l_navicular-USE-1, :hanim_l_talus-USE-1, :hanim_l_tarsal_distal_phalanx_1-USE-1, :hanim_l_tarsal_distal_phalanx_2-USE-1, :hanim_l_tarsal_distal_phalanx_3-USE-1, :hanim_l_tarsal_distal_phalanx_4-USE-1, :hanim_l_tarsal_distal_phalanx_5-USE-1, :hanim_l_tarsal_middle_phalanx_2-USE-1, :hanim_l_tarsal_middle_phalanx_3-USE-1, :hanim_l_tarsal_middle_phalanx_4-USE-1, :hanim_l_tarsal_middle_phalanx_5-USE-1, :hanim_l_tarsal_proximal_phalanx_1-USE-1, :hanim_l_tarsal_proximal_phalanx_2-USE-1, :hanim_l_tarsal_proximal_phalanx_3-USE-1, :hanim_l_tarsal_proximal_phalanx_4-USE-1, :hanim_l_tarsal_proximal_phalanx_5-USE-1 ;
+  x3do:DEF 'hanim_Foot_Left' ;
+  x3do:loa 4 ;
+  x3do:name 'Foot_Left' ;
+  x3do:version '2.0' .
+:MetadataSet_2_2_1 a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :hanim_Foot_Left ;
+  x3do:hasValue :MetadataString_2_2_1_1 ;
+  x3do:name 'HAnimHumanoid.info' ;
+  x3do:reference 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid' .
+:MetadataString_2_2_1_1 a owl:NamedIndividual, x3do:MetadataString ;
+  x3do:hasParent :MetadataSet_2_2_1 ;
+  x3do:name 'authorName' ;
+  x3do:value 'Kwan-Hee YOO, Don Brutzman and Joe Williams' .
+:hanim_humanoid_root a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  x3do:hasChildren :hanim_l_talocrural ;
+  x3do:DEF 'hanim_humanoid_root' ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_talocrural a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_humanoid_root ;
+  x3do:hasChildren :hanim_l_talus, :hanim_l_talocalcaneonavicular, :hanim_l_calcaneocuboid ;
+  x3do:DEF 'hanim_l_talocrural' ;
+  x3do:description 'connection joint of foot to leg above' ;
+  x3do:name 'l_talocrural' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_talus a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_talocrural ;
+  x3do:hasChildren :Transform_2_2_2_1_1_1, :Shape_2_2_2_1_1_2, :Shape_2_2_2_1_1_3 ;
+  x3do:DEF 'hanim_l_talus' ;
+  x3do:name 'l_talus' .
+:Transform_2_2_2_1_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_talus ;
+  x3do:hasChildren :HAnimJointShape .
+:HAnimJointShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_1_1_1_1 ;
+  x3do:hasAppearance :HAnimJointAppearance ;
+  x3do:DEF 'HAnimJointShape' .
+:Sphere_2_2_2_1_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:radius 0.025 .
+:HAnimJointAppearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1_1_2_1 ;
+  x3do:DEF 'HAnimJointAppearance' .
+:Material_2_2_2_1_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :HAnimJointAppearance ;
+  x3do:diffuseColor ( 0 0 1 ) .
+:Shape_2_2_2_1_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_talus ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_2_1 ;
+  x3do:hasGeometry :TCtoTCN .
+:Appearance_2_2_2_1_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_2_1_1 .
+:Material_2_2_2_1_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TCtoTCN a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_1_2_2_1 ;
+  x3do:DEF 'TCtoTCN' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TCtoTCN ;
+  x3do:point ( 0 0 0 0.0 -0.3 0 ) .
+:Shape_2_2_2_1_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_talus ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_3_1 ;
+  x3do:hasGeometry :TCtoCC .
+:Appearance_2_2_2_1_1_3_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_3 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_3_1_1 .
+:Material_2_2_2_1_1_3_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_3_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TCtoCC a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_3 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_1_3_2_1 ;
+  x3do:DEF 'TCtoCC' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_1_3_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TCtoCC ;
+  x3do:point ( 0 0 0 0.2 0.3 0 ) .
+:hanim_l_talocalcaneonavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocrural ;
+  x3do:hasChildren :hanim_l_navicular, :hanim_l_cuneonavicular_1, :hanim_l_cuneonavicular_2, :hanim_l_cuneonavicular_3 ;
+  x3do:DEF 'hanim_l_talocalcaneonavicular' ;
+  x3do:center ( 0.0 -0.3 0 ) ;
+  x3do:name 'l_talocalcaneonavicular' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_navicular a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :Transform_2_2_2_1_2_1_1, :Shape_2_2_2_1_2_1_2, :Shape_2_2_2_1_2_1_3, :Shape_2_2_2_1_2_1_4 ;
+  x3do:DEF 'hanim_l_navicular' ;
+  x3do:name 'l_navicular' .
+:Transform_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_navicular ;
+  x3do:hasChildren :HAnimJointShape-USE-1 ;
+  x3do:translation ( 0.0 -0.3 0 ) .
+:HAnimJointShape-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_navicular ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_1_2_1 ;
+  x3do:hasGeometry :TCNtoCN1 .
+:Appearance_2_2_2_1_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_1_2_1_1 .
+:Material_2_2_2_1_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TCNtoCN1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_1_2_2_1 ;
+  x3do:DEF 'TCNtoCN1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TCNtoCN1 ;
+  x3do:point ( 0.0 -0.3 0 -0.1 -0.45 0 ) .
+:Shape_2_2_2_1_2_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_navicular ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_1_3_1 ;
+  x3do:hasGeometry :TCNtoCN2 .
+:Appearance_2_2_2_1_2_1_3_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_3 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_1_3_1_1 .
+:Material_2_2_2_1_2_1_3_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_1_3_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TCNtoCN2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_3 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_1_3_2_1 ;
+  x3do:DEF 'TCNtoCN2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_1_3_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TCNtoCN2 ;
+  x3do:point ( 0.0 -0.3 0 0.0 -0.45 0 ) .
+:Shape_2_2_2_1_2_1_4 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_navicular ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_1_4_1 ;
+  x3do:hasGeometry :TCNtoCN3 .
+:Appearance_2_2_2_1_2_1_4_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_4 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_1_4_1_1 .
+:Material_2_2_2_1_2_1_4_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_1_4_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TCNtoCN3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_4 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_1_4_2_1 ;
+  x3do:DEF 'TCNtoCN3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_1_4_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TCNtoCN3 ;
+  x3do:point ( 0.0 -0.3 0 0.1 -0.4 0 ) .
+:hanim_l_cuneonavicular_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_cuneiform_1, :hanim_l_tarsometatarsal_1 ;
+  x3do:DEF 'hanim_l_cuneonavicular_1' ;
+  x3do:center ( -0.1 -0.45 0 ) ;
+  x3do:name 'l_cuneonavicular_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneiform_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_cuneonavicular_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_1_1, :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:DEF 'hanim_l_cuneiform_1' ;
+  x3do:name 'l_cuneiform_1' .
+:Transform_2_2_2_1_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_cuneiform_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-2 ;
+  x3do:translation ( -0.1 -0.45 0 ) .
+:HAnimJointShape-USE-2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_cuneiform_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_1_2_1 ;
+  x3do:hasGeometry :CN1toTMT1 .
+:Appearance_2_2_2_1_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CN1toTMT1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_1_2_2_1 ;
+  x3do:DEF 'CN1toTMT1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CN1toTMT1 ;
+  x3do:point ( -0.1 -0.45 0 -0.1 -0.6 0 ) .
+:hanim_l_tarsometatarsal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_1 ;
+  x3do:hasChildren :hanim_l_metatarsal_1, :hanim_l_metatarsophalangeal_1 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_1' ;
+  x3do:center ( -0.1 -0.6 0 ) ;
+  x3do:name 'l_tarsometatarsal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsal_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsometatarsal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_2_1_1, :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_metatarsal_1' ;
+  x3do:name 'l_metatarsal_1' .
+:Transform_2_2_2_1_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_metatarsal_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-3 ;
+  x3do:translation ( -0.1 -0.6 0 ) .
+:HAnimJointShape-USE-3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_metatarsal_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_2_1_2_1 ;
+  x3do:hasGeometry :TMT1toMTP1 .
+:Appearance_2_2_2_1_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TMT1toMTP1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_2_1_2_2_1 ;
+  x3do:DEF 'TMT1toMTP1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TMT1toMTP1 ;
+  x3do:point ( -0.1 -0.6 0 -0.1 -0.9 0 ) .
+:hanim_l_metatarsophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_1 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_phalanx_1, :hanim_l_tarsal_interphalangeal_1 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_1' ;
+  x3do:center ( -0.1 -0.9 0 ) ;
+  x3do:name 'l_metatarsophalangeal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_phalanx_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_2_2_1_1, :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_phalanx_1' ;
+  x3do:name 'l_tarsal_proximal_phalanx_1' .
+:Transform_2_2_2_1_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-4 ;
+  x3do:translation ( -0.1 -0.9 0 ) .
+:HAnimJointShape-USE-4 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :MTP1toIP1 .
+:Appearance_2_2_2_1_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MTP1toIP1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'MTP1toIP1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MTP1toIP1 ;
+  x3do:point ( -0.1 -0.9 0 -0.1 -1.05 0 ) .
+:hanim_l_tarsal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_1 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_phalanx_1 ;
+  x3do:DEF 'hanim_l_tarsal_interphalangeal_1' ;
+  x3do:center ( -0.1 -1.05 0 ) ;
+  x3do:name 'l_tarsal_interphalangeal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_phalanx_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_interphalangeal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_2_2_2_1_1, :Shape_2_2_2_1_2_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_phalanx_1' ;
+  x3do:name 'l_tarsal_distal_phalanx_1' .
+:Transform_2_2_2_1_2_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-5 ;
+  x3do:translation ( -0.1 -1.05 0 ) .
+:HAnimJointShape-USE-5 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :tiptoe_l_tarsal_distal_interphalangeal_1 .
+:Appearance_2_2_2_1_2_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:tiptoe_l_tarsal_distal_interphalangeal_1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'tiptoe_l_tarsal_distal_interphalangeal_1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :tiptoe_l_tarsal_distal_interphalangeal_1 ;
+  x3do:point ( -0.1 -1.05 0 -0.1 -1.1 0 ) .
+:hanim_l_cuneonavicular_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_cuneiform_2, :hanim_l_tarsometatarsal_2 ;
+  x3do:DEF 'hanim_l_cuneonavicular_2' ;
+  x3do:center ( 0.0 -0.45 0 ) ;
+  x3do:name 'l_cuneonavicular_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneiform_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_cuneonavicular_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_3_1_1, :Shape_2_2_2_1_2_3_1_2 ;
+  x3do:DEF 'hanim_l_cuneiform_2' ;
+  x3do:name 'l_cuneiform_2' .
+:Transform_2_2_2_1_2_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_cuneiform_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-6 ;
+  x3do:translation ( 0.0 -0.45 0 ) .
+:HAnimJointShape-USE-6 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_3_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_3_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_cuneiform_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_3_1_2_1 ;
+  x3do:hasGeometry :CN2toTMT2 .
+:Appearance_2_2_2_1_2_3_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_3_1_2_1_1 .
+:Material_2_2_2_1_2_3_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_3_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CN2toTMT2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_3_1_2_2_1 ;
+  x3do:DEF 'CN2toTMT2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_3_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CN2toTMT2 ;
+  x3do:point ( 0.0 -0.45 0 0.05 -0.6 0 ) .
+:hanim_l_tarsometatarsal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_2 ;
+  x3do:hasChildren :hanim_l_metatarsal_2, :hanim_l_metatarsophalangeal_2 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_2' ;
+  x3do:center ( 0.05 -0.6 0 ) ;
+  x3do:name 'l_tarsometatarsal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsal_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsometatarsal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_3_2_1_1, :Shape_2_2_2_1_2_3_2_1_2 ;
+  x3do:DEF 'hanim_l_metatarsal_2' ;
+  x3do:name 'l_metatarsal_2' .
+:Transform_2_2_2_1_2_3_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_metatarsal_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-7 ;
+  x3do:translation ( 0.05 -0.6 0 ) .
+:HAnimJointShape-USE-7 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_3_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_metatarsal_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_3_2_1_2_1 ;
+  x3do:hasGeometry :TMT2toMTP2 .
+:Appearance_2_2_2_1_2_3_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_3_2_1_2_1_1 .
+:Material_2_2_2_1_2_3_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_3_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TMT2toMTP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_3_2_1_2_2_1 ;
+  x3do:DEF 'TMT2toMTP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TMT2toMTP2 ;
+  x3do:point ( 0.05 -0.6 0 0.05 -0.9 0 ) .
+:hanim_l_metatarsophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_2 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_phalanx_2, :hanim_l_tarsal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_2' ;
+  x3do:center ( 0.05 -0.9 0 ) ;
+  x3do:name 'l_metatarsophalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_3_2_2_1_1, :Shape_2_2_2_1_2_3_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_phalanx_2' ;
+  x3do:name 'l_tarsal_proximal_phalanx_2' .
+:Transform_2_2_2_1_2_3_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-8 ;
+  x3do:translation ( 0.05 -0.9 0 ) .
+:HAnimJointShape-USE-8 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_3_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_3_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_3_2_2_1_2_1 ;
+  x3do:hasGeometry :MTP2toPIP2 .
+:Appearance_2_2_2_1_2_3_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_3_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_3_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_3_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MTP2toPIP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_3_2_2_1_2_2_1 ;
+  x3do:DEF 'MTP2toPIP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_3_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MTP2toPIP2 ;
+  x3do:point ( 0.05 -0.9 0 0.05 -1.05 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_2 ;
+  x3do:hasChildren :hanim_l_tarsal_middle_phalanx_2, :hanim_l_tarsal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_2' ;
+  x3do:center ( 0.05 -1.05 0 ) ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_middle_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_3_2_2_2_1_1, :Shape_2_2_2_1_2_3_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_middle_phalanx_2' ;
+  x3do:name 'l_tarsal_middle_phalanx_2' .
+:Transform_2_2_2_1_2_3_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-9 ;
+  x3do:translation ( 0.05 -1.05 0 ) .
+:HAnimJointShape-USE-9 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_3_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_3_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_3_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP2toDIP2 .
+:Appearance_2_2_2_1_2_3_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_3_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_3_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_3_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP2toDIP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_3_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP2toDIP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_3_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP2toDIP2 ;
+  x3do:point ( 0.05 -1.05 0 0.05 -1.12 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_2 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_phalanx_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_2' ;
+  x3do:center ( 0.05 -1.12 0 ) ;
+  x3do:name 'l_tarsal_distal_interphalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_distal_interphalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_3_2_2_2_2_1_1, :Shape_2_2_2_1_2_3_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_phalanx_2' ;
+  x3do:name 'l_tarsal_distal_phalanx_2' .
+:Transform_2_2_2_1_2_3_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-10 ;
+  x3do:translation ( 0.05 -1.12 0 ) .
+:HAnimJointShape-USE-10 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_3_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_3_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_3_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :tiptoe_l_tarsal_distal_phalanx_2 .
+:Appearance_2_2_2_1_2_3_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_3_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_3_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_3_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:tiptoe_l_tarsal_distal_phalanx_2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_3_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_3_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'tiptoe_l_tarsal_distal_phalanx_2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_3_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :tiptoe_l_tarsal_distal_phalanx_2 ;
+  x3do:point ( 0.05 -1.12 0 0.05 -1.16 0 ) .
+:hanim_l_cuneonavicular_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_cuneiform_3, :hanim_l_tarsometatarsal_3 ;
+  x3do:DEF 'hanim_l_cuneonavicular_3' ;
+  x3do:center ( 0.1 -0.4 0 ) ;
+  x3do:name 'l_cuneonavicular_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneiform_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_cuneonavicular_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_4_1_1, :Shape_2_2_2_1_2_4_1_2 ;
+  x3do:DEF 'hanim_l_cuneiform_3' ;
+  x3do:name 'l_cuneiform_3' .
+:Transform_2_2_2_1_2_4_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_cuneiform_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-11 ;
+  x3do:translation ( 0.1 -0.4 0 ) .
+:HAnimJointShape-USE-11 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_4_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_4_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_cuneiform_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_4_1_2_1 ;
+  x3do:hasGeometry :CN3toTMT3 .
+:Appearance_2_2_2_1_2_4_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_4_1_2_1_1 .
+:Material_2_2_2_1_2_4_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_4_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CN3toTMT3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_4_1_2_2_1 ;
+  x3do:DEF 'CN3toTMT3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_4_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CN3toTMT3 ;
+  x3do:point ( 0.1 -0.4 0 0.15 -0.6 0 ) .
+:hanim_l_tarsometatarsal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_3 ;
+  x3do:hasChildren :hanim_l_metatarsal_3, :hanim_l_metatarsophalangeal_3 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_3' ;
+  x3do:center ( 0.15 -0.6 0 ) ;
+  x3do:name 'l_tarsometatarsal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsal_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsometatarsal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_4_2_1_1, :Shape_2_2_2_1_2_4_2_1_2 ;
+  x3do:DEF 'hanim_l_metatarsal_3' ;
+  x3do:name 'l_metatarsal_3' .
+:Transform_2_2_2_1_2_4_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_metatarsal_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-12 ;
+  x3do:translation ( 0.15 -0.6 0 ) .
+:HAnimJointShape-USE-12 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_4_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_4_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_metatarsal_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_4_2_1_2_1 ;
+  x3do:hasGeometry :TMT3toMTP3 .
+:Appearance_2_2_2_1_2_4_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_4_2_1_2_1_1 .
+:Material_2_2_2_1_2_4_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_4_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TMT3toMTP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_4_2_1_2_2_1 ;
+  x3do:DEF 'TMT3toMTP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_4_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TMT3toMTP3 ;
+  x3do:point ( 0.15 -0.6 0 0.15 -0.9 0 ) .
+:hanim_l_metatarsophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_3 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_phalanx_3, :hanim_l_tarsal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_3' ;
+  x3do:center ( 0.15 -0.9 0 ) ;
+  x3do:name 'l_metatarsophalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_4_2_2_1_1, :Shape_2_2_2_1_2_4_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_phalanx_3' ;
+  x3do:name 'l_tarsal_proximal_phalanx_3' .
+:Transform_2_2_2_1_2_4_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-13 ;
+  x3do:translation ( 0.15 -0.9 0 ) .
+:HAnimJointShape-USE-13 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_4_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_4_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_4_2_2_1_2_1 ;
+  x3do:hasGeometry :MTP3toPIP3 .
+:Appearance_2_2_2_1_2_4_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_4_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_4_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_4_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MTP3toPIP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_4_2_2_1_2_2_1 ;
+  x3do:DEF 'MTP3toPIP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_4_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MTP3toPIP3 ;
+  x3do:point ( 0.15 -0.9 0 0.15 -1.05 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_3 ;
+  x3do:hasChildren :hanim_l_tarsal_middle_phalanx_3, :hanim_l_tarsal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_3' ;
+  x3do:center ( 0.15 -1.05 0 ) ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_middle_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_4_2_2_2_1_1, :Shape_2_2_2_1_2_4_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_middle_phalanx_3' ;
+  x3do:name 'l_tarsal_middle_phalanx_3' .
+:Transform_2_2_2_1_2_4_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-14 ;
+  x3do:translation ( 0.15 -1.05 0 ) .
+:HAnimJointShape-USE-14 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_4_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_4_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_4_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP3toDIP3 .
+:Appearance_2_2_2_1_2_4_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_4_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_4_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_4_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP3toDIP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_4_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP3toDIP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_4_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP3toDIP3 ;
+  x3do:point ( 0.15 -1.05 0 0.15 -1.13 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_3 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_phalanx_3 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_3' ;
+  x3do:center ( 0.15 -1.13 0 ) ;
+  x3do:name 'l_tarsal_distal_interphalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_distal_interphalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_4_2_2_2_2_1_1, :Shape_2_2_2_1_2_4_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_phalanx_3' ;
+  x3do:name 'l_tarsal_distal_phalanx_3' .
+:Transform_2_2_2_1_2_4_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-15 ;
+  x3do:translation ( 0.15 -1.13 0 ) .
+:HAnimJointShape-USE-15 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_4_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_4_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_4_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :tiptoe_l_tarsal_distal_interphalangeal_3 .
+:Appearance_2_2_2_1_2_4_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_4_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_4_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_4_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:tiptoe_l_tarsal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_4_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_4_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'tiptoe_l_tarsal_distal_interphalangeal_3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_4_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :tiptoe_l_tarsal_distal_interphalangeal_3 ;
+  x3do:point ( 0.15 -1.13 0 0.15 -1.16 0 ) .
+:hanim_l_calcaneocuboid a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocrural ;
+  x3do:hasChildren :hanim_l_calcaneus, :hanim_l_transversetarsal ;
+  x3do:DEF 'hanim_l_calcaneocuboid' ;
+  x3do:center ( 0.2 0.3 0 ) ;
+  x3do:name 'l_calcaneocuboid' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_calcaneus a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_calcaneocuboid ;
+  x3do:hasChildren :Transform_2_2_2_1_3_1_1, :Shape_2_2_2_1_3_1_2 ;
+  x3do:DEF 'hanim_l_calcaneus' ;
+  x3do:name 'l_calcaneus' .
+:Transform_2_2_2_1_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_calcaneus ;
+  x3do:hasChildren :HAnimJointShape-USE-16 ;
+  x3do:translation ( 0.2 0.3 0 ) .
+:HAnimJointShape-USE-16 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_calcaneus ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_1_2_1 ;
+  x3do:hasGeometry :CCtoTT .
+:Appearance_2_2_2_1_3_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_1_2_1_1 .
+:Material_2_2_2_1_3_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CCtoTT a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_1_2_2_1 ;
+  x3do:DEF 'CCtoTT' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CCtoTT ;
+  x3do:point ( 0.2 0.3 0 0.21 -0.3 0 ) .
+:hanim_l_transversetarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_calcaneocuboid ;
+  x3do:hasChildren :hanim_l_cuboid, :hanim_l_tarsometatarsal_4, :hanim_l_tarsometatarsal_5 ;
+  x3do:DEF 'hanim_l_transversetarsal' ;
+  x3do:center ( 0.21 -0.3 0 ) ;
+  x3do:name 'l_transversetarsal' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuboid a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_transversetarsal ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_1_1, :Shape_2_2_2_1_3_2_1_2, :Shape_2_2_2_1_3_2_1_3 ;
+  x3do:DEF 'hanim_l_cuboid' ;
+  x3do:name 'l_cuboid' .
+:Transform_2_2_2_1_3_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_cuboid ;
+  x3do:hasChildren :HAnimJointShape-USE-17 ;
+  x3do:translation ( 0.21 -0.3 0 ) .
+:HAnimJointShape-USE-17 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_cuboid ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_1_2_1 ;
+  x3do:hasGeometry :TTtoTMT4 .
+:Appearance_2_2_2_1_3_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TTtoTMT4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_1_2_2_1 ;
+  x3do:DEF 'TTtoTMT4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TTtoTMT4 ;
+  x3do:point ( 0.21 -0.3 0 0.25 -0.58 0 ) .
+:Shape_2_2_2_1_3_2_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_cuboid ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_1_3_1 ;
+  x3do:hasGeometry :TTtoTMT5 .
+:Appearance_2_2_2_1_3_2_1_3_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_3 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_1_3_1_1 .
+:Material_2_2_2_1_3_2_1_3_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_1_3_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TTtoTMT5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_3 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_1_3_2_1 ;
+  x3do:DEF 'TTtoTMT5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_1_3_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TTtoTMT5 ;
+  x3do:point ( 0.21 -0.3 0 0.33 -0.52 0 ) .
+:hanim_l_tarsometatarsal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_transversetarsal ;
+  x3do:hasChildren :hanim_l_metatarsal_4, :hanim_l_metatarsophalangeal_4 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_4' ;
+  x3do:center ( 0.25 -0.58 0 ) ;
+  x3do:name 'l_tarsometatarsal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsal_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsometatarsal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_1_1, :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:DEF 'hanim_l_metatarsal_4' ;
+  x3do:name 'l_metatarsal_4' .
+:Transform_2_2_2_1_3_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_metatarsal_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-18 ;
+  x3do:translation ( 0.25 -0.58 0 ) .
+:HAnimJointShape-USE-18 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_metatarsal_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_1_2_1 ;
+  x3do:hasGeometry :TMT4toMTP4 .
+:Appearance_2_2_2_1_3_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TMT4toMTP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_1_2_2_1 ;
+  x3do:DEF 'TMT4toMTP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TMT4toMTP4 ;
+  x3do:point ( 0.25 -0.58 0 0.25 -0.87 0 ) .
+:hanim_l_metatarsophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_4 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_phalanx_4, :hanim_l_tarsal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_4' ;
+  x3do:center ( 0.25 -0.87 0 ) ;
+  x3do:name 'l_metatarsophalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_2_1_1, :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_phalanx_4' ;
+  x3do:name 'l_tarsal_proximal_phalanx_4' .
+:Transform_2_2_2_1_3_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-19 ;
+  x3do:translation ( 0.25 -0.87 0 ) .
+:HAnimJointShape-USE-19 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_2_1_2_1 ;
+  x3do:hasGeometry :MTP4toPIP4 .
+:Appearance_2_2_2_1_3_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MTP4toPIP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_2_1_2_2_1 ;
+  x3do:DEF 'MTP4toPIP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MTP4toPIP4 ;
+  x3do:point ( 0.25 -0.87 0 0.25 -1.0 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_4 ;
+  x3do:hasChildren :hanim_l_tarsal_middle_phalanx_4, :hanim_l_tarsal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_4' ;
+  x3do:center ( 0.25 -1.0 0 ) ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_middle_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_2_2_1_1, :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_middle_phalanx_4' ;
+  x3do:name 'l_tarsal_middle_phalanx_4' .
+:Transform_2_2_2_1_3_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-20 ;
+  x3do:translation ( 0.25 -1.0 0 ) .
+:HAnimJointShape-USE-20 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP4toDIP4 .
+:Appearance_2_2_2_1_3_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP4toDIP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP4toDIP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP4toDIP4 ;
+  x3do:point ( 0.25 -1.0 0 0.25 -1.1 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_4 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_phalanx_4 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_4' ;
+  x3do:center ( 0.25 -1.1 0 ) ;
+  x3do:name 'l_tarsal_distal_interphalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_distal_interphalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_2_2_2_1_1, :Shape_2_2_2_1_3_2_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_phalanx_4' ;
+  x3do:name 'l_tarsal_distal_phalanx_4' .
+:Transform_2_2_2_1_3_2_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-21 ;
+  x3do:translation ( 0.25 -1.1 0 ) .
+:HAnimJointShape-USE-21 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :tiptoe_l_tarsal_distal_interphalangeal_4 .
+:Appearance_2_2_2_1_3_2_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:tiptoe_l_tarsal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'tiptoe_l_tarsal_distal_interphalangeal_4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :tiptoe_l_tarsal_distal_interphalangeal_4 ;
+  x3do:point ( 0.25 -1.1 0 0.25 -1.15 0 ) .
+:hanim_l_tarsometatarsal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_transversetarsal ;
+  x3do:hasChildren :hanim_l_metatarsal_5, :hanim_l_metatarsophalangeal_5 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_5' ;
+  x3do:center ( 0.33 -0.52 0 ) ;
+  x3do:name 'l_tarsometatarsal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsal_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsometatarsal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_3_1_1, :Shape_2_2_2_1_3_2_3_1_2 ;
+  x3do:DEF 'hanim_l_metatarsal_5' ;
+  x3do:name 'l_metatarsal_5' .
+:Transform_2_2_2_1_3_2_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_metatarsal_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-22 ;
+  x3do:translation ( 0.33 -0.52 0 ) .
+:HAnimJointShape-USE-22 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_3_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_3_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_metatarsal_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_3_1_2_1 ;
+  x3do:hasGeometry :TMT5toMTP5 .
+:Appearance_2_2_2_1_3_2_3_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_3_1_2_1_1 .
+:Material_2_2_2_1_3_2_3_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_3_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:TMT5toMTP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_3_1_2_2_1 ;
+  x3do:DEF 'TMT5toMTP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_3_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TMT5toMTP5 ;
+  x3do:point ( 0.33 -0.52 0 0.34 -0.8 0 ) .
+:hanim_l_metatarsophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_5 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_phalanx_5, :hanim_l_tarsal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_5' ;
+  x3do:center ( 0.34 -0.8 0 ) ;
+  x3do:name 'l_metatarsophalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_3_2_1_1, :Shape_2_2_2_1_3_2_3_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_phalanx_5' ;
+  x3do:name 'l_tarsal_proximal_phalanx_5' .
+:Transform_2_2_2_1_3_2_3_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-23 ;
+  x3do:translation ( 0.34 -0.8 0 ) .
+:HAnimJointShape-USE-23 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_3_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_proximal_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_3_2_1_2_1 ;
+  x3do:hasGeometry :MTP5toPIP5 .
+:Appearance_2_2_2_1_3_2_3_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_3_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_3_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_3_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MTP5toPIP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_3_2_1_2_2_1 ;
+  x3do:DEF 'MTP5toPIP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MTP5toPIP5 ;
+  x3do:point ( 0.34 -0.8 0 0.34 -0.95 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_5 ;
+  x3do:hasChildren :hanim_l_tarsal_middle_phalanx_5, :hanim_l_tarsal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_5' ;
+  x3do:center ( 0.34 -0.95 0 ) ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_middle_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_3_2_2_1_1, :Shape_2_2_2_1_3_2_3_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_middle_phalanx_5' ;
+  x3do:name 'l_tarsal_middle_phalanx_5' .
+:Transform_2_2_2_1_3_2_3_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-24 ;
+  x3do:translation ( 0.34 -0.95 0 ) .
+:HAnimJointShape-USE-24 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_3_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_3_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_middle_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_3_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP5toDIP5 .
+:Appearance_2_2_2_1_3_2_3_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_3_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_3_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_3_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP5toDIP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_3_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP5toDIP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_3_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP5toDIP5 ;
+  x3do:point ( 0.34 -0.95 0 0.34 -1.05 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_5 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_phalanx_5 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_5' ;
+  x3do:center ( 0.34 -1.05 0 ) ;
+  x3do:name 'l_tarsal_distal_interphalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_l_tarsal_distal_interphalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_3_2_2_2_1_1, :Shape_2_2_2_1_3_2_3_2_2_2_1_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_phalanx_5' ;
+  x3do:name 'l_tarsal_distal_phalanx_5' .
+:Transform_2_2_2_1_3_2_3_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-25 ;
+  x3do:translation ( 0.34 -1.05 0 ) .
+:HAnimJointShape-USE-25 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_3_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_3_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_l_tarsal_distal_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_3_2_2_2_1_2_1 ;
+  x3do:hasGeometry :tiptoe_l_tarsal_distal_interphalangeal_5 .
+:Appearance_2_2_2_1_3_2_3_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_3_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_3_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_3_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:tiptoe_l_tarsal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_3_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_3_2_2_2_1_2_2_1 ;
+  x3do:DEF 'tiptoe_l_tarsal_distal_interphalangeal_5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_3_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :tiptoe_l_tarsal_distal_interphalangeal_5 ;
+  x3do:point ( 0.34 -1.05 0 0.34 -1.08 0 ) .
+:hanim_humanoid_root-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_humanoid_root . # DEF matching this USE
+:hanim_l_calcaneocuboid-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_calcaneocuboid . # DEF matching this USE
+:hanim_l_cuneonavicular_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneonavicular_1 . # DEF matching this USE
+:hanim_l_cuneonavicular_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneonavicular_2 . # DEF matching this USE
+:hanim_l_cuneonavicular_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneonavicular_3 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsophalangeal_1 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsophalangeal_2 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsophalangeal_3 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsophalangeal_4 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsophalangeal_5 . # DEF matching this USE
+:hanim_l_talocalcaneonavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_talocalcaneonavicular . # DEF matching this USE
+:hanim_l_talocrural-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_talocrural . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_5 . # DEF matching this USE
+:hanim_l_tarsal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_interphalangeal_1 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_l_tarsometatarsal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsometatarsal_1 . # DEF matching this USE
+:hanim_l_tarsometatarsal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsometatarsal_2 . # DEF matching this USE
+:hanim_l_tarsometatarsal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsometatarsal_3 . # DEF matching this USE
+:hanim_l_tarsometatarsal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsometatarsal_4 . # DEF matching this USE
+:hanim_l_tarsometatarsal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsometatarsal_5 . # DEF matching this USE
+:hanim_l_transversetarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_transversetarsal . # DEF matching this USE
+:hanim_l_calcaneus-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_calcaneus . # DEF matching this USE
+:hanim_l_cuboid-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuboid . # DEF matching this USE
+:hanim_l_cuneiform_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneiform_1 . # DEF matching this USE
+:hanim_l_cuneiform_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneiform_2 . # DEF matching this USE
+:hanim_l_cuneiform_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_cuneiform_3 . # DEF matching this USE
+:hanim_l_metatarsal_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsal_1 . # DEF matching this USE
+:hanim_l_metatarsal_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsal_2 . # DEF matching this USE
+:hanim_l_metatarsal_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsal_3 . # DEF matching this USE
+:hanim_l_metatarsal_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsal_4 . # DEF matching this USE
+:hanim_l_metatarsal_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_metatarsal_5 . # DEF matching this USE
+:hanim_l_navicular-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_navicular . # DEF matching this USE
+:hanim_l_talus-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_talus . # DEF matching this USE
+:hanim_l_tarsal_distal_phalanx_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_phalanx_1 . # DEF matching this USE
+:hanim_l_tarsal_distal_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_phalanx_2 . # DEF matching this USE
+:hanim_l_tarsal_distal_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_phalanx_3 . # DEF matching this USE
+:hanim_l_tarsal_distal_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_phalanx_4 . # DEF matching this USE
+:hanim_l_tarsal_distal_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_distal_phalanx_5 . # DEF matching this USE
+:hanim_l_tarsal_middle_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_middle_phalanx_2 . # DEF matching this USE
+:hanim_l_tarsal_middle_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_middle_phalanx_3 . # DEF matching this USE
+:hanim_l_tarsal_middle_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_middle_phalanx_4 . # DEF matching this USE
+:hanim_l_tarsal_middle_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_middle_phalanx_5 . # DEF matching this USE
+:hanim_l_tarsal_proximal_phalanx_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_phalanx_1 . # DEF matching this USE
+:hanim_l_tarsal_proximal_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_phalanx_2 . # DEF matching this USE
+:hanim_l_tarsal_proximal_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_phalanx_3 . # DEF matching this USE
+:hanim_l_tarsal_proximal_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_phalanx_4 . # DEF matching this USE
+:hanim_l_tarsal_proximal_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Foot_Left ;
+  owl:sameAs :hanim_l_tarsal_proximal_phalanx_5 . # DEF matching this USE

@@ -1,0 +1,152 @@
+@prefix :        <https://coderextreme.net/x3d/qq3.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'qq3.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'creator' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'translator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '11 Jan 2015' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '05 May 2017' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '12 extrusions to test prototype expander' ;
+  x3do:name 'description' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://coderextreme.net/x3d/qq3.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'manual' ;
+  x3do:name 'generator' .
+:meta dcterms:title "qq3.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:translator "John Carlson" .
+:meta dcterms:created "11 Jan 2015" .
+:meta dcterms:modified "05 May 2017" .
+:meta dcterms:description "12 extrusions to test prototype expander" .
+:meta dcterms:identifier "https://coderextreme.net/x3d/qq3.x3d" .
+:meta dcterms:generator "manual" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Viewpoint_2_2, :Transform_2_3, :Transform_2_4, :Transform_2_5 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoBody :ProtoBody_2_1_1 ;
+  x3do:name 'Process' .
+:ProtoBody_2_1_1 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Group_2_1_1_1 .
+:Group_2_1_1_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:hasChildren :Transform_2_1_1_1_1, :Transform_2_1_1_1_2, :Transform_2_1_1_1_3, :Transform_2_1_1_1_4 .
+:Transform_2_1_1_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :ShapeLeftDown ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:ShapeLeftDown a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_1_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_1_1_2 ;
+  x3do:DEF 'ShapeLeftDown' .
+:Appearance_2_1_1_1_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :ShapeLeftDown ;
+  x3do:hasMaterial :Material_2_1_1_1_1_1_1_1 .
+:Material_2_1_1_1_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_1_1_1 ;
+  x3do:diffuseColor ( 0.7 1 0 ) .
+:Extrusion_2_1_1_1_1_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :ShapeLeftDown ;
+  x3do:spine ( -2.5 0 0 -1.5 0 0 ) ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00 ) .
+:Transform_2_1_1_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :ShapeUpRight ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:ShapeUpRight a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_2 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_2_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_2_1_2 ;
+  x3do:DEF 'ShapeUpRight' .
+:Appearance_2_1_1_1_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :ShapeUpRight ;
+  x3do:hasMaterial :Material_2_1_1_1_2_1_1_1 .
+:Material_2_1_1_1_2_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_2_1_1 ;
+  x3do:diffuseColor ( 0 0.7 1 ) .
+:Extrusion_2_1_1_1_2_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :ShapeUpRight ;
+  x3do:spine ( 1.5 0 0 2.5 0 0 ) ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00 ) .
+:Transform_2_1_1_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :ShapeUpRight-USE-1 ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:ShapeUpRight-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_3 ;
+  owl:sameAs :ShapeUpRight . # DEF matching this USE
+:Transform_2_1_1_1_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :ShapeLeftDown-USE-1 ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:ShapeLeftDown-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_4 ;
+  owl:sameAs :ShapeLeftDown . # DEF matching this USE
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Process pipes' ;
+  x3do:orientation ( 1 0 0 -0.4 ) ;
+  x3do:position ( 0 5 12 ) .
+:Transform_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_3_1 ;
+  x3do:translation ( 0 -2.5 0 ) .
+:ProtoInstance_2_3_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:name 'Process' .
+:Transform_2_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_4_1 .
+:ProtoInstance_2_4_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_4 ;
+  x3do:name 'Process' .
+:Transform_2_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_5_1 ;
+  x3do:translation ( 0 2.5 0 ) .
+:ProtoInstance_2_5_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_5 ;
+  x3do:name 'Process' .

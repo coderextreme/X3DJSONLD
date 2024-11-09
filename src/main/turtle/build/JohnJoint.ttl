@@ -1,0 +1,1722 @@
+@prefix :        <http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'HAnim' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'JohnJoint.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'An attempt at a standard LOA-4 skeleton' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'h6.pl' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Carlson' ;
+  x3do:name 'creator' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '12 January 2023' ;
+  x3do:name 'created' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "JohnJoint.x3d" .
+:meta dcterms:identifier "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d" .
+:meta dcterms:description "An attempt at a standard LOA-4 skeleton" .
+:meta dcterms:generator "h6.pl" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:created "12 January 2023" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Transform_2_1, :Group_2_2, :NavigationInfo_2_3, :Viewpoint_2_4 ;
+  x3do:hasSkeleton :hanim_HAnim .
+:Transform_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :AxisLinesShape .
+:AxisLinesShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1 ;
+  x3do:hasGeometry :IndexedLineSet_2_1_1_1 ;
+  x3do:DEF 'AxisLinesShape' .
+:IndexedLineSet_2_1_1_1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :AxisLinesShape ;
+  x3do:hasCoord :Coordinate_2_1_1_1_1 ;
+  x3do:hasColor :Color_2_1_1_1_2 ;
+  x3do:colorIndex ( 0 1 2 ) ;
+  x3do:colorPerVertex false ;
+  x3do:coordIndex ( 0 1 -1 0 2 -1 0 3 -1 ) .
+:Coordinate_2_1_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedLineSet_2_1_1_1 ;
+  x3do:point ( 0 0 0 0.1 0 0 0 0.1 0 0 0 0.1 ) .
+:Color_2_1_1_1_2 a owl:NamedIndividual, x3do:Color ;
+  x3do:hasParent :IndexedLineSet_2_1_1_1 ;
+  x3do:color ( 1 0 0 0 0.6 0 0 0 1 ) .
+:Group_2_2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_2_1 .
+:Transform_2_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Transform_2_2_1_1, :Transform_2_2_1_2 .
+:Transform_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_1 ;
+  x3do:hasChildren :HAnimJointShape ;
+  x3do:translation ( 0 2.1 0 ) .
+:HAnimJointShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_1_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_2_1_1_1_2 ;
+  x3do:DEF 'HAnimJointShape' .
+:Sphere_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:radius 0.02 .
+:Appearance_2_2_1_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:hasMaterial :HAnimJointMaterial .
+:HAnimJointMaterial a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_1_1_1_2 ;
+  x3do:DEF 'HAnimJointMaterial' ;
+  x3do:diffuseColor ( 0 0 0.8 ) ;
+  x3do:transparency 0.3 .
+:Transform_2_2_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_2_1 ;
+  x3do:hasChildren :HAnimSegmentLine ;
+  x3do:translation ( 0 2.05 0 ) .
+:HAnimSegmentLine a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1_2 ;
+  x3do:hasGeometry :LineSet_2_2_1_2_1_1 ;
+  x3do:DEF 'HAnimSegmentLine' .
+:LineSet_2_2_1_2_1_1 a owl:NamedIndividual, x3do:LineSet ;
+  x3do:hasParent :HAnimSegmentLine ;
+  x3do:hasColor :HAnimSegmentLineColorRGBA ;
+  x3do:hasCoord :Coordinate_2_2_1_2_1_1_2 ;
+  x3do:vertexCount ( 2 ) .
+:HAnimSegmentLineColorRGBA a owl:NamedIndividual, x3do:ColorRGBA ;
+  x3do:hasParent :LineSet_2_2_1_2_1_1 ;
+  x3do:DEF 'HAnimSegmentLineColorRGBA' ;
+  x3do:color ( 1 1 0 1 1 1 0 0.1 ) .
+:Coordinate_2_2_1_2_1_1_2 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :LineSet_2_2_1_2_1_1 ;
+  x3do:point ( -0.05 0 0 0.05 0 0 ) .
+:NavigationInfo_2_3 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:speed 1.5 .
+:Viewpoint_2_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'default' .
+:hanim_HAnim a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :Scene ;
+  x3do:hasSkeleton :hanim_humanoid_root ;
+  x3do:hasJoints :hanim_humanoid_root-USE-1, :hanim_sacroiliac-USE-1, :hanim_l_hip-USE-1, :hanim_l_knee-USE-1, :hanim_l_talocrural-USE-1, :hanim_l_talocalcaneonavicular-USE-1, :hanim_l_cuneonavicular_1-USE-1, :hanim_l_tarsometatarsal_1-USE-1, :hanim_l_metatarsophalangeal_1-USE-1, :hanim_l_tarsal_interphalangeal_1-USE-1, :hanim_l_cuneonavicular_2-USE-1, :hanim_l_tarsometatarsal_2-USE-1, :hanim_l_metatarsophalangeal_2-USE-1, :hanim_l_tarsal_proximal_interphalangeal_2-USE-1, :hanim_l_tarsal_distal_interphalangeal_2-USE-1, :hanim_l_cuneonavicular_3-USE-1, :hanim_l_tarsometatarsal_3-USE-1, :hanim_l_metatarsophalangeal_3-USE-1, :hanim_l_tarsal_proximal_interphalangeal_3-USE-1, :hanim_l_tarsal_distal_interphalangeal_3-USE-1, :hanim_l_calcaneocuboid-USE-1, :hanim_l_transversetarsal-USE-1, :hanim_l_tarsometatarsal_4-USE-1, :hanim_l_metatarsophalangeal_4-USE-1, :hanim_l_tarsal_proximal_interphalangeal_4-USE-1, :hanim_l_tarsal_distal_interphalangeal_4-USE-1, :hanim_l_tarsometatarsal_5-USE-1, :hanim_l_metatarsophalangeal_5-USE-1, :hanim_l_tarsal_proximal_interphalangeal_5-USE-1, :hanim_l_tarsal_distal_interphalangeal_5-USE-1, :hanim_r_hip-USE-1, :hanim_r_knee-USE-1, :hanim_r_talocrural-USE-1, :hanim_r_talocalcaneonavicular-USE-1, :hanim_r_cuneonavicular_1-USE-1, :hanim_r_tarsometatarsal_1-USE-1, :hanim_r_metatarsophalangeal_1-USE-1, :hanim_r_tarsal_interphalangeal_1-USE-1, :hanim_r_cuneonavicular_2-USE-1, :hanim_r_tarsometatarsal_2-USE-1, :hanim_r_metatarsophalangeal_2-USE-1, :hanim_r_tarsal_proximal_interphalangeal_2-USE-1, :hanim_r_tarsal_distal_interphalangeal_2-USE-1, :hanim_r_cuneonavicular_3-USE-1, :hanim_r_tarsometatarsal_3-USE-1, :hanim_r_metatarsophalangeal_3-USE-1, :hanim_r_tarsal_proximal_interphalangeal_3-USE-1, :hanim_r_tarsal_distal_interphalangeal_3-USE-1, :hanim_r_calcaneocuboid-USE-1, :hanim_r_transversetarsal-USE-1, :hanim_r_tarsometatarsal_4-USE-1, :hanim_r_metatarsophalangeal_4-USE-1, :hanim_r_tarsal_proximal_interphalangeal_4-USE-1, :hanim_r_tarsal_distal_interphalangeal_4-USE-1, :hanim_r_tarsometatarsal_5-USE-1, :hanim_r_metatarsophalangeal_5-USE-1, :hanim_r_tarsal_proximal_interphalangeal_5-USE-1, :hanim_r_tarsal_distal_interphalangeal_5-USE-1, :hanim_vl5-USE-1, :hanim_vl4-USE-1, :hanim_vl3-USE-1, :hanim_vl2-USE-1, :hanim_vl1-USE-1, :hanim_vt12-USE-1, :hanim_vt11-USE-1, :hanim_vt10-USE-1, :hanim_vt9-USE-1, :hanim_vt8-USE-1, :hanim_vt7-USE-1, :hanim_vt6-USE-1, :hanim_vt5-USE-1, :hanim_vt4-USE-1, :hanim_vt3-USE-1, :hanim_vt2-USE-1, :hanim_vt1-USE-1, :hanim_vc7-USE-1, :hanim_vc6-USE-1, :hanim_vc5-USE-1, :hanim_vc4-USE-1, :hanim_vc3-USE-1, :hanim_vc2-USE-1, :hanim_vc1-USE-1, :hanim_skullbase-USE-1, :hanim_l_eyelid_joint-USE-1, :hanim_r_eyelid_joint-USE-1, :hanim_l_eyeball_joint-USE-1, :hanim_r_eyeball_joint-USE-1, :hanim_l_eyebrow_joint-USE-1, :hanim_r_eyebrow_joint-USE-1, :hanim_temporomandibular-USE-1, :hanim_l_sternoclavicular-USE-1, :hanim_l_acromioclavicular-USE-1, :hanim_l_shoulder-USE-1, :hanim_l_elbow-USE-1, :hanim_l_radiocarpal-USE-1, :hanim_l_midcarpal_1-USE-1, :hanim_l_carpometacarpal_1-USE-1, :hanim_l_metacarpophalangeal_1-USE-1, :hanim_l_carpal_interphalangeal_1-USE-1, :hanim_l_midcarpal_2-USE-1, :hanim_l_carpometacarpal_2-USE-1, :hanim_l_metacarpophalangeal_2-USE-1, :hanim_l_carpal_proximal_interphalangeal_2-USE-1, :hanim_l_carpal_distal_interphalangeal_2-USE-1, :hanim_l_midcarpal_3-USE-1, :hanim_l_carpometacarpal_3-USE-1, :hanim_l_metacarpophalangeal_3-USE-1, :hanim_l_carpal_proximal_interphalangeal_3-USE-1, :hanim_l_carpal_distal_interphalangeal_3-USE-1, :hanim_l_midcarpal_4_5-USE-1, :hanim_l_carpometacarpal_4-USE-1, :hanim_l_metacarpophalangeal_4-USE-1, :hanim_l_carpal_proximal_interphalangeal_4-USE-1, :hanim_l_carpal_distal_interphalangeal_4-USE-1, :hanim_l_carpometacarpal_5-USE-1, :hanim_l_metacarpophalangeal_5-USE-1, :hanim_l_carpal_proximal_interphalangeal_5-USE-1, :hanim_l_carpal_distal_interphalangeal_5-USE-1, :hanim_r_sternoclavicular-USE-1, :hanim_r_acromioclavicular-USE-1, :hanim_r_shoulder-USE-1, :hanim_r_elbow-USE-1, :hanim_r_radiocarpal-USE-1, :hanim_r_midcarpal_1-USE-1, :hanim_r_carpometacarpal_1-USE-1, :hanim_r_metacarpophalangeal_1-USE-1, :hanim_r_carpal_interphalangeal_1-USE-1, :hanim_r_midcarpal_2-USE-1, :hanim_r_carpometacarpal_2-USE-1, :hanim_r_metacarpophalangeal_2-USE-1, :hanim_r_carpal_proximal_interphalangeal_2-USE-1, :hanim_r_carpal_distal_interphalangeal_2-USE-1, :hanim_r_midcarpal_3-USE-1, :hanim_r_carpometacarpal_3-USE-1, :hanim_r_metacarpophalangeal_3-USE-1, :hanim_r_carpal_proximal_interphalangeal_3-USE-1, :hanim_r_carpal_distal_interphalangeal_3-USE-1, :hanim_r_midcarpal_4_5-USE-1, :hanim_r_carpometacarpal_4-USE-1, :hanim_r_metacarpophalangeal_4-USE-1, :hanim_r_carpal_proximal_interphalangeal_4-USE-1, :hanim_r_carpal_distal_interphalangeal_4-USE-1, :hanim_r_carpometacarpal_5-USE-1, :hanim_r_metacarpophalangeal_5-USE-1, :hanim_r_carpal_proximal_interphalangeal_5-USE-1, :hanim_r_carpal_distal_interphalangeal_5-USE-1 ;
+  x3do:DEF 'hanim_HAnim' ;
+  x3do:info '"humanoidVersion=2.0"' ;
+  x3do:name 'HAnim' ;
+  x3do:version '2.0' .
+:hanim_humanoid_root a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  x3do:hasChildren :hanim_sacroiliac, :hanim_vl5 ;
+  x3do:DEF 'hanim_humanoid_root' ;
+  x3do:name 'humanoid_root' ;
+  x3do:center ( 0.0000 0.8240 0.0277 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_sacroiliac a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_humanoid_root ;
+  x3do:hasChildren :hanim_l_hip, :hanim_r_hip ;
+  x3do:DEF 'hanim_sacroiliac' ;
+  x3do:name 'sacroiliac' ;
+  x3do:center ( 0.0000 0.9149 0.0016 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_hip a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_sacroiliac ;
+  x3do:hasChildren :hanim_l_knee ;
+  x3do:DEF 'hanim_l_hip' ;
+  x3do:name 'l_hip' ;
+  x3do:center ( 0.0961 0.9124 -0.0001 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_knee a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_hip ;
+  x3do:hasChildren :hanim_l_talocrural ;
+  x3do:DEF 'hanim_l_knee' ;
+  x3do:name 'l_knee' ;
+  x3do:center ( 0.1040 0.4867 0.0308 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_talocrural a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_knee ;
+  x3do:hasChildren :hanim_l_talocalcaneonavicular, :hanim_l_calcaneocuboid ;
+  x3do:DEF 'hanim_l_talocrural' ;
+  x3do:name 'l_talocrural' ;
+  x3do:center ( 0.1101 0.0656 -0.0736 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_talocalcaneonavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocrural ;
+  x3do:hasChildren :hanim_l_cuneonavicular_1, :hanim_l_cuneonavicular_2, :hanim_l_cuneonavicular_3 ;
+  x3do:DEF 'hanim_l_talocalcaneonavicular' ;
+  x3do:name 'l_talocalcaneonavicular' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneonavicular_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_tarsometatarsal_1 ;
+  x3do:DEF 'hanim_l_cuneonavicular_1' ;
+  x3do:name 'l_cuneonavicular_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsometatarsal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_1 ;
+  x3do:hasChildren :hanim_l_metatarsophalangeal_1 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_1' ;
+  x3do:name 'l_tarsometatarsal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_1 ;
+  x3do:hasChildren :hanim_l_tarsal_interphalangeal_1 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_1' ;
+  x3do:name 'l_metatarsophalangeal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_1 ;
+  x3do:DEF 'hanim_l_tarsal_interphalangeal_1' ;
+  x3do:name 'l_tarsal_interphalangeal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneonavicular_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_tarsometatarsal_2 ;
+  x3do:DEF 'hanim_l_cuneonavicular_2' ;
+  x3do:name 'l_cuneonavicular_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsometatarsal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_2 ;
+  x3do:hasChildren :hanim_l_metatarsophalangeal_2 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_2' ;
+  x3do:name 'l_tarsometatarsal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_2 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_2' ;
+  x3do:name 'l_metatarsophalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_2 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_2' ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_2' ;
+  x3do:name 'l_tarsal_distal_interphalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_cuneonavicular_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_l_tarsometatarsal_3 ;
+  x3do:DEF 'hanim_l_cuneonavicular_3' ;
+  x3do:name 'l_cuneonavicular_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsometatarsal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_cuneonavicular_3 ;
+  x3do:hasChildren :hanim_l_metatarsophalangeal_3 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_3' ;
+  x3do:name 'l_tarsometatarsal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_3 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_3' ;
+  x3do:name 'l_metatarsophalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_3 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_3' ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_3' ;
+  x3do:name 'l_tarsal_distal_interphalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_calcaneocuboid a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_talocrural ;
+  x3do:hasChildren :hanim_l_transversetarsal ;
+  x3do:DEF 'hanim_l_calcaneocuboid' ;
+  x3do:name 'l_calcaneocuboid' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_transversetarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_calcaneocuboid ;
+  x3do:hasChildren :hanim_l_tarsometatarsal_4, :hanim_l_tarsometatarsal_5 ;
+  x3do:DEF 'hanim_l_transversetarsal' ;
+  x3do:name 'l_transversetarsal' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsometatarsal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_transversetarsal ;
+  x3do:hasChildren :hanim_l_metatarsophalangeal_4 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_4' ;
+  x3do:name 'l_tarsometatarsal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_4 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_4' ;
+  x3do:name 'l_metatarsophalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_4 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_4' ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_4' ;
+  x3do:name 'l_tarsal_distal_interphalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsometatarsal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_transversetarsal ;
+  x3do:hasChildren :hanim_l_metatarsophalangeal_5 ;
+  x3do:DEF 'hanim_l_tarsometatarsal_5' ;
+  x3do:name 'l_tarsometatarsal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metatarsophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsometatarsal_5 ;
+  x3do:hasChildren :hanim_l_tarsal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_metatarsophalangeal_5' ;
+  x3do:name 'l_metatarsophalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metatarsophalangeal_5 ;
+  x3do:hasChildren :hanim_l_tarsal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_tarsal_proximal_interphalangeal_5' ;
+  x3do:name 'l_tarsal_proximal_interphalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_tarsal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_tarsal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_tarsal_distal_interphalangeal_5' ;
+  x3do:name 'l_tarsal_distal_interphalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_hip a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_sacroiliac ;
+  x3do:hasChildren :hanim_r_knee ;
+  x3do:DEF 'hanim_r_hip' ;
+  x3do:name 'r_hip' ;
+  x3do:center ( -0.0950 0.9171 0.0029 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_knee a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_hip ;
+  x3do:hasChildren :hanim_r_talocrural ;
+  x3do:DEF 'hanim_r_knee' ;
+  x3do:name 'r_knee' ;
+  x3do:center ( -0.0867 0.4913 0.0318 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_talocrural a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_knee ;
+  x3do:hasChildren :hanim_r_talocalcaneonavicular, :hanim_r_calcaneocuboid ;
+  x3do:DEF 'hanim_r_talocrural' ;
+  x3do:name 'r_talocrural' ;
+  x3do:center ( -0.0801 0.0712 -0.0766 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_talocalcaneonavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_talocrural ;
+  x3do:hasChildren :hanim_r_cuneonavicular_1, :hanim_r_cuneonavicular_2, :hanim_r_cuneonavicular_3 ;
+  x3do:DEF 'hanim_r_talocalcaneonavicular' ;
+  x3do:name 'r_talocalcaneonavicular' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_cuneonavicular_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_r_tarsometatarsal_1 ;
+  x3do:DEF 'hanim_r_cuneonavicular_1' ;
+  x3do:name 'r_cuneonavicular_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsometatarsal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_cuneonavicular_1 ;
+  x3do:hasChildren :hanim_r_metatarsophalangeal_1 ;
+  x3do:DEF 'hanim_r_tarsometatarsal_1' ;
+  x3do:name 'r_tarsometatarsal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metatarsophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsometatarsal_1 ;
+  x3do:hasChildren :hanim_r_tarsal_interphalangeal_1 ;
+  x3do:DEF 'hanim_r_metatarsophalangeal_1' ;
+  x3do:name 'r_metatarsophalangeal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metatarsophalangeal_1 ;
+  x3do:DEF 'hanim_r_tarsal_interphalangeal_1' ;
+  x3do:name 'r_tarsal_interphalangeal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_cuneonavicular_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_r_tarsometatarsal_2 ;
+  x3do:DEF 'hanim_r_cuneonavicular_2' ;
+  x3do:name 'r_cuneonavicular_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsometatarsal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_cuneonavicular_2 ;
+  x3do:hasChildren :hanim_r_metatarsophalangeal_2 ;
+  x3do:DEF 'hanim_r_tarsometatarsal_2' ;
+  x3do:name 'r_tarsometatarsal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metatarsophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsometatarsal_2 ;
+  x3do:hasChildren :hanim_r_tarsal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_metatarsophalangeal_2' ;
+  x3do:name 'r_metatarsophalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metatarsophalangeal_2 ;
+  x3do:hasChildren :hanim_r_tarsal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_tarsal_proximal_interphalangeal_2' ;
+  x3do:name 'r_tarsal_proximal_interphalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_tarsal_distal_interphalangeal_2' ;
+  x3do:name 'r_tarsal_distal_interphalangeal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_cuneonavicular_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_talocalcaneonavicular ;
+  x3do:hasChildren :hanim_r_tarsometatarsal_3 ;
+  x3do:DEF 'hanim_r_cuneonavicular_3' ;
+  x3do:name 'r_cuneonavicular_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsometatarsal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_cuneonavicular_3 ;
+  x3do:hasChildren :hanim_r_metatarsophalangeal_3 ;
+  x3do:DEF 'hanim_r_tarsometatarsal_3' ;
+  x3do:name 'r_tarsometatarsal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metatarsophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsometatarsal_3 ;
+  x3do:hasChildren :hanim_r_tarsal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_metatarsophalangeal_3' ;
+  x3do:name 'r_metatarsophalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metatarsophalangeal_3 ;
+  x3do:hasChildren :hanim_r_tarsal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_tarsal_proximal_interphalangeal_3' ;
+  x3do:name 'r_tarsal_proximal_interphalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_tarsal_distal_interphalangeal_3' ;
+  x3do:name 'r_tarsal_distal_interphalangeal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_calcaneocuboid a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_talocrural ;
+  x3do:hasChildren :hanim_r_transversetarsal ;
+  x3do:DEF 'hanim_r_calcaneocuboid' ;
+  x3do:name 'r_calcaneocuboid' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_transversetarsal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_calcaneocuboid ;
+  x3do:hasChildren :hanim_r_tarsometatarsal_4, :hanim_r_tarsometatarsal_5 ;
+  x3do:DEF 'hanim_r_transversetarsal' ;
+  x3do:name 'r_transversetarsal' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsometatarsal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_transversetarsal ;
+  x3do:hasChildren :hanim_r_metatarsophalangeal_4 ;
+  x3do:DEF 'hanim_r_tarsometatarsal_4' ;
+  x3do:name 'r_tarsometatarsal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metatarsophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsometatarsal_4 ;
+  x3do:hasChildren :hanim_r_tarsal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_metatarsophalangeal_4' ;
+  x3do:name 'r_metatarsophalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metatarsophalangeal_4 ;
+  x3do:hasChildren :hanim_r_tarsal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_tarsal_proximal_interphalangeal_4' ;
+  x3do:name 'r_tarsal_proximal_interphalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_tarsal_distal_interphalangeal_4' ;
+  x3do:name 'r_tarsal_distal_interphalangeal_4' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsometatarsal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_transversetarsal ;
+  x3do:hasChildren :hanim_r_metatarsophalangeal_5 ;
+  x3do:DEF 'hanim_r_tarsometatarsal_5' ;
+  x3do:name 'r_tarsometatarsal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metatarsophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsometatarsal_5 ;
+  x3do:hasChildren :hanim_r_tarsal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_metatarsophalangeal_5' ;
+  x3do:name 'r_metatarsophalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metatarsophalangeal_5 ;
+  x3do:hasChildren :hanim_r_tarsal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_tarsal_proximal_interphalangeal_5' ;
+  x3do:name 'r_tarsal_proximal_interphalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_tarsal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_tarsal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_tarsal_distal_interphalangeal_5' ;
+  x3do:name 'r_tarsal_distal_interphalangeal_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vl5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_humanoid_root ;
+  x3do:hasChildren :hanim_vl4 ;
+  x3do:DEF 'hanim_vl5' ;
+  x3do:name 'vl5' ;
+  x3do:center ( 0.0028 1.0568 -0.0776 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vl4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vl5 ;
+  x3do:hasChildren :hanim_vl3 ;
+  x3do:DEF 'hanim_vl4' ;
+  x3do:name 'vl4' ;
+  x3do:center ( 0.0035 1.0925 -0.0787 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vl3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vl4 ;
+  x3do:hasChildren :hanim_vl2 ;
+  x3do:DEF 'hanim_vl3' ;
+  x3do:name 'vl3' ;
+  x3do:center ( 0.0041 1.1276 -0.0796 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vl2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vl3 ;
+  x3do:hasChildren :hanim_vl1 ;
+  x3do:DEF 'hanim_vl2' ;
+  x3do:name 'vl2' ;
+  x3do:center ( 0.0045 1.1546 -0.0800 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vl1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vl2 ;
+  x3do:hasChildren :hanim_vt12 ;
+  x3do:DEF 'hanim_vl1' ;
+  x3do:name 'vl1' ;
+  x3do:center ( 0.0048 1.1912 -0.0805 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt12 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vl1 ;
+  x3do:hasChildren :hanim_vt11 ;
+  x3do:DEF 'hanim_vt12' ;
+  x3do:name 'vt12' ;
+  x3do:center ( 0.0051 1.2278 -0.0808 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt11 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt12 ;
+  x3do:hasChildren :hanim_vt10 ;
+  x3do:DEF 'hanim_vt11' ;
+  x3do:name 'vt11' ;
+  x3do:center ( 0.0053 1.2679 -0.0810 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt10 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt11 ;
+  x3do:hasChildren :hanim_vt9 ;
+  x3do:DEF 'hanim_vt10' ;
+  x3do:name 'vt10' ;
+  x3do:center ( 0.0056 1.2848 -0.0822 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt9 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt10 ;
+  x3do:hasChildren :hanim_vt8 ;
+  x3do:DEF 'hanim_vt9' ;
+  x3do:name 'vt9' ;
+  x3do:center ( 0.0057 1.3126 -0.0838 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt8 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt9 ;
+  x3do:hasChildren :hanim_vt7 ;
+  x3do:DEF 'hanim_vt8' ;
+  x3do:name 'vt8' ;
+  x3do:center ( 0.0057 1.3382 -0.0845 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt7 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt8 ;
+  x3do:hasChildren :hanim_vt6 ;
+  x3do:DEF 'hanim_vt7' ;
+  x3do:name 'vt7' ;
+  x3do:center ( 0.0058 1.3625 -0.0833 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt6 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt7 ;
+  x3do:hasChildren :hanim_vt5 ;
+  x3do:DEF 'hanim_vt6' ;
+  x3do:name 'vt6' ;
+  x3do:center ( 0.0059 1.3866 -0.0800 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt6 ;
+  x3do:hasChildren :hanim_vt4 ;
+  x3do:DEF 'hanim_vt5' ;
+  x3do:name 'vt5' ;
+  x3do:center ( 0.0060 1.4102 -0.0745 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt5 ;
+  x3do:hasChildren :hanim_vt3 ;
+  x3do:DEF 'hanim_vt4' ;
+  x3do:name 'vt4' ;
+  x3do:center ( 0.0061 1.4320 -0.0675 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt4 ;
+  x3do:hasChildren :hanim_vt2 ;
+  x3do:DEF 'hanim_vt3' ;
+  x3do:name 'vt3' ;
+  x3do:center ( 0.0062 1.4583 -0.0570 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt3 ;
+  x3do:hasChildren :hanim_vt1 ;
+  x3do:DEF 'hanim_vt2' ;
+  x3do:name 'vt2' ;
+  x3do:center ( 0.0063 1.4761 -0.0484 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vt1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt2 ;
+  x3do:hasChildren :hanim_vc7, :hanim_l_sternoclavicular, :hanim_r_sternoclavicular ;
+  x3do:DEF 'hanim_vt1' ;
+  x3do:name 'vt1' ;
+  x3do:center ( 0.0065 1.4951 -0.0387 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc7 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt1 ;
+  x3do:hasChildren :hanim_vc6 ;
+  x3do:DEF 'hanim_vc7' ;
+  x3do:name 'vc7' ;
+  x3do:center ( 0.0066 1.5132 -0.0301 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc6 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc7 ;
+  x3do:hasChildren :hanim_vc5 ;
+  x3do:DEF 'hanim_vc6' ;
+  x3do:name 'vc6' ;
+  x3do:center ( 0.0066 1.5357 -0.0143 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc6 ;
+  x3do:hasChildren :hanim_vc4 ;
+  x3do:DEF 'hanim_vc5' ;
+  x3do:name 'vc5' ;
+  x3do:center ( 0.0066 1.5520 -0.0082 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc5 ;
+  x3do:hasChildren :hanim_vc3 ;
+  x3do:DEF 'hanim_vc4' ;
+  x3do:name 'vc4' ;
+  x3do:center ( 0.0066 1.5662 -0.0084 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc4 ;
+  x3do:hasChildren :hanim_vc2 ;
+  x3do:DEF 'hanim_vc3' ;
+  x3do:name 'vc3' ;
+  x3do:center ( 0.0066 1.5800 -0.0103 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc3 ;
+  x3do:hasChildren :hanim_vc1 ;
+  x3do:DEF 'hanim_vc2' ;
+  x3do:name 'vc2' ;
+  x3do:center ( 0.0066 1.5928 -0.0103 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_vc1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc2 ;
+  x3do:hasChildren :hanim_skullbase ;
+  x3do:DEF 'hanim_vc1' ;
+  x3do:name 'vc1' ;
+  x3do:center ( 0.0066 1.6144 -0.0034 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_skullbase a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vc1 ;
+  x3do:hasChildren :hanim_l_eyelid_joint, :hanim_r_eyelid_joint, :hanim_l_eyeball_joint, :hanim_r_eyeball_joint, :hanim_l_eyebrow_joint, :hanim_r_eyebrow_joint, :hanim_temporomandibular ;
+  x3do:DEF 'hanim_skullbase' ;
+  x3do:name 'skullbase' ;
+  x3do:center ( 0.0044 1.6209 0.0236 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_eyelid_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_l_eyelid_joint' ;
+  x3do:name 'l_eyelid_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_eyelid_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_r_eyelid_joint' ;
+  x3do:name 'r_eyelid_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_eyeball_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_l_eyeball_joint' ;
+  x3do:name 'l_eyeball_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_eyeball_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_r_eyeball_joint' ;
+  x3do:name 'r_eyeball_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_eyebrow_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_l_eyebrow_joint' ;
+  x3do:name 'l_eyebrow_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_eyebrow_joint a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_r_eyebrow_joint' ;
+  x3do:name 'r_eyebrow_joint' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_temporomandibular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_skullbase ;
+  x3do:DEF 'hanim_temporomandibular' ;
+  x3do:name 'temporomandibular' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_sternoclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt1 ;
+  x3do:hasChildren :hanim_l_acromioclavicular ;
+  x3do:DEF 'hanim_l_sternoclavicular' ;
+  x3do:name 'l_sternoclavicular' ;
+  x3do:center ( 0.0820 1.4488 -0.0353 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_acromioclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_sternoclavicular ;
+  x3do:hasChildren :hanim_l_shoulder ;
+  x3do:DEF 'hanim_l_acromioclavicular' ;
+  x3do:name 'l_acromioclavicular' ;
+  x3do:center ( 0.0962 1.4269 -0.0424 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_shoulder a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_acromioclavicular ;
+  x3do:hasChildren :hanim_l_elbow ;
+  x3do:DEF 'hanim_l_shoulder' ;
+  x3do:name 'l_shoulder' ;
+  x3do:center ( 0.2029 1.4376 -0.0387 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_elbow a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_shoulder ;
+  x3do:hasChildren :hanim_l_radiocarpal ;
+  x3do:DEF 'hanim_l_elbow' ;
+  x3do:name 'l_elbow' ;
+  x3do:center ( 0.2014 1.1357 -0.0682 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_radiocarpal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_elbow ;
+  x3do:hasChildren :hanim_l_midcarpal_1, :hanim_l_midcarpal_2, :hanim_l_midcarpal_3, :hanim_l_midcarpal_4_5 ;
+  x3do:DEF 'hanim_l_radiocarpal' ;
+  x3do:name 'l_radiocarpal' ;
+  x3do:center ( 0.1984 0.8663 -0.0583 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_midcarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_radiocarpal ;
+  x3do:hasChildren :hanim_l_carpometacarpal_1 ;
+  x3do:DEF 'hanim_l_midcarpal_1' ;
+  x3do:name 'l_midcarpal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpometacarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_midcarpal_1 ;
+  x3do:hasChildren :hanim_l_metacarpophalangeal_1 ;
+  x3do:DEF 'hanim_l_carpometacarpal_1' ;
+  x3do:name 'l_carpometacarpal_1' ;
+  x3do:center ( 0.1924 0.8472 -0.0534 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metacarpophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpometacarpal_1 ;
+  x3do:hasChildren :hanim_l_carpal_interphalangeal_1 ;
+  x3do:DEF 'hanim_l_metacarpophalangeal_1' ;
+  x3do:name 'l_metacarpophalangeal_1' ;
+  x3do:center ( 0.1951 0.8226 0.0246 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metacarpophalangeal_1 ;
+  x3do:DEF 'hanim_l_carpal_interphalangeal_1' ;
+  x3do:name 'l_carpal_interphalangeal_1' ;
+  x3do:center ( 0.1955 0.8159 0.0464 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_midcarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_radiocarpal ;
+  x3do:hasChildren :hanim_l_carpometacarpal_2 ;
+  x3do:DEF 'hanim_l_midcarpal_2' ;
+  x3do:name 'l_midcarpal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpometacarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_midcarpal_2 ;
+  x3do:hasChildren :hanim_l_metacarpophalangeal_2 ;
+  x3do:DEF 'hanim_l_carpometacarpal_2' ;
+  x3do:name 'l_carpometacarpal_2' ;
+  x3do:center ( 0.1983 0.8024 -0.0280 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metacarpophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpometacarpal_2 ;
+  x3do:hasChildren :hanim_l_carpal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_metacarpophalangeal_2' ;
+  x3do:name 'l_metacarpophalangeal_2' ;
+  x3do:center ( 0.1983 0.7815 -0.0280 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metacarpophalangeal_2 ;
+  x3do:hasChildren :hanim_l_carpal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_carpal_proximal_interphalangeal_2' ;
+  x3do:name 'l_carpal_proximal_interphalangeal_2' ;
+  x3do:center ( 0.2017 0.7363 -0.0248 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_l_carpal_distal_interphalangeal_2' ;
+  x3do:name 'l_carpal_distal_interphalangeal_2' ;
+  x3do:center ( 0.2028 0.7139 -0.0236 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_midcarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_radiocarpal ;
+  x3do:hasChildren :hanim_l_carpometacarpal_3 ;
+  x3do:DEF 'hanim_l_midcarpal_3' ;
+  x3do:name 'l_midcarpal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpometacarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_midcarpal_3 ;
+  x3do:hasChildren :hanim_l_metacarpophalangeal_3 ;
+  x3do:DEF 'hanim_l_carpometacarpal_3' ;
+  x3do:name 'l_carpometacarpal_3' ;
+  x3do:center ( 0.1987 0.8029 -0.0530 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metacarpophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpometacarpal_3 ;
+  x3do:hasChildren :hanim_l_carpal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_metacarpophalangeal_3' ;
+  x3do:name 'l_metacarpophalangeal_3' ;
+  x3do:center ( 0.1987 0.7818 -0.0530 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metacarpophalangeal_3 ;
+  x3do:hasChildren :hanim_l_carpal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_carpal_proximal_interphalangeal_3' ;
+  x3do:name 'l_carpal_proximal_interphalangeal_3' ;
+  x3do:center ( 0.2013 0.7273 -0.0503 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_l_carpal_distal_interphalangeal_3' ;
+  x3do:name 'l_carpal_distal_interphalangeal_3' ;
+  x3do:center ( 0.2026 0.7011 -0.0494 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_midcarpal_4_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_radiocarpal ;
+  x3do:hasChildren :hanim_l_carpometacarpal_4, :hanim_l_carpometacarpal_5 ;
+  x3do:DEF 'hanim_l_midcarpal_4_5' ;
+  x3do:name 'l_midcarpal_4_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpometacarpal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_l_metacarpophalangeal_4 ;
+  x3do:DEF 'hanim_l_carpometacarpal_4' ;
+  x3do:name 'l_carpometacarpal_4' ;
+  x3do:center ( 0.1956 0.8019 -0.0794 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metacarpophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpometacarpal_4 ;
+  x3do:hasChildren :hanim_l_carpal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_metacarpophalangeal_4' ;
+  x3do:name 'l_metacarpophalangeal_4' ;
+  x3do:center ( 0.1956 0.7815 -0.0794 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metacarpophalangeal_4 ;
+  x3do:hasChildren :hanim_l_carpal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_carpal_proximal_interphalangeal_4' ;
+  x3do:name 'l_carpal_proximal_interphalangeal_4' ;
+  x3do:center ( 0.1973 0.7287 -0.0777 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_l_carpal_distal_interphalangeal_4' ;
+  x3do:name 'l_carpal_distal_interphalangeal_4' ;
+  x3do:center ( 0.1983 0.7045 -0.0767 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpometacarpal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_l_metacarpophalangeal_5 ;
+  x3do:DEF 'hanim_l_carpometacarpal_5' ;
+  x3do:name 'l_carpometacarpal_5' ;
+  x3do:center ( 0.1925 0.8066 -0.1036 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_metacarpophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpometacarpal_5 ;
+  x3do:hasChildren :hanim_l_carpal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_metacarpophalangeal_5' ;
+  x3do:name 'l_metacarpophalangeal_5' ;
+  x3do:center ( 0.1925 0.7866 -0.1036 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_metacarpophalangeal_5 ;
+  x3do:hasChildren :hanim_l_carpal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_carpal_proximal_interphalangeal_5' ;
+  x3do:name 'l_carpal_proximal_interphalangeal_5' ;
+  x3do:center ( 0.1938 0.7452 -0.1024 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_l_carpal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_l_carpal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_l_carpal_distal_interphalangeal_5' ;
+  x3do:name 'l_carpal_distal_interphalangeal_5' ;
+  x3do:center ( 0.1948 0.7277 -0.1017 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_sternoclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_vt1 ;
+  x3do:hasChildren :hanim_r_acromioclavicular ;
+  x3do:DEF 'hanim_r_sternoclavicular' ;
+  x3do:name 'r_sternoclavicular' ;
+  x3do:center ( -0.0694 1.4600 -0.0330 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_acromioclavicular a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_sternoclavicular ;
+  x3do:hasChildren :hanim_r_shoulder ;
+  x3do:DEF 'hanim_r_acromioclavicular' ;
+  x3do:name 'r_acromioclavicular' ;
+  x3do:center ( -0.0836 1.4281 -0.0401 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_shoulder a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_acromioclavicular ;
+  x3do:hasChildren :hanim_r_elbow ;
+  x3do:DEF 'hanim_r_shoulder' ;
+  x3do:name 'r_shoulder' ;
+  x3do:center ( -0.1907 1.4407 -0.0325 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_elbow a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_shoulder ;
+  x3do:hasChildren :hanim_r_radiocarpal ;
+  x3do:DEF 'hanim_r_elbow' ;
+  x3do:name 'r_elbow' ;
+  x3do:center ( -0.1949 1.1388 -0.0620 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_radiocarpal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_elbow ;
+  x3do:hasChildren :hanim_r_midcarpal_1, :hanim_r_midcarpal_2, :hanim_r_midcarpal_3, :hanim_r_midcarpal_4_5 ;
+  x3do:DEF 'hanim_r_radiocarpal' ;
+  x3do:name 'r_radiocarpal' ;
+  x3do:center ( -0.1959 0.8694 -0.0521 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_midcarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_carpometacarpal_1 ;
+  x3do:DEF 'hanim_r_midcarpal_1' ;
+  x3do:name 'r_midcarpal_1' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpometacarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_1 ;
+  x3do:hasChildren :hanim_r_metacarpophalangeal_1 ;
+  x3do:DEF 'hanim_r_carpometacarpal_1' ;
+  x3do:name 'r_carpometacarpal_1' ;
+  x3do:center ( -0.1899 0.8502 -0.0473 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_1 ;
+  x3do:hasChildren :hanim_r_carpal_interphalangeal_1 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_1' ;
+  x3do:name 'r_metacarpophalangeal_1' ;
+  x3do:center ( -0.1874 0.8256 0.0306 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_1 ;
+  x3do:DEF 'hanim_r_carpal_interphalangeal_1' ;
+  x3do:name 'r_carpal_interphalangeal_1' ;
+  x3do:center ( -0.1864 0.8190 0.0506 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_midcarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_carpometacarpal_2 ;
+  x3do:DEF 'hanim_r_midcarpal_2' ;
+  x3do:name 'r_midcarpal_2' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpometacarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_2 ;
+  x3do:hasChildren :hanim_r_metacarpophalangeal_2 ;
+  x3do:DEF 'hanim_r_carpometacarpal_2' ;
+  x3do:name 'r_carpometacarpal_2' ;
+  x3do:center ( -0.1961 0.8055 -0.0218 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_2 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_2' ;
+  x3do:name 'r_metacarpophalangeal_2' ;
+  x3do:center ( -0.1961 0.7846 -0.0218 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_2 ;
+  x3do:hasChildren :hanim_r_carpal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_2' ;
+  x3do:name 'r_carpal_proximal_interphalangeal_2' ;
+  x3do:center ( -0.1954 0.7393 -0.0185 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_2' ;
+  x3do:name 'r_carpal_distal_interphalangeal_2' ;
+  x3do:center ( -0.1945 0.7169 -0.0173 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_midcarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_carpometacarpal_3 ;
+  x3do:DEF 'hanim_r_midcarpal_3' ;
+  x3do:name 'r_midcarpal_3' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpometacarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_3 ;
+  x3do:hasChildren :hanim_r_metacarpophalangeal_3 ;
+  x3do:DEF 'hanim_r_carpometacarpal_3' ;
+  x3do:name 'r_carpometacarpal_3' ;
+  x3do:center ( -0.1972 0.8060 -0.0468 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_3 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_3' ;
+  x3do:name 'r_metacarpophalangeal_3' ;
+  x3do:center ( -0.1972 0.7849 -0.0468 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_3 ;
+  x3do:hasChildren :hanim_r_carpal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_3' ;
+  x3do:name 'r_carpal_proximal_interphalangeal_3' ;
+  x3do:center ( -0.1950 0.7304 -0.0441 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_3' ;
+  x3do:name 'r_carpal_distal_interphalangeal_3' ;
+  x3do:center ( -0.1939 0.7042 -0.0432 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_midcarpal_4_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_carpometacarpal_4, :hanim_r_carpometacarpal_5 ;
+  x3do:DEF 'hanim_r_midcarpal_4_5' ;
+  x3do:name 'r_midcarpal_4_5' ;
+  x3do:center ( 0 1 0 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpometacarpal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_r_metacarpophalangeal_4 ;
+  x3do:DEF 'hanim_r_carpometacarpal_4' ;
+  x3do:name 'r_carpometacarpal_4' ;
+  x3do:center ( -0.1951 0.8049 -0.0732 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_4 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_4' ;
+  x3do:name 'r_metacarpophalangeal_4' ;
+  x3do:center ( -0.1951 0.7845 -0.0732 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_4 ;
+  x3do:hasChildren :hanim_r_carpal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_4' ;
+  x3do:name 'r_carpal_proximal_interphalangeal_4' ;
+  x3do:center ( -0.1920 0.7318 -0.0716 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_4' ;
+  x3do:name 'r_carpal_distal_interphalangeal_4' ;
+  x3do:center ( -0.1908 0.7077 -0.0706 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpometacarpal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_r_metacarpophalangeal_5 ;
+  x3do:DEF 'hanim_r_carpometacarpal_5' ;
+  x3do:name 'r_carpometacarpal_5' ;
+  x3do:center ( -0.1926 0.8096 -0.0975 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_5 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_5' ;
+  x3do:name 'r_metacarpophalangeal_5' ;
+  x3do:center ( -0.1926 0.7896 -0.0975 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_5 ;
+  x3do:hasChildren :hanim_r_carpal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_5' ;
+  x3do:name 'r_carpal_proximal_interphalangeal_5' ;
+  x3do:center ( -0.1902 0.7483 -0.0963 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_5' ;
+  x3do:name 'r_carpal_distal_interphalangeal_5' ;
+  x3do:center ( -0.1908 0.7540 -0.0960 ) ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_humanoid_root-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_humanoid_root . # DEF matching this USE
+:hanim_sacroiliac-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_sacroiliac . # DEF matching this USE
+:hanim_l_hip-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_hip . # DEF matching this USE
+:hanim_l_knee-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_knee . # DEF matching this USE
+:hanim_l_talocrural-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_talocrural . # DEF matching this USE
+:hanim_l_talocalcaneonavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_talocalcaneonavicular . # DEF matching this USE
+:hanim_l_cuneonavicular_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_cuneonavicular_1 . # DEF matching this USE
+:hanim_l_tarsometatarsal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsometatarsal_1 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metatarsophalangeal_1 . # DEF matching this USE
+:hanim_l_tarsal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_interphalangeal_1 . # DEF matching this USE
+:hanim_l_cuneonavicular_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_cuneonavicular_2 . # DEF matching this USE
+:hanim_l_tarsometatarsal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsometatarsal_2 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metatarsophalangeal_2 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_cuneonavicular_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_cuneonavicular_3 . # DEF matching this USE
+:hanim_l_tarsometatarsal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsometatarsal_3 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metatarsophalangeal_3 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_calcaneocuboid-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_calcaneocuboid . # DEF matching this USE
+:hanim_l_transversetarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_transversetarsal . # DEF matching this USE
+:hanim_l_tarsometatarsal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsometatarsal_4 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metatarsophalangeal_4 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_tarsometatarsal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsometatarsal_5 . # DEF matching this USE
+:hanim_l_metatarsophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metatarsophalangeal_5 . # DEF matching this USE
+:hanim_l_tarsal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_l_tarsal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_tarsal_distal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_hip-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_hip . # DEF matching this USE
+:hanim_r_knee-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_knee . # DEF matching this USE
+:hanim_r_talocrural-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_talocrural . # DEF matching this USE
+:hanim_r_talocalcaneonavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_talocalcaneonavicular . # DEF matching this USE
+:hanim_r_cuneonavicular_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_cuneonavicular_1 . # DEF matching this USE
+:hanim_r_tarsometatarsal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsometatarsal_1 . # DEF matching this USE
+:hanim_r_metatarsophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metatarsophalangeal_1 . # DEF matching this USE
+:hanim_r_tarsal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_interphalangeal_1 . # DEF matching this USE
+:hanim_r_cuneonavicular_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_cuneonavicular_2 . # DEF matching this USE
+:hanim_r_tarsometatarsal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsometatarsal_2 . # DEF matching this USE
+:hanim_r_metatarsophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metatarsophalangeal_2 . # DEF matching this USE
+:hanim_r_tarsal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_tarsal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_cuneonavicular_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_cuneonavicular_3 . # DEF matching this USE
+:hanim_r_tarsometatarsal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsometatarsal_3 . # DEF matching this USE
+:hanim_r_metatarsophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metatarsophalangeal_3 . # DEF matching this USE
+:hanim_r_tarsal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_tarsal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_calcaneocuboid-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_calcaneocuboid . # DEF matching this USE
+:hanim_r_transversetarsal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_transversetarsal . # DEF matching this USE
+:hanim_r_tarsometatarsal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsometatarsal_4 . # DEF matching this USE
+:hanim_r_metatarsophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metatarsophalangeal_4 . # DEF matching this USE
+:hanim_r_tarsal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_tarsal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_tarsometatarsal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsometatarsal_5 . # DEF matching this USE
+:hanim_r_metatarsophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metatarsophalangeal_5 . # DEF matching this USE
+:hanim_r_tarsal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_tarsal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_tarsal_distal_interphalangeal_5 . # DEF matching this USE
+:hanim_vl5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vl5 . # DEF matching this USE
+:hanim_vl4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vl4 . # DEF matching this USE
+:hanim_vl3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vl3 . # DEF matching this USE
+:hanim_vl2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vl2 . # DEF matching this USE
+:hanim_vl1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vl1 . # DEF matching this USE
+:hanim_vt12-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt12 . # DEF matching this USE
+:hanim_vt11-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt11 . # DEF matching this USE
+:hanim_vt10-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt10 . # DEF matching this USE
+:hanim_vt9-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt9 . # DEF matching this USE
+:hanim_vt8-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt8 . # DEF matching this USE
+:hanim_vt7-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt7 . # DEF matching this USE
+:hanim_vt6-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt6 . # DEF matching this USE
+:hanim_vt5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt5 . # DEF matching this USE
+:hanim_vt4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt4 . # DEF matching this USE
+:hanim_vt3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt3 . # DEF matching this USE
+:hanim_vt2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt2 . # DEF matching this USE
+:hanim_vt1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vt1 . # DEF matching this USE
+:hanim_vc7-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc7 . # DEF matching this USE
+:hanim_vc6-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc6 . # DEF matching this USE
+:hanim_vc5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc5 . # DEF matching this USE
+:hanim_vc4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc4 . # DEF matching this USE
+:hanim_vc3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc3 . # DEF matching this USE
+:hanim_vc2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc2 . # DEF matching this USE
+:hanim_vc1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_vc1 . # DEF matching this USE
+:hanim_skullbase-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_skullbase . # DEF matching this USE
+:hanim_l_eyelid_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_eyelid_joint . # DEF matching this USE
+:hanim_r_eyelid_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_eyelid_joint . # DEF matching this USE
+:hanim_l_eyeball_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_eyeball_joint . # DEF matching this USE
+:hanim_r_eyeball_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_eyeball_joint . # DEF matching this USE
+:hanim_l_eyebrow_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_eyebrow_joint . # DEF matching this USE
+:hanim_r_eyebrow_joint-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_eyebrow_joint . # DEF matching this USE
+:hanim_temporomandibular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_temporomandibular . # DEF matching this USE
+:hanim_l_sternoclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_sternoclavicular . # DEF matching this USE
+:hanim_l_acromioclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_acromioclavicular . # DEF matching this USE
+:hanim_l_shoulder-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_shoulder . # DEF matching this USE
+:hanim_l_elbow-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_elbow . # DEF matching this USE
+:hanim_l_radiocarpal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_radiocarpal . # DEF matching this USE
+:hanim_l_midcarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_midcarpal_1 . # DEF matching this USE
+:hanim_l_carpometacarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpometacarpal_1 . # DEF matching this USE
+:hanim_l_metacarpophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metacarpophalangeal_1 . # DEF matching this USE
+:hanim_l_carpal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_interphalangeal_1 . # DEF matching this USE
+:hanim_l_midcarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_midcarpal_2 . # DEF matching this USE
+:hanim_l_carpometacarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpometacarpal_2 . # DEF matching this USE
+:hanim_l_metacarpophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metacarpophalangeal_2 . # DEF matching this USE
+:hanim_l_carpal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_carpal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_l_midcarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_midcarpal_3 . # DEF matching this USE
+:hanim_l_carpometacarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpometacarpal_3 . # DEF matching this USE
+:hanim_l_metacarpophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metacarpophalangeal_3 . # DEF matching this USE
+:hanim_l_carpal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_carpal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_l_midcarpal_4_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_midcarpal_4_5 . # DEF matching this USE
+:hanim_l_carpometacarpal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpometacarpal_4 . # DEF matching this USE
+:hanim_l_metacarpophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metacarpophalangeal_4 . # DEF matching this USE
+:hanim_l_carpal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_carpal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_l_carpometacarpal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpometacarpal_5 . # DEF matching this USE
+:hanim_l_metacarpophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_metacarpophalangeal_5 . # DEF matching this USE
+:hanim_l_carpal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_l_carpal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_l_carpal_distal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_sternoclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_sternoclavicular . # DEF matching this USE
+:hanim_r_acromioclavicular-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_acromioclavicular . # DEF matching this USE
+:hanim_r_shoulder-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_shoulder . # DEF matching this USE
+:hanim_r_elbow-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_elbow . # DEF matching this USE
+:hanim_r_radiocarpal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_radiocarpal . # DEF matching this USE
+:hanim_r_midcarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_midcarpal_1 . # DEF matching this USE
+:hanim_r_carpometacarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpometacarpal_1 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metacarpophalangeal_1 . # DEF matching this USE
+:hanim_r_carpal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_interphalangeal_1 . # DEF matching this USE
+:hanim_r_midcarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_midcarpal_2 . # DEF matching this USE
+:hanim_r_carpometacarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpometacarpal_2 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metacarpophalangeal_2 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_midcarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_midcarpal_3 . # DEF matching this USE
+:hanim_r_carpometacarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpometacarpal_3 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metacarpophalangeal_3 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_midcarpal_4_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_midcarpal_4_5 . # DEF matching this USE
+:hanim_r_carpometacarpal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpometacarpal_4 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metacarpophalangeal_4 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_carpometacarpal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpometacarpal_5 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_metacarpophalangeal_5 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_HAnim ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_5 . # DEF matching this USE

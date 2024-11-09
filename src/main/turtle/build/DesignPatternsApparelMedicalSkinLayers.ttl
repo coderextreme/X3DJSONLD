@@ -1,0 +1,338 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'DesignPatternsApparelMedicalSkinLayers.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Design patterns for skin and apparel using HAnim2 standard in X3D4' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Joe D. Williams' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Dick Puk' ;
+  x3do:name 'creator' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 December 2022' ;
+  x3do:name 'created' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '2 July 2023' ;
+  x3do:name 'modified' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'DesignPatternsApparelVariations.txt' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Under development. This template example does not produce renderable HAnim models.' ;
+  x3do:name 'warning' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "DesignPatternsApparelMedicalSkinLayers.x3d" .
+:meta dcterms:description "Design patterns for skin and apparel using HAnim2 standard in X3D4" .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:creator "Joe D. Williams" .
+:meta dcterms:creator "Dick Puk" .
+:meta dcterms:created "23 December 2022" .
+:meta dcterms:modified "2 July 2023" .
+:meta dcterms:reference "DesignPatternsApparelVariations.txt" .
+:meta dcterms:reference "HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject" .
+:meta dcterms:reference "HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile" .
+:meta dcterms:reference "X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid" .
+:meta dcterms:warning "Under development. This template example does not produce renderable HAnim models." .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d" .
+:meta dcterms:generator "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Background_2_2, :MultipleHumanoids, :ViewHelpText, :Anchor_2_5 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'HAnimHumanoid skin design patterns for apparel, medical' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0 0.6 0.6 ) .
+:MultipleHumanoids a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasMetadata :MetadataString_2_3_1 ;
+  x3do:hasChildren :a_SimpleSkeleton, :b_SimpleSkeletonMesh, :c_SkinIndexedGeometry, :d_SkinShapeIndexedGeometry, :e_SkinSwitchShapeIndexedGeometry, :f_SynthesizedSkinShapeIndexedTwoPartGeometry, :g_ApparelSkinIndexedGeometryMultipleShapes, :h_AnatomySkinIndexedGeometryMultipleShapes ;
+  x3do:DEF 'MultipleHumanoids' .
+:MetadataString_2_3_1 a owl:NamedIndividual, x3do:MetadataString ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:name 'HAnimArchitecture' ;
+  x3do:reference 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' ;
+  x3do:value '"E.4 Multiple humanoids per file"' .
+:a_SimpleSkeleton a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_2_1 ;
+  x3do:DEF 'a_SimpleSkeleton' ;
+  x3do:name 'SimpleSkeleton' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_2_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :a_SimpleSkeleton ;
+  x3do:hasChildren :HAnimSegment_2_3_2_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_2_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_2_1 ;
+  x3do:hasChildren :JointVisualization, :SegmentVisualization, :a_feature01_tip ;
+  x3do:name 'sacrum' .
+:JointVisualization a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :HAnimSegment_2_3_2_1_1 ;
+  x3do:DEF 'JointVisualization' .
+:SegmentVisualization a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :HAnimSegment_2_3_2_1_1 ;
+  x3do:DEF 'SegmentVisualization' .
+:a_feature01_tip a owl:NamedIndividual, x3do:HAnimSite ;
+  x3do:hasParent :HAnimSegment_2_3_2_1_1 ;
+  x3do:hasChildren :SiteVisualization ;
+  x3do:DEF 'a_feature01_tip' ;
+  x3do:name 'feature01_tip' .
+:SiteVisualization a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :a_feature01_tip ;
+  x3do:DEF 'SiteVisualization' .
+:b_SimpleSkeletonMesh a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_3_1 ;
+  x3do:DEF 'b_SimpleSkeletonMesh' ;
+  x3do:name 'SimpleSkeletonMesh' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_3_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :b_SimpleSkeletonMesh ;
+  x3do:hasChildren :HAnimSegment_2_3_3_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_3_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_3_1 ;
+  x3do:hasChildren :Shape_2_3_3_1_1_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_3_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :HAnimSegment_2_3_3_1_1 ;
+  x3do:hasGeometry :SegmentBoneMesh .
+:SegmentBoneMesh a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_3_1_1_1 ;
+  x3do:DEF 'SegmentBoneMesh' .
+:c_SkinIndexedGeometry a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_4_1 ;
+  x3do:hasSkin :SkinMeshIFS ;
+  x3do:DEF 'c_SkinIndexedGeometry' ;
+  x3do:name 'SkinIndexedGeometry' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_4_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :c_SkinIndexedGeometry ;
+  x3do:hasChildren :HAnimSegment_2_3_4_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_4_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_4_1 ;
+  x3do:name 'sacrum' .
+:SkinMeshIFS a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :c_SkinIndexedGeometry ;
+  x3do:DEF 'SkinMeshIFS' .
+:d_SkinShapeIndexedGeometry a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_5_1 ;
+  x3do:hasSkin :Shape_2_3_5_2 ;
+  x3do:DEF 'd_SkinShapeIndexedGeometry' ;
+  x3do:name 'SkinShapeIndexedGeometry' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_5_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :d_SkinShapeIndexedGeometry ;
+  x3do:hasChildren :HAnimSegment_2_3_5_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_5_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_5_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_5_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :d_SkinShapeIndexedGeometry ;
+  x3do:hasGeometry :SkinMeshIFS-USE-1 .
+:SkinMeshIFS-USE-1 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_5_2 ;
+  owl:sameAs :SkinMeshIFS . # DEF matching this USE
+:e_SkinSwitchShapeIndexedGeometry a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_6_1 ;
+  x3do:hasSkin :Shape_2_3_6_2 ;
+  x3do:DEF 'e_SkinSwitchShapeIndexedGeometry' ;
+  x3do:name 'SkinSwitchShapeIndexedGeometry' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_6_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :e_SkinSwitchShapeIndexedGeometry ;
+  x3do:hasChildren :HAnimSegment_2_3_6_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_6_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_6_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_6_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :e_SkinSwitchShapeIndexedGeometry ;
+  x3do:hasGeometry :IndexedSkinMeshIFS .
+:IndexedSkinMeshIFS a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_6_2 ;
+  x3do:hasCoord :SkinMeshCoordinate ;
+  x3do:DEF 'IndexedSkinMeshIFS' .
+:SkinMeshCoordinate a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedSkinMeshIFS ;
+  x3do:DEF 'SkinMeshCoordinate' .
+:f_SynthesizedSkinShapeIndexedTwoPartGeometry a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_7_1 ;
+  x3do:hasSkin :Shape_2_3_7_2 ;
+  x3do:DEF 'f_SynthesizedSkinShapeIndexedTwoPartGeometry' ;
+  x3do:name 'SynthesizedSkinShapeIndexedTwoPartGeometry' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_7_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :f_SynthesizedSkinShapeIndexedTwoPartGeometry ;
+  x3do:hasChildren :HAnimSegment_2_3_7_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_7_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_7_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_7_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :f_SynthesizedSkinShapeIndexedTwoPartGeometry ;
+  x3do:hasGeometry :TwoPartIndexedSkinMesh .
+:TwoPartIndexedSkinMesh a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_3_7_2 ;
+  x3do:hasCoord :TwoPartSkinMesh ;
+  x3do:DEF 'TwoPartIndexedSkinMesh' .
+:TwoPartSkinMesh a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :TwoPartIndexedSkinMesh ;
+  x3do:DEF 'TwoPartSkinMesh' .
+:g_ApparelSkinIndexedGeometryMultipleShapes a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_8_1 ;
+  x3do:hasSkin :Shape_2_3_8_2 ;
+  x3do:DEF 'g_ApparelSkinIndexedGeometryMultipleShapes' ;
+  x3do:name 'ApparelSkinIndexedGeometryMultipleShapes' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_8_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :g_ApparelSkinIndexedGeometryMultipleShapes ;
+  x3do:hasChildren :HAnimSegment_2_3_8_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_8_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_8_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_8_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :g_ApparelSkinIndexedGeometryMultipleShapes .
+:h_AnatomySkinIndexedGeometryMultipleShapes a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :MultipleHumanoids ;
+  x3do:hasSkeleton :HAnimJoint_2_3_9_1 ;
+  x3do:hasSkin :Shape_2_3_9_2 ;
+  x3do:DEF 'h_AnatomySkinIndexedGeometryMultipleShapes' ;
+  x3do:name 'AnatomySkinIndexedGeometryMultipleShapes' ;
+  x3do:version '2.0' .
+:HAnimJoint_2_3_9_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :h_AnatomySkinIndexedGeometryMultipleShapes ;
+  x3do:hasChildren :HAnimSegment_2_3_9_1_1 ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:HAnimSegment_2_3_9_1_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :HAnimJoint_2_3_9_1 ;
+  x3do:name 'sacrum' .
+:Shape_2_3_9_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :h_AnatomySkinIndexedGeometryMultipleShapes .
+:ViewHelpText a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'ViewHelpText' ;
+  x3do:description 'Select text to see website' ;
+  x3do:position ( 0 0 12 ) .
+:Anchor_2_5 a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_5_1, :Shape_2_5_2 ;
+  x3do:description 'DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches' ;
+  x3do:parameter '"target=blank"' ;
+  x3do:url '"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"' .
+:Shape_2_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Anchor_2_5 ;
+  x3do:hasGeometry :Text_2_5_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_1_2 .
+:Text_2_5_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasFontStyle :FontStyle_2_5_1_1_1 ;
+  x3do:string '"DesignPatternsApparelMedicalSkinLayers.x3d" "" "explores potential apparel approaches"' .
+:FontStyle_2_5_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_5_1_1 ;
+  x3do:family '"SANS"' ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size 0.6 ;
+  x3do:cssStyle 'BOLD' .
+:Appearance_2_5_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasMaterial :Material_2_5_1_2_1 .
+:Material_2_5_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_2 ;
+  x3do:diffuseColor ( 0.9 0.9 0.9 ) .
+:Shape_2_5_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Anchor_2_5 ;
+  x3do:hasGeometry :Box_2_5_2_1 ;
+  x3do:hasAppearance :Appearance_2_5_2_2 .
+:Box_2_5_2_1 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_5_2 ;
+  x3do:size ( 11 2 .001 ) .
+:Appearance_2_5_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_2 ;
+  x3do:hasMaterial :Material_2_5_2_2_1 .
+:Material_2_5_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_2_2 ;
+  x3do:transparency 1 .

@@ -95,12 +95,12 @@ bumpyfreewrl.prototype = {
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
           .setTexture((new autoclass.ComposedCubeMapTexture("texture"))
-            .setBack((new autoclass.ImageTexture()).setId("backShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-            .setBottom((new autoclass.ImageTexture()).setId("bottomShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-            .setFront((new autoclass.ImageTexture()).setId("frontShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-            .setLeft((new autoclass.ImageTexture()).setId("leftShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-            .setRight((new autoclass.ImageTexture()).setId("rightShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-            .setTop((new autoclass.ImageTexture()).setId("topShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+            .setBackTexture((new autoclass.ImageTexture()).setId("backShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+            .setBottomTexture((new autoclass.ImageTexture()).setId("bottomShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+            .setFrontTexture((new autoclass.ImageTexture()).setId("frontShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+            .setLeftTexture((new autoclass.ImageTexture()).setId("leftShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+            .setRightTexture((new autoclass.ImageTexture()).setId("rightShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+            .setTopTexture((new autoclass.ImageTexture()).setId("topShader").setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addShaders((new autoclass.ComposedShader("freewrlShader")).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOnly").setValue("0.98 1.0 1.033"))
             .addField((new autoclass.field()).setName("fw_textureCoordGenType").setType("SFInt32").setAccessType("inputOnly").setValue("0"))
@@ -170,7 +170,6 @@ bumpyfreewrl.prototype = {
     {
 		var testObject = new bumpyfreewrl();
 		console.log ("bumpyfreewrl execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new bumpyfreewrl().main();

@@ -1,0 +1,150 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2, :component_1_3, :component_1_4, :component_1_5, :component_1_6, :component_1_7, :component_1_8 ;
+  x3do:hasMeta :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'Scripting' .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'EnvironmentalEffects' ;
+  x3do:level 3 .
+:component_1_3 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shaders' ;
+  x3do:level 1 .
+:component_1_4 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'CubeMapTexturing' ;
+  x3do:level 1 .
+:component_1_5 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Texturing' ;
+  x3do:level 1 .
+:component_1_6 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Rendering' ;
+  x3do:level 1 .
+:component_1_7 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Grouping' ;
+  x3do:level 3 .
+:component_1_8 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Core' ;
+  x3do:level 1 .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'x3domflowers.x3d' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content '5 or more prismatic flowers' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'X3D-Edit, https://savage.nps.edu/X3D-Edit' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d' .
+:meta dcterms:title "x3domflowers.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:description "5 or more prismatic flowers" .
+:meta dcterms:generator "X3D-Edit, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Background_2_2, :Group_2_3 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ;
+  x3do:bottomUrl '"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ;
+  x3do:frontUrl '"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ;
+  x3do:leftUrl '"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ;
+  x3do:rightUrl '"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ;
+  x3do:topUrl '"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:Group_2_3 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasExternProtoDeclare :ExternProtoDeclare_2_3_1 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_3_2 ;
+  x3do:hasChildren :ProtoInstance_2_3_3, :ProtoInstance_2_3_4, :ProtoInstance_2_3_5, :ProtoInstance_2_3_6, :ProtoInstance_2_3_7, :ProtoInstance_2_3_8 .
+:ExternProtoDeclare_2_3_1 a owl:NamedIndividual, x3do:ExternProtoDeclare ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:hasField :field_2_3_1_1, :field_2_3_1_2 ;
+  x3do:name 'FlowerProto' ;
+  x3do:url '"../data/flowerproto.json#FlowerProto"' .
+:field_2_3_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'vertex' ;
+  x3do:type 'MFString' .
+:field_2_3_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ExternProtoDeclare_2_3_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'fragment' ;
+  x3do:type 'MFString' .
+:ProtoDeclare_2_3_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:hasProtoBody :ProtoBody_2_3_2_1 ;
+  x3do:name 'flower' .
+:ProtoBody_2_3_2_1 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_3_2 ;
+  x3do:hasChildren :Group_2_3_2_1_1 .
+:Group_2_3_2_1_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_3_2_1 ;
+  x3do:hasChildren :ProtoInstance_2_3_2_1_1_1 .
+:ProtoInstance_2_3_2_1_1_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3_2_1_1 ;
+  x3do:hasFieldValue :fieldValue_2_3_2_1_1_1_1, :fieldValue_2_3_2_1_1_1_2 ;
+  x3do:name 'FlowerProto' .
+:fieldValue_2_3_2_1_1_1_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_2_1_1_1 ;
+  x3do:name 'vertex' ;
+  x3do:value '"../shaders/x3dom_flowers_chromatic.vs"' .
+:fieldValue_2_3_2_1_1_1_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3_2_1_1_1 ;
+  x3do:name 'fragment' ;
+  x3do:value '"../shaders/common.fs"' .
+:ProtoInstance_2_3_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .
+:ProtoInstance_2_3_4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .
+:ProtoInstance_2_3_5 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .
+:ProtoInstance_2_3_6 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .
+:ProtoInstance_2_3_7 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .
+:ProtoInstance_2_3_8 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Group_2_3 ;
+  x3do:name 'flower' .

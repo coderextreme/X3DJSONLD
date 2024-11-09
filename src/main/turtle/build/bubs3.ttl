@@ -1,0 +1,527 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/bubs.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'bubs3.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'Tour around a prismatic sphere' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'X3D-Edit, https://savage.nps.edu/X3D-Edit' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d' .
+:meta dcterms:title "bubs3.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:description "Tour around a prismatic sphere" .
+:meta dcterms:generator "X3D-Edit, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Viewpoint_2_2, :Background_2_3, :DECLBubble_bubbleA, :DECLBubble_bubbleB, :DECLBubble_bubbleC, :DECLBubble_bubbleD .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE"' .
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:position ( 0 0 4 ) ;
+  x3do:orientation ( 1 0 0 0 ) ;
+  x3do:description 'Bubbles in action' .
+:Background_2_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' ;
+  x3do:bottomUrl '"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' ;
+  x3do:frontUrl '"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' ;
+  x3do:leftUrl '"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' ;
+  x3do:rightUrl '"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' ;
+  x3do:topUrl '"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"' .
+:DECLBubble_bubbleA a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_4_1, :DECLBubble_bubbleA_bounce, :DECLBubble_bubbleA_bubbleClock ;
+  x3do:hasROUTE :ROUTE_2_4_4, :ROUTE_2_4_5, :ROUTE_2_4_6 ;
+  x3do:DEF 'DECLBubble_bubbleA' .
+:Shape_2_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:hasGeometry :Sphere_2_4_1_1 ;
+  x3do:hasAppearance :Appearance_2_4_1_2 .
+:Sphere_2_4_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_4_1 ;
+  x3do:radius 0.25 .
+:Appearance_2_4_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1 ;
+  x3do:hasMaterial :Material_2_4_1_2_1 .
+:Material_2_4_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_4_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:transparency 0.2 .
+:DECLBubble_bubbleA_bounce a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:hasField :field_2_4_2_1, :field_2_4_2_2, :field_2_4_2_3, :field_2_4_2_4, :field_2_4_2_5 ;
+  x3do:DEF 'DECLBubble_bubbleA_bounce' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+""" .
+:field_2_4_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleA_bounce ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_4_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleA_bounce ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_4_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleA_bounce ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_4_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleA_bounce ;
+  x3do:name 'scalvel' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_4_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleA_bounce ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:DECLBubble_bubbleA_bubbleClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:DEF 'DECLBubble_bubbleA_bubbleClock' ;
+  x3do:cycleInterval '10.0' ;
+  x3do:loop true .
+:ROUTE_2_4_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:fromNode 'DECLBubble_bubbleA_bounce' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_translation' .
+:ROUTE_2_4_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:fromNode 'DECLBubble_bubbleA_bounce' ;
+  x3do:fromField 'scale_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_scale' .
+:ROUTE_2_4_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleA ;
+  x3do:fromNode 'DECLBubble_bubbleA_bubbleClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'DECLBubble_bubbleA_bounce' ;
+  x3do:toField 'set_fraction' .
+:DECLBubble_bubbleB a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_5_1, :DECLBubble_bubbleB_bounce, :DECLBubble_bubbleB_bubbleClock ;
+  x3do:hasROUTE :ROUTE_2_5_4, :ROUTE_2_5_5, :ROUTE_2_5_6 ;
+  x3do:DEF 'DECLBubble_bubbleB' .
+:Shape_2_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:hasGeometry :Sphere_2_5_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_1_2 .
+:Sphere_2_5_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:radius 0.25 .
+:Appearance_2_5_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasMaterial :Material_2_5_1_2_1 .
+:Material_2_5_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:transparency 0.2 .
+:DECLBubble_bubbleB_bounce a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:hasField :field_2_5_2_1, :field_2_5_2_2, :field_2_5_2_3, :field_2_5_2_4, :field_2_5_2_5 ;
+  x3do:DEF 'DECLBubble_bubbleB_bounce' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+""" .
+:field_2_5_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleB_bounce ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_5_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleB_bounce ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_5_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleB_bounce ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_5_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleB_bounce ;
+  x3do:name 'scalvel' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_5_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleB_bounce ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:DECLBubble_bubbleB_bubbleClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:DEF 'DECLBubble_bubbleB_bubbleClock' ;
+  x3do:cycleInterval '10.0' ;
+  x3do:loop true .
+:ROUTE_2_5_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:fromNode 'DECLBubble_bubbleB_bounce' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_translation' .
+:ROUTE_2_5_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:fromNode 'DECLBubble_bubbleB_bounce' ;
+  x3do:fromField 'scale_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_scale' .
+:ROUTE_2_5_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleB ;
+  x3do:fromNode 'DECLBubble_bubbleB_bubbleClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'DECLBubble_bubbleB_bounce' ;
+  x3do:toField 'set_fraction' .
+:DECLBubble_bubbleC a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_6_1, :DECLBubble_bubbleC_bounce, :DECLBubble_bubbleC_bubbleClock ;
+  x3do:hasROUTE :ROUTE_2_6_4, :ROUTE_2_6_5, :ROUTE_2_6_6 ;
+  x3do:DEF 'DECLBubble_bubbleC' .
+:Shape_2_6_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:hasGeometry :Sphere_2_6_1_1 ;
+  x3do:hasAppearance :Appearance_2_6_1_2 .
+:Sphere_2_6_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_6_1 ;
+  x3do:radius 0.25 .
+:Appearance_2_6_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_1 ;
+  x3do:hasMaterial :Material_2_6_1_2_1 .
+:Material_2_6_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:transparency 0.2 .
+:DECLBubble_bubbleC_bounce a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:hasField :field_2_6_2_1, :field_2_6_2_2, :field_2_6_2_3, :field_2_6_2_4, :field_2_6_2_5 ;
+  x3do:DEF 'DECLBubble_bubbleC_bounce' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+""" .
+:field_2_6_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleC_bounce ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_6_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleC_bounce ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_6_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleC_bounce ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_6_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleC_bounce ;
+  x3do:name 'scalvel' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_6_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleC_bounce ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:DECLBubble_bubbleC_bubbleClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:DEF 'DECLBubble_bubbleC_bubbleClock' ;
+  x3do:cycleInterval '10.0' ;
+  x3do:loop true .
+:ROUTE_2_6_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:fromNode 'DECLBubble_bubbleC_bounce' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_translation' .
+:ROUTE_2_6_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:fromNode 'DECLBubble_bubbleC_bounce' ;
+  x3do:fromField 'scale_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_scale' .
+:ROUTE_2_6_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleC ;
+  x3do:fromNode 'DECLBubble_bubbleC_bubbleClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'DECLBubble_bubbleC_bounce' ;
+  x3do:toField 'set_fraction' .
+:DECLBubble_bubbleD a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_7_1, :DECLBubble_bubbleD_bounce, :DECLBubble_bubbleD_bubbleClock ;
+  x3do:hasROUTE :ROUTE_2_7_4, :ROUTE_2_7_5, :ROUTE_2_7_6 ;
+  x3do:DEF 'DECLBubble_bubbleD' .
+:Shape_2_7_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:hasGeometry :Sphere_2_7_1_1 ;
+  x3do:hasAppearance :Appearance_2_7_1_2 .
+:Sphere_2_7_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_7_1 ;
+  x3do:radius 0.25 .
+:Appearance_2_7_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_7_1 ;
+  x3do:hasMaterial :Material_2_7_1_2_1 .
+:Material_2_7_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_7_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:transparency 0.2 .
+:DECLBubble_bubbleD_bounce a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:hasField :field_2_7_2_1, :field_2_7_2_2, :field_2_7_2_3, :field_2_7_2_4, :field_2_7_2_5 ;
+  x3do:DEF 'DECLBubble_bubbleD_bounce' ;
+  x3do:sourceCode """
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}
+""" .
+:field_2_7_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleD_bounce ;
+  x3do:name 'scale' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1 1 1 ) .
+:field_2_7_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleD_bounce ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_7_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleD_bounce ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_7_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleD_bounce ;
+  x3do:name 'scalvel' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_7_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :DECLBubble_bubbleD_bounce ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:DECLBubble_bubbleD_bubbleClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:DEF 'DECLBubble_bubbleD_bubbleClock' ;
+  x3do:cycleInterval '10.0' ;
+  x3do:loop true .
+:ROUTE_2_7_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:fromNode 'DECLBubble_bubbleD_bounce' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_translation' .
+:ROUTE_2_7_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:fromNode 'DECLBubble_bubbleD_bounce' ;
+  x3do:fromField 'scale_changed' ;
+  x3do:toNode 'DECLBubble_transform' ;
+  x3do:toField 'set_scale' .
+:ROUTE_2_7_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :DECLBubble_bubbleD ;
+  x3do:fromNode 'DECLBubble_bubbleD_bubbleClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'DECLBubble_bubbleD_bounce' ;
+  x3do:toField 'set_fraction' .

@@ -1,0 +1,305 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'MaskAndSnorkel.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Diving mask and snorkel tube.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Etsuko Lippi' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'January 24, 2001' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 May 2020' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "MaskAndSnorkel.x3d" .
+:meta dcterms:description "Diving mask and snorkel tube." .
+:meta dcterms:creator "Etsuko Lippi" .
+:meta dcterms:created "January 24, 2001" .
+:meta dcterms:modified "23 May 2020" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Background_2_2, :maskAndSnorkel .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'MaskAndSnorkel.x3d' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0 0 0.9 ) .
+:maskAndSnorkel a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_3_1, :snorkelHoldRing, :snorkel, :Transform_2_3_4, :Transform_2_3_5, :Transform_2_3_6, :Transform_2_3_7, :Transform_2_3_8 ;
+  x3do:DEF 'maskAndSnorkel' .
+:Transform_2_3_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :maskFrame .
+:maskFrame a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_3_1_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_1_1_2 ;
+  x3do:DEF 'maskFrame' .
+:Appearance_2_3_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :maskFrame ;
+  x3do:hasMaterial :frameColor .
+:frameColor a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1_1 ;
+  x3do:DEF 'frameColor' ;
+  x3do:diffuseColor ( 0 0 0 ) .
+:IndexedFaceSet_2_3_1_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :maskFrame ;
+  x3do:hasCoord :Coordinate_2_3_1_1_2_1 ;
+  x3do:coordIndex ( 0 1 13 12 0 -1 1 2 14 13 1 -1 2 3 15 14 2 -1 3 4 16 15 3 -1 4 5 17 16 4 -1 5 6 18 17 5 -1 18 6 25 19 0 12 18 -1 0 19 20 11 0 -1 10 11 20 21 10 -1 9 10 21 22 9 -1 8 9 22 23 8 -1 23 24 7 8 23 -1 6 7 24 25 6 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_1_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_1_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 ) .
+:snorkelHoldRing a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :Shape_2_3_2_1 ;
+  x3do:DEF 'snorkelHoldRing' ;
+  x3do:translation ( 0.075 0.075 -0.02 ) .
+:Shape_2_3_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :snorkelHoldRing ;
+  x3do:hasAppearance :Appearance_2_3_2_1_1 ;
+  x3do:hasGeometry :Cylinder_2_3_2_1_2 .
+:Appearance_2_3_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_2_1 ;
+  x3do:hasMaterial :frameColor-USE-1 .
+:frameColor-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_2_1_1 ;
+  owl:sameAs :frameColor . # DEF matching this USE
+:Cylinder_2_3_2_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_3_2_1 ;
+  x3do:height 0.003 ;
+  x3do:radius 0.015 .
+:snorkel a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :Transform_2_3_3_1 ;
+  x3do:DEF 'snorkel' .
+:Transform_2_3_3_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :snorkel ;
+  x3do:hasChildren :Transform_2_3_3_1_1, :Transform_2_3_3_1_2, :Transform_2_3_3_1_3 ;
+  x3do:translation ( 0 -0.02 0 ) .
+:Transform_2_3_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_3_3_1 ;
+  x3do:hasChildren :Shape_2_3_3_1_1_1 ;
+  x3do:scale ( 0.9 0.9 0.9 ) ;
+  x3do:translation ( 0.035 -0.07 -0.02 ) .
+:Shape_2_3_3_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_3_3_1_1_1_1 ;
+  x3do:hasGeometry :Extrusion_2_3_3_1_1_1_2 .
+:Appearance_2_3_3_1_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_3_1_1_1 ;
+  x3do:hasMaterial :snorkelTube .
+:snorkelTube a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_3_1_1_1_1 ;
+  x3do:DEF 'snorkelTube' ;
+  x3do:diffuseColor ( 0.678 1 0.184 ) ;
+  x3do:transparency 0.4 .
+:Extrusion_2_3_3_1_1_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_3_3_1_1_1 ;
+  x3do:crossSection ( 0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.00 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.00 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 -0.0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0.00 0.013 ) ;
+  x3do:spine ( -0.01 -0.04 0 0 0 0 0.03 0.05 0 0.05 0.2 0 0.03 0.4 0.03 ) .
+:Transform_2_3_3_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_3_3_1 ;
+  x3do:hasChildren :Shape_2_3_3_1_2_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) ;
+  x3do:scale ( 0.9 0.9 0.9 ) ;
+  x3do:translation ( 0.01 -0.04 -0.02 ) .
+:Shape_2_3_3_1_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_3_1_2 ;
+  x3do:hasAppearance :Appearance_2_3_3_1_2_1_1 ;
+  x3do:hasGeometry :Extrusion_2_3_3_1_2_1_2 .
+:Appearance_2_3_3_1_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_3_1_2_1 ;
+  x3do:hasMaterial :Mouthpiece .
+:Mouthpiece a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_3_1_2_1_1 ;
+  x3do:DEF 'Mouthpiece' ;
+  x3do:diffuseColor ( 0.678 1 0.8 ) ;
+  x3do:transparency 0.4 .
+:Extrusion_2_3_3_1_2_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_3_3_1_2_1 ;
+  x3do:crossSection ( 0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.00 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.00 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 -0.0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0.00 0.013 ) ;
+  x3do:spine ( -0.01 -0.03 0 0 0 0 0.02 0.01 0 ) .
+:Transform_2_3_3_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_3_3_1 ;
+  x3do:hasChildren :Shape_2_3_3_1_3_1 ;
+  x3do:rotation ( 0 0 1 -0.85 ) ;
+  x3do:scale ( 0.9 0.9 0.9 ) ;
+  x3do:translation ( 0.005 -0.01 -0.02 ) .
+:Shape_2_3_3_1_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_3_1_3 ;
+  x3do:hasAppearance :Appearance_2_3_3_1_3_1_1 ;
+  x3do:hasGeometry :Extrusion_2_3_3_1_3_1_2 .
+:Appearance_2_3_3_1_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_3_1_3_1 ;
+  x3do:hasMaterial :Mouthpiece-USE-1 .
+:Mouthpiece-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_3_1_3_1_1 ;
+  owl:sameAs :Mouthpiece . # DEF matching this USE
+:Extrusion_2_3_3_1_3_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_3_3_1_3_1 ;
+  x3do:crossSection ( 0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.00 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.00 0.013 ) ;
+  x3do:spine ( -0.02 -0.03 0 -0.01 -0.03 0 0 -0.0175 0 0 -0.0135 0 -0.01 0 0 -0.02 0 0 ) .
+:Transform_2_3_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :maskLensR .
+:maskLensR a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_4 ;
+  x3do:hasAppearance :Appearance_2_3_4_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_4_1_2 ;
+  x3do:DEF 'maskLensR' .
+:Appearance_2_3_4_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :maskLensR ;
+  x3do:hasMaterial :plastic .
+:plastic a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_4_1_1 ;
+  x3do:DEF 'plastic' ;
+  x3do:diffuseColor ( 0.941 0.973 1 ) ;
+  x3do:transparency 0.8 .
+:IndexedFaceSet_2_3_4_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :maskLensR ;
+  x3do:hasCoord :Coordinate_2_3_4_1_2_1 ;
+  x3do:coordIndex ( 12 13 14 15 16 17 18 12 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_4_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_4_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 ) .
+:Transform_2_3_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :maskLensL .
+:maskLensL a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_5 ;
+  x3do:hasAppearance :Appearance_2_3_5_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_5_1_2 ;
+  x3do:DEF 'maskLensL' .
+:Appearance_2_3_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :maskLensL ;
+  x3do:hasMaterial :plastic-USE-1 .
+:plastic-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_5_1_1 ;
+  owl:sameAs :plastic . # DEF matching this USE
+:IndexedFaceSet_2_3_5_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :maskLensL ;
+  x3do:hasCoord :Coordinate_2_3_5_1_2_1 ;
+  x3do:coordIndex ( 19 20 21 22 23 24 25 19 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_5_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_5_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 ) .
+:Transform_2_3_6 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :nose .
+:nose a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_6 ;
+  x3do:hasAppearance :Appearance_2_3_6_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_6_1_2 ;
+  x3do:DEF 'nose' .
+:Appearance_2_3_6_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :nose ;
+  x3do:hasMaterial :plasticFit .
+:plasticFit a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_6_1_1 ;
+  x3do:DEF 'plasticFit' ;
+  x3do:diffuseColor ( 0.678 1 0.184 ) ;
+  x3do:transparency 0.7 .
+:IndexedFaceSet_2_3_6_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :nose ;
+  x3do:hasCoord :Coordinate_2_3_6_1_2_1 ;
+  x3do:coordIndex ( 0 37 26 0 -1 0 36 26 0 -1 36 37 26 36 -1 0 1 37 0 -1 0 11 36 0 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_6_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_6_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 0 0.04 0.015 0.05 0.04 -0.03 0.06 0.05 -0.03 0.07 0.095 -0.03 0.055 0.11 -0.03 0 0.11 -0.02 -0.055 0.11 -0.03 -0.07 0.095 -0.03 -0.06 0.05 -0.03 -0.05 0.04 -0.03 -0.02 0.04 -0.02 0.02 0.04 -0.02 ) .
+:Transform_2_3_7 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :faceFit .
+:faceFit a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_7 ;
+  x3do:hasAppearance :Appearance_2_3_7_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_7_1_2 ;
+  x3do:DEF 'faceFit' .
+:Appearance_2_3_7_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :faceFit ;
+  x3do:hasMaterial :plasticFit-USE-1 .
+:plasticFit-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_7_1_1 ;
+  owl:sameAs :plasticFit . # DEF matching this USE
+:IndexedFaceSet_2_3_7_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :faceFit ;
+  x3do:hasCoord :Coordinate_2_3_7_1_2_1 ;
+  x3do:coordIndex ( 1 2 27 37 1 -1 2 3 28 27 2 -1 3 4 29 28 3 -1 4 5 30 29 4 -1 5 6 31 30 5 -1 6 7 32 31 6 -1 7 8 33 32 7 -1 8 9 34 33 8 -1 9 10 35 34 9 -1 10 11 36 35 10 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_7_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_7_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 0 0.05 0.015 0.05 0.04 -0.03 0.06 0.05 -0.03 0.07 0.095 -0.03 0.055 0.11 -0.03 0 0.11 -0.02 -0.055 0.11 -0.03 -0.07 0.095 -0.03 -0.06 0.05 -0.03 -0.05 0.04 -0.03 -0.02 0.04 -0.02 0.02 0.04 -0.02 ) .
+:Transform_2_3_8 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :maskAndSnorkel ;
+  x3do:hasChildren :belt .
+:belt a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_8 ;
+  x3do:hasAppearance :Appearance_2_3_8_1_1 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_8_1_2 ;
+  x3do:DEF 'belt' .
+:Appearance_2_3_8_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :belt ;
+  x3do:hasMaterial :plastic-USE-2 .
+:plastic-USE-2 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_8_1_1 ;
+  owl:sameAs :plastic . # DEF matching this USE
+:IndexedFaceSet_2_3_8_1_2 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :belt ;
+  x3do:hasCoord :Coordinate_2_3_8_1_2_1 ;
+  x3do:coordIndex ( 3 4 39 38 3 -1 8 9 40 41 8 -1 38 39 42 43 38 -1 40 41 44 45 40 -1 42 43 47 46 42 -1 44 45 47 46 44 -1 ) ;
+  x3do:creaseAngle 1.45 ;
+  x3do:solid false .
+:Coordinate_2_3_8_1_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_8_1_2 ;
+  x3do:point ( 0 0.08 0 0.02 0.05 0 0.05 0.05 0 0.06 0.06 0 0.06 0.09 0 0.05 0.1 0 0 0.1 0 -0.05 0.1 0 -0.06 0.09 0 -0.06 0.06 0 -0.05 0.05 0 -0.02 0.05 0 0.005 0.08 0 0.02 0.055 0 0.05 0.055 0 0.055 0.06 0 0.055 0.09 0 0.045 0.095 0 0.005 0.095 0 -0.005 0.08 0 -0.02 0.055 0 -0.05 0.055 0 -0.055 0.06 0 -0.055 0.09 0 -0.045 0.095 0 -0.005 0.095 0 0 0.05 0.015 0.05 0.04 -0.03 0.06 0.05 -0.03 0.07 0.095 -0.03 0.055 0.11 -0.03 0 0.11 -0.02 -0.055 0.11 -0.03 -0.07 0.095 -0.03 -0.06 0.05 -0.03 -0.05 0.04 -0.03 -0.02 0.04 -0.02 0.02 0.04 -0.02 0.075 0.06 -0.135 0.075 0.09 -0.135 -0.075 0.06 -0.135 -0.075 0.09 -0.135 0.06 0.09 -0.165 0.06 0.06 -0.165 -0.06 0.09 -0.165 -0.06 0.06 -0.165 0 0.09 -0.2 0 0.06 -0.175 ) .

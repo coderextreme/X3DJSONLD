@@ -1,0 +1,67 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/asphere.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Interchange' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Scripting' ;
+  x3do:level 1 .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'asphere.x3d' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'a sphere' .
+:meta dcterms:title "asphere.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d" .
+:meta dcterms:description "a sphere" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Group_2_1 .
+:Group_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_1_1 .
+:Shape_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Group_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_1_1 ;
+  x3do:hasGeometry :Sphere_2_1_1_2 .
+:Appearance_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_1 .
+:Material_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1 ;
+  x3do:diffuseColor ( 1 1 1 ) .
+:Sphere_2_1_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_1 .

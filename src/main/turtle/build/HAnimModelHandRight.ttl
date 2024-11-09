@@ -1,0 +1,1293 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20, :meta_1_21, :meta_1_22 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'HAnim' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HAnimModelHandRight.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Right hand using high-fidelity definitions for HAnim version 2.0' ;
+  x3do:name 'description' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Kwan-Hee YOO, Don Brutzman and Joe Williams' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '26 January 2015' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 December 2021' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2' ;
+  x3do:name 'TODO' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HAnimModelHandRightSegmentVisualizationError.png' ;
+  x3do:name 'Image' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'not yet to scale, also relatively flat' ;
+  x3do:name 'error' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'TODO will X3D HAnim component add a new level to support LOA-4 functionality?' ;
+  x3do:name 'warning' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body' ;
+  x3do:name 'info' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/working-groups/humanoid-animation-HAnim' ;
+  x3do:name 'reference' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0' ;
+  x3do:name 'reference' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands' ;
+  x3do:name 'reference' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints' ;
+  x3do:name 'reference' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4' ;
+  x3do:name 'reference' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html' ;
+  x3do:name 'reference' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D HAnim humanoid animation' ;
+  x3do:name 'subject' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Integrate and confirm Segment/Joint names, Viewpoints.' ;
+  x3do:name 'TODO' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_21 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_22 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "HAnimModelHandRight.x3d" .
+:meta dcterms:description "Right hand using high-fidelity definitions for HAnim version 2.0" .
+:meta dcterms:creator "Kwan-Hee YOO, Don Brutzman and Joe Williams" .
+:meta dcterms:created "26 January 2015" .
+:meta dcterms:modified "23 December 2021" .
+:meta dcterms:Image "HAnimModelHandRightSegmentVisualizationError.png" .
+:meta dcterms:warning "TODO will X3D HAnim component add a new level to support LOA-4 functionality?" .
+:meta dcterms:reference "https://www.web3d.org/working-groups/humanoid-animation-HAnim" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints" .
+:meta dcterms:reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4" .
+:meta dcterms:reference "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html" .
+:meta dcterms:subject "X3D HAnim humanoid animation" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :hanim_Hand_Right .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'HAnimModelHandRight.x3d' .
+:hanim_Hand_Right a owl:NamedIndividual, x3do:HAnimHumanoid ;
+  x3do:hasParent :Scene ;
+  x3do:hasMetadata :MetadataSet_2_2_1 ;
+  x3do:hasSkeleton :hanim_humanoid_root ;
+  x3do:hasJoints :hanim_humanoid_root-USE-1, :hanim_r_carpal_distal_interphalangeal_2-USE-1, :hanim_r_carpal_distal_interphalangeal_3-USE-1, :hanim_r_carpal_distal_interphalangeal_4-USE-1, :hanim_r_carpal_distal_interphalangeal_5-USE-1, :hanim_r_carpal_interphalangeal_1-USE-1, :hanim_r_carpal_proximal_interphalangeal_2-USE-1, :hanim_r_carpal_proximal_interphalangeal_3-USE-1, :hanim_r_carpal_proximal_interphalangeal_4-USE-1, :hanim_r_carpal_proximal_interphalangeal_5-USE-1, :hanim_r_carpometacarpal_1-USE-1, :hanim_r_carpometacarpal_2-USE-1, :hanim_r_carpometacarpal_3-USE-1, :hanim_r_carpometacarpal_4-USE-1, :hanim_r_carpometacarpal_5-USE-1, :hanim_r_metacarpophalangeal_1-USE-1, :hanim_r_metacarpophalangeal_2-USE-1, :hanim_r_metacarpophalangeal_3-USE-1, :hanim_r_metacarpophalangeal_4-USE-1, :hanim_r_metacarpophalangeal_5-USE-1, :hanim_r_midcarpal_1-USE-1, :hanim_r_midcarpal_2-USE-1, :hanim_r_midcarpal_3-USE-1, :hanim_r_midcarpal_4_5-USE-1, :hanim_r_radiocarpal-USE-1 ;
+  x3do:hasSegments :hanim_r_capitate-USE-1, :hanim_r_carpal-USE-1, :hanim_r_carpal_distal_phalanx_1-USE-1, :hanim_r_carpal_distal_phalanx_2-USE-1, :hanim_r_carpal_distal_phalanx_3-USE-1, :hanim_r_carpal_distal_phalanx_4-USE-1, :hanim_r_carpal_distal_phalanx_5-USE-1, :hanim_r_carpal_middle_phalanx_2-USE-1, :hanim_r_carpal_middle_phalanx_3-USE-1, :hanim_r_carpal_middle_phalanx_4-USE-1, :hanim_r_carpal_middle_phalanx_5-USE-1, :hanim_r_carpal_proximal_phalanx_1-USE-1, :hanim_r_carpal_proximal_phalanx_2-USE-1, :hanim_r_carpal_proximal_phalanx_3-USE-1, :hanim_r_carpal_proximal_phalanx_4-USE-1, :hanim_r_carpal_proximal_phalanx_5-USE-1, :hanim_r_hamate-USE-1, :hanim_r_metacarpal_1-USE-1, :hanim_r_metacarpal_2-USE-1, :hanim_r_metacarpal_3-USE-1, :hanim_r_metacarpal_4-USE-1, :hanim_r_metacarpal_5-USE-1, :hanim_r_trapezium-USE-1, :hanim_r_trapezoid-USE-1 ;
+  x3do:DEF 'hanim_Hand_Right' ;
+  x3do:loa 4 ;
+  x3do:name 'Hand_Right' ;
+  x3do:version '2.0' .
+:MetadataSet_2_2_1 a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :hanim_Hand_Right ;
+  x3do:hasValue :MetadataString_2_2_1_1 ;
+  x3do:name 'HAnimHumanoid.info' ;
+  x3do:reference 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid' .
+:MetadataString_2_2_1_1 a owl:NamedIndividual, x3do:MetadataString ;
+  x3do:hasParent :MetadataSet_2_2_1 ;
+  x3do:name 'authorName' ;
+  x3do:value 'Kwan-Hee YOO, Don Brutzman and Joe Williams' .
+:hanim_humanoid_root a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  x3do:hasChildren :hanim_r_radiocarpal ;
+  x3do:DEF 'hanim_humanoid_root' ;
+  x3do:name 'humanoid_root' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_radiocarpal a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_humanoid_root ;
+  x3do:hasChildren :hanim_r_carpal, :hanim_r_midcarpal_1, :hanim_r_midcarpal_2, :hanim_r_midcarpal_3, :hanim_r_midcarpal_4_5 ;
+  x3do:DEF 'hanim_r_radiocarpal' ;
+  x3do:description 'connection joint of hand to leg above' ;
+  x3do:name 'r_radiocarpal' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :Transform_2_2_2_1_1_1, :Shape_2_2_2_1_1_2, :Shape_2_2_2_1_1_3, :Shape_2_2_2_1_1_4 ;
+  x3do:DEF 'hanim_r_carpal' ;
+  x3do:name 'r_carpal' .
+:Transform_2_2_2_1_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal ;
+  x3do:hasChildren :HAnimJointShape .
+:HAnimJointShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_1_1_1_1 ;
+  x3do:hasAppearance :HAnimJointAppearanceBlue ;
+  x3do:DEF 'HAnimJointShape' .
+:Sphere_2_2_2_1_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:radius 0.025 .
+:HAnimJointAppearanceBlue a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HAnimJointShape ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1_1_2_1 ;
+  x3do:DEF 'HAnimJointAppearanceBlue' .
+:Material_2_2_2_1_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :HAnimJointAppearanceBlue ;
+  x3do:diffuseColor ( 0 0 1 ) .
+:Shape_2_2_2_1_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_2_1 ;
+  x3do:hasGeometry :RCToMC12 .
+:Appearance_2_2_2_1_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_2_1_1 .
+:Material_2_2_2_1_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:RCToMC12 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_1_2_2_1 ;
+  x3do:DEF 'RCToMC12' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :RCToMC12 ;
+  x3do:point ( 0 0 0 -0.1 0.1 0 ) .
+:Shape_2_2_2_1_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_3_1 ;
+  x3do:hasGeometry :RCToMC3 .
+:Appearance_2_2_2_1_1_3_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_3 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_3_1_1 .
+:Material_2_2_2_1_1_3_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_3_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:RCToMC3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_3 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_1_3_2_1 ;
+  x3do:DEF 'RCToMC3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_1_3_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :RCToMC3 ;
+  x3do:point ( 0 0 0 0.0 0.07 0 ) .
+:Shape_2_2_2_1_1_4 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_4_1 ;
+  x3do:hasGeometry :RCToMC45 .
+:Appearance_2_2_2_1_1_4_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_4 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_4_1_1 .
+:Material_2_2_2_1_1_4_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_4_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:RCToMC45 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_4 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_1_4_2_1 ;
+  x3do:DEF 'RCToMC45' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_1_4_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :RCToMC45 ;
+  x3do:point ( 0 0 0 0.1 0.1 0 ) .
+:hanim_r_midcarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_trapezium, :hanim_r_carpometacarpal_1 ;
+  x3do:DEF 'hanim_r_midcarpal_1' ;
+  x3do:center ( -0.14 0.09 0 ) ;
+  x3do:name 'r_midcarpal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_trapezium a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_midcarpal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_1_1, :Shape_2_2_2_1_2_1_2 ;
+  x3do:DEF 'hanim_r_trapezium' ;
+  x3do:name 'r_trapezium' .
+:Transform_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_trapezium ;
+  x3do:hasChildren :HAnimNewJointShape ;
+  x3do:translation ( -0.14 0.09 0 ) .
+:HAnimNewJointShape a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_2_1_1_1_1 ;
+  x3do:hasAppearance :HAnimJointAppearanceRed ;
+  x3do:DEF 'HAnimNewJointShape' .
+:Sphere_2_2_2_1_2_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :HAnimNewJointShape ;
+  x3do:radius 0.025 .
+:HAnimJointAppearanceRed a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HAnimNewJointShape ;
+  x3do:hasMaterial :Material_2_2_2_1_2_1_1_1_2_1 ;
+  x3do:DEF 'HAnimJointAppearanceRed' .
+:Material_2_2_2_1_2_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :HAnimJointAppearanceRed ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_2_2_1_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_trapezium ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_1_2_1 ;
+  x3do:hasGeometry :MC12toCMC1 .
+:Appearance_2_2_2_1_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_1_2_1_1 .
+:Material_2_2_2_1_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MC12toCMC1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_1_2_2_1 ;
+  x3do:DEF 'MC12toCMC1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MC12toCMC1 ;
+  x3do:point ( -0.1 0.1 0 -0.2 0.15 0 ) .
+:hanim_r_carpometacarpal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_1 ;
+  x3do:hasChildren :hanim_r_metacarpal_1, :hanim_r_metacarpophalangeal_1 ;
+  x3do:DEF 'hanim_r_carpometacarpal_1' ;
+  x3do:center ( -0.2 0.15 0 ) ;
+  x3do:name 'r_carpometacarpal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpal_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpometacarpal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_1_1, :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:DEF 'hanim_r_metacarpal_1' ;
+  x3do:name 'r_metacarpal_1' .
+:Transform_2_2_2_1_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_metacarpal_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-1 ;
+  x3do:translation ( -0.2 0.15 0 ) .
+:HAnimJointShape-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_metacarpal_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_1_2_1 ;
+  x3do:hasGeometry :CMC1toMCP1xxx .
+:Appearance_2_2_2_1_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CMC1toMCP1xxx a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_1_2_2_1 ;
+  x3do:DEF 'CMC1toMCP1xxx' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CMC1toMCP1xxx ;
+  x3do:point ( -0.2 0.15 0 -0.3 0.3 0 ) .
+:hanim_r_metacarpophalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_1 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_phalanx_1, :hanim_r_carpal_interphalangeal_1 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_1' ;
+  x3do:center ( -0.3 0.3 0 ) ;
+  x3do:name 'r_metacarpophalangeal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_phalanx_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_2_1_1, :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_phalanx_1' ;
+  x3do:name 'r_carpal_proximal_phalanx_1' .
+:Transform_2_2_2_1_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-2 ;
+  x3do:translation ( -0.3 0.3 0 ) .
+:HAnimJointShape-USE-2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_2_1_2_1 ;
+  x3do:hasGeometry :MCP11toIP1 .
+:Appearance_2_2_2_1_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MCP11toIP1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_2_1_2_2_1 ;
+  x3do:DEF 'MCP11toIP1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MCP11toIP1 ;
+  x3do:point ( -0.3 0.3 0 -0.35 0.4 0 ) .
+:hanim_r_carpal_interphalangeal_1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_1 ;
+  x3do:hasChildren :hanim_r_carpal_distal_phalanx_1 ;
+  x3do:DEF 'hanim_r_carpal_interphalangeal_1' ;
+  x3do:center ( -0.35 0.4 0 ) ;
+  x3do:name 'r_carpal_interphalangeal_1' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_phalanx_1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_interphalangeal_1 ;
+  x3do:hasChildren :Transform_2_2_2_1_2_2_2_2_1_1, :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_phalanx_1' ;
+  x3do:name 'r_carpal_distal_phalanx_1' .
+:Transform_2_2_2_1_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_1 ;
+  x3do:hasChildren :HAnimJointShape-USE-3 ;
+  x3do:translation ( -0.35 0.4 0 ) .
+:HAnimJointShape-USE-3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :fingertip_r_carpal_interphalangeal_1 .
+:Appearance_2_2_2_1_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:fingertip_r_carpal_interphalangeal_1 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'fingertip_r_carpal_interphalangeal_1' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :fingertip_r_carpal_interphalangeal_1 ;
+  x3do:point ( -0.35 0.4 0 -0.36 0.45 0 ) .
+:hanim_r_midcarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_trapezoid, :hanim_r_carpometacarpal_2 ;
+  x3do:DEF 'hanim_r_midcarpal_2' ;
+  x3do:center ( -0.07 0.07 0 ) ;
+  x3do:name 'r_midcarpal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_trapezoid a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_midcarpal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_1_1, :Shape_2_2_2_1_3_1_2 ;
+  x3do:DEF 'hanim_r_trapezoid' ;
+  x3do:name 'r_trapezoid' .
+:Transform_2_2_2_1_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_trapezoid ;
+  x3do:hasChildren :HAnimNewJointShape-USE-1 ;
+  x3do:translation ( -0.07 0.07 0 ) .
+:HAnimNewJointShape-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_1_1 ;
+  owl:sameAs :HAnimNewJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_trapezoid ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_1_2_1 ;
+  x3do:hasGeometry :MC12toCMC2 .
+:Appearance_2_2_2_1_3_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_1_2_1_1 .
+:Material_2_2_2_1_3_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MC12toCMC2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_1_2_2_1 ;
+  x3do:DEF 'MC12toCMC2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MC12toCMC2 ;
+  x3do:point ( -0.1 0.1 0 -0.1 0.2 0 ) .
+:hanim_r_carpometacarpal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_2 ;
+  x3do:hasChildren :hanim_r_metacarpal_2, :hanim_r_metacarpophalangeal_2 ;
+  x3do:DEF 'hanim_r_carpometacarpal_2' ;
+  x3do:center ( -0.1 0.2 0 ) ;
+  x3do:name 'r_carpometacarpal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpal_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpometacarpal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_1_1, :Shape_2_2_2_1_3_2_1_2 ;
+  x3do:DEF 'hanim_r_metacarpal_2' ;
+  x3do:name 'r_metacarpal_2' .
+:Transform_2_2_2_1_3_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_metacarpal_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-4 ;
+  x3do:translation ( -0.1 0.2 0 ) .
+:HAnimJointShape-USE-4 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_metacarpal_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_1_2_1 ;
+  x3do:hasGeometry :CMC2toMCP2 .
+:Appearance_2_2_2_1_3_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CMC2toMCP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_1_2_2_1 ;
+  x3do:DEF 'CMC2toMCP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CMC2toMCP2 ;
+  x3do:point ( -0.1 0.2 0 -0.15 0.5 0 ) .
+:hanim_r_metacarpophalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_2 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_phalanx_2, :hanim_r_carpal_proximal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_2' ;
+  x3do:center ( -0.15 0.5 0 ) ;
+  x3do:name 'r_metacarpophalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_1_1, :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_phalanx_2' ;
+  x3do:name 'r_carpal_proximal_phalanx_2' .
+:Transform_2_2_2_1_3_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-5 ;
+  x3do:translation ( -0.15 0.5 0 ) .
+:HAnimJointShape-USE-5 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_1_2_1 ;
+  x3do:hasGeometry :MCP2toPIP2 .
+:Appearance_2_2_2_1_3_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MCP2toPIP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_1_2_2_1 ;
+  x3do:DEF 'MCP2toPIP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MCP2toPIP2 ;
+  x3do:point ( -0.15 0.5 0 -0.2 0.7 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_2 ;
+  x3do:hasChildren :hanim_r_carpal_middle_phalanx_2, :hanim_r_carpal_distal_interphalangeal_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_2' ;
+  x3do:center ( -0.2 0.7 0 ) ;
+  x3do:name 'r_carpal_proximal_interphalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_middle_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_2_1_1, :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_middle_phalanx_2' ;
+  x3do:name 'r_carpal_middle_phalanx_2' .
+:Transform_2_2_2_1_3_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-6 ;
+  x3do:translation ( -0.2 0.7 0 ) .
+:HAnimJointShape-USE-6 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP2toDIP2 .
+:Appearance_2_2_2_1_3_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP2toDIP2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP2toDIP2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP2toDIP2 ;
+  x3do:point ( -0.2 0.7 0 -0.24 0.87 0 ) .
+:hanim_r_carpal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_2 ;
+  x3do:hasChildren :hanim_r_carpal_distal_phalanx_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_2' ;
+  x3do:center ( -0.24 0.87 0 ) ;
+  x3do:name 'r_carpal_distal_interphalangeal_2' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_phalanx_2 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_distal_interphalangeal_2 ;
+  x3do:hasChildren :Transform_2_2_2_1_3_2_2_2_2_1_1, :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_phalanx_2' ;
+  x3do:name 'r_carpal_distal_phalanx_2' .
+:Transform_2_2_2_1_3_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_2 ;
+  x3do:hasChildren :HAnimJointShape-USE-7 ;
+  x3do:translation ( -0.24 0.87 0 ) .
+:HAnimJointShape-USE-7 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_3_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_3_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_3_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :fingertip_r_carpal_distal_interphalangeal_2 .
+:Appearance_2_2_2_1_3_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_3_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_3_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_3_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:fingertip_r_carpal_distal_interphalangeal_2 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_3_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_3_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'fingertip_r_carpal_distal_interphalangeal_2' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_3_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :fingertip_r_carpal_distal_interphalangeal_2 ;
+  x3do:point ( -0.24 0.87 0 -0.26 0.93 0 ) .
+:hanim_r_midcarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_capitate, :hanim_r_carpometacarpal_3 ;
+  x3do:DEF 'hanim_r_midcarpal_3' ;
+  x3do:center ( 0.0 0.07 0 ) ;
+  x3do:name 'r_midcarpal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_capitate a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_midcarpal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_4_1_1, :Shape_2_2_2_1_4_1_2 ;
+  x3do:DEF 'hanim_r_capitate' ;
+  x3do:name 'r_capitate' .
+:Transform_2_2_2_1_4_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_capitate ;
+  x3do:hasChildren :HAnimNewJointShape-USE-2 ;
+  x3do:translation ( 0.0 0.07 0 ) .
+:HAnimNewJointShape-USE-2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_4_1_1 ;
+  owl:sameAs :HAnimNewJointShape . # DEF matching this USE
+:Shape_2_2_2_1_4_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_capitate ;
+  x3do:hasAppearance :Appearance_2_2_2_1_4_1_2_1 ;
+  x3do:hasGeometry :MC3toCMC3 .
+:Appearance_2_2_2_1_4_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_4_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_4_1_2_1_1 .
+:Material_2_2_2_1_4_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_4_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MC3toCMC3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_4_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_4_1_2_2_1 ;
+  x3do:DEF 'MC3toCMC3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_4_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MC3toCMC3 ;
+  x3do:point ( 0.0 0.07 0 0.0 0.2 0 ) .
+:hanim_r_carpometacarpal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_3 ;
+  x3do:hasChildren :hanim_r_metacarpal_3, :hanim_r_metacarpophalangeal_3 ;
+  x3do:DEF 'hanim_r_carpometacarpal_3' ;
+  x3do:center ( 0.0 0.2 0 ) ;
+  x3do:name 'r_carpometacarpal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpal_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpometacarpal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_4_2_1_1, :Shape_2_2_2_1_4_2_1_2 ;
+  x3do:DEF 'hanim_r_metacarpal_3' ;
+  x3do:name 'r_metacarpal_3' .
+:Transform_2_2_2_1_4_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_metacarpal_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-8 ;
+  x3do:translation ( 0.0 0.2 0 ) .
+:HAnimJointShape-USE-8 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_4_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_4_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_metacarpal_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_4_2_1_2_1 ;
+  x3do:hasGeometry :CMC3toMCP3 .
+:Appearance_2_2_2_1_4_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_4_2_1_2_1_1 .
+:Material_2_2_2_1_4_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_4_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CMC3toMCP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_4_2_1_2_2_1 ;
+  x3do:DEF 'CMC3toMCP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_4_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CMC3toMCP3 ;
+  x3do:point ( 0.0 0.2 0 -0.03 0.5 0 ) .
+:hanim_r_metacarpophalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_3 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_phalanx_3, :hanim_r_carpal_proximal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_3' ;
+  x3do:center ( -0.03 0.5 0 ) ;
+  x3do:name 'r_metacarpophalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_4_2_2_1_1, :Shape_2_2_2_1_4_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_phalanx_3' ;
+  x3do:name 'r_carpal_proximal_phalanx_3' .
+:Transform_2_2_2_1_4_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-9 ;
+  x3do:translation ( -0.03 0.5 0 ) .
+:HAnimJointShape-USE-9 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_4_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_4_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_4_2_2_1_2_1 ;
+  x3do:hasGeometry :MCP3toPIP3 .
+:Appearance_2_2_2_1_4_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_4_2_2_1_2_1_1 .
+:Material_2_2_2_1_4_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_4_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MCP3toPIP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_4_2_2_1_2_2_1 ;
+  x3do:DEF 'MCP3toPIP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_4_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MCP3toPIP3 ;
+  x3do:point ( -0.03 0.5 0 -0.05 0.75 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_3 ;
+  x3do:hasChildren :hanim_r_carpal_middle_phalanx_3, :hanim_r_carpal_distal_interphalangeal_3 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_3' ;
+  x3do:center ( -0.05 0.75 0 ) ;
+  x3do:name 'r_carpal_proximal_interphalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_middle_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_4_2_2_2_1_1, :Shape_2_2_2_1_4_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_middle_phalanx_3' ;
+  x3do:name 'r_carpal_middle_phalanx_3' .
+:Transform_2_2_2_1_4_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-10 ;
+  x3do:translation ( -0.05 0.75 0 ) .
+:HAnimJointShape-USE-10 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_4_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_4_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_4_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP3toDIP3 .
+:Appearance_2_2_2_1_4_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_4_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_4_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_4_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP3toDIP3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_4_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP3toDIP3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_4_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP3toDIP3 ;
+  x3do:point ( -0.05 0.75 0 -0.08 0.96 0 ) .
+:hanim_r_carpal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_3 ;
+  x3do:hasChildren :hanim_r_carpal_distal_phalanx_3 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_3' ;
+  x3do:center ( -0.08 0.96 0 ) ;
+  x3do:name 'r_carpal_distal_interphalangeal_3' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_phalanx_3 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_distal_interphalangeal_3 ;
+  x3do:hasChildren :Transform_2_2_2_1_4_2_2_2_2_1_1, :Shape_2_2_2_1_4_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_phalanx_3' ;
+  x3do:name 'r_carpal_distal_phalanx_3' .
+:Transform_2_2_2_1_4_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_3 ;
+  x3do:hasChildren :HAnimJointShape-USE-11 ;
+  x3do:translation ( -0.08 0.96 0 ) .
+:HAnimJointShape-USE-11 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_4_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_4_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_3 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_4_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :fingertip_r_carpal_distal_interphalangeal_3 .
+:Appearance_2_2_2_1_4_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_4_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_4_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_4_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:fingertip_r_carpal_distal_interphalangeal_3 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_4_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_4_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'fingertip_r_carpal_distal_interphalangeal_3' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_4_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :fingertip_r_carpal_distal_interphalangeal_3 ;
+  x3do:point ( -0.08 0.96 0 -0.09 1.05 0 ) .
+:hanim_r_midcarpal_4_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_radiocarpal ;
+  x3do:hasChildren :hanim_r_hamate, :hanim_r_carpometacarpal_4, :hanim_r_carpometacarpal_5 ;
+  x3do:DEF 'hanim_r_midcarpal_4_5' ;
+  x3do:center ( 0.1 0.1 0 ) ;
+  x3do:name 'r_midcarpal_4_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_hamate a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_midcarpal_4_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_1_1, :Shape_2_2_2_1_5_1_2, :Shape_2_2_2_1_5_1_3 ;
+  x3do:DEF 'hanim_r_hamate' ;
+  x3do:name 'r_hamate' .
+:Transform_2_2_2_1_5_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_hamate ;
+  x3do:hasChildren :HAnimNewJointShape-USE-3 ;
+  x3do:translation ( 0.1 0.1 0 ) .
+:HAnimNewJointShape-USE-3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_1_1 ;
+  owl:sameAs :HAnimNewJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_hamate ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_1_2_1 ;
+  x3do:hasGeometry :MC45toCMC4 .
+:Appearance_2_2_2_1_5_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_1_2_1_1 .
+:Material_2_2_2_1_5_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MC45toCMC4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_1_2_2_1 ;
+  x3do:DEF 'MC45toCMC4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MC45toCMC4 ;
+  x3do:point ( 0.1 0.1 0 0.1 0.2 0 ) .
+:Shape_2_2_2_1_5_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_hamate ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_1_3_1 ;
+  x3do:hasGeometry :MC45toCMC5 .
+:Appearance_2_2_2_1_5_1_3_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_1_3 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_1_3_1_1 .
+:Material_2_2_2_1_5_1_3_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_1_3_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MC45toCMC5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_1_3 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_1_3_2_1 ;
+  x3do:DEF 'MC45toCMC5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_1_3_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MC45toCMC5 ;
+  x3do:point ( 0.1 0.1 0 0.15 0.17 0 ) .
+:hanim_r_carpometacarpal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_r_metacarpal_4, :hanim_r_metacarpophalangeal_4 ;
+  x3do:DEF 'hanim_r_carpometacarpal_4' ;
+  x3do:center ( 0.1 0.2 0 ) ;
+  x3do:name 'r_carpometacarpal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpal_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpometacarpal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_2_1_1, :Shape_2_2_2_1_5_2_1_2 ;
+  x3do:DEF 'hanim_r_metacarpal_4' ;
+  x3do:name 'r_metacarpal_4' .
+:Transform_2_2_2_1_5_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_metacarpal_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-12 ;
+  x3do:translation ( 0.1 0.2 0 ) .
+:HAnimJointShape-USE-12 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_metacarpal_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_2_1_2_1 ;
+  x3do:hasGeometry :CMC4toMCP4 .
+:Appearance_2_2_2_1_5_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_2_1_2_1_1 .
+:Material_2_2_2_1_5_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CMC4toMCP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_2_1_2_2_1 ;
+  x3do:DEF 'CMC4toMCP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CMC4toMCP4 ;
+  x3do:point ( 0.1 0.2 0 0.1 0.47 0 ) .
+:hanim_r_metacarpophalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_4 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_phalanx_4, :hanim_r_carpal_proximal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_4' ;
+  x3do:center ( 0.1 0.47 0 ) ;
+  x3do:name 'r_metacarpophalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_2_2_1_1, :Shape_2_2_2_1_5_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_phalanx_4' ;
+  x3do:name 'r_carpal_proximal_phalanx_4' .
+:Transform_2_2_2_1_5_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-13 ;
+  x3do:translation ( 0.1 0.47 0 ) .
+:HAnimJointShape-USE-13 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_2_2_1_2_1 ;
+  x3do:hasGeometry :MCP4toPIP4 .
+:Appearance_2_2_2_1_5_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_2_2_1_2_1_1 .
+:Material_2_2_2_1_5_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MCP4toPIP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_2_2_1_2_2_1 ;
+  x3do:DEF 'MCP4toPIP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MCP4toPIP4 ;
+  x3do:point ( 0.1 0.47 0 0.1 0.7 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_4 ;
+  x3do:hasChildren :hanim_r_carpal_middle_phalanx_4, :hanim_r_carpal_distal_interphalangeal_4 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_4' ;
+  x3do:center ( 0.1 0.7 0 ) ;
+  x3do:name 'r_carpal_proximal_interphalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_middle_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_2_2_2_1_1, :Shape_2_2_2_1_5_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_middle_phalanx_4' ;
+  x3do:name 'r_carpal_middle_phalanx_4' .
+:Transform_2_2_2_1_5_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-14 ;
+  x3do:translation ( 0.1 0.7 0 ) .
+:HAnimJointShape-USE-14 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_2_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP4toDIP4 .
+:Appearance_2_2_2_1_5_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_5_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP4toDIP4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_2_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP4toDIP4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP4toDIP4 ;
+  x3do:point ( 0.1 0.7 0 0.1 0.93 0 ) .
+:hanim_r_carpal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_4 ;
+  x3do:hasChildren :hanim_r_carpal_distal_phalanx_4 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_4' ;
+  x3do:center ( 0.1 0.93 0 ) ;
+  x3do:name 'r_carpal_distal_interphalangeal_4' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_phalanx_4 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_distal_interphalangeal_4 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_2_2_2_2_1_1, :Shape_2_2_2_1_5_2_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_phalanx_4' ;
+  x3do:name 'r_carpal_distal_phalanx_4' .
+:Transform_2_2_2_1_5_2_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_4 ;
+  x3do:hasChildren :HAnimJointShape-USE-15 ;
+  x3do:translation ( 0.1 0.93 0 ) .
+:HAnimJointShape-USE-15 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_2_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_2_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_4 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_2_2_2_2_1_2_1 ;
+  x3do:hasGeometry :fingertip_r_carpal_distal_interphalangeal_4 .
+:Appearance_2_2_2_1_5_2_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_2_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_5_2_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_2_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:fingertip_r_carpal_distal_interphalangeal_4 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_2_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_2_2_2_2_1_2_2_1 ;
+  x3do:DEF 'fingertip_r_carpal_distal_interphalangeal_4' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_2_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :fingertip_r_carpal_distal_interphalangeal_4 ;
+  x3do:point ( 0.1 0.93 0 0.1 1.0 0 ) .
+:hanim_r_carpometacarpal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_midcarpal_4_5 ;
+  x3do:hasChildren :hanim_r_metacarpal_5, :hanim_r_metacarpophalangeal_5 ;
+  x3do:DEF 'hanim_r_carpometacarpal_5' ;
+  x3do:center ( 0.15 0.17 0 ) ;
+  x3do:name 'r_carpometacarpal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_metacarpal_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpometacarpal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_3_1_1, :Shape_2_2_2_1_5_3_1_2 ;
+  x3do:DEF 'hanim_r_metacarpal_5' ;
+  x3do:name 'r_metacarpal_5' .
+:Transform_2_2_2_1_5_3_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_metacarpal_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-16 ;
+  x3do:translation ( 0.15 0.17 0 ) .
+:HAnimJointShape-USE-16 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_3_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_3_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_metacarpal_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_3_1_2_1 ;
+  x3do:hasGeometry :CMC5toMCP5 .
+:Appearance_2_2_2_1_5_3_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_3_1_2_1_1 .
+:Material_2_2_2_1_5_3_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_3_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:CMC5toMCP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_3_1_2_2_1 ;
+  x3do:DEF 'CMC5toMCP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_3_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :CMC5toMCP5 ;
+  x3do:point ( 0.15 0.17 0 0.2 0.4 0 ) .
+:hanim_r_metacarpophalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpometacarpal_5 ;
+  x3do:hasChildren :hanim_r_carpal_proximal_phalanx_5, :hanim_r_carpal_proximal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_metacarpophalangeal_5' ;
+  x3do:center ( 0.2 0.4 0 ) ;
+  x3do:name 'r_metacarpophalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_proximal_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_3_2_1_1, :Shape_2_2_2_1_5_3_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_proximal_phalanx_5' ;
+  x3do:name 'r_carpal_proximal_phalanx_5' .
+:Transform_2_2_2_1_5_3_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-17 ;
+  x3do:translation ( 0.2 0.4 0 ) .
+:HAnimJointShape-USE-17 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_3_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_proximal_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_3_2_1_2_1 ;
+  x3do:hasGeometry :MCP5toPIP5 .
+:Appearance_2_2_2_1_5_3_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_3_2_1_2_1_1 .
+:Material_2_2_2_1_5_3_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_3_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:MCP5toPIP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_3_2_1_2_2_1 ;
+  x3do:DEF 'MCP5toPIP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :MCP5toPIP5 ;
+  x3do:point ( 0.2 0.4 0 0.23 0.63 0 ) .
+:hanim_r_carpal_proximal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_metacarpophalangeal_5 ;
+  x3do:hasChildren :hanim_r_carpal_middle_phalanx_5, :hanim_r_carpal_distal_interphalangeal_5 ;
+  x3do:DEF 'hanim_r_carpal_proximal_interphalangeal_5' ;
+  x3do:center ( 0.23 0.63 0 ) ;
+  x3do:name 'r_carpal_proximal_interphalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_middle_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_3_2_2_1_1, :Shape_2_2_2_1_5_3_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_middle_phalanx_5' ;
+  x3do:name 'r_carpal_middle_phalanx_5' .
+:Transform_2_2_2_1_5_3_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-18 ;
+  x3do:translation ( 0.23 0.63 0 ) .
+:HAnimJointShape-USE-18 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_3_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_3_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_middle_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_3_2_2_1_2_1 ;
+  x3do:hasGeometry :PIP5toDIP5 .
+:Appearance_2_2_2_1_5_3_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_3_2_2_1_2_1_1 .
+:Material_2_2_2_1_5_3_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_3_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:PIP5toDIP5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_3_2_2_1_2_2_1 ;
+  x3do:DEF 'PIP5toDIP5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_3_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :PIP5toDIP5 ;
+  x3do:point ( 0.23 0.63 0 0.25 0.79 0 ) .
+:hanim_r_carpal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_r_carpal_proximal_interphalangeal_5 ;
+  x3do:hasChildren :hanim_r_carpal_distal_phalanx_5 ;
+  x3do:DEF 'hanim_r_carpal_distal_interphalangeal_5' ;
+  x3do:center ( 0.25 0.79 0 ) ;
+  x3do:name 'r_carpal_distal_interphalangeal_5' ;
+  x3do:ulimit ( 0 0 0 ) ;
+  x3do:llimit ( 0 0 0 ) .
+:hanim_r_carpal_distal_phalanx_5 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_r_carpal_distal_interphalangeal_5 ;
+  x3do:hasChildren :Transform_2_2_2_1_5_3_2_2_2_1_1, :Shape_2_2_2_1_5_3_2_2_2_1_2 ;
+  x3do:DEF 'hanim_r_carpal_distal_phalanx_5' ;
+  x3do:name 'r_carpal_distal_phalanx_5' .
+:Transform_2_2_2_1_5_3_2_2_2_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_5 ;
+  x3do:hasChildren :HAnimJointShape-USE-19 ;
+  x3do:translation ( 0.25 0.79 0 ) .
+:HAnimJointShape-USE-19 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2_1_5_3_2_2_2_1_1 ;
+  owl:sameAs :HAnimJointShape . # DEF matching this USE
+:Shape_2_2_2_1_5_3_2_2_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :hanim_r_carpal_distal_phalanx_5 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_5_3_2_2_2_1_2_1 ;
+  x3do:hasGeometry :fingertip_r_carpal_distal_interphalangeal_5 .
+:Appearance_2_2_2_1_5_3_2_2_2_1_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_2_2_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_5_3_2_2_2_1_2_1_1 .
+:Material_2_2_2_1_5_3_2_2_2_1_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_5_3_2_2_2_1_2_1 ;
+  x3do:emissiveColor ( 1 1 1 ) .
+:fingertip_r_carpal_distal_interphalangeal_5 a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_5_3_2_2_2_1_2 ;
+  x3do:hasCoord :Coordinate_2_2_2_1_5_3_2_2_2_1_2_2_1 ;
+  x3do:DEF 'fingertip_r_carpal_distal_interphalangeal_5' ;
+  x3do:coordIndex ( 0 1 ) .
+:Coordinate_2_2_2_1_5_3_2_2_2_1_2_2_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :fingertip_r_carpal_distal_interphalangeal_5 ;
+  x3do:point ( 0.25 0.79 0 0.26 0.85 0 ) .
+:hanim_humanoid_root-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_humanoid_root . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_carpal_distal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_carpal_interphalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_interphalangeal_1 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_2 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_3 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_4 . # DEF matching this USE
+:hanim_r_carpal_proximal_interphalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_interphalangeal_5 . # DEF matching this USE
+:hanim_r_carpometacarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpometacarpal_1 . # DEF matching this USE
+:hanim_r_carpometacarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpometacarpal_2 . # DEF matching this USE
+:hanim_r_carpometacarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpometacarpal_3 . # DEF matching this USE
+:hanim_r_carpometacarpal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpometacarpal_4 . # DEF matching this USE
+:hanim_r_carpometacarpal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpometacarpal_5 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpophalangeal_1 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpophalangeal_2 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpophalangeal_3 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_4-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpophalangeal_4 . # DEF matching this USE
+:hanim_r_metacarpophalangeal_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpophalangeal_5 . # DEF matching this USE
+:hanim_r_midcarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_midcarpal_1 . # DEF matching this USE
+:hanim_r_midcarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_midcarpal_2 . # DEF matching this USE
+:hanim_r_midcarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_midcarpal_3 . # DEF matching this USE
+:hanim_r_midcarpal_4_5-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_midcarpal_4_5 . # DEF matching this USE
+:hanim_r_radiocarpal-USE-1 a owl:NamedIndividual, x3do:HAnimJoint ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_radiocarpal . # DEF matching this USE
+:hanim_r_capitate-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_capitate . # DEF matching this USE
+:hanim_r_carpal-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal . # DEF matching this USE
+:hanim_r_carpal_distal_phalanx_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_phalanx_1 . # DEF matching this USE
+:hanim_r_carpal_distal_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_phalanx_2 . # DEF matching this USE
+:hanim_r_carpal_distal_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_phalanx_3 . # DEF matching this USE
+:hanim_r_carpal_distal_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_phalanx_4 . # DEF matching this USE
+:hanim_r_carpal_distal_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_distal_phalanx_5 . # DEF matching this USE
+:hanim_r_carpal_middle_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_middle_phalanx_2 . # DEF matching this USE
+:hanim_r_carpal_middle_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_middle_phalanx_3 . # DEF matching this USE
+:hanim_r_carpal_middle_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_middle_phalanx_4 . # DEF matching this USE
+:hanim_r_carpal_middle_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_middle_phalanx_5 . # DEF matching this USE
+:hanim_r_carpal_proximal_phalanx_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_phalanx_1 . # DEF matching this USE
+:hanim_r_carpal_proximal_phalanx_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_phalanx_2 . # DEF matching this USE
+:hanim_r_carpal_proximal_phalanx_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_phalanx_3 . # DEF matching this USE
+:hanim_r_carpal_proximal_phalanx_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_phalanx_4 . # DEF matching this USE
+:hanim_r_carpal_proximal_phalanx_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_carpal_proximal_phalanx_5 . # DEF matching this USE
+:hanim_r_hamate-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_hamate . # DEF matching this USE
+:hanim_r_metacarpal_1-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpal_1 . # DEF matching this USE
+:hanim_r_metacarpal_2-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpal_2 . # DEF matching this USE
+:hanim_r_metacarpal_3-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpal_3 . # DEF matching this USE
+:hanim_r_metacarpal_4-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpal_4 . # DEF matching this USE
+:hanim_r_metacarpal_5-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_metacarpal_5 . # DEF matching this USE
+:hanim_r_trapezium-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_trapezium . # DEF matching this USE
+:hanim_r_trapezoid-USE-1 a owl:NamedIndividual, x3do:HAnimSegment ;
+  x3do:hasParent :hanim_Hand_Right ;
+  owl:sameAs :hanim_r_trapezoid . # DEF matching this USE

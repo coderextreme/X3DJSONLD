@@ -1,0 +1,403 @@
+@prefix :        <http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumPrototype.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '16 August 2008' ;
+  x3do:name 'translated' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumExample.x3d' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumComputation.png' ;
+  x3do:name 'drawing' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumOverheadView.png' ;
+  x3do:name 'Image' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ViewFrustumObliqueView.png' ;
+  x3do:name 'Image' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'view culling frustum' ;
+  x3do:name 'subject' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "ViewFrustumPrototype.x3d" .
+:meta dcterms:description "Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype." .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:translated "16 August 2008" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:reference "ViewFrustumExample.x3d" .
+:meta dcterms:drawing "ViewFrustumComputation.png" .
+:meta dcterms:Image "ViewFrustumOverheadView.png" .
+:meta dcterms:Image "ViewFrustumObliqueView.png" .
+:meta dcterms:subject "view culling frustum" .
+:meta dcterms:identifier "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Anchor_2_3 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_2 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'ViewFrustumPrototype.x3d' .
+:ProtoDeclare_2_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_2_2 ;
+  x3do:appinfo 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' ;
+  x3do:name 'ViewFrustum' .
+:ProtoInterface_2_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasField :field_2_2_1_1, :field_2_2_1_2, :field_2_2_1_3, :field_2_2_1_4, :field_2_2_1_5, :field_2_2_1_6, :field_2_2_1_7, :field_2_2_1_8 .
+:field_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'required: insert Viewpoint DEF or USE node for view of interest' ;
+  x3do:name 'ViewpointNode' ;
+  x3do:type 'SFNode' .
+:field_2_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'required: insert NavigationInfo DEF or USE node of interest' ;
+  x3do:name 'NavigationInfoNode' ;
+  x3do:type 'SFNode' .
+:field_2_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'whether or not frustum geometry is rendered' ;
+  x3do:name 'visible' ;
+  x3do:type 'SFBool' ;
+  x3do:value true .
+:field_2_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'RGB color of ViewFrustum outline, default value 0.9 0.9 0.9' ;
+  x3do:name 'lineColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 0.9 0.9 0.9 ) .
+:field_2_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8' ;
+  x3do:name 'frustumColor' ;
+  x3do:type 'SFColor' ;
+  x3do:value ( 0.8 0.8 0.8 ) .
+:field_2_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'transparency of ViewFrustum hull geometry, default value 0.5' ;
+  x3do:name 'transparency' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_2_1_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'assumed ratio height/width, default value 0.75' ;
+  x3do:name 'aspectRatio' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.75 .
+:field_2_2_1_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'debug support, default false' ;
+  x3do:name 'trace' ;
+  x3do:type 'SFBool' ;
+  x3do:value false .
+:ProtoBody_2_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasChildren :VisibilitySwitch, :GeometryComputationScript ;
+  x3do:hasROUTE :ROUTE_2_2_2_3, :ROUTE_2_2_2_4, :ROUTE_2_2_2_5, :ROUTE_2_2_2_6, :ROUTE_2_2_2_7, :ROUTE_2_2_2_8 .
+:VisibilitySwitch a owl:NamedIndividual, x3do:Switch ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasChildren :PositionTransform ;
+  x3do:DEF 'VisibilitySwitch' ;
+  x3do:whichChoice -1 .
+:PositionTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :VisibilitySwitch ;
+  x3do:hasChildren :OrientationTransform ;
+  x3do:DEF 'PositionTransform' ;
+  x3do:rotation ( 0 1 0 3.14159 ) .
+:OrientationTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :PositionTransform ;
+  x3do:hasChildren :Shape_2_2_2_1_1_1_1, :Shape_2_2_2_1_1_1_2, :Shape_2_2_2_1_1_1_3 ;
+  x3do:DEF 'OrientationTransform' .
+:Shape_2_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrientationTransform ;
+  x3do:hasGeometry :FrustumLines ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_1_1_2 .
+:FrustumLines a owl:NamedIndividual, x3do:IndexedLineSet ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_1 ;
+  x3do:hasCoord :FrustumCoordinate ;
+  x3do:DEF 'FrustumLines' ;
+  x3do:coordIndex ( 0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1 ) .
+:FrustumCoordinate a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :FrustumLines ;
+  x3do:DEF 'FrustumCoordinate' ;
+  x3do:point ( 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) .
+:Appearance_2_2_2_1_1_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_1 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1_1_2_1 .
+:Material_2_2_2_1_1_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_1_1_2 ;
+  x3do:hasIS :IS_2_2_2_1_1_1_1_2_1_1 .
+:IS_2_2_2_1_1_1_1_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Material_2_2_2_1_1_1_1_2_1 ;
+  x3do:hasConnect :connect_2_2_2_1_1_1_1_2_1_1_1 .
+:connect_2_2_2_1_1_1_1_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1_1_2_1_1 ;
+  x3do:nodeField 'emissiveColor' ;
+  x3do:protoField 'lineColor' .
+:Shape_2_2_2_1_1_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrientationTransform ;
+  x3do:hasGeometry :FrustumExtrusion ;
+  x3do:hasAppearance :FrustumAppearance .
+:FrustumExtrusion a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_2 ;
+  x3do:DEF 'FrustumExtrusion' .
+:FrustumAppearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_2 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1_2_2_1 ;
+  x3do:DEF 'FrustumAppearance' .
+:Material_2_2_2_1_1_1_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :FrustumAppearance ;
+  x3do:hasIS :IS_2_2_2_1_1_1_2_2_1_1 .
+:IS_2_2_2_1_1_1_2_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Material_2_2_2_1_1_1_2_2_1 ;
+  x3do:hasConnect :connect_2_2_2_1_1_1_2_2_1_1_1, :connect_2_2_2_1_1_1_2_2_1_1_2 .
+:connect_2_2_2_1_1_1_2_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1_2_2_1_1 ;
+  x3do:nodeField 'diffuseColor' ;
+  x3do:protoField 'frustumColor' .
+:connect_2_2_2_1_1_1_2_2_1_1_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1_2_2_1_1 ;
+  x3do:nodeField 'transparency' ;
+  x3do:protoField 'transparency' .
+:Shape_2_2_2_1_1_1_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrientationTransform ;
+  x3do:hasGeometry :Sphere_2_2_2_1_1_1_3_1 ;
+  x3do:hasAppearance :FrustumAppearance-USE-1 .
+:Sphere_2_2_2_1_1_1_3_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_3 ;
+  x3do:radius 0.08 .
+:FrustumAppearance-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1_1_3 ;
+  owl:sameAs :FrustumAppearance . # DEF matching this USE
+:GeometryComputationScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasField :field_2_2_2_2_1, :field_2_2_2_2_2, :field_2_2_2_2_3, :field_2_2_2_2_4, :field_2_2_2_2_5, :field_2_2_2_2_6, :field_2_2_2_2_7, :field_2_2_2_2_8, :field_2_2_2_2_9, :field_2_2_2_2_10, :field_2_2_2_2_11, :field_2_2_2_2_12, :field_2_2_2_2_13, :field_2_2_2_2_14 ;
+  x3do:hasIS :IS_2_2_2_2_15 ;
+  x3do:DEF 'GeometryComputationScript' ;
+  x3do:directOutput true ;
+  x3do:url '"ViewFrustumPrototypeScript.js"' .
+:field_2_2_2_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Whether or not frustum geometry is rendered' ;
+  x3do:name 'visible' ;
+  x3do:type 'SFBool' .
+:field_2_2_2_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'Adjust Switch selection to make geometry visible or not' ;
+  x3do:name 'visibilitySwitchSelection' ;
+  x3do:type 'SFInt32' .
+:field_2_2_2_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'ViewpointNode' ;
+  x3do:type 'SFNode' .
+:field_2_2_2_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'NavigationInfoNode' ;
+  x3do:type 'SFNode' .
+:field_2_2_2_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:hasCoord :FrustumCoordinate-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'FrustumCoordinate' ;
+  x3do:type 'SFNode' .
+:FrustumCoordinate-USE-1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :field_2_2_2_2_5 ;
+  owl:sameAs :FrustumCoordinate . # DEF matching this USE
+:field_2_2_2_2_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:hasGeometry :FrustumExtrusion-USE-1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'FrustumExtrusion' ;
+  x3do:type 'SFNode' .
+:FrustumExtrusion-USE-1 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :field_2_2_2_2_6 ;
+  owl:sameAs :FrustumExtrusion . # DEF matching this USE
+:field_2_2_2_2_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'recompute' ;
+  x3do:type 'SFBool' .
+:field_2_2_2_2_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'assumed ratio height/width' ;
+  x3do:name 'aspectRatio' ;
+  x3do:type 'SFFloat' .
+:field_2_2_2_2_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'position_changed' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_2_2_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'orientation_changed' ;
+  x3do:type 'SFRotation' .
+:field_2_2_2_2_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'spine_changed' ;
+  x3do:type 'MFVec3f' .
+:field_2_2_2_2_12 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'scale_changed' ;
+  x3do:type 'MFVec2f' .
+:field_2_2_2_2_13 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'point_changed' ;
+  x3do:type 'MFVec3f' .
+:field_2_2_2_2_14 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'trace' ;
+  x3do:type 'SFBool' .
+:IS_2_2_2_2_15 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :GeometryComputationScript ;
+  x3do:hasConnect :connect_2_2_2_2_15_1, :connect_2_2_2_2_15_2, :connect_2_2_2_2_15_3, :connect_2_2_2_2_15_4, :connect_2_2_2_2_15_5 .
+:connect_2_2_2_2_15_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_2_15 ;
+  x3do:nodeField 'visible' ;
+  x3do:protoField 'visible' .
+:connect_2_2_2_2_15_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_2_15 ;
+  x3do:nodeField 'ViewpointNode' ;
+  x3do:protoField 'ViewpointNode' .
+:connect_2_2_2_2_15_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_2_15 ;
+  x3do:nodeField 'NavigationInfoNode' ;
+  x3do:protoField 'NavigationInfoNode' .
+:connect_2_2_2_2_15_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_2_15 ;
+  x3do:nodeField 'aspectRatio' ;
+  x3do:protoField 'aspectRatio' .
+:connect_2_2_2_2_15_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_2_15 ;
+  x3do:nodeField 'trace' ;
+  x3do:protoField 'trace' .
+:ROUTE_2_2_2_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'visibilitySwitchSelection' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'whichChoice' ;
+  x3do:toNode 'VisibilitySwitch' .
+:ROUTE_2_2_2_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'position_changed' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'translation' ;
+  x3do:toNode 'PositionTransform' .
+:ROUTE_2_2_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'orientation_changed' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'rotation' ;
+  x3do:toNode 'OrientationTransform' .
+:ROUTE_2_2_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'spine_changed' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'set_spine' ;
+  x3do:toNode 'FrustumExtrusion' .
+:ROUTE_2_2_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'scale_changed' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'set_scale' ;
+  x3do:toNode 'FrustumExtrusion' .
+:ROUTE_2_2_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:fromField 'point_changed' ;
+  x3do:fromNode 'GeometryComputationScript' ;
+  x3do:toField 'point' ;
+  x3do:toNode 'FrustumCoordinate' .
+:Anchor_2_3 a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 ;
+  x3do:description 'ViewFrustum Example' ;
+  x3do:url '"ViewFrustumExample.x3d"' .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Anchor_2_3 ;
+  x3do:hasAppearance :Appearance_2_3_1_1 ;
+  x3do:hasGeometry :Text_2_3_1_2 .
+:Appearance_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasMaterial :Material_2_3_1_1_1 .
+:Material_2_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1 ;
+  x3do:diffuseColor ( 0.8 0.4 0 ) .
+:Text_2_3_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_3_1_2_1 ;
+  x3do:string '"ViewFrustumPrototype.x3d" "is a Prototype declaration file." "For an example scene using the prototype," "click this text and view" "ViewFrustumExample.x3d"' .
+:FontStyle_2_3_1_2_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_1_2 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size 0.8 .
