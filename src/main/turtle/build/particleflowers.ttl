@@ -1,0 +1,408 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2, :component_1_3, :component_1_4, :component_1_5, :component_1_6, :component_1_7, :component_1_8 ;
+  x3do:hasMeta :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'EnvironmentalEffects' ;
+  x3do:level 3 .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shaders' ;
+  x3do:level 1 .
+:component_1_3 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'CubeMapTexturing' ;
+  x3do:level 1 .
+:component_1_4 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Texturing' ;
+  x3do:level 1 .
+:component_1_5 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Rendering' ;
+  x3do:level 1 .
+:component_1_6 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Grouping' ;
+  x3do:level 3 .
+:component_1_7 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Core' ;
+  x3do:level 1 .
+:component_1_8 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'ParticleSystems' ;
+  x3do:level 3 .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'particleflowers.x3d' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'A flower particle system' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' .
+:meta dcterms:title "particleflowers.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:description "A flower particle system" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :NavigationInfo_2_2, :Viewpoint_2_3, :Background_2_4, :Group_2_5 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'particleflowers.x3d' .
+:NavigationInfo_2_2 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"ANY" "EXAMINE" "FLY" "LOOKAT"' .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Tour Views' ;
+  x3do:position ( 0 0 12 ) .
+:Background_2_4 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png"' ;
+  x3do:bottomUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ;
+  x3do:frontUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png"' ;
+  x3do:leftUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png"' ;
+  x3do:rightUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png"' ;
+  x3do:topUrl '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:Group_2_5 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ParticleSystem_2_5_1, :Animate, :TourTime ;
+  x3do:hasROUTE :ROUTE_2_5_4, :ROUTE_2_5_5, :ROUTE_2_5_6, :ROUTE_2_5_7, :ROUTE_2_5_8, :ROUTE_2_5_9, :ROUTE_2_5_10 .
+:ParticleSystem_2_5_1 a owl:NamedIndividual, x3do:ParticleSystem ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasPhysics :BoundedPhysicsModel_2_5_1_1 ;
+  x3do:hasEmitter :ExplosionEmitter_2_5_1_2 ;
+  x3do:hasAppearance :Appearance_2_5_1_3 ;
+  x3do:hasGeometry :Sphere_2_5_1_4 ;
+  x3do:maxParticles 20 ;
+  x3do:geometryType 'GEOMETRY' .
+:BoundedPhysicsModel_2_5_1_1 a owl:NamedIndividual, x3do:BoundedPhysicsModel ;
+  x3do:hasParent :ParticleSystem_2_5_1 ;
+  x3do:hasGeometry :Sphere_2_5_1_1_1 .
+:Sphere_2_5_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :BoundedPhysicsModel_2_5_1_1 ;
+  x3do:radius 100 .
+:ExplosionEmitter_2_5_1_2 a owl:NamedIndividual, x3do:ExplosionEmitter ;
+  x3do:hasParent :ParticleSystem_2_5_1 ;
+  x3do:speed 2 ;
+  x3do:variation 0.75 .
+:Appearance_2_5_1_3 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :ParticleSystem_2_5_1 ;
+  x3do:hasMaterial :Material_2_5_1_3_1 ;
+  x3do:hasTexture :texture ;
+  x3do:hasShaders :x_ite .
+:Material_2_5_1_3_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_3 ;
+  x3do:diffuseColor ( 0.7 0.7 0.7 ) ;
+  x3do:specularColor ( 0.5 0.5 0.5 ) .
+:texture a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :Appearance_2_5_1_3 ;
+  x3do:hasBackTexture :ImageTexture_2_5_1_3_2_1 ;
+  x3do:hasBottomTexture :ImageTexture_2_5_1_3_2_2 ;
+  x3do:hasFrontTexture :ImageTexture_2_5_1_3_2_3 ;
+  x3do:hasLeftTexture :ImageTexture_2_5_1_3_2_4 ;
+  x3do:hasRightTexture :ImageTexture_2_5_1_3_2_5 ;
+  x3do:hasTopTexture :ImageTexture_2_5_1_3_2_6 ;
+  x3do:DEF 'texture' .
+:ImageTexture_2_5_1_3_2_1 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png"' .
+:ImageTexture_2_5_1_3_2_2 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' .
+:ImageTexture_2_5_1_3_2_3 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png"' .
+:ImageTexture_2_5_1_3_2_4 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png"' .
+:ImageTexture_2_5_1_3_2_5 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png"' .
+:ImageTexture_2_5_1_3_2_6 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:x_ite a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_5_1_3 ;
+  x3do:hasField :field_2_5_1_3_3_1, :field_2_5_1_3_3_2, :field_2_5_1_3_3_3, :field_2_5_1_3_3_4, :field_2_5_1_3_3_5, :field_2_5_1_3_3_6, :field_2_5_1_3_3_7, :field_2_5_1_3_3_8, :field_2_5_1_3_3_9, :field_2_5_1_3_3_10, :field_2_5_1_3_3_11 ;
+  x3do:hasParts :ShaderPart_2_5_1_3_3_12, :ShaderPart_2_5_1_3_3_13 ;
+  x3do:DEF 'x_ite' ;
+  x3do:language 'GLSL' .
+:field_2_5_1_3_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'chromaticDispertion' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.98 1 1.033 ) .
+:field_2_5_1_3_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:hasTexture :texture-USE-1 ;
+  x3do:name 'cube' ;
+  x3do:type 'SFNode' ;
+  x3do:accessType 'initializeOnly' .
+:texture-USE-1 a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :field_2_5_1_3_3_2 ;
+  owl:sameAs :texture . # DEF matching this USE
+:field_2_5_1_3_3_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'bias' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_5_1_3_3_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'scale' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 0.5 .
+:field_2_5_1_3_3_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'power' ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 2 .
+:field_2_5_1_3_3_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'a' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 2 .
+:field_2_5_1_3_3_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'b' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 1 .
+:field_2_5_1_3_3_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'c' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_5_1_3_3_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'd' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_5_1_3_3_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'tdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0 .
+:field_2_5_1_3_3_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_ite ;
+  x3do:name 'pdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0 .
+:ShaderPart_2_5_1_3_3_12 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :x_ite ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"' .
+:ShaderPart_2_5_1_3_3_13 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :x_ite ;
+  x3do:url '"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"' ;
+  x3do:type 'FRAGMENT' .
+:Sphere_2_5_1_4 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :ParticleSystem_2_5_1 .
+:Animate a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasField :field_2_5_2_1, :field_2_5_2_2, :field_2_5_2_3, :field_2_5_2_4, :field_2_5_2_5, :field_2_5_2_6, :field_2_5_2_7, :field_2_5_2_8, :field_2_5_2_9 ;
+  x3do:DEF 'Animate' ;
+  x3do:sourceCode """
+ecmascript:
+
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta = tdelta + 0.05;
+				pdelta = pdelta + 0.05;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+""" .
+:field_2_5_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_5_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'velocity' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_5_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'set_fraction' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFFloat' .
+:field_2_5_2_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'a' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:field_2_5_2_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'b' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:field_2_5_2_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'c' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 3 .
+:field_2_5_2_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'd' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 3 .
+:field_2_5_2_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'tdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:field_2_5_2_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Animate ;
+  x3do:name 'pdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0.5 .
+:TourTime a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:DEF 'TourTime' ;
+  x3do:cycleInterval '5' ;
+  x3do:loop true .
+:ROUTE_2_5_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'TourTime' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'Animate' ;
+  x3do:toField 'set_fraction' .
+:ROUTE_2_5_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'a' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'a' .
+:ROUTE_2_5_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'b' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'b' .
+:ROUTE_2_5_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'c' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'c' .
+:ROUTE_2_5_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'd' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'd' .
+:ROUTE_2_5_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'pdelta' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'pdelta' .
+:ROUTE_2_5_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:fromNode 'Animate' ;
+  x3do:fromField 'tdelta' ;
+  x3do:toNode 'x_ite' ;
+  x3do:toField 'tdelta' .

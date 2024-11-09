@@ -1,0 +1,530 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/arc.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'arcold.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'an attempt to implement an arc in a graph' .
+:meta dcterms:title "arcold.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d" .
+:meta dcterms:description "an attempt to implement an arc in a graph" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Viewpoint_2_1, :Background_2_2, :trans1, :trans2, :trans3, :G1, :G2, :G3, :G4, :connector1, :connector2, :connector3 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_6, :ProtoDeclare_2_7 ;
+  x3do:hasROUTE :ROUTE_2_15, :ROUTE_2_16, :ROUTE_2_17, :ROUTE_2_18, :ROUTE_2_19, :ROUTE_2_20 .
+:Viewpoint_2_1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:position ( 0 0 5 ) ;
+  x3do:description 'a moving graph' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0.4 0.4 0.4 ) .
+:trans1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :rotscale1 ;
+  x3do:DEF 'trans1' .
+:rotscale1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :trans1 ;
+  x3do:hasChildren :Shape_2_3_1_1 ;
+  x3do:DEF 'rotscale1' .
+:Shape_2_3_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :rotscale1 ;
+  x3do:hasAppearance :Appearance_2_3_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_3_1_1_2 .
+:Appearance_2_3_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1_1 ;
+  x3do:hasMaterial :Material_2_3_1_1_1_1 .
+:Material_2_3_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1_1 ;
+  x3do:diffuseColor ( 0.2 0.7 0.7 ) .
+:Cylinder_2_3_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_3_1_1 ;
+  x3do:radius 0.1 .
+:trans2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :rotscale2 ;
+  x3do:DEF 'trans2' .
+:rotscale2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :trans2 ;
+  x3do:hasChildren :Shape_2_4_1_1 ;
+  x3do:DEF 'rotscale2' .
+:Shape_2_4_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :rotscale2 ;
+  x3do:hasAppearance :Appearance_2_4_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_4_1_1_2 .
+:Appearance_2_4_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_4_1_1 ;
+  x3do:hasMaterial :Material_2_4_1_1_1_1 .
+:Material_2_4_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_4_1_1_1 ;
+  x3do:diffuseColor ( 0.2 0.7 0.7 ) .
+:Cylinder_2_4_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_4_1_1 ;
+  x3do:radius 0.1 .
+:trans3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :rotscale3 ;
+  x3do:DEF 'trans3' .
+:rotscale3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :trans3 ;
+  x3do:hasChildren :Shape_2_5_1_1 ;
+  x3do:DEF 'rotscale3' .
+:Shape_2_5_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :rotscale3 ;
+  x3do:hasAppearance :Appearance_2_5_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_5_1_1_2 .
+:Appearance_2_5_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1_1 ;
+  x3do:hasMaterial :Material_2_5_1_1_1_1 .
+:Material_2_5_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_1_1 ;
+  x3do:diffuseColor ( 0.2 0.7 0.7 ) .
+:Cylinder_2_5_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_5_1_1 ;
+  x3do:radius 0.1 .
+:ProtoDeclare_2_6 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_6_1 ;
+  x3do:hasProtoBody :ProtoBody_2_6_2 ;
+  x3do:name 'point' .
+:ProtoInterface_2_6_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_6 ;
+  x3do:hasField :field_2_6_1_1 .
+:field_2_6_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_6_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'translation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:ProtoBody_2_6_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_6 ;
+  x3do:hasChildren :node .
+:node a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_6_2 ;
+  x3do:hasIS :IS_2_6_2_1_1 ;
+  x3do:hasChildren :Shape_2_6_2_1_2, :PI1, :MB1, :CL1 ;
+  x3do:hasROUTE :ROUTE_2_6_2_1_6, :ROUTE_2_6_2_1_7, :ROUTE_2_6_2_1_8, :ROUTE_2_6_2_1_9 ;
+  x3do:DEF 'node' .
+:IS_2_6_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :node ;
+  x3do:hasConnect :connect_2_6_2_1_1_1 .
+:connect_2_6_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_6_2_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'translation' .
+:Shape_2_6_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :node ;
+  x3do:hasGeometry :Sphere_2_6_2_1_2_1 ;
+  x3do:hasAppearance :Appearance_2_6_2_1_2_2 .
+:Sphere_2_6_2_1_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_6_2_1_2 ;
+  x3do:radius 0.1 .
+:Appearance_2_6_2_1_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_2_1_2 ;
+  x3do:hasMaterial :Material_2_6_2_1_2_2_1 .
+:Material_2_6_2_1_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_2_1_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:PI1 a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :node ;
+  x3do:DEF 'PI1' ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0 0 0 0 5 0 ) .
+:MB1 a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :node ;
+  x3do:hasField :field_2_6_2_1_4_1, :field_2_6_2_1_4_2, :field_2_6_2_1_4_3, :field_2_6_2_1_4_4 ;
+  x3do:DEF 'MB1' ;
+  x3do:sourceCode """
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+""" .
+:field_2_6_2_1_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MB1 ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 50 50 0 ) .
+:field_2_6_2_1_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MB1 ;
+  x3do:name 'old' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_6_2_1_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MB1 ;
+  x3do:name 'set_location' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFTime' .
+:field_2_6_2_1_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MB1 ;
+  x3do:name 'keyValue' ;
+  x3do:accessType 'outputOnly' ;
+  x3do:type 'MFVec3f' .
+:CL1 a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :node ;
+  x3do:DEF 'CL1' ;
+  x3do:cycleInterval '3' ;
+  x3do:loop true .
+:ROUTE_2_6_2_1_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :node ;
+  x3do:fromNode 'CL1' ;
+  x3do:fromField 'cycleTime' ;
+  x3do:toNode 'MB1' ;
+  x3do:toField 'set_location' .
+:ROUTE_2_6_2_1_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :node ;
+  x3do:fromNode 'CL1' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'PI1' ;
+  x3do:toField 'set_fraction' .
+:ROUTE_2_6_2_1_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :node ;
+  x3do:fromNode 'MB1' ;
+  x3do:fromField 'keyValue' ;
+  x3do:toNode 'PI1' ;
+  x3do:toField 'keyValue' .
+:ROUTE_2_6_2_1_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :node ;
+  x3do:fromNode 'PI1' ;
+  x3do:fromField 'value_changed' ;
+  x3do:toNode 'node' ;
+  x3do:toField 'set_translation' .
+:ProtoDeclare_2_7 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_7_1 ;
+  x3do:hasProtoBody :ProtoBody_2_7_2 ;
+  x3do:name 'x3dconnector' .
+:ProtoInterface_2_7_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_7 ;
+  x3do:hasField :field_2_7_1_1, :field_2_7_1_2, :field_2_7_1_3, :field_2_7_1_4, :field_2_7_1_5, :field_2_7_1_6 .
+:field_2_7_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'startnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'endnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'transnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'rotscalenode' ;
+  x3do:type 'SFNode' .
+:field_2_7_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_startpoint' ;
+  x3do:type 'SFVec3f' .
+:field_2_7_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_7_1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_endpoint' ;
+  x3do:type 'SFVec3f' .
+:ProtoBody_2_7_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_7 ;
+  x3do:hasChildren :S1 .
+:S1 a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_7_2 ;
+  x3do:hasField :field_2_7_2_1_1, :field_2_7_2_1_2, :field_2_7_2_1_3, :field_2_7_2_1_4, :field_2_7_2_1_5, :field_2_7_2_1_6 ;
+  x3do:hasIS :IS_2_7_2_1_7 ;
+  x3do:DEF 'S1' ;
+  x3do:sourceCode """
+ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+		var trafo = recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			transnode.translation = trafo.translation;
+			rotscalenode.rotation = trafo.rotation;
+			rotscalenode.scale = trafo.scale;
+		} else {
+			Browser.print("recompute returned undefined");
+		}
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val || startnode.translation,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val || endnode.translation);
+        }
+""" .
+:field_2_7_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'startnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'endnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'transnode' ;
+  x3do:type 'SFNode' .
+:field_2_7_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'rotscalenode' ;
+  x3do:type 'SFNode' .
+:field_2_7_2_1_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_startpoint' ;
+  x3do:type 'SFVec3f' .
+:field_2_7_2_1_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :S1 ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_endpoint' ;
+  x3do:type 'SFVec3f' .
+:IS_2_7_2_1_7 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :S1 ;
+  x3do:hasConnect :connect_2_7_2_1_7_1, :connect_2_7_2_1_7_2, :connect_2_7_2_1_7_3, :connect_2_7_2_1_7_4, :connect_2_7_2_1_7_5, :connect_2_7_2_1_7_6 .
+:connect_2_7_2_1_7_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'startnode' ;
+  x3do:protoField 'startnode' .
+:connect_2_7_2_1_7_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'endnode' ;
+  x3do:protoField 'endnode' .
+:connect_2_7_2_1_7_3 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'transnode' ;
+  x3do:protoField 'transnode' .
+:connect_2_7_2_1_7_4 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'rotscalenode' ;
+  x3do:protoField 'rotscalenode' .
+:connect_2_7_2_1_7_5 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'set_startpoint' ;
+  x3do:protoField 'set_startpoint' .
+:connect_2_7_2_1_7_6 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_7_2_1_7 ;
+  x3do:nodeField 'set_endpoint' ;
+  x3do:protoField 'set_endpoint' .
+:G1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'G1' ;
+  x3do:name 'point' .
+:G2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'G2' ;
+  x3do:name 'point' .
+:G3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'G3' ;
+  x3do:name 'point' .
+:G4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'G4' ;
+  x3do:name 'point' .
+:connector1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_12_1, :fieldValue_2_12_2, :fieldValue_2_12_3, :fieldValue_2_12_4 ;
+  x3do:name 'x3dconnector' ;
+  x3do:DEF 'connector1' .
+:fieldValue_2_12_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector1 ;
+  x3do:hasChildren :G1-USE-1 ;
+  x3do:name 'startnode' .
+:G1-USE-1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_12_1 ;
+  owl:sameAs :G1 . # DEF matching this USE
+:fieldValue_2_12_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector1 ;
+  x3do:hasChildren :G2-USE-1 ;
+  x3do:name 'endnode' .
+:G2-USE-1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_12_2 ;
+  owl:sameAs :G2 . # DEF matching this USE
+:fieldValue_2_12_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector1 ;
+  x3do:hasChildren :trans1-USE-1 ;
+  x3do:name 'transnode' .
+:trans1-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_12_3 ;
+  owl:sameAs :trans1 . # DEF matching this USE
+:fieldValue_2_12_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector1 ;
+  x3do:hasChildren :rotscale1-USE-1 ;
+  x3do:name 'rotscalenode' .
+:rotscale1-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_12_4 ;
+  owl:sameAs :rotscale1 . # DEF matching this USE
+:connector2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_13_1, :fieldValue_2_13_2, :fieldValue_2_13_3, :fieldValue_2_13_4 ;
+  x3do:name 'x3dconnector' ;
+  x3do:DEF 'connector2' .
+:fieldValue_2_13_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector2 ;
+  x3do:hasChildren :G1-USE-2 ;
+  x3do:name 'startnode' .
+:G1-USE-2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_13_1 ;
+  owl:sameAs :G1 . # DEF matching this USE
+:fieldValue_2_13_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector2 ;
+  x3do:hasChildren :G3-USE-1 ;
+  x3do:name 'endnode' .
+:G3-USE-1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_13_2 ;
+  owl:sameAs :G3 . # DEF matching this USE
+:fieldValue_2_13_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector2 ;
+  x3do:hasChildren :trans2-USE-1 ;
+  x3do:name 'transnode' .
+:trans2-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_13_3 ;
+  owl:sameAs :trans2 . # DEF matching this USE
+:fieldValue_2_13_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector2 ;
+  x3do:hasChildren :rotscale2-USE-1 ;
+  x3do:name 'rotscalenode' .
+:rotscale2-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_13_4 ;
+  owl:sameAs :rotscale2 . # DEF matching this USE
+:connector3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_14_1, :fieldValue_2_14_2, :fieldValue_2_14_3, :fieldValue_2_14_4 ;
+  x3do:name 'x3dconnector' ;
+  x3do:DEF 'connector3' .
+:fieldValue_2_14_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector3 ;
+  x3do:hasChildren :G1-USE-3 ;
+  x3do:name 'startnode' .
+:G1-USE-3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_14_1 ;
+  owl:sameAs :G1 . # DEF matching this USE
+:fieldValue_2_14_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector3 ;
+  x3do:hasChildren :G4-USE-1 ;
+  x3do:name 'endnode' .
+:G4-USE-1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :fieldValue_2_14_2 ;
+  owl:sameAs :G4 . # DEF matching this USE
+:fieldValue_2_14_3 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector3 ;
+  x3do:hasChildren :trans3-USE-1 ;
+  x3do:name 'transnode' .
+:trans3-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_14_3 ;
+  owl:sameAs :trans3 . # DEF matching this USE
+:fieldValue_2_14_4 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :connector3 ;
+  x3do:hasChildren :rotscale3-USE-1 ;
+  x3do:name 'rotscalenode' .
+:rotscale3-USE-1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :fieldValue_2_14_4 ;
+  owl:sameAs :rotscale3 . # DEF matching this USE
+:ROUTE_2_15 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G1' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector1' ;
+  x3do:toField 'set_startpoint' .
+:ROUTE_2_16 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G2' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector1' ;
+  x3do:toField 'set_endpoint' .
+:ROUTE_2_17 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G1' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector2' ;
+  x3do:toField 'set_startpoint' .
+:ROUTE_2_18 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G3' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector2' ;
+  x3do:toField 'set_endpoint' .
+:ROUTE_2_19 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G1' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector3' ;
+  x3do:toField 'set_startpoint' .
+:ROUTE_2_20 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'G4' ;
+  x3do:fromField 'translation_changed' ;
+  x3do:toNode 'connector3' ;
+  x3do:toField 'set_endpoint' .

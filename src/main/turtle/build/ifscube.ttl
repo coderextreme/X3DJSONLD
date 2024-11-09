@@ -1,0 +1,73 @@
+@prefix :        <http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Interchange' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'ifscube.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'Template for an Indexed Face Set' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'created' ;
+  x3do:content '4 April 2017' .
+:meta dcterms:title "ifscube.x3d" .
+:meta dcterms:identifier "http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d" .
+:meta dcterms:description "Template for an Indexed Face Set" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:created "4 April 2017" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Group_2_1 .
+:Group_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_1_1 .
+:Shape_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Group_2_1 ;
+  x3do:hasGeometry :IndexedFaceSet .
+:IndexedFaceSet a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_1_1 ;
+  x3do:hasCoord :Coordinate_2_1_1_1_1 ;
+  x3do:hasNormal :Normal_2_1_1_1_2 ;
+  x3do:hasColor :Color_2_1_1_1_3 ;
+  x3do:creaseAngle 1.57 ;
+  x3do:DEF 'IndexedFaceSet' ;
+  x3do:coordIndex ( 0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1 ) ;
+  x3do:normalIndex ( 0 -1 0 -1 1 -1 2 -1 3 -1 4 -1 5 -1 ) ;
+  x3do:normalPerVertex false ;
+  x3do:colorIndex ( 0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 ) .
+:Coordinate_2_1_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet ;
+  x3do:point ( 0 0 1 0 1 1 1 1 1 1 0 1 ) .
+:Normal_2_1_1_1_2 a owl:NamedIndividual, x3do:Normal ;
+  x3do:hasParent :IndexedFaceSet ;
+  x3do:vector ( 1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1 ) .
+:Color_2_1_1_1_3 a owl:NamedIndividual, x3do:Color ;
+  x3do:hasParent :IndexedFaceSet ;
+  x3do:color ( 0 1 0 ) .

@@ -41,14 +41,14 @@ if light.name in bpy.context.scene.collection.objects:
 bpy.data.objects.remove(light, do_unlink=True)
 #############################################################
 
-# bpy.ops.wm.collada_import(filepath = "maleWaving.dae", auto_connect = True, find_chains = True, fix_orientation = True)
+#bpy.ops.wm.collada_import(filepath = "maleWaving.dae", auto_connect = True, find_chains = True, fix_orientation = True)
 
 #bpy.ops.export_scene.x3d(filepath="maleWaving.x3d")
-bpy.ops.import_scene.x3d(filepath="maleWaving.x3d")
+bpy.ops.import_scene.x3d(filepath="maleWaving.x3d") #, axis_forward='Y', axis_up='Z')
 
-bpy.ops.export_scene.x3dv(filepath="maleWavingExport.x3d",
-                         export_round_precision=20,
-                         export_yup=True,
-                         export_normals=True,
-                         export_format="X3D"
+#bpy.ops.export_scene.x3dv(filepath="maleWavingExportMW.x3d",
+#                         export_round_precision=20,
+#                         export_yup=True,
+#                         export_normals=True,
+#                         export_format="X3D"
 #                         )

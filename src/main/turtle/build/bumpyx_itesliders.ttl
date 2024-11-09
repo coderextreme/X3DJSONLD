@@ -1,0 +1,1163 @@
+@prefix :        <https://www.web3d.org/semantics/scenes/UnnamedX3dModel.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Full' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1, :component_1_2, :component_1_3, :component_1_4, :component_1_5, :component_1_6, :component_1_7, :component_1_8, :component_1_9 ;
+  x3do:hasMeta :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20, :meta_1_21, :meta_1_22, :meta_1_23, :meta_1_24, :meta_1_25, :meta_1_26, :meta_1_27, :meta_1_28, :meta_1_29 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level 1 ;
+  x3do:name 'Scripting' .
+:component_1_2 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'EnvironmentalEffects' ;
+  x3do:level 3 .
+:component_1_3 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Shaders' ;
+  x3do:level 1 .
+:component_1_4 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'CubeMapTexturing' ;
+  x3do:level 1 .
+:component_1_5 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Texturing' ;
+  x3do:level 1 .
+:component_1_6 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Rendering' ;
+  x3do:level 1 .
+:component_1_7 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Grouping' ;
+  x3do:level 3 .
+:component_1_8 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'Core' ;
+  x3do:level 1 .
+:component_1_9 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:name 'DIS' ;
+  x3do:level 2 .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'bumpyx_itesliders.x3d' ;
+  x3do:name 'title' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter description here, short-sentence summaries preferred*' ;
+  x3do:name 'description' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Doug Sanden, Christoph Valentin, John Carlson' ;
+  x3do:name 'creator' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*if manually translating VRML-to-X3D, enter name of person translating here*' ;
+  x3do:name 'translator' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter date of initial version here*' ;
+  x3do:name 'created' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter date of translation here*' ;
+  x3do:name 'translated' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter date of latest revision here*' ;
+  x3do:name 'modified' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter version here, if any*' ;
+  x3do:name 'version' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter reference citation or relative/online url here*' ;
+  x3do:name 'reference' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter additional url/bibliographic reference information here*' ;
+  x3do:name 'reference' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter reference resource here if required to support function, delivery, or coherence of content*' ;
+  x3do:name 'requires' .
+:meta_1_21 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024' ;
+  x3do:name 'rights' .
+:meta_1_22 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter drawing filename/url here*' ;
+  x3do:name 'drawing' .
+:meta_1_23 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter movie filename/url here*' ;
+  x3do:name 'MovingImage' .
+:meta_1_24 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter photo filename/url here*' ;
+  x3do:name 'photo' .
+:meta_1_25 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter subject keywords here*' ;
+  x3do:name 'subject' .
+:meta_1_26 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter permission statements or url here*' ;
+  x3do:name 'accessRights' .
+:meta_1_27 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*' ;
+  x3do:name 'identifier' .
+:meta_1_28 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'PSPad, http://www.pspad.com/' ;
+  x3do:name 'generator' .
+:meta_1_29 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "bumpyx_itesliders.x3d" .
+:meta dcterms:description "*enter description here, short-sentence summaries preferred*" .
+:meta dcterms:creator "Doug Sanden, Christoph Valentin, John Carlson" .
+:meta dcterms:translator "*if manually translating VRML-to-X3D, enter name of person translating here*" .
+:meta dcterms:created "*enter date of initial version here*" .
+:meta dcterms:translated "*enter date of translation here*" .
+:meta dcterms:modified "*enter date of latest revision here*" .
+:meta dcterms:version "*enter version here, if any*" .
+:meta dcterms:reference "*enter reference citation or relative/online url here*" .
+:meta dcterms:reference "*enter additional url/bibliographic reference information here*" .
+:meta dcterms:requires "*enter reference resource here if required to support function, delivery, or coherence of content*" .
+:meta dcterms:rights "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024" .
+:meta dcterms:drawing "*enter drawing filename/url here*" .
+:meta dcterms:MovingImage "*enter movie filename/url here*" .
+:meta dcterms:photo "*enter photo filename/url here*" .
+:meta dcterms:subject "*enter subject keywords here*" .
+:meta dcterms:identifier "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*" .
+:meta dcterms:generator "PSPad, http://www.pspad.com/" .
+:meta dcterms:license "license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :LayerSet_2_1 .
+:LayerSet_2_1 a owl:NamedIndividual, x3do:LayerSet ;
+  x3do:hasParent :Scene ;
+  x3do:hasLayers :Layer_2_1_1, :LayoutLayer_2_1_2 ;
+  x3do:activeLayer 1 ;
+  x3do:order ( 1 2 ) .
+:Layer_2_1_1 a owl:NamedIndividual, x3do:Layer ;
+  x3do:hasParent :LayerSet_2_1 ;
+  x3do:hasChildren :NavigationInfo_2_1_1_1, :DirectionalLight_2_1_1_2, :DirectionalLight_2_1_1_3, :Viewpoint_2_1_1_4, :Group_2_1_1_5, :FlowerTransform, :EntityManager, :Collision_2_1_1_8 ;
+  x3do:hasROUTE :ROUTE_2_1_1_9, :ROUTE_2_1_1_10 ;
+  x3do:pickable true ;
+  x3do:objectType '"ALL"' .
+:NavigationInfo_2_1_1_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:type '"EXAMINE"' ;
+  x3do:avatarSize ( 0.25 1.75 0.75 ) .
+:DirectionalLight_2_1_1_2 a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:ambientIntensity .2 ;
+  x3do:direction ( 0 -1 -0 ) .
+:DirectionalLight_2_1_1_3 a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:ambientIntensity .2 ;
+  x3do:direction ( -1 -0.1 -1 ) .
+:Viewpoint_2_1_1_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:description 'My Overview' ;
+  x3do:fieldOfView 1.570796 ;
+  x3do:position ( 0 1.75 60 ) .
+:Group_2_1_1_5 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:hasChildren :Transform_2_1_1_5_1, :Transform_2_1_1_5_2, :Transform_2_1_1_5_3, :Transform_2_1_1_5_4, :Transform_2_1_1_5_5, :Transform_2_1_1_5_6 .
+:Transform_2_1_1_5_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_1_1 ;
+  x3do:translation ( 25 0 0 ) ;
+  x3do:rotation ( 0 0 -1 1.57 ) .
+:Shape_2_1_1_5_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_1 ;
+  x3do:hasGeometry :Shaft ;
+  x3do:hasAppearance :Appearance_2_1_1_5_1_1_2 .
+:Shaft a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_1_5_1_1 ;
+  x3do:DEF 'Shaft' ;
+  x3do:radius .35 ;
+  x3do:height 50.0 .
+:Appearance_2_1_1_5_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_1_1 ;
+  x3do:hasMaterial :RED .
+:RED a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_1_1_2 ;
+  x3do:DEF 'RED' ;
+  x3do:diffuseColor ( 1 0 0 ) ;
+  x3do:emissiveColor ( 1 0 0 ) .
+:Transform_2_1_1_5_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_2_1 ;
+  x3do:translation ( 50 0 0 ) ;
+  x3do:rotation ( 0 0 -1 1.57 ) .
+:Shape_2_1_1_5_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_2 ;
+  x3do:hasGeometry :Tip ;
+  x3do:hasAppearance :Appearance_2_1_1_5_2_1_2 .
+:Tip a owl:NamedIndividual, x3do:Cone ;
+  x3do:hasParent :Shape_2_1_1_5_2_1 ;
+  x3do:DEF 'Tip' ;
+  x3do:bottomRadius .8 ;
+  x3do:height 3.0 .
+:Appearance_2_1_1_5_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_2_1 ;
+  x3do:hasMaterial :RED-USE-1 .
+:RED-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_2_1_2 ;
+  owl:sameAs :RED . # DEF matching this USE
+:Transform_2_1_1_5_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_3_1 ;
+  x3do:translation ( 0 25 0 ) .
+:Shape_2_1_1_5_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_3 ;
+  x3do:hasGeometry :Shaft-USE-1 ;
+  x3do:hasAppearance :Appearance_2_1_1_5_3_1_2 .
+:Shaft-USE-1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_1_5_3_1 ;
+  owl:sameAs :Shaft . # DEF matching this USE
+:Appearance_2_1_1_5_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_3_1 ;
+  x3do:hasMaterial :GREEN .
+:GREEN a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_3_1_2 ;
+  x3do:DEF 'GREEN' ;
+  x3do:diffuseColor ( 0 1 0 ) ;
+  x3do:emissiveColor ( 0 1 0 ) .
+:Transform_2_1_1_5_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_4_1 ;
+  x3do:translation ( 0 50 0 ) .
+:Shape_2_1_1_5_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_4 ;
+  x3do:hasGeometry :Tip-USE-1 ;
+  x3do:hasAppearance :Appearance_2_1_1_5_4_1_2 .
+:Tip-USE-1 a owl:NamedIndividual, x3do:Cone ;
+  x3do:hasParent :Shape_2_1_1_5_4_1 ;
+  owl:sameAs :Tip . # DEF matching this USE
+:Appearance_2_1_1_5_4_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_4_1 ;
+  x3do:hasMaterial :GREEN-USE-1 .
+:GREEN-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_4_1_2 ;
+  owl:sameAs :GREEN . # DEF matching this USE
+:Transform_2_1_1_5_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_5_1 ;
+  x3do:translation ( 0 0 25 ) ;
+  x3do:rotation ( 1 0 0 1.57 ) .
+:Shape_2_1_1_5_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_5 ;
+  x3do:hasGeometry :Shaft-USE-2 ;
+  x3do:hasAppearance :Appearance_2_1_1_5_5_1_2 .
+:Shaft-USE-2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_1_5_5_1 ;
+  owl:sameAs :Shaft . # DEF matching this USE
+:Appearance_2_1_1_5_5_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_5_1 ;
+  x3do:hasMaterial :BLUE .
+:BLUE a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_5_1_2 ;
+  x3do:DEF 'BLUE' ;
+  x3do:diffuseColor ( 0 0 1 ) ;
+  x3do:emissiveColor ( 0 0 1 ) .
+:Transform_2_1_1_5_6 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_5_6_1 ;
+  x3do:translation ( 0 0 50 ) ;
+  x3do:rotation ( 1 0 0 1.57 ) .
+:Shape_2_1_1_5_6_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_5_6 ;
+  x3do:hasGeometry :Tip-USE-2 ;
+  x3do:hasAppearance :Appearance_2_1_1_5_6_1_2 .
+:Tip-USE-2 a owl:NamedIndividual, x3do:Cone ;
+  x3do:hasParent :Shape_2_1_1_5_6_1 ;
+  owl:sameAs :Tip . # DEF matching this USE
+:Appearance_2_1_1_5_6_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_5_6_1 ;
+  x3do:hasMaterial :BLUE-USE-1 .
+:BLUE-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_5_6_1_2 ;
+  owl:sameAs :BLUE . # DEF matching this USE
+:FlowerTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:hasChildren :Background_2_1_1_6_1, :Transform_2_1_1_6_2 ;
+  x3do:DEF 'FlowerTransform' .
+:Background_2_1_1_6_1 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :FlowerTransform ;
+  x3do:backUrl '"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ;
+  x3do:bottomUrl '"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ;
+  x3do:frontUrl '"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ;
+  x3do:leftUrl '"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ;
+  x3do:rightUrl '"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ;
+  x3do:topUrl '"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:Transform_2_1_1_6_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :FlowerTransform ;
+  x3do:hasChildren :Shape_2_1_1_6_2_1 .
+:Shape_2_1_1_6_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_6_2 ;
+  x3do:hasGeometry :Sphere_2_1_1_6_2_1_1 ;
+  x3do:hasAppearance :Appearance_2_1_1_6_2_1_2 .
+:Sphere_2_1_1_6_2_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_1_6_2_1 ;
+  x3do:radius 40 .
+:Appearance_2_1_1_6_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_6_2_1 ;
+  x3do:hasMaterial :Material_2_1_1_6_2_1_2_1 ;
+  x3do:hasTexture :texture ;
+  x3do:hasShaders :x_iteShader .
+:Material_2_1_1_6_2_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_6_2_1_2 ;
+  x3do:diffuseColor ( .7 .7 .7 ) ;
+  x3do:specularColor ( .5 .5 .5 ) .
+:texture a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :Appearance_2_1_1_6_2_1_2 ;
+  x3do:hasBackTexture :ImageTexture_2_1_1_6_2_1_2_2_1 ;
+  x3do:hasBottomTexture :ImageTexture_2_1_1_6_2_1_2_2_2 ;
+  x3do:hasFrontTexture :ImageTexture_2_1_1_6_2_1_2_2_3 ;
+  x3do:hasLeftTexture :ImageTexture_2_1_1_6_2_1_2_2_4 ;
+  x3do:hasRightTexture :ImageTexture_2_1_1_6_2_1_2_2_5 ;
+  x3do:hasTopTexture :ImageTexture_2_1_1_6_2_1_2_2_6 ;
+  x3do:DEF 'texture' .
+:ImageTexture_2_1_1_6_2_1_2_2_1 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'backShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' .
+:ImageTexture_2_1_1_6_2_1_2_2_2 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'bottomShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' .
+:ImageTexture_2_1_1_6_2_1_2_2_3 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'frontShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' .
+:ImageTexture_2_1_1_6_2_1_2_2_4 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'leftShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' .
+:ImageTexture_2_1_1_6_2_1_2_2_5 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'rightShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' .
+:ImageTexture_2_1_1_6_2_1_2_2_6 a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :texture ;
+  x3do:id 'topShader' ;
+  x3do:url '"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' .
+:x_iteShader a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_1_1_6_2_1_2 ;
+  x3do:hasField :field_2_1_1_6_2_1_2_3_1, :field_2_1_1_6_2_1_2_3_2, :field_2_1_1_6_2_1_2_3_3, :field_2_1_1_6_2_1_2_3_4, :field_2_1_1_6_2_1_2_3_5, :field_2_1_1_6_2_1_2_3_6, :field_2_1_1_6_2_1_2_3_7, :field_2_1_1_6_2_1_2_3_8, :field_2_1_1_6_2_1_2_3_9, :field_2_1_1_6_2_1_2_3_10, :field_2_1_1_6_2_1_2_3_11 ;
+  x3do:hasParts :ShaderPart_2_1_1_6_2_1_2_3_12, :ShaderPart_2_1_1_6_2_1_2_3_13 ;
+  x3do:DEF 'x_iteShader' ;
+  x3do:language 'GLSL' .
+:field_2_1_1_6_2_1_2_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'chromaticDispertion' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.98 1.0 1.033 ) .
+:field_2_1_1_6_2_1_2_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:hasTexture :texture-USE-1 ;
+  x3do:name 'cube' ;
+  x3do:type 'SFNode' ;
+  x3do:accessType 'inputOnly' .
+:texture-USE-1 a owl:NamedIndividual, x3do:ComposedCubeMapTexture ;
+  x3do:hasParent :field_2_1_1_6_2_1_2_3_2 ;
+  owl:sameAs :texture . # DEF matching this USE
+:field_2_1_1_6_2_1_2_3_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'bias' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:value 0.5 .
+:field_2_1_1_6_2_1_2_3_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'scale' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:value 0.5 .
+:field_2_1_1_6_2_1_2_3_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'power' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:value 2 .
+:field_2_1_1_6_2_1_2_3_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'a' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 15 .
+:field_2_1_1_6_2_1_2_3_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'b' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_1_1_6_2_1_2_3_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'c' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_1_1_6_2_1_2_3_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'd' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 5 .
+:field_2_1_1_6_2_1_2_3_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'tdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0 .
+:field_2_1_1_6_2_1_2_3_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :x_iteShader ;
+  x3do:name 'pdelta' ;
+  x3do:type 'SFFloat' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:value 0 .
+:ShaderPart_2_1_1_6_2_1_2_3_12 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :x_iteShader ;
+  x3do:url '"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' .
+:ShaderPart_2_1_1_6_2_1_2_3_13 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :x_iteShader ;
+  x3do:url '"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' ;
+  x3do:type 'FRAGMENT' .
+:EntityManager a owl:NamedIndividual, x3do:DISEntityManager ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:hasChildren :DISEntityTypeMapping_2_1_1_7_1, :DISEntityTypeMapping_2_1_1_7_2 ;
+  x3do:DEF 'EntityManager' ;
+  x3do:networkMode 'networkReader' .
+:DISEntityTypeMapping_2_1_1_7_1 a owl:NamedIndividual, x3do:DISEntityTypeMapping ;
+  x3do:hasParent :EntityManager ;
+  x3do:category 77 ;
+  x3do:specific 1 ;
+  x3do:url '"Leif8Final.x3d"' .
+:DISEntityTypeMapping_2_1_1_7_2 a owl:NamedIndividual, x3do:DISEntityTypeMapping ;
+  x3do:hasParent :EntityManager ;
+  x3do:category 77 ;
+  x3do:specific 2 ;
+  x3do:url '"Lily8Final.x3d"' .
+:Collision_2_1_1_8 a owl:NamedIndividual, x3do:Collision ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:hasChildren :AvatarHolder ;
+  x3do:enabled false .
+:AvatarHolder a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Collision_2_1_1_8 ;
+  x3do:DEF 'AvatarHolder' .
+:ROUTE_2_1_1_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:fromField 'addedEntities' ;
+  x3do:fromNode 'EntityManager' ;
+  x3do:toField 'addChildren' ;
+  x3do:toNode 'AvatarHolder' .
+:ROUTE_2_1_1_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Layer_2_1_1 ;
+  x3do:fromField 'removedEntities' ;
+  x3do:fromNode 'EntityManager' ;
+  x3do:toField 'removeChildren' ;
+  x3do:toNode 'AvatarHolder' .
+:LayoutLayer_2_1_2 a owl:NamedIndividual, x3do:LayoutLayer ;
+  x3do:hasParent :LayerSet_2_1 ;
+  x3do:hasLayout :Layout_2_1_2_1 ;
+  x3do:hasViewport :Viewport_2_1_2_2 ;
+  x3do:hasChildren :Transform_2_1_2_3, :aSlider, :bSlider, :cSlider, :dSlider, :pdeltaSlider, :tdeltaSlider, :aValueTransformerScript, :bValueTransformerScript, :cValueTransformerScript, :dValueTransformerScript, :pdeltaValueTransformerScript, :tdeltaValueTransformerScript ;
+  x3do:hasROUTE :ROUTE_2_1_2_16, :ROUTE_2_1_2_17, :ROUTE_2_1_2_18, :ROUTE_2_1_2_19, :ROUTE_2_1_2_20, :ROUTE_2_1_2_21, :ROUTE_2_1_2_22, :ROUTE_2_1_2_23, :ROUTE_2_1_2_24, :ROUTE_2_1_2_25, :ROUTE_2_1_2_26, :ROUTE_2_1_2_27, :ROUTE_2_1_2_28, :ROUTE_2_1_2_29, :ROUTE_2_1_2_30, :ROUTE_2_1_2_31, :ROUTE_2_1_2_32, :ROUTE_2_1_2_33 ;
+  x3do:pickable true ;
+  x3do:objectType '"ALL"' .
+:Layout_2_1_2_1 a owl:NamedIndividual, x3do:Layout ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:align '"RIGHT","BOTTOM"' ;
+  x3do:offset ( 0.0 0.2 ) ;
+  x3do:offsetUnits '"WORLD","WORLD"' ;
+  x3do:scaleMode '"NONE","NONE"' ;
+  x3do:size ( 0.4 0.6 ) ;
+  x3do:sizeUnits '"WORLD","WORLD"' .
+:Viewport_2_1_2_2 a owl:NamedIndividual, x3do:Viewport ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:clipBoundary ( 0 1 0 1 ) .
+:Transform_2_1_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Shape_2_1_2_3_1 ;
+  x3do:translation ( 0 0 -3 ) .
+:Shape_2_1_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_3 ;
+  x3do:hasAppearance :Appearance_2_1_2_3_1_1 ;
+  x3do:hasGeometry :Box_2_1_2_3_1_2 .
+:Appearance_2_1_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_3_1 ;
+  x3do:hasMaterial :Material_2_1_2_3_1_1_1 .
+:Material_2_1_2_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_3_1_1 ;
+  x3do:diffuseColor ( 0 0 0 ) ;
+  x3do:transparency 0.7 .
+:Box_2_1_2_3_1_2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_1_2_3_1 ;
+  x3do:size ( 100 100 0.02 ) .
+:aSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_4_1, :aTransform, :Transform_2_1_2_4_3 ;
+  x3do:DEF 'aSlider' ;
+  x3do:translation ( 0 0.7 0 ) .
+:Transform_2_1_2_4_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :aSlider ;
+  x3do:hasChildren :Shape_2_1_2_4_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_4_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_4_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_4_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_4_1_1_2 .
+:Appearance_2_1_2_4_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_4_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_4_1_1_1_1 .
+:Material_2_1_2_4_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_4_1_1_1 .
+:Cylinder_2_1_2_4_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_4_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:aTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :aSlider ;
+  x3do:hasChildren :aSensor, :Transform_2_1_2_4_2_2, :Shape_2_1_2_4_2_3 ;
+  x3do:DEF 'aTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:aSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :aTransform ;
+  x3do:DEF 'aSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_4_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :aTransform ;
+  x3do:hasChildren :aTS, :Shape_2_1_2_4_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:aTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_4_2_2 ;
+  x3do:DEF 'aTS' .
+:Shape_2_1_2_4_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_4_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_4_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_4_2_2_2_2 .
+:Sphere_2_1_2_4_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_4_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_4_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_4_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_4_2_2_2_2_1 .
+:Material_2_1_2_4_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_4_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_4_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :aTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_4_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_4_2_3_2 .
+:Cylinder_2_1_2_4_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_4_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_4_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_4_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_4_2_3_2_1 .
+:Material_2_1_2_4_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_4_2_3_2 .
+:Transform_2_1_2_4_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :aSlider ;
+  x3do:hasChildren :Shape_2_1_2_4_3_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_4_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_4_3 ;
+  x3do:hasAppearance :Appearance_2_1_2_4_3_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_4_3_1_2 .
+:Appearance_2_1_2_4_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_4_3_1 ;
+  x3do:hasMaterial :Material_2_1_2_4_3_1_1_1 .
+:Material_2_1_2_4_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_4_3_1_1 .
+:Cylinder_2_1_2_4_3_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_4_3_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:bSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_5_1, :bTransform ;
+  x3do:DEF 'bSlider' ;
+  x3do:translation ( 0 0.4 0 ) .
+:Transform_2_1_2_5_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :bSlider ;
+  x3do:hasChildren :Shape_2_1_2_5_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_5_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_5_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_5_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_5_1_1_2 .
+:Appearance_2_1_2_5_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_5_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_5_1_1_1_1 .
+:Material_2_1_2_5_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_5_1_1_1 .
+:Cylinder_2_1_2_5_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_5_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:bTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :bSlider ;
+  x3do:hasChildren :bSensor, :Transform_2_1_2_5_2_2, :Shape_2_1_2_5_2_3 ;
+  x3do:DEF 'bTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:bSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :bTransform ;
+  x3do:DEF 'bSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_5_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :bTransform ;
+  x3do:hasChildren :bTS, :Shape_2_1_2_5_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:bTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_5_2_2 ;
+  x3do:DEF 'bTS' .
+:Shape_2_1_2_5_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_5_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_5_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_5_2_2_2_2 .
+:Sphere_2_1_2_5_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_5_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_5_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_5_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_5_2_2_2_2_1 .
+:Material_2_1_2_5_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_5_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_5_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :bTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_5_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_5_2_3_2 .
+:Cylinder_2_1_2_5_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_5_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_5_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_5_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_5_2_3_2_1 .
+:Material_2_1_2_5_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_5_2_3_2 .
+:cSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_6_1, :cTransform ;
+  x3do:DEF 'cSlider' ;
+  x3do:translation ( 0 0.1 0 ) .
+:Transform_2_1_2_6_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :cSlider ;
+  x3do:hasChildren :Shape_2_1_2_6_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_6_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_6_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_6_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_6_1_1_2 .
+:Appearance_2_1_2_6_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_6_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_6_1_1_1_1 .
+:Material_2_1_2_6_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_6_1_1_1 .
+:Cylinder_2_1_2_6_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_6_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:cTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :cSlider ;
+  x3do:hasChildren :cSensor, :Transform_2_1_2_6_2_2, :Shape_2_1_2_6_2_3 ;
+  x3do:DEF 'cTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:cSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :cTransform ;
+  x3do:DEF 'cSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_6_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :cTransform ;
+  x3do:hasChildren :cTS, :Shape_2_1_2_6_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:cTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_6_2_2 ;
+  x3do:DEF 'cTS' .
+:Shape_2_1_2_6_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_6_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_6_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_6_2_2_2_2 .
+:Sphere_2_1_2_6_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_6_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_6_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_6_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_6_2_2_2_2_1 .
+:Material_2_1_2_6_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_6_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_6_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :cTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_6_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_6_2_3_2 .
+:Cylinder_2_1_2_6_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_6_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_6_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_6_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_6_2_3_2_1 .
+:Material_2_1_2_6_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_6_2_3_2 .
+:dSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_7_1, :dTransform ;
+  x3do:DEF 'dSlider' ;
+  x3do:translation ( 0 -0.2 0 ) .
+:Transform_2_1_2_7_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :dSlider ;
+  x3do:hasChildren :Shape_2_1_2_7_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_7_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_7_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_7_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_7_1_1_2 .
+:Appearance_2_1_2_7_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_7_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_7_1_1_1_1 .
+:Material_2_1_2_7_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_7_1_1_1 .
+:Cylinder_2_1_2_7_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_7_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:dTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :dSlider ;
+  x3do:hasChildren :dSensor, :Transform_2_1_2_7_2_2, :Shape_2_1_2_7_2_3 ;
+  x3do:DEF 'dTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:dSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :dTransform ;
+  x3do:DEF 'dSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_7_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :dTransform ;
+  x3do:hasChildren :dTS, :Shape_2_1_2_7_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:dTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_7_2_2 ;
+  x3do:DEF 'dTS' .
+:Shape_2_1_2_7_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_7_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_7_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_7_2_2_2_2 .
+:Sphere_2_1_2_7_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_7_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_7_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_7_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_7_2_2_2_2_1 .
+:Material_2_1_2_7_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_7_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_7_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :dTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_7_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_7_2_3_2 .
+:Cylinder_2_1_2_7_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_7_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_7_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_7_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_7_2_3_2_1 .
+:Material_2_1_2_7_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_7_2_3_2 .
+:pdeltaSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_8_1, :pdeltaTransform ;
+  x3do:DEF 'pdeltaSlider' ;
+  x3do:translation ( 0 -0.5 0 ) .
+:Transform_2_1_2_8_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :pdeltaSlider ;
+  x3do:hasChildren :Shape_2_1_2_8_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_8_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_8_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_8_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_8_1_1_2 .
+:Appearance_2_1_2_8_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_8_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_8_1_1_1_1 .
+:Material_2_1_2_8_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_8_1_1_1 .
+:Cylinder_2_1_2_8_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_8_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:pdeltaTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :pdeltaSlider ;
+  x3do:hasChildren :pdeltaSensor, :Transform_2_1_2_8_2_2, :Shape_2_1_2_8_2_3 ;
+  x3do:DEF 'pdeltaTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:pdeltaSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :pdeltaTransform ;
+  x3do:DEF 'pdeltaSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_8_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :pdeltaTransform ;
+  x3do:hasChildren :pdeltaTS, :Shape_2_1_2_8_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:pdeltaTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_8_2_2 ;
+  x3do:DEF 'pdeltaTS' .
+:Shape_2_1_2_8_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_8_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_8_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_8_2_2_2_2 .
+:Sphere_2_1_2_8_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_8_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_8_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_8_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_8_2_2_2_2_1 .
+:Material_2_1_2_8_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_8_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_8_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :pdeltaTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_8_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_8_2_3_2 .
+:Cylinder_2_1_2_8_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_8_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_8_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_8_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_8_2_3_2_1 .
+:Material_2_1_2_8_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_8_2_3_2 .
+:tdeltaSlider a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasChildren :Transform_2_1_2_9_1, :tdeltaTransform ;
+  x3do:DEF 'tdeltaSlider' ;
+  x3do:translation ( 0 -0.8 0 ) .
+:Transform_2_1_2_9_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :tdeltaSlider ;
+  x3do:hasChildren :Shape_2_1_2_9_1_1 ;
+  x3do:rotation ( 0 0 1 1.57 ) .
+:Shape_2_1_2_9_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_9_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_9_1_1_1 ;
+  x3do:hasGeometry :Cylinder_2_1_2_9_1_1_2 .
+:Appearance_2_1_2_9_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_9_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_9_1_1_1_1 .
+:Material_2_1_2_9_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_9_1_1_1 .
+:Cylinder_2_1_2_9_1_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_9_1_1 ;
+  x3do:radius .05 ;
+  x3do:height 2.5 .
+:tdeltaTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :tdeltaSlider ;
+  x3do:hasChildren :tdeltaSensor, :Transform_2_1_2_9_2_2, :Shape_2_1_2_9_2_3 ;
+  x3do:DEF 'tdeltaTransform' ;
+  x3do:translation ( 0 0 0.1 ) .
+:tdeltaSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :tdeltaTransform ;
+  x3do:DEF 'tdeltaSensor' ;
+  x3do:minPosition ( -20 0 ) ;
+  x3do:maxPosition ( 20 0 ) .
+:Transform_2_1_2_9_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :tdeltaTransform ;
+  x3do:hasChildren :tdeltaTS, :Shape_2_1_2_9_2_2_2 ;
+  x3do:translation ( 0 0.0 0 ) .
+:tdeltaTS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_2_9_2_2 ;
+  x3do:DEF 'tdeltaTS' .
+:Shape_2_1_2_9_2_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_9_2_2 ;
+  x3do:hasGeometry :Sphere_2_1_2_9_2_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_9_2_2_2_2 .
+:Sphere_2_1_2_9_2_2_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_9_2_2_2 ;
+  x3do:radius 0.08 .
+:Appearance_2_1_2_9_2_2_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_9_2_2_2 ;
+  x3do:hasMaterial :Material_2_1_2_9_2_2_2_2_1 .
+:Material_2_1_2_9_2_2_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_9_2_2_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Shape_2_1_2_9_2_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :tdeltaTransform ;
+  x3do:hasGeometry :Cylinder_2_1_2_9_2_3_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_9_2_3_2 .
+:Cylinder_2_1_2_9_2_3_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_1_2_9_2_3 ;
+  x3do:radius 0.05 ;
+  x3do:height 0.3 .
+:Appearance_2_1_2_9_2_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_9_2_3 ;
+  x3do:hasMaterial :Material_2_1_2_9_2_3_2_1 .
+:Material_2_1_2_9_2_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_9_2_3_2 .
+:aValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_10_1, :field_2_1_2_10_2 ;
+  x3do:DEF 'aValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }
+""" .
+:field_2_1_2_10_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :aValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_10_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :aValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'aValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:bValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_11_1, :field_2_1_2_11_2 ;
+  x3do:DEF 'bValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }
+""" .
+:field_2_1_2_11_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_11_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :bValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:cValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_12_1, :field_2_1_2_12_2 ;
+  x3do:DEF 'cValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }
+""" .
+:field_2_1_2_12_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :cValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_12_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :cValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'cValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:dValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_13_1, :field_2_1_2_13_2 ;
+  x3do:DEF 'dValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }
+""" .
+:field_2_1_2_13_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :dValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_13_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :dValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'dValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:pdeltaValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_14_1, :field_2_1_2_14_2 ;
+  x3do:DEF 'pdeltaValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }
+""" .
+:field_2_1_2_14_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :pdeltaValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_14_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :pdeltaValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'pdeltaValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:tdeltaValueTransformerScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:hasField :field_2_1_2_15_1, :field_2_1_2_15_2 ;
+  x3do:DEF 'tdeltaValueTransformerScript' ;
+  x3do:directOutput true ;
+  x3do:mustEvaluate true ;
+  x3do:sourceCode """
+ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }
+""" .
+:field_2_1_2_15_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :tdeltaValueTransformerScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'newTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 1.0 1.0 1.0 ) .
+:field_2_1_2_15_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :tdeltaValueTransformerScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'tdeltaValue_changed' ;
+  x3do:type 'SFFloat' ;
+  x3do:value 1.0 .
+:ROUTE_2_1_2_16 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'aSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'aTransform' .
+:ROUTE_2_1_2_17 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'bSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'bTransform' .
+:ROUTE_2_1_2_18 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'cSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'cTransform' .
+:ROUTE_2_1_2_19 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'dSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'dTransform' .
+:ROUTE_2_1_2_20 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'pdeltaSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'pdeltaTransform' .
+:ROUTE_2_1_2_21 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'tdeltaSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'tdeltaTransform' .
+:ROUTE_2_1_2_22 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'aSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'aValueTransformerScript' .
+:ROUTE_2_1_2_23 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'bSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'bValueTransformerScript' .
+:ROUTE_2_1_2_24 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'cSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'cValueTransformerScript' .
+:ROUTE_2_1_2_25 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'dSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'dValueTransformerScript' .
+:ROUTE_2_1_2_26 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'pdeltaSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'pdeltaValueTransformerScript' .
+:ROUTE_2_1_2_27 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'tdeltaSensor' ;
+  x3do:toField 'newTranslation' ;
+  x3do:toNode 'tdeltaValueTransformerScript' .
+:ROUTE_2_1_2_28 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'aValue_changed' ;
+  x3do:fromNode 'aValueTransformerScript' ;
+  x3do:toField 'a' ;
+  x3do:toNode 'x_iteShader' .
+:ROUTE_2_1_2_29 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'bValue_changed' ;
+  x3do:fromNode 'bValueTransformerScript' ;
+  x3do:toField 'b' ;
+  x3do:toNode 'x_iteShader' .
+:ROUTE_2_1_2_30 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'cValue_changed' ;
+  x3do:fromNode 'cValueTransformerScript' ;
+  x3do:toField 'c' ;
+  x3do:toNode 'x_iteShader' .
+:ROUTE_2_1_2_31 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'dValue_changed' ;
+  x3do:fromNode 'dValueTransformerScript' ;
+  x3do:toField 'd' ;
+  x3do:toNode 'x_iteShader' .
+:ROUTE_2_1_2_32 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'pdeltaValue_changed' ;
+  x3do:fromNode 'pdeltaValueTransformerScript' ;
+  x3do:toField 'pdelta' ;
+  x3do:toNode 'x_iteShader' .
+:ROUTE_2_1_2_33 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :LayoutLayer_2_1_2 ;
+  x3do:fromField 'tdeltaValue_changed' ;
+  x3do:fromNode 'tdeltaValueTransformerScript' ;
+  x3do:toField 'tdelta' ;
+  x3do:toNode 'x_iteShader' .

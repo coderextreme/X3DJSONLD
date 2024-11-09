@@ -1,0 +1,72 @@
+#include "C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h"
+void main(int argc, char ** argv) {
+Browser browser = X3D.getBrowser();
+X3D X3D0;
+X3D0.profile = "Full";
+X3D0.version = "3.3";
+head head1 = createNode("head");
+meta meta2 = createNode("meta");
+meta2.name = "comment";
+meta2.content = "World of Titania";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+meta meta3 = createNode("meta");
+meta3.name = "created";
+meta3.content = "Thu, 23 Apr 2015 06:07:01 GMT";
+head1.meta[1] = meta3;
+
+meta meta4 = createNode("meta");
+meta4.name = "creator";
+meta4.content = "Holger Seelig";
+head1.meta[2] = meta4;
+
+meta meta5 = createNode("meta");
+meta5.name = "generator";
+meta5.content = "Titania V0.7.8, http://titania.create3000.de";
+head1.meta[3] = meta5;
+
+meta meta6 = createNode("meta");
+meta6.name = "modified";
+meta6.content = "Thu, 23 Apr 2015 06:07:01 GMT";
+head1.meta[4] = meta6;
+
+head = head1;
+
+WorldInfo WorldInfo8 = createNode("WorldInfo");
+WorldInfo8.info = new MFString(new java.lang.String["Packaged by CosmoPackage"]);
+children = new MFNode();
+
+children[0] = WorldInfo8;
+
+Transform Transform9 = createNode("Transform");
+Transform9.translation = new SFVec3f(new float[-0.240425,-0.171864,-0.297753]);
+Transform9.scale = new SFVec3f(new float[0.0412831,0.0412831,0.412834]);
+Shape Shape10 = createNode("Shape");
+Appearance Appearance11 = createNode("Appearance");
+ImageTexture ImageTexture12 = createNode("ImageTexture");
+ImageTexture12.url = new MFString(new java.lang.String["else.gif"]);
+Appearance11.texture = ImageTexture12;
+
+Shape10.appearance = Appearance11;
+
+IndexedFaceSet IndexedFaceSet13 = createNode("IndexedFaceSet");
+IndexedFaceSet13.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
+TextureCoordinate TextureCoordinate14 = createNode("TextureCoordinate");
+TextureCoordinate14.point = new MFVec2f(new float[0,0,1,0,1,1,0,1]);
+IndexedFaceSet13.texCoord = TextureCoordinate14;
+
+Coordinate Coordinate15 = createNode("Coordinate");
+Coordinate15.point = new MFVec3f(new float[-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0]);
+IndexedFaceSet13.coord = Coordinate15;
+
+Shape10.geometry = IndexedFaceSet13;
+
+Transform9.child = new undefined();
+
+Transform9.child[0] = Shape10;
+
+children[1] = Transform9;
+
+}

@@ -1,0 +1,159 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'jumpcut_loadurl.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.nist.gov/vrml.html' ;
+  x3do:name 'reference' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.itl.nist.gov/div897/ctg/vrml/vrml.html' ;
+  x3do:name 'reference' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.itl.nist.gov/div897/ctg/vrml/members.html' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.' ;
+  x3do:name 'disclaimer' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d' ;
+  x3do:name 'info' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Michael Kass NIST, Don Brutzman NPS' ;
+  x3do:name 'translator' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '21 January 2001' ;
+  x3do:name 'translated' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the "loadURL" method, with a url corresponding to the MFString "Top_View" (the name of a Viewpoint in this world) should create a "jump cut" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry.' ;
+  x3do:name 'description' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' ;
+  x3do:name 'generator' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "jumpcut_loadurl.x3d" .
+:meta dcterms:reference "http://www.nist.gov/vrml.html" .
+:meta dcterms:reference "http://www.itl.nist.gov/div897/ctg/vrml/vrml.html" .
+:meta dcterms:creator "http://www.itl.nist.gov/div897/ctg/vrml/members.html" .
+:meta dcterms:translator "Michael Kass NIST, Don Brutzman NPS" .
+:meta dcterms:translated "21 January 2001" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:description "Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry." .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d" .
+:meta dcterms:generator "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Background_2_2, :NavigationInfo_2_3, :Front_View, :Top_View, :STARTER, :ROOT, :MYSCRIPT ;
+  x3do:hasROUTE :ROUTE_2_9 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'jumpcut_loadurl.x3d' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:groundAngle ( 1.57 ) ;
+  x3do:groundColor ( 0 0.5 0 0 0.5 0 ) ;
+  x3do:skyColor ( 0 0 1 ) .
+:NavigationInfo_2_3 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE" "WALK" "FLY" "ANY"' .
+:Front_View a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Front_View' ;
+  x3do:description 'Front View' .
+:Top_View a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Top_View' ;
+  x3do:description 'Top View' ;
+  x3do:orientation ( 1 0 0 -1.57 ) ;
+  x3do:position ( 0 10 0 ) .
+:STARTER a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'STARTER' ;
+  x3do:description 'touch to activate' .
+:ROOT a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_7_1 ;
+  x3do:DEF 'ROOT' .
+:Shape_2_7_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :ROOT ;
+  x3do:hasAppearance :Appearance_2_7_1_1 ;
+  x3do:hasGeometry :Box_2_7_1_2 .
+:Appearance_2_7_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_7_1 ;
+  x3do:hasMaterial :Material_2_7_1_1_1 .
+:Material_2_7_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_7_1_1 .
+:Box_2_7_1_2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_7_1 .
+:MYSCRIPT a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_8_1, :field_2_8_2, :field_2_8_3 ;
+  x3do:DEF 'MYSCRIPT' ;
+  x3do:url '"jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"' .
+:field_2_8_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MYSCRIPT ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'myParameter' ;
+  x3do:type 'MFString' ;
+  x3do:value '"Top_View"' .
+:field_2_8_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MYSCRIPT ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'myUrl' ;
+  x3do:type 'MFString' ;
+  x3do:value '"jumpcut_loadurl.x3d#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View" "jumpcut_loadurl.wrl#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"' .
+:field_2_8_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MYSCRIPT ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'trigger_event' ;
+  x3do:type 'SFBool' .
+:ROUTE_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'STARTER' ;
+  x3do:toField 'trigger_event' ;
+  x3do:toNode 'MYSCRIPT' .

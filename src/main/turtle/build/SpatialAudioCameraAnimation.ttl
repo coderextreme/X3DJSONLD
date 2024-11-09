@@ -1,0 +1,297 @@
+@prefix :        <https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Full' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'SpatialAudioCameraAnimation.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'In the last demo, there are two sound sources in different positions. Through the immersion in the X3D scene the user could attend a rational navigation. Whenever the camera moves in the direction of an existing sound source, the strength of this source increases, while the sound strength of the other (the second one) decreases and vice versa. Through this process, great realism of the scene is achieved, since it emulates the spatial sound in real world.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.' ;
+  x3do:name 'info' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '28 October 2020' ;
+  x3do:name 'created' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '5 December 2021' ;
+  x3do:name 'modified' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'CHANGELOG.txt' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'credit for audio files' ;
+  x3do:name 'TODO' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.medialab.hmu.gr/minipages/x3domAudio' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "SpatialAudioCameraAnimation.x3d" .
+:meta dcterms:description "In the last demo, there are two sound sources in different positions. Through the immersion in the X3D scene the user could attend a rational navigation. Whenever the camera moves in the direction of an existing sound source, the strength of this source increases, while the sound strength of the other (the second one) decreases and vice versa. Through this process, great realism of the scene is achieved, since it emulates the spatial sound in real world." .
+:meta dcterms:creator "Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman" .
+:meta dcterms:created "28 October 2020" .
+:meta dcterms:modified "5 December 2021" .
+:meta dcterms:reference "CHANGELOG.txt" .
+:meta dcterms:reference "https://www.medialab.hmu.gr/minipages/x3domAudio" .
+:meta dcterms:identifier "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d" .
+:meta dcterms:generator "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :NavigationInfo_2_2, :Background_2_3, :Camera001, :TIMER, :Camera001-POS-INTERP, :Camera001-ROT-INTERP, :Floor, :TransformAudio1, :TransformAudio2, :ListenerPointSource_2_15, :StreamAudioDestination_2_16 ;
+  x3do:hasROUTE :ROUTE_2_8, :ROUTE_2_9, :ROUTE_2_10, :ROUTE_2_11 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'SpatialAudioCameraAnimation.x3d' .
+:NavigationInfo_2_2 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:id 'NAV' .
+:Background_2_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"images/generic/BK1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"' ;
+  x3do:bottomUrl '"images/generic/DN1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"' ;
+  x3do:frontUrl '"images/generic/FR1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"' ;
+  x3do:leftUrl '"images/generic/LF1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"' ;
+  x3do:rightUrl '"images/generic/RT1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"' ;
+  x3do:topUrl '"images/generic/UP1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"' .
+:Camera001 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Camera001' ;
+  x3do:description 'Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view' ;
+  x3do:orientation ( 1 0 0 -0.523599 ) ;
+  x3do:position ( 0 2000 3500 ) .
+:TIMER a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'TIMER' ;
+  x3do:cycleInterval '33.333332' ;
+  x3do:loop true .
+:Camera001-POS-INTERP a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Camera001-POS-INTERP' ;
+  x3do:key ( 0 0.25 0.5 0.75 1 ) ;
+  x3do:keyValue ( 0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500 ) .
+:Camera001-ROT-INTERP a owl:NamedIndividual, x3do:OrientationInterpolator ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Camera001-ROT-INTERP' ;
+  x3do:key ( 0 0.25 0.5 0.75 1 ) ;
+  x3do:keyValue ( 1 0 0 -0.523599 0.999990 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.608760 -3.135645 1 -0.000001 -0 -0.523599 ) .
+:ROUTE_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'Camera001-POS-INTERP' .
+:ROUTE_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'Camera001-POS-INTERP' ;
+  x3do:toField 'set_position' ;
+  x3do:toNode 'Camera001' .
+:ROUTE_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'TIMER' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'Camera001-ROT-INTERP' .
+:ROUTE_2_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'Camera001-ROT-INTERP' ;
+  x3do:toField 'set_orientation' ;
+  x3do:toNode 'Camera001' .
+:Floor a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_12_1 ;
+  x3do:DEF 'Floor' ;
+  x3do:translation ( 1.241 0.000 0.358 ) .
+:Shape_2_12_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Floor ;
+  x3do:hasAppearance :WireColor ;
+  x3do:hasGeometry :Box_2_12_1_2 .
+:WireColor a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_12_1 ;
+  x3do:hasMaterial :Material_2_12_1_1_1 ;
+  x3do:DEF 'WireColor' .
+:Material_2_12_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :WireColor ;
+  x3do:diffuseColor ( 0.122 0.114 0.125 ) .
+:Box_2_12_1_2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_12_1 ;
+  x3do:size ( 2000 1 2000 ) .
+:TransformAudio1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_13_1, :Billboard_2_13_2 ;
+  x3do:DEF 'TransformAudio1' ;
+  x3do:translation ( -933.123474 0 -926.253235 ) .
+:Shape_2_13_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :TransformAudio1 ;
+  x3do:hasAppearance :WireColor_1 ;
+  x3do:hasGeometry :Sphere_2_13_1_2 .
+:WireColor_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_13_1 ;
+  x3do:hasMaterial :Material_2_13_1_1_1 ;
+  x3do:DEF 'WireColor_1' .
+:Material_2_13_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :WireColor_1 ;
+  x3do:diffuseColor ( 0.690196 0.101961 0.101961 ) .
+:Sphere_2_13_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_13_1 ;
+  x3do:radius 100 .
+:Billboard_2_13_2 a owl:NamedIndividual, x3do:Billboard ;
+  x3do:hasParent :TransformAudio1 ;
+  x3do:hasChildren :violin .
+:violin a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Billboard_2_13_2 ;
+  x3do:hasChildren :Shape_2_13_2_1_1 ;
+  x3do:DEF 'violin' ;
+  x3do:rotation ( 1 0 0 -0.5 ) ;
+  x3do:scale ( 100 100 100 ) ;
+  x3do:translation ( 0 100 0 ) .
+:Shape_2_13_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :violin ;
+  x3do:hasAppearance :Appearance_2_13_2_1_1_1 ;
+  x3do:hasGeometry :Text_2_13_2_1_1_2 .
+:Appearance_2_13_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_13_2_1_1 ;
+  x3do:hasMaterial :Material_2_13_2_1_1_1_1 .
+:Material_2_13_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_13_2_1_1_1 ;
+  x3do:ambientIntensity 0.0933 ;
+  x3do:diffuseColor ( 1 1 1 ) ;
+  x3do:shininess 0.51 ;
+  x3do:specularColor ( 0.46 0.46 0.46 ) .
+:Text_2_13_2_1_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_13_2_1_1 ;
+  x3do:hasFontStyle :ModelFontStyle ;
+  x3do:string '"Violin"' .
+:ModelFontStyle a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_13_2_1_1_2 ;
+  x3do:DEF 'ModelFontStyle' ;
+  x3do:family '"Times" "SERIF"' ;
+  x3do:cssStyle 'BOLD' .
+:TransformAudio2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_14_1, :Billboard_2_14_2 ;
+  x3do:DEF 'TransformAudio2' ;
+  x3do:translation ( 933.475586 0 924.423218 ) .
+:Shape_2_14_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :TransformAudio2 ;
+  x3do:hasAppearance :WireColor_2 ;
+  x3do:hasGeometry :Sphere_2_14_1_2 .
+:WireColor_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_14_1 ;
+  x3do:hasMaterial :Material_2_14_1_1_1 ;
+  x3do:DEF 'WireColor_2' .
+:Material_2_14_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :WireColor_2 ;
+  x3do:diffuseColor ( 0.105882 0.694118 0.580392 ) .
+:Sphere_2_14_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_14_1 ;
+  x3do:radius 100 .
+:Billboard_2_14_2 a owl:NamedIndividual, x3do:Billboard ;
+  x3do:hasParent :TransformAudio2 ;
+  x3do:hasChildren :saxophone .
+:saxophone a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Billboard_2_14_2 ;
+  x3do:hasChildren :Shape_2_14_2_1_1 ;
+  x3do:DEF 'saxophone' ;
+  x3do:rotation ( 1 0 0 -0.5 ) ;
+  x3do:scale ( 100 100 100 ) ;
+  x3do:translation ( 0 100 0 ) .
+:Shape_2_14_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :saxophone ;
+  x3do:hasAppearance :Appearance_2_14_2_1_1_1 ;
+  x3do:hasGeometry :Text_2_14_2_1_1_2 .
+:Appearance_2_14_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_14_2_1_1 ;
+  x3do:hasMaterial :Material_2_14_2_1_1_1_1 .
+:Material_2_14_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_14_2_1_1_1 ;
+  x3do:ambientIntensity 0.0933 ;
+  x3do:diffuseColor ( 1 1 1 ) ;
+  x3do:shininess 0.51 ;
+  x3do:specularColor ( 0.46 0.46 0.46 ) .
+:Text_2_14_2_1_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_14_2_1_1 ;
+  x3do:hasFontStyle :ModelFontStyle-USE-1 ;
+  x3do:string '"Saxophone"' .
+:ModelFontStyle-USE-1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_14_2_1_1_2 ;
+  owl:sameAs :ModelFontStyle . # DEF matching this USE
+:ListenerPointSource_2_15 a owl:NamedIndividual, x3do:ListenerPointSource ;
+  x3do:hasParent :Scene ;
+  x3do:id 'ListenerPointSource' ;
+  x3do:trackCurrentView true .
+:StreamAudioDestination_2_16 a owl:NamedIndividual, x3do:StreamAudioDestination ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Audio1, :Audio2 ;
+  x3do:id 'AudioDestination' .
+:Audio1 a owl:NamedIndividual, x3do:SpatialSound ;
+  x3do:hasParent :StreamAudioDestination_2_16 ;
+  x3do:hasChildren :Gain_2_16_1_1 ;
+  x3do:DEF 'Audio1' ;
+  x3do:id 'SpatialSound1' .
+:Gain_2_16_1_1 a owl:NamedIndividual, x3do:Gain ;
+  x3do:hasParent :Audio1 ;
+  x3do:hasChildren :AudioClip_2_16_1_1_1 ;
+  x3do:id 'Gain1' .
+:AudioClip_2_16_1_1_1 a owl:NamedIndividual, x3do:AudioClip ;
+  x3do:hasParent :Gain_2_16_1_1 ;
+  x3do:description 'Violin' ;
+  x3do:id 'AudioClip1' ;
+  x3do:loop true ;
+  x3do:url '"sound/violin.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"' .
+:Audio2 a owl:NamedIndividual, x3do:SpatialSound ;
+  x3do:hasParent :StreamAudioDestination_2_16 ;
+  x3do:hasChildren :Gain_2_16_2_1 ;
+  x3do:DEF 'Audio2' ;
+  x3do:id 'SpatialSound2' .
+:Gain_2_16_2_1 a owl:NamedIndividual, x3do:Gain ;
+  x3do:hasParent :Audio2 ;
+  x3do:hasChildren :AudioClip_2_16_2_1_1 ;
+  x3do:id 'Gain2' .
+:AudioClip_2_16_2_1_1 a owl:NamedIndividual, x3do:AudioClip ;
+  x3do:hasParent :Gain_2_16_2_1 ;
+  x3do:description 'Saxophone' ;
+  x3do:id 'AudioClip2' ;
+  x3do:loop true ;
+  x3do:url '"sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"' .

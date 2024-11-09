@@ -1,0 +1,203 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/flower3.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '4.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-4.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'flower3.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'a flower' .
+:meta dcterms:title "flower3.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d" .
+:meta dcterms:description "a flower" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :DirectionalLight_2_2, :Background_2_3, :Viewpoint_2_4, :OrbitTransform, :OrbitScript, :Clock ;
+  x3do:hasROUTE :ROUTE_2_8, :ROUTE_2_9, :ROUTE_2_10 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:DirectionalLight_2_2 a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :Scene ;
+  x3do:direction ( 0 -0.8 -0.2 ) ;
+  x3do:intensity 0.5 .
+:Background_2_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 1.000 1.000 1.000 ) .
+:Viewpoint_2_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'One mathematical orbital' ;
+  x3do:position ( 0 0 50 ) .
+:OrbitTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_5_1 ;
+  x3do:DEF 'OrbitTransform' ;
+  x3do:translation ( 8 0 0 ) .
+:Shape_2_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrbitTransform ;
+  x3do:hasAppearance :Appearance_2_5_1_1 ;
+  x3do:hasGeometry :Orbit .
+:Appearance_2_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasMaterial :Material_2_5_1_1_1 .
+:Material_2_5_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_1 ;
+  x3do:diffuseColor ( 0 0.5 1 ) ;
+  x3do:specularColor ( 0 0.5 1 ) .
+:Orbit a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasCoord :OrbitCoordinates ;
+  x3do:convex false ;
+  x3do:DEF 'Orbit' .
+:OrbitCoordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Orbit ;
+  x3do:DEF 'OrbitCoordinates' .
+:OrbitScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_6_1, :field_2_6_2, :field_2_6_3 ;
+  x3do:DEF 'OrbitScript' ;
+  x3do:sourceCode """
+ecmascript:
+    
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
+var t = 0;
+var p = 0;
+
+function initialize() {
+     generateCoordinates(resolution);
+     var localci = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(...localci);
+}
+
+function generateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var localc = [];
+     for (var  i = 0; i < resolution; i++) {
+     	for (var  j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(...localc);
+}
+
+function set_fraction(fraction, eventTime) {
+	t += 0.5;
+	p += 0.5;
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	generateCoordinates(resolution);
+}
+""" .
+:field_2_6_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_2_6_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'coordinates' ;
+  x3do:type 'MFVec3f' .
+:field_2_6_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'coordIndexes' ;
+  x3do:type 'MFInt32' .
+:Clock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'Clock' ;
+  x3do:cycleInterval '16' ;
+  x3do:loop true .
+:ROUTE_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordIndexes' ;
+  x3do:toNode 'Orbit' ;
+  x3do:toField 'set_coordIndex' .
+:ROUTE_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordinates' ;
+  x3do:toNode 'OrbitCoordinates' ;
+  x3do:toField 'point' .
+:ROUTE_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'Clock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'OrbitScript' ;
+  x3do:toField 'set_fraction' .

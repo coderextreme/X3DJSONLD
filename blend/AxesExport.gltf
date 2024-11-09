@@ -1,0 +1,38 @@
+{
+	"asset":{
+		"generator":"Khronos glTF Blender I/O v4.2.60",
+		"version":"2.0"
+	},
+	"scene":0,
+	"scenes":[
+		{
+			"name":"Scene",
+			"nodes":[
+				3
+			]
+		}
+	],
+	"nodes":[
+		{
+			"name":"IndexedLineSet.0"
+		},
+		{
+			"children":[
+				0
+			],
+			"name":"Shape.0"
+		},
+		{
+			"children":[
+				1
+			],
+			"name":"Transform.0"
+		},
+		{
+			"children":[
+				2
+			],
+			"name":"Group.0"
+		}
+	]
+}

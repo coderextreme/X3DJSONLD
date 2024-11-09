@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
+<head>
+	<component name="Text" level="1" />
+	<component name="Texturing" level="3" />
+	<meta name="generator" content="castle-model-converter, https://castle-engine.io/castle-model-converter" />
+	<meta name="source" content="JointCoordinateAxes.x3dv" />
+</head>
+<Scene>
+	<NavigationInfo DEF="_1"
+		avatarSize="0.25 1.60000002384186 0.75"
+		headlight="false"
+		type='"EXAMINE" "ANY"' />
+	<Group DEF="_2">
+		<Group DEF="ARROW">
+			<Shape DEF="_3">
+				<Appearance DEF="ARROW_APPEARANCE">
+					<Material DEF="_4"
+						diffuseColor="0.300000011920929 0.300000011920929 1"
+						emissiveColor="0.300000011920929 0.300000011920929 0.330000013113022" />
+				</Appearance>
+				<Cylinder
+					bottom="false"
+					radius="0.025000000372529"
+					top="false" />
+			</Shape>
+			<Transform DEF="_5"
+				translation="0 1 0">
+				<Shape DEF="ARROW_POINTER">
+					<Appearance USE="ARROW_APPEARANCE" />
+					<Cone
+						bottomRadius="0.0500000007450581"
+						height="0.100000001490116" />
+				</Shape>
+			</Transform>
+			<Transform DEF="_6"
+				rotation="1 0 0 3.14159989356995"
+				translation="0 -1 0">
+				<Shape USE="ARROW_POINTER" />
+			</Transform>
+		</Group>
+		<Transform DEF="_7"
+			translation="0 1.08000004291534 0">
+			<Billboard DEF="_8">
+				<Shape DEF="_9">
+					<Appearance DEF="LABEL_APPEARANCE">
+						<Material DEF="_10"
+							diffuseColor="1 1 0.300000011920929"
+							emissiveColor="0.330000013113022 0.330000013113022 0.100000001490116" />
+					</Appearance>
+					<Text DEF="_11"
+						string='"Y"'>
+						<FontStyle DEF="LABEL_FONT"
+							family='"SANS"'
+							justify='"MIDDLE"'
+							size="0.200000002980232" />
+					</Text>
+				</Shape>
+			</Billboard>
+		</Transform>
+	</Group>
+	<Transform DEF="_12"
+		rotation="0 0 1 -1.57079994678497">
+		<Group DEF="_13">
+			<Group USE="ARROW" />
+			<Transform DEF="_14"
+				rotation="0 0 1 1.57079994678497"
+				translation="0.0719999969005585 1.10000002384186 0">
+				<Billboard DEF="_15">
+					<Shape DEF="_16">
+						<Appearance USE="LABEL_APPEARANCE" />
+						<Text DEF="_17"
+							string='"X"'>
+							<FontStyle USE="LABEL_FONT" />
+						</Text>
+					</Shape>
+				</Billboard>
+			</Transform>
+		</Group>
+	</Transform>
+	<Transform DEF="_18"
+		rotation="1 0 0 1.57079994678497">
+		<Group DEF="_19">
+			<Group USE="ARROW" />
+			<Transform DEF="_20"
+				rotation="1 0 0 -1.57079994678497"
+				translation="0 1.10000002384186 0.0719999969005585">
+				<Billboard DEF="_21">
+					<Shape DEF="_22">
+						<Appearance USE="LABEL_APPEARANCE" />
+						<Text DEF="_23"
+							string='"Z"'>
+							<FontStyle USE="LABEL_FONT" />
+						</Text>
+					</Shape>
+				</Billboard>
+			</Transform>
+		</Group>
+	</Transform>
+</Scene>
+</X3D>

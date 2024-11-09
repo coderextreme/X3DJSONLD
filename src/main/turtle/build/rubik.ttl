@@ -1,0 +1,259 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/rubik.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'rubik.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'a kind of rubik cube with spheres' .
+:meta dcterms:title "rubik.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d" .
+:meta dcterms:description "a kind of rubik cube with spheres" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Viewpoint_2_2, :ProtoInstance_2_7 ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_3, :ProtoDeclare_2_4, :ProtoDeclare_2_5, :ProtoDeclare_2_6 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE"' .
+:Viewpoint_2_2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Rubiks Cube' ;
+  x3do:position ( 0 0 12 ) .
+:ProtoDeclare_2_3 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_3_1 ;
+  x3do:hasProtoBody :ProtoBody_2_3_2 ;
+  x3do:name 'sphereproto' .
+:ProtoInterface_2_3_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_3 ;
+  x3do:hasField :field_2_3_1_1 .
+:field_2_3_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_3_1 ;
+  x3do:name 'xtranslation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.0 0.0 0.0 ) .
+:ProtoBody_2_3_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_3 ;
+  x3do:hasChildren :Transform_2_3_2_1 .
+:Transform_2_3_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_3_2 ;
+  x3do:hasIS :IS_2_3_2_1_1 ;
+  x3do:hasChildren :Shape_2_3_2_1_2 .
+:IS_2_3_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Transform_2_3_2_1 ;
+  x3do:hasConnect :connect_2_3_2_1_1_1 .
+:connect_2_3_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_3_2_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'xtranslation' .
+:Shape_2_3_2_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_2_1 ;
+  x3do:hasGeometry :Sphere_2_3_2_1_2_1 ;
+  x3do:hasAppearance :Appearance_2_3_2_1_2_2 .
+:Sphere_2_3_2_1_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_3_2_1_2 .
+:Appearance_2_3_2_1_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_2_1_2 ;
+  x3do:hasMaterial :Material_2_3_2_1_2_2_1 .
+:Material_2_3_2_1_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_2_1_2_2 ;
+  x3do:diffuseColor ( 1 1 1 ) .
+:ProtoDeclare_2_4 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_4_1 ;
+  x3do:hasProtoBody :ProtoBody_2_4_2 ;
+  x3do:name 'three' .
+:ProtoInterface_2_4_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_4 ;
+  x3do:hasField :field_2_4_1_1 .
+:field_2_4_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_4_1 ;
+  x3do:name 'ytranslation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.0 0.0 0.0 ) .
+:ProtoBody_2_4_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_4 ;
+  x3do:hasChildren :Transform_2_4_2_1 .
+:Transform_2_4_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_4_2 ;
+  x3do:hasIS :IS_2_4_2_1_1 ;
+  x3do:hasChildren :ProtoInstance_2_4_2_1_2, :ProtoInstance_2_4_2_1_3, :ProtoInstance_2_4_2_1_4 .
+:IS_2_4_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Transform_2_4_2_1 ;
+  x3do:hasConnect :connect_2_4_2_1_1_1 .
+:connect_2_4_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_4_2_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'ytranslation' .
+:ProtoInstance_2_4_2_1_2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_4_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_4_2_1_2_1 ;
+  x3do:name 'sphereproto' .
+:fieldValue_2_4_2_1_2_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_4_2_1_2 ;
+  x3do:name 'xtranslation' ;
+  x3do:value '0 0 0' .
+:ProtoInstance_2_4_2_1_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_4_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_4_2_1_3_1 ;
+  x3do:name 'sphereproto' .
+:fieldValue_2_4_2_1_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_4_2_1_3 ;
+  x3do:name 'xtranslation' ;
+  x3do:value '2 0 0' .
+:ProtoInstance_2_4_2_1_4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_4_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_4_2_1_4_1 ;
+  x3do:name 'sphereproto' .
+:fieldValue_2_4_2_1_4_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_4_2_1_4 ;
+  x3do:name 'xtranslation' ;
+  x3do:value '-2 0 0' .
+:ProtoDeclare_2_5 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_5_1 ;
+  x3do:hasProtoBody :ProtoBody_2_5_2 ;
+  x3do:name 'nine' .
+:ProtoInterface_2_5_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_5 ;
+  x3do:hasField :field_2_5_1_1 .
+:field_2_5_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_5_1 ;
+  x3do:name 'ztranslation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.0 0.0 0.0 ) .
+:ProtoBody_2_5_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_5 ;
+  x3do:hasChildren :Transform_2_5_2_1 .
+:Transform_2_5_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_5_2 ;
+  x3do:hasIS :IS_2_5_2_1_1 ;
+  x3do:hasChildren :ProtoInstance_2_5_2_1_2, :ProtoInstance_2_5_2_1_3, :ProtoInstance_2_5_2_1_4 .
+:IS_2_5_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Transform_2_5_2_1 ;
+  x3do:hasConnect :connect_2_5_2_1_1_1 .
+:connect_2_5_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_5_2_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'ztranslation' .
+:ProtoInstance_2_5_2_1_2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_5_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_5_2_1_2_1 ;
+  x3do:name 'three' .
+:fieldValue_2_5_2_1_2_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_5_2_1_2 ;
+  x3do:name 'ytranslation' ;
+  x3do:value '0 0 0' .
+:ProtoInstance_2_5_2_1_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_5_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_5_2_1_3_1 ;
+  x3do:name 'three' .
+:fieldValue_2_5_2_1_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_5_2_1_3 ;
+  x3do:name 'ytranslation' ;
+  x3do:value '0 2 0' .
+:ProtoInstance_2_5_2_1_4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_5_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_5_2_1_4_1 ;
+  x3do:name 'three' .
+:fieldValue_2_5_2_1_4_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_5_2_1_4 ;
+  x3do:name 'ytranslation' ;
+  x3do:value '0 -2 0' .
+:ProtoDeclare_2_6 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_6_1 ;
+  x3do:hasProtoBody :ProtoBody_2_6_2 ;
+  x3do:name 'twentyseven' .
+:ProtoInterface_2_6_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_6 ;
+  x3do:hasField :field_2_6_1_1 .
+:field_2_6_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_6_1 ;
+  x3do:name 'ttranslation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.0 0.0 0.0 ) .
+:ProtoBody_2_6_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_6 ;
+  x3do:hasChildren :Transform_2_6_2_1 .
+:Transform_2_6_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_6_2 ;
+  x3do:hasIS :IS_2_6_2_1_1 ;
+  x3do:hasChildren :ProtoInstance_2_6_2_1_2, :ProtoInstance_2_6_2_1_3, :ProtoInstance_2_6_2_1_4 .
+:IS_2_6_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Transform_2_6_2_1 ;
+  x3do:hasConnect :connect_2_6_2_1_1_1 .
+:connect_2_6_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_6_2_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'ttranslation' .
+:ProtoInstance_2_6_2_1_2 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_6_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_6_2_1_2_1 ;
+  x3do:name 'nine' .
+:fieldValue_2_6_2_1_2_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_6_2_1_2 ;
+  x3do:name 'ztranslation' ;
+  x3do:value '0 0 0' .
+:ProtoInstance_2_6_2_1_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_6_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_6_2_1_3_1 ;
+  x3do:name 'nine' .
+:fieldValue_2_6_2_1_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_6_2_1_3 ;
+  x3do:name 'ztranslation' ;
+  x3do:value '0 0 2' .
+:ProtoInstance_2_6_2_1_4 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_6_2_1 ;
+  x3do:hasFieldValue :fieldValue_2_6_2_1_4_1 ;
+  x3do:name 'nine' .
+:fieldValue_2_6_2_1_4_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_6_2_1_4 ;
+  x3do:name 'ztranslation' ;
+  x3do:value '0 0 -2' .
+:ProtoInstance_2_7 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_7_1 ;
+  x3do:name 'twentyseven' .
+:fieldValue_2_7_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_7 ;
+  x3do:name 'ttranslation' ;
+  x3do:value '0 0 0' .

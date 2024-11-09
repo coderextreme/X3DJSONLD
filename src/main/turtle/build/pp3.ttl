@@ -1,0 +1,404 @@
+@prefix :        <https://coderextreme.net/x3d/pp3.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'pp3.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'translator' ;
+  x3do:content 'John Carlson' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'created' ;
+  x3do:content '5 May 2015' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '23 Dec 2022' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'A process pipeline between three spheres (try typing on spheres and blue' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/x3d/pp3.x3d' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta dcterms:title "pp3.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:translator "John Carlson" .
+:meta dcterms:created "5 May 2015" .
+:meta dcterms:modified "23 Dec 2022" .
+:meta dcterms:description "A process pipeline between three spheres (try typing on spheres and blue" .
+:meta dcterms:identifier "https://coderextreme.net/x3d/pp3.x3d" .
+:meta dcterms:generator "manual" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1 ;
+  x3do:hasChildren :NavigationInfo_2_2, :Viewpoint_2_3, :Transform_2_4, :Transform_2_5, :Transform_2_6 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoBody :ProtoBody_2_1_1 ;
+  x3do:name 'Process' .
+:ProtoBody_2_1_1 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Group_2_1_1_1, :RightSingleToMultiString, :UpSingleToMultiString, :CenterSingleToMultiString ;
+  x3do:hasROUTE :ROUTE_2_1_1_5, :ROUTE_2_1_1_6, :ROUTE_2_1_1_7, :ROUTE_2_1_1_8, :ROUTE_2_1_1_9, :ROUTE_2_1_1_10, :ROUTE_2_1_1_11, :ROUTE_2_1_1_12, :ROUTE_2_1_1_13 .
+:Group_2_1_1_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:hasChildren :Transform_2_1_1_1_1, :Transform_2_1_1_1_2, :Transform_2_1_1_1_3, :Transform_2_1_1_1_4, :Transform_2_1_1_1_5 .
+:Transform_2_1_1_1_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_1_1 ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:Shape_2_1_1_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_1_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_1_1_2 .
+:Appearance_2_1_1_1_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_1_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_1_1_1_1 .
+:Material_2_1_1_1_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_1_1_1 ;
+  x3do:diffuseColor ( 0.7 1 0 ) ;
+  x3do:transparency 0.5 .
+:Extrusion_2_1_1_1_1_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_1_1_1_1_1 ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0 ) ;
+  x3do:spine ( -2.5 0 0 -1.5 0 0 ) .
+:Transform_2_1_1_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_2_1, :Transform_2_1_1_1_2_2, :RightSensor, :RightTouch ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:Shape_2_1_1_1_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_2 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_2_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_2_1_2 .
+:Appearance_2_1_1_1_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_2_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_2_1_1_1 .
+:Material_2_1_1_1_2_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_2_1_1 ;
+  x3do:diffuseColor ( 0 0.7 1 ) ;
+  x3do:transparency 0.5 .
+:Extrusion_2_1_1_1_2_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_1_1_1_2_1 ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0 ) ;
+  x3do:spine ( 1.5 0 0 2.5 0 0 ) .
+:Transform_2_1_1_1_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_1_1_1_2 ;
+  x3do:hasChildren :Shape_2_1_1_1_2_2_1 ;
+  x3do:translation ( 2 0 0 ) .
+:Shape_2_1_1_1_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_2_2 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_2_2_1_1 ;
+  x3do:hasGeometry :RightString .
+:Appearance_2_1_1_1_2_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_2_2_1 ;
+  x3do:hasMaterial :MaterialLightBlue .
+:MaterialLightBlue a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_2_2_1_1 ;
+  x3do:DEF 'MaterialLightBlue' ;
+  x3do:diffuseColor ( 1 1 1 ) .
+:RightString a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_1_1_2_2_1 ;
+  x3do:DEF 'RightString' ;
+  x3do:string '"r"' .
+:RightSensor a owl:NamedIndividual, x3do:StringSensor ;
+  x3do:hasParent :Transform_2_1_1_1_2 ;
+  x3do:DEF 'RightSensor' ;
+  x3do:enabled false .
+:RightTouch a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_1_1_2 ;
+  x3do:description 'touch to activate' ;
+  x3do:DEF 'RightTouch' .
+:Transform_2_1_1_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_3_1, :Transform_2_1_1_1_3_2, :UpSensor, :UpTouch ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:Shape_2_1_1_1_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_3 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_3_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_3_1_2 .
+:Appearance_2_1_1_1_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_3_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_3_1_1_1 .
+:Material_2_1_1_1_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_3_1_1 ;
+  x3do:diffuseColor ( 0 0.7 1 ) ;
+  x3do:transparency 0.5 .
+:Extrusion_2_1_1_1_3_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_1_1_1_3_1 ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0 ) ;
+  x3do:spine ( 0 1.5 0 0 2.5 0 ) .
+:Transform_2_1_1_1_3_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_1_1_1_3 ;
+  x3do:hasChildren :Shape_2_1_1_1_3_2_1 ;
+  x3do:translation ( -0.5 2 0 ) .
+:Shape_2_1_1_1_3_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_3_2 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_3_2_1_1 ;
+  x3do:hasGeometry :UpString .
+:Appearance_2_1_1_1_3_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_3_2_1 ;
+  x3do:hasMaterial :MaterialLightBlue-USE-1 .
+:MaterialLightBlue-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_3_2_1_1 ;
+  owl:sameAs :MaterialLightBlue . # DEF matching this USE
+:UpString a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_1_1_3_2_1 ;
+  x3do:DEF 'UpString' ;
+  x3do:string '"u"' .
+:UpSensor a owl:NamedIndividual, x3do:StringSensor ;
+  x3do:hasParent :Transform_2_1_1_1_3 ;
+  x3do:DEF 'UpSensor' ;
+  x3do:enabled false .
+:UpTouch a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_1_1_3 ;
+  x3do:description 'touch to activate' ;
+  x3do:DEF 'UpTouch' .
+:Transform_2_1_1_1_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_4_1 ;
+  x3do:scale ( 0.5 0.5 0.5 ) .
+:Shape_2_1_1_1_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_4 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_4_1_1 ;
+  x3do:hasGeometry :Extrusion_2_1_1_1_4_1_2 .
+:Appearance_2_1_1_1_4_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_4_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_4_1_1_1 .
+:Material_2_1_1_1_4_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_4_1_1 ;
+  x3do:diffuseColor ( 0.7 1 0 ) ;
+  x3do:transparency 0.5 .
+:Extrusion_2_1_1_1_4_1_2 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_1_1_1_4_1 ;
+  x3do:creaseAngle 0.785 ;
+  x3do:crossSection ( 1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0 ) ;
+  x3do:spine ( 0 -2.5 0 0 -1.5 0 ) .
+:Transform_2_1_1_1_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_5_1, :Transform_2_1_1_1_5_2, :CenterSensor, :CenterTouch .
+:Shape_2_1_1_1_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_5 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_5_1_1 ;
+  x3do:hasGeometry :Sphere_2_1_1_1_5_1_2 .
+:Appearance_2_1_1_1_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_5_1 ;
+  x3do:hasMaterial :Material_2_1_1_1_5_1_1_1 .
+:Material_2_1_1_1_5_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_5_1_1 ;
+  x3do:diffuseColor ( 1 0 0.7 ) .
+:Sphere_2_1_1_1_5_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_1_1_5_1 .
+:Transform_2_1_1_1_5_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_1_1_1_5 ;
+  x3do:hasChildren :Shape_2_1_1_1_5_2_1 ;
+  x3do:scale ( 0.5 0.5 0.5 ) ;
+  x3do:translation ( -0.5 0 1 ) .
+:Shape_2_1_1_1_5_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_1_1_5_2 ;
+  x3do:hasAppearance :Appearance_2_1_1_1_5_2_1_1 ;
+  x3do:hasGeometry :CenterString .
+:Appearance_2_1_1_1_5_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_1_1_5_2_1 ;
+  x3do:hasMaterial :MaterialLightBlue-USE-2 .
+:MaterialLightBlue-USE-2 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_1_1_5_2_1_1 ;
+  owl:sameAs :MaterialLightBlue . # DEF matching this USE
+:CenterString a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_1_1_5_2_1 ;
+  x3do:DEF 'CenterString' .
+:CenterSensor a owl:NamedIndividual, x3do:StringSensor ;
+  x3do:hasParent :Transform_2_1_1_1_5 ;
+  x3do:DEF 'CenterSensor' ;
+  x3do:enabled false .
+:CenterTouch a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_1_1_1_5 ;
+  x3do:description 'touch to activate' ;
+  x3do:DEF 'CenterTouch' .
+:RightSingleToMultiString a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:hasField :field_2_1_1_2_1, :field_2_1_1_2_2 ;
+  x3do:DEF 'RightSingleToMultiString' ;
+  x3do:sourceCode """
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+""" .
+:field_2_1_1_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RightSingleToMultiString ;
+  x3do:name 'set_rightstring' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFString' .
+:field_2_1_1_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RightSingleToMultiString ;
+  x3do:name 'rightlines' ;
+  x3do:accessType 'outputOnly' ;
+  x3do:type 'MFString' .
+:UpSingleToMultiString a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:hasField :field_2_1_1_3_1, :field_2_1_1_3_2 ;
+  x3do:DEF 'UpSingleToMultiString' ;
+  x3do:sourceCode """
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+""" .
+:field_2_1_1_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :UpSingleToMultiString ;
+  x3do:name 'set_upstring' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFString' .
+:field_2_1_1_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :UpSingleToMultiString ;
+  x3do:name 'uplines' ;
+  x3do:accessType 'outputOnly' ;
+  x3do:type 'MFString' .
+:CenterSingleToMultiString a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:hasField :field_2_1_1_4_1, :field_2_1_1_4_2 ;
+  x3do:DEF 'CenterSingleToMultiString' ;
+  x3do:sourceCode """
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+""" .
+:field_2_1_1_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CenterSingleToMultiString ;
+  x3do:name 'set_centerstring' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFString' .
+:field_2_1_1_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :CenterSingleToMultiString ;
+  x3do:name 'centerlines' ;
+  x3do:accessType 'outputOnly' ;
+  x3do:type 'MFString' .
+:ROUTE_2_1_1_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'enteredText' ;
+  x3do:fromNode 'CenterSensor' ;
+  x3do:toField 'set_centerstring' ;
+  x3do:toNode 'CenterSingleToMultiString' .
+:ROUTE_2_1_1_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'centerlines' ;
+  x3do:fromNode 'CenterSingleToMultiString' ;
+  x3do:toField 'set_string' ;
+  x3do:toNode 'CenterString' .
+:ROUTE_2_1_1_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'isOver' ;
+  x3do:fromNode 'CenterTouch' ;
+  x3do:toField 'set_enabled' ;
+  x3do:toNode 'CenterSensor' .
+:ROUTE_2_1_1_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'enteredText' ;
+  x3do:fromNode 'RightSensor' ;
+  x3do:toField 'set_rightstring' ;
+  x3do:toNode 'RightSingleToMultiString' .
+:ROUTE_2_1_1_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'rightlines' ;
+  x3do:fromNode 'RightSingleToMultiString' ;
+  x3do:toField 'set_string' ;
+  x3do:toNode 'RightString' .
+:ROUTE_2_1_1_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'isOver' ;
+  x3do:fromNode 'RightTouch' ;
+  x3do:toField 'set_enabled' ;
+  x3do:toNode 'RightSensor' .
+:ROUTE_2_1_1_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'enteredText' ;
+  x3do:fromNode 'UpSensor' ;
+  x3do:toField 'set_upstring' ;
+  x3do:toNode 'UpSingleToMultiString' .
+:ROUTE_2_1_1_12 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'uplines' ;
+  x3do:fromNode 'UpSingleToMultiString' ;
+  x3do:toField 'set_string' ;
+  x3do:toNode 'UpString' .
+:ROUTE_2_1_1_13 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :ProtoBody_2_1_1 ;
+  x3do:fromField 'isOver' ;
+  x3do:fromNode 'UpTouch' ;
+  x3do:toField 'set_enabled' ;
+  x3do:toNode 'UpSensor' .
+:NavigationInfo_2_2 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Process pipes' ;
+  x3do:orientation ( 1 0 0 -0.4 ) ;
+  x3do:position ( 0 5 12 ) .
+:Transform_2_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_4_1 ;
+  x3do:translation ( 0 -2.5 0 ) .
+:ProtoInstance_2_4_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_4 ;
+  x3do:name 'Process' .
+:Transform_2_5 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_5_1 .
+:ProtoInstance_2_5_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_5 ;
+  x3do:name 'Process' .
+:Transform_2_6 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ProtoInstance_2_6_1 ;
+  x3do:translation ( 0 2.5 0 ) .
+:ProtoInstance_2_6_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:name 'Process' .

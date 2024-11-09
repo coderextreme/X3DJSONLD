@@ -593,7 +593,6 @@ Layer37.addChild(&ROUTE108);
 
 //DIS multiuser facilities
 DISEntityManager& DISEntityManager109 =  DISEntityManager();
-DISEntityManager109.setReadInterval("3");
 DISEntityManager109.setDEF(CString("EntityManager"));
 DISEntityManager109.setNetworkMode("networkReader");
 DISEntityTypeMapping& DISEntityTypeMapping110 =  DISEntityTypeMapping();
@@ -900,30 +899,18 @@ _T("        var ps = Browser.currentScene.getNamedNode(\"protoSensor\");")+
 _T("        var t = Browser.currentScene.getNamedNode(\"protoTransform\");")+
 _T("        var txt = Browser.currentScene.getNamedNode(\"protoText\");")+
 _T("        if (shader) {")+
-_T("            X3DUser.LOG(\"old\", shader.getField(protoParameterName).getValue());")+
 _T("            shader.getField(protoParameterName).setValue(orientation * protoScale);")+
-_T("            X3DUser.LOG(\"new\", shader.getField(protoParameterName).getValue());")+
-_T("        } else {")+
-_T("            X3DUser.LOG('ComposedShader not found');")+
 _T("        }")+
 _T("        if (txt) {")+
 _T("            var stringField = txt.getField(\"string\");")+
-_T("            X3DUser.LOG(\"old\", stringField.getValue());")+
 _T("            var label = protoParameterName;")+
 _T("            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));")+
-_T("            X3DUser.LOG(\"new\", stringField.getValue());")+
-_T("        } else {")+
-_T("            X3DUser.LOG('ComposedShader not found');")+
 _T("        }")+
 _T("        if (ps) {")+
 _T("            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);")+
-_T("        } else {")+
-_T("            X3DUser.LOG(\"Not found protoSensor\");")+
 _T("        }")+
 _T("        if (t) {")+
 _T("            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);")+
-_T("        } else {")+
-_T("            X3DUser.LOG(\"Not found protoTransform\");")+
 _T("        }")+
 _T("}"));
 Group141.addChild(&Script159);

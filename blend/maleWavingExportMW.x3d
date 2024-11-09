@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component level='3' name='HAnim'/>
+    <meta content='maleWavingExportMW.x3d' name='title'/>
+    <meta content='2024' name='copyright'/>
+    <meta content='https://github.com/Web3DConsortium/BlenderX3DSupport (offcial release)' name='reference'/>
+    <meta content='Blender 4.2.3 LTS' name='generator'/>
+    <meta content='https://github.com/coderextreme/BlenderX3DSupport/tree/main/io_scene_x3dv (experiemental release)' name='exporter'/>
+  </head>
+  <Scene>
+    <Background DEF='WO_World' groundColor='0.05087608844041824 0.05087608844041824 0.05087608844041824' skyColor='0.05087608844041824 0.05087608844041824 0.05087608844041824'/>
+    <TimeSensor DEF='X3DV_Clock' cycleInterval='10.416666666666666' loop='true'/>
+    <ProximitySensor DEF='X3DV_Close' size='1000000 1000000 1000000'/>
+    <ROUTE fromField='enterTime' fromNode='X3DV_Close' toField='startTime' toNode='X3DV_Clock'/>
+    <Group>
+      <Shape>
+        <IndexedFaceSet DEF='Waving_-_Zygote'/>
+      </Shape>
+    </Group>
+    <Group>
+      <Shape>
+        <IndexedFaceSet DEF='Waving_-_Zygote'/>
+      </Shape>
+    </Group>
+    <Shape DEF='SH_ID15'>
+      <Appearance/>
+      <IndexedFaceSet DEF='Waving_-_Zygote'/>
+    </Shape>
+  </Scene>
+</X3D>

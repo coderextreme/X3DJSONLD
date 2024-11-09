@@ -1,0 +1,114 @@
+@prefix :        <https://www.web3d.org/semantics/scenes/UnnamedX3dModel.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:version '3.0' ;
+  x3do:profile 'Immersive' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'Scripting.x3d' .
+:meta dcterms:title "Scripting.x3d" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :OpenVault, :Shape_2_2, :Sound_2_3, :TS ;
+  x3do:hasROUTE :ROUTE_2_5, :ROUTE_2_6, :ROUTE_2_7 .
+:OpenVault a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_1_1, :field_2_1_2, :field_2_1_3, :field_2_1_4 ;
+  x3do:DEF 'OpenVault' ;
+  x3do:sourceCode """
+ecmascript:
+
+      function combinationEntered (value) {
+
+        unlocked = value;
+
+      }
+
+      function openVault(value) {
+
+      if (unlocked) vaultUnlocked = value;
+
+      }
+""" .
+:field_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OpenVault ;
+  x3do:name 'openVault' ;
+  x3do:type 'SFTime' ;
+  x3do:accessType 'inputOnly' .
+:field_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OpenVault ;
+  x3do:name 'combinationEntered' ;
+  x3do:type 'SFBool' ;
+  x3do:accessType 'inputOnly' .
+:field_2_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OpenVault ;
+  x3do:name 'vaultUnlocked' ;
+  x3do:type 'SFTime' ;
+  x3do:accessType 'outputOnly' .
+:field_2_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OpenVault ;
+  x3do:name 'unlocked' ;
+  x3do:type 'SFBool' ;
+  x3do:value false ;
+  x3do:accessType 'initializeOnly' .
+:Shape_2_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Scene ;
+  x3do:hasAppearance :Appearance_2_2_1 ;
+  x3do:hasGeometry :Sphere_2_2_2 .
+:Appearance_2_2_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2 ;
+  x3do:hasMaterial :Material_2_2_1_1 .
+:Material_2_2_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_1 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Sphere_2_2_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2 .
+:Sound_2_3 a owl:NamedIndividual, x3do:Sound ;
+  x3do:hasParent :Scene ;
+  x3do:hasSource :Click ;
+  x3do:maxBack 1000 ;
+  x3do:maxFront 1000 ;
+  x3do:minBack 1000 ;
+  x3do:minFront 1000 .
+:Click a owl:NamedIndividual, x3do:AudioClip ;
+  x3do:hasParent :Sound_2_3 ;
+  x3do:DEF 'Click' ;
+  x3do:stopTime '1' ;
+  x3do:description 'clicking sound' ;
+  x3do:url '"../resources/chandubabamusic1.wav"' .
+:TS a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Scene ;
+  x3do:DEF 'TS' .
+:ROUTE_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'TS' ;
+  x3do:fromField 'isOver' ;
+  x3do:toNode 'OpenVault' ;
+  x3do:toField 'combinationEntered' .
+:ROUTE_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'TS' ;
+  x3do:fromField 'touchTime' ;
+  x3do:toNode 'OpenVault' ;
+  x3do:toField 'openVault' .
+:ROUTE_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'OpenVault' ;
+  x3do:fromField 'vaultUnlocked' ;
+  x3do:toNode 'Click' ;
+  x3do:toField 'startTime' .

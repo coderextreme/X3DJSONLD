@@ -84,13 +84,13 @@ newModel=X3D(profile='Full',version='4.0',
           Transform(translation=(25,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cylinder(DEF='Shaft',radius=.35,height=50),
+              geometry=Cylinder(DEF='Shaft',radius=.35,height=50.0),
               appearance=Appearance(
                 material=Material(DEF='RED',diffuseColor=(1,0,0),emissiveColor=(1,0,0))))]),
           Transform(translation=(50,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3),
+              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3.0),
               appearance=Appearance(
                 material=Material(USE='RED')))]),
           #  Arrow Y 

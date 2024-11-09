@@ -1,0 +1,137 @@
+@prefix :        <https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorldCommented.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Numerous comments added to simple X3D scene example for testing JSON encoding alternatives.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '19 December 2015' ;
+  x3do:name 'created' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '20 October 2019' ;
+  x3do:name 'modified' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental.' ;
+  x3do:name 'info' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorldCommented.json' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorldCommentedOriginalEncoding.json' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HelloWorldCommentedAlternativeEncoding.json' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/license.html' ;
+  x3do:name 'license' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta dcterms:title "HelloWorldCommented.x3d" .
+:meta dcterms:description "Numerous comments added to simple X3D scene example for testing JSON encoding alternatives." .
+:meta dcterms:created "19 December 2015" .
+:meta dcterms:modified "20 October 2019" .
+:meta dcterms:creator "Don Brutzman" .
+:meta dcterms:reference "HelloWorldCommented.json" .
+:meta dcterms:reference "HelloWorldCommentedOriginalEncoding.json" .
+:meta dcterms:reference "HelloWorldCommentedAlternativeEncoding.json" .
+:meta dcterms:identifier "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d" .
+:meta dcterms:license "https://www.web3d.org/x3d/content/examples/license.html" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :WorldInfo_2_1, :Group_2_2 .
+:WorldInfo_2_1 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:title 'Hello world!' .
+:Group_2_2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ViewUpClose, :Transform_2_2_2, :Transform_2_2_3 .
+:ViewUpClose a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:DEF 'ViewUpClose' ;
+  x3do:centerOfRotation ( 0 -1 0 ) ;
+  x3do:description 'Hello world!' ;
+  x3do:position ( 0 -1 7 ) .
+:Transform_2_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_2_1 ;
+  x3do:rotation ( 0 1 0 3 ) .
+:Shape_2_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_1 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_2 .
+:Sphere_2_2_2_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2_2_1 .
+:Appearance_2_2_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1 ;
+  x3do:hasMaterial :MaterialLightBlue ;
+  x3do:hasTexture :ImageCloudlessEarth .
+:MaterialLightBlue a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_2 ;
+  x3do:DEF 'MaterialLightBlue' ;
+  x3do:diffuseColor ( 0.1 0.5 1 ) .
+:ImageCloudlessEarth a owl:NamedIndividual, x3do:ImageTexture ;
+  x3do:hasParent :Appearance_2_2_2_1_2 ;
+  x3do:DEF 'ImageCloudlessEarth' ;
+  x3do:url '"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"' .
+:Transform_2_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_3_1 ;
+  x3do:translation ( 0 -2 0 ) .
+:Shape_2_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_3 ;
+  x3do:hasGeometry :TextMessage ;
+  x3do:hasAppearance :Appearance_2_2_3_1_2 .
+:TextMessage a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_2_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_2_3_1_1_1 ;
+  x3do:DEF 'TextMessage' ;
+  x3do:string '"Hello" "world!"' .
+:FontStyle_2_2_3_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :TextMessage ;
+  x3do:justify '"MIDDLE" "MIDDLE"' .
+:Appearance_2_2_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_3_1 ;
+  x3do:hasMaterial :MaterialLightBlue-USE-1 .
+:MaterialLightBlue-USE-1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_3_1_2 ;
+  owl:sameAs :MaterialLightBlue . # DEF matching this USE

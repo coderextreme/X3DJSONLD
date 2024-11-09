@@ -1,0 +1,88 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ExtrusionHeart.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Simple extrusion of a Valentine heart.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Class participants in course Introduction to VRML/X3D.' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '14 February 2001' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '27 November 2015' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "ExtrusionHeart.x3d" .
+:meta dcterms:description "Simple extrusion of a Valentine heart." .
+:meta dcterms:creator "Class participants in course Introduction to VRML/X3D." .
+:meta dcterms:created "14 February 2001" .
+:meta dcterms:modified "27 November 2015" .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Viewpoint_2_1, :Transform_2_2 .
+:Viewpoint_2_1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Extrusion Heart' ;
+  x3do:orientation ( 1 0 0 1.57 ) ;
+  x3do:position ( 0 -4 0 ) .
+:Transform_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_2_1 ;
+  x3do:translation ( 0 -0.5 0 ) .
+:Shape_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2 ;
+  x3do:hasGeometry :Extrusion_2_2_1_1 ;
+  x3do:hasAppearance :Appearance_2_2_1_2 .
+:Extrusion_2_2_1_1 a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_2_1 ;
+  x3do:creaseAngle 3.14159 ;
+  x3do:crossSection ( 0 0.8 0.2 1 0.7 0.95 1 0.5 0.8 0 0.5 -0.3 0 -0.7 -0.5 -0.3 -0.8 0 -1 0.5 -0.7 0.95 -0.2 1 0 0.8 ) ;
+  x3do:scale ( 0.01 0.01 0.8 0.8 1 1 0.8 0.8 0.01 0.01 ) ;
+  x3do:solid false ;
+  x3do:spine ( 0 0 0 0 0.1 0 0 0.5 0 0 0.9 0 0 1 0 ) .
+:Appearance_2_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1 ;
+  x3do:hasMaterial :Material_2_2_1_2_1 .
+:Material_2_2_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_1_2 ;
+  x3do:diffuseColor ( 0.8 0.3 0.3 ) .

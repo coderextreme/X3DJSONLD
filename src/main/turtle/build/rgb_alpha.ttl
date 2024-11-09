@@ -1,0 +1,193 @@
+@prefix :        <https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Interchange' ;
+  x3do:version '3.0' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'rgb_alpha.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'rgb_alpha-front.jpg' ;
+  x3do:name 'Image' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'rgb_alpha-rear.jpg' ;
+  x3do:name 'Image' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'rgb_alpha-top.jpg' ;
+  x3do:name 'Image' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'rgb_alpha-bottom.jpg' ;
+  x3do:name 'Image' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.nist.gov/vrml.html' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.itl.nist.gov/div897/ctg/vrml/vrml.html' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.itl.nist.gov/div897/ctg/vrml/members.html' ;
+  x3do:name 'creator' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.' ;
+  x3do:name 'disclaimer' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d' ;
+  x3do:name 'info' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Michael Kass NIST, Don Brutzman NPS' ;
+  x3do:name 'translator' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '21 January 2001' ;
+  x3do:name 'translated' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '16 January 2011' ;
+  x3do:name 'modified' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box.' ;
+  x3do:name 'description' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' ;
+  x3do:name 'generator' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../../license.html' ;
+  x3do:name 'license' .
+:meta dcterms:title "rgb_alpha.x3d" .
+:meta dcterms:Image "rgb_alpha-front.jpg" .
+:meta dcterms:Image "rgb_alpha-rear.jpg" .
+:meta dcterms:Image "rgb_alpha-top.jpg" .
+:meta dcterms:Image "rgb_alpha-bottom.jpg" .
+:meta dcterms:reference "http://www.nist.gov/vrml.html" .
+:meta dcterms:reference "http://www.itl.nist.gov/div897/ctg/vrml/vrml.html" .
+:meta dcterms:creator "http://www.itl.nist.gov/div897/ctg/vrml/members.html" .
+:meta dcterms:translator "Michael Kass NIST, Don Brutzman NPS" .
+:meta dcterms:translated "21 January 2001" .
+:meta dcterms:modified "16 January 2011" .
+:meta dcterms:description "Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box." .
+:meta dcterms:identifier "https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d" .
+:meta dcterms:generator "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html" .
+:meta dcterms:generator "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" .
+:meta dcterms:license "../../license.html" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Group_2_2 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene ;
+  x3do:type '"EXAMINE" "WALK" "FLY" "ANY"' .
+:Group_2_2 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Transform_2_2_1, :Transform_2_2_2, :Transform_2_2_3, :Transform_2_2_4 .
+:Transform_2_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_1_1 ;
+  x3do:translation ( 6.14221 0.0694613 -0.000999451 ) .
+:Shape_2_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_1 ;
+  x3do:hasAppearance :Appearance_2_2_1_1_1 ;
+  x3do:hasGeometry :Box_2_2_1_1_2 .
+:Appearance_2_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1_1 ;
+  x3do:hasMaterial :Material_2_2_1_1_1_1 ;
+  x3do:hasTexture :RgbOpacityCheckerboard .
+:Material_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_1_1_1 .
+:RgbOpacityCheckerboard a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_2_1_1_1 ;
+  x3do:DEF 'RgbOpacityCheckerboard' ;
+  x3do:image '2 2 4 0xFF0000FF 0xFFFF0000 0xFFFF0000 0xFF0000FF' .
+:Box_2_2_1_1_2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_2_1_1 .
+:Transform_2_2_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_2_1 ;
+  x3do:translation ( -4.85443 0.0694381 -0.00149918 ) .
+:Shape_2_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_2 ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1 ;
+  x3do:hasGeometry :Sphere_2_2_2_1_2 .
+:Appearance_2_2_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_1 ;
+  x3do:hasTexture :RgbOpacityCheckerboard-USE-1 .
+:Material_2_2_2_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1 .
+:RgbOpacityCheckerboard-USE-1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_2_2_1_1 ;
+  owl:sameAs :RgbOpacityCheckerboard . # DEF matching this USE
+:Sphere_2_2_2_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_2_2_1 .
+:Transform_2_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_3_1 ;
+  x3do:translation ( -1.47341 0.036672 -0.00175095 ) .
+:Shape_2_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_3 ;
+  x3do:hasAppearance :Appearance_2_2_3_1_1 ;
+  x3do:hasGeometry :Cone_2_2_3_1_2 .
+:Appearance_2_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_3_1 ;
+  x3do:hasMaterial :Material_2_2_3_1_1_1 ;
+  x3do:hasTexture :RgbOpacityCheckerboard-USE-2 .
+:Material_2_2_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_3_1_1 .
+:RgbOpacityCheckerboard-USE-2 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_2_3_1_1 ;
+  owl:sameAs :RgbOpacityCheckerboard . # DEF matching this USE
+:Cone_2_2_3_1_2 a owl:NamedIndividual, x3do:Cone ;
+  x3do:hasParent :Shape_2_2_3_1 .
+:Transform_2_2_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_2 ;
+  x3do:hasChildren :Shape_2_2_4_1 ;
+  x3do:translation ( 2.31094 0.0694206 -0.00187683 ) .
+:Shape_2_2_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_2_4 ;
+  x3do:hasAppearance :Appearance_2_2_4_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_4_1_2 .
+:Appearance_2_2_4_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_4_1 ;
+  x3do:hasMaterial :Material_2_2_4_1_1_1 ;
+  x3do:hasTexture :RgbOpacityCheckerboard-USE-3 .
+:Material_2_2_4_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_4_1_1 .
+:RgbOpacityCheckerboard-USE-3 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_2_4_1_1 ;
+  owl:sameAs :RgbOpacityCheckerboard . # DEF matching this USE
+:Cylinder_2_2_4_1_2 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_2_4_1 .

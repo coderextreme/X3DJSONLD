@@ -1,0 +1,129 @@
+@prefix :        <https://coderextreme.net/X3DJSONLD/src/main/data/abox.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'https://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'asmallbox.x3d' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'a box' .
+:meta dcterms:title "asmallbox.x3d" .
+:meta dcterms:creator "John Carlson" .
+:meta dcterms:generator "manual" .
+:meta dcterms:identifier "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d" .
+:meta dcterms:description "a box" .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1, :ProtoDeclare_2_2 ;
+  x3do:hasChildren :ProtoInstance_2_3 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:name 'anyShape' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:hasChildren :Shape_2_1_1_1_1 ;
+  x3do:name 'myShape' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'MFNode' .
+:Shape_2_1_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :field_2_1_1_1 ;
+  x3do:hasGeometry :Sphere_2_1_1_1_1_1 .
+:Sphere_2_1_1_1_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_1_1_1 .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Transform_2_1_2_1 .
+:Transform_2_1_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasIS :IS_2_1_2_1_1 .
+:IS_2_1_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Transform_2_1_2_1 ;
+  x3do:hasConnect :connect_2_1_2_1_1_1 .
+:connect_2_1_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1 ;
+  x3do:nodeField 'children' ;
+  x3do:protoField 'myShape' .
+:ProtoDeclare_2_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_2_2 ;
+  x3do:name 'one' .
+:ProtoInterface_2_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasField :field_2_2_1_1 .
+:field_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:hasChildren :Shape_2_2_1_1_1 ;
+  x3do:name 'myShape' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'MFNode' .
+:Shape_2_2_1_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :field_2_2_1_1 ;
+  x3do:hasGeometry :Cylinder_2_2_1_1_1_1 .
+:Cylinder_2_2_1_1_1_1 a owl:NamedIndividual, x3do:Cylinder ;
+  x3do:hasParent :Shape_2_2_1_1_1 .
+:ProtoBody_2_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasChildren :Transform_2_2_2_1 .
+:Transform_2_2_2_1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasChildren :ProtoInstance_2_2_2_1_1 .
+:ProtoInstance_2_2_2_1_1 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Transform_2_2_2_1 ;
+  x3do:hasIS :IS_2_2_2_1_1_1 ;
+  x3do:name 'anyShape' .
+:IS_2_2_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :ProtoInstance_2_2_2_1_1 ;
+  x3do:hasConnect :connect_2_2_2_1_1_1_1 .
+:connect_2_2_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_1_1 ;
+  x3do:nodeField 'myShape' ;
+  x3do:protoField 'myShape' .
+:ProtoInstance_2_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:hasFieldValue :fieldValue_2_3_1 ;
+  x3do:name 'one' .
+:fieldValue_2_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :ProtoInstance_2_3 ;
+  x3do:hasChildren :Shape_2_3_1_1 ;
+  x3do:name 'myShape' .
+:Shape_2_3_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :fieldValue_2_3_1 ;
+  x3do:hasGeometry :Box_2_3_1_1_1 .
+:Box_2_3_1_1_1 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_3_1_1 .
