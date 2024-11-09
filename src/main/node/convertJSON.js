@@ -97,8 +97,12 @@ function convertJSON(options) {
 					if (options[ser].extension === ".clj") {
 						outfile = options[ser].folder+basefile+"/"+basefile+options[ser].extension
 					}
-					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
-					fs.writeFileSync(outfile, str);
+					try {
+						mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
+						fs.writeFileSync(outfile, str);
+					} catch (e) {
+						console.error("Problems creating folder or writing file for", outfile);
+					}
 				} else {
 					throw("Wrote nothing, serializer returned nothing");
 				}
