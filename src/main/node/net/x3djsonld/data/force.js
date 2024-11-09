@@ -287,7 +287,6 @@ force.prototype = {
     {
 		var testObject = new force();
 		console.log ("force execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new force().main();

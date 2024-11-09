@@ -179,7 +179,6 @@ gridBack.prototype = {
     {
 		var testObject = new gridBack();
 		console.log ("gridBack execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new gridBack().main();

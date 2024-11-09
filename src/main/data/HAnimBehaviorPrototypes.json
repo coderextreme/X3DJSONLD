@@ -74,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2024"
+            "@content":"09 November 2024"
           },
           {
             "@name":"generator",
@@ -10879,7 +10879,7 @@
                 },
                 {
                   "@name":"enabledBehaviorsArray",
-                  "@value":true
+                  "@value":[true]
                 }
               ]
             }

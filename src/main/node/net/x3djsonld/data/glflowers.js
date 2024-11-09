@@ -148,7 +148,6 @@ glflowers.prototype = {
     {
 		var testObject = new glflowers();
 		console.log ("glflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new glflowers().main();

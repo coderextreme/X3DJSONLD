@@ -134,7 +134,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2024"
+            "@content":"09 November 2024"
           },
           {
             "@name":"generator",
@@ -223,7 +223,7 @@
                                           {
                                             "@DEF":"Shaft",
                                             "@radius":0.35,
-                                            "@height":50
+                                            "@height":50.0
                                           }
                                         },
                                       "-appearance":
@@ -256,7 +256,7 @@
                                           {
                                             "@DEF":"Tip",
                                             "@bottomRadius":0.8,
-                                            "@height":3
+                                            "@height":3.0
                                           }
                                         },
                                       "-appearance":

@@ -443,7 +443,6 @@ Bushes.prototype = {
     {
 		var testObject = new Bushes();
 		console.log ("Bushes execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Bushes().main();

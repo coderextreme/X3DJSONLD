@@ -68,10 +68,10 @@ JointCoordinateAxes.prototype = {
           .setGeometry((new autoclass.Cylinder()).setBottom(false).setRadius(0.025).setTop(false)))
         .addChild((new autoclass.Transform()).setTranslation(0.0,1.0,0.0)
           .addChild((new autoclass.Shape("ARROW_POINTER"))
-            .setAppearance((new autoclass.Appearance()).setUSE("ARROW_APPEARANCE"))
+            .setAppearance((new autoclass.Appearance()))
             .setGeometry((new autoclass.Cone()).setBottomRadius(0.05).setHeight(0.1))))
         .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,3.1416).setTranslation(0.0,-1.0,0.0)
-          .addChild((new autoclass.Shape()).setUSE("ARROW_POINTER"))))
+          .addChild((new autoclass.Shape()))))
       .addChild((new autoclass.Transform()).setTranslation(0.0,1.08,0.0)
         .addChild((new autoclass.Billboard())
           .addChild((new autoclass.Shape())
@@ -81,22 +81,22 @@ JointCoordinateAxes.prototype = {
               .setFontStyle((new autoclass.FontStyle("LABEL_FONT")).setFamily(new autoclass.MFString("\"SANS\"")).setJustify(new autoclass.MFString("\"MIDDLE\"")).setSize(0.2)))))))
     .addChild((new autoclass.Transform()).setRotation(0.0,0.0,1.0,-1.5708)
       .addChild((new autoclass.Group())
-        .addChild((new autoclass.Group()).setUSE("ARROW"))
+        .addChild((new autoclass.Group()))
         .addChild((new autoclass.Transform()).setRotation(0.0,0.0,1.0,1.5708).setTranslation(0.072,1.1,0.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
-              .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
+              .setAppearance((new autoclass.Appearance()))
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"X\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT"))))))))
+                .setFontStyle((new autoclass.FontStyle()))))))))
     .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,1.5708)
       .addChild((new autoclass.Group())
-        .addChild((new autoclass.Group()).setUSE("ARROW"))
+        .addChild((new autoclass.Group()))
         .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,-1.5708).setTranslation(0.0,1.1,0.072)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
-              .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
+              .setAppearance((new autoclass.Appearance()))
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Z\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT")))))))));
+                .setFontStyle((new autoclass.FontStyle())))))))));
   },
   // end of initialize() method
 
@@ -152,7 +152,6 @@ JointCoordinateAxes.prototype = {
     {
 		var testObject = new JointCoordinateAxes();
 		console.log ("JointCoordinateAxes execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new JointCoordinateAxes().main();

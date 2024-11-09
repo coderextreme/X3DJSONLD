@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2024"
+            "@content":"09 November 2024"
           },
           {
             "@name":"generator",
@@ -202,7 +202,7 @@
                           { "TimeSensor":
                             {
                               "@DEF":"bubbleClock",
-                              "@cycleInterval":10,
+                              "@cycleInterval":10.0,
                               "@loop":true
                             }
                           },

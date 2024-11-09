@@ -148,7 +148,6 @@ freewrlflowers.prototype = {
     {
 		var testObject = new freewrlflowers();
 		console.log ("freewrlflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new freewrlflowers().main();

@@ -151,7 +151,7 @@ ViewFrustumPrototype.prototype = {
                       .addConnect((new autoclass.connect()).setNodeField("transparency").setProtoField("transparency"))))))
               .addChild((new autoclass.Shape())
                 .setGeometry((new autoclass.Sphere()).setRadius(0.08))
-                .setAppearance((new autoclass.Appearance()).setUSE("FrustumAppearance"))))))
+                .setAppearance((new autoclass.Appearance()))))))
         .addChild((new autoclass.Script("GeometryComputationScript")).setDirectOutput(true).setUrl(new autoclass.MFString("\"ViewFrustumPrototypeScript.js\""))
           .addField((new autoclass.field()).setName("visible").setType("SFBool").setAccessType("inputOutput").setAppinfo("Whether or not frustum geometry is rendered"))
           .addField((new autoclass.field()).setName("visibilitySwitchSelection").setType("SFInt32").setAccessType("outputOnly").setAppinfo("Adjust Switch selection to make geometry visible or not"))
@@ -160,9 +160,9 @@ ViewFrustumPrototype.prototype = {
           .addField((new autoclass.field()).setName("NavigationInfoNode").setType("SFNode").setAccessType("initializeOnly")
             .addComments(" initialization node (if any) goes here "))
           .addField((new autoclass.field()).setName("FrustumCoordinate").setType("SFNode").setAccessType("initializeOnly")
-            .addChild((new autoclass.Coordinate()).setUSE("FrustumCoordinate")))
+            .addChild((new autoclass.Coordinate())))
           .addField((new autoclass.field()).setName("FrustumExtrusion").setType("SFNode").setAccessType("initializeOnly")
-            .addChild((new autoclass.Extrusion()).setUSE("FrustumExtrusion")))
+            .addChild((new autoclass.Extrusion())))
           .addField((new autoclass.field()).setName("recompute").setType("SFBool").setAccessType("inputOnly"))
           .addField((new autoclass.field()).setName("aspectRatio").setType("SFFloat").setAccessType("inputOutput").setAppinfo("assumed ratio height/width"))
           .addField((new autoclass.field()).setName("position_changed").setType("SFVec3f").setAccessType("outputOnly"))
@@ -245,7 +245,6 @@ ViewFrustumPrototype.prototype = {
     {
 		var testObject = new ViewFrustumPrototype();
 		console.log ("ViewFrustumPrototype execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ViewFrustumPrototype().main();

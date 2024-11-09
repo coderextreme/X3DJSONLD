@@ -153,7 +153,6 @@ abox.prototype = {
     {
 		var testObject = new abox();
 		console.log ("abox execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new abox().main();

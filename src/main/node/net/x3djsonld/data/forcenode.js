@@ -270,7 +270,6 @@ forcenode.prototype = {
     {
 		var testObject = new forcenode();
 		console.log ("forcenode execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new forcenode().main();

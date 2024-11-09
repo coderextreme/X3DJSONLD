@@ -164,7 +164,7 @@ MaskAndSnorkel.prototype = {
       .addChild((new autoclass.Transform("snorkelHoldRing")).setTranslation(0.075,0.075,-0.02)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("frameColor")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.Cylinder()).setHeight(0.003).setRadius(0.015))))
       .addChild((new autoclass.Group("snorkel"))
         .addChild((new autoclass.Transform()).setTranslation(0.0,-0.02,0.0)
@@ -181,7 +181,7 @@ MaskAndSnorkel.prototype = {
           .addChild((new autoclass.Transform()).setRotation(0.0,0.0,1.0,-0.85).setScale(0.9,0.9,0.9).setTranslation(0.005,-0.01,-0.02)
             .addChild((new autoclass.Shape())
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material()).setUSE("Mouthpiece")))
+                .setMaterial((new autoclass.Material())))
               .setGeometry((new autoclass.Extrusion()).setCrossSection(this.Extrusion_8_35_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [-0.02,-0.03,0.0,-0.01,-0.03,0.0,0.0,-0.0175,0.0,0.0,-0.0135,0.0,-0.01,0.0,0.0,-0.02,0.0,0.0]))))))))
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape("maskLensR"))
@@ -192,7 +192,7 @@ MaskAndSnorkel.prototype = {
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape("maskLensL"))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("plastic")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.45).setSolid(false).setCoordIndex(java.newArray("int", [19,20,21,22,23,24,25,19,-1]))
             .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_7_48_point)))))
       .addChild((new autoclass.Transform())
@@ -204,13 +204,13 @@ MaskAndSnorkel.prototype = {
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape("faceFit"))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("plasticFit")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.45).setSolid(false).setCoordIndex(this.IndexedFaceSet_6_60_coordIndex)
             .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_7_60_point)))))
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape("belt"))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("plastic")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.45).setSolid(false).setCoordIndex(this.IndexedFaceSet_6_66_coordIndex)
             .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_7_66_point)))))));
   },
@@ -268,7 +268,6 @@ MaskAndSnorkel.prototype = {
     {
 		var testObject = new MaskAndSnorkel();
 		console.log ("MaskAndSnorkel execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new MaskAndSnorkel().main();

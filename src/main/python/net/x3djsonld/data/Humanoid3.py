@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python JohnBoy.py
+#   $ python Humanoid3.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,8 +30,8 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='JohnBoy.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
+    meta(content='Humanoid3.x3d',name='title'),
+    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h2.pl'),
     meta(name='modified',content='14 Jan 2023'),
@@ -77,7 +77,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(position=(0,1,3),centerOfRotation=(0,1,0),description='default'),
     HAnimHumanoid(DEF='hanim_HAnim',info=["humanoidVersion=2.0"],name='HAnim',version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -97,7 +97,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               coord=Coordinate(point=[(0.0000,0.8240,0.0277),(0.0028,1.0568,-0.0776)]),
               #  from humanoid_root to vl5 vertices 2
               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -207,7 +207,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 coord=Coordinate(point=[(0.0000,0.9149,0.0016),(-0.0950,0.9171,0.0029)]),
                 #  from sacroiliac to r_hip vertices 2
                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -258,7 +258,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["41"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
@@ -300,7 +300,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["47"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -334,7 +334,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         geometry=Text(string=["50"],
                           fontStyle=FontStyle(size=0.035)))])])]),
-                HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0800,0.0175,-0.0608),
+                HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0800,0.0175,-0.0608),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                     children=[
@@ -349,7 +349,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         coord=Coordinate(point=[(0.0800,0.0175,-0.0608),(0.0824,0.0064,-0.0040)]),
                         #  from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040),
+                  HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                       children=[
@@ -427,8 +427,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(
                             geometry=Text(string=[""],
                               fontStyle=FontStyle(size=0.035)))])])]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0841,0.0013,0.0216))])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0841,0.0013,0.0216),ulimit=[0,0,0],llimit=[0,0,0])])])])])]),
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -479,7 +479,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["45"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
@@ -521,7 +521,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["51"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -555,7 +555,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         geometry=Text(string=["54"],
                           fontStyle=FontStyle(size=0.035)))])])]),
-                HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.0800,0.0175,-0.0608),
+                HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.0800,0.0175,-0.0608),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
                     children=[
@@ -570,7 +570,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         coord=Coordinate(point=[(-0.0800,0.0175,-0.0608),(-0.0823,0.0064,-0.0040)]),
                         #  from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040),
+                  HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                       children=[
@@ -648,8 +648,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(
                             geometry=Text(string=[""],
                               fontStyle=FontStyle(size=0.035)))])])]),
-                    HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0841,0.0013,0.0216))])])])])])]),
-        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),
+                    HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0841,0.0013,0.0216),ulimit=[0,0,0],llimit=[0,0,0])])])])])])]),
+        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_l5',name='l5',
             children=[
@@ -691,7 +691,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(
                   geometry=Text(string=["27"],
                     fontStyle=FontStyle(size=0.035)))])])]),
-          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0.0035,1.0925,-0.0787),
+          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0.0035,1.0925,-0.0787),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l4',name='l4',
               children=[
@@ -706,7 +706,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   coord=Coordinate(point=[(0.0035,1.0925,-0.0787),(0.0041,1.1276,-0.0796)]),
                   #  from vl4 to vl3 vertices 2
                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0.0041,1.1276,-0.0796),
+            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0.0041,1.1276,-0.0796),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l3',name='l3',
                 children=[
@@ -721,7 +721,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     coord=Coordinate(point=[(0.0041,1.1276,-0.0796),(0.0045,1.1546,-0.0800)]),
                     #  from vl3 to vl2 vertices 2
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0.0045,1.1546,-0.0800),
+              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0.0045,1.1546,-0.0800),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l2',name='l2',
                   children=[
@@ -763,7 +763,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         geometry=Text(string=[""],
                           fontStyle=FontStyle(size=0.035)))])])]),
-                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0.0048,1.1912,-0.0805),
+                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0.0048,1.1912,-0.0805),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l1',name='l1',
                     children=[
@@ -778,7 +778,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         coord=Coordinate(point=[(0.0048,1.1912,-0.0805),(0.0051,1.2278,-0.0808)]),
                         #  from vl1 to vt12 vertices 2
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0.0051,1.2278,-0.0808),
+                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0.0051,1.2278,-0.0808),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_t12',name='t12',
                       children=[
@@ -793,7 +793,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           coord=Coordinate(point=[(0.0051,1.2278,-0.0808),(0.0053,1.2679,-0.0810)]),
                           #  from vt12 to vt11 vertices 2
                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0.0053,1.2679,-0.0810),
+                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0.0053,1.2679,-0.0810),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_t11',name='t11',
                         children=[
@@ -808,7 +808,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                             coord=Coordinate(point=[(0.0053,1.2679,-0.0810),(0.0056,1.2848,-0.0822)]),
                             #  from vt11 to vt10 vertices 2
                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0.0056,1.2848,-0.0822),
+                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0.0056,1.2848,-0.0822),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_t10',name='t10',
                           children=[
@@ -832,7 +832,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                               Shape(
                                 geometry=Text(string=["13"],
                                   fontStyle=FontStyle(size=0.035)))])])]),
-                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0.0057,1.3126,-0.0838),
+                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0.0057,1.3126,-0.0838),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_t9',name='t9',
                             children=[
@@ -865,7 +865,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 Shape(
                                   geometry=Text(string=["31"],
                                     fontStyle=FontStyle(size=0.035)))])])]),
-                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0.0057,1.3382,-0.0845),
+                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0.0057,1.3382,-0.0845),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_t8',name='t8',
                               children=[
@@ -880,7 +880,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   coord=Coordinate(point=[(0.0057,1.3382,-0.0845),(0.0058,1.3625,-0.0833)]),
                                   #  from vt8 to vt7 vertices 2
                                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0.0058,1.3625,-0.0833),
+                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0.0058,1.3625,-0.0833),ulimit=[0,0,0],llimit=[0,0,0],
                               children=[
                               HAnimSegment(DEF='hanim_t7',name='t7',
                                 children=[
@@ -895,7 +895,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                     coord=Coordinate(point=[(0.0058,1.3625,-0.0833),(0.0059,1.3866,-0.0800)]),
                                     #  from vt7 to vt6 vertices 2
                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0.0059,1.3866,-0.0800),
+                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0.0059,1.3866,-0.0800),ulimit=[0,0,0],llimit=[0,0,0],
                                 children=[
                                 HAnimSegment(DEF='hanim_t6',name='t6',
                                   children=[
@@ -946,7 +946,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                       Shape(
                                         geometry=Text(string=["92"],
                                           fontStyle=FontStyle(size=0.035)))])])]),
-                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0.0060,1.4102,-0.0745),
+                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0.0060,1.4102,-0.0745),ulimit=[0,0,0],llimit=[0,0,0],
                                   children=[
                                   HAnimSegment(DEF='hanim_t5',name='t5',
                                     children=[
@@ -970,7 +970,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                         Shape(
                                           geometry=Text(string=["24"],
                                             fontStyle=FontStyle(size=0.035)))])])]),
-                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0.0061,1.4320,-0.0675),
+                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0.0061,1.4320,-0.0675),ulimit=[0,0,0],llimit=[0,0,0],
                                     children=[
                                     HAnimSegment(DEF='hanim_t4',name='t4',
                                       children=[
@@ -985,7 +985,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                           coord=Coordinate(point=[(0.0061,1.4320,-0.0675),(0.0062,1.4583,-0.0570)]),
                                           #  from vt4 to vt3 vertices 2
                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0.0062,1.4583,-0.0570),
+                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0.0062,1.4583,-0.0570),ulimit=[0,0,0],llimit=[0,0,0],
                                       children=[
                                       HAnimSegment(DEF='hanim_t3',name='t3',
                                         children=[
@@ -1000,7 +1000,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                             coord=Coordinate(point=[(0.0062,1.4583,-0.0570),(0.0063,1.4761,-0.0484)]),
                                             #  from vt3 to vt2 vertices 2
                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0.0063,1.4761,-0.0484),
+                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0.0063,1.4761,-0.0484),ulimit=[0,0,0],llimit=[0,0,0],
                                         children=[
                                         HAnimSegment(DEF='hanim_t2',name='t2',
                                           children=[
@@ -1015,7 +1015,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                               coord=Coordinate(point=[(0.0063,1.4761,-0.0484),(0.0065,1.4951,-0.0387)]),
                                               #  from vt2 to vt1 vertices 2
                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0.0065,1.4951,-0.0387),
+                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0.0065,1.4951,-0.0387),ulimit=[0,0,0],llimit=[0,0,0],
                                           children=[
                                           HAnimSegment(DEF='hanim_t1',name='t1',
                                             children=[
@@ -1058,7 +1058,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 coord=Coordinate(point=[(0.0065,1.4951,-0.0387),(-0.0694,1.4600,-0.0330)]),
                                                 #  from vt1 to r_sternoclavicular vertices 2
                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0.0066,1.5132,-0.0301),
+                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0.0066,1.5132,-0.0301),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_c7',name='c7',
                                               children=[
@@ -1091,7 +1091,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   Shape(
                                                     geometry=Text(string=["83"],
                                                       fontStyle=FontStyle(size=0.035)))])])]),
-                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0.0066,1.5357,-0.0143),
+                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0.0066,1.5357,-0.0143),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_c6',name='c6',
                                                 children=[
@@ -1106,7 +1106,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     coord=Coordinate(point=[(0.0066,1.5357,-0.0143),(0.0066,1.5520,-0.0082)]),
                                                     #  from vc6 to vc5 vertices 2
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0.0066,1.5520,-0.0082),
+                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0.0066,1.5520,-0.0082),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c5',name='c5',
                                                   children=[
@@ -1121,7 +1121,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       coord=Coordinate(point=[(0.0066,1.5520,-0.0082),(0.0066,1.5662,-0.0084)]),
                                                       #  from vc5 to vc4 vertices 2
                                                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0.0066,1.5662,-0.0084),
+                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0.0066,1.5662,-0.0084),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c4',name='c4',
                                                     children=[
@@ -1136,7 +1136,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         coord=Coordinate(point=[(0.0066,1.5662,-0.0084),(0.0066,1.5800,-0.0103)]),
                                                         #  from vc4 to vc3 vertices 2
                                                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0.0066,1.5800,-0.0103),
+                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0.0066,1.5800,-0.0103),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c3',name='c3',
                                                       children=[
@@ -1151,7 +1151,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           coord=Coordinate(point=[(0.0066,1.5800,-0.0103),(0.0066,1.5928,-0.0103)]),
                                                           #  from vc3 to vc2 vertices 2
                                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0.0066,1.5928,-0.0103),
+                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0.0066,1.5928,-0.0103),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c2',name='c2',
                                                         children=[
@@ -1175,7 +1175,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["11"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0.0066,1.6144,-0.0034),
+                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0.0066,1.6144,-0.0034),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c1',name='c1',
                                                           children=[
@@ -1190,7 +1190,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.0066,1.6144,-0.0034),(0.0044,1.6209,0.0236)]),
                                                               #  from vc1 to skullbase vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),
+                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_skull',name='skull',
                                                             children=[
@@ -1334,14 +1334,14 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0002,1.3043,-0.0865)]),
                                                                 #  from skullbase to temporomandibular vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0503,1.4157,-0.0689)),
-                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0507,1.4157,-0.0689)),
-                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.0479,1.3963,-0.0188)),
-                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.0483,1.3963,-0.0188)),
-                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.0216,1.4053,0.0051)),
-                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.0219,1.4053,0.0051)),
-                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(-0.0002,1.3043,-0.0865))])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.0820,1.4488,-0.0353),
+                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0503,1.4157,-0.0689),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0507,1.4157,-0.0689),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.0479,1.3963,-0.0188),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.0483,1.3963,-0.0188),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.0216,1.4053,0.0051),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.0219,1.4053,0.0051),ulimit=[0,0,0],llimit=[0,0,0]),
+                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(-0.0002,1.3043,-0.0865),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])]),
+                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.0820,1.4488,-0.0353),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
                                               children=[
@@ -1401,7 +1401,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   Shape(
                                                     geometry=Text(string=["14"],
                                                       fontStyle=FontStyle(size=0.035)))])])]),
-                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.0962,1.4269,-0.0424),
+                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.0962,1.4269,-0.0424),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
                                                 children=[
@@ -1416,7 +1416,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     coord=Coordinate(point=[(0.0962,1.4269,-0.0424),(0.2029,1.4376,-0.0387)]),
                                                     #  from l_acromioclavicular to l_shoulder vertices 2
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),
+                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
                                                   children=[
@@ -1449,7 +1449,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       Shape(
                                                         geometry=Text(string=["63"],
                                                           fontStyle=FontStyle(size=0.035)))])])]),
-                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),
+                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                                                     children=[
@@ -1500,7 +1500,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         Shape(
                                                           geometry=Text(string=["69"],
                                                             fontStyle=FontStyle(size=0.035)))])])]),
-                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),
+                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                                                       children=[
@@ -1545,7 +1545,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           coord=Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1925,0.8066,-0.1036)]),
                                                           #  from l_radiocarpal to l_carpometacarpal_5 vertices 2
                                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1924,0.8472,-0.0534),
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1924,0.8472,-0.0534),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                                                         children=[
@@ -1560,7 +1560,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             coord=Coordinate(point=[(0.1924,0.8472,-0.0534),(0.1951,0.8226,0.0246)]),
                                                             #  from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.1951,0.8226,0.0246),
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.1951,0.8226,0.0246),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                                                           children=[
@@ -1575,8 +1575,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.1951,0.8226,0.0246),(0.1955,0.8159,0.0464)]),
                                                               #  from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1955,0.8159,0.0464))])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1983,0.8024,-0.0280),
+                                                        HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1955,0.8159,0.0464),ulimit=[0,0,0],llimit=[0,0,0])])]),
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1983,0.8024,-0.0280),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                                                         children=[
@@ -1600,7 +1600,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["75"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1983,0.7815,-0.0280),
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1983,0.7815,-0.0280),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                                                           children=[
@@ -1615,7 +1615,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.1983,0.7815,-0.0280),(0.2017,0.7363,-0.0248)]),
                                                               #  from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.2017,0.7363,-0.0248),
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.2017,0.7363,-0.0248),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                                                             children=[
@@ -1630,8 +1630,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(0.2017,0.7363,-0.0248),(0.2028,0.7139,-0.0236)]),
                                                                 #  from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.2028,0.7139,-0.0236))])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.1987,0.8029,-0.0530),
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.2028,0.7139,-0.0236),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.1987,0.8029,-0.0530),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                                                         children=[
@@ -1655,7 +1655,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["76"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.1987,0.7818,-0.0530),
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.1987,0.7818,-0.0530),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                                                           children=[
@@ -1670,7 +1670,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.1987,0.7818,-0.0530),(0.2013,0.7273,-0.0503)]),
                                                               #  from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.2013,0.7273,-0.0503),
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.2013,0.7273,-0.0503),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                                                             children=[
@@ -1685,8 +1685,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(0.2013,0.7273,-0.0503),(0.2026,0.7011,-0.0494)]),
                                                                 #  from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.2026,0.7011,-0.0494))])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1956,0.8019,-0.0794),
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.2026,0.7011,-0.0494),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1956,0.8019,-0.0794),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                                                         children=[
@@ -1701,7 +1701,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             coord=Coordinate(point=[(0.1956,0.8019,-0.0794),(0.1956,0.7815,-0.0794)]),
                                                             #  from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.1956,0.7815,-0.0794),
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.1956,0.7815,-0.0794),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                                                           children=[
@@ -1716,7 +1716,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.1956,0.7815,-0.0794),(0.1973,0.7287,-0.0777)]),
                                                               #  from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1973,0.7287,-0.0777),
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1973,0.7287,-0.0777),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                                                             children=[
@@ -1731,8 +1731,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(0.1973,0.7287,-0.0777),(0.1983,0.7045,-0.0767)]),
                                                                 #  from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.1983,0.7045,-0.0767))])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1925,0.8066,-0.1036),
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.1983,0.7045,-0.0767),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1925,0.8066,-0.1036),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                                                         children=[
@@ -1756,7 +1756,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["77"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1925,0.7866,-0.1036),
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1925,0.7866,-0.1036),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                                                           children=[
@@ -1771,7 +1771,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(0.1925,0.7866,-0.1036),(0.1938,0.7452,-0.1024)]),
                                                               #  from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.1938,0.7452,-0.1024),
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.1938,0.7452,-0.1024),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                                                             children=[
@@ -1786,8 +1786,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(0.1938,0.7452,-0.1024),(0.1948,0.7277,-0.1017)]),
                                                                 #  from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1948,0.7277,-0.1017))])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.0694,1.4600,-0.0330),
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1948,0.7277,-0.1017),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])]),
+                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.0694,1.4600,-0.0330),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
                                               children=[
@@ -1847,7 +1847,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   Shape(
                                                     geometry=Text(string=["19"],
                                                       fontStyle=FontStyle(size=0.035)))])])]),
-                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.0836,1.4281,-0.0401),
+                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.0836,1.4281,-0.0401),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
                                                 children=[
@@ -1862,7 +1862,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     coord=Coordinate(point=[(-0.0836,1.4281,-0.0401),(-0.1907,1.4407,-0.0325)]),
                                                     #  from r_acromioclavicular to r_shoulder vertices 2
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),
+                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
                                                   children=[
@@ -1895,7 +1895,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       Shape(
                                                         geometry=Text(string=["66"],
                                                           fontStyle=FontStyle(size=0.035)))])])]),
-                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),
+                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                                                     children=[
@@ -1946,7 +1946,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         Shape(
                                                           geometry=Text(string=["72"],
                                                             fontStyle=FontStyle(size=0.035)))])])]),
-                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),
+                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                                                       children=[
@@ -1991,7 +1991,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           coord=Coordinate(point=[(-0.1959,0.8694,-0.0521),(-0.1926,0.8096,-0.0975)]),
                                                           #  from r_radiocarpal to r_carpometacarpal_5 vertices 2
                                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.1899,0.8502,-0.0473),
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.1899,0.8502,-0.0473),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                                                         children=[
@@ -2006,7 +2006,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             coord=Coordinate(point=[(-0.1899,0.8502,-0.0473),(-0.1874,0.8256,0.0306)]),
                                                             #  from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.1874,0.8256,0.0306),
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.1874,0.8256,0.0306),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                                                           children=[
@@ -2021,8 +2021,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(-0.1874,0.8256,0.0306),(-0.1864,0.8190,0.0506)]),
                                                               #  from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.1864,0.8190,0.0506))])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1961,0.8055,-0.0218),
+                                                        HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.1864,0.8190,0.0506),ulimit=[0,0,0],llimit=[0,0,0])])]),
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1961,0.8055,-0.0218),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                                                         children=[
@@ -2046,7 +2046,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["78"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.1961,0.7846,-0.0218),
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.1961,0.7846,-0.0218),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                                                           children=[
@@ -2061,7 +2061,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(-0.1961,0.7846,-0.0218),(-0.1954,0.7393,-0.0185)]),
                                                               #  from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1954,0.7393,-0.0185),
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1954,0.7393,-0.0185),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                                                             children=[
@@ -2076,8 +2076,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(-0.1954,0.7393,-0.0185),(-0.1945,0.7169,-0.0173)]),
                                                                 #  from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1945,0.7169,-0.0173))])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.1972,0.8060,-0.0468),
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1945,0.7169,-0.0173),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.1972,0.8060,-0.0468),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                                                         children=[
@@ -2101,7 +2101,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["79"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1972,0.7849,-0.0468),
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1972,0.7849,-0.0468),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                                                           children=[
@@ -2116,7 +2116,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(-0.1972,0.7849,-0.0468),(-0.1950,0.7304,-0.0441)]),
                                                               #  from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1950,0.7304,-0.0441),
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1950,0.7304,-0.0441),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                                                             children=[
@@ -2131,8 +2131,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(-0.1950,0.7304,-0.0441),(-0.1939,0.7042,-0.0432)]),
                                                                 #  from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1939,0.7042,-0.0432))])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.1951,0.8049,-0.0732),
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1939,0.7042,-0.0432),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.1951,0.8049,-0.0732),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                                                         children=[
@@ -2147,7 +2147,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             coord=Coordinate(point=[(-0.1951,0.8049,-0.0732),(-0.1951,0.7845,-0.0732)]),
                                                             #  from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1951,0.7845,-0.0732),
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1951,0.7845,-0.0732),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                                                           children=[
@@ -2162,7 +2162,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(-0.1951,0.7845,-0.0732),(-0.1920,0.7318,-0.0716)]),
                                                               #  from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1920,0.7318,-0.0716),
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1920,0.7318,-0.0716),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                                                             children=[
@@ -2177,8 +2177,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(-0.1920,0.7318,-0.0716),(-0.1908,0.7077,-0.0706)]),
                                                                 #  from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1908,0.7077,-0.0706))])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.1926,0.8096,-0.0975),
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1908,0.7077,-0.0706),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.1926,0.8096,-0.0975),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                                                         children=[
@@ -2202,7 +2202,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(
                                                               geometry=Text(string=["80"],
                                                                 fontStyle=FontStyle(size=0.035)))])])]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.1926,0.7896,-0.0975),
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.1926,0.7896,-0.0975),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                                                           children=[
@@ -2217,7 +2217,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               coord=Coordinate(point=[(-0.1926,0.7896,-0.0975),(-0.1902,0.7483,-0.0963)]),
                                                               #  from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1902,0.7483,-0.0963),
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1902,0.7483,-0.0963),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                                                             children=[
@@ -2232,7 +2232,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 coord=Coordinate(point=[(-0.1902,0.7483,-0.0963),(-0.1908,0.7540,-0.0960)]),
                                                                 #  from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.1908,0.7540,-0.0960))])])])])])])])])])])])])])])])])])])])])])])])])])]),],
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.1908,0.7540,-0.0960),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
       sites=[
       HAnimSite(USE='hanim_buttocks_standing_wall_contact_point'),
       HAnimSite(USE='hanim_crotch'),
@@ -2348,100 +2348,100 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  </LOD> 
       skinCoord=Coordinate(USE='TheSkinCoord'),
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root'),
-      HAnimJoint(USE='hanim_sacroiliac'),
-      HAnimJoint(USE='hanim_l_hip'),
-      HAnimJoint(USE='hanim_l_knee'),
-      HAnimJoint(USE='hanim_l_talocrural'),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_2'),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_hip'),
-      HAnimJoint(USE='hanim_r_knee'),
-      HAnimJoint(USE='hanim_r_talocrural'),
-      HAnimJoint(USE='hanim_r_tarsometatarsal_2'),
-      HAnimJoint(USE='hanim_r_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_r_tarsal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_vl5'),
-      HAnimJoint(USE='hanim_vl4'),
-      HAnimJoint(USE='hanim_vl3'),
-      HAnimJoint(USE='hanim_vl2'),
-      HAnimJoint(USE='hanim_vl1'),
-      HAnimJoint(USE='hanim_vt12'),
-      HAnimJoint(USE='hanim_vt11'),
-      HAnimJoint(USE='hanim_vt10'),
-      HAnimJoint(USE='hanim_vt9'),
-      HAnimJoint(USE='hanim_vt8'),
-      HAnimJoint(USE='hanim_vt7'),
-      HAnimJoint(USE='hanim_vt6'),
-      HAnimJoint(USE='hanim_vt5'),
-      HAnimJoint(USE='hanim_vt4'),
-      HAnimJoint(USE='hanim_vt3'),
-      HAnimJoint(USE='hanim_vt2'),
-      HAnimJoint(USE='hanim_vt1'),
-      HAnimJoint(USE='hanim_vc7'),
-      HAnimJoint(USE='hanim_vc6'),
-      HAnimJoint(USE='hanim_vc5'),
-      HAnimJoint(USE='hanim_vc4'),
-      HAnimJoint(USE='hanim_vc3'),
-      HAnimJoint(USE='hanim_vc2'),
-      HAnimJoint(USE='hanim_vc1'),
-      HAnimJoint(USE='hanim_skullbase'),
-      HAnimJoint(USE='hanim_l_eyelid_joint'),
-      HAnimJoint(USE='hanim_r_eyelid_joint'),
-      HAnimJoint(USE='hanim_l_eyeball_joint'),
-      HAnimJoint(USE='hanim_r_eyeball_joint'),
-      HAnimJoint(USE='hanim_l_eyebrow_joint'),
-      HAnimJoint(USE='hanim_r_eyebrow_joint'),
-      HAnimJoint(USE='hanim_temporomandibular'),
-      HAnimJoint(USE='hanim_l_sternoclavicular'),
-      HAnimJoint(USE='hanim_l_acromioclavicular'),
-      HAnimJoint(USE='hanim_l_shoulder'),
-      HAnimJoint(USE='hanim_l_elbow'),
-      HAnimJoint(USE='hanim_l_radiocarpal'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_1'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_1'),
-      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_2'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_2'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_3'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_3'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_4'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_4'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_5'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_5'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_r_sternoclavicular'),
-      HAnimJoint(USE='hanim_r_acromioclavicular'),
-      HAnimJoint(USE='hanim_r_shoulder'),
-      HAnimJoint(USE='hanim_r_elbow'),
-      HAnimJoint(USE='hanim_r_radiocarpal'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_1'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_1'),
-      HAnimJoint(USE='hanim_r_carpal_interphalangeal_1'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_2'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_2'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_3'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_3'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_4'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_4'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_5'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_5'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_5')],
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt12',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt11',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt10',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt9',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt8',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt7',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt6',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc7',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc6',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_temporomandibular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0])],
       segments=[
       HAnimSegment(USE='hanim_sacrum'),
       HAnimSegment(USE='hanim_pelvis'),
@@ -2524,7 +2524,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JohnBoy.py:')
+print('Self-test diagnostics for Humanoid3.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -2553,4 +2553,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JohnBoy.py load and self-test diagnostics complete.")
+print("python Humanoid3.py load and self-test diagnostics complete.")

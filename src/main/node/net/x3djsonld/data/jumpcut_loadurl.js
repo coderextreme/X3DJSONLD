@@ -194,7 +194,6 @@ jumpcut_loadurl.prototype = {
     {
 		var testObject = new jumpcut_loadurl();
 		console.log ("jumpcut_loadurl execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new jumpcut_loadurl().main();

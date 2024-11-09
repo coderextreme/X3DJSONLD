@@ -117,10 +117,10 @@ qq3.prototype = {
               .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [1.5,0.0,0.0,2.5,0.0,0.0]))))))
           .addComments(" up ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
-            .addChild((new autoclass.Shape()).setUSE("ShapeUpRight")))
+            .addChild((new autoclass.Shape())))
           .addComments(" down ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
-            .addChild((new autoclass.Shape()).setUSE("ShapeLeftDown"))))))
+            .addChild((new autoclass.Shape()))))))
     .addChild((new autoclass.Viewpoint()).setDescription("Process pipes").setOrientation(1.0,0.0,0.0,-0.4).setPosition(0.0,5.0,12.0))
     .addChild((new autoclass.Transform()).setTranslation(0.0,-2.5,0.0)
       .addChild((new autoclass.ProtoInstance())))
@@ -183,7 +183,6 @@ qq3.prototype = {
     {
 		var testObject = new qq3();
 		console.log ("qq3 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new qq3().main();

@@ -141,20 +141,20 @@ MainStage.prototype = {
               .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_32_point)))))
         .addChild((new autoclass.Transform("Circle1")).setScale(.5,1.0,.5)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("LineColor"))
-            .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedLineSet()))))
         .addChild((new autoclass.Transform("Circle2")).setScale(.25,1.0,.25)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("LineColor"))
-            .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedLineSet()))))
         .addChild((new autoclass.Transform("Circle3")).setScale(2.0,1.0,2.0)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("LineColor"))
-            .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1"))))
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedLineSet()))))
         .addChild((new autoclass.Transform("Circle4")).setScale(3.0,1.0,3.0)
           .addChild((new autoclass.Shape())
-            .setAppearance((new autoclass.Appearance()).setUSE("LineColor"))
-            .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1")))))));
+            .setAppearance((new autoclass.Appearance()))
+            .setGeometry((new autoclass.IndexedLineSet())))))));
   },
   // end of initialize() method
 
@@ -210,7 +210,6 @@ MainStage.prototype = {
     {
 		var testObject = new MainStage();
 		console.log ("MainStage execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new MainStage().main();

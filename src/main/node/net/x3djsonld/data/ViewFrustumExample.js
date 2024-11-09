@@ -211,7 +211,6 @@ ViewFrustumExample.prototype = {
     {
 		var testObject = new ViewFrustumExample();
 		console.log ("ViewFrustumExample execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ViewFrustumExample().main();

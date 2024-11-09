@@ -432,28 +432,28 @@ Appearance73.Material := Material74;
 ComposedCubeMapTexture75 := TComposedCubeMapTextureNode.Create;
 ImageTexture76 := TImageTextureNode.Create;
 ImageTexture76.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBack }
-ComposedCubeMapTexture75.Back := ImageTexture76;
+{ .SetBackTexture }
+ComposedCubeMapTexture75.BackTexture := ImageTexture76;
 ImageTexture77 := TImageTextureNode.Create;
 ImageTexture77.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottom }
-ComposedCubeMapTexture75.Bottom := ImageTexture77;
+{ .SetBottomTexture }
+ComposedCubeMapTexture75.BottomTexture := ImageTexture77;
 ImageTexture78 := TImageTextureNode.Create;
 ImageTexture78.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFront }
-ComposedCubeMapTexture75.Front := ImageTexture78;
+{ .SetFrontTexture }
+ComposedCubeMapTexture75.FrontTexture := ImageTexture78;
 ImageTexture79 := TImageTextureNode.Create;
 ImageTexture79.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeft }
-ComposedCubeMapTexture75.Left := ImageTexture79;
+{ .SetLeftTexture }
+ComposedCubeMapTexture75.LeftTexture := ImageTexture79;
 ImageTexture80 := TImageTextureNode.Create;
 ImageTexture80.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRight }
-ComposedCubeMapTexture75.Right := ImageTexture80;
+{ .SetRightTexture }
+ComposedCubeMapTexture75.RightTexture := ImageTexture80;
 ImageTexture81 := TImageTextureNode.Create;
 ImageTexture81.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTop }
-ComposedCubeMapTexture75.Top := ImageTexture81;
+{ .SetTopTexture }
+ComposedCubeMapTexture75.TopTexture := ImageTexture81;
 { .SetTexture }
 Appearance73.Texture := ComposedCubeMapTexture75;
 ComposedShader82 := TComposedShaderNode.Create;

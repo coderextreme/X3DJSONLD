@@ -227,7 +227,7 @@ ProtoInstance ProtoInstance5 = null;
             .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
             .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
             .addComments("DIS multiuser facilities")
-            .addChild(new DISEntityManager().setReadInterval("3").setDEF("EntityManager").setNetworkMode("networkReader")
+            .addChild(new DISEntityManager().setDEF("EntityManager").setNetworkMode("networkReader")
               .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(1).setUrl(new MFString17().getArray()))
               .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(2).setUrl(new MFString18().getArray()))
               .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(3).setUrl(new MFString19().getArray()))
@@ -304,30 +304,18 @@ ProtoInstance ProtoInstance5 = null;
 "        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\n"+
 "        var txt = Browser.currentScene.getNamedNode(\"protoText\");\n"+
 "        if (shader) {\n"+
-"            X3DUser.LOG(\"old\", shader.getField(protoParameterName).getValue());\n"+
 "            shader.getField(protoParameterName).setValue(orientation * protoScale);\n"+
-"            X3DUser.LOG(\"new\", shader.getField(protoParameterName).getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (txt) {\n"+
 "            var stringField = txt.getField(\"string\");\n"+
-"            X3DUser.LOG(\"old\", stringField.getValue());\n"+
 "            var label = protoParameterName;\n"+
 "            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\n"+
-"            X3DUser.LOG(\"new\", stringField.getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (ps) {\n"+
 "            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoSensor\");\n"+
 "        }\n"+
 "        if (t) {\n"+
 "            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoTransform\");\n"+
 "        }\n"+
 "}"))
                   .addChild(new ROUTE().setFromField("translation_changed").setFromNode("protoSensor").setToField("set_translation").setToNode("protoTransform"))

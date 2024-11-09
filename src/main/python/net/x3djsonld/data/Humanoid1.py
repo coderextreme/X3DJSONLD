@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python JohnBoy.py
+#   $ python Humanoid1.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,8 +30,8 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='JohnBoy.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
+    meta(content='Humanoid1.x3d',name='title'),
+    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h2.pl'),
     meta(name='modified',content='14 Jan 2023'),
@@ -77,7 +77,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(position=(0,1,3),centerOfRotation=(0,1,0),description='default'),
     HAnimHumanoid(DEF='hanim_HAnim',info=["humanoidVersion=2.0"],name='HAnim',version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -97,7 +97,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               coord=Coordinate(point=[(0.0000,0.8240,0.0277),(0.0028,1.0568,-0.0776)]),
               #  from humanoid_root to vl5 vertices 2
               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -207,7 +207,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 coord=Coordinate(point=[(0.0000,0.9149,0.0016),(-0.0950,0.9171,0.0029)]),
                 #  from sacroiliac to r_hip vertices 2
                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -258,7 +258,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["41"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
@@ -300,7 +300,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["47"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -334,8 +334,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         geometry=Text(string=["50"],
                           fontStyle=FontStyle(size=0.035)))])])]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040))])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040),ulimit=[0,0,0],llimit=[0,0,0])])])]),
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -386,7 +386,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["45"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
@@ -428,7 +428,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["51"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -462,8 +462,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         geometry=Text(string=["54"],
                           fontStyle=FontStyle(size=0.035)))])])]),
-                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040))])])])]),
-        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),
+                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
+        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_l5',name='l5',
             children=[
@@ -749,8 +749,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 coord=Coordinate(point=[(0.0028,1.0568,-0.0776),(-0.1907,1.4407,-0.0325)]),
                 #  from vl5 to r_shoulder vertices 2
                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236)),
-          HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),
+          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),ulimit=[0,0,0],llimit=[0,0,0]),
+          HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
               children=[
@@ -783,7 +783,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["63"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),
+            HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                 children=[
@@ -834,8 +834,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["69"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583))])]),
-          HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),
+              HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),ulimit=[0,0,0],llimit=[0,0,0])])]),
+          HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
               children=[
@@ -868,7 +868,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(
                     geometry=Text(string=["66"],
                       fontStyle=FontStyle(size=0.035)))])])]),
-            HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),
+            HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                 children=[
@@ -919,7 +919,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       geometry=Text(string=["72"],
                         fontStyle=FontStyle(size=0.035)))])])]),
-              HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521))])])])]),],
+              HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),ulimit=[0,0,0],llimit=[0,0,0])])])])]),],
       sites=[
       HAnimSite(USE='hanim_buttocks_standing_wall_contact_point'),
       HAnimSite(USE='hanim_crotch'),
@@ -1002,24 +1002,24 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  </LOD> 
       skinCoord=Coordinate(USE='TheSkinCoord'),
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root'),
-      HAnimJoint(USE='hanim_sacroiliac'),
-      HAnimJoint(USE='hanim_l_hip'),
-      HAnimJoint(USE='hanim_l_knee'),
-      HAnimJoint(USE='hanim_l_talocrural'),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_r_hip'),
-      HAnimJoint(USE='hanim_r_knee'),
-      HAnimJoint(USE='hanim_r_talocrural'),
-      HAnimJoint(USE='hanim_r_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_vl5'),
-      HAnimJoint(USE='hanim_skullbase'),
-      HAnimJoint(USE='hanim_l_shoulder'),
-      HAnimJoint(USE='hanim_l_elbow'),
-      HAnimJoint(USE='hanim_l_radiocarpal'),
-      HAnimJoint(USE='hanim_r_shoulder'),
-      HAnimJoint(USE='hanim_r_elbow'),
-      HAnimJoint(USE='hanim_r_radiocarpal')],
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0])],
       segments=[
       HAnimSegment(USE='hanim_sacrum'),
       HAnimSegment(USE='hanim_pelvis'),
@@ -1040,7 +1040,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JohnBoy.py:')
+print('Self-test diagnostics for Humanoid1.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -1069,4 +1069,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JohnBoy.py load and self-test diagnostics complete.")
+print("python Humanoid1.py load and self-test diagnostics complete.")

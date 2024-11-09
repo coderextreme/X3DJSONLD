@@ -184,7 +184,6 @@ ArchHalf.prototype = {
     {
 		var testObject = new ArchHalf();
 		console.log ("ArchHalf execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ArchHalf().main();

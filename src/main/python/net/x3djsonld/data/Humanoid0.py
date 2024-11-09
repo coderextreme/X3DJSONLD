@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python JohnBoy.py
+#   $ python Humanoid0.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -30,8 +30,8 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='JohnBoy.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
+    meta(content='Humanoid0.x3d',name='title'),
+    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h2.pl'),
     meta(name='modified',content='14 Jan 2023'),
@@ -77,7 +77,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(position=(0,1,3),centerOfRotation=(0,1,0),description='default'),
     HAnimHumanoid(DEF='hanim_HAnim',info=["humanoidVersion=2.0"],name='HAnim',version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_',name=''),],
+      HAnimJoint(DEF='hanim_',name='',ulimit=[0,0,0],llimit=[0,0,0]),],
       #  <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) 
       skin=[
       Shape(DEF='SkinShape',
@@ -90,14 +90,14 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  </LOD> 
       skinCoord=Coordinate(USE='TheSkinCoord'),
       joints=[
-      HAnimJoint(USE='hanim_')],)])
+      HAnimJoint(USE='hanim_',ulimit=[0,0,0],llimit=[0,0,0])],)])
 ) # X3D model complete
 
 ####################################################################################################
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JohnBoy.py:')
+print('Self-test diagnostics for Humanoid0.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -126,4 +126,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JohnBoy.py load and self-test diagnostics complete.")
+print("python Humanoid0.py load and self-test diagnostics complete.")

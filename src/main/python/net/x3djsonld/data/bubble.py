@@ -102,7 +102,7 @@ function set_fraction(value) {
 	}
 }
 """),
-          TimeSensor(DEF='bubbleClock',cycleInterval=10,loop=True),
+          TimeSensor(DEF='bubbleClock',cycleInterval=10.0,loop=True),
           ROUTE(fromNode='bounce',fromField='translation_changed',toNode='transform',toField='set_translation'),
           ROUTE(fromNode='bounce',fromField='scale_changed',toNode='transform',toField='set_scale'),
           ROUTE(fromNode='bubbleClock',fromField='fraction_changed',toNode='bounce',toField='set_fraction')])])),

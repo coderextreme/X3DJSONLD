@@ -184,7 +184,6 @@ ThreeDTexture.prototype = {
     {
 		var testObject = new ThreeDTexture();
 		console.log ("ThreeDTexture execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ThreeDTexture().main();

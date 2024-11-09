@@ -148,7 +148,6 @@ plainflowers.prototype = {
     {
 		var testObject = new plainflowers();
 		console.log ("plainflowers execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new plainflowers().main();

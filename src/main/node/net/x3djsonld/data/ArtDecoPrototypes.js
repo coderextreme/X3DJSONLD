@@ -277,7 +277,6 @@ ArtDecoPrototypes.prototype = {
     {
 		var testObject = new ArtDecoPrototypes();
 		console.log ("ArtDecoPrototypes execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ArtDecoPrototypes().main();

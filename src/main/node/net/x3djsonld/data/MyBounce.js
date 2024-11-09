@@ -172,7 +172,6 @@ MyBounce.prototype = {
     {
 		var testObject = new MyBounce();
 		console.log ("MyBounce execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new MyBounce().main();

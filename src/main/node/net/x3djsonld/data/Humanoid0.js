@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d">Humanoid0.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -200,8 +200,8 @@ Humanoid0.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("Humanoid0.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -248,9 +248,9 @@ Humanoid0.prototype = {
           .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"../data/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
           .setMaterial((new autoclass.Material("SkinMaterial")).setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(1))))
       .addComments(" </LOD> ")
-      .setSkinCoord((new autoclass.Coordinate()).setUSE("TheSkinCoord"))
+      .setSkinCoord((new autoclass.Coordinate()))
       .addSkeleton((new autoclass.HAnimJoint("hanim_")).setName("").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))));
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))));
   },
   // end of initialize() method
 
@@ -306,7 +306,6 @@ Humanoid0.prototype = {
     {
 		var testObject = new Humanoid0();
 		console.log ("Humanoid0 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Humanoid0().main();

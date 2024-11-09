@@ -253,7 +253,7 @@ Humanoid1NoSegSite.prototype = {
           .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"../data/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
           .setMaterial((new autoclass.Material("SkinMaterial")).setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
       .addComments(" </LOD> ")
-      .setSkinCoord((new autoclass.Coordinate()).setUSE("TheSkinCoord"))
+      .setSkinCoord((new autoclass.Coordinate()))
       .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
         .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0000,0.9149,0.0016).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .addChild((new autoclass.HAnimJoint("hanim_l_hip")).setName("l_hip").setCenter(0.0961,0.9124,-0.0001).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
@@ -272,24 +272,24 @@ Humanoid1NoSegSite.prototype = {
           .addChild((new autoclass.HAnimJoint("hanim_r_shoulder")).setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
             .addChild((new autoclass.HAnimJoint("hanim_r_elbow")).setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
               .addChild((new autoclass.HAnimJoint("hanim_r_radiocarpal")).setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))))))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_hip").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_knee").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_talocrural").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_metatarsophalangeal_2").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_hip").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_knee").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_talocrural").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_metatarsophalangeal_2").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl5").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_skullbase").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_shoulder").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_elbow").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_radiocarpal").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_shoulder").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_elbow").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_radiocarpal").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))));
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))));
   },
   // end of initialize() method
 
@@ -345,7 +345,6 @@ Humanoid1NoSegSite.prototype = {
     {
 		var testObject = new Humanoid1NoSegSite();
 		console.log ("Humanoid1NoSegSite execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Humanoid1NoSegSite().main();
