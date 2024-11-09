@@ -69,12 +69,12 @@
 <Transform><Shape><!--<Sphere radius='40'></Sphere>--><IndexedFaceSet convex="false" DEF="Orbit"><Coordinate DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="leftTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <ComposedShader DEF="freewrlShader" language="GLSL"><field name="chromaticDispertion" accessType="inputOnly" type="SFVec3f" value="0.98 1 1.033"></field>
 <field name="fw_textureCoordGenType" accessType="inputOnly" type="SFInt32" value="0"></field>
@@ -143,7 +143,7 @@ function initialize() {
 }]]></Script>
 <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"></ROUTE>
 <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"></ROUTE>
-<!--DIS multiuser facilities--><DISEntityManager readInterval="3" DEF="EntityManager" networkMode="networkReader"><DISEntityTypeMapping readInterval="3" category="77" specific="1" url="&quot;../data/Gramps8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d&quot;"></DISEntityTypeMapping>
+<!--DIS multiuser facilities--><DISEntityManager DEF="EntityManager" networkMode="networkReader"><DISEntityTypeMapping readInterval="3" category="77" specific="1" url="&quot;../data/Gramps8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d&quot;"></DISEntityTypeMapping>
 <DISEntityTypeMapping readInterval="3" category="77" specific="2" url="&quot;../data/Leif8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d&quot;"></DISEntityTypeMapping>
 <DISEntityTypeMapping readInterval="3" category="77" specific="3" url="&quot;../data/Lily8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d&quot;"></DISEntityTypeMapping>
 <DISEntityTypeMapping readInterval="3" category="77" specific="4" url="&quot;../data/Tufani8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d&quot;"></DISEntityTypeMapping>
@@ -212,30 +212,18 @@ const newTranslation = function(Value) {
         var t = Browser.currentScene.getNamedNode("protoTransform");
         var txt = Browser.currentScene.getNamedNode("protoText");
         if (shader) {
-            X3DUser.LOG("old", shader.getField(protoParameterName).getValue());
             shader.getField(protoParameterName).setValue(orientation * protoScale);
-            X3DUser.LOG("new", shader.getField(protoParameterName).getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (txt) {
             var stringField = txt.getField("string");
-            X3DUser.LOG("old", stringField.getValue());
             var label = protoParameterName;
             stringField.setValue(new MFString(label+"="+(orientation * protoScale).toFixed(2)));
-            X3DUser.LOG("new", stringField.getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (ps) {
             ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);
-        } else {
-            X3DUser.LOG("Not found protoSensor");
         }
         if (t) {
             t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);
-        } else {
-            X3DUser.LOG("Not found protoTransform");
         }
 }]]></Script>
 <ROUTE fromField="translation_changed" fromNode="protoSensor" toField="set_translation" toNode="protoTransform"></ROUTE>
