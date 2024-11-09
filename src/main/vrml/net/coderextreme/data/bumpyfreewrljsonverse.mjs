@@ -618,7 +618,6 @@ Layer37.children[4] = ROUTE108;
 
 //DIS multiuser facilities
 let DISEntityManager109 = browser.currentScene.createNode("DISEntityManager");
-DISEntityManager109.readInterval = "3";
 DISEntityManager109.DEF = "EntityManager";
 DISEntityManager109.networkMode = "networkReader";
 let DISEntityTypeMapping110 = browser.currentScene.createNode("DISEntityTypeMapping");
@@ -789,30 +788,18 @@ const newTranslation = function(Value) {
         var t = Browser.currentScene.getNamedNode("protoTransform");
         var txt = Browser.currentScene.getNamedNode("protoText");
         if (shader) {
-            X3DUser.LOG("old", shader.getField(protoParameterName).getValue());
             shader.getField(protoParameterName).setValue(orientation * protoScale);
-            X3DUser.LOG("new", shader.getField(protoParameterName).getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (txt) {
             var stringField = txt.getField("string");
-            X3DUser.LOG("old", stringField.getValue());
             var label = protoParameterName;
             stringField.setValue(new MFString(label+"="+(orientation * protoScale).toFixed(2)));
-            X3DUser.LOG("new", stringField.getValue());
-        } else {
-            X3DUser.LOG('ComposedShader not found');
         }
         if (ps) {
             ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);
-        } else {
-            X3DUser.LOG("Not found protoSensor");
         }
         if (t) {
             t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);
-        } else {
-            X3DUser.LOG("Not found protoTransform");
         }
 }]]></Script>
 <ROUTE fromField="translation_changed" fromNode="protoSensor" toField="set_translation" toNode="protoTransform"></ROUTE>
@@ -1041,30 +1028,18 @@ Script159.setSourceCode(`ecmascript:\n"+
 "        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\n"+
 "        var txt = Browser.currentScene.getNamedNode(\"protoText\");\n"+
 "        if (shader) {\n"+
-"            X3DUser.LOG(\"old\", shader.getField(protoParameterName).getValue());\n"+
 "            shader.getField(protoParameterName).setValue(orientation * protoScale);\n"+
-"            X3DUser.LOG(\"new\", shader.getField(protoParameterName).getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (txt) {\n"+
 "            var stringField = txt.getField(\"string\");\n"+
-"            X3DUser.LOG(\"old\", stringField.getValue());\n"+
 "            var label = protoParameterName;\n"+
 "            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\n"+
-"            X3DUser.LOG(\"new\", stringField.getValue());\n"+
-"        } else {\n"+
-"            X3DUser.LOG('ComposedShader not found');\n"+
 "        }\n"+
 "        if (ps) {\n"+
 "            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoSensor\");\n"+
 "        }\n"+
 "        if (t) {\n"+
 "            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\n"+
-"        } else {\n"+
-"            X3DUser.LOG(\"Not found protoTransform\");\n"+
 "        }\n"+
 "}`)
 Group141.children[1] = Script159;

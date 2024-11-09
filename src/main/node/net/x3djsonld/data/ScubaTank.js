@@ -100,7 +100,7 @@ ScubaTank.prototype = {
       .addChild((new autoclass.Transform()).setTranslation(0.0,0.35,0.0)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("tank")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.Sphere()).setRadius(0.098))))
       .addChild((new autoclass.Transform()).setTranslation(0.0,-0.35,0.0)
         .addChild((new autoclass.Shape("tankBottom"))
@@ -117,23 +117,23 @@ ScubaTank.prototype = {
           .addChild((new autoclass.Transform()).setTranslation(0.0,0.50,0.0)
             .addChild((new autoclass.Shape("pressureTop"))
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material()).setUSE("black")))
+                .setMaterial((new autoclass.Material())))
               .setGeometry((new autoclass.Cylinder()).setHeight(0.02).setRadius(0.025))))
           .addChild((new autoclass.Transform()).setRotation(0.0,0.0,1.0,1.57).setTranslation(-0.028,0.462,0.0)
             .addChild((new autoclass.Transform())
               .addChild((new autoclass.Shape("connectorToRegulator"))
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setUSE("pressureColor")))
+                  .setMaterial((new autoclass.Material())))
                 .setGeometry((new autoclass.Cylinder()).setHeight(0.03).setRadius(0.01))))
             .addChild((new autoclass.Transform()).setTranslation(0.0,0.02,0.0)
               .addChild((new autoclass.Shape("connectorToRegulatorTop"))
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setUSE("black")))
+                  .setMaterial((new autoclass.Material())))
                 .setGeometry((new autoclass.Cylinder()).setHeight(0.02).setRadius(0.02)))))))
       .addChild((new autoclass.Transform()).setTranslation(0.0,0.2,0.0)
         .addChild((new autoclass.Shape("tankHoldBelt"))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("black")))
+            .setMaterial((new autoclass.Material())))
           .setGeometry((new autoclass.Cylinder()).setHeight(0.1).setRadius(0.115)))))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.6,0.6,0.6])))));
   },
@@ -191,7 +191,6 @@ ScubaTank.prototype = {
     {
 		var testObject = new ScubaTank();
 		console.log ("ScubaTank execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ScubaTank().main();

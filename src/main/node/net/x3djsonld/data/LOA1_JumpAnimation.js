@@ -367,7 +367,6 @@ LOA1_JumpAnimation.prototype = {
     {
 		var testObject = new LOA1_JumpAnimation();
 		console.log ("LOA1_JumpAnimation execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new LOA1_JumpAnimation().main();

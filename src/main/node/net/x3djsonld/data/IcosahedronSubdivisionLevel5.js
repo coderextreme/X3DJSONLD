@@ -1218,7 +1218,6 @@ IcosahedronSubdivisionLevel5.prototype = {
     {
 		var testObject = new IcosahedronSubdivisionLevel5();
 		console.log ("IcosahedronSubdivisionLevel5 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new IcosahedronSubdivisionLevel5().main();

@@ -122,7 +122,7 @@ BoxEm.prototype = {
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))))
     .addChild((new autoclass.Transform()).setTranslation(0.0,2.0,0.0)
-      .addChild((new autoclass.Shape()).setUSE("box"))));
+      .addChild((new autoclass.Shape()))));
   },
   // end of initialize() method
 
@@ -178,7 +178,6 @@ BoxEm.prototype = {
     {
 		var testObject = new BoxEm();
 		console.log ("BoxEm execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new BoxEm().main();

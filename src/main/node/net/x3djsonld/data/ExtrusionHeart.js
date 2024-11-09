@@ -153,7 +153,6 @@ ExtrusionHeart.prototype = {
     {
 		var testObject = new ExtrusionHeart();
 		console.log ("ExtrusionHeart execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ExtrusionHeart().main();

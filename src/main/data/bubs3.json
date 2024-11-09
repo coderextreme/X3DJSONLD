@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2024"
+            "@content":"09 November 2024"
           },
           {
             "@name":"generator",
@@ -175,7 +175,7 @@
                 { "TimeSensor":
                   {
                     "@DEF":"DECLBubble_bubbleA_bubbleClock",
-                    "@cycleInterval":10,
+                    "@cycleInterval":10.0,
                     "@loop":true
                   }
                 },
@@ -317,7 +317,7 @@
                 { "TimeSensor":
                   {
                     "@DEF":"DECLBubble_bubbleB_bubbleClock",
-                    "@cycleInterval":10,
+                    "@cycleInterval":10.0,
                     "@loop":true
                   }
                 },
@@ -459,7 +459,7 @@
                 { "TimeSensor":
                   {
                     "@DEF":"DECLBubble_bubbleC_bubbleClock",
-                    "@cycleInterval":10,
+                    "@cycleInterval":10.0,
                     "@loop":true
                   }
                 },
@@ -601,7 +601,7 @@
                 { "TimeSensor":
                   {
                     "@DEF":"DECLBubble_bubbleD_bubbleClock",
-                    "@cycleInterval":10,
+                    "@cycleInterval":10.0,
                     "@loop":true
                   }
                 },

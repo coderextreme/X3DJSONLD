@@ -244,7 +244,6 @@ flowers4.prototype = {
     {
 		var testObject = new flowers4();
 		console.log ("flowers4 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flowers4().main();

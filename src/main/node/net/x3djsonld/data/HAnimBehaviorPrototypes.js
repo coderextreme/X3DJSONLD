@@ -2316,7 +2316,7 @@ HAnimBehaviorPrototypes.prototype = {
           .addField((new autoclass.field()).setName("enableBehavior").setType("SFInt32").setAccessType("inputOnly").setAppinfo("enable corresponding behavior"))
           .addField((new autoclass.field()).setName("disableBehavior").setType("SFInt32").setAccessType("inputOnly").setAppinfo("enable corresponding behavior"))
           .addField((new autoclass.field()).setName("timeSensorNode").setType("SFNode").setAccessType("initializeOnly")
-            .addChild((new autoclass.TimeSensor()).setUSE("TimeSensorHolderStartStopTimes")))
+            .addChild((new autoclass.TimeSensor())))
           .addField((new autoclass.field()).setName("previousBodyIndex").setType("SFInt32").setAccessType("initializeOnly").setValue("-1").setAppinfo("remember prior body index to avoid unnecessary ROUTE teardown and creation"))
           .addField((new autoclass.field()).setName("traceEnabled").setType("SFBool").setAccessType("initializeOnly").setValue("true"))
           .setIS((new autoclass.IS())
@@ -2398,7 +2398,6 @@ HAnimBehaviorPrototypes.prototype = {
     {
 		var testObject = new HAnimBehaviorPrototypes();
 		console.log ("HAnimBehaviorPrototypes execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new HAnimBehaviorPrototypes().main();

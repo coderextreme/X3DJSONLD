@@ -230,7 +230,6 @@ flower3.prototype = {
     {
 		var testObject = new flower3();
 		console.log ("flower3 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flower3().main();

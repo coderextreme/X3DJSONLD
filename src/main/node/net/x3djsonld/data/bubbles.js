@@ -231,7 +231,6 @@ Bubbles.prototype = {
     {
 		var testObject = new Bubbles();
 		console.log ("Bubbles execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new Bubbles().main();

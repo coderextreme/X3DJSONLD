@@ -241,7 +241,6 @@ mirror.prototype = {
     {
 		var testObject = new mirror();
 		console.log ("mirror execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new mirror().main();

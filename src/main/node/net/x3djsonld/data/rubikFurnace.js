@@ -224,7 +224,6 @@ rubikFurnace.prototype = {
     {
 		var testObject = new rubikFurnace();
 		console.log ("rubikFurnace execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new rubikFurnace().main();

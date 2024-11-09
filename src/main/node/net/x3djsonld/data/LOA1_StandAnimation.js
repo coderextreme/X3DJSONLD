@@ -312,7 +312,6 @@ LOA1_StandAnimation.prototype = {
     {
 		var testObject = new LOA1_StandAnimation();
 		console.log ("LOA1_StandAnimation execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new LOA1_StandAnimation().main();

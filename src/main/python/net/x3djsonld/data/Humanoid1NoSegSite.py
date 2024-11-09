@@ -83,37 +83,37 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(description='default'),
     HAnimHumanoid(DEF='hanim_HAnim',info=["humanoidVersion=2.0"],name='HAnim',version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),skinCoordIndex=[0],skinCoordWeight=[0],
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
         children=[
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),skinCoordIndex=[0],skinCoordWeight=[0],
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
           children=[
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),skinCoordIndex=[0],skinCoordWeight=[0],
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),skinCoordIndex=[0],skinCoordWeight=[0],
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),skinCoordIndex=[0],skinCoordWeight=[0],
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040),skinCoordIndex=[0],skinCoordWeight=[0])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),skinCoordIndex=[0],skinCoordWeight=[0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0824,0.0064,-0.0040),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])])]),
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),skinCoordIndex=[0],skinCoordWeight=[0],
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),skinCoordIndex=[0],skinCoordWeight=[0],
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
-                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040),skinCoordIndex=[0],skinCoordWeight=[0])])])])]),
-        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),skinCoordIndex=[0],skinCoordWeight=[0],
+                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0823,0.0064,-0.0040),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])])])]),
+        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
           children=[
-          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),skinCoordIndex=[0],skinCoordWeight=[0]),
-          HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),skinCoordIndex=[0],skinCoordWeight=[0],
+          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0]),
+          HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),skinCoordIndex=[0],skinCoordWeight=[0],
+            HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),skinCoordIndex=[0],skinCoordWeight=[0])])]),
-          HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),skinCoordIndex=[0],skinCoordWeight=[0],
+              HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])]),
+          HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),skinCoordIndex=[0],skinCoordWeight=[0],
+            HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),skinCoordIndex=[0],skinCoordWeight=[0])])])])]),],
+              HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),skinCoordIndex=[0],skinCoordWeight=[0],ulimit=[0,0,0],llimit=[0,0,0])])])])]),],
       #  <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) 
       skin=[
       Shape(DEF='SkinShape',
@@ -126,24 +126,24 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  </LOD> 
       skinCoord=Coordinate(USE='TheSkinCoord'),
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root'),
-      HAnimJoint(USE='hanim_sacroiliac'),
-      HAnimJoint(USE='hanim_l_hip'),
-      HAnimJoint(USE='hanim_l_knee'),
-      HAnimJoint(USE='hanim_l_talocrural'),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_r_hip'),
-      HAnimJoint(USE='hanim_r_knee'),
-      HAnimJoint(USE='hanim_r_talocrural'),
-      HAnimJoint(USE='hanim_r_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_vl5'),
-      HAnimJoint(USE='hanim_skullbase'),
-      HAnimJoint(USE='hanim_l_shoulder'),
-      HAnimJoint(USE='hanim_l_elbow'),
-      HAnimJoint(USE='hanim_l_radiocarpal'),
-      HAnimJoint(USE='hanim_r_shoulder'),
-      HAnimJoint(USE='hanim_r_elbow'),
-      HAnimJoint(USE='hanim_r_radiocarpal')],)])
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0])],)])
 ) # X3D model complete
 
 ####################################################################################################

@@ -181,7 +181,7 @@ HelloWorld.prototype = {
           .setGeometry((new autoclass.Text("TextMessage")).setString(new autoclass.MFString("\"Hello\" \"world!\""))
             .setFontStyle((new autoclass.FontStyle()).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))))));
+            .setMaterial((new autoclass.Material())))))));
   },
   // end of initialize() method
 
@@ -237,7 +237,6 @@ HelloWorld.prototype = {
     {
 		var testObject = new HelloWorld();
 		console.log ("HelloWorld execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new HelloWorld().main();

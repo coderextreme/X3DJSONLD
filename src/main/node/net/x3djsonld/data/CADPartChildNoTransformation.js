@@ -149,17 +149,17 @@ CADPartChildNoTransformation.prototype = {
           .setShape((new autoclass.Shape())
             .addComments(" note solid='false' and so two-sided internal + external rendering ")
             .setGeometry((new autoclass.Cylinder()).setBottom(false).setHeight(3).setSolid(false).setTop(false))
-            .setAppearance((new autoclass.Appearance()).setUSE("AppearanceGrey"))))
+            .setAppearance((new autoclass.Appearance()))))
         .addChild((new autoclass.CADFace()).setName("topCap")
           .setShape((new autoclass.Shape())
             .setGeometry((new autoclass.IndexedTriangleSet()).setCcw(true).setColorPerVertex(true).setIndex(this.IndexedTriangleSet_7_27_index).setNormalPerVertex(true).setSolid(true)
               .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_27_point)))
-            .setAppearance((new autoclass.Appearance()).setUSE("AppearanceGrey"))))
+            .setAppearance((new autoclass.Appearance()))))
         .addChild((new autoclass.CADFace()).setName("bottomCap")
           .setShape((new autoclass.Shape())
             .setGeometry((new autoclass.IndexedTriangleSet()).setCcw(true).setColorPerVertex(true).setIndex(this.IndexedTriangleSet_7_32_index).setNormalPerVertex(true).setSolid(true)
               .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_32_point)))
-            .setAppearance((new autoclass.Appearance()).setUSE("AppearanceGrey")))))));
+            .setAppearance((new autoclass.Appearance())))))));
   },
   // end of initialize() method
 
@@ -215,7 +215,6 @@ CADPartChildNoTransformation.prototype = {
     {
 		var testObject = new CADPartChildNoTransformation();
 		console.log ("CADPartChildNoTransformation execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new CADPartChildNoTransformation().main();

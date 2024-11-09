@@ -220,7 +220,6 @@ indexedfaceset_pixeltexture_plus.prototype = {
     {
 		var testObject = new indexedfaceset_pixeltexture_plus();
 		console.log ("indexedfaceset_pixeltexture_plus execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new indexedfaceset_pixeltexture_plus().main();

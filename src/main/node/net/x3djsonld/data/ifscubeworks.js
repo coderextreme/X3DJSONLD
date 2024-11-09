@@ -147,7 +147,6 @@ ifscubeworks.prototype = {
     {
 		var testObject = new ifscubeworks();
 		console.log ("ifscubeworks execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new ifscubeworks().main();

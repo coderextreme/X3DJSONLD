@@ -149,7 +149,7 @@ SplitChannels.prototype = {
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setAmbientIntensity(0.0933).setDiffuseColor(0.345,0.345,0.882).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Left Channel Volume\""))
-            .setFontStyle((new autoclass.FontStyle()).setUSE("VolumeFontStyle"))))))
+            .setFontStyle((new autoclass.FontStyle()))))))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance("floor"))
@@ -160,9 +160,9 @@ SplitChannels.prototype = {
       .addChild((new autoclass.Gain()).setId("Gain3")
         .addChild((new autoclass.ChannelMerger()).setId("ChannelMerger")
           .addChild((new autoclass.ChannelSelector()).setId("ChannelSelector0")
-            .addChild((new autoclass.Gain()).setUSE("ChannelSplitter")))
+            .addChild((new autoclass.Gain())))
           .addChild((new autoclass.ChannelSelector()).setChannelSelection(1).setId("ChannelSelector1")
-            .addChild((new autoclass.Gain()).setUSE("ChannelSplitter"))))))
+            .addChild((new autoclass.Gain()))))))
     .addChild((new autoclass.ChannelSplitter("ChannelSplitter")).setChannelCountMode("EXPLICIT")
       .addChild((new autoclass.AudioClip()).setDescription("Violin").setUrl(new autoclass.MFString("\"sound/violin.mp3\" \"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3\""))))
     .addChild((new autoclass.Transform("Audio3")).setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
@@ -226,7 +226,6 @@ SplitChannels.prototype = {
     {
 		var testObject = new SplitChannels();
 		console.log ("SplitChannels execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new SplitChannels().main();

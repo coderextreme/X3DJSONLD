@@ -195,9 +195,9 @@ arc4.prototype = {
         .addField((new autoclass.field()).setName("startnode").setType("SFNode").setAccessType("initializeOnly"))
         .addField((new autoclass.field()).setName("endnode").setType("SFNode").setAccessType("initializeOnly"))
         .addField((new autoclass.field()).setName("position").setType("SFNode").setAccessType("inputOutput")
-          .addChild((new autoclass.Transform()).setUSE("DECLx3dconnector_connector1_trans")))
+          .addChild((new autoclass.Transform())))
         .addField((new autoclass.field()).setName("rotscale").setType("SFNode").setAccessType("inputOutput")
-          .addChild((new autoclass.Transform()).setUSE("DECLx3dconnector_connector1_rotscale")))
+          .addChild((new autoclass.Transform())))
         .addField((new autoclass.field()).setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
         .addField((new autoclass.field()).setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly"))))
     .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_G1_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
@@ -257,7 +257,6 @@ arc4.prototype = {
     {
 		var testObject = new arc4();
 		console.log ("arc4 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new arc4().main();

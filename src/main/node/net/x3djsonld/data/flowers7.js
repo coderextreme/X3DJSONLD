@@ -121,7 +121,7 @@ flowers7.prototype = {
             .addComments(java.newArray("java.lang.String",[" TODO VERIFY",
 "                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"]))
             .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
-              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+              .addChild((new autoclass.ComposedCubeMapTexture())))
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
@@ -136,7 +136,7 @@ flowers7.prototype = {
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
-              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+              .addChild((new autoclass.ComposedCubeMapTexture())))
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
@@ -314,7 +314,6 @@ flowers7.prototype = {
     {
 		var testObject = new flowers7();
 		console.log ("flowers7 execution self-validation test results: " + testObject.validateSelf());
-		process.exit();
 	}
 }
 new flowers7().main();
