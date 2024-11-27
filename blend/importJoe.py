@@ -54,7 +54,7 @@ for screen in bpy.data.screens:
 
 
 #bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3NoROUTE.x3d", axis_forward='Y', axis_up='Z')
-bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3.x3d", axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JoeKick.x3dv", axis_forward='Y', axis_up='Z')
 
 bpy.ops.export_scene.gltf(
