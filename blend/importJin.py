@@ -43,12 +43,13 @@ if light.name in bpy.context.scene.collection.objects:
 bpy.data.objects.remove(light, do_unlink=True)
 #############################################################
 
+#bpy.ops.import_scene.x3d(filepath="JinLOA4.scaled1.x3d", axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat06gForJohn2.x3d", axis_forward='Y', axis_up='Z')
 # bpy.ops.import_scene.x3d(filepath="JinConcat08o.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat10h.x3d")
 #bpy.ops.import_scene.x3d(filepath="JinConcat11c.x3d")
 # bpy.ops.import_scene.x3d(filepath="JinLOA4.x3d", axis_forward='Y', axis_up='Z')
-bpy.ops.import_scene.x3d(filepath="JinLOA4.scaled1.x3d") #, axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="ItsAFACSJack.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20b.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4MinimumSkeleton20c.x3d", axis_forward='Z', axis_up='Y')
@@ -88,7 +89,7 @@ for screen in bpy.data.screens:
 #
 filepath = "."
 bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"ItsAFACSJack.glb"),
+    filepath=os.path.join(filepath, f"JinConconcatenated.glb"),
     export_yup=False,
     # export_format="GLTF_SEPARATE",
     export_format="GLB",
