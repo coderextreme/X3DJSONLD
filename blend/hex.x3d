@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='X_ITE' level='1'/>
+    <component name="CubeMapTexturing" level="2"/>
+    <meta content='hex.x3d' name='title'/>
+    <meta content='A hexagon' name='description'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='12 December 2024' name='created'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <EnvironmentLight>
+      <ImageCubeMapTexture containerField='diffuseTexture'
+          url='"https://create3000.github.io/Library/Tests/Components/images/helipad-diffuse.jpg"'>
+        <TextureProperties DEF='_1'
+            generateMipMaps='true'
+            minificationFilter='NICEST'
+            magnificationFilter='NICEST'/>
+      </ImageCubeMapTexture>
+      <ImageCubeMapTexture containerField='specularTexture'
+          url='"https://create3000.github.io/Library/Tests/Components/images/helipad-specular.jpg"'>
+        <TextureProperties USE='_1'/>
+      </ImageCubeMapTexture>
+    </EnvironmentLight>
+        <Viewpoint DEF='Front_View' description='Front View' position='0 1.5 25'/>
+	<!--
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='1.0 1.0 1.0' ambientIntensity='0.9' emissiveColor='1 1 1'/>
+          </Appearance>
+          <IndexedFaceSet solid='false' coordIndex='0 1 2 3 4 5 -1' creaseAngle='3.14'>
+            <Coordinate point='-2 0 0, -1 1.732 0, 1 1.732 0, 2 0 0, 1 -1.732 0, -1 -1.732 0'/>
+          </IndexedFaceSet>
+        </Shape>
+	-->
+        <Transform rotation="1 0 0 0.385" DEF="shapeContainer"></Transform>
+	<Script url='"hex.js"'/>
+  </Scene>
+</X3D>
