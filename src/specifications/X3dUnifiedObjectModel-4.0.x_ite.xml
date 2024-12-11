@@ -1,13 +1,13 @@
 <ConcreteNode name="AnisotropyMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/anisotropymaterialextension"
-		appinfo="Overview AnisotropyMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The AnisotropyMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview AnisotropyMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The AnisotropyMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="anisotropyStrength"
@@ -26,13 +26,14 @@
 <field name="anisotropyTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *anisotropyTextureMapping*."
 ></field>
 <field name="anisotropyTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The anisotropy texture. Red and green channels represent the anisotropy direction in tangent, bitangent space to be rotated by the anisotropy rotation. The blue channel contains strength as to be multiplied by the anisotropy strength."
 ></field>
 <containerField default="blendMode" type="xs:NMTOKEN"/>
@@ -40,14 +41,14 @@
 </ConcreteNode>
 <ConcreteNode name="BlendMode">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/blendmode"
-		appinfo="Overview BlendMode controls how pixels of an objects are drawn. Pixels can be drawn using a function that blends the incoming (source) RGBA values with the RGBA values that are already in the frame buffer (the destination values). BlendMode is an X3DAppearanceChildNode node that handles blend operations. The BlendMode node belongs to the **X_ITE** component and its default container field is *blendMode.* It is available in X_ITE.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview BlendMode controls how pixels of an objects are drawn. Pixels can be drawn using a function that blends the incoming (source) RGBA values with the RGBA values that are already in the frame buffer (the destination values). BlendMode is an X3DAppearanceChildNode node that handles blend operations. The BlendMode node belongs to the **X_ITE** component and its default container field is *blendMode.* It is available in X_ITE.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DAppearanceChildNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="blendColor"
@@ -99,14 +100,14 @@
 </ConcreteNode>
 <ConcreteNode name="ClearcoatMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/clearcoatmaterialextension"
-		appinfo="Overview ClearcoatMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The ClearcoatMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview ClearcoatMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The ClearcoatMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="clearcoat"
@@ -119,13 +120,14 @@
 <field name="clearcoatTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *clearcoatTextureMapping*."
 ></field>
 <field name="clearcoatTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The clearcoat layer intensity texture."
 ></field>
 <field name="clearcoatRoughness"
@@ -138,25 +140,27 @@
 <field name="clearcoatRoughnessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *clearcoatRoughnessTextureMapping*."
 ></field>
 <field name="clearcoatRoughnessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The clearcoat layer roughness texture."
 ></field>
 <field name="clearcoatNormalTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *clearcoatNormalTextureMapping*."
 ></field>
 <field name="clearcoatNormalTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The clearcoat normal map texture."
 ></field>
 <containerField default="depthMode" type="xs:NMTOKEN"/>
@@ -164,14 +168,14 @@
 </ConcreteNode>
 <ConcreteNode name="DepthMode">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/depthmode"
-		appinfo="Overview DepthMode contains parameters that are specific for depth control, like the value used for depth buffer comparisons. The DepthMode node belongs to the **X_ITE** component and its default container field is *depthMode.* It is available in X_ITE.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview DepthMode contains parameters that are specific for depth control, like the value used for depth buffer comparisons. The DepthMode node belongs to the **X_ITE** component and its default container field is *depthMode.* It is available in X_ITE.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DAppearanceChildNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="polygonOffset"
@@ -216,16 +220,72 @@
 <containerField default="extensions" type="xs:NMTOKEN"/>
 </InterfaceDefinition>
 </ConcreteNode>
-<ConcreteNode name="DispersionMaterialExtension">
-	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/dispersionmaterialextension"
-		appinfo="Overview DispersionMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The DispersionMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+<ConcreteNode name="DiffuseTransmissionMaterialExtension">
+	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/diffusetransmissionmaterialextension"
+		appinfo="Overview DiffuseTransmissionMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The DiffuseTransmissionMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
+	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
+></field>
+<field name="diffuseTransmission"
+	type="SFFloat"
+	accessType="inputOutput"
+	default="0"
+	minInclusive="0"
+	description="The percentage of reflected, non-specularly reflected light that is transmitted through the surface via the Lambertian diffuse transmission, i.e., the strength of the diffuse transmission effect."
+></field>
+<field name="diffuseTransmissionTextureMapping"
+	type="SFString"
+	accessType="inputOutput"
+	default=""
+	description="Input/Output field *diffuseTransmissionTextureMapping*."
+></field>
+<field name="diffuseTransmissionTexture"
+	type="SFNode"
+	accessType="inputOutput"
+	default="NULL"
+	inheritedFrom="X3DSingleTextureNode"
+	description="A texture that defines the strength of the diffuse transmission effect, stored in the alpha (A) channel. Will be multiplied by the diffuseTransmissionFactor."
+></field>
+<field name="diffuseTransmissionColor"
+	type="SFColor"
+	accessType="inputOutput"
+	default="1 1 1"
+	minInclusive="0"
+	maxInclusive="1"
+	description="The color of the transmitted light."
+></field>
+<field name="diffuseTransmissionColorTextureMapping"
+	type="SFString"
+	accessType="inputOutput"
+	default=""
+	description="Input/Output field *diffuseTransmissionColorTextureMapping*."
+></field>
+<field name="diffuseTransmissionColorTexture"
+	type="SFNode"
+	accessType="inputOutput"
+	default="NULL"
+	inheritedFrom="X3DSingleTextureNode"
+	description="A texture that defines the color of the transmitted light, stored in the RGB channels and encoded in sRGB. This texture will be multiplied by diffuseTransmissionColorFactor."
+></field>
+<containerField default="extensions" type="xs:NMTOKEN"/>
+</InterfaceDefinition>
+</ConcreteNode>
+<ConcreteNode name="DispersionMaterialExtension">
+	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/dispersionmaterialextension"
+		appinfo="Overview DispersionMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The DispersionMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
+	<componentInfo name="X_ITE" level="1"/>
+	<Inheritance baseType="X3DMaterialExtensionNode"/>
+<field name="metadata"
+	type="SFNode"
+	accessType="inputOutput"
+	default="NULL"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="dispersion"
@@ -240,14 +300,14 @@
 </ConcreteNode>
 <ConcreteNode name="EmissiveStrengthMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/emissivestrengthmaterialextension"
-		appinfo="Overview EmissiveStrengthMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The EmissiveStrengthMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview EmissiveStrengthMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. The EmissiveStrengthMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="emissiveStrength"
@@ -255,21 +315,21 @@
 	accessType="inputOutput"
 	default="1"
 	minInclusive="0"
-	description="The strength adjustment to be multiplied with the material's emissive value."
+	description="The strength adjustment to be multiplied with the material's emissive value.  strength of the dispersion effect, specified as 20/Abbe number."
 ></field>
 <containerField default="children" type="xs:NMTOKEN"/>
 </InterfaceDefinition>
 </ConcreteNode>
 <ConcreteNode name="InstancedShape">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/instancedshape"
-		appinfo="Overview InstancedShape can appear under any grouping node. InstancedShape can contain an Appearance node and a geometry node (for example one of the primitives Box Cone Cylinder Sphere Text, one of ElevationGrid Extrusion IndexedFaceSet IndexedLineSet LineSet PointSet, or one of the other geometry nodes) and this geometry node is instantiated as often as transformations are provided. The InstancedShape node belongs to the **X_ITE** component and its default container field is *children.* It is available in X_ITE.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview InstancedShape can appear under any grouping node. InstancedShape can contain an Appearance node and a geometry node (for example one of the primitives Box Cone Cylinder Sphere Text, one of ElevationGrid Extrusion IndexedFaceSet IndexedLineSet LineSet PointSet, or one of the other geometry nodes) and this geometry node is instantiated as often as transformations are provided. The InstancedShape node belongs to the **X_ITE** component and its default container field is *children.* It is available in X_ITE.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DShapeNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="translations"
@@ -287,6 +347,17 @@
 	type="MFVec3f"
 	accessType="inputOutput"
 	description="Input/Output field *scales*."
+></field>
+<field name="scaleOrientations"
+	type="MFRotation"
+	accessType="inputOutput"
+	maxInclusive="1"
+	description="Input/Output field *scaleOrientations*."
+></field>
+<field name="centers"
+	type="MFVec3f"
+	accessType="inputOutput"
+	description="Input/Output field *centers*."
 ></field>
 <field name="pointerEvents"
 	type="SFBool"
@@ -329,14 +400,14 @@
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DAppearanceNode"
+	inheritedFrom="X3DAppearanceNode"
 	description="Input/Output field *appearance*."
 ></field>
 <field name="geometry"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DGeometryNode"
+	inheritedFrom="X3DGeometryNode"
 	description="Input/Output field *geometry*."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -344,21 +415,21 @@
 </ConcreteNode>
 <ConcreteNode name="IORMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/iormaterialextension"
-		appinfo="Overview IORMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The IORMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview IORMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The IORMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="indexOfRefraction"
 	type="SFFloat"
 	accessType="inputOutput"
 	default="1.5"
-	minInclusive="0"
+	minInclusive="1"
 	description="The index of refraction."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -366,14 +437,14 @@
 </ConcreteNode>
 <ConcreteNode name="IridescenceMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/iridescencematerialextension"
-		appinfo="Overview IridescenceMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The IridescenceMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview IridescenceMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The IridescenceMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="iridescence"
@@ -386,20 +457,21 @@
 <field name="iridescenceTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *iridescenceTextureMapping*."
 ></field>
 <field name="iridescenceTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The iridescence intensity texture."
 ></field>
 <field name="iridescenceIndexOfRefraction"
 	type="SFFloat"
 	accessType="inputOutput"
 	default="1.3"
-	minInclusive="0"
+	minInclusive="1"
 	description="The index of refraction of the dielectric thin-film layer."
 ></field>
 <field name="iridescenceThicknessMinimum"
@@ -419,13 +491,14 @@
 <field name="iridescenceThicknessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *iridescenceThicknessTextureMapping*."
 ></field>
 <field name="iridescenceThicknessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The thickness texture of the thin-film layer."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -433,14 +506,14 @@
 </ConcreteNode>
 <ConcreteNode name="SheenMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/sheenmaterialextension"
-		appinfo="Overview SheenMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The SheenMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview SheenMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The SheenMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="sheenColor"
@@ -454,13 +527,14 @@
 <field name="sheenColorTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *sheenColorTextureMapping*."
 ></field>
 <field name="sheenColorTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The sheen color (RGB). The sheen color is in sRGB transfer function."
 ></field>
 <field name="sheenRoughness"
@@ -473,13 +547,14 @@
 <field name="sheenRoughnessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *sheenRoughnessTextureMapping*."
 ></field>
 <field name="sheenRoughnessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The sheen roughness (Alpha) texture."
 ></field>
 <containerField default="material" type="xs:NMTOKEN"/>
@@ -487,14 +562,14 @@
 </ConcreteNode>
 <ConcreteNode name="SpecularGlossinessMaterial">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/specularglossinessmaterial"
-		appinfo="Overview SpecularGlossinessMaterial specifies surface rendering properties for associated geometry nodes. Material attributes are used by the X3D lighting equations during rendering. The SpecularGlossinessMaterial node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *material.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview SpecularGlossinessMaterial specifies surface rendering properties for associated geometry nodes. Material attributes are used by the X3D lighting equations during rendering. The SpecularGlossinessMaterial node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *material.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE.   **Deprecated:** This node is **deprecated** as of X3D version 4.0. Future versions of the standard may remove this node. Please use [PhysicalMaterial](/x_ite/components/shape/physicalmaterial/) instead. {: .prompt-danger } ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DOneSidedMaterialNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="diffuseColor"
@@ -508,13 +583,14 @@
 <field name="diffuseTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *diffuseTextureMapping*."
 ></field>
 <field name="diffuseTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The diffuse texture."
 ></field>
 <field name="specularColor"
@@ -536,13 +612,14 @@
 <field name="specularGlossinessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *specularGlossinessTextureMapping*."
 ></field>
 <field name="specularGlossinessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="The specular-glossiness texture."
 ></field>
 <field name="emissiveColor"
@@ -556,13 +633,14 @@
 <field name="emissiveTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="emissiveTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="When applying emissiveColor for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."
 ></field>
 <field name="occlusionStrength"
@@ -576,13 +654,14 @@
 <field name="occlusionTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="occlusionTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="When applying occlusionStrength for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."
 ></field>
 <field name="normalScale"
@@ -595,13 +674,14 @@
 <field name="normalTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."
 ></field>
 <field name="normalTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="When applying normalScale for this material node, the contained texture modulates the texture across the surface."
 ></field>
 <field name="transparency"
@@ -615,7 +695,7 @@
 <field name="extensions"
 	type="MFNode"
 	accessType="inputOutput"
-	acceptableNodeTypes="X3DMaterialExtensionNode"
+	inheritedFrom="X3DMaterialExtensionNode"
 	description="Input/Output field *extensions*."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -623,14 +703,14 @@
 </ConcreteNode>
 <ConcreteNode name="SpecularMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/specularmaterialextension"
-		appinfo="Overview SpecularMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The SpecularMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview SpecularMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The SpecularMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="specular"
@@ -643,13 +723,14 @@
 <field name="specularTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *specularTextureMapping*."
 ></field>
 <field name="specularTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="texture that defines the strength of the specular reflection, stored in the alpha (A) channel. This will be multiplied by specularFactor."
 ></field>
 <field name="specularColor"
@@ -663,13 +744,14 @@
 <field name="specularColorTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *specularColorTextureMapping*."
 ></field>
 <field name="specularColorTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="A texture that defines the F0 color of the specular reflection, stored in the RGB channels and encoded in sRGB. This texture will be multiplied by specularColorFactor."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
@@ -677,14 +759,14 @@
 </ConcreteNode>
 <ConcreteNode name="TransmissionMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/transmissionmaterialextension"
-		appinfo="Overview TransmissionMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The TransmissionMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview TransmissionMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The TransmissionMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="transmission"
@@ -697,43 +779,29 @@
 <field name="transmissionTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *transmissionTextureMapping*."
 ></field>
 <field name="transmissionTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="A texture that defines the transmission percentage of the surface, stored in the R channel. This will be multiplied by transmissionFactor."
-></field>
-<containerField default="extensions" type="xs:NMTOKEN"/>
-</InterfaceDefinition>
-</ConcreteNode>
-<ConcreteNode name="UnlitMaterialExtension">
-	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/unlitmaterialextension"
-		appinfo="Overview UnlitMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The UnlitMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
-	<componentInfo name="X_ITE" level="1"/>
-	<Inheritance baseType="X3DMaterialExtensionNode"/>
-<field name="metadata"
-	type="SFNode"
-	accessType="inputOutput"
-	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
-	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <containerField default="extensions" type="xs:NMTOKEN"/>
 </InterfaceDefinition>
 </ConcreteNode>
 <ConcreteNode name="VolumeMaterialExtension">
 	<InterfaceDefinition specificationUrl="https://create3000.github.io/x_ite/components/x-ite/volumematerialextension"
-		appinfo="Overview VolumeMaterialExtension is an extension for [PhysicalMaterial](../../shape/physicalmaterial/) node and [SpecularGlossinessMaterial](../specularglossinessmaterial/) node. The VolumeMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that the functionality of this node is still experimental. ">
+		appinfo="Overview VolumeMaterialExtension is an extension for the [PhysicalMaterial](../../shape/physicalmaterial/) and [SpecularGlossinessMaterial](../specularglossinessmaterial/) nodes. For this node to have an effect, add an [EnvironmentLight](../../lighting/environmentlight) node. The VolumeMaterialExtension node belongs to the **X_ITE** component and requires at least level **1,** its default container field is *extensions.* It is available from X3D version 4.0 or higher.   **Info:** Please note that this node is still **experimental**, i.e. the functionality of this node may change in future versions of X_ITE. ">
 	<componentInfo name="X_ITE" level="1"/>
 	<Inheritance baseType="X3DMaterialExtensionNode"/>
 <field name="metadata"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DMetadataObject"
+	inheritedFrom="X3DMetadataObject"
 	description="Information about this node can be contained in a [MetadataBoolean](/x_ite/components/core/metadataboolean/), [MetadataDouble](/x_ite/components/core/metadatadouble/), [MetadataFloat](/x_ite/components/core/metadatafloat/), [MetadataInteger](/x_ite/components/core/metadatainteger/), [MetadataString](/x_ite/components/core/metadatastring/) or [MetadataSet](/x_ite/components/core/metadataset/) node."
 ></field>
 <field name="thickness"
@@ -746,13 +814,14 @@
 <field name="thicknessTextureMapping"
 	type="SFString"
 	accessType="inputOutput"
+	default=""
 	description="Input/Output field *thicknessTextureMapping*."
 ></field>
 <field name="thicknessTexture"
 	type="SFNode"
 	accessType="inputOutput"
 	default="NULL"
-	acceptableNodeTypes="X3DSingleTextureNode"
+	inheritedFrom="X3DSingleTextureNode"
 	description="A texture that defines the thickness, stored in the G channel. This will be multiplied by thicknessFactor."
 ></field>
 <field name="attenuationDistance"
