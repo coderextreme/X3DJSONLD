@@ -69,7 +69,7 @@ public class ballx_ite implements X3DRoots {
         .addMeta(new meta().setName("title").setContent("ballx_ite.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"))
         .addMeta(new meta().setName("description").setContent("a prismatic sphere")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ball.x3d"))

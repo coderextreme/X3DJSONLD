@@ -12,6 +12,26 @@ this.codeno = 0;
 this.preno = 0;
 }
 
+/*
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+
+async function main ()
+{
+   scene .setProfile (browser .getProfile ("Interchange"));
+   scene .addComponent (browser .getComponent ("Interpolation", 1));
+
+   await browser .loadComponents (scene);
+
+   scene .rootNodes .push (scene .createNode ("Transform"));
+   console .log (scene .toXMLString ());
+}
+
+main ();
+*/
 
 VRMLScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
@@ -26,13 +46,15 @@ VRMLScriptSerializer.prototype = {
 		this.preno++;
 		let bodystr = "";
         
-        // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
-        // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
-        // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
-        // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += "let browser = X3D.getBrowser();\n";
-		bodystr += "let "+element.nodeName+stack[0]+" = {};\n";
+		bodystr += 'const\n';
+		bodystr += '   X3D     = require ("x_ite-node"),\n';
+		bodystr += '   canvas  = X3D .createBrowser (),\n';
+		bodystr += '   browser = canvas .browser,\n';
+		bodystr += '   scene   = browser .currentScene;\n';
+		bodystr += 'async function main () {\n';
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
+		bodystr += '}\n';
+		bodystr += 'main ();\n';
 
 		str += bodystr;
 		stack.shift();
@@ -69,7 +91,7 @@ VRMLScriptSerializer.prototype = {
 			values.pop();
 		}
 
-		return 'new '+attrType+'(new '+type+'['+lead+values.join(j)+trail+'])';
+		return 'new X3D.'+attrType+'(['+lead+values.join(j)+trail+'])';
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
@@ -109,7 +131,7 @@ VRMLScriptSerializer.prototype = {
 						}
 						if (method === "Shaders") {
 							addpre = "add";
-							method = "Child";
+							method = "Children";
 						} else {
 							addpre = "set";
 						}
@@ -128,7 +150,7 @@ VRMLScriptSerializer.prototype = {
 			addpre = "add";
 		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
-			method = "Metadata"
+			method = "MetaData"
 			addpre = "add";
 		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
@@ -171,7 +193,7 @@ VRMLScriptSerializer.prototype = {
 			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 		} else if (attrType === "MFString") {
 			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
-			strval = this.printSubArray(attrType, "java.lang.String",
+			strval = this.printSubArray(attrType, "",
 				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
 				map(function(x) {
 					let y = x.
@@ -185,7 +207,7 @@ VRMLScriptSerializer.prototype = {
 						// console.error("VRMLScriptSerializer Replacing "+x+" with "+y);
 					}
 					return y;
-				}), this.codeno, '","', '"', '"');
+				}), this.codeno, '"), new X3D.SFString("', 'new X3D.SFString("', '")');
 		} else if (
 			attrType === "MFInt32"||
 			attrType === "MFImage"||
@@ -230,7 +252,7 @@ VRMLScriptSerializer.prototype = {
 		}
 		return strval;
 	},
-	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
+	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack, parent) {
 		let str = "";
 		let attrType = "";
 		for (let a in element.attributes) {
@@ -277,8 +299,59 @@ VRMLScriptSerializer.prototype = {
 					if (attr === "class") {
 						method = "CssClass";
 					}
-					str += element.nodeName+stack[0];
-					str += '.'+method+" = "+strval+";\n";
+					switch (element.nodeName) {
+					case "meta":
+					case "component":
+						break;
+					case "field":
+						if (method === 'name') {
+							for (let a in element.attributes) {
+								let attrs = element.attributes;
+								try {
+									parseInt(a);
+									let attrsa = attrs[a];
+									if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
+										let attrName = attrsa.nodeName;
+										let attrValue = attrsa.nodeValue;
+										if (attrName === 'name') {
+											str += parent.nodeName+stack[0];
+											str += '.getField("'+attrValue+'")';
+										}
+									}
+								} catch (e) {
+									console.log(e);
+								}
+							}
+						}
+						if (method === 'value') {
+							for (let a in element.attributes) {
+								let attrs = element.attributes;
+								try {
+									parseInt(a);
+									let attrsa = attrs[a];
+									if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
+										let attrName = attrsa.nodeName;
+										let attrValue = attrsa.nodeValue;
+										if (attrName === 'value') {
+											str += '.setValue('+strval+');\n';
+										}
+									}
+								} catch (e) {
+									console.log(e);
+								}
+							}
+						}
+						break;
+					case "X3D":
+						if (method === "profile") {
+   							str += "scene.setProfile(browser.getProfile("+strval+"));\n";
+						}
+						// ignore version for now
+						break;
+					default:
+						str += element.nodeName+stack[0];
+						str += '.'+method+" = "+strval+";\n";
+					}
 				}
 			} catch (e) {
 				console.error(e);
@@ -297,23 +370,60 @@ VRMLScriptSerializer.prototype = {
 				stack.unshift(this.preno);
 				this.preno++;
 				let ch = "";
-				if (node.nodeName === "ProtoDeclare") {
+				switch(node.nodeName) {
+				case "ProtoDeclare":
 					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.0"}}, node)+"`);\n";
 
-				} else if (node.nodeName !== "Scene") {
+					break;
+				case "head":
+					break;
+				case "meta":
+					{
+					let n = "";
+					let c = "";
+				        for (let a in node.attributes) {
+					    switch(node.attributes[a].nodeName) {
+					    case "name":
+						   n = node.attributes[a].nodeValue;
+					    	break;
+					    case "content":
+						   c = node.attributes[a].nodeValue;
+					    	break;
+					    }
+					}
+					ch += 'scene.addMetaData("'+n+'", "'+c+'");\n';
+					}
+					break;
+				case "component":
+					{
+					let n = "";
+					let l = "";
+				        for (let a in node.attributes) {
+					    switch(node.attributes[a].nodeName) {
+					    case "name":
+						   n = node.attributes[a].nodeValue;
+					    	break;
+					    case "level":
+						   l = node.attributes[a].nodeValue;
+					    	break;
+					    }
+					}
+   					ch += 'scene .addComponent (browser .getComponent ("'+n+'", '+l+'));\n';
+					}
+					break;
+				case "Scene":
+					ch += "await browser .loadComponents (scene);\n";
+				case "ProtoInterface":
+				case "field":
+					break;
+				default:
 					ch += "let "+node.nodeName+stack[0]+" = browser.currentScene.createNode(\""+ node.nodeName+"\");\n";
+					break;
 				}
 
-				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, element);
 				ch += bodystr;
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
-				if (element.nodeName !== "X3D") {
-					if (element.nodeName !== "Scene") {
-						ch += element.nodeName+stack[1]+".";
-					} else {
-						ch += "browser.currentScene.";
-					}
-				}
 				// console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
 				if (method.startsWith(".set")) {
 					if (method.startsWith(".setadd")) {
@@ -322,54 +432,92 @@ VRMLScriptSerializer.prototype = {
 						method = method.charAt(0).toLowerCase() + method.slice(1);
 						// console.log(method);
 						if (ai === 0) {
-							if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
-								let attrType = fieldTypes[element.nodeName][node.nodeName];
-								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
-							} else {
-								let attrType = fieldTypes[element.nodeName][(method.substr(3,1).toLowerCase())+method.substr(4)];
-								// console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
-								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
-							}
-							if (element.nodeName !== "X3D") {
-								if (element.nodeName !== "Scene") {
-									ch += element.nodeName+stack[1]+".";
+							switch(element.nodeName) {
+							case "X3D":
+							case "head":
+							case "meta":
+							case "component":
+								break;
+							case "Scene":
+								ch += "browser.currentScene.";
+								if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+									let attrType = fieldTypes[element.nodeName][node.nodeName];
+									ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new X3D."+attrType+"();\n\n";
 								} else {
-									ch += "browser.currentScene.";
+									let attrType = fieldTypes[element.nodeName][(method.substr(3,1).toLowerCase())+method.substr(4)];
+									// console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
+									ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new X3D."+attrType+"();\n\n";
 								}
+								ch += "browser.currentScene.";
+								break
+							default:
+								ch += element.nodeName+stack[1]+".";
+								if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+									let attrType = fieldTypes[element.nodeName][node.nodeName];
+									ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new X3D."+attrType+"();\n\n";
+								} else {
+									let attrType = fieldTypes[element.nodeName][(method.substr(3,1).toLowerCase())+method.substr(4)];
+									// console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
+									ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new X3D."+attrType+"();\n\n";
+								}
+								ch += element.nodeName+stack[1]+"XXX.";
+								break;
 							}
 						}
-						ch += (method.substr(3,1).toLowerCase())+method.substr(4)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
-						ai++;
+						if (node.nodeName !== 'component' && node.nodeName !== 'meta' && node.nodeName !== 'field') {
+							ch += (method.substr(3,1).toLowerCase())+method.substr(4)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
+							ai++;
+						}
 					} else if (method.startsWith(".setset")) {
 						method = method.substring(4);
 						method = method.charAt(0).toLowerCase() + method.slice(1);
-						if (method !== ".setScene") {
+						if (method !== ".setScene" && method !== ".setHead") {
 							ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = "+node.nodeName+stack[0]+";\n\n";
 						}
 					} else {
-						if (method !== ".setScene") {
+						if (method !== ".setScene" && method !== ".setHead") {
 							ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = "+node.nodeName+stack[0]+";\n\n";
 						}
 					}
 				} else {
 					if (ai === 0) {
-						if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
-							let attrType = fieldTypes[element.nodeName][node.nodeName];
-							ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new "+attrType+"();\n\n";
-						} else {
-							let attrType = fieldTypes[element.nodeName][(method.substr(4,1).toLowerCase())+method.substr(5)];
-							ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new "+attrType+"();\n\n";
-						}
-						if (element.nodeName !== "X3D") {
-							if (element.nodeName !== "Scene") {
-								ch += element.nodeName+stack[1]+".";
+						switch(element.nodeName) {
+						case "Scene":
+							ch += "browser.currentScene.";
+							if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+								let attrType = fieldTypes[element.nodeName][node.nodeName];
+								ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new X3D."+attrType+"();\n\n";
 							} else {
-								ch += "browser.currentScene.";
+								let attrType = fieldTypes[element.nodeName][(method.substr(4,1).toLowerCase())+method.substr(5)];
+								ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new X3D."+attrType+"();\n\n";
 							}
+							break;
+						case "X3D":
+						case "head":
+						case "meta":
+						case "component":
+							break;
+						default:
+							ch += element.nodeName+stack[1]+"YYY.";
+							if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+								let attrType = fieldTypes[element.nodeName][node.nodeName];
+								ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new X3D."+attrType+"();\n\n";
+							} else {
+								let attrType = fieldTypes[element.nodeName][(method.substr(4,1).toLowerCase())+method.substr(5)];
+								ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new X3D."+attrType+"();\n\n";
+							}
+							break;
 						}
 					}
-					ch += (method.substr(4,1).toLowerCase())+method.substr(5)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
-					ai++;
+					if (node.nodeName !== 'component' && node.nodeName !== 'meta' && node.nodeName !== 'field') {
+						if (element.nodeName !== 'Scene') {
+							ch += element.nodeName+stack[1]+"ZZZ.";
+						} else {
+							ch += "browser.currentScene.";
+						}
+						ch += (method.substr(4,1).toLowerCase())+method.substr(5)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
+						ai++;
+					}
 				}
 				str += ch;
 				stack.shift();
@@ -398,7 +546,6 @@ VRMLScriptSerializer.prototype = {
 					;
 					}).join('\\n\"+\n\"')+"`)\n";
 			}
-	        		
 		}
 		return str;
 	}

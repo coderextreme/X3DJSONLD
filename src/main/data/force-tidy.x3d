@@ -10,7 +10,7 @@
     <meta name='description' content='beginnings of a force directed graph in 3D'/>
     <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     <meta name='generator' content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy'/>
-    <meta name='modified' content='Sat, 09 Nov 2024 19:29:39 GMT'/>
+    <meta name='modified' content='Sat, 9 Nov 2024 19:29:39 GMT'/>
   </head>
   <Scene>
     <ProtoDeclare name='node'>
@@ -65,7 +65,7 @@ ecmascript:
 			    			tmpkeyValue[1] = translation;
                                                 keyValue = tmpkeyValue;
 		    				*/
-                                                keyValue = new MFVec3f(old, translation);
+                                                keyValue = new MFVec3f([old, translation]);
 			    		
 						// Browser.println(translation);
 					}
@@ -117,7 +117,7 @@ ecmascript:
 			tmpspine[1] = value;
 			spine = tmpspine;
 		    	*/
-		        spine = new MFVec3f(value, value);
+		        spine = new MFVec3f([value, value]);
 		    } else {
 		    	/*
 		        var tmpspine = new MFVec3f();
@@ -125,7 +125,7 @@ ecmascript:
 			tmpspine[1] = spine[1];
 			spine = tmpspine;
 		        */
-		        spine = new MFVec3f(value, spine[1]);
+		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
                 
@@ -137,7 +137,7 @@ ecmascript:
 			tmpspine[1] = value;
 			spine = tmpspine;
 		        */
-		        spine = new MFVec3f(value, value);
+		        spine = new MFVec3f([value, value]);
 		    } else {
 		    	/*
 		        var tmpspine = new MFVec3f();
@@ -145,7 +145,7 @@ ecmascript:
 			tmpspine[1] = value;
 			spine = tmpspine;
 		    	*/
-		        spine = new MFVec3f(spine[0], value);
+		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
                 

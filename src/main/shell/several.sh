@@ -13,21 +13,25 @@ export PROCESSORS="${PROCESSORS-8}"
 
 STYLESHEETDIR=../lib/stylesheets
 
+DATATOCLOJURE='s/\/data\//\/clojure\/net\/coderextreme\/data\//' 
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
 DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
 DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
 
+PERSONALTOCLOJURE='s/\/personal\//\/clojure\/net\/coderextreme\/personal\//' 
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
 PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
 PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
 
+EXTOCLOJURE='s/\/Library\//\/clojure\/net\/coderextreme\/Library\//' 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
 EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
 EXTOPYTHON='s/\/Library\//\/python\/net\/coderextreme\/Library\//' 
 
+ROOTTOCLOJURE='s/\/x3d_code\/www.web3d.org\//\/clojure\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
@@ -65,6 +69,23 @@ JSONEXT=json
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^/Created /'
 echo  "ls -d $@ | grep -v intermediate | grep -v  '\.new'  | tr '\n' '\0'| xargs -0 -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | sed 's/^\(.*\)\$/\"\1\"/' | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js"
 ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
+
+echo Running Clojure
+OLDCLASSPATH=${CLASSPATH}
+unset CLASSPATH
+for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.clj/' -e 's/^\/c/../' -e "$EXTOCLOJURE" -e "$DATATOCLOJURE" -e "$ROOTTOCLOJURE" -e "$PERSONALTOCLOJURE" | sed -e 's/\(data\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | xargs ls -d`
+do
+	MODEL=`basename "$i" .clj`
+	DIR="data/"
+	sed "s/{{MODEL}}/${MODEL}/g" < ../resources/project.clj.template > "../clojure/net/coderextreme/data/$MODEL/project.clj"
+	pushd "../clojure/net/coderextreme/data/$MODEL"
+	ln -s "${DIR}" "x3dclsail"
+	echo "clj $i"
+	lein run
+	popd
+done
+export CLASSPATH=${OLDCLASSPATH}
+
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/\(.*\)/"\1"/'
 # Add exit here to just do conversions
 #
@@ -136,15 +157,15 @@ do
 	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
 
-echo Running Node JavaScript
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONODE" -e "$DATATONODE" -e "$PERSONALTONODE" -e "$ROOTTONODE" | tr '\n' '\0' | while read -d $'\0' -r i
-do
-	pushd ../node
-	# We do have a node.js java module
-	echo "${NODE}" --trace-warnings "$i"
-	"${NODE}" --trace-warnings "$i"
-	popd
-done
+#echo Running Node JavaScript
+#ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONODE" -e "$DATATONODE" -e "$PERSONALTONODE" -e "$ROOTTONODE" | tr '\n' '\0' | while read -d $'\0' -r i
+#do
+#	pushd ../node
+#	# We do have a node.js java module
+#	echo "${NODE}" --trace-warnings "$i"
+#	"${NODE}" --trace-warnings "$i"
+#	popd
+#done
 
 #echo comparing SAXON and XSLT outputs
 #ls -d "$@" | grep -v intermediate | grep -v "\.new"| tr '\n' '\0' | while read -d $'\0' -r i
