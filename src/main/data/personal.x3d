@@ -1,20 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+<X3D profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
    <head>
-	   <meta name="title" content="personal.x3d"/>
+	<meta name="title" content="personal.x3d"/>
+	<meta name='identifier' content='https://someAddress/somePath/personal.x3d'/>
+	<meta name='description' content="John&apos;s Portfolio"/>
+	<meta name='generator' content='vim and X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
    </head>
    <Scene>
+    <Viewpoint description='Tour Views' position="0 0 12"/>
     <Switch DEF="SceneSwitcher" whichChoice='0'>
-    <Inline url='"../data/ballx_ite.x3d"'/>
-    <Inline url='"../data/extrusion.x3d"'/>
-    <Inline url='"../data/flower.x3d"'/>
-    <Inline url='"../data/flower3.x3d"'/>
-    <Inline url='"../data/flowers.x3d"'/>
-    <Inline url='"../data/flowers2.x3d"'/>
-    <Inline url='"../data/flowers4.x3d"'/>
-    <Inline url='"../data/flowers7.x3d"'/>
-    <Inline url='"../data/force-tidy.x3d"'/>
+	    <!--
+	    <Inline url='"../data/myextrusion.x3d"  "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"'/>
+	    <Inline url='"../data/ballx_ite.x3d"  "https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"'/>
+	    <Inline url='"../data/flower.x3d"     "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"'/>
+	    <Inline url='"../data/flower3.x3d"    "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"'/>
+	    <Inline url='"../data/flowers.x3d"    "https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d"'/>
+	    <Inline url='"../data/flowers2.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"'/>
+	    <Inline url='"../data/flowers4.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"'/>
+	    <Inline url='"../data/flowers7.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"'/>
+	    -->
+	    <Inline url='"../data/force-tidy.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d"'/>
     </Switch>
     <!--
     <Script DEF="Choice0">

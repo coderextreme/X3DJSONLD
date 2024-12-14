@@ -60,7 +60,7 @@ meta12.setContent("manual")
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("identifier")
-meta13.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d")
+meta13.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()

@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-        "title": "X3D V4.0 JSON Schema, generated 2024/07/14 12:03:27",
+        "title": "X3D V4.0 JSON Schema, generated 2024/12/05 16:15:02",
         "description": "Experimental JSON Schema for X3D V4.0",
         "type": "object",
         "properties": {
@@ -1288,7 +1288,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -1418,6 +1418,12 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-blendMode" : {
+						"$ref":"#/$defs/-BlendModeSFNode"
+					},
+					"-depthMode" : {
+						"$ref":"#/$defs/-DepthModeSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -1712,7 +1718,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -1883,7 +1889,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@bottomUrl" : {
@@ -1893,7 +1899,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@frontUrl" : {
@@ -1903,7 +1909,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@groundAngle" : {
@@ -1937,7 +1943,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-metadata" : {
@@ -1950,7 +1956,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@skyAngle" : {
@@ -1982,7 +1988,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@transparency" : {
@@ -2921,6 +2927,12 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"@damping" : {
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
 					}
 				},
 				"additionalProperties": false
@@ -3179,7 +3191,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -7750,7 +7762,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -8532,6 +8544,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -10424,6 +10439,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -10618,7 +10636,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child2Url" : {
@@ -10628,7 +10646,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child3Url" : {
@@ -10638,7 +10656,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child4Url" : {
@@ -10648,7 +10666,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-children" : {
@@ -10682,7 +10700,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -10791,7 +10809,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -13389,7 +13407,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -13495,7 +13513,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -13513,6 +13531,11 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"@colorSpaceConversion" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
 					}
 				},
 				"additionalProperties": false
@@ -13606,7 +13629,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -13771,6 +13794,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -13871,6 +13897,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -13980,6 +14009,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -14089,6 +14121,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -14198,6 +14233,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -14307,6 +14345,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -14414,7 +14455,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -15645,6 +15686,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -17368,7 +17412,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -19956,7 +20000,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -20173,6 +20217,11 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"@pointerEvents" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
 					}
 				},
 				"additionalProperties": false
@@ -20433,6 +20482,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-extensions" : {
+						"$ref":"#/$defs/-X3DMaterialExtensionNodeMFNode"
 					}
 				},
 				"additionalProperties": false
@@ -21475,6 +21527,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -22869,6 +22924,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -24275,7 +24333,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -24610,7 +24668,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -24732,7 +24790,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -24855,6 +24913,11 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"@pointerEvents" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
 					}
 				},
 				"additionalProperties": false
@@ -29896,6 +29959,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -29996,6 +30062,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -30181,6 +30250,9 @@
 					"@style" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-tangent" : {
+						"$ref":"#/$defs/-TangentSFNode"
 					}
 				},
 				"additionalProperties": false
@@ -31862,6 +31934,1134 @@
 			}
 		]
 		},
+		"EnvironmentLight" : {
+			"type": "object",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@class": {
+                            "$comment": "SFString inputOutput",
+                            "type": "string"
+                        },
+                           "@USE": {
+                              "$comment": "SFString inputOutput",
+                               "type": "string"
+                            },
+                            "-children": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
+                                            },
+                                            "additionalProperties": false
+                                    }
+                            }
+                    },
+                    "required": [ "@USE" ],
+					"additionalProperties": false
+				},
+				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@global" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@on" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@color" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@intensity" : {
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@ambientIntensity" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@rotation" : {
+						"minimum" : -1,
+						"$comment":"SFRotation inputOutput",
+						"type":"array",
+						"$comment":"SFRotation inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"maxItems" : 4,
+						"prefixItems": [
+						{
+							"default":0,
+						"minimum" : -1,
+						"type":"number"
+						}
+,
+						{
+							"default":0,
+						"minimum" : -1,
+						"type":"number"
+						}
+,
+						{
+							"default":1,
+						"minimum" : -1,
+						"type":"number"
+						}
+,
+						{
+							"default":0,
+						"minimum" : -1,
+						"type":"number"
+						}
+						],
+						"items": false
+					},
+					"-diffuseTexture" : {
+						"$ref":"#/$defs/-X3DEnvironmentTextureNodeSFNode"
+					},
+					"@diffuseCoefficients" : {
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"items": {
+						"type":"number"
+						}					},
+					"-specularTexture" : {
+						"$ref":"#/$defs/-X3DEnvironmentTextureNodeSFNode"
+					},
+					"@shadows" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@shadowIntensity" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@DEF" : {
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
+		"Tangent" : {
+			"type": "object",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@class": {
+                            "$comment": "SFString inputOutput",
+                            "type": "string"
+                        },
+                           "@USE": {
+                              "$comment": "SFString inputOutput",
+                               "type": "string"
+                            },
+                            "-children": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
+                                            },
+                                            "additionalProperties": false
+                                    }
+                            }
+                    },
+                    "required": [ "@USE" ],
+					"additionalProperties": false
+				},
+				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@vector" : {
+						"$comment":"MFVec4f inputOutput",
+						"type":"array",
+						"$comment":"MFVec4f inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"items": {
+						"maximum" : 1,
+						"minimum" : -1,
+						"type":"number"
+						}					},
+					"@DEF" : {
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
+		"ImageTextureAtlas" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@description" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@load" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@url" : {
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"minItems" : 1,
+						"items": {
+						"format":"iri-reference",
+						"type":"string"
+						}					},
+					"@autoRefresh" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFTime inputOutput",
+						"type":"number"
+					},
+					"@autoRefreshTimeLimit" : {
+						"minimum" : 0,
+						"default":3600,
+						"$comment":"SFTime inputOutput",
+						"type":"number"
+					},
+					"@slicesOverX" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFInt32 inputOutput",
+						"type":"integer"
+					},
+					"@slicesOverY" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFInt32 inputOutput",
+						"type":"integer"
+					},
+					"@numberOfSlices" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFInt32 inputOutput",
+						"type":"integer"
+					},
+					"@repeatS" : {
+						"default":false,
+						"$comment":"SFBool initializeOnly",
+						"type":"boolean"
+					},
+					"@repeatT" : {
+						"default":false,
+						"$comment":"SFBool initializeOnly",
+						"type":"boolean"
+					},
+					"@repeatR" : {
+						"default":false,
+						"$comment":"SFBool initializeOnly",
+						"type":"boolean"
+					},
+					"-textureProperties" : {
+						"$ref":"#/$defs/-TexturePropertiesSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"AnisotropyMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@anisotropyStrength" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@anisotropyRotation" : {
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@anisotropyTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-anisotropyTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"BlendMode" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@blendColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColorRGBA inputOutput",
+						"type":"array",
+						"$comment":"SFColorRGBA inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"maxItems" : 4,
+						"items": {
+							"default":0,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@sourceColorFactor" : {
+						"enum": [
+							"ZERO",
+							"ONE",
+							"SRC_COLOR",
+							"ONE_MINUS_SRC_COLOR",
+							"DST_COLOR",
+							"ONE_MINUS_DST_COLOR",
+							"SRC_ALPHA",
+							"ONE_MINUS_SRC_ALPHA",
+							"DST_ALPHA",
+							"ONE_MINUS_DST_ALPHA",
+							"CONSTANT_COLOR",
+							"ONE_MINUS_CONSTANT_COLOR",
+							"CONSTANT_ALPHA",
+							"ONE_MINUS_CONSTANT_ALPHA"
+						],
+						"default":"SRC_ALPHA",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@sourceAlphaFactor" : {
+						"enum": [
+							"ZERO",
+							"ONE",
+							"SRC_COLOR",
+							"ONE_MINUS_SRC_COLOR",
+							"DST_COLOR",
+							"ONE_MINUS_DST_COLOR",
+							"SRC_ALPHA",
+							"ONE_MINUS_SRC_ALPHA",
+							"DST_ALPHA",
+							"ONE_MINUS_DST_ALPHA",
+							"CONSTANT_COLOR",
+							"ONE_MINUS_CONSTANT_COLOR",
+							"CONSTANT_ALPHA",
+							"ONE_MINUS_CONSTANT_ALPHA"
+						],
+						"default":"ONE",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@destinationColorFactor" : {
+						"enum": [
+							"ZERO",
+							"ONE",
+							"SRC_COLOR",
+							"ONE_MINUS_SRC_COLOR",
+							"DST_COLOR",
+							"ONE_MINUS_DST_COLOR",
+							"SRC_ALPHA",
+							"ONE_MINUS_SRC_ALPHA",
+							"DST_ALPHA",
+							"ONE_MINUS_DST_ALPHA",
+							"CONSTANT_COLOR",
+							"ONE_MINUS_CONSTANT_COLOR",
+							"CONSTANT_ALPHA",
+							"ONE_MINUS_CONSTANT_ALPHA"
+						],
+						"default":"ONE_MINUS_SRC_ALPHA",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@destinationAlphaFactor" : {
+						"enum": [
+							"ZERO",
+							"ONE",
+							"SRC_COLOR",
+							"ONE_MINUS_SRC_COLOR",
+							"DST_COLOR",
+							"ONE_MINUS_DST_COLOR",
+							"SRC_ALPHA",
+							"ONE_MINUS_SRC_ALPHA",
+							"DST_ALPHA",
+							"ONE_MINUS_DST_ALPHA",
+							"CONSTANT_COLOR",
+							"ONE_MINUS_CONSTANT_COLOR",
+							"CONSTANT_ALPHA",
+							"ONE_MINUS_CONSTANT_ALPHA"
+						],
+						"default":"ONE_MINUS_SRC_ALPHA",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@colorEquation" : {
+						"enum": [
+							"FUNC_ADD",
+							"FUNC_SUBTRACT",
+							"FUNC_REVERSE_SUBTRACT"
+						],
+						"default":"FUNC_ADD",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@alphaEquation" : {
+						"enum": [
+							"FUNC_ADD",
+							"FUNC_SUBTRACT",
+							"FUNC_REVERSE_SUBTRACT"
+						],
+						"default":"FUNC_ADD",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+		},
+		"ClearcoatMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@clearcoat" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@clearcoatTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-clearcoatTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@clearcoatRoughness" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@clearcoatRoughnessTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-clearcoatRoughnessTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@clearcoatNormalTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-clearcoatNormalTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"DepthMode" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@polygonOffset" : {
+						"$comment":"SFVec2f inputOutput",
+						"type":"array",
+						"$comment":"SFVec2f inputOutput",
+						"type":"array",
+						"minItems" : 2,
+						"maxItems" : 2,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@depthRange" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFVec2f inputOutput",
+						"type":"array",
+						"$comment":"SFVec2f inputOutput",
+						"type":"array",
+						"minItems" : 2,
+						"maxItems" : 2,
+						"prefixItems": [
+						{
+							"default":0,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}
+,
+						{
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}
+						],
+						"items": false
+					},
+					"@depthTest" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@depthFunction" : {
+						"enum": [
+							"NEVER",
+							"LESS",
+							"EQUAL",
+							"LESS_EQUAL",
+							"GREATER",
+							"NOT_EQUAL",
+							"GREATER_EQUAL",
+							"ALWAYS"
+						],
+						"default":"LESS_EQUAL",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@depthMask" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					}
+				},
+				"additionalProperties": false
+		},
+		"DispersionMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@dispersion" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					}
+				},
+				"additionalProperties": false
+		},
+		"EmissiveStrengthMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@emissiveStrength" : {
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					}
+				},
+				"additionalProperties": false
+		},
+		"IORMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@indexOfRefraction" : {
+						"minimum" : 1,
+						"default":1.5,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					}
+				},
+				"additionalProperties": false
+		},
+		"InstancedShape" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@translations" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@rotations" : {
+						"$comment":"MFRotation inputOutput",
+						"type":"array",
+						"$comment":"MFRotation inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"items": {
+						"type":"number"
+						}					},
+					"@scales" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@scaleOrientations" : {
+						"$comment":"MFRotation inputOutput",
+						"type":"array",
+						"$comment":"MFRotation inputOutput",
+						"type":"array",
+						"minItems" : 4,
+						"items": {
+						"type":"number"
+						}					},
+					"@centers" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@pointerEvents" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@castShadow" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@visible" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@bboxDisplay" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@bboxSize" : {
+						"minimum" : 0,
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":-1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@bboxCenter" : {
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"-appearance" : {
+						"$ref":"#/$defs/-X3DAppearanceNodeSFNode"
+					},
+					"-geometry" : {
+						"$ref":"#/$defs/-X3DGeometryNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"IridescenceMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@iridescence" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@iridescenceTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-iridescenceTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@iridescenceIndexOfRefraction" : {
+						"minimum" : 1,
+						"default":1.3,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@iridescenceThicknessMinimum" : {
+						"minimum" : 0,
+						"default":100,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@iridescenceThicknessMaximum" : {
+						"minimum" : 0,
+						"default":400,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@iridescenceThicknessTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-iridescenceThicknessTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"SheenMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@sheenColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@sheenColorTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-sheenColorTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@sheenRoughness" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@sheenRoughnessTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-sheenRoughnessTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"SpecularGlossinessMaterial" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@diffuseColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@diffuseTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-diffuseTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@specularColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@glossiness" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@specularGlossinessTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-specularGlossinessTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@emissiveColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@emissiveTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-emissiveTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@occlusionStrength" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@occlusionTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-occlusionTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@normalScale" : {
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@normalTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-normalTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@transparency" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"-extensions" : {
+						"$ref":"#/$defs/-X3DMaterialExtensionNodeMFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"SpecularMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@specular" : {
+						"minimum" : 0,
+						"default":1,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@specularTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-specularTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@specularColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@specularColorTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-specularColorTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"TransmissionMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@transmission" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@transmissionTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-transmissionTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
+		"VolumeMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@thickness" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@thicknessTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-thicknessTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@attenuationDistance" : {
+						"minimum" : 0,
+						"default":1000000,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@attenuationColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					}
+				},
+				"additionalProperties": false
+		},
+		"DiffuseTransmissionMaterialExtension" : {
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@diffuseTransmission" : {
+						"minimum" : 0,
+						"default":0,
+						"$comment":"SFFloat inputOutput",
+						"type":"number"
+					},
+					"@diffuseTransmissionTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-diffuseTransmissionTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@diffuseTransmissionColor" : {
+						"maximum" : 1,
+						"minimum" : 0,
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"$comment":"SFColor inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":1,
+						"maximum" : 1,
+						"minimum" : 0,
+						"type":"number"
+						}					},
+					"@diffuseTransmissionColorTextureMapping" : {
+						"default":"",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"-diffuseTransmissionColorTexture" : {
+						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					}
+				},
+				"additionalProperties": false
+		},
 		"component" : {
 			"type" : "array",
 			"items" : {
@@ -31923,7 +33123,8 @@
 							"Texturing",
 							"Texturing3D",
 							"Time",
-							"VolumeRendering"
+							"VolumeRendering",
+							"X_ITE"
 						],
 						"$comment":"SFString inputOutput",
 						"type":"string"
@@ -32056,7 +33257,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					}
 				},
@@ -32689,7 +33890,7 @@
                                  "properties": {
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "uri"
+                                        "format": "iri"
                                 },
                                 "JSON schema": {
                                         "type": "string"
@@ -33077,6 +34278,9 @@
 								"SpotLight" : {
 									"$ref":"#/$defs/SpotLight"
 								},
+								"EnvironmentLight" : {
+									"$ref":"#/$defs/EnvironmentLight"
+								},
 								"CollidableOffset" : {
 									"$ref":"#/$defs/CollidableOffset"
 								},
@@ -33163,6 +34367,9 @@
 								},
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
+								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
 								},
 								"ChannelMerger" : {
 									"$ref":"#/$defs/ChannelMerger"
@@ -33339,6 +34546,9 @@
 								"UnlitMaterial" : {
 									"$ref":"#/$defs/UnlitMaterial"
 								},
+								"SpecularGlossinessMaterial" : {
+									"$ref":"#/$defs/SpecularGlossinessMaterial"
+								},
 								"TwoSidedMaterial" : {
 									"$ref":"#/$defs/TwoSidedMaterial"
 								},
@@ -33440,6 +34650,9 @@
 								"PixelTexture3D" : {
 									"$ref":"#/$defs/PixelTexture3D"
 								},
+								"ImageTextureAtlas" : {
+									"$ref":"#/$defs/ImageTextureAtlas"
+								},
 								"MultiTexture" : {
 									"$ref":"#/$defs/MultiTexture"
 								},
@@ -33452,17 +34665,41 @@
 					"-X3DTextureTransformNodeSFNode" : {
 							"type": "object",
 							"properties": {
-								"MultiTextureTransform" : {
-									"$ref":"#/$defs/MultiTextureTransform"
-								},
 								"TextureTransform" : {
 									"$ref":"#/$defs/TextureTransform"
+								},
+								"TextureTransformMatrix3D" : {
+									"$ref":"#/$defs/TextureTransformMatrix3D"
+								},
+								"MultiTextureTransform" : {
+									"$ref":"#/$defs/MultiTextureTransform"
 								},
 								"TextureTransform3D" : {
 									"$ref":"#/$defs/TextureTransform3D"
 								},
-								"TextureTransformMatrix3D" : {
-									"$ref":"#/$defs/TextureTransformMatrix3D"
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+					},
+					"-BlendModeSFNode" : {
+							"type": "object",
+							"properties": {
+								"BlendMode" : {
+									"$ref":"#/$defs/BlendMode"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+					},
+					"-DepthModeSFNode" : {
+							"type": "object",
+							"properties": {
+								"DepthMode" : {
+									"$ref":"#/$defs/DepthMode"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -33529,6 +34766,9 @@
 								},
 								"PixelTexture3D" : {
 									"$ref":"#/$defs/PixelTexture3D"
+								},
+								"ImageTextureAtlas" : {
+									"$ref":"#/$defs/ImageTextureAtlas"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -33999,6 +35239,9 @@
 								"SpotLight" : {
 									"$ref":"#/$defs/SpotLight"
 								},
+								"EnvironmentLight" : {
+									"$ref":"#/$defs/EnvironmentLight"
+								},
 								"CollidableOffset" : {
 									"$ref":"#/$defs/CollidableOffset"
 								},
@@ -34085,6 +35328,9 @@
 								},
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
+								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
 								},
 								"ChannelMerger" : {
 									"$ref":"#/$defs/ChannelMerger"
@@ -34548,6 +35794,18 @@
 							},
 							"additionalProperties": false
 					},
+					"-TangentSFNode" : {
+							"type": "object",
+							"properties": {
+								"Tangent" : {
+									"$ref":"#/$defs/Tangent"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+					},
 					"-GeoOriginSFNode" : {
 							"type": "object",
 							"properties": {
@@ -34578,6 +35836,9 @@
 								},
 								"UnlitMaterial" : {
 									"$ref":"#/$defs/UnlitMaterial"
+								},
+								"SpecularGlossinessMaterial" : {
+									"$ref":"#/$defs/SpecularGlossinessMaterial"
 								},
 								"TwoSidedMaterial" : {
 									"$ref":"#/$defs/TwoSidedMaterial"
@@ -34618,20 +35879,23 @@
 								"PixelTexture3D" : {
 									"$ref":"#/$defs/PixelTexture3D"
 								},
+								"ImageTextureAtlas" : {
+									"$ref":"#/$defs/ImageTextureAtlas"
+								},
 								"MultiTexture" : {
 									"$ref":"#/$defs/MultiTexture"
-								},
-								"MultiTextureTransform" : {
-									"$ref":"#/$defs/MultiTextureTransform"
 								},
 								"TextureTransform" : {
 									"$ref":"#/$defs/TextureTransform"
 								},
-								"TextureTransform3D" : {
-									"$ref":"#/$defs/TextureTransform3D"
-								},
 								"TextureTransformMatrix3D" : {
 									"$ref":"#/$defs/TextureTransformMatrix3D"
+								},
+								"MultiTextureTransform" : {
+									"$ref":"#/$defs/MultiTextureTransform"
+								},
+								"TextureTransform3D" : {
+									"$ref":"#/$defs/TextureTransform3D"
 								},
 								"AcousticProperties" : {
 									"$ref":"#/$defs/AcousticProperties"
@@ -34644,6 +35908,12 @@
 								},
 								"PointProperties" : {
 									"$ref":"#/$defs/PointProperties"
+								},
+								"BlendMode" : {
+									"$ref":"#/$defs/BlendMode"
+								},
+								"DepthMode" : {
+									"$ref":"#/$defs/DepthMode"
 								},
 								"Appearance" : {
 									"$ref":"#/$defs/Appearance"
@@ -34849,6 +36119,9 @@
 								"SpotLight" : {
 									"$ref":"#/$defs/SpotLight"
 								},
+								"EnvironmentLight" : {
+									"$ref":"#/$defs/EnvironmentLight"
+								},
 								"CollidableOffset" : {
 									"$ref":"#/$defs/CollidableOffset"
 								},
@@ -34935,6 +36208,9 @@
 								},
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
+								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
 								},
 								"ChannelMerger" : {
 									"$ref":"#/$defs/ChannelMerger"
@@ -35134,6 +36410,9 @@
 								"HAnimDisplacer" : {
 									"$ref":"#/$defs/HAnimDisplacer"
 								},
+								"Tangent" : {
+									"$ref":"#/$defs/Tangent"
+								},
 								"IndexedFaceSet" : {
 									"$ref":"#/$defs/IndexedFaceSet"
 								},
@@ -35322,6 +36601,39 @@
 								},
 								"ProjectionVolumeStyle" : {
 									"$ref":"#/$defs/ProjectionVolumeStyle"
+								},
+								"AnisotropyMaterialExtension" : {
+									"$ref":"#/$defs/AnisotropyMaterialExtension"
+								},
+								"ClearcoatMaterialExtension" : {
+									"$ref":"#/$defs/ClearcoatMaterialExtension"
+								},
+								"DispersionMaterialExtension" : {
+									"$ref":"#/$defs/DispersionMaterialExtension"
+								},
+								"EmissiveStrengthMaterialExtension" : {
+									"$ref":"#/$defs/EmissiveStrengthMaterialExtension"
+								},
+								"IORMaterialExtension" : {
+									"$ref":"#/$defs/IORMaterialExtension"
+								},
+								"IridescenceMaterialExtension" : {
+									"$ref":"#/$defs/IridescenceMaterialExtension"
+								},
+								"SheenMaterialExtension" : {
+									"$ref":"#/$defs/SheenMaterialExtension"
+								},
+								"SpecularMaterialExtension" : {
+									"$ref":"#/$defs/SpecularMaterialExtension"
+								},
+								"TransmissionMaterialExtension" : {
+									"$ref":"#/$defs/TransmissionMaterialExtension"
+								},
+								"VolumeMaterialExtension" : {
+									"$ref":"#/$defs/VolumeMaterialExtension"
+								},
+								"DiffuseTransmissionMaterialExtension" : {
+									"$ref":"#/$defs/DiffuseTransmissionMaterialExtension"
 								},
 								"Contact" : {
 									"$ref":"#/$defs/Contact"
@@ -35780,6 +37092,9 @@
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
 								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
+								},
 								"Inline" : {
 									"$ref":"#/$defs/Inline"
 								},
@@ -35967,6 +37282,12 @@
 								"#comment": {
 									"type": "string"
 								},
+								"TextureTransform" : {
+									"$ref":"#/$defs/TextureTransform"
+								},
+								"TextureTransformMatrix3D" : {
+									"$ref":"#/$defs/TextureTransformMatrix3D"
+								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
 								}
@@ -36098,6 +37419,9 @@
 								"PixelTexture3D" : {
 									"$ref":"#/$defs/PixelTexture3D"
 								},
+								"ImageTextureAtlas" : {
+									"$ref":"#/$defs/ImageTextureAtlas"
+								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
 								}
@@ -36183,6 +37507,56 @@
 								}
 							},
 							"additionalProperties": false
+					},
+					"-X3DMaterialExtensionNodeMFNode" : {
+						"$comment":"MFNode inputOutput",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "object",
+							"properties": {
+								"#comment": {
+									"type": "string"
+								},
+								"AnisotropyMaterialExtension" : {
+									"$ref":"#/$defs/AnisotropyMaterialExtension"
+								},
+								"ClearcoatMaterialExtension" : {
+									"$ref":"#/$defs/ClearcoatMaterialExtension"
+								},
+								"DispersionMaterialExtension" : {
+									"$ref":"#/$defs/DispersionMaterialExtension"
+								},
+								"EmissiveStrengthMaterialExtension" : {
+									"$ref":"#/$defs/EmissiveStrengthMaterialExtension"
+								},
+								"IORMaterialExtension" : {
+									"$ref":"#/$defs/IORMaterialExtension"
+								},
+								"IridescenceMaterialExtension" : {
+									"$ref":"#/$defs/IridescenceMaterialExtension"
+								},
+								"SheenMaterialExtension" : {
+									"$ref":"#/$defs/SheenMaterialExtension"
+								},
+								"SpecularMaterialExtension" : {
+									"$ref":"#/$defs/SpecularMaterialExtension"
+								},
+								"TransmissionMaterialExtension" : {
+									"$ref":"#/$defs/TransmissionMaterialExtension"
+								},
+								"VolumeMaterialExtension" : {
+									"$ref":"#/$defs/VolumeMaterialExtension"
+								},
+								"DiffuseTransmissionMaterialExtension" : {
+									"$ref":"#/$defs/DiffuseTransmissionMaterialExtension"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+						}
 					},
 					"-ShaderProgramMFNode" : {
 						"$comment":"MFNode inputOutput",
@@ -36409,6 +37783,9 @@
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
 								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
+								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
 								}
@@ -36476,6 +37853,24 @@
 								},
 								"ProjectionVolumeStyle" : {
 									"$ref":"#/$defs/ProjectionVolumeStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+					},
+					"-X3DEnvironmentTextureNodeSFNode" : {
+							"type": "object",
+							"properties": {
+								"ComposedCubeMapTexture" : {
+									"$ref":"#/$defs/ComposedCubeMapTexture"
+								},
+								"GeneratedCubeMapTexture" : {
+									"$ref":"#/$defs/GeneratedCubeMapTexture"
+								},
+								"ImageCubeMapTexture" : {
+									"$ref":"#/$defs/ImageCubeMapTexture"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -36694,6 +38089,9 @@
 								"SpotLight" : {
 									"$ref":"#/$defs/SpotLight"
 								},
+								"EnvironmentLight" : {
+									"$ref":"#/$defs/EnvironmentLight"
+								},
 								"CollidableOffset" : {
 									"$ref":"#/$defs/CollidableOffset"
 								},
@@ -36780,6 +38178,9 @@
 								},
 								"Shape" : {
 									"$ref":"#/$defs/Shape"
+								},
+								"InstancedShape" : {
+									"$ref":"#/$defs/InstancedShape"
 								},
 								"ChannelMerger" : {
 									"$ref":"#/$defs/ChannelMerger"

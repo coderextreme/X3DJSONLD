@@ -66,7 +66,7 @@ head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
 meta13.setName(CString("identifier"));
-meta13.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"));
+meta13.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();

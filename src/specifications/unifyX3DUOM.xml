@@ -12306,16 +12306,18 @@
     <field accessType="inputOutput" default="FALSE" description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry." name="shadows" type="SFBool"/>
     <field accessType="inputOutput" default="1" description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)." maxInclusive="1" minInclusive="0" name="shadowIntensity" type="SFFloat"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
+    <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <containerField default="children" type="xs:NMTOKEN"/>
    </InterfaceDefinition>
   </ConcreteNode>
   <ConcreteNode name="Tangent">
    <InterfaceDefinition appinfo="Tangent." specificationUrl="https://create3000.github.io/x_ite/components/rendering/tangent">
-    <componentInfo level="4" name="Rendering"/>
+    <componentInfo level="1" name="X_ITE"/>
     <Inheritance baseType="X3DGeometricPropertyNode"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." name="metadata" type="SFNode"/>
     <field accessType="inputOutput" description="A unit XYZ vector defining a tangent direction on the surface, and a W component whose sign value (-1 or +1) indicates the handedness of the tangent base." maxInclusive="1" minInclusive="-1" name="vector" type="MFVec4f"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
+    <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <containerField default="tangent" type="xs:NMTOKEN"/>
    </InterfaceDefinition>
   </ConcreteNode>

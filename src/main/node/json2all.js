@@ -42,7 +42,7 @@ convertJSON.convertJSON([
 	{ 
 	serializer : './VRMLScriptSerializer.js',
 	folder : "../vrml/net/coderextreme/",
-	extension : ".mjs",
+	extension : ".js",
 	codeOutput : "../"
 	},
 	{ 

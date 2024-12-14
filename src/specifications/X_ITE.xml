@@ -146,6 +146,13 @@
 					baseType="xs:ID"
 					description="DEF defines a unique ID name for this node, referenceable by other nodes."
 				></field>
+				<field name="USE"
+					type="SFString"
+					accessType="inputOutput"
+					inheritedFrom="X3DNode"
+					baseType="xs:IDREF"
+					description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."
+				></field>
 				<containerField default="children" type="xs:NMTOKEN" />
 			</InterfaceDefinition>
 		</ConcreteNode>
@@ -154,7 +161,7 @@
 			<InterfaceDefinition
 				specificationUrl="https://create3000.github.io/x_ite/components/rendering/tangent"
 				appinfo="Tangent.">
-				<componentInfo name="Rendering" level="4" />
+				<componentInfo name="X_ITE" level="1" />
 				<Inheritance baseType="X3DGeometricPropertyNode" />
 				<field name="metadata"
 					type="SFNode"
@@ -176,6 +183,13 @@
 					inheritedFrom="X3DNode"
 					baseType="xs:ID"
 					description="DEF defines a unique ID name for this node, referenceable by other nodes."
+				></field>
+				<field name="USE"
+					type="SFString"
+					accessType="inputOutput"
+					inheritedFrom="X3DNode"
+					baseType="xs:IDREF"
+					description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."
 				></field>
 				<containerField default="tangent" type="xs:NMTOKEN" />
 			</InterfaceDefinition>
