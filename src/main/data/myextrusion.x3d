@@ -4,15 +4,16 @@
     <head>
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
-        <meta name='title' content='extrusion.x3d'/>
-	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/extrusion.x3d'/>
+        <meta name='modified' content='November 9 2024'/>
+        <meta name='title' content='myextrusion.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d'/>
         <meta name='description' content='beginnings of a force directed graph in 3D'/>
         <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     </head>
     <Scene>      
         <Group>
                 <Shape>
-                    <Extrusion DEF='extrusion'  spine='-50 -50 0 50 50 0' creaseAngle='0.785' crossSection='1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00'>
+                    <Extrusion DEF='myextrusion'  spine='-50 -50 0 50 50 0' creaseAngle='0.785' crossSection='1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00'>
                     </Extrusion>
                     <Appearance>
                         <Material diffuseColor='0 1 0'/>
@@ -37,7 +38,7 @@ ecmascript:
 ]]>
                 </Script>               
                 <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='MoveCylinder' toField='set_cycle'/>
-                <ROUTE fromNode='MoveCylinder' fromField='spine_changed' toNode='extrusion' toField='set_spine'/>
+                <ROUTE fromNode='MoveCylinder' fromField='spine_changed' toNode='myextrusion' toField='set_spine'/>
         </Group>
 
     </Scene>

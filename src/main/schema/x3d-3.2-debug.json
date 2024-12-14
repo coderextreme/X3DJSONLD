@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-        "title": "X3D V3.2 JSON Schema, generated 2024/07/14 12:03:27",
+        "title": "X3D V3.2 JSON Schema, generated 2024/12/05 16:15:02",
         "description": "Experimental JSON Schema for X3D V3.2",
         "type": "object",
         "properties": {
@@ -1031,7 +1031,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -1364,7 +1364,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -1422,7 +1422,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@bottomUrl" : {
@@ -1432,7 +1432,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@frontUrl" : {
@@ -1442,7 +1442,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@groundAngle" : {
@@ -1476,7 +1476,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-metadata" : {
@@ -1489,7 +1489,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@skyAngle" : {
@@ -1521,7 +1521,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@transparency" : {
@@ -5369,7 +5369,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -6461,7 +6461,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					}
 				},
@@ -7635,7 +7635,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child2Url" : {
@@ -7645,7 +7645,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child3Url" : {
@@ -7655,7 +7655,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child4Url" : {
@@ -7665,7 +7665,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-children" : {
@@ -7699,7 +7699,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -7774,7 +7774,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -9803,7 +9803,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -9880,7 +9880,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -9962,7 +9962,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -10714,7 +10714,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -12878,7 +12878,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -15059,7 +15059,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -18507,7 +18507,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -18590,7 +18590,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -18679,7 +18679,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -23724,7 +23724,7 @@
                                  "properties": {
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "uri"
+                                        "format": "iri"
                                 },
                                 "JSON schema": {
                                         "type": "string"

@@ -344,7 +344,7 @@ class ClassPrinter:
                     str += '\t\t\t\t\t\t"items": '
                     str += '{\n'
                     if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
-                        str += '\t\t\t\t\t\t"format":"uri-reference",\n'
+                        str += '\t\t\t\t\t\t"format":"iri-reference",\n'
                     if enums != []:
                         if field.get('additionalEnumerationValuesAllowed') == "true":
                             str += '\t\t\t\t\t\t"anyOf" : [ {\n'
@@ -377,7 +377,7 @@ class ClassPrinter:
                                 str += ',\n'
                             str += '\t\t\t\t\t\t{\n'
                             if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
-                                str += '\t\t\t\t\t\t\t\t"format":"uri-reference",\n'
+                                str += '\t\t\t\t\t\t\t\t"format":"iri-reference",\n'
                             if enums != []:
                                 str += '\t\t\t\t\t\t\t"enum": [\n'
                                 str += '\t\t\t\t\t\t\t'
@@ -507,7 +507,7 @@ class ClassPrinter:
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "uri"
+                                        "format": "iri"
                                 },
                                 "JSON schema": {
                                         "type": "string"
