@@ -89,7 +89,7 @@
         ))
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )
             (.setName "identifier")
-            (.setContent "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d")
+            (.setContent "https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d")
         ))
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )
             (.setName "description")
