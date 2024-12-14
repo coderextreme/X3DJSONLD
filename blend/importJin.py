@@ -63,7 +63,6 @@ bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", prefer_flat=False, a
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4Sites10h.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4Sites09x.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinSample.x3d", axis_forward='Y', axis_up='Z')
-#bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", axis_forward='Y', axis_up='Z')
 
 # bpy.ops.export_scene.x3dv(filepath="JinLOA4Export.x3d", export_hanim_prefix='hanim_', export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3d(filepath="JinBlender.x3d")
