@@ -11,6 +11,8 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
+    <Background skyColor='1.000 1.000 1.000'/>
+    <NavigationInfo type='"EXAMINE" "FLY" "WALK" "ANY"' />
     <EnvironmentLight>
       <ImageCubeMapTexture containerField='diffuseTexture'
           url='"https://create3000.github.io/Library/Tests/Components/images/helipad-diffuse.jpg"'>

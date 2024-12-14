@@ -273,9 +273,9 @@ def create_transform(node, def_objects, parent_object, animated_objects):
             empty['x3dtranslation'] = None
 
         if parent_object:
-            # empty.matrix_world = parent_object.matrix_world @ transform_matrix
+            empty.matrix_world = parent_object.matrix_world @ transform_matrix
             # empty.matrix_world = transform_matrix
-            empty.matrix_local = parent_object.matrix_world @ transform_matrix
+            # empty.matrix_local = parent_object.matrix_world @ transform_matrix
         else:
             empty.matrix_world = transform_matrix
 
@@ -461,7 +461,7 @@ def get_color_values(node, def_objects):
         colors = [tuple(map(float, color_values[i:i+3] + [1.0])) for i in range(0, len(color_values), 3)]
         return colors
     else:
-        return None
+        return []
 
 def create_indexed_line_set(name, node, def_objects, parent_object, animated_objects):
     # print('CREATE', compose_name(node))
@@ -787,7 +787,7 @@ def create_material(material, def_objects, appearance, animated_objects):
     def set_input(name, value):
         if name in principled.inputs:
             if principled.inputs[name].type == 'RGBA':
-                principled.inputs[name].default_value = (*value, 1)
+                principled.inputs[name].default_value = value
             elif principled.inputs[name].type == 'VALUE':
                 principled.inputs[name].default_value = value if isinstance(value, float) else sum(value) / len(value)
 
@@ -801,7 +801,7 @@ def create_material(material, def_objects, appearance, animated_objects):
     if 'emissiveColor' in material.attrib:
         r, g, b = parse_color(material.get('emissiveColor'))
         set_input('Emission', (r, g, b, 1))
-        principled.inputs['Emission'].default_value = (r, g, b, 1)
+        # principled.inputs['Emission'].default_value = (r, g, b, 1)
         # If any emission color is set, set emission strength
         if any([r, g, b]):
             set_input('Emission Strength', 1.0)
@@ -834,7 +834,7 @@ def create_material(material, def_objects, appearance, animated_objects):
     if 'ambientIntensity' in material.attrib:
         ambient = parse_float(material.get('ambientIntensity'), 0.2)
         set_input('Subsurface', ambient)
-        principled.inputs['Subsurface'].default_value = ambient
+        # principled.inputs['Subsurface'].default_value = ambient
 
     image_texture = child_lookup(material, 'ImageTexture')
     it_material = None
@@ -1022,7 +1022,7 @@ def old_create_material(node, def_objects, parent_object, animated_objects):
         def set_input(name, value):
             if name in principled.inputs:
                 if principled.inputs[name].type == 'RGBA':
-                    principled.inputs[name].default_value = (*value, 1)
+                    principled.inputs[name].default_value = value
                 elif principled.inputs[name].type == 'VALUE':
                     principled.inputs[name].default_value = value if isinstance(value, float) else sum(value) / len(value)
 
@@ -1417,7 +1417,7 @@ def create_pbr_material(material_node, def_objects, appearance, animated_objects
     def set_input(name, value):
         if name in principled.inputs:
             if principled.inputs[name].type == 'RGBA':
-                principled.inputs[name].default_value = (*value, 1)
+                principled.inputs[name].default_value = value
             elif principled.inputs[name].type == 'VALUE':
                 principled.inputs[name].default_value = value if isinstance(value, float) else sum(value) / len(value)
 
@@ -1536,8 +1536,9 @@ for screen in bpy.data.screens:
 #file_path = "Jin11gNoUSE.x3d"
 #file_path = "JinConcat11g.x3d"
 #file_path = "JinConcat10h.x3d"
+#file_path = "JinConconcatenated.x3d"
 #file_path = "localrotation.x3d"
-#file_path = "localcenters.x3d"
+file_path = "localcenters.x3d"
 #file_path = "localcentersjoe.x3d"
 #file_path = "JinLOA1scaled1.x3d"
 #file_path = "HAnim2SpecificationLOA3Illustrated.x3d"
@@ -1551,7 +1552,7 @@ for screen in bpy.data.screens:
 #file_path = 'JoeSkinTexcoordDisplacerKickUpdate2.x3d'
 #file_path = 'JinLOA1.x3d'
 #file_path = 'maleWaving.x3d'
-file_path = 'IridescentDishWithOlives.x3d'
+# file_path = 'IridescentDishWithOlives.x3d'
 
 
 

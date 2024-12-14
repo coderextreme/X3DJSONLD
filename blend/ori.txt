@@ -1,0 +1,64 @@
+def translateLocalOrientationInterpolator(node, action, ancestry, child_obj, interpolation='BEZIER'):
+    """
+    Keyframe multiple axis-angle rotations for an object.
+
+    :param node: OrientationInterpolator
+    :param action: Action (unused, but kept for compatibility)
+    :param ancestry: node's ancestors
+    :param child_obj: The object to rotate
+    :param interpolation: Interpolation type for keyframes
+    """
+    # Ensure the object has a parent
+    if child_obj.parent is None:
+        print(f"Warning: {child_obj.name} has no parent")
+        return
+
+    # Get key and keyValue arrays
+    key = node.getFieldAsArray('key', 0, ancestry)
+    keyValue = node.getFieldAsArray('keyValue', 4, ancestry)
+
+    # Ensure animation data exists
+    if child_obj.animation_data is None:
+        child_obj.animation_data_create()
+
+    # Create a new action if one doesn't exist
+    if child_obj.animation_data.action is None:
+        child_obj.animation_data.action = bpy.data.actions.new(f"{child_obj.name}_OrientationAction")
+
+    # Set rotation mode to AXIS_ANGLE
+    child_obj.rotation_mode = 'AXIS_ANGLE'
+
+    # Iterate through rotation keys
+    for time, (x, y, z, w) in zip(key, keyValue):
+        # Create axis vector and extract angle
+        axis = mathutils.Vector((x, y, z))
+        angle = w
+
+        # Normalize the axis vector
+        rotation_axis = axis.normalized()
+
+        # Set the scene to the current frame (assuming TIME_MULTIPLIER is defined)
+        frame = int(time * TIME_MULTIPLIER)
+        bpy.context.scene.frame_set(frame)
+
+        # Set the rotation
+        child_obj.rotation_axis_angle = (angle, rotation_axis.x, rotation_axis.y, rotation_axis.z)
+
+        # Keyframe the rotation with more explicit curve creation
+        fcurves = child_obj.animation_data.action.fcurves
+        for i in range(4):  # 4 components of rotation_axis_angle
+            curve = fcurves.find('rotation_axis_angle', index=i)
+            if curve is None:
+                curve = fcurves.new('rotation_axis_angle', index=i)
+
+            # Insert keyframe
+            curve.keyframe_points.insert(frame, child_obj.rotation_axis_angle[i], options={'FAST'})
+
+    # Ensure interpolation is set for all keyframes
+    if child_obj.animation_data and child_obj.animation_data.action:
+        for fcurve in child_obj.animation_data.action.fcurves:
+            for kf in fcurve.keyframe_points:
+                kf.interpolation = interpolation
+
+    # Ensure the animation is visible in the timeline
+    child_obj.animation_data.action.use_fake_user = True
