@@ -56,7 +56,7 @@ for screen in bpy.data.screens:
 bpy.ops.import_scene.x3d(filepath="GrampsAnimations.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="GrampsAnimations.x3d")
 #bpy.ops.import_scene.x3d(filepath="Gramps8Final.x3d", axis_forward='Y', axis_up='Z')
-#bpy.ops.export_scene.x3dv(filepath="GrampsAnimationsExport.x3d", export_hanim_prefix='hanim_', export_round_precision=20, export_yup=True, export_normals=True, export_format="X3D")
+bpy.ops.export_scene.x3dv(filepath="GrampsAnimationsExport.x3d", export_hanim_prefix='', export_round_precision=20, export_yup=False, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3d(filepath="GrampsBlender.x3d")
 #filepath = "C:/Temp"
 #

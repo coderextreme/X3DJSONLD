@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2024-04-28-07:00 13:15:28.386754-07:00 -->
+<!-- Generated 2024-12-10-08:00 12:33:23.8336395-08:00 -->
 <X3dUnifiedObjectModel version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
  <SimpleTypeEnumerations>
   <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
@@ -3428,6 +3428,7 @@
     <field accessType="inputOutput" baseType="unitIntervalType" default="1" inheritedFrom="X3DLightNode" maxInclusive="1" minInclusive="0" name="shadowIntensity" type="SFFloat"/>
     <field accessType="inputOutput" default="false" inheritedFrom="X3DLightNode" name="shadows" type="SFBool"/>
     <field acceptableNodeTypes="X3DTexture2DNode" accessType="inputOutput" default="NULL" name="texture" type="SFNode"/>
+    <field accessType="inputOutput" default="0 1 0" name="upVector" type="SFVec3f"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:NMTOKENS" description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets." inheritedFrom="X3DNode" name="class" type="SFString"/>
@@ -3776,7 +3777,7 @@
      <enumeration appinfo="Alpha-testing mode for transparent when alpha value less than 0.5 and opaque when greater than or equal to 0.5." value="MASK"/>
      <enumeration appinfo="Blend combines partial transparency of textures and materials." value="BLEND"/>
     </field>
-    <field acceptableNodeTypes="X3DMaterialNode" accessType="inputOutput" default="NULL" name="backMaterial" type="SFNode"/>
+    <field acceptableNodeTypes="X3DMaterialNode" accessType="inputOutput" default="NULL" description="Single contained Material, PhysicalMaterial or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc." name="backMaterial" type="SFNode"/>
     <field acceptableNodeTypes="FillProperties" accessType="inputOutput" default="NULL" description="Single contained FillProperties node that can specify additional visual attributes applied to polygonal areas of corresponding geometry, on top of whatever other appearance is already defined." name="fillProperties" type="SFNode">
      <componentInfo level="3" name="Shape"/>
     </field>
@@ -3784,7 +3785,7 @@
     <field acceptableNodeTypes="LineProperties" accessType="inputOutput" default="NULL" description="Single contained LineProperties node that can specify additional visual attributes applied to corresponding line geometry." name="lineProperties" type="SFNode">
      <componentInfo level="2" name="Shape"/>
     </field>
-    <field acceptableNodeTypes="X3DMaterialNode" accessType="inputOutput" default="NULL" description="Single contained Material node that can specify visual attributes for lighting response (color types, transparency, etc." name="material" type="SFNode"/>
+    <field acceptableNodeTypes="X3DMaterialNode" accessType="inputOutput" default="NULL" description="Single contained Material, PhysicalMaterial, TwoSidedMaterial (deprecated), or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc." name="material" type="SFNode"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field acceptableNodeTypes="PointProperties" accessType="inputOutput" default="NULL" description="Single contained PointProperties node that can specify additional visual attributes applied to corresponding point geometry." name="pointProperties" type="SFNode">
      <componentInfo level="5" name="Shape"/>
@@ -7438,7 +7439,7 @@
     <field acceptableNodeTypes="X3DVertexAttributeNode" accessType="inputOutput" description="Single contained FloatVertexAttribute node that can specify list of per-vertex attribute information for programmable shaders." inheritedFrom="X3DComposedGeometryNode" name="attrib" type="MFNode"/>
     <field accessType="initializeOnly" default="true" description="ccw defines clockwise/counterclockwise ordering of vertex coordinates, which in turn defines front/back orientation of polygon normals according to Right-Hand Rule (RHR)." inheritedFrom="X3DComposedGeometryNode" name="ccw" type="SFBool"/>
     <field acceptableNodeTypes="X3DColorNode" accessType="inputOutput" default="NULL" description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields." inheritedFrom="X3DComposedGeometryNode" name="color" type="SFNode"/>
-    <field accessType="initializeOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)." minInclusive="-1" name="colorIndex" type="MFInt32"/>
+    <field accessType="initializeOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true." minInclusive="-1" name="colorIndex" type="MFInt32"/>
     <field accessType="initializeOnly" default="true" description="Whether Color|ColorRGBA values are applied to each point vertex (true) or to each polygon face (false)." inheritedFrom="X3DComposedGeometryNode" name="colorPerVertex" type="SFBool"/>
     <field accessType="initializeOnly" default="true" description="The convex field is a hint to renderers whether all polygons in a shape are convex (true), or possibly concave (false)." name="convex" type="SFBool">
      <componentInfo level="4" name="Geometry3D"/>
@@ -7452,15 +7453,15 @@
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field acceptableNodeTypes="X3DNormalNode" accessType="inputOutput" default="NULL" description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field." inheritedFrom="X3DComposedGeometryNode" name="normal" type="SFNode"/>
-    <field accessType="initializeOnly" description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices)." minInclusive="-1" name="normalIndex" type="MFInt32">
+    <field accessType="initializeOnly" description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true." minInclusive="-1" name="normalIndex" type="MFInt32">
      <componentInfo level="4" name="Geometry3D"/>
     </field>
     <field accessType="initializeOnly" default="true" description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)." inheritedFrom="X3DComposedGeometryNode" name="normalPerVertex" type="SFBool"/>
-    <field accessType="inputOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)." minInclusive="-1" name="set_colorIndex" type="MFInt32">
+    <field accessType="inputOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true." minInclusive="-1" name="set_colorIndex" type="MFInt32">
      <componentInfo level="4" name="Geometry3D"/>
     </field>
     <field accessType="inputOnly" description="coordIndex indices provide the order in which coordinates are applied to construct each polygon face." minInclusive="-1" name="set_coordIndex" type="MFInt32"/>
-    <field accessType="inputOnly" description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices)." minInclusive="-1" name="set_normalIndex" type="MFInt32">
+    <field accessType="inputOnly" description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true." minInclusive="-1" name="set_normalIndex" type="MFInt32">
      <componentInfo level="4" name="Geometry3D"/>
     </field>
     <field accessType="inputOnly" description="List of texture-coordinate indices mapping attached texture to corresponding coordinates." minInclusive="-1" name="set_texCoordIndex" type="MFInt32"/>
@@ -7486,7 +7487,7 @@
     <Inheritance baseType="X3DGeometryNode"/>
     <field acceptableNodeTypes="X3DVertexAttributeNode" accessType="inputOutput" description="Single contained FloatVertexAttribute node that can specify list of per-vertex attribute information for programmable shaders." name="attrib" type="MFNode"/>
     <field acceptableNodeTypes="X3DColorNode" accessType="inputOutput" default="NULL" description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields." name="color" type="SFNode"/>
-    <field accessType="initializeOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)." minInclusive="-1" name="colorIndex" type="MFInt32"/>
+    <field accessType="initializeOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true." minInclusive="-1" name="colorIndex" type="MFInt32"/>
     <field accessType="initializeOnly" default="true" description="Whether Color node color values are applied to each point vertex (true) or per polyline (false)." name="colorPerVertex" type="SFBool"/>
     <field acceptableNodeTypes="X3DCoordinateNode" accessType="inputOutput" default="NULL" description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values." name="coord" type="SFNode"/>
     <field accessType="initializeOnly" description="coordIndex indices provide the order in which coordinates are applied to construct each polygon face." minInclusive="-1" name="coordIndex" type="MFInt32"/>
@@ -7494,7 +7495,7 @@
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field acceptableNodeTypes="X3DNormalNode" accessType="inputOutput" default="NULL" description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field." name="normal" type="SFNode"/>
-    <field accessType="inputOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)." minInclusive="-1" name="set_colorIndex" type="MFInt32">
+    <field accessType="inputOnly" description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true." minInclusive="-1" name="set_colorIndex" type="MFInt32">
      <componentInfo level="3" name="Rendering"/>
     </field>
     <field accessType="inputOnly" description="coordIndex indices provide the order in which coordinates are applied to construct each polyline." minInclusive="-1" name="set_coordIndex" type="MFInt32">
@@ -11324,7 +11325,7 @@
     <field accessType="inputOutput" baseType="unitIntervalType" default="1" description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)." inheritedFrom="X3DLightNode" maxInclusive="1" minInclusive="0" name="shadowIntensity" type="SFFloat"/>
     <field accessType="inputOutput" default="false" description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry." inheritedFrom="X3DLightNode" name="shadows" type="SFBool"/>
     <field acceptableNodeTypes="X3DTexture2DNode" accessType="inputOutput" default="NULL" description="Single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry." inheritedFrom="X3DTextureProjectorNode" name="texture" type="SFNode"/>
-    <field accessType="inputOutput" default="0 0 1" description="upVector describes the roll of the camera by saying which direction is up for the camera's orientation." name="upVector" type="SFVec3f"/>
+    <field accessType="inputOutput" default="0 1 0" description="upVector describes the roll of the camera by saying which direction is up for the camera's orientation." inheritedFrom="X3DTextureProjectorNode" name="upVector" type="SFVec3f"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:NMTOKENS" description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets." inheritedFrom="X3DNode" name="class" type="SFString"/>
@@ -11361,6 +11362,7 @@
     <field accessType="inputOutput" baseType="unitIntervalType" default="1" description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)." inheritedFrom="X3DLightNode" maxInclusive="1" minInclusive="0" name="shadowIntensity" type="SFFloat"/>
     <field accessType="inputOutput" default="false" description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry." inheritedFrom="X3DLightNode" name="shadows" type="SFBool"/>
     <field acceptableNodeTypes="X3DTexture2DNode" accessType="inputOutput" default="NULL" description="Single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry." inheritedFrom="X3DTextureProjectorNode" name="texture" type="SFNode"/>
+    <field accessType="inputOutput" default="0 1 0" description="upVector describes the roll of the camera by saying which direction is up for the camera's orientation." inheritedFrom="X3DTextureProjectorNode" name="upVector" type="SFVec3f"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:NMTOKENS" description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets." inheritedFrom="X3DNode" name="class" type="SFString"/>
@@ -12312,7 +12314,7 @@
   </ConcreteNode>
   <ConcreteNode name="Tangent">
    <InterfaceDefinition appinfo="Tangent." specificationUrl="https://create3000.github.io/x_ite/components/rendering/tangent">
-    <componentInfo level="1" name="X_ITE"/>
+    <componentInfo level="4" name="Rendering"/>
     <Inheritance baseType="X3DGeometricPropertyNode"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." name="metadata" type="SFNode"/>
     <field accessType="inputOutput" description="A unit XYZ vector defining a tangent direction on the surface, and a W component whose sign value (-1 or +1) indicates the handedness of the tangent base." maxInclusive="1" minInclusive="-1" name="vector" type="MFVec4f"/>
