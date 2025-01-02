@@ -20,7 +20,7 @@ import numbers
 #        return None
 #    return children
 #
-#tree = ET.parse("C:/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.x3d")
+#tree = ET.parse("C:/Users/jcarl/www.web3d.org/x3d/content/examples/HelloWorld.x3d")
 #dictionary = etree_to_dict(tree)
 # pprint.pprint(dictionary)
 

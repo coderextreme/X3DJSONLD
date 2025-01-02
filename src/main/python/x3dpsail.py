@@ -1,5 +1,5 @@
 import jnius_config
-jnius_config.set_classpath('.', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')
+jnius_config.set_classpath('.', 'c:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')
 from jnius import autoclass
 CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')
 ConfigurationProperties = autoclass('org.web3d.x3d.jsail.ConfigurationProperties')

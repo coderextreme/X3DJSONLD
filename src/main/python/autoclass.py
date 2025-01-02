@@ -84,7 +84,7 @@ for k,v in classes.items():
 
 f = open("x3dpsail.py", "w")
 f.write("import jnius_config\n")
-f.write("jnius_config.set_classpath('.', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')\n")
+f.write("jnius_config.set_classpath('.', 'c:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')\n")
 
 f.write('from jnius import autoclass\n')
 f.write(code)
