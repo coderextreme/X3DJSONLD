@@ -11,6 +11,6 @@ def scan_directory(dirname):
                 if file_path.suffix.lower() == ".json":
                     yield file_path
 
-current_directory = "C:/x3d-code/www.web3d.org/x3d/content/examples"
+current_directory = "C:/Users/jcarl/www.web3d.org/x3d/content/examples"
 for x in scan_directory(current_directory):
     print(x)

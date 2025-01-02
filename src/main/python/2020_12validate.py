@@ -17,7 +17,7 @@ def validate_one40(schema, instance):
     except:
         pass
 
-for base, directories, filenames in list(os.walk("/c/x3d-code/www.web3d.org/x3d/content/examples")):
+for base, directories, filenames in list(os.walk("/c/Users/jcarl/www.web3d.org/x3d/content/examples")):
     for filename in filenames:
         if filename.endswith(".json"):
             fullpath = os.path.join(base, filename)

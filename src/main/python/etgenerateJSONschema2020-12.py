@@ -465,6 +465,7 @@ class ClassPrinter:
                             "type": "string"
                         },
 '''
+
             if self.name == 'ProtoInstance':
                 str += '''\
                            "@name": {
@@ -472,6 +473,7 @@ class ClassPrinter:
                               "type": "string"
                            },
 '''
+
             str += '''\
                            "@USE": {
                               "$comment": "SFString inputOutput",
@@ -489,7 +491,17 @@ class ClassPrinter:
                                     }
                             }
                     },
-                    "required": [ "@USE" ],
+                    "required": [
+'''
+
+            if self.name == 'ProtoInstance' and sys.argv[1] == "4.0":
+                str += '''\
+                        "@name",
+'''
+
+            str += '''\
+                        "@USE"
+                    ],
 					"additionalProperties": false
 				},
 				{
