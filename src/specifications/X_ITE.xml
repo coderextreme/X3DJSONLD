@@ -161,7 +161,7 @@
 			<InterfaceDefinition
 				specificationUrl="https://create3000.github.io/x_ite/components/rendering/tangent"
 				appinfo="Tangent.">
-				<componentInfo name="X_ITE" level="1" />
+				<componentInfo name="Rendering" level="4" />
 				<Inheritance baseType="X3DGeometricPropertyNode" />
 				<field name="metadata"
 					type="SFNode"

@@ -1,4 +1,5 @@
 import bpy
+import os
 
 #############################################################
 objs = bpy.data.objects
@@ -54,7 +55,20 @@ bpy.ops.wm.open_mainfile(filepath="gramps_animated_full_1.scaled.blend")
 #                          )
 bpy.ops.export_scene.x3dv(filepath="GrampsAnimations.x3d",
                          export_round_precision=20,
-                         export_yup=True,
+                         export_yup=False,
                          export_normals=True,
                          export_format="X3D"
                          )
+#
+#bpy.ops.export_scene.gltf(
+#    filepath=os.path.join(".", f"GrampsAnimations.glb"),
+#    export_yup=False,
+#    # export_format="GLTF_SEPARATE",
+#    export_format="GLB",
+#    export_nla_strips_merged_animation_name='Animation',
+#    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
+#    export_influence_nb=40,
+#    export_all_influences=True,
+#    use_active_collection=True
+#)
+#
