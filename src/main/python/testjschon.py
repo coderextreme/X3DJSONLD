@@ -59,6 +59,6 @@ if __name__ == "__main__":
         print("Valid "+schemafile)
     except:
         print("Invalid "+schemafile)
-    for entryPath in X3DJSONValidator.fileList("C:/x3d-code/www.web3d.org/x3d/content/examples"):
+    for entryPath in X3DJSONValidator.fileList("C:/Users/jcarl/www.web3d.org/x3d/content/examples"):
         X3DJSONValidator.validate_with_schemas(entryPath, schemas, pre)
         print(entryPath)
