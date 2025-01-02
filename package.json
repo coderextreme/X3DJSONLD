@@ -17,6 +17,7 @@
     "@xmldom/xmldom": "^0.8.8",
     "ajv": "*",
     "ajv-formats": "*",
+    "ajv-formats-draft2019": "*",
     "ajv-i18n": "*",
     "antlr4": "^4.13.1-patch-1",
     "buffer": "^6.0.3",
