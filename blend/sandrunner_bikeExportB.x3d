@@ -221,6 +221,12 @@
 														              url='"Test_baseColor.png"'
 														              />
 														<Material DEF="MA_Test"
+														          diffuseColor="0.800 0.800 0.800"
+														          specularColor="0.401 0.401 0.401"
+														          emissiveColor="0.000 0.000 0.000"
+														          ambientIntensity="0.000"
+														          shininess="0.500"
+														          transparency="0.0"
 														          />
 													</Appearance>
 													<IndexedFaceSet solid="false"
@@ -679,11 +685,19 @@
 			           fieldOfView="0.761"
 			           />
 		</Transform> <!-- "Camera_001_TRANSFORM" -->
-		<DirectionalLight DEF="LA_Sun"
-				  ambientIntensity="1.0000"
-				  color="1.0000 1.0000 1.0000"
-				  intensity="1"
-				  direction="0.0000 -0.0000 -1.0000"
-				  />
+		<!--
+		<Transform DEF="Sun_TRANSFORM"
+		           translation="0.026617 5.376730 -1.257598"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.901011 0.403544 -0.159159 1.024577"
+		           >
+		-->
+			<DirectionalLight DEF="LA_Sun"
+			                  ambientIntensity="0.0000"
+			                  color="1.0000 1.0000 1.0000"
+			                  intensity="0.5714"
+			                  direction="0.0000 -0.0000 -1.0000"
+			                  />
+			<!-- </Transform> --> <!-- "Sun_TRANSFORM" -->
 	</Scene>
 </X3D>
