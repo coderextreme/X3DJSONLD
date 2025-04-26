@@ -60,6 +60,7 @@ pip3 install x3d
 # bash generateSchema.sh
 # popd
 npm install -g jsonlint
+npm install -g browserify
 pushd src/main/python
 ${PYTHON} generateSchemas.py
 popd

@@ -94,7 +94,7 @@ browser.currentScene.children[1] = Background22;
 
 let OrthoViewpoint23 = browser.currentScene.createNode("OrthoViewpoint");
 OrthoViewpoint23.description = "OrthoViewpoint";
-OrthoViewpoint23.fieldOfView = new X3D.SFVec3f([-1.5,-1.5,1.5,1.5]);
+OrthoViewpoint23.fieldOfView = new X3D.MFFloat([-1.5,-1.5,1.5,1.5]);
 browser.currentScene.children[2] = OrthoViewpoint23;
 
 let Viewpoint24 = browser.currentScene.createNode("Viewpoint");
