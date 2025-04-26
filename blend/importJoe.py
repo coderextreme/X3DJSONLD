@@ -54,7 +54,8 @@ for screen in bpy.data.screens:
 
 
 #bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3NoROUTE.x3d", axis_forward='Y', axis_up='Z')
-bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
+#bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JoeKickAttention.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JoeKick.x3dv", axis_forward='Y', axis_up='Z')
 
 #bpy.ops.export_scene.gltf(
@@ -70,7 +71,8 @@ bpy.ops.import_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3.x3d", pre
 #)
 
 #bpy.ops.export_scene.x3dv(filepath="JoeBlender.x3d", export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
-bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate3Export.x3d", export_hanim_prefix='Joe_',export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
+bpy.ops.wm.obj_export(filepath="JoeKickAttention.obj", forward_axis='Y', up_axis='Z')
+# bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate3Export.x3d", export_hanim_prefix='Joe_',export_round_precision=6, export_yup=True, export_normals=True, export_format="X3D")
 # bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3d", export_hanim_prefix='Joe_', export_round_precision=6, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3dv(filepath="JoeSkinTexcoordDisplacerKickUpdate2Export.x3dv", export_hanim_prefix='Joe_', export_round_precision=6, export_normals=True, export_format="X3DV")
 # bpy.ops.export_scene.x3d(filepath="JoeSkinTexcoordDisplacerKickUpdate3Export.x3d")
