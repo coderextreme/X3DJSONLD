@@ -604,7 +604,7 @@ OrthoViewpoint& OrthoViewpoint119 =  OrthoViewpoint();
 OrthoViewpoint119.setDescription(CString("OthoViewpoint"));
 OrthoViewpoint119.setPosition(new float[]{-3.13496,-4.19776,10});
 OrthoViewpoint119.setCenterOfRotation(new float[]{-3.13496,-4.19776,0});
-OrthoViewpoint119.setFieldOfView(new float[]{0,0,10,10});
+OrthoViewpoint119.setFieldOfView(new float[]{0,0,10,10}, 4);
 Scene9.addChild(&OrthoViewpoint119);
 
 Viewpoint& Viewpoint120 =  Viewpoint();

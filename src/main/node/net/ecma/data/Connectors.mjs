@@ -43,6 +43,7 @@ var NavigationInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
 var OrthoViewpoint = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -545,7 +546,7 @@ var X3D0 =  new X3D({
               description : new SFString("OthoViewpoint"),
               position : new SFVec3f([-3.13496,-4.19776,10]),
               centerOfRotation : new SFVec3f([-3.13496,-4.19776,0]),
-              fieldOfView : new SFVec3f([0,0,10,10])}),
+              fieldOfView : new MFFloat([0,0,10,10])}),
 
             new Viewpoint({
               description : new SFString("Viewpoint")}),

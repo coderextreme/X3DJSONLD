@@ -133,7 +133,7 @@ children[1] = Background22;
 
 OrthoViewpoint OrthoViewpoint23 = createNode("OrthoViewpoint");
 OrthoViewpoint23.description = "OrthoViewpoint";
-OrthoViewpoint23.fieldOfView = new SFVec3f(new float[-1.5,-1.5,1.5,1.5]);
+OrthoViewpoint23.fieldOfView = new MFFloat(new float[-1.5,-1.5,1.5,1.5]);
 children[2] = OrthoViewpoint23;
 
 Viewpoint Viewpoint24 = createNode("Viewpoint");

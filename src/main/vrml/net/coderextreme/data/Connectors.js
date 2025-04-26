@@ -737,7 +737,7 @@ let OrthoViewpoint119 = browser.currentScene.createNode("OrthoViewpoint");
 OrthoViewpoint119.description = "OthoViewpoint";
 OrthoViewpoint119.position = new X3D.SFVec3f([-3.13496,-4.19776,10]);
 OrthoViewpoint119.centerOfRotation = new X3D.SFVec3f([-3.13496,-4.19776,0]);
-OrthoViewpoint119.fieldOfView = new X3D.SFVec3f([0,0,10,10]);
+OrthoViewpoint119.fieldOfView = new X3D.MFFloat([0,0,10,10]);
 browser.currentScene.children[6] = OrthoViewpoint119;
 
 let Viewpoint120 = browser.currentScene.createNode("Viewpoint");

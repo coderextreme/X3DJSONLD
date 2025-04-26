@@ -505,7 +505,7 @@ var X3D0 =  X3D(
               description_ : SFString('OthoViewpoint'),
               position_ : SFVec3f([SFDouble(-3.13496), SFDouble(-4.19776), SFDouble(10)]),
               centerOfRotation_ : SFVec3f([SFDouble(-3.13496), SFDouble(-4.19776), SFDouble(0)]),
-              fieldOfView_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(10), SFDouble(10)])),
+              fieldOfView_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(10), SFFloat(10)])),
 
             Viewpoint(
               description_ : SFString('Viewpoint')),

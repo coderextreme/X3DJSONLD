@@ -283,7 +283,7 @@ ProtoInstance ProtoInstance41 = null;
 "}"))))
         .addChild(new NavigationInfo().setType("\", \" \"PLANE_create3000.deANY\""))
         .addChild(new Background().setSkyColor(new MFColor2().getArray()))
-        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new double[] {-3.13496,-4.19776,10}).setCenterOfRotation(new double[] {-3.13496,-4.19776,0}).setFieldOfView(new double[] {0,0,10,10}))
+        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new double[] {-3.13496,-4.19776,10}).setCenterOfRotation(new double[] {-3.13496,-4.19776,0}).setFieldOfView(new MFFloat3().getArray()))
         .addChild(new Viewpoint().setDescription("Viewpoint"))
         .addChild(new Transform().setDEF("Connectors")
           .addChild(ProtoInstance4 = new ProtoInstance().setName("Route"))
@@ -412,6 +412,11 @@ private class MFVec3f1 {
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.2,0.2,0.2});
+  }
+}
+private class MFFloat3 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,10,10});
   }
 }
 }
