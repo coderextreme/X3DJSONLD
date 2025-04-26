@@ -104,7 +104,7 @@ var X3D0 =  X3D(
 
             OrthoViewpoint(
               description_ : SFString('OrthoViewpoint'),
-              fieldOfView_ : SFVec3f([SFDouble(-1.5), SFDouble(-1.5), SFDouble(1.5), SFDouble(1.5)])),
+              fieldOfView_ : MFFloat([SFFloat(-1.5), SFFloat(-1.5), SFFloat(1.5), SFFloat(1.5)])),
 
             Viewpoint(
               description_ : SFString('Viewpoint'),

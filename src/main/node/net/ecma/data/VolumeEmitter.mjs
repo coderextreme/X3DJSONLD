@@ -22,12 +22,12 @@ var MFDouble = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
 var OrthoViewpoint = require('./x3d.mjs');
-var SFVec3f = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var ParticleSystem = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var SFVec2f = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var VolumeEmitter = require('./x3d.mjs');
 var Coordinate = require('./x3d.mjs');
 var MFVec3f = require('./x3d.mjs');
@@ -144,7 +144,7 @@ var X3D0 =  new X3D({
 
             new OrthoViewpoint({
               description : new SFString("OrthoViewpoint"),
-              fieldOfView : new SFVec3f([-1.5,-1.5,1.5,1.5])}),
+              fieldOfView : new MFFloat([-1.5,-1.5,1.5,1.5])}),
 
             new Viewpoint({
               description : new SFString("Viewpoint"),

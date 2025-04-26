@@ -101,7 +101,7 @@ Background22.SetSkyColor([Vector3(0.2,0.2,0.2)]);
 Group11.AddChildren([Background22]);
 OrthoViewpoint23 := TOrthoViewpointNode.Create;
 OrthoViewpoint23.Description := 'OrthoViewpoint';
-OrthoViewpoint23.FieldOfView := Vector3(-1.5,-1.5,1.5,1.5);
+OrthoViewpoint23.SetFieldOfView([-1.5,-1.5,1.5,1.5]);
 { .AddChildren }
 Group11.AddChildren([OrthoViewpoint23]);
 Viewpoint24 := TViewpointNode.Create;

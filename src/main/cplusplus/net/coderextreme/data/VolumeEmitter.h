@@ -125,7 +125,7 @@ Scene11.addChild(&Background22);
 
 OrthoViewpoint& OrthoViewpoint23 =  OrthoViewpoint();
 OrthoViewpoint23.setDescription(CString("OrthoViewpoint"));
-OrthoViewpoint23.setFieldOfView(new float[]{-1.5,-1.5,1.5,1.5});
+OrthoViewpoint23.setFieldOfView(new float[]{-1.5,-1.5,1.5,1.5}, 4);
 Scene11.addChild(&OrthoViewpoint23);
 
 Viewpoint& Viewpoint24 =  Viewpoint();

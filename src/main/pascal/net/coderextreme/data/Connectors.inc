@@ -753,7 +753,7 @@ OrthoViewpoint119 := TOrthoViewpointNode.Create;
 OrthoViewpoint119.Description := 'OthoViewpoint';
 OrthoViewpoint119.Position := Vector3(-3.13496,-4.19776,10);
 OrthoViewpoint119.CenterOfRotation := Vector3(-3.13496,-4.19776,0);
-OrthoViewpoint119.FieldOfView := Vector3(0,0,10,10);
+OrthoViewpoint119.SetFieldOfView([0,0,10,10]);
 { .AddChildren }
 Group9.AddChildren([OrthoViewpoint119]);
 Viewpoint120 := TViewpointNode.Create;

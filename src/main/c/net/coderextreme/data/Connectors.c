@@ -886,7 +886,7 @@ OrthoViewpoint OrthoViewpoint119 = createNode("OrthoViewpoint");
 OrthoViewpoint119.description = "OthoViewpoint";
 OrthoViewpoint119.position = new SFVec3f(new float[-3.13496,-4.19776,10]);
 OrthoViewpoint119.centerOfRotation = new SFVec3f(new float[-3.13496,-4.19776,0]);
-OrthoViewpoint119.fieldOfView = new SFVec3f(new float[0,0,10,10]);
+OrthoViewpoint119.fieldOfView = new MFFloat(new float[0,0,10,10]);
 children[6] = OrthoViewpoint119;
 
 Viewpoint Viewpoint120 = createNode("Viewpoint");
