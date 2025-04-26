@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2000-2023 held by the author(s).  All rights reserved.
+  Copyright (c) 2000-2024 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -91,10 +91,18 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- https://github.com/Saxonica/Saxon-HE/tree/main/12/Java -->
     <!-- https://www.saxonica.com/documentation10/#!about/gettingstarted/gettingstartedjava -->
     <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
+    <property name="saxon.dir"         location="lib" description="relative path from stylesheets directory"/>
+    <!-- previously saxon-he-12.4.jar saxon-he-11.4.jar saxon-he-11.3.jar saxon-he-11.2.jar saxon-he-10.6.jar saxon9he.jar -->
+    <property name="saxon.jar"            value="saxon-he-12.5.jar"/>
+    <property name="xmlresolver.jar"      value="xmlresolver-5.2.2.jar"/><!-- required with saxon-he-11+.jar -->
+    <property name="xmlresolver-data.jar" value="xmlresolver-5.2.2-data.jar"/><!-- provided with saxon-he-11+.jar -->
+    <property name="jline.jar"            value="jline-2.14.6.jar"/>
+    <property name="saxon.classpath"      value="${saxon.dir}/${saxon.jar};${saxon.dir}/${jline.jar};${saxon.dir}/${xmlresolver.jar};${saxon.dir}/${xmlresolver-data.jar};."/>
     
-    <property name="saxon.dir"        location="../content/examples/X3dForWebAuthors/lib/" description="relative path from stylesheets directory"/>
-    <property name="saxon.jar"           value="saxon-he-12.4.jar"/><!-- previously saxon-he-11.4.jar saxon-he-10.6.jar saxon9he.jar -->
-    <property name="xmlresolver.jar"     value="xmlresolver-5.2.2.jar"/><!-- required with saxon-he-11+.jar -->
+    <property name="jsai.full.archive.jar.name"     value="X3DJSAIL.4.0.full.jar"/>
+    
+    <!-- no need to set path since Python installation adds at top of system PATH environment variable -->
+    <property name=   "python" value="python" description="local executable"/>
     
     <property name=   "node.exe" value="node.exe"/>
 
@@ -126,65 +134,91 @@ POSSIBILITY OF SUCH DAMAGE.
              dest="${saxon.dir}/${saxon.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${xmlresolver.jar}"
              dest="${saxon.dir}/${xmlresolver.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${xmlresolver-data.jar}"
+             dest="${saxon.dir}/${xmlresolver-data.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${ saxon-jline.jar}"
+             dest="${saxon.dir}/${ saxon-jline.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
     <target name="get.saxon.check">
         <condition property="saxon.found" else="false">
             <and>
                 <available file="${saxon.dir}/${saxon.jar}"/>
                 <available file="${saxon.dir}/${xmlresolver.jar}"/>
+                <available file="${saxon.dir}/${xmlresolver-data.jar}"/>
+                <available file="${saxon.dir}/${saxon-jline.jar}"/>
             </and>
         </condition>
-        <echo message="found ${saxon.dir}/${saxon.jar} and ${saxon.dir}/${xmlresolver.jar}: ${saxon.found}"/>
+        <echo message="found ${saxon.dir}/${saxon.jar}, ${xmlresolver.jar}, ${xmlresolver-data.jar} and ${saxon-jline.jar}: ${saxon.found}"/>
     </target>
     
     <target name="versions" description="show tool versions and environment values">
+        <echo>=============</echo>
+        <echo>ant -version</echo>
+        <exec executable="ant" dir="." vmlauncher="false">
+            <arg value="-version"/>
+        </exec>
+        <echo message="NetBeans ant directory is set under Tools > Options > Java"/>
+        <echo>which ant</echo>
+        <exec executable="which" dir="." vmlauncher="false">
+            <arg value="ant"/>
+        </exec>
+        <echo>=============</echo>
+        <echo>java -version</echo>
+        <exec executable="java" dir="." vmlauncher="false">
+            <arg value="-version"/>
+        </exec>
+        <echo>which java</echo>
+        <exec executable="which" dir="." vmlauncher="false">
+            <arg value="java"/>
+        </exec>
+        <echo>=============</echo>
+        <echo>python -version</echo>
+        <exec executable="${python}" dir="." vmlauncher="false">
+            <arg value="--version"/>
+        </exec>
+        <echo>which python</echo>
+        <exec executable="which" dir="." vmlauncher="false">
+            <arg value="python"/>
+        </exec>
+        <echo>=============</echo>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        <echo>saxon -? help</echo>
+	<!--
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.classpath}" failonerror="true">
+            <arg value="-?" description="help information"/>
+        </java>
+	-->
+        <!-- <echo>$saxon.classpath=${saxon.classpath}</echo> -->
+        <echo>$saxon.dir=${saxon.dir}</echo>
+        <echo>=============</echo>
+        <echo>System environment variables:</echo>
         <!-- Ant environment variables https://ant.apache.org/manual/Tasks/property.html -->
         <echo>  ANT_HOME=${env.ANT_HOME}</echo>
         <echo> JAVA_HOME=${env.JAVA_HOME}</echo>
-        <echo>PYTHONHOME=${env.PYTHONHOME}</echo>
         <echo>PYTHONPATH=${env.PYTHONPATH}</echo>
-        <echo>Check CLASSPATH for X3DJSAIL ${jsail.full.archive.jar.name} or ${jsai.classes.archive.jar.name}</echo>
-        <echo>CLASSPATH=${env.CLASSPATH}</echo>
     <!--<echo>USER      =${env.USER}</echo> -->
         <!-- https://stackoverflow.com/questions/949678/ant-is-using-wrong-java-version -->
-        <echo>javac source/target      $java.source=${java.source}</echo>
-        <echo>                         $java.target=${java.target}</echo>
+        <echo>javac source version     $java.source=${java.source}</echo>
         <echo>Java/JVM version    $ant.java.version=${ant.java.version}</echo>
         <echo>Java/JVM detail version $java.version=${java.version}</echo>
-        <echo>Saxon directory            $saxon.dir=${saxon.dir}</echo>
-        <echo>Saxon jar                  $saxon.jar=${saxon.jar}</echo>
         <echo>Ant version              $ant.version=${ant.version}</echo>
-        <echo></echo>
-        <echo>ant -version</echo>
-        <exec executable="ant"  dir="." vmlauncher="false">
-            <arg value="-version"/>
-        </exec>
-        <echo>java -version</echo>
-        <exec executable="java"  dir="." vmlauncher="false">
-            <arg value="-version"/>
-        </exec>
-        <echo>python -version</echo>
-        <exec executable="python"  dir="." vmlauncher="false">
-            <arg value="--version"/>
-        </exec>
-        <!-- https://www.saxonica.com/documentation10/#!using-xsl/commandline -->
-        <echo>saxon -? help</echo>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." failonerror="true" fork="${fork}">
-            <arg value="-?" description="help information"/>
-        </java>
+        <echo>=============</echo>
         <echo>Check for node.js installation from https://nodejs.org</echo>
         <exec executable="${node.exe}">
             <arg value="--version"/>
         </exec>
-        <echo>${jsail.full.archive.jar.name} -version</echo>
-        <java jar="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
+        <echo>=============</echo>
+        <echo>Check for locally bundled copy of X3DJSAIL at ${jsai.full.archive.jar.name}</echo>
+        <echo>CLASSPATH=${env.CLASSPATH}</echo>
+        <echo>java java/jars/${jsai.full.archive.jar.name} -version</echo>
+        <java jar="java/jars/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="-version" description="log report"/>
         </java>
-        <echo>Configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
-        <!-- TODO Netbeans version -->
-        <!-- TODO Netbeans project version -->
-        <!-- DEBUG: to show all environment and local properties, add
+        <echo>Further detail on configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
+        <!-- DEBUG: in order to show all environment and local properties, add
         <echoproperties/> -->
+        <!-- TODO NetBeans version -->
+        <!-- TODO NetBeans project version -->
         <echo message="==========================================="/>
     </target>
 
@@ -194,6 +228,16 @@ POSSIBILITY OF SUCH DAMAGE.
         <dtd    publicId="ISO//Web3D//DTD X3D 3.2//EN"                                   location="../../../../specifications/x3d-3.2.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 3.3//EN"                                   location="../../../../specifications/x3d-3.3.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 4.0//EN"                                   location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-3.0.dtd"               location="../../../../specifications/x3d-3.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-3.1.dtd"               location="../../../../specifications/x3d-3.1.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-3.2.dtd"               location="../../../../specifications/x3d-3.2.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-3.3.dtd"               location="../../../../specifications/x3d-3.3.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.0.dtd"               location="../../../../specifications/x3d-4.0.dtd"/>
+        <entity publicId="http://www.web3D.org/specifications/x3d-3.0.xsd"               location="../../../../specifications/x3d-3.0.xsd"/>
+        <entity publicId="http://www.web3D.org/specifications/x3d-3.1.xsd"               location="../../../../specifications/x3d-3.1.xsd"/>
+        <entity publicId="http://www.web3D.org/specifications/x3d-3.2.xsd"               location="../../../../specifications/x3d-3.2.xsd"/>
+        <entity publicId="http://www.web3D.org/specifications/x3d-3.3.xsd"               location="../../../../specifications/x3d-3.3.xsd"/>
+        <entity publicId="http://www.web3D.org/specifications/x3d-4.0.xsd"               location="../../../../specifications/x3d-4.0.xsd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.0.dtd"              location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.1.dtd"              location="../../../../specifications/x3d-3.1.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.2.dtd"              location="../../../../specifications/x3d-3.2.dtd"/>
@@ -298,7 +342,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${X3DJSAIL.relative.dir}/javadoc"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;2005-2021 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Java%20SAI%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;2005-2024 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org;brutzman@nps.edu?subject=X3DJSAIL%20Javadoc%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -324,6 +368,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="junit-platform-launcher"    value="junit-platform-launcher"/>
     <property name="junit-jupiter-api"          value="junit-jupiter-api"/>
     <property name="junit-jupiter-engine"       value="junit-jupiter-engine"/>
+    
+    <property name=   "castle-model-viewer.dir"    location="C:\Program Files\castle-model-viewer"/>
+    <property name=   "castle-model-converter.exe"    value="castle-model-converter.exe"/>
 	
     <path id="junit5.classpath">
         <fileset dir="${junit5.dir}">
@@ -420,15 +467,17 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
         </delete>
         <echo message="delete autogenerated test class HelloWorldProgramOutput.java"/>
-        <delete file="java/examples/HelloWorldProgramOutput.java" verbose="true" failonerror="false"/>
-        <echo message="delete autogenerated test class flowers4.java"/>
-        <delete file="java/examples/flowers4.java" verbose="true" failonerror="false"/>
+        <delete file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.java" verbose="true" failonerror="false"/>
+        <echo message="delete autogenerated test class flowers7.java"/>
+        <delete file="${X3DJSAIL.examples.dir}/flowers7.java" verbose="true" failonerror="false"/>
         
         <echo message="copy latest stylesheets:"/>
         <mkdir dir="${X3DJSAIL.lib.dir}/stylesheets"/>
         <!-- copying of local/latest updates is optional since the following files are in version control -->
         <copy file="${saxon.dir}/${saxon.jar}"             todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file="${saxon.dir}/${xmlresolver.jar}"       todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${saxon.dir}/${xmlresolver-data.jar}"  todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${saxon.dir}/${saxon-jline.jar}"       todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file=      "${c14n.dir}/${c14n.jar}"         todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file="${exificient.dir}/${exificient.jar}"   todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file=   "${openexi.dir}/${nagasena.jar}"     todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
@@ -453,7 +502,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="X3dUnifiedObjectModel*.xml"/>
             </fileset>
         </copy>
-        <echo message="$env.CLASSPATH=${env.CLASSPATH}"/>
+        <echo message="System environment variable $env.CLASSPATH=${env.CLASSPATH}"/>
         <echo message="create autogenerated Java source code for X3DUOM using JAXB:"/>
         <antcall target="create.X3DUOM.JAXB.schema"/>
         <echo message="create autogenerated Java source code:"/>
@@ -620,7 +669,7 @@ POSSIBILITY OF SUCH DAMAGE.
                   splitindex="${javadoc.splitindex}"
                          use="${javadoc.use}"
              useexternalfile="true"
-                     verbose="true"
+                     verbose="${javac.verbose}"
                      version="${javadoc.version}"
                  windowtitle="${javadoc.windowtitle}">
             <!--
@@ -1387,7 +1436,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- <arg value="-o:python/temphold.py" description="output-doc"/> -->
         </java>
         <echo message="Result: created files ${stylesheets.dir}/${X3dPackageDirectory}/x3d.py and __init__.py"/>
-        <echo message="PYTHONPATH=${env.PYTHONPATH}"/>
+        <echo message="System environment variable PYTHONPATH=${env.PYTHONPATH}"/>
         <echo message="BuildX3dPythonPackageFromX3duom.saxon complete."/>
     </target>
 
@@ -1663,6 +1712,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:X3dToX3dvClassicVrmlEncoding.xslt" description="style-doc"/>
         </java>
         <echo message="expected output: test/HelloWorld.saxon.x3dv"/>
+        <echo>ClassicVRML validation: ${castle-model-converter.exe} test/HelloWorld.saxon.x3dv --validate --enable-downloads</echo>
+        <exec executable="${castle-model-viewer.dir}/${castle-model-converter.exe}" vmlauncher="false"><!-- vmlauncher switch needed for netbeans invocation -->
+            <arg value="test/HelloWorld.saxon.x3dv"/>
+            <arg value="--validate"/>        <!-- validate the document reporting all VRML warnings and errors -->
+            <arg value="--enable-downloads"/><!-- ExternProtoDeclare and Inline -->
+        </exec>
     </target>
     
     <target name="test.X3dToXhtml.xslt" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using default Ant xslt task" >
@@ -1748,6 +1803,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="${X3DJSAIL.examples.dir}/X3DJSAIL.properties"/>
         </java>
         <echo message="==========================================="/>
+        <echo   message="System environment variable env.BLENDER_PATH=${env.BLENDER_PATH}"/>
         <echo   message="org.web3d.x3d.jsail.BlenderLauncher -BLENDER_PATH ${env.BLENDER_PATH}"/>
         <java classname="org.web3d.x3d.jsail.BlenderLauncher" classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
             <arg value="-BLENDER_PATH"/>
@@ -1861,6 +1917,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="${X3DJSAIL.examples.dir}/X3DJSAIL.properties"/>
         </java>
         <echo message="==========================================="/>
+        <echo   message="System environment variable env.MESHLAB_PATH=${env.MESHLAB_PATH}"/>
         <echo   message="org.web3d.x3d.jsail.MeshLabLauncher -MESHLAB_PATH ${env.MESHLAB_PATH}"/>
         <java classname="org.web3d.x3d.jsail.MeshLabLauncher" classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
             <arg value="-MESHLAB_PATH"/>
@@ -1947,9 +2004,11 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <target name="test.X3DPSAIL" description="Test x3d.py X3DPSAIL">
-        <ant dir="python" target="test.x3d.py.local" inheritAll="false"/>
+        <ant dir="python" target="test.x3d.py" inheritAll="false"/>
         <echo message="==========================================="/>
         <ant dir="python" target="examples" inheritAll="false"/>
+        <echo message="results saved as python/build.test.X3DPSAIL.log.txt"/>
+        <echo message="==========================================="/>
     </target>
     
     <target name="test.X3DJSAIL" depends="versions,test.X3DJSAIL.clean,test.mkdir,compile.examples.java" description="Test X3DJSAIL">
@@ -2030,6 +2089,13 @@ POSSIBILITY OF SUCH DAMAGE.
         <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3d"/>
         <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3d"/>
         <echo message="==========================================="/>
+        <echo>ClassicVRML validation: ${castle-model-converter.exe} ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3dv --validate --enable-downloads</echo>
+        <exec executable="${castle-model-viewer.dir}/${castle-model-converter.exe}" vmlauncher="false"><!-- vmlauncher switch needed for netbeans invocation -->
+            <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3dv"/>
+            <arg value="--validate"/>        <!-- validate the document reporting all VRML warnings and errors -->
+            <arg value="--enable-downloads"/><!-- ExternProtoDeclare and Inline -->
+        </exec>
+        <echo message="==========================================="/>
         <echo message="HelloWorldProgramOutput_CommandLine.x3d"/>
         <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
         <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput_CommandLine.x3d"/>
@@ -2063,6 +2129,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- otherwise -->
         <property name="ReloadedDOM.match" value="false"/>
         <echo message="matches HelloWorldProgramOutput.x3d: ${ReloadedDOM.match}"/>
+        <echo>ClassicVRML validation: ${castle-model-converter.exe} ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3dv --validate --enable-downloads</echo>
+        <exec executable="${castle-model-viewer.dir}/${castle-model-converter.exe}" vmlauncher="false"><!-- vmlauncher switch needed for netbeans invocation -->
+            <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3dv"/>
+            <arg value="--validate"/>        <!-- validate the document reporting all VRML warnings and errors -->
+            <arg value="--enable-downloads"/><!-- ExternProtoDeclare and Inline -->
+        </exec>
         <echo message="==========================================="/>
         <antcall target="test.X3DJSAIL.unitTests"/>
         <echo message="==========================================="/>
@@ -2083,14 +2155,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.ant.zip" description="output model"/>
         </java>
         <echo message="==========================================="/>
-        <echo   message="org.web3d.x3d.jsail.CommandLine ${X3DJSAIL.examples.dir}/flowers4.x3d -toJava -toFile ${X3DJSAIL.examples.dir}/flowers4.java"/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${X3DJSAIL.examples.dir}/flowers7.x3d -toJava -toFile ${X3DJSAIL.examples.dir}/flowers7.java"/>
         <java jar="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
-            <arg value="${X3DJSAIL.examples.dir}/flowers4.x3d" description="input model"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.x3d" description="input model"/>
             <arg value="-toJava"/>
             <arg value="-toFile"/>
-            <arg value="${X3DJSAIL.examples.dir}/flowers4.java"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.java"/>
         </java>
-        <echo message="compile flowers4.java source..."/>
+        <echo message="compile flowers7.java source..."/>
         <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${X3DJSAIL.examples.dir}"
                 destdir="${X3DJSAIL.examples.dir}"
@@ -2103,6 +2175,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
             <compilerarg value="-Xlint:all"/>
             -->
+            <compilerarg value="-proc:only" /><!-- silence annotations warning -->
             <!-- http://ant.apache.org/manual/Tasks/javac.html#bootstrap -->
             <!-- https://stackoverflow.com/questions/4134803/ant-passing-compilerarg-into-javac -->
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
@@ -2111,18 +2184,19 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
-        <echo message="test flowers4.java execution and self-validation:"/>
-        <java classname="flowers4" 
+        <echo message="test flowers7.java execution and self-validation:"/>
+        <java classname="flowers7" 
               dir="${X3DJSAIL.examples.dir}"
               classpath="${X3DJSAIL.examples.dir};${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};" fork="${fork}">
         </java>
         <echo message="==========================================="/>
-        <echo   message="org.web3d.x3d.jsail.CommandLine ${X3DJSAIL.examples.dir}/flowers4.x3d -toJSON -toFile ${X3DJSAIL.examples.dir}/flowers4.json"/>
+        <echo   message="org.web3d.x3d.jsail.CommandLine flowers7.x3d -toJSON -toFile /flowers7.json"/>
+        <echo   message="    in directory ${X3DJSAIL.examples.dir}"/>
         <java jar="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
-            <arg value="${X3DJSAIL.examples.dir}/flowers4.x3d" description="input model"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.x3d" description="input model"/>
             <arg value="-toJSON"/>
             <arg value="-toFile"/>
-            <arg value="${X3DJSAIL.examples.dir}/flowers4.json"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.json"/>
         </java>
         <echo message="==========================================="/>
         <echo   message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
@@ -2566,43 +2640,6 @@ POSSIBILITY OF SUCH DAMAGE.
                       classpath="test;${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};" fork="${fork}">
         </java>
         <echo message="==========================================="/>
-        <echo message="org.web3d.x3d.jsail.CommandLine test/flowers4.x3d -toJava -toFile test/flowers4.java"/>
-        <delete file="test/flowers4.java" failonerror="false"/>
-        <java jar="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}">
-            <arg value="test/flowers4.x3d" description="input model"/>
-            <arg value="-toJava"/>
-            <arg value="-toFile"/>
-            <arg value="test/flowers4.java"/>
-        </java>
-        <echo message="compile..."/>
-        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
-        <javac includes="flowers4.java" 
-                 srcdir="test"
-                destdir="test"
-              classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
-                  debug="on"
-               encoding="UTF-8"
-                release="${java.source}"
-                verbose="false"
-            failonerror="false"
-               includeantruntime="false" fork="${fork}">
-            <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
-            <compilerarg value="-Xlint:all"/>
-            -->
-            <!-- http://ant.apache.org/manual/Tasks/javac.html#bootstrap -->
-            <!-- https://stackoverflow.com/questions/4134803/ant-passing-compilerarg-into-javac -->
-            <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
-            <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
-            <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
-        </javac>
-        <!-- self-validation test -->
-        <echo message="test flowers4.java execution and self-validation:"/>
-        <java classname="flowers4" 
-                      dir="test"
-                      classpath="test;${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};" fork="${fork}">
-        </java>
-        <echo message="==========================================="/>
     </target>
     
     <target name="test.TestSurface" >
@@ -2663,12 +2700,12 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <echo>..error checking with jslint</echo>
         <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
-            <arg value="test/HelloWorldProgramOutput.json"/>
+            <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json"/>
         </java>
         <echo>..error checking with json-schema-validator</echo>
         <java jar="${json-schema-validator.jar}" fork="${fork}">
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
-            <arg value="test/HelloWorldProgramOutput.json"/>
+            <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json"/>
         </java>
         <echo message="==========================================="/>
         <echo>First check X3D JSON Schema:</echo>
@@ -2819,24 +2856,24 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="test/CadGeometryPrototypes.json"/>
         </java>
         <echo message="==========================================="/>
-        <echo message="translation input: test/flowers4.x3d"/>
-        <echo message="..expected output: test/flowers4.json"/>
+        <echo message="translation input: ${X3DJSAIL.examples.dir}/flowers7.x3d"/>
+        <echo message="..expected output: ${X3DJSAIL.examples.dir}/flowers7.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
-            <arg value="-o:test/flowers4.json" description="output-doc"/>
-            <arg value="-s:test/flowers4.x3d" description="source-doc"/>
+            <arg value="-o:${X3DJSAIL.examples.dir}/flowers7.json" description="output-doc"/>
+            <arg value="-s:${X3DJSAIL.examples.dir}/flowers7.x3d" description="source-doc"/>
             <arg value="-xsl:X3dToJson.xslt" description="style-doc"/>
         </java>
         <echo>..error checking with jslint</echo>
         <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
-            <arg value="test/flowers4.json"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.json"/>
         </java>
         <echo>..error checking with json-schema-validator</echo>
         <java jar="${json-schema-validator.jar}" fork="${fork}">
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
-            <arg value="test/flowers4.json"/>
+            <arg value="${X3DJSAIL.examples.dir}/flowers7.json"/>
         </java>
         <echo message="==========================================="/>
         <echo message="translation input: test/arc.x3d"/>
