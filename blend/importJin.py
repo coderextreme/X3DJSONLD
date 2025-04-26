@@ -44,7 +44,8 @@ bpy.data.objects.remove(light, do_unlink=True)
 #############################################################
 
 #bpy.ops.import_scene.x3d(filepath="JinLOA4.scaled1.x3d", axis_forward='Y', axis_up='Z')
-bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
+bpy.ops.import_scene.x3d(filepath="JinScaledV2L1LOA4Markers11eJoeDemo5.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
+# bpy.ops.import_scene.x3d(filepath="JinConconcatenated.x3d", prefer_flat=False, axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat06gForJohn2.x3d", axis_forward='Y', axis_up='Z')
 # bpy.ops.import_scene.x3d(filepath="JinConcat08o.x3d", axis_forward='Y', axis_up='Z')
 #bpy.ops.import_scene.x3d(filepath="JinConcat10h.x3d")
@@ -86,18 +87,18 @@ for screen in bpy.data.screens:
             rv3d.update()
 
 #
-filepath = "."
-bpy.ops.export_scene.gltf(
-    filepath=os.path.join(filepath, f"JinConconcatenated.glb"),
-    export_yup=False,
-    # export_format="GLTF_SEPARATE",
-    export_format="GLB",
-    export_nla_strips_merged_animation_name='Animation',
-    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
-    export_influence_nb=40,
-    export_all_influences=True,
-    use_active_collection=True
-)
+#filepath = "."
+#bpy.ops.export_scene.gltf(
+#    filepath=os.path.join(filepath, f"JinScaledV2L1LOA4Markers11eJoeDemo5.glb"),
+#    export_yup=False,
+#    # export_format="GLTF_SEPARATE",
+#    export_format="GLB",
+#    export_nla_strips_merged_animation_name='Animation',
+#    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
+#    export_influence_nb=40,
+#    export_all_influences=True,
+#    use_active_collection=True
+#)
 #
 #filepath = "."
 #bpy.ops.export_scene.vrm(
