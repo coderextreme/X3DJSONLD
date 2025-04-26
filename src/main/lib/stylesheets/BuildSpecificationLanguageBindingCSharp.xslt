@@ -55,7 +55,7 @@ TODO:
 <xsl:variable name="X3dTooltipsFile"><xsl:text>x3d-3.3.profile.xml</xsl:text></xsl:variable>
 
 <xsl:variable name="specificationIndexUrl">
-    <xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/</xsl:text>
+    <xsl:text>https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/</xsl:text>
 </xsl:variable>
 
 <xsl:variable name="includeAbstractSpecLinks" select="false()"/>
@@ -92,7 +92,7 @@ TODO:
 <!-- ===================================================================================== -->
 <!-- Annex A Abstract node interfaces -->
   
-<xsl:result-document  href="CSharpLanguageBinding.Part5.nodeTypeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+<xsl:result-document  href="CSharpLanguageBinding.Part5.abstracts.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -110,11 +110,11 @@ TODO:
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-5/V3.3/Part5/nodeTypeInterfaces.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-5/V3.3/Part5/abstracts.html</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CSharpLanguageBinding.Part5.nodeTypeInterfaces.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CSharpLanguageBinding.Part5.abstracts.html</xsl:text></xsl:attribute>
 	</xsl:element>
         
         <xsl:call-template name="generate-html-meta-tags"/>
@@ -654,19 +654,7 @@ TODO:
 
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
-        
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
-
+      
         <xsl:element name="h1">
 		<xsl:element name="img">
 			<xsl:attribute name="class"><xsl:text>cube</xsl:text></xsl:attribute>
@@ -691,19 +679,6 @@ TODO:
 	<xsl:for-each select="//xs:schema/xs:complexType[ends-with(@name,'Node') or (@name='X3DPrototypeInstance')]">
             <xsl:sort select="lower-case(@name)"/>
             
-            <!-- divider X3D separator bar that links back to Topics table -->
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
 
             <!-- example: X3DAppearanceChildNode -->
             <h2>
@@ -733,18 +708,6 @@ TODO:
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
         
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
-
         <xsl:element name="h1">
 		<xsl:element name="img">
 			<xsl:attribute name="class"><xsl:text>cube</xsl:text></xsl:attribute>
@@ -765,18 +728,6 @@ TODO:
 	<xsl:for-each select="//xs:schema/xs:complexType[ends-with(@name,'Object')]">
             <xsl:sort select="lower-case(@name)"/>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
 
             <!-- example: X3DAppearanceChildNode -->
             <h2>
@@ -804,17 +755,7 @@ TODO:
             
         </xsl:for-each>
         
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
+
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -832,18 +773,6 @@ TODO:
 	<xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>  
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>          
 
 <h2><a name="X3DFieldTypes"></a>
 A.4.1 X3DFieldTypes</h2>
@@ -886,18 +815,6 @@ A.4.1 X3DFieldTypes</h2>
 }
 </pre>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
 
 <h2><a name="X3DFieldEvent"></a>
 A.4.2 X3DFieldEvent</h2>
@@ -912,18 +829,7 @@ A.4.2 X3DFieldEvent</h2>
 }
 </pre>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
+
 
 <h2><a name="X3DFieldEventListener"></a>
 A.4.3 X3DFieldEventListener</h2>
@@ -933,46 +839,24 @@ A.4.3 X3DFieldEventListener</h2>
 }
 </pre>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
+
 
 <h2><a name="X3DFieldDefinition"></a>
 A.4.4 X3DFieldDefinition</h2>
 
 <pre class="listing">public interface X3DFieldDefinition {
 
-    public string getName();
+    public String getName();
 
     public int getAccessType();
 
     public int getFieldType();
 
-    public string getFieldTypeString();
+    public String getFieldTypeString();
 }
 </pre>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
+
 
 <h2><a name="X3DField"></a>
 A.4.5 X3DField</h2>
@@ -995,18 +879,7 @@ A.4.5 X3DField</h2>
 }
 </pre>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
+
 
 <h2><a name="MField"></a>
 A.4.6 MField</h2>
@@ -1026,19 +899,7 @@ A.4.6 MField</h2>
             <!-- sort SF before MF
             <xsl:sort select="starts-with(@name,'MF')"/>
             <xsl:sort select="starts-with(@name,'SF')"/> -->
-                                            
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>&#10;</xsl:text>
+
             
             <!-- example SFBool -->
             <h2>
@@ -1067,16 +928,7 @@ A.4.6 MField</h2>
         </xsl:for-each>
         
         <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
+
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -1118,17 +970,31 @@ A.5.2 BrowserFactory</h2>
     private BrowserFactory();
 
     public static void setBrowserFactoryImpl(
-        BrowserFactoryImpl fac);
+        BrowserFactoryImpl fac)
+        throws IllegalArgumentException,
+               X3DException,
+               SecurityException;
 
-    public static X3DComponent createX3DComponent(Map params);
+    public static X3DComponent createX3DComponent(Map params)
+        throws NotSupportedException;
 
-    public static ExternalBrowser getBrowser(Applet applet);
+    public static ExternalBrowser getBrowser(Applet applet)
+        throws NotSupportedException,
+               NoSuchBrowserException,
+               ConnectionException;
 
     public static ExternalBrowser getBrowser(Applet applet,
-                                             string frameName,
-                                             int index);
+                                             String frameName,
+                                             int index)
+        throws NotSupportedException,
+               NoSuchBrowserException,
+               ConnectionException;
 
-    public static ExternalBrowser getBrowser(InetAddress address, int port);
+    public static ExternalBrowser getBrowser(InetAddress address, int port)
+        throws NotSupportedException,
+               NoSuchBrowserException,
+               UnknownHostException,
+               ConnectionException;
 }
 </pre>
 
@@ -1149,22 +1015,22 @@ A.5.4 Matrix3</h2>
 {
 	public Matrix3();
 	public void setIdentity();
-    public void set(int row, int column);
-    public float get(int row, int column);
+    public void set(int row, int column)
+    public float get(int row, int column)
     public void setTransform(SFVec2f translation,
                              SFVec3f rotation,
                              SFVec2f scale,
                              SFVec3f scaleOrientation,
-                             SFVec2f center);
+                             SFVec2f center)
     public void getTransform(SFVec2f translation,
                              SFVec3f rotation,
-                             SFVec2f scale);
-    public Matrix3 inverse();
-    public Matrix3 transpose();
-    public Matrix3 multiplyLeft(Matrix3 mat);
-    public Matrix3 multiplyRight(Matrix3 mat);
-    public Matrix3 multiplyRowVector(SFVec3f vec);
-    public Matrix3 multiplyColVector(SFVec3f vec);
+                             SFVec2f scale)
+    public Matrix3 inverse()
+    public Matrix3 transpose()
+    public Matrix3 multiplyLeft(Matrix3 mat)
+    public Matrix3 multiplyRight(Matrix3 mat)
+    public Matrix3 multiplyRowVector(SFVec3f vec)
+    public Matrix3 multiplyColVector(SFVec3f vec)
 }
 </pre>
 
@@ -1173,38 +1039,27 @@ A.5.5 Matrix4</h2>
 
 <pre class="listing">public class Matrix4
 {
-	Matrix4();
-	void setIdentity();
-    void set(int row, int column);
-    float get(int row, int column);
-    void setTransform(SFVec3f translation,
+	public Matrix4();
+	public void setIdentity();
+    public void set(int row, int column)
+    public float get(int row, int column)
+    public void setTransform(SFVec3f translation,
                              SFRotation rotation,
                              SFVec3f scale,
                              SFRotation scaleOrientation,
-                             SFVec3f center);
-    void getTransform(SFVec3f translation,
+                             SFVec3f center)
+    public void getTransform(SFVec3f translation,
                              SFRotation rotation,
-                             SFVec3f scale);
-    Matrix3 inverse();
-    Matrix3 transpose();
-    Matrix3 multiplyLeft(Matrix4 mat);
-    Matrix3 multiplyRight(Matrix4 mat);
-    Matrix3 multiplyRowVector(SFVec3f vec);
-    Matrix3 multiplyColVector(SFVec3f vec);
+                             SFVec3f scale)
+    public Matrix3 inverse()
+    public Matrix3 transpose()
+    public Matrix3 multiplyLeft(Matrix4 mat)
+    public Matrix3 multiplyRight(Matrix4 mat)
+    public Matrix3 multiplyRowVector(SFVec3f vec)
+    public Matrix3 multiplyColVector(SFVec3f vec)
 }
 </pre>
 
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -1226,34 +1081,23 @@ A.5.5 Matrix4</h2>
 
 <pre class="listing">public interface ComponentInfo
 {
-    string getName();
-    int getLevel();
-    string getTitle();
-    string getProviderURL();
-    string toX3DString();
+    public String getName();
+    public int getLevel();
+    public String getTitle();
+    public String getProviderURL();
+    public String toX3DString();
 }</pre>
 
 <h2><a name="ProfileInfo"></a>A.6.2 ProfileInfo</h2>
 
 <pre class="listing">public interface ProfileInfo
 {
-    string getName();
-    string getTitle();
-    ComponentInfo[] getComponents();
-    string toX3DString();
+    public String getName();
+    public String getTitle();
+    public ComponentInfo[] getComponents();
+    public String toX3DString();
 }</pre>
         
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -1277,6 +1121,7 @@ A.7.1 X3DException</h2>
 <pre class="listing">public class X3DException : RuntimeException
 {
 	public X3DException();
+	public X3DException(String);
 }
 </pre>
 
@@ -1286,6 +1131,7 @@ A.7.2 BrowserNotSharedException</h2>
 <pre class="listing">public class BrowserNotSharedException : X3DException
 {
 	public BrowserNotSharedException();
+	public BrowserNotSharedException(String);
 }
 </pre>
 
@@ -1295,6 +1141,7 @@ A.7.3 ConnectionException</h2>
 <pre class="listing">public class ConnectionException : X3DException
 {
 	public ConnectionException();
+	public ConnectionException(String);
 }
 </pre>
 
@@ -1304,6 +1151,7 @@ A.7.4 ImportedNodeException</h2>
 <pre class="listing">public class ImportedNodeException : X3DException
 {
 	public ImportedNodeException();
+	public ImportedNodeException(String);
 }
 </pre>
 
@@ -1313,6 +1161,7 @@ A.7.5 InsufficientCapabilitiesException</h2>
 <pre class="listing">public class InsufficientCapabilitiesException : X3DException
 {
 	public InsufficientCapabilitiesException();
+	public InsufficientCapabilitiesException(String);
 }
 </pre>
 
@@ -1322,6 +1171,7 @@ A.7.6 InvalidBrowserException</h2>
 <pre class="listing">public class InvalidBrowserException : X3DException
 {
 	public InvalidBrowserException();
+	public InvalidBrowserException(String);
 }
 </pre>
 
@@ -1331,6 +1181,7 @@ A.7.7 InvalidDocumentException</h2>
 <pre class="listing">public class InvalidDocumentException : X3DException
 {
 	public InvalidDocumentException();
+	public InvalidDocumentException(String);
 }
 </pre>
 
@@ -1340,6 +1191,7 @@ A.7.8 InvalidExecutionContextException</h2>
 <pre class="listing">public class InvalidExecutionContextException : X3DException
 {
 	public InvalidExecutionContextException();
+	public InvalidExecutionContextException(String);
 }
 </pre>
 
@@ -1349,6 +1201,7 @@ A.7.9 InvalidFieldException</h2>
 <pre class="listing">public class InvalidFieldException : X3DException
 {
 	public InvalidFieldException();
+	public InvalidFieldException(String);
 }
 </pre>
 
@@ -1358,6 +1211,7 @@ A.7.10  InvalidFieldValueException</h2>
 <pre class="listing">public class InvalidFieldValueException : X3DException
 {
 	public InvalidFieldValueException();
+	public InvalidFieldValueException(String);
 }
 </pre>
 
@@ -1367,6 +1221,7 @@ A.7.11 InvalidNodeException</h2>
 <pre class="listing">public class InvalidNodeException : X3DException
 {
 	public InvalidNodeException();
+	public InvalidNodeException(String);
 }
 </pre>
 
@@ -1376,6 +1231,7 @@ A.7.12 InvalidOperationTimingException</h2>
 <pre class="listing">public class InvalidOperationTimingException : X3DException
 {
 	public InvalidOperationTimingException();
+	public InvalidOperationTimingException(String);
 }
 </pre>
 
@@ -1385,6 +1241,7 @@ A.7.13 InvalidProtoException</h2>
 <pre class="listing">public class InvalidProtoException : X3DException
 {
 	public InvalidProtoException();
+	public InvalidProtoException(String);
 }
 </pre>
 
@@ -1394,6 +1251,7 @@ A.7.14 InvalidRouteException</h2>
 <pre class="listing">public class InvalidRouteException : X3DException
 {
 	public InvalidRouteException();
+	public InvalidRouteException(String);
 }
 </pre>
 
@@ -1403,6 +1261,7 @@ A.7.15 InvalidURLException</h2>
 <pre class="listing">public class InvalidURLException : X3DException
 {
 	public InvalidURLException();
+	public InvalidURLException(String);
 }
 </pre>
 
@@ -1412,6 +1271,7 @@ A.7.16 InvalidX3DException</h2>
 <pre class="listing">public class InvalidX3DException : X3DException
 {
 	public InvalidX3DException();
+	public InvalidX3DException(String);
 }
 </pre>
 
@@ -1421,6 +1281,7 @@ A.7.17 NodeInUseException</h2>
 <pre class="listing">public class NodeInUseException : X3DException
 {
 	public NodeInUseException();
+	public NodeInUseException(String);
 }
 </pre>
 
@@ -1430,6 +1291,7 @@ A.7.18 NodeUnavailableException</h2>
 <pre class="listing">public class NodeUnavailableException : X3DException
 {
 	public NodeUnavailableException();
+	public NodeUnavailableException(String);
 }
 </pre>
 
@@ -1439,6 +1301,7 @@ A.7.19 NoSuchBrowserException</h2>
 <pre class="listing">public class NoSuchBrowserException : X3DException
 {
 	public NoSuchBrowserException();
+	public NoSuchBrowserException(String);
 }
 </pre>
 
@@ -1448,6 +1311,7 @@ A.7.20 NotSupportedException</h2>
 <pre class="listing">public class NotSupportedException : X3DException
 {
 	public NotSupportedException();
+	public NotSupportedException(String);
 }
 </pre>
 
@@ -1457,11 +1321,12 @@ A.7.21 URLUnavailableException</h2>
 <pre class="listing">public class URLUnavailableException : X3DException
 {
 	public URLUnavailableException();
+	public URLUnavailableException(String);
 }
 </pre>
 
 
-        <!-- ===================================================================================== -->
+<!-- ===================================================================================== -->
         <a href="#top" title="to top">
             <xsl:element name="img">
                 <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
@@ -1484,7 +1349,7 @@ A.7.21 URLUnavailableException</h2>
 <!-- ===================================================================================== -->
 <!-- Annex B Concrete node interfaces -->
   
-<xsl:result-document  href="CSharpLanguageBinding.Part5.nodeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+<xsl:result-document  href="CSharpLanguageBinding.Part5.concretes.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -1502,11 +1367,11 @@ A.7.21 URLUnavailableException</h2>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-5/V3.3/Part5/nodeInterfaces.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-5/V3.3/Part5/concretes.html</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CSharpLanguageBinding.Part5.nodeInterfaces.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CSharpLanguageBinding.Part5.concretes.html</xsl:text></xsl:attribute>
 	</xsl:element>
         
         <xsl:call-template name="generate-html-meta-tags"/>
@@ -1637,6 +1502,7 @@ A.7.21 URLUnavailableException</h2>
 			</xsl:element>
 		</xsl:element>
 		<xsl:text>&#10;</xsl:text>
+		
 
 		<!-- Loop over elements, build index -->
 
@@ -1773,17 +1639,7 @@ A.7.21 URLUnavailableException</h2>
 		<xsl:text>&#10;</xsl:text>
 	</xsl:element>  <!-- div CenterDiv -->
         
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
+
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -1821,22 +1677,11 @@ interface definition is</p>
 
 <h2><a name="MethodDeclarations"></a>B.2.3 Method declarations</h2><p>Within each node interface there shall be methods to read and set the values for 
 every field. The naming convention for each field method shall follow the definition
-in <a href="nodeTypeInterfaces.html#Conventions">A.1.2 Conventions</a> for the abstract
+in <a href="abstracts.html#Conventions">A.1.2 Conventions</a> for the abstract
 interfaces. Where fields are already covered by the abstract interface, the concrete
 interface is not required to redeclare the same methods. The concrete interface shall
 declare methods that are not defined by the abstract node representation.</p>
         
-        <!-- ===================================================================================== -->
-        <a href="#top" title="to top">
-            <xsl:element name="img">
-                <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-            </xsl:element>
-            <xsl:text>&#10;</xsl:text>
-        </a>
 
         <xsl:element name="h1">
 		<xsl:element name="img">
@@ -1857,21 +1702,15 @@ declare methods that are not defined by the abstract node representation.</p>
         <p>
             The following node interfaces include getter/setter accessor methods for all fields, including those defined in parent abstract types.
         </p>
+        
+        
+        
+       
 
 	<!-- Document body: loop over elements, matching TOC loop for each detailed page entry -->
 	<xsl:for-each select="//xs:schema/xs:element[not(@name='TODO')]">
             <xsl:sort select="lower-case(@name)"/>
                                             
-            <a href="#TopicsTable" title="to Topics">
-                <xsl:element name="img">
-                    <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
-                    <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
-                    <xsl:attribute name="alt"><xsl:text>--- X3D separator bar ---</xsl:text></xsl:attribute>
-                    <xsl:attribute name="width"><xsl:text>430</xsl:text></xsl:attribute>
-                    <xsl:attribute name="height"><xsl:text>23</xsl:text></xsl:attribute>
-                </xsl:element>
-                <xsl:text>&#10;</xsl:text>
-            </a>
             
             <xsl:text>&#10;</xsl:text>
             <xsl:text>&#10;</xsl:text>
@@ -1903,7 +1742,16 @@ declare methods that are not defined by the abstract node representation.</p>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
                                             
-        <a href="#TopicsTable" title="to Topics">
+
+        <!-- ===================================================================================== -->
+
+	<xsl:text>&#10;</xsl:text>
+	<xsl:text>&#10;</xsl:text>
+  </xsl:element> <!-- end div -->
+</xsl:element> <!-- end body -->
+
+
+<a href="#top" title="to top">
             <xsl:element name="img">
                 <xsl:attribute name="class"><xsl:text>x3dbar</xsl:text></xsl:attribute>
                 <xsl:attribute name="src"><xsl:text>../Images/x3dbar.png</xsl:text></xsl:attribute>
@@ -1913,16 +1761,8 @@ declare methods that are not defined by the abstract node representation.</p>
             </xsl:element>
             <xsl:text>&#10;</xsl:text>
         </a>
-
-        <xsl:text>&#10;</xsl:text>
-        <xsl:text>&#10;</xsl:text>
-
-        <!-- ===================================================================================== -->
-
-	<xsl:text>&#10;</xsl:text>
-	<xsl:text>&#10;</xsl:text>
-  </xsl:element> <!-- end div -->
-</xsl:element> <!-- end body -->
+        
+        
 
 <xsl:text>&#10;</xsl:text>
 </xsl:result-document>
@@ -2125,7 +1965,7 @@ declare methods that are not defined by the abstract node representation.</p>
     <xsl:param name="default" select="@default"/>
     
     <xsl:choose>
-        <xsl:when test="($schemaType='xs:bool')">
+        <xsl:when test="($schemaType='xs:boolean')">
             <xsl:text>SFBool</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='xs:integer') or ($schemaType='xs:positiveInteger')">
@@ -2157,7 +1997,7 @@ declare methods that are not defined by the abstract node representation.</p>
     <xsl:param name="default" select="@default"/>
     
     <xsl:choose>
-        <xsl:when test="($schemaType='SFBool') or ($schemaType='xs:bool')">
+        <xsl:when test="($schemaType='SFBool') or ($schemaType='xs:boolean')">
             <xsl:text>bool</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='MFBool')">
@@ -2183,10 +2023,10 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>double[]</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='SFString') or ($schemaType='xs:string') or ($schemaType='xs:NMTOKEN') or ($schemaType='xs:token')">
-            <xsl:text>string</xsl:text>
+            <xsl:text>String</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='MFString')">
-            <xsl:text>string[]</xsl:text>
+            <xsl:text>String[]</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='SFNode') and (string-length($default) > 0)">
             <xsl:value-of select="@default"/>
@@ -2332,7 +2172,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>&#10;</xsl:text>
             
             <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                <xsl:text> </xsl:text>
+                <xsl:text>@Deprecated </xsl:text>
             </xsl:if>
             <xsl:text>public interface </xsl:text>
             <xsl:value-of select="@name"/>
@@ -2352,29 +2192,32 @@ declare methods that are not defined by the abstract node representation.</p>
         <xsl:when test="(@name='SFImage')">
 <xsl:text disable-output-escaping="yes">
     /** Get image width in pixels */
-    int getWidth ();
+    public int getWidth ();
 
     /** Get image height in pixels */
-    int getHeight ();
+    public int getHeight ();
 
     /** Get number of components in an image:
       * 1 (intensity), 2 (intensity alpha), 3 (red green blue), 4 (red green blue alpha-opacity).*/
-    int getComponents();
+    public int getComponents();
 
     /** Get array of pixel values [0-255] */
-    void getPixels (int[] pixels);
+    public void getPixels (int[] pixels);
+
+    /** Get &lt;a href="http://docs.oracle.com/javase/8/docs/api/java/awt/image/WritableRenderedImage.html"&gt;java.awt.image.WritableRenderedImage&lt;/a&gt; version of image */
+    public  java.awt.image.WritableRenderedImage getImage();
 
     /** Initialize image */
-    void setValue (int width,
+    public void setValue (int width,
                           int height,
                           int components,
                           int[] pixels);
 
     /** Assign a new image as current image */
-    void setImage (RenderedImage image);
+    public void setImage (RenderedImage image);
 
     /** Assign a portion of a new image as part of current image */
-    void setSubImage (RenderedImage image,
+    public void setSubImage (RenderedImage image,
                              int srcWidth,
                              int srcHeight,
                              int srcXOffset,
@@ -2386,55 +2229,55 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:when test="(@name='MFImage')">
 <xsl:text>
     /** Get selected image width in pixels */
-    int getWidth (int imageIndex);
+    public int getWidth (int imageIndex) throws ArrayIndexOutOfBoundsException;
 
     /** Get selected image height in pixels */
-    int getHeight (int imageIndex);
+    public int getHeight (int imageIndex) throws ArrayIndexOutOfBoundsException;
 
     /** Get number of components in selected image:
       * 1 (intensity), 2 (intensity alpha), 3 (red green blue), 4 (red green blue alpha-opacity).*/
-    int getComponents (int imageIndex);
+    public int getComponents (int imageIndex) throws ArrayIndexOutOfBoundsException;
 
     /** Get array of pixel values [0-255] in selected image */
-    void getPixels (int imageIndex, int[] pixels);
+    public void getPixels (int imageIndex, int[] pixels) throws ArrayIndexOutOfBoundsException;
 
-    /** Get a version of selected image */
-    RenderedImage getImage(int imageIndex);
+    /** Get &lt;a href="http://docs.oracle.com/javase/8/docs/api/java/awt/image/WritableRenderedImage.html"&gt;java.awt.image.WritableRenderedImage&lt;/a&gt; version of selected image */
+    public WritableRenderedImage getImage(int imageIndex) throws ArrayIndexOutOfBoundsException;
 
     /** Assign a new image as a replacement image within the current image array */
-    void setImage (int imageIndex, RenderedImage img);
+    public void setImage (int imageIndex, RenderedImage img) throws ArrayIndexOutOfBoundsException;
 
     /** Assign a portion of a new image as part of current selected image in array */
-    void setSubImage (int imageIndex,
+    public void setSubImage (int imageIndex,
                              RenderedImage img,
                              int srcWidth,
                              int srcHeight,
                              int srcXOffset,
                              int srcYOffset,
                              int destXOffset,
-                             int destYOffset);
+                             int destYOffset) throws ArrayIndexOutOfBoundsException;
 
     /** Utility method to set all values for selected image in array */
-    void set1Value (int imageIndex, int value);
+    public void set1Value (int imageIndex, int value) throws ArrayIndexOutOfBoundsException;
 
     /** Initialize selected image */
-    void set1Value (int imageIndex,
+    public void set1Value (int imageIndex,
                            int width,
                            int height,
                            int components,
-                           int[] pixels);
+                           int[] pixels) throws ArrayIndexOutOfBoundsException;
 
     /** Utility method to set all values for all images in array */
-    void setValue (int[] value);
+    public void setValue (int[] value);
 
     /** Assign a new image array as current image array */
-    void setImage (RenderedImage[] img);
+    public void setImage (RenderedImage[] img);
 
     /** Append a new image to current image array */
-    void append (RenderedImage value);
+    public void append (RenderedImage value);
 
     /** Insert a new image in the current image array */
-    void insertValue (int imageIndex, RenderedImage value);
+    public void insertValue (int imageIndex, RenderedImage value) throws ArrayIndexOutOfBoundsException;
 </xsl:text>
         </xsl:when>
         <xsl:otherwise>
@@ -2494,7 +2337,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>&#10;</xsl:text>
             <!-- getter -->
             <xsl:text>&#160;&#160;</xsl:text>
-            <xsl:text></xsl:text>
+            <xsl:text>public </xsl:text>
             <xsl:choose>
                 <xsl:when test="contains($type,'FVec') or contains($type,'FColor') or contains($type,'FNode')">
                     <xsl:text>void</xsl:text>
@@ -2533,7 +2376,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- getter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>long getJavaValue ();</xsl:text>
+                <xsl:text>public long getJavaValue ();</xsl:text>
             <xsl:text>&#10;</xsl:text>
             </xsl:if>
             <!-- additional getters for array types -->
@@ -2543,7 +2386,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- getter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text></xsl:text>
+                <xsl:text>public </xsl:text>
                 <xsl:text>void</xsl:text>
                 <xsl:text> </xsl:text>
                 <xsl:text>getValue</xsl:text>
@@ -2578,7 +2421,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text> array */</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text></xsl:text>
+                <xsl:text>public </xsl:text>
                 <xsl:choose>
                     <xsl:when test="contains($type,'FVec') or contains($type,'FColor') or contains($type,'FNode')">
                         <xsl:text>void</xsl:text>
@@ -2623,7 +2466,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- getter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>long get1JavaValue (int index);</xsl:text>
+                <xsl:text>public long get1JavaValue (int index);</xsl:text>
             <xsl:text>&#10;</xsl:text>
             </xsl:if>
             
@@ -2635,9 +2478,9 @@ declare methods that are not defined by the abstract node representation.</p>
             <!-- setter -->
             <xsl:text>&#160;&#160;</xsl:text>
             <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                <xsl:text> </xsl:text>
+                <xsl:text>@Deprecated </xsl:text>
             </xsl:if>
-            <xsl:text>void </xsl:text>
+            <xsl:text>public void </xsl:text>
             <xsl:text>setValue</xsl:text>
             <xsl:text> (</xsl:text>
             <xsl:if test="starts-with(@name,'MF')">
@@ -2667,7 +2510,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- getter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>void setValue (long value);</xsl:text>
+                <xsl:text>public void setValue (long value);</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
             <xsl:if test="(@name='MFTime')">
@@ -2678,7 +2521,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- getter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>void setValue (int size, long[] values);</xsl:text>
+                <xsl:text>public void setValue (int size, long[] values);</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
             <!-- add custom method for ProtoInstance if default node type used.  don't do this for MFNode array since it can already be a mix of typed and ProtoInstance nodes. -->
@@ -2689,7 +2532,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- alternate setter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>void </xsl:text>
+                <xsl:text>public void </xsl:text>
                 <xsl:text>set</xsl:text>
                 <xsl:value-of select="$camelCaseName"/>
                 <xsl:text> (X3DPrototypeInstance protoInstance);</xsl:text>
@@ -2701,7 +2544,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>&#10;</xsl:text>
                 <!-- setter -->
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>void </xsl:text>
+                <xsl:text>public void </xsl:text>
                 <xsl:text>setValue</xsl:text>
                 <xsl:text> (</xsl:text>
                 <xsl:choose>
@@ -2735,7 +2578,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text> array */</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text></xsl:text>
+                <xsl:text>public </xsl:text>
                 <xsl:text>void</xsl:text>
                 <xsl:text> </xsl:text>
                 <xsl:text>set1Value</xsl:text>
@@ -2770,7 +2613,7 @@ declare methods that are not defined by the abstract node representation.</p>
                     <xsl:text>&#10;</xsl:text>
                     <!-- getter -->
                     <xsl:text>&#160;&#160;</xsl:text>
-                    <xsl:text>void set1Value (int index, long value);</xsl:text>
+                    <xsl:text>public void set1Value (int index, long value);</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:if>
                 <!-- additional setters for array types -->
@@ -2784,7 +2627,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text> array */</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text></xsl:text>
+                <xsl:text>public </xsl:text>
                 <xsl:text>void</xsl:text>
                 <xsl:text> </xsl:text>
                 <xsl:text>append</xsl:text>
@@ -2821,7 +2664,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text> array */</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text></xsl:text>
+                <xsl:text>public </xsl:text>
                 <xsl:text>void</xsl:text>
                 <xsl:text> </xsl:text>
                 <xsl:text>insertValue</xsl:text>
@@ -2943,7 +2786,7 @@ declare methods that are not defined by the abstract node representation.</p>
                     <xsl:when test="//xs:complexType[@name = $baseInterface]">
                         <xsl:element name="a">
                             <xsl:attribute name="href">
-                                <!-- nodeTypeInterfaces.html -->
+                                <!-- abstracts.html -->
                                 <xsl:text>#</xsl:text>
                                 <xsl:value-of select="$baseInterface"/>
                             </xsl:attribute>
@@ -2982,7 +2825,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface1]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- nodeTypeInterfaces.html -->
+                                    <!-- abstracts.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface1"/>
                                 </xsl:attribute>
@@ -3021,7 +2864,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface2]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- nodeTypeInterfaces.html -->
+                                    <!-- abstracts.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface2"/>
                                 </xsl:attribute>
@@ -3060,7 +2903,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface3]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- nodeTypeInterfaces.html -->
+                                    <!-- abstracts.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface3"/>
                                 </xsl:attribute>
@@ -3092,7 +2935,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface4]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- nodeTypeInterfaces.html -->
+                                    <!-- abstracts.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface4"/>
                                 </xsl:attribute>
@@ -3133,11 +2976,11 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-                        <xsl:text>nodeTypeInterfaces.html#</xsl:text>
+                        <xsl:text>abstracts.html#</xsl:text>
                         <xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">
-                        <xsl:text>_nodeTypeInterfaces</xsl:text>
+                        <xsl:text>_abstracts</xsl:text>
                     </xsl:attribute>
                     <xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
                 </xsl:element>
@@ -3150,11 +2993,11 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-                        <xsl:text>nodeTypeInterfaces.html#</xsl:text>
+                        <xsl:text>abstracts.html#</xsl:text>
                         <xsl:value-of select="@default"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">
-                        <xsl:text>_nodeTypeInterfaces</xsl:text>
+                        <xsl:text>_abstracts</xsl:text>
                     </xsl:attribute>
                     <xsl:value-of select="@default"/>
                 </xsl:element>
@@ -3175,7 +3018,7 @@ declare methods that are not defined by the abstract node representation.</p>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-        <xsl:text> </xsl:text>
+        <xsl:text>@Deprecated </xsl:text>
     </xsl:if>
     <xsl:text>public interface </xsl:text>
     <xsl:value-of select="@name"/>
@@ -3351,7 +3194,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>/** Get a field for this node by name. */</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <xsl:text>&#160;&#160;</xsl:text>
-            <xsl:text>X3DField getField (string name);</xsl:text>
+            <xsl:text>X3DField getField (String name);</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <!-- ========== -->
             <xsl:text>&#10;</xsl:text>
@@ -3367,7 +3210,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>/** Get the name of this node. */</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <xsl:text>&#160;&#160;</xsl:text>
-            <xsl:text>string getNodeName();</xsl:text>
+            <xsl:text>String getNodeName();</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <!-- ========== -->
             <xsl:text>&#10;</xsl:text>
@@ -3375,7 +3218,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:text>/** Determine if node setup is completed. */</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <xsl:text>&#160;&#160;</xsl:text>
-            <xsl:text>bool isRealized ();</xsl:text>
+            <xsl:text>boolean isRealized ();</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <!-- ========== -->
             <xsl:text>&#10;</xsl:text>
@@ -3390,7 +3233,8 @@ declare methods that are not defined by the abstract node representation.</p>
     </xsl:choose>
     <xsl:text>}</xsl:text>
     <xsl:text>&#10;</xsl:text>
-                
+    
+   
 </xsl:template>
 
 <!-- ****************** catch-all ****************** -->
@@ -3476,6 +3320,8 @@ declare methods that are not defined by the abstract node representation.</p>
 		<xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
 		<xsl:attribute name="content"><xsl:text>http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationLanguageBindingCSharp.xslt?view=log</xsl:text></xsl:attribute>
 	</xsl:element>
+	
+	
 
 <!-- css not working...
 	<xsl:text>&#10;</xsl:text>
@@ -3748,9 +3594,9 @@ node.source {background-color:#f4f4f4;}
             <!-- getter -->
             <xsl:text>&#160;&#160;</xsl:text>
             <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                <xsl:text> </xsl:text>
+                <xsl:text>@Deprecated </xsl:text>
             </xsl:if>
-            <xsl:text></xsl:text>
+            <xsl:text>public </xsl:text>
             <xsl:choose>
                 <xsl:when test="contains($type,'FVec') or contains($type,'FColor') or contains($type,'FNode')">
                     <xsl:text>void</xsl:text>
@@ -3803,7 +3649,7 @@ node.source {background-color:#f4f4f4;}
                 <xsl:text>*/</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
-                <xsl:text>int </xsl:text>
+                <xsl:text>public int </xsl:text>
                 <xsl:text>getNum</xsl:text>
                 <xsl:value-of select="$camelCaseName"/>
                 <xsl:text> ();</xsl:text>
@@ -3881,9 +3727,9 @@ node.source {background-color:#f4f4f4;}
             <!-- setter -->
             <xsl:text>&#160;&#160;</xsl:text>
             <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                <xsl:text> </xsl:text>
+                <xsl:text>@Deprecated </xsl:text>
             </xsl:if>
-            <xsl:text>void </xsl:text>
+            <xsl:text>public void </xsl:text>
             <xsl:choose>
                 <xsl:when test="(@name='addChildren') or (@name='removeChildren')">
                     <xsl:value-of select="@name"/>
@@ -3919,9 +3765,9 @@ node.source {background-color:#f4f4f4;}
                 <!-- alternate setter -->
                 <xsl:text>&#160;&#160;</xsl:text>
                 <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                    <xsl:text> </xsl:text>
+                    <xsl:text>@Deprecated </xsl:text>
                 </xsl:if>
-                <xsl:text>void </xsl:text>
+                <xsl:text>public void </xsl:text>
                 <xsl:text>set</xsl:text>
                 <xsl:value-of select="$camelCaseName"/>
                 <xsl:text> (X3DPrototypeInstance protoInstance);</xsl:text>
@@ -3974,9 +3820,9 @@ node.source {background-color:#f4f4f4;}
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>&#160;&#160;</xsl:text>
                 <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                    <xsl:text> </xsl:text>
+                    <xsl:text>@Deprecated </xsl:text>
                 </xsl:if>
-                <xsl:text>void </xsl:text>
+                <xsl:text>public void </xsl:text>
                 <xsl:choose>
                     <xsl:when test="(@name='addChildren') or (@name='removeChildren')">
                         <xsl:value-of select="@name"/>
@@ -4027,9 +3873,9 @@ node.source {background-color:#f4f4f4;}
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>&#160;&#160;</xsl:text>
                     <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
-                        <xsl:text> </xsl:text>
+                        <xsl:text>@Deprecated </xsl:text>
                     </xsl:if>
-                    <xsl:text>void </xsl:text>
+                    <xsl:text>public void </xsl:text>
                     <xsl:choose>
                         <xsl:when test="(@name='addChildren') or (@name='removeChildren')">
                             <xsl:value-of select="@name"/>
@@ -4060,7 +3906,7 @@ node.source {background-color:#f4f4f4;}
                     </xsl:choose>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>&#160;&#160;</xsl:text>
-                    <xsl:text>void </xsl:text>
+                    <xsl:text>public void </xsl:text>
                     <xsl:choose>
                         <xsl:when test="(@name='addChildren') or (@name='removeChildren')">
                             <xsl:value-of select="@name"/>
@@ -4079,8 +3925,16 @@ node.source {background-color:#f4f4f4;}
                 </xsl:if>
             </xsl:if>
         </xsl:if>
-            
+        
+        
+           
+
 </xsl:template>
+
+
+
+
+
 
 <!-- ****************** schema-appinfo-warnings ****************** -->
 
@@ -4164,7 +4018,7 @@ node.source {background-color:#f4f4f4;}
     <!-- inheritance test #1: check elements derive from node type interface and not abstract objects; ignore special cases -->
     <xsl:for-each select="//xs:element[string-length(@name) > 0]/xs:complexType/xs:complexContent/
                           *[not(starts-with(@base,'X3D') and ends-with(@base,'Node')) and 
-                            not(@base='SceneGraphStructureStatement') and not(@base='X3DStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
+                            not(@base='SceneGraphStructureStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
         <xsl:if test="not(ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface' and starts-with(@default,'X3D') and ends-with(@default,'Node')])">
             <xsl:message>
                 <xsl:text>*** Schema error: element type not derived from X3D*Node interface. </xsl:text>
@@ -4362,6 +4216,9 @@ node.source {background-color:#f4f4f4;}
             <xsl:text>"]</xsl:text>
         </xsl:message>
     </xsl:for-each>
+    
+    
+
     
     <!-- TODO confirm field lists consistent for each specification version -->
     
