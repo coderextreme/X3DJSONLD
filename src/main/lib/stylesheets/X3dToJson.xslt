@@ -1017,7 +1017,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>"</xsl:text>
                     </xsl:when>
                     <!-- single string -->
-                    <xsl:when test="($attributeType = 'SFString') or 
+                    <xsl:when test="not((local-name(..)='NavigationInfo')      and ((local-name()='type') or (local-name()='transitionType'))) and (($attributeType = 'SFString') or
                                     not(local-name() ='url') and not(ends-with(local-name(),'Url')) and
                                        ((local-name()='value') and 
                                        ((contains(local-name(../..),'Proto') or contains(local-name(../../..),'Proto')) and
@@ -1027,7 +1027,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                         (local-name()='name')       or (local-name()='description') or (local-name()='accessType') or 
                                         (local-name()='marking')    or (local-name()='description') or
 					(local-name()='nodeField')  or (local-name()='protoField')  or
-                                        ((local-name()='type') and not(local-name(..)='NavigationInfo')))
+                                        ((local-name()='type') and not(local-name(..)='NavigationInfo'))))
                                      ">
                         <!-- debug -->
                         <xsl:if test="$debugTrace">
