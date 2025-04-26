@@ -5234,9 +5234,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:choose>
                 </xsl:when>
                 <xsl:when test="local-name(..)='meta' and
-                                ((../@name='warning') or (../@name='TODO') or
-                                 ((../@name='accessRights') and 
-                                    ((../@content='Controlled Unclassified Information (CUI)')) or $endsWithFileExtension))">
+                                ((../@name='warning') or (../@name='TODO'))">
                     <b class="warning">
                         <xsl:call-template name="URL-ize-MFString-elements">
                             <xsl:with-param name="list" select="normalize-space(string(.))"/>
@@ -5250,8 +5248,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:call-template>
                     </b>
                 </xsl:when>
-                <!-- disable this test, somehow it breaks lines and thus wraps whitepace -->
-                <xsl:when test="false() and local-name(..)='meta' and $endsWithFileExtension">
+                <!-- false() to disable this test, somehow it breaks lines and thus wraps whitepace -->
+                <xsl:when test="local-name(..)='meta' and $endsWithFileExtension">
                     <!-- debug
                     <xsl:text>($endsWithFileExtension=</xsl:text><xsl:value-of select="$endsWithFileExtension"/><xsl:text>)</xsl:text>
                     -->

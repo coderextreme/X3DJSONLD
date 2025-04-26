@@ -32,16 +32,12 @@ import org.web3d.x3d.jsail.Time.*;
 			<td> John Carlson </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> transcriber </i> </td>
-			<td> John Carlson </td>
-		</tr>
-		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
 			<td> 23 January 2005 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 21 March 2018 </td>
+			<td> 9 November 2024 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -94,9 +90,8 @@ public class flowers2
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("flowers2.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new meta().setName("transcriber").setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("23 January 2005"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("21 March 2018"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("9 November 2024"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manually written"))
@@ -301,7 +296,7 @@ ecmascript:
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.flowers2 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.flowers2 self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());

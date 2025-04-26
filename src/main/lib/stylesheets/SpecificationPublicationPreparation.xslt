@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://stackoverflow.com/questions/21523574/replace-special-characters-like-ndash-and-mdash-occuring-in-an-xml-document -->
 <!DOCTYPE stylesheet [
-<!ENTITY ndash  "&#x2013;" >
-<!ENTITY mdash  "&#x2014;" >
+    <!ENTITY nbsp  "&#160;">
+    <!ENTITY mdash "&#x2014;">
+    <!ENTITY ndash "&#x2013;">
 ]>
 <!--
     title       : SpecificationPublicationPreparation.xslt
@@ -164,6 +165,13 @@
                 </xsl:if>
                 <!-- omit copying this element -->
             </xsl:when>
+            <xsl:when test="(local-name() = 'table') and (@id = 'ColorCodingLegend')">
+                <!-- omit copying this element -->
+                <!-- debug diagnostic -->
+                <xsl:message>
+                    <xsl:text>*** omit table ColorCodingLegend</xsl:text>
+                </xsl:message>
+            </xsl:when>
             <xsl:when test="(($elementName = 'div') or ($elementName = 'span')) and
                             ((@class = 'proposed') or (@class = 'approved'))    and
                             not(($elementName = 'div') and (*[local-name() = 'div']))"><!-- be careful of nested div elements -->
@@ -217,45 +225,43 @@
         </xsl:choose>
         
         <!-- additional diagnostics -->
-        <xsl:choose>
-            <!-- potentially malformed i b em strong -->
-            <xsl:when test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
-                             (*[(local-name() != 'a') and (local-name() != 'br') and (local-name() != 'span') and (local-name() != 'sub') and (local-name() != 'sup')])">
-                <xsl:if test="not(local-name() = 'b') and (*[local-name() = 'i']) and (//p[contains(.,'Architecture and base components')])">
-                    <xsl:message>
+        <!-- potentially malformed i b em strong -->
+        <xsl:if test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
+                         (*[(local-name() != 'a') and (local-name() != 'br') and (local-name() != 'span') and (local-name() != 'sub') and (local-name() != 'sup')])">
+            <xsl:if test="not(local-name() = 'b') and (*[local-name() = 'i']) and (//p[contains(.,'Architecture and base components')])">
+                <xsl:message>
+                <xsl:text>!!! </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text> element contains embedded element </xsl:text>
+                <xsl:value-of select="local-name(*[1])"/>
+                <xsl:text> with text </xsl:text>
+                <xsl:text>[</xsl:text>
+                <xsl:value-of select="string(.)"/>
+                <xsl:text>]</xsl:text>
+            </xsl:message>
+            </xsl:if>
+        </xsl:if>
+        <xsl:if test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
+                         (starts-with(.,' ') or starts-with(normalize-space(.),',') or starts-with(normalize-space(.),';') or starts-with(normalize-space(.),':') or starts-with(normalize-space(.),'.') or 
+                            ends-with(.,' ') or   ends-with(normalize-space(.),',') or   ends-with(normalize-space(.),';') or   ends-with(normalize-space(.),':') or   ends-with(normalize-space(.),'.') or   ends-with(normalize-space(.),'-'))">
+            <xsl:if test="not(ends-with(normalize-space(.),'e.g.')) and not(ends-with(normalize-space(.),'ecmascript:')) and 
+                          not(ends-with(normalize-space(.),'i.e.')) and not(ends-with(normalize-space(.),'javascript:'))">
+                <xsl:message>
                     <xsl:text>!!! </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> element contains embedded element </xsl:text>
-                    <xsl:value-of select="local-name(*[1])"/>
-                    <xsl:text> with text </xsl:text>
+                    <xsl:text> element has embedded whitespace/punctuation: </xsl:text>
                     <xsl:text>[</xsl:text>
-                    <xsl:value-of select="string(.)"/>
+                        <xsl:variable name="containedText">
+                            <xsl:for-each select="../text() | ../*/text()">
+                                <xsl:value-of select="."/>
+                                <xsl:text> </xsl:text>
+                            </xsl:for-each>
+                        </xsl:variable>
+                        <xsl:value-of select="normalize-space($containedText)" disable-output-escaping="yes"/>
                     <xsl:text>]</xsl:text>
                 </xsl:message>
-                </xsl:if>
-            </xsl:when>
-            <xsl:when test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
-                             (starts-with(.,' ') or starts-with(normalize-space(.),',') or starts-with(normalize-space(.),';') or starts-with(normalize-space(.),':') or starts-with(normalize-space(.),'.') or 
-                                ends-with(.,' ') or   ends-with(normalize-space(.),',') or   ends-with(normalize-space(.),';') or   ends-with(normalize-space(.),':') or   ends-with(normalize-space(.),'.') or   ends-with(normalize-space(.),'-'))">
-                <xsl:if test="not(ends-with(normalize-space(.),'e.g.')) and not(ends-with(normalize-space(.),'ecmascript:')) and 
-                              not(ends-with(normalize-space(.),'i.e.')) and not(ends-with(normalize-space(.),'javascript:'))">
-                    <xsl:message>
-                        <xsl:text>!!! </xsl:text>
-                        <xsl:value-of select="local-name()"/>
-                        <xsl:text> element has embedded whitespace/punctuation: </xsl:text>
-                        <xsl:text>[</xsl:text>
-                            <xsl:variable name="containedText">
-                                <xsl:for-each select="../text() | ../*/text()">
-                                    <xsl:value-of select="."/>
-                                    <xsl:text> </xsl:text>
-                                </xsl:for-each>
-                            </xsl:variable>
-                            <xsl:value-of select="normalize-space($containedText)" disable-output-escaping="yes"/>
-                        <xsl:text>]</xsl:text>
-                    </xsl:message>
-                </xsl:if>
-            </xsl:when>
-        </xsl:choose>
+            </xsl:if>
+        </xsl:if>
         
     </xsl:template>
 
@@ -270,7 +276,7 @@
              (. = 'code')          or (. = 'deprecated') or (. = 'equation')    or (. = 'editorsNote') or (. = 'editorialChange') or
              (. = 'note')          or (. = 'terms')         or (. = 'TermRef')    or (. = 'approved')    or (. = 'approvedDeletion') or
              (. = 'example')       or (. = 'IndexEntry') or (. = 'Params') or
-             (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
+             (. = 'services')      or (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
              (. = 'RunningHeader') or (. = 'RunningHeaderLeft')  or (. = 'RunningHeaderCenter') or (. = 'RunningHeaderRight') or 
              (. = 'Version')       or
 
@@ -314,7 +320,11 @@
             </xsl:choose>
         </xsl:variable>
 
+        <!-- document modifications -->
         <xsl:choose>
+            <xsl:when test="(local-name() = 'class') and (contains(.,'proposed') or contains(.,'approved') or $isEquation or $isLocalStyle)">
+                <!-- omit -->
+            </xsl:when>
             <xsl:when test="(local-name() = 'class') and (contains(.,'proposed') or contains(.,'approved') or $isEquation or $isLocalStyle)">
                 <!-- omit -->
             </xsl:when>
