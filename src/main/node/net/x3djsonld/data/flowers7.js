@@ -69,22 +69,22 @@ flowers7.prototype = {
   {
 
 	/** Large attribute array: field value field, scene-graph level=4, element #61, 9 total values */
-	this.field_frontUrls_4_61_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
+	this.field_frontUrls_4_61_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\""));
 
 	/** Large attribute array: field value field, scene-graph level=4, element #62, 9 total values */
-	this.field_backUrls_4_62_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
+	this.field_backUrls_4_62_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\""));
 
 	/** Large attribute array: field value field, scene-graph level=4, element #63, 9 total values */
-	this.field_leftUrls_4_63_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
+	this.field_leftUrls_4_63_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\""));
 
 	/** Large attribute array: field value field, scene-graph level=4, element #64, 9 total values */
-	this.field_rightUrls_4_64_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
+	this.field_rightUrls_4_64_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\""));
 
 	/** Large attribute array: field value field, scene-graph level=4, element #65, 9 total values */
-	this.field_topUrls_4_65_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
+	this.field_topUrls_4_65_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\""));
 
 	/** Large attribute array: field value field, scene-graph level=4, element #66, 9 total values */
-	this.field_bottomUrls_4_66_value = new autoclass.SFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
+	this.field_bottomUrls_4_66_value = new autoclass.MFString(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\""));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
@@ -120,33 +120,33 @@ flowers7.prototype = {
           .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
             .addComments(java.newArray("java.lang.String",[" TODO VERIFY",
 "                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"]))
-            .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
+            .addField((new autoclass.field()).setName(cube).setType(SFNode).setAccessType(inputOutput)
               .addChild((new autoclass.ComposedCubeMapTexture())))
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-            .addField((new autoclass.field()).setName("a").setType("SFFloat").setAccessType("inputOutput").setValue("10"))
-            .addField((new autoclass.field()).setName("b").setType("SFFloat").setAccessType("inputOutput").setValue("1"))
-            .addField((new autoclass.field()).setName("c").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-            .addField((new autoclass.field()).setName("d").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-            .addField((new autoclass.field()).setName("tdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-            .addField((new autoclass.field()).setName("pdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
+            .addField((new autoclass.field()).setName(chromaticDispertion).setType(SFVec3f).setAccessType(initializeOnly).setValue(0.98,1.0,1.033))
+            .addField((new autoclass.field()).setName(bias).setType(SFFloat).setAccessType(inputOutput).setValue(0.5))
+            .addField((new autoclass.field()).setName(scale).setType(SFFloat).setAccessType(inputOutput).setValue(0.5))
+            .addField((new autoclass.field()).setName(power).setType(SFFloat).setAccessType(inputOutput).setValue(2))
+            .addField((new autoclass.field()).setName(a).setType(SFFloat).setAccessType(inputOutput).setValue(10))
+            .addField((new autoclass.field()).setName(b).setType(SFFloat).setAccessType(inputOutput).setValue(1))
+            .addField((new autoclass.field()).setName(c).setType(SFFloat).setAccessType(inputOutput).setValue(20))
+            .addField((new autoclass.field()).setName(d).setType(SFFloat).setAccessType(inputOutput).setValue(20))
+            .addField((new autoclass.field()).setName(tdelta).setType(SFFloat).setAccessType(inputOutput).setValue(0))
+            .addField((new autoclass.field()).setName(pdelta).setType(SFFloat).setAccessType(inputOutput).setValue(0))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"")))
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
+            .addField((new autoclass.field()).setName(cube).setType(SFNode).setAccessType(inputOutput)
               .addChild((new autoclass.ComposedCubeMapTexture())))
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1.0 1.033"))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOnly").setValue("2"))
-            .addField((new autoclass.field()).setName("a").setType("SFFloat").setAccessType("inputOnly").setValue("10"))
-            .addField((new autoclass.field()).setName("b").setType("SFFloat").setAccessType("inputOnly").setValue("1"))
-            .addField((new autoclass.field()).setName("c").setType("SFFloat").setAccessType("inputOnly").setValue("20"))
-            .addField((new autoclass.field()).setName("d").setType("SFFloat").setAccessType("inputOnly").setValue("20"))
-            .addField((new autoclass.field()).setName("tdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
-            .addField((new autoclass.field()).setName("pdelta").setType("SFFloat").setAccessType("inputOnly").setValue("0"))
+            .addField((new autoclass.field()).setName(chromaticDispertion).setType(SFVec3f).setAccessType(initializeOnly).setValue(0.98,1.0,1.033))
+            .addField((new autoclass.field()).setName(bias).setType(SFFloat).setAccessType(inputOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(scale).setType(SFFloat).setAccessType(inputOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(power).setType(SFFloat).setAccessType(inputOnly).setValue(2))
+            .addField((new autoclass.field()).setName(a).setType(SFFloat).setAccessType(inputOnly).setValue(10))
+            .addField((new autoclass.field()).setName(b).setType(SFFloat).setAccessType(inputOnly).setValue(1))
+            .addField((new autoclass.field()).setName(c).setType(SFFloat).setAccessType(inputOnly).setValue(20))
+            .addField((new autoclass.field()).setName(d).setType(SFFloat).setAccessType(inputOnly).setValue(20))
+            .addField((new autoclass.field()).setName(tdelta).setType(SFFloat).setAccessType(inputOnly).setValue(0))
+            .addField((new autoclass.field()).setName(pdelta).setType(SFFloat).setAccessType(inputOnly).setValue(0))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
         .setGeometry((new autoclass.Sphere()))))
@@ -168,20 +168,20 @@ flowers7.prototype = {
 "                    bottom[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
 "        }" + "\n")
-      .addField((new autoclass.field()).setName("frontUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_frontUrls_4_61_value))
-      .addField((new autoclass.field()).setName("backUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_backUrls_4_62_value))
-      .addField((new autoclass.field()).setName("leftUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_leftUrls_4_63_value))
-      .addField((new autoclass.field()).setName("rightUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_rightUrls_4_64_value))
-      .addField((new autoclass.field()).setName("topUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_topUrls_4_65_value))
-      .addField((new autoclass.field()).setName("bottomUrls").setType("MFString").setAccessType("initializeOnly").setValue(this.field_bottomUrls_4_66_value))
-      .addField((new autoclass.field()).setName("front").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("back").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("left").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("right").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("top").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("bottom").setType("MFString").setAccessType("inputOutput"))
-      .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("old").setType("SFInt32").setAccessType("inputOutput").setValue("-1")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"frontUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_frontUrls_4_61_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"backUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_backUrls_4_62_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"leftUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_leftUrls_4_63_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"rightUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_rightUrls_4_64_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"topUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_topUrls_4_65_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"bottomUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_bottomUrls_4_66_value))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"front\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"back\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"left\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"right\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"top\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"bottom\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"inputOutput\"")))
+      .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly))
+      .addField((new autoclass.field()).setName(old).setType(SFInt32).setAccessType(inputOutput).setValue(-1)))
     .addComments(java.newArray("java.lang.String",["",
 "            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>",
 "            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>",
@@ -238,13 +238,13 @@ flowers7.prototype = {
 "		d = 4;" + "\n" + 
 "	}" + "\n" + 
 "}" + "\n")
-      .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("a").setType("SFFloat").setAccessType("inputOutput").setValue("10"))
-      .addField((new autoclass.field()).setName("b").setType("SFFloat").setAccessType("inputOutput").setValue("1"))
-      .addField((new autoclass.field()).setName("c").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-      .addField((new autoclass.field()).setName("d").setType("SFFloat").setAccessType("inputOutput").setValue("20"))
-      .addField((new autoclass.field()).setName("tdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-      .addField((new autoclass.field()).setName("pdelta").setType("SFFloat").setAccessType("inputOutput").setValue("0")))
+      .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly))
+      .addField((new autoclass.field()).setName(a).setType(SFFloat).setAccessType(inputOutput).setValue(10))
+      .addField((new autoclass.field()).setName(b).setType(SFFloat).setAccessType(inputOutput).setValue(1))
+      .addField((new autoclass.field()).setName(c).setType(SFFloat).setAccessType(inputOutput).setValue(20))
+      .addField((new autoclass.field()).setName(d).setType(SFFloat).setAccessType(inputOutput).setValue(20))
+      .addField((new autoclass.field()).setName(tdelta).setType(SFFloat).setAccessType(inputOutput).setValue(0))
+      .addField((new autoclass.field()).setName(pdelta).setType(SFFloat).setAccessType(inputOutput).setValue(0)))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("a").setToNode("x_ite").setToField("a"))

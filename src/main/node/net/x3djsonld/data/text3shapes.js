@@ -99,7 +99,7 @@ text3shapes.prototype = {
       .addChild((new autoclass.Script()).setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
 "			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
-        .addField((new autoclass.field()).setName("frontUrls").setType("MFString").setAccessType("initializeOnly").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
+        .addField((new autoclass.field()).setName(new autoclass.MFString("\"frontUrls\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(new autoclass.MFString("\"rnl_front.png\" \"uffizi_front.png\""))))));
   },
   // end of initialize() method
 

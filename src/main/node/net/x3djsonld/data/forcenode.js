@@ -87,7 +87,7 @@ forcenode.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("node")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setName("position").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0")))
+        .addField((new autoclass.field()).setName(position.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0)))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Transform("transform"))
@@ -113,10 +113,10 @@ forcenode.prototype = {
 "                                                keyValue = new MFVec3f(...[old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
-            .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("50 50 0"))
-            .addField((new autoclass.field()).setName("old").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-            .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
-            .addField((new autoclass.field()).setName("keyValue").setType("MFVec3f").setAccessType("outputOnly")))
+            .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(50.0,50.0,0.0))
+            .addField((new autoclass.field()).setName(old.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+            .addField((new autoclass.field()).setName(set_cycle).setType(SFTime).setAccessType(inputOnly))
+            .addField((new autoclass.field()).setName(new autoclass.MFVec3f(java.newArray("float", [keyValue]))).setType(new autoclass.MFVec3f(java.newArray("float", [MFVec3f]))).setAccessType(new autoclass.MFVec3f(java.newArray("float", [outputOnly.0])))))
           .addChild((new autoclass.TimeSensor("nodeClock")).setCycleInterval(3).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
           .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
@@ -124,8 +124,8 @@ forcenode.prototype = {
           .addChild((new autoclass.ROUTE()).setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
     .addChild((new autoclass.ProtoDeclare()).setName("cylinder")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setName("set_positionA").setType("SFVec3f").setAccessType("inputOnly"))
-        .addField((new autoclass.field()).setName("set_positionB").setType("SFVec3f").setAccessType("inputOnly")))
+        .addField((new autoclass.field()).setName(set_positionA).setType(SFVec3f).setAccessType(inputOnly.0))
+        .addField((new autoclass.field()).setName(set_positionB).setType(SFVec3f).setAccessType(inputOnly.0)))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Shape())
@@ -155,9 +155,9 @@ forcenode.prototype = {
 "                function set_spine(value) {" + "\n" + 
 "                    spine = value;" + "\n" + 
 "                }" + "\n")
-            .addField((new autoclass.field()).setName("spine").setType("MFVec3f").setAccessType("inputOutput").setValue("0 -50 0 0 50 0"))
-            .addField((new autoclass.field()).setName("set_endA").setType("SFVec3f").setAccessType("inputOnly"))
-            .addField((new autoclass.field()).setName("set_endB").setType("SFVec3f").setAccessType("inputOnly"))
+            .addField((new autoclass.field()).setName(new autoclass.MFVec3f(java.newArray("float", [spine]))).setType(new autoclass.MFVec3f(java.newArray("float", [MFVec3f]))).setAccessType(new autoclass.MFVec3f(java.newArray("float", [inputOutput.0]))).setValue(new autoclass.MFVec3f(java.newArray("float", [0.0,-50.0,0.0,0.0,50.0,0.0]))))
+            .addField((new autoclass.field()).setName(set_endA).setType(SFVec3f).setAccessType(inputOnly.0))
+            .addField((new autoclass.field()).setName(set_endB).setType(SFVec3f).setAccessType(inputOnly.0))
             .setIS((new autoclass.IS())
               .addConnect((new autoclass.connect()).setNodeField("set_endA").setProtoField("set_positionA"))
               .addConnect((new autoclass.connect()).setNodeField("set_endB").setProtoField("set_positionB"))))
@@ -165,22 +165,22 @@ forcenode.prototype = {
     .addChild((new autoclass.Transform("HoldsContent")).setScale(0.1,0.1,0.1)
       .addChild((new autoclass.PlaneSensor("clickGenerator")).setDescription("click on background to add nodes, click on nodes to add links").setMaxPosition(50.0,50.0).setMinPosition(-50.0,-50.0))
       .addChild((new autoclass.ProtoInstance("nodeA", "node"))
-        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("0.0 0.0 0.0")))
+        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue(0.0 0.0 0.0)))
       .addChild((new autoclass.ProtoInstance("nodeB", "node"))
-        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("50.0 50.0 50.0")))
+        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue(50.0 50.0 50.0)))
       .addChild((new autoclass.ProtoInstance("nodeC", "node"))
-        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("-50.0 -50.0 -50.0")))
+        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue(-50.0 -50.0 -50.0)))
       .addChild((new autoclass.ProtoInstance("nodeD", "node"))
-        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("50.0 50.0 -50.0")))
+        .addFieldValue((new autoclass.fieldValue()).setName("position").setValue(50.0 50.0 -50.0)))
       .addChild((new autoclass.ProtoInstance("linkA", "cylinder"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue("0 0 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("50 50 50")))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue(0 0 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue(50 50 50)))
       .addChild((new autoclass.ProtoInstance("linkB", "cylinder"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue("0 0 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("-50 -50 -50")))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue(0 0 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue(-50 -50 -50)))
       .addChild((new autoclass.ProtoInstance("linkC", "cylinder"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue("50 50 50"))
-        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("50 50 -50"))))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue(50 50 50))
+        .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue(50 50 -50))))
     .addChild((new autoclass.Script("clickHandler")).setSourceCode("\n" + 
 "	" + "\n" + 
 "ecmascript:" + "\n" + 
@@ -201,9 +201,9 @@ forcenode.prototype = {
 "			});" + "\n" + 
 "                " + "\n" + 
 "        }" + "\n")
-      .addField((new autoclass.field()).setName("counter").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
-      .addField((new autoclass.field()).setName("node_changed").setType("SFNode").setAccessType("outputOnly"))
-      .addField((new autoclass.field()).setName("add_node").setType("SFBool").setAccessType("inputOnly").setValue("false"))
+      .addField((new autoclass.field()).setName(counter).setType(SFInt32).setAccessType(inputOutput).setValue(0))
+      .addField((new autoclass.field()).setName(node_changed).setType(SFNode).setAccessType(outputOnly))
+      .addField((new autoclass.field()).setName(add_node).setType(SFBool).setAccessType(inputOnly).setValue(false))
       .addComments(java.newArray("java.lang.String",["",
 "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
 "                <Transform USE=\"HoldsContent\"/>",

@@ -177,7 +177,7 @@ pp3.prototype = {
 "	rightlines = new MFString(rightstr);" + "\n" + 
 "}" + "\n")
           .addField((new autoclass.field()).setName("set_rightstring").setType("SFString").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("rightlines").setType("MFString").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(new autoclass.MFString("\"rightlines\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"outputOnly\""))))
         .addChild((new autoclass.Script("UpSingleToMultiString")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -189,7 +189,7 @@ pp3.prototype = {
 "	uplines = new MFString(upstr);" + "\n" + 
 "}" + "\n")
           .addField((new autoclass.field()).setName("set_upstring").setType("SFString").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("uplines").setType("MFString").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(new autoclass.MFString("\"uplines\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"outputOnly\""))))
         .addChild((new autoclass.Script("CenterSingleToMultiString")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -201,7 +201,7 @@ pp3.prototype = {
 "	centerlines = new MFString(centerstr);" + "\n" + 
 "}" + "\n")
           .addField((new autoclass.field()).setName("set_centerstring").setType("SFString").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("centerlines").setType("MFString").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(new autoclass.MFString("\"centerlines\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"outputOnly\""))))
         .addChild((new autoclass.ROUTE()).setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
         .addChild((new autoclass.ROUTE()).setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
         .addChild((new autoclass.ROUTE()).setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
