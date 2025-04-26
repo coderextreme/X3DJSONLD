@@ -21,16 +21,12 @@ var X3D0 =  X3D(
               content_ : SFString('John Carlson')),
 
             meta(
-              name_ : SFString('transcriber'),
-              content_ : SFString('John Carlson')),
-
-            meta(
               name_ : SFString('created'),
               content_ : SFString('23 January 2005')),
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('21 March 2018')),
+              content_ : SFString('9 November 2024')),
 
             meta(
               name_ : SFString('description'),
