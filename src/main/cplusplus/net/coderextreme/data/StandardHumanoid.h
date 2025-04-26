@@ -15,12 +15,12 @@ head1.addChild(&component2);
 
 meta& meta3 =  meta();
 meta3.setName(CString("title"));
-meta3.setContent(CString("JohnBoy.x3d"));
+meta3.setContent(CString("StandardHumanoid.x3d"));
 head1.addMeta(&meta3);
 
 meta& meta4 =  meta();
 meta4.setName(CString("identifier"));
-meta4.setContent(CString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"));
+meta4.setContent(CString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/StandardHumanoid.x3d"));
 head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
