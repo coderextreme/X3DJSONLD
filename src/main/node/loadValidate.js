@@ -4,7 +4,7 @@ if (typeof myAjv2020 === 'undefined') {
 	var addFormats = myAjv2020["addFormats"];
 	if (typeof window === 'undefined') {
 		var Ajv2020 = require("ajv/dist/2020");
-		var addFormats = require("ajv-formats");
+		var addFormats = require("ajv-formats-draft2019");
 	} else {
 		var Ajv2020 = window.Ajv2020;
 		var addFormats = window.addFormats;
@@ -18,7 +18,7 @@ if (typeof Ajv2020 === 'undefined' || typeof addFormats === 'undefined') {
 	addFormats = window.addFormats;
 }
 var ajv = new Ajv2020({ strict: false });
-addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 
 var fs = require('fs');
 var http = require('http');
