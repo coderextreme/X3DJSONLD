@@ -62,16 +62,12 @@ var X3D0 =  new X3D({
               content : new SFString("John Carlson")}),
 
             new meta({
-              name : new SFString("transcriber"),
-              content : new SFString("John Carlson")}),
-
-            new meta({
               name : new SFString("created"),
               content : new SFString("23 January 2005")}),
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("21 March 2018")}),
+              content : new SFString("9 November 2024")}),
 
             new meta({
               name : new SFString("description"),
