@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
-<meta name="title" content="JohnBoy.x3d"></meta>
-<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"></meta>
+<meta name="title" content="DonHumanoid.x3d"></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d"></meta>
 <meta name="description" content="An attempt at a standard LOA-4 skeleton"></meta>
 <meta name="generator" content="h2.pl"></meta>
 <meta name="modified" content="14 Jan 2023"></meta>

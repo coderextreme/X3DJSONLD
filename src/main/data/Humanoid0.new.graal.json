@@ -14,11 +14,11 @@
 "meta": [
 {
 "@name":"title",
-"@content":"JohnBoy.x3d"
+"@content":"Humanoid0.x3d"
 },
 {
 "@name":"identifier",
-"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
+"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"
 },
 {
 "@name":"description",
@@ -46,7 +46,7 @@
 },
 {
 "@name":"translated",
-"@content":"09 November 2024"
+"@content":"19 December 2024"
 },
 {
 "@name":"generator",

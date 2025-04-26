@@ -305,7 +305,7 @@ function initialize() {
                 field(accessType='inputOutput',name='shader',type='SFNode'),
                 field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
                 field(accessType='outputOnly',name='protoValue_changed',type='SFFloat',value=1.0),
-                field(accessType='outputOnly',name='protoText_changed',type='MFString',value=['1.0'])],
+                field(accessType='outputOnly',name='protoText_changed',type='MFString',value=["1.0"])],
                 IS=IS(
                   connect=[
                   connect(nodeField='protoScale',protoField='parameterScale'),
