@@ -136,8 +136,8 @@
           <field name='shotCount' accessType='initializeOnly' appinfo='how many CameraShot nodes are contained in shots array' type='SFInt32' value='0'/>
           <field name='movesCount' accessType='initializeOnly' appinfo='how many CameraMove nodes are contained in moves array' type='SFInt32' value='0'/>
           <field name='frameCount' accessType='initializeOnly' appinfo='how many frames were created in current loop' type='SFFloat' value='0.0'/>
-          <field name='startTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime'/>
-          <field name='priorTraceTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime'/>
+          <field name='startTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
+          <field name='priorTraceTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
           <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
           <IS>
             <connect nodeField='description' protoField='description'/>

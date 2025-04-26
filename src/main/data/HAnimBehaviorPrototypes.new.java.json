@@ -74,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 October 2024"
+            "@content":"19 December 2024"
           },
           {
             "@name":"generator",
@@ -138,7 +138,8 @@
                       "@name":"cycleInterval",
                       "@accessType":"inputOutput",
                       "@appinfo":"how long do these interpolators take to execute?",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":1.0
                     },
                     {
                       "@name":"loop",
@@ -151,25 +152,29 @@
                       "@name":"startTime",
                       "@accessType":"inputOutput",
                       "@appinfo":"when time now >= startTime isActive becomes true and TimeSensor becomes active",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     },
                     {
                       "@name":"stopTime",
                       "@accessType":"inputOutput",
                       "@appinfo":"when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     },
                     {
                       "@name":"pauseTime",
                       "@accessType":"inputOutput",
                       "@appinfo":"when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     },
                     {
                       "@name":"resumeTime",
                       "@accessType":"inputOutput",
                       "@appinfo":"when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     },
                     {
                       "@name":"cycleTime",
@@ -10602,12 +10607,14 @@
                     {
                       "@name":"startTime",
                       "@accessType":"inputOutput",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     },
                     {
                       "@name":"stopTime",
                       "@accessType":"inputOutput",
-                      "@type":"SFTime"
+                      "@type":"SFTime",
+                      "@value":0.0
                     }
                   ]
               },
@@ -10872,7 +10879,7 @@
                 },
                 {
                   "@name":"enabledBehaviorsArray",
-                  "@value":true
+                  "@value":[true]
                 }
               ]
             }
