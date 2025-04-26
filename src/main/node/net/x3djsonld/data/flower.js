@@ -160,9 +160,9 @@ flower.prototype = {
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("coordinates").setType("MFVec3f").setAccessType("outputOnly"))
-      .addField((new autoclass.field()).setName("coordIndexes").setType("MFInt32").setAccessType("outputOnly"))
+      .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly))
+      .addField((new autoclass.field()).setName(new autoclass.MFVec3f(java.newArray("float", [coordinates]))).setType(new autoclass.MFVec3f(java.newArray("float", [MFVec3f]))).setAccessType(new autoclass.MFVec3f(java.newArray("float", [outputOnly.0]))))
+      .addField((new autoclass.field()).setName(java.newArray("int", [coordIndexes])).setType(java.newArray("int", [MFInt32])).setAccessType(java.newArray("int", [outputOnly])))
       .addComments(java.newArray("java.lang.String",["",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",

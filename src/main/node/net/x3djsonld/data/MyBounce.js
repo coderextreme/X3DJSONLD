@@ -109,11 +109,11 @@ MyBounce.prototype = {
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			}" + "\n")
-      .addField((new autoclass.field()).setName("set_translation").setType("SFVec3f").setAccessType("inputOnly").setValue("0 0 0"))
-      .addField((new autoclass.field()).setName("translation_changed").setType("SFVec3f").setAccessType("outputOnly").setValue("0 0 0"))
-      .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-      .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-      .addField((new autoclass.field()).setName("set_fraction").setType("SFTime").setAccessType("inputOnly")))
+      .addField((new autoclass.field()).setName(set_translation).setType(SFVec3f).setAccessType(inputOnly.0).setValue(0.0,0.0,0.0))
+      .addField((new autoclass.field()).setName(translation_changed).setType(SFVec3f).setAccessType(outputOnly.0).setValue(0.0,0.0,0.0))
+      .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+      .addField((new autoclass.field()).setName(velocity).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+      .addField((new autoclass.field()).setName(set_fraction).setType(SFTime).setAccessType(inputOnly)))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(0.150).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));

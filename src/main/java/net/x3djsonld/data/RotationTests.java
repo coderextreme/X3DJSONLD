@@ -156,11 +156,11 @@ public class RotationTests
     .addChild(new ROUTE().setFromNode("ClockStepper").setFromField("fraction_changed").setToNode("DiscreteFrameStepper").setToField("set_fraction"))
     .addComments(" TODO fix OrientationInterpolator euler-angle to SFRotation conversions ")
     .addChild(new OrientationInterpolator("Interpolator1").setKey(getInterpolator1_3_37_key()).setKeyValue(getInterpolator1_3_37_keyValue()))
-    .addComments("*** Warning: extra-large comment found (6149 characters)")
+    .addComments("** Warning: extra-large comment found (6149 characters)")
     .addChild(new OrientationInterpolator("Interpolator2").setKey(getInterpolator2_3_38_key()).setKeyValue(getInterpolator2_3_38_keyValue()))
-    .addComments("*** Warning: extra-large comment found (5898 characters)")
+    .addComments("** Warning: extra-large comment found (5898 characters)")
     .addChild(new OrientationInterpolator("Interpolator3").setKey(getInterpolator3_3_39_key()).setKeyValue(getInterpolator3_3_39_keyValue()))
-    .addComments("*** Warning: extra-large comment found (6265 characters)")
+    .addComments("** Warning: extra-large comment found (6265 characters)")
     .addChild(new ROUTE().setFromNode("ClockTimer").setFromField("fraction_changed").setToNode("Interpolator1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("DiscreteFrameStepper").setFromField("value_changed").setToNode("Interpolator1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("Interpolator1").setFromField("value_changed").setToNode("Transform1").setToField("set_rotation"))
@@ -453,7 +453,7 @@ public class RotationTests
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.RotationTests self-validation test results: ");
+                System.out.print("net.x3djsonld.data.RotationTests self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());

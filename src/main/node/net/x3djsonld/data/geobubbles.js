@@ -104,10 +104,10 @@ geobubbles.prototype = {
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
 "               }")
-      .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("val").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-      .addField((new autoclass.field()).setName("positions").setType("MFVec3d").setAccessType("inputOutput").setValue("0.0015708 0 4 0 0.0015708 4"))
-      .addField((new autoclass.field()).setName("position").setType("MFVec3d").setAccessType("inputOutput").setValue("0.0015708 0 4 0 0.0015708 4")))
+      .addField((new autoclass.field()).setName(set_cycle).setType(SFTime).setAccessType(inputOnly))
+      .addField((new autoclass.field()).setName(val).setType(SFFloat).setAccessType(inputOutput).setValue(0))
+      .addField((new autoclass.field()).setName(new autoclass.MFVec3d(java.newArray("double", [positions.0]))).setType(new autoclass.MFVec3d(java.newArray("double", [MFVec3d]))).setAccessType(new autoclass.MFVec3d(java.newArray("double", [inputOutput.0]))).setValue(new autoclass.MFVec3d(java.newArray("double", [0.0015708,0.0,4.0,0.0,0.0015708,4.0]))))
+      .addField((new autoclass.field()).setName(new autoclass.MFVec3d(java.newArray("double", [position.0]))).setType(new autoclass.MFVec3d(java.newArray("double", [MFVec3d]))).setAccessType(new autoclass.MFVec3d(java.newArray("double", [inputOutput.0]))).setValue(new autoclass.MFVec3d(java.newArray("double", [0.0015708,0.0,4.0,0.0,0.0015708,4.0])))))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
     .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))

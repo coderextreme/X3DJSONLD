@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="ballx_ite.x3d">ballx_ite.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d">ballx_ite.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -80,7 +80,7 @@ ballx_ite.prototype = {
     .addMeta((new autoclass.meta()).setName("title").setContent("ballx_ite.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("a prismatic sphere")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("ball.x3d"))
@@ -100,12 +100,12 @@ ballx_ite.prototype = {
             .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
             .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1 1.033"))
-            .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("initializeOnly")
+            .addField((new autoclass.field()).setName(chromaticDispertion).setType(SFVec3f).setAccessType(initializeOnly).setValue(0.98,1.0,1.033))
+            .addField((new autoclass.field()).setName(cube).setType(SFNode).setAccessType(initializeOnly)
               .addChild((new autoclass.ComposedCubeMapTexture())))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("initializeOnly").setValue("2"))
+            .addField((new autoclass.field()).setName(bias).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(scale).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(power).setType(SFFloat).setAccessType(initializeOnly).setValue(2))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\""))))))));
   },

@@ -77,7 +77,7 @@ asteroids.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setName("myShape").setType("MFNode").setAccessType("inputOutput")
+        .addField((new autoclass.field()).setName(myShape).setType(MFNode).setAccessType(inputOutput)
           .addChild((new autoclass.Shape())
             .setGeometry((new autoclass.Sphere())))))
       .setProtoBody((new autoclass.ProtoBody())

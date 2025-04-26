@@ -509,9 +509,9 @@ Trebuchet.prototype = {
 "\n" + 
 "        Browser.println ('CounterWeight ='+CounterWeight);" + "\n" + 
 "}" + "\n")
-          .addField((new autoclass.field()).setName("set_boolean").setType("SFBool").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("whichchoice").setType("SFInt32").setAccessType("outputOnly"))
-          .addField((new autoclass.field()).setName("CounterWeight").setType("SFFloat").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(set_boolean).setType(SFBool).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(whichchoice).setType(SFInt32).setAccessType(outputOnly))
+          .addField((new autoclass.field()).setName(CounterWeight).setType(SFFloat).setAccessType(outputOnly)))
         .addChild((new autoclass.Script("LauncheeScript")).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -527,9 +527,9 @@ Trebuchet.prototype = {
 "	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }" + "\n" + 
 "	Browser.println ('Projectile Weight'+ProjectileWeight);" + "\n" + 
 "}" + "\n")
-          .addField((new autoclass.field()).setName("set_boolean").setType("SFBool").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("whichchoice").setType("SFInt32").setAccessType("outputOnly"))
-          .addField((new autoclass.field()).setName("ProjectileWeight").setType("SFFloat").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(set_boolean).setType(SFBool).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(whichchoice).setType(SFInt32).setAccessType(outputOnly))
+          .addField((new autoclass.field()).setName(ProjectileWeight).setType(SFFloat).setAccessType(outputOnly)))
         .addChild((new autoclass.Script("PigdogMonkScript")).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -544,8 +544,8 @@ Trebuchet.prototype = {
 "\n" + 
 "\n" + 
 "}" + "\n")
-          .addField((new autoclass.field()).setName("set_boolean").setType("SFBool").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("whichchoice").setType("SFInt32").setAccessType("outputOnly")))
+          .addField((new autoclass.field()).setName(set_boolean).setType(SFBool).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(whichchoice).setType(SFInt32).setAccessType(outputOnly)))
         .addChild((new autoclass.Script("Mover")).setSourceCode("\n" + 
 "          " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -589,13 +589,13 @@ Trebuchet.prototype = {
 "	value_changed = new SFVec3f (x, y, z);" + "\n" + 
 "	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);" + "\n" + 
 "}" + "\n")
-          .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("set_MassCounterWeight").setType("SFFloat").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("set_MassProjectileWeight").setType("SFFloat").setAccessType("inputOnly"))
-          .addField((new autoclass.field()).setName("MassCounterWeight").setType("SFFloat").setAccessType("initializeOnly").setValue("1"))
-          .addField((new autoclass.field()).setName("MassProjectileWeight").setType("SFFloat").setAccessType("initializeOnly").setValue("1"))
-          .addField((new autoclass.field()).setName("transparent").setType("SFVec3f").setAccessType("outputOnly"))
-          .addField((new autoclass.field()).setName("value_changed").setType("SFVec3f").setAccessType("outputOnly")))))
+          .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(set_MassCounterWeight).setType(SFFloat).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(set_MassProjectileWeight).setType(SFFloat).setAccessType(inputOnly))
+          .addField((new autoclass.field()).setName(MassCounterWeight).setType(SFFloat).setAccessType(initializeOnly).setValue(1))
+          .addField((new autoclass.field()).setName(MassProjectileWeight).setType(SFFloat).setAccessType(initializeOnly).setValue(1))
+          .addField((new autoclass.field()).setName(transparent).setType(SFVec3f).setAccessType(outputOnly.0))
+          .addField((new autoclass.field()).setName(value_changed).setType(SFVec3f).setAccessType(outputOnly.0)))))
     .addChild((new autoclass.TimeSensor("clock")).setCycleInterval(10))
     .addChild((new autoclass.PositionInterpolator("verticalweightpath")).setKey(java.newArray("float", [0.0,.1,.2,.2,.3,.9])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [1.4,1.6,0.0,1.,-8.0,0.0,-3.5,-12.0,0.0,-3.5,-12.0,0.0,1.2,-8.0,0.0,1.4,1.6,0.0]))))
     .addChild((new autoclass.OrientationInterpolator("flingerangles")).setKey(java.newArray("float", [0.0,.1,.2,.2,.3,.9])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,.82,0.0,0.0,1.0,-.77,0.0,0.0,1.0,-1.57,0.0,0.0,1.0,-1.57,0.0,0.0,1.0,-.77,0.0,0.0,1.0,.82]))))
