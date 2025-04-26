@@ -1,289 +1,673 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatNames = exports.fastFormats = exports.fullFormats = void 0;
-function fmtDef(validate, compare) {
-    return { validate, compare };
-}
-exports.fullFormats = {
-    // date: http://tools.ietf.org/html/rfc3339#section-5.6
-    date: fmtDef(date, compareDate),
-    // date-time: http://tools.ietf.org/html/rfc3339#section-5.6
-    time: fmtDef(time, compareTime),
-    "date-time": fmtDef(date_time, compareDateTime),
-    // duration: https://tools.ietf.org/html/rfc3339#appendix-A
-    duration: /^P(?!$)((\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)?|(\d+W)?)$/,
-    uri,
-    "uri-reference": /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'"()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'"()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!$&'"()*+,;=:@/?]|%[0-9a-f]{2})*)?$/i,
-    // uri-template: https://tools.ietf.org/html/rfc6570
-    "uri-template": /^(?:(?:[^\x00-\x20"'<>%\\^`{|}]|%[0-9a-f]{2})|\{[+#./;?&=,!@|]?(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?(?:,(?:[a-z0-9_]|%[0-9a-f]{2})+(?::[1-9][0-9]{0,3}|\*)?)*\})*$/i,
-    // For the source: https://gist.github.com/dperini/729294
-    // For test cases: https://mathiasbynens.be/demo/url-regex
-    url: /^(?:https?|ftp):\/\/(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u{00a1}-\u{ffff}]+-)*[a-z0-9\u{00a1}-\u{ffff}]+)(?:\.(?:[a-z0-9\u{00a1}-\u{ffff}]+-)*[a-z0-9\u{00a1}-\u{ffff}]+)*(?:\.(?:[a-z\u{00a1}-\u{ffff}]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/iu,
-    email: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i,
-    hostname: /^(?=.{1,253}\.?$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[-0-9a-z]{0,61}[0-9a-z])?)*\.?$/i,
-    // optimized https://www.safaribooksonline.com/library/view/regular-expressions-cookbook/9780596802837/ch07s16.html
-    ipv4: /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$/,
-    ipv6: /^((([0-9a-f]{1,4}:){7}([0-9a-f]{1,4}|:))|(([0-9a-f]{1,4}:){6}(:[0-9a-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9a-f]{1,4}:){5}(((:[0-9a-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9a-f]{1,4}:){4}(((:[0-9a-f]{1,4}){1,3})|((:[0-9a-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9a-f]{1,4}:){3}(((:[0-9a-f]{1,4}){1,4})|((:[0-9a-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9a-f]{1,4}:){2}(((:[0-9a-f]{1,4}){1,5})|((:[0-9a-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9a-f]{1,4}:){1}(((:[0-9a-f]{1,4}){1,6})|((:[0-9a-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9a-f]{1,4}){1,7})|((:[0-9a-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))$/i,
-    regex,
-    // uuid: http://tools.ietf.org/html/rfc4122
-    uuid: /^(?:urn:uuid:)?[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i,
-    // JSON-pointer: https://tools.ietf.org/html/rfc6901
-    // uri fragment: https://tools.ietf.org/html/rfc3986#appendix-A
-    "json-pointer": /^(?:\/(?:[^~/]|~0|~1)*)*$/,
-    "json-pointer-uri-fragment": /^#(?:\/(?:[a-z0-9_\-.!$&'()*+,;:=@]|%[0-9a-f]{2}|~0|~1)*)*$/i,
-    // relative JSON-pointer: http://tools.ietf.org/html/draft-luff-relative-json-pointer-00
-    "relative-json-pointer": /^(?:0|[1-9][0-9]*)(?:#|(?:\/(?:[^~/]|~0|~1)*)*)$/,
-    // the following formats are used by the openapi specification: https://spec.openapis.org/oas/v3.0.0#data-types
-    // byte: https://github.com/miguelmota/is-base64
-    byte,
-    // signed 32 bit integer
-    int32: { type: "number", validate: validateInt32 },
-    // signed 64 bit integer
-    int64: { type: "number", validate: validateInt64 },
-    // C-type float
-    float: { type: "number", validate: validateNumber },
-    // C-type double
-    double: { type: "number", validate: validateNumber },
-    // hint to the UI to hide input strings
-    password: true,
-    // unchecked string payload
-    binary: true,
-};
-exports.fastFormats = {
-    ...exports.fullFormats,
-    date: fmtDef(/^\d\d\d\d-[0-1]\d-[0-3]\d$/, compareDate),
-    time: fmtDef(/^(?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)?$/i, compareTime),
-    "date-time": fmtDef(/^\d\d\d\d-[0-1]\d-[0-3]\d[t\s](?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60)(?:\.\d+)?(?:z|[+-]\d\d(?::?\d\d)?)$/i, compareDateTime),
-    // uri: https://github.com/mafintosh/is-my-json-valid/blob/master/formats.js
-    uri: /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/)?[^\s]*$/i,
-    "uri-reference": /^(?:(?:[a-z][a-z0-9+\-.]*:)?\/?\/)?(?:[^\\\s#][^\s#]*)?(?:#[^\\\s]*)?$/i,
-    // email (sources from jsen validator):
-    // http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address#answer-8829363
-    // http://www.w3.org/TR/html5/forms.html#valid-e-mail-address (search for 'wilful violation')
-    email: /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$/i,
-};
-exports.formatNames = Object.keys(exports.fullFormats);
-function isLeapYear(year) {
-    // https://tools.ietf.org/html/rfc3339#appendix-C
-    return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
-}
-const DATE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
-const DAYS = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-function date(str) {
-    // full-date from http://tools.ietf.org/html/rfc3339#section-5.6
-    const matches = DATE.exec(str);
-    if (!matches)
-        return false;
-    const year = +matches[1];
-    const month = +matches[2];
-    const day = +matches[3];
-    return (month >= 1 &&
-        month <= 12 &&
-        day >= 1 &&
-        day <= (month === 2 && isLeapYear(year) ? 29 : DAYS[month]));
-}
-function compareDate(d1, d2) {
-    if (!(d1 && d2))
-        return undefined;
-    if (d1 > d2)
-        return 1;
-    if (d1 < d2)
-        return -1;
-    return 0;
-}
-const TIME = /^(\d\d):(\d\d):(\d\d)(\.\d+)?(z|[+-]\d\d(?::?\d\d)?)?$/i;
-function time(str, withTimeZone) {
-    const matches = TIME.exec(str);
-    if (!matches)
-        return false;
-    const hour = +matches[1];
-    const minute = +matches[2];
-    const second = +matches[3];
-    const timeZone = matches[5];
-    return (((hour <= 23 && minute <= 59 && second <= 59) ||
-        (hour === 23 && minute === 59 && second === 60)) &&
-        (!withTimeZone || timeZone !== ""));
-}
-function compareTime(t1, t2) {
-    if (!(t1 && t2))
-        return undefined;
-    const a1 = TIME.exec(t1);
-    const a2 = TIME.exec(t2);
-    if (!(a1 && a2))
-        return undefined;
-    t1 = a1[1] + a1[2] + a1[3] + (a1[4] || "");
-    t2 = a2[1] + a2[2] + a2[3] + (a2[4] || "");
-    if (t1 > t2)
-        return 1;
-    if (t1 < t2)
-        return -1;
-    return 0;
-}
-const DATE_TIME_SEPARATOR = /t|\s/i;
-function date_time(str) {
-    // http://tools.ietf.org/html/rfc3339#section-5.6
-    const dateTime = str.split(DATE_TIME_SEPARATOR);
-    return dateTime.length === 2 && date(dateTime[0]) && time(dateTime[1], true);
-}
-function compareDateTime(dt1, dt2) {
-    if (!(dt1 && dt2))
-        return undefined;
-    const [d1, t1] = dt1.split(DATE_TIME_SEPARATOR);
-    const [d2, t2] = dt2.split(DATE_TIME_SEPARATOR);
-    const res = compareDate(d1, d2);
-    if (res === undefined)
-        return undefined;
-    return res || compareTime(t1, t2);
-}
-const NOT_URI_FRAGMENT = /\/|:/;
-const URI = /^(?:[a-z][a-z0-9+\-.]*:)(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9a-f]{2})*)?(?:#(?:[a-z0-9\-._~!$&'()*+,;=:@/?]|%[0-9a-f]{2})*)?$/i;
-function uri(str) {
-    // http://jmrware.com/articles/2009/uri_regexp/URI_regex.html + optional protocol + required "."
-    return NOT_URI_FRAGMENT.test(str) && URI.test(str);
-}
-const BYTE = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/gm;
-function byte(str) {
-    BYTE.lastIndex = 0;
-    return BYTE.test(str);
-}
-const MIN_INT32 = -(2 ** 31);
-const MAX_INT32 = 2 ** 31 - 1;
-function validateInt32(value) {
-    return Number.isInteger(value) && value <= MAX_INT32 && value >= MIN_INT32;
-}
-function validateInt64(value) {
-    // JSON and javascript max Int is 2**53, so any int that passes isInteger is valid for Int64
-    return Number.isInteger(value);
-}
-function validateNumber() {
-    return true;
-}
-const Z_ANCHOR = /[^\\]\\Z/;
-function regex(str) {
-    if (Z_ANCHOR.test(str))
-        return false;
-    try {
-        new RegExp(str);
-        return true;
-    }
-    catch (e) {
-        return false;
-    }
-}
+(function (global){(function (){
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+;(function(root) {
 
+	/** Detect free variables */
+	var freeExports = typeof exports == 'object' && exports &&
+		!exports.nodeType && exports;
+	var freeModule = typeof module == 'object' && module &&
+		!module.nodeType && module;
+	var freeGlobal = typeof global == 'object' && global;
+	if (
+		freeGlobal.global === freeGlobal ||
+		freeGlobal.window === freeGlobal ||
+		freeGlobal.self === freeGlobal
+	) {
+		root = freeGlobal;
+	}
+
+	/**
+	 * The `punycode` object.
+	 * @name punycode
+	 * @type Object
+	 */
+	var punycode,
+
+	/** Highest positive signed 32-bit float value */
+	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
+
+	/** Bootstring parameters */
+	base = 36,
+	tMin = 1,
+	tMax = 26,
+	skew = 38,
+	damp = 700,
+	initialBias = 72,
+	initialN = 128, // 0x80
+	delimiter = '-', // '\x2D'
+
+	/** Regular expressions */
+	regexPunycode = /^xn--/,
+	regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
+	regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
+
+	/** Error messages */
+	errors = {
+		'overflow': 'Overflow: input needs wider integers to process',
+		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+		'invalid-input': 'Invalid input'
+	},
+
+	/** Convenience shortcuts */
+	baseMinusTMin = base - tMin,
+	floor = Math.floor,
+	stringFromCharCode = String.fromCharCode,
+
+	/** Temporary variable */
+	key;
+
+	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * A generic error utility function.
+	 * @private
+	 * @param {String} type The error type.
+	 * @returns {Error} Throws a `RangeError` with the applicable error message.
+	 */
+	function error(type) {
+		throw new RangeError(errors[type]);
+	}
+
+	/**
+	 * A generic `Array#map` utility function.
+	 * @private
+	 * @param {Array} array The array to iterate over.
+	 * @param {Function} callback The function that gets called for every array
+	 * item.
+	 * @returns {Array} A new array of values returned by the callback function.
+	 */
+	function map(array, fn) {
+		var length = array.length;
+		var result = [];
+		while (length--) {
+			result[length] = fn(array[length]);
+		}
+		return result;
+	}
+
+	/**
+	 * A simple `Array#map`-like wrapper to work with domain name strings or email
+	 * addresses.
+	 * @private
+	 * @param {String} domain The domain name or email address.
+	 * @param {Function} callback The function that gets called for every
+	 * character.
+	 * @returns {Array} A new string of characters returned by the callback
+	 * function.
+	 */
+	function mapDomain(string, fn) {
+		var parts = string.split('@');
+		var result = '';
+		if (parts.length > 1) {
+			// In email addresses, only the domain name should be punycoded. Leave
+			// the local part (i.e. everything up to `@`) intact.
+			result = parts[0] + '@';
+			string = parts[1];
+		}
+		// Avoid `split(regex)` for IE8 compatibility. See #17.
+		string = string.replace(regexSeparators, '\x2E');
+		var labels = string.split('.');
+		var encoded = map(labels, fn).join('.');
+		return result + encoded;
+	}
+
+	/**
+	 * Creates an array containing the numeric code points of each Unicode
+	 * character in the string. While JavaScript uses UCS-2 internally,
+	 * this function will convert a pair of surrogate halves (each of which
+	 * UCS-2 exposes as separate characters) into a single code point,
+	 * matching UTF-16.
+	 * @see `punycode.ucs2.encode`
+	 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+	 * @memberOf punycode.ucs2
+	 * @name decode
+	 * @param {String} string The Unicode input string (UCS-2).
+	 * @returns {Array} The new array of code points.
+	 */
+	function ucs2decode(string) {
+		var output = [],
+		    counter = 0,
+		    length = string.length,
+		    value,
+		    extra;
+		while (counter < length) {
+			value = string.charCodeAt(counter++);
+			if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+				// high surrogate, and there is a next character
+				extra = string.charCodeAt(counter++);
+				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+				} else {
+					// unmatched surrogate; only append this code unit, in case the next
+					// code unit is the high surrogate of a surrogate pair
+					output.push(value);
+					counter--;
+				}
+			} else {
+				output.push(value);
+			}
+		}
+		return output;
+	}
+
+	/**
+	 * Creates a string based on an array of numeric code points.
+	 * @see `punycode.ucs2.decode`
+	 * @memberOf punycode.ucs2
+	 * @name encode
+	 * @param {Array} codePoints The array of numeric code points.
+	 * @returns {String} The new Unicode string (UCS-2).
+	 */
+	function ucs2encode(array) {
+		return map(array, function(value) {
+			var output = '';
+			if (value > 0xFFFF) {
+				value -= 0x10000;
+				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+				value = 0xDC00 | value & 0x3FF;
+			}
+			output += stringFromCharCode(value);
+			return output;
+		}).join('');
+	}
+
+	/**
+	 * Converts a basic code point into a digit/integer.
+	 * @see `digitToBasic()`
+	 * @private
+	 * @param {Number} codePoint The basic numeric code point value.
+	 * @returns {Number} The numeric value of a basic code point (for use in
+	 * representing integers) in the range `0` to `base - 1`, or `base` if
+	 * the code point does not represent a value.
+	 */
+	function basicToDigit(codePoint) {
+		if (codePoint - 48 < 10) {
+			return codePoint - 22;
+		}
+		if (codePoint - 65 < 26) {
+			return codePoint - 65;
+		}
+		if (codePoint - 97 < 26) {
+			return codePoint - 97;
+		}
+		return base;
+	}
+
+	/**
+	 * Converts a digit/integer into a basic code point.
+	 * @see `basicToDigit()`
+	 * @private
+	 * @param {Number} digit The numeric value of a basic code point.
+	 * @returns {Number} The basic code point whose value (when used for
+	 * representing integers) is `digit`, which needs to be in the range
+	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
+	 * used; else, the lowercase form is used. The behavior is undefined
+	 * if `flag` is non-zero and `digit` has no uppercase form.
+	 */
+	function digitToBasic(digit, flag) {
+		//  0..25 map to ASCII a..z or A..Z
+		// 26..35 map to ASCII 0..9
+		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+	}
+
+	/**
+	 * Bias adaptation function as per section 3.4 of RFC 3492.
+	 * https://tools.ietf.org/html/rfc3492#section-3.4
+	 * @private
+	 */
+	function adapt(delta, numPoints, firstTime) {
+		var k = 0;
+		delta = firstTime ? floor(delta / damp) : delta >> 1;
+		delta += floor(delta / numPoints);
+		for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
+			delta = floor(delta / baseMinusTMin);
+		}
+		return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
+	}
+
+	/**
+	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+	 * symbols.
+	 * @memberOf punycode
+	 * @param {String} input The Punycode string of ASCII-only symbols.
+	 * @returns {String} The resulting string of Unicode symbols.
+	 */
+	function decode(input) {
+		// Don't use UCS-2
+		var output = [],
+		    inputLength = input.length,
+		    out,
+		    i = 0,
+		    n = initialN,
+		    bias = initialBias,
+		    basic,
+		    j,
+		    index,
+		    oldi,
+		    w,
+		    k,
+		    digit,
+		    t,
+		    /** Cached calculation results */
+		    baseMinusT;
+
+		// Handle the basic code points: let `basic` be the number of input code
+		// points before the last delimiter, or `0` if there is none, then copy
+		// the first basic code points to the output.
+
+		basic = input.lastIndexOf(delimiter);
+		if (basic < 0) {
+			basic = 0;
+		}
+
+		for (j = 0; j < basic; ++j) {
+			// if it's not a basic code point
+			if (input.charCodeAt(j) >= 0x80) {
+				error('not-basic');
+			}
+			output.push(input.charCodeAt(j));
+		}
+
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
+
+		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
+
+			// `index` is the index of the next character to be consumed.
+			// Decode a generalized variable-length integer into `delta`,
+			// which gets added to `i`. The overflow checking is easier
+			// if we increase `i` as we go, then subtract off its starting
+			// value at the end to obtain `delta`.
+			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+				if (index >= inputLength) {
+					error('invalid-input');
+				}
+
+				digit = basicToDigit(input.charCodeAt(index++));
+
+				if (digit >= base || digit > floor((maxInt - i) / w)) {
+					error('overflow');
+				}
+
+				i += digit * w;
+				t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+				if (digit < t) {
+					break;
+				}
+
+				baseMinusT = base - t;
+				if (w > floor(maxInt / baseMinusT)) {
+					error('overflow');
+				}
+
+				w *= baseMinusT;
+
+			}
+
+			out = output.length + 1;
+			bias = adapt(i - oldi, out, oldi == 0);
+
+			// `i` was supposed to wrap around from `out` to `0`,
+			// incrementing `n` each time, so we'll fix that now:
+			if (floor(i / out) > maxInt - n) {
+				error('overflow');
+			}
+
+			n += floor(i / out);
+			i %= out;
+
+			// Insert `n` at position `i` of the output
+			output.splice(i++, 0, n);
+
+		}
+
+		return ucs2encode(output);
+	}
+
+	/**
+	 * Converts a string of Unicode symbols (e.g. a domain name label) to a
+	 * Punycode string of ASCII-only symbols.
+	 * @memberOf punycode
+	 * @param {String} input The string of Unicode symbols.
+	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
+	 */
+	function encode(input) {
+		var n,
+		    delta,
+		    handledCPCount,
+		    basicLength,
+		    bias,
+		    j,
+		    m,
+		    q,
+		    k,
+		    t,
+		    currentValue,
+		    output = [],
+		    /** `inputLength` will hold the number of code points in `input`. */
+		    inputLength,
+		    /** Cached calculation results */
+		    handledCPCountPlusOne,
+		    baseMinusT,
+		    qMinusT;
+
+		// Convert the input in UCS-2 to Unicode
+		input = ucs2decode(input);
+
+		// Cache the length
+		inputLength = input.length;
+
+		// Initialize the state
+		n = initialN;
+		delta = 0;
+		bias = initialBias;
+
+		// Handle the basic code points
+		for (j = 0; j < inputLength; ++j) {
+			currentValue = input[j];
+			if (currentValue < 0x80) {
+				output.push(stringFromCharCode(currentValue));
+			}
+		}
+
+		handledCPCount = basicLength = output.length;
+
+		// `handledCPCount` is the number of code points that have been handled;
+		// `basicLength` is the number of basic code points.
+
+		// Finish the basic string - if it is not empty - with a delimiter
+		if (basicLength) {
+			output.push(delimiter);
+		}
+
+		// Main encoding loop:
+		while (handledCPCount < inputLength) {
+
+			// All non-basic code points < n have been handled already. Find the next
+			// larger one:
+			for (m = maxInt, j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue >= n && currentValue < m) {
+					m = currentValue;
+				}
+			}
+
+			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
+			// but guard against overflow
+			handledCPCountPlusOne = handledCPCount + 1;
+			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
+				error('overflow');
+			}
+
+			delta += (m - n) * handledCPCountPlusOne;
+			n = m;
+
+			for (j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+
+				if (currentValue < n && ++delta > maxInt) {
+					error('overflow');
+				}
+
+				if (currentValue == n) {
+					// Represent delta as a generalized variable-length integer
+					for (q = delta, k = base; /* no condition */; k += base) {
+						t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+						if (q < t) {
+							break;
+						}
+						qMinusT = q - t;
+						baseMinusT = base - t;
+						output.push(
+							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+						);
+						q = floor(qMinusT / baseMinusT);
+					}
+
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
+					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+					delta = 0;
+					++handledCPCount;
+				}
+			}
+
+			++delta;
+			++n;
+
+		}
+		return output.join('');
+	}
+
+	/**
+	 * Converts a Punycode string representing a domain name or an email address
+	 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
+	 * it doesn't matter if you call it on a string that has already been
+	 * converted to Unicode.
+	 * @memberOf punycode
+	 * @param {String} input The Punycoded domain name or email address to
+	 * convert to Unicode.
+	 * @returns {String} The Unicode representation of the given Punycode
+	 * string.
+	 */
+	function toUnicode(input) {
+		return mapDomain(input, function(string) {
+			return regexPunycode.test(string)
+				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}
+
+	/**
+	 * Converts a Unicode string representing a domain name or an email address to
+	 * Punycode. Only the non-ASCII parts of the domain name will be converted,
+	 * i.e. it doesn't matter if you call it with a domain that's already in
+	 * ASCII.
+	 * @memberOf punycode
+	 * @param {String} input The domain name or email address to convert, as a
+	 * Unicode string.
+	 * @returns {String} The Punycode representation of the given domain name or
+	 * email address.
+	 */
+	function toASCII(input) {
+		return mapDomain(input, function(string) {
+			return regexNonASCII.test(string)
+				? 'xn--' + encode(string)
+				: string;
+		});
+	}
+
+	/*--------------------------------------------------------------------------*/
+
+	/** Define the public API */
+	punycode = {
+		/**
+		 * A string representing the current Punycode.js version number.
+		 * @memberOf punycode
+		 * @type String
+		 */
+		'version': '1.4.1',
+		/**
+		 * An object of methods to convert from JavaScript's internal character
+		 * representation (UCS-2) to Unicode code points, and back.
+		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+		 * @memberOf punycode
+		 * @type Object
+		 */
+		'ucs2': {
+			'decode': ucs2decode,
+			'encode': ucs2encode
+		},
+		'decode': decode,
+		'encode': encode,
+		'toASCII': toASCII,
+		'toUnicode': toUnicode
+	};
+
+	/** Expose `punycode` */
+	// Some AMD build optimizers, like r.js, check for specific condition patterns
+	// like the following:
+	if (
+		typeof define == 'function' &&
+		typeof define.amd == 'object' &&
+		define.amd
+	) {
+		define('punycode', function() {
+			return punycode;
+		});
+	} else if (freeExports && freeModule) {
+		if (module.exports == freeExports) {
+			// in Node.js, io.js, or RingoJS v0.8.0+
+			freeModule.exports = punycode;
+		} else {
+			// in Narwhal or RingoJS v0.7.0-
+			for (key in punycode) {
+				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
+			}
+		}
+	} else {
+		// in Rhino or a web browser
+		root.punycode = punycode;
+	}
+
+}(this));
+
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],2:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const formats_1 = require("./formats");
-const limit_1 = require("./limit");
-const codegen_1 = require("ajv/dist/compile/codegen");
-const fullName = new codegen_1.Name("fullFormats");
-const fastName = new codegen_1.Name("fastFormats");
-const formatsPlugin = (ajv, opts = { keywords: true }) => {
-    if (Array.isArray(opts)) {
-        addFormats(ajv, opts, formats_1.fullFormats, fullName);
-        return ajv;
-    }
-    const [formats, exportName] = opts.mode === "fast" ? [formats_1.fastFormats, fastName] : [formats_1.fullFormats, fullName];
-    const list = opts.formats || formats_1.formatNames;
-    addFormats(ajv, list, formats, exportName);
-    if (opts.keywords)
-        limit_1.default(ajv);
-    return ajv;
+// Regex from https://stackoverflow.com/questions/32044846/regex-for-iso-8601-durations
+module.exports =
+  /^P(?!$)(\d+(?:\.\d+)?Y)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?W)?(\d+(?:\.\d+)?D)?(T(?=\d)(\d+(?:\.\d+)?H)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?S)?)?$/;
+
+},{}],3:[function(require,module,exports){
+const { parse } = require('smtp-address-parser');
+
+module.exports = (value) => {
+  try {
+    parse(value);
+    return true;
+  } catch (err) {
+    return false;
+  }
 };
-formatsPlugin.get = (name, mode = "full") => {
-    const formats = mode === "fast" ? formats_1.fastFormats : formats_1.fullFormats;
-    const f = formats[name];
-    if (!f)
-        throw new Error(`Unknown format "${name}"`);
-    return f;
+
+},{"smtp-address-parser":106}],4:[function(require,module,exports){
+const { toASCII } = require('punycode');
+
+const hostnameRegex =
+  /^(?=.{1,253}\.?$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[-0-9a-z]{0,61}[0-9a-z])?)*\.?$/i;
+
+module.exports = (value) => {
+  const hostname = toASCII(value);
+  return (
+    hostname.replace(/\.$/, '').length <= 253 && hostnameRegex.test(hostname)
+  );
 };
-function addFormats(ajv, list, fs, exportName) {
-    var _a;
-    var _b;
-    (_a = (_b = ajv.opts.code).formats) !== null && _a !== void 0 ? _a : (_b.formats = codegen_1._ `require("ajv-formats/dist/formats").${exportName}`);
-    for (const f of list)
-        ajv.addFormat(f, fs[f]);
+
+},{"punycode":1}],5:[function(require,module,exports){
+module.exports.iri = require('./iri');
+module.exports.duration = require('./duration');
+module.exports['idn-email'] = require('./idn-email');
+module.exports['idn-hostname'] = require('./idn-hostname');
+module.exports['iri-reference'] = require('./iri-reference');
+
+},{"./duration":2,"./idn-email":3,"./idn-hostname":4,"./iri":7,"./iri-reference":6}],6:[function(require,module,exports){
+const { parse } = require('uri-js');
+const { addressParser } = require('smtp-address-parser');
+const schemes = require('schemes');
+
+function validate(address) {
+  try {
+    addressParser(address);
+    return true;
+  } catch (err) {
+    return false;
+  }
 }
-module.exports = exports = formatsPlugin;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = formatsPlugin;
 
-},{"./formats":1,"./limit":3,"ajv/dist/compile/codegen":7}],3:[function(require,module,exports){
+module.exports = (value) => {
+  const iri = parse(value);
+  // All valid IRIs are valid IRI-references
+  if (iri.scheme === 'mailto' && iri.to.every(validate)) {
+    return true;
+  }
+
+  if (
+    iri.reference === 'absolute' &&
+    iri.path !== undefined &&
+    schemes.allByName[iri.scheme]
+  ) {
+    return true;
+  }
+
+  // Check for valid IRI-reference
+
+  // If there is a scheme, it must be valid
+  if (iri.scheme && !schemes.allByName[iri.scheme]) {
+    return false;
+  }
+
+  // Check there's a path and for a proper type of reference
+  return (
+    iri.path !== undefined &&
+    (iri.reference === 'relative' ||
+      iri.reference === 'same-document' ||
+      iri.reference === 'uri')
+  );
+};
+
+},{"schemes":100,"smtp-address-parser":106,"uri-js":107}],7:[function(require,module,exports){
+const { parse } = require('uri-js');
+const { addressParser } = require('smtp-address-parser');
+const schemes = require('schemes');
+
+function validate(address) {
+  try {
+    addressParser(address);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+module.exports = (value) => {
+  const iri = parse(value);
+  if (iri.scheme === 'mailto' && iri.to.every(validate)) {
+    return true;
+  }
+  if (iri.reference === 'absolute' && schemes.allByName[iri.scheme]) {
+    return true;
+  }
+  return false;
+};
+
+},{"schemes":100,"smtp-address-parser":106,"uri-js":107}],8:[function(require,module,exports){
+const formats = require('./formats');
+
+module.exports = (ajv, options = {}) => {
+  const allFormats = Object.keys(formats);
+  let formatsToInstall = allFormats;
+
+  if (options.formats) {
+    if (!Array.isArray(options.formats))
+      throw new Error('options.formats must be an array');
+    formatsToInstall = options.formats;
+  }
+
+  allFormats
+    .filter((format) => formatsToInstall.includes(format))
+    .forEach((key) => {
+      ajv.addFormat(key, formats[key]);
+    });
+
+  return ajv;
+};
+
+},{"./formats":5}],9:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatLimitDefinition = void 0;
-const ajv_1 = require("ajv");
-const codegen_1 = require("ajv/dist/compile/codegen");
-const ops = codegen_1.operators;
-const KWDs = {
-    formatMaximum: { okStr: "<=", ok: ops.LTE, fail: ops.GT },
-    formatMinimum: { okStr: ">=", ok: ops.GTE, fail: ops.LT },
-    formatExclusiveMaximum: { okStr: "<", ok: ops.LT, fail: ops.GTE },
-    formatExclusiveMinimum: { okStr: ">", ok: ops.GT, fail: ops.LTE },
-};
-const error = {
-    message: ({ keyword, schemaCode }) => codegen_1.str `should be ${KWDs[keyword].okStr} ${schemaCode}`,
-    params: ({ keyword, schemaCode }) => codegen_1._ `{comparison: ${KWDs[keyword].okStr}, limit: ${schemaCode}}`,
-};
-exports.formatLimitDefinition = {
-    keyword: Object.keys(KWDs),
-    type: "string",
-    schemaType: "string",
-    $data: true,
-    error,
-    code(cxt) {
-        const { gen, data, schemaCode, keyword, it } = cxt;
-        const { opts, self } = it;
-        if (!opts.validateFormats)
-            return;
-        const fCxt = new ajv_1.KeywordCxt(it, self.RULES.all.format.definition, "format");
-        if (fCxt.$data)
-            validate$DataFormat();
-        else
-            validateFormat();
-        function validate$DataFormat() {
-            const fmts = gen.scopeValue("formats", {
-                ref: self.formats,
-                code: opts.code.formats,
-            });
-            const fmt = gen.const("fmt", codegen_1._ `${fmts}[${fCxt.schemaCode}]`);
-            cxt.fail$data(codegen_1.or(codegen_1._ `typeof ${fmt} != "object"`, codegen_1._ `${fmt} instanceof RegExp`, codegen_1._ `typeof ${fmt}.compare != "function"`, compareCode(fmt)));
-        }
-        function validateFormat() {
-            const format = fCxt.schema;
-            const fmtDef = self.formats[format];
-            if (!fmtDef || fmtDef === true)
-                return;
-            if (typeof fmtDef != "object" ||
-                fmtDef instanceof RegExp ||
-                typeof fmtDef.compare != "function") {
-                throw new Error(`"${keyword}": format "${format}" does not define "compare" function`);
-            }
-            const fmt = gen.scopeValue("formats", {
-                key: format,
-                ref: fmtDef,
-                code: opts.code.formats ? codegen_1._ `${opts.code.formats}${codegen_1.getProperty(format)}` : undefined,
-            });
-            cxt.fail$data(compareCode(fmt));
-        }
-        function compareCode(fmt) {
-            return codegen_1._ `${fmt}.compare(${data}, ${schemaCode}) ${KWDs[keyword].fail} 0`;
-        }
-    },
-    dependencies: ["format"],
-};
-const formatLimitPlugin = (ajv) => {
-    ajv.addKeyword(exports.formatLimitDefinition);
-    return ajv;
-};
-exports.default = formatLimitPlugin;
-
-},{"ajv":5,"ajv/dist/compile/codegen":7}],4:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
+exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv2020 = void 0;
 const core_1 = require("./core");
 const draft2020_1 = require("./vocabularies/draft2020");
 const discriminator_1 = require("./vocabularies/discriminator");
@@ -317,7 +701,9 @@ class Ajv2020 extends core_1.default {
             super.defaultMeta() || (this.getSchema(META_SCHEMA_ID) ? META_SCHEMA_ID : undefined));
     }
 }
+exports.Ajv2020 = Ajv2020;
 module.exports = exports = Ajv2020;
+module.exports.Ajv2020 = Ajv2020;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Ajv2020;
 var validate_1 = require("./compile/validate");
@@ -334,59 +720,11 @@ Object.defineProperty(exports, "ValidationError", { enumerable: true, get: funct
 var ref_error_1 = require("./compile/ref_error");
 Object.defineProperty(exports, "MissingRefError", { enumerable: true, get: function () { return ref_error_1.default; } });
 
-},{"./compile/codegen":7,"./compile/ref_error":12,"./compile/validate":20,"./core":23,"./refs/json-schema-2020-12":25,"./runtime/validation_error":38,"./vocabularies/discriminator":61,"./vocabularies/draft2020":63}],5:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
-const core_1 = require("./core");
-const draft7_1 = require("./vocabularies/draft7");
-const discriminator_1 = require("./vocabularies/discriminator");
-const draft7MetaSchema = require("./refs/json-schema-draft-07.json");
-const META_SUPPORT_DATA = ["/properties"];
-const META_SCHEMA_ID = "http://json-schema.org/draft-07/schema";
-class Ajv extends core_1.default {
-    _addVocabularies() {
-        super._addVocabularies();
-        draft7_1.default.forEach((v) => this.addVocabulary(v));
-        if (this.opts.discriminator)
-            this.addKeyword(discriminator_1.default);
-    }
-    _addDefaultMetaSchema() {
-        super._addDefaultMetaSchema();
-        if (!this.opts.meta)
-            return;
-        const metaSchema = this.opts.$data
-            ? this.$dataMetaSchema(draft7MetaSchema, META_SUPPORT_DATA)
-            : draft7MetaSchema;
-        this.addMetaSchema(metaSchema, META_SCHEMA_ID, false);
-        this.refs["http://json-schema.org/schema"] = META_SCHEMA_ID;
-    }
-    defaultMeta() {
-        return (this.opts.defaultMeta =
-            super.defaultMeta() || (this.getSchema(META_SCHEMA_ID) ? META_SCHEMA_ID : undefined));
-    }
-}
-module.exports = exports = Ajv;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Ajv;
-var validate_1 = require("./compile/validate");
-Object.defineProperty(exports, "KeywordCxt", { enumerable: true, get: function () { return validate_1.KeywordCxt; } });
-var codegen_1 = require("./compile/codegen");
-Object.defineProperty(exports, "_", { enumerable: true, get: function () { return codegen_1._; } });
-Object.defineProperty(exports, "str", { enumerable: true, get: function () { return codegen_1.str; } });
-Object.defineProperty(exports, "stringify", { enumerable: true, get: function () { return codegen_1.stringify; } });
-Object.defineProperty(exports, "nil", { enumerable: true, get: function () { return codegen_1.nil; } });
-Object.defineProperty(exports, "Name", { enumerable: true, get: function () { return codegen_1.Name; } });
-Object.defineProperty(exports, "CodeGen", { enumerable: true, get: function () { return codegen_1.CodeGen; } });
-var validation_error_1 = require("./runtime/validation_error");
-Object.defineProperty(exports, "ValidationError", { enumerable: true, get: function () { return validation_error_1.default; } });
-var ref_error_1 = require("./compile/ref_error");
-Object.defineProperty(exports, "MissingRefError", { enumerable: true, get: function () { return ref_error_1.default; } });
-
-},{"./compile/codegen":7,"./compile/ref_error":12,"./compile/validate":20,"./core":23,"./refs/json-schema-draft-07.json":34,"./runtime/validation_error":38,"./vocabularies/discriminator":61,"./vocabularies/draft7":64}],6:[function(require,module,exports){
+},{"./compile/codegen":11,"./compile/ref_error":16,"./compile/validate":24,"./core":27,"./refs/json-schema-2020-12":29,"./runtime/validation_error":41,"./vocabularies/discriminator":64,"./vocabularies/draft2020":66}],10:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = void 0;
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 class _CodeOrName {
 }
 exports._CodeOrName = _CodeOrName;
@@ -539,7 +877,7 @@ function regexpCode(rx) {
 }
 exports.regexpCode = regexpCode;
 
-},{}],7:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = void 0;
@@ -1237,7 +1575,7 @@ function par(x) {
     return x instanceof code_1.Name ? x : (0, code_1._) `(${x})`;
 }
 
-},{"./code":6,"./scope":8}],8:[function(require,module,exports){
+},{"./code":10,"./scope":12}],12:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = void 0;
@@ -1252,7 +1590,7 @@ var UsedValueState;
 (function (UsedValueState) {
     UsedValueState[UsedValueState["Started"] = 0] = "Started";
     UsedValueState[UsedValueState["Completed"] = 1] = "Completed";
-})(UsedValueState = exports.UsedValueState || (exports.UsedValueState = {}));
+})(UsedValueState || (exports.UsedValueState = UsedValueState = {}));
 exports.varKinds = {
     const: new code_1.Name("const"),
     let: new code_1.Name("let"),
@@ -1381,7 +1719,7 @@ class ValueScope extends Scope {
 }
 exports.ValueScope = ValueScope;
 
-},{"./code":6}],9:[function(require,module,exports){
+},{"./code":10}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
@@ -1456,7 +1794,7 @@ function returnErrors(it, errs) {
 }
 const E = {
     keyword: new codegen_1.Name("keyword"),
-    schemaPath: new codegen_1.Name("schemaPath"),
+    schemaPath: new codegen_1.Name("schemaPath"), // also used in JTD errors
     params: new codegen_1.Name("params"),
     propertyName: new codegen_1.Name("propertyName"),
     message: new codegen_1.Name("message"),
@@ -1505,7 +1843,7 @@ function extraErrorProps(cxt, { params, message }, keyValues) {
         keyValues.push([E.propertyName, propertyName]);
 }
 
-},{"./codegen":7,"./names":11,"./util":15}],10:[function(require,module,exports){
+},{"./codegen":11,"./names":15,"./util":19}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolveSchema = exports.getCompilingSchema = exports.resolveRef = exports.compileSchema = exports.SchemaEnv = void 0;
@@ -1563,7 +1901,7 @@ function compileSchema(sch) {
         parentData: names_1.default.parentData,
         parentDataProperty: names_1.default.parentDataProperty,
         dataNames: [names_1.default.data],
-        dataPathArr: [codegen_1.nil],
+        dataPathArr: [codegen_1.nil], // TODO can its length be used as dataLevel if nil is removed?
         dataLevel: 0,
         dataTypes: [],
         definedProperties: new Set(),
@@ -1748,23 +2086,23 @@ function getJsonPointer(parsedRef, { baseId, schema, root }) {
     return undefined;
 }
 
-},{"../runtime/validation_error":38,"./codegen":7,"./names":11,"./resolve":13,"./util":15,"./validate":20}],11:[function(require,module,exports){
+},{"../runtime/validation_error":41,"./codegen":11,"./names":15,"./resolve":17,"./util":19,"./validate":24}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("./codegen");
 const names = {
     // validation function arguments
-    data: new codegen_1.Name("data"),
+    data: new codegen_1.Name("data"), // data passed to validation function
     // args passed from referencing schema
-    valCxt: new codegen_1.Name("valCxt"),
+    valCxt: new codegen_1.Name("valCxt"), // validation/data context - should not be used directly, it is destructured to the names below
     instancePath: new codegen_1.Name("instancePath"),
     parentData: new codegen_1.Name("parentData"),
     parentDataProperty: new codegen_1.Name("parentDataProperty"),
-    rootData: new codegen_1.Name("rootData"),
-    dynamicAnchors: new codegen_1.Name("dynamicAnchors"),
+    rootData: new codegen_1.Name("rootData"), // root data - same as the data passed to the first/top validation function
+    dynamicAnchors: new codegen_1.Name("dynamicAnchors"), // used to support recursiveRef and dynamicRef
     // function scoped variables
-    vErrors: new codegen_1.Name("vErrors"),
-    errors: new codegen_1.Name("errors"),
+    vErrors: new codegen_1.Name("vErrors"), // null or array of validation errors
+    errors: new codegen_1.Name("errors"), // counter of validation errors
     this: new codegen_1.Name("this"),
     // "globals"
     self: new codegen_1.Name("self"),
@@ -1777,7 +2115,7 @@ const names = {
 };
 exports.default = names;
 
-},{"./codegen":7}],12:[function(require,module,exports){
+},{"./codegen":11}],16:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const resolve_1 = require("./resolve");
@@ -1790,7 +2128,7 @@ class MissingRefError extends Error {
 }
 exports.default = MissingRefError;
 
-},{"./resolve":13}],13:[function(require,module,exports){
+},{"./resolve":17}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSchemaRefs = exports.resolveUrl = exports.normalizeId = exports._getFullPath = exports.getFullPath = exports.inlineRef = void 0;
@@ -1897,16 +2235,16 @@ function getSchemaRefs(schema, baseId) {
         if (parentJsonPtr === undefined)
             return;
         const fullPath = pathPrefix + jsonPtr;
-        let baseId = baseIds[parentJsonPtr];
+        let innerBaseId = baseIds[parentJsonPtr];
         if (typeof sch[schemaId] == "string")
-            baseId = addRef.call(this, sch[schemaId]);
+            innerBaseId = addRef.call(this, sch[schemaId]);
         addAnchor.call(this, sch.$anchor);
         addAnchor.call(this, sch.$dynamicAnchor);
-        baseIds[jsonPtr] = baseId;
+        baseIds[jsonPtr] = innerBaseId;
         function addRef(ref) {
             // eslint-disable-next-line @typescript-eslint/unbound-method
             const _resolve = this.opts.uriResolver.resolve;
-            ref = normalizeId(baseId ? _resolve(baseId, ref) : ref);
+            ref = normalizeId(innerBaseId ? _resolve(innerBaseId, ref) : ref);
             if (schemaRefs.has(ref))
                 throw ambiguos(ref);
             schemaRefs.add(ref);
@@ -1946,7 +2284,7 @@ function getSchemaRefs(schema, baseId) {
 }
 exports.getSchemaRefs = getSchemaRefs;
 
-},{"./util":15,"fast-deep-equal":90,"json-schema-traverse":91}],14:[function(require,module,exports){
+},{"./util":19,"fast-deep-equal":93,"json-schema-traverse":98}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getRules = exports.isJSONType = void 0;
@@ -1973,7 +2311,7 @@ function getRules() {
 }
 exports.getRules = getRules;
 
-},{}],15:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkStrictMode = exports.getErrorPath = exports.Type = exports.useFunc = exports.setEvaluated = exports.evaluatedPropsToName = exports.mergeEvaluated = exports.eachItem = exports.unescapeJsonPointer = exports.escapeJsonPointer = exports.escapeFragment = exports.unescapeFragment = exports.schemaRefOrVal = exports.schemaHasRulesButRef = exports.schemaHasRules = exports.checkUnknownRules = exports.alwaysValidSchema = exports.toHash = void 0;
@@ -2126,7 +2464,7 @@ var Type;
 (function (Type) {
     Type[Type["Num"] = 0] = "Num";
     Type[Type["Str"] = 1] = "Str";
-})(Type = exports.Type || (exports.Type = {}));
+})(Type || (exports.Type = Type = {}));
 function getErrorPath(dataProp, dataPropType, jsPropertySyntax) {
     // let path
     if (dataProp instanceof codegen_1.Name) {
@@ -2152,7 +2490,7 @@ function checkStrictMode(it, msg, mode = it.opts.strictSchema) {
 }
 exports.checkStrictMode = checkStrictMode;
 
-},{"./codegen":7,"./codegen/code":6}],16:[function(require,module,exports){
+},{"./codegen":11,"./codegen/code":10}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shouldUseRule = exports.shouldUseGroup = exports.schemaHasRulesForType = void 0;
@@ -2172,7 +2510,7 @@ function shouldUseRule(schema, rule) {
 }
 exports.shouldUseRule = shouldUseRule;
 
-},{}],17:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.boolOrEmptySchema = exports.topBoolOrEmptySchema = void 0;
@@ -2223,7 +2561,7 @@ function falseSchemaError(it, overrideAllErrors) {
     (0, errors_1.reportError)(cxt, boolError, undefined, overrideAllErrors);
 }
 
-},{"../codegen":7,"../errors":9,"../names":11}],18:[function(require,module,exports){
+},{"../codegen":11,"../errors":13,"../names":15}],22:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reportTypeError = exports.checkDataTypes = exports.checkDataType = exports.coerceAndCheckDataType = exports.getJSONTypes = exports.getSchemaTypes = exports.DataType = void 0;
@@ -2236,7 +2574,7 @@ var DataType;
 (function (DataType) {
     DataType[DataType["Correct"] = 0] = "Correct";
     DataType[DataType["Wrong"] = 1] = "Wrong";
-})(DataType = exports.DataType || (exports.DataType = {}));
+})(DataType || (exports.DataType = DataType = {}));
 function getSchemaTypes(schema) {
     const types = getJSONTypes(schema.type);
     const hasNull = types.includes("null");
@@ -2254,6 +2592,7 @@ function getSchemaTypes(schema) {
     return types;
 }
 exports.getSchemaTypes = getSchemaTypes;
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 function getJSONTypes(ts) {
     const types = Array.isArray(ts) ? ts : ts ? [ts] : [];
     if (types.every(rules_1.isJSONType))
@@ -2426,7 +2765,7 @@ function getTypeErrorContext(it) {
     };
 }
 
-},{"../codegen":7,"../errors":9,"../rules":14,"../util":15,"./applicability":16}],19:[function(require,module,exports){
+},{"../codegen":11,"../errors":13,"../rules":18,"../util":19,"./applicability":20}],23:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assignDefaults = void 0;
@@ -2462,7 +2801,7 @@ function assignDefault(it, prop, defaultValue) {
     gen.if(condition, (0, codegen_1._) `${childData} = ${(0, codegen_1.stringify)(defaultValue)}`);
 }
 
-},{"../codegen":7,"../util":15}],20:[function(require,module,exports){
+},{"../codegen":11,"../util":19}],24:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.KeywordCxt = exports.validateFunctionCode = void 0;
@@ -2983,7 +3322,7 @@ function getData($data, { dataLevel, dataNames, dataPathArr }) {
 }
 exports.getData = getData;
 
-},{"../codegen":7,"../errors":9,"../names":11,"../resolve":13,"../util":15,"./applicability":16,"./boolSchema":17,"./dataType":18,"./defaults":19,"./keyword":21,"./subschema":22}],21:[function(require,module,exports){
+},{"../codegen":11,"../errors":13,"../names":15,"../resolve":17,"../util":19,"./applicability":20,"./boolSchema":21,"./dataType":22,"./defaults":23,"./keyword":25,"./subschema":26}],25:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateKeywordUsage = exports.validSchemaType = exports.funcKeywordCode = exports.macroKeywordCode = void 0;
@@ -3108,7 +3447,7 @@ function validateKeywordUsage({ schema, opts, self, errSchemaPath }, def, keywor
 }
 exports.validateKeywordUsage = validateKeywordUsage;
 
-},{"../../vocabularies/code":57,"../codegen":7,"../errors":9,"../names":11}],22:[function(require,module,exports){
+},{"../../vocabularies/code":60,"../codegen":11,"../errors":13,"../names":15}],26:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extendSubschemaMode = exports.extendSubschemaData = exports.getSubschema = void 0;
@@ -3190,7 +3529,7 @@ function extendSubschemaMode(subschema, { jtdDiscriminator, jtdMetadata, composi
 }
 exports.extendSubschemaMode = extendSubschemaMode;
 
-},{"../codegen":7,"../util":15}],23:[function(require,module,exports){
+},{"../codegen":11,"../util":19}],27:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -3331,6 +3670,7 @@ class Ajv {
         return (this.opts.defaultMeta = typeof meta == "object" ? meta[schemaId] || meta : undefined);
     }
     validate(schemaKeyRef, // key, ref or schema object
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     data // to be validated
     ) {
         let v;
@@ -3679,9 +4019,9 @@ class Ajv {
         }
     }
 }
-exports.default = Ajv;
 Ajv.ValidationError = validation_error_1.default;
 Ajv.MissingRefError = ref_error_1.default;
+exports.default = Ajv;
 function checkOptions(checkOpts, options, msg, log = "error") {
     for (const key in checkOpts) {
         const opt = key;
@@ -3808,7 +4148,7 @@ function schemaOrData(schema) {
     return { anyOf: [schema, $dataRef] };
 }
 
-},{"./compile":10,"./compile/codegen":7,"./compile/ref_error":12,"./compile/resolve":13,"./compile/rules":14,"./compile/util":15,"./compile/validate":20,"./compile/validate/dataType":18,"./refs/data.json":24,"./runtime/uri":37,"./runtime/validation_error":38}],24:[function(require,module,exports){
+},{"./compile":14,"./compile/codegen":11,"./compile/ref_error":16,"./compile/resolve":17,"./compile/rules":18,"./compile/util":19,"./compile/validate":24,"./compile/validate/dataType":22,"./refs/data.json":28,"./runtime/uri":40,"./runtime/validation_error":41}],28:[function(require,module,exports){
 module.exports={
   "$id": "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
   "description": "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -3823,7 +4163,7 @@ module.exports={
   "additionalProperties": false
 }
 
-},{}],25:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const metaSchema = require("./schema.json");
@@ -3854,7 +4194,7 @@ function addMetaSchema2020($data) {
 }
 exports.default = addMetaSchema2020;
 
-},{"./meta/applicator.json":26,"./meta/content.json":27,"./meta/core.json":28,"./meta/format-annotation.json":29,"./meta/meta-data.json":30,"./meta/unevaluated.json":31,"./meta/validation.json":32,"./schema.json":33}],26:[function(require,module,exports){
+},{"./meta/applicator.json":30,"./meta/content.json":31,"./meta/core.json":32,"./meta/format-annotation.json":33,"./meta/meta-data.json":34,"./meta/unevaluated.json":35,"./meta/validation.json":36,"./schema.json":37}],30:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/applicator",
@@ -3904,7 +4244,7 @@ module.exports={
   }
 }
 
-},{}],27:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/content",
@@ -3923,7 +4263,7 @@ module.exports={
   }
 }
 
-},{}],28:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/core",
@@ -3976,7 +4316,7 @@ module.exports={
   }
 }
 
-},{}],29:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/format-annotation",
@@ -3992,7 +4332,7 @@ module.exports={
   }
 }
 
-},{}],30:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/meta-data",
@@ -4031,7 +4371,7 @@ module.exports={
   }
 }
 
-},{}],31:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/unevaluated",
@@ -4048,7 +4388,7 @@ module.exports={
   }
 }
 
-},{}],32:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/validation",
@@ -4140,7 +4480,7 @@ module.exports={
   }
 }
 
-},{}],33:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/schema",
@@ -4197,160 +4537,7 @@ module.exports={
   }
 }
 
-},{}],34:[function(require,module,exports){
-module.exports={
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://json-schema.org/draft-07/schema#",
-  "title": "Core schema meta-schema",
-  "definitions": {
-    "schemaArray": {
-      "type": "array",
-      "minItems": 1,
-      "items": {"$ref": "#"}
-    },
-    "nonNegativeInteger": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "nonNegativeIntegerDefault0": {
-      "allOf": [{"$ref": "#/definitions/nonNegativeInteger"}, {"default": 0}]
-    },
-    "simpleTypes": {
-      "enum": ["array", "boolean", "integer", "null", "number", "object", "string"]
-    },
-    "stringArray": {
-      "type": "array",
-      "items": {"type": "string"},
-      "uniqueItems": true,
-      "default": []
-    }
-  },
-  "type": ["object", "boolean"],
-  "properties": {
-    "$id": {
-      "type": "string",
-      "format": "uri-reference"
-    },
-    "$schema": {
-      "type": "string",
-      "format": "uri"
-    },
-    "$ref": {
-      "type": "string",
-      "format": "uri-reference"
-    },
-    "$comment": {
-      "type": "string"
-    },
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "default": true,
-    "readOnly": {
-      "type": "boolean",
-      "default": false
-    },
-    "examples": {
-      "type": "array",
-      "items": true
-    },
-    "multipleOf": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "maximum": {
-      "type": "number"
-    },
-    "exclusiveMaximum": {
-      "type": "number"
-    },
-    "minimum": {
-      "type": "number"
-    },
-    "exclusiveMinimum": {
-      "type": "number"
-    },
-    "maxLength": {"$ref": "#/definitions/nonNegativeInteger"},
-    "minLength": {"$ref": "#/definitions/nonNegativeIntegerDefault0"},
-    "pattern": {
-      "type": "string",
-      "format": "regex"
-    },
-    "additionalItems": {"$ref": "#"},
-    "items": {
-      "anyOf": [{"$ref": "#"}, {"$ref": "#/definitions/schemaArray"}],
-      "default": true
-    },
-    "maxItems": {"$ref": "#/definitions/nonNegativeInteger"},
-    "minItems": {"$ref": "#/definitions/nonNegativeIntegerDefault0"},
-    "uniqueItems": {
-      "type": "boolean",
-      "default": false
-    },
-    "contains": {"$ref": "#"},
-    "maxProperties": {"$ref": "#/definitions/nonNegativeInteger"},
-    "minProperties": {"$ref": "#/definitions/nonNegativeIntegerDefault0"},
-    "required": {"$ref": "#/definitions/stringArray"},
-    "additionalProperties": {"$ref": "#"},
-    "definitions": {
-      "type": "object",
-      "additionalProperties": {"$ref": "#"},
-      "default": {}
-    },
-    "properties": {
-      "type": "object",
-      "additionalProperties": {"$ref": "#"},
-      "default": {}
-    },
-    "patternProperties": {
-      "type": "object",
-      "additionalProperties": {"$ref": "#"},
-      "propertyNames": {"format": "regex"},
-      "default": {}
-    },
-    "dependencies": {
-      "type": "object",
-      "additionalProperties": {
-        "anyOf": [{"$ref": "#"}, {"$ref": "#/definitions/stringArray"}]
-      }
-    },
-    "propertyNames": {"$ref": "#"},
-    "const": true,
-    "enum": {
-      "type": "array",
-      "items": true,
-      "minItems": 1,
-      "uniqueItems": true
-    },
-    "type": {
-      "anyOf": [
-        {"$ref": "#/definitions/simpleTypes"},
-        {
-          "type": "array",
-          "items": {"$ref": "#/definitions/simpleTypes"},
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      ]
-    },
-    "format": {"type": "string"},
-    "contentMediaType": {"type": "string"},
-    "contentEncoding": {"type": "string"},
-    "if": {"$ref": "#"},
-    "then": {"$ref": "#"},
-    "else": {"$ref": "#"},
-    "allOf": {"$ref": "#/definitions/schemaArray"},
-    "anyOf": {"$ref": "#/definitions/schemaArray"},
-    "oneOf": {"$ref": "#/definitions/schemaArray"},
-    "not": {"$ref": "#"}
-  },
-  "default": true
-}
-
-},{}],35:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // https://github.com/ajv-validator/ajv/issues/889
@@ -4358,7 +4545,7 @@ const equal = require("fast-deep-equal");
 equal.code = 'require("ajv/dist/runtime/equal").default';
 exports.default = equal;
 
-},{"fast-deep-equal":90}],36:[function(require,module,exports){
+},{"fast-deep-equal":93}],39:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // https://mathiasbynens.be/notes/javascript-encoding
@@ -4383,14 +4570,14 @@ function ucs2length(str) {
 exports.default = ucs2length;
 ucs2length.code = 'require("ajv/dist/runtime/ucs2length").default';
 
-},{}],37:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const uri = require("uri-js");
+const uri = require("fast-uri");
 uri.code = 'require("ajv/dist/runtime/uri").default';
 exports.default = uri;
 
-},{"uri-js":92}],38:[function(require,module,exports){
+},{"fast-uri":94}],41:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ValidationError extends Error {
@@ -4402,7 +4589,7 @@ class ValidationError extends Error {
 }
 exports.default = ValidationError;
 
-},{}],39:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateAdditionalItems = void 0;
@@ -4452,7 +4639,7 @@ function validateAdditionalItems(cxt, items) {
 exports.validateAdditionalItems = validateAdditionalItems;
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],40:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],43:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -4559,7 +4746,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/names":11,"../../compile/util":15,"../code":57}],41:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/names":15,"../../compile/util":19,"../code":60}],44:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -4583,7 +4770,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15}],42:[function(require,module,exports){
+},{"../../compile/util":19}],45:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -4596,7 +4783,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../code":57}],43:[function(require,module,exports){
+},{"../code":60}],46:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -4692,7 +4879,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],44:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],47:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
@@ -4778,7 +4965,7 @@ function validateSchemaDeps(cxt, schemaDeps = cxt.schema) {
 exports.validateSchemaDeps = validateSchemaDeps;
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],45:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../code":60}],48:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependencies_1 = require("./dependencies");
@@ -4790,7 +4977,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./dependencies":44}],46:[function(require,module,exports){
+},{"./dependencies":47}],49:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -4857,7 +5044,7 @@ function hasSchema(it, keyword) {
 }
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],47:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],50:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const additionalItems_1 = require("./additionalItems");
@@ -4902,7 +5089,7 @@ function getApplicator(draft2020 = false) {
 }
 exports.default = getApplicator;
 
-},{"./additionalItems":39,"./additionalProperties":40,"./allOf":41,"./anyOf":42,"./contains":43,"./dependencies":44,"./if":46,"./items":48,"./items2020":49,"./not":50,"./oneOf":51,"./patternProperties":52,"./prefixItems":53,"./properties":54,"./propertyNames":55,"./thenElse":56}],48:[function(require,module,exports){
+},{"./additionalItems":42,"./additionalProperties":43,"./allOf":44,"./anyOf":45,"./contains":46,"./dependencies":47,"./if":49,"./items":51,"./items2020":52,"./not":53,"./oneOf":54,"./patternProperties":55,"./prefixItems":56,"./properties":57,"./propertyNames":58,"./thenElse":59}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateTuple = void 0;
@@ -4955,7 +5142,7 @@ function validateTuple(cxt, extraItems, schArr = cxt.schema) {
 exports.validateTuple = validateTuple;
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],49:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../code":60}],52:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -4986,7 +5173,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../code":57,"./additionalItems":39}],50:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../code":60,"./additionalItems":42}],53:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -5013,7 +5200,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15}],51:[function(require,module,exports){
+},{"../../compile/util":19}],54:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -5074,7 +5261,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],52:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],55:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -5150,7 +5337,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],53:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../code":60}],56:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const items_1 = require("./items");
@@ -5163,7 +5350,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./items":48}],54:[function(require,module,exports){
+},{"./items":51}],57:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const validate_1 = require("../../compile/validate");
@@ -5218,7 +5405,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15,"../../compile/validate":20,"../code":57,"./additionalProperties":40}],55:[function(require,module,exports){
+},{"../../compile/util":19,"../../compile/validate":24,"../code":60,"./additionalProperties":43}],58:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -5257,7 +5444,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],56:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],59:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -5271,7 +5458,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15}],57:[function(require,module,exports){
+},{"../../compile/util":19}],60:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateUnion = exports.validateArray = exports.usePattern = exports.callValidateCode = exports.schemaProperties = exports.allSchemaProperties = exports.noPropertyInData = exports.propertyInData = exports.isOwnProperty = exports.hasPropFunc = exports.reportMissingProp = exports.checkMissingProp = exports.checkReportMissingProp = void 0;
@@ -5403,7 +5590,7 @@ function validateUnion(cxt) {
 }
 exports.validateUnion = validateUnion;
 
-},{"../compile/codegen":7,"../compile/names":11,"../compile/util":15}],58:[function(require,module,exports){
+},{"../compile/codegen":11,"../compile/names":15,"../compile/util":19}],61:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const def = {
@@ -5414,7 +5601,7 @@ const def = {
 };
 exports.default = def;
 
-},{}],59:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const id_1 = require("./id");
@@ -5431,7 +5618,7 @@ const core = [
 ];
 exports.default = core;
 
-},{"./id":58,"./ref":60}],60:[function(require,module,exports){
+},{"./id":61,"./ref":63}],63:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.callRef = exports.getValidate = void 0;
@@ -5554,12 +5741,13 @@ function callRef(cxt, v, sch, $async) {
 exports.callRef = callRef;
 exports.default = def;
 
-},{"../../compile":10,"../../compile/codegen":7,"../../compile/names":11,"../../compile/ref_error":12,"../../compile/util":15,"../code":57}],61:[function(require,module,exports){
+},{"../../compile":14,"../../compile/codegen":11,"../../compile/names":15,"../../compile/ref_error":16,"../../compile/util":19,"../code":60}],64:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
 const types_1 = require("../discriminator/types");
 const compile_1 = require("../../compile");
+const ref_error_1 = require("../../compile/ref_error");
 const util_1 = require("../../compile/util");
 const error = {
     message: ({ params: { discrError, tagName } }) => discrError === types_1.DiscrError.Tag
@@ -5614,9 +5802,12 @@ const def = {
             for (let i = 0; i < oneOf.length; i++) {
                 let sch = oneOf[i];
                 if ((sch === null || sch === void 0 ? void 0 : sch.$ref) && !(0, util_1.schemaHasRulesButRef)(sch, it.self.RULES)) {
-                    sch = compile_1.resolveRef.call(it.self, it.schemaEnv.root, it.baseId, sch === null || sch === void 0 ? void 0 : sch.$ref);
+                    const ref = sch.$ref;
+                    sch = compile_1.resolveRef.call(it.self, it.schemaEnv.root, it.baseId, ref);
                     if (sch instanceof compile_1.SchemaEnv)
                         sch = sch.schema;
+                    if (sch === undefined)
+                        throw new ref_error_1.default(it.opts.uriResolver, it.baseId, ref);
                 }
                 const propSch = (_a = sch === null || sch === void 0 ? void 0 : sch.properties) === null || _a === void 0 ? void 0 : _a[tagName];
                 if (typeof propSch != "object") {
@@ -5655,7 +5846,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile":10,"../../compile/codegen":7,"../../compile/util":15,"../discriminator/types":62}],62:[function(require,module,exports){
+},{"../../compile":14,"../../compile/codegen":11,"../../compile/ref_error":16,"../../compile/util":19,"../discriminator/types":65}],65:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscrError = void 0;
@@ -5663,9 +5854,9 @@ var DiscrError;
 (function (DiscrError) {
     DiscrError["Tag"] = "tag";
     DiscrError["Mapping"] = "mapping";
-})(DiscrError = exports.DiscrError || (exports.DiscrError = {}));
+})(DiscrError || (exports.DiscrError = DiscrError = {}));
 
-},{}],63:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("./core");
@@ -5689,25 +5880,7 @@ const draft2020Vocabularies = [
 ];
 exports.default = draft2020Vocabularies;
 
-},{"./applicator":47,"./core":59,"./dynamic":67,"./format":71,"./metadata":72,"./next":73,"./unevaluated":74,"./validation":80}],64:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("./core");
-const validation_1 = require("./validation");
-const applicator_1 = require("./applicator");
-const format_1 = require("./format");
-const metadata_1 = require("./metadata");
-const draft7Vocabularies = [
-    core_1.default,
-    validation_1.default,
-    (0, applicator_1.default)(),
-    format_1.default,
-    metadata_1.metadataVocabulary,
-    metadata_1.contentVocabulary,
-];
-exports.default = draft7Vocabularies;
-
-},{"./applicator":47,"./core":59,"./format":71,"./metadata":72,"./validation":80}],65:[function(require,module,exports){
+},{"./applicator":50,"./core":62,"./dynamic":69,"./format":73,"./metadata":74,"./next":75,"./unevaluated":76,"./validation":82}],67:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dynamicAnchor = void 0;
@@ -5738,7 +5911,7 @@ function _getValidate(cxt) {
 }
 exports.default = def;
 
-},{"../../compile":10,"../../compile/codegen":7,"../../compile/names":11,"../core/ref":60}],66:[function(require,module,exports){
+},{"../../compile":14,"../../compile/codegen":11,"../../compile/names":15,"../core/ref":63}],68:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dynamicRef = void 0;
@@ -5790,7 +5963,7 @@ function dynamicRef(cxt, ref) {
 exports.dynamicRef = dynamicRef;
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/names":11,"../core/ref":60}],67:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/names":15,"../core/ref":63}],69:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicAnchor_1 = require("./dynamicAnchor");
@@ -5800,7 +5973,7 @@ const recursiveRef_1 = require("./recursiveRef");
 const dynamic = [dynamicAnchor_1.default, dynamicRef_1.default, recursiveAnchor_1.default, recursiveRef_1.default];
 exports.default = dynamic;
 
-},{"./dynamicAnchor":65,"./dynamicRef":66,"./recursiveAnchor":68,"./recursiveRef":69}],68:[function(require,module,exports){
+},{"./dynamicAnchor":67,"./dynamicRef":68,"./recursiveAnchor":70,"./recursiveRef":71}],70:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicAnchor_1 = require("./dynamicAnchor");
@@ -5817,7 +5990,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15,"./dynamicAnchor":65}],69:[function(require,module,exports){
+},{"../../compile/util":19,"./dynamicAnchor":67}],71:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicRef_1 = require("./dynamicRef");
@@ -5828,7 +6001,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./dynamicRef":66}],70:[function(require,module,exports){
+},{"./dynamicRef":68}],72:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -5921,14 +6094,14 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7}],71:[function(require,module,exports){
+},{"../../compile/codegen":11}],73:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const format_1 = require("./format");
 const format = [format_1.default];
 exports.default = format;
 
-},{"./format":70}],72:[function(require,module,exports){
+},{"./format":72}],74:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.contentVocabulary = exports.metadataVocabulary = void 0;
@@ -5947,7 +6120,7 @@ exports.contentVocabulary = [
     "contentSchema",
 ];
 
-},{}],73:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependentRequired_1 = require("./validation/dependentRequired");
@@ -5956,7 +6129,7 @@ const limitContains_1 = require("./validation/limitContains");
 const next = [dependentRequired_1.default, dependentSchemas_1.default, limitContains_1.default];
 exports.default = next;
 
-},{"./applicator/dependentSchemas":45,"./validation/dependentRequired":78,"./validation/limitContains":81}],74:[function(require,module,exports){
+},{"./applicator/dependentSchemas":48,"./validation/dependentRequired":80,"./validation/limitContains":83}],76:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const unevaluatedProperties_1 = require("./unevaluatedProperties");
@@ -5964,7 +6137,7 @@ const unevaluatedItems_1 = require("./unevaluatedItems");
 const unevaluated = [unevaluatedProperties_1.default, unevaluatedItems_1.default];
 exports.default = unevaluated;
 
-},{"./unevaluatedItems":75,"./unevaluatedProperties":76}],75:[function(require,module,exports){
+},{"./unevaluatedItems":77,"./unevaluatedProperties":78}],77:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6005,7 +6178,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15}],76:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19}],78:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6071,7 +6244,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/names":11,"../../compile/util":15}],77:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/names":15,"../../compile/util":19}],79:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6097,7 +6270,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/equal":35}],78:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../../runtime/equal":38}],80:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependencies_1 = require("../applicator/dependencies");
@@ -6110,7 +6283,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../applicator/dependencies":44}],79:[function(require,module,exports){
+},{"../applicator/dependencies":47}],81:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6159,7 +6332,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/equal":35}],80:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../../runtime/equal":38}],82:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const limitNumber_1 = require("./limitNumber");
@@ -6193,7 +6366,7 @@ const validation = [
 ];
 exports.default = validation;
 
-},{"./const":77,"./enum":79,"./limitItems":82,"./limitLength":83,"./limitNumber":84,"./limitProperties":85,"./multipleOf":86,"./pattern":87,"./required":88,"./uniqueItems":89}],81:[function(require,module,exports){
+},{"./const":79,"./enum":81,"./limitItems":84,"./limitLength":85,"./limitNumber":86,"./limitProperties":87,"./multipleOf":88,"./pattern":89,"./required":90,"./uniqueItems":91}],83:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -6209,7 +6382,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":15}],82:[function(require,module,exports){
+},{"../../compile/util":19}],84:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6234,7 +6407,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7}],83:[function(require,module,exports){
+},{"../../compile/codegen":11}],85:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6262,7 +6435,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/ucs2length":36}],84:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../../runtime/ucs2length":39}],86:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6290,7 +6463,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7}],85:[function(require,module,exports){
+},{"../../compile/codegen":11}],87:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6315,7 +6488,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7}],86:[function(require,module,exports){
+},{"../../compile/codegen":11}],88:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -6342,7 +6515,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7}],87:[function(require,module,exports){
+},{"../../compile/codegen":11}],89:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -6367,7 +6540,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../code":57}],88:[function(require,module,exports){
+},{"../../compile/codegen":11,"../code":60}],90:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -6447,7 +6620,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],89:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../code":60}],91:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dataType_1 = require("../../compile/validate/dataType");
@@ -6512,7 +6685,126 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":7,"../../compile/util":15,"../../compile/validate/dataType":18,"../../runtime/equal":35}],90:[function(require,module,exports){
+},{"../../compile/codegen":11,"../../compile/util":19,"../../compile/validate/dataType":22,"../../runtime/equal":38}],92:[function(require,module,exports){
+'use strict';
+
+var hasOwn = Object.prototype.hasOwnProperty;
+var toStr = Object.prototype.toString;
+var defineProperty = Object.defineProperty;
+var gOPD = Object.getOwnPropertyDescriptor;
+
+var isArray = function isArray(arr) {
+	if (typeof Array.isArray === 'function') {
+		return Array.isArray(arr);
+	}
+
+	return toStr.call(arr) === '[object Array]';
+};
+
+var isPlainObject = function isPlainObject(obj) {
+	if (!obj || toStr.call(obj) !== '[object Object]') {
+		return false;
+	}
+
+	var hasOwnConstructor = hasOwn.call(obj, 'constructor');
+	var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+	// Not own constructor property must be Object
+	if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+		return false;
+	}
+
+	// Own properties are enumerated firstly, so to speed up,
+	// if last one is own, then all properties are own.
+	var key;
+	for (key in obj) { /**/ }
+
+	return typeof key === 'undefined' || hasOwn.call(obj, key);
+};
+
+// If name is '__proto__', and Object.defineProperty is available, define __proto__ as an own property on target
+var setProperty = function setProperty(target, options) {
+	if (defineProperty && options.name === '__proto__') {
+		defineProperty(target, options.name, {
+			enumerable: true,
+			configurable: true,
+			value: options.newValue,
+			writable: true
+		});
+	} else {
+		target[options.name] = options.newValue;
+	}
+};
+
+// Return undefined instead of __proto__ if '__proto__' is not an own property
+var getProperty = function getProperty(obj, name) {
+	if (name === '__proto__') {
+		if (!hasOwn.call(obj, name)) {
+			return void 0;
+		} else if (gOPD) {
+			// In early versions of node, obj['__proto__'] is buggy when obj has
+			// __proto__ as an own property. Object.getOwnPropertyDescriptor() works.
+			return gOPD(obj, name).value;
+		}
+	}
+
+	return obj[name];
+};
+
+module.exports = function extend() {
+	var options, name, src, copy, copyIsArray, clone;
+	var target = arguments[0];
+	var i = 1;
+	var length = arguments.length;
+	var deep = false;
+
+	// Handle a deep copy situation
+	if (typeof target === 'boolean') {
+		deep = target;
+		target = arguments[1] || {};
+		// skip the boolean and the target
+		i = 2;
+	}
+	if (target == null || (typeof target !== 'object' && typeof target !== 'function')) {
+		target = {};
+	}
+
+	for (; i < length; ++i) {
+		options = arguments[i];
+		// Only deal with non-null/undefined values
+		if (options != null) {
+			// Extend the base object
+			for (name in options) {
+				src = getProperty(target, name);
+				copy = getProperty(options, name);
+
+				// Prevent never-ending loop
+				if (target !== copy) {
+					// Recurse if we're merging plain objects or arrays
+					if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+						if (copyIsArray) {
+							copyIsArray = false;
+							clone = src && isArray(src) ? src : [];
+						} else {
+							clone = src && isPlainObject(src) ? src : {};
+						}
+
+						// Never move original objects, clone them
+						setProperty(target, { name: name, newValue: extend(deep, clone, copy) });
+
+					// Don't bring in undefined values
+					} else if (typeof copy !== 'undefined') {
+						setProperty(target, { name: name, newValue: copy });
+					}
+				}
+			}
+		}
+	}
+
+	// Return the modified object
+	return target;
+};
+
+},{}],93:[function(require,module,exports){
 'use strict';
 
 // do not edit .js files directly - edit src/index.jst
@@ -6560,7 +6852,780 @@ module.exports = function equal(a, b) {
   return a!==a && b!==b;
 };
 
-},{}],91:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
+'use strict'
+
+const { normalizeIPv6, normalizeIPv4, removeDotSegments, recomposeAuthority, normalizeComponentEncoding } = require('./lib/utils')
+const SCHEMES = require('./lib/schemes')
+
+function normalize (uri, options) {
+  if (typeof uri === 'string') {
+    uri = serialize(parse(uri, options), options)
+  } else if (typeof uri === 'object') {
+    uri = parse(serialize(uri, options), options)
+  }
+  return uri
+}
+
+function resolve (baseURI, relativeURI, options) {
+  const schemelessOptions = Object.assign({ scheme: 'null' }, options)
+  const resolved = resolveComponents(parse(baseURI, schemelessOptions), parse(relativeURI, schemelessOptions), schemelessOptions, true)
+  return serialize(resolved, { ...schemelessOptions, skipEscape: true })
+}
+
+function resolveComponents (base, relative, options, skipNormalization) {
+  const target = {}
+  if (!skipNormalization) {
+    base = parse(serialize(base, options), options) // normalize base components
+    relative = parse(serialize(relative, options), options) // normalize relative components
+  }
+  options = options || {}
+
+  if (!options.tolerant && relative.scheme) {
+    target.scheme = relative.scheme
+    // target.authority = relative.authority;
+    target.userinfo = relative.userinfo
+    target.host = relative.host
+    target.port = relative.port
+    target.path = removeDotSegments(relative.path || '')
+    target.query = relative.query
+  } else {
+    if (relative.userinfo !== undefined || relative.host !== undefined || relative.port !== undefined) {
+      // target.authority = relative.authority;
+      target.userinfo = relative.userinfo
+      target.host = relative.host
+      target.port = relative.port
+      target.path = removeDotSegments(relative.path || '')
+      target.query = relative.query
+    } else {
+      if (!relative.path) {
+        target.path = base.path
+        if (relative.query !== undefined) {
+          target.query = relative.query
+        } else {
+          target.query = base.query
+        }
+      } else {
+        if (relative.path.charAt(0) === '/') {
+          target.path = removeDotSegments(relative.path)
+        } else {
+          if ((base.userinfo !== undefined || base.host !== undefined || base.port !== undefined) && !base.path) {
+            target.path = '/' + relative.path
+          } else if (!base.path) {
+            target.path = relative.path
+          } else {
+            target.path = base.path.slice(0, base.path.lastIndexOf('/') + 1) + relative.path
+          }
+          target.path = removeDotSegments(target.path)
+        }
+        target.query = relative.query
+      }
+      // target.authority = base.authority;
+      target.userinfo = base.userinfo
+      target.host = base.host
+      target.port = base.port
+    }
+    target.scheme = base.scheme
+  }
+
+  target.fragment = relative.fragment
+
+  return target
+}
+
+function equal (uriA, uriB, options) {
+  if (typeof uriA === 'string') {
+    uriA = unescape(uriA)
+    uriA = serialize(normalizeComponentEncoding(parse(uriA, options), true), { ...options, skipEscape: true })
+  } else if (typeof uriA === 'object') {
+    uriA = serialize(normalizeComponentEncoding(uriA, true), { ...options, skipEscape: true })
+  }
+
+  if (typeof uriB === 'string') {
+    uriB = unescape(uriB)
+    uriB = serialize(normalizeComponentEncoding(parse(uriB, options), true), { ...options, skipEscape: true })
+  } else if (typeof uriB === 'object') {
+    uriB = serialize(normalizeComponentEncoding(uriB, true), { ...options, skipEscape: true })
+  }
+
+  return uriA.toLowerCase() === uriB.toLowerCase()
+}
+
+function serialize (cmpts, opts) {
+  const components = {
+    host: cmpts.host,
+    scheme: cmpts.scheme,
+    userinfo: cmpts.userinfo,
+    port: cmpts.port,
+    path: cmpts.path,
+    query: cmpts.query,
+    nid: cmpts.nid,
+    nss: cmpts.nss,
+    uuid: cmpts.uuid,
+    fragment: cmpts.fragment,
+    reference: cmpts.reference,
+    resourceName: cmpts.resourceName,
+    secure: cmpts.secure,
+    error: ''
+  }
+  const options = Object.assign({}, opts)
+  const uriTokens = []
+
+  // find scheme handler
+  const schemeHandler = SCHEMES[(options.scheme || components.scheme || '').toLowerCase()]
+
+  // perform scheme specific serialization
+  if (schemeHandler && schemeHandler.serialize) schemeHandler.serialize(components, options)
+
+  if (components.path !== undefined) {
+    if (!options.skipEscape) {
+      components.path = escape(components.path)
+
+      if (components.scheme !== undefined) {
+        components.path = components.path.split('%3A').join(':')
+      }
+    } else {
+      components.path = unescape(components.path)
+    }
+  }
+
+  if (options.reference !== 'suffix' && components.scheme) {
+    uriTokens.push(components.scheme, ':')
+  }
+
+  const authority = recomposeAuthority(components)
+  if (authority !== undefined) {
+    if (options.reference !== 'suffix') {
+      uriTokens.push('//')
+    }
+
+    uriTokens.push(authority)
+
+    if (components.path && components.path.charAt(0) !== '/') {
+      uriTokens.push('/')
+    }
+  }
+  if (components.path !== undefined) {
+    let s = components.path
+
+    if (!options.absolutePath && (!schemeHandler || !schemeHandler.absolutePath)) {
+      s = removeDotSegments(s)
+    }
+
+    if (authority === undefined) {
+      s = s.replace(/^\/\//u, '/%2F') // don't allow the path to start with "//"
+    }
+
+    uriTokens.push(s)
+  }
+
+  if (components.query !== undefined) {
+    uriTokens.push('?', components.query)
+  }
+
+  if (components.fragment !== undefined) {
+    uriTokens.push('#', components.fragment)
+  }
+  return uriTokens.join('')
+}
+
+const hexLookUp = Array.from({ length: 127 }, (_v, k) => /[^!"$&'()*+,\-.;=_`a-z{}~]/u.test(String.fromCharCode(k)))
+
+function nonSimpleDomain (value) {
+  let code = 0
+  for (let i = 0, len = value.length; i < len; ++i) {
+    code = value.charCodeAt(i)
+    if (code > 126 || hexLookUp[code]) {
+      return true
+    }
+  }
+  return false
+}
+
+const URI_PARSE = /^(?:([^#/:?]+):)?(?:\/\/((?:([^#/?@]*)@)?(\[[^#/?\]]+\]|[^#/:?]*)(?::(\d*))?))?([^#?]*)(?:\?([^#]*))?(?:#((?:.|[\n\r])*))?/u
+
+function parse (uri, opts) {
+  const options = Object.assign({}, opts)
+  const parsed = {
+    scheme: undefined,
+    userinfo: undefined,
+    host: '',
+    port: undefined,
+    path: '',
+    query: undefined,
+    fragment: undefined
+  }
+  const gotEncoding = uri.indexOf('%') !== -1
+  let isIP = false
+  if (options.reference === 'suffix') uri = (options.scheme ? options.scheme + ':' : '') + '//' + uri
+
+  const matches = uri.match(URI_PARSE)
+
+  if (matches) {
+    // store each component
+    parsed.scheme = matches[1]
+    parsed.userinfo = matches[3]
+    parsed.host = matches[4]
+    parsed.port = parseInt(matches[5], 10)
+    parsed.path = matches[6] || ''
+    parsed.query = matches[7]
+    parsed.fragment = matches[8]
+
+    // fix port number
+    if (isNaN(parsed.port)) {
+      parsed.port = matches[5]
+    }
+    if (parsed.host) {
+      const ipv4result = normalizeIPv4(parsed.host)
+      if (ipv4result.isIPV4 === false) {
+        const ipv6result = normalizeIPv6(ipv4result.host)
+        parsed.host = ipv6result.host.toLowerCase()
+        isIP = ipv6result.isIPV6
+      } else {
+        parsed.host = ipv4result.host
+        isIP = true
+      }
+    }
+    if (parsed.scheme === undefined && parsed.userinfo === undefined && parsed.host === undefined && parsed.port === undefined && parsed.query === undefined && !parsed.path) {
+      parsed.reference = 'same-document'
+    } else if (parsed.scheme === undefined) {
+      parsed.reference = 'relative'
+    } else if (parsed.fragment === undefined) {
+      parsed.reference = 'absolute'
+    } else {
+      parsed.reference = 'uri'
+    }
+
+    // check for reference errors
+    if (options.reference && options.reference !== 'suffix' && options.reference !== parsed.reference) {
+      parsed.error = parsed.error || 'URI is not a ' + options.reference + ' reference.'
+    }
+
+    // find scheme handler
+    const schemeHandler = SCHEMES[(options.scheme || parsed.scheme || '').toLowerCase()]
+
+    // check if scheme can't handle IRIs
+    if (!options.unicodeSupport && (!schemeHandler || !schemeHandler.unicodeSupport)) {
+      // if host component is a domain name
+      if (parsed.host && (options.domainHost || (schemeHandler && schemeHandler.domainHost)) && isIP === false && nonSimpleDomain(parsed.host)) {
+        // convert Unicode IDN -> ASCII IDN
+        try {
+          parsed.host = URL.domainToASCII(parsed.host.toLowerCase())
+        } catch (e) {
+          parsed.error = parsed.error || "Host's domain name can not be converted to ASCII: " + e
+        }
+      }
+      // convert IRI -> URI
+    }
+
+    if (!schemeHandler || (schemeHandler && !schemeHandler.skipNormalize)) {
+      if (gotEncoding && parsed.scheme !== undefined) {
+        parsed.scheme = unescape(parsed.scheme)
+      }
+      if (gotEncoding && parsed.host !== undefined) {
+        parsed.host = unescape(parsed.host)
+      }
+      if (parsed.path) {
+        parsed.path = escape(unescape(parsed.path))
+      }
+      if (parsed.fragment) {
+        parsed.fragment = encodeURI(decodeURIComponent(parsed.fragment))
+      }
+    }
+
+    // perform scheme specific parsing
+    if (schemeHandler && schemeHandler.parse) {
+      schemeHandler.parse(parsed, options)
+    }
+  } else {
+    parsed.error = parsed.error || 'URI can not be parsed.'
+  }
+  return parsed
+}
+
+const fastUri = {
+  SCHEMES,
+  normalize,
+  resolve,
+  resolveComponents,
+  equal,
+  serialize,
+  parse
+}
+
+module.exports = fastUri
+module.exports.default = fastUri
+module.exports.fastUri = fastUri
+
+},{"./lib/schemes":95,"./lib/utils":97}],95:[function(require,module,exports){
+'use strict'
+
+const UUID_REG = /^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iu
+const URN_REG = /([\da-z][\d\-a-z]{0,31}):((?:[\w!$'()*+,\-.:;=@]|%[\da-f]{2})+)/iu
+
+function isSecure (wsComponents) {
+  return typeof wsComponents.secure === 'boolean' ? wsComponents.secure : String(wsComponents.scheme).toLowerCase() === 'wss'
+}
+
+function httpParse (components) {
+  if (!components.host) {
+    components.error = components.error || 'HTTP URIs must have a host.'
+  }
+
+  return components
+}
+
+function httpSerialize (components) {
+  const secure = String(components.scheme).toLowerCase() === 'https'
+
+  // normalize the default port
+  if (components.port === (secure ? 443 : 80) || components.port === '') {
+    components.port = undefined
+  }
+
+  // normalize the empty path
+  if (!components.path) {
+    components.path = '/'
+  }
+
+  // NOTE: We do not parse query strings for HTTP URIs
+  // as WWW Form Url Encoded query strings are part of the HTML4+ spec,
+  // and not the HTTP spec.
+
+  return components
+}
+
+function wsParse (wsComponents) {
+// indicate if the secure flag is set
+  wsComponents.secure = isSecure(wsComponents)
+
+  // construct resouce name
+  wsComponents.resourceName = (wsComponents.path || '/') + (wsComponents.query ? '?' + wsComponents.query : '')
+  wsComponents.path = undefined
+  wsComponents.query = undefined
+
+  return wsComponents
+}
+
+function wsSerialize (wsComponents) {
+// normalize the default port
+  if (wsComponents.port === (isSecure(wsComponents) ? 443 : 80) || wsComponents.port === '') {
+    wsComponents.port = undefined
+  }
+
+  // ensure scheme matches secure flag
+  if (typeof wsComponents.secure === 'boolean') {
+    wsComponents.scheme = (wsComponents.secure ? 'wss' : 'ws')
+    wsComponents.secure = undefined
+  }
+
+  // reconstruct path from resource name
+  if (wsComponents.resourceName) {
+    const [path, query] = wsComponents.resourceName.split('?')
+    wsComponents.path = (path && path !== '/' ? path : undefined)
+    wsComponents.query = query
+    wsComponents.resourceName = undefined
+  }
+
+  // forbid fragment component
+  wsComponents.fragment = undefined
+
+  return wsComponents
+}
+
+function urnParse (urnComponents, options) {
+  if (!urnComponents.path) {
+    urnComponents.error = 'URN can not be parsed'
+    return urnComponents
+  }
+  const matches = urnComponents.path.match(URN_REG)
+  if (matches) {
+    const scheme = options.scheme || urnComponents.scheme || 'urn'
+    urnComponents.nid = matches[1].toLowerCase()
+    urnComponents.nss = matches[2]
+    const urnScheme = `${scheme}:${options.nid || urnComponents.nid}`
+    const schemeHandler = SCHEMES[urnScheme]
+    urnComponents.path = undefined
+
+    if (schemeHandler) {
+      urnComponents = schemeHandler.parse(urnComponents, options)
+    }
+  } else {
+    urnComponents.error = urnComponents.error || 'URN can not be parsed.'
+  }
+
+  return urnComponents
+}
+
+function urnSerialize (urnComponents, options) {
+  const scheme = options.scheme || urnComponents.scheme || 'urn'
+  const nid = urnComponents.nid.toLowerCase()
+  const urnScheme = `${scheme}:${options.nid || nid}`
+  const schemeHandler = SCHEMES[urnScheme]
+
+  if (schemeHandler) {
+    urnComponents = schemeHandler.serialize(urnComponents, options)
+  }
+
+  const uriComponents = urnComponents
+  const nss = urnComponents.nss
+  uriComponents.path = `${nid || options.nid}:${nss}`
+
+  options.skipEscape = true
+  return uriComponents
+}
+
+function urnuuidParse (urnComponents, options) {
+  const uuidComponents = urnComponents
+  uuidComponents.uuid = uuidComponents.nss
+  uuidComponents.nss = undefined
+
+  if (!options.tolerant && (!uuidComponents.uuid || !UUID_REG.test(uuidComponents.uuid))) {
+    uuidComponents.error = uuidComponents.error || 'UUID is not valid.'
+  }
+
+  return uuidComponents
+}
+
+function urnuuidSerialize (uuidComponents) {
+  const urnComponents = uuidComponents
+  // normalize UUID
+  urnComponents.nss = (uuidComponents.uuid || '').toLowerCase()
+  return urnComponents
+}
+
+const http = {
+  scheme: 'http',
+  domainHost: true,
+  parse: httpParse,
+  serialize: httpSerialize
+}
+
+const https = {
+  scheme: 'https',
+  domainHost: http.domainHost,
+  parse: httpParse,
+  serialize: httpSerialize
+}
+
+const ws = {
+  scheme: 'ws',
+  domainHost: true,
+  parse: wsParse,
+  serialize: wsSerialize
+}
+
+const wss = {
+  scheme: 'wss',
+  domainHost: ws.domainHost,
+  parse: ws.parse,
+  serialize: ws.serialize
+}
+
+const urn = {
+  scheme: 'urn',
+  parse: urnParse,
+  serialize: urnSerialize,
+  skipNormalize: true
+}
+
+const urnuuid = {
+  scheme: 'urn:uuid',
+  parse: urnuuidParse,
+  serialize: urnuuidSerialize,
+  skipNormalize: true
+}
+
+const SCHEMES = {
+  http,
+  https,
+  ws,
+  wss,
+  urn,
+  'urn:uuid': urnuuid
+}
+
+module.exports = SCHEMES
+
+},{}],96:[function(require,module,exports){
+'use strict'
+
+const HEX = {
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  a: 10,
+  A: 10,
+  b: 11,
+  B: 11,
+  c: 12,
+  C: 12,
+  d: 13,
+  D: 13,
+  e: 14,
+  E: 14,
+  f: 15,
+  F: 15
+}
+
+module.exports = {
+  HEX
+}
+
+},{}],97:[function(require,module,exports){
+'use strict'
+
+const { HEX } = require('./scopedChars')
+
+const IPV4_REG = /^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/u
+
+function normalizeIPv4 (host) {
+  if (findToken(host, '.') < 3) { return { host, isIPV4: false } }
+  const matches = host.match(IPV4_REG) || []
+  const [address] = matches
+  if (address) {
+    return { host: stripLeadingZeros(address, '.'), isIPV4: true }
+  } else {
+    return { host, isIPV4: false }
+  }
+}
+
+/**
+ * @param {string[]} input
+ * @param {boolean} [keepZero=false]
+ * @returns {string|undefined}
+ */
+function stringArrayToHexStripped (input, keepZero = false) {
+  let acc = ''
+  let strip = true
+  for (const c of input) {
+    if (HEX[c] === undefined) return undefined
+    if (c !== '0' && strip === true) strip = false
+    if (!strip) acc += c
+  }
+  if (keepZero && acc.length === 0) acc = '0'
+  return acc
+}
+
+function getIPV6 (input) {
+  let tokenCount = 0
+  const output = { error: false, address: '', zone: '' }
+  const address = []
+  const buffer = []
+  let isZone = false
+  let endipv6Encountered = false
+  let endIpv6 = false
+
+  function consume () {
+    if (buffer.length) {
+      if (isZone === false) {
+        const hex = stringArrayToHexStripped(buffer)
+        if (hex !== undefined) {
+          address.push(hex)
+        } else {
+          output.error = true
+          return false
+        }
+      }
+      buffer.length = 0
+    }
+    return true
+  }
+
+  for (let i = 0; i < input.length; i++) {
+    const cursor = input[i]
+    if (cursor === '[' || cursor === ']') { continue }
+    if (cursor === ':') {
+      if (endipv6Encountered === true) {
+        endIpv6 = true
+      }
+      if (!consume()) { break }
+      tokenCount++
+      address.push(':')
+      if (tokenCount > 7) {
+        // not valid
+        output.error = true
+        break
+      }
+      if (i - 1 >= 0 && input[i - 1] === ':') {
+        endipv6Encountered = true
+      }
+      continue
+    } else if (cursor === '%') {
+      if (!consume()) { break }
+      // switch to zone detection
+      isZone = true
+    } else {
+      buffer.push(cursor)
+      continue
+    }
+  }
+  if (buffer.length) {
+    if (isZone) {
+      output.zone = buffer.join('')
+    } else if (endIpv6) {
+      address.push(buffer.join(''))
+    } else {
+      address.push(stringArrayToHexStripped(buffer))
+    }
+  }
+  output.address = address.join('')
+  return output
+}
+
+function normalizeIPv6 (host) {
+  if (findToken(host, ':') < 2) { return { host, isIPV6: false } }
+  const ipv6 = getIPV6(host)
+
+  if (!ipv6.error) {
+    let newHost = ipv6.address
+    let escapedHost = ipv6.address
+    if (ipv6.zone) {
+      newHost += '%' + ipv6.zone
+      escapedHost += '%25' + ipv6.zone
+    }
+    return { host: newHost, escapedHost, isIPV6: true }
+  } else {
+    return { host, isIPV6: false }
+  }
+}
+
+function stripLeadingZeros (str, token) {
+  let out = ''
+  let skip = true
+  const l = str.length
+  for (let i = 0; i < l; i++) {
+    const c = str[i]
+    if (c === '0' && skip) {
+      if ((i + 1 <= l && str[i + 1] === token) || i + 1 === l) {
+        out += c
+        skip = false
+      }
+    } else {
+      if (c === token) {
+        skip = true
+      } else {
+        skip = false
+      }
+      out += c
+    }
+  }
+  return out
+}
+
+function findToken (str, token) {
+  let ind = 0
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === token) ind++
+  }
+  return ind
+}
+
+const RDS1 = /^\.\.?\//u
+const RDS2 = /^\/\.(?:\/|$)/u
+const RDS3 = /^\/\.\.(?:\/|$)/u
+const RDS5 = /^\/?(?:.|\n)*?(?=\/|$)/u
+
+function removeDotSegments (input) {
+  const output = []
+
+  while (input.length) {
+    if (input.match(RDS1)) {
+      input = input.replace(RDS1, '')
+    } else if (input.match(RDS2)) {
+      input = input.replace(RDS2, '/')
+    } else if (input.match(RDS3)) {
+      input = input.replace(RDS3, '/')
+      output.pop()
+    } else if (input === '.' || input === '..') {
+      input = ''
+    } else {
+      const im = input.match(RDS5)
+      if (im) {
+        const s = im[0]
+        input = input.slice(s.length)
+        output.push(s)
+      } else {
+        throw new Error('Unexpected dot segment condition')
+      }
+    }
+  }
+  return output.join('')
+}
+
+function normalizeComponentEncoding (components, esc) {
+  const func = esc !== true ? escape : unescape
+  if (components.scheme !== undefined) {
+    components.scheme = func(components.scheme)
+  }
+  if (components.userinfo !== undefined) {
+    components.userinfo = func(components.userinfo)
+  }
+  if (components.host !== undefined) {
+    components.host = func(components.host)
+  }
+  if (components.path !== undefined) {
+    components.path = func(components.path)
+  }
+  if (components.query !== undefined) {
+    components.query = func(components.query)
+  }
+  if (components.fragment !== undefined) {
+    components.fragment = func(components.fragment)
+  }
+  return components
+}
+
+function recomposeAuthority (components) {
+  const uriTokens = []
+
+  if (components.userinfo !== undefined) {
+    uriTokens.push(components.userinfo)
+    uriTokens.push('@')
+  }
+
+  if (components.host !== undefined) {
+    let host = unescape(components.host)
+    const ipV4res = normalizeIPv4(host)
+
+    if (ipV4res.isIPV4) {
+      host = ipV4res.host
+    } else {
+      const ipV6res = normalizeIPv6(ipV4res.host)
+      if (ipV6res.isIPV6 === true) {
+        host = `[${ipV6res.escapedHost}]`
+      } else {
+        host = components.host
+      }
+    }
+    uriTokens.push(host)
+  }
+
+  if (typeof components.port === 'number' || typeof components.port === 'string') {
+    uriTokens.push(':')
+    uriTokens.push(String(components.port))
+  }
+
+  return uriTokens.length ? uriTokens.join('') : undefined
+};
+
+module.exports = {
+  recomposeAuthority,
+  normalizeComponentEncoding,
+  removeDotSegments,
+  normalizeIPv4,
+  normalizeIPv6,
+  stringArrayToHexStripped
+}
+
+},{"./scopedChars":96}],98:[function(require,module,exports){
 'use strict';
 
 var traverse = module.exports = function (schema, opts, cb) {
@@ -6655,7 +7720,2848 @@ function escapeJsonPtr(str) {
   return str.replace(/~/g, '~0').replace(/\//g, '~1');
 }
 
-},{}],92:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
+(function(root, factory) {
+    if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else {
+        root.nearley = factory();
+    }
+}(this, function() {
+
+    function Rule(name, symbols, postprocess) {
+        this.id = ++Rule.highestId;
+        this.name = name;
+        this.symbols = symbols;        // a list of literal | regex class | nonterminal
+        this.postprocess = postprocess;
+        return this;
+    }
+    Rule.highestId = 0;
+
+    Rule.prototype.toString = function(withCursorAt) {
+        var symbolSequence = (typeof withCursorAt === "undefined")
+                             ? this.symbols.map(getSymbolShortDisplay).join(' ')
+                             : (   this.symbols.slice(0, withCursorAt).map(getSymbolShortDisplay).join(' ')
+                                 + " ● "
+                                 + this.symbols.slice(withCursorAt).map(getSymbolShortDisplay).join(' ')     );
+        return this.name + " → " + symbolSequence;
+    }
+
+
+    // a State is a rule at a position from a given starting point in the input stream (reference)
+    function State(rule, dot, reference, wantedBy) {
+        this.rule = rule;
+        this.dot = dot;
+        this.reference = reference;
+        this.data = [];
+        this.wantedBy = wantedBy;
+        this.isComplete = this.dot === rule.symbols.length;
+    }
+
+    State.prototype.toString = function() {
+        return "{" + this.rule.toString(this.dot) + "}, from: " + (this.reference || 0);
+    };
+
+    State.prototype.nextState = function(child) {
+        var state = new State(this.rule, this.dot + 1, this.reference, this.wantedBy);
+        state.left = this;
+        state.right = child;
+        if (state.isComplete) {
+            state.data = state.build();
+            // Having right set here will prevent the right state and its children
+            // form being garbage collected
+            state.right = undefined;
+        }
+        return state;
+    };
+
+    State.prototype.build = function() {
+        var children = [];
+        var node = this;
+        do {
+            children.push(node.right.data);
+            node = node.left;
+        } while (node.left);
+        children.reverse();
+        return children;
+    };
+
+    State.prototype.finish = function() {
+        if (this.rule.postprocess) {
+            this.data = this.rule.postprocess(this.data, this.reference, Parser.fail);
+        }
+    };
+
+
+    function Column(grammar, index) {
+        this.grammar = grammar;
+        this.index = index;
+        this.states = [];
+        this.wants = {}; // states indexed by the non-terminal they expect
+        this.scannable = []; // list of states that expect a token
+        this.completed = {}; // states that are nullable
+    }
+
+
+    Column.prototype.process = function(nextColumn) {
+        var states = this.states;
+        var wants = this.wants;
+        var completed = this.completed;
+
+        for (var w = 0; w < states.length; w++) { // nb. we push() during iteration
+            var state = states[w];
+
+            if (state.isComplete) {
+                state.finish();
+                if (state.data !== Parser.fail) {
+                    // complete
+                    var wantedBy = state.wantedBy;
+                    for (var i = wantedBy.length; i--; ) { // this line is hot
+                        var left = wantedBy[i];
+                        this.complete(left, state);
+                    }
+
+                    // special-case nullables
+                    if (state.reference === this.index) {
+                        // make sure future predictors of this rule get completed.
+                        var exp = state.rule.name;
+                        (this.completed[exp] = this.completed[exp] || []).push(state);
+                    }
+                }
+
+            } else {
+                // queue scannable states
+                var exp = state.rule.symbols[state.dot];
+                if (typeof exp !== 'string') {
+                    this.scannable.push(state);
+                    continue;
+                }
+
+                // predict
+                if (wants[exp]) {
+                    wants[exp].push(state);
+
+                    if (completed.hasOwnProperty(exp)) {
+                        var nulls = completed[exp];
+                        for (var i = 0; i < nulls.length; i++) {
+                            var right = nulls[i];
+                            this.complete(state, right);
+                        }
+                    }
+                } else {
+                    wants[exp] = [state];
+                    this.predict(exp);
+                }
+            }
+        }
+    }
+
+    Column.prototype.predict = function(exp) {
+        var rules = this.grammar.byName[exp] || [];
+
+        for (var i = 0; i < rules.length; i++) {
+            var r = rules[i];
+            var wantedBy = this.wants[exp];
+            var s = new State(r, 0, this.index, wantedBy);
+            this.states.push(s);
+        }
+    }
+
+    Column.prototype.complete = function(left, right) {
+        var copy = left.nextState(right);
+        this.states.push(copy);
+    }
+
+
+    function Grammar(rules, start) {
+        this.rules = rules;
+        this.start = start || this.rules[0].name;
+        var byName = this.byName = {};
+        this.rules.forEach(function(rule) {
+            if (!byName.hasOwnProperty(rule.name)) {
+                byName[rule.name] = [];
+            }
+            byName[rule.name].push(rule);
+        });
+    }
+
+    // So we can allow passing (rules, start) directly to Parser for backwards compatibility
+    Grammar.fromCompiled = function(rules, start) {
+        var lexer = rules.Lexer;
+        if (rules.ParserStart) {
+          start = rules.ParserStart;
+          rules = rules.ParserRules;
+        }
+        var rules = rules.map(function (r) { return (new Rule(r.name, r.symbols, r.postprocess)); });
+        var g = new Grammar(rules, start);
+        g.lexer = lexer; // nb. storing lexer on Grammar is iffy, but unavoidable
+        return g;
+    }
+
+
+    function StreamLexer() {
+      this.reset("");
+    }
+
+    StreamLexer.prototype.reset = function(data, state) {
+        this.buffer = data;
+        this.index = 0;
+        this.line = state ? state.line : 1;
+        this.lastLineBreak = state ? -state.col : 0;
+    }
+
+    StreamLexer.prototype.next = function() {
+        if (this.index < this.buffer.length) {
+            var ch = this.buffer[this.index++];
+            if (ch === '\n') {
+              this.line += 1;
+              this.lastLineBreak = this.index;
+            }
+            return {value: ch};
+        }
+    }
+
+    StreamLexer.prototype.save = function() {
+      return {
+        line: this.line,
+        col: this.index - this.lastLineBreak,
+      }
+    }
+
+    StreamLexer.prototype.formatError = function(token, message) {
+        // nb. this gets called after consuming the offending token,
+        // so the culprit is index-1
+        var buffer = this.buffer;
+        if (typeof buffer === 'string') {
+            var lines = buffer
+                .split("\n")
+                .slice(
+                    Math.max(0, this.line - 5), 
+                    this.line
+                );
+
+            var nextLineBreak = buffer.indexOf('\n', this.index);
+            if (nextLineBreak === -1) nextLineBreak = buffer.length;
+            var col = this.index - this.lastLineBreak;
+            var lastLineDigits = String(this.line).length;
+            message += " at line " + this.line + " col " + col + ":\n\n";
+            message += lines
+                .map(function(line, i) {
+                    return pad(this.line - lines.length + i + 1, lastLineDigits) + " " + line;
+                }, this)
+                .join("\n");
+            message += "\n" + pad("", lastLineDigits + col) + "^\n";
+            return message;
+        } else {
+            return message + " at index " + (this.index - 1);
+        }
+
+        function pad(n, length) {
+            var s = String(n);
+            return Array(length - s.length + 1).join(" ") + s;
+        }
+    }
+
+    function Parser(rules, start, options) {
+        if (rules instanceof Grammar) {
+            var grammar = rules;
+            var options = start;
+        } else {
+            var grammar = Grammar.fromCompiled(rules, start);
+        }
+        this.grammar = grammar;
+
+        // Read options
+        this.options = {
+            keepHistory: false,
+            lexer: grammar.lexer || new StreamLexer,
+        };
+        for (var key in (options || {})) {
+            this.options[key] = options[key];
+        }
+
+        // Setup lexer
+        this.lexer = this.options.lexer;
+        this.lexerState = undefined;
+
+        // Setup a table
+        var column = new Column(grammar, 0);
+        var table = this.table = [column];
+
+        // I could be expecting anything.
+        column.wants[grammar.start] = [];
+        column.predict(grammar.start);
+        // TODO what if start rule is nullable?
+        column.process();
+        this.current = 0; // token index
+    }
+
+    // create a reserved token for indicating a parse fail
+    Parser.fail = {};
+
+    Parser.prototype.feed = function(chunk) {
+        var lexer = this.lexer;
+        lexer.reset(chunk, this.lexerState);
+
+        var token;
+        while (true) {
+            try {
+                token = lexer.next();
+                if (!token) {
+                    break;
+                }
+            } catch (e) {
+                // Create the next column so that the error reporter
+                // can display the correctly predicted states.
+                var nextColumn = new Column(this.grammar, this.current + 1);
+                this.table.push(nextColumn);
+                var err = new Error(this.reportLexerError(e));
+                err.offset = this.current;
+                err.token = e.token;
+                throw err;
+            }
+            // We add new states to table[current+1]
+            var column = this.table[this.current];
+
+            // GC unused states
+            if (!this.options.keepHistory) {
+                delete this.table[this.current - 1];
+            }
+
+            var n = this.current + 1;
+            var nextColumn = new Column(this.grammar, n);
+            this.table.push(nextColumn);
+
+            // Advance all tokens that expect the symbol
+            var literal = token.text !== undefined ? token.text : token.value;
+            var value = lexer.constructor === StreamLexer ? token.value : token;
+            var scannable = column.scannable;
+            for (var w = scannable.length; w--; ) {
+                var state = scannable[w];
+                var expect = state.rule.symbols[state.dot];
+                // Try to consume the token
+                // either regex or literal
+                if (expect.test ? expect.test(value) :
+                    expect.type ? expect.type === token.type
+                                : expect.literal === literal) {
+                    // Add it
+                    var next = state.nextState({data: value, token: token, isToken: true, reference: n - 1});
+                    nextColumn.states.push(next);
+                }
+            }
+
+            // Next, for each of the rules, we either
+            // (a) complete it, and try to see if the reference row expected that
+            //     rule
+            // (b) predict the next nonterminal it expects by adding that
+            //     nonterminal's start state
+            // To prevent duplication, we also keep track of rules we have already
+            // added
+
+            nextColumn.process();
+
+            // If needed, throw an error:
+            if (nextColumn.states.length === 0) {
+                // No states at all! This is not good.
+                var err = new Error(this.reportError(token));
+                err.offset = this.current;
+                err.token = token;
+                throw err;
+            }
+
+            // maybe save lexer state
+            if (this.options.keepHistory) {
+              column.lexerState = lexer.save()
+            }
+
+            this.current++;
+        }
+        if (column) {
+          this.lexerState = lexer.save()
+        }
+
+        // Incrementally keep track of results
+        this.results = this.finish();
+
+        // Allow chaining, for whatever it's worth
+        return this;
+    };
+
+    Parser.prototype.reportLexerError = function(lexerError) {
+        var tokenDisplay, lexerMessage;
+        // Planning to add a token property to moo's thrown error
+        // even on erroring tokens to be used in error display below
+        var token = lexerError.token;
+        if (token) {
+            tokenDisplay = "input " + JSON.stringify(token.text[0]) + " (lexer error)";
+            lexerMessage = this.lexer.formatError(token, "Syntax error");
+        } else {
+            tokenDisplay = "input (lexer error)";
+            lexerMessage = lexerError.message;
+        }
+        return this.reportErrorCommon(lexerMessage, tokenDisplay);
+    };
+
+    Parser.prototype.reportError = function(token) {
+        var tokenDisplay = (token.type ? token.type + " token: " : "") + JSON.stringify(token.value !== undefined ? token.value : token);
+        var lexerMessage = this.lexer.formatError(token, "Syntax error");
+        return this.reportErrorCommon(lexerMessage, tokenDisplay);
+    };
+
+    Parser.prototype.reportErrorCommon = function(lexerMessage, tokenDisplay) {
+        var lines = [];
+        lines.push(lexerMessage);
+        var lastColumnIndex = this.table.length - 2;
+        var lastColumn = this.table[lastColumnIndex];
+        var expectantStates = lastColumn.states
+            .filter(function(state) {
+                var nextSymbol = state.rule.symbols[state.dot];
+                return nextSymbol && typeof nextSymbol !== "string";
+            });
+
+        if (expectantStates.length === 0) {
+            lines.push('Unexpected ' + tokenDisplay + '. I did not expect any more input. Here is the state of my parse table:\n');
+            this.displayStateStack(lastColumn.states, lines);
+        } else {
+            lines.push('Unexpected ' + tokenDisplay + '. Instead, I was expecting to see one of the following:\n');
+            // Display a "state stack" for each expectant state
+            // - which shows you how this state came to be, step by step.
+            // If there is more than one derivation, we only display the first one.
+            var stateStacks = expectantStates
+                .map(function(state) {
+                    return this.buildFirstStateStack(state, []) || [state];
+                }, this);
+            // Display each state that is expecting a terminal symbol next.
+            stateStacks.forEach(function(stateStack) {
+                var state = stateStack[0];
+                var nextSymbol = state.rule.symbols[state.dot];
+                var symbolDisplay = this.getSymbolDisplay(nextSymbol);
+                lines.push('A ' + symbolDisplay + ' based on:');
+                this.displayStateStack(stateStack, lines);
+            }, this);
+        }
+        lines.push("");
+        return lines.join("\n");
+    }
+    
+    Parser.prototype.displayStateStack = function(stateStack, lines) {
+        var lastDisplay;
+        var sameDisplayCount = 0;
+        for (var j = 0; j < stateStack.length; j++) {
+            var state = stateStack[j];
+            var display = state.rule.toString(state.dot);
+            if (display === lastDisplay) {
+                sameDisplayCount++;
+            } else {
+                if (sameDisplayCount > 0) {
+                    lines.push('    ^ ' + sameDisplayCount + ' more lines identical to this');
+                }
+                sameDisplayCount = 0;
+                lines.push('    ' + display);
+            }
+            lastDisplay = display;
+        }
+    };
+
+    Parser.prototype.getSymbolDisplay = function(symbol) {
+        return getSymbolLongDisplay(symbol);
+    };
+
+    /*
+    Builds a the first state stack. You can think of a state stack as the call stack
+    of the recursive-descent parser which the Nearley parse algorithm simulates.
+    A state stack is represented as an array of state objects. Within a
+    state stack, the first item of the array will be the starting
+    state, with each successive item in the array going further back into history.
+
+    This function needs to be given a starting state and an empty array representing
+    the visited states, and it returns an single state stack.
+
+    */
+    Parser.prototype.buildFirstStateStack = function(state, visited) {
+        if (visited.indexOf(state) !== -1) {
+            // Found cycle, return null
+            // to eliminate this path from the results, because
+            // we don't know how to display it meaningfully
+            return null;
+        }
+        if (state.wantedBy.length === 0) {
+            return [state];
+        }
+        var prevState = state.wantedBy[0];
+        var childVisited = [state].concat(visited);
+        var childResult = this.buildFirstStateStack(prevState, childVisited);
+        if (childResult === null) {
+            return null;
+        }
+        return [state].concat(childResult);
+    };
+
+    Parser.prototype.save = function() {
+        var column = this.table[this.current];
+        column.lexerState = this.lexerState;
+        return column;
+    };
+
+    Parser.prototype.restore = function(column) {
+        var index = column.index;
+        this.current = index;
+        this.table[index] = column;
+        this.table.splice(index + 1);
+        this.lexerState = column.lexerState;
+
+        // Incrementally keep track of results
+        this.results = this.finish();
+    };
+
+    // nb. deprecated: use save/restore instead!
+    Parser.prototype.rewind = function(index) {
+        if (!this.options.keepHistory) {
+            throw new Error('set option `keepHistory` to enable rewinding')
+        }
+        // nb. recall column (table) indicies fall between token indicies.
+        //        col 0   --   token 0   --   col 1
+        this.restore(this.table[index]);
+    };
+
+    Parser.prototype.finish = function() {
+        // Return the possible parsings
+        var considerations = [];
+        var start = this.grammar.start;
+        var column = this.table[this.table.length - 1]
+        column.states.forEach(function (t) {
+            if (t.rule.name === start
+                    && t.dot === t.rule.symbols.length
+                    && t.reference === 0
+                    && t.data !== Parser.fail) {
+                considerations.push(t);
+            }
+        });
+        return considerations.map(function(c) {return c.data; });
+    };
+
+    function getSymbolLongDisplay(symbol) {
+        var type = typeof symbol;
+        if (type === "string") {
+            return symbol;
+        } else if (type === "object") {
+            if (symbol.literal) {
+                return JSON.stringify(symbol.literal);
+            } else if (symbol instanceof RegExp) {
+                return 'character matching ' + symbol;
+            } else if (symbol.type) {
+                return symbol.type + ' token';
+            } else if (symbol.test) {
+                return 'token matching ' + String(symbol.test);
+            } else {
+                throw new Error('Unknown symbol type: ' + symbol);
+            }
+        }
+    }
+
+    function getSymbolShortDisplay(symbol) {
+        var type = typeof symbol;
+        if (type === "string") {
+            return symbol;
+        } else if (type === "object") {
+            if (symbol.literal) {
+                return JSON.stringify(symbol.literal);
+            } else if (symbol instanceof RegExp) {
+                return symbol.toString();
+            } else if (symbol.type) {
+                return '%' + symbol.type;
+            } else if (symbol.test) {
+                return '<' + String(symbol.test) + '>';
+            } else {
+                throw new Error('Unknown symbol type: ' + symbol);
+            }
+        }
+    }
+
+    return {
+        Parser: Parser,
+        Grammar: Grammar,
+        Rule: Rule,
+    };
+
+}));
+
+},{}],100:[function(require,module,exports){
+'use strict';
+
+var extend = require('extend');
+
+var data = {
+  permanent: require('./lib/iana-permanent.json'),
+  provosional: require('./lib/iana-provisional.json'),
+  historical: require('./lib/iana-historical.json')
+};
+
+var allByName = {};
+
+Object.keys(data).forEach(function (type) {
+  data[type].forEach(function (schemeObj) {
+    allByName[schemeObj.scheme] = extend(schemeObj, { type: type });
+  });
+});
+
+data.unofficial = require('./lib/unofficial.json').filter(function (item) {
+  return !allByName[item.scheme];
+});
+
+data.unofficial.forEach(function (schemeObj) {
+  allByName[schemeObj.scheme] = extend(schemeObj, { type: 'unofficial' });
+});
+
+
+module.exports = extend(data, { allByName: allByName });
+
+},{"./lib/iana-historical.json":101,"./lib/iana-permanent.json":102,"./lib/iana-provisional.json":103,"./lib/unofficial.json":104,"extend":92}],101:[function(require,module,exports){
+module.exports=[
+  {
+    "scheme": "fax",
+    "description": "fax",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2806"
+      },
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3966"
+      }
+    ]
+  },
+  {
+    "scheme": "filesystem",
+    "description": "filesystem",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/historic/filesystem"
+  },
+  {
+    "scheme": "mailserver",
+    "description": "Access to data available from mail servers",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6196"
+      }
+    ]
+  },
+  {
+    "scheme": "modem",
+    "description": "modem",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2806"
+      },
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3966"
+      }
+    ]
+  },
+  {
+    "scheme": "pack",
+    "description": "pack",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-shur-pack-uri-scheme"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/historic/pack"
+  },
+  {
+    "scheme": "prospero",
+    "description": "Prospero Directory Service",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4157"
+      }
+    ]
+  },
+  {
+    "scheme": "snews",
+    "description": "NNTP over SSL/TLS",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5538"
+      }
+    ]
+  },
+  {
+    "scheme": "videotex",
+    "description": "videotex",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-mavrakis-videotex-url-spec"
+      },
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2122"
+      },
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3986"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/historic/videotex"
+  },
+  {
+    "scheme": "wais",
+    "description": "Wide Area Information Servers",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4156"
+      }
+    ]
+  },
+  {
+    "scheme": "z39.50",
+    "description": "Z39.50 information access",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc1738"
+      },
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2056"
+      }
+    ]
+  }
+]
+},{}],102:[function(require,module,exports){
+module.exports=[
+  {
+    "scheme": "aaa",
+    "description": "Diameter Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6733"
+      }
+    ]
+  },
+  {
+    "scheme": "aaas",
+    "description": "Diameter Protocol with Secure Transport",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6733"
+      }
+    ]
+  },
+  {
+    "scheme": "about",
+    "description": "about",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6694"
+      }
+    ]
+  },
+  {
+    "scheme": "acap",
+    "description": "application configuration access protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2244"
+      }
+    ]
+  },
+  {
+    "scheme": "acct",
+    "description": "acct",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7565"
+      }
+    ]
+  },
+  {
+    "scheme": "cap",
+    "description": "Calendar Access Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4324"
+      }
+    ]
+  },
+  {
+    "scheme": "cid",
+    "description": "content identifier",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2392"
+      }
+    ]
+  },
+  {
+    "scheme": "coap",
+    "description": "coap",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7252"
+      }
+    ]
+  },
+  {
+    "scheme": "coaps",
+    "description": "coaps",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7252"
+      }
+    ]
+  },
+  {
+    "scheme": "crid",
+    "description": "TV-Anytime Content Reference Identifier",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4078"
+      }
+    ]
+  },
+  {
+    "scheme": "data",
+    "description": "data",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2397"
+      }
+    ]
+  },
+  {
+    "scheme": "dav",
+    "description": "dav",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4918"
+      }
+    ]
+  },
+  {
+    "scheme": "dict",
+    "description": "dictionary service protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2229"
+      }
+    ]
+  },
+  {
+    "scheme": "dns",
+    "description": "Domain Name System",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4501"
+      }
+    ]
+  },
+  {
+    "scheme": "example",
+    "description": "example",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7595"
+      }
+    ]
+  },
+  {
+    "scheme": "file",
+    "description": "Host-specific file names",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc1738"
+      }
+    ]
+  },
+  {
+    "scheme": "ftp",
+    "description": "File Transfer Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc1738"
+      }
+    ]
+  },
+  {
+    "scheme": "geo",
+    "description": "Geographic Locations",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5870"
+      }
+    ]
+  },
+  {
+    "scheme": "go",
+    "description": "go",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3368"
+      }
+    ]
+  },
+  {
+    "scheme": "gopher",
+    "description": "The Gopher Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4266"
+      }
+    ]
+  },
+  {
+    "scheme": "h323",
+    "description": "H.323",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3508"
+      }
+    ]
+  },
+  {
+    "scheme": "http",
+    "description": "Hypertext Transfer Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7230"
+      }
+    ]
+  },
+  {
+    "scheme": "https",
+    "description": "Hypertext Transfer Protocol Secure",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7230"
+      }
+    ]
+  },
+  {
+    "scheme": "iax",
+    "description": "Inter-Asterisk eXchange Version 2",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5456"
+      }
+    ]
+  },
+  {
+    "scheme": "icap",
+    "description": "Internet Content Adaptation Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3507"
+      }
+    ]
+  },
+  {
+    "scheme": "im",
+    "description": "Instant Messaging",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3860"
+      }
+    ]
+  },
+  {
+    "scheme": "imap",
+    "description": "internet message access protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5092"
+      }
+    ]
+  },
+  {
+    "scheme": "info",
+    "description": "Information Assets with Identifiers in Public Namespaces. \n       (section 3) defines an \"info\" registry \n        of public namespaces, which is maintained by NISO and can be accessed \n        from .",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4452"
+      }
+    ]
+  },
+  {
+    "scheme": "ipp",
+    "description": "Internet Printing Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3510"
+      }
+    ]
+  },
+  {
+    "scheme": "ipps",
+    "description": "Internet Printing Protocol over HTTPS",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7472"
+      }
+    ]
+  },
+  {
+    "scheme": "iris",
+    "description": "Internet Registry Information Service",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3981"
+      }
+    ]
+  },
+  {
+    "scheme": "iris.beep",
+    "description": "iris.beep",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3983"
+      }
+    ]
+  },
+  {
+    "scheme": "iris.lwz",
+    "description": "iris.lwz",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4993"
+      }
+    ]
+  },
+  {
+    "scheme": "iris.xpc",
+    "description": "iris.xpc",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4992"
+      }
+    ]
+  },
+  {
+    "scheme": "iris.xpcs",
+    "description": "iris.xpcs",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4992"
+      }
+    ]
+  },
+  {
+    "scheme": "jabber",
+    "description": "jabber",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/perm/jabber"
+  },
+  {
+    "scheme": "ldap",
+    "description": "Lightweight Directory Access Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4516"
+      }
+    ]
+  },
+  {
+    "scheme": "mailto",
+    "description": "Electronic mail address",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6068"
+      }
+    ]
+  },
+  {
+    "scheme": "mid",
+    "description": "message identifier",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2392"
+      }
+    ]
+  },
+  {
+    "scheme": "msrp",
+    "description": "Message Session Relay Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4975"
+      }
+    ]
+  },
+  {
+    "scheme": "msrps",
+    "description": "Message Session Relay Protocol Secure",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4975"
+      }
+    ]
+  },
+  {
+    "scheme": "mtqp",
+    "description": "Message Tracking Query Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3887"
+      }
+    ]
+  },
+  {
+    "scheme": "mupdate",
+    "description": "Mailbox Update (MUPDATE) Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3656"
+      }
+    ]
+  },
+  {
+    "scheme": "news",
+    "description": "USENET news",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5538"
+      }
+    ]
+  },
+  {
+    "scheme": "nfs",
+    "description": "network file system protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2224"
+      }
+    ]
+  },
+  {
+    "scheme": "ni",
+    "description": "ni",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6920"
+      }
+    ]
+  },
+  {
+    "scheme": "nih",
+    "description": "nih",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6920"
+      }
+    ]
+  },
+  {
+    "scheme": "nntp",
+    "description": "USENET news using NNTP access",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5538"
+      }
+    ]
+  },
+  {
+    "scheme": "opaquelocktoken",
+    "description": "opaquelocktokent",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4918"
+      }
+    ]
+  },
+  {
+    "scheme": "pkcs11",
+    "description": "PKCS#11",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7512"
+      }
+    ]
+  },
+  {
+    "scheme": "pop",
+    "description": "Post Office Protocol v3",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2384"
+      }
+    ]
+  },
+  {
+    "scheme": "pres",
+    "description": "Presence",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3859"
+      }
+    ]
+  },
+  {
+    "scheme": "reload",
+    "description": "reload",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6940"
+      }
+    ]
+  },
+  {
+    "scheme": "rtsp",
+    "description": "Real-time Streaming Protocol (RTSP)",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2326"
+      },
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/RFC-ietf-mmusic-rfc2326bis-40"
+      }
+    ]
+  },
+  {
+    "scheme": "rtsps",
+    "description": "Real-time Streaming Protocol (RTSP) over TLS",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2326"
+      },
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/RFC-ietf-mmusic-rfc2326bis-40"
+      }
+    ]
+  },
+  {
+    "scheme": "rtspu",
+    "description": "Real-time Streaming Protocol (RTSP) over unreliable datagram transport",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2326"
+      }
+    ]
+  },
+  {
+    "scheme": "service",
+    "description": "service location",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2609"
+      }
+    ]
+  },
+  {
+    "scheme": "session",
+    "description": "session",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6787"
+      }
+    ]
+  },
+  {
+    "scheme": "shttp",
+    "description": "Secure Hypertext Transfer Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2660"
+      }
+    ]
+  },
+  {
+    "scheme": "sieve",
+    "description": "ManageSieve Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5804"
+      }
+    ]
+  },
+  {
+    "scheme": "sip",
+    "description": "session initiation protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3261"
+      }
+    ]
+  },
+  {
+    "scheme": "sips",
+    "description": "secure session initiation protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3261"
+      }
+    ]
+  },
+  {
+    "scheme": "sms",
+    "description": "Short Message Service",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5724"
+      }
+    ]
+  },
+  {
+    "scheme": "snmp",
+    "description": "Simple Network Management Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4088"
+      }
+    ]
+  },
+  {
+    "scheme": "soap.beep",
+    "description": "soap.beep",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4227"
+      }
+    ]
+  },
+  {
+    "scheme": "soap.beeps",
+    "description": "soap.beeps",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4227"
+      }
+    ]
+  },
+  {
+    "scheme": "stun",
+    "description": "stun",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7064"
+      }
+    ]
+  },
+  {
+    "scheme": "stuns",
+    "description": "stuns",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7064"
+      }
+    ]
+  },
+  {
+    "scheme": "tag",
+    "description": "tag",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4151"
+      }
+    ]
+  },
+  {
+    "scheme": "tel",
+    "description": "telephone",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3966"
+      }
+    ]
+  },
+  {
+    "scheme": "telnet",
+    "description": "Reference to interactive sessions",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc4248"
+      }
+    ]
+  },
+  {
+    "scheme": "tftp",
+    "description": "Trivial File Transfer Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3617"
+      }
+    ]
+  },
+  {
+    "scheme": "thismessage",
+    "description": "multipart/related relative reference resolution",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2557"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/perm/thismessage"
+  },
+  {
+    "scheme": "tip",
+    "description": "Transaction Internet Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2371"
+      }
+    ]
+  },
+  {
+    "scheme": "tn3270",
+    "description": "Interactive 3270 emulation sessions",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6270"
+      }
+    ]
+  },
+  {
+    "scheme": "turn",
+    "description": "turn",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7065"
+      }
+    ]
+  },
+  {
+    "scheme": "turns",
+    "description": "turns",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7065"
+      }
+    ]
+  },
+  {
+    "scheme": "tv",
+    "description": "TV Broadcasts",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2838"
+      }
+    ]
+  },
+  {
+    "scheme": "urn",
+    "description": "Uniform Resource Names",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2141"
+      },
+      {
+        "type": "registry",
+        "href": "http://www.iana.org/assignments/urn-namespaces"
+      }
+    ]
+  },
+  {
+    "scheme": "vemmi",
+    "description": "versatile multimedia interface",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2122"
+      }
+    ]
+  },
+  {
+    "scheme": "vnc",
+    "description": "Remote Framebuffer Protocol",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/RFC-warden-appsawg-vnc-scheme-10"
+      }
+    ]
+  },
+  {
+    "scheme": "ws",
+    "description": "WebSocket connections",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6455"
+      }
+    ]
+  },
+  {
+    "scheme": "wss",
+    "description": "Encrypted WebSocket connections",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6455"
+      }
+    ]
+  },
+  {
+    "scheme": "xcon",
+    "description": "xcon",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6501"
+      }
+    ]
+  },
+  {
+    "scheme": "xcon-userid",
+    "description": "xcon-userid",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6501"
+      }
+    ]
+  },
+  {
+    "scheme": "xmlrpc.beep",
+    "description": "xmlrpc.beep",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3529"
+      }
+    ]
+  },
+  {
+    "scheme": "xmlrpc.beeps",
+    "description": "xmlrpc.beeps",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc3529"
+      }
+    ]
+  },
+  {
+    "scheme": "xmpp",
+    "description": "Extensible Messaging and Presence Protocol",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5122"
+      }
+    ]
+  },
+  {
+    "scheme": "z39.50r",
+    "description": "Z39.50 Retrieval",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2056"
+      }
+    ]
+  },
+  {
+    "scheme": "z39.50s",
+    "description": "Z39.50 Session",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc2056"
+      }
+    ]
+  }
+]
+},{}],103:[function(require,module,exports){
+module.exports=[
+  {
+    "scheme": "acr",
+    "description": "acr",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/acr"
+  },
+  {
+    "scheme": "adiumxtra",
+    "description": "adiumxtra",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/adiumxtra"
+  },
+  {
+    "scheme": "afp",
+    "description": "afp",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/afp"
+  },
+  {
+    "scheme": "afs",
+    "description": "Andrew File System global file names",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc1738"
+      }
+    ]
+  },
+  {
+    "scheme": "aim",
+    "description": "aim",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/aim"
+  },
+  {
+    "scheme": "appdata",
+    "description": "appdata",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/appdata"
+  },
+  {
+    "scheme": "apt",
+    "description": "apt",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/apt"
+  },
+  {
+    "scheme": "attachment",
+    "description": "attachment",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/attachment"
+  },
+  {
+    "scheme": "aw",
+    "description": "aw",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/aw"
+  },
+  {
+    "scheme": "barion",
+    "description": "barion",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/barion"
+  },
+  {
+    "scheme": "beshare",
+    "description": "beshare",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/beshare"
+  },
+  {
+    "scheme": "bitcoin",
+    "description": "bitcoin",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/bitcoin"
+  },
+  {
+    "scheme": "blob",
+    "description": "blob",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/blob"
+  },
+  {
+    "scheme": "bolo",
+    "description": "bolo",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/bolo"
+  },
+  {
+    "scheme": "callto",
+    "description": "callto",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/callto"
+  },
+  {
+    "scheme": "chrome",
+    "description": "chrome",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/chrome"
+  },
+  {
+    "scheme": "chrome-extension",
+    "description": "chrome-extension",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/chrome-extension"
+  },
+  {
+    "scheme": "com-eventbrite-attendee",
+    "description": "com-eventbrite-attendee",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/com-eventbrite-attendee"
+  },
+  {
+    "scheme": "content",
+    "description": "content",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/content"
+  },
+  {
+    "scheme": "cvs",
+    "description": "cvs",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/cvs"
+  },
+  {
+    "scheme": "dis",
+    "description": "dis",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/dis"
+  },
+  {
+    "scheme": "dlna-playcontainer",
+    "description": "dlna-playcontainer",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/dlna-playcontainer"
+  },
+  {
+    "scheme": "dlna-playsingle",
+    "description": "dlna-playsingle",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/dlna-playsingle"
+  },
+  {
+    "scheme": "dntp",
+    "description": "dntp",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/dntp"
+  },
+  {
+    "scheme": "dtn",
+    "description": "DTNRG research and development",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5050"
+      }
+    ]
+  },
+  {
+    "scheme": "dvb",
+    "description": "dvb",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-mcroberts-uri-dvb"
+      }
+    ]
+  },
+  {
+    "scheme": "ed2k",
+    "description": "ed2k",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ed2k"
+  },
+  {
+    "scheme": "facetime",
+    "description": "facetime",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/facetime"
+  },
+  {
+    "scheme": "feed",
+    "description": "feed",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/feed"
+  },
+  {
+    "scheme": "feedready",
+    "description": "feedready",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/feedready"
+  },
+  {
+    "scheme": "finger",
+    "description": "finger",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/finger"
+  },
+  {
+    "scheme": "fish",
+    "description": "fish",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/fish"
+  },
+  {
+    "scheme": "gg",
+    "description": "gg",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/gg"
+  },
+  {
+    "scheme": "git",
+    "description": "git",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/git"
+  },
+  {
+    "scheme": "gizmoproject",
+    "description": "gizmoproject",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/gizmoproject"
+  },
+  {
+    "scheme": "gtalk",
+    "description": "gtalk",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/gtalk"
+  },
+  {
+    "scheme": "ham",
+    "description": "ham",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7046"
+      }
+    ]
+  },
+  {
+    "scheme": "hcp",
+    "description": "hcp",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/hcp"
+  },
+  {
+    "scheme": "icon",
+    "description": "icon",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-lafayette-icon-uri-scheme"
+      }
+    ]
+  },
+  {
+    "scheme": "iotdisco",
+    "description": "iotdisco",
+    "reference": [
+      {
+        "type": "uri",
+        "href": "http://www.iana.org/assignments/uri-schemes/prov/iotdisco.pdf"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/iotdisco"
+  },
+  {
+    "scheme": "ipn",
+    "description": "ipn",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6260"
+      }
+    ]
+  },
+  {
+    "scheme": "irc",
+    "description": "irc",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/irc"
+  },
+  {
+    "scheme": "irc6",
+    "description": "irc6",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/irc6"
+  },
+  {
+    "scheme": "ircs",
+    "description": "ircs",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ircs"
+  },
+  {
+    "scheme": "isostore",
+    "description": "isostore",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/isostore"
+  },
+  {
+    "scheme": "itms",
+    "description": "itms",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/itms"
+  },
+  {
+    "scheme": "jar",
+    "description": "jar",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/jar"
+  },
+  {
+    "scheme": "jms",
+    "description": "Java Message Service",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc6167"
+      }
+    ]
+  },
+  {
+    "scheme": "keyparc",
+    "description": "keyparc",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/keyparc"
+  },
+  {
+    "scheme": "lastfm",
+    "description": "lastfm",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/lastfm"
+  },
+  {
+    "scheme": "ldaps",
+    "description": "ldaps",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ldaps"
+  },
+  {
+    "scheme": "magnet",
+    "description": "magnet",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/magnet"
+  },
+  {
+    "scheme": "maps",
+    "description": "maps",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/maps"
+  },
+  {
+    "scheme": "market",
+    "description": "market",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/market"
+  },
+  {
+    "scheme": "message",
+    "description": "message",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/message"
+  },
+  {
+    "scheme": "mms",
+    "description": "mms",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/mms"
+  },
+  {
+    "scheme": "ms-access",
+    "description": "ms-access",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-access"
+  },
+  {
+    "scheme": "ms-drive-to",
+    "description": "ms-drive-to",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-drive-to"
+  },
+  {
+    "scheme": "ms-enrollment",
+    "description": "ms-enrollment",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-enrollment"
+  },
+  {
+    "scheme": "ms-excel",
+    "description": "ms-excel",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-excel"
+  },
+  {
+    "scheme": "ms-getoffice",
+    "description": "ms-getoffice",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-getoffice"
+  },
+  {
+    "scheme": "ms-help",
+    "description": "ms-help",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-help"
+  },
+  {
+    "scheme": "ms-infopath",
+    "description": "ms-infopath",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-infopath"
+  },
+  {
+    "scheme": "ms-media-stream-id",
+    "description": "ms-media-stream-id",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-media-stream-id"
+  },
+  {
+    "scheme": "ms-powerpoint",
+    "description": "ms-powerpoint",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-powerpoint"
+  },
+  {
+    "scheme": "ms-project",
+    "description": "ms-project",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-project"
+  },
+  {
+    "scheme": "ms-publisher",
+    "description": "ms-publisher",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-publisher"
+  },
+  {
+    "scheme": "ms-search-repair",
+    "description": "ms-search-repair",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-search-repair"
+  },
+  {
+    "scheme": "ms-secondary-screen-controller",
+    "description": "ms-secondary-screen-controller",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-secondary-screen-controller"
+  },
+  {
+    "scheme": "ms-secondary-screen-setup",
+    "description": "ms-secondary-screen-setup",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-secondary-screen-setup"
+  },
+  {
+    "scheme": "ms-settings",
+    "description": "ms-settings",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings"
+  },
+  {
+    "scheme": "ms-settings-airplanemode",
+    "description": "ms-settings-airplanemode",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-airplanemode"
+  },
+  {
+    "scheme": "ms-settings-bluetooth",
+    "description": "ms-settings-bluetooth",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-bluetooth"
+  },
+  {
+    "scheme": "ms-settings-camera",
+    "description": "ms-settings-camera",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-camera"
+  },
+  {
+    "scheme": "ms-settings-cellular",
+    "description": "ms-settings-cellular",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-cellular"
+  },
+  {
+    "scheme": "ms-settings-cloudstorage",
+    "description": "ms-settings-cloudstorage",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-cloudstorage"
+  },
+  {
+    "scheme": "ms-settings-connectabledevices",
+    "description": "ms-settings-connectabledevices",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-connectabledevices"
+  },
+  {
+    "scheme": "ms-settings-displays-topology",
+    "description": "ms-settings-displays-topology",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-displays-topology"
+  },
+  {
+    "scheme": "ms-settings-emailandaccounts",
+    "description": "ms-settings-emailandaccounts",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-emailandaccounts"
+  },
+  {
+    "scheme": "ms-settings-language",
+    "description": "ms-settings-language",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-language"
+  },
+  {
+    "scheme": "ms-settings-location",
+    "description": "ms-settings-location",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-location"
+  },
+  {
+    "scheme": "ms-settings-lock",
+    "description": "ms-settings-lock",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-lock"
+  },
+  {
+    "scheme": "ms-settings-nfctransactions",
+    "description": "ms-settings-nfctransactions",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-nfctransactions"
+  },
+  {
+    "scheme": "ms-settings-notifications",
+    "description": "ms-settings-notifications",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-notifications"
+  },
+  {
+    "scheme": "ms-settings-power",
+    "description": "ms-settings-power",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-power"
+  },
+  {
+    "scheme": "ms-settings-privacy",
+    "description": "ms-settings-privacy",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-privacy"
+  },
+  {
+    "scheme": "ms-settings-proximity",
+    "description": "ms-settings-proximity",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-proximity"
+  },
+  {
+    "scheme": "ms-settings-screenrotation",
+    "description": "ms-settings-screenrotation",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-screenrotation"
+  },
+  {
+    "scheme": "ms-settings-wifi",
+    "description": "ms-settings-wifi",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-wifi"
+  },
+  {
+    "scheme": "ms-settings-workplace",
+    "description": "ms-settings-workplace",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-settings-workplace"
+  },
+  {
+    "scheme": "ms-spd",
+    "description": "ms-spd",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-spd"
+  },
+  {
+    "scheme": "ms-transit-to",
+    "description": "ms-transit-to",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-transit-to"
+  },
+  {
+    "scheme": "ms-visio",
+    "description": "ms-visio",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-visio"
+  },
+  {
+    "scheme": "ms-walk-to",
+    "description": "ms-walk-to",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-walk-to"
+  },
+  {
+    "scheme": "ms-word",
+    "description": "ms-word",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ms-word"
+  },
+  {
+    "scheme": "msnim",
+    "description": "msnim",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/msnim"
+  },
+  {
+    "scheme": "mumble",
+    "description": "mumble",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/mumble"
+  },
+  {
+    "scheme": "mvn",
+    "description": "mvn",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/mvn"
+  },
+  {
+    "scheme": "notes",
+    "description": "notes",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/notes"
+  },
+  {
+    "scheme": "oid",
+    "description": "oid",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-larmouth-oid-iri"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/oid"
+  },
+  {
+    "scheme": "palm",
+    "description": "palm",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/palm"
+  },
+  {
+    "scheme": "paparazzi",
+    "description": "paparazzi",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/paparazzi"
+  },
+  {
+    "scheme": "platform",
+    "description": "platform",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/platform"
+  },
+  {
+    "scheme": "proxy",
+    "description": "proxy",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/proxy"
+  },
+  {
+    "scheme": "psyc",
+    "description": "psyc",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/psyc"
+  },
+  {
+    "scheme": "query",
+    "description": "query",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/query"
+  },
+  {
+    "scheme": "redis",
+    "description": "redis",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/redis"
+  },
+  {
+    "scheme": "rediss",
+    "description": "rediss",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/rediss"
+  },
+  {
+    "scheme": "res",
+    "description": "res",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/res"
+  },
+  {
+    "scheme": "resource",
+    "description": "resource",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/resource"
+  },
+  {
+    "scheme": "rmi",
+    "description": "rmi",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/rmi"
+  },
+  {
+    "scheme": "rsync",
+    "description": "rsync",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc5781"
+      }
+    ]
+  },
+  {
+    "scheme": "rtmfp",
+    "description": "rtmfp",
+    "reference": [
+      {
+        "type": "rfc",
+        "href": "http://www.iana.org/go/rfc7425"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/rtmfp"
+  },
+  {
+    "scheme": "rtmp",
+    "description": "rtmp",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/rtmp"
+  },
+  {
+    "scheme": "secondlife",
+    "description": "query",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/secondlife"
+  },
+  {
+    "scheme": "sftp",
+    "description": "query",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/sftp"
+  },
+  {
+    "scheme": "sgn",
+    "description": "sgn",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/sgn"
+  },
+  {
+    "scheme": "skype",
+    "description": "skype",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/skype"
+  },
+  {
+    "scheme": "smb",
+    "description": "smb",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/smb"
+  },
+  {
+    "scheme": "smtp",
+    "description": "smtp",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-melnikov-smime-msa-to-mda"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/smtp"
+  },
+  {
+    "scheme": "soldat",
+    "description": "soldat",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/soldat"
+  },
+  {
+    "scheme": "spotify",
+    "description": "spotify",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/spotify"
+  },
+  {
+    "scheme": "ssh",
+    "description": "ssh",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ssh"
+  },
+  {
+    "scheme": "steam",
+    "description": "steam",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/steam"
+  },
+  {
+    "scheme": "submit",
+    "description": "submit",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-melnikov-smime-msa-to-mda"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/submit"
+  },
+  {
+    "scheme": "svn",
+    "description": "svn",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/svn"
+  },
+  {
+    "scheme": "teamspeak",
+    "description": "teamspeak",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/teamspeak"
+  },
+  {
+    "scheme": "teliaeid",
+    "description": "teliaeid",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/teliaeid"
+  },
+  {
+    "scheme": "things",
+    "description": "things",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/things"
+  },
+  {
+    "scheme": "tool",
+    "description": "tool",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/tool"
+  },
+  {
+    "scheme": "udp",
+    "description": "udp",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/udp"
+  },
+  {
+    "scheme": "unreal",
+    "description": "unreal",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/unreal"
+  },
+  {
+    "scheme": "ut2004",
+    "description": "ut2004",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ut2004"
+  },
+  {
+    "scheme": "v-event",
+    "description": "v-event",
+    "reference": [
+      {
+        "type": "draft",
+        "href": "http://www.iana.org/go/draft-menderico-v-event-uri"
+      }
+    ],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/v-event"
+  },
+  {
+    "scheme": "ventrilo",
+    "description": "ventrilo",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ventrilo"
+  },
+  {
+    "scheme": "view-source",
+    "description": "view-source",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/view-source"
+  },
+  {
+    "scheme": "webcal",
+    "description": "webcal",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/webcal"
+  },
+  {
+    "scheme": "wpid",
+    "description": "wpid",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/wpid"
+  },
+  {
+    "scheme": "wtai",
+    "description": "wtai",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/wtai"
+  },
+  {
+    "scheme": "wyciwyg",
+    "description": "wyciwyg",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/wyciwyg"
+  },
+  {
+    "scheme": "xfire",
+    "description": "xfire",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/xfire"
+  },
+  {
+    "scheme": "xri",
+    "description": "xri",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/xri"
+  },
+  {
+    "scheme": "ymsgr",
+    "description": "ymsgr",
+    "reference": [],
+    "template": "http://www.iana.org/assignments/uri-schemes/prov/ymsgr"
+  }
+]
+},{}],104:[function(require,module,exports){
+module.exports=[
+  {
+    "scheme": "android-app"
+  },
+  {
+    "scheme": "webpack"
+  },
+  {
+    "scheme": "s3",
+    "description": "Amazon Web Services S3 bucket"
+  },
+  {
+    "scheme": "gs",
+    "description": "Google Cloud Storage"
+  },
+  {
+    "scheme": "mqtt",
+    "description": "Message Queuing Telemetry Transport Protocol"
+  },
+  {
+    "scheme": "modbus+tcp",
+    "description": "Modbus over TCP"
+  }
+]
+
+},{}],105:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// Generated automatically by nearley, version 2.20.1
+// http://github.com/Hardmath123/nearley
+// Bypasses TS6133. Allow declared but unused functions.
+// @ts-ignore
+function id(d) { return d[0]; }
+const deepFlatten = (arr) => [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)));
+function flat_string(d) {
+    if (d) {
+        if (Array.isArray(d))
+            return deepFlatten(d).join("");
+        return d;
+    }
+    return "";
+}
+;
+;
+;
+;
+const grammar = {
+    Lexer: undefined,
+    ParserRules: [
+        { "name": "Reverse_path", "symbols": ["Path"] },
+        { "name": "Reverse_path$string$1", "symbols": [{ "literal": "<" }, { "literal": ">" }], "postprocess": (d) => d.join('') },
+        { "name": "Reverse_path", "symbols": ["Reverse_path$string$1"] },
+        { "name": "Forward_path$subexpression$1$subexpression$1", "symbols": [{ "literal": "<" }, /[pP]/, /[oO]/, /[sS]/, /[tT]/, /[mM]/, /[aA]/, /[sS]/, /[tT]/, /[eE]/, /[rR]/, { "literal": "@" }], "postprocess": function (d) { return d.join(""); } },
+        { "name": "Forward_path$subexpression$1", "symbols": ["Forward_path$subexpression$1$subexpression$1", "Domain", { "literal": ">" }] },
+        { "name": "Forward_path", "symbols": ["Forward_path$subexpression$1"] },
+        { "name": "Forward_path$subexpression$2", "symbols": [{ "literal": "<" }, /[pP]/, /[oO]/, /[sS]/, /[tT]/, /[mM]/, /[aA]/, /[sS]/, /[tT]/, /[eE]/, /[rR]/, { "literal": ">" }], "postprocess": function (d) { return d.join(""); } },
+        { "name": "Forward_path", "symbols": ["Forward_path$subexpression$2"] },
+        { "name": "Forward_path", "symbols": ["Path"] },
+        { "name": "Path$ebnf$1$subexpression$1", "symbols": ["A_d_l", { "literal": ":" }] },
+        { "name": "Path$ebnf$1", "symbols": ["Path$ebnf$1$subexpression$1"], "postprocess": id },
+        { "name": "Path$ebnf$1", "symbols": [], "postprocess": () => null },
+        { "name": "Path", "symbols": [{ "literal": "<" }, "Path$ebnf$1", "Mailbox", { "literal": ">" }] },
+        { "name": "A_d_l$ebnf$1", "symbols": [] },
+        { "name": "A_d_l$ebnf$1$subexpression$1", "symbols": [{ "literal": "," }, "At_domain"] },
+        { "name": "A_d_l$ebnf$1", "symbols": ["A_d_l$ebnf$1", "A_d_l$ebnf$1$subexpression$1"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "A_d_l", "symbols": ["At_domain", "A_d_l$ebnf$1"] },
+        { "name": "At_domain", "symbols": [{ "literal": "@" }, "Domain"] },
+        { "name": "Domain$ebnf$1", "symbols": [] },
+        { "name": "Domain$ebnf$1$subexpression$1", "symbols": [{ "literal": "." }, "sub_domain"] },
+        { "name": "Domain$ebnf$1", "symbols": ["Domain$ebnf$1", "Domain$ebnf$1$subexpression$1"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "Domain", "symbols": ["sub_domain", "Domain$ebnf$1"] },
+        { "name": "sub_domain", "symbols": ["U_label"] },
+        { "name": "Let_dig", "symbols": ["ALPHA_DIGIT"], "postprocess": id },
+        { "name": "Ldh_str$ebnf$1", "symbols": [] },
+        { "name": "Ldh_str$ebnf$1", "symbols": ["Ldh_str$ebnf$1", "ALPHA_DIG_DASH"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "Ldh_str", "symbols": ["Ldh_str$ebnf$1", "Let_dig"] },
+        { "name": "U_Let_dig", "symbols": ["ALPHA_DIGIT_U"], "postprocess": id },
+        { "name": "U_Ldh_str$ebnf$1", "symbols": [] },
+        { "name": "U_Ldh_str$ebnf$1", "symbols": ["U_Ldh_str$ebnf$1", "ALPHA_DIG_DASH_U"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "U_Ldh_str", "symbols": ["U_Ldh_str$ebnf$1", "U_Let_dig"] },
+        { "name": "U_label$ebnf$1$subexpression$1", "symbols": ["U_Ldh_str"] },
+        { "name": "U_label$ebnf$1", "symbols": ["U_label$ebnf$1$subexpression$1"], "postprocess": id },
+        { "name": "U_label$ebnf$1", "symbols": [], "postprocess": () => null },
+        { "name": "U_label", "symbols": ["U_Let_dig", "U_label$ebnf$1"] },
+        { "name": "address_literal$subexpression$1", "symbols": ["IPv4_address_literal"] },
+        { "name": "address_literal$subexpression$1", "symbols": ["IPv6_address_literal"] },
+        { "name": "address_literal$subexpression$1", "symbols": ["General_address_literal"] },
+        { "name": "address_literal", "symbols": [{ "literal": "[" }, "address_literal$subexpression$1", { "literal": "]" }] },
+        { "name": "non_local_part", "symbols": ["Domain"], "postprocess": function (d) {
+                return { DomainName: flat_string(d[0]) };
+            }
+        },
+        { "name": "non_local_part", "symbols": ["address_literal"], "postprocess": function (d) {
+                return { AddressLiteral: flat_string(d[0]) };
+            }
+        },
+        { "name": "Mailbox", "symbols": ["Local_part", { "literal": "@" }, "non_local_part"], "postprocess": function (d) {
+                return { localPart: flat_string(d[0]), domainPart: flat_string(d[2]) };
+            }
+        },
+        { "name": "Local_part", "symbols": ["Dot_string"], "postprocess": function (d) {
+                return { DotString: flat_string(d[0]) };
+            }
+        },
+        { "name": "Local_part", "symbols": ["Quoted_string"], "postprocess": function (d) {
+                return { QuotedString: flat_string(d[0]) };
+            }
+        },
+        { "name": "Dot_string$ebnf$1", "symbols": [] },
+        { "name": "Dot_string$ebnf$1$subexpression$1", "symbols": [{ "literal": "." }, "Atom"] },
+        { "name": "Dot_string$ebnf$1", "symbols": ["Dot_string$ebnf$1", "Dot_string$ebnf$1$subexpression$1"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "Dot_string", "symbols": ["Atom", "Dot_string$ebnf$1"] },
+        { "name": "Atom$ebnf$1", "symbols": [/[0-9A-Za-z!#$%&'*+\-/=?^_`{|}~\u0080-\uFFFF/]/] },
+        { "name": "Atom$ebnf$1", "symbols": ["Atom$ebnf$1", /[0-9A-Za-z!#$%&'*+\-/=?^_`{|}~\u0080-\uFFFF/]/], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "Atom", "symbols": ["Atom$ebnf$1"] },
+        { "name": "Quoted_string$ebnf$1", "symbols": [] },
+        { "name": "Quoted_string$ebnf$1", "symbols": ["Quoted_string$ebnf$1", "QcontentSMTP"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "Quoted_string", "symbols": ["DQUOTE", "Quoted_string$ebnf$1", "DQUOTE"] },
+        { "name": "QcontentSMTP", "symbols": ["qtextSMTP"] },
+        { "name": "QcontentSMTP", "symbols": ["quoted_pairSMTP"] },
+        { "name": "quoted_pairSMTP", "symbols": [{ "literal": "\\" }, /[\x20-\x7e]/] },
+        { "name": "qtextSMTP", "symbols": [/[\x20-\x21\x23-\x5b\x5d-\x7e\u0080-\uFFFF]/], "postprocess": id },
+        { "name": "IPv4_address_literal$macrocall$2", "symbols": [{ "literal": "." }, "Snum"] },
+        { "name": "IPv4_address_literal$macrocall$1", "symbols": ["IPv4_address_literal$macrocall$2", "IPv4_address_literal$macrocall$2", "IPv4_address_literal$macrocall$2"] },
+        { "name": "IPv4_address_literal", "symbols": ["Snum", "IPv4_address_literal$macrocall$1"] },
+        { "name": "IPv6_address_literal$subexpression$1", "symbols": [/[iI]/, /[pP]/, /[vV]/, { "literal": "6" }, { "literal": ":" }], "postprocess": function (d) { return d.join(""); } },
+        { "name": "IPv6_address_literal", "symbols": ["IPv6_address_literal$subexpression$1", "IPv6_addr"] },
+        { "name": "General_address_literal$ebnf$1", "symbols": ["dcontent"] },
+        { "name": "General_address_literal$ebnf$1", "symbols": ["General_address_literal$ebnf$1", "dcontent"], "postprocess": (d) => d[0].concat([d[1]]) },
+        { "name": "General_address_literal", "symbols": ["Standardized_tag", { "literal": ":" }, "General_address_literal$ebnf$1"] },
+        { "name": "Standardized_tag", "symbols": ["Ldh_str"] },
+        { "name": "dcontent", "symbols": [/[\x21-\x5a\x5e-\x7e]/], "postprocess": id },
+        { "name": "Snum", "symbols": ["DIGIT"] },
+        { "name": "Snum$subexpression$1", "symbols": [/[1-9]/, "DIGIT"] },
+        { "name": "Snum", "symbols": ["Snum$subexpression$1"] },
+        { "name": "Snum$subexpression$2", "symbols": [{ "literal": "1" }, "DIGIT", "DIGIT"] },
+        { "name": "Snum", "symbols": ["Snum$subexpression$2"] },
+        { "name": "Snum$subexpression$3", "symbols": [{ "literal": "2" }, /[0-4]/, "DIGIT"] },
+        { "name": "Snum", "symbols": ["Snum$subexpression$3"] },
+        { "name": "Snum$subexpression$4", "symbols": [{ "literal": "2" }, { "literal": "5" }, /[0-5]/] },
+        { "name": "Snum", "symbols": ["Snum$subexpression$4"] },
+        { "name": "IPv6_addr", "symbols": ["IPv6_full"] },
+        { "name": "IPv6_addr", "symbols": ["IPv6_comp"] },
+        { "name": "IPv6_addr", "symbols": ["IPv6v4_full"] },
+        { "name": "IPv6_addr", "symbols": ["IPv6v4_comp"] },
+        { "name": "IPv6_hex", "symbols": ["HEXDIG"] },
+        { "name": "IPv6_hex$subexpression$1", "symbols": ["HEXDIG", "HEXDIG"] },
+        { "name": "IPv6_hex", "symbols": ["IPv6_hex$subexpression$1"] },
+        { "name": "IPv6_hex$subexpression$2", "symbols": ["HEXDIG", "HEXDIG", "HEXDIG"] },
+        { "name": "IPv6_hex", "symbols": ["IPv6_hex$subexpression$2"] },
+        { "name": "IPv6_hex$subexpression$3", "symbols": ["HEXDIG", "HEXDIG", "HEXDIG", "HEXDIG"] },
+        { "name": "IPv6_hex", "symbols": ["IPv6_hex$subexpression$3"] },
+        { "name": "IPv6_full$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6_full$macrocall$1", "symbols": ["IPv6_full$macrocall$2", "IPv6_full$macrocall$2", "IPv6_full$macrocall$2", "IPv6_full$macrocall$2", "IPv6_full$macrocall$2", "IPv6_full$macrocall$2", "IPv6_full$macrocall$2"] },
+        { "name": "IPv6_full", "symbols": ["IPv6_hex", "IPv6_full$macrocall$1"] },
+        { "name": "IPv6_comp$ebnf$1$subexpression$1$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6_comp$ebnf$1$subexpression$1$macrocall$1", "symbols": ["IPv6_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6_comp$ebnf$1$subexpression$1$macrocall$2"] },
+        { "name": "IPv6_comp$ebnf$1$subexpression$1", "symbols": ["IPv6_hex", "IPv6_comp$ebnf$1$subexpression$1$macrocall$1"] },
+        { "name": "IPv6_comp$ebnf$1", "symbols": ["IPv6_comp$ebnf$1$subexpression$1"], "postprocess": id },
+        { "name": "IPv6_comp$ebnf$1", "symbols": [], "postprocess": () => null },
+        { "name": "IPv6_comp$string$1", "symbols": [{ "literal": ":" }, { "literal": ":" }], "postprocess": (d) => d.join('') },
+        { "name": "IPv6_comp$ebnf$2$subexpression$1$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6_comp$ebnf$2$subexpression$1$macrocall$1", "symbols": ["IPv6_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6_comp$ebnf$2$subexpression$1$macrocall$2"] },
+        { "name": "IPv6_comp$ebnf$2$subexpression$1", "symbols": ["IPv6_hex", "IPv6_comp$ebnf$2$subexpression$1$macrocall$1"] },
+        { "name": "IPv6_comp$ebnf$2", "symbols": ["IPv6_comp$ebnf$2$subexpression$1"], "postprocess": id },
+        { "name": "IPv6_comp$ebnf$2", "symbols": [], "postprocess": () => null },
+        { "name": "IPv6_comp", "symbols": ["IPv6_comp$ebnf$1", "IPv6_comp$string$1", "IPv6_comp$ebnf$2"] },
+        { "name": "IPv6v4_full$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6v4_full$macrocall$1", "symbols": ["IPv6v4_full$macrocall$2", "IPv6v4_full$macrocall$2", "IPv6v4_full$macrocall$2", "IPv6v4_full$macrocall$2", "IPv6v4_full$macrocall$2"] },
+        { "name": "IPv6v4_full", "symbols": ["IPv6_hex", "IPv6v4_full$macrocall$1", { "literal": ":" }, "IPv4_address_literal"] },
+        { "name": "IPv6v4_comp$ebnf$1$subexpression$1$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6v4_comp$ebnf$1$subexpression$1$macrocall$1", "symbols": ["IPv6v4_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6v4_comp$ebnf$1$subexpression$1$macrocall$2", "IPv6v4_comp$ebnf$1$subexpression$1$macrocall$2"] },
+        { "name": "IPv6v4_comp$ebnf$1$subexpression$1", "symbols": ["IPv6_hex", "IPv6v4_comp$ebnf$1$subexpression$1$macrocall$1"] },
+        { "name": "IPv6v4_comp$ebnf$1", "symbols": ["IPv6v4_comp$ebnf$1$subexpression$1"], "postprocess": id },
+        { "name": "IPv6v4_comp$ebnf$1", "symbols": [], "postprocess": () => null },
+        { "name": "IPv6v4_comp$string$1", "symbols": [{ "literal": ":" }, { "literal": ":" }], "postprocess": (d) => d.join('') },
+        { "name": "IPv6v4_comp$ebnf$2$subexpression$1$macrocall$2", "symbols": [{ "literal": ":" }, "IPv6_hex"] },
+        { "name": "IPv6v4_comp$ebnf$2$subexpression$1$macrocall$1", "symbols": ["IPv6v4_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6v4_comp$ebnf$2$subexpression$1$macrocall$2", "IPv6v4_comp$ebnf$2$subexpression$1$macrocall$2"] },
+        { "name": "IPv6v4_comp$ebnf$2$subexpression$1", "symbols": ["IPv6_hex", "IPv6v4_comp$ebnf$2$subexpression$1$macrocall$1", { "literal": ":" }] },
+        { "name": "IPv6v4_comp$ebnf$2", "symbols": ["IPv6v4_comp$ebnf$2$subexpression$1"], "postprocess": id },
+        { "name": "IPv6v4_comp$ebnf$2", "symbols": [], "postprocess": () => null },
+        { "name": "IPv6v4_comp", "symbols": ["IPv6v4_comp$ebnf$1", "IPv6v4_comp$string$1", "IPv6v4_comp$ebnf$2", "IPv4_address_literal"] },
+        { "name": "DIGIT", "symbols": [/[0-9]/], "postprocess": id },
+        { "name": "ALPHA_DIGIT_U", "symbols": [/[0-9A-Za-z\u0080-\uFFFF]/], "postprocess": id },
+        { "name": "ALPHA_DIGIT", "symbols": [/[0-9A-Za-z]/], "postprocess": id },
+        { "name": "ALPHA_DIG_DASH", "symbols": [/[-0-9A-Za-z]/], "postprocess": id },
+        { "name": "ALPHA_DIG_DASH_U", "symbols": [/[-0-9A-Za-z\u0080-\uFFFF]/], "postprocess": id },
+        { "name": "HEXDIG", "symbols": [/[0-9A-Fa-f]/], "postprocess": id },
+        { "name": "DQUOTE", "symbols": [{ "literal": "\"" }], "postprocess": id }
+    ],
+    ParserStart: "Reverse_path",
+};
+exports.default = grammar;
+
+},{}],106:[function(require,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.canonicalize = exports.canonicalize_quoted_string = exports.normalize = exports.normalize_dot_string = exports.parse = void 0;
+// const punycode = require('punycode');
+const nearley = require("nearley");
+const grammar_1 = __importDefault(require("./grammar"));
+grammar_1.default.ParserStart = "Mailbox";
+const grammar = nearley.Grammar.fromCompiled(grammar_1.default);
+// <https://tools.ietf.org/html/rfc5321#section-4.1.2>
+function parse(address) {
+    // An insane length, to protect the parsing code from huge input. SMTP line limit, minus command size.
+    const insane_length = 1000 - "MAIL FROM:<>\r\n".length;
+    if (address.length > insane_length) {
+        throw new Error("address too long");
+    }
+    const parser = new nearley.Parser(grammar);
+    parser.feed(address);
+    if (parser.results.length !== 1) {
+        throw new Error("address parsing failed: ambiguous grammar");
+    }
+    // Domain checks
+    const at_idx = address.lastIndexOf('@'); // must be found, since parse was successful
+    const domain = address.substring(at_idx + 1);
+    if (domain[0] !== '[') { // Not an address literal
+        if (domain.length > 253) {
+            throw new Error("domain too long");
+        }
+        const labels = domain.split(".");
+        if (labels.length < 2) {
+            throw new Error("domain not fully qualified");
+        }
+        if (labels[labels.length - 1].length < 2) {
+            throw new Error("top level domain label too short");
+        }
+        labels.sort(function (a, b) {
+            return b.length - a.length;
+        });
+        if (labels[0].length > 63) {
+            throw new Error("domain label too long");
+        }
+    }
+    return parser.results[0];
+}
+exports.parse = parse;
+/** Strip +something, strip '.'s, and map to lower case.
+ */
+function normalize_dot_string(dot_string) {
+    const tagless = (function () {
+        const plus_loc = dot_string.indexOf("+");
+        if (plus_loc === -1) {
+            return dot_string;
+        }
+        return dot_string.substr(0, plus_loc);
+    })();
+    const dotless = tagless.replace(/\./g, "");
+    return dotless.toLowerCase();
+}
+exports.normalize_dot_string = normalize_dot_string;
+/** The G style address normalization.
+ */
+function normalize(address) {
+    var _a, _b;
+    const a = parse(address);
+    const domain = (_a = a.domainPart.AddressLiteral) !== null && _a !== void 0 ? _a : a.domainPart.DomainName.toLowerCase();
+    const local = (_b = a.localPart.QuotedString) !== null && _b !== void 0 ? _b : normalize_dot_string(a.localPart.DotString);
+    return `${local}@${domain}`;
+}
+exports.normalize = normalize;
+function canonicalize_quoted_string(quoted_string) {
+    const unquoted = quoted_string.substr(1).substr(0, quoted_string.length - 2);
+    const unescaped = unquoted.replace(/(?:\\(.))/g, "$1");
+    const reescaped = unescaped.replace(/(?:(["\\]))/g, "\\$1");
+    return `"${reescaped}"`; // re-quote
+}
+exports.canonicalize_quoted_string = canonicalize_quoted_string;
+/**
+ * Apply a canonicalization consistent with standards to support
+ * comparison as a string.
+ */
+function canonicalize(address) {
+    var _a;
+    const a = parse(address);
+    const domain = (_a = a.domainPart.AddressLiteral) !== null && _a !== void 0 ? _a : a.domainPart.DomainName.toLowerCase();
+    const local = a.localPart.QuotedString
+        ? canonicalize_quoted_string(a.localPart.QuotedString)
+        : a.localPart.DotString;
+    return `${local}@${domain}`;
+}
+exports.canonicalize = canonicalize;
+
+},{"./grammar":105,"nearley":99}],107:[function(require,module,exports){
 /** @license URI.js v4.4.1 (c) 2011 Gary Court. License: http://github.com/garycourt/uri-js */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -8100,9 +12006,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 })));
 
 
-},{}],93:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 const Ajv2020 = require("ajv/dist/2020");
-const addFormats = require("ajv-formats");
+const addFormats = require("ajv-formats-draft2019");
 
 if (typeof window !== 'undefined') {
 	window.Ajv2020 = Ajv2020;
@@ -8116,4 +12022,4 @@ module.exports = {
 
 myAjv2020 = module.exports;
 
-},{"ajv-formats":2,"ajv/dist/2020":4}]},{},[93]);
+},{"ajv-formats-draft2019":8,"ajv/dist/2020":9}]},{},[108]);

@@ -23,60 +23,55 @@ meta4.content = "John Carlson";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "transcriber";
-meta5.content = "John Carlson";
+meta5.name = "created";
+meta5.content = "23 January 2005";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "created";
-meta6.content = "23 January 2005";
+meta6.name = "modified";
+meta6.content = "9 November 2024";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "modified";
-meta7.content = "21 March 2018";
+meta7.name = "description";
+meta7.content = "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "description";
-meta8.content = "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)";
+meta8.name = "identifier";
+meta8.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "identifier";
-meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d";
+meta9.name = "generator";
+meta9.content = "manually written";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
-meta10.name = "generator";
-meta10.content = "manually written";
+meta10.name = "license";
+meta10.content = "https://www.web3d.org/x3d/content/examples/license.html";
 head1.meta[8] = meta10;
-
-meta meta11 = createNode("meta");
-meta11.name = "license";
-meta11.content = "https://www.web3d.org/x3d/content/examples/license.html";
-head1.meta[9] = meta11;
 
 head = head1;
 
-NavigationInfo NavigationInfo13 = createNode("NavigationInfo");
+NavigationInfo NavigationInfo12 = createNode("NavigationInfo");
 children = new MFNode();
 
-children[0] = NavigationInfo13;
+children[0] = NavigationInfo12;
 
-Viewpoint Viewpoint14 = createNode("Viewpoint");
-Viewpoint14.description = "Two mathematical orbitals";
-Viewpoint14.position = new SFVec3f(new float[0,0,50]);
-children[1] = Viewpoint14;
+Viewpoint Viewpoint13 = createNode("Viewpoint");
+Viewpoint13.description = "Two mathematical orbitals";
+Viewpoint13.position = new SFVec3f(new float[0,0,50]);
+children[1] = Viewpoint13;
 
-Group Group15 = createNode("Group");
-DirectionalLight DirectionalLight16 = createNode("DirectionalLight");
-DirectionalLight16.direction = new SFVec3f(new float[1,1,1]);
-Group15.children = new MFNode();
+Group Group14 = createNode("Group");
+DirectionalLight DirectionalLight15 = createNode("DirectionalLight");
+DirectionalLight15.direction = new SFVec3f(new float[1,1,1]);
+Group14.children = new MFNode();
 
-Group15.children[0] = DirectionalLight16;
+Group14.children[0] = DirectionalLight15;
 
-ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare16 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="orbit" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="-8 0 0"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
@@ -178,173 +173,173 @@ ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" e
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare17.name = "orbit";
-ProtoInterface ProtoInterface18 = createNode("ProtoInterface");
-field field19 = createNode("field");
-field19.name = "translation";
-field19.accessType = "inputOutput";
-field19.type = "SFVec3f";
-field19.value = "-8 0 0";
-ProtoInterface18.field = new MFNode();
+ProtoDeclare16.name = "orbit";
+ProtoInterface ProtoInterface17 = createNode("ProtoInterface");
+field field18 = createNode("field");
+field18.name = "translation";
+field18.accessType = "inputOutput";
+field18.type = "SFVec3f";
+field18.value = "-8 0 0";
+ProtoInterface17.field = new MFNode();
 
-ProtoInterface18.field[0] = field19;
+ProtoInterface17.field[0] = field18;
+
+field field19 = createNode("field");
+field19.name = "diffuseColor";
+field19.accessType = "inputOutput";
+field19.type = "SFColor";
+field19.value = "1 0.5 0";
+ProtoInterface17.field[1] = field19;
 
 field field20 = createNode("field");
-field20.name = "diffuseColor";
+field20.name = "specularColor";
 field20.accessType = "inputOutput";
 field20.type = "SFColor";
 field20.value = "1 0.5 0";
-ProtoInterface18.field[1] = field20;
+ProtoInterface17.field[2] = field20;
 
 field field21 = createNode("field");
-field21.name = "specularColor";
+field21.name = "transparency";
 field21.accessType = "inputOutput";
-field21.type = "SFColor";
-field21.value = "1 0.5 0";
-ProtoInterface18.field[2] = field21;
+field21.type = "SFFloat";
+field21.value = "0.75";
+ProtoInterface17.field[3] = field21;
 
-field field22 = createNode("field");
-field22.name = "transparency";
-field22.accessType = "inputOutput";
-field22.type = "SFFloat";
-field22.value = "0.75";
-ProtoInterface18.field[3] = field22;
+ProtoDeclare16.protoInterface = ProtoInterface17;
 
-ProtoDeclare17.protoInterface = ProtoInterface18;
+ProtoBody ProtoBody22 = createNode("ProtoBody");
+Group Group23 = createNode("Group");
+TimeSensor TimeSensor24 = createNode("TimeSensor");
+TimeSensor24.DEF = "Clock";
+TimeSensor24.cycleInterval = 16;
+TimeSensor24.loop = True;
+Group23.children = new MFNode();
 
-ProtoBody ProtoBody23 = createNode("ProtoBody");
-Group Group24 = createNode("Group");
-TimeSensor TimeSensor25 = createNode("TimeSensor");
-TimeSensor25.DEF = "Clock";
-TimeSensor25.cycleInterval = 16;
-TimeSensor25.loop = True;
-Group24.children = new MFNode();
+Group23.children[0] = TimeSensor24;
 
-Group24.children[0] = TimeSensor25;
+OrientationInterpolator OrientationInterpolator25 = createNode("OrientationInterpolator");
+OrientationInterpolator25.DEF = "OrbitPath";
+OrientationInterpolator25.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator25.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,3.14,1,0,0,6.28]);
+Group23.children[1] = OrientationInterpolator25;
 
-OrientationInterpolator OrientationInterpolator26 = createNode("OrientationInterpolator");
-OrientationInterpolator26.DEF = "OrbitPath";
-OrientationInterpolator26.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator26.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,3.14,1,0,0,6.28]);
-Group24.children[1] = OrientationInterpolator26;
+Transform Transform26 = createNode("Transform");
+Transform26.DEF = "OrbitTransform";
+IS IS27 = createNode("IS");
+connect connect28 = createNode("connect");
+connect28.nodeField = "translation";
+connect28.protoField = "translation";
+IS27.connect = new MFNode();
 
-Transform Transform27 = createNode("Transform");
-Transform27.DEF = "OrbitTransform";
-IS IS28 = createNode("IS");
-connect connect29 = createNode("connect");
-connect29.nodeField = "translation";
-connect29.protoField = "translation";
-IS28.connect = new MFNode();
+IS27.connect[0] = connect28;
 
-IS28.connect[0] = connect29;
+Transform26.iS = IS27;
 
-Transform27.iS = IS28;
+Shape Shape29 = createNode("Shape");
+Appearance Appearance30 = createNode("Appearance");
+Material Material31 = createNode("Material");
+IS IS32 = createNode("IS");
+connect connect33 = createNode("connect");
+connect33.nodeField = "diffuseColor";
+connect33.protoField = "diffuseColor";
+IS32.connect = new MFNode();
 
-Shape Shape30 = createNode("Shape");
-Appearance Appearance31 = createNode("Appearance");
-Material Material32 = createNode("Material");
-IS IS33 = createNode("IS");
+IS32.connect[0] = connect33;
+
 connect connect34 = createNode("connect");
-connect34.nodeField = "diffuseColor";
-connect34.protoField = "diffuseColor";
-IS33.connect = new MFNode();
-
-IS33.connect[0] = connect34;
+connect34.nodeField = "specularColor";
+connect34.protoField = "specularColor";
+IS32.connect[1] = connect34;
 
 connect connect35 = createNode("connect");
-connect35.nodeField = "specularColor";
-connect35.protoField = "specularColor";
-IS33.connect[1] = connect35;
+connect35.nodeField = "transparency";
+connect35.protoField = "transparency";
+IS32.connect[2] = connect35;
 
-connect connect36 = createNode("connect");
-connect36.nodeField = "transparency";
-connect36.protoField = "transparency";
-IS33.connect[2] = connect36;
+Material31.iS = IS32;
 
-Material32.iS = IS33;
+Appearance30.material = Material31;
 
-Appearance31.material = Material32;
-
-Shape30.appearance = Appearance31;
+Shape29.appearance = Appearance30;
 
 //<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
-IndexedFaceSet IndexedFaceSet37 = createNode("IndexedFaceSet");
-IndexedFaceSet37.ccw = False;
-IndexedFaceSet37.convex = False;
-IndexedFaceSet37.coordIndex = new MFInt32(new int[0,1,2,-1]);
-IndexedFaceSet37.DEF = "Orbit";
-Coordinate Coordinate38 = createNode("Coordinate");
-Coordinate38.DEF = "OrbitCoordinates";
-Coordinate38.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
-IndexedFaceSet37.coord = Coordinate38;
+IndexedFaceSet IndexedFaceSet36 = createNode("IndexedFaceSet");
+IndexedFaceSet36.ccw = False;
+IndexedFaceSet36.convex = False;
+IndexedFaceSet36.coordIndex = new MFInt32(new int[0,1,2,-1]);
+IndexedFaceSet36.DEF = "Orbit";
+Coordinate Coordinate37 = createNode("Coordinate");
+Coordinate37.DEF = "OrbitCoordinates";
+Coordinate37.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
+IndexedFaceSet36.coord = Coordinate37;
 
-Shape30.geometry = IndexedFaceSet37;
+Shape29.geometry = IndexedFaceSet36;
 
-Transform27.child = new undefined();
+Transform26.child = new undefined();
 
-Transform27.child[0] = Shape30;
+Transform26.child[0] = Shape29;
 
-Group24.children[2] = Transform27;
+Group23.children[2] = Transform26;
 
-Script Script39 = createNode("Script");
-Script39.DEF = "OrbitScript";
+Script Script38 = createNode("Script");
+Script38.DEF = "OrbitScript";
+field field39 = createNode("field");
+field39.name = "set_fraction";
+field39.accessType = "inputOnly";
+field39.type = "SFFloat";
+Script38.field = new MFNode();
+
+Script38.field[0] = field39;
+
 field field40 = createNode("field");
-field40.name = "set_fraction";
-field40.accessType = "inputOnly";
-field40.type = "SFFloat";
-Script39.field = new MFNode();
-
-Script39.field[0] = field40;
+field40.name = "coordinates";
+field40.accessType = "inputOutput";
+field40.type = "MFVec3f";
+Script38.field[1] = field40;
 
 field field41 = createNode("field");
-field41.name = "coordinates";
+field41.name = "coordIndexes";
 field41.accessType = "inputOutput";
-field41.type = "MFVec3f";
-Script39.field[1] = field41;
+field41.type = "MFInt32";
+Script38.field[2] = field41;
 
 field field42 = createNode("field");
-field42.name = "coordIndexes";
+field42.name = "e";
 field42.accessType = "inputOutput";
-field42.type = "MFInt32";
-Script39.field[2] = field42;
+field42.type = "SFFloat";
+field42.value = "5";
+Script38.field[3] = field42;
 
 field field43 = createNode("field");
-field43.name = "e";
+field43.name = "f";
 field43.accessType = "inputOutput";
 field43.type = "SFFloat";
 field43.value = "5";
-Script39.field[3] = field43;
+Script38.field[4] = field43;
 
 field field44 = createNode("field");
-field44.name = "f";
+field44.name = "g";
 field44.accessType = "inputOutput";
 field44.type = "SFFloat";
 field44.value = "5";
-Script39.field[4] = field44;
+Script38.field[5] = field44;
 
 field field45 = createNode("field");
-field45.name = "g";
+field45.name = "h";
 field45.accessType = "inputOutput";
 field45.type = "SFFloat";
 field45.value = "5";
-Script39.field[5] = field45;
+Script38.field[6] = field45;
 
 field field46 = createNode("field");
-field46.name = "h";
+field46.name = "resolution";
 field46.accessType = "inputOutput";
-field46.type = "SFFloat";
-field46.value = "5";
-Script39.field[6] = field46;
-
-field field47 = createNode("field");
-field47.name = "resolution";
-field47.accessType = "inputOutput";
-field47.type = "SFInt32";
-field47.value = "50";
-Script39.field[7] = field47;
+field46.type = "SFInt32";
+field46.value = "50";
+Script38.field[7] = field46;
 
 
-Script39.setSourceCode(`ecmascript:\n"+
+Script38.setSourceCode(`ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
@@ -409,103 +404,103 @@ Script39.setSourceCode(`ecmascript:\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
 "			}`)
-Group24.children[3] = Script39;
+Group23.children[3] = Script38;
+
+ROUTE ROUTE47 = createNode("ROUTE");
+ROUTE47.fromNode = "OrbitScript";
+ROUTE47.fromField = "coordIndexes";
+ROUTE47.toNode = "Orbit";
+ROUTE47.toField = "set_coordIndex";
+Group23.children[4] = ROUTE47;
 
 ROUTE ROUTE48 = createNode("ROUTE");
 ROUTE48.fromNode = "OrbitScript";
-ROUTE48.fromField = "coordIndexes";
-ROUTE48.toNode = "Orbit";
-ROUTE48.toField = "set_coordIndex";
-Group24.children[4] = ROUTE48;
+ROUTE48.fromField = "coordinates";
+ROUTE48.toNode = "OrbitCoordinates";
+ROUTE48.toField = "point";
+Group23.children[5] = ROUTE48;
 
 ROUTE ROUTE49 = createNode("ROUTE");
-ROUTE49.fromNode = "OrbitScript";
-ROUTE49.fromField = "coordinates";
-ROUTE49.toNode = "OrbitCoordinates";
-ROUTE49.toField = "point";
-Group24.children[5] = ROUTE49;
+ROUTE49.fromNode = "Clock";
+ROUTE49.fromField = "fraction_changed";
+ROUTE49.toNode = "OrbitScript";
+ROUTE49.toField = "set_fraction";
+Group23.children[6] = ROUTE49;
 
 ROUTE ROUTE50 = createNode("ROUTE");
-ROUTE50.fromNode = "Clock";
-ROUTE50.fromField = "fraction_changed";
-ROUTE50.toNode = "OrbitScript";
-ROUTE50.toField = "set_fraction";
-Group24.children[6] = ROUTE50;
+ROUTE50.fromNode = "OrbitPath";
+ROUTE50.fromField = "value_changed";
+ROUTE50.toNode = "OrbitTransform";
+ROUTE50.toField = "rotation";
+Group23.children[7] = ROUTE50;
 
 ROUTE ROUTE51 = createNode("ROUTE");
-ROUTE51.fromNode = "OrbitPath";
-ROUTE51.fromField = "value_changed";
-ROUTE51.toNode = "OrbitTransform";
-ROUTE51.toField = "rotation";
-Group24.children[7] = ROUTE51;
+ROUTE51.fromNode = "Clock";
+ROUTE51.fromField = "fraction_changed";
+ROUTE51.toNode = "OrbitPath";
+ROUTE51.toField = "set_fraction";
+Group23.children[8] = ROUTE51;
 
-ROUTE ROUTE52 = createNode("ROUTE");
-ROUTE52.fromNode = "Clock";
-ROUTE52.fromField = "fraction_changed";
-ROUTE52.toNode = "OrbitPath";
-ROUTE52.toField = "set_fraction";
-Group24.children[8] = ROUTE52;
+ProtoBody22.children = new MFNode();
 
-ProtoBody23.children = new MFNode();
+ProtoBody22.children[0] = Group23;
 
-ProtoBody23.children[0] = Group24;
+ProtoDeclare16.protoBody = ProtoBody22;
 
-ProtoDeclare17.protoBody = ProtoBody23;
+Group14.children[1] = ProtoDeclare16;
 
-Group15.children[1] = ProtoDeclare17;
+ProtoInstance ProtoInstance52 = createNode("ProtoInstance");
+ProtoInstance52.name = "orbit";
+fieldValue fieldValue53 = createNode("fieldValue");
+fieldValue53.name = "translation";
+fieldValue53.value = "-8 0 0";
+ProtoInstance52.fieldValue = new MFNode();
 
-ProtoInstance ProtoInstance53 = createNode("ProtoInstance");
-ProtoInstance53.name = "orbit";
+ProtoInstance52.fieldValue[0] = fieldValue53;
+
 fieldValue fieldValue54 = createNode("fieldValue");
-fieldValue54.name = "translation";
-fieldValue54.value = "-8 0 0";
-ProtoInstance53.fieldValue = new MFNode();
-
-ProtoInstance53.fieldValue[0] = fieldValue54;
+fieldValue54.name = "diffuseColor";
+fieldValue54.value = "1 0.5 0";
+ProtoInstance52.fieldValue[1] = fieldValue54;
 
 fieldValue fieldValue55 = createNode("fieldValue");
-fieldValue55.name = "diffuseColor";
+fieldValue55.name = "specularColor";
 fieldValue55.value = "1 0.5 0";
-ProtoInstance53.fieldValue[1] = fieldValue55;
+ProtoInstance52.fieldValue[2] = fieldValue55;
 
 fieldValue fieldValue56 = createNode("fieldValue");
-fieldValue56.name = "specularColor";
-fieldValue56.value = "1 0.5 0";
-ProtoInstance53.fieldValue[2] = fieldValue56;
+fieldValue56.name = "transparency";
+fieldValue56.value = "0.75";
+ProtoInstance52.fieldValue[3] = fieldValue56;
 
-fieldValue fieldValue57 = createNode("fieldValue");
-fieldValue57.name = "transparency";
-fieldValue57.value = "0.75";
-ProtoInstance53.fieldValue[3] = fieldValue57;
+Group14.children[2] = ProtoInstance52;
 
-Group15.children[2] = ProtoInstance53;
+ProtoInstance ProtoInstance57 = createNode("ProtoInstance");
+ProtoInstance57.name = "orbit";
+fieldValue fieldValue58 = createNode("fieldValue");
+fieldValue58.name = "translation";
+fieldValue58.value = "8 0 0";
+ProtoInstance57.fieldValue = new MFNode();
 
-ProtoInstance ProtoInstance58 = createNode("ProtoInstance");
-ProtoInstance58.name = "orbit";
+ProtoInstance57.fieldValue[0] = fieldValue58;
+
 fieldValue fieldValue59 = createNode("fieldValue");
-fieldValue59.name = "translation";
-fieldValue59.value = "8 0 0";
-ProtoInstance58.fieldValue = new MFNode();
-
-ProtoInstance58.fieldValue[0] = fieldValue59;
+fieldValue59.name = "diffuseColor";
+fieldValue59.value = "0 0.5 1";
+ProtoInstance57.fieldValue[1] = fieldValue59;
 
 fieldValue fieldValue60 = createNode("fieldValue");
-fieldValue60.name = "diffuseColor";
+fieldValue60.name = "specularColor";
 fieldValue60.value = "0 0.5 1";
-ProtoInstance58.fieldValue[1] = fieldValue60;
+ProtoInstance57.fieldValue[2] = fieldValue60;
 
 fieldValue fieldValue61 = createNode("fieldValue");
-fieldValue61.name = "specularColor";
-fieldValue61.value = "0 0.5 1";
-ProtoInstance58.fieldValue[2] = fieldValue61;
+fieldValue61.name = "transparency";
+fieldValue61.value = "0.5";
+ProtoInstance57.fieldValue[3] = fieldValue61;
 
-fieldValue fieldValue62 = createNode("fieldValue");
-fieldValue62.name = "transparency";
-fieldValue62.value = "0.5";
-ProtoInstance58.fieldValue[3] = fieldValue62;
+Group14.children[3] = ProtoInstance57;
 
-Group15.children[3] = ProtoInstance58;
-
-children[2] = Group15;
+children[2] = Group14;
 
 }
