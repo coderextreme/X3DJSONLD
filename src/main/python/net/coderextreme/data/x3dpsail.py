@@ -1,5 +1,5 @@
 import jnius_config
-jnius_config.set_classpath('.', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')
+jnius_config.set_classpath('.', 'c:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')
 from jnius import autoclass
 CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')
 ConfigurationProperties = autoclass('org.web3d.x3d.jsail.ConfigurationProperties')
@@ -253,7 +253,6 @@ TriangleStripSet = autoclass('org.web3d.x3d.jsail.Rendering.TriangleStripSet')
 TwoSidedMaterial = autoclass('org.web3d.x3d.jsail.Shape.TwoSidedMaterial')
 UniversalJoint = autoclass('org.web3d.x3d.jsail.RigidBodyPhysics.UniversalJoint')
 UnlitMaterial = autoclass('org.web3d.x3d.jsail.Shape.UnlitMaterial')
-# VariationPhysicsModel = autoclass('org.web3d.x3d.jsail.ParticleSystems.VariationPhysicsModel')
 Viewpoint = autoclass('org.web3d.x3d.jsail.Navigation.Viewpoint')
 ViewpointGroup = autoclass('org.web3d.x3d.jsail.Navigation.ViewpointGroup')
 Viewport = autoclass('org.web3d.x3d.jsail.Layering.Viewport')

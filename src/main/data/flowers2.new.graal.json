@@ -21,16 +21,12 @@
 "@content":"John Carlson"
 },
 {
-"@name":"transcriber",
-"@content":"John Carlson"
-},
-{
 "@name":"created",
 "@content":"23 January 2005"
 },
 {
 "@name":"modified",
-"@content":"21 March 2018"
+"@content":"9 November 2024"
 },
 {
 "@name":"description",
@@ -51,7 +47,7 @@
 },
 {
 "@name":"translated",
-"@content":"09 November 2024"
+"@content":"19 December 2024"
 },
 {
 "@name":"generator",

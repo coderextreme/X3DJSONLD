@@ -23,11 +23,11 @@
     <WorldInfo title='LOA1_RunAnimation.x3d'/>
     <ProtoDeclare name='LOA1_RunAnimation'>
       <ProtoInterface>
-        <field name='cycleInterval' accessType='inputOutput' type='SFTime'/>
+        <field name='cycleInterval' accessType='inputOutput' type='SFTime' value='1.0'/>
         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
         <field name='loop' accessType='inputOutput' type='SFBool' value='true'/>
-        <field name='startTime' accessType='inputOutput' type='SFTime'/>
-        <field name='stopTime' accessType='inputOutput' type='SFTime'/>
+        <field name='startTime' accessType='inputOutput' type='SFTime' value='0.0'/>
+        <field name='stopTime' accessType='inputOutput' type='SFTime' value='-1.0'/>
         <field name='fraction_changed' accessType='outputOnly' type='SFFloat'/>
         <field name='isActive' accessType='outputOnly' type='SFBool'/>
         <field name='HumanoidRoot_translation_changed' accessType='outputOnly' type='SFVec3f'/>

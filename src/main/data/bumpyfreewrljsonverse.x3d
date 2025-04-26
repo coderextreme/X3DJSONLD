@@ -301,7 +301,7 @@ function initialize() {
 
 		  <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
 		  <field accessType='outputOnly' name='protoValue_changed' type='SFFloat' value='1.0'/>
-		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='1.0'/>
+		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='"1.0"'/>
 <![CDATA[ecmascript:
 const newTranslation = function(Value) {
 	'use strict';

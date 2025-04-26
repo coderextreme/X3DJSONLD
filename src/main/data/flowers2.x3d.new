@@ -3,9 +3,8 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
 <meta name="title" content="flowers2.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
-<meta name="transcriber" content="John Carlson"></meta>
 <meta name="created" content="23 January 2005"></meta>
-<meta name="modified" content="21 March 2018"></meta>
+<meta name="modified" content="9 November 2024"></meta>
 <meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"></meta>
 <meta name="generator" content="manually written"></meta>
