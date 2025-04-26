@@ -4103,7 +4103,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
                     ($parentElementName='Text' and $attributeName='maxExtent') or
                     ($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
-                    (starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance' or $attributeName='upVector')) or
+                    (starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance')) or
                     ($parentElementName='TextureTransform' and $attributeName='rotation') or
                     ($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
                     ($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
@@ -4325,7 +4325,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
                     ($localFieldType='SFRotation')    or 
-                    ($attributeName='orientation') or
+                    (not($parentElementName='Extrusion') and ($attributeName='orientation')) or
                     ($attributeName='rotation') or
                     ($attributeName='scaleOrientation') or
                     (($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or

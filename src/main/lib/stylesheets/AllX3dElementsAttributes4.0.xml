@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- All X3D elements and attributes, with default values, as defined in X3D Schema version 4.0 -->
+<!-- All X3D elements and attributes, with default values, as defined in X3D XML Schema version 4.0 -->
 <AllX3dElementsAttributes>
 <AcousticProperties absorption='0' description='' diffuse='0' enabled='true' refraction='0' specular='0' containerField='acousticProperties' class='' id='' style=''/>
 <Analyser channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' fftSize='2048' frequencyBinCount='1024' gain='1' maxDecibels='-30' minDecibels='-100' pauseTime='0' resumeTime='0' smoothingTimeConstant='0.8' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
@@ -246,8 +246,8 @@
 <TextureCoordinate3D mapping='' point='' containerField='texCoord' class='' id='' style=''/>
 <TextureCoordinate4D mapping='' point='' containerField='texCoord' class='' id='' style=''/>
 <TextureCoordinateGenerator mapping='' mode='SPHERE' parameter='' containerField='texCoord' class='' id='' style=''/>
-<TextureProjector ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='0.7854' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' upVector='0 0 1' containerField='children' class='' id='' style=''/>
-<TextureProjectorParallel ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='-1 -1 1 1' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
+<TextureProjector ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='0.7854' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' upVector='0 1 0' containerField='children' class='' id='' style=''/>
+<TextureProjectorParallel ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='-1 -1 1 1' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' upVector='0 1 0' containerField='children' class='' id='' style=''/>
 <TextureProperties anisotropicDegree='1' borderColor='0 0 0 0' borderWidth='0' boundaryModeR='REPEAT' boundaryModeS='REPEAT' boundaryModeT='REPEAT' generateMipMaps='false' magnificationFilter='FASTEST' minificationFilter='FASTEST' textureCompression='FASTEST' texturePriority='0' containerField='textureProperties' class='' id='' style=''/>
 <TextureTransform center='0 0' mapping='' rotation='0' scale='1 1' translation='0 0' containerField='textureTransform' class='' id='' style=''/>
 <TextureTransform3D center='0 0 0' mapping='' rotation='0 0 1 0' scale='1 1 1' translation='0 0 0' containerField='textureTransform' class='' id='' style=''/>
