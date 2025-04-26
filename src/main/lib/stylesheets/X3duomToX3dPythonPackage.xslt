@@ -12,6 +12,8 @@
 
 <!-- TODO authors can edit this example to customize all transformation rules -->
 
+<!-- TODO insert special tests in context for xs:NMTOKEN fields in order to further strengthen constraints on such SFString values -->
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
@@ -642,6 +644,7 @@ class Comment(_X3DStatement):
         """' Regular expression for validating values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
         return r'(\s|\S)*' # (includes lower-case true, false)
     def __init__(self, value=''):
+        super().__init__()
         self.value = value
     @property # getter - - - - - - - - - -
     def value(self):
@@ -710,10 +713,12 @@ def isX3DNode(value):
 # TODO how to introspect the version number at run time from the object. Specifically,
 # get the magic dictionary __dict__ and then perform standard dictionary lookups on that version key.
 
-print("x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!", flush=True)
+print("x3d.py package 4.0.64.5 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>
+<!-- TODO put version in x3d.py from pyproject.toml -->
+
 <!-- (testing version) (post-deployment revisions)
 
     TODO how to perform runtime look up __version__ or setup.py setuptools.setup(
@@ -3167,6 +3172,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:with-param name="x3dType" select="@type"/>
                 </xsl:call-template>
             </xsl:variable>
+            <xsl:variable name="correctedType">    
+                <xsl:choose>
+                    <xsl:when test="(@type = 'xs:NMTOKEN')">
+                        <xsl:text>SFString</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@type"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             
             <xsl:if test="(position() = 1)">
                 <xsl:text>
@@ -3185,7 +3200,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:text>', </xsl:text>
                     <xsl:value-of select="$defaultValue"/>
                     <xsl:text>, FieldType.</xsl:text>
-                    <xsl:value-of select="@type"/>
+                    <xsl:value-of select="$correctedType"/>
                     <xsl:text>, AccessType.</xsl:text>
                     <xsl:value-of select="@accessType"/>
                     <xsl:text>, '</xsl:text>
@@ -3429,6 +3444,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
+            <xsl:variable name="correctedType">    
+                <xsl:choose>
+                    <xsl:when test="(@type = 'xs:NMTOKEN')">
+                        <xsl:text>SFString</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@type"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            
             <!-- debug
             <xsl:variable name="inheritanceName"           select="../Inheritance/@baseType"/>
             <xsl:variable name="additionalInheritanceName" select="../AdditionalInheritance/@baseType"/>
@@ -3571,12 +3597,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>  # default</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="@type"/>
+                        <xsl:value-of select="$correctedType"/>
                         <xsl:text>.DEFAULT_VALUE()
             # if _DEBUG: print('...DEBUG... set value to </xsl:text>
-                        <xsl:value-of select="@type"/>
+                        <xsl:value-of select="correctedType"/>
                         <xsl:text>.DEFAULT_VALUE()=' + str(</xsl:text>
-                        <xsl:value-of select="@type"/>
+                        <xsl:value-of select="$correctedType"/>
                         <xsl:text>.DEFAULT_VALUE()))</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -3633,7 +3659,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:otherwise>
                 <xsl:text>
         assertValid</xsl:text>
-                <xsl:value-of select="@type"/>
+                <xsl:value-of select="$correctedType"/>
                 <xsl:text>(</xsl:text>
                 <xsl:value-of select="$fieldName"/>
                 <xsl:text>)</xsl:text>
@@ -3877,11 +3903,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     # output function - - - - - - - - - -
     def VRML97(self, indentLevel=0):
         """ Provide VRML97 output serialization suitable for .wrl file. """
-        return VRML(self, indentLevel=0, VRML97=True)
+        return VRML97(self, indentLevel, VRML97=True)
     # output function - - - - - - - - - -
     def ClassicVRML(self, indentLevel=0):
         """ Provide ClassicVRML output serialization suitable for .x3dv file. """
-        return VRML(self, indentLevel=0, VRML97=False)
+        return ClassicVRML(self, indentLevel, VRML97=False)
     # output function - - - - - - - - - -
 #    def X_ITE(self): # TODO implement
 #        """ Provide X_ITE output serialization suitable for .html file. """
@@ -3920,6 +3946,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             <xsl:with-param name="x3dType" select="@type"/>
                         </xsl:call-template>
                     </xsl:variable>
+                    <xsl:variable name="correctedType">    
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'xs:NMTOKEN')">
+                                <xsl:text>SFString</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@type"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
                         <xsl:text>
@@ -4073,7 +4110,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             result += " </xsl:text>
                                 <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
                                 <xsl:text>='" + </xsl:text>
-                                <xsl:value-of select="@type"/>
+                                <xsl:value-of select="$correctedType"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
@@ -4267,6 +4304,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             <xsl:with-param name="x3dType" select="@type"/>
                         </xsl:call-template>
                     </xsl:variable>
+                    <xsl:variable name="correctedType">    
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'xs:NMTOKEN')">
+                                <xsl:text>SFString</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@type"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+            
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
                         <xsl:text>
@@ -4314,7 +4362,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             </xsl:when>
                             <xsl:when test="(string-length(@type) > 0)"><!-- not(@type='SFString')" -->
                                 <!-- Use field type for value conversion, for example SFString handling of apostrophes and quotes -->
-                                <xsl:value-of select="@type"/>
+                                <xsl:value-of select="$correctedType"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
@@ -4591,6 +4639,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             <xsl:with-param name="x3dType" select="@type"/>
                         </xsl:call-template>
                     </xsl:variable>
+                    <xsl:variable name="correctedType">    
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'xs:NMTOKEN')">
+                                <xsl:text>SFString</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@type"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
                         <xsl:text>
@@ -4654,7 +4713,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             </xsl:when>
                             <xsl:when test="not(@type='SFString')">
                                 <!-- Use field type for value conversion -->
-                                <xsl:value-of select="@type"/>
+                                <xsl:value-of select="$correctedType"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
