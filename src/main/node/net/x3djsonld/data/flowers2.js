@@ -27,16 +27,12 @@ var autoclass = require('./X3Dautoclass');
 			<td> John Carlson </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> transcriber </i> </td>
-			<td> John Carlson </td>
-		</tr>
-		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
 			<td> 23 January 2005 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 21 March 2018 </td>
+			<td> 9 November 2024 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -88,9 +84,8 @@ flowers2.prototype = {
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("flowers2.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
-    .addMeta((new autoclass.meta()).setName("transcriber").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("23 January 2005"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("21 March 2018"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("9 November 2024"))
     .addMeta((new autoclass.meta()).setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manually written"))
@@ -102,10 +97,10 @@ flowers2.prototype = {
       .addChild((new autoclass.DirectionalLight()).setDirection(1.0,1.0,1.0))
       .addChild((new autoclass.ProtoDeclare()).setName("orbit")
         .setProtoInterface((new autoclass.ProtoInterface())
-          .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("-8 0 0"))
-          .addField((new autoclass.field()).setName("diffuseColor").setType("SFColor").setAccessType("inputOutput").setValue("1 0.5 0"))
-          .addField((new autoclass.field()).setName("specularColor").setType("SFColor").setAccessType("inputOutput").setValue("1 0.5 0"))
-          .addField((new autoclass.field()).setName("transparency").setType("SFFloat").setAccessType("inputOutput").setValue("0.75")))
+          .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(-8.0,0.0,0.0))
+          .addField((new autoclass.field()).setName(diffuseColor).setType(SFColor.0).setAccessType(inputOutput.0).setValue(1.0,0.5,0.0))
+          .addField((new autoclass.field()).setName(specularColor).setType(SFColor.0).setAccessType(inputOutput.0).setValue(1.0,0.5,0.0))
+          .addField((new autoclass.field()).setName(transparency).setType(SFFloat).setAccessType(inputOutput).setValue(0.75)))
         .setProtoBody((new autoclass.ProtoBody())
           .addChild((new autoclass.Group())
             .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(16).setLoop(true))
@@ -193,29 +188,29 @@ flowers2.prototype = {
 "				}" + "\n" + 
 "				generateCoordinates();" + "\n" + 
 "			}" + "\n")
-              .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
-              .addField((new autoclass.field()).setName("coordinates").setType("MFVec3f").setAccessType("inputOutput"))
-              .addField((new autoclass.field()).setName("coordIndexes").setType("MFInt32").setAccessType("inputOutput"))
-              .addField((new autoclass.field()).setName("e").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
-              .addField((new autoclass.field()).setName("f").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
-              .addField((new autoclass.field()).setName("g").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
-              .addField((new autoclass.field()).setName("h").setType("SFFloat").setAccessType("inputOutput").setValue("5"))
-              .addField((new autoclass.field()).setName("resolution").setType("SFInt32").setAccessType("inputOutput").setValue("50")))
+              .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly))
+              .addField((new autoclass.field()).setName(new autoclass.MFVec3f(java.newArray("float", [coordinates]))).setType(new autoclass.MFVec3f(java.newArray("float", [MFVec3f]))).setAccessType(new autoclass.MFVec3f(java.newArray("float", [inputOutput.0]))))
+              .addField((new autoclass.field()).setName(java.newArray("int", [coordIndexes])).setType(java.newArray("int", [MFInt32])).setAccessType(java.newArray("int", [inputOutput])))
+              .addField((new autoclass.field()).setName(e).setType(SFFloat).setAccessType(inputOutput).setValue(5))
+              .addField((new autoclass.field()).setName(f).setType(SFFloat).setAccessType(inputOutput).setValue(5))
+              .addField((new autoclass.field()).setName(g).setType(SFFloat).setAccessType(inputOutput).setValue(5))
+              .addField((new autoclass.field()).setName(h).setType(SFFloat).setAccessType(inputOutput).setValue(5))
+              .addField((new autoclass.field()).setName(resolution).setType(SFInt32).setAccessType(inputOutput).setValue(50)))
             .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
             .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
             .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
             .addChild((new autoclass.ROUTE()).setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
             .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
       .addChild((new autoclass.ProtoInstance())
-        .addFieldValue((new autoclass.fieldValue()).setName("translation").setValue("-8 0 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue("1 0.5 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("specularColor").setValue("1 0.5 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.75")))
+        .addFieldValue((new autoclass.fieldValue()).setName("translation").setValue(-8 0 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue(1 0.5 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("specularColor").setValue(1 0.5 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue(0.75)))
       .addChild((new autoclass.ProtoInstance())
-        .addFieldValue((new autoclass.fieldValue()).setName("translation").setValue("8 0 0"))
-        .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue("0 0.5 1"))
-        .addFieldValue((new autoclass.fieldValue()).setName("specularColor").setValue("0 0.5 1"))
-        .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.5")))));
+        .addFieldValue((new autoclass.fieldValue()).setName("translation").setValue(8 0 0))
+        .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue(0 0.5 1))
+        .addFieldValue((new autoclass.fieldValue()).setName("specularColor").setValue(0 0.5 1))
+        .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue(0.5)))));
   },
   // end of initialize() method
 

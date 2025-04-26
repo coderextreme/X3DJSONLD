@@ -96,9 +96,9 @@ public class variationalflowers2
 "			    * values - array of MFFloats to pass to ComposedShader",
 "			    * variations in values - array of MFFloats to pass to ComposedShader that varies values"})
         .setVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0"
-// *** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), VariationPhysicsModel values: $isNumeric=true, $attributeType=, value='2 2 5 5 0 0']
+// *** (X3dToJava.xslt error?) Encountered incorrect type, VariationPhysicsModel values: $isNumeric=true, $attributeType=FieldTypeNotFound, value='2 2 5 5 0 0']
 ).setVariations("0.2 0.1 0.3 0.3 0.01 0.01"
-// *** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), VariationPhysicsModel variations: $isNumeric=true, $attributeType=, value='0.2 0.1 0.3 0.3 0.01 0.01']
+// *** (X3dToJava.xslt error?) Encountered incorrect type, VariationPhysicsModel variations: $isNumeric=true, $attributeType=FieldTypeNotFound, value='0.2 0.1 0.3 0.3 0.01 0.01']
 ))
         .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
         .setGeometry(new Sphere())
@@ -219,7 +219,7 @@ ecmascript:
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.variationalflowers2 self-validation test results: ");
+                System.out.print("net.x3djsonld.data.variationalflowers2 self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());

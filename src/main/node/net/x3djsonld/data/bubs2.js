@@ -148,11 +148,11 @@ bubs2.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}")
-            .addField((new autoclass.field()).setName("scale").setType("SFVec3f").setAccessType("inputOutput").setValue("1 1 1"))
-            .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-            .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-            .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
-            .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
+            .addField((new autoclass.field()).setName(scale).setType(SFVec3f).setAccessType(inputOutput.0).setValue(1.0,1.0,1.0))
+            .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+            .addField((new autoclass.field()).setName(velocity).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+            .addField((new autoclass.field()).setName(scalvel).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
+            .addField((new autoclass.field()).setName(set_fraction).setType(SFFloat).setAccessType(inputOnly)))
           .addChild((new autoclass.TimeSensor("bubbleClock")).setCycleInterval(10.0).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))

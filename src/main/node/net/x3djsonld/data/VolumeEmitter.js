@@ -149,7 +149,7 @@ VolumeEmitter.prototype = {
         .addValue((new autoclass.MetadataSet("Selection")).setName("Selection").setReference("http://titania.create3000.de")
           .addValue((new autoclass.MetadataSet("previous")).setName("previous").setReference("http://titania.create3000.de")))))
     .addChild((new autoclass.Background("Gray")).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.2,0.2,0.2]))))
-    .addChild((new autoclass.OrthoViewpoint()).setDescription("OrthoViewpoint").setFieldOfView(-1.5, -1.5, 1.5, 1.5))
+    .addChild((new autoclass.OrthoViewpoint()).setDescription("OrthoViewpoint").setFieldOfView(-1.5,.0,-1.5,.0,1.5,.0,1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("Viewpoint").setPosition(0.0,0.0,8.0))
     .addChild((new autoclass.ParticleSystem()).setColorKey(java.newArray("float", [0.0,.0,0.1,.0,0.4,.0,1.0])).setGeometryType("POINT").setLifetimeVariation(0.01).setMaxParticles(100000).setParticleLifetime(60).setParticleSize(0.1,0.1)
       .setEmitter((new autoclass.VolumeEmitter()).setDirection(0.0,0.0,0.0).setMass(0.01).setSurfaceArea(0.01)

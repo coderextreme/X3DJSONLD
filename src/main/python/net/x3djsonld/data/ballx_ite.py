@@ -40,7 +40,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='title',content='ballx_ite.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d'),
     meta(name='description',content='a prismatic sphere')]),
   Scene=Scene(
     children=[

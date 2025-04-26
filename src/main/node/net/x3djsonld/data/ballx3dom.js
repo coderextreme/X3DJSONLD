@@ -100,12 +100,12 @@ ballx3dom.prototype = {
             .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
             .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
-            .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("inputOutput")
+            .addField((new autoclass.field()).setName(chromaticDispertion).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.98,1.0,1.033))
+            .addField((new autoclass.field()).setName(cube).setType(SFNode).setAccessType(inputOutput)
               .addChild((new autoclass.ComposedCubeMapTexture())))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
+            .addField((new autoclass.field()).setName(bias).setType(SFFloat).setAccessType(inputOutput).setValue(0.5))
+            .addField((new autoclass.field()).setName(scale).setType(SFFloat).setAccessType(inputOutput).setValue(0.5))
+            .addField((new autoclass.field()).setName(power).setType(SFFloat).setAccessType(inputOutput).setValue(2))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
             .addParts((new autoclass.ShaderPart("common")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))))));
   },

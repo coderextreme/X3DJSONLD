@@ -96,25 +96,25 @@ ArchPrototype.prototype = {
 	this.ProtoDeclare_ArchPrototype_3_13_appinfo = new autoclass.SFString("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.");
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #21, 26 total values */
-	this.field_archHalf_5_21_appinfo = new autoclass.SFString("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width");
+	this.field_archHalf_5_21_appinfo = new autoclass.SFBool(archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width);
 
-	/** Large attribute array: field appinfo field, scene-graph level=5, element #22, 30 total values */
-	this.field_archHalfExtensionWidth_5_22_appinfo = new autoclass.SFString("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.");
+	/** Large attribute array: field appinfo field, scene-graph level=5, element #22, 30 total numbers */
+	this.field_archHalfExtensionWidth_5_22_appinfo = new autoclass.SFFloat(archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.);
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #23, 20 total values */
-	this.field_onlyIntrados_5_23_appinfo = new autoclass.SFString("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.");
+	this.field_onlyIntrados_5_23_appinfo = new autoclass.SFBool(onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.);
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #24, 15 total values */
-	this.field_archFilled_5_24_appinfo = new autoclass.SFString("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.");
+	this.field_archFilled_5_24_appinfo = new autoclass.SFBool(archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.);
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #25, 28 total values */
-	this.field_archHalfFilled_5_25_appinfo = new autoclass.SFString("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.");
+	this.field_archHalfFilled_5_25_appinfo = new autoclass.SFBool(archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.);
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #26, 21 total values */
-	this.field_lintel_5_26_appinfo = new autoclass.SFString("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.");
+	this.field_lintel_5_26_appinfo = new autoclass.SFBool(lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.);
 
-	/** Large attribute array: field appinfo field, scene-graph level=6, element #49, 29 total values */
-	this.field_computedScale_6_49_appinfo = new autoclass.SFString("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth");
+	/** Large attribute array: field appinfo field, scene-graph level=6, element #49, 29 total numbers made up of 9.666666666666666 3-tuple values */
+	this.field_computedScale_6_49_appinfo = new autoclass.SFVec3f(computedScale:,modify,scale,field,-,NOTE,it,is,not,used,to,modify,the,whole,arch,,but,to,modify,clearSpanWidth,,riseHeight,,depth.,It,does,not,affect,topAbutmentHeight,,pierWidth,,pierHeight,,archHalfExtensionWidth);
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ArchPrototype.x3d"))
@@ -132,23 +132,23 @@ ArchPrototype.prototype = {
     .addChild((new autoclass.ProtoDeclare()).setName("ArchPrototype").setAppinfo(this.ProtoDeclare_ArchPrototype_3_13_appinfo)
       .setProtoInterface((new autoclass.ProtoInterface())
         .addComments(" COLOR OF ARCH ")
-        .addField((new autoclass.field()).setName("diffuseColor").setType("SFColor").setAccessType("inputOutput").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
-        .addField((new autoclass.field()).setName("emissiveColor").setType("SFColor").setAccessType("inputOutput").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
+        .addField((new autoclass.field()).setName(diffuseColor).setType(SFColor.0).setAccessType(inputOutput.0).setValue(0.2,0.8,0.8).setAppinfo(color.0,of.0,arch.0))
+        .addField((new autoclass.field()).setName(emissiveColor).setType(SFColor.0).setAccessType(inputOutput.0).setValue(0.2,0.8,0.8).setAppinfo(color.0,of.0,arch.0))
         .addComments(" INPUT PARAMETERS ")
         .addComments(" General parameters: measures in meters ")
-        .addField((new autoclass.field()).setName("clearSpanWidth").setType("SFFloat").setAccessType("initializeOnly").setValue("4").setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"))
-        .addField((new autoclass.field()).setName("riseHeight").setType("SFFloat").setAccessType("initializeOnly").setValue("2").setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"))
-        .addField((new autoclass.field()).setName("depth").setType("SFFloat").setAccessType("initializeOnly").setValue("3").setAppinfo("depth"))
-        .addField((new autoclass.field()).setName("topAbutmentHeight").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5").setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"))
-        .addField((new autoclass.field()).setName("pierWidth").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5").setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
-        .addField((new autoclass.field()).setName("pierHeight").setType("SFFloat").setAccessType("initializeOnly").setValue("1").setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
+        .addField((new autoclass.field()).setName(clearSpanWidth).setType(SFFloat).setAccessType(initializeOnly).setValue(4).setAppinfo(clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference))
+        .addField((new autoclass.field()).setName(riseHeight).setType(SFFloat).setAccessType(initializeOnly).setValue(2).setAppinfo(riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference))
+        .addField((new autoclass.field()).setName(depth).setType(SFFloat).setAccessType(initializeOnly).setValue(3).setAppinfo(depth))
+        .addField((new autoclass.field()).setName(topAbutmentHeight).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5).setAppinfo(topAbutmentHeight:topAbutmentHeight=0 means no topAbutment))
+        .addField((new autoclass.field()).setName(pierWidth).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5).setAppinfo(pierWidth:pierWidtht=0 means no pierWidth))
+        .addField((new autoclass.field()).setName(pierHeight).setType(SFFloat).setAccessType(initializeOnly).setValue(1).setAppinfo(pierHeight: pierHeight=0 means no pierHeight))
         .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
-        .addField((new autoclass.field()).setName("archHalf").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo(this.field_archHalf_5_21_appinfo))
-        .addField((new autoclass.field()).setName("archHalfExtensionWidth").setType("SFFloat").setAccessType("initializeOnly").setValue("0").setAppinfo(this.field_archHalfExtensionWidth_5_22_appinfo))
-        .addField((new autoclass.field()).setName("onlyIntrados").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo(this.field_onlyIntrados_5_23_appinfo))
-        .addField((new autoclass.field()).setName("archFilled").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo(this.field_archFilled_5_24_appinfo))
-        .addField((new autoclass.field()).setName("archHalfFilled").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo(this.field_archHalfFilled_5_25_appinfo))
-        .addField((new autoclass.field()).setName("lintel").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo(this.field_lintel_5_26_appinfo)))
+        .addField((new autoclass.field()).setName(archHalf).setType(SFBool).setAccessType(initializeOnly).setValue(false).setAppinfo(this.field_archHalf_5_21_appinfo))
+        .addField((new autoclass.field()).setName(archHalfExtensionWidth).setType(SFFloat).setAccessType(initializeOnly).setValue(0).setAppinfo(this.field_archHalfExtensionWidth_5_22_appinfo))
+        .addField((new autoclass.field()).setName(onlyIntrados).setType(SFBool).setAccessType(initializeOnly).setValue(false).setAppinfo(this.field_onlyIntrados_5_23_appinfo))
+        .addField((new autoclass.field()).setName(archFilled).setType(SFBool).setAccessType(initializeOnly).setValue(false).setAppinfo(this.field_archFilled_5_24_appinfo))
+        .addField((new autoclass.field()).setName(archHalfFilled).setType(SFBool).setAccessType(initializeOnly).setValue(false).setAppinfo(this.field_archHalfFilled_5_25_appinfo))
+        .addField((new autoclass.field()).setName(lintel).setType(SFBool).setAccessType(initializeOnly).setValue(false).setAppinfo(this.field_lintel_5_26_appinfo)))
       .setProtoBody((new autoclass.ProtoBody())
         .addComments(" First node determines node type of this prototype ")
         .addComments(" IndexedFaceset creates arch ")
@@ -169,21 +169,22 @@ ArchPrototype.prototype = {
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
           .addComments(" OUTPUT PARAMETERS ")
-          .addField((new autoclass.field()).setName("clearSpanWidth").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for clearSpanWidth parameter"))
-          .addField((new autoclass.field()).setName("riseHeight").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for riseHeight parameter"))
-          .addField((new autoclass.field()).setName("depth").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for depth parameter"))
-          .addField((new autoclass.field()).setName("topAbutmentHeight").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for topAbutmentHeight parameter"))
-          .addField((new autoclass.field()).setName("pierWidth").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for pierWidth parameter"))
-          .addField((new autoclass.field()).setName("pierHeight").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for pierHeight parameter"))
-          .addField((new autoclass.field()).setName("archHalf").setType("SFBool").setAccessType("initializeOnly").setAppinfo("user or default input for archHalf parameter"))
-          .addField((new autoclass.field()).setName("archHalfExtensionWidth").setType("SFFloat").setAccessType("initializeOnly").setAppinfo("user or default input for archHalfExtensionWidth parameter"))
-          .addField((new autoclass.field()).setName("onlyIntrados").setType("SFBool").setAccessType("initializeOnly").setAppinfo("user or default input for onlyIntrados parameter"))
-          .addField((new autoclass.field()).setName("archFilled").setType("SFBool").setAccessType("initializeOnly").setAppinfo("user or default input for archFilled parameter"))
-          .addField((new autoclass.field()).setName("archHalfFilled").setType("SFBool").setAccessType("initializeOnly").setAppinfo("user or default input for archHalfFilled parameter"))
-          .addField((new autoclass.field()).setName("lintel").setType("SFBool").setAccessType("initializeOnly").setAppinfo("user or default input for lintel parameter"))
-          .addField((new autoclass.field()).setName("computedScale").setType("SFVec3f").setAccessType("outputOnly").setAppinfo(this.field_computedScale_6_49_appinfo))
-          .addField((new autoclass.field()).setName("pointOut").setType("MFVec3f").setAccessType("outputOnly").setAppinfo("send computed points to the Coordinate node"))
-          .addField((new autoclass.field()).setName("indexOut").setType("MFInt32").setAccessType("outputOnly").setAppinfo("send computed indices to the IndexedFaceSet node"))
+          .addField((new autoclass.field()).setName(clearSpanWidth).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for clearSpanWidth parameter))
+          .addField((new autoclass.field()).setName(riseHeight).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for riseHeight parameter))
+          .addField((new autoclass.field()).setName(depth).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for depth parameter))
+          .addField((new autoclass.field()).setName(topAbutmentHeight).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for topAbutmentHeight parameter))
+          .addField((new autoclass.field()).setName(pierWidth).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for pierWidth parameter))
+          .addField((new autoclass.field()).setName(pierHeight).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for pierHeight parameter))
+          .addField((new autoclass.field()).setName(archHalf).setType(SFBool).setAccessType(initializeOnly).setAppinfo(user or default input for archHalf parameter))
+          .addField((new autoclass.field()).setName(archHalfExtensionWidth).setType(SFFloat).setAccessType(initializeOnly).setAppinfo(user or default input for archHalfExtensionWidth parameter))
+          .addField((new autoclass.field()).setName(onlyIntrados).setType(SFBool).setAccessType(initializeOnly).setAppinfo(user or default input for onlyIntrados parameter))
+          .addField((new autoclass.field()).setName(archFilled).setType(SFBool).setAccessType(initializeOnly).setAppinfo(user or default input for archFilled parameter))
+          .addField((new autoclass.field()).setName(archHalfFilled).setType(SFBool).setAccessType(initializeOnly).setAppinfo(user or default input for archHalfFilled parameter))
+          .addField((new autoclass.field()).setName(lintel).setType(SFBool).setAccessType(initializeOnly).setAppinfo(user or default input for lintel parameter))
+          .addField((new autoclass.field()).setName(computedScale).setType(SFVec3f).setAccessType(outputOnly.0).setAppinfo(this.field_computedScale_6_49_appinfo))
+          .addField((new autoclass.field()).setName(new autoclass.MFVec3f(java.newArray("float", [pointOut.0]))).setType(new autoclass.MFVec3f(java.newArray("float", [MFVec3f]))).setAccessType(new autoclass.MFVec3f(java.newArray("float", [outputOnly.0]))).setAppinfo(new autoclass.MFVec3f() /* splitting up long array to improve readability */
+.append(new autoclass.MFVec3f(java.newArray("float", [send,computed,points,to,the,Coordinate,node])))))
+          .addField((new autoclass.field()).setName(java.newArray("int", [indexOut])).setType(java.newArray("int", [MFInt32])).setAccessType(java.newArray("int", [outputOnly])).setAppinfo(java.newArray("int", [send,computed,indices,to,the,IndexedFaceSet,node])))
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("clearSpanWidth").setProtoField("clearSpanWidth"))
             .addConnect((new autoclass.connect()).setNodeField("riseHeight").setProtoField("riseHeight"))
@@ -201,14 +202,14 @@ ArchPrototype.prototype = {
         .addChild((new autoclass.ROUTE()).setFromNode("ArchPrototypeScript").setFromField("pointOut").setToNode("ArchChord").setToField("point"))
         .addChild((new autoclass.ROUTE()).setFromNode("ArchPrototypeScript").setFromField("indexOut").setToNode("ArchIndex").setToField("set_coordIndex"))))
     .addChild((new autoclass.ProtoInstance("ArchInstance", "ArchPrototype"))
-      .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue("0.5 0.3 0.6"))
-      .addFieldValue((new autoclass.fieldValue()).setName("emissiveColor").setValue("0.5 0.3 0.6"))
-      .addFieldValue((new autoclass.fieldValue()).setName("clearSpanWidth").setValue("5"))
-      .addFieldValue((new autoclass.fieldValue()).setName("riseHeight").setValue("2.5"))
-      .addFieldValue((new autoclass.fieldValue()).setName("depth").setValue("2"))
-      .addFieldValue((new autoclass.fieldValue()).setName("topAbutmentHeight").setValue("0.6"))
-      .addFieldValue((new autoclass.fieldValue()).setName("pierWidth").setValue("1"))
-      .addFieldValue((new autoclass.fieldValue()).setName("pierHeight").setValue("2")))
+      .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue(0.5 0.3 0.6))
+      .addFieldValue((new autoclass.fieldValue()).setName("emissiveColor").setValue(0.5 0.3 0.6))
+      .addFieldValue((new autoclass.fieldValue()).setName("clearSpanWidth").setValue(5))
+      .addFieldValue((new autoclass.fieldValue()).setName("riseHeight").setValue(2.5))
+      .addFieldValue((new autoclass.fieldValue()).setName("depth").setValue(2))
+      .addFieldValue((new autoclass.fieldValue()).setName("topAbutmentHeight").setValue(0.6))
+      .addFieldValue((new autoclass.fieldValue()).setName("pierWidth").setValue(1))
+      .addFieldValue((new autoclass.fieldValue()).setName("pierHeight").setValue(2)))
     .addComments(" Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) ")
     .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../data/CoordinateAxes.x3d\""))));
   },

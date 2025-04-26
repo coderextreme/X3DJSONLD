@@ -105,7 +105,7 @@ jumpcut_loadurl.prototype = {
   {
 
 	/** Large attribute array: field value field, scene-graph level=4, element #28, 4 total values */
-	this.field_myUrl_4_28_value = new autoclass.SFString("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"");
+	this.field_myUrl_4_28_value = new autoclass.MFString(new autoclass.MFString("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("jumpcut_loadurl.x3d"))
@@ -135,9 +135,9 @@ jumpcut_loadurl.prototype = {
           .setMaterial((new autoclass.Material())))
         .setGeometry((new autoclass.Box()))))
     .addChild((new autoclass.Script("MYSCRIPT")).setUrl(new autoclass.MFString("\"jumpcut_loadurl.js\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js\""))
-      .addField((new autoclass.field()).setName("myParameter").setType("MFString").setAccessType("initializeOnly").setValue("\"Top_View\""))
-      .addField((new autoclass.field()).setName("myUrl").setType("MFString").setAccessType("initializeOnly").setValue(this.field_myUrl_4_28_value))
-      .addField((new autoclass.field()).setName("trigger_event").setType("SFBool").setAccessType("inputOnly")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"myParameter\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(new autoclass.MFString("\"Top_View\"")))
+      .addField((new autoclass.field()).setName(new autoclass.MFString("\"myUrl\"")).setType(new autoclass.MFString("\"MFString\"")).setAccessType(new autoclass.MFString("\"initializeOnly\"")).setValue(this.field_myUrl_4_28_value))
+      .addField((new autoclass.field()).setName(trigger_event).setType(SFBool).setAccessType(inputOnly)))
     .addChild((new autoclass.ROUTE()).setFromNode("STARTER").setFromField("isActive").setToNode("MYSCRIPT").setToField("trigger_event")));
   },
   // end of initialize() method

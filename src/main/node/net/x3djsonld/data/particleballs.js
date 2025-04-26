@@ -122,12 +122,12 @@ particleballs.prototype = {
 "				  <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>",
 "	  		    </ComposedShader>"]))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1 1.033"))
-            .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("initializeOnly")
+            .addField((new autoclass.field()).setName(chromaticDispertion).setType(SFVec3f).setAccessType(initializeOnly).setValue(0.98,1.0,1.033))
+            .addField((new autoclass.field()).setName(cube).setType(SFNode).setAccessType(initializeOnly)
               .addChild((new autoclass.ComposedCubeMapTexture())))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("initializeOnly").setValue("2"))
+            .addField((new autoclass.field()).setName(bias).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(scale).setType(SFFloat).setAccessType(initializeOnly).setValue(0.5))
+            .addField((new autoclass.field()).setName(power).setType(SFFloat).setAccessType(initializeOnly).setValue(2))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_iteparticles.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs\"")))
             .addParts((new autoclass.ShaderPart("commonfs")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs\""))))))
       .addComments(java.newArray("java.lang.String",["",
