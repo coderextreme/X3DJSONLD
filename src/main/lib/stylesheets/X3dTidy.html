@@ -278,6 +278,9 @@
         
         <ol>
             <li>
+                Optionally remove Normal nodes and IndexedFaceSet normalIndex, normalPerVertex fields. 
+            </li>
+            <li>
                 Optionally add  visualization spheres and lines to HAnimJoint and HAnimSegment nodes in an HAnimHumanoid skeleton. 
             </li>
             <li>
@@ -327,31 +330,34 @@
         
 <pre>
     &lt;!-- Default parameter values follow, can be overridden when invoking this stylesheet --&gt;
-    &lt;xsl:param name="<span class="parameterName">conversionRequired</span>"          &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">title</span>"                       &gt;&lt;xsl:text&gt;<span class="parameterValue">&lt;!-- default title value for file name is empty --&gt;</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">modifyX3dVersion</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">revisedX3dVersion</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">3.3</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">reviseCurrentDate</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">fixDateFormats</span>"              &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">fixMFStringQuotes</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:te xt&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">fixGeoSystemMetadata</span>"        &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">fixMetaNamesMatchDublinCore</span>" &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">omitObsoleteAttributes</span>"      &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">conversionRequired</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">title</span>"                        &gt;&lt;xsl:text&gt;<span class="parameterValue">&lt;!-- default title value for file name is empty --&gt;</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">modifyX3dVersion</span>"             &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">revisedX3dVersion</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">3.3</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">reviseCurrentDate</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">fixDateFormats</span>"               &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">fixMFStringQuotes</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:te xt&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">fixGeoSystemMetadata</span>"         &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">fixMetaNamesMatchDublinCore</span>"  &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">omitObsoleteAttributes</span>"       &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;!-- prependWorldInfoIfMissing values: true, false, or can also provide name to use --&gt;
-    &lt;xsl:param name="<span class="parameterName">prependWorldInfoIfMissing</span>"   &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">replaceBlackEmissiveColor</span>"   &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">prependWorldInfoIfMissing</span>"    &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">replaceBlackEmissiveColor</span>"    &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;!-- expand local url array to include online addresses --&gt;
-    &lt;xsl:param name="<span class="parameterName">fixUrlAdditionHttpAddresses</span>" &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">fixUrlAdditionHttpAddresses</span>"  &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;!-- note that url quotes are always added if needed --&gt;
-    &lt;xsl:param name="<span class="parameterName">appendWrlAfterX3dAddresses</span>"  &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">appendWrlAfterX3dAddresses</span>"   &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">prependX3dBeforeWrlAddresses</span>"&gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">defaultUrlAddress</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">&lt;!-- default value is empty --&gt;</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">defaultUrlAddress</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">&lt;!-- default value is empty --&gt;</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;!-- baseUrlAvailable false means that stylesheet is being used by servlet, or else styled results won't be in original directory: --&gt;
-    &lt;xsl:param name="<span class="parameterName">baseUrlAvailable</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">changeJavascriptEcmascript</span>"  &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">insertMissingEcmascript</span>"     &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">insertMissingMetaLicense</span>"    &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">licenseLink</span>"                 &gt;&lt;xsl:text&gt;<span class="parameterValue">https://www.web3d.org/x3d/content/examples/license.html</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">baseUrlAvailable</span>"             &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">changeJavascriptEcmascript</span>"   &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">insertMissingEcmascript</span>"      &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">insertMissingMetaLicense</span>"     &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">licenseLink</span>"                  &gt;&lt;xsl:text&gt;<span class="parameterValue">https://www.web3d.org/x3d/content/examples/license.html</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">removeDuplicateIndexesIFS_ILS</span>"&gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">removeNormals</span>"                &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt; (Normal nodes and related attributes)
+    &lt;xsl:param name="<span class="parameterName">removeColors</span>"                 &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt; (Color/ColorRGBA nodes and related attributes)
 </pre>
         
         <p>
@@ -360,17 +366,17 @@
         
 <pre>
     &lt;!-- Default parameter values can be overridden when invoking this stylesheet --&gt;
-    &lt;xsl:param name="<span class="parameterName">HAnimGeometryRemove</span>"         &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">HAnimSkeletonIllustrate</span>"     &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">HAnimSiteIllustrate</span>"         &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">HAnimViewpointIllustrate</span>"    &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">HAnimGeometryRemove</span>"          &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">HAnimSkeletonIllustrate</span>"      &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">HAnimSiteIllustrate</span>"          &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">HAnimViewpointIllustrate</span>"     &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
 
-    &lt;xsl:param name="<span class="parameterName">jointColor</span>"                  &gt;&lt;xsl:text&gt;<span class="parameterValue">1 0.5 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">segmentColor</span>"                &gt;&lt;xsl:text&gt;<span class="parameterValue">1 1 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">siteColor</span>"                   &gt;&lt;xsl:text&gt;<span class="parameterValue">1 0 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<span class="parameterName">siteViewpointColor</span>"          &gt;&lt;xsl:text&gt;<span class="parameterValue">0 0 1</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">jointColor</span>"                   &gt;&lt;xsl:text&gt;<span class="parameterValue">1 0.5 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">segmentColor</span>"                 &gt;&lt;xsl:text&gt;<span class="parameterValue">1 1 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">siteColor</span>"                    &gt;&lt;xsl:text&gt;<span class="parameterValue">1 0 0</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">siteViewpointColor</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">0 0 1</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
 TODO:
-    &lt;xsl:param name="<span class="parameterName">HAnimAddBoneSegments</span>"        &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">HAnimAddBoneSegments</span>"         &gt;&lt;xsl:text&gt;<span class="parameterValue">false</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
 </pre>
 
         <p>
@@ -487,7 +493,7 @@ TODO:
         </h3>
         
         <p>
-            Updated: 2 July 2022
+            Updated: 19 September 2024
         </p>
         <div>
                <a href="http://validator.w3.org/check?uri=https://www.web3d.org/x3d/stylesheets/X3dTidy.html">

@@ -4,7 +4,7 @@
    <meta name="title"       content="X3dToX3domX_ITE.xslt" />
    <meta name="author"      content="Don Brutzman" />
    <meta name="created"     content="25 March 2012" />
-   <meta name="description" content="XSLT stylesheet to convert X3D source into an HTML5 XHTML page containing the embedded X3D scene using X3DOM syntax." />
+   <meta name="description" content="XSLT stylesheet to convert X3D source into an HTML5 XHTML page containing the embedded X3D scene using either X3DOM or X_ITE syntax." />
    <meta name="identififer" content="https://www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
    <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
   </head>
@@ -23,7 +23,7 @@ X3DOM references
 - Node support  https://doc.x3dom.org/author/nodes.html
 -               https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html
 
---> 
+-->
 <!--
 Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
 
@@ -70,9 +70,11 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
-    
-    <xsl:param name="urlX_ITE"                >https://create3000.github.io/code/x_ite</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionX_ITE"            >latest</xsl:param>
+
+    <xsl:param name="urlX_ITE"                >https://cdn.jsdelivr.net/npm/x_ite@latest/dist</xsl:param> <!-- no trailing slash / -->
+<!--<xsl:param name="urlX_ITE"                >https://create3000.github.io/code/x_ite</xsl:param>             no trailing slash / -->
+    <xsl:param name="versionX_ITE"            >x_ite.min.js</xsl:param>
+<!--<xsl:param name="versionX_ITE"            >latest</xsl:param>     -->
 <!--<xsl:param name="versionX_ITE"            >latest/dist</xsl:param>-->
 <!--<xsl:param name="versionCobweb"           >x_ite@latest/dist</xsl:param>  1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 4.6.11 or x_ite@latest/dist with no trailing slash / -->
     <xsl:param name="urlWebsiteX_ITE"         >https://create3000.github.io/x_ite</xsl:param>
@@ -83,11 +85,11 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
     <xsl:param name="traceEnabled"             >false</xsl:param>
     <xsl:param name="styleX_ITE"              >default</xsl:param><!-- simple or default -->
-        
+
     <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
     <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
-    
+
     <xsl:strip-space elements="*"/>
     <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
 
@@ -101,15 +103,15 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-		
+
     <xsl:variable name="lower-case-player" select="translate($player,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/> <!-- XSLT 1 hack -->
 
     <xsl:variable name="apos">'</xsl:variable>
     <xsl:variable name="quot">"</xsl:variable>
-    
+
     <xsl:variable name="urlX3DOM.dev"             >https://x3dom.org/download/dev</xsl:variable> <!-- no trailing / -->
     <xsl:variable name="urlX3DOM.release"         >https://x3dom.org/release</xsl:variable>      <!-- no trailing / -->
-    
+
     <xsl:variable name="urlSceneQuoted">
         <xsl:choose>
             <xsl:when test="not(contains($urlScene,'&quot;'))">
@@ -122,7 +124,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    
+
     <xsl:variable name="urlSceneUnquoted">
         <xsl:choose>
             <xsl:when test="(contains($urlScene,'&quot;'))">
@@ -136,7 +138,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:variable>
 
     <xsl:template match="/">
-        
+
         <xsl:variable name="fileName">
             <xsl:choose>
                 <xsl:when test="//head/meta[@name='title']/@content[.!='*enter FileNameWithNoAbbreviations.x3d here*']">
@@ -151,7 +153,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="x3dWorldInfoTitle">
             <xsl:value-of select="//WorldInfo[1]/@title"/>
         </xsl:variable>
-        
+
         <!-- debug diagnostics -->
         <xsl:if test="($traceEnabled = 'true')">
             <xsl:message>
@@ -203,7 +205,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$x3dDocumentationAvailable"/>
             </xsl:message>
         </xsl:if>
-                    
+
         <!-- header -->
         <!-- https://stackoverflow.com/questions/4666523/xhtml-strict-1-0-target-blank-not-valid
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</xsl:text> -->
@@ -236,10 +238,10 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$fileName"/>
                 <xsl:if test="(string-length($x3dWorldInfoTitle) > 0) and ends-with($x3dWorldInfoTitle,'.x3d') and not(contains($x3dWorldInfoTitle,' '))">
                     <xsl:message>
-                        <xsl:text>*** Warning, possible mismatch between WorldInfo/@title=</xsl:text>
-                        <xsl:value-of select="$x3dWorldInfoTitle"/>
-                        <xsl:text> and meta title=</xsl:text>
+                        <xsl:text>*** Warning, possible mismatch between meta title=</xsl:text>
                         <xsl:value-of select="$fileName"/>
+                        <xsl:text> and WorldInfo/@title=</xsl:text>
+                        <xsl:value-of select="$x3dWorldInfoTitle"/>
                         <xsl:text> ?</xsl:text>
                     </xsl:message>
                 </xsl:if>
@@ -271,7 +273,7 @@ POSSIBILITY OF SUCH DAMAGE.
               <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
               <!--                     alternate stylesheet: https://www.x3dom.org/x3dom/example/x3dom.css -->
                 <xsl:text>&#10;</xsl:text>
-                
+
                 <!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
                 <xsl:variable name="urlJquery">
                     <xsl:text>https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</xsl:text>
@@ -279,7 +281,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text>        </xsl:text>
                 <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlJquery"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
                 <xsl:text>&#10;</xsl:text>
-              
+
                 <xsl:choose>
                   <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
                     <xsl:text>        </xsl:text>
@@ -296,9 +298,9 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>&#10;</xsl:text> -->
                     <xsl:text>        </xsl:text>
                     <!-- TODO singleton <script /> tag buggy under Firefox -->
-                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlX_ITE"/><xsl:text>/</xsl:text><xsl:value-of select="$versionX_ITE"/><xsl:text disable-output-escaping="yes"><![CDATA[/x_ite.min.js"></script>]]></xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlX_ITE"/><xsl:text>/</xsl:text><xsl:value-of select="$versionX_ITE"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
-                    <!-- separate entry apparently no longer needed 
+                    <!-- separate entry apparently no longer needed
 		    <xsl:text>        </xsl:text>
                     <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlX_ITE"/><xsl:text>/</xsl:text><xsl:value-of select="$versionX_ITE"/><xsl:text disable-output-escaping="yes"><![CDATA[/rigid-body-physics.min.js"></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text> -->
@@ -324,7 +326,7 @@ POSSIBILITY OF SUCH DAMAGE.
 </xsl:text>
 </style>
                             </xsl:when>
-                            <xsl:otherwise>      
+                            <xsl:otherwise>
 	<style type="text/css">
 		<xsl:text>
          @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
@@ -420,7 +422,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     <link rel="icon" type="image/png" sizes="32x32" href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/tools/X3dEdit4.0/X3dEditModuleSuite/X3dSourceFilePalette/src/org/web3d/x3d/resources/x3dom-whiteOnblue32.png?format=raw"/>
                     <link rel="icon" type="image/png" sizes="24x24" href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/tools/X3dEdit4.0/X3dEditModuleSuite/X3dSourceFilePalette/src/org/web3d/x3d/resources/x3dom-whiteOnblue24.png?format=raw"/>
                     <xsl:text>&#10;</xsl:text>
-                    
+
                   </xsl:otherwise>
               </xsl:choose>
 
@@ -430,7 +432,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <!-- TODO -->
     </xsl:when>
     <xsl:otherwise> <!-- default X3DOM -->
-                  
+
                     <!-- New X3DOM components development entries are placed placed _after_ X3DOM script link above, so that any updates in x3dom-full.js take precedence -->
 
                     <!-- development testing example: CAD component by CAD Working Group, successfully completed and integrated into X3DOM -->
@@ -471,11 +473,11 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 <script type="text/javascript">
 		<xsl:text>
          var fullscreen = false;
-         
+
          function toggleFullscreen ()
          {
            fullscreen = !fullscreen;
-           
+
            if (fullscreen)
            {
              jQuery (".frame")
@@ -485,9 +487,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                .css ("bottom", "0px")
                .css ("right", "0px")
                .css ("background", "#313131");
-                
+
              jQuery (".maximize") .attr ("title", "Reduce frame, show console");
-         
+
              jQuery (".browser") .css ("height", "100%");
              jQuery ("x3d-canvas") .css ("height", "90%");
            }
@@ -496,9 +498,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
              jQuery (".frame")
                .css ("position", "inherit")
                .css ("background", "none");
-               
+
              jQuery (".maximize") .attr ("title", "Full Frame");
-         
+
              jQuery (".browser") .css ("height", "initial");
              jQuery ("x3d-canvas") .css ("height", "432px");
            }
@@ -509,7 +511,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
             </head>
             <body id="htmlBody" onload="toggleFullscreen ();">
                 <xsl:text>&#10;</xsl:text>
-                    
+
 <xsl:choose>
     <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
         <div id="main" style="margin-left: 40px;">
@@ -517,9 +519,11 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 <xsl:choose>
                     <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
                         <xsl:value-of select="$fileName"/>
+                        <xsl:text> using X_ITE</xsl:text>
                     </xsl:when>
                     <xsl:when test="$fileName">
                         <xsl:value-of select="$fileName"/>
+                        <xsl:text> using X_ITE</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:text> X3dToX3domX_ITE.xslt stylesheet conversion to XHTML</xsl:text>
@@ -554,7 +558,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                         <xsl:attribute name="title">
                                             <xsl:text>X_ITE website</xsl:text>
                                         </xsl:attribute>
-                                        <xsl:text>X_ITE X3D Player</xsl:text>
+                                        <xsl:text>X_ITE X3D Browser</xsl:text>
                                     </xsl:element>
                                     <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                 </span>
@@ -584,7 +588,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 &lt;/</xsl:text><xsl:value-of select="$rootElementX_ITE"/><xsl:text disable-output-escaping="yes">&gt;
 </xsl:text>
                     <div class="references">
-                        <xsl:text>Original X3D scene: </xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;nbsp;&amp;nbsp; &amp;nbsp; Original X3D model: </xsl:text>
                         <xsl:element name="a">
                             <xsl:attribute name="href">
                                 <xsl:value-of select="$urlScene"/>
@@ -598,6 +602,28 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <xsl:value-of select="$urlScene"/>
                         </xsl:element>
                     </div>
+                    <xsl:variable name="urlCatalog">
+                        <xsl:value-of select="substring-before(//X3D/head/meta[@name='identifier']/@content,'.x3d')"/>
+                        <xsl:text>Index.html</xsl:text>
+                    </xsl:variable>
+                    <xsl:if test="(string-length($urlCatalog) > 0)">
+                        <div class="references">
+                            <xsl:text>X3D Examples Archive: </xsl:text>
+                            <xsl:element name="a">
+                                <xsl:attribute name="href">
+                                    <xsl:value-of select="$urlCatalog"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="target">
+                                    <xsl:value-of select="_blank"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="title">
+                                    <xsl:value-of select="$urlScene"/>
+                                    <xsl:text> catalog index</xsl:text>
+                                </xsl:attribute>
+                                <xsl:value-of select="$urlCatalog"/>
+                            </xsl:element>
+                        </div>
+                    </xsl:if>
                 </div><!-- browser -->
             </div><!-- frame -->
             <div>
@@ -614,9 +640,11 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:choose>
                                     <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
                                         <xsl:value-of select="$fileName"/>
+                                        <xsl:text> using X3DOM</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$fileName">
                                         <xsl:value-of select="$fileName"/>
+                                        <xsl:text> using X3DOM</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text> X3dToX3domX_ITE.xslt stylesheet conversion to XHTML</xsl:text>
@@ -672,7 +700,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             </xsl:variable>
                             <input id="checkBoxOverlayStatistics" type="checkbox" value="Overlay scene statistics" onclick="toggleOverlayStatistics();"/>
                             <!-- initial status of box checked is controlled by whether attribute is present, rather than defined value.  therefore omit:
-                                 checked="{$checkedShowStatistics}" 
+                                 checked="{$checkedShowStatistics}"
                                  reference: https://www.w3schools.com/tags/att_input_checked.asp -->
                             <span title="Overlay scene performance statistics">
                                 <xsl:text>statistics</xsl:text>
@@ -725,7 +753,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 
                 </table>
                 <xsl:text>&#10;</xsl:text>
-                
+
                 <!-- X3D scene is inserted here -->
                 <!-- n.b. if the following rule is missing, then nothing else from the X3D scene gets processed!! -->
                 <div>
@@ -734,14 +762,14 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     <xsl:text>&#10;</xsl:text>
                     <xsl:comment> embedded X3D scene appears here: </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
-                    
+
                     <xsl:apply-templates select="*" />
-                    
+
                     <xsl:text>&#10;</xsl:text>
                     <xsl:comment> ================================ </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                 </div>
-                
+
                 <xsl:text>&#10;</xsl:text>
                 <!--
                 <table width="96%">
@@ -758,9 +786,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     </tr>
                 </table>
                 -->
-                
+
                 <div id="details">
-    
+
                 <!-- Clear CSS float property to resume expected layout behavior -->
                 <!-- vertical whitespace -->
                 <p style="clear:both;">
@@ -796,7 +824,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <tr style="background-color:silver; border-color:silver;">
                                 <td style="text-align:right;color:green;">
                                     <i>
-                                        <xsl:text>archive</xsl:text>
+                                        <xsl:text>Examples Archive</xsl:text>
                                     </i>
                                 </td>
                                 <td>
@@ -816,12 +844,31 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                             <xsl:when  test="(substring($base-address,string-length($base-address)) = '/')">
                                                 <!-- strip trailing slash character -->
                                                 <xsl:value-of select="substring($base-address,1,string-length($base-address)-1)"/>
+                                                <xsl:text>/</xsl:text>
+                                                <xsl:value-of select="substring-before($fileName,'.x3d')"/>
+                                                <xsl:text>Index.html</xsl:text>
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="$base-address"/>
+                                                <xsl:value-of select="substring-before($fileName,'.x3d')"/>
+                                                <xsl:text>Index.html</xsl:text>
                                             </xsl:otherwise>
                                         </xsl:choose>
                                     </xsl:variable>
+                                    <!--
+                                    <xsl:variable name="examplesIndexUrl">
+                                        <xsl:choose>
+                                            <xsl:when  test="(string-length($archiveUrl) > 0))">
+                                                <br />
+                                                <xsl:value-of select="$archiveUrl"/>
+                                                <xsl:text>/</xsl:text>
+                                                <xsl:value-of select="$fileName"/>
+                                                <xsl:text>Index.html</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable> -->
                                     <i>
                                         <a href="{$archiveUrl}"><xsl:value-of select="$archiveUrl"/></a>
                                     </i>
@@ -839,9 +886,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <td style="text-align:right;color:green">
                                     <xsl:value-of select="$attributeName"/>
                                 </td>
-								<td>
-									<xsl:text disable-output-escaping="yes"> &#160; </xsl:text>
-								</td>
+                                <td>
+                                        <xsl:text disable-output-escaping="yes"> &#160; </xsl:text>
+                                </td>
                                 <td>
                                     <xsl:choose>
                                         <xsl:when test="starts-with($attributeContent,'http') or starts-with($attributeContent,'ftp') or
@@ -850,7 +897,47 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                                         contains($attributeContent,'.x3d')    or contains($attributeContent,'.png')   or
                                                         contains($attributeContent,'.jpg')    or contains($attributeContent,'.mpg')   or
                                                         contains($attributeContent,'.pdf')    or contains($attributeContent,'.js')    or
-                                                        contains($attributeContent,'.css')    or starts-with($attributeName,'title')   or
+
+                                                        contains($attributeContent, '.pdf')  or
+                                                        contains($attributeContent, '.ppt')  or
+                                                        contains($attributeContent, '.pptx') or
+                                                        contains($attributeContent, '.htm')  or
+                                                        contains($attributeContent, '.html') or
+                                                        contains($attributeContent, '.css')  or
+                                                        contains($attributeContent, '.au')   or
+                                                        contains($attributeContent, '.aiff') or
+                                                        contains($attributeContent, '.midi') or
+                                                        contains($attributeContent, '.mp3')  or
+                                                        contains($attributeContent, '.mp4')  or
+                                                        contains($attributeContent, '.mpeg') or
+                                                        contains($attributeContent, '.rdf')  or
+                                                        contains($attributeContent, '.owl')  or
+                                                        contains($attributeContent, '.ttl')  or
+                                                        contains($attributeContent, '.xml')  or
+                                                        contains($attributeContent, '.xslt') or
+                                                        contains($attributeContent, '.java') or
+                                                        contains($attributeContent, '.json') or
+                                                        contains($attributeContent, '.py')   or
+                                                        contains($attributeContent, '.x3d')  or
+                                                        contains($attributeContent, '.html') or
+                                                        contains($attributeContent, '.htm')  or
+                                                        contains($attributeContent, '.svg')  or
+                                                        contains($attributeContent, '.3dm')  or
+                                                        contains($attributeContent, '.blend') or
+                                                        contains($attributeContent, '.bvh')  or
+                                                        contains($attributeContent, '.dwg')  or
+                                                        contains($attributeContent, '.dxf')  or
+                                                        contains($attributeContent, '.gltf') or
+                                                        contains($attributeContent, '.glb')  or
+                                                        contains($attributeContent, '.igs')  or
+                                                        contains($attributeContent, '.igse') or
+                                                        contains($attributeContent, '.stp')  or
+                                                        contains($attributeContent, '.step') or
+                                                        contains($attributeContent, '.ply')  or
+                                                        contains($attributeContent, '.stl')  or
+                                                        contains($attributeContent, '.txt')  or
+
+                                                        contains($attributeContent,'.css')    or starts-with($attributeName,'title')  or
                                                         starts-with($attributeName,'Image')   or starts-with($attributeName,'MovingImage')">
                                             <a href="{$attributeContent}"><xsl:value-of select="$attributeContent"/></a>
                                         </xsl:when>
@@ -931,7 +1018,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <td id="browserSystemLanguage"/>
                         </tr>
                     </xsl:if>
-                    
+
             <tr>
                 <td colspan="3">
                 <!-- output table of nodes supported by X3DOM border-collapse:collapse;-->
@@ -952,7 +1039,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text> Partially supported nodes</xsl:text>
                             </th>
                         </tr>
-                        
+
                         <tr style="border:1px solid black;">
                             <!-- Nodes supported by X3DOM -->
                             <td style="text-align:left;vertical-align:text-top;padding:4px;">
@@ -966,7 +1053,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 										</xsl:call-template>
 									</xsl:variable>
 
-									 <!-- debug: 
+									 <!-- debug:
 									<xsl:text>Testing </xsl:text>
 									<xsl:value-of select="local-name()"/>
 									<xsl:text>... </xsl:text>
@@ -1065,21 +1152,21 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             </td>
                         </tr>
                     </table>
-                    <xsl:text>&#10;</xsl:text>   
+                    <xsl:text>&#10;</xsl:text>
                     </div>
                 </xsl:if>
-                <xsl:text>&#10;</xsl:text>    
+                <xsl:text>&#10;</xsl:text>
                         </td>
                     </tr>
                 </table>
-                </div>  <!-- id="details" -->    
+                </div>  <!-- id="details" -->
                 <xsl:text>&#10;</xsl:text>
     </xsl:otherwise>
 </xsl:choose>
             </body>
         </html>
     </xsl:template>
-	
+
     <xsl:template match="@*">
         <!-- eliminate default attribute values, otherwise they will all appear in output  -->
         <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3domX_ITE.xslt X3dUnwrap.xslt X3dWrap.xslt X3dToJson.xslt X3dToPython.xslt and X3dToTurtle.xslt -->
@@ -1156,7 +1243,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       not( local-name(..)='BooleanToggle' and local-name()='toggle' and string(.)='false') and
                       not( local-name(..)='Box'	and ((local-name()='size' and (string(.)='2 2 2' or string(.)='2.0 2.0 2.0')) or (local-name()='solid' and string(.)='true'))) and
                       not( local-name(..)='Collision'	and local-name()='enabled' and string(.)='true') and
-                      not( local-name(..)='Cone' and	
+                      not( local-name(..)='Cone' and
                       ((local-name()='bottomRadius' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='height' and (string(.)='2' or string(.)='2.0')) or
                       (local-name()='side' and string(.)='true') or
@@ -1539,7 +1626,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='sampleRate' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='AudioDestination' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='maxChannelCount' and (string(.)='2')))) and   
+                      (local-name()='maxChannelCount' and (string(.)='2')))) and
                       not( local-name(..)='BiquadFilter' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='frequency' and (string(.)='350' or string(.)='350.0')) or
@@ -1717,16 +1804,16 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (((local-name()='applicationID') and (string(.)='0')) or
                       (local-name()='address' and (string(.)='localhost')) or
                       ((local-name()='port' or local-name()='siteID') and (string(.)='0')))) and
-                      not(local-name(..)='DISEntityTypeMapping' and 
+                      not(local-name(..)='DISEntityTypeMapping' and
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
         <xsl:variable name="notDefaultGeo"
-                      select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
+                      select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and
                       ((local-name()='containerField' and (string(.)='children')) or
                        (local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
-                      not(local-name(..)='GeoLOD' 	  and 
+                      not(local-name(..)='GeoLOD' 	  and
                       ((local-name()='range' and (string(.)='10' or string(.)='10.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not(local-name(..)='GeoViewpoint' and
@@ -1799,7 +1886,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='closed' and (string(.)='false')) or
                       (local-name()='order' and (string(.)='3')))) and
                       not(local-name(..)='NurbsSet' and
-                      ((local-name()='tessellationScale' and (string(.)='1' or string(.)='1.0')) or 
+                      ((local-name()='tessellationScale' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       ( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='NurbsOrientationInterpolator' or local-name(..)='NurbsPositionInterpolator') and
@@ -1843,7 +1930,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        (local-name()='closureType' and (string(.)='PIE'))))" />
         <xsl:variable name="notDefaultVolume"
                       select="not(((local-name(..)='IsoSurfaceVolumeData') or (local-name(..)='SegmentedVolumeData') or (local-name(..)='VolumeData'))	and
-                      ((local-name()='dimensions' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or 
+                      ((local-name()='dimensions' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                       (local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       ( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='IsoSurfaceVolumeData')	and
@@ -2064,7 +2151,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 					</xsl:variable>
 					<!-- good attribute found, output it -->
                     <xsl:text> </xsl:text>
-					<!-- apparently namespace-prefix attributes on X3D element can't be added without inducing error 
+					<!-- apparently namespace-prefix attributes on X3D element can't be added without inducing error
 					<xsl:choose>
 						<xsl:when test="(local-name() = 'xsd')">
 							<xsl:text>xmlns:</xsl:text>
@@ -2083,7 +2170,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 					<xsl:value-of select="$attributeDelimiter"/>
         </xsl:if>
     </xsl:template>
-	
+
     <xsl:template match="*">
 			<xsl:if test="local-name() = 'X3D'">
 				<xsl:comment> Conversion note: the following HTML button is overlaid on top of the page </xsl:comment>
@@ -2137,7 +2224,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <xsl:text>&#10;</xsl:text>
         <!-- next are X3D node children, following contained head section -->
     </xsl:template>
-    
+
     <xsl:template name="webFontCss">
         <xsl:comment> X3DOM needs Web Fonts when an X3D Text node is included </xsl:comment>
         <xsl:text>&#10;</xsl:text>
@@ -2186,7 +2273,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 /* ============================================================================= */
 </xsl:text></style>
     </xsl:template>
-    
+
     <xsl:template name="cssZoomButton">
         <xsl:comment> Button zoom adapted from https://x3dom.org/docs/dev/tutorial/styling.html </xsl:comment>
         <xsl:text>&#10;</xsl:text>
@@ -2244,7 +2331,7 @@ function toggleZoom(button) {
         var new_height;
         var new_width;
         var x3d_element;
-        
+
         htmlBody       = document.getElementById('htmlBody');
         htmlPageHeader = document.getElementById('htmlPageHeader');
         htmlPageFooter = document.getElementById('htmlPageFooter');
@@ -2283,9 +2370,9 @@ function toggleZoom(button) {
         x3d_element.style.height = new_height;
         x3d_element.style.width  = new_width;
 }
-                    
+
     // Browser information table adapted from https://www.w3schools.com/js/js_window_navigator.asp
-    
+
     document.addEventListener("DOMContentLoaded", function()
     {
         document.getElementById("browserCodeName"      ).innerHTML = navigator.appCodeName;
@@ -2315,7 +2402,7 @@ function toggleShowDebugLogs()
 }
 </xsl:text></script>
     </xsl:template>
-    
+
     <!-- X3DOM nightly list of supported nodes https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html -->
     <!-- X3DOM spreadsheet inventory           https://www.web3d.org/specifications/X3dNodeInventoryComparison.pdf -->
     <xsl:template name="x3dom-supported-node">
@@ -2338,7 +2425,7 @@ function toggleShowDebugLogs()
  ($nodename='BooleanTrigger') or
  ($nodename='BoundaryEnhancementVolumeStyle') or
  ($nodename='Box') or
- ($nodename='CADAssembly') or 
+ ($nodename='CADAssembly') or
  ($nodename='CADFace') or
  ($nodename='CADLayer') or
  ($nodename='CADPart') or
@@ -2373,6 +2460,9 @@ function toggleShowDebugLogs()
  ($nodename='ElevationGrid') or
  ($nodename='Extrusion') or
  ($nodename='field') or
+ ($nodename='fieldValue') or
+ ($nodename='IS') or
+ ($nodename='connect') or
  ($nodename='FloatVertexAttribute') or
  ($nodename='Fog') or
  ($nodename='FontStyle') or
@@ -2433,7 +2523,7 @@ function toggleShowDebugLogs()
  ($nodename='PixelTexture3D') or
  ($nodename='PlaneSensor') or
  ($nodename='PointLight') or
- ($nodename='PointProperties ') or
+ ($nodename='PointProperties') or
  ($nodename='PointSet') or
  ($nodename='Polyline2D') or
  ($nodename='Polypoint2D') or
@@ -2444,6 +2534,11 @@ function toggleShowDebugLogs()
  ($nodename='PositionInterpolator') or
  ($nodename='PositionInterpolator2D') or
  ($nodename='ProjectionVolumeStyle') or
+ ($nodename='ExternProtoDeclare') or
+ ($nodename='ProtoDeclare') or
+ ($nodename='ProtoBody') or
+ ($nodename='ProtoInterface') or
+ ($nodename='ProtoInstance') or
  ($nodename='QuadSet') or
  ($nodename='Rectangle2D') or
  ($nodename='RigidBody') or
@@ -2519,14 +2614,14 @@ function toggleShowDebugLogs()
  ($nodename='GeoProximitySensor') or
  ($nodename='Geospatial') or
  ($nodename='GeoTouchSensor') or
- 
+
  -->
             <xsl:otherwise>
                 <xsl:text>false</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!-- ****** find-base-address:  callable template (recursive function) ****** -->
     <!-- follows examples in Michael Kay's _XSLT_, first edition, pp. 551-554 -->
     <xsl:template name="find-base-address">
