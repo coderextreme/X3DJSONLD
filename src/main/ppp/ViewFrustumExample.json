@@ -69,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -137,14 +137,133 @@
         },
         {
           "NavigationInfo": {
-            "@type": "\"EXAMINE\" \"FLY\" \"ANY\""
+            "@type": [
+              "EXAMINE",
+              "FLY",
+              "ANY"
+            ]
           }
         },
-        {},
+        {
+          "ExternProtoDeclare": {
+            "@name": "ViewFrustum",
+            "@appinfo": "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes",
+            "@url": [
+              "ViewFrustumPrototype.x3d#ViewFrustum"
+            ],
+            "field": [
+              {
+                "@name": "ViewpointNode",
+                "@accessType": "initializeOnly",
+                "@appinfo": "required: insert Viewpoint DEF or USE node for view of interest",
+                "@type": "SFNode"
+              },
+              {
+                "@name": "NavigationInfoNode",
+                "@accessType": "initializeOnly",
+                "@appinfo": "required: insert NavigationInfo DEF or USE node of interest",
+                "@type": "SFNode"
+              },
+              {
+                "@name": "visible",
+                "@accessType": "inputOutput",
+                "@appinfo": "whether or not frustum geometry is rendered",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "lineColor",
+                "@accessType": "inputOutput",
+                "@appinfo": "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9",
+                "@type": "SFColor"
+              },
+              {
+                "@name": "frustumColor",
+                "@accessType": "inputOutput",
+                "@appinfo": "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8",
+                "@type": "SFColor"
+              },
+              {
+                "@name": "transparency",
+                "@accessType": "inputOutput",
+                "@appinfo": "transparency of ViewFrustum hull geometry, default value 0.5",
+                "@type": "SFFloat"
+              },
+              {
+                "@name": "aspectRatio",
+                "@accessType": "inputOutput",
+                "@appinfo": "assumed ratio height/width, default value 0.75",
+                "@type": "SFFloat"
+              },
+              {
+                "@name": "trace",
+                "@accessType": "initializeOnly",
+                "@appinfo": "debug support, default false",
+                "@type": "SFBool"
+              }
+            ]
+          }
+        },
         {
           "#comment": "Example use"
         },
-        {},
+        {
+          "ProtoInstance": {
+            "@name": "ViewFrustum",
+            "fieldValue": [
+              {
+                "@name": "ViewpointNode",
+                "-children": [
+                  {
+                    "#comment": "prefer empty description to prevent entry in player's ViewpointList"
+                  },
+                  {
+                    "Viewpoint": {
+                      "@description": "ViewFrustum ViewpointNode"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "NavigationInfoNode",
+                "-children": [
+                  {
+                    "NavigationInfo": {
+                      "@visibilityLimit": 15
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "visible",
+                "@value": true
+              },
+              {
+                "@name": "lineColor",
+                "@value": [
+                  0.9,
+                  0.9,
+                  0.9
+                ]
+              },
+              {
+                "@name": "frustumColor",
+                "@value": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              },
+              {
+                "@name": "transparency",
+                "@value": 0.75
+              },
+              {
+                "@name": "trace",
+                "@value": true
+              }
+            ]
+          }
+        },
         {
           "#comment": "Visualization assists"
         },

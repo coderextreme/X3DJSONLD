@@ -153,7 +153,7 @@ if (typeof X3DJSON['Script']['Scene']['../data/bub.json'] === 'undefined') {
 X3DJSON['Script']['Scene']['../data/bub.json'] = {};
 }
 
-X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] = function() {
+X3DJSON['Script']['Scene']['../data/bub.json']['Bounce'] = function() {
 	this.set_translation = function (value) {
 		try {
 			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
@@ -251,7 +251,7 @@ if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
 X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
 }
 
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] = new X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']();
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'] = new X3DJSON['Script']['Scene']['../data/bub.json']['Bounce']();
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -261,275 +261,21 @@ X3DJSON['Obj']['Scene'] = {};
 if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
 X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
 }
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION'] = {};
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION'],X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']);
+if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION'],X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']);
 }
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].initialize === "function") X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
-}
-if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
-X3DJSON['Script']['Scene'] = {};
-}
-if (typeof X3DJSON['Script']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Script']['Scene']['../data/bub.json'] = {};
-}
-
-X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] = function() {
-	this.set_translation = function (value) {
-		try {
-			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting translation '+e);
-			console.error('Problems setting translation',e);
-		}
-	};
-	this.translation_changed = function () {
-		var value = this.translation;
-		return value;
-	};
-	try {
-		this.translation = new SFVec3f(0,0,0);
-	} catch (e) {
-		console.log('Problems setting translation '+e);
-		console.error('Problems setting translation',e);
-	}
-	this.set_velocity = function (value) {
-		try {
-			this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting velocity '+e);
-			console.error('Problems setting velocity',e);
-		}
-	};
-	this.velocity_changed = function () {
-		var value = this.velocity;
-		return value;
-	};
-	try {
-		this.velocity = new SFVec3f(0,0,0);
-	} catch (e) {
-		console.log('Problems setting velocity '+e);
-		console.error('Problems setting velocity',e);
-	}
-	this.set_fraction = function (value) {
-		try {
-			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting fraction '+e);
-			console.error('Problems setting fraction',e);
-		}
-	};
-	this.fraction_changed = function () {
-		var value = this.fraction;
-		return value;
-	};
-	try {
-		this.fraction = undefined;
-	} catch (e) {
-		console.log('Problems setting fraction '+e);
-		console.error('Problems setting fraction',e);
-	}
-
-ecmascript:
-		
-	this.initialize = function () {
-			    this.proxy.translation = new SFVec3f(0, 0, 0);
-			    this.proxy.velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-		;
-
-	this.set_fraction = function () {
-			    this.proxy.translation = new SFVec3f(
-			    	this.proxy.translation.x + this.proxy.velocity.x,
-				this.proxy.translation.y + this.proxy.velocity.y,
-				this.proxy.translation.z + this.proxy.velocity.z);
-			    if (Math.abs(this.proxy.translation.x) > 10) {
-				this.initialize();
-			    } else if (Math.abs(this.proxy.translation.y) > 10) {
-				this.initialize();
-			    } else if (Math.abs(this.proxy.translation.z) > 10) {
-				this.initialize();
-			    } else {
-				this.proxy.velocity.x += Math.random() * 0.2 - 0.1;
-				this.proxy.velocity.y += Math.random() * 0.2 - 0.1;
-				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
-			    }
-			}
-
-;
-
-};
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] = new X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION'] = {};
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION'],X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']);
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].initialize === "function") X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
-}
-if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
-X3DJSON['Script']['Scene'] = {};
-}
-if (typeof X3DJSON['Script']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Script']['Scene']['../data/bub.json'] = {};
-}
-
-X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] = function() {
-	this.set_translation = function (value) {
-		try {
-			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting translation '+e);
-			console.error('Problems setting translation',e);
-		}
-	};
-	this.translation_changed = function () {
-		var value = this.translation;
-		return value;
-	};
-	try {
-		this.translation = new SFVec3f(0,0,0);
-	} catch (e) {
-		console.log('Problems setting translation '+e);
-		console.error('Problems setting translation',e);
-	}
-	this.set_velocity = function (value) {
-		try {
-			this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting velocity '+e);
-			console.error('Problems setting velocity',e);
-		}
-	};
-	this.velocity_changed = function () {
-		var value = this.velocity;
-		return value;
-	};
-	try {
-		this.velocity = new SFVec3f(0,0,0);
-	} catch (e) {
-		console.log('Problems setting velocity '+e);
-		console.error('Problems setting velocity',e);
-	}
-	this.set_fraction = function (value) {
-		try {
-			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-		} catch (e) {
-			console.log('Problems setting fraction '+e);
-			console.error('Problems setting fraction',e);
-		}
-	};
-	this.fraction_changed = function () {
-		var value = this.fraction;
-		return value;
-	};
-	try {
-		this.fraction = undefined;
-	} catch (e) {
-		console.log('Problems setting fraction '+e);
-		console.error('Problems setting fraction',e);
-	}
-
-ecmascript:
-		
-	this.initialize = function () {
-			    this.proxy.translation = new SFVec3f(0, 0, 0);
-			    this.proxy.velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-		;
-
-	this.set_fraction = function () {
-			    this.proxy.translation = new SFVec3f(
-			    	this.proxy.translation.x + this.proxy.velocity.x,
-				this.proxy.translation.y + this.proxy.velocity.y,
-				this.proxy.translation.z + this.proxy.velocity.z);
-			    if (Math.abs(this.proxy.translation.x) > 10) {
-				this.initialize();
-			    } else if (Math.abs(this.proxy.translation.y) > 10) {
-				this.initialize();
-			    } else if (Math.abs(this.proxy.translation.z) > 10) {
-				this.initialize();
-			    } else {
-				this.proxy.velocity.x += Math.random() * 0.2 - 0.1;
-				this.proxy.velocity.y += Math.random() * 0.2 - 0.1;
-				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
-			    }
-			}
-
-;
-
-};
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] = new X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']();
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION'] = {};
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION'],X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']);
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].initialize === "function") X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].initialize();
-    if (X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_TourTime")) {
-X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_TourTime").addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_TourTime","cycleTime"), __eventTime);
+if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].initialize === "function") X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].initialize();
+    if (X3DJSON.nodeUtil("Scene","TourTime")) {
+X3DJSON.nodeUtil("Scene","TourTime").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_TourTime","cycleTime"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -539,78 +285,18 @@ X3DJSON['Obj']['Scene'] = {};
 if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
 X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
 }
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION']['translation'] = [];
+if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION']['translation'] = [];
 }
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce']['ACTION']['translation'].push(function(property, value) {
+X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce']['ACTION']['translation'].push(function(property, value) {
 		if (property === 'translation') {
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation, __eventTime);
-    if (X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_TourTime")) {
-X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_TourTime").addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_TourTime","cycleTime"), __eventTime);
-}, false);
-}
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_TourTime","cycleTime"), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION']['translation'] = [];
-}
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']['ACTION']['translation'].push(function(property, value) {
-		if (property === 'translation') {
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation, __eventTime);
-		}
-});
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation, __eventTime);
-    if (X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_TourTime")) {
-X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_TourTime").addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_TourTime","cycleTime"), __eventTime);
-}, false);
-}
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_TourTime","cycleTime"), __eventTime);
-if (typeof X3DJSON['Obj'] === 'undefined') {
-X3DJSON['Obj'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
-X3DJSON['Obj']['Scene'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json'] = {};
-}
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'] = {};
-}
-
-if (typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION']['translation'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION']['translation'] = [];
-}
-X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']['ACTION']['translation'].push(function(property, value) {
-		if (property === 'translation') {
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation, __eventTime);
-		}
-});
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_TourTime","cycleTime"), __eventTime);
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'].translation, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_TourTime","cycleTime"), __eventTime);
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE1000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce'].translation, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_TourTime","cycleTime"), __eventTime);
-			X3DJSON.nodeUtil("Scene","DECLBubble_INSTANCE2000_transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce'].translation, __eventTime);
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation_changed() : X3DJSON['Obj']['Scene']['../data/bub.json']['Bounce'].translation, __eventTime);

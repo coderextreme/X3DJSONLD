@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -12085,10 +12085,10 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Close",
             "@fromField": "enterTime",
-            "@toNode": "Armature_Clock",
-            "@toField": "startTime"
+            "@fromNode": "Armature_Close",
+            "@toField": "startTime",
+            "@toNode": "Armature_Clock"
           }
         },
         {
@@ -14867,2338 +14867,2338 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_sacrum",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_sacrum"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_sacrum",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_sacrum",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_sacrum"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_pelvis",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_pelvis"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_pelvis",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_pelvis",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_pelvis"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_thigh",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_thigh"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_thigh",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_thigh",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_thigh"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_calf",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_calf"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_calf",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_calf",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_calf"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_talus",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_talus"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_talus",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_talus",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_talus"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_navicular",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_navicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_navicular",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_navicular",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_navicular"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_cuneiform_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_cuneiform_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_cuneiform_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_cuneiform_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_cuneiform_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metatarsal_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metatarsal_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metatarsal_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metatarsal_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metatarsal_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_proximal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_proximal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_distal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_distal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_cuneiform_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_cuneiform_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_cuneiform_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_cuneiform_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_cuneiform_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metatarsal_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metatarsal_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metatarsal_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metatarsal_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metatarsal_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_proximal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_proximal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_middle_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_middle_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_distal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_distal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_cuneiform_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_cuneiform_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_cuneiform_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_cuneiform_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_cuneiform_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metatarsal_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metatarsal_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metatarsal_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metatarsal_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metatarsal_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_proximal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_proximal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_middle_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_middle_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_distal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_distal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_calcaneus",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_calcaneus"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_calcaneus",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_calcaneus",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_calcaneus"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_cuboid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_cuboid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_cuboid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_cuboid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_cuboid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metatarsal_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metatarsal_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metatarsal_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metatarsal_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metatarsal_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_proximal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_proximal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_middle_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_middle_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_distal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_distal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metatarsal_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metatarsal_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metatarsal_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metatarsal_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metatarsal_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_proximal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_proximal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_middle_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_middle_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_tarsal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_tarsal_distal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_tarsal_distal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_tarsal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_thigh",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_thigh"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_thigh",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_thigh",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_thigh"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_calf",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_calf"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_calf",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_calf",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_calf"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_talus",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_talus"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_talus",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_talus",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_talus"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_navicular",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_navicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_navicular",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_navicular",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_navicular"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_cuneiform_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_cuneiform_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_cuneiform_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_cuneiform_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_cuneiform_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metatarsal_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metatarsal_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metatarsal_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metatarsal_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metatarsal_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_proximal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_proximal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_distal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_distal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_cuneiform_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_cuneiform_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_cuneiform_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_cuneiform_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_cuneiform_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metatarsal_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metatarsal_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metatarsal_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metatarsal_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metatarsal_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_proximal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_proximal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_middle_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_middle_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_distal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_distal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_cuneiform_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_cuneiform_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_cuneiform_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_cuneiform_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_cuneiform_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metatarsal_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metatarsal_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metatarsal_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metatarsal_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metatarsal_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_proximal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_proximal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_middle_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_middle_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_distal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_distal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_calcaneus",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_calcaneus"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_calcaneus",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_calcaneus",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_calcaneus"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_cuboid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_cuboid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_cuboid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_cuboid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_cuboid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metatarsal_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metatarsal_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metatarsal_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metatarsal_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metatarsal_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_proximal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_proximal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_middle_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_middle_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_distal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_distal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metatarsal_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metatarsal_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metatarsal_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metatarsal_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metatarsal_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_proximal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_proximal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_middle_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_middle_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_tarsal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_tarsal_distal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_tarsal_distal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_tarsal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t12",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t12"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t12",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t12",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t12"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t11",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t11"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t11",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t11",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t11"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t10",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t10"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t10",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t10",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t10"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t9",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t9"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t9",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t9",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t9"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t8",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t8"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t8",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t8",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t8"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t7",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t7"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t7",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t7",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t7"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t6",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t6"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t6",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t6",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t6"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_t1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_t1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_t1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_t1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_t1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c7",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c7"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c7",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c7",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c7"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c6",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c6"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c6",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c6",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c6"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_c1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_c1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_c1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_c1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_c1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_skull",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_skull"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_skull",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_skull",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_skull"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_eyelid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_eyelid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_eyelid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_eyelid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_eyelid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_eyelid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_eyelid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_eyelid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_eyelid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_eyelid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_eyeball",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_eyeball"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_eyeball",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_eyeball",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_eyeball"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_eyeball",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_eyeball"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_eyeball",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_eyeball",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_eyeball"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_eyebrow",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_eyebrow"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_eyebrow",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_eyebrow",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_eyebrow"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_eyebrow",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_eyebrow"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_eyebrow",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_eyebrow",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_eyebrow"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_jaw",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_jaw"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_jaw",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_jaw",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_jaw"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_clavicle",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_clavicle"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_clavicle",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_clavicle",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_clavicle"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_scapula",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_scapula"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_scapula",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_scapula",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_scapula"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_upperarm",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_upperarm"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_upperarm",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_upperarm",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_upperarm"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_forearm",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_forearm"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_forearm",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_forearm",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_forearm"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_trapezium",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_trapezium"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_trapezium",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_trapezium",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_trapezium"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metacarpal_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metacarpal_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metacarpal_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metacarpal_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metacarpal_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_proximal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_proximal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_distal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_distal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_distal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_trapezoid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_trapezoid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_trapezoid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_trapezoid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_trapezoid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metacarpal_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metacarpal_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metacarpal_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metacarpal_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metacarpal_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_proximal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_proximal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_middle_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_middle_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_middle_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_distal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_distal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_distal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_capitate",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_capitate"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_capitate",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_capitate",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_capitate"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metacarpal_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metacarpal_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metacarpal_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metacarpal_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metacarpal_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_proximal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_proximal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_middle_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_middle_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_middle_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_distal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_distal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_distal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_hamate",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_hamate"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_hamate",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_hamate",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_hamate"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metacarpal_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metacarpal_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metacarpal_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metacarpal_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metacarpal_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_proximal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_proximal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_middle_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_middle_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_middle_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_distal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_distal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_distal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_metacarpal_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_metacarpal_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_metacarpal_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_metacarpal_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_metacarpal_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_proximal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_proximal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_middle_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_middle_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_middle_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_l_carpal_distal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_l_carpal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_l_carpal_distal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_l_carpal_distal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_l_carpal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_clavicle",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_clavicle"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_clavicle",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_clavicle",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_clavicle"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_scapula",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_scapula"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_scapula",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_scapula",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_scapula"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_upperarm",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_upperarm"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_upperarm",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_upperarm",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_upperarm"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_forearm",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_forearm"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_forearm",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_forearm",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_forearm"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_trapezium",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_trapezium"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_trapezium",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_trapezium",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_trapezium"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metacarpal_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metacarpal_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metacarpal_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metacarpal_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metacarpal_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_proximal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_proximal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_proximal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_distal_phalanx_1",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_distal_phalanx_1",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_distal_phalanx_1",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_distal_phalanx_1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_trapezoid",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_trapezoid"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_trapezoid",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_trapezoid",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_trapezoid"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metacarpal_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metacarpal_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metacarpal_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metacarpal_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metacarpal_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_proximal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_proximal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_proximal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_middle_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_middle_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_middle_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_middle_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_distal_phalanx_2",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_distal_phalanx_2",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_distal_phalanx_2",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_distal_phalanx_2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_capitate",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_capitate"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_capitate",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_capitate",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_capitate"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metacarpal_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metacarpal_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metacarpal_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metacarpal_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metacarpal_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_proximal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_proximal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_proximal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_middle_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_middle_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_middle_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_middle_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_distal_phalanx_3",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_distal_phalanx_3",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_distal_phalanx_3",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_distal_phalanx_3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_hamate",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_hamate"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_hamate",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_hamate",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_hamate"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metacarpal_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metacarpal_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metacarpal_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metacarpal_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metacarpal_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_proximal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_proximal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_proximal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_middle_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_middle_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_middle_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_middle_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_distal_phalanx_4",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_distal_phalanx_4",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_distal_phalanx_4",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_distal_phalanx_4"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_metacarpal_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_metacarpal_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_metacarpal_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_metacarpal_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_metacarpal_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_proximal_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_proximal_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_proximal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_middle_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Armature_OI_r_carpal_middle_phalanx_5",
-            "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_middle_phalanx_5",
-            "@toField": "rotation"
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_middle_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_Clock",
             "@fromField": "fraction_changed",
-            "@toNode": "Armature_OI_r_carpal_distal_phalanx_5",
-            "@toField": "set_fraction"
+            "@fromNode": "Armature_Clock",
+            "@toField": "set_fraction",
+            "@toNode": "Armature_OI_r_carpal_distal_phalanx_5"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Armature_OI_r_carpal_distal_phalanx_5",
             "@fromField": "value_changed",
-            "@toNode": "hanim_r_carpal_distal_phalanx_5",
-            "@toField": "rotation"
+            "@fromNode": "Armature_OI_r_carpal_distal_phalanx_5",
+            "@toField": "rotation",
+            "@toNode": "hanim_r_carpal_distal_phalanx_5"
           }
         }
       ]

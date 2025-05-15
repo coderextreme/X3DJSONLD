@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -196,34 +196,34 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "TIMER",
             "@fromField": "fraction_changed",
-            "@toNode": "Camera001-POS-INTERP",
-            "@toField": "set_fraction"
+            "@fromNode": "TIMER",
+            "@toField": "set_fraction",
+            "@toNode": "Camera001-POS-INTERP"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Camera001-POS-INTERP",
-            "@fromField": "value_changed",
-            "@toNode": "Camera001",
-            "@toField": "set_position"
+            "@toField": "set_position",
+            "@toNode": "Camera001"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "TIMER",
             "@fromField": "fraction_changed",
-            "@toNode": "Camera001-ROT-INTERP",
-            "@toField": "set_fraction"
+            "@fromNode": "TIMER",
+            "@toField": "set_fraction",
+            "@toNode": "Camera001-ROT-INTERP"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Camera001-ROT-INTERP",
             "@fromField": "value_changed",
-            "@toNode": "Camera001",
-            "@toField": "set_orientation"
+            "@fromNode": "Camera001-ROT-INTERP",
+            "@toField": "set_orientation",
+            "@toNode": "Camera001"
           }
         },
         {

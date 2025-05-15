@@ -133,7 +133,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -154,7 +154,9 @@
         },
         {
           "NavigationInfo": {
-            "@type": "\"NONE\""
+            "@type": [
+              "NONE"
+            ]
           }
         },
         {
@@ -300,7 +302,7 @@
           "Script": {
             "@DEF": "TextScript",
             "@url": [
-              "../data/ObliqueStrategiesScript.js",
+              "ObliqueStrategiesScript.js",
               "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"
             ],
             "-children": [
@@ -412,10 +414,10 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "TextScript",
                   "@fromField": "string_changed",
-                  "@toNode": "CardText",
-                  "@toField": "string"
+                  "@fromNode": "TextScript",
+                  "@toField": "string",
+                  "@toNode": "CardText"
                 }
               },
               {
@@ -454,18 +456,18 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "TextScript",
                   "@fromField": "textToSpeechUrl",
-                  "@toNode": "TextToSpeechAudioClip",
-                  "@toField": "url"
+                  "@fromNode": "TextScript",
+                  "@toField": "url",
+                  "@toNode": "TextToSpeechAudioClip"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "TextScript",
                   "@fromField": "newCardTime",
-                  "@toNode": "TextToSpeechAudioClip",
-                  "@toField": "startTime"
+                  "@fromNode": "TextScript",
+                  "@toField": "startTime",
+                  "@toNode": "TextToSpeechAudioClip"
                 }
               }
             ]
@@ -492,10 +494,10 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "PreviousTextClickedSensor",
                   "@fromField": "isActive",
-                  "@toNode": "TextScript",
-                  "@toField": "selectPreviousCard"
+                  "@fromNode": "PreviousTextClickedSensor",
+                  "@toField": "selectPreviousCard",
+                  "@toNode": "TextScript"
                 }
               },
               {
@@ -612,10 +614,10 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "NextTextClickedSensor",
                   "@fromField": "isActive",
-                  "@toNode": "TextScript",
-                  "@toField": "selectNextCard"
+                  "@fromNode": "NextTextClickedSensor",
+                  "@toField": "selectNextCard",
+                  "@toNode": "TextScript"
                 }
               },
               {
@@ -678,10 +680,10 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "RandomTextClickedSensor",
                   "@fromField": "isActive",
-                  "@toNode": "TextScript",
-                  "@toField": "selectRandomCard"
+                  "@fromNode": "RandomTextClickedSensor",
+                  "@toField": "selectRandomCard",
+                  "@toNode": "TextScript"
                 }
               },
               {
@@ -750,10 +752,10 @@
                   "-children": [
                     {
                       "ROUTE": {
-                        "@fromNode": "TextScript",
                         "@fromField": "textToSpeechUrl",
-                        "@toNode": "TextToSpeechAnchor",
-                        "@toField": "url"
+                        "@fromNode": "TextScript",
+                        "@toField": "url",
+                        "@toNode": "TextToSpeechAnchor"
                       }
                     },
                     {
