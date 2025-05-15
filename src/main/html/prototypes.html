@@ -95,7 +95,6 @@
 	<script src="../node/ajvAll.js"></script>
 	<script src="../node/config.js"></script>
 	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
 	<script src="../node/DOMSerializer.js"></script>
 	<script src="../node/X3DJSONLD.js"></script>
 	<script src="../node/matrix.js"></script>
@@ -117,7 +116,6 @@
 	var scripts = new Scripts();
 
 	function load_X3DOM_All(loadObj, url, callback) {
-		loadObj.x3domjson = new PROTOS().prototypeExpander(url, loadObj.x3domjson, "");
 		load_X3DOM_JS(loadObj.x3domjson, loadObj.x3domjsonselector, url, function(element, xml) {
 			load_X3DOM_XML(xml, url, loadObj.x3domxmlselector);
 			try {

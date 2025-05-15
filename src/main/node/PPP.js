@@ -6,9 +6,6 @@ var fs = require('fs');
 var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
-// Bring in prototype expander and script expander
-var PROTOS = require('./PrototypeExpander.js');
-
 var Scripts = require('./Script.js');
 var LOG = Scripts.LOG;
 var scripts = new Scripts.Scripts();
@@ -23,8 +20,6 @@ var loadX3DJS = convertJSON.loadX3DJS;
 var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
-	json = new PROTOS().prototypeExpander(file, json, "");
-	// console.log(JSON.stringify(json));
 	var outfile = file.replace(/data/, "ppp");
 	try {
 		fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));

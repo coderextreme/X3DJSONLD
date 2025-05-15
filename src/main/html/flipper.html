@@ -39,7 +39,6 @@
 	<script src="../node/ajvAll.js"></script>
 	<script src="../node/config.js"></script>
 	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
 	<script src="../node/DOMSerializer.js"></script>
 	<script src="../node/X3DJSONLD.js"></script>
 	<script src="../node/matrix.js"></script>
@@ -99,12 +98,10 @@ function getJSON(url) {
 
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
-			json = new PROTOS().prototypeExpander(url, json, "");
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
 			var url = '../data/abox.json';
 			getJSON(url).then(function(subjson) {
-				subjson = new PROTOS().prototypeExpander(url, subjson, "");
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
 				$(selector).empty();
 				$(element.querySelector(scenetag)).appendTo(selector);
