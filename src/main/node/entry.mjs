@@ -8,7 +8,6 @@ import { JavaScriptSerializer } from "./JavaScriptSerializer.mjs";
 import mapToMethod from "./mapToMethod.mjs";
 import mapToMethod2 from "./mapToMethod2.mjs";
 import { Matrix } from "./matrix.mjs";
-import PROTOS from "./PrototypeExpander.mjs";
 import { PythonSerializer } from "./PythonSerializer.mjs";
 import { LOG, Packages, Script, Scripts } from "./Script.mjs";
 import { Three2Serializer } from "./Three2Serializer.mjs";

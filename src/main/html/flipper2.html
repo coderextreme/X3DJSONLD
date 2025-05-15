@@ -67,7 +67,6 @@
 	<script src="../node/ajvAll.js"></script>
 	<script src="../node/config.js"></script>
 	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
 	<script src="../node/DOMSerializer.js"></script>
 	<script src="../node/X3DJSONLD.js"></script>
 	<script src="../node/matrix.js"></script>
@@ -130,7 +129,6 @@ function getJSON(url) {
 			window.loadX3D('#x3domjson', json, url);
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
-                                subjson = new PROTOS().prototypeExpander(suburl, subjson, "");
 
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])

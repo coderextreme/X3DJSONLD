@@ -2,7 +2,6 @@ import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.mjs"
 import { convertJsonToStl } from "./convertJsonToStl.mjs";
 import sax from '../../../node_modules/saxon-js/SaxonJS2N.js';
 const { SaxonJS2N } = sax;
-import PROTOS from './PrototypeExpander.mjs'
 import X3DJSONLD from './X3DJSONLD.mjs'
 
 var Browser = X3DJSONLD.Browser;
@@ -210,16 +209,6 @@ function convertJsonToXml(json, next, path) {
 }
 
 function loadProtoX3D(scripts, selector, json, url) {
-    if ($('#prototype').is(':checked')) {
-	// Expand Protos
-	try {
-		json = PROTOS.prototypeExpander(url, json, "");
-	} catch (e) {
-		alert("Problems with Proto Expander "+ e);
-		console.error(e);
-	}
-    }
-    
    // console.error("JSON IS NOW", json);
    try {
 	$('#json').val(JSON.stringify(json, null, 2));
@@ -254,7 +243,6 @@ function loadProtoX3D(scripts, selector, json, url) {
 	    } else {
 		    alert("Unknown error returning no child element!");
 	    }
-	    // do this afterwards to take advantage of prototype expander
 	    try {
 		updateStl(json);
 	    } catch (e) {
@@ -280,18 +268,6 @@ window.loadX3D = function loadX3D(selector, json, url) {
  */
 function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
-		if (typeof PROTOS !== 'undefined' && typeof PROTOS.prototypeExpander === 'function') {
-			try {
-			    if ($('#prototype').is(':checked')) {
-				json = PROTOS.prototypeExpander(url, json, "");
-			    }
-			} catch (e) {
-				alert("Problems with ProtoExpander in appendInline "+ e);
-				console.error(e);
-			}
-		} else {
-			console.error("Perhaps you need to include the PrototypeExpander.mjs?");
-		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, X3DJSONLD, function() {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);

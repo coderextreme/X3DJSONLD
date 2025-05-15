@@ -2,7 +2,6 @@ var port = process.env.PORT || 3000;
 
 var config = require("./src/main/node/config.js");
 var fieldTypes = require("./src/main/node/fieldTypes.js");
-var PROTOS = require('./src/main/node/PrototypeExpander.js');
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 var { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
 var path = require('path');
@@ -50,7 +49,6 @@ async function convertX3dToJson(res, infile, outfile, next) {
 		var serializer = new DOM2JSONSerializer();
 		var str = serializer.serializeToString(null, element, outfile, mapToMethod, fieldTypes);
 		var json = JSON.parse(str);
-		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		send(res, json, "text/json", next);
 	} catch (e) {
 		next();
@@ -58,7 +56,6 @@ async function convertX3dToJson(res, infile, outfile, next) {
 	}
 	/*
 	runAndSend(['---overwrite', '---', infile], function(json) {
-		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		// console.error("Json", json);
 		send(res, json, "text/json", next);
 	});
@@ -342,8 +339,6 @@ app.get("*.json", async function(req, res, next) {
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
 		// console.error(JSON.stringify(json));
-		// console.error("Calling extern proto expander");
-		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		// console.error(JSON.stringify(json));
                 send(res, json, "text/json", next);
 	/*
@@ -379,9 +374,6 @@ app.get("*.x3dj", async function(req, res, next) {
 		var data = await fs.promises.readFile(outfile);
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
-		// console.error(JSON.stringify(json));
-		// console.error("Calling extern proto expander");
-		// json = PROTOS.externalPrototypeExpander(outfile, json);
 		// console.error(JSON.stringify(json));
                 send(res, json, "text/json", next);
 	/*

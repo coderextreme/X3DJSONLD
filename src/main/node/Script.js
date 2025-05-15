@@ -1,4 +1,3 @@
-// X3D JSON Script expander
 class LOG {
 	constructor() {
 		this.array = [];

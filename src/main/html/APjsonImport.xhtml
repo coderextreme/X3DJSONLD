@@ -116,7 +116,6 @@ a:active {
 </td>
 <td>
 <input type="text" onchange="filter(event)" />
-Use Prototype Expander? <input id="prototype" type="checkbox" checked="true" />
 Use JSON Scripts? <input id="scripting" type="checkbox" checked="true"/>
 Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d</option>
@@ -149,7 +148,6 @@ Use Namespace: <select id="namespace">
 	<script src="../node/ajvAll.js"></script>
 	<script src="../node/config.js"></script>
 	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
 	<script src="../node/DOMSerializer.js"></script>
 	<script src="../node/X3DJSONLD.js"></script>
 	<script src="../node/matrix.js"></script>
@@ -169,15 +167,10 @@ Use Namespace: <select id="namespace">
     <script type="text/javascript" src="../node/test_json.js"></script>
     
     <script type="module">
-	import * as protoExpander from "../node/ProtoTypeExpander.mjs";
 	$(document).ready(function() {
 		var url = "../data/ExtrusionHeart.json";  // providing a fake path
 		var selector = "#x_itedom";
 		var NS;
-		if ($('#prototype').is(':checked')) {
-			test_json = new PROTOS().prototypeExpander(url, test_json, "");
-			$('textarea#json').val(JSON.stringify(test_json, null, 2));
-		}
 		window.loadX3DJS_X_ITE(selector, document.implementation, test_json, url, "", X3DJSONLD, function(json_element) {
 			X3D(function(){
 				window.load_X_ITE_DOM(json_element, selector);
