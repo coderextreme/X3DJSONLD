@@ -32,17 +32,16 @@
           "@level": 1
         },
         {
+          "@name": "Shape",
+          "@level": 4
+        },
+        {
           "@name": "Grouping",
           "@level": 3
         },
         {
           "@name": "Core",
           "@level": 1
-        }
-      ],
-      "-children": [
-        {
-          "#comment": "<component name='Shape' level='4'></component>"
         }
       ],
       "meta": [
@@ -68,7 +67,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -232,8 +231,9 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/x3dom.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
@@ -241,8 +241,9 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    "../shaders/x_ite.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -292,19 +293,35 @@
                 "@name": "coordIndexes",
                 "@accessType": "outputOnly",
                 "@type": "MFInt32"
+              },
+              {
+                "@name": "e",
+                "@type": "SFFloat",
+                "@accessType": "inputOutput",
+                "@value": 5
+              },
+              {
+                "@name": "f",
+                "@type": "SFFloat",
+                "@accessType": "inputOutput",
+                "@value": 5
+              },
+              {
+                "@name": "g",
+                "@type": "SFFloat",
+                "@accessType": "inputOutput",
+                "@value": 5
+              },
+              {
+                "@name": "h",
+                "@type": "SFFloat",
+                "@accessType": "inputOutput",
+                "@value": 5
               }
             ],
             "#sourceCode": [
               "",
-              "",
-              "",
               "ecmascript:",
-              "",
-              "var e = 5;",
-              "var f = 5;",
-              "var g = 5;",
-              "var h = 5;",
-              "",
               "function initialize() {",
               "     var resolution = 100;",
               "     updateCoordinates(resolution);",
@@ -318,7 +335,7 @@
               "\t     cis.push(-1);",
               "\t}",
               "    }",
-              "    coordIndexes = new MFInt32(cis);",
+              "    coordIndexes = new MFInt32(...cis);",
               "}",
               "",
               "function updateCoordinates(resolution) {",
@@ -338,7 +355,7 @@
               "\t}",
               "\tphi += delta;",
               "     }",
-              "     coordinates = new MFVec3f(crds);",
+              "     coordinates = new MFVec3f(...crds);",
               "}",
               "",
               "function set_fraction(fraction, eventTime) {",
@@ -356,6 +373,9 @@
               "\tcase 3:",
               "\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
               "\t\tbreak;",
+              "\t}",
+              "\tif (e < 1) {",
+              "\t\te = 10;",
               "\t}",
               "\tif (f < 1) {",
               "\t\tf = 10;",
@@ -382,26 +402,26 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "OrbitScript",
             "@fromField": "coordIndexes",
-            "@toNode": "Orbit",
-            "@toField": "set_coordIndex"
-          }
-        },
-        {
-          "ROUTE": {
             "@fromNode": "OrbitScript",
-            "@fromField": "coordinates",
-            "@toNode": "OrbitCoordinates",
-            "@toField": "set_point"
+            "@toField": "set_coordIndex",
+            "@toNode": "Orbit"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Clock",
+            "@fromField": "coordinates",
+            "@fromNode": "OrbitScript",
+            "@toField": "set_point",
+            "@toNode": "OrbitCoordinates"
+          }
+        },
+        {
+          "ROUTE": {
             "@fromField": "fraction_changed",
-            "@toNode": "OrbitScript",
-            "@toField": "set_fraction"
+            "@fromNode": "Clock",
+            "@toField": "set_fraction",
+            "@toNode": "OrbitScript"
           }
         }
       ]

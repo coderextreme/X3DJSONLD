@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -11340,762 +11340,762 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "HumanoidRoot_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "HumanoidRoot_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "HumanoidRoot_TranslationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "HumanoidRoot_TranslationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "sacroiliac_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "sacroiliac_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_hip_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_hip_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_knee_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_knee_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_ankle_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_ankle_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_subtalar_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_subtalar_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_midtarsal_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_midtarsal_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_metatarsal_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_metatarsal_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_hip_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_hip_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_knee_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_knee_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_ankle_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_ankle_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_subtalar_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_subtalar_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_midtarsal_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_midtarsal_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_metatarsal_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_metatarsal_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vl5_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vl5_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vl4_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vl4_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vl3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vl3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vl2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vl2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vl1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vl1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt12_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt12_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt11_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt11_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt10_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt10_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt9_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt9_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt8_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt8_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt7_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt7_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt6_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt6_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt5_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt5_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt4_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt4_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vt1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vt1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc7_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc7_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc6_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc6_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc5_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc5_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc4_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc4_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "vc1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "vc1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "skullbase_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "skullbase_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_eyelid_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_eyelid_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_eyeball_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_eyeball_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_eyebrow_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_eyebrow_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_eyelid_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_eyelid_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_eyeball_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_eyeball_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_eyebrow_joint_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_eyebrow_joint_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "temporomandibular_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "temporomandibular_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_sternoclavicular_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_sternoclavicular_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_acromioclavicular_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_acromioclavicular_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_shoulder_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_shoulder_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_elbow_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_elbow_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_wrist_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_wrist_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_thumb1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_thumb1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_thumb2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_thumb2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_thumb3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_thumb3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_index0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_index0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_index1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_index1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_index2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_index2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_index3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_index3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_middle0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_middle0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_middle1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_middle1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_middle2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_middle2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_middle3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_middle3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_ring0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_ring0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_ring1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_ring1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_ring2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_ring2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_ring3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_ring3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_pinky0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_pinky0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_pinky1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_pinky1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_pinky2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_pinky2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "l_pinky3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "l_pinky3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_sternoclavicular_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_sternoclavicular_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_acromioclavicular_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_acromioclavicular_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_shoulder_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_shoulder_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_elbow_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_elbow_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_wrist_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_wrist_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_thumb1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_thumb1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_thumb2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_thumb2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_thumb3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_thumb3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_index0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_index0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_index1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_index1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_index2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_index2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_index3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_index3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_middle0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_middle0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_middle1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_middle1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_middle2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_middle2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_middle3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_middle3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_ring0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_ring0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_ring1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_ring1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_ring2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_ring2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_ring3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_ring3_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_pinky0_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_pinky0_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_pinky1_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_pinky1_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_pinky2_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_pinky2_RotationInterpolator"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "KickTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "r_pinky3_RotationInterpolator",
-            "@toField": "set_fraction"
+            "@fromNode": "KickTimer",
+            "@toField": "set_fraction",
+            "@toNode": "r_pinky3_RotationInterpolator"
           }
         },
         {
@@ -12103,762 +12103,762 @@
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "HumanoidRoot_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_HumanoidRoot",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_HumanoidRoot"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "HumanoidRoot_TranslationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_HumanoidRoot",
-            "@toField": "set_translation"
+            "@toField": "set_translation",
+            "@toNode": "Joe_HumanoidRoot"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "sacroiliac_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_sacroiliac",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_sacroiliac"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_hip_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_hip",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_hip"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_knee_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_knee",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_knee"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_ankle_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_ankle",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_ankle"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_subtalar_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_subtalar",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_subtalar"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_midtarsal_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_midtarsal",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_midtarsal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_metatarsal_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_metatarsal",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_metatarsal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_hip_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_hip",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_hip"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_knee_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_knee",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_knee"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_ankle_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_ankle",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_ankle"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_subtalar_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_subtalar",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_subtalar"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_midtarsal_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_midtarsal",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_midtarsal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_metatarsal_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_metatarsal",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_metatarsal"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vl5_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vl5",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vl5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vl4_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vl4",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vl4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vl3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vl3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vl3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vl2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vl2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vl2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vl1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vl1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vl1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt12_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt12",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt12"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt11_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt11",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt11"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt10_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt10",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt10"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt9_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt9",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt9"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt8_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt8",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt8"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt7_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt7",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt7"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt6_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt6",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt6"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt5_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt5",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt4_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt4",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vt1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vt1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vt1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc7_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc7",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc7"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc6_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc6",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc6"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc5_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc5",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc5"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc4_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc4",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc4"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "vc1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_vc1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_vc1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "skullbase_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_skullbase",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_skullbase"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_eyelid_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_eyelid_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_eyelid_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_eyeball_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_eyeball_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_eyeball_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_eyebrow_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_eyebrow_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_eyebrow_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_eyelid_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_eyelid_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_eyelid_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_eyeball_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_eyeball_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_eyeball_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_eyebrow_joint_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_eyebrow_joint",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_eyebrow_joint"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "temporomandibular_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_temporomandibular",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_temporomandibular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_sternoclavicular_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_sternoclavicular",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_sternoclavicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_acromioclavicular_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_acromioclavicular",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_acromioclavicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_shoulder_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_shoulder",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_shoulder"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_elbow_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_elbow",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_elbow"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_wrist_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_wrist",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_wrist"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_thumb1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_thumb1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_thumb1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_thumb2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_thumb2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_thumb2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_thumb3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_thumb3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_thumb3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_index0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_index0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_index0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_index1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_index1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_index1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_index2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_index2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_index2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_index3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_index3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_index3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_middle0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_middle0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_middle0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_middle1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_middle1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_middle1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_middle2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_middle2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_middle2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_middle3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_middle3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_middle3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_ring0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_ring0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_ring0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_ring1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_ring1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_ring1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_ring2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_ring2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_ring2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_ring3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_ring3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_ring3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_pinky0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_pinky0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_pinky0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_pinky1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_pinky1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_pinky1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_pinky2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_pinky2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_pinky2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "l_pinky3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_l_pinky3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_l_pinky3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_sternoclavicular_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_sternoclavicular",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_sternoclavicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_acromioclavicular_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_acromioclavicular",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_acromioclavicular"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_shoulder_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_shoulder",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_shoulder"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_elbow_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_elbow",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_elbow"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_wrist_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_wrist",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_wrist"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_thumb1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_thumb1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_thumb1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_thumb2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_thumb2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_thumb2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_thumb3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_thumb3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_thumb3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_index0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_index0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_index0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_index1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_index1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_index1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_index2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_index2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_index2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_index3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_index3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_index3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_middle0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_middle0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_middle0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_middle1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_middle1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_middle1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_middle2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_middle2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_middle2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_middle3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_middle3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_middle3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_ring0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_ring0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_ring0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_ring1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_ring1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_ring1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_ring2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_ring2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_ring2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_ring3_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_ring3",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_ring3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_pinky0_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_pinky0",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_pinky0"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_pinky1_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_pinky1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_pinky1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "r_pinky2_RotationInterpolator",
-            "@fromField": "value_changed",
-            "@toNode": "Joe_r_pinky2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_pinky2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "r_pinky3_RotationInterpolator",
             "@fromField": "value_changed",
-            "@toNode": "Joe_r_pinky3",
-            "@toField": "set_rotation"
+            "@fromNode": "r_pinky3_RotationInterpolator",
+            "@toField": "set_rotation",
+            "@toNode": "Joe_r_pinky3"
           }
         },
         {
@@ -12901,18 +12901,18 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KickTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "skull_tipInterpolator",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KickTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "skull_tipInterpolator"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "skull_tipInterpolator",
                   "@fromField": "value_changed",
-                  "@toNode": "Joe_skull_tip_raiser_action",
-                  "@toField": "weight"
+                  "@fromNode": "skull_tipInterpolator",
+                  "@toField": "weight",
+                  "@toNode": "Joe_skull_tip_raiser_action"
                 }
               }
             ]
@@ -12949,18 +12949,18 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KickTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "SkinTextureTransformInterpolator",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KickTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "SkinTextureTransformInterpolator"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "SkinTextureTransformInterpolator",
                   "@fromField": "value_changed",
-                  "@toNode": "KickTextureTransform",
-                  "@toField": "rotation"
+                  "@fromNode": "SkinTextureTransformInterpolator",
+                  "@toField": "rotation",
+                  "@toNode": "KickTextureTransform"
                 }
               }
             ]
@@ -13775,34 +13775,34 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KickTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "ball_TranslationInterpolator",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KickTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "ball_TranslationInterpolator"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "ball_TranslationInterpolator",
-                  "@fromField": "value_changed",
-                  "@toNode": "SBall",
-                  "@toField": "set_translation"
+                  "@toField": "set_translation",
+                  "@toNode": "SBall"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KickTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "ball_RotationInterpolator",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KickTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "ball_RotationInterpolator"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "ball_RotationInterpolator",
                   "@fromField": "value_changed",
-                  "@toNode": "SBall",
-                  "@toField": "set_rotation"
+                  "@fromNode": "ball_RotationInterpolator",
+                  "@toField": "set_rotation",
+                  "@toNode": "SBall"
                 }
               }
             ]

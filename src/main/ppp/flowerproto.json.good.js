@@ -143,4 +143,452 @@ if (typeof X3DJSON['Scene../data/flowerproto.json'] === 'undefined') {
 	X3DJSON['Scene../data/flowerproto.json'] = {};
 }
 
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/flowerproto.json'] = {};
+}
 
+X3DJSON['Script']['Scene']['../data/flowerproto.json']['Animate'] = function() {
+	this.set_translation = function (value) {
+		try {
+			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting translation '+e);
+			console.error('Problems setting translation',e);
+		}
+	};
+	this.translation_changed = function () {
+		var value = this.translation;
+		return value;
+	};
+	try {
+		this.translation = new SFVec3f(0,0,0);
+	} catch (e) {
+		console.log('Problems setting translation '+e);
+		console.error('Problems setting translation',e);
+	}
+	this.set_velocity = function (value) {
+		try {
+			this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting velocity '+e);
+			console.error('Problems setting velocity',e);
+		}
+	};
+	this.velocity_changed = function () {
+		var value = this.velocity;
+		return value;
+	};
+	try {
+		this.velocity = new SFVec3f(0,0,0);
+	} catch (e) {
+		console.log('Problems setting velocity '+e);
+		console.error('Problems setting velocity',e);
+	}
+	this.set_fraction = function (value) {
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
+	};
+	this.fraction_changed = function () {
+		var value = this.fraction;
+		return value;
+	};
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		console.log('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
+	this.set_a = function (value) {
+		try {
+			this.proxy.a = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting a '+e);
+			console.error('Problems setting a',e);
+		}
+	};
+	this.a_changed = function () {
+		var value = this.a;
+		return value;
+	};
+	try {
+		this.a = new SFFloat(0.5);
+	} catch (e) {
+		console.log('Problems setting a '+e);
+		console.error('Problems setting a',e);
+	}
+	this.set_b = function (value) {
+		try {
+			this.proxy.b = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting b '+e);
+			console.error('Problems setting b',e);
+		}
+	};
+	this.b_changed = function () {
+		var value = this.b;
+		return value;
+	};
+	try {
+		this.b = new SFFloat(0.5);
+	} catch (e) {
+		console.log('Problems setting b '+e);
+		console.error('Problems setting b',e);
+	}
+	this.set_c = function (value) {
+		try {
+			this.proxy.c = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting c '+e);
+			console.error('Problems setting c',e);
+		}
+	};
+	this.c_changed = function () {
+		var value = this.c;
+		return value;
+	};
+	try {
+		this.c = new SFFloat(3);
+	} catch (e) {
+		console.log('Problems setting c '+e);
+		console.error('Problems setting c',e);
+	}
+	this.set_d = function (value) {
+		try {
+			this.proxy.d = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting d '+e);
+			console.error('Problems setting d',e);
+		}
+	};
+	this.d_changed = function () {
+		var value = this.d;
+		return value;
+	};
+	try {
+		this.d = new SFFloat(3);
+	} catch (e) {
+		console.log('Problems setting d '+e);
+		console.error('Problems setting d',e);
+	}
+	this.set_tdelta = function (value) {
+		try {
+			this.proxy.tdelta = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting tdelta '+e);
+			console.error('Problems setting tdelta',e);
+		}
+	};
+	this.tdelta_changed = function () {
+		var value = this.tdelta;
+		return value;
+	};
+	try {
+		this.tdelta = new SFFloat(0.5);
+	} catch (e) {
+		console.log('Problems setting tdelta '+e);
+		console.error('Problems setting tdelta',e);
+	}
+	this.set_pdelta = function (value) {
+		try {
+			this.proxy.pdelta = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting pdelta '+e);
+			console.error('Problems setting pdelta',e);
+		}
+	};
+	this.pdelta_changed = function () {
+		var value = this.pdelta;
+		return value;
+	};
+	try {
+		this.pdelta = new SFFloat(0.5);
+	} catch (e) {
+		console.log('Problems setting pdelta '+e);
+		console.error('Problems setting pdelta',e);
+	}
+
+
+
+ecmascript:
+		
+	this.initialize = function () {
+			    this.proxy.translation = new SFVec3f(0, 0, 0);
+			    this.proxy.velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+		;
+
+	this.set_fraction = function () {
+			    this.proxy.translation = new SFVec3f(
+			    	this.proxy.translation.x + this.proxy.velocity.x,
+				this.proxy.translation.y + this.proxy.velocity.y,
+				this.proxy.translation.z + this.proxy.velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(this.proxy.translation.x) > 10) {
+					this.initialize();
+				    } else if (Math.abs(this.proxy.translation.y) > 10) {
+					this.initialize();
+				    } else if (Math.abs(this.proxy.translation.z) > 10) {
+					this.initialize();
+				    } else {
+					this.proxy.velocity.x += Math.random() * 0.2 - 0.1;
+					this.proxy.velocity.y += Math.random() * 0.2 - 0.1;
+					this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    this.animate_flowers();
+			}
+
+		;
+
+	this.animate_flowers = function (fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					this.proxy.a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					this.proxy.b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					this.proxy.c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					this.proxy.d += Math.random() * 2 - 1;
+					break;
+				}
+				this.proxy.tdelta += 0.5;
+				this.proxy.pdelta += 0.5;
+				if (this.proxy.a > 1) {
+					this.proxy.a =  0.5;
+				}
+				if (this.proxy.b > 1) {
+					this.proxy.b =  0.5;
+				}
+				if (this.proxy.c < 1) {
+					this.proxy.c =  4;
+				}
+				if (this.proxy.d < 1) {
+					this.proxy.d =  4;
+				}
+				if (this.proxy.c > 10) {
+					this.proxy.c = 4;
+				}
+				if (this.proxy.d > 10) {
+					this.proxy.d = 4;
+				}
+			}
+
+
+;
+
+};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = new X3DJSON['Script']['Scene']['../data/flowerproto.json']['Animate']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION'],X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].initialize === "function") X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].initialize();
+    if (X3DJSON.nodeUtil("Scene","TourTime")) {
+X3DJSON.nodeUtil("Scene","TourTime").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","fraction"), __eventTime);
+}, false);
+}
+			X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","fraction"), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['translation'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['translation'].push(function(property, value) {
+		if (property === 'translation') {
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['a'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['a'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['a'].push(function(property, value) {
+		if (property === 'a') {
+			X3DJSON.nodeUtil("Scene","shader","a",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","a",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['b'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['b'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['b'].push(function(property, value) {
+		if (property === 'b') {
+			X3DJSON.nodeUtil("Scene","shader","b",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","b",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['c'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['c'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['c'].push(function(property, value) {
+		if (property === 'c') {
+			X3DJSON.nodeUtil("Scene","shader","c",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","c",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['d'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['d'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['d'].push(function(property, value) {
+		if (property === 'd') {
+			X3DJSON.nodeUtil("Scene","shader","d",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","d",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['tdelta'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['tdelta'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['tdelta'].push(function(property, value) {
+		if (property === 'tdelta') {
+			X3DJSON.nodeUtil("Scene","shader","tdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","tdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['pdelta'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['pdelta'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate']['ACTION']['pdelta'].push(function(property, value) {
+		if (property === 'pdelta') {
+			X3DJSON.nodeUtil("Scene","shader","pdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil("Scene","shader","pdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].set_fraction(X3DJSON.nodeUtil("Scene","TourTime","fraction"), __eventTime);
+			X3DJSON.nodeUtil("Scene","transform","translation",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation_changed() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].translation, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","a",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].a, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","b",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].b, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","c",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].c, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","d",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].d, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","tdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].tdelta, __eventTime);
+			X3DJSON.nodeUtil("Scene","shader","pdelta",typeof X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta === "function" ? X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta() : X3DJSON['Obj']['Scene']['../data/flowerproto.json']['Animate'].pdelta, __eventTime);

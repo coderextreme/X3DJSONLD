@@ -71,7 +71,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -1445,10 +1445,10 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "ClockStepper",
             "@fromField": "fraction_changed",
-            "@toNode": "DiscreteFrameStepper",
-            "@toField": "set_fraction"
+            "@fromNode": "ClockStepper",
+            "@toField": "set_fraction",
+            "@toNode": "DiscreteFrameStepper"
           }
         },
         {
@@ -5782,74 +5782,74 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "ClockTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "Interpolator1",
-            "@toField": "set_fraction"
+            "@fromNode": "ClockTimer",
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "DiscreteFrameStepper",
             "@fromField": "value_changed",
-            "@toNode": "Interpolator1",
-            "@toField": "set_fraction"
+            "@fromNode": "DiscreteFrameStepper",
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator1"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Interpolator1",
-            "@fromField": "value_changed",
-            "@toNode": "Transform1",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Transform1"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "ClockTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "Interpolator2",
-            "@toField": "set_fraction"
+            "@fromNode": "ClockTimer",
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "DiscreteFrameStepper",
             "@fromField": "value_changed",
-            "@toNode": "Interpolator2",
-            "@toField": "set_fraction"
+            "@fromNode": "DiscreteFrameStepper",
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator2"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "Interpolator2",
-            "@fromField": "value_changed",
-            "@toNode": "Transform2",
-            "@toField": "set_rotation"
+            "@toField": "set_rotation",
+            "@toNode": "Transform2"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "ClockTimer",
             "@fromField": "fraction_changed",
-            "@toNode": "Interpolator3",
-            "@toField": "set_fraction"
+            "@fromNode": "ClockTimer",
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator3"
           }
         },
         {
           "ROUTE": {
+            "@fromField": "value_changed",
             "@fromNode": "DiscreteFrameStepper",
-            "@fromField": "value_changed",
-            "@toNode": "Interpolator3",
-            "@toField": "set_fraction"
+            "@toField": "set_fraction",
+            "@toNode": "Interpolator3"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Interpolator3",
             "@fromField": "value_changed",
-            "@toNode": "Transform3",
-            "@toField": "set_rotation"
+            "@fromNode": "Interpolator3",
+            "@toField": "set_rotation",
+            "@toNode": "Transform3"
           }
         }
       ]

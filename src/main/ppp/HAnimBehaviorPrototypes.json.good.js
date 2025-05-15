@@ -153,7 +153,7 @@ if (typeof X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json'] ==
 X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json'] = {};
 }
 
-X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'] = function() {
+X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'] = function() {
 	this.set_HumanoidArray = function (value) {
 		try {
 			this.proxy.HumanoidArray = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
@@ -185,7 +185,7 @@ X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBod
 		return value;
 	};
 	try {
-		this.whichBody = new SFInt32(0);
+		this.whichBody = new SFInt32();
 	} catch (e) {
 		console.log('Problems setting whichBody '+e);
 		console.error('Problems setting whichBody',e);
@@ -203,7 +203,7 @@ X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBod
 		return value;
 	};
 	try {
-		this.whichBody = new SFInt32(0);
+		this.whichBody = new SFInt32();
 	} catch (e) {
 		console.log('Problems setting whichBody '+e);
 		console.error('Problems setting whichBody',e);
@@ -221,7 +221,7 @@ X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBod
 		return value;
 	};
 	try {
-		this.whichBody = new SFInt32(0);
+		this.whichBody = new SFInt32();
 	} catch (e) {
 		console.log('Problems setting whichBody '+e);
 		console.error('Problems setting whichBody',e);
@@ -257,7 +257,7 @@ X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBod
 		return value;
 	};
 	try {
-		this.enabledBehaviorsArray = new MFBool(ru);
+		this.enabledBehaviorsArray = new MFBool();
 	} catch (e) {
 		console.log('Problems setting enabledBehaviorsArray '+e);
 		console.error('Problems setting enabledBehaviorsArray',e);
@@ -311,7 +311,7 @@ X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBod
 		return value;
 	};
 	try {
-		this.timeSensorNode = X3DJSON.nodeUtil("Scene","DECLHAnimBodyBehaviorChooser_ChooserTest_TimeSensorHolderStartStopTimes");
+		this.timeSensorNode = X3DJSON.nodeUtil("Scene","TimeSensorHolderStartStopTimes");
 	} catch (e) {
 		console.log('Problems setting timeSensorNode '+e);
 		console.error('Problems setting timeSensorNode',e);
@@ -363,7 +363,7 @@ if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json'] === '
 X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json'] = {};
 }
 
-X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'] = new X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript']();
+X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'] = new X3DJSON['Script']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript']();
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -373,776 +373,768 @@ X3DJSON['Obj']['Scene'] = {};
 if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json'] === 'undefined') {
 X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json'] = {};
 }
-if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'] = {};
+if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'] = {};
 }
 
-if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript']['ACTION'] = {};
-X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript']);
+if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript']);
 }
-if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['DECLHAnimBodyBehaviorChooser_ChooserTest_BehaviorSelectionScript'].initialize();
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+if (typeof X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/HAnimBehaviorPrototypes.json']['BehaviorSelectionScript'].initialize();
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock")) {
-X3DJSON.nodeUtil("Scene","DECLHAnimBehavior_BehaviorTest1_BehaviorClock").addEventListener('outputchange', function(event) {
-}, false);
-}
-    if (X3DJSON.nodeUtil("Scene","undefined")) {
-X3DJSON.nodeUtil("Scene","undefined").addEventListener('outputchange', function(event) {
-}, false);
-}
-    if (X3DJSON.nodeUtil("Scene","undefined")) {
-X3DJSON.nodeUtil("Scene","undefined").addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BehaviorClock")) {
+X3DJSON.nodeUtil("Scene","BehaviorClock").addEventListener('outputchange', function(event) {
 }, false);
 }

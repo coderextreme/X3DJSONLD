@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -169,7 +169,7 @@
               "\t     localci.push(-1);",
               "\t}",
               "    }",
-              "    coordIndexes = new MFInt32(localci);",
+              "    coordIndexes = new MFInt32(...localci);",
               "}",
               "",
               "function generateCoordinates(resolution) {",
@@ -189,7 +189,7 @@
               "\t}",
               "\tphi += delta;",
               "     }",
-              "     coordinates = new MFVec3f(localc);",
+              "     coordinates = new MFVec3f(...localc);",
               "}",
               "",
               "function set_fraction(fraction, eventTime) {",

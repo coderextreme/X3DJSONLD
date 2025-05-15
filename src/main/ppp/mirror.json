@@ -68,7 +68,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -99,7 +99,7 @@
                 "@DEF": "leftBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_left.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                 ]
               }
             },
@@ -108,7 +108,7 @@
                 "@DEF": "rightBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_right.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                 ]
               }
             },
@@ -117,7 +117,7 @@
                 "@DEF": "frontBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_front.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                 ]
               }
             },
@@ -126,7 +126,7 @@
                 "@DEF": "backBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_back.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                 ]
               }
             },
@@ -135,7 +135,7 @@
                 "@DEF": "topBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_top.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                 ]
               }
             },
@@ -144,7 +144,7 @@
                 "@DEF": "bottomBackgroundTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
                 ]
               }
             }
@@ -178,7 +178,7 @@
                               "@DEF": "backShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_back.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                               ]
                             }
                           },
@@ -187,7 +187,7 @@
                               "@DEF": "bottomShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
                               ]
                             }
                           },
@@ -196,7 +196,7 @@
                               "@DEF": "frontShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_front.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                               ]
                             }
                           },
@@ -205,7 +205,7 @@
                               "@DEF": "leftShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_left.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                               ]
                             }
                           },
@@ -214,7 +214,7 @@
                               "@DEF": "rightShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_right.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                               ]
                             }
                           },
@@ -223,7 +223,7 @@
                               "@DEF": "topShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_top.png",
-                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                               ]
                             }
                           }

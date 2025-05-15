@@ -65,7 +65,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -106,7 +106,12 @@
         },
         {
           "NavigationInfo": {
-            "@type": "\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
+            "@type": [
+              "EXAMINE",
+              "WALK",
+              "FLY",
+              "ANY"
+            ]
           }
         },
         {
@@ -163,7 +168,7 @@
           "Script": {
             "@DEF": "MYSCRIPT",
             "@url": [
-              "../data/jumpcut_loadurl.js",
+              "jumpcut_loadurl.js",
               "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"
             ],
             "field": [
@@ -196,10 +201,10 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "STARTER",
             "@fromField": "isActive",
-            "@toNode": "MYSCRIPT",
-            "@toField": "trigger_event"
+            "@fromNode": "STARTER",
+            "@toField": "trigger_event",
+            "@toNode": "MYSCRIPT"
           }
         }
       ]

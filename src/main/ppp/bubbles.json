@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -670,162 +670,162 @@
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath1",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath1"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath2",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath2"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath3",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath3"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath4",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath4"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath5",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath5"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath6",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath6"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath7",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath7"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath8",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath8"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath9",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath9"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubbleClock",
                               "@fromField": "fraction_changed",
-                              "@toNode": "BubblePath10",
-                              "@toField": "set_fraction"
+                              "@fromNode": "BubbleClock",
+                              "@toField": "set_fraction",
+                              "@toNode": "BubblePath10"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath1",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble1",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble1"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath2",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble2",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble2"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath3",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble3",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble3"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath4",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble4",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble4"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath5",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble5",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble5"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath6",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble6",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble6"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath7",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble7",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble7"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath8",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble8",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble8"
                             }
                           },
                           {
                             "ROUTE": {
+                              "@fromField": "value_changed",
                               "@fromNode": "BubblePath9",
-                              "@fromField": "value_changed",
-                              "@toNode": "bubble9",
-                              "@toField": "set_translation"
+                              "@toField": "set_translation",
+                              "@toNode": "bubble9"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "BubblePath10",
                               "@fromField": "value_changed",
-                              "@toNode": "bubble10",
-                              "@toField": "set_translation"
+                              "@fromNode": "BubblePath10",
+                              "@toField": "set_translation",
+                              "@toNode": "bubble10"
                             }
                           }
                         ]

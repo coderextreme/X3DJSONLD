@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -45,7 +45,9 @@
       "-children": [
         {
           "NavigationInfo": {
-            "@type": "\"EXAMINE\""
+            "@type": [
+              "EXAMINE"
+            ]
           }
         },
         {
@@ -58,1148 +60,451 @@
             ]
           }
         },
-        {},
-        {},
-        {},
-        {},
         {
-          "Transform": {
-            "@translation": [
-              0,
-              0,
-              0
-            ],
-            "-children": [
-              {
-                "Transform": {
-                  "-children": [
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
-                        ]
-                      }
-                    }
-                  ],
-                  "@translation": [
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "xtranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
                     0,
                     0,
                     0
                   ]
-                }
-              },
-              {
-                "Transform": {
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
                   "-children": [
                     {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
-                        ]
-                      }
+                      "Sphere": {}
                     }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    2
                   ]
                 }
-              },
-              {
-                "Transform": {
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "xtranslation"
+                        }
+                      ]
+                    },
+                    "-children": [
+                      {
+                        "Shape": {
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "geometry",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          },
+                          "-appearance": {
+                            "Appearance": {
+                              "-material": {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "three",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "ytranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
                   "-children": [
                     {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          0,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          2,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                2,
-                                0,
-                                0
-                              ]
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1,
-                                          1,
-                                          1
-                                        ]
-                                      }
-                                    },
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              ],
-                              "@translation": [
-                                -2,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        ],
-                        "@translation": [
-                          0,
-                          -2,
-                          0
-                        ]
-                      }
+                      "Sphere": {}
                     }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    -2
                   ]
                 }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ytranslation"
+                        }
+                      ]
+                    },
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "nine",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "ztranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "-children": [
+                    {
+                      "Sphere": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ztranslation"
+                        }
+                      ]
+                    },
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [
+                            {
+                              "@name": "ytranslation",
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [
+                            {
+                              "@name": "ytranslation",
+                              "@value": [
+                                0,
+                                2,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [
+                            {
+                              "@name": "ytranslation",
+                              "@value": [
+                                0,
+                                -2,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "twentyseven",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "ttranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "-children": [
+                    {
+                      "Sphere": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ttranslation"
+                        }
+                      ]
+                    },
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [
+                            {
+                              "@name": "ztranslation",
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [
+                            {
+                              "@name": "ztranslation",
+                              "@value": [
+                                0,
+                                0,
+                                2
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [
+                            {
+                              "@name": "ztranslation",
+                              "@value": [
+                                0,
+                                0,
+                                -2
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "twentyseven",
+            "fieldValue": [
+              {
+                "@name": "ttranslation",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Box": {
+                      "@size": [
+                        1,
+                        1,
+                        1
+                      ]
+                    }
+                  }
+                ]
               }
             ]
           }

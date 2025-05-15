@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -45,7 +45,9 @@
       "-children": [
         {
           "NavigationInfo": {
-            "@type": "\"EXAMINE\""
+            "@type": [
+              "EXAMINE"
+            ]
           }
         },
         {
@@ -58,39 +60,39 @@
             ]
           }
         },
-        {},
-        {},
         {
-          "Transform": {
-            "@translation": [
-              0,
-              0,
-              0
-            ],
-            "-children": [
-              {
-                "Transform": {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "xtranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
                   "-children": [
                     {
                       "Shape": {
-                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
                         "-geometry": {
-                          "Box": {
-                            "@size": [
-                              1,
-                              1,
-                              1
-                            ]
-                          }
+                          "Sphere": {}
                         },
                         "-appearance": {
                           "Appearance": {
                             "-material": {
                               "Material": {
                                 "@diffuseColor": [
-                                  0,
                                   1,
-                                  0
+                                  1,
+                                  1
                                 ]
                               }
                             }
@@ -98,89 +100,209 @@
                         }
                       }
                     }
-                  ],
-                  "@translation": [
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "xtranslation"
+                        },
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "three",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "ytranslation",
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@value": [
                     0,
                     0,
                     0
                   ]
+                },
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
                 }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ytranslation"
+                        }
+                      ]
+                    },
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "three",
+            "@DEF": "threepi",
+            "fieldValue": [
+              {
+                "@name": "ytranslation",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
               },
               {
-                "Transform": {
-                  "-children": [
-                    {
-                      "Shape": {
-                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
-                        "-geometry": {
-                          "Box": {
-                            "@size": [
-                              1,
-                              1,
-                              1
-                            ]
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0,
-                                  1,
-                                  0
-                                ]
-                              }
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Shape": {
+                      "@DEF": "box",
+                      "-geometry": {
+                        "Box": {
+                          "@size": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
+                      },
+                      "-appearance": {
+                        "Appearance": {
+                          "-material": {
+                            "Material": {
+                              "@diffuseColor": [
+                                0,
+                                1,
+                                0
+                              ]
                             }
                           }
                         }
                       }
                     }
-                  ],
-                  "@translation": [
-                    2,
-                    0,
-                    0
-                  ]
-                }
-              },
-              {
-                "Transform": {
-                  "-children": [
-                    {
-                      "Shape": {
-                        "@DEF": "DECLthree_threepi_FIELDmyShape_box",
-                        "-geometry": {
-                          "Box": {
-                            "@size": [
-                              1,
-                              1,
-                              1
-                            ]
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0,
-                                  1,
-                                  0
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "@translation": [
-                    -2,
-                    0,
-                    0
-                  ]
-                }
+                  }
+                ]
               }
             ]
           }
@@ -195,7 +317,7 @@
             "-children": [
               {
                 "Shape": {
-                  "@USE": "DECLthree_threepi_FIELDmyShape_box"
+                  "@USE": "box"
                 }
               }
             ]

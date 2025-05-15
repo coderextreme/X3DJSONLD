@@ -5,48 +5,53 @@ if (typeof X3DJSON === 'undefined') {
 if (typeof __eventTime === 'undefined') {
 	var __eventTime = 0;
 }
-var MFBool = x3dom.fields.MFBoolean;
-var MFColor = x3dom.fields.MFColor;
-var MFColorRGBA = x3dom.fields.MFColorRGBA;
+if (typeof x3dom !== 'undefined') {
+    var MFBool = x3dom.fields.MFBoolean;
+    var MFColor = x3dom.fields.MFColor;
+    var MFColorRGBA = x3dom.fields.MFColorRGBA;
+    var MFFloat = x3dom.fields.MFFloat;
+    var MFInt32 = x3dom.fields.MFInt32;
+    var MFNode = x3dom.fields.MFNode;
+    var MFRotation = x3dom.fields.MFRotation;
+    var MFString = x3dom.fields.MFString;
+    var MFVec2f = x3dom.fields.MFVec2f;
+    var MFVec3f = x3dom.fields.MFVec3f;
+    var Quaternion = x3dom.fields.Quaternion;
+    var SFColor = x3dom.fields.SFColor;
+    var SFColorRGBA = x3dom.fields.SFColorRGBA;
+    var SFImage = x3dom.fields.SFImage;
+    var SFMatrix4f = x3dom.fields.SFMatrix4f;
+    var SFNode = x3dom.fields.SFNode;
+    var SFRotation = x3dom.fields.SFRotation;
+    var SFVec2f = x3dom.fields.SFVec2f;
+    var SFVec3f = x3dom.fields.SFVec3f;
+    var SFVec4f = x3dom.fields.SFVec4f;
+} else {
+    var SFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };
+}
+var SFString = String;
+var SFTime = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
+var SFBool = Boolean;
 var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };
-var MFFloat = x3dom.fields.MFFloat;
 var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };
-var MFInt32 = x3dom.fields.MFInt32;
 var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };
-var MFNode = x3dom.fields.MFNode;
-var MFRotation = x3dom.fields.MFRotation;
-var MFString = x3dom.fields.MFString;
 var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
-var MFVec2f = x3dom.fields.MFVec2f;
 var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
-var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFBool = Boolean;
-var SFColor = x3dom.fields.SFColor;
-var SFColorRGBA = x3dom.fields.SFColorRGBA;
-var SFDouble = Number;
-var SFFloat = Number;
-var SFInt32 = Number;
-var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFMatrix4f = x3dom.fields.SFMatrix4f;
-var SFNode = x3dom.fields.SFNode;
-var Quaternion = x3dom.fields.Quaternion;
-var SFString = String;
-var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -66,9 +71,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -226,7 +231,7 @@ var p = 0;
 	     localci.push(-1);
 	}
     }
-    this.proxy.coordIndexes = new MFInt32(localci);
+    this.proxy.coordIndexes = new MFInt32(...localci);
 }
 ;
 
@@ -247,7 +252,7 @@ var p = 0;
 	}
 	phi += delta;
      }
-     this.proxy.coordinates = new MFVec3f(localc);
+     this.proxy.coordinates = new MFVec3f(...localc);
 }
 ;
 
@@ -330,10 +335,10 @@ X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordI
 }
 X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
 		if (property === 'coordIndexes') {
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -352,16 +357,16 @@ X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordi
 }
 X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
 		if (property === 'coordinates') {
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','Clock')) {
-X3DJSON.nodeUtil('Scene','Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","Clock")) {
+X3DJSON.nodeUtil("Scene","Clock").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);
