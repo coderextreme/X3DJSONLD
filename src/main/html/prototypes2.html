@@ -41,7 +41,6 @@
 	<script src="../node/ajvAll.js"></script>
 	<script src="../node/config.js"></script>
 	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
 	<script src="../node/DOMSerializer.js"></script>
 	<script src="../node/X3DJSONLD.js"></script>
 	<script src="../node/matrix.js"></script>
@@ -98,11 +97,9 @@ function getJSON(url) {
 
 	function loadX3DJSON(url) {
 		getJSON(url).then(function(json) {
-			// json = new PROTOS().prototypeExpander(url, json, "");
 			load_X_ITE_JS(json, "#x_itejson"); // loads into X_ITE element on page.
 			var url = '../data/sphere.json';
 			getJSON(url).then(function(subjson) {
-				// subjson = new PROTOS().prototypeExpander(url, subjson, "");
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
