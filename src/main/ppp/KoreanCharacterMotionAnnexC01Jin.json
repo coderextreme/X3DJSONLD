@@ -87,7 +87,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -71805,306 +71805,306 @@
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_humanoid_root_Position",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_humanoid_root_Position"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_humanoid_root",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_humanoid_root"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_sacroiliac",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_sacroiliac"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_shoulder",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_shoulder"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_elbow",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_elbow"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_radiocarpal",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_radiocarpal"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_shoulder",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_shoulder"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_elbow",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_elbow"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_radiocarpal",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_radiocarpal"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_vl5",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_vl5"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_skullbase",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_skullbase"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_hip",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_hip"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_knee",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_knee"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_talocrural",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_talocrural"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_l_metatarsophalangeal_2",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_l_metatarsophalangeal_2"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_hip",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_hip"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_knee",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_knee"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_talocrural",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_talocrural"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "KeyframeTimer",
                   "@fromField": "fraction_changed",
-                  "@toNode": "Keyframe_r_metatarsophalangeal_2",
-                  "@toField": "set_fraction"
+                  "@fromNode": "KeyframeTimer",
+                  "@toField": "set_fraction",
+                  "@toNode": "Keyframe_r_metatarsophalangeal_2"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_humanoid_root_Position",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_humanoid_root",
-                  "@toField": "translation"
+                  "@toField": "translation",
+                  "@toNode": "hanim_humanoid_root"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_humanoid_root",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_humanoid_root",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_humanoid_root"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_sacroiliac",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_sacroiliac",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_sacroiliac"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_shoulder",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_shoulder",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_shoulder"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_elbow",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_elbow",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_elbow"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_radiocarpal",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_radiocarpal",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_radiocarpal"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_r_shoulder",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_shoulder",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_shoulder"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_r_elbow",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_elbow",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_elbow"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_r_radiocarpal",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_radiocarpal",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_radiocarpal"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_vl5",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_vl5",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_vl5"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_skullbase",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_skullbase",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_skullbase"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_hip",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_hip",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_hip"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_knee",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_knee",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_knee"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_talocrural",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_talocrural",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_talocrural"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_talocrural",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_l_metatarsophalangeal_2",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_l_metatarsophalangeal_2"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_r_hip",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_hip",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_hip"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_r_knee",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_knee",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_knee"
                 }
               },
               {
                 "ROUTE": {
+                  "@fromField": "value_changed",
                   "@fromNode": "Keyframe_l_talocrural",
-                  "@fromField": "value_changed",
-                  "@toNode": "hanim_r_talocrural",
-                  "@toField": "rotation"
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_talocrural"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "Keyframe_r_metatarsophalangeal_2",
                   "@fromField": "value_changed",
-                  "@toNode": "hanim_r_metatarsophalangeal_2",
-                  "@toField": "rotation"
+                  "@fromNode": "Keyframe_r_metatarsophalangeal_2",
+                  "@toField": "rotation",
+                  "@toNode": "hanim_r_metatarsophalangeal_2"
                 }
               }
             ]

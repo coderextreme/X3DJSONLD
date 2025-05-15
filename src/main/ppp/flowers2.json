@@ -22,16 +22,12 @@
           "@content": "John Carlson"
         },
         {
-          "@name": "transcriber",
-          "@content": "John Carlson"
-        },
-        {
           "@name": "created",
           "@content": "23 January 2005"
         },
         {
           "@name": "modified",
-          "@content": "21 March 2018"
+          "@content": "9 November 2024"
         },
         {
           "@name": "description",
@@ -51,7 +47,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -90,557 +86,397 @@
                   ]
                 }
               },
-              {},
               {
-                "Group": {
-                  "-children": [
-                    {
-                      "TimeSensor": {
-                        "@DEF": "DECLorbit_INSTANCE_Clock",
-                        "@cycleInterval": 16,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "OrientationInterpolator": {
-                        "@DEF": "DECLorbit_INSTANCE_OrbitPath",
-                        "@key": [
-                          0,
-                          0.5,
-                          1
-                        ],
-                        "@keyValue": [
-                          1,
-                          0,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          3.14,
-                          1,
-                          0,
-                          0,
-                          6.28
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "@DEF": "DECLorbit_INSTANCE_OrbitTransform",
-                        "@translation": [
+                "ProtoDeclare": {
+                  "@name": "orbit",
+                  "ProtoInterface": {
+                    "field": [
+                      {
+                        "@name": "translation",
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
+                        "@value": [
                           -8,
                           0,
                           0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        1,
-                                        0.5,
-                                        0
+                        ]
+                      },
+                      {
+                        "@name": "diffuseColor",
+                        "@accessType": "inputOutput",
+                        "@type": "SFColor",
+                        "@value": [
+                          1,
+                          0.5,
+                          0
+                        ]
+                      },
+                      {
+                        "@name": "specularColor",
+                        "@accessType": "inputOutput",
+                        "@type": "SFColor",
+                        "@value": [
+                          1,
+                          0.5,
+                          0
+                        ]
+                      },
+                      {
+                        "@name": "transparency",
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@value": 0.75
+                      }
+                    ]
+                  },
+                  "ProtoBody": {
+                    "-children": [
+                      {
+                        "Group": {
+                          "-children": [
+                            {
+                              "TimeSensor": {
+                                "@DEF": "Clock",
+                                "@cycleInterval": 16,
+                                "@loop": true
+                              }
+                            },
+                            {
+                              "OrientationInterpolator": {
+                                "@DEF": "OrbitPath",
+                                "@key": [
+                                  0,
+                                  0.5,
+                                  1
+                                ],
+                                "@keyValue": [
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  3.14,
+                                  1,
+                                  0,
+                                  0,
+                                  6.28
+                                ]
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@DEF": "OrbitTransform",
+                                "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField": "translation",
+                                      "@protoField": "translation"
+                                    }
+                                  ]
+                                },
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "IS": {
+                                                "connect": [
+                                                  {
+                                                    "@nodeField": "diffuseColor",
+                                                    "@protoField": "diffuseColor"
+                                                  },
+                                                  {
+                                                    "@nodeField": "specularColor",
+                                                    "@protoField": "specularColor"
+                                                  },
+                                                  {
+                                                    "@nodeField": "transparency",
+                                                    "@protoField": "transparency"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "-children": [
+                                        {
+                                          "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                        }
                                       ],
-                                      "@specularColor": [
-                                        1,
-                                        0.5,
-                                        0
-                                      ],
-                                      "@transparency": 0.75
+                                      "-geometry": {
+                                        "IndexedFaceSet": {
+                                          "@ccw": false,
+                                          "@convex": false,
+                                          "@coordIndex": [
+                                            0,
+                                            1,
+                                            2,
+                                            -1
+                                          ],
+                                          "@DEF": "Orbit",
+                                          "-coord": {
+                                            "Coordinate": {
+                                              "@DEF": "OrbitCoordinates",
+                                              "@point": [
+                                                0,
+                                                0,
+                                                1,
+                                                0,
+                                                1,
+                                                0,
+                                                1,
+                                                0,
+                                                0
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      }
                                     }
                                   }
-                                }
-                              },
-                              "-children": [
-                                {
-                                  "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
-                                }
-                              ],
-                              "-geometry": {
-                                "IndexedFaceSet": {
-                                  "@ccw": false,
-                                  "@convex": false,
-                                  "@coordIndex": [
-                                    0,
-                                    1,
-                                    2,
-                                    -1
-                                  ],
-                                  "@DEF": "DECLorbit_INSTANCE_Orbit",
-                                  "-coord": {
-                                    "Coordinate": {
-                                      "@DEF": "DECLorbit_INSTANCE_OrbitCoordinates",
-                                      "@point": [
-                                        0,
-                                        0,
-                                        1,
-                                        0,
-                                        1,
-                                        0,
-                                        1,
-                                        0,
-                                        0
-                                      ]
-                                    }
+                                ]
+                              }
+                            },
+                            {
+                              "Script": {
+                                "@DEF": "OrbitScript",
+                                "field": [
+                                  {
+                                    "@name": "set_fraction",
+                                    "@accessType": "inputOnly",
+                                    "@type": "SFFloat"
+                                  },
+                                  {
+                                    "@name": "coordinates",
+                                    "@accessType": "inputOutput",
+                                    "@type": "MFVec3f"
+                                  },
+                                  {
+                                    "@name": "coordIndexes",
+                                    "@accessType": "inputOutput",
+                                    "@type": "MFInt32"
+                                  },
+                                  {
+                                    "@name": "e",
+                                    "@accessType": "inputOutput",
+                                    "@type": "SFFloat",
+                                    "@value": 5
+                                  },
+                                  {
+                                    "@name": "f",
+                                    "@accessType": "inputOutput",
+                                    "@type": "SFFloat",
+                                    "@value": 5
+                                  },
+                                  {
+                                    "@name": "g",
+                                    "@accessType": "inputOutput",
+                                    "@type": "SFFloat",
+                                    "@value": 5
+                                  },
+                                  {
+                                    "@name": "h",
+                                    "@accessType": "inputOutput",
+                                    "@type": "SFFloat",
+                                    "@value": 5
+                                  },
+                                  {
+                                    "@name": "resolution",
+                                    "@accessType": "inputOutput",
+                                    "@type": "SFInt32",
+                                    "@value": 50
                                   }
-                                }
+                                ],
+                                "#sourceCode": [
+                                  "",
+                                  "\t\t\t",
+                                  "\t\t\tecmascript:",
+                                  "",
+                                  "\t\t\tfunction initialize() {",
+                                  "\t\t\t     generateCoordinates();",
+                                  "\t\t\t     var arrIndex = 0;",
+                                  "\t\t\t     for (var i = 0; i < resolution-1; i++) {",
+                                  "\t\t\t\tfor (var j = 0; j < resolution-1; j++) {",
+                                  "\t\t\t\t     coordIndexes[arrIndex++] = i*resolution+j;",
+                                  "\t\t\t\t     coordIndexes[arrIndex++] = i*resolution+j+1;",
+                                  "\t\t\t\t     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;",
+                                  "\t\t\t\t     coordIndexes[arrIndex++] = (i+1)*resolution+j;",
+                                  "\t\t\t\t     coordIndexes[arrIndex++] = -1;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t    }",
+                                  "\t\t\t}",
+                                  "",
+                                  "\t\t\tfunction generateCoordinates() {",
+                                  "\t\t\t     var theta = 0.0;",
+                                  "\t\t\t     var phi = 0.0;",
+                                  "\t\t\t     var delta = (2 * 3.141592653) / (resolution-1);",
+                                  "\t\t\t     var arrIndex = 0;",
+                                  "\t\t\t     for (var i = 0; i < resolution; i++) {",
+                                  "\t\t\t\tfor (var j = 0; j < resolution; j++) {",
+                                  "\t\t\t\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+                                  "\t\t\t\t\tcoordinates[arrIndex++] = new SFVec3f(",
+                                  "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+                                  "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+                                  "\t\t\t\t\t\trho * Math.sin(phi)",
+                                  "\t\t\t\t\t);",
+                                  "\t\t\t\t\ttheta += delta;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tphi += delta;",
+                                  "\t\t\t     }",
+                                  "\t\t\t}",
+                                  "",
+                                  "\t\t\tfunction set_fraction(fraction, eventTime) {",
+                                  "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
+                                  "\t\t\t\tswitch (choice) {",
+                                  "\t\t\t\tcase 0:",
+                                  "\t\t\t\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
+                                  "\t\t\t\t\tbreak;",
+                                  "\t\t\t\tcase 1:",
+                                  "\t\t\t\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
+                                  "\t\t\t\t\tbreak;",
+                                  "\t\t\t\tcase 2:",
+                                  "\t\t\t\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
+                                  "\t\t\t\t\tbreak;",
+                                  "\t\t\t\tcase 3:",
+                                  "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
+                                  "\t\t\t\t\tbreak;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tif (e < 1) {",
+                                  "\t\t\t\t\tf = 10;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tif (f < 1) {",
+                                  "\t\t\t\t\tf = 10;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tif (g < 1) {",
+                                  "\t\t\t\t\tg = 4;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tif (h < 1) {",
+                                  "\t\t\t\t\th = 4;",
+                                  "\t\t\t\t}",
+                                  "\t\t\t\tgenerateCoordinates();",
+                                  "\t\t\t}",
+                                  "\t\t\t      "
+                                ]
+                              }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "OrbitScript",
+                                "@fromField": "coordIndexes",
+                                "@toNode": "Orbit",
+                                "@toField": "set_coordIndex"
+                              }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "OrbitScript",
+                                "@fromField": "coordinates",
+                                "@toNode": "OrbitCoordinates",
+                                "@toField": "point"
+                              }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "Clock",
+                                "@fromField": "fraction_changed",
+                                "@toNode": "OrbitScript",
+                                "@toField": "set_fraction"
+                              }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "OrbitPath",
+                                "@fromField": "value_changed",
+                                "@toNode": "OrbitTransform",
+                                "@toField": "rotation"
+                              }
+                            },
+                            {
+                              "ROUTE": {
+                                "@fromNode": "Clock",
+                                "@fromField": "fraction_changed",
+                                "@toNode": "OrbitPath",
+                                "@toField": "set_fraction"
                               }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
+                    ]
+                  }
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "orbit",
+                  "fieldValue": [
+                    {
+                      "@name": "translation",
+                      "@value": [
+                        -8,
+                        0,
+                        0
+                      ]
                     },
                     {
-                      "Script": {
-                        "@DEF": "DECLorbit_INSTANCE_OrbitScript",
-                        "field": [
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "coordinates",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec3f"
-                          },
-                          {
-                            "@name": "coordIndexes",
-                            "@accessType": "outputOnly",
-                            "@type": "MFInt32"
-                          },
-                          {
-                            "@name": "e",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "f",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "g",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "h",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "resolution",
-                            "@accessType": "inputOutput",
-                            "@type": "SFInt32",
-                            "@value": 50
-                          }
-                        ],
-                        "#sourceCode": [
-                          "",
-                          "\t\t\t",
-                          "\t\t\tecmascript:",
-                          "",
-                          "\t\t\tvar e = 5;",
-                          "\t\t\tvar f = 5;",
-                          "\t\t\tvar g = 5;",
-                          "\t\t\tvar h = 5;",
-                          "\t\t\tvar resolution = 100;",
-                          "",
-                          "\t\t\tfunction initialize() {",
-                          "\t\t\t     generateCoordinates();",
-                          "\t\t\t     var localci = [];",
-                          "\t\t\t     for (var i = 0; i < resolution-1; i++) {",
-                          "\t\t\t\tfor (var j = 0; j < resolution-1; j++) {",
-                          "\t\t\t\t     localci.push(i*resolution+j);",
-                          "\t\t\t\t     localci.push(i*resolution+j+1);",
-                          "\t\t\t\t     localci.push((i+1)*resolution+j+1);",
-                          "\t\t\t\t     localci.push((i+1)*resolution+j);",
-                          "\t\t\t\t     localci.push(-1);",
-                          "\t\t\t\t}",
-                          "\t\t\t    }",
-                          "\t\t\t    coordIndexes = new MFInt32(localci);",
-                          "\t\t\t}",
-                          "",
-                          "\t\t\tfunction generateCoordinates() {",
-                          "\t\t\t     var theta = 0.0;",
-                          "\t\t\t     var phi = 0.0;",
-                          "\t\t\t     var delta = (2 * 3.141592653) / (resolution-1);",
-                          "\t\t\t     var localc = [];",
-                          "\t\t\t     for (var i = 0; i < resolution; i++) {",
-                          "\t\t\t\tfor (var j = 0; j < resolution; j++) {",
-                          "\t\t\t\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
-                          "\t\t\t\t\tlocalc.push(new SFVec3f(",
-                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
-                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
-                          "\t\t\t\t\t\trho * Math.sin(phi)",
-                          "\t\t\t\t\t));",
-                          "\t\t\t\t\ttheta += delta;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tphi += delta;",
-                          "\t\t\t     }",
-                          "\t\t\t     ",
-                          "\t\t\t     coordinates = new MFVec3f(localc);",
-                          "\t\t\t}",
-                          "",
-                          "\t\t\tfunction set_fraction(fraction, eventTime) {",
-                          "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
-                          "\t\t\t\tswitch (choice) {",
-                          "\t\t\t\tcase 0:",
-                          "\t\t\t\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 1:",
-                          "\t\t\t\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 2:",
-                          "\t\t\t\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 3:",
-                          "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (e < 1) {",
-                          "\t\t\t\t\tf = 10;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (f < 1) {",
-                          "\t\t\t\t\tf = 10;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (g < 1) {",
-                          "\t\t\t\t\tg = 4;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (h < 1) {",
-                          "\t\t\t\t\th = 4;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tgenerateCoordinates();",
-                          "\t\t\t}",
-                          "\t\t\t      "
-                        ]
-                      }
+                      "@name": "diffuseColor",
+                      "@value": [
+                        1,
+                        0.5,
+                        0
+                      ]
                     },
                     {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE_OrbitScript",
-                        "@fromField": "coordIndexes",
-                        "@toNode": "DECLorbit_INSTANCE_Orbit",
-                        "@toField": "set_coordIndex"
-                      }
+                      "@name": "specularColor",
+                      "@value": [
+                        1,
+                        0.5,
+                        0
+                      ]
                     },
                     {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE_OrbitScript",
-                        "@fromField": "coordinates",
-                        "@toNode": "DECLorbit_INSTANCE_OrbitCoordinates",
-                        "@toField": "point"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE_Clock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "DECLorbit_INSTANCE_OrbitScript",
-                        "@toField": "set_fraction"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE_OrbitPath",
-                        "@fromField": "value_changed",
-                        "@toNode": "DECLorbit_INSTANCE_OrbitTransform",
-                        "@toField": "rotation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE_Clock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "DECLorbit_INSTANCE_OrbitPath",
-                        "@toField": "set_fraction"
-                      }
+                      "@name": "transparency",
+                      "@value": 0.75
                     }
                   ]
                 }
               },
               {
-                "Group": {
-                  "-children": [
+                "ProtoInstance": {
+                  "@name": "orbit",
+                  "fieldValue": [
                     {
-                      "TimeSensor": {
-                        "@DEF": "DECLorbit_INSTANCE1000_Clock",
-                        "@cycleInterval": 16,
-                        "@loop": true
-                      }
+                      "@name": "translation",
+                      "@value": [
+                        8,
+                        0,
+                        0
+                      ]
                     },
                     {
-                      "OrientationInterpolator": {
-                        "@DEF": "DECLorbit_INSTANCE1000_OrbitPath",
-                        "@key": [
-                          0,
-                          0.5,
-                          1
-                        ],
-                        "@keyValue": [
-                          1,
-                          0,
-                          0,
-                          0,
-                          1,
-                          0,
-                          0,
-                          3.14,
-                          1,
-                          0,
-                          0,
-                          6.28
-                        ]
-                      }
+                      "@name": "diffuseColor",
+                      "@value": [
+                        0,
+                        0.5,
+                        1
+                      ]
                     },
                     {
-                      "Transform": {
-                        "@DEF": "DECLorbit_INSTANCE1000_OrbitTransform",
-                        "@translation": [
-                          8,
-                          0,
-                          0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0.5,
-                                        1
-                                      ],
-                                      "@specularColor": [
-                                        0,
-                                        0.5,
-                                        1
-                                      ],
-                                      "@transparency": 0.5
-                                    }
-                                  }
-                                }
-                              },
-                              "-children": [
-                                {
-                                  "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
-                                }
-                              ],
-                              "-geometry": {
-                                "IndexedFaceSet": {
-                                  "@ccw": false,
-                                  "@convex": false,
-                                  "@coordIndex": [
-                                    0,
-                                    1,
-                                    2,
-                                    -1
-                                  ],
-                                  "@DEF": "DECLorbit_INSTANCE1000_Orbit",
-                                  "-coord": {
-                                    "Coordinate": {
-                                      "@DEF": "DECLorbit_INSTANCE1000_OrbitCoordinates",
-                                      "@point": [
-                                        0,
-                                        0,
-                                        1,
-                                        0,
-                                        1,
-                                        0,
-                                        1,
-                                        0,
-                                        0
-                                      ]
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
+                      "@name": "specularColor",
+                      "@value": [
+                        0,
+                        0.5,
+                        1
+                      ]
                     },
                     {
-                      "Script": {
-                        "@DEF": "DECLorbit_INSTANCE1000_OrbitScript",
-                        "field": [
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "coordinates",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec3f"
-                          },
-                          {
-                            "@name": "coordIndexes",
-                            "@accessType": "outputOnly",
-                            "@type": "MFInt32"
-                          },
-                          {
-                            "@name": "e",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "f",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "g",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "h",
-                            "@accessType": "inputOutput",
-                            "@type": "SFFloat",
-                            "@value": 5
-                          },
-                          {
-                            "@name": "resolution",
-                            "@accessType": "inputOutput",
-                            "@type": "SFInt32",
-                            "@value": 50
-                          }
-                        ],
-                        "#sourceCode": [
-                          "",
-                          "\t\t\t",
-                          "\t\t\tecmascript:",
-                          "",
-                          "\t\t\tvar e = 5;",
-                          "\t\t\tvar f = 5;",
-                          "\t\t\tvar g = 5;",
-                          "\t\t\tvar h = 5;",
-                          "\t\t\tvar resolution = 100;",
-                          "",
-                          "\t\t\tfunction initialize() {",
-                          "\t\t\t     generateCoordinates();",
-                          "\t\t\t     var localci = [];",
-                          "\t\t\t     for (var i = 0; i < resolution-1; i++) {",
-                          "\t\t\t\tfor (var j = 0; j < resolution-1; j++) {",
-                          "\t\t\t\t     localci.push(i*resolution+j);",
-                          "\t\t\t\t     localci.push(i*resolution+j+1);",
-                          "\t\t\t\t     localci.push((i+1)*resolution+j+1);",
-                          "\t\t\t\t     localci.push((i+1)*resolution+j);",
-                          "\t\t\t\t     localci.push(-1);",
-                          "\t\t\t\t}",
-                          "\t\t\t    }",
-                          "\t\t\t    coordIndexes = new MFInt32(localci);",
-                          "\t\t\t}",
-                          "",
-                          "\t\t\tfunction generateCoordinates() {",
-                          "\t\t\t     var theta = 0.0;",
-                          "\t\t\t     var phi = 0.0;",
-                          "\t\t\t     var delta = (2 * 3.141592653) / (resolution-1);",
-                          "\t\t\t     var localc = [];",
-                          "\t\t\t     for (var i = 0; i < resolution; i++) {",
-                          "\t\t\t\tfor (var j = 0; j < resolution; j++) {",
-                          "\t\t\t\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
-                          "\t\t\t\t\tlocalc.push(new SFVec3f(",
-                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
-                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
-                          "\t\t\t\t\t\trho * Math.sin(phi)",
-                          "\t\t\t\t\t));",
-                          "\t\t\t\t\ttheta += delta;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tphi += delta;",
-                          "\t\t\t     }",
-                          "\t\t\t     ",
-                          "\t\t\t     coordinates = new MFVec3f(localc);",
-                          "\t\t\t}",
-                          "",
-                          "\t\t\tfunction set_fraction(fraction, eventTime) {",
-                          "\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
-                          "\t\t\t\tswitch (choice) {",
-                          "\t\t\t\tcase 0:",
-                          "\t\t\t\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 1:",
-                          "\t\t\t\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 2:",
-                          "\t\t\t\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\tcase 3:",
-                          "\t\t\t\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
-                          "\t\t\t\t\tbreak;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (e < 1) {",
-                          "\t\t\t\t\tf = 10;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (f < 1) {",
-                          "\t\t\t\t\tf = 10;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (g < 1) {",
-                          "\t\t\t\t\tg = 4;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tif (h < 1) {",
-                          "\t\t\t\t\th = 4;",
-                          "\t\t\t\t}",
-                          "\t\t\t\tgenerateCoordinates();",
-                          "\t\t\t}",
-                          "\t\t\t      "
-                        ]
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE1000_OrbitScript",
-                        "@fromField": "coordIndexes",
-                        "@toNode": "DECLorbit_INSTANCE1000_Orbit",
-                        "@toField": "set_coordIndex"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE1000_OrbitScript",
-                        "@fromField": "coordinates",
-                        "@toNode": "DECLorbit_INSTANCE1000_OrbitCoordinates",
-                        "@toField": "point"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE1000_Clock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "DECLorbit_INSTANCE1000_OrbitScript",
-                        "@toField": "set_fraction"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE1000_OrbitPath",
-                        "@fromField": "value_changed",
-                        "@toNode": "DECLorbit_INSTANCE1000_OrbitTransform",
-                        "@toField": "rotation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLorbit_INSTANCE1000_Clock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "DECLorbit_INSTANCE1000_OrbitPath",
-                        "@toField": "set_fraction"
-                      }
+                      "@name": "transparency",
+                      "@value": 0.5
                     }
                   ]
                 }

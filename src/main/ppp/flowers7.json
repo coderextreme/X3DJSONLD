@@ -32,17 +32,16 @@
           "@level": 1
         },
         {
+          "@name": "Shape",
+          "@level": 4
+        },
+        {
           "@name": "Grouping",
           "@level": 3
         },
         {
           "@name": "Core",
           "@level": 1
-        }
-      ],
-      "-children": [
-        {
-          "#comment": "<component name='Shape' level='4'></component>"
         }
       ],
       "meta": [
@@ -68,7 +67,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -212,12 +211,23 @@
                           "ComposedShader": {
                             "@DEF": "x3dom",
                             "@language": "GLSL",
+                            "-children": [
+                              {
+                                "#comment": "TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"
+                              }
+                            ],
                             "field": [
                               {
                                 "@name": "cube",
-                                "@type": "SFInt32",
+                                "@type": "SFNode",
                                 "@accessType": "inputOutput",
-                                "@value": 0
+                                "-children": [
+                                  {
+                                    "ComposedCubeMapTexture": {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
                               },
                               {
                                 "@name": "chromaticDispertion",
@@ -284,16 +294,11 @@
                                 "@value": 0
                               }
                             ],
-                            "-children": [
-                              {
-                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
-                              }
-                            ],
                             "-parts": [
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/x3dom_flowers_chromatic.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs",
                                     "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"
                                   ],
                                   "@type": "VERTEX"
@@ -302,7 +307,7 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/common.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs",
                                     "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
                                   ],
                                   "@type": "FRAGMENT"
@@ -397,7 +402,7 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/x_ite_flowers_chromatic.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs",
                                     "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"
                                   ],
                                   "@type": "VERTEX"
@@ -406,7 +411,7 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/x_ite.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs",
                                     "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
                                   ],
                                   "@type": "FRAGMENT"
@@ -436,15 +441,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_front.png",
-                  "../resources/images/all_probes/building_cross/building_front.png",
-                  "../resources/images/all_probes/campus_cross/campus_front.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_front.png",
-                  "../resources/images/all_probes/grace_cross/grace_front.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_front.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_front.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_front.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"
                 ]
               },
               {
@@ -452,15 +457,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_back.png",
-                  "../resources/images/all_probes/building_cross/building_back.png",
-                  "../resources/images/all_probes/campus_cross/campus_back.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_back.png",
-                  "../resources/images/all_probes/grace_cross/grace_back.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_back.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_back.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_back.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"
                 ]
               },
               {
@@ -468,15 +473,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_left.png",
-                  "../resources/images/all_probes/building_cross/building_left.png",
-                  "../resources/images/all_probes/campus_cross/campus_left.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_left.png",
-                  "../resources/images/all_probes/grace_cross/grace_left.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_left.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_left.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_left.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"
                 ]
               },
               {
@@ -484,15 +489,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_right.png",
-                  "../resources/images/all_probes/building_cross/building_right.png",
-                  "../resources/images/all_probes/campus_cross/campus_right.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_right.png",
-                  "../resources/images/all_probes/grace_cross/grace_right.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_right.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_right.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_right.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"
                 ]
               },
               {
@@ -500,15 +505,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_top.png",
-                  "../resources/images/all_probes/building_cross/building_top.png",
-                  "../resources/images/all_probes/campus_cross/campus_top.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_top.png",
-                  "../resources/images/all_probes/grace_cross/grace_top.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_top.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_top.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_top.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"
                 ]
               },
               {
@@ -516,15 +521,15 @@
                 "@type": "MFString",
                 "@accessType": "initializeOnly",
                 "@value": [
-                  "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                  "../resources/images/all_probes/building_cross/building_bottom.png",
-                  "../resources/images/all_probes/campus_cross/campus_bottom.png",
-                  "../resources/images/all_probes/galileo_cross/galileo_bottom.png",
-                  "../resources/images/all_probes/grace_cross/grace_bottom.png",
-                  "../resources/images/all_probes/kitchen_cross/kitchen_bottom.png",
-                  "../resources/images/all_probes/rnl_cross/rnl_bottom.png",
-                  "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                  "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                  "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
                 ]
               },
               {

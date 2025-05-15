@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -77,48 +77,88 @@
         {
           "Group": {
             "-children": [
-              {},
-              {},
               {
-                "Group": {
-                  "-children": [
-                    {}
+                "ExternProtoDeclare": {
+                  "@name": "FlowerProto",
+                  "@url": [
+                    "../data/flowerproto.x3d#FlowerProto"
+                  ],
+                  "field": [
+                    {
+                      "@name": "vertex",
+                      "@accessType": "inputOutput",
+                      "@type": "MFString"
+                    },
+                    {
+                      "@name": "fragment",
+                      "@accessType": "inputOutput",
+                      "@type": "MFString"
+                    }
                   ]
                 }
               },
               {
-                "Group": {
-                  "-children": [
-                    {}
-                  ]
+                "ProtoDeclare": {
+                  "@name": "flower",
+                  "ProtoBody": {
+                    "-children": [
+                      {
+                        "Group": {
+                          "-children": [
+                            {
+                              "ProtoInstance": {
+                                "@name": "FlowerProto",
+                                "fieldValue": [
+                                  {
+                                    "@name": "vertex",
+                                    "@value": [
+                                      "../shaders/gl_flowers_chromatic.vs"
+                                    ]
+                                  },
+                                  {
+                                    "@name": "fragment",
+                                    "@value": [
+                                      "../shaders/common.fs"
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
                 }
               },
               {
-                "Group": {
-                  "-children": [
-                    {}
-                  ]
+                "ProtoInstance": {
+                  "@name": "flower"
                 }
               },
               {
-                "Group": {
-                  "-children": [
-                    {}
-                  ]
+                "ProtoInstance": {
+                  "@name": "flower"
                 }
               },
               {
-                "Group": {
-                  "-children": [
-                    {}
-                  ]
+                "ProtoInstance": {
+                  "@name": "flower"
                 }
               },
               {
-                "Group": {
-                  "-children": [
-                    {}
-                  ]
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
                 }
               }
             ]

@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -43,23 +43,106 @@
     },
     "Scene": {
       "-children": [
-        {},
-        {},
         {
-          "Transform": {
-            "-children": [
-              {
-                "Transform": {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
                   "-children": [
                     {
                       "Shape": {
                         "-geometry": {
-                          "Box": {}
+                          "Sphere": {}
                         }
                       }
                     }
                   ]
                 }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "one",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "one",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Shape": {
+                      "-geometry": {
+                        "Box": {}
+                      }
+                    }
+                  }
+                ]
               }
             ]
           }

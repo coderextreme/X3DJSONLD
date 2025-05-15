@@ -63,7 +63,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -84,7 +84,12 @@
         },
         {
           "NavigationInfo": {
-            "@type": "\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
           }
         },
         {

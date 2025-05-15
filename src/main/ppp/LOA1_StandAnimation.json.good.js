@@ -143,4 +143,79 @@ if (typeof X3DJSON['Scene../data/LOA1_StandAnimation.json'] === 'undefined') {
 	X3DJSON['Scene../data/LOA1_StandAnimation.json'] = {};
 }
 
-
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}
+    if (X3DJSON.nodeUtil("Scene","TIMER")) {
+X3DJSON.nodeUtil("Scene","TIMER").addEventListener('outputchange', function(event) {
+}, false);
+}

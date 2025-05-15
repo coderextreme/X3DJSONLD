@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 March 2024"
+          "@content": "26 April 2025"
         },
         {
           "@name": "generator",
@@ -55,7 +55,221 @@
     },
     "Scene": {
       "-children": [
-        {},
+        {
+          "ProtoDeclare": {
+            "@name": "Process",
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "#comment": "left"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "@DEF": "ShapeLeftDown",
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
+                                          1,
+                                          0
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@spine": [
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0,
+                                      0
+                                    ],
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "right"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "@DEF": "ShapeUpRight",
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0,
+                                          0.7,
+                                          1
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@spine": [
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0,
+                                      0
+                                    ],
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "up"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "@USE": "ShapeUpRight"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "down"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "@USE": "ShapeLeftDown"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
         {
           "Viewpoint": {
             "@description": "Process pipes",
@@ -81,209 +295,8 @@
             ],
             "-children": [
               {
-                "Group": {
-                  "-children": [
-                    {
-                      "#comment": "left"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE_ShapeLeftDown",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.7,
-                                        1,
-                                        0
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    -2.5,
-                                    0,
-                                    0,
-                                    -1.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "right"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE_ShapeUpRight",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0.7,
-                                        1
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    1.5,
-                                    0,
-                                    0,
-                                    2.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "up"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE_ShapeUpRight"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "down"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE_ShapeLeftDown"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                "ProtoInstance": {
+                  "@name": "Process"
                 }
               }
             ]
@@ -293,209 +306,8 @@
           "Transform": {
             "-children": [
               {
-                "Group": {
-                  "-children": [
-                    {
-                      "#comment": "left"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE1000_ShapeLeftDown",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.7,
-                                        1,
-                                        0
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    -2.5,
-                                    0,
-                                    0,
-                                    -1.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "right"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE1000_ShapeUpRight",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0.7,
-                                        1
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    1.5,
-                                    0,
-                                    0,
-                                    2.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "up"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE1000_ShapeUpRight"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "down"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE1000_ShapeLeftDown"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                "ProtoInstance": {
+                  "@name": "Process"
                 }
               }
             ]
@@ -510,209 +322,8 @@
             ],
             "-children": [
               {
-                "Group": {
-                  "-children": [
-                    {
-                      "#comment": "left"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE2000_ShapeLeftDown",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.7,
-                                        1,
-                                        0
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    -2.5,
-                                    0,
-                                    0,
-                                    -1.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "right"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE2000_ShapeUpRight",
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0.7,
-                                        1
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Extrusion": {
-                                  "@spine": [
-                                    1.5,
-                                    0,
-                                    0,
-                                    2.5,
-                                    0,
-                                    0
-                                  ],
-                                  "@creaseAngle": 0.785,
-                                  "@crossSection": [
-                                    1,
-                                    0,
-                                    0.92,
-                                    -0.38,
-                                    0.71,
-                                    -0.71,
-                                    0.38,
-                                    -0.92,
-                                    0,
-                                    -1,
-                                    -0.38,
-                                    -0.92,
-                                    -0.71,
-                                    -0.71,
-                                    -0.92,
-                                    -0.38,
-                                    -1,
-                                    0,
-                                    -0.92,
-                                    0.38,
-                                    -0.71,
-                                    0.71,
-                                    -0.38,
-                                    0.92,
-                                    0,
-                                    1,
-                                    0.38,
-                                    0.92,
-                                    0.71,
-                                    0.71,
-                                    0.92,
-                                    0.38,
-                                    1,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "up"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE2000_ShapeUpRight"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "#comment": "down"
-                    },
-                    {
-                      "Transform": {
-                        "@scale": [
-                          0.5,
-                          0.5,
-                          0.5
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "@USE": "DECLProcess_INSTANCE2000_ShapeLeftDown"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                "ProtoInstance": {
+                  "@name": "Process"
                 }
               }
             ]
