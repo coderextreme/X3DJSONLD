@@ -78,6 +78,8 @@
 	<script src="../node/loadValidate.js"></script>
 	<script src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
+let IS_X3DOM = true;
+let IS_X_ITE = true;
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
 function get(url) {
   // Return a new promise.
@@ -116,7 +118,7 @@ function getJSON(url) {
 
 function load(url) {
 	getJSON(url).then(function(json) {
-		window.loadX3D('#x3domjson', json, url);
+		window.loadX3D('#x3domjson', "x3domjson", json, url);
 	}).catch(function(err) {
 		alert("Scene Load failed: "+err);
 		console.log(err);

@@ -218,6 +218,8 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script type="module" src="../../../node_modules/three/examples/jsm/loaders/VRMLLoader.js"></script>
     <script type="module" src="../node/threex3dloader.mjs"></script>
     <script>
+	let IS_X3DOM = true;
+	let IS_X_ITE = true;
 	$(document).ready(function() {
 		myLoadJson('../data/flipp.json'); // does load sphereflowers.json
 	});

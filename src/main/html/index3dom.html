@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
    <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
+   <script type="text/javascript" _src="https://x3dom.github.io/x3dom-dev/dist/x3dom-full.debug.js"
+            src="https://andreasplesch.github.io/x3dom/dist/x3dom-full.debug.js"></script>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
    <!--
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
@@ -22,6 +24,42 @@
 	width: 300px;
 	height:150px;
     }
+    #dummy {
+	display:none;
+	width: 0px;
+	height:0px;
+    }
+    }
+    #x_itejson {
+	display:none;
+	width: 0px;
+	height:0px;
+    }
+    #x_itexml {
+	display:none;
+	width: 0px;
+	height:0px;
+    }
+    table td, table td * {
+        vertical-align: top;
+    }
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
     table td, table td * {
         vertical-align: top;
     }
@@ -51,27 +89,29 @@ a:active {
 <tr>
 <td>
 <select id="file">
-<option>../data/flipp.json</option>
-<option>../data/force.json</option>
-<option>../data/ArchHalf.json</option>
-<option>../data/ArchPrototype.json</option>
-<option>../data/bubbles.json</option>
-<option>../data/geobubbles.json</option>
-<option>../data/ObliqueStrategies.json</option>
-<option>../data/IcosahedronSubdivisionLevel5.json</option>
-<option>../data/ExtrusionHeart.json</option>
-<option>../data/bubs.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/Robots/UnmannedUnderwaterVehicles/Marv.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/ShipsCivilian/CigaretteBoat/CigaretteBoatWithDriver.json</option>
-<option>www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/SanCarlosCathedral/Church.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/AircraftHelicopters/AH1W-UnitedStates/SuperCobraLightsOn.json</option>
-<option>../stl/CaffeinePubChem2519Sticks.blender.stl</option>
+<option>DO NOT LOAD</option>
+<option>../personal/app.json</option>
+<option>../personal/asmallbox.json</option>
+<option>../personal/BoxEm.json</option>
+<option>../personal/ifscubeworks.json</option>
+<option>../personal/qq3.json</option>
+<option>../personal/rubik.json</option>
+<option>../personal/rubikFurnace.json</option>
+<option>../personal/rubikOnFire.json</option>
+
+<option>../personal/app.x3d</option>
+<option>../personal/asmallbox.x3d</option>
+<option>../personal/BoxEm.x3d</option>
+<option>../personal/ifscubeworks.x3d</option>
+<option>../personal/qq3.x3d</option>
+<option>../personal/rubik.x3d</option>
+<option>../personal/rubikFurnace.x3d</option>
+<option>../personal/rubikOnFire.x3d</option>
+
 <option>../stl/cleat_clamp.stl</option>
 <option>../stl/example.stl</option>
 <option>../stl/UavBeehive.stl</option>
+
 <option>../ply/Dodecahedron.ply</option>
 <option>../ply/example.ply</option>
 <option>../ply/Icosahedron.ply</option>
@@ -82,75 +122,7 @@ a:active {
 <option>../ply/IcosahedronSubdivisionLevel5.ply</option>
 <option>../ply/Octahedron.ply</option>
 <option>../ply/OrigamiCrane.ply</option>
-<option>../ply/Rocktopus.stl</option>
-<option>../ply/teapot.ply</option>
 <option>../ply/Tetrahedron.ply</option>
-<option>../ppp/abox.json</option>
-<option>../ppp/arc.json</option>
-<option>../ppp/ArchHalf.json</option>
-<option>../ppp/ArchPrototype.json</option>
-<option>../ppp/asmallbox.json</option>
-<option>../ppp/ball.json</option>
-<option>../ppp/BindingOperations.json</option>
-<option>../ppp/BoxEm.json</option>
-<option>../ppp/browser.json</option>
-<option>../ppp/bub.json</option>
-<option>../ppp/bubble.json</option>
-<option>../ppp/bubbles.json</option>
-<option>../ppp/CameraExamples.json</option>
-<option>../ppp/CameraPrototypes.json</option>
-<option>../ppp/CameraShape.json</option>
-<option>../ppp/CloudsProcedural4.json</option>
-<option>../ppp/bubs.json</option>
-<option>../ppp/bubs2.json</option>
-<option>../ppp/CoordinateAxes.json</option>
-<option>../ppp/cube.json</option>
-<option>../ppp/extrusion.json</option>
-<option>../ppp/ExtrusionHeart.json</option>
-<option>../ppp/flipp.json</option>
-<option>../ppp/flowerproto.json</option>
-<option>../ppp/flowers.json</option>
-<option>../ppp/flowers2.json</option>
-<option>../ppp/flowers4.json</option>
-<option>../ppp/flowers7.json</option>
-<option>../ppp/force.json</option>
-<option>../ppp/fors.json</option>
-<option>../ppp/fors2.json</option>
-<option>../ppp/freewrlflowers.json</option>
-<option>../ppp/geo.json</option>
-<option>../ppp/geobubbles.json</option>
-<option>../ppp/glflowers.json</option>
-<option>../ppp/gridBack.json</option>
-<option>../ppp/HeadsUpDisplayExample.json</option>
-<option>../ppp/ifscube.json</option>
-<option>../ppp/ifscubeworks.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_entire.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_part.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_plus.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_whole.json</option>
-<option>../ppp/MFString.json</option>
-<option>../ppp/mirror.json</option>
-<option>../ppp/mirror2.json</option>
-<option>../ppp/ObliqueStrategies.json</option>
-<option>../ppp/PixelTextureComponentExamples.json</option>
-<option>../ppp/plainflowers.json</option>
-<option>../ppp/pp3.json</option>
-<option>../ppp/qq3.json</option>
-<option>../ppp/rgb_alpha.json</option>
-<option>../ppp/rubik.json</option>
-<option>../ppp/rubikFurnace.json</option>
-<option>../ppp/rubikOnFire.json</option>
-<option>../ppp/SFVec3f.json</option>
-<option>../ppp/sphere.json</option>
-<option>../ppp/sphereflowers.json</option>
-<option>../ppp/Table5_18PixelTexture.json</option>
-<option>../ppp/Teapot.json</option>
-<option>../ppp/TextExamples.json</option>
-<option>../ppp/TextSpecialCharacters.json</option>
-<option>../ppp/x3dconnector.json</option>
-<option>../ppp/x3dconnectorProto.json</option>
-<option>../ppp/X3dHeaderPrototypeSyntaxExamples.json</option>
-<option>../ppp/x3domflowers.json</option>
 </select>
 <input type="text" onchange="filter(event)"></input>
 </td>
@@ -183,6 +155,7 @@ Use Namespace: <select id="namespace">
 		<Scene>
 		</Scene>
     </X3D>
+    <!--
     <x3d-canvas id='x_itejson' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -190,6 +163,7 @@ Use Namespace: <select id="namespace">
 	   </Scene>
 	   </X3D>
     </x3d-canvas>
+    -->
 </td>
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
@@ -197,7 +171,16 @@ Use Namespace: <select id="namespace">
 		<Scene id="x3domxml">
 		</Scene>
     </X3D>
+    <!--
     <x3d-canvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </x3d-canvas>
+    -->
+    <x3d-canvas id='dummy' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
 	   <Scene>
@@ -250,8 +233,10 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 	<script src="../node/loadValidate.js"></script>
 	<script src="../node/loaderJQuery.js"></script>
     <script>
+	let IS_X3DOM = true;
+	let IS_X_ITE = false;
 	$(document).ready(function() {
-		myLoadJson('../personal/sphereflowers.json'); // does load sphereflowers.json
+		myLoadJson('../personal/rubikFurnace.json'); // does load sphereflowers.json
 	});
     </script>
 </html>
