@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "description";
-meta7.content = "12 extrusions to test prototype expander";
+meta7.content = "12 extrusions";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");

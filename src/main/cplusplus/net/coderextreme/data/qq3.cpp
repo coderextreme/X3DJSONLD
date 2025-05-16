@@ -36,7 +36,7 @@ head1.addMeta(&meta6);
 
 meta& meta7 =  meta();
 meta7.setName(CString("description"));
-meta7.setContent(CString("12 extrusions to test prototype expander"));
+meta7.setContent(CString("12 extrusions"));
 head1.addMeta(&meta7);
 
 meta& meta8 =  meta();

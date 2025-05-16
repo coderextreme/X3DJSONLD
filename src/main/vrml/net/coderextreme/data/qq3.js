@@ -10,7 +10,7 @@ scene.addMetaData("creator", "John Carlson");
 scene.addMetaData("translator", "John Carlson");
 scene.addMetaData("created", "11 Jan 2015");
 scene.addMetaData("modified", "05 May 2017");
-scene.addMetaData("description", "12 extrusions to test prototype expander");
+scene.addMetaData("description", "12 extrusions");
 scene.addMetaData("identifier", "https://coderextreme.net/x3d/qq3.x3d");
 scene.addMetaData("generator", "manual");
 await browser .loadComponents (scene);

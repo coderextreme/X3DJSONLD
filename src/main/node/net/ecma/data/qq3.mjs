@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("12 extrusions to test prototype expander")}),
+              content : new SFString("12 extrusions")}),
 
             new meta({
               name : new SFString("identifier"),
