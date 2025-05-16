@@ -30,7 +30,7 @@ meta6.setContent("05 May 2017")
 head1.addMeta(meta6)
 meta7 = x3d.meta()
 meta7.setName("description")
-meta7.setContent("12 extrusions to test prototype expander")
+meta7.setContent("12 extrusions")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()

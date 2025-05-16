@@ -1,0 +1,429 @@
+####################################################################################################
+#
+# Invoking X3D model self-test:
+#
+#   $ python personal.py
+#
+# Python package x3d.py package is available on PyPI for import.
+#   This approach simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package in other Python programs:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix,
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+#
+####################################################################################################
+
+from x3d import *
+
+newModel=X3D(profile='Full',version='4.0',
+  head=head(
+    children=[
+    meta(name='title',content='personal.x3d'),
+    meta(name='identifier',content='https://someAddress/somePath/personal.x3d'),
+    meta(name='description',content="John's Portfolio"),
+    meta(name='generator',content='vim and X3D-Edit, https://savage.nps.edu/X3D-Edit')]),
+  Scene=Scene(
+    children=[
+    Viewpoint(description='Tour Views',position=(0,0,12)),
+    Switch(DEF='SceneSwitcher',whichChoice=0,
+      # 
+	    <Inline url='"../data/myextrusion.x3d"  "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"'/>
+	    <Inline url='"../data/ballx_ite.x3d"  "https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"'/>
+	    <Inline url='"../data/flower.x3d"     "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"'/>
+	    <Inline url='"../data/flower3.x3d"    "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"'/>
+	    <Inline url='"../data/flowers.x3d"    "https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d"'/>
+	    <Inline url='"../data/flowers2.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"'/>
+	    <Inline url='"../data/flowers4.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"'/>
+	    <Inline url='"../data/flowers7.x3d"   "https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"'/>
+	    
+      children=[
+      Inline(url=["../data/force-tidy.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d"])])]
+    # 
+    <Script DEF="Choice0">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 0;
+      }
+      function touchTime(value) {
+          choice = 0;
+      }
+      ]]>
+    </Script>
+	<Transform translation="0 4 0">
+	  <TouchSensor description="Ball Prism" DEF="BallPrism_Sensor"/>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Ball Prism"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="BallPrism_Sensor" fromField="touchTime" toNode="Choice0" toField="touchTime"/>
+<ROUTE fromNode="Choice0" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice1">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 1;
+      }
+      function touchTime(value) {
+          choice = 1;
+      }
+      ]]>
+    </Script>
+	<Transform translation="0 3 0">
+	  <TouchSensor description="Floating Extrusion" DEF="FloatingExtrusion_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Floating Extrusion"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="FloatingExtrusion_Sensor" fromField="touchTime" toNode="Choice1" toField="touchTime"/>
+<ROUTE fromNode="Choice1" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice2">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 2;
+      }
+      function touchTime(value) {
+          choice = 2;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 2 0">
+<TouchSensor description="Flower" DEF="Flower_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flower"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flower_Sensor" fromField="touchTime" toNode="Choice2" toField="touchTime"/>
+<ROUTE fromNode="Choice2" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice3">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 3;
+      }
+      function touchTime(value) {
+          choice = 3;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 1 0">
+<TouchSensor description="Flower 3" DEF="Flower3_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flower 3"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flower3_Sensor" fromField="touchTime" toNode="Choice3" toField="touchTime"/>
+<ROUTE fromNode="Choice3" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice4">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 4;
+      }
+      function touchTime(value) {
+          choice = 4;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 0 0">
+<TouchSensor description="Flowers" DEF="Flowers_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flowers"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flowers_Sensor" fromField="touchTime" toNode="Choice4" toField="touchTime"/>
+<ROUTE fromNode="Choice4" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice5">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 5;
+      }
+      function touchTime(value) {
+          choice = 5;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 -1 0">
+<TouchSensor description="Flowers 2" DEF="Flowers2_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flowers 2"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flowers2_Sensor" fromField="touchTime" toNode="Choice5" toField="touchTime"/>
+<ROUTE fromNode="Choice5" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice6">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 6;
+      }
+      function touchTime(value) {
+          choice = 6;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 -2 0">
+<TouchSensor description="Flowers 4" DEF="Flowers4_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flowers 4"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flowers4_Sensor" fromField="touchTime" toNode="Choice6" toField="touchTime"/>
+<ROUTE fromNode="Choice6" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice7">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 7;
+      }
+      function touchTime(value) {
+          choice = 7;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 -3 0">
+<TouchSensor description="Flowers 7 Inner Brow Raiser" DEF="Flowers7_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Flowers 7"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Flowers7_Sensor" fromField="touchTime" toNode="Choice7" toField="touchTime"/>
+<ROUTE fromNode="Choice7" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+
+    <Script DEF="Choice8">
+      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
+      <field name="choice" type="SFInt32" accessType="outputOnly"/>
+      <![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 8;
+      }
+      function touchTime(value) {
+          choice = 8;
+      }
+      ]]>
+    </Script>
+<Transform translation="0 -4 0">
+<TouchSensor description="Force" DEF="Force_Sensor"/>
+
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text string='"Force"'>
+
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
+            <Coordinate point="2 1.3833333333333333 -0.1, -2 1.3833333333333333 -0.1, -2 -1.616666666666667 -0.1, 2 -1.616666666666667 -0.1"/>
+
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+<ROUTE fromNode="Force_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"/>
+<ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
+    
+    )
+) # X3D model complete
+
+####################################################################################################
+# Self-test diagnostics
+####################################################################################################
+
+print('Self-test diagnostics for personal.py:')
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
+# print(newModelXML) # diagnostic
+
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful", flush=True)
+except Exception as err: # usually BaseException
+    # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
+    print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (under development)")
+except Exception as err: # usually SyntaxError
+    print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python personal.py load and self-test diagnostics complete.")
