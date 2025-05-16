@@ -10,7 +10,7 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> 12 extrusions to test prototype expander. </p>
+ * <p> 12 extrusions. </p>
  <p> Related links: qq3.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> 12 extrusions to test prototype expander </td>
+			<td> 12 extrusions </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -96,7 +96,7 @@ qq3.prototype = {
     .addMeta((new autoclass.meta()).setName("translator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("11 Jan 2015"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("05 May 2017"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("12 extrusions to test prototype expander"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("12 extrusions"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual")))
   .setScene((new autoclass.Scene())
