@@ -575,6 +575,8 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 	<script src="../node/loaderJQuery.js"></script>
 	<script src="../node/loadJson.js"></script>
     	<script type="text/javascript">
+		let IS_X3DOM = false;
+		let IS_X_ITE = true;
 		$(document).ready(function() {
 		console.log("Loading sphereflowers");
 			window.myLoadJson('../personal/sphereflowers.json'); // does load sphereflowers.json
