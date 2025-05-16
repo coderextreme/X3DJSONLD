@@ -52,10 +52,10 @@ for screen in bpy.data.screens:
             rv3d.view_rotation = Quaternion((1.0, 0.0, 0.0, 0.0))
             rv3d.update()
 
-#bpy.ops.wm.collada_import(filepath = "maleWaving.dae", auto_connect = True, find_chains = True, fix_orientation = True)
+bpy.ops.wm.collada_import(filepath = "maleWaving.dae", auto_connect = True, find_chains = True, fix_orientation = True)
 
-#bpy.ops.export_scene.x3d(filepath="maleWaving.x3d")
-bpy.ops.import_scene.x3d(filepath="maleWaving.x3d", prefer_flat=True, axis_forward='Y', axis_up='-Z')
+bpy.ops.export_scene.x3d(filepath="maleWaving.x3d")
+#bpy.ops.import_scene.x3d(filepath="maleWaving.x3d", prefer_flat=True, axis_forward='Y', axis_up='-Z')
 
 #bpy.ops.export_scene.x3dv(filepath="maleWavingExportMW.x3d",
 #                         export_round_precision=20,
@@ -63,14 +63,14 @@ bpy.ops.import_scene.x3d(filepath="maleWaving.x3d", prefer_flat=True, axis_forwa
 #                         export_normals=True,
 #                         export_format="X3D"
 #                         )
-bpy.ops.export_scene.gltf(
-    filepath=os.path.join(".", f"maleWaving.gltf"),
-    export_yup=False,
-    export_format="GLTF_SEPARATE",
-    # export_format="GLB",
-    export_nla_strips_merged_animation_name='Animation',
-    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
-    export_influence_nb=40,
-    export_all_influences=True,
-    use_active_collection=True
-)
+#bpy.ops.export_scene.gltf(
+#    filepath=os.path.join(".", f"maleWaving.gltf"),
+#    export_yup=False,
+#    export_format="GLTF_SEPARATE",
+#    # export_format="GLB",
+#    export_nla_strips_merged_animation_name='Animation',
+#    export_animation_mode="ACTIVE_ACTIONS", #"SCENE", 
+#    export_influence_nb=40,
+#    export_all_influences=True,
+#    use_active_collection=True
+#)
