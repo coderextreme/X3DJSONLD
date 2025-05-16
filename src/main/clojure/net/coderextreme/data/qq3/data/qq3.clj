@@ -65,7 +65,7 @@
         ))
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )
             (.setName "description")
-            (.setContent "12 extrusions to test prototype expander")
+            (.setContent "12 extrusions")
         ))
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )
             (.setName "identifier")

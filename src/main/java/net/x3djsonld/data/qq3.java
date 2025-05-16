@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> 12 extrusions to test prototype expander. </p>
+ * <p> 12 extrusions. </p>
  <p> Related links:  source qq3.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> 12 extrusions to test prototype expander </td>
+			<td> 12 extrusions </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -87,7 +87,7 @@ public class qq3
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("11 Jan 2015"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("05 May 2017"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("12 extrusions to test prototype expander"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("12 extrusions"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/qq3.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual")))
   .setScene(new Scene()

@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('description'),
-              content_ : SFString('12 extrusions to test prototype expander')),
+              content_ : SFString('12 extrusions')),
 
             meta(
               name_ : SFString('identifier'),
