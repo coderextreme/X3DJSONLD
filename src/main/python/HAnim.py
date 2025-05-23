@@ -61,7 +61,6 @@ for elem in sites:
             print("X:", "x", "m")
             print("Y:", "y", "m")
             print("Z:", "z", "m")
-            print("")
         if enum.get('alias') is not None:
             print("Aliases:", enum.get('alias'))
         print("")

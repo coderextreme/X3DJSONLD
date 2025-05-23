@@ -1392,7 +1392,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 sellion
 Type: site
@@ -1483,7 +1482,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 suprasternale
 Type: site
@@ -1550,7 +1548,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 r_clavicle
 Type: site
@@ -1599,7 +1596,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 spine_1_middle_back
 Type: site
@@ -1608,7 +1604,6 @@ Index: 24
 X: x m
 Y: y m
 Z: z m
-
 Aliases: middle back
 
 --------------------------------
@@ -1629,7 +1624,6 @@ Index: 26
 X: x m
 Y: y m
 Z: z m
-
 Aliases: waist_preferred_ant
 
 --------------------------------
@@ -1777,7 +1771,6 @@ Index: 41
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_kneecap
 
 --------------------------------
@@ -1788,7 +1781,6 @@ Index: 42
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_trochanter
 
 --------------------------------
@@ -1819,7 +1811,6 @@ Index: 45
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_kneecap
 
 --------------------------------
@@ -1830,7 +1821,6 @@ Index: 46
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_trochanter
 
 --------------------------------
@@ -1842,7 +1832,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_medial_malleolus
 Type: site
@@ -1851,7 +1840,6 @@ Index: 48
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 l_lateral_malleolus
@@ -1862,7 +1850,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_sphyrion
 Type: site
@@ -1871,7 +1858,6 @@ Index: 50
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 r_tibiale
@@ -1882,7 +1868,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 r_medial_malleolus
 Type: site
@@ -1891,7 +1876,6 @@ Index: 52
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 r_lateral_malleolus
@@ -1902,7 +1886,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 r_sphyrion
 Type: site
@@ -1912,7 +1895,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_metatarsal_phalanx_1
 Type: site
@@ -1921,7 +1903,6 @@ Index: 55
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_metatarsal_pha1
 
 --------------------------------
@@ -1932,7 +1913,6 @@ Index: 56
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_metatarsal_pha5
 
 --------------------------------
@@ -1952,7 +1932,6 @@ Index: 58
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_calcaneous_post
 
 --------------------------------
@@ -1963,7 +1942,6 @@ Index: 59
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_metatarsal_pha1
 
 --------------------------------
@@ -1974,7 +1952,6 @@ Index: 60
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_metatarsal_pha5
 
 --------------------------------
@@ -1994,7 +1971,6 @@ Index: 62
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_calcaneous_post
 
 --------------------------------
@@ -2117,7 +2093,6 @@ Index: 75
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_metacarpal_pha2,l_metacarpal_phalanx
 
 --------------------------------
@@ -2129,7 +2104,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_metacarpal_phalanx_5
 Type: site
@@ -2138,7 +2112,6 @@ Index: 77
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_metacarpal_pha5
 
 --------------------------------
@@ -2149,7 +2122,6 @@ Index: 78
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_metacarpal_pha2,r_metacarpal_phalanx
 
 --------------------------------
@@ -2161,7 +2133,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 r_metacarpal_phalanx_5
 Type: site
@@ -2170,7 +2141,6 @@ Index: 80
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_metacarpal_pha5
 
 --------------------------------
@@ -2219,7 +2189,6 @@ Index: 85
 X: x m
 Y: y m
 Z: z m
-
 Aliases: l_canthus
 
 --------------------------------
@@ -2230,7 +2199,6 @@ Index: 86
 X: x m
 Y: y m
 Z: z m
-
 Aliases: r_canthus
 
 --------------------------------
@@ -2241,7 +2209,6 @@ Index: 87
 X: x m
 Y: y m
 Z: z m
-
 Aliases: chin
 
 --------------------------------
@@ -2252,7 +2219,6 @@ Index: 88
 X: x m
 Y: y m
 Z: z m
-
 Aliases: mesosternum
 
 --------------------------------
@@ -2263,7 +2229,6 @@ Index: 89
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 l_knee_crease
@@ -2291,7 +2256,6 @@ Index: 92
 X: x m
 Y: y m
 Z: z m
-
 Aliases: median plane
 
 --------------------------------
@@ -2303,7 +2267,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_chest_midsagittal_plane
 Type: site
@@ -2312,7 +2275,6 @@ Index: 94
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 r_chest_midsagittal_plane
@@ -2323,7 +2285,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 l_bideltoid
 Type: site
@@ -2333,7 +2294,6 @@ X: x m
 Y: y m
 Z: z m
 
-
 --------------------------------
 r_bideltoid
 Type: site
@@ -2342,7 +2302,6 @@ Index: 97
 X: x m
 Y: y m
 Z: z m
-
 
 --------------------------------
 l_carpal_distal_phalanx_1
