@@ -1,81 +1,81 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "4.0"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "title"
             content: "flower.x3d"
-        meta: meta
+        meta:
             name: "creator"
             content: "John Carlson"
-        meta: meta
+        meta:
             name: "generator"
             content: "manual"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "a flower"
-    scene: Scene
-        children: NavigationInfo
-        children: DirectionalLight
+    Scene:
+        NavigationInfo:
+        DirectionalLight:
             direction: [0, -0.8, -0.2]
             intensity: 0.5
-        children: Background
+        Background:
             skyColor: [1, 1, 1]
-        children: Viewpoint
+        Viewpoint:
             description: "One mathematical orbital"
             position: [0, 0, 50]
-        children: Transform
+        Transform:
             translation: [0, -1, 1]
             rotation: [0, 1, 0, 3.1415926]
             scale: [1.5, 1.5, 1.5]
-            child: Shape
-                appearance: Appearance
-                    material: Material
+            Shape:
+                Appearance:
+                    Material:
                         transparency: 0.1
                         diffuseColor: [0.9, 0.3, 0.3]
                         specularColor: [0.8, 0.8, 0.8]
                         shininess: 0.145
-                geometry: IndexedFaceSet
+                IndexedFaceSet:
                     ccw: false
                     convex: false
                     coordIndex: [0, 1, 2, -1]
                     DEF: "Orbit"
-                    coord: Coordinate
+                    Coordinate:
                         DEF: "OrbitCoordinates"
                         point: [0, 0, 1, 0, 1, 0, 1, 0, 0]
-        children: Script
+        Script:
             DEF: "OrbitScript"
-            field: field
+            field:
                 name: "set_fraction"
                 accessType: "inputOnly"
                 type: "SFFloat"
-            field: field
+            field:
                 name: "coordinates"
                 accessType: "outputOnly"
                 type: "MFVec3f"
-            field: field
+            field:
                 name: "coordIndexes"
                 accessType: "outputOnly"
                 type: "MFInt32"
-;<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
-(.setSourceCode "\\newline\\newlinevar e = 5;\\newlinevar f = 5;\\newlinevar g = 5;\\newlinevar h = 5;\\newlinevar resolution = 100;\\newlinevar t = 0;\\newlinevar p = 0;\\newline\\newlinefunction initialize() {\\newline     generateCoordinates(resolution);\\newline     var localci = [];\\newline     for ( i = 0; i < resolution-1; i++) {\\newline     	for ( j = 0; j < resolution-1; j++) {\\newline	     localci.push(i*resolution+j);\\newline	     localci.push(i*resolution+j+1);\\newline	     localci.push((i+1)*resolution+j+1);\\newline	     localci.push((i+1)*resolution+j);\\newline	     localci.push(-1);\\newline	}\\newline    }\\newline    coordIndexes = new MFInt32(...localci);\\newline}\\newline\\newlinefunction generateCoordinates(resolution) {\\newline     var theta = 0.0;\\newline     var phi = 0.0;\\newline     var delta = (2 * 3.141592653) / (resolution-1);\\newline     var localc = [];\\newline     for ( i = 0; i < resolution; i++) {\\newline     	for ( j = 0; j < resolution; j++) {\\newline		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\\newline		localc.push(new SFVec3f(\\newline			rho * Math.cos(phi) * Math.cos(theta),\\newline			rho * Math.cos(phi) * Math.sin(theta),\\newline			rho * Math.sin(phi)\\newline		));\\newline		theta += delta;\\newline	}\\newline	phi += delta;\\newline     }\\newline     coordinates = new MFVec3f(...localc);\\newline}\\newline\\newlinefunction set_fraction(fraction, eventTime) {\\newline	t += 0.5;\\newline	p += 0.5;\\newline	var choice = Math.floor(Math.random() * 4);\\newline	switch (choice) {\\newline	case 0:\\newline		e += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 1:\\newline		f += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 2:\\newline		g += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 3:\\newline		h += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	}\\newline	if (f < 1) {\\newline		f = 10;\\newline	}\\newline	if (g < 1) {\\newline		g = 4;\\newline	}\\newline	if (h < 1) {\\newline		h = 4;\\newline	}\\newline	generateCoordinates(resolution);\\newline}\\newline")        children: TimeSensor
+#<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
+(.setSourceCode "\\newline\\newlinevar e = 5;\\newlinevar f = 5;\\newlinevar g = 5;\\newlinevar h = 5;\\newlinevar resolution = 100;\\newlinevar t = 0;\\newlinevar p = 0;\\newline\\newlinefunction initialize() {\\newline     generateCoordinates(resolution);\\newline     var localci = [];\\newline     for ( i = 0; i < resolution-1; i++) {\\newline     	for ( j = 0; j < resolution-1; j++) {\\newline	     localci.push(i*resolution+j);\\newline	     localci.push(i*resolution+j+1);\\newline	     localci.push((i+1)*resolution+j+1);\\newline	     localci.push((i+1)*resolution+j);\\newline	     localci.push(-1);\\newline	}\\newline    }\\newline    coordIndexes = new MFInt32(...localci);\\newline}\\newline\\newlinefunction generateCoordinates(resolution) {\\newline     var theta = 0.0;\\newline     var phi = 0.0;\\newline     var delta = (2 * 3.141592653) / (resolution-1);\\newline     var localc = [];\\newline     for ( i = 0; i < resolution; i++) {\\newline     	for ( j = 0; j < resolution; j++) {\\newline		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\\newline		localc.push(new SFVec3f(\\newline			rho * Math.cos(phi) * Math.cos(theta),\\newline			rho * Math.cos(phi) * Math.sin(theta),\\newline			rho * Math.sin(phi)\\newline		));\\newline		theta += delta;\\newline	}\\newline	phi += delta;\\newline     }\\newline     coordinates = new MFVec3f(...localc);\\newline}\\newline\\newlinefunction set_fraction(fraction, eventTime) {\\newline	t += 0.5;\\newline	p += 0.5;\\newline	var choice = Math.floor(Math.random() * 4);\\newline	switch (choice) {\\newline	case 0:\\newline		e += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 1:\\newline		f += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 2:\\newline		g += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	case 3:\\newline		h += Math.floor(Math.random() * 2) * 2 - 1;\\newline		break;\\newline	}\\newline	if (f < 1) {\\newline		f = 10;\\newline	}\\newline	if (g < 1) {\\newline		g = 4;\\newline	}\\newline	if (h < 1) {\\newline		h = 4;\\newline	}\\newline	generateCoordinates(resolution);\\newline}\\newline")        TimeSensor:
             DEF: "Clock"
             cycleInterval: 16.0
             loop: true
-        children: ROUTE
+        ROUTE:
             fromNode: "OrbitScript"
             fromField: "coordIndexes"
             toNode: "Orbit"
             toField: "set_coordIndex"
-        children: ROUTE
+        ROUTE:
             fromNode: "OrbitScript"
             fromField: "coordinates"
             toNode: "OrbitCoordinates"
             toField: "point"
-        children: ROUTE
+        ROUTE:
             fromNode: "Clock"
             fromField: "fraction_changed"
             toNode: "OrbitScript"

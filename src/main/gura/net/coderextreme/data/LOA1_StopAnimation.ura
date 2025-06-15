@@ -1,452 +1,452 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "3.3"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "title"
             content: "LOA1_StopAnimation.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "Humanoid animation prototype reusable by any Humanoid."
-        meta: meta
+        meta:
             name: "creator"
             content: "Cindy Ballreich cindy@ballreich.net 3Name3D, Joe Williams, Don Brutzman"
-        meta: meta
+        meta:
             name: "rights"
             content: "1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."
-        meta: meta
+        meta:
             name: "translator"
             content: "Ozan APAYDIN"
-        meta: meta
+        meta:
             name: "created"
             content: "1 December 2001"
-        meta: meta
+        meta:
             name: "modified"
             content: "23 May 2020"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://www.HAnim.org"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://HAnim.org/Models"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://HAnim.org/Nodes"
-        meta: meta
+        meta:
             name: "subject"
             content: "Nancy Stand Animation HAnim 2001"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StopAnimation.x3d"
-        meta: meta
+        meta:
             name: "generator"
             content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        meta: meta
+        meta:
             name: "license"
             content: "../license.html"
-    scene: Scene
-        children: WorldInfo
+    Scene:
+        WorldInfo:
             title: "LOA1_StopAnimation.x3d"
-        children: ProtoDeclare
+        ProtoDeclare:
             name: "LOA1_StopAnimation"
-            protoInterface: ProtoInterface
-                field: field
+            ProtoInterface:
+                field:
                     name: "cycleInterval"
                     accessType: "inputOutput"
                     type: "SFTime"
                     value: "0.009999999776482582"
-                field: field
+                field:
                     name: "enabled"
                     accessType: "inputOutput"
                     type: "SFBool"
                     value: "true"
-                field: field
+                field:
                     name: "loop"
                     accessType: "inputOutput"
                     type: "SFBool"
                     value: "true"
-                field: field
+                field:
                     name: "startTime"
                     accessType: "inputOutput"
                     type: "SFTime"
                     value: "0"
-                field: field
+                field:
                     name: "stopTime"
                     accessType: "inputOutput"
                     type: "SFTime"
                     value: "-1"
-                field: field
+                field:
                     name: "fraction_changed"
                     accessType: "outputOnly"
                     type: "SFFloat"
-                field: field
+                field:
                     name: "isActive"
                     accessType: "outputOnly"
                     type: "SFBool"
-                field: field
+                field:
                     name: "HumanoidRoot_translation_changed"
                     accessType: "outputOnly"
                     type: "SFVec3f"
-                field: field
+                field:
                     name: "HumanoidRoot_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "lower_body_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_hip_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_knee_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_ankle_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_midtarsal_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_hip_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_knee_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_ankle_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_midtarsal_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "vl5_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "skullbase_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_shoulder_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_elbow_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "l_wrist_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_shoulder_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_elbow_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-                field: field
+                field:
                     name: "r_wrist_rotation_changed"
                     accessType: "outputOnly"
                     type: "SFRotation"
-            protoBody: ProtoBody
-                children: Group
-                    children: TimeSensor
+            ProtoBody:
+                Group:
+                    TimeSensor:
                         DEF: "TIMER"
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "cycleInterval"
                                 protoField: "cycleInterval"
-                            connect: connect
+                            connect:
                                 nodeField: "enabled"
                                 protoField: "enabled"
-                            connect: connect
+                            connect:
                                 nodeField: "loop"
                                 protoField: "loop"
-                            connect: connect
+                            connect:
                                 nodeField: "startTime"
                                 protoField: "startTime"
-                            connect: connect
+                            connect:
                                 nodeField: "stopTime"
                                 protoField: "stopTime"
-                            connect: connect
+                            connect:
                                 nodeField: "fraction_changed"
                                 protoField: "fraction_changed"
-                            connect: connect
+                            connect:
                                 nodeField: "isActive"
                                 protoField: "isActive"
-                    children: PositionInterpolator
+                    PositionInterpolator:
                         DEF: "HUMANOIDROOT_POSITION_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 0, 0, 0, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "HumanoidRoot_translation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "HUMANOIDROOT_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "HumanoidRoot_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "SACROILIAC_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "lower_body_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_HIP_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_hip_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_KNEE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_knee_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_ANKLE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_ankle_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_MIDTARSAL_ANIMATOR"
                         key: [0, 1]
                         keyValue: [1, 0, 0, 0, 1, 0, 0, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_midtarsal_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_HIP_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_hip_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_KNEE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_knee_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_ANKLE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_ankle_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_MIDTARSAL_ANIMATOR"
                         key: [0, 1]
                         keyValue: [1, 0, 0, 0, 1, 0, 0, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_midtarsal_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "VL5_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "vl5_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "SKULLBASE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "skullbase_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_SHOULDER_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_shoulder_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_ELBOW_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_elbow_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "L_WRIST_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "l_wrist_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_SHOULDER_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_shoulder_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_ELBOW_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_elbow_rotation_changed"
-                    children: OrientationInterpolator
+                    OrientationInterpolator:
                         DEF: "R_WRIST_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "value_changed"
                                 protoField: "r_wrist_rotation_changed"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "HUMANOIDROOT_POSITION_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "HUMANOIDROOT_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "SACROILIAC_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_HIP_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_KNEE_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_ANKLE_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_MIDTARSAL_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_HIP_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_KNEE_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_ANKLE_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_MIDTARSAL_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "VL5_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "SKULLBASE_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_SHOULDER_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_ELBOW_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "L_WRIST_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_SHOULDER_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_ELBOW_ANIMATOR"
-                children: ROUTE
+                ROUTE:
                     fromField: "fraction_changed"
                     fromNode: "TIMER"
                     toField: "set_fraction"
                     toNode: "R_WRIST_ANIMATOR"
-;======================================
-;Point to example use in case someone inspects this file
-        children: Anchor
+#======================================
+#Point to example use in case someone inspects this file
+        Anchor:
             description: "InterchangableActorsViaDynamicRouting"
             parameter: ["target=_blank"]
             url: ["InterchangableActorsViaDynamicRouting.x3d", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d", "InterchangableActorsViaDynamicRouting.wrl", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"]
-            children: Shape
-                geometry: Text
+            Shape:
+                Text:
                     string: ["LOA1_StopAnimation.x3d", "defines a prototype", "for animating a humanoid.", "", "Click this text to see", "InterchangableActorsViaDynamicRouting example."]
-                    fontStyle: FontStyle
+                    FontStyle:
                         justify: ["MIDDLE", "MIDDLE"]
                         size: 0.8
-                appearance: Appearance
-                    material: Material
+                Appearance:
+                    Material:
                         diffuseColor: [1, 1, 0.2]

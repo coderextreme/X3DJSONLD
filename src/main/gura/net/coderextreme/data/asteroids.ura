@@ -1,37 +1,37 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "3.3"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "title"
             content: "asteroids.x3d"
-        meta: meta
+        meta:
             name: "creator"
             content: "John Carlson"
-        meta: meta
+        meta:
             name: "generator"
             content: "manual"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "asteroids"
-    scene: Scene
-        children: ProtoDeclare
+    Scene:
+        ProtoDeclare:
             name: "anyShape"
-            protoInterface: ProtoInterface
-                field: field
+            ProtoInterface:
+                field:
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    children: Shape
-                        geometry: Sphere
-            protoBody: ProtoBody
-                children: Transform
-                    IS: IS
-                        connect: connect
+                    Shape:
+                        Sphere:
+            ProtoBody:
+                Transform:
+                    IS:
+                        connect:
                             nodeField: "children"
                             protoField: "myShape"
-        children: ProtoInstance
+        ProtoInstance:
             name: "anyShape"

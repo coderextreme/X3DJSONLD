@@ -1,88 +1,88 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "4.0"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "converter"
             content: "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
-        meta: meta
+        meta:
             name: "converted"
             content: "Mon, 31 Jul 2023 03:48:04 GMT"
-    scene: Scene
-        children: NavigationInfo
+    Scene:
+        NavigationInfo:
             headlight: false
-        children: Group
-            children: Group
+        Group:
+            Group:
                 DEF: "ARROW"
-                children: Shape
-                    appearance: Appearance
+                Shape:
+                    Appearance:
                         DEF: "ARROW_APPEARANCE"
-                        material: Material
+                        Material:
                             diffuseColor: [0.3, 0.3, 1]
                             emissiveColor: [0.3, 0.3, 0.33]
-                    geometry: Cylinder
+                    Cylinder:
                         top: false
                         bottom: false
                         radius: 0.025
-                children: Transform
+                Transform:
                     translation: [0, 1, 0]
-                    child: Shape
+                    Shape:
                         DEF: "ARROW_POINTER"
-                        appearance: Appearance
+                        Appearance:
                             USE: "ARROW_APPEARANCE"
-                        geometry: Cone
+                        Cone:
                             height: 0.1
                             bottomRadius: 0.05
-                children: Transform
+                Transform:
                     translation: [0, -1, 0]
                     rotation: [1, 0, 0, 3.1416]
-                    child: Shape
+                    Shape:
                         USE: "ARROW_POINTER"
-            children: Transform
+            Transform:
                 translation: [0, 1.08, 0]
-                children: Billboard
-                    children: Shape
-                        appearance: Appearance
+                Billboard:
+                    Shape:
+                        Appearance:
                             DEF: "LABEL_APPEARANCE"
-                            material: Material
+                            Material:
                                 diffuseColor: [1, 1, 0.3]
                                 emissiveColor: [0.33, 0.33, 0.1]
-                        geometry: Text
+                        Text:
                             string: ["Y"]
-                            fontStyle: FontStyle
+                            FontStyle:
                                 DEF: "LABEL_FONT"
                                 family: ["SANS"]
                                 size: 0.2
                                 justify: ["MIDDLE"]
-        children: Transform
+        Transform:
             rotation: [0, 0, 1, -1.5708]
-            children: Group
-                children: Group
+            Group:
+                Group:
                     USE: "ARROW"
-                children: Transform
+                Transform:
                     translation: [0.072, 1.1, 0]
                     rotation: [0, 0, 1, 1.5708]
-                    children: Billboard
-                        children: Shape
-                            appearance: Appearance
+                    Billboard:
+                        Shape:
+                            Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            geometry: Text
+                            Text:
                                 string: ["X"]
-                                fontStyle: FontStyle
+                                FontStyle:
                                     USE: "LABEL_FONT"
-        children: Transform
+        Transform:
             rotation: [1, 0, 0, 1.5708]
-            children: Group
-                children: Group
+            Group:
+                Group:
                     USE: "ARROW"
-                children: Transform
+                Transform:
                     translation: [0, 1.1, 0.072]
                     rotation: [1, 0, 0, -1.5708]
-                    children: Billboard
-                        children: Shape
-                            appearance: Appearance
+                    Billboard:
+                        Shape:
+                            Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            geometry: Text
+                            Text:
                                 string: ["Z"]
-                                fontStyle: FontStyle
+                                FontStyle:
                                     USE: "LABEL_FONT"

@@ -1,107 +1,107 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "3.3"
-    head: head
-;Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
-        meta: meta
+    head:
+#Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
+        meta:
             name: "title"
             content: "HelloWorld.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "Simple X3D model example: Hello World!"
-        meta: meta
+        meta:
             name: "created"
             content: "30 October 2000"
-        meta: meta
+        meta:
             name: "modified"
             content: "20 October 2019"
-        meta: meta
+        meta:
             name: "creator"
             content: "Don Brutzman"
-        meta: meta
+        meta:
             name: "Image"
             content: "HelloWorld.tall.png"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://en.wikipedia.org/wiki/Hello_world"
-        meta: meta
+        meta:
             name: "reference"
             content: "https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"
-        meta: meta
+        meta:
             name: "reference"
             content: "https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://www.HelloWorldExample.net"
-        meta: meta
+        meta:
             name: "reference"
             content: "https://www.web3d.org"
-        meta: meta
+        meta:
             name: "reference"
             content: "https://www.web3d.org/realtime-3d/news/internationalization-x3d"
-        meta: meta
+        meta:
             name: "reference"
             content: "https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
-        meta: meta
+        meta:
             name: "reference"
             content: "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"
-        meta: meta
+        meta:
             name: "identifier"
             content: "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
-        meta: meta
+        meta:
             name: "license"
             content: "https://www.web3d.org/x3d/content/examples/license.html"
-        meta: meta
+        meta:
             name: "generator"
             content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        meta: meta
+        meta:
             name: "reference"
             content: "HelloWorld.wrl"
-        meta: meta
+        meta:
             name: "reference"
             content: "HelloWorld.x3dv"
-        meta: meta
+        meta:
             name: "reference"
             content: "HelloWorld.x3db"
-        meta: meta
+        meta:
             name: "reference"
             content: "HelloWorld.xhtml"
-        meta: meta
+        meta:
             name: "reference"
             content: "HelloWorld.json"
-    scene: Scene
-;Example scene to illustrate X3D nodes and fields (XML elements and attributes)
-        children: WorldInfo
+    Scene:
+#Example scene to illustrate X3D nodes and fields (XML elements and attributes)
+        WorldInfo:
             info: ["Example scene to illustrate a simple X3D model"]
             title: "Hello World!"
-        children: Group
-            children: Viewpoint
+        Group:
+            Viewpoint:
                 DEF: "ViewUpClose"
                 centerOfRotation: [0, -1, 0]
                 description: "Hello world!"
                 position: [0, -1, 7]
-            children: Transform
+            Transform:
                 rotation: [0, 1, 0, 3]
-                child: Shape
-                    geometry: Sphere
-                    appearance: Appearance
-                        material: Material
+                Shape:
+                    Sphere:
+                    Appearance:
+                        Material:
                             DEF: "MaterialLightBlue"
                             diffuseColor: [0.1, 0.5, 1]
-                        texture: ImageTexture
+                        ImageTexture:
                             DEF: "ImageCloudlessEarth"
                             url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
-            children: Transform
+            Transform:
                 translation: [0, -2, 0]
-                child: Shape
-                    geometry: Text
+                Shape:
+                    Text:
                         DEF: "TextMessage"
                         string: ["Hello", "world!"]
-                        fontStyle: FontStyle
+                        FontStyle:
                             justify: ["MIDDLE", "MIDDLE"]
-                    appearance: Appearance
-                        material: Material
+                    Appearance:
+                        Material:
                             USE: "MaterialLightBlue"
