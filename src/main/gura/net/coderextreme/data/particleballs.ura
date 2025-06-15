@@ -1,67 +1,67 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         component: [
             name: "ParticleSystems"
             level: 3
-        ]
+        ],
         meta: [
             name: "title"
             content: "particleflowers.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "description"
             content: "A flower proto with configurable shaders"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         WorldInfo: [
             title: "particleflowers.x3d"
-        ]
+        ],
         NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        ]
+        ],
         Viewpoint: [
             description: "Tour Views"
             position: [0, 0, 12]
-        ]
+        ],
         Background: [
             backUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
@@ -69,50 +69,51 @@ X3D:
             leftUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Transform: [
             ParticleSystem: [
                 maxParticles: 20
                 geometryType: "GEOMETRY"
                 BoundedPhysicsModel: [
-                    Sphere: [
+                    Sphere:
                         radius: 100.0
-                    ]
-                ]
-                ExplosionEmitter: [
+                ],
+                ExplosionEmitter:
                     speed: 2.0
                     variation: 0.75
-                ]
+,
+
 #<Shape>
-                Sphere: [
-                ]
-                Appearance: [
-                    Material: [
+                Sphere:
+,
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ]
-                    ComposedCubeMapTexture: [
+,
+                    ComposedCubeMapTexture:
                         DEF: "texture"
-                        ImageTexture: [
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                        ]
-                    ]
+,
+
 #<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
+
 #<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart type=\"VERTEX\" url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>
                     ComposedShader: [
                         language: "GLSL"
@@ -121,7 +122,7 @@ X3D:
                             accessType: "initializeOnly"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        ]
+                        ],
                         field: [
                             name: "cube"
                             type: "SFNode"
@@ -129,37 +130,36 @@ X3D:
                             ComposedCubeMapTexture: [
                                 USE: "texture"
                             ]
-                        ]
+                        ],
                         field: [
                             name: "bias"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "scale"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "power"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "2"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["../shaders/x_iteparticles.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs"]
                             type: "VERTEX"
-                        ]
+                        ],
                         ShaderPart: [
                             DEF: "commonfs"
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"]
                             type: "FRAGMENT"
                         ]
                     ]
-                ]
-            ]
+            ],
+
 #</Shape>
         ]
-    ]

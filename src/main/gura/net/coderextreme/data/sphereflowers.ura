@@ -1,71 +1,71 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "Scripting"
             level: 1
-        ]
+        ],
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "sphereflowers.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "created"
             content: "Jan 17 2022"
-        ]
+        ],
         meta: [
             name: "modified"
             content: "Sep 3 2023"
-        ]
+        ],
         meta: [
             name: "description"
             content: "5 or more prismatic flowers"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         NavigationInfo: [
-        ]
+        ],
         Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
@@ -73,7 +73,7 @@ X3D:
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Group: [
             ExternProtoDeclare: [
                 name: "FlowerProto"
@@ -82,65 +82,63 @@ X3D:
                     name: "vertex"
                     accessType: "inputOutput"
                     type: "MFString"
-                ]
+                ],
                 field: [
                     name: "fragment"
                     accessType: "inputOutput"
                     type: "MFString"
                 ]
-            ]
+            ],
             ProtoDeclare: [
                 name: "flower"
-                ProtoBody: [
+                ProtoBody:
                     Group: [
                         ProtoInstance: [
                             name: "FlowerProto"
                             fieldValue: [
                                 name: "vertex"
                                 value: "\"../shaders/x_ite_flowers_chromatic.vs\""
-                            ]
+                            ],
                             fieldValue: [
                                 name: "fragment"
                                 value: "\"../shaders/x_ite.fs\""
                             ]
                         ]
                     ]
-                ]
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             TimeSensor: [
                 DEF: "SongTime"
                 loop: true
-            ]
+            ],
             Sound: [
                 maxBack: 100.0
                 maxFront: 100.0
                 minBack: 20.0
                 minFront: 20.0
                 location: [0, 1, 0]
-                AudioClip: [
+                AudioClip:
                     DEF: "AudioClip"
                     description: "Chandubabamusic #1"
                     url: ["../resources/chandubabamusic1.wav", "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
-                ]
-            ]
+            ],
             ROUTE: [
                 fromField: "cycleTime"
                 fromNode: "SongTime"
@@ -148,4 +146,3 @@ X3D:
                 toNode: "AudioClip"
             ]
         ]
-    ]

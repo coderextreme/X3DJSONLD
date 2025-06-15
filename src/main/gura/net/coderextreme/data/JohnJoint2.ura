@@ -1,108 +1,107 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "HAnim"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "JohnJoint2.x3d"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint2.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "An attempt at a standard LOA-4 skeleton"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "h2.pl"
-        ]
+        ],
         meta: [
             name: "modified"
             content: "14 Jan 2023"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "created"
             content: "9 November 2020"
-        ]
+        ],
         meta: [
             name: "license"
             content: "../license.html"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         Transform: [
+
 #DEF for markerfor XYZ axes
             Shape: [
                 DEF: "AxisLinesShape"
+
 #RGB lines showing XYZ axes
-                IndexedLineSet: [
+                IndexedLineSet:
                     colorIndex: [0, 1, 2]
                     colorPerVertex: false
                     coordIndex: [0, 1, -1, 0, 2, -1, 0, 3, -1]
-                    Coordinate: [
+                    Coordinate:
                         point: [0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1]
-                    ]
-                    Color: [
+,
+                    Color:
                         color: [1, 0, 0, 0, 0.6, 0, 0, 0, 1]
-                    ]
-                ]
             ]
-        ]
+        ],
         Group: [
+
 #DEFS for markers of skeleton joints, segments, and sites
             Transform: [
+
 #<Transform translation='0 2 0' scale='1 1 1'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
                 Transform: [
                     translation: [0, 2.1, 0]
                     Shape: [
                         DEF: "HAnimJointShape"
-                        Sphere: [
+                        Sphere:
                             radius: 0.02
-                        ]
-                        Appearance: [
-                            Material: [
+                        ,
+                        Appearance:
+                            Material:
                                 DEF: "HAnimJointMaterial"
                                 diffuseColor: [0, 0, 0.8]
                                 transparency: 0.3
-                            ]
-                        ]
                     ]
-                ]
+                ],
                 Transform: [
                     translation: [0, 2.05, 0]
                     Shape: [
                         DEF: "HAnimSegmentLine"
-                        LineSet: [
+                        LineSet:
                             vertexCount: [2]
-                            ColorRGBA: [
+                            ColorRGBA:
                                 DEF: "HAnimSegmentLineColorRGBA"
                                 color: [1, 1, 0, 1, 1, 1, 0, 0.1]
-                            ]
-                            Coordinate: [
+,
+                            Coordinate:
                                 point: [-0.05, 0, 0, 0.05, 0, 0]
-                            ]
-                        ]
                     ]
-                ]
+                ],
+
 #<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
             ]
-        ]
+        ],
         NavigationInfo: [
             speed: 1.5
-        ]
+        ],
         Viewpoint: [
             description: "default"
-        ]
+        ],
         HAnimHumanoid: [
             name: "HAnim"
             DEF: "hanim_HAnim"
@@ -172,7 +171,7 @@ X3D:
                                                 ]
                                             ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_cuneonavicular_2"
                                         DEF: "hanim_l_cuneonavicular_2"
@@ -207,7 +206,7 @@ X3D:
                                                 ]
                                             ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_cuneonavicular_3"
                                         DEF: "hanim_l_cuneonavicular_3"
@@ -243,7 +242,7 @@ X3D:
                                             ]
                                         ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_calcaneocuboid"
                                     DEF: "hanim_l_calcaneocuboid"
@@ -283,7 +282,7 @@ X3D:
                                                     ]
                                                 ]
                                             ]
-                                        ]
+                                        ],
                                         HAnimJoint: [
                                             name: "l_tarsometatarsal_5"
                                             DEF: "hanim_l_tarsometatarsal_5"
@@ -316,7 +315,7 @@ X3D:
                                 ]
                             ]
                         ]
-                    ]
+                    ],
                     HAnimJoint: [
                         name: "r_hip"
                         DEF: "hanim_r_hip"
@@ -368,7 +367,7 @@ X3D:
                                                 ]
                                             ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "r_cuneonavicular_2"
                                         DEF: "hanim_r_cuneonavicular_2"
@@ -403,7 +402,7 @@ X3D:
                                                 ]
                                             ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "r_cuneonavicular_3"
                                         DEF: "hanim_r_cuneonavicular_3"
@@ -439,7 +438,7 @@ X3D:
                                             ]
                                         ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "r_calcaneocuboid"
                                     DEF: "hanim_r_calcaneocuboid"
@@ -479,7 +478,7 @@ X3D:
                                                     ]
                                                 ]
                                             ]
-                                        ]
+                                        ],
                                         HAnimJoint: [
                                             name: "r_tarsometatarsal_5"
                                             DEF: "hanim_r_tarsometatarsal_5"
@@ -513,7 +512,7 @@ X3D:
                             ]
                         ]
                     ]
-                ]
+                ],
                 HAnimJoint: [
                     name: "vl5"
                     DEF: "hanim_vl5"
@@ -670,42 +669,42 @@ X3D:
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "r_eyelid_joint"
                                                                                                                         DEF: "hanim_r_eyelid_joint"
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "l_eyeball_joint"
                                                                                                                         DEF: "hanim_l_eyeball_joint"
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "r_eyeball_joint"
                                                                                                                         DEF: "hanim_r_eyeball_joint"
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "l_eyebrow_joint"
                                                                                                                         DEF: "hanim_l_eyebrow_joint"
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "r_eyebrow_joint"
                                                                                                                         DEF: "hanim_r_eyebrow_joint"
                                                                                                                         center: [0, 1, 0]
                                                                                                                         ulimit: [0, 0, 0]
                                                                                                                         llimit: [0, 0, 0]
-                                                                                                                    ]
+                                                                                                                    ],
                                                                                                                     HAnimJoint: [
                                                                                                                         name: "temporomandibular"
                                                                                                                         DEF: "hanim_temporomandibular"
@@ -720,7 +719,7 @@ X3D:
                                                                                                 ]
                                                                                             ]
                                                                                         ]
-                                                                                    ]
+                                                                                    ],
                                                                                     HAnimJoint: [
                                                                                         name: "l_sternoclavicular"
                                                                                         DEF: "hanim_l_sternoclavicular"
@@ -778,7 +777,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "l_midcarpal_2"
                                                                                                             DEF: "hanim_l_midcarpal_2"
@@ -813,7 +812,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "l_midcarpal_3"
                                                                                                             DEF: "hanim_l_midcarpal_3"
@@ -848,7 +847,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "l_midcarpal_4_5"
                                                                                                             DEF: "hanim_l_midcarpal_4_5"
@@ -882,7 +881,7 @@ X3D:
                                                                                                                         ]
                                                                                                                     ]
                                                                                                                 ]
-                                                                                                            ]
+                                                                                                            ],
                                                                                                             HAnimJoint: [
                                                                                                                 name: "l_carpometacarpal_5"
                                                                                                                 DEF: "hanim_l_carpometacarpal_5"
@@ -916,7 +915,7 @@ X3D:
                                                                                                 ]
                                                                                             ]
                                                                                         ]
-                                                                                    ]
+                                                                                    ],
                                                                                     HAnimJoint: [
                                                                                         name: "r_sternoclavicular"
                                                                                         DEF: "hanim_r_sternoclavicular"
@@ -974,7 +973,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "r_midcarpal_2"
                                                                                                             DEF: "hanim_r_midcarpal_2"
@@ -1009,7 +1008,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "r_midcarpal_3"
                                                                                                             DEF: "hanim_r_midcarpal_3"
@@ -1044,7 +1043,7 @@ X3D:
                                                                                                                     ]
                                                                                                                 ]
                                                                                                             ]
-                                                                                                        ]
+                                                                                                        ],
                                                                                                         HAnimJoint: [
                                                                                                             name: "r_midcarpal_4_5"
                                                                                                             DEF: "hanim_r_midcarpal_4_5"
@@ -1078,7 +1077,7 @@ X3D:
                                                                                                                         ]
                                                                                                                     ]
                                                                                                                 ]
-                                                                                                            ]
+                                                                                                            ],
                                                                                                             HAnimJoint: [
                                                                                                                 name: "r_carpometacarpal_5"
                                                                                                                 DEF: "hanim_r_carpometacarpal_5"
@@ -1130,590 +1129,589 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_humanoid_root"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_sacroiliac"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_hip"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_knee"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_talocrural"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_talocalcaneonavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_cuneonavicular_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsometatarsal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metatarsophalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_interphalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_cuneonavicular_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsometatarsal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metatarsophalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_cuneonavicular_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsometatarsal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metatarsophalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_calcaneocuboid"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_transversetarsal"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsometatarsal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metatarsophalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsometatarsal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metatarsophalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_hip"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_knee"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_talocrural"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_talocalcaneonavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_cuneonavicular_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsometatarsal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metatarsophalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_interphalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_cuneonavicular_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsometatarsal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metatarsophalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_cuneonavicular_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsometatarsal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metatarsophalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_calcaneocuboid"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_transversetarsal"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsometatarsal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metatarsophalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsometatarsal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metatarsophalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vl5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vl4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vl3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vl2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vl1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt12"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt11"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt10"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt9"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt8"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt7"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt6"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vt1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc7"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc6"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_vc1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_skullbase"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_eyelid_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_eyelid_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_eyeball_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_eyeball_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_eyebrow_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_eyebrow_joint"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_temporomandibular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_sternoclavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_acromioclavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_shoulder"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_elbow"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_radiocarpal"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_interphalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_4_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_sternoclavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_acromioclavicular"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_shoulder"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_elbow"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_radiocarpal"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_midcarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpometacarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metacarpophalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_interphalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_midcarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpometacarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metacarpophalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_midcarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpometacarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metacarpophalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_midcarpal_4_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpometacarpal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metacarpophalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpometacarpal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_metacarpophalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_5"
             ]
         ]
-    ]

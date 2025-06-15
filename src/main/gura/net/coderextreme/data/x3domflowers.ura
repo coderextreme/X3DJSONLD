@@ -1,63 +1,64 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head: [
+    head:
         component: [
             name: "Scripting"
             level: 1
-        ]
+        ],
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "x3domflowers.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "description"
             content: "5 or more prismatic flowers"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         NavigationInfo: [
-        ]
+        ],
+
 #Images courtesy of Paul Debevec's Light Probe Image Gallery
         Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
@@ -66,7 +67,7 @@ X3D:
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Group: [
             ExternProtoDeclare: [
                 name: "FlowerProto"
@@ -75,48 +76,46 @@ X3D:
                     name: "vertex"
                     accessType: "inputOutput"
                     type: "MFString"
-                ]
+                ],
                 field: [
                     name: "fragment"
                     accessType: "inputOutput"
                     type: "MFString"
                 ]
-            ]
+            ],
             ProtoDeclare: [
                 name: "flower"
-                ProtoBody: [
+                ProtoBody:
                     Group: [
                         ProtoInstance: [
                             name: "FlowerProto"
                             fieldValue: [
                                 name: "vertex"
                                 value: "\"../shaders/x3dom_flowers_chromatic.vs\""
-                            ]
+                            ],
                             fieldValue: [
                                 name: "fragment"
                                 value: "\"../shaders/common.fs\""
                             ]
                         ]
                     ]
-                ]
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
-            ]
+            ],
             ProtoInstance: [
                 name: "flower"
             ]
         ]
-    ]
