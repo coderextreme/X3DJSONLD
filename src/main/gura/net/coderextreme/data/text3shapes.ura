@@ -26,14 +26,12 @@ X3D:
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
         ]
-    ,
     Scene:
         Transform: [
             Shape: [
                 Text:
                     string: ["Node\"\"\""]
                     FontStyle:
-                ,
                 Appearance:
                     Material:
             ],
@@ -41,7 +39,6 @@ X3D:
                 Text:
                     string: ["Node2", "\\\\", "\\\\\\\\", "Node2"]
                     FontStyle:
-                ,
                 Appearance:
                     Material:
             ],
@@ -49,7 +46,6 @@ X3D:
                 Text:
                     string: ["Node3 \\\\\\\\ \\\\ ", "Node3\"\"\""]
                     FontStyle:
-                ,
                 Appearance:
                     Material:
             ],
@@ -60,7 +56,7 @@ X3D:
                     accessType: "initializeOnly"
                     value: "\"rnl_front.png\" \"uffizi_front.png\""
                 ],
-
-#sourceCode "\\newline			    var me = '\"1\" \"\"2\" \"\\n3\"';\\newline"
+#ecmascript:
+#			    var me = '"1" ""2" "\\n3"';
             ]
         ]

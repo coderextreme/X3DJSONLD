@@ -22,7 +22,6 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],
@@ -33,7 +32,6 @@ X3D:
                     Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                ,
                 Sphere:
             ]
         ],
@@ -68,8 +66,37 @@ X3D:
                 accessType: "inputOnly"
                 type: "SFTime"
             ],
-
-#sourceCode "\\newline			function newBubble() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline				if (Math.abs(translation.x) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.y) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.z) > 10) {\\newline					newBubble();\\newline				} else {\\newline					velocity = new SFVec3f(\\newline						velocity.x + Math.random() * 0.2 - 0.1,\\newline						velocity.y + Math.random() * 0.2 - 0.1,\\newline						velocity.z + Math.random() * 0.2 - 0.1\\newline					);\\newline				}\\newline			}\\newline\\newline			function initialize() {\\newline			     newBubble();\\newline			}\\newline"
+#ecmascript:
+#			function newBubble() {
+#			    translation = new SFVec3f(0, 0, 0);
+#			    velocity = new SFVec3f(
+#			    	Math.random() - 0.5,
+#				Math.random() - 0.5,
+#				Math.random() - 0.5);
+#			}
+#			function set_fraction() {
+#			    translation = new SFVec3f(
+#			    	translation.x + velocity.x,
+#				translation.y + velocity.y,
+#				translation.z + velocity.z);
+#				if (Math.abs(translation.x) > 10) {
+#					newBubble();
+#				} else if (Math.abs(translation.y) > 10) {
+#					newBubble();
+#				} else if (Math.abs(translation.z) > 10) {
+#					newBubble();
+#				} else {
+#					velocity = new SFVec3f(
+#						velocity.x + Math.random() * 0.2 - 0.1,
+#						velocity.y + Math.random() * 0.2 - 0.1,
+#						velocity.z + Math.random() * 0.2 - 0.1
+#					);
+#				}
+#			}
+#
+#			function initialize() {
+#			     newBubble();
+#			}
         ],
         TimeSensor: [
             DEF: "TourTime"

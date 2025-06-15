@@ -22,7 +22,6 @@ X3D:
             name: "description"
             content: "a kind of rubik cube with spheres"
         ]
-    ,
     Scene:
         NavigationInfo: [
             type: ["EXAMINE"]
@@ -40,18 +39,16 @@ X3D:
                     type: "SFVec3f"
                     value: "0 0 0"
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "xtranslation"
                         ]
-,
+                    ],
                     Shape: [
                         Sphere:
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 1, 1]
@@ -67,15 +64,14 @@ X3D:
                     type: "SFVec3f"
                     value: "0 0 0"
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "ytranslation"
                         ]
-,
+                    ],
                     ProtoInstance: [
                         name: "sphereproto"
                         fieldValue: [
@@ -108,15 +104,14 @@ X3D:
                     type: "SFVec3f"
                     value: "0 0 0"
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "ztranslation"
                         ]
-,
+                    ],
                     ProtoInstance: [
                         name: "three"
                         fieldValue: [
@@ -149,15 +144,14 @@ X3D:
                     type: "SFVec3f"
                     value: "0 0 0"
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "ttranslation"
                         ]
-,
+                    ],
                     ProtoInstance: [
                         name: "nine"
                         fieldValue: [

@@ -58,15 +58,12 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
-
 #=============== Camera ==============
         ProtoDeclare: [
             name: "Camera"
             appinfo: "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images."
             ProtoInterface:
-
 #Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields
                 field: [
                     name: "description"
@@ -138,7 +135,6 @@ X3D:
                     accessType: "inputOutput"
                     appinfo: "Array of CameraShot nodes which in turn contain CameraMovement nodes"
                     type: "MFNode"
-
 #initialization nodes (if any) go here
                 ],
                 field: [
@@ -214,7 +210,6 @@ X3D:
                     accessType: "inputOutput"
                     appinfo: "OfflineRender node"
                     type: "SFNode"
-
 #initialization node (if any) goes here
                 ],
                 field: [
@@ -224,11 +219,10 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
                 Viewpoint: [
                     DEF: "CameraViewpoint"
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "description"
                             protoField: "description"
@@ -257,13 +251,13 @@ X3D:
                             nodeField: "isBound"
                             protoField: "isBound"
                         ]
+                    ]
                 ],
-
 #NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
                 NavigationInfo: [
                     DEF: "CameraNavInfo"
                     type: ["EXAMINE", "FLY", "ANY"]
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "set_bind"
                             protoField: "set_bind"
@@ -276,17 +270,15 @@ X3D:
                             nodeField: "visibilityLimit"
                             protoField: "farClipPlane"
                         ],
-
 #No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.
+                    ]
                 ],
-
 #this DirectionalLight replaces NavigationInfo headlight in order to add color capability
                 DirectionalLight: [
                     DEF: "CameraDirectionalLight"
                     global: true
-
 #TODO confirm other default field values match NavigationInfo spec
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "on"
                             protoField: "headlight"
@@ -299,26 +291,29 @@ X3D:
                             nodeField: "intensity"
                             protoField: "headlightIntensity"
                         ]
+                    ]
                 ],
                 PositionInterpolator: [
                     DEF: "CameraPositionInterpolator"
                     key: [0, 1]
                     keyValue: [0, 0, 0, 0, 0, 0]
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "set_fraction"
                             protoField: "set_fraction"
                         ]
+                    ]
                 ],
                 OrientationInterpolator: [
                     DEF: "CameraOrientationInterpolator"
                     key: [0, 1]
                     keyValue: [0, 1, 0, 0, 0, 1, 0, 0]
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "set_fraction"
                             protoField: "set_fraction"
                         ]
+                    ]
                 ],
                 ROUTE: [
                     fromField: "value_changed"
@@ -336,7 +331,6 @@ X3D:
                     DEF: "CameraScript"
                     directOutput: true
                     mustEvaluate: true
-
 #binding is controlled externally, all camera operations proceed the same regardless of whether bound or not
                     field: [
                         name: "description"
@@ -391,7 +385,6 @@ X3D:
                         accessType: "inputOutput"
                         appinfo: "Array of CameraShot nodes which in turn contain CameraMovement nodes"
                         type: "MFNode"
-
 #initialization nodes (if any) go here
                     ],
                     field: [
@@ -441,7 +434,6 @@ X3D:
                         accessType: "inputOutput"
                         appinfo: "OfflineRender node"
                         type: "SFNode"
-
 #initialization node (if any) goes here
                     ],
                     field: [
@@ -553,7 +545,7 @@ X3D:
                         appinfo: "enable console output to trace script computations and prototype progress"
                         type: "SFBool"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "description"
                             protoField: "description"
@@ -626,9 +618,347 @@ X3D:
                             nodeField: "traceEnabled"
                             protoField: "traceEnabled"
                         ]
-,
-
-#sourceCode "\\newlinefunction initialize () // CameraScript\\newline{\\newline//  tracePrint ('initialize start...');\\newline\\newline    NavInfoNode.avatarSize[0]   = nearClipPlane;\\newline\\newline    // remaining setups deferred to invocation of checkShots() method\\newline    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization\\newline    alwaysPrint ('initialize complete');\\newline}\\newline\\newlinefunction checkShots (eventValue)\\newline{\\newline    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');\\newline\\newline    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes\\newline    totalDuration= 0;\\newline    shotCount  = shots.length;\\newline    movesCount = 0;\\newline    for (i = 0; i < shotCount; i++) // shots index\\newline    {\\newline       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);\\newline       movesCount   += shots[i].moves.length;\\newline       totalDuration = totalDuration + shots[i].shotDuration;\\newline       if (shots[i].moves.length == 0)\\newline       {\\newline          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');\\newline       }\\newline    }\\newline    // size checks before proceeding\\newline    if (shotCount == 0)\\newline    {\\newline       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');\\newline       return;\\newline    }\\newline    else if (movesCount == 0)\\newline    {\\newline       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');\\newline       return;\\newline    }\\newline    else if (totalDuration == 0)\\newline    {\\newline       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');\\newline       return;\\newline    }\\newline    tracePrint ('number of contained CameraShot nodes=' + shotCount);\\newline    tracePrint ('number of contained CameraMove nodes=' + movesCount);\\newline    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');\\newline\\newline    // compute interpolators\\newline    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation\\newline    for (i = 0; i < shotCount; i++) // shots index\\newline    {\\newline        if (i==0) // initial entries\\newline        {\\newline           key[0]                   = 0.0; // no previous move\\newline           keyValuePosition[0]      = shots[i].initialPosition;\\newline           keyValueOrientation[0]   = shots[i].initialOrientation;\\newline        }\\newline        else     // new shot repositions, reorients camera as clean break from preceding shot/move\\newline        {\\newline           key[k+1]                 = key[k]; // start from end from previous move\\newline           keyValuePosition[k+1]    = shots[i].initialPosition;\\newline           keyValueOrientation[k+1] = shots[i].initialOrientation;\\newline           k++;\\newline        }\\newline        tracePrint (shots[i].description);\\newline        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);\\newline\\newline        for (j = 0; j < shots[i].moves.length; j++) // moves index\\newline        {\\newline            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime\\newline            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime\\newline            //  tracePrint ('durationFloat=' + durationFloat);\\newline            key[k+1]               = key[k] + (durationFloat / totalDuration);\\newline            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;\\newline            if (!animated)\\newline            {\\newline                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\\newline            }\\newline            else\\newline            {\\newline                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)\\newline                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions\\newline\\newline                // test if difference vector is zero, if so maintain previous rotation\\newline                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();\\newline                if (shotVector.length() >= 0)\\newline                {\\newline                    // default view direction is along -Z axis\\newline                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);\\newline                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\\newline                }\\newline                else // note (k > 0)\\newline                {\\newline                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change\\newline                }\\newline\\newline                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());\\newline                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());\\newline                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());\\newline                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());\\newline                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());\\newline                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\\n');\\newline            }\\newline            k++; // update index to match latest key, keyValuePosition, keyValueOrientation\\newline\\newline            // check animated parameter:  set true if any of moves are tracking moves\\newline            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true\\newline         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);\\newline\\newline            // intermediate trace\\newline            tracePrint ('                key=' + key);\\newline            tracePrint ('   keyValuePosition=' + keyValuePosition);\\newline            tracePrint ('keyValueOrientation=' + keyValueOrientation);\\newline            tracePrint ('- ' + shots[i].moves[j].description);\\newline        }\\newline    }\\newline    tracePrint ('                key=' + key);\\newline    tracePrint ('   keyValuePosition=' + keyValuePosition);\\newline    tracePrint ('keyValueOrientation=' + keyValueOrientation);\\newline    if (key.length != keyValuePosition.length)\\newline    {\\newline      alwaysPrint ('warning: internal error during array construction, ' +\\newline                  'key.length=' + key.length + ' must equal ' +\\newline                  'keyValuePosition.length=' + keyValuePosition.length);\\newline    }\\newline    if (key.length != keyValueOrientation.length)\\newline    {\\newline      alwaysPrint ('warning: internal error during array construction, ' +\\newline                  'key.length=' + key.length + ' must equal ' +\\newline                  'keyValueOrientation.length=' + keyValueOrientation.length);\\newline    }\\newline    if (key.length != (shotCount + movesCount))\\newline    {\\newline      alwaysPrint ('warning: internal error during array construction, ' +\\newline                  'key.length=' + key.length + ' must equal ' +\\newline                  '(shotCount + movesCount)=' + (shotCount + movesCount));\\newline    }\\newline    tracePrint ('           animated=' + animated);\\newline    // set node values\\newline    CameraPI.key      = key;\\newline    CameraOI.key      = key;\\newline    CameraPI.keyValue = keyValuePosition;\\newline    CameraOI.keyValue = keyValueOrientation;\\newline\\newline    if (!animated) // output results\\newline    {\\newline        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\newline        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\newline    }\\newline    tracePrint ('checkShots() complete');\\newline}\\newline\\newlinefunction stripBrackets (fieldArray)\\newline{\\newline    // some browsers add brackets to array output strings, this function strips them\\newline    outputString = '';\\newline    for (i = 0; i < fieldArray.length; i++)\\newline    {\\newline       outputString += fieldArray[i].toString();\\newline       if (i < fieldArray.length - 1) outputString += ' ';\\newline    }\\newline    return outputString;\\newline}\\newline\\newlinefunction set_fraction (eventValue, timestamp) // input event received for inputOnly field\\newline{\\newline   // traceEnabled = false;  // for testing purposes\\newline\\newline   // if Camera is being animated, immediately recompute interpolator settings\\newline   if (animated) checkShots (true);\\newline\\newline   // trace progress on console with reduced output frequency\\newline   if (frameCount == 0)\\newline   {\\newline      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);\\newline      startTime      = timestamp;\\newline      priorTraceTime = timestamp;\\newline      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\newline\\newline      if (animated) // output results\\newline      {\\newline        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\newline        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\newline        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\newline      }\\newline   }\\newline   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval\\newline   {\\newline      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\newline      priorTraceTime = timestamp;\\newline\\newline      if (animated) // output results\\newline      {\\newline        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\newline        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\newline        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\newline      }\\newline   }\\newline   if (eventValue == 0)\\newline   {\\newline      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored\\newline      frameCount++;\\newline   }\\newline   else if (eventValue == 1)\\newline   {\\newline      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\newline      if (animated) // output results\\newline      {\\newline        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\newline      }\\newline      alwaysPrint ('Animation loop complete.');\\newline      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally\\newline   }\\newline   else\\newline   {\\newline      frameCount++;\\newline   }\\newline}\\newline\\newlinefunction set_bind (eventValue) // input event received for inputOnly field\\newline{\\newline   // need to ensure CameraShot nodes are properly initialized\\newline   if (initialized == false)\\newline   {\\newline      checkShots (true);\\newline      initialized = true;\\newline   }\\newline   if (eventValue)\\newline   {\\newline       tracePrint ('Camera has been bound');\\newline   }\\newline   else\\newline   {\\newline       tracePrint ('Camera has been unbound');\\newline   }\\newline}\\newline\\newlinefunction set_description (eventValue) // input event received for inputOutput field\\newline{\\newline    description = eventValue;\\newline}\\newline\\newlinefunction set_position (eventValue) // input event received for inputOutput field\\newline{\\newline    position = eventValue;\\newline}\\newline\\newlinefunction set_orientation (eventValue) // input event received for inputOutput field\\newline{\\newline    orientation = eventValue;\\newline}\\newline\\newlinefunction set_fieldOfView (eventValue) // input event received for inputOutput field\\newline{\\newline    fieldOfView = eventValue;\\newline}\\newline\\newlinefunction set_nearClipPlane (eventValue) // input event received for inputOutput field\\newline{\\newline    nearClipPlane = eventValue;\\newline}\\newline\\newlinefunction set_farClipPlane (eventValue) // input event received for inputOutput field\\newline{\\newline    farClipPlane = eventValue;\\newline}\\newline\\newlinefunction set_shots (eventValue) // input event received for inputOutput field\\newline{\\newline    shots = eventValue;\\newline}\\newline\\newlinefunction set_filterColor (eventValue) // input event received for inputOutput field\\newline{\\newline    filterColor = eventValue;\\newline}\\newline\\newlinefunction set_filterTransparency (eventValue) // input event received for inputOutput field\\newline{\\newline    filterTransparency = eventValue;\\newline}\\newline\\newlinefunction set_upVector (eventValue) // input event received for inputOutput field\\newline{\\newline    upVector = eventValue;\\newline}\\newline\\newlinefunction set_fStop (eventValue) // input event received for inputOutput field\\newline{\\newline    fStop = eventValue;\\newline}\\newline\\newlinefunction set_focusDistance (eventValue) // input event received for inputOutput field\\newline{\\newline    focusDistance = eventValue;\\newline}\\newline\\newlinefunction set_offlineRender (eventValue) // input event received for inputOutput field\\newline{\\newline    offlineRender = eventValue;\\newline}\\newline\\newlinefunction set_key (eventValue) // input event received for inputOutput field\\newline{\\newline    key = eventValue;\\newline}\\newline\\newlinefunction set_keyValuePosition (eventValue) // input event received for inputOutput field\\newline{\\newline    keyValuePosition = eventValue;\\newline}\\newline\\newlinefunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\\newline{\\newline    keyValueOrientation = eventValue;\\newline}\\newline\\newlinefunction set_animated (eventValue) // input event received for inputOutput field\\newline{\\newline    animated = eventValue;\\newline}\\newline\\newlinefunction tracePrint (outputValue)\\newline{\\newline	if (traceEnabled) alwaysPrint (outputValue);\\newline}\\newlinefunction alwaysPrint (outputValue)\\newline{\\newline    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies\\newline    var outputString = outputValue.toString(); // utility function according to spec\\newline    if (outputString == null) outputString = outputValue; // direct cast\\newline\\newline    if  (description.length > 0)\\newline         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');\\newline    else\\newline         Browser.print ('[Camera] ' + outputString + '\\n');\\newline}\\newline"
+                    ],
+#ecmascript:
+#function initialize () // CameraScript
+#{
+#//  tracePrint ('initialize start...');
+#
+#    NavInfoNode.avatarSize[0]   = nearClipPlane;
+#
+#    // remaining setups deferred to invocation of checkShots() method
+#    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization
+#    alwaysPrint ('initialize complete');
+#}
+#
+#function checkShots (eventValue)
+#{
+#    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');
+#
+#    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes
+#    totalDuration= 0;
+#    shotCount  = shots.length;
+#    movesCount = 0;
+#    for (i = 0; i < shotCount; i++) // shots index
+#    {
+#       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);
+#       movesCount   += shots[i].moves.length;
+#       totalDuration = totalDuration + shots[i].shotDuration;
+#       if (shots[i].moves.length == 0)
+#       {
+#          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');
+#       }
+#    }
+#    // size checks before proceeding
+#    if (shotCount == 0)
+#    {
+#       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');
+#       return;
+#    }
+#    else if (movesCount == 0)
+#    {
+#       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');
+#       return;
+#    }
+#    else if (totalDuration == 0)
+#    {
+#       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');
+#       return;
+#    }
+#    tracePrint ('number of contained CameraShot nodes=' + shotCount);
+#    tracePrint ('number of contained CameraMove nodes=' + movesCount);
+#    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');
+#
+#    // compute interpolators
+#    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation
+#    for (i = 0; i < shotCount; i++) // shots index
+#    {
+#        if (i==0) // initial entries
+#        {
+#           key[0]                   = 0.0; // no previous move
+#           keyValuePosition[0]      = shots[i].initialPosition;
+#           keyValueOrientation[0]   = shots[i].initialOrientation;
+#        }
+#        else     // new shot repositions, reorients camera as clean break from preceding shot/move
+#        {
+#           key[k+1]                 = key[k]; // start from end from previous move
+#           keyValuePosition[k+1]    = shots[i].initialPosition;
+#           keyValueOrientation[k+1] = shots[i].initialOrientation;
+#           k++;
+#        }
+#        tracePrint (shots[i].description);
+#        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);
+#
+#        for (j = 0; j < shots[i].moves.length; j++) // moves index
+#        {
+#            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime
+#            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime
+#            //  tracePrint ('durationFloat=' + durationFloat);
+#            key[k+1]               = key[k] + (durationFloat / totalDuration);
+#            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;
+#            if (!animated)
+#            {
+#                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;
+#            }
+#            else
+#            {
+#                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)
+#                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions
+#
+#                // test if difference vector is zero, if so maintain previous rotation
+#                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();
+#                if (shotVector.length() >= 0)
+#                {
+#                    // default view direction is along -Z axis
+#                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);
+#                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;
+#                }
+#                else // note (k > 0)
+#                {
+#                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change
+#                }
+#
+#                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());
+#                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());
+#                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());
+#                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());
+#                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());
+#                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\\n');
+#            }
+#            k++; // update index to match latest key, keyValuePosition, keyValueOrientation
+#
+#            // check animated parameter:  set true if any of moves are tracking moves
+#            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true
+#         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);
+#
+#            // intermediate trace
+#            tracePrint ('                key=' + key);
+#            tracePrint ('   keyValuePosition=' + keyValuePosition);
+#            tracePrint ('keyValueOrientation=' + keyValueOrientation);
+#            tracePrint ('- ' + shots[i].moves[j].description);
+#        }
+#    }
+#    tracePrint ('                key=' + key);
+#    tracePrint ('   keyValuePosition=' + keyValuePosition);
+#    tracePrint ('keyValueOrientation=' + keyValueOrientation);
+#    if (key.length != keyValuePosition.length)
+#    {
+#      alwaysPrint ('warning: internal error during array construction, ' +
+#                  'key.length=' + key.length + ' must equal ' +
+#                  'keyValuePosition.length=' + keyValuePosition.length);
+#    }
+#    if (key.length != keyValueOrientation.length)
+#    {
+#      alwaysPrint ('warning: internal error during array construction, ' +
+#                  'key.length=' + key.length + ' must equal ' +
+#                  'keyValueOrientation.length=' + keyValueOrientation.length);
+#    }
+#    if (key.length != (shotCount + movesCount))
+#    {
+#      alwaysPrint ('warning: internal error during array construction, ' +
+#                  'key.length=' + key.length + ' must equal ' +
+#                  '(shotCount + movesCount)=' + (shotCount + movesCount));
+#    }
+#    tracePrint ('           animated=' + animated);
+#    // set node values
+#    CameraPI.key      = key;
+#    CameraOI.key      = key;
+#    CameraPI.keyValue = keyValuePosition;
+#    CameraOI.keyValue = keyValueOrientation;
+#
+#    if (!animated) // output results
+#    {
+#        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
+#        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+#    }
+#    tracePrint ('checkShots() complete');
+#}
+#
+#function stripBrackets (fieldArray)
+#{
+#    // some browsers add brackets to array output strings, this function strips them
+#    outputString = '';
+#    for (i = 0; i < fieldArray.length; i++)
+#    {
+#       outputString += fieldArray[i].toString();
+#       if (i < fieldArray.length - 1) outputString += ' ';
+#    }
+#    return outputString;
+#}
+#
+#function set_fraction (eventValue, timestamp) // input event received for inputOnly field
+#{
+#   // traceEnabled = false;  // for testing purposes
+#
+#   // if Camera is being animated, immediately recompute interpolator settings
+#   if (animated) checkShots (true);
+#
+#   // trace progress on console with reduced output frequency
+#   if (frameCount == 0)
+#   {
+#      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
+#      startTime      = timestamp;
+#      priorTraceTime = timestamp;
+#      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+#
+#      if (animated) // output results
+#      {
+#        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+#        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
+#        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+#      }
+#   }
+#   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval
+#   {
+#      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+#      priorTraceTime = timestamp;
+#
+#      if (animated) // output results
+#      {
+#        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+#        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
+#        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+#      }
+#   }
+#   if (eventValue == 0)
+#   {
+#      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored
+#      frameCount++;
+#   }
+#   else if (eventValue == 1)
+#   {
+#      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());
+#      if (animated) // output results
+#      {
+#        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
+#      }
+#      alwaysPrint ('Animation loop complete.');
+#      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally
+#   }
+#   else
+#   {
+#      frameCount++;
+#   }
+#}
+#
+#function set_bind (eventValue) // input event received for inputOnly field
+#{
+#   // need to ensure CameraShot nodes are properly initialized
+#   if (initialized == false)
+#   {
+#      checkShots (true);
+#      initialized = true;
+#   }
+#   if (eventValue)
+#   {
+#       tracePrint ('Camera has been bound');
+#   }
+#   else
+#   {
+#       tracePrint ('Camera has been unbound');
+#   }
+#}
+#
+#function set_description (eventValue) // input event received for inputOutput field
+#{
+#    description = eventValue;
+#}
+#
+#function set_position (eventValue) // input event received for inputOutput field
+#{
+#    position = eventValue;
+#}
+#
+#function set_orientation (eventValue) // input event received for inputOutput field
+#{
+#    orientation = eventValue;
+#}
+#
+#function set_fieldOfView (eventValue) // input event received for inputOutput field
+#{
+#    fieldOfView = eventValue;
+#}
+#
+#function set_nearClipPlane (eventValue) // input event received for inputOutput field
+#{
+#    nearClipPlane = eventValue;
+#}
+#
+#function set_farClipPlane (eventValue) // input event received for inputOutput field
+#{
+#    farClipPlane = eventValue;
+#}
+#
+#function set_shots (eventValue) // input event received for inputOutput field
+#{
+#    shots = eventValue;
+#}
+#
+#function set_filterColor (eventValue) // input event received for inputOutput field
+#{
+#    filterColor = eventValue;
+#}
+#
+#function set_filterTransparency (eventValue) // input event received for inputOutput field
+#{
+#    filterTransparency = eventValue;
+#}
+#
+#function set_upVector (eventValue) // input event received for inputOutput field
+#{
+#    upVector = eventValue;
+#}
+#
+#function set_fStop (eventValue) // input event received for inputOutput field
+#{
+#    fStop = eventValue;
+#}
+#
+#function set_focusDistance (eventValue) // input event received for inputOutput field
+#{
+#    focusDistance = eventValue;
+#}
+#
+#function set_offlineRender (eventValue) // input event received for inputOutput field
+#{
+#    offlineRender = eventValue;
+#}
+#
+#function set_key (eventValue) // input event received for inputOutput field
+#{
+#    key = eventValue;
+#}
+#
+#function set_keyValuePosition (eventValue) // input event received for inputOutput field
+#{
+#    keyValuePosition = eventValue;
+#}
+#
+#function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+#{
+#    keyValueOrientation = eventValue;
+#}
+#
+#function set_animated (eventValue) // input event received for inputOutput field
+#{
+#    animated = eventValue;
+#}
+#
+#function tracePrint (outputValue)
+#{
+#	if (traceEnabled) alwaysPrint (outputValue);
+#}
+#function alwaysPrint (outputValue)
+#{
+#    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies
+#    var outputString = outputValue.toString(); // utility function according to spec
+#    if (outputString == null) outputString = outputValue; // direct cast
+#
+#    if  (description.length > 0)
+#         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');
+#    else
+#         Browser.print ('[Camera] ' + outputString + '\\n');
+#}
                 ],
                 ROUTE: [
                     fromField: "position"
@@ -661,7 +991,6 @@ X3D:
                     toNode: "CameraDirectionalLight"
                 ]
         ],
-
 #=============== CameraShot ==============
         ProtoDeclare: [
             name: "CameraShot"
@@ -685,7 +1014,6 @@ X3D:
                     accessType: "inputOutput"
                     appinfo: "Set of CameraMovement nodes"
                     type: "MFNode"
-
 #initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
                 ],
                 field: [
@@ -749,7 +1077,6 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
                 Script: [
                     DEF: "CameraShotScript"
@@ -772,7 +1099,6 @@ X3D:
                         accessType: "inputOutput"
                         appinfo: "Set of CameraMovement nodes"
                         type: "MFNode"
-
 #initialization nodes (if any) go here
                     ],
                     field: [
@@ -847,7 +1173,7 @@ X3D:
                         appinfo: "keyValue array for OrientationInterpolator"
                         type: "MFRotation"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "description"
                             protoField: "description"
@@ -896,14 +1222,103 @@ X3D:
                             nodeField: "traceEnabled"
                             protoField: "traceEnabled"
                         ]
-,
-
-#sourceCode "\\newlinefunction initialize () // CameraShotScript\\newline{\\newline//  tracePrint ('initialize start...');\\newline\\newline    // compute shotDuration by summing durations from contained CameraMovement nodes\\newline    shotDuration = 0;\\newline    for (i = 0; i < moves.length; i++)\\newline    {\\newline        shotDuration = shotDuration + moves[i].duration;\\newline    }\\newline    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');\\newline\\newline//  tracePrint ('... initialize() complete');\\newline}\\newline\\newlinefunction set_description (eventValue) // input event received for inputOutput field\\newline{\\newline    description = eventValue;\\newline}\\newline\\newlinefunction set_enabled (eventValue) // input event received for inputOutput field\\newline{\\newline    enabled = eventValue;\\newline}\\newline\\newlinefunction set_moves (eventValue) // input event received for inputOutput field\\newline{\\newline    moves = eventValue;\\newline}\\newline\\newlinefunction set_initialPosition (eventValue) // input event received for inputOutput field\\newline{\\newline    initialPosition = eventValue;\\newline}\\newline\\newlinefunction set_initialOrientation (eventValue) // input event received for inputOutput field\\newline{\\newline    initialOrientation = eventValue;\\newline}\\newline\\newlinefunction set_initialAimPoint (eventValue) // input event received for inputOutput field\\newline{\\newline    initialAimPoint = eventValue;\\newline}\\newline\\newlinefunction set_initialFieldOfView (eventValue) // input event received for inputOutput field\\newline{\\newline    initialFieldOfView = eventValue;\\newline}\\newline\\newlinefunction set_initialFStop (eventValue) // input event received for inputOutput field\\newline{\\newline    initialFStop = eventValue;\\newline}\\newline\\newlinefunction set_initialFocusDistance (eventValue) // input event received for inputOutput field\\newline{\\newline    initialFocusDistance = eventValue;\\newline}\\newline\\newlinefunction set_key (eventValue) // input event received for inputOutput field\\newline{\\newline    key = eventValue;\\newline}\\newline\\newlinefunction set_keyValuePosition (eventValue) // input event received for inputOutput field\\newline{\\newline    keyValuePosition = eventValue;\\newline}\\newline\\newlinefunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\\newline{\\newline    keyValueOrientation = eventValue;\\newline}\\newline\\newline// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\\newline\\newlinefunction tracePrint (outputValue)\\newline{\\newline	if (traceEnabled) alwaysPrint (outputValue);\\newline}\\newlinefunction alwaysPrint (outputValue)\\newline{\\newline	// try to ensure outputValue is converted to string despite browser idiosyncracies\\newline    var outputString = outputValue.toString(); // utility function according to spec\\newline    if (outputString == null) outputString = outputValue; // direct cast\\newline\\newline    if  (description.length > 0)\\newline         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');\\newline    else\\newline         Browser.print ('[CameraShot] ' + outputString + '\\n');\\newline}\\newline"
+                    ],
+#ecmascript:
+#function initialize () // CameraShotScript
+#{
+#//  tracePrint ('initialize start...');
+#
+#    // compute shotDuration by summing durations from contained CameraMovement nodes
+#    shotDuration = 0;
+#    for (i = 0; i < moves.length; i++)
+#    {
+#        shotDuration = shotDuration + moves[i].duration;
+#    }
+#    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');
+#
+#//  tracePrint ('... initialize() complete');
+#}
+#
+#function set_description (eventValue) // input event received for inputOutput field
+#{
+#    description = eventValue;
+#}
+#
+#function set_enabled (eventValue) // input event received for inputOutput field
+#{
+#    enabled = eventValue;
+#}
+#
+#function set_moves (eventValue) // input event received for inputOutput field
+#{
+#    moves = eventValue;
+#}
+#
+#function set_initialPosition (eventValue) // input event received for inputOutput field
+#{
+#    initialPosition = eventValue;
+#}
+#
+#function set_initialOrientation (eventValue) // input event received for inputOutput field
+#{
+#    initialOrientation = eventValue;
+#}
+#
+#function set_initialAimPoint (eventValue) // input event received for inputOutput field
+#{
+#    initialAimPoint = eventValue;
+#}
+#
+#function set_initialFieldOfView (eventValue) // input event received for inputOutput field
+#{
+#    initialFieldOfView = eventValue;
+#}
+#
+#function set_initialFStop (eventValue) // input event received for inputOutput field
+#{
+#    initialFStop = eventValue;
+#}
+#
+#function set_initialFocusDistance (eventValue) // input event received for inputOutput field
+#{
+#    initialFocusDistance = eventValue;
+#}
+#
+#function set_key (eventValue) // input event received for inputOutput field
+#{
+#    key = eventValue;
+#}
+#
+#function set_keyValuePosition (eventValue) // input event received for inputOutput field
+#{
+#    keyValuePosition = eventValue;
+#}
+#
+#function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+#{
+#    keyValueOrientation = eventValue;
+#}
+#
+#// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
+#
+#function tracePrint (outputValue)
+#{
+#	if (traceEnabled) alwaysPrint (outputValue);
+#}
+#function alwaysPrint (outputValue)
+#{
+#	// try to ensure outputValue is converted to string despite browser idiosyncracies
+#    var outputString = outputValue.toString(); // utility function according to spec
+#    if (outputString == null) outputString = outputValue; // direct cast
+#
+#    if  (description.length > 0)
+#         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');
+#    else
+#         Browser.print ('[CameraShot] ' + outputString + '\\n');
+#}
                 ],
-
 #Add any ROUTEs here, going from Script to other nodes within ProtoBody
         ],
-
 #=============== CameraMovement ==============
         ProtoDeclare: [
             name: "CameraMovement"
@@ -991,13 +1406,9 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
-
 #First node determines node type of this prototype
-
 #Subsequent nodes do not render, but still must be a valid X3D subgraph
-
 #Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events
                 Script: [
                     DEF: "CameraMovementScript"
@@ -1075,7 +1486,7 @@ X3D:
                         appinfo: "enable console output to trace script computations and prototype progress"
                         type: "SFBool"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "description"
                             protoField: "description"
@@ -1124,20 +1535,105 @@ X3D:
                             nodeField: "traceEnabled"
                             protoField: "traceEnabled"
                         ]
-,
-
-#sourceCode "\\newlinefunction initialize () // CameraMovementScript\\newline{\\newline//  tracePrint ('initialize start...');\\newline    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +\\newline                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()\\newline                           );\\newline    if (duration < 0)\\newline    {\\newline       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');\\newline       duration = 0;\\newline    }\\newline    else if (duration == 0)\\newline    {\\newline       alwaysPrint ('warning: duration=0, nothing to do!');\\newline    }\\newline    tracePrint ('... initialize complete');\\newline}\\newline\\newlinefunction set_goalAimPoint (eventValue) // input event received for inputOutput field\\newline{\\newline    goalAimPoint_changed = eventValue;\\newline    tracePrint ('goalAimPoint=' + goalAimPoint.toString());\\newline\\newline    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator\\newline}\\newline\\newlinefunction set_description (eventValue) // input event received for inputOutput field\\newline{\\newline    description = eventValue;\\newline}\\newline\\newlinefunction set_enabled (eventValue) // input event received for inputOutput field\\newline{\\newline    enabled = eventValue;\\newline}\\newline\\newlinefunction set_duration (eventValue) // input event received for inputOutput field\\newline{\\newline    duration = eventValue;\\newline}\\newline\\newlinefunction set_goalPosition (eventValue) // input event received for inputOutput field\\newline{\\newline    goalPosition = eventValue;\\newline}\\newline\\newlinefunction set_goalOrientation (eventValue) // input event received for inputOutput field\\newline{\\newline    goalOrientation = eventValue;\\newline}\\newline\\newlinefunction set_tracking (eventValue) // input event received for inputOutput field\\newline{\\newline    tracking = eventValue;\\newline}\\newline\\newlinefunction set_goalFieldOfView (eventValue) // input event received for inputOutput field\\newline{\\newline    goalFieldOfView = eventValue;\\newline}\\newline\\newlinefunction set_goalFStop (eventValue) // input event received for inputOutput field\\newline{\\newline    goalFStop = eventValue;\\newline}\\newline\\newlinefunction set_goalFocusDistance (eventValue) // input event received for inputOutput field\\newline{\\newline    goalFocusDistance = eventValue;\\newline}\\newline\\newline// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\\newline\\newlinefunction tracePrint (outputValue)\\newline{\\newline	if (traceEnabled) alwaysPrint (outputValue);\\newline}\\newline\\newlinefunction alwaysPrint (outputValue)\\newline{\\newline	// try to ensure outputValue is converted to string despite browser idiosyncracies\\newline    var outputString = outputValue.toString(); // utility function according to spec\\newline    if (outputString == null) outputString = outputValue; // direct cast\\newline\\newline    if  (description.length > 0)\\newline         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');\\newline    else\\newline         Browser.print ('[CameraMovement] ' + outputString + '\\n');\\newline}\\newline"
+                    ],
+#ecmascript:
+#function initialize () // CameraMovementScript
+#{
+#//  tracePrint ('initialize start...');
+#    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +
+#                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()
+#                           );
+#    if (duration < 0)
+#    {
+#       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');
+#       duration = 0;
+#    }
+#    else if (duration == 0)
+#    {
+#       alwaysPrint ('warning: duration=0, nothing to do!');
+#    }
+#    tracePrint ('... initialize complete');
+#}
+#
+#function set_goalAimPoint (eventValue) // input event received for inputOutput field
+#{
+#    goalAimPoint_changed = eventValue;
+#    tracePrint ('goalAimPoint=' + goalAimPoint.toString());
+#
+#    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator
+#}
+#
+#function set_description (eventValue) // input event received for inputOutput field
+#{
+#    description = eventValue;
+#}
+#
+#function set_enabled (eventValue) // input event received for inputOutput field
+#{
+#    enabled = eventValue;
+#}
+#
+#function set_duration (eventValue) // input event received for inputOutput field
+#{
+#    duration = eventValue;
+#}
+#
+#function set_goalPosition (eventValue) // input event received for inputOutput field
+#{
+#    goalPosition = eventValue;
+#}
+#
+#function set_goalOrientation (eventValue) // input event received for inputOutput field
+#{
+#    goalOrientation = eventValue;
+#}
+#
+#function set_tracking (eventValue) // input event received for inputOutput field
+#{
+#    tracking = eventValue;
+#}
+#
+#function set_goalFieldOfView (eventValue) // input event received for inputOutput field
+#{
+#    goalFieldOfView = eventValue;
+#}
+#
+#function set_goalFStop (eventValue) // input event received for inputOutput field
+#{
+#    goalFStop = eventValue;
+#}
+#
+#function set_goalFocusDistance (eventValue) // input event received for inputOutput field
+#{
+#    goalFocusDistance = eventValue;
+#}
+#
+#// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
+#
+#function tracePrint (outputValue)
+#{
+#	if (traceEnabled) alwaysPrint (outputValue);
+#}
+#
+#function alwaysPrint (outputValue)
+#{
+#	// try to ensure outputValue is converted to string despite browser idiosyncracies
+#    var outputString = outputValue.toString(); // utility function according to spec
+#    if (outputString == null) outputString = outputValue; // direct cast
+#
+#    if  (description.length > 0)
+#         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');
+#    else
+#         Browser.print ('[CameraMovement] ' + outputString + '\\n');
+#}
                 ],
-
 #Add any ROUTEs here, going from Script to other nodes within ProtoBody
         ],
-
 #=============== OfflineRender ==============
         ProtoDeclare: [
             name: "OfflineRender"
             appinfo: "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)."
             ProtoInterface:
-
 #TODO non-photorealistic rendering (NPR) parameters
                 field: [
                     name: "description"
@@ -1212,11 +1708,8 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
-
 #First node determines node type of this prototype
-
 #Subsequent nodes do not render, but still must be a valid X3D subgraph
                 Script: [
                     DEF: "OfflineRenderScript"
@@ -1287,7 +1780,7 @@ X3D:
                         appinfo: "enable console output to trace script computations and prototype progress"
                         type: "SFBool"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "description"
                             protoField: "description"
@@ -1332,14 +1825,64 @@ X3D:
                             nodeField: "traceEnabled"
                             protoField: "traceEnabled"
                         ]
-,
-
-#sourceCode "\\newlinefunction initialize () // OfflineRenderScript\\newline{\\newline//  tracePrint ('initialize start...');\\newline\\newline    tracePrint ('... initialize complete');\\newline}\\newline\\newlinefunction set_description (eventValue) // input event received for inputOutput field\\newline{\\newline    description = eventValue;\\newline}\\newline\\newlinefunction set_enabled (eventValue) // input event received for inputOutput field\\newline{\\newline    enabled = eventValue;\\newline}\\newline\\newlinefunction set_frameRate (eventValue) // input event received for inputOutput field\\newline{\\newline    frameRate = eventValue;\\newline}\\newline\\newlinefunction set_frameSize (eventValue) // input event received for inputOutput field\\newline{\\newline    frameSize = eventValue;\\newline}\\newline\\newlinefunction set_pixelAspectRatio (eventValue) // input event received for inputOutput field\\newline{\\newline    pixelAspectRatio = eventValue;\\newline}\\newline\\newlinefunction set_startTime (eventValue) // input event received for inputOnly field\\newline{\\newline   // do something with input eventValue;\\newline}\\newline\\newlinefunction tracePrint (outputValue)\\newline{\\newline	if (traceEnabled) alwaysPrint (outputValue);\\newline}\\newline\\newlinefunction alwaysPrint (outputValue)\\newline{\\newline	// try to ensure outputValue is converted to string despite browser idiosyncracies\\newline    var outputString = outputValue.toString(); // utility function according to spec\\newline    if (outputString == null) outputString = outputValue; // direct cast\\newline\\newline    if  (description.length > 0)\\newline         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');\\newline    else\\newline         Browser.print ('[OfflineRender] ' + outputString + '\\n');\\newline}\\newline"
+                    ],
+#ecmascript:
+#function initialize () // OfflineRenderScript
+#{
+#//  tracePrint ('initialize start...');
+#
+#    tracePrint ('... initialize complete');
+#}
+#
+#function set_description (eventValue) // input event received for inputOutput field
+#{
+#    description = eventValue;
+#}
+#
+#function set_enabled (eventValue) // input event received for inputOutput field
+#{
+#    enabled = eventValue;
+#}
+#
+#function set_frameRate (eventValue) // input event received for inputOutput field
+#{
+#    frameRate = eventValue;
+#}
+#
+#function set_frameSize (eventValue) // input event received for inputOutput field
+#{
+#    frameSize = eventValue;
+#}
+#
+#function set_pixelAspectRatio (eventValue) // input event received for inputOutput field
+#{
+#    pixelAspectRatio = eventValue;
+#}
+#
+#function set_startTime (eventValue) // input event received for inputOnly field
+#{
+#   // do something with input eventValue;
+#}
+#
+#function tracePrint (outputValue)
+#{
+#	if (traceEnabled) alwaysPrint (outputValue);
+#}
+#
+#function alwaysPrint (outputValue)
+#{
+#	// try to ensure outputValue is converted to string despite browser idiosyncracies
+#    var outputString = outputValue.toString(); // utility function according to spec
+#    if (outputString == null) outputString = outputValue; // direct cast
+#
+#    if  (description.length > 0)
+#         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');
+#    else
+#         Browser.print ('[OfflineRender] ' + outputString + '\\n');
+#}
                 ],
-
 #Add any ROUTEs here, going from Script to other nodes within ProtoBody
         ],
-
 #=============== Launch Prototype Example ==============
         Background: [
             skyColor: [0.282353, 0.380392, 0.470588]
@@ -1353,7 +1896,6 @@ X3D:
                         string: ["CameraPrototypes.x3d", "defines multiple prototype nodes", "", "Click on this text to see", "CameraExamples.x3d scene"]
                         FontStyle:
                             justify: ["MIDDLE", "MIDDLE"]
-                    ,
                     Appearance:
                         Material:
                             diffuseColor: [1, 1, 0.2]

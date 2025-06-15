@@ -62,7 +62,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         Viewpoint: [
             DEF: "EntryView"
@@ -74,14 +73,11 @@ X3D:
         Shape: [
             Text:
                 string: ["One, Two, Three", "", "He said, \"Immel did it!\""]
-
-#alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
-
-#alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
+#alternative XML encoding: Text string='"One, Two, Three" "" "He said, \\&quot;Immel did it!\\&quot;"'
+#alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \\""Immel did it!\\"""})
                 FontStyle:
                     justify: ["MIDDLE", "MIDDLE"]
                     style: "BOLD"
-            ,
             Appearance:
                 Material:
                     diffuseColor: [0.6, 0.4, 0.2]

@@ -66,7 +66,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "LOA1_StandAnimation.x3d"
@@ -209,12 +208,11 @@ X3D:
                     accessType: "outputOnly"
                     type: "SFRotation"
                 ]
-,
             ProtoBody:
                 Group: [
                     TimeSensor: [
                         DEF: "TIMER"
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "cycleInterval"
                                 protoField: "cycleInterval"
@@ -243,196 +241,216 @@ X3D:
                                 nodeField: "isActive"
                                 protoField: "isActive"
                             ]
+                        ]
                     ],
                     PositionInterpolator: [
                         DEF: "HUMANOIDROOT_POSITION_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 0, 0, 0, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "HumanoidRoot_translation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "HUMANOIDROOT_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "HumanoidRoot_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "SACROILIAC_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "lower_body_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_HIP_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_hip_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_KNEE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_knee_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_ANKLE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_ankle_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_MIDTARSAL_ANIMATOR"
                         key: [0, 1]
                         keyValue: [1, 0, 0, 0, 1, 0, 0, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_midtarsal_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_HIP_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_hip_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_KNEE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_knee_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_ANKLE_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_ankle_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_MIDTARSAL_ANIMATOR"
                         key: [0, 1]
                         keyValue: [1, 0, 0, 0, 1, 0, 0, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_midtarsal_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "VL5_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "vl5_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "SKULLBASE_ANIMATOR"
                         key: [0, 0.5, 1]
                         keyValue: [0, 0, 1, 0, -1, 0, 0, 0.5, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "skullbase_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_SHOULDER_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_shoulder_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_ELBOW_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_elbow_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "L_WRIST_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "l_wrist_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_SHOULDER_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_shoulder_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_ELBOW_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_elbow_rotation_changed"
                             ]
+                        ]
                     ],
                     OrientationInterpolator: [
                         DEF: "R_WRIST_ANIMATOR"
                         key: [0, 1]
                         keyValue: [0, 0, 1, 0, 0, 0, 1, 0]
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "value_changed"
                                 protoField: "r_wrist_rotation_changed"
                             ]
+                        ]
                     ]
                 ],
                 ROUTE: [
@@ -550,9 +568,7 @@ X3D:
                     toNode: "R_WRIST_ANIMATOR"
                 ]
         ],
-
 #======================================
-
 #Point to example use in case someone inspects this file
         Anchor: [
             description: "InterchangableActorsViaDynamicRouting"
@@ -564,7 +580,6 @@ X3D:
                     FontStyle:
                         justify: ["MIDDLE", "MIDDLE"]
                         size: 0.8
-                ,
                 Appearance:
                     Material:
                         diffuseColor: [1, 1, 0.2]

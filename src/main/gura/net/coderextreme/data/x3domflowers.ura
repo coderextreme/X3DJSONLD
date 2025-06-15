@@ -54,11 +54,9 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],
-
 #Images courtesy of Paul Debevec's Light Probe Image Gallery
         Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]

@@ -34,7 +34,6 @@ X3D:
             name: "Core"
             level: 1
         ],
-
 #<component name='Shape' level='4'></component>
         meta: [
             name: "title"
@@ -56,7 +55,6 @@ X3D:
             name: "description"
             content: "a sphere"
         ]
-    ,
     Scene:
         NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
@@ -65,7 +63,6 @@ X3D:
             DEF: "Tour"
             description: "Tour Views"
         ],
-
 #Viewpoint position='0 0 4' description='sphere in road'/
         Background: [
             backUrl: ["../resources/images/bBK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
@@ -78,32 +75,24 @@ X3D:
         Transform: [
             Shape: [
                 Sphere:
-                ,
                 Appearance:
                     Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-,
                     ComposedCubeMapTexture:
                         DEF: "texture"
                         ImageTexture:
                             url: ["../resources/images/bBK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/bBT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/bFR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/bLF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/bRT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/bTP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
-,
                     ComposedShader: [
                         language: "GLSL"
                         field: [

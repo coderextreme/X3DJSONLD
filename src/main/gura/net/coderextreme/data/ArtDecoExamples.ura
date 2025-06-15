@@ -46,7 +46,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ArtDecoExamples.x3d"
@@ -337,7 +336,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco00"
-                        ,
                         Sphere:
                             DEF: "Ball"
                             radius: 0.5
@@ -354,7 +352,6 @@ X3D:
                                 Material:
                                     DEF: "TextMat"
                                     diffuseColor: [1, 1, 1]
-                            ,
                             Text:
                                 string: ["ArtDeco00"]
                                 FontStyle:
@@ -381,7 +378,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco01"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -396,7 +392,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco01"]
                                 FontStyle:
@@ -419,7 +414,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco02"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -434,7 +428,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco02"]
                                 FontStyle:
@@ -457,7 +450,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco03"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -472,7 +464,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco03"]
                                 FontStyle:
@@ -495,7 +486,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco04"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -510,7 +500,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco04"]
                                 FontStyle:
@@ -533,7 +522,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco05"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -548,7 +536,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco05"]
                                 FontStyle:
@@ -571,7 +558,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco06"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -586,7 +572,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco06"]
                                 FontStyle:
@@ -609,7 +594,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco07"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -624,7 +608,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco07"]
                                 FontStyle:
@@ -647,7 +630,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco08"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -662,7 +644,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco08"]
                                 FontStyle:
@@ -685,7 +666,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco09"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -700,7 +680,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco09"]
                                 FontStyle:
@@ -723,7 +702,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco10"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -738,7 +716,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco10"]
                                 FontStyle:
@@ -761,7 +738,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco11"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -776,7 +752,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco11"]
                                 FontStyle:
@@ -799,7 +774,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco12"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -814,7 +788,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco12"]
                                 FontStyle:
@@ -837,7 +810,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco13"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -852,7 +824,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco13"]
                                 FontStyle:
@@ -875,7 +846,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco14"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -890,7 +860,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco14"]
                                 FontStyle:
@@ -913,7 +882,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco15"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -928,7 +896,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco15"]
                                 FontStyle:
@@ -951,7 +918,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco16"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -966,7 +932,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco16"]
                                 FontStyle:
@@ -989,7 +954,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco17"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1004,7 +968,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco17"]
                                 FontStyle:
@@ -1027,7 +990,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco18"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1042,7 +1004,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco18"]
                                 FontStyle:
@@ -1065,7 +1026,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco19"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1080,7 +1040,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco19"]
                                 FontStyle:
@@ -1103,7 +1062,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco20"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1118,7 +1076,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco20"]
                                 FontStyle:
@@ -1141,7 +1098,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco21"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1156,7 +1112,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco21"]
                                 FontStyle:
@@ -1179,7 +1134,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco22"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1194,7 +1148,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco22"]
                                 FontStyle:
@@ -1217,7 +1170,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco23"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1232,7 +1184,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco23"]
                                 FontStyle:
@@ -1255,7 +1206,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco24"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1270,7 +1220,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco24"]
                                 FontStyle:
@@ -1293,7 +1242,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco25"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1308,7 +1256,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco25"]
                                 FontStyle:
@@ -1331,7 +1278,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco26"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1346,7 +1292,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco26"]
                                 FontStyle:
@@ -1369,7 +1314,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco27"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1384,7 +1328,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco27"]
                                 FontStyle:
@@ -1407,7 +1350,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco28"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1422,7 +1364,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco28"]
                                 FontStyle:
@@ -1445,7 +1386,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco29"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1460,7 +1400,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco29"]
                                 FontStyle:
@@ -1483,7 +1422,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco30"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1498,7 +1436,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco30"]
                                 FontStyle:
@@ -1521,7 +1458,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco31"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1536,7 +1472,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco31"]
                                 FontStyle:
@@ -1559,7 +1494,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco32"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1574,7 +1508,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco32"]
                                 FontStyle:
@@ -1597,7 +1530,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco33"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1612,7 +1544,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco33"]
                                 FontStyle:
@@ -1635,7 +1566,6 @@ X3D:
                         Appearance:
                             ProtoInstance:
                                 name: "ArtDeco34"
-                        ,
                         Sphere:
                             USE: "Ball"
                     ]
@@ -1650,7 +1580,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "TextMat"
-                            ,
                             Text:
                                 string: ["ArtDeco34"]
                                 FontStyle:

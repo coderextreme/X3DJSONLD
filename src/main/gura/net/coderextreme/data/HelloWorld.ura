@@ -2,7 +2,6 @@ X3D:
     profile: "Immersive"
     version: "3.3"
     head:
-
 #Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
         meta: [
             name: "title"
@@ -96,9 +95,7 @@ X3D:
             name: "reference"
             content: "HelloWorld.json"
         ]
-    ,
     Scene:
-
 #Example scene to illustrate X3D nodes and fields (XML elements and attributes)
         WorldInfo: [
             info: ["Example scene to illustrate a simple X3D model"]
@@ -115,12 +112,10 @@ X3D:
                 rotation: [0, 1, 0, 3]
                 Shape: [
                     Sphere:
-                    ,
                     Appearance:
                         Material:
                             DEF: "MaterialLightBlue"
                             diffuseColor: [0.1, 0.5, 1]
-,
                         ImageTexture:
                             DEF: "ImageCloudlessEarth"
                             url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
@@ -134,7 +129,6 @@ X3D:
                         string: ["Hello", "world!"]
                         FontStyle:
                             justify: ["MIDDLE", "MIDDLE"]
-                    ,
                     Appearance:
                         Material:
                             USE: "MaterialLightBlue"

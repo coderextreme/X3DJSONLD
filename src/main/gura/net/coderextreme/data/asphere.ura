@@ -26,14 +26,12 @@ X3D:
             name: "description"
             content: "a sphere"
         ]
-    ,
     Scene:
         Group: [
             Shape: [
                 Appearance:
                     Material:
                         diffuseColor: [1, 1, 1]
-                ,
                 Sphere:
             ]
         ]

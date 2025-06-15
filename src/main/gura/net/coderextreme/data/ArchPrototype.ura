@@ -46,19 +46,14 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         ProtoDeclare: [
             name: "ArchPrototype"
             appinfo: "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."
             ProtoInterface:
-
 #COLOR OF ARCH
-
 #INPUT PARAMETERS
-
 #General parameters: measures in meters
-
 #Parameters to create to create shapes related to arch: put true to apply
                 field: [
                     name: "diffuseColor"
@@ -158,17 +153,13 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
-
 #First node determines node type of this prototype
-
 #IndexedFaceset creates arch
                 Transform: [
                     DEF: "ArchTransform"
                     Shape: [
                         DEF: "Arch"
-
 #note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
                         IndexedFaceSet:
                             DEF: "ArchIndex"
@@ -176,11 +167,10 @@ X3D:
                             solid: false
                             Coordinate:
                                 DEF: "ArchChord"
-                        ,
                         Appearance:
                             Material:
                                 DEF: "MaterialNode"
-                                IS:
+                                IS: [
                                     connect: [
                                         nodeField: "emissiveColor"
                                         protoField: "emissiveColor"
@@ -189,22 +179,17 @@ X3D:
                                         nodeField: "diffuseColor"
                                         protoField: "diffuseColor"
                                     ]
+                                ]
                     ]
                 ],
-
 #Subsequent nodes do not render, but still must be a valid X3D subgraph
-
 #This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
                 Script: [
                     DEF: "ArchPrototypeScript"
                     url: ["../node/ArchPrototypeScript.js", "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]
-
 #INPUT PARAMETERS
-
 #General parameters
-
 #Parameters to create to create shapes related to arch: put true to apply
-
 #OUTPUT PARAMETERS
                     field: [
                         name: "clearSpanWidth"
@@ -296,7 +281,7 @@ X3D:
                         appinfo: "send computed indices to the IndexedFaceSet node"
                         type: "MFInt32"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "clearSpanWidth"
                             protoField: "clearSpanWidth"
@@ -345,6 +330,7 @@ X3D:
                             nodeField: "lintel"
                             protoField: "lintel"
                         ]
+                    ]
                 ],
                 ROUTE: [
                     fromField: "computedScale"
@@ -401,7 +387,6 @@ X3D:
                 value: "2"
             ]
         ],
-
 #Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)
         Inline: [
             DEF: "CoordinateAxes"

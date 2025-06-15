@@ -74,7 +74,6 @@ X3D:
             name: "license"
             content: "../../license.html"
         ]
-    ,
     Scene:
         NavigationInfo: [
             type: ["EXAMINE", "WALK", "FLY", "ANY"]
@@ -85,11 +84,9 @@ X3D:
                 Shape: [
                     Appearance:
                         Material:
-,
                         PixelTexture:
                             DEF: "RgbOpacityCheckerboard"
                             image: [2, 2, 4, -16776961, -65536, -65536, -16776961]
-                    ,
                     Box:
                 ]
             ],
@@ -98,10 +95,8 @@ X3D:
                 Shape: [
                     Appearance:
                         Material:
-,
                         PixelTexture:
                             USE: "RgbOpacityCheckerboard"
-                    ,
                     Sphere:
                 ]
             ],
@@ -110,10 +105,8 @@ X3D:
                 Shape: [
                     Appearance:
                         Material:
-,
                         PixelTexture:
                             USE: "RgbOpacityCheckerboard"
-                    ,
                     Cone:
                 ]
             ],
@@ -122,10 +115,8 @@ X3D:
                 Shape: [
                     Appearance:
                         Material:
-,
                         PixelTexture:
                             USE: "RgbOpacityCheckerboard"
-                    ,
                     Cylinder:
                 ]
             ]

@@ -10,7 +10,6 @@ X3D:
             name: "converted"
             content: "Mon, 31 Jul 2023 03:48:04 GMT"
         ]
-    ,
     Scene:
         NavigationInfo: [
             headlight: false
@@ -24,7 +23,6 @@ X3D:
                         Material:
                             diffuseColor: [0.3, 0.3, 1]
                             emissiveColor: [0.3, 0.3, 0.33]
-                    ,
                     Cylinder:
                         top: false
                         bottom: false
@@ -36,7 +34,6 @@ X3D:
                         DEF: "ARROW_POINTER"
                         Appearance:
                             USE: "ARROW_APPEARANCE"
-                        ,
                         Cone:
                             height: 0.1
                             bottomRadius: 0.05
@@ -59,7 +56,6 @@ X3D:
                             Material:
                                 diffuseColor: [1, 1, 0.3]
                                 emissiveColor: [0.33, 0.33, 0.1]
-                        ,
                         Text:
                             string: ["Y"]
                             FontStyle:
@@ -84,7 +80,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            ,
                             Text:
                                 string: ["X"]
                                 FontStyle:
@@ -107,7 +102,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            ,
                             Text:
                                 string: ["Z"]
                                 FontStyle:

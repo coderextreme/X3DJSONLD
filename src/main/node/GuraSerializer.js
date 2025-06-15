@@ -110,7 +110,7 @@ GuraSerializer.prototype = {
 		}
 		if (node.nodeName === "IS") {
 			method = "IS";
-			addpre = "set";
+			addpre = "add";
 		}
 		if (addpre+method === "setJoints") {
 			method = "Joints"
@@ -316,12 +316,22 @@ GuraSerializer.prototype = {
 			let ch = "";
 			if (first) {
 				first = false;
-			} else {
-				if (element.nodeName === 'Shape'
-				    || element.nodeName === 'X3D') {
-					ch += "    ".repeat(n);
+			} else if (node.nodeType != 8 && node.nodeType != 4) {
+				let prevNode = childrenNodes[childrenNodes.length-1];
+				if (prevNode) {
+					let lastchar = prevNode.charAt(prevNode.length - 1);
+					let seclastchar = prevNode.charAt(prevNode.length - 2);
+					if (lastchar === '\n' && seclastchar !== ',') {
+						prevNode = prevNode.slice(0, -1)+lastchar;  // chop off newline, add comma
+						childrenNodes[childrenNodes.length-1] = prevNode;
+					} else {
+						ch +=  ",\n";
+					}
+				} else {
+					ch +=  ",\n";
 				}
-				ch +=  ",\n";
+			} else {
+				ch += ","; // because we do want a comma here
 			}
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				let method = this.printParentChild(element, node, cn, mapToMethod);
@@ -338,28 +348,21 @@ GuraSerializer.prototype = {
 					ch += "    ".repeat(n)+end;
 				}
 				childrenNodes.push(ch);
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				let y = node.nodeValue.
-					replace(/\\/g, '\\\\').
-					replace(/"/g, '\\"');
-				ch += y.split("\r\n").map(function(x) {
-					return x.replace(/^/g, '\n#');
-					}).join("\n")+"\n";
-				// no commas for comments, don't print a comma
-				first = true;
-				childrenNodes.push(ch);
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				ch += '\n#sourceCode "'+node.nodeValue.split(/\r?\n/).map(function(x) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8
+			        || element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+				// both comments and code are handled the same way
+				if (ch) {
+					let lastchar = ch.charAt(ch.length - 1);
+					if (lastchar === ',') {
+						ch += '\n';
+					}
+				}
+				ch += node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"').
-						replace(/$/g, '\\').
-						replace("ecmascript:", "");
-					}).join('\\newline')+'\\newline"\n';
-				if (cn === 0) {
-					// if comment is first, don't print a comma
-					first = true;
-				}
+						replace(/^/g, '#');
+					}).join('\n')+'\n';
+				first = true;
 				childrenNodes.push(ch);
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 3 && node.nodeValue.trim() === '') {
 			} else if (typeof node.nodeType === 'undefined') {

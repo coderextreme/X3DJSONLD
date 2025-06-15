@@ -58,7 +58,6 @@ X3D:
             name: "license"
             content: "../../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "jumpcut_loadurl.x3d"
@@ -90,7 +89,6 @@ X3D:
             Shape: [
                 Appearance:
                     Material:
-                ,
                 Box:
             ]
         ],

@@ -22,7 +22,6 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d"
         ]
-    ,
     Scene:
         NavigationInfo: [
             type: ["EXAMINE"]
@@ -40,7 +39,6 @@ X3D:
                     Shape: [
                         Sphere:
                             radius: 0.25
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 0, 0]
@@ -77,8 +75,51 @@ X3D:
                             accessType: "inputOnly"
                             type: "SFFloat"
                         ],
-
-#sourceCode "\\newlinefunction initialize() {\\newline    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\\newline\\newline    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\\newline}\\newline\\newlinefunction set_fraction(value) {\\newline	translation = new SFVec3f(\\newline		translation.x + velocity.x,\\newline		translation.y + velocity.y,\\newline		translation.z + velocity.z);\\newline	scale = new SFVec3f(\\newline		scale.x + scalvel.x,\\newline		scale.y + scalvel.y,\\newline		scale.z + scalvel.z);\\newline        // if you get to far away or too big, explode\\newline        if ( Math.abs(translation.x) > 256) {\\newline		translation.x = 0;\\newline		initialize();\\newline	}\\newline        if ( Math.abs(translation.y) > 256) {\\newline		translation.y = 0;\\newline		initialize();\\newline	}\\newline        if ( Math.abs(translation.z) > 256) {\\newline		translation.z = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.x) > 20) {\\newline		scale.x = scale.x/2;\\newline		translation.x = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.y) > 20) {\\newline		scale.y = scale.y/2;\\newline		translation.y = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.z) > 20) {\\newline		scale.z = scale.z/2;\\newline		translation.z = 0;\\newline		initialize();\\newline	}\\newline}\\newline"
+#ecmascript:
+#function initialize() {
+#    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+#
+#    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+#}
+#
+#function set_fraction(value) {
+#	translation = new SFVec3f(
+#		translation.x + velocity.x,
+#		translation.y + velocity.y,
+#		translation.z + velocity.z);
+#	scale = new SFVec3f(
+#		scale.x + scalvel.x,
+#		scale.y + scalvel.y,
+#		scale.z + scalvel.z);
+#        // if you get to far away or too big, explode
+#        if ( Math.abs(translation.x) > 256) {
+#		translation.x = 0;
+#		initialize();
+#	}
+#        if ( Math.abs(translation.y) > 256) {
+#		translation.y = 0;
+#		initialize();
+#	}
+#        if ( Math.abs(translation.z) > 256) {
+#		translation.z = 0;
+#		initialize();
+#	}
+#	if (Math.abs(scale.x) > 20) {
+#		scale.x = scale.x/2;
+#		translation.x = 0;
+#		initialize();
+#	}
+#	if (Math.abs(scale.y) > 20) {
+#		scale.y = scale.y/2;
+#		translation.y = 0;
+#		initialize();
+#	}
+#	if (Math.abs(scale.z) > 20) {
+#		scale.z = scale.z/2;
+#		translation.z = 0;
+#		initialize();
+#	}
+#}
                     ],
                     TimeSensor: [
                         DEF: "bubbleClock"
