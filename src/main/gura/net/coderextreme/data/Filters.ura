@@ -50,7 +50,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "Filters.x3d"
@@ -76,7 +75,6 @@ X3D:
                         diffuseColor: [0.1, 0.1, 0.1]
                         emissiveColor: [0.8, 0.8, 0.8]
                         specularColor: [0.01, 0.01, 0.01]
-                ,
                 Sphere:
                     radius: 30.0
             ]
@@ -91,7 +89,6 @@ X3D:
                         diffuseColor: [0.1, 0.1, 0.1]
                         emissiveColor: [0.8, 0.8, 0.8]
                         specularColor: [0.01, 0.01, 0.01]
-                ,
                 Sphere:
                     radius: 30.0
             ]
@@ -106,7 +103,6 @@ X3D:
                         diffuseColor: [0.1, 0.1, 0.1]
                         emissiveColor: [0.8, 0.8, 0.8]
                         specularColor: [0.01, 0.01, 0.01]
-                ,
                 Sphere:
                     radius: 30.0
             ]
@@ -143,7 +139,6 @@ X3D:
                         diffuseColor: [0.1, 0.1, 0.1]
                         shininess: 0.8
                         specularColor: [0.5, 0.6, 0.7]
-                ,
                 Cylinder:
                     radius: 500.0
             ]

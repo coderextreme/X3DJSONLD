@@ -38,7 +38,6 @@ X3D:
             name: "license"
             content: "https://www.web3d.org/x3d/content/examples/license.html"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],
@@ -77,7 +76,6 @@ X3D:
                         type: "SFFloat"
                         value: "0.75"
                     ]
-,
                 ProtoBody:
                     Group: [
                         TimeSensor: [
@@ -92,16 +90,16 @@ X3D:
                         ],
                         Transform: [
                             DEF: "OrbitTransform"
-                            IS:
+                            IS: [
                                 connect: [
                                     nodeField: "translation"
                                     protoField: "translation"
                                 ]
-,
+                            ],
                             Shape: [
                                 Appearance:
                                     Material:
-                                        IS:
+                                        IS: [
                                             connect: [
                                                 nodeField: "diffuseColor"
                                                 protoField: "diffuseColor"
@@ -114,9 +112,9 @@ X3D:
                                                 nodeField: "transparency"
                                                 protoField: "transparency"
                                             ]
-                                ,
-
-#<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+                                        ]
+,
+#<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet>
                                 IndexedFaceSet:
                                     ccw: false
                                     convex: false
@@ -174,8 +172,71 @@ X3D:
                                 type: "SFInt32"
                                 value: "50"
                             ],
-
-#sourceCode "\\newline\\newline			function initialize() {\\newline			     generateCoordinates();\\newline			     var arrIndex = 0;\\newline			     for (var i = 0; i < resolution-1; i++) {\\newline				for (var j = 0; j < resolution-1; j++) {\\newline				     coordIndexes[arrIndex++] = i*resolution+j;\\newline				     coordIndexes[arrIndex++] = i*resolution+j+1;\\newline				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;\\newline				     coordIndexes[arrIndex++] = (i+1)*resolution+j;\\newline				     coordIndexes[arrIndex++] = -1;\\newline				}\\newline			    }\\newline			}\\newline\\newline			function generateCoordinates() {\\newline			     var theta = 0.0;\\newline			     var phi = 0.0;\\newline			     var delta = (2 * 3.141592653) / (resolution-1);\\newline			     var arrIndex = 0;\\newline			     for (var i = 0; i < resolution; i++) {\\newline				for (var j = 0; j < resolution; j++) {\\newline					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\\newline					coordinates[arrIndex++] = new SFVec3f(\\newline						rho * Math.cos(phi) * Math.cos(theta),\\newline						rho * Math.cos(phi) * Math.sin(theta),\\newline						rho * Math.sin(phi)\\newline					);\\newline					theta += delta;\\newline				}\\newline				phi += delta;\\newline			     }\\newline			}\\newline\\newline			function set_fraction(fraction, eventTime) {\\newline				var choice = Math.floor(Math.random() * 4);\\newline				switch (choice) {\\newline				case 0:\\newline					e += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 1:\\newline					f += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 2:\\newline					g += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 3:\\newline					h += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				}\\newline				if (e < 1) {\\newline					f = 10;\\newline				}\\newline				if (f < 1) {\\newline					f = 10;\\newline				}\\newline				if (g < 1) {\\newline					g = 4;\\newline				}\\newline				if (h < 1) {\\newline					h = 4;\\newline				}\\newline				generateCoordinates();\\newline			}\\newline"
+#ecmascript:
+#
+#			function initialize() {
+#			     generateCoordinates();
+#			     var arrIndex = 0;
+#			     for (var i = 0; i < resolution-1; i++) {
+#				for (var j = 0; j < resolution-1; j++) {
+#				     coordIndexes[arrIndex++] = i*resolution+j;
+#				     coordIndexes[arrIndex++] = i*resolution+j+1;
+#				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+#				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+#				     coordIndexes[arrIndex++] = -1;
+#				}
+#			    }
+#			}
+#
+#			function generateCoordinates() {
+#			     var theta = 0.0;
+#			     var phi = 0.0;
+#			     var delta = (2 * 3.141592653) / (resolution-1);
+#			     var arrIndex = 0;
+#			     for (var i = 0; i < resolution; i++) {
+#				for (var j = 0; j < resolution; j++) {
+#					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+#					coordinates[arrIndex++] = new SFVec3f(
+#						rho * Math.cos(phi) * Math.cos(theta),
+#						rho * Math.cos(phi) * Math.sin(theta),
+#						rho * Math.sin(phi)
+#					);
+#					theta += delta;
+#				}
+#				phi += delta;
+#			     }
+#			}
+#
+#			function set_fraction(fraction, eventTime) {
+#				var choice = Math.floor(Math.random() * 4);
+#				switch (choice) {
+#				case 0:
+#					e += Math.floor(Math.random() * 2) * 2 - 1;
+#					break;
+#				case 1:
+#					f += Math.floor(Math.random() * 2) * 2 - 1;
+#					break;
+#				case 2:
+#					g += Math.floor(Math.random() * 2) * 2 - 1;
+#					break;
+#				case 3:
+#					h += Math.floor(Math.random() * 2) * 2 - 1;
+#					break;
+#				}
+#				if (e < 1) {
+#					f = 10;
+#				}
+#				if (f < 1) {
+#					f = 10;
+#				}
+#				if (g < 1) {
+#					g = 4;
+#				}
+#				if (h < 1) {
+#					h = 4;
+#				}
+#				generateCoordinates();
+#			}
                         ],
                         ROUTE: [
                             fromNode: "OrbitScript"

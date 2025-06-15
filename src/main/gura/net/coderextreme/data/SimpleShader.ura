@@ -82,9 +82,7 @@ X3D:
             name: "license"
             content: "../../license.html"
         ],
-
 #meta content='under development' name='warning'/
-    ,
     Scene:
         ProtoDeclare: [
             name: "myPrototype"
@@ -95,7 +93,6 @@ X3D:
                     type: "SFVec3f"
                     value: "0.95 0.44 0.22"
                 ]
-,
             ProtoBody:
                 Transform: [
                     DEF: "TR"
@@ -103,7 +100,6 @@ X3D:
                         Appearance:
                             Material:
                                 diffuseColor: [0.5, 0.5, 0.9]
-,
                             ComposedShader: [
                                 language: "GLSL"
                                 field: [
@@ -111,12 +107,12 @@ X3D:
                                     accessType: "initializeOnly"
                                     type: "SFVec3f"
                                 ],
-                                IS:
+                                IS: [
                                     connect: [
                                         nodeField: "decis"
                                         protoField: "myInputRange"
                                     ]
-,
+                                ],
                                 ShaderPart: [
                                     type: "VERTEX"
                                 ],
@@ -141,7 +137,6 @@ X3D:
                                     type: "FRAGMENT"
                                 ]
                             ]
-                        ,
                         Sphere:
                             radius: 1.75
                     ]
@@ -161,7 +156,6 @@ X3D:
                         name: "nodes"
                         DEF: "nodes"
                         reference: "http://titania.create3000.de"
-
 #NULL
                     ]
                 ],

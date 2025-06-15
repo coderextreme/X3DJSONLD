@@ -22,7 +22,6 @@ X3D:
             name: "description"
             content: "a box"
         ]
-    ,
     Scene:
         ProtoDeclare: [
             name: "anyShape"
@@ -35,14 +34,14 @@ X3D:
                         Sphere:
                     ]
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "children"
                             protoField: "myShape"
                         ]
+                    ]
                 ]
         ],
         ProtoDeclare: [
@@ -56,16 +55,16 @@ X3D:
                         Cylinder:
                     ]
                 ]
-,
             ProtoBody:
                 Transform: [
                     ProtoInstance: [
                         name: "anyShape"
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
+                        ]
                     ]
                 ]
         ],

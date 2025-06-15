@@ -6,7 +6,6 @@ X3D:
             name: "title"
             content: "Scripting.x3d"
         ]
-    ,
     Scene:
         Script: [
             DEF: "OpenVault"
@@ -31,14 +30,24 @@ X3D:
                 value: "false"
                 accessType: "initializeOnly"
             ],
-
-#sourceCode "\\newline\\newline      function combinationEntered (value) {\\newline\\newline        unlocked = value;\\newline\\newline      }\\newline\\newline      function openVault(value) {\\newline\\newline      if (unlocked) vaultUnlocked = value;\\newline\\newline      }\\newline"
+#ecmascript:
+#
+#      function combinationEntered (value) {
+#
+#        unlocked = value;
+#
+#      }
+#
+#      function openVault(value) {
+#
+#      if (unlocked) vaultUnlocked = value;
+#
+#      }
         ],
         Shape: [
             Appearance:
                 Material:
                     diffuseColor: [1, 0, 0]
-            ,
             Sphere:
         ],
         Sound: [

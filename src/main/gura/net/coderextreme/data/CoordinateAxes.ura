@@ -50,23 +50,17 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "CoordinateAxes.x3d"
         ],
         Collision: [
             DEF: "DoNotCollideWithVisualizationWidget"
-
 #Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
-
 #This NavigationInfo allows examine mode and will be overridden by any parent scene.
-
 #Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
-
 #Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
             Group:
-
 #Vertical Y arrow and label
                 Group: [
                     DEF: "ArrowGreen"
@@ -75,7 +69,6 @@ X3D:
                             DEF: "ArrowCylinder"
                             radius: 0.025
                             top: false
-                        ,
                         Appearance:
                             DEF: "Green"
                             Material:
@@ -89,7 +82,6 @@ X3D:
                                 DEF: "ArrowCone"
                                 bottomRadius: 0.05
                                 height: 0.1
-                            ,
                             Appearance:
                                 USE: "Green"
                         ]
@@ -104,7 +96,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 0.3]
                                     emissiveColor: [0.33, 0.33, 0.1]
-                            ,
                             Text:
                                 string: ["Y"]
                                 FontStyle:
@@ -115,10 +106,8 @@ X3D:
                         ]
                     ]
                 ]
-,
             Transform:
                 rotation: [0, 0, 1, -1.57079]
-
 #Horizontal X arrow and label
                 Group: [
                     Group: [
@@ -126,7 +115,6 @@ X3D:
                         Shape: [
                             Cylinder:
                                 USE: "ArrowCylinder"
-                            ,
                             Appearance:
                                 DEF: "Red"
                                 Material:
@@ -138,7 +126,6 @@ X3D:
                             Shape: [
                                 Cone:
                                     USE: "ArrowCone"
-                                ,
                                 Appearance:
                                     USE: "Red"
                             ]
@@ -147,13 +134,11 @@ X3D:
                     Transform: [
                         rotation: [0, 0, 1, 1.57079]
                         translation: [0.072, 1.1, 0]
-
 #note label rotated back to original coordinate frame
                         Billboard: [
                             Shape: [
                                 Appearance:
                                     USE: "LABEL_APPEARANCE"
-                                ,
                                 Text:
                                     string: ["X"]
                                     FontStyle:
@@ -162,10 +147,8 @@ X3D:
                         ]
                     ]
                 ]
-,
             Transform:
                 rotation: [1, 0, 0, 1.57079]
-
 #Perpendicular Z arrow and label, note right-hand rule
                 Group: [
                     Group: [
@@ -173,7 +156,6 @@ X3D:
                         Shape: [
                             Cylinder:
                                 USE: "ArrowCylinder"
-                            ,
                             Appearance:
                                 DEF: "Blue"
                                 Material:
@@ -185,7 +167,6 @@ X3D:
                             Shape: [
                                 Cone:
                                     USE: "ArrowCone"
-                                ,
                                 Appearance:
                                     USE: "Blue"
                             ]
@@ -194,13 +175,11 @@ X3D:
                     Transform: [
                         rotation: [1, 0, 0, -1.57079]
                         translation: [0, 1.1, 0.072]
-
 #note label rotated back to original coordinate frame
                         Billboard: [
                             Shape: [
                                 Appearance:
                                     USE: "LABEL_APPEARANCE"
-                                ,
                                 Text:
                                     string: ["Z"]
                                     FontStyle:

@@ -50,7 +50,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "SpatialAudioCameraAnimation.x3d"
@@ -118,7 +117,6 @@ X3D:
                     DEF: "WireColor"
                     Material:
                         diffuseColor: [0.122, 0.114, 0.125]
-                ,
                 Box:
                     size: [2000, 1, 2000]
             ]
@@ -131,7 +129,6 @@ X3D:
                     DEF: "WireColor_1"
                     Material:
                         diffuseColor: [0.690196, 0.101961, 0.101961]
-                ,
                 Sphere:
                     radius: 100.0
             ],
@@ -148,7 +145,6 @@ X3D:
                                 diffuseColor: [1, 1, 1]
                                 shininess: 0.51
                                 specularColor: [0.46, 0.46, 0.46]
-                        ,
                         Text:
                             string: ["Violin"]
                             FontStyle:
@@ -167,7 +163,6 @@ X3D:
                     DEF: "WireColor_2"
                     Material:
                         diffuseColor: [0.105882, 0.694118, 0.580392]
-                ,
                 Sphere:
                     radius: 100.0
             ],
@@ -184,7 +179,6 @@ X3D:
                                 diffuseColor: [1, 1, 1]
                                 shininess: 0.51
                                 specularColor: [0.46, 0.46, 0.46]
-                        ,
                         Text:
                             string: ["Saxophone"]
                             FontStyle:

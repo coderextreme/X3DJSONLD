@@ -34,7 +34,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "Bubbles.x3d"
@@ -106,7 +105,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.025
                         ]
@@ -118,7 +116,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.055
                         ]
@@ -130,7 +127,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.065
                         ]
@@ -142,7 +138,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.015
                         ]
@@ -154,7 +149,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.075
                         ]
@@ -166,7 +160,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.005
                         ]
@@ -178,7 +171,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.035
                         ]
@@ -190,7 +182,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.05
                         ]
@@ -202,7 +193,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.045
                         ]
@@ -214,7 +204,6 @@ X3D:
                                 Material:
                                     diffuseColor: [1, 1, 1]
                                     transparency: 0.8
-                            ,
                             Sphere:
                                 radius: 0.035
                         ]

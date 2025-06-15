@@ -62,7 +62,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ViewFrustumExample.x3d"
@@ -140,13 +139,11 @@ X3D:
                 type: "SFBool"
             ]
         ],
-
 #Example use
         ProtoInstance: [
             name: "ViewFrustum"
             fieldValue: [
                 name: "ViewpointNode"
-
 #prefer empty description to prevent entry in player's ViewpointList
                 Viewpoint: [
                     description: "ViewFrustum ViewpointNode"
@@ -179,7 +176,6 @@ X3D:
                 value: "true"
             ]
         ],
-
 #Visualization assists
         Inline: [
             DEF: "GridXZ"

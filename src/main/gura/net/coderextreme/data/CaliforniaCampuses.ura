@@ -74,7 +74,6 @@ X3D:
             name: "license"
             content: "https://savage.nps.edu/Savage/license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "CaliforniaCampuses.x3d"
@@ -82,19 +81,14 @@ X3D:
         Switch: [
             DEF: "SwitchGlobes"
             whichChoice: 0
-
 #Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching.
             Inline: [
                 url: ["http://x3d-earth.nps.edu/osmdemo.x3d"]
             ],
-
-#<Inline load='false' url='\"http://mmog.ern.nps.edu/California/California.x3d\"'/>
-
-#<Inline load='false' url='\"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d\"'/>
-
-#<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d\"'/>
-
-#<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d\"'/>
+#<Inline load='false' url='"http://mmog.ern.nps.edu/California/California.x3d"'/>
+#<Inline load='false' url='"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d"'/>
+#<Inline load='false' url='"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d"'/>
+#<Inline load='false' url='"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d"'/>
         ],
         NavigationInfo: [
             transitionType: ["ANIMATE"]
@@ -312,7 +306,6 @@ X3D:
                 position: [33.879947, -118.027903, 250000]
             ]
         ],
-
 #====================
         ExternProtoDeclare: [
             name: "CrossHair"
@@ -369,7 +362,6 @@ X3D:
                 value: "0 0 -5"
             ]
         ],
-
 #====================
         ExternProtoDeclare: [
             name: "HeadsUpDisplay"
@@ -400,7 +392,6 @@ X3D:
                 type: "SFRotation"
             ]
         ],
-
 #====================
         ExternProtoDeclare: [
             name: "ViewpointSequencer"
@@ -596,10 +587,8 @@ X3D:
                     position: [-10, 0, 0]
                 ]
             ],
-
 #initially enabled is off, scene provides selectable text to activate
         ],
-
 #====================
         GeoLocation: [
             geoCoords: [36.595599, -121.877148, 624990]
@@ -610,7 +599,6 @@ X3D:
                         string: ["ViewpointSequencer tour"]
                         FontStyle:
                             justify: ["MIDDLE", "MIDDLE"]
-                    ,
                     Appearance:
                         Material:
                             ambientIntensity: 0.25
@@ -639,7 +627,6 @@ X3D:
                 toNode: "ViewpointTour"
             ]
         ],
-
 #====================
         ExternProtoDeclare: [
             name: "ViewPositionOrientation"
@@ -690,5 +677,4 @@ X3D:
                 value: "false"
             ]
         ],
-
 #====================

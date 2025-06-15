@@ -38,14 +38,11 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         Transform: [
-
 #DEF for markerfor XYZ axes
             Shape: [
                 DEF: "AxisLinesShape"
-
 #RGB lines showing XYZ axes
                 IndexedLineSet:
                     colorIndex: [0, 1, 2]
@@ -53,13 +50,11 @@ X3D:
                     coordIndex: [0, 1, -1, 0, 2, -1, 0, 3, -1]
                     Coordinate:
                         point: [0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1]
-,
                     Color:
                         color: [1, 0, 0, 0, 0.6, 0, 0, 0, 1]
             ]
         ],
         Group: [
-
 #DEFS for markers of skeleton joints, segments, and sites
             Transform: [
                 Transform: [
@@ -68,7 +63,6 @@ X3D:
                         DEF: "HAnimRootShape"
                         Sphere:
                             radius: 0.02
-                        ,
                         Appearance:
                             Material:
                                 DEF: "HAnimRootMaterial"
@@ -82,7 +76,6 @@ X3D:
                         DEF: "HAnimJointShape"
                         Sphere:
                             radius: 0.02
-                        ,
                         Appearance:
                             Material:
                                 DEF: "HAnimJointMaterial"
@@ -99,7 +92,6 @@ X3D:
                             ColorRGBA:
                                 DEF: "HAnimSegmentLineColorRGBA"
                                 color: [1, 1, 0, 1, 1, 1, 0, 0.1]
-,
                             Coordinate:
                                 point: [-0.05, 0, 0, 0.05, 0, 0]
                     ]
@@ -116,10 +108,8 @@ X3D:
                             ColorRGBA:
                                 DEF: "HAnimSiteColorRGBA"
                                 color: [1, 1, 0, 1, 1, 1, 0, 0.1, 1, 1, 0, 1, 1, 1, 0, 0.1, 1, 1, 0, 1, 1, 1, 0, 0.1]
-,
                             Coordinate:
                                 point: [0, 0.01, 0, -0.01, 0, 0, 0, 0, 0.01, 0.01, 0, 0, 0, 0, -0.01, 0, -0.01, 0]
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 1, 0]
@@ -139,9 +129,7 @@ X3D:
             DEF: "hanim_HAnim"
             info: ["humanoidVersion=2.0"]
             version: "2.0"
-
 #<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)
-
 #</LOD>
             Shape: [
                 DEF: "SkinShape"
@@ -152,16 +140,13 @@ X3D:
                     Coordinate:
                         DEF: "TheSkinCoord"
                         point: [0, 1.77, 0, 0, 1.665, 0.09, -0.033, 1.62, 0.087, 0.033, 1.62, 0.087, 0, 1.55, 0.097, -0.077, 1.64, -0.01, -0.0527, 1.58, 0.015, 0.077, 1.64, -0.01, 0.0527, 1.58, 0.015, 0, 1.625, -0.0925, -0.03, 1.46, 0.035, 0, 1.44, 0.03, 0.03, 1.46, 0.035, -0.1135, 1.318, 0.095, 0.1135, 1.318, 0.095, 0, 1.25, 0.113, -0.087, 1.19, 0.09, -0.0935, 1.03, 0.075, 0.087, 1.19, 0.09, 0.0935, 1.03, 0.075, -0.1425, 1.065, 0.0033, -0.15, 0.9, -0.01, 0.1425, 1.065, 0.0033, 0.15, 0.9, -0.01, 0, 1.53, -0.084, 0.0049, 1.1908, -0.1113, -0.0773, 1.019, -0.12, 0.0773, 1.019, -0.12, 0.005, 1.0915, -0.1091, -0.178, 1.4825, -0.0625, -0.17, 1.38, 0.007, -0.1884, 0.8676, -0.036, -0.16, 1.38, -0.127, -0.2, 1.1388, -0.08, -0.244, 1.1388, -0.04, -0.165, 1.1388, -0.04, -0.23, 1.133, -0.055, -0.1977, 0.8169, -0.0177, -0.1941, 0.6772, -0.0423, -0.2117, 0.8562, -0.0584, -0.1929, 0.789, -0.1064, 0.175, 1.4825, -0.06, 0.17, 1.38, 0.007, 0.1901, 0.8645, -0.0415, 0.16, 1.38, -0.125, 0.2, 1.1388, -0.08, 0.165, 1.1388, -0.04, 0.244, 1.1388, -0.04, 0.23, 1.133, -0.055, 0.2009, 0.8139, -0.0237, 0.2056, 0.6743, -0.0482, 0.2142, 0.8529, -0.0648, 0.1929, 0.786, -0.1122, -0.1, 0.4913, -0.03, -0.17, 0.466, 0, -0.05, 0.466, 0, -0.165, 0.01, 0.12, -0.15, 0.07, 0, -0.085, 0.086, 0.0125, -0.09, 0.056, 0.0125, -0.115, 0.02, 0.122, -0.115, 0.04, -0.055, -0.11, 0.011, 0.19, 0.0993, 0.4881, -0.0309, 0.17, 0.466, 0, 0.05, 0.4867, 0, 0.165, 0.01, 0.12, 0.15, 0.07, 0, 0.085, 0.086, 0.0125, 0.09, 0.056, 0.0125, 0.115, 0.02, 0.122, 0.115, 0.04, -0.055, 0.11, 0.011, 0.19, 0, 0.875, 0, -0.0646, 1.5149, -0.038, 0.0646, 1.5149, -0.038, 0, 1.07225, 0.09, -0.11, 1.427, -0.1375, -0.235, 1.42, -0.0625, 0.11, 1.427, -0.1375, 0.235, 1.42, -0.0625, 0, 1.41, -0.145, 0, 0.925, 0.08, -0.087, 1.19, -0.09, 0.087, 1.19, -0.09, 0.172, 1.32, -0.03, -0.172, 1.32, -0.03, 0.15, 1.23, -0.015, -0.15, 1.23, -0.015, 0.079, 0.92, -0.14, 0.1, 0.9, 0.077, -0.079, 0.92, -0.14, -0.1, 0.9, 0.075, 0, 0.87, 0, 0.171, 0.65, 0, 0.02, 0.65, 0, 0.1, 0.65, -0.08, 0.1, 0.65, 0.07, -0.171, 0.65, 0, -0.02, 0.65, 0, -0.1, 0.65, -0.08, -0.1, 0.65, 0.07, 0.25, 1.27, -0.04, 0.17, 1.27, -0.04, 0.2, 1.27, -0.09, 0.2, 1.27, 0.02, 0.244, 1.1388, -0.04, 0.165, 1.1388, -0.04, 0.2, 1.1388, -0.08, 0.2, 1.1388, -0.013, 0.225, 1, -0.01, 0.225, 1, -0.07, 0.185, 1, -0.01, 0.185, 1, -0.07, 0.2, 1.1388, -0.04, 0.225, 0.92, -0.04, 0.175, 0.92, -0.04, 0.2, 0.92, -0.065, 0.2, 0.92, -0.015, 0.225, 0.89, -0.04, 0.175, 0.89, -0.04, 0.2, 0.89, -0.065, 0.2, 0.89, -0.015, 0.218, 0.86, -0.04, 0.184, 0.86, -0.04, 0.2, 0.87, -0.07, 0.2, 0.87, 0, 0.21, 0.85, 0, 0.1854, 0.85, 0, 0.212, 0.84, -0.015, 0.183, 0.84, -0.015, 0.213, 0.835, -0.04, 0.19, 0.835, -0.04, 0.211, 0.835, -0.065, 0.192, 0.835, -0.065, 0.208, 0.84, -0.085, 0.19, 0.84, -0.085, 0.2, 0.84, -0.095, 0.215, 0.82, 0, 0.193, 0.815, 0.005, 0.198, 0.8, 0.012, 0.21, 0.82, 0.03, 0.19, 0.82, 0.03, 0.2, 0.835, 0.039, 0.212, 0.8, 0.05, 0.188, 0.8, 0.05, 0.2, 0.807, 0.057, 0.2, 0.793, 0.035, 0.2, 0.774, 0.076, 0.212, 0.78, 0.07, 0.188, 0.78, 0.07, 0.2, 0.785, 0.075, 0.2, 0.77, 0.062, 0.215, 0.793, -0.015, 0.187, 0.793, -0.015, 0.2, 0.793, -0.005, 0.215, 0.788, -0.04, 0.187, 0.788, -0.04, 0.215, 0.793, -0.065, 0.187, 0.793, -0.065, 0.21, 0.79, -0.085, 0.19, 0.79, -0.085, 0.2, 0.79, -0.095, 0.19, 0.77, -0.0275, 0.19, 0.77, -0.0525, 0.19, 0.78, -0.0775, 0.212, 0.745, -0.015, 0.188, 0.745, -0.02, 0.2, 0.745, -0.0255, 0.2, 0.745, -0.0045, 0.211, 0.72, -0.015, 0.189, 0.72, -0.015, 0.2, 0.72, -0.0252, 0.2, 0.72, -0.0048, 0.21, 0.695, -0.015, 0.19, 0.695, -0.015, 0.2, 0.695, -0.025, 0.2, 0.695, -0.005, 0.2, 0.685, -0.015, 0.215, 0.74, -0.04, 0.185, 0.74, -0.04, 0.2, 0.74, -0.055, 0.2, 0.74, -0.025, 0.21, 0.7142, -0.04, 0.19, 0.7142, -0.04, 0.2, 0.7142, -0.053, 0.2, 0.7142, -0.027, 0.21, 0.68, -0.04, 0.19, 0.68, -0.04, 0.2, 0.68, -0.05, 0.2, 0.68, -0.03, 0.2, 0.67, -0.04, 0.212, 0.74, -0.065, 0.188, 0.74, -0.065, 0.2, 0.74, -0.0756, 0.2, 0.74, -0.0542, 0.21, 0.7177, -0.065, 0.19, 0.7177, -0.065, 0.2, 0.7177, -0.0751, 0.2, 0.7177, -0.0549, 0.21, 0.695, -0.065, 0.19, 0.695, -0.065, 0.2, 0.695, -0.075, 0.2, 0.695, -0.055, 0.2, 0.685, -0.065, 0.211, 0.755, -0.085, 0.189, 0.755, -0.085, 0.2, 0.755, -0.0952, 0.2, 0.755, -0.0748, 0.21, 0.735, -0.085, 0.19, 0.735, -0.085, 0.2, 0.735, -0.0951, 0.2, 0.735, -0.0749, 0.21, 0.72, -0.085, 0.19, 0.72, -0.085, 0.2, 0.72, -0.095, 0.2, 0.72, -0.075, 0.2, 0.71, -0.085, -0.23, 1.23, -0.04, -0.16, 1.23, -0.04, -0.2, 1.235, -0.105, -0.2, 1.235, 0.02, -0.244, 1.1388, -0.04, -0.165, 1.1388, -0.04, -0.2, 1.1388, -0.08, -0.2, 1.1388, 0.013, -0.225, 1, -0.01, -0.225, 1, -0.07, -0.185, 1, -0.01, -0.185, 1, -0.07, -0.2, 1.1388, -0.04, -0.225, 0.92, -0.04, -0.175, 0.92, -0.04, -0.2, 0.92, -0.065, -0.2, 0.92, -0.015, -0.225, 0.89, -0.04, -0.175, 0.89, -0.04, -0.2, 0.89, -0.065, -0.2, 0.89, -0.015, -0.218, 0.86, -0.04, -0.184, 0.86, -0.04, -0.2, 0.87, -0.07, -0.2, 0.87, 0, -0.21, 0.85, 0, -0.1854, 0.85, 0, -0.212, 0.84, -0.015, -0.183, 0.84, -0.015, -0.213, 0.835, -0.04, -0.19, 0.835, -0.04, -0.211, 0.835, -0.065, -0.192, 0.835, -0.065, -0.208, 0.84, -0.085, -0.19, 0.84, -0.085, -0.2, 0.84, -0.095, -0.215, 0.82, 0, -0.193, 0.815, 0.005, -0.198, 0.8, 0.012, -0.21, 0.82, 0.03, -0.19, 0.82, 0.03, -0.2, 0.835, 0.039, -0.212, 0.8, 0.05, -0.188, 0.8, 0.05, -0.2, 0.807, 0.057, -0.2, 0.793, 0.035, -0.2, 0.774, 0.076, -0.212, 0.78, 0.07, -0.188, 0.78, 0.07, -0.2, 0.785, 0.075, -0.2, 0.77, 0.062, -0.215, 0.793, -0.015, -0.187, 0.793, -0.015, -0.2, 0.793, -0.005, -0.215, 0.788, -0.04, -0.187, 0.788, -0.04, -0.215, 0.793, -0.065, -0.187, 0.793, -0.065, -0.21, 0.79, -0.085, -0.19, 0.79, -0.085, -0.2, 0.79, -0.095, -0.19, 0.77, -0.0275, -0.19, 0.77, -0.0525, -0.19, 0.78, -0.0775, -0.212, 0.745, -0.015, -0.188, 0.745, -0.02, -0.2, 0.745, -0.0255, -0.2, 0.745, -0.0045, -0.211, 0.72, -0.015, -0.189, 0.72, -0.015, -0.2, 0.72, -0.0252, -0.2, 0.72, -0.0048, -0.21, 0.695, -0.015, -0.19, 0.695, -0.015, -0.2, 0.695, -0.025, -0.2, 0.695, -0.005, -0.2, 0.685, -0.015, -0.215, 0.74, -0.04, -0.185, 0.74, -0.04, -0.2, 0.74, -0.055, -0.2, 0.74, -0.025, -0.21, 0.7142, -0.04, -0.19, 0.7142, -0.04, -0.2, 0.7142, -0.053, -0.2, 0.7142, -0.027, -0.21, 0.68, -0.04, -0.19, 0.68, -0.04, -0.2, 0.68, -0.05, -0.2, 0.68, -0.03, -0.2, 0.67, -0.04, -0.212, 0.74, -0.065, -0.188, 0.74, -0.065, -0.2, 0.74, -0.0756, -0.2, 0.74, -0.0542, -0.21, 0.7177, -0.065, -0.19, 0.7177, -0.065, -0.2, 0.7177, -0.0751, -0.2, 0.7177, -0.0549, -0.21, 0.695, -0.065, -0.19, 0.695, -0.065, -0.2, 0.695, -0.075, -0.2, 0.695, -0.055, -0.2, 0.685, -0.065, -0.211, 0.755, -0.085, -0.189, 0.755, -0.085, -0.2, 0.755, -0.0952, -0.2, 0.755, -0.0748, -0.21, 0.735, -0.085, -0.19, 0.735, -0.085, -0.2, 0.735, -0.0951, -0.2, 0.735, -0.0749, -0.21, 0.72, -0.085, -0.19, 0.72, -0.085, -0.2, 0.72, -0.095, -0.2, 0.72, -0.075, -0.2, 0.71, -0.085, 0.115, 0.466, 0.06, 0.115, 0.466, -0.055, 0.15, 0.466, 0, 0.05, 0.466, 0, 0.17, 0.3, 0, 0.06, 0.3, 0, 0.1, 0.3, -0.05, 0.1, 0.3, 0.05, 0.15, 0.07, 0, 0.085, 0.086, 0.0125, 0.115, 0.069, -0.045, 0.117, 0.0975, 0.0615, 0.1375, 0.006, -0.03, 0.095, 0.006, -0.03, 0.115, 0.015, -0.045, 0.115, 0.06, 0.1, 0.115, 0, 0.07, 0.165, 0, 0.07, 0.095, 0, 0.07, 0.115, 0.04, 0.13, 0.125, 0, 0.12, 0.165, 0, 0.12, 0.087, 0, 0.122, 0.09, 0.012, 0.188, 0.11, 0.011, 0.19, 0.128, 0.011, 0.185, 0.142, 0.011, 0.178, 0.154, 0.01, 0.168, -0.115, 0.466, 0.06, -0.115, 0.466, -0.055, -0.17, 0.466, 0, -0.05, 0.466, 0, -0.17, 0.3, 0, -0.06, 0.3, 0, -0.1, 0.3, -0.05, -0.1, 0.3, 0.05, -0.15, 0.07, 0, -0.085, 0.086, 0.0125, -0.115, 0.069, -0.045, -0.117, 0.0975, 0.0615, -0.1375, 0.006, -0.03, -0.095, 0.006, -0.03, -0.095, 0.006, -0.03, -0.115, 0.06, 0.1, -0.115, 0, 0.07, -0.165, 0, 0.07, -0.095, 0, 0.07, -0.115, 0.04, 0.13, -0.125, 0, 0.12, -0.165, 0, 0.12, -0.087, 0, 0.122, -0.09, 0.012, 0.188, -0.11, 0.011, 0.19, -0.128, 0.011, 0.185, -0.142, 0.011, 0.178, -0.154, 0.01, 0.168]
-,
                     Color:
                         color: [1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1]
-                ,
                 Appearance:
                     DEF: "SkinAppearance"
                     ImageTexture:
                         DEF: "zBlueSpiralBkg2"
                         url: ["../resources/images/zBlueSpiralBkg2.gif", "../data/zBlueSpiralBkg2.gif", "zBlueSpiralBkg2.gif", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
-,
                     Material:
                         DEF: "SkinMaterial"
                         ambientIntensity: 0.6
@@ -172,7 +157,6 @@ X3D:
             Coordinate:
                 containerFieldOverride: "skinCoord"
                 USE: "TheSkinCoord"
-,
             HAnimJoint: [
                 name: "humanoid_root"
                 DEF: "hanim_humanoid_root"
@@ -194,10 +178,8 @@ X3D:
                         displacements: [0, 0, 0]
                     ],
                     Transform: [
-
 #Empty Transform
                         Transform: [
-
 #Empty Transform
                             Shape: [
                                 USE: "HAnimJointShape"
@@ -210,7 +192,6 @@ X3D:
                             Coordinate:
                                 point: [0, 0.824, 0.0277, 0, 0.9149, 0.0016]
 ,
-
 #from humanoid_root to sacroiliac vertices 2
                             ColorRGBA:
                                 USE: "HAnimSegmentLineColorRGBA"
@@ -331,7 +312,6 @@ X3D:
                             Coordinate:
                                 point: [0, 0.824, 0.0277, 0.0028, 1.0568, -0.0776]
 ,
-
 #from humanoid_root to vl5 vertices 2
                             ColorRGBA:
                                 USE: "HAnimSegmentLineColorRGBA"
@@ -380,10 +360,8 @@ X3D:
                         name: "pelvis"
                         DEF: "hanim_pelvis"
                         Transform: [
-
 #Empty Transform
                             Transform: [
-
 #Empty Transform
                                 Shape: [
                                     USE: "HAnimJointShape"
@@ -396,7 +374,6 @@ X3D:
                                 Coordinate:
                                     point: [0, 0.9149, 0.0016, 0.0961, 0.9124, -0.0001]
 ,
-
 #from sacroiliac to l_hip vertices 2
                                 ColorRGBA:
                                     USE: "HAnimSegmentLineColorRGBA"
@@ -451,7 +428,6 @@ X3D:
                                 Coordinate:
                                     point: [0, 0.9149, 0.0016, -0.095, 0.9171, 0.0029]
 ,
-
 #from sacroiliac to r_hip vertices 2
                                 ColorRGBA:
                                     USE: "HAnimSegmentLineColorRGBA"
@@ -511,10 +487,8 @@ X3D:
                             name: "l_thigh"
                             DEF: "hanim_l_thigh"
                             Transform: [
-
 #Empty Transform
                                 Transform: [
-
 #Empty Transform
                                     Shape: [
                                         USE: "HAnimJointShape"
@@ -527,7 +501,6 @@ X3D:
                                     Coordinate:
                                         point: [0.0961, 0.9124, -0.0001, 0.104, 0.4867, 0.0308]
 ,
-
 #from l_hip to l_knee vertices 2
                                     ColorRGBA:
                                         USE: "HAnimSegmentLineColorRGBA"
@@ -576,10 +549,8 @@ X3D:
                                 name: "l_calf"
                                 DEF: "hanim_l_calf"
                                 Transform: [
-
 #Empty Transform
                                     Transform: [
-
 #Empty Transform
                                         Shape: [
                                             USE: "HAnimJointShape"
@@ -592,7 +563,6 @@ X3D:
                                         Coordinate:
                                             point: [0.104, 0.4867, 0.0308, 0.1101, 0.0656, -0.0736]
 ,
-
 #from l_knee to l_talocrural vertices 2
                                         ColorRGBA:
                                             USE: "HAnimSegmentLineColorRGBA"
@@ -633,10 +603,8 @@ X3D:
                                         scale: [0.15, 0.15, 0.15]
                                         translation: [0.08, 0.06, -0.025]
                                         rotation: [1, 0, 0, -1.57]
-
 #Transform left foot
                                         Transform: [
-
 #Empty Transform left foot
                                             Shape: [
                                                 USE: "HAnimJointShape"
@@ -649,7 +617,6 @@ X3D:
                                             Coordinate:
                                                 point: [0.1101, 0.0656, -0.0736, 0, 1, 0]
 ,
-
 #from l_talocrural to l_talocalcaneonavicular vertices 2
                                             ColorRGBA:
                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -660,7 +627,6 @@ X3D:
                                             Coordinate:
                                                 point: [0.1101, 0.0656, -0.0736, 0, 1, 0]
 ,
-
 #from l_talocrural to l_calcaneocuboid vertices 2
                                             ColorRGBA:
                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -676,10 +642,8 @@ X3D:
                                         name: "l_navicular"
                                         DEF: "hanim_l_navicular"
                                         Transform: [
-
 #Empty Transform
                                             Transform: [
-
 #Empty Transform
                                                 Shape: [
                                                     USE: "HAnimJointShape"
@@ -692,7 +656,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -703,7 +666,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -714,7 +676,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -730,10 +691,8 @@ X3D:
                                             name: "l_cuneiform_1"
                                             DEF: "hanim_l_cuneiform_1"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -746,7 +705,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -762,10 +720,8 @@ X3D:
                                                 name: "l_metatarsal_1"
                                                 DEF: "hanim_l_metatarsal_1"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -778,7 +734,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -805,10 +760,8 @@ X3D:
                                                     name: "l_tarsal_proximal_phalanx_1"
                                                     DEF: "hanim_l_tarsal_proximal_phalanx_1"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -821,7 +774,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -858,10 +810,8 @@ X3D:
                                             name: "l_cuneiform_2"
                                             DEF: "hanim_l_cuneiform_2"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -874,7 +824,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -890,10 +839,8 @@ X3D:
                                                 name: "l_metatarsal_2"
                                                 DEF: "hanim_l_metatarsal_2"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -906,7 +853,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -922,10 +868,8 @@ X3D:
                                                     name: "l_tarsal_proximal_phalanx_2"
                                                     DEF: "hanim_l_tarsal_proximal_phalanx_2"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -938,7 +882,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -954,10 +897,8 @@ X3D:
                                                         name: "l_tarsal_middle_phalanx_2"
                                                         DEF: "hanim_l_tarsal_middle_phalanx_2"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -970,7 +911,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1008,10 +948,8 @@ X3D:
                                             name: "l_cuneiform_3"
                                             DEF: "hanim_l_cuneiform_3"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -1024,7 +962,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1040,10 +977,8 @@ X3D:
                                                 name: "l_metatarsal_3"
                                                 DEF: "hanim_l_metatarsal_3"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -1056,7 +991,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1072,10 +1006,8 @@ X3D:
                                                     name: "l_tarsal_proximal_phalanx_3"
                                                     DEF: "hanim_l_tarsal_proximal_phalanx_3"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -1088,7 +1020,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1104,10 +1035,8 @@ X3D:
                                                         name: "l_tarsal_middle_phalanx_3"
                                                         DEF: "hanim_l_tarsal_middle_phalanx_3"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -1120,7 +1049,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1159,10 +1087,8 @@ X3D:
                                         name: "l_calcaneus"
                                         DEF: "hanim_l_calcaneus"
                                         Transform: [
-
 #Empty Transform
                                             Transform: [
-
 #Empty Transform
                                                 Shape: [
                                                     USE: "HAnimJointShape"
@@ -1175,7 +1101,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_calcaneocuboid to l_transversetarsal vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1191,10 +1116,8 @@ X3D:
                                             name: "l_cuboid"
                                             DEF: "hanim_l_cuboid"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -1207,7 +1130,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_transversetarsal to l_tarsometatarsal_4 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1218,7 +1140,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_transversetarsal to l_tarsometatarsal_5 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1234,10 +1155,8 @@ X3D:
                                                 name: "l_metatarsal_4"
                                                 DEF: "hanim_l_metatarsal_4"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -1250,7 +1169,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1266,10 +1184,8 @@ X3D:
                                                     name: "l_tarsal_proximal_phalanx_4"
                                                     DEF: "hanim_l_tarsal_proximal_phalanx_4"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -1282,7 +1198,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1298,10 +1213,8 @@ X3D:
                                                         name: "l_tarsal_middle_phalanx_4"
                                                         DEF: "hanim_l_tarsal_middle_phalanx_4"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -1314,7 +1227,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1351,10 +1263,8 @@ X3D:
                                                 name: "l_metatarsal_5"
                                                 DEF: "hanim_l_metatarsal_5"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -1367,7 +1277,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1394,10 +1303,8 @@ X3D:
                                                     name: "l_tarsal_proximal_phalanx_5"
                                                     DEF: "hanim_l_tarsal_proximal_phalanx_5"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -1410,7 +1317,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1426,10 +1332,8 @@ X3D:
                                                         name: "l_tarsal_middle_phalanx_5"
                                                         DEF: "hanim_l_tarsal_middle_phalanx_5"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -1442,7 +1346,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1484,10 +1387,8 @@ X3D:
                             name: "r_thigh"
                             DEF: "hanim_r_thigh"
                             Transform: [
-
 #Empty Transform
                                 Transform: [
-
 #Empty Transform
                                     Shape: [
                                         USE: "HAnimJointShape"
@@ -1500,7 +1401,6 @@ X3D:
                                     Coordinate:
                                         point: [-0.095, 0.9171, 0.0029, -0.0867, 0.4913, 0.0318]
 ,
-
 #from r_hip to r_knee vertices 2
                                     ColorRGBA:
                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1549,10 +1449,8 @@ X3D:
                                 name: "r_calf"
                                 DEF: "hanim_r_calf"
                                 Transform: [
-
 #Empty Transform
                                     Transform: [
-
 #Empty Transform
                                         Shape: [
                                             USE: "HAnimJointShape"
@@ -1565,7 +1463,6 @@ X3D:
                                         Coordinate:
                                             point: [-0.0867, 0.4913, 0.0318, -0.0801, 0.0712, -0.0766]
 ,
-
 #from r_knee to r_talocrural vertices 2
                                         ColorRGBA:
                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1606,10 +1503,8 @@ X3D:
                                         scale: [0.15, 0.15, 0.15]
                                         translation: [-0.05, 0.06, -0.025]
                                         rotation: [1, 0, 0, -1.57]
-
 #Transform right foot
                                         Transform: [
-
 #Empty Transform right foot
                                             Shape: [
                                                 USE: "HAnimJointShape"
@@ -1622,7 +1517,6 @@ X3D:
                                             Coordinate:
                                                 point: [-0.0801, 0.0712, -0.0766, 0, 1, 0]
 ,
-
 #from r_talocrural to r_talocalcaneonavicular vertices 2
                                             ColorRGBA:
                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1633,7 +1527,6 @@ X3D:
                                             Coordinate:
                                                 point: [-0.0801, 0.0712, -0.0766, 0, 1, 0]
 ,
-
 #from r_talocrural to r_calcaneocuboid vertices 2
                                             ColorRGBA:
                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1649,10 +1542,8 @@ X3D:
                                         name: "r_navicular"
                                         DEF: "hanim_r_navicular"
                                         Transform: [
-
 #Empty Transform
                                             Transform: [
-
 #Empty Transform
                                                 Shape: [
                                                     USE: "HAnimJointShape"
@@ -1665,7 +1556,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1676,7 +1566,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1687,7 +1576,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1703,10 +1591,8 @@ X3D:
                                             name: "r_cuneiform_1"
                                             DEF: "hanim_r_cuneiform_1"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -1719,7 +1605,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1735,10 +1620,8 @@ X3D:
                                                 name: "r_metatarsal_1"
                                                 DEF: "hanim_r_metatarsal_1"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -1751,7 +1634,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1778,10 +1660,8 @@ X3D:
                                                     name: "r_tarsal_proximal_phalanx_1"
                                                     DEF: "hanim_r_tarsal_proximal_phalanx_1"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -1794,7 +1674,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1831,10 +1710,8 @@ X3D:
                                             name: "r_cuneiform_2"
                                             DEF: "hanim_r_cuneiform_2"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -1847,7 +1724,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -1863,10 +1739,8 @@ X3D:
                                                 name: "r_metatarsal_2"
                                                 DEF: "hanim_r_metatarsal_2"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -1879,7 +1753,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -1895,10 +1768,8 @@ X3D:
                                                     name: "r_tarsal_proximal_phalanx_2"
                                                     DEF: "hanim_r_tarsal_proximal_phalanx_2"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -1911,7 +1782,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -1927,10 +1797,8 @@ X3D:
                                                         name: "r_tarsal_middle_phalanx_2"
                                                         DEF: "hanim_r_tarsal_middle_phalanx_2"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -1943,7 +1811,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -1981,10 +1848,8 @@ X3D:
                                             name: "r_cuneiform_3"
                                             DEF: "hanim_r_cuneiform_3"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -1997,7 +1862,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2013,10 +1877,8 @@ X3D:
                                                 name: "r_metatarsal_3"
                                                 DEF: "hanim_r_metatarsal_3"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -2029,7 +1891,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2045,10 +1906,8 @@ X3D:
                                                     name: "r_tarsal_proximal_phalanx_3"
                                                     DEF: "hanim_r_tarsal_proximal_phalanx_3"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -2061,7 +1920,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2077,10 +1935,8 @@ X3D:
                                                         name: "r_tarsal_middle_phalanx_3"
                                                         DEF: "hanim_r_tarsal_middle_phalanx_3"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -2093,7 +1949,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2132,10 +1987,8 @@ X3D:
                                         name: "r_calcaneus"
                                         DEF: "hanim_r_calcaneus"
                                         Transform: [
-
 #Empty Transform
                                             Transform: [
-
 #Empty Transform
                                                 Shape: [
                                                     USE: "HAnimJointShape"
@@ -2148,7 +2001,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_calcaneocuboid to r_transversetarsal vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2164,10 +2016,8 @@ X3D:
                                             name: "r_cuboid"
                                             DEF: "hanim_r_cuboid"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -2180,7 +2030,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_transversetarsal to r_tarsometatarsal_4 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2191,7 +2040,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_transversetarsal to r_tarsometatarsal_5 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2207,10 +2055,8 @@ X3D:
                                                 name: "r_metatarsal_4"
                                                 DEF: "hanim_r_metatarsal_4"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -2223,7 +2069,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2239,10 +2084,8 @@ X3D:
                                                     name: "r_tarsal_proximal_phalanx_4"
                                                     DEF: "hanim_r_tarsal_proximal_phalanx_4"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -2255,7 +2098,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2271,10 +2113,8 @@ X3D:
                                                         name: "r_tarsal_middle_phalanx_4"
                                                         DEF: "hanim_r_tarsal_middle_phalanx_4"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -2287,7 +2127,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2324,10 +2163,8 @@ X3D:
                                                 name: "r_metatarsal_5"
                                                 DEF: "hanim_r_metatarsal_5"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -2340,7 +2177,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2367,10 +2203,8 @@ X3D:
                                                     name: "r_tarsal_proximal_phalanx_5"
                                                     DEF: "hanim_r_tarsal_proximal_phalanx_5"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -2383,7 +2217,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2399,10 +2232,8 @@ X3D:
                                                         name: "r_tarsal_middle_phalanx_5"
                                                         DEF: "hanim_r_tarsal_middle_phalanx_5"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -2415,7 +2246,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0, 1, 0, 0, 1, 0]
 ,
-
 #from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2458,10 +2288,8 @@ X3D:
                         name: "l5"
                         DEF: "hanim_l5"
                         Transform: [
-
 #Empty Transform
                             Transform: [
-
 #Empty Transform
                                 Shape: [
                                     USE: "HAnimJointShape"
@@ -2474,7 +2302,6 @@ X3D:
                                 Coordinate:
                                     point: [0.0028, 1.0568, -0.0776, 0.0035, 1.0925, -0.0787]
 ,
-
 #from vl5 to vl4 vertices 2
                                 ColorRGBA:
                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2490,10 +2317,8 @@ X3D:
                             name: "l4"
                             DEF: "hanim_l4"
                             Transform: [
-
 #Empty Transform
                                 Transform: [
-
 #Empty Transform
                                     Shape: [
                                         USE: "HAnimJointShape"
@@ -2506,7 +2331,6 @@ X3D:
                                     Coordinate:
                                         point: [0.0035, 1.0925, -0.0787, 0.0041, 1.1276, -0.0796]
 ,
-
 #from vl4 to vl3 vertices 2
                                     ColorRGBA:
                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2522,10 +2346,8 @@ X3D:
                                 name: "l3"
                                 DEF: "hanim_l3"
                                 Transform: [
-
 #Empty Transform
                                     Transform: [
-
 #Empty Transform
                                         Shape: [
                                             USE: "HAnimJointShape"
@@ -2538,7 +2360,6 @@ X3D:
                                         Coordinate:
                                             point: [0.0041, 1.1276, -0.0796, 0.0045, 1.1546, -0.08]
 ,
-
 #from vl3 to vl2 vertices 2
                                         ColorRGBA:
                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2587,10 +2408,8 @@ X3D:
                                     name: "l2"
                                     DEF: "hanim_l2"
                                     Transform: [
-
 #Empty Transform
                                         Transform: [
-
 #Empty Transform
                                             Shape: [
                                                 USE: "HAnimJointShape"
@@ -2603,7 +2422,6 @@ X3D:
                                             Coordinate:
                                                 point: [0.0045, 1.1546, -0.08, 0.0048, 1.1912, -0.0805]
 ,
-
 #from vl2 to vl1 vertices 2
                                             ColorRGBA:
                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2619,10 +2437,8 @@ X3D:
                                         name: "l1"
                                         DEF: "hanim_l1"
                                         Transform: [
-
 #Empty Transform
                                             Transform: [
-
 #Empty Transform
                                                 Shape: [
                                                     USE: "HAnimJointShape"
@@ -2635,7 +2451,6 @@ X3D:
                                                 Coordinate:
                                                     point: [0.0048, 1.1912, -0.0805, 0.0051, 1.2278, -0.0808]
 ,
-
 #from vl1 to vt12 vertices 2
                                                 ColorRGBA:
                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2651,10 +2466,8 @@ X3D:
                                             name: "t12"
                                             DEF: "hanim_t12"
                                             Transform: [
-
 #Empty Transform
                                                 Transform: [
-
 #Empty Transform
                                                     Shape: [
                                                         USE: "HAnimJointShape"
@@ -2667,7 +2480,6 @@ X3D:
                                                     Coordinate:
                                                         point: [0.0051, 1.2278, -0.0808, 0.0053, 1.2679, -0.081]
 ,
-
 #from vt12 to vt11 vertices 2
                                                     ColorRGBA:
                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2683,10 +2495,8 @@ X3D:
                                                 name: "t11"
                                                 DEF: "hanim_t11"
                                                 Transform: [
-
 #Empty Transform
                                                     Transform: [
-
 #Empty Transform
                                                         Shape: [
                                                             USE: "HAnimJointShape"
@@ -2699,7 +2509,6 @@ X3D:
                                                         Coordinate:
                                                             point: [0.0053, 1.2679, -0.081, 0.0056, 1.2848, -0.0822]
 ,
-
 #from vt11 to vt10 vertices 2
                                                         ColorRGBA:
                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2726,10 +2535,8 @@ X3D:
                                                     name: "t10"
                                                     DEF: "hanim_t10"
                                                     Transform: [
-
 #Empty Transform
                                                         Transform: [
-
 #Empty Transform
                                                             Shape: [
                                                                 USE: "HAnimJointShape"
@@ -2742,7 +2549,6 @@ X3D:
                                                             Coordinate:
                                                                 point: [0.0056, 1.2848, -0.0822, 0.0057, 1.3126, -0.0838]
 ,
-
 #from vt10 to vt9 vertices 2
                                                             ColorRGBA:
                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2780,10 +2586,8 @@ X3D:
                                                         name: "t9"
                                                         DEF: "hanim_t9"
                                                         Transform: [
-
 #Empty Transform
                                                             Transform: [
-
 #Empty Transform
                                                                 Shape: [
                                                                     USE: "HAnimJointShape"
@@ -2796,7 +2600,6 @@ X3D:
                                                                 Coordinate:
                                                                     point: [0.0057, 1.3126, -0.0838, 0.0057, 1.3382, -0.0845]
 ,
-
 #from vt9 to vt8 vertices 2
                                                                 ColorRGBA:
                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2812,10 +2615,8 @@ X3D:
                                                             name: "t8"
                                                             DEF: "hanim_t8"
                                                             Transform: [
-
 #Empty Transform
                                                                 Transform: [
-
 #Empty Transform
                                                                     Shape: [
                                                                         USE: "HAnimJointShape"
@@ -2828,7 +2629,6 @@ X3D:
                                                                     Coordinate:
                                                                         point: [0.0057, 1.3382, -0.0845, 0.0058, 1.3625, -0.0833]
 ,
-
 #from vt8 to vt7 vertices 2
                                                                     ColorRGBA:
                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -2844,10 +2644,8 @@ X3D:
                                                                 name: "t7"
                                                                 DEF: "hanim_t7"
                                                                 Transform: [
-
 #Empty Transform
                                                                     Transform: [
-
 #Empty Transform
                                                                         Shape: [
                                                                             USE: "HAnimJointShape"
@@ -2860,7 +2658,6 @@ X3D:
                                                                         Coordinate:
                                                                             point: [0.0058, 1.3625, -0.0833, 0.0059, 1.3866, -0.08]
 ,
-
 #from vt7 to vt6 vertices 2
                                                                         ColorRGBA:
                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -2920,10 +2717,8 @@ X3D:
                                                                     name: "t6"
                                                                     DEF: "hanim_t6"
                                                                     Transform: [
-
 #Empty Transform
                                                                         Transform: [
-
 #Empty Transform
                                                                             Shape: [
                                                                                 USE: "HAnimJointShape"
@@ -2936,7 +2731,6 @@ X3D:
                                                                             Coordinate:
                                                                                 point: [0.0059, 1.3866, -0.08, 0.006, 1.4102, -0.0745]
 ,
-
 #from vt6 to vt5 vertices 2
                                                                             ColorRGBA:
                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -2963,10 +2757,8 @@ X3D:
                                                                         name: "t5"
                                                                         DEF: "hanim_t5"
                                                                         Transform: [
-
 #Empty Transform
                                                                             Transform: [
-
 #Empty Transform
                                                                                 Shape: [
                                                                                     USE: "HAnimJointShape"
@@ -2979,7 +2771,6 @@ X3D:
                                                                                 Coordinate:
                                                                                     point: [0.006, 1.4102, -0.0745, 0.0061, 1.432, -0.0675]
 ,
-
 #from vt5 to vt4 vertices 2
                                                                                 ColorRGBA:
                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -2995,10 +2786,8 @@ X3D:
                                                                             name: "t4"
                                                                             DEF: "hanim_t4"
                                                                             Transform: [
-
 #Empty Transform
                                                                                 Transform: [
-
 #Empty Transform
                                                                                     Shape: [
                                                                                         USE: "HAnimJointShape"
@@ -3011,7 +2800,6 @@ X3D:
                                                                                     Coordinate:
                                                                                         point: [0.0061, 1.432, -0.0675, 0.0062, 1.4583, -0.057]
 ,
-
 #from vt4 to vt3 vertices 2
                                                                                     ColorRGBA:
                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -3027,10 +2815,8 @@ X3D:
                                                                                 name: "t3"
                                                                                 DEF: "hanim_t3"
                                                                                 Transform: [
-
 #Empty Transform
                                                                                     Transform: [
-
 #Empty Transform
                                                                                         Shape: [
                                                                                             USE: "HAnimJointShape"
@@ -3043,7 +2829,6 @@ X3D:
                                                                                         Coordinate:
                                                                                             point: [0.0062, 1.4583, -0.057, 0.0063, 1.4761, -0.0484]
 ,
-
 #from vt3 to vt2 vertices 2
                                                                                         ColorRGBA:
                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -3059,10 +2844,8 @@ X3D:
                                                                                     name: "t2"
                                                                                     DEF: "hanim_t2"
                                                                                     Transform: [
-
 #Empty Transform
                                                                                         Transform: [
-
 #Empty Transform
                                                                                             Shape: [
                                                                                                 USE: "HAnimJointShape"
@@ -3075,7 +2858,6 @@ X3D:
                                                                                             Coordinate:
                                                                                                 point: [0.0063, 1.4761, -0.0484, 0.0065, 1.4951, -0.0387]
 ,
-
 #from vt2 to vt1 vertices 2
                                                                                             ColorRGBA:
                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -3113,10 +2895,8 @@ X3D:
                                                                                         name: "t1"
                                                                                         DEF: "hanim_t1"
                                                                                         Transform: [
-
 #Empty Transform
                                                                                             Transform: [
-
 #Empty Transform
                                                                                                 Shape: [
                                                                                                     USE: "HAnimJointShape"
@@ -3129,7 +2909,6 @@ X3D:
                                                                                                 Coordinate:
                                                                                                     point: [0.0065, 1.4951, -0.0387, 0.0066, 1.5132, -0.0301]
 ,
-
 #from vt1 to vc7 vertices 2
                                                                                                 ColorRGBA:
                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3162,7 +2941,6 @@ X3D:
                                                                                                 Coordinate:
                                                                                                     point: [0.0065, 1.4951, -0.0387, 0.082, 1.4488, -0.0353]
 ,
-
 #from vt1 to l_sternoclavicular vertices 2
                                                                                                 ColorRGBA:
                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3228,7 +3006,6 @@ X3D:
                                                                                                 Coordinate:
                                                                                                     point: [0.0065, 1.4951, -0.0387, -0.0694, 1.46, -0.033]
 ,
-
 #from vt1 to r_sternoclavicular vertices 2
                                                                                                 ColorRGBA:
                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3299,10 +3076,8 @@ X3D:
                                                                                             name: "c7"
                                                                                             DEF: "hanim_c7"
                                                                                             Transform: [
-
 #Empty Transform
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Shape: [
                                                                                                         USE: "HAnimJointShape"
@@ -3315,7 +3090,6 @@ X3D:
                                                                                                     Coordinate:
                                                                                                         point: [0.0066, 1.5132, -0.0301, 0.0066, 1.5357, -0.0143]
 ,
-
 #from vc7 to vc6 vertices 2
                                                                                                     ColorRGBA:
                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -3331,10 +3105,8 @@ X3D:
                                                                                                 name: "c6"
                                                                                                 DEF: "hanim_c6"
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Shape: [
                                                                                                             USE: "HAnimJointShape"
@@ -3347,7 +3119,6 @@ X3D:
                                                                                                         Coordinate:
                                                                                                             point: [0.0066, 1.5357, -0.0143, 0.0066, 1.552, -0.0082]
 ,
-
 #from vc6 to vc5 vertices 2
                                                                                                         ColorRGBA:
                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -3363,10 +3134,8 @@ X3D:
                                                                                                     name: "c5"
                                                                                                     DEF: "hanim_c5"
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Shape: [
                                                                                                                 USE: "HAnimJointShape"
@@ -3379,7 +3148,6 @@ X3D:
                                                                                                             Coordinate:
                                                                                                                 point: [0.0066, 1.552, -0.0082, 0.0066, 1.5662, -0.0084]
 ,
-
 #from vc5 to vc4 vertices 2
                                                                                                             ColorRGBA:
                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -3395,10 +3163,8 @@ X3D:
                                                                                                         name: "c4"
                                                                                                         DEF: "hanim_c4"
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                 Shape: [
                                                                                                                     USE: "HAnimJointShape"
@@ -3411,7 +3177,6 @@ X3D:
                                                                                                                 Coordinate:
                                                                                                                     point: [0.0066, 1.5662, -0.0084, 0.0066, 1.58, -0.0103]
 ,
-
 #from vc4 to vc3 vertices 2
                                                                                                                 ColorRGBA:
                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3427,10 +3192,8 @@ X3D:
                                                                                                             name: "c3"
                                                                                                             DEF: "hanim_c3"
                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Shape: [
                                                                                                                         USE: "HAnimJointShape"
@@ -3443,7 +3206,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [0.0066, 1.58, -0.0103, 0.0066, 1.5928, -0.0103]
 ,
-
 #from vc3 to vc2 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -3470,10 +3232,8 @@ X3D:
                                                                                                                 name: "c2"
                                                                                                                 DEF: "hanim_c2"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -3486,7 +3246,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0.0066, 1.5928, -0.0103, 0.0066, 1.6144, -0.0034]
 ,
-
 #from vc2 to vc1 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -3502,10 +3261,8 @@ X3D:
                                                                                                                     name: "c1"
                                                                                                                     DEF: "hanim_c1"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -3518,7 +3275,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.0066, 1.6144, -0.0034, 0.0044, 1.6209, 0.0236]
 ,
-
 #from vc1 to skullbase vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -3655,10 +3411,8 @@ X3D:
                                                                                                                         name: "skull"
                                                                                                                         DEF: "hanim_skull"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -3671,7 +3425,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to l_eyelid_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3682,7 +3435,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to r_eyelid_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3693,7 +3445,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to l_eyeball_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3704,7 +3455,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to r_eyeball_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3715,7 +3465,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to l_eyebrow_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3726,7 +3475,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to r_eyebrow_joint vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3737,7 +3485,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.0044, 1.6209, 0.0236, 0, 1, 0]
 ,
-
 #from skullbase to temporomandibular vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -3860,10 +3607,8 @@ X3D:
                                                                                             name: "l_clavicle"
                                                                                             DEF: "hanim_l_clavicle"
                                                                                             Transform: [
-
 #Empty Transform
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Shape: [
                                                                                                         USE: "HAnimJointShape"
@@ -3876,7 +3621,6 @@ X3D:
                                                                                                     Coordinate:
                                                                                                         point: [0.082, 1.4488, -0.0353, 0.0962, 1.4269, -0.0424]
 ,
-
 #from l_sternoclavicular to l_acromioclavicular vertices 2
                                                                                                     ColorRGBA:
                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -3892,10 +3636,8 @@ X3D:
                                                                                                 name: "l_scapula"
                                                                                                 DEF: "hanim_l_scapula"
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Shape: [
                                                                                                             USE: "HAnimJointShape"
@@ -3908,7 +3650,6 @@ X3D:
                                                                                                         Coordinate:
                                                                                                             point: [0.0962, 1.4269, -0.0424, 0.2029, 1.4376, -0.0387]
 ,
-
 #from l_acromioclavicular to l_shoulder vertices 2
                                                                                                         ColorRGBA:
                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -3946,10 +3687,8 @@ X3D:
                                                                                                     name: "l_upperarm"
                                                                                                     DEF: "hanim_l_upperarm"
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Shape: [
                                                                                                                 USE: "HAnimJointShape"
@@ -3962,7 +3701,6 @@ X3D:
                                                                                                             Coordinate:
                                                                                                                 point: [0.2029, 1.4376, -0.0387, 0.2014, 1.1357, -0.0682]
 ,
-
 #from l_shoulder to l_elbow vertices 2
                                                                                                             ColorRGBA:
                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4022,10 +3760,8 @@ X3D:
                                                                                                         name: "l_forearm"
                                                                                                         DEF: "hanim_l_forearm"
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                 Shape: [
                                                                                                                     USE: "HAnimJointShape"
@@ -4038,7 +3774,6 @@ X3D:
                                                                                                                 Coordinate:
                                                                                                                     point: [0.2014, 1.1357, -0.0682, 0.1984, 0.8663, -0.0583]
 ,
-
 #from l_elbow to l_radiocarpal vertices 2
                                                                                                                 ColorRGBA:
                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4068,11 +3803,9 @@ X3D:
                                                                                                                 scale: [0.2, 0.2, 0.2]
                                                                                                                 translation: [0.2, 0.85, -0.05]
                                                                                                                 rotation: [0, 0, 1, -3.14]
-
 #Transform left hand
                                                                                                                 Transform: [
                                                                                                                     rotation: [0, 1, 0, -1.57]
-
 #Transform left hand
                                                                                                                     Shape: [
                                                                                                                         USE: "HAnimJointShape"
@@ -4085,7 +3818,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [0.1984, 0.8663, -0.0583, 0, 1, 0]
 ,
-
 #from l_radiocarpal to l_midcarpal_1 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4096,7 +3828,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [0.1984, 0.8663, -0.0583, 0, 1, 0]
 ,
-
 #from l_radiocarpal to l_midcarpal_2 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4107,7 +3838,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [0.1984, 0.8663, -0.0583, 0, 1, 0]
 ,
-
 #from l_radiocarpal to l_midcarpal_3 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4118,7 +3848,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [0.1984, 0.8663, -0.0583, 0, 1, 0]
 ,
-
 #from l_radiocarpal to l_midcarpal_4_5 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4134,10 +3863,8 @@ X3D:
                                                                                                                 name: "l_trapezium"
                                                                                                                 DEF: "hanim_l_trapezium"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -4150,7 +3877,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, 0.1924, 0.8472, -0.0534]
 ,
-
 #from l_midcarpal_1 to l_carpometacarpal_1 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4166,10 +3892,8 @@ X3D:
                                                                                                                     name: "l_metacarpal_1"
                                                                                                                     DEF: "hanim_l_metacarpal_1"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -4182,7 +3906,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.1924, 0.8472, -0.0534, 0.1951, 0.8226, 0.0246]
 ,
-
 #from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4198,10 +3921,8 @@ X3D:
                                                                                                                         name: "l_carpal_proximal_phalanx_1"
                                                                                                                         DEF: "hanim_l_carpal_proximal_phalanx_1"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -4214,7 +3935,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.1951, 0.8226, 0.0246, 0.1955, 0.8159, 0.0464]
 ,
-
 #from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4251,10 +3971,8 @@ X3D:
                                                                                                                 name: "l_trapezoid"
                                                                                                                 DEF: "hanim_l_trapezoid"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -4267,7 +3985,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, 0.1983, 0.8024, -0.028]
 ,
-
 #from l_midcarpal_2 to l_carpometacarpal_2 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4294,10 +4011,8 @@ X3D:
                                                                                                                     name: "l_metacarpal_2"
                                                                                                                     DEF: "hanim_l_metacarpal_2"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -4310,7 +4025,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.1983, 0.8024, -0.028, 0.1983, 0.7815, -0.028]
 ,
-
 #from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4326,10 +4040,8 @@ X3D:
                                                                                                                         name: "l_carpal_proximal_phalanx_2"
                                                                                                                         DEF: "hanim_l_carpal_proximal_phalanx_2"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -4342,7 +4054,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.1983, 0.7815, -0.028, 0.2017, 0.7363, -0.0248]
 ,
-
 #from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4358,10 +4069,8 @@ X3D:
                                                                                                                             name: "l_carpal_middle_phalanx_2"
                                                                                                                             DEF: "hanim_l_carpal_middle_phalanx_2"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -4374,7 +4083,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [0.2017, 0.7363, -0.0248, 0.2028, 0.7139, -0.0236]
 ,
-
 #from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4423,10 +4131,8 @@ X3D:
                                                                                                                 name: "l_capitate"
                                                                                                                 DEF: "hanim_l_capitate"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -4439,7 +4145,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, 0.1987, 0.8029, -0.053]
 ,
-
 #from l_midcarpal_3 to l_carpometacarpal_3 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4466,10 +4171,8 @@ X3D:
                                                                                                                     name: "l_metacarpal_3"
                                                                                                                     DEF: "hanim_l_metacarpal_3"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -4482,7 +4185,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.1987, 0.8029, -0.053, 0.1987, 0.7818, -0.053]
 ,
-
 #from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4498,10 +4200,8 @@ X3D:
                                                                                                                         name: "l_carpal_proximal_phalanx_3"
                                                                                                                         DEF: "hanim_l_carpal_proximal_phalanx_3"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -4514,7 +4214,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.1987, 0.7818, -0.053, 0.2013, 0.7273, -0.0503]
 ,
-
 #from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4530,10 +4229,8 @@ X3D:
                                                                                                                             name: "l_carpal_middle_phalanx_3"
                                                                                                                             DEF: "hanim_l_carpal_middle_phalanx_3"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -4546,7 +4243,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [0.2013, 0.7273, -0.0503, 0.2026, 0.7011, -0.0494]
 ,
-
 #from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4584,10 +4280,8 @@ X3D:
                                                                                                                 name: "l_hamate"
                                                                                                                 DEF: "hanim_l_hamate"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -4600,7 +4294,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, 0.1956, 0.8019, -0.0794]
 ,
-
 #from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4611,7 +4304,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, 0.1925, 0.8066, -0.1036]
 ,
-
 #from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4638,10 +4330,8 @@ X3D:
                                                                                                                     name: "l_metacarpal_4"
                                                                                                                     DEF: "hanim_l_metacarpal_4"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -4654,7 +4344,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.1956, 0.8019, -0.0794, 0.1956, 0.7815, -0.0794]
 ,
-
 #from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4670,10 +4359,8 @@ X3D:
                                                                                                                         name: "l_carpal_proximal_phalanx_4"
                                                                                                                         DEF: "hanim_l_carpal_proximal_phalanx_4"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -4686,7 +4373,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.1956, 0.7815, -0.0794, 0.1973, 0.7287, -0.0777]
 ,
-
 #from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4702,10 +4388,8 @@ X3D:
                                                                                                                             name: "l_carpal_middle_phalanx_4"
                                                                                                                             DEF: "hanim_l_carpal_middle_phalanx_4"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -4718,7 +4402,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [0.1973, 0.7287, -0.0777, 0.1983, 0.7045, -0.0767]
 ,
-
 #from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4755,10 +4438,8 @@ X3D:
                                                                                                                     name: "l_metacarpal_5"
                                                                                                                     DEF: "hanim_l_metacarpal_5"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -4771,7 +4452,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [0.1925, 0.8066, -0.1036, 0.1925, 0.7866, -0.1036]
 ,
-
 #from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -4787,10 +4467,8 @@ X3D:
                                                                                                                         name: "l_carpal_proximal_phalanx_5"
                                                                                                                         DEF: "hanim_l_carpal_proximal_phalanx_5"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -4803,7 +4481,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [0.1925, 0.7866, -0.1036, 0.1938, 0.7452, -0.1024]
 ,
-
 #from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -4819,10 +4496,8 @@ X3D:
                                                                                                                             name: "l_carpal_middle_phalanx_5"
                                                                                                                             DEF: "hanim_l_carpal_middle_phalanx_5"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -4835,7 +4510,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [0.1938, 0.7452, -0.1024, 0.1948, 0.7277, -0.1017]
 ,
-
 #from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4878,10 +4552,8 @@ X3D:
                                                                                             name: "r_clavicle"
                                                                                             DEF: "hanim_r_clavicle"
                                                                                             Transform: [
-
 #Empty Transform
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Shape: [
                                                                                                         USE: "HAnimJointShape"
@@ -4894,7 +4566,6 @@ X3D:
                                                                                                     Coordinate:
                                                                                                         point: [-0.0694, 1.46, -0.033, -0.0836, 1.4281, -0.0401]
 ,
-
 #from r_sternoclavicular to r_acromioclavicular vertices 2
                                                                                                     ColorRGBA:
                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -4910,10 +4581,8 @@ X3D:
                                                                                                 name: "r_scapula"
                                                                                                 DEF: "hanim_r_scapula"
                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Shape: [
                                                                                                             USE: "HAnimJointShape"
@@ -4926,7 +4595,6 @@ X3D:
                                                                                                         Coordinate:
                                                                                                             point: [-0.0836, 1.4281, -0.0401, -0.1907, 1.4407, -0.0325]
 ,
-
 #from r_acromioclavicular to r_shoulder vertices 2
                                                                                                         ColorRGBA:
                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -4964,10 +4632,8 @@ X3D:
                                                                                                     name: "r_upperarm"
                                                                                                     DEF: "hanim_r_upperarm"
                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Shape: [
                                                                                                                 USE: "HAnimJointShape"
@@ -4980,7 +4646,6 @@ X3D:
                                                                                                             Coordinate:
                                                                                                                 point: [-0.1907, 1.4407, -0.0325, -0.1949, 1.1388, -0.062]
 ,
-
 #from r_shoulder to r_elbow vertices 2
                                                                                                             ColorRGBA:
                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5040,10 +4705,8 @@ X3D:
                                                                                                         name: "r_forearm"
                                                                                                         DEF: "hanim_r_forearm"
                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                 Shape: [
                                                                                                                     USE: "HAnimJointShape"
@@ -5056,7 +4719,6 @@ X3D:
                                                                                                                 Coordinate:
                                                                                                                     point: [-0.1949, 1.1388, -0.062, -0.1959, 0.8694, -0.0521]
 ,
-
 #from r_elbow to r_radiocarpal vertices 2
                                                                                                                 ColorRGBA:
                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5086,11 +4748,9 @@ X3D:
                                                                                                                 scale: [0.2, 0.2, 0.2]
                                                                                                                 translation: [-0.2, 0.85, -0.05]
                                                                                                                 rotation: [0, 0, 1, -3.14]
-
 #Transform right hand
                                                                                                                 Transform: [
                                                                                                                     rotation: [0, 1, 0, 1.57]
-
 #Transform right hand
                                                                                                                     Shape: [
                                                                                                                         USE: "HAnimJointShape"
@@ -5103,7 +4763,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [-0.1959, 0.8694, -0.0521, 0, 1, 0]
 ,
-
 #from r_radiocarpal to r_midcarpal_1 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5114,7 +4773,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [-0.1959, 0.8694, -0.0521, 0, 1, 0]
 ,
-
 #from r_radiocarpal to r_midcarpal_2 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5125,7 +4783,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [-0.1959, 0.8694, -0.0521, 0, 1, 0]
 ,
-
 #from r_radiocarpal to r_midcarpal_3 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5136,7 +4793,6 @@ X3D:
                                                                                                                     Coordinate:
                                                                                                                         point: [-0.1959, 0.8694, -0.0521, 0, 1, 0]
 ,
-
 #from r_radiocarpal to r_midcarpal_4_5 vertices 2
                                                                                                                     ColorRGBA:
                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5152,10 +4808,8 @@ X3D:
                                                                                                                 name: "r_trapezium"
                                                                                                                 DEF: "hanim_r_trapezium"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -5168,7 +4822,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, -0.1899, 0.8502, -0.0473]
 ,
-
 #from r_midcarpal_1 to r_carpometacarpal_1 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -5184,10 +4837,8 @@ X3D:
                                                                                                                     name: "r_metacarpal_1"
                                                                                                                     DEF: "hanim_r_metacarpal_1"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -5200,7 +4851,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [-0.1899, 0.8502, -0.0473, -0.1874, 0.8256, 0.0306]
 ,
-
 #from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5216,10 +4866,8 @@ X3D:
                                                                                                                         name: "r_carpal_proximal_phalanx_1"
                                                                                                                         DEF: "hanim_r_carpal_proximal_phalanx_1"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -5232,7 +4880,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [-0.1874, 0.8256, 0.0306, -0.1864, 0.819, 0.0506]
 ,
-
 #from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5269,10 +4916,8 @@ X3D:
                                                                                                                 name: "r_trapezoid"
                                                                                                                 DEF: "hanim_r_trapezoid"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -5285,7 +4930,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, -0.1961, 0.8055, -0.0218]
 ,
-
 #from r_midcarpal_2 to r_carpometacarpal_2 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -5312,10 +4956,8 @@ X3D:
                                                                                                                     name: "r_metacarpal_2"
                                                                                                                     DEF: "hanim_r_metacarpal_2"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -5328,7 +4970,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [-0.1961, 0.8055, -0.0218, -0.1961, 0.7846, -0.0218]
 ,
-
 #from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5344,10 +4985,8 @@ X3D:
                                                                                                                         name: "r_carpal_proximal_phalanx_2"
                                                                                                                         DEF: "hanim_r_carpal_proximal_phalanx_2"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -5360,7 +4999,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [-0.1961, 0.7846, -0.0218, -0.1954, 0.7393, -0.0185]
 ,
-
 #from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5376,10 +5014,8 @@ X3D:
                                                                                                                             name: "r_carpal_middle_phalanx_2"
                                                                                                                             DEF: "hanim_r_carpal_middle_phalanx_2"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -5392,7 +5028,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [-0.1954, 0.7393, -0.0185, -0.1945, 0.7169, -0.0173]
 ,
-
 #from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5441,10 +5076,8 @@ X3D:
                                                                                                                 name: "r_capitate"
                                                                                                                 DEF: "hanim_r_capitate"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -5457,7 +5090,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, -0.1972, 0.806, -0.0468]
 ,
-
 #from r_midcarpal_3 to r_carpometacarpal_3 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -5484,10 +5116,8 @@ X3D:
                                                                                                                     name: "r_metacarpal_3"
                                                                                                                     DEF: "hanim_r_metacarpal_3"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -5500,7 +5130,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [-0.1972, 0.806, -0.0468, -0.1972, 0.7849, -0.0468]
 ,
-
 #from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5516,10 +5145,8 @@ X3D:
                                                                                                                         name: "r_carpal_proximal_phalanx_3"
                                                                                                                         DEF: "hanim_r_carpal_proximal_phalanx_3"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -5532,7 +5159,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [-0.1972, 0.7849, -0.0468, -0.195, 0.7304, -0.0441]
 ,
-
 #from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5548,10 +5174,8 @@ X3D:
                                                                                                                             name: "r_carpal_middle_phalanx_3"
                                                                                                                             DEF: "hanim_r_carpal_middle_phalanx_3"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -5564,7 +5188,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [-0.195, 0.7304, -0.0441, -0.1939, 0.7042, -0.0432]
 ,
-
 #from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5602,10 +5225,8 @@ X3D:
                                                                                                                 name: "r_hamate"
                                                                                                                 DEF: "hanim_r_hamate"
                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Shape: [
                                                                                                                             USE: "HAnimJointShape"
@@ -5618,7 +5239,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, -0.1951, 0.8049, -0.0732]
 ,
-
 #from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -5629,7 +5249,6 @@ X3D:
                                                                                                                         Coordinate:
                                                                                                                             point: [0, 1, 0, -0.1926, 0.8096, -0.0975]
 ,
-
 #from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2
                                                                                                                         ColorRGBA:
                                                                                                                             USE: "HAnimSegmentLineColorRGBA"
@@ -5656,10 +5275,8 @@ X3D:
                                                                                                                     name: "r_metacarpal_4"
                                                                                                                     DEF: "hanim_r_metacarpal_4"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -5672,7 +5289,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [-0.1951, 0.8049, -0.0732, -0.1951, 0.7845, -0.0732]
 ,
-
 #from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5688,10 +5304,8 @@ X3D:
                                                                                                                         name: "r_carpal_proximal_phalanx_4"
                                                                                                                         DEF: "hanim_r_carpal_proximal_phalanx_4"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -5704,7 +5318,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [-0.1951, 0.7845, -0.0732, -0.192, 0.7318, -0.0716]
 ,
-
 #from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5720,10 +5333,8 @@ X3D:
                                                                                                                             name: "r_carpal_middle_phalanx_4"
                                                                                                                             DEF: "hanim_r_carpal_middle_phalanx_4"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -5736,7 +5347,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [-0.192, 0.7318, -0.0716, -0.1908, 0.7077, -0.0706]
 ,
-
 #from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"
@@ -5773,10 +5383,8 @@ X3D:
                                                                                                                     name: "r_metacarpal_5"
                                                                                                                     DEF: "hanim_r_metacarpal_5"
                                                                                                                     Transform: [
-
 #Empty Transform
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Shape: [
                                                                                                                                 USE: "HAnimJointShape"
@@ -5789,7 +5397,6 @@ X3D:
                                                                                                                             Coordinate:
                                                                                                                                 point: [-0.1926, 0.8096, -0.0975, -0.1926, 0.7896, -0.0975]
 ,
-
 #from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2
                                                                                                                             ColorRGBA:
                                                                                                                                 USE: "HAnimSegmentLineColorRGBA"
@@ -5805,10 +5412,8 @@ X3D:
                                                                                                                         name: "r_carpal_proximal_phalanx_5"
                                                                                                                         DEF: "hanim_r_carpal_proximal_phalanx_5"
                                                                                                                         Transform: [
-
 #Empty Transform
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Shape: [
                                                                                                                                     USE: "HAnimJointShape"
@@ -5821,7 +5426,6 @@ X3D:
                                                                                                                                 Coordinate:
                                                                                                                                     point: [-0.1926, 0.7896, -0.0975, -0.1902, 0.7483, -0.0963]
 ,
-
 #from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2
                                                                                                                                 ColorRGBA:
                                                                                                                                     USE: "HAnimSegmentLineColorRGBA"
@@ -5837,10 +5441,8 @@ X3D:
                                                                                                                             name: "r_carpal_middle_phalanx_5"
                                                                                                                             DEF: "hanim_r_carpal_middle_phalanx_5"
                                                                                                                             Transform: [
-
 #Empty Transform
                                                                                                                                 Transform: [
-
 #Empty Transform
                                                                                                                                     Shape: [
                                                                                                                                         USE: "HAnimJointShape"
@@ -5853,7 +5455,6 @@ X3D:
                                                                                                                                     Coordinate:
                                                                                                                                         point: [-0.1902, 0.7483, -0.0963, -0.1908, 0.754, -0.096]
 ,
-
 #from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2
                                                                                                                                     ColorRGBA:
                                                                                                                                         USE: "HAnimSegmentLineColorRGBA"

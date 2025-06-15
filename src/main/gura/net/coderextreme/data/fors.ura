@@ -26,7 +26,6 @@ X3D:
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
         ]
-    ,
     Scene:
         ProtoDeclare: [
             name: "node"
@@ -37,19 +36,17 @@ X3D:
                     type: "SFVec3f"
                     value: "0 0 0"
                 ]
-,
             ProtoBody:
                 Transform: [
                     DEF: "transform"
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "position"
                         ]
-,
+                    ],
                     Shape: [
                         Sphere:
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 0, 0]
@@ -62,7 +59,6 @@ X3D:
                                 FontStyle:
                                     justify: ["MIDDLE", "MIDDLE"]
                                     size: 5.0
-                            ,
                             Appearance:
                                 Material:
                                     diffuseColor: [0, 0, 1]
@@ -98,8 +94,13 @@ X3D:
                         accessType: "outputOnly"
                         type: "MFVec3f"
                     ],
-
-#sourceCode "\\newline					function set_cycle(value) {\\newline                                                old = translation;\\newline						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\\newline                                                keyValue = new MFVec3f([old, translation]);\\newline						// Browser.println(translation);\\newline					}\\newline"
+#ecmascript:
+#					function set_cycle(value) {
+#                                                old = translation;
+#						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+#                                                keyValue = new MFVec3f([old, translation]);
+#						// Browser.println(translation);
+#					}
                 ],
                 TimeSensor: [
                     DEF: "nodeClock"
@@ -144,7 +145,6 @@ X3D:
                     accessType: "inputOnly"
                     type: "SFVec3f"
                 ]
-,
             ProtoBody:
                 Shape: [
                     Extrusion:
@@ -152,7 +152,6 @@ X3D:
                         creaseAngle: 0.785
                         crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                         spine: [0, -50, 0, 0, 50, 0]
-                    ,
                     Appearance:
                         Material:
                             diffuseColor: [0, 1, 0]
@@ -175,7 +174,7 @@ X3D:
                         accessType: "inputOnly"
                         type: "SFVec3f"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "set_endA"
                             protoField: "set_positionA"
@@ -184,9 +183,28 @@ X3D:
                             nodeField: "set_endB"
                             protoField: "set_positionB"
                         ]
-,
-
-#sourceCode "\\newline\\newline                function set_endA(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f([value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f([value, spine[1]]);\\newline		    }\\newline                }\\newline\\newline                function set_endB(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f([value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f([spine[0], value]);\\newline		    }\\newline                }\\newline\\newline                function set_spine(value) {\\newline                    spine = value;\\newline                }\\newline"
+                    ],
+#ecmascript:
+#
+#                function set_endA(value) {
+#		    if (typeof spine === 'undefined') {
+#		        spine = new MFVec3f([value, value]);
+#		    } else {
+#		        spine = new MFVec3f([value, spine[1]]);
+#		    }
+#                }
+#
+#                function set_endB(value) {
+#		    if (typeof spine === 'undefined') {
+#		        spine = new MFVec3f([value, value]);
+#		    } else {
+#		        spine = new MFVec3f([spine[0], value]);
+#		    }
+#                }
+#
+#                function set_spine(value) {
+#                    spine = value;
+#                }
                 ],
                 ROUTE: [
                     fromNode: "MoveCylinder"

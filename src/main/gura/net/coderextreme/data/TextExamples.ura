@@ -42,7 +42,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         Transform: [
             translation: [0, 2, 0]
@@ -53,7 +52,6 @@ X3D:
                         DEF: "testFontStyle"
                         justify: ["MIDDLE", "MIDDLE"]
                         size: 0.8
-                ,
                 Appearance:
                     DEF: "LightBlueAppearance"
                     Material:
@@ -67,7 +65,6 @@ X3D:
                     string: ["I don't think so", "", "he said \"Hi\""]
                     FontStyle:
                         USE: "testFontStyle"
-                ,
                 Appearance:
                     USE: "LightBlueAppearance"
             ]
@@ -79,7 +76,6 @@ X3D:
                     string: ["I don't think so", "", "he said \"Hi\""]
                     FontStyle:
                         USE: "testFontStyle"
-                ,
                 Appearance:
                     USE: "LightBlueAppearance"
             ]

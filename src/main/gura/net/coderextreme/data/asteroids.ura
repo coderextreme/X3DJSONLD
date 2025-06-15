@@ -22,7 +22,6 @@ X3D:
             name: "description"
             content: "asteroids"
         ]
-    ,
     Scene:
         ProtoDeclare: [
             name: "anyShape"
@@ -35,14 +34,14 @@ X3D:
                         Sphere:
                     ]
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "children"
                             protoField: "myShape"
                         ]
+                    ]
                 ]
         ],
         ProtoInstance: [

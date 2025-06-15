@@ -22,15 +22,24 @@ X3D:
             name: "description"
             content: "a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \""
         ]
-    ,
     Scene:
         Script: [
             DEF: "Browser"
-
-#sourceCode "\\newline                function initialize() {\\newline		    Browser.print('DUDES\\n'+'\"DUDETTES');\\newline                }\\newline"
+#ecmascript:
+#                function initialize() {
+#		    Browser.print('DUDES\\n'+'"DUDETTES');
+#                }
         ],
         Script: [
             DEF: "Clouds"
-
-#sourceCode "\\newline\\newline\\newlinefunction cumulustranslation() // These values designate the boundary location of the cloud\\newline{\\newlinevar xxx = ' '+' '+\\newline'	Transform		\\n'+\\newline'    ' + '               	\\n';\\newline\\newline}\\newline"
+#ecmascript:
+#
+#
+#function cumulustranslation() // These values designate the boundary location of the cloud
+#{
+#var xxx = ' '+' '+
+#'	Transform		\\n'+
+#'    ' + '               	\\n';
+#
+#}
         ]

@@ -50,19 +50,14 @@ X3D:
             name: "generator"
             content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
         ]
-    ,
     Scene:
-
 #Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)
-
 #WorldInfo begin
         WorldInfo: [
             title: "Hello world!"
         ],
-
 #WorldInfo complete, Group begin
         Group: [
-
 #Viewpoint begin
             Viewpoint: [
                 DEF: "ViewUpClose"
@@ -70,75 +65,51 @@ X3D:
                 description: "Hello world!"
                 position: [0, -1, 7]
             ],
-
 #Viewpoint complete, Transform begin
             Transform: [
                 rotation: [0, 1, 0, 3]
-
 #Shape begin
                 Shape: [
-
 #Sphere begin
-
 #Sphere complete, Appearance begin
-
 #Appearance complete
                     Sphere:
-                    ,
                     Appearance:
-
 #Material begin
-
 #Material complete, ImageTexture begin
-
 #ImageTexture complete
                         Material:
                             DEF: "MaterialLightBlue"
                             diffuseColor: [0.1, 0.5, 1]
-,
                         ImageTexture:
                             DEF: "ImageCloudlessEarth"
                             url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
                 ],
-
 #Shape complete
             ],
-
 #Transform complete, Transform begin
             Transform: [
                 translation: [0, -2, 0]
-
 #Shape begin
                 Shape: [
-
 #Text begin
-
 #Text complete, Appearance begin
-
 #Appearance complete
                     Text:
                         DEF: "TextMessage"
                         string: ["Hello", "world!"]
-
 #FontStyle begin
-
 #FontStyle complete
                         FontStyle:
                             justify: ["MIDDLE", "MIDDLE"]
-                    ,
                     Appearance:
-
 #Material begin
-
 #Material complete
                         Material:
                             USE: "MaterialLightBlue"
                 ],
-
 #Shape complete
             ],
-
 #Transform complete
         ],
-
 #Group complete
