@@ -1,214 +1,315 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head:
-        meta:
+    head: [
+        meta: [
             name: "title"
             content: "rubikFurnace.x3d"
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "John Carlson"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "manual"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "a green rubik cube"
-    Scene:
-        NavigationInfo:
+        ]
+    ]
+    Scene: [
+        NavigationInfo: [
             type: ["EXAMINE"]
-        Viewpoint:
+        ]
+        Viewpoint: [
             description: "Rubiks Cube on Fire"
             position: [0, 0, 12]
-        ProtoDeclare:
+        ]
+        ProtoDeclare: [
             name: "anyShape"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "xtranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                field:
+                ]
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Sphere:
-                        Appearance:
-                            Material:
+                    Shape: [
+                        Sphere: [
+                        ]
+                        Appearance: [
+                            Material: [
                                 diffuseColor: [1, 1, 1]
-            ProtoBody:
-                Transform:
-                    IS:
-                        connect:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    IS: [
+                        connect: [
                             nodeField: "translation"
                             protoField: "xtranslation"
-                        connect:
+                        ]
+                        connect: [
                             nodeField: "children"
                             protoField: "myShape"
-        ProtoDeclare:
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoDeclare: [
             name: "three"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "ytranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                field:
+                ]
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Sphere:
-                        Appearance:
-                            Material:
+                    Shape: [
+                        Sphere: [
+                        ]
+                        Appearance: [
+                            Material: [
                                 diffuseColor: [1, 1, 1]
-            ProtoBody:
-                Transform:
-                    IS:
-                        connect:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    IS: [
+                        connect: [
                             nodeField: "translation"
                             protoField: "ytranslation"
-                    ProtoInstance:
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "anyShape"
-                        fieldValue:
+                        fieldValue: [
                             name: "xtranslation"
                             value: "0 0 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "anyShape"
-                        fieldValue:
+                        fieldValue: [
                             name: "xtranslation"
                             value: "2 0 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "anyShape"
-                        fieldValue:
+                        fieldValue: [
                             name: "xtranslation"
                             value: "-2 0 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-        ProtoDeclare:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoDeclare: [
             name: "nine"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "ztranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                field:
+                ]
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Sphere:
-                        Appearance:
-                            Material:
+                    Shape: [
+                        Sphere: [
+                        ]
+                        Appearance: [
+                            Material: [
                                 diffuseColor: [1, 1, 1]
-            ProtoBody:
-                Transform:
-                    IS:
-                        connect:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    IS: [
+                        connect: [
                             nodeField: "translation"
                             protoField: "ztranslation"
-                    ProtoInstance:
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "three"
-                        fieldValue:
+                        fieldValue: [
                             name: "ytranslation"
                             value: "0 0 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "three"
-                        fieldValue:
+                        fieldValue: [
                             name: "ytranslation"
                             value: "0 2 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "three"
-                        fieldValue:
+                        fieldValue: [
                             name: "ytranslation"
                             value: "0 -2 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-        ProtoDeclare:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoDeclare: [
             name: "twentyseven"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "ttranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                field:
+                ]
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Sphere:
-                        Appearance:
-                            Material:
+                    Shape: [
+                        Sphere: [
+                        ]
+                        Appearance: [
+                            Material: [
                                 diffuseColor: [1, 1, 1]
-            ProtoBody:
-                Transform:
-                    IS:
-                        connect:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    IS: [
+                        connect: [
                             nodeField: "translation"
                             protoField: "ttranslation"
-                    ProtoInstance:
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "nine"
-                        fieldValue:
+                        fieldValue: [
                             name: "ztranslation"
                             value: "0 0 0"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "nine"
-                        fieldValue:
+                        fieldValue: [
                             name: "ztranslation"
                             value: "0 0 2"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-                    ProtoInstance:
+                            ]
+                        ]
+                    ]
+                    ProtoInstance: [
                         name: "nine"
-                        fieldValue:
+                        fieldValue: [
                             name: "ztranslation"
                             value: "0 0 -2"
-                        IS:
-                            connect:
+                        ]
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-        ProtoInstance:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoInstance: [
             name: "twentyseven"
-            fieldValue:
+            fieldValue: [
                 name: "ttranslation"
                 value: "0 0 0"
-            fieldValue:
+            ]
+            fieldValue: [
                 name: "myShape"
-                Shape:
-                    Box:
+                Shape: [
+                    Box: [
                         size: [1, 1, 1]
-                    Appearance:
-                        Material:
+                    ]
+                    Appearance: [
+                        Material: [
                             diffuseColor: [0, 1, 0]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

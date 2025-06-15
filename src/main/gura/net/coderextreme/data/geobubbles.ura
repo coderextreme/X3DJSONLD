@@ -1,93 +1,119 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head:
-        component:
+    head: [
+        component: [
             name: "Geospatial"
             level: 1
-        meta:
+        ]
+        meta: [
             name: "title"
             content: "geobubbles.x3d"
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "John Carlson"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "manual"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "geo bubbles"
-    Scene:
+        ]
+    ]
+    Scene: [
 #Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/
 #PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
-        GeoViewpoint:
+        GeoViewpoint: [
             DEF: "Tour"
             position: [0, 0, 4]
             orientation: [1, 0, 0, 0]
             description: "Tour Views"
-        Background:
+        ]
+        Background: [
             backUrl: ["../resources/images/BK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
             bottomUrl: ["../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
             frontUrl: ["../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
             leftUrl: ["../resources/images/LF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
             rightUrl: ["../resources/images/RT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
             topUrl: ["../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
-        Transform:
-            Shape:
-                Sphere:
-                Appearance:
-                    Material:
+        ]
+        Transform: [
+            Shape: [
+                Sphere: [
+                ]
+                Appearance: [
+                    Material: [
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-        TimeSensor:
+                    ]
+                ]
+            ]
+        ]
+        TimeSensor: [
             DEF: "TourTime"
             cycleInterval: 5.0
             loop: true
-        GeoPositionInterpolator:
+        ]
+        GeoPositionInterpolator: [
             DEF: "TourPosition"
             key: [0, 1]
             keyValue: [0.0015708, 0, 4, 0, 0.0015708, 4]
-        Script:
+        ]
+        Script: [
             DEF: "RandomTourTime"
-            field:
+            field: [
                 name: "set_cycle"
                 accessType: "inputOnly"
                 type: "SFTime"
-            field:
+            ]
+            field: [
                 name: "val"
                 accessType: "inputOutput"
                 type: "SFFloat"
                 value: "0"
-            field:
+            ]
+            field: [
                 name: "positions"
                 accessType: "inputOutput"
                 type: "MFVec3d"
                 value: "0.0015708 0 4 0 0.0015708 4"
-            field:
+            ]
+            field: [
                 name: "position"
                 accessType: "inputOutput"
                 type: "MFVec3d"
                 value: "0.0015708 0 4 0 0.0015708 4"
-(.setSourceCode "\\newline\\newline               function set_cycle(value) {\\newline                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\\newline                        var ov = val;\\newline			// Browser.print('old '+ov);\\newline                        do {\\newline                                val = Math.floor(Math.random()*2);\\newline                                var vc = val;\\newline                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\\newline                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\\newline			// Browser.println(positions[ov]);\\newline			// Browser.println(positions[vc]);\\newline                        position = new MFVec3d();\\newline                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\\newline                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\\newline               }\\newline")        ROUTE:
+            ]
+(.setSourceCode "\\newline\\newline               function set_cycle(value) {\\newline                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\\newline                        var ov = val;\\newline			// Browser.print('old '+ov);\\newline                        do {\\newline                                val = Math.floor(Math.random()*2);\\newline                                var vc = val;\\newline                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\\newline                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\\newline			// Browser.println(positions[ov]);\\newline			// Browser.println(positions[vc]);\\newline                        position = new MFVec3d();\\newline                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\\newline                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\\newline               }\\newline")        ]
+        ROUTE: [
             fromNode: "TourTime"
             fromField: "cycleTime"
             toNode: "RandomTourTime"
             toField: "set_cycle"
-        ROUTE:
+        ]
+        ROUTE: [
             fromNode: "RandomTourTime"
             fromField: "position"
             toNode: "TourPosition"
             toField: "keyValue"
-        ROUTE:
+        ]
+        ROUTE: [
             fromNode: "TourTime"
             fromField: "fraction_changed"
             toNode: "TourPosition"
             toField: "set_fraction"
-        ROUTE:
+        ]
+        ROUTE: [
             fromNode: "TourPosition"
             fromField: "geovalue_changed"
             toNode: "Tour"
             toField: "set_position"
+        ]
+    ]
