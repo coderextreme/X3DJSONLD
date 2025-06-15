@@ -1,111 +1,145 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head:
-        meta:
+    head: [
+        meta: [
             name: "title"
             content: "bubs2.x3d"
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "John Carlson"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "Tour around a prismatic sphere"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"
-        meta:
+        ]
+        meta: [
             name: "translated"
             content: "13 March 2016"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-        component:
+        ]
+        component: [
             name: "Scripting"
             level: 1
-    Scene:
-        NavigationInfo:
+        ]
+    ]
+    Scene: [
+        NavigationInfo: [
             type: ["EXAMINE"]
-        Viewpoint:
+        ]
+        Viewpoint: [
             position: [0, 0, 4]
             orientation: [1, 0, 0, 0]
             description: "Bubbles in action"
-        Background:
+        ]
+        Background: [
             backUrl: ["../resources/images/BK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
             bottomUrl: ["../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
             frontUrl: ["../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
             leftUrl: ["../resources/images/LF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
             rightUrl: ["../resources/images/RT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
             topUrl: ["../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
-        ProtoDeclare:
+        ]
+        ProtoDeclare: [
             name: "Bubble"
-            ProtoBody:
-                Transform:
+            ProtoBody: [
+                Transform: [
                     DEF: "body_trans"
-                    Shape:
-                        Sphere:
+                    Shape: [
+                        Sphere: [
                             radius: 0.25
-                        Appearance:
-                            Material:
+                        ]
+                        Appearance: [
+                            Material: [
                                 diffuseColor: [1, 0, 0]
                                 transparency: 0.2
-                    Script:
+                            ]
+                        ]
+                    ]
+                    Script: [
                         DEF: "bounce"
-                        field:
+                        field: [
                             name: "scale"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "1 1 1"
-                        field:
+                        ]
+                        field: [
                             name: "translation"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0"
-                        field:
+                        ]
+                        field: [
                             name: "velocity"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0"
-                        field:
+                        ]
+                        field: [
                             name: "scalvel"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0"
-                        field:
+                        ]
+                        field: [
                             name: "set_fraction"
                             accessType: "inputOnly"
                             type: "SFFloat"
-(.setSourceCode "\\newlinefunction initialize() {\\newline    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\\newline\\newline    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\\newline}\\newline\\newlinefunction set_fraction(value) {\\newline    if (typeof translation === 'undefined') {\\newline		translation = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof velocity === 'undefined') {\\newline		velocity = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof scalvel === 'undefined') {\\newline		scalvel = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof scale === 'undefined') {\\newline		scale = new SFVec3f(1, 1, 1);\\newline    }\\newline    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\\newline    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\\newline    // if you get to far away or too big, explode\\newline    if ( Math.abs(translation.x) > 256) {\\newline	translation.x = 0;\\newline	initialize();\\newline    }\\newline    if ( Math.abs(translation.y) > 256) {\\newline	translation.y = 0;\\newline	initialize();\\newline    }\\newline    if ( Math.abs(translation.z) > 256) {\\newline	translation.z = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.x) > 20) {\\newline	scale.x = scale.x/20;\\newline	translation.x = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.y) > 20) {\\newline	scale.y = scale.y/20;\\newline	translation.y = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.z) > 20) {\\newline	scale.z = scale.z/20;\\newline	translation.z = 0;\\newline	initialize();\\newline    }\\newline}\\newline")                    TimeSensor:
+                        ]
+(.setSourceCode "\\newlinefunction initialize() {\\newline    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\\newline\\newline    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\\newline}\\newline\\newlinefunction set_fraction(value) {\\newline    if (typeof translation === 'undefined') {\\newline		translation = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof velocity === 'undefined') {\\newline		velocity = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof scalvel === 'undefined') {\\newline		scalvel = new SFVec3f(0, 0, 0);\\newline    }\\newline    if (typeof scale === 'undefined') {\\newline		scale = new SFVec3f(1, 1, 1);\\newline    }\\newline    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\\newline    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\\newline    // if you get to far away or too big, explode\\newline    if ( Math.abs(translation.x) > 256) {\\newline	translation.x = 0;\\newline	initialize();\\newline    }\\newline    if ( Math.abs(translation.y) > 256) {\\newline	translation.y = 0;\\newline	initialize();\\newline    }\\newline    if ( Math.abs(translation.z) > 256) {\\newline	translation.z = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.x) > 20) {\\newline	scale.x = scale.x/20;\\newline	translation.x = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.y) > 20) {\\newline	scale.y = scale.y/20;\\newline	translation.y = 0;\\newline	initialize();\\newline    }\\newline    if (Math.abs(scale.z) > 20) {\\newline	scale.z = scale.z/20;\\newline	translation.z = 0;\\newline	initialize();\\newline    }\\newline}\\newline")                    ]
+                    TimeSensor: [
                         DEF: "bubbleClock"
                         cycleInterval: 10.0
                         loop: true
-                    ROUTE:
+                    ]
+                    ROUTE: [
                         fromNode: "bounce"
                         fromField: "translation_changed"
                         toNode: "body_trans"
                         toField: "set_translation"
-                    ROUTE:
+                    ]
+                    ROUTE: [
                         fromNode: "bounce"
                         fromField: "scale_changed"
                         toNode: "body_trans"
                         toField: "set_scale"
-                    ROUTE:
+                    ]
+                    ROUTE: [
                         fromNode: "bubbleClock"
                         fromField: "fraction_changed"
                         toNode: "bounce"
                         toField: "set_fraction"
-        ProtoInstance:
+                    ]
+                ]
+            ]
+        ]
+        ProtoInstance: [
             name: "Bubble"
             DEF: "bubbleA"
-        ProtoInstance:
+        ]
+        ProtoInstance: [
             name: "Bubble"
             DEF: "bubbleB"
-        ProtoInstance:
+        ]
+        ProtoInstance: [
             name: "Bubble"
             DEF: "bubbleC"
-        ProtoInstance:
+        ]
+        ProtoInstance: [
             name: "Bubble"
             DEF: "bubbleD"
+        ]
+    ]

@@ -1,148 +1,194 @@
 X3D:
     profile: "Full"
     version: "4.0"
-    head:
-        component:
+    head: [
+        component: [
             name: "Scripting"
             level: 1
-        component:
+        ]
+        component: [
             name: "EnvironmentalEffects"
             level: 3
-        component:
+        ]
+        component: [
             name: "Shaders"
             level: 1
-        component:
+        ]
+        component: [
             name: "CubeMapTexturing"
             level: 1
-        component:
+        ]
+        component: [
             name: "Texturing"
             level: 1
-        component:
+        ]
+        component: [
             name: "Rendering"
             level: 1
-        component:
+        ]
+        component: [
             name: "Grouping"
             level: 3
-        component:
+        ]
+        component: [
             name: "Core"
             level: 1
+        ]
 #<component name='Shape' level='4'></component>
-        meta:
+        meta: [
             name: "title"
             content: "bumpyx_ite.x3d"
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "John Carlson"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "A flower"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/bumpyx_ite.x3d"
-    Scene:
-        WorldInfo:
+        ]
+    ]
+    Scene: [
+        WorldInfo: [
             title: "bumpyx_ite.x3d"
-        NavigationInfo:
+        ]
+        NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        Viewpoint:
+        ]
+        Viewpoint: [
             position: [0, 0, 40]
             description: "Transparent rose"
+        ]
 #Images courtesy of Paul Debevec's Light Probe Image Gallery
-        Background:
+        Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
             frontUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        Transform:
-            Shape:
-                Sphere:
+        ]
+        Transform: [
+            Shape: [
+                Sphere: [
                     radius: 40.0
-                Appearance:
-                    Material:
+                ]
+                Appearance: [
+                    Material: [
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ComposedCubeMapTexture:
+                    ]
+                    ComposedCubeMapTexture: [
                         DEF: "texture"
-                        ImageTexture:
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ImageTexture:
+                        ]
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ImageTexture:
+                        ]
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ImageTexture:
+                        ]
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ImageTexture:
+                        ]
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ImageTexture:
+                        ]
+                        ImageTexture: [
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                    ComposedShader:
+                        ]
+                    ]
+                    ComposedShader: [
                         DEF: "x_iteShader"
                         language: "GLSL"
-                        field:
+                        field: [
                             name: "chromaticDispertion"
                             accessType: "inputOnly"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        field:
+                        ]
+                        field: [
                             name: "cube"
                             type: "SFNode"
                             accessType: "inputOnly"
-                            ComposedCubeMapTexture:
+                            ComposedCubeMapTexture: [
                                 USE: "texture"
-                        field:
+                            ]
+                        ]
+                        field: [
                             name: "bias"
                             type: "SFFloat"
                             accessType: "inputOnly"
                             value: "0.5"
-                        field:
+                        ]
+                        field: [
                             name: "scale"
                             type: "SFFloat"
                             accessType: "inputOnly"
                             value: "0.5"
-                        field:
+                        ]
+                        field: [
                             name: "power"
                             type: "SFFloat"
                             accessType: "inputOnly"
                             value: "2"
-                        field:
+                        ]
+                        field: [
                             name: "a"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "15"
-                        field:
+                        ]
+                        field: [
                             name: "b"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "5"
-                        field:
+                        ]
+                        field: [
                             name: "c"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "5"
-                        field:
+                        ]
+                        field: [
                             name: "d"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "5"
-                        field:
+                        ]
+                        field: [
                             name: "tdelta"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "0"
-                        field:
+                        ]
+                        field: [
                             name: "pdelta"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "0"
-                        ShaderPart:
+                        ]
+                        ShaderPart: [
                             url: ["../shaders/x_ite_flowers_chromatic.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
                             type: "VERTEX"
-                        ShaderPart:
+                        ]
+                        ShaderPart: [
                             url: ["../shaders/x_ite.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
                             type: "FRAGMENT"
+                        ]
 #TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                    ]
+                ]
+            ]
+        ]
+    ]
