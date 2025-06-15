@@ -62,7 +62,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "Trebuchet.x3d"
@@ -91,7 +90,6 @@ X3D:
         Shape: [
             Box:
                 size: [10000, 1, 10000]
-            ,
             Appearance:
                 ImageTexture:
                     url: ["grass.jpg", "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"]
@@ -106,7 +104,6 @@ X3D:
                     Material:
                         diffuseColor: [1, 0, 0]
                         emissiveColor: [1, 1, 0]
-                ,
                 Text:
                     string: ["Click Sling to Select Projectile"]
                     FontStyle:
@@ -123,7 +120,6 @@ X3D:
                     Shape: [
                         Appearance:
                             USE: "TextAppearance"
-                        ,
                         Text:
                             string: ["Click Here to Change Counter Weight (50 lbs)"]
                     ]
@@ -132,7 +128,6 @@ X3D:
                     Shape: [
                         Appearance:
                             USE: "TextAppearance"
-                        ,
                         Text:
                             string: ["Click Here to Change Counter Weight (500 lbs)"]
                     ]
@@ -141,7 +136,6 @@ X3D:
                     Shape: [
                         Appearance:
                             USE: "TextAppearance"
-                        ,
                         Text:
                             string: ["Click Here to Change Counter Weight (1000 lbs)"]
                     ]
@@ -150,7 +144,6 @@ X3D:
                     Shape: [
                         Appearance:
                             USE: "TextAppearance"
-                        ,
                         Text:
                             string: ["Click Here to Change Counter Weight (10000 lbs)"]
                     ]
@@ -165,7 +158,6 @@ X3D:
                 Shape: [
                     Box:
                         size: [20, 1, 1]
-                    ,
                     Appearance:
                         Material:
                             transparency: 1.0
@@ -183,7 +175,6 @@ X3D:
                         Appearance:
                             Material:
                                 diffuseColor: [1, 0, 0]
-                        ,
                         Text:
                             string: ["LAUNCH"]
                             FontStyle:
@@ -193,7 +184,6 @@ X3D:
                         Shape: [
                             Box:
                                 size: [5, 1, 1]
-                            ,
                             Appearance:
                                 Material:
                                     transparency: 1.0
@@ -237,7 +227,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 USE: "TextAppearance"
-                            ,
                             Text:
                                 string: ["Bowling Ball (10 lbs)"]
                                 FontStyle:
@@ -257,7 +246,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 USE: "TextAppearance"
-                            ,
                             Text:
                                 string: ["Cow (1000 lbs)"]
                                 FontStyle:
@@ -276,7 +264,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 USE: "TextAppearance"
-                            ,
                             Text:
                                 string: ["Chicken (5 lbs)"]
                                 FontStyle:
@@ -314,7 +301,6 @@ X3D:
                 DEF: "plank"
                 Box:
                     size: [25, 1, 1]
-                ,
                 Appearance:
                     DEF: "wood"
                     ImageTexture:
@@ -345,7 +331,6 @@ X3D:
                 Shape: [
                     USE: "plank"
                 ],
-
 #Main Verticle Support
             ],
             Transform: [
@@ -373,7 +358,6 @@ X3D:
                 Shape: [
                     Box:
                         size: [5, 5, 0.5]
-                    ,
                     Appearance:
                         USE: "wood"
                 ]
@@ -390,7 +374,6 @@ X3D:
                             endCap: false
                             solid: false
                             spine: [0, 6, 0, 0, -11, 0]
-                        ,
                         Appearance:
                             USE: "wood"
                     ]
@@ -406,7 +389,6 @@ X3D:
                     Shape: [
                         Box:
                             size: [35, 1, 1]
-                        ,
                         Appearance:
                             USE: "wood"
                     ],
@@ -415,7 +397,6 @@ X3D:
                         Shape: [
                             Box:
                                 size: [8, 2, 2]
-                            ,
                             Appearance:
                                 USE: "wood"
                         ]
@@ -430,7 +411,6 @@ X3D:
                         Appearance:
                             Material:
                                 specularColor: [1, 1, 1]
-                        ,
                         Extrusion:
                             beginCap: false
                             convex: false
@@ -446,15 +426,12 @@ X3D:
                                 DEF: "rope"
                                 ImageTexture:
                                     USE: "woodTexture"
-                            ,
                             Sphere:
                                 radius: 1.5
                         ],
-
 #knott
                     ]
                 ],
-
 #The Unicorn
                 Transform: [
                     rotation: [0, 0, 1, 1.2]
@@ -463,14 +440,12 @@ X3D:
                     Shape: [
                         Cylinder:
                             height: 10.0
-                        ,
                         Appearance:
                             Material:
                                 specularColor: [1, 1, 1]
                     ],
                     Transform: [
                         translation: [0, -2.5, 0]
-
 #The Unicorn
                         Shape: [
                             USE: "Torus"
@@ -480,11 +455,9 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 1.5
-                                ,
                                 Appearance:
                                     USE: "rope"
                             ],
-
 #Knott
                         ]
                     ],
@@ -496,7 +469,6 @@ X3D:
                             Shape: [
                                 Appearance:
                                     USE: "rope"
-                                ,
                                 Extrusion:
                                     beginCap: false
                                     creaseAngle: 0.76
@@ -513,7 +485,6 @@ X3D:
                     translation: [-17, -4.5, 0]
                     Transform: [
                         scale: [0.2, 0.2, 0.2]
-
 #Knot
                         Shape: [
                             USE: "Torus"
@@ -523,7 +494,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 1.5
-                                ,
                                 Appearance:
                                     USE: "rope"
                             ]
@@ -540,7 +510,6 @@ X3D:
                             Shape: [
                                 Appearance:
                                     USE: "rope"
-                                ,
                                 Extrusion:
                                     beginCap: false
                                     creaseAngle: 0.76
@@ -552,7 +521,6 @@ X3D:
                             Shape: [
                                 Appearance:
                                     USE: "rope"
-                                ,
                                 Extrusion:
                                     beginCap: false
                                     creaseAngle: 0.76
@@ -582,7 +550,6 @@ X3D:
                                                 DEF: "clear"
                                                 Material:
                                                     transparency: 0.5
-                                            ,
                                             Extrusion:
                                                 crossSection: [0, 0, 0, 5, 0.5, 7, 1, 8, 2, 9, 3, 11, 3.5, 11.2, 4, 11, 5, 9, 6, 8, 6.5, 7, 6.7, 5, 6.7, 0, 0, 0]
                                                 spine: [0, 0, 0, 0.1, 0, 0]
@@ -598,7 +565,6 @@ X3D:
                                                 Shape: [
                                                     Appearance:
                                                         USE: "rope"
-                                                    ,
                                                     Sphere:
                                                         radius: 1.5
                                                 ]
@@ -622,7 +588,6 @@ X3D:
                                                 Shape: [
                                                     Appearance:
                                                         USE: "rope"
-                                                    ,
                                                     Sphere:
                                                         radius: 1.5
                                                 ]
@@ -639,7 +604,6 @@ X3D:
                                                 endCap: false
                                                 solid: false
                                                 spine: [0, -1, 0, 0, 1, 0]
-                                            ,
                                             Appearance:
                                                 USE: "clear"
                                         ]
@@ -662,7 +626,6 @@ X3D:
                                             Shape: [
                                                 Sphere:
                                                     radius: 0.7
-                                                ,
                                                 Appearance:
                                                     DEF: "black"
                                                     Material:
@@ -701,13 +664,11 @@ X3D:
                     Cylinder:
                         height: 8.0
                         radius: 0.4
-                    ,
                     Appearance:
                         Material:
                             diffuseColor: [0, 0, 0]
                             specularColor: [1, 1, 1]
                 ],
-
 #Top Pivot
             ],
             Transform: [
@@ -717,7 +678,6 @@ X3D:
                     Shape: [
                         Box:
                             size: [1, 10, 0.5]
-                        ,
                         Appearance:
                             USE: "wood"
                     ]
@@ -727,20 +687,17 @@ X3D:
                     Shape: [
                         Box:
                             size: [1, 10, 0.5]
-                        ,
                         Appearance:
                             USE: "wood"
                     ]
                 ],
                 Transform: [
                     translation: [4, 14, 2.5]
-
 #CounterWeight
                     Shape: [
                         Cylinder:
                             height: 4.0
                             radius: 1.5
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [0, 0, 0]
@@ -754,7 +711,6 @@ X3D:
                         Cylinder:
                             height: 2.5
                             radius: 0.3
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [0, 0, 0]
@@ -779,7 +735,6 @@ X3D:
                             Cylinder:
                                 height: 10.0
                                 radius: 0.7
-                            ,
                             Appearance:
                                 Material:
                                     specularColor: [1, 1, 1]
@@ -792,7 +747,6 @@ X3D:
                         USE: "screw"
                     ]
                 ],
-
 #Release Pin
                 Transform: [
                     DEF: "Pin"
@@ -852,7 +806,6 @@ X3D:
                     DEF: "Axle"
                     Box:
                         size: [1, 1, 8]
-                    ,
                     Appearance:
                         USE: "wood"
                 ],
@@ -863,7 +816,6 @@ X3D:
                         DEF: "wheel"
                         Cylinder:
                             radius: 2.0
-                        ,
                         Appearance:
                             USE: "wood"
                     ],
@@ -871,7 +823,6 @@ X3D:
                         DEF: "tracks"
                         Sphere:
                             radius: 1.5
-                        ,
                         Appearance:
                             USE: "black"
                     ],
@@ -881,7 +832,6 @@ X3D:
                             DEF: "hub"
                             Sphere:
                                 radius: 1.5
-                            ,
                             Appearance:
                                 USE: "black"
                         ]
@@ -965,7 +915,6 @@ X3D:
                             Shape: [
                                 Box:
                                     size: [5, 0.5, 0.5]
-                                ,
                                 Appearance:
                                     Material:
                                         transparency: 1.0
@@ -986,7 +935,6 @@ X3D:
                             Shape: [
                                 Box:
                                     size: [17, 1, 0.5]
-                                ,
                                 Appearance:
                                     Material:
                                         transparency: 1.0
@@ -1045,8 +993,29 @@ X3D:
                         accessType: "outputOnly"
                         type: "SFFloat"
                     ],
-
-#sourceCode "\\newline\\newline\\newlinefunction initialize ()\\newline{\\newline	whichchoice =0;\\newline	CounterWeight=100;\\newline}\\newline\\newlinefunction set_boolean ( boolean_input, eventTime)\\newline{\\newline\\newline	if ( boolean_input== false ) { return; } // ignore the unclick\\newline        whichchoice = whichchoice +1;\\newline	if (whichchoice == 0)CounterWeight=50.00;\\newline	if (whichchoice == 1)CounterWeight=500.00;\\newline	if (whichchoice == 2)CounterWeight=1000.00;\\newline	if (whichchoice == 3)CounterWeight=10000.00;\\newline        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }\\newline\\newline\\newline        Browser.println ('CounterWeight ='+CounterWeight);\\newline}\\newline"
+#ecmascript:
+#
+#
+#function initialize ()
+#{
+#	whichchoice =0;
+#	CounterWeight=100;
+#}
+#
+#function set_boolean ( boolean_input, eventTime)
+#{
+#
+#	if ( boolean_input== false ) { return; } // ignore the unclick
+#        whichchoice = whichchoice +1;
+#	if (whichchoice == 0)CounterWeight=50.00;
+#	if (whichchoice == 1)CounterWeight=500.00;
+#	if (whichchoice == 2)CounterWeight=1000.00;
+#	if (whichchoice == 3)CounterWeight=10000.00;
+#        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
+#
+#
+#        Browser.println ('CounterWeight ='+CounterWeight);
+#}
                 ],
                 Script: [
                     DEF: "LauncheeScript"
@@ -1065,8 +1034,19 @@ X3D:
                         accessType: "outputOnly"
                         type: "SFFloat"
                     ],
-
-#sourceCode "\\newline\\newlinefunction set_boolean (boolean_input, eventTime)\\newline{\\newline	if ( boolean_input== false ) { return; } // ignore unclick\\newline        whichchoice = whichchoice +1;\\newline        if (whichchoice == 0)ProjectileWeight=10.00;\\newline        if (whichchoice == 1)ProjectileWeight=1000.00;\\newline	if (whichchoice == 2)ProjectileWeight=5;\\newline\\newline	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }\\newline	Browser.println ('Projectile Weight'+ProjectileWeight);\\newline}\\newline"
+#ecmascript:
+#
+#function set_boolean (boolean_input, eventTime)
+#{
+#	if ( boolean_input== false ) { return; } // ignore unclick
+#        whichchoice = whichchoice +1;
+#        if (whichchoice == 0)ProjectileWeight=10.00;
+#        if (whichchoice == 1)ProjectileWeight=1000.00;
+#	if (whichchoice == 2)ProjectileWeight=5;
+#
+#	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
+#	Browser.println ('Projectile Weight'+ProjectileWeight);
+#}
                 ],
                 Script: [
                     DEF: "PigdogMonkScript"
@@ -1080,8 +1060,18 @@ X3D:
                         accessType: "outputOnly"
                         type: "SFInt32"
                     ],
-
-#sourceCode "\\newline\\newlinefunction set_boolean (boolean_input, eventTime)\\newline{\\newline	if ( boolean_input== false ) { return; } // ignore unclick\\newline\\newline        whichchoice = whichchoice +1;\\newline\\newline        if ( whichchoice ==2 )  whichchoice = 0;\\newline\\newline\\newline}\\newline"
+#ecmascript:
+#
+#function set_boolean (boolean_input, eventTime)
+#{
+#	if ( boolean_input== false ) { return; } // ignore unclick
+#
+#        whichchoice = whichchoice +1;
+#
+#        if ( whichchoice ==2 )  whichchoice = 0;
+#
+#
+#}
                 ],
                 Script: [
                     DEF: "Mover"
@@ -1122,8 +1112,47 @@ X3D:
                         accessType: "outputOnly"
                         type: "SFVec3f"
                     ],
-
-#sourceCode "\\newline\\newlinefunction initialize ()\\newline{\\newline	MassCounterWeight=100;\\newline	MassProjectileWeight=10;\\newline	Browser.println ('MassCounterWeight =' + MassCounterWeight);\\newline	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);\\newline}\\newline\\newlinefunction set_MassProjectileWeight (value, timestamp)\\newline{\\newline	MassProjectileWeight = value;\\newline	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);\\newline}\\newlinefunction set_MassCounterWeight (value2, timestamp)\\newline{\\newline	MassCounterWeight = value2;\\newline	Browser.println ('new MassCounterWeight =' + MassCounterWeight);\\newline}\\newline\\newline\\newlinefunction set_fraction ( fraction, eventTime )\\newline{\\newline	var TrebuchetHeight=45;\\newline	var Height =25;\\newline      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\\newline	// start at TrebuchetHeight and keep along z axis (z=zero)\\newline	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\\newline        z = 0;\\newline        transparent = new SFVec3f (1,1,1);\\newline     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)\\newline		{\\newline		x=x-10;\\newline		y=y+1;\\newline		transparent = new SFVec3f(.01, .01, .01);\\newline			}\\newline\\newline	value_changed = new SFVec3f (x, y, z);\\newline	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\\newline}\\newline"
+#ecmascript:
+#
+#function initialize ()
+#{
+#	MassCounterWeight=100;
+#	MassProjectileWeight=10;
+#	Browser.println ('MassCounterWeight =' + MassCounterWeight);
+#	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
+#}
+#
+#function set_MassProjectileWeight (value, timestamp)
+#{
+#	MassProjectileWeight = value;
+#	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
+#}
+#function set_MassCounterWeight (value2, timestamp)
+#{
+#	MassCounterWeight = value2;
+#	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
+#}
+#
+#
+#function set_fraction ( fraction, eventTime )
+#{
+#	var TrebuchetHeight=45;
+#	var Height =25;
+#      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+#	// start at TrebuchetHeight and keep along z axis (z=zero)
+#	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+#        z = 0;
+#        transparent = new SFVec3f (1,1,1);
+#     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
+#		{
+#		x=x-10;
+#		y=y+1;
+#		transparent = new SFVec3f(.01, .01, .01);
+#			}
+#
+#	value_changed = new SFVec3f (x, y, z);
+#	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+#}
                 ]
             ]
         ],

@@ -34,7 +34,6 @@ X3D:
             name: "Core"
             level: 1
         ],
-
 #<component name='Shape' level='4'></component>
         meta: [
             name: "title"
@@ -56,7 +55,6 @@ X3D:
             name: "description"
             content: "a mirrored sphere"
         ]
-    ,
     Scene:
         Viewpoint: [
             position: [0, 5, 100]
@@ -77,36 +75,28 @@ X3D:
                     Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-,
                     ComposedCubeMapTexture:
                         ImageTexture:
                             DEF: "backShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
-,
                         ImageTexture:
                             DEF: "bottomShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
-,
                         ImageTexture:
                             DEF: "frontShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
-,
                         ImageTexture:
                             DEF: "leftShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
-,
                         ImageTexture:
                             DEF: "rightShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
-,
                         ImageTexture:
                             DEF: "topShader"
                             url: ["../resources/images/all_probes/beach_cross/beach_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
-,
                     ComposedShader: [
                         DEF: "x_ite"
                         language: "GLSL"
-
 #http://hypertextbook.com/facts/2005/JustinChe.shtml
                         field: [
                             name: "chromaticDispertion"
@@ -189,7 +179,6 @@ X3D:
                             type: "FRAGMENT"
                         ]
                     ]
-                ,
                 Sphere:
                     radius: 30.0
             ],
@@ -273,8 +262,23 @@ X3D:
                     accessType: "inputOutput"
                     value: "-1"
                 ],
-
-#sourceCode "\\newline        function set_fraction( f, tm ) {\\newline	    var side = Math.floor(f*frontUrls.length);\\newline	    if (side > frontUrls.length-1) {\\newline	    	side = 0;\\newline	    }\\newline	    if (side != old) {\\newline	    	    // Browser.print(f+\" \"+side);\\newline	    	    old = side;\\newline		    front_changed[0] = frontUrls[side];\\newline		    back_changed[0] = backUrls[side];\\newline		    left_changed[0] = leftUrls[side];\\newline		    right_changed[0] = rightUrls[side];\\newline		    top_changed[0] = topUrls[side];\\newline		    bottom_changed[0] = bottomUrls[side];\\newline            }\\newline        }\\newline"
+#ecmascript:
+#        function set_fraction( f, tm ) {
+#	    var side = Math.floor(f*frontUrls.length);
+#	    if (side > frontUrls.length-1) {
+#	    	side = 0;
+#	    }
+#	    if (side != old) {
+#	    	    // Browser.print(f+" "+side);
+#	    	    old = side;
+#		    front_changed[0] = frontUrls[side];
+#		    back_changed[0] = backUrls[side];
+#		    left_changed[0] = leftUrls[side];
+#		    right_changed[0] = rightUrls[side];
+#		    top_changed[0] = topUrls[side];
+#		    bottom_changed[0] = bottomUrls[side];
+#            }
+#        }
             ],
             TimeSensor: [
                 DEF: "Clock"

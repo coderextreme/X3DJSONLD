@@ -82,7 +82,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "HAnimModelFootLeft.x3d"
@@ -92,8 +91,7 @@ X3D:
             DEF: "hanim_Foot_Left"
             loa: 4
             version: "2.0"
-
-#original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'
+#original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'
             MetadataSet:
                 name: "HAnimHumanoid.info"
                 reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -101,14 +99,12 @@ X3D:
                     name: "authorName"
                     value: ["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
                 ]
-,
             HAnimJoint: [
                 name: "humanoid_root"
                 DEF: "hanim_humanoid_root"
                 ulimit: [0, 0, 0]
                 llimit: [0, 0, 0]
                 containerFieldOverride: "skeleton"
-
 #Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
                 HAnimJoint: [
                     name: "l_talocrural"
@@ -124,7 +120,6 @@ X3D:
                                 DEF: "HAnimJointShape"
                                 Sphere:
                                     radius: 0.025
-                                ,
                                 Appearance:
                                     DEF: "HAnimJointAppearance"
                                     Material:
@@ -135,7 +130,6 @@ X3D:
                             Appearance:
                                 Material:
                                     emissiveColor: [1, 1, 1]
-                            ,
                             IndexedLineSet:
                                 DEF: "TCtoTCN"
                                 coordIndex: [0, 1]
@@ -146,7 +140,6 @@ X3D:
                             Appearance:
                                 Material:
                                     emissiveColor: [1, 1, 1]
-                            ,
                             IndexedLineSet:
                                 DEF: "TCtoCC"
                                 coordIndex: [0, 1]
@@ -154,7 +147,6 @@ X3D:
                                     point: [0, 0, 0, 0.2, 0.3, 0]
                         ]
                     ],
-
 #TCN
                     HAnimJoint: [
                         name: "l_talocalcaneonavicular"
@@ -175,7 +167,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "TCNtoCN1"
                                     coordIndex: [0, 1]
@@ -186,7 +177,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "TCNtoCN2"
                                     coordIndex: [0, 1]
@@ -197,7 +187,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "TCNtoCN3"
                                     coordIndex: [0, 1]
@@ -205,7 +194,6 @@ X3D:
                                         point: [0, -0.3, 0, 0.1, -0.4, 0]
                             ]
                         ],
-
 #CN1
                         HAnimJoint: [
                             name: "l_cuneonavicular_1"
@@ -226,7 +214,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CN1toTMT1"
                                         coordIndex: [0, 1]
@@ -253,7 +240,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "TMT1toMTP1"
                                             coordIndex: [0, 1]
@@ -280,7 +266,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "MTP1toIP1"
                                                 coordIndex: [0, 1]
@@ -307,7 +292,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "tiptoe_l_tarsal_distal_interphalangeal_1"
                                                     coordIndex: [0, 1]
@@ -319,7 +303,6 @@ X3D:
                                 ]
                             ]
                         ],
-
 #CN2
                         HAnimJoint: [
                             name: "l_cuneonavicular_2"
@@ -340,7 +323,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CN2toTMT2"
                                         coordIndex: [0, 1]
@@ -367,7 +349,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "TMT2toMTP2"
                                             coordIndex: [0, 1]
@@ -394,7 +375,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "MTP2toPIP2"
                                                 coordIndex: [0, 1]
@@ -421,7 +401,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "PIP2toDIP2"
                                                     coordIndex: [0, 1]
@@ -448,7 +427,6 @@ X3D:
                                                     Appearance:
                                                         Material:
                                                             emissiveColor: [1, 1, 1]
-                                                    ,
                                                     IndexedLineSet:
                                                         DEF: "tiptoe_l_tarsal_distal_phalanx_2"
                                                         coordIndex: [0, 1]
@@ -461,7 +439,6 @@ X3D:
                                 ]
                             ]
                         ],
-
 #CN3
                         HAnimJoint: [
                             name: "l_cuneonavicular_3"
@@ -482,7 +459,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CN3toTMT3"
                                         coordIndex: [0, 1]
@@ -509,7 +485,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "TMT3toMTP3"
                                             coordIndex: [0, 1]
@@ -536,7 +511,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "MTP3toPIP3"
                                                 coordIndex: [0, 1]
@@ -563,7 +537,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "PIP3toDIP3"
                                                     coordIndex: [0, 1]
@@ -590,7 +563,6 @@ X3D:
                                                     Appearance:
                                                         Material:
                                                             emissiveColor: [1, 1, 1]
-                                                    ,
                                                     IndexedLineSet:
                                                         DEF: "tiptoe_l_tarsal_distal_interphalangeal_3"
                                                         coordIndex: [0, 1]
@@ -604,7 +576,6 @@ X3D:
                             ]
                         ]
                     ],
-
 #CC
                     HAnimJoint: [
                         name: "l_calcaneocuboid"
@@ -625,7 +596,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "CCtoTT"
                                     coordIndex: [0, 1]
@@ -633,7 +603,6 @@ X3D:
                                         point: [0.2, 0.3, 0, 0.21, -0.3, 0]
                             ]
                         ],
-
 #TT
                         HAnimJoint: [
                             name: "l_transversetarsal"
@@ -654,7 +623,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "TTtoTMT4"
                                         coordIndex: [0, 1]
@@ -665,7 +633,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "TTtoTMT5"
                                         coordIndex: [0, 1]
@@ -673,7 +640,6 @@ X3D:
                                             point: [0.21, -0.3, 0, 0.33, -0.52, 0]
                                 ]
                             ],
-
 #TMT4
                             HAnimJoint: [
                                 name: "l_tarsometatarsal_4"
@@ -694,7 +660,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "TMT4toMTP4"
                                             coordIndex: [0, 1]
@@ -721,7 +686,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "MTP4toPIP4"
                                                 coordIndex: [0, 1]
@@ -748,7 +712,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "PIP4toDIP4"
                                                     coordIndex: [0, 1]
@@ -775,7 +738,6 @@ X3D:
                                                     Appearance:
                                                         Material:
                                                             emissiveColor: [1, 1, 1]
-                                                    ,
                                                     IndexedLineSet:
                                                         DEF: "tiptoe_l_tarsal_distal_interphalangeal_4"
                                                         coordIndex: [0, 1]
@@ -787,7 +749,6 @@ X3D:
                                     ]
                                 ]
                             ],
-
 #TMT5
                             HAnimJoint: [
                                 name: "l_tarsometatarsal_5"
@@ -808,7 +769,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "TMT5toMTP5"
                                             coordIndex: [0, 1]
@@ -835,7 +795,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "MTP5toPIP5"
                                                 coordIndex: [0, 1]
@@ -862,7 +821,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "PIP5toDIP5"
                                                     coordIndex: [0, 1]
@@ -889,7 +847,6 @@ X3D:
                                                     Appearance:
                                                         Material:
                                                             emissiveColor: [1, 1, 1]
-                                                    ,
                                                     IndexedLineSet:
                                                         DEF: "tiptoe_l_tarsal_distal_interphalangeal_5"
                                                         coordIndex: [0, 1]

@@ -90,7 +90,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "HAnimModelHandRight.x3d"
@@ -100,8 +99,7 @@ X3D:
             DEF: "hanim_Hand_Right"
             loa: 4
             version: "2.0"
-
-#original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'
+#original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'
             MetadataSet:
                 name: "HAnimHumanoid.info"
                 reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -109,14 +107,12 @@ X3D:
                     name: "authorName"
                     value: ["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
                 ]
-,
             HAnimJoint: [
                 name: "humanoid_root"
                 DEF: "hanim_humanoid_root"
                 ulimit: [0, 0, 0]
                 llimit: [0, 0, 0]
                 containerFieldOverride: "skeleton"
-
 #Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
                 HAnimJoint: [
                     name: "r_radiocarpal"
@@ -132,7 +128,6 @@ X3D:
                                 DEF: "HAnimJointShape"
                                 Sphere:
                                     radius: 0.025
-                                ,
                                 Appearance:
                                     DEF: "HAnimJointAppearanceBlue"
                                     Material:
@@ -143,7 +138,6 @@ X3D:
                             Appearance:
                                 Material:
                                     emissiveColor: [1, 1, 1]
-                            ,
                             IndexedLineSet:
                                 DEF: "RCToMC12"
                                 coordIndex: [0, 1]
@@ -154,7 +148,6 @@ X3D:
                             Appearance:
                                 Material:
                                     emissiveColor: [1, 1, 1]
-                            ,
                             IndexedLineSet:
                                 DEF: "RCToMC3"
                                 coordIndex: [0, 1]
@@ -165,7 +158,6 @@ X3D:
                             Appearance:
                                 Material:
                                     emissiveColor: [1, 1, 1]
-                            ,
                             IndexedLineSet:
                                 DEF: "RCToMC45"
                                 coordIndex: [0, 1]
@@ -173,7 +165,6 @@ X3D:
                                     point: [0, 0, 0, 0.1, 0.1, 0]
                         ]
                     ],
-
 #MC1
                     HAnimJoint: [
                         name: "r_midcarpal_1"
@@ -190,7 +181,6 @@ X3D:
                                     DEF: "HAnimNewJointShape"
                                     Sphere:
                                         radius: 0.025
-                                    ,
                                     Appearance:
                                         DEF: "HAnimJointAppearanceRed"
                                         Material:
@@ -201,7 +191,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "MC12toCMC1"
                                     coordIndex: [0, 1]
@@ -209,7 +198,6 @@ X3D:
                                         point: [-0.1, 0.1, 0, -0.2, 0.15, 0]
                             ]
                         ],
-
 #thumb finger
                         HAnimJoint: [
                             name: "r_carpometacarpal_1"
@@ -230,7 +218,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CMC1toMCP1xxx"
                                         coordIndex: [0, 1]
@@ -257,7 +244,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "MCP11toIP1"
                                             coordIndex: [0, 1]
@@ -284,7 +270,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "fingertip_r_carpal_interphalangeal_1"
                                                 coordIndex: [0, 1]
@@ -296,7 +281,6 @@ X3D:
                             ]
                         ]
                     ],
-
 #MC2
                     HAnimJoint: [
                         name: "r_midcarpal_2"
@@ -317,7 +301,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "MC12toCMC2"
                                     coordIndex: [0, 1]
@@ -325,7 +308,6 @@ X3D:
                                         point: [-0.1, 0.1, 0, -0.1, 0.2, 0]
                             ]
                         ],
-
 #index finger
                         HAnimJoint: [
                             name: "r_carpometacarpal_2"
@@ -346,7 +328,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CMC2toMCP2"
                                         coordIndex: [0, 1]
@@ -373,7 +354,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "MCP2toPIP2"
                                             coordIndex: [0, 1]
@@ -400,7 +380,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "PIP2toDIP2"
                                                 coordIndex: [0, 1]
@@ -427,7 +406,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "fingertip_r_carpal_distal_interphalangeal_2"
                                                     coordIndex: [0, 1]
@@ -440,7 +418,6 @@ X3D:
                             ]
                         ]
                     ],
-
 #MC3
                     HAnimJoint: [
                         name: "r_midcarpal_3"
@@ -461,7 +438,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "MC3toCMC3"
                                     coordIndex: [0, 1]
@@ -469,7 +445,6 @@ X3D:
                                         point: [0, 0.07, 0, 0, 0.2, 0]
                             ]
                         ],
-
 #Middle fingle
                         HAnimJoint: [
                             name: "r_carpometacarpal_3"
@@ -490,7 +465,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CMC3toMCP3"
                                         coordIndex: [0, 1]
@@ -517,7 +491,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "MCP3toPIP3"
                                             coordIndex: [0, 1]
@@ -544,7 +517,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "PIP3toDIP3"
                                                 coordIndex: [0, 1]
@@ -571,7 +543,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "fingertip_r_carpal_distal_interphalangeal_3"
                                                     coordIndex: [0, 1]
@@ -584,7 +555,6 @@ X3D:
                             ]
                         ]
                     ],
-
 #MC4_5
                     HAnimJoint: [
                         name: "r_midcarpal_4_5"
@@ -605,7 +575,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "MC45toCMC4"
                                     coordIndex: [0, 1]
@@ -616,7 +585,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         emissiveColor: [1, 1, 1]
-                                ,
                                 IndexedLineSet:
                                     DEF: "MC45toCMC5"
                                     coordIndex: [0, 1]
@@ -624,7 +592,6 @@ X3D:
                                         point: [0.1, 0.1, 0, 0.15, 0.17, 0]
                             ]
                         ],
-
 #ring finger
                         HAnimJoint: [
                             name: "r_carpometacarpal_4"
@@ -645,7 +612,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CMC4toMCP4"
                                         coordIndex: [0, 1]
@@ -672,7 +638,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "MCP4toPIP4"
                                             coordIndex: [0, 1]
@@ -699,7 +664,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "PIP4toDIP4"
                                                 coordIndex: [0, 1]
@@ -726,7 +690,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "fingertip_r_carpal_distal_interphalangeal_4"
                                                     coordIndex: [0, 1]
@@ -738,7 +701,6 @@ X3D:
                                 ]
                             ]
                         ],
-
 #pinky finger
                         HAnimJoint: [
                             name: "r_carpometacarpal_5"
@@ -759,7 +721,6 @@ X3D:
                                     Appearance:
                                         Material:
                                             emissiveColor: [1, 1, 1]
-                                    ,
                                     IndexedLineSet:
                                         DEF: "CMC5toMCP5"
                                         coordIndex: [0, 1]
@@ -786,7 +747,6 @@ X3D:
                                         Appearance:
                                             Material:
                                                 emissiveColor: [1, 1, 1]
-                                        ,
                                         IndexedLineSet:
                                             DEF: "MCP5toPIP5"
                                             coordIndex: [0, 1]
@@ -813,7 +773,6 @@ X3D:
                                             Appearance:
                                                 Material:
                                                     emissiveColor: [1, 1, 1]
-                                            ,
                                             IndexedLineSet:
                                                 DEF: "PIP5toDIP5"
                                                 coordIndex: [0, 1]
@@ -840,7 +799,6 @@ X3D:
                                                 Appearance:
                                                     Material:
                                                         emissiveColor: [1, 1, 1]
-                                                ,
                                                 IndexedLineSet:
                                                     DEF: "fingertip_r_carpal_distal_interphalangeal_5"
                                                     coordIndex: [0, 1]

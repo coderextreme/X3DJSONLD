@@ -126,7 +126,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ObliqueStrategies.x3d"
@@ -152,7 +151,6 @@ X3D:
                         family: ["SANS"]
                         justify: ["MIDDLE", "MIDDLE"]
                         style: "BOLD"
-                ,
                 Appearance:
                     Material:
                         diffuseColor: [1, 1, 1]
@@ -166,7 +164,6 @@ X3D:
                         solid: false
                         Coordinate:
                             point: [1, 1, 0, 1, -1, 0, -1, -1, 0, -1, 1, 0]
-                    ,
                     Appearance:
                         Material:
                             ambientIntensity: 0.245763
@@ -180,9 +177,7 @@ X3D:
         Script: [
             DEF: "TextScript"
             url: ["ObliqueStrategiesScript.js", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]
-
 #initialize() method includes unit test to printAllStrategies() to console
-
 #TODO insert field definitions here (index string_changed previous next random) and then animate!
             field: [
                 name: "index"
@@ -243,7 +238,6 @@ X3D:
                         family: ["SANS"]
                         justify: ["MIDDLE", "MIDDLE"]
                         style: "BOLD"
-                ,
                 Appearance:
                     Material:
                         diffuseColor: [1, 1, 1]
@@ -260,13 +254,9 @@ X3D:
                 maxFront: 100.0
                 minBack: 20.0
                 minFront: 20.0
-
 #Make sure the sound source AudioClip is audible at the user location
-
 #Not all X3D players seem to use the .mp3
-
 #&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
-
 #%20 is space character used in uri/url encoding
                 AudioClip:
                     DEF: "TextToSpeechAudioClip"
@@ -304,7 +294,6 @@ X3D:
                     string: ["previous"]
                     FontStyle:
                         USE: "MessageFont"
-                ,
                 Appearance:
                     DEF: "InterfaceAppearance"
                     Material:
@@ -314,14 +303,12 @@ X3D:
                 scale: [2, 0.6, 1]
                 Shape: [
                     DEF: "TransparentClickSurface"
-
 #support Selectable Text with a scalable IFS
                     IndexedFaceSet:
                         coordIndex: [0, 1, 2, 3, -1]
                         solid: false
                         Coordinate:
                             point: [1, 1, 0, 1, -1, 0, -1, -1, 0, -1, 1, 0]
-                    ,
                     Appearance:
                         Material:
                             transparency: 1.0
@@ -346,7 +333,6 @@ X3D:
                     string: ["next"]
                     FontStyle:
                         USE: "MessageFont"
-                ,
                 Appearance:
                     USE: "InterfaceAppearance"
             ],
@@ -374,7 +360,6 @@ X3D:
                     string: ["random"]
                     FontStyle:
                         USE: "MessageFont"
-                ,
                 Appearance:
                     USE: "InterfaceAppearance"
             ],
@@ -404,7 +389,6 @@ X3D:
                         string: ["speech"]
                         FontStyle:
                             USE: "MessageFont"
-                    ,
                     Appearance:
                         USE: "InterfaceAppearance"
                 ],

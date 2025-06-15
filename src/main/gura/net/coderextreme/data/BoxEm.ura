@@ -22,7 +22,6 @@ X3D:
             name: "description"
             content: "3 boxes"
         ]
-    ,
     Scene:
         NavigationInfo: [
             type: ["EXAMINE"]
@@ -46,16 +45,14 @@ X3D:
                     type: "MFNode"
                     Shape: [
                         Sphere:
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 1, 1]
                     ]
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "xtranslation"
@@ -64,6 +61,7 @@ X3D:
                             nodeField: "children"
                             protoField: "myShape"
                         ]
+                    ]
                 ]
         ],
         ProtoDeclare: [
@@ -81,32 +79,31 @@ X3D:
                     type: "MFNode"
                     Shape: [
                         Cylinder:
-                        ,
                         Appearance:
                             Material:
                                 diffuseColor: [1, 1, 1]
                     ]
                 ]
-,
             ProtoBody:
                 Transform: [
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "translation"
                             protoField: "ytranslation"
                         ]
-,
+                    ],
                     ProtoInstance: [
                         name: "anyShape"
                         fieldValue: [
                             name: "xtranslation"
                             value: "0 0 0"
                         ],
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
+                        ]
                     ],
                     ProtoInstance: [
                         name: "anyShape"
@@ -114,11 +111,12 @@ X3D:
                             name: "xtranslation"
                             value: "2 0 0"
                         ],
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
+                        ]
                     ],
                     ProtoInstance: [
                         name: "anyShape"
@@ -126,11 +124,12 @@ X3D:
                             name: "xtranslation"
                             value: "-2 0 0"
                         ],
-                        IS:
+                        IS: [
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
+                        ]
                     ]
                 ]
         ],
@@ -147,7 +146,6 @@ X3D:
                     DEF: "box"
                     Box:
                         size: [1, 1, 1]
-                    ,
                     Appearance:
                         Material:
                             diffuseColor: [0, 1, 0]

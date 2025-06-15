@@ -54,7 +54,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ViewFrustumPrototype.x3d"
@@ -68,7 +67,6 @@ X3D:
                     accessType: "initializeOnly"
                     appinfo: "required: insert Viewpoint DEF or USE node for view of interest"
                     type: "SFNode"
-
 #NULL node, ProtoInstance must provide
                 ],
                 field: [
@@ -76,7 +74,6 @@ X3D:
                     accessType: "initializeOnly"
                     appinfo: "required: insert NavigationInfo DEF or USE node of interest"
                     type: "SFNode"
-
 #NULL node, ProtoInstance must provide
                 ],
                 field: [
@@ -121,7 +118,6 @@ X3D:
                     type: "SFBool"
                     value: "false"
                 ]
-,
             ProtoBody:
                 Switch: [
                     DEF: "VisibilitySwitch"
@@ -138,23 +134,22 @@ X3D:
                                     Coordinate:
                                         DEF: "FrustumCoordinate"
                                         point: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-                                ,
                                 Appearance:
                                     Material:
-                                        IS:
+                                        IS: [
                                             connect: [
                                                 nodeField: "emissiveColor"
                                                 protoField: "lineColor"
                                             ]
+                                        ]
                             ],
                             Shape: [
                                 Extrusion:
                                     DEF: "FrustumExtrusion"
-                                ,
                                 Appearance:
                                     DEF: "FrustumAppearance"
                                     Material:
-                                        IS:
+                                        IS: [
                                             connect: [
                                                 nodeField: "diffuseColor"
                                                 protoField: "frustumColor"
@@ -163,11 +158,11 @@ X3D:
                                                 nodeField: "transparency"
                                                 protoField: "transparency"
                                             ]
+                                        ]
                             ],
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     USE: "FrustumAppearance"
                             ]
@@ -194,14 +189,12 @@ X3D:
                         name: "ViewpointNode"
                         accessType: "initializeOnly"
                         type: "SFNode"
-
 #initialization node (if any) goes here
                     ],
                     field: [
                         name: "NavigationInfoNode"
                         accessType: "initializeOnly"
                         type: "SFNode"
-
 #initialization node (if any) goes here
                     ],
                     field: [
@@ -261,7 +254,7 @@ X3D:
                         accessType: "initializeOnly"
                         type: "SFBool"
                     ],
-                    IS:
+                    IS: [
                         connect: [
                             nodeField: "visible"
                             protoField: "visible"
@@ -282,6 +275,7 @@ X3D:
                             nodeField: "trace"
                             protoField: "trace"
                         ]
+                    ]
                 ],
                 ROUTE: [
                     fromField: "visibilitySwitchSelection"
@@ -320,7 +314,6 @@ X3D:
                     toNode: "FrustumCoordinate"
                 ]
         ],
-
 #Example use is in separate scene
         Anchor: [
             description: "ViewFrustum Example"
@@ -329,7 +322,6 @@ X3D:
                 Appearance:
                     Material:
                         diffuseColor: [0.8, 0.4, 0]
-                ,
                 Text:
                     string: ["ViewFrustumPrototype.x3d", "is a Prototype declaration file.", "For an example scene using the prototype,", "click this text and view", "ViewFrustumExample.x3d"]
                     FontStyle:

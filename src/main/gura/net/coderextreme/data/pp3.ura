@@ -34,13 +34,11 @@ X3D:
             name: "generator"
             content: "manual"
         ]
-    ,
     Scene:
         ProtoDeclare: [
             name: "Process"
             ProtoBody:
                 Group: [
-
 #left
                     Transform: [
                         scale: [0.5, 0.5, 0.5]
@@ -49,16 +47,13 @@ X3D:
                                 Material:
                                     diffuseColor: [0.7, 1, 0]
                                     transparency: 0.5
-                            ,
                             Extrusion:
                                 creaseAngle: 0.785
                                 crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                                 spine: [-2.5, 0, 0, -1.5, 0, 0]
                         ],
-
-#<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>
+#<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>
                     ],
-
 #right
                     Transform: [
                         scale: [0.5, 0.5, 0.5]
@@ -67,7 +62,6 @@ X3D:
                                 Material:
                                     diffuseColor: [0, 0.7, 1]
                                     transparency: 0.5
-                            ,
                             Extrusion:
                                 creaseAngle: 0.785
                                 crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
@@ -80,7 +74,6 @@ X3D:
                                     Material:
                                         DEF: "MaterialLightBlue"
                                         diffuseColor: [1, 1, 1]
-                                ,
                                 Text:
                                     DEF: "RightString"
                                     string: ["r"]
@@ -95,7 +88,6 @@ X3D:
                             DEF: "RightTouch"
                         ]
                     ],
-
 #up
                     Transform: [
                         scale: [0.5, 0.5, 0.5]
@@ -104,7 +96,6 @@ X3D:
                                 Material:
                                     diffuseColor: [0, 0.7, 1]
                                     transparency: 0.5
-                            ,
                             Extrusion:
                                 creaseAngle: 0.785
                                 crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
@@ -116,7 +107,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         USE: "MaterialLightBlue"
-                                ,
                                 Text:
                                     DEF: "UpString"
                                     string: ["u"]
@@ -131,7 +121,6 @@ X3D:
                             DEF: "UpTouch"
                         ]
                     ],
-
 #down
                     Transform: [
                         scale: [0.5, 0.5, 0.5]
@@ -140,23 +129,19 @@ X3D:
                                 Material:
                                     diffuseColor: [0.7, 1, 0]
                                     transparency: 0.5
-                            ,
                             Extrusion:
                                 creaseAngle: 0.785
                                 crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                                 spine: [0, -2.5, 0, 0, -1.5, 0]
                         ],
-
-#<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>
+#<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>
                     ],
-
 #center
                     Transform: [
                         Shape: [
                             Appearance:
                                 Material:
                                     diffuseColor: [1, 0, 0.7]
-                            ,
                             Sphere:
                         ],
                         Transform: [
@@ -166,7 +151,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         USE: "MaterialLightBlue"
-                                ,
                                 Text:
                                     DEF: "CenterString"
                             ]
@@ -193,8 +177,15 @@ X3D:
                         accessType: "outputOnly"
                         type: "MFString"
                     ],
-
-#sourceCode "\\newline\\newlinefunction initialize() {\\newline	rightlines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_rightstring(rightstr) {\\newline	rightlines = new MFString(rightstr);\\newline}\\newline"
+#ecmascript:
+#
+#function initialize() {
+#	rightlines = new MFString("");
+#}
+#
+#function set_rightstring(rightstr) {
+#	rightlines = new MFString(rightstr);
+#}
                 ],
                 Script: [
                     DEF: "UpSingleToMultiString"
@@ -208,8 +199,15 @@ X3D:
                         accessType: "outputOnly"
                         type: "MFString"
                     ],
-
-#sourceCode "\\newline\\newlinefunction initialize() {\\newline	uplines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_upstring(upstr) {\\newline	uplines = new MFString(upstr);\\newline}\\newline"
+#ecmascript:
+#
+#function initialize() {
+#	uplines = new MFString("");
+#}
+#
+#function set_upstring(upstr) {
+#	uplines = new MFString(upstr);
+#}
                 ],
                 Script: [
                     DEF: "CenterSingleToMultiString"
@@ -223,8 +221,15 @@ X3D:
                         accessType: "outputOnly"
                         type: "MFString"
                     ],
-
-#sourceCode "\\newline\\newlinefunction initialize() {\\newline	centerlines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_centerstring(centerstr) {\\newline	centerlines = new MFString(centerstr);\\newline}\\newline"
+#ecmascript:
+#
+#function initialize() {
+#	centerlines = new MFString("");
+#}
+#
+#function set_centerstring(centerstr) {
+#	centerlines = new MFString(centerstr);
+#}
                 ],
                 ROUTE: [
                     fromField: "enteredText"

@@ -50,7 +50,6 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "variationalflowers.x3d"
@@ -74,7 +73,6 @@ X3D:
             ParticleSystem: [
                 maxParticles: 20
                 geometryType: "GEOMETRY"
-
 #* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
                 VariationPhysicsModel: [
                     values: "2 2 5 5 0 0"
@@ -83,34 +81,25 @@ X3D:
                 ExplosionEmitter:
                     speed: 1.0
                     variation: 0.75
-,
                 Sphere:
-,
                 Appearance:
                     Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-,
                     ComposedCubeMapTexture:
                         DEF: "texture"
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-,
                         ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-,
                     ComposedShader: [
                         DEF: "x_ite"
                         language: "GLSL"
@@ -193,8 +182,15 @@ X3D:
                     accessType: "inputOutput"
                     value: "0.1"
                 ],
-
-#sourceCode "\\newline			function set_fraction(f, tm) {\\newline			    if (lastframe + updaterate < tm) {\\newline			  	lastframe = tm;\\newline				for (let v in values) {\\newline					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\\newline				}\\newline			    }\\newline			}\\newline"
+#ecmascript:
+#			function set_fraction(f, tm) {
+#			    if (lastframe + updaterate < tm) {
+#			  	lastframe = tm;
+#				for (let v in values) {
+#					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];
+#				}
+#			    }
+#			}
             ],
             TimeSensor: [
                 DEF: "TourTime"

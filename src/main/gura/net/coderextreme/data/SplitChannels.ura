@@ -50,7 +50,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "SplitChannels.x3d"
@@ -79,7 +78,6 @@ X3D:
                             diffuseColor: [0, 1, 0]
                             emissiveColor: [0.8, 0.8, 0.8]
                             specularColor: [0.01, 0.01, 0.01]
-                    ,
                     Box:
                         size: [10, 80, 0.01]
                 ]
@@ -94,10 +92,8 @@ X3D:
                             diffuseColor: [0, 1, 0]
                             emissiveColor: [0.8, 0.8, 0.8]
                             specularColor: [0.01, 0.01, 0.01]
-,
                         ImageTexture:
                             url: ["images/line.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
-                    ,
                     Box:
                         size: [25, 83, 0.01]
                 ]
@@ -114,7 +110,6 @@ X3D:
                             diffuseColor: [0.345, 0.345, 0.882]
                             shininess: 0.51
                             specularColor: [0.46, 0.46, 0.46]
-                    ,
                     Text:
                         string: ["Right Channel Volume"]
                         FontStyle:
@@ -137,7 +132,6 @@ X3D:
                             diffuseColor: [0, 1, 0]
                             emissiveColor: [0.8, 0.8, 0.8]
                             specularColor: [0.01, 0.01, 0.01]
-                    ,
                     Box:
                         size: [10, 80, 0.01]
                 ]
@@ -152,10 +146,8 @@ X3D:
                             diffuseColor: [0, 1, 0]
                             emissiveColor: [0.8, 0.8, 0.8]
                             specularColor: [0.01, 0.01, 0.01]
-,
                         ImageTexture:
                             url: ["images/line.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
-                    ,
                     Box:
                         size: [25, 83, 0.01]
                 ]
@@ -172,7 +164,6 @@ X3D:
                             diffuseColor: [0.345, 0.345, 0.882]
                             shininess: 0.51
                             specularColor: [0.46, 0.46, 0.46]
-                    ,
                     Text:
                         string: ["Left Channel Volume"]
                         FontStyle:
@@ -188,7 +179,6 @@ X3D:
                         diffuseColor: [0.1, 0.1, 0.1]
                         shininess: 0.8
                         specularColor: [0.5, 0.6, 0.7]
-                ,
                 Box:
                     size: [1500, 10, 500]
             ]
@@ -232,10 +222,8 @@ X3D:
                         diffuseColor: [0.3, 1, 0.3]
                         emissiveColor: [0.8, 0.8, 0.8]
                         specularColor: [0.01, 0.01, 0.01]
-,
                     ImageTexture:
                         url: ["images/loudspeaker.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]
-                ,
                 Box:
                     size: [100, 100, 0.001]
             ]

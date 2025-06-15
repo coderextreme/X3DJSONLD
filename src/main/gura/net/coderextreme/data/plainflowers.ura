@@ -22,7 +22,6 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/plainflowers.x3d"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],

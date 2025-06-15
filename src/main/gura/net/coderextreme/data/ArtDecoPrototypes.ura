@@ -46,7 +46,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ArtDecoPrototypes.x3d"
@@ -79,7 +78,6 @@ X3D:
             name: "ArtDeco02"
             appinfo: "UniversalMediaMaterials prototype"
             documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-
 #computed conversion ambientIntensity=1.745282, normalized to 1.0
             ProtoBody:
                 Material: [
@@ -370,7 +368,6 @@ X3D:
             name: "ArtDeco26"
             appinfo: "UniversalMediaMaterials prototype"
             documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-
 #computed conversion ambientIntensity=2.226234, normalized to 1.0
             ProtoBody:
                 Material: [
@@ -483,7 +480,6 @@ X3D:
                 Appearance:
                     Material:
                         diffuseColor: [0.8, 0.4, 0]
-                ,
                 Text:
                     string: ["ArtDecoExamples.x3d", "is a Materials Prototype declaration file.", "", "For an example scene using these node,", "click this text and view", "ArtDecoExamples.x3d"]
                     FontStyle:

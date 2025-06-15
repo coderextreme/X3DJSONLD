@@ -34,7 +34,6 @@ X3D:
             name: "Core"
             level: 1
         ],
-
 #<component name='Shape' level='4'></component>
         meta: [
             name: "title"
@@ -56,7 +55,6 @@ X3D:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/bub.x3d"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],
@@ -83,31 +81,23 @@ X3D:
                             Material:
                                 diffuseColor: [0.7, 0.7, 0.7]
                                 specularColor: [0.5, 0.5, 0.5]
-,
                             ComposedCubeMapTexture:
                                 DEF: "texture"
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-,
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-,
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-,
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-,
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-,
                                 ImageTexture:
                                     url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 ,
-
-#<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
-
-#<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
+#<ComposedShader DEF='gl' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language="GLSL"> <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>
+#<ComposedShader DEF='instant' language="GLSL"> <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/> <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/> <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"' type='VERTEX'></ShaderPart> <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader>
                             ComposedShader: [
                                 DEF: "x3dom"
                                 language: "GLSL"
@@ -194,7 +184,6 @@ X3D:
                                     type: "FRAGMENT"
                                 ]
                             ]
-                        ,
                         Sphere:
                     ]
                 ],
@@ -217,8 +206,31 @@ X3D:
                         accessType: "inputOnly"
                         type: "SFTime"
                     ],
-
-#sourceCode "\\newline			function initialize() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline			    if (Math.abs(translation.x) > 10) {\\newline				initialize();\\newline			    } else if (Math.abs(translation.y) > 10) {\\newline				initialize();\\newline			    } else if (Math.abs(translation.z) > 10) {\\newline				initialize();\\newline			    } else {\\newline				velocity.x += Math.random() * 0.2 - 0.1;\\newline				velocity.y += Math.random() * 0.2 - 0.1;\\newline				velocity.z += Math.random() * 0.2 - 0.1;\\newline			    }\\newline			}\\newline"
+#ecmascript:
+#			function initialize() {
+#			    translation = new SFVec3f(0, 0, 0);
+#			    velocity = new SFVec3f(
+#			    	Math.random() - 0.5,
+#				Math.random() - 0.5,
+#				Math.random() - 0.5);
+#			}
+#			function set_fraction() {
+#			    translation = new SFVec3f(
+#			    	translation.x + velocity.x,
+#				translation.y + velocity.y,
+#				translation.z + velocity.z);
+#			    if (Math.abs(translation.x) > 10) {
+#				initialize();
+#			    } else if (Math.abs(translation.y) > 10) {
+#				initialize();
+#			    } else if (Math.abs(translation.z) > 10) {
+#				initialize();
+#			    } else {
+#				velocity.x += Math.random() * 0.2 - 0.1;
+#				velocity.y += Math.random() * 0.2 - 0.1;
+#				velocity.z += Math.random() * 0.2 - 0.1;
+#			    }
+#			}
                 ],
                 TimeSensor: [
                     DEF: "TourTime"

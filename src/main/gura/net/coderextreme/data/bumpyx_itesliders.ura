@@ -38,9 +38,7 @@ X3D:
             name: "DIS"
             level: 2
         ],
-
 #<component name='Shape' level='4'></component>
-
 #Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
         meta: [
             name: "title"
@@ -122,23 +120,18 @@ X3D:
             name: "license"
             content: "license.html"
         ]
-    ,
-
-#\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+,
+#"The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot"
     Scene:
-
 #LayerSet with two layers, navigation happens in layer 1
         LayerSet: [
             activeLayer: 1
             order: [1, 2]
-
-#the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-
+#the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
 #the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
             Layer: [
                 pickable: true
                 objectType: ["ALL"]
-
 #basic nodes, which might be present in any scene
                 NavigationInfo: [
                     type: ["EXAMINE"]
@@ -157,10 +150,8 @@ X3D:
                     fieldOfView: 1.570796
                     position: [0, 1.75, 60]
                 ],
-
 #this group contains the red/green/blue 3D crosshair
                 Group: [
-
 #Arrow X
                     Transform: [
                         translation: [25, 0, 0]
@@ -170,7 +161,6 @@ X3D:
                                 DEF: "Shaft"
                                 radius: 0.35
                                 height: 50.0
-                            ,
                             Appearance:
                                 Material:
                                     DEF: "RED"
@@ -186,20 +176,17 @@ X3D:
                                 DEF: "Tip"
                                 bottomRadius: 0.8
                                 height: 3.0
-                            ,
                             Appearance:
                                 Material:
                                     USE: "RED"
                         ]
                     ],
-
 #Arrow Y
                     Transform: [
                         translation: [0, 25, 0]
                         Shape: [
                             Cylinder:
                                 USE: "Shaft"
-                            ,
                             Appearance:
                                 Material:
                                     DEF: "GREEN"
@@ -212,13 +199,11 @@ X3D:
                         Shape: [
                             Cone:
                                 USE: "Tip"
-                            ,
                             Appearance:
                                 Material:
                                     USE: "GREEN"
                         ]
                     ],
-
 #Arrow Z
                     Transform: [
                         translation: [0, 0, 25]
@@ -226,7 +211,6 @@ X3D:
                         Shape: [
                             Cylinder:
                                 USE: "Shaft"
-                            ,
                             Appearance:
                                 Material:
                                     DEF: "BLUE"
@@ -240,20 +224,16 @@ X3D:
                         Shape: [
                             Cone:
                                 USE: "Tip"
-                            ,
                             Appearance:
                                 Material:
                                     USE: "BLUE"
                         ]
                     ]
                 ],
-
 #the model that is being reviewed by the users of this scene
                 Transform: [
                     DEF: "FlowerTransform"
-
-#<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />
-
+#<Inline DEF="Flower" url='"bumpyx_ite.x3d"' />
 #Images courtesy of Paul Debevec's Light Probe Image Gallery
                     Background: [
                         backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
@@ -267,32 +247,24 @@ X3D:
                         Shape: [
                             Sphere:
                                 radius: 40.0
-                            ,
                             Appearance:
                                 Material:
                                     diffuseColor: [0.7, 0.7, 0.7]
                                     specularColor: [0.5, 0.5, 0.5]
-,
                                 ComposedCubeMapTexture:
                                     DEF: "texture"
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-,
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-,
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-,
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-,
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-,
                                     ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-,
                                 ComposedShader: [
                                     DEF: "x_iteShader"
                                     language: "GLSL"
@@ -372,13 +344,11 @@ X3D:
                                         url: ["../shaders/x_ite.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
                                         type: "FRAGMENT"
                                     ],
-
-#TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+#TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                                 ]
                         ]
                     ]
                 ],
-
 #DIS multiuser facilities
                 DISEntityManager: [
                     DEF: "EntityManager"
@@ -415,13 +385,9 @@ X3D:
             LayoutLayer: [
                 pickable: true
                 objectType: ["ALL"]
-
 #positioning the LayoutLayer
-
 #clipping the LayoutLayer
-
 #the content (children) of the LayoutLayer
-
 #first, the slider for scaling the model
                 Transform: [
                     translation: [0, 0, -3]
@@ -430,12 +396,10 @@ X3D:
                             Material:
                                 diffuseColor: [0, 0, 0]
                                 transparency: 0.7
-                        ,
                         Box:
                             size: [100, 100, 0.02]
                     ]
                 ],
-
 #the plane sensors
                 Transform: [
                     DEF: "aSlider"
@@ -445,7 +409,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -467,7 +430,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -477,7 +439,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -487,7 +448,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -502,7 +462,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -524,7 +483,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -534,7 +492,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -548,7 +505,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -570,7 +526,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -580,7 +535,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -594,7 +548,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -616,7 +569,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -626,7 +578,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -640,7 +591,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -662,7 +612,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -672,7 +621,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -686,7 +634,6 @@ X3D:
                         Shape: [
                             Appearance:
                                 Material:
-                            ,
                             Cylinder:
                                 radius: 0.05
                                 height: 2.5
@@ -708,7 +655,6 @@ X3D:
                             Shape: [
                                 Sphere:
                                     radius: 0.08
-                                ,
                                 Appearance:
                                     Material:
                                         diffuseColor: [1, 0, 0]
@@ -718,7 +664,6 @@ X3D:
                             Cylinder:
                                 radius: 0.05
                                 height: 0.3
-                            ,
                             Appearance:
                                 Material:
                         ]
@@ -740,8 +685,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { aValue_changed = Value.x * 30; }\\newline"
+#ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }
                 ],
                 Script: [
                     DEF: "bValueTransformerScript"
@@ -759,8 +703,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { bValue_changed = Value.x * 30; }\\newline"
+#ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }
                 ],
                 Script: [
                     DEF: "cValueTransformerScript"
@@ -778,8 +721,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { cValue_changed = Value.x * 5; }\\newline"
+#ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }
                 ],
                 Script: [
                     DEF: "dValueTransformerScript"
@@ -797,8 +739,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { dValue_changed = Value.x * 5; }\\newline"
+#ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }
                 ],
                 Script: [
                     DEF: "pdeltaValueTransformerScript"
@@ -816,8 +757,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { pdeltaValue_changed = Value.x; }\\newline"
+#ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }
                 ],
                 Script: [
                     DEF: "tdeltaValueTransformerScript"
@@ -835,8 +775,7 @@ X3D:
                         type: "SFFloat"
                         value: "1"
                     ],
-
-#sourceCode " function newTranslation(Value) { tdeltaValue_changed = Value.x; }\\newline"
+#ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }
                 ],
                 ROUTE: [
                     fromField: "translation_changed"
@@ -953,7 +892,6 @@ X3D:
                     scaleMode: ["NONE", "NONE"]
                     size: [0.4, 0.6]
                     sizeUnits: ["WORLD", "WORLD"]
-,
                 Viewport:
                     clipBoundary: [0, 1, 0, 1]
             ]

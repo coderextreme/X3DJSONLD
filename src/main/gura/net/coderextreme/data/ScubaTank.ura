@@ -34,7 +34,6 @@ X3D:
             name: "license"
             content: "../license.html"
         ]
-    ,
     Scene:
         WorldInfo: [
             title: "ScubaTank.x3d"
@@ -50,7 +49,6 @@ X3D:
                             diffuseColor: [0.3, 0.3, 0.5]
                             shininess: 0.1
                             specularColor: [0.7, 0.7, 0.8]
-                    ,
                     Cylinder:
                         height: 0.7
                         radius: 0.1
@@ -62,7 +60,6 @@ X3D:
                     Appearance:
                         Material:
                             USE: "tank"
-                    ,
                     Sphere:
                         radius: 0.098
                 ]
@@ -76,7 +73,6 @@ X3D:
                             DEF: "black"
                             ambientIntensity: 0.3
                             diffuseColor: [0, 0, 0]
-                    ,
                     Cylinder:
                         height: 0.06
                         radius: 0.115
@@ -96,7 +92,6 @@ X3D:
                                     diffuseColor: [0.91, 0.91, 0.91]
                                     shininess: 0.16
                                     specularColor: [0.91, 0.9, 0.91]
-                            ,
                             Cylinder:
                                 height: 0.1
                                 radius: 0.015
@@ -109,7 +104,6 @@ X3D:
                             Appearance:
                                 Material:
                                     USE: "black"
-                            ,
                             Cylinder:
                                 height: 0.02
                                 radius: 0.025
@@ -124,7 +118,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         USE: "pressureColor"
-                                ,
                                 Cylinder:
                                     height: 0.03
                                     radius: 0.01
@@ -137,7 +130,6 @@ X3D:
                                 Appearance:
                                     Material:
                                         USE: "black"
-                                ,
                                 Cylinder:
                                     height: 0.02
                                     radius: 0.02
@@ -153,7 +145,6 @@ X3D:
                     Appearance:
                         Material:
                             USE: "black"
-                    ,
                     Cylinder:
                         height: 0.1
                         radius: 0.115

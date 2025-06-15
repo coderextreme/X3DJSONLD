@@ -22,7 +22,6 @@ X3D:
             name: "generator"
             content: "Blender 4.0.1"
         ]
-    ,
     Scene:
         NavigationInfo: [
         ],
@@ -36,7 +35,6 @@ X3D:
                 DEF: "SiteShape"
                 Box:
                     size: [0.05, 0.05, 0.05]
-                ,
                 Appearance:
                     Material:
                         diffuseColor: [0, 0, 1]
@@ -47,7 +45,6 @@ X3D:
                 DEF: "JointShape"
                 Sphere:
                     radius: 0.06
-                ,
                 Appearance:
                     DEF: "JointAppearance"
                     Material:
