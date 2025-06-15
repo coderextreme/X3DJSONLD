@@ -10,6 +10,12 @@ console.log(convertJSON.convertJSON);
 
 convertJSON.convertJSON([
 	{ 
+	serializer : "./GuraSerializer.js",
+	folder : "../gura/net/coderextreme/",
+	extension : ".ura",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : "./JavaSerializer.js",
 	folder : "../java/net/coderextreme/",
 	extension : ".java",
@@ -67,6 +73,12 @@ convertJSON.convertJSON([
 	serializer : './CppFunctionBodySerializer.js',
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".h",
+	codeOutput : "../"
+	},
+	{ 
+	serializer : './QuarterSerializer.js',
+	folder : "../quarter/net/coderextreme/",
+	extension : ".cpp",
 	codeOutput : "../"
 	},
 	{ 
