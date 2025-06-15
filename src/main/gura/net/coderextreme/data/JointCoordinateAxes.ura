@@ -1,50 +1,47 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         meta: [
             name: "converter"
             content: "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
-        ]
+        ],
         meta: [
             name: "converted"
             content: "Mon, 31 Jul 2023 03:48:04 GMT"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         NavigationInfo: [
             headlight: false
-        ]
+        ],
         Group: [
             Group: [
                 DEF: "ARROW"
                 Shape: [
-                    Appearance: [
+                    Appearance:
                         DEF: "ARROW_APPEARANCE"
-                        Material: [
+                        Material:
                             diffuseColor: [0.3, 0.3, 1]
                             emissiveColor: [0.3, 0.3, 0.33]
-                        ]
-                    ]
-                    Cylinder: [
+                    ,
+                    Cylinder:
                         top: false
                         bottom: false
                         radius: 0.025
-                    ]
-                ]
+                ],
                 Transform: [
                     translation: [0, 1, 0]
                     Shape: [
                         DEF: "ARROW_POINTER"
-                        Appearance: [
+                        Appearance:
                             USE: "ARROW_APPEARANCE"
-                        ]
-                        Cone: [
+                        ,
+                        Cone:
                             height: 0.1
                             bottomRadius: 0.05
-                        ]
                     ]
-                ]
+                ],
                 Transform: [
                     translation: [0, -1, 0]
                     rotation: [1, 0, 0, 3.1416]
@@ -52,79 +49,71 @@ X3D:
                         USE: "ARROW_POINTER"
                     ]
                 ]
-            ]
+            ],
             Transform: [
                 translation: [0, 1.08, 0]
                 Billboard: [
                     Shape: [
-                        Appearance: [
+                        Appearance:
                             DEF: "LABEL_APPEARANCE"
-                            Material: [
+                            Material:
                                 diffuseColor: [1, 1, 0.3]
                                 emissiveColor: [0.33, 0.33, 0.1]
-                            ]
-                        ]
-                        Text: [
+                        ,
+                        Text:
                             string: ["Y"]
-                            FontStyle: [
+                            FontStyle:
                                 DEF: "LABEL_FONT"
                                 family: ["SANS"]
                                 size: 0.2
                                 justify: ["MIDDLE"]
-                            ]
-                        ]
                     ]
                 ]
             ]
-        ]
+        ],
         Transform: [
             rotation: [0, 0, 1, -1.5708]
             Group: [
                 Group: [
                     USE: "ARROW"
-                ]
+                ],
                 Transform: [
                     translation: [0.072, 1.1, 0]
                     rotation: [0, 0, 1, 1.5708]
                     Billboard: [
                         Shape: [
-                            Appearance: [
+                            Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            ]
-                            Text: [
+                            ,
+                            Text:
                                 string: ["X"]
-                                FontStyle: [
+                                FontStyle:
                                     USE: "LABEL_FONT"
-                                ]
-                            ]
                         ]
                     ]
                 ]
             ]
-        ]
+        ],
         Transform: [
             rotation: [1, 0, 0, 1.5708]
             Group: [
                 Group: [
                     USE: "ARROW"
-                ]
+                ],
                 Transform: [
                     translation: [0, 1.1, 0.072]
                     rotation: [1, 0, 0, -1.5708]
                     Billboard: [
                         Shape: [
-                            Appearance: [
+                            Appearance:
                                 USE: "LABEL_APPEARANCE"
-                            ]
-                            Text: [
+                            ,
+                            Text:
                                 string: ["Z"]
-                                FontStyle: [
+                                FontStyle:
                                     USE: "LABEL_FONT"
-                                ]
-                            ]
                         ]
                     ]
                 ]
             ]
         ]
-    ]

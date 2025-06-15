@@ -1,77 +1,75 @@
 X3D:
     version: "3.0"
     profile: "Immersive"
-    head: [
+    head:
         meta: [
             name: "title"
             content: "Scripting.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         Script: [
             DEF: "OpenVault"
             field: [
                 name: "openVault"
                 type: "SFTime"
                 accessType: "inputOnly"
-            ]
+            ],
             field: [
                 name: "combinationEntered"
                 type: "SFBool"
                 accessType: "inputOnly"
-            ]
+            ],
             field: [
                 name: "vaultUnlocked"
                 type: "SFTime"
                 accessType: "outputOnly"
-            ]
+            ],
             field: [
                 name: "unlocked"
                 type: "SFBool"
                 value: "false"
                 accessType: "initializeOnly"
-            ]
-(.setSourceCode "\\newline\\newline      function combinationEntered (value) {\\newline\\newline        unlocked = value;\\newline\\newline      }\\newline\\newline      function openVault(value) {\\newline\\newline      if (unlocked) vaultUnlocked = value;\\newline\\newline      }\\newline")        ]
+            ],
+
+#sourceCode "\\newline\\newline      function combinationEntered (value) {\\newline\\newline        unlocked = value;\\newline\\newline      }\\newline\\newline      function openVault(value) {\\newline\\newline      if (unlocked) vaultUnlocked = value;\\newline\\newline      }\\newline"
+        ],
         Shape: [
-            Appearance: [
-                Material: [
+            Appearance:
+                Material:
                     diffuseColor: [1, 0, 0]
-                ]
-            ]
-            Sphere: [
-            ]
-        ]
+            ,
+            Sphere:
+        ],
         Sound: [
             maxBack: 1000.0
             maxFront: 1000.0
             minBack: 1000.0
             minFront: 1000.0
-            AudioClip: [
+            AudioClip:
                 DEF: "Click"
                 stopTime: 1.0
                 description: "clicking sound"
                 url: ["../resources/chandubabamusic1.wav"]
-            ]
-        ]
+        ],
         TouchSensor: [
             DEF: "TS"
-        ]
+        ],
         ROUTE: [
             fromNode: "TS"
             fromField: "isOver"
             toNode: "OpenVault"
             toField: "combinationEntered"
-        ]
+        ],
         ROUTE: [
             fromNode: "TS"
             fromField: "touchTime"
             toNode: "OpenVault"
             toField: "openVault"
-        ]
+        ],
         ROUTE: [
             fromNode: "OpenVault"
             fromField: "vaultUnlocked"
             toNode: "Click"
             toField: "startTime"
         ]
-    ]

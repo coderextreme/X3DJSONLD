@@ -1,44 +1,42 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head: [
+    head:
         component: [
             name: "Scripting"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "MyBounce.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "description"
             content: "3 prismatic spheres"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         NavigationInfo: [
-        ]
+        ],
         Transform: [
             DEF: "transform"
             Shape: [
-                Appearance: [
-                    Material: [
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ]
-                ]
-                Sphere: [
-                ]
+                ,
+                Sphere:
             ]
-        ]
+        ],
         Script: [
             DEF: "Bounce2"
             field: [
@@ -46,46 +44,47 @@ X3D:
                 accessType: "inputOnly"
                 type: "SFVec3f"
                 value: "0 0 0"
-            ]
+            ],
             field: [
                 name: "translation_changed"
                 accessType: "outputOnly"
                 type: "SFVec3f"
                 value: "0 0 0"
-            ]
+            ],
             field: [
                 name: "translation"
                 accessType: "inputOutput"
                 type: "SFVec3f"
                 value: "0 0 0"
-            ]
+            ],
             field: [
                 name: "velocity"
                 accessType: "inputOutput"
                 type: "SFVec3f"
                 value: "0 0 0"
-            ]
+            ],
             field: [
                 name: "set_fraction"
                 accessType: "inputOnly"
                 type: "SFTime"
-            ]
-(.setSourceCode "\\newline			function newBubble() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline				if (Math.abs(translation.x) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.y) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.z) > 10) {\\newline					newBubble();\\newline				} else {\\newline					velocity = new SFVec3f(\\newline						velocity.x + Math.random() * 0.2 - 0.1,\\newline						velocity.y + Math.random() * 0.2 - 0.1,\\newline						velocity.z + Math.random() * 0.2 - 0.1\\newline					);\\newline				}\\newline			}\\newline\\newline			function initialize() {\\newline			     newBubble();\\newline			}\\newline")        ]
+            ],
+
+#sourceCode "\\newline			function newBubble() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline				if (Math.abs(translation.x) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.y) > 10) {\\newline					newBubble();\\newline				} else if (Math.abs(translation.z) > 10) {\\newline					newBubble();\\newline				} else {\\newline					velocity = new SFVec3f(\\newline						velocity.x + Math.random() * 0.2 - 0.1,\\newline						velocity.y + Math.random() * 0.2 - 0.1,\\newline						velocity.z + Math.random() * 0.2 - 0.1\\newline					);\\newline				}\\newline			}\\newline\\newline			function initialize() {\\newline			     newBubble();\\newline			}\\newline"
+        ],
         TimeSensor: [
             DEF: "TourTime"
             cycleInterval: 0.15
             loop: true
-        ]
+        ],
         ROUTE: [
             fromNode: "TourTime"
             fromField: "cycleTime"
             toNode: "Bounce2"
             toField: "set_fraction"
-        ]
+        ],
         ROUTE: [
             fromNode: "Bounce2"
             fromField: "translation_changed"
             toNode: "transform"
             toField: "set_translation"
         ]
-    ]

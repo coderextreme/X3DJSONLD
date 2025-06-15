@@ -1,67 +1,67 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         component: [
             name: "ParticleSystems"
             level: 3
-        ]
+        ],
         meta: [
             name: "title"
             content: "particleflowers.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "description"
             content: "A flower proto with configurable shaders"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         WorldInfo: [
             title: "particleflowers.x3d"
-        ]
+        ],
         NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        ]
+        ],
         Viewpoint: [
             description: "Tour Views"
             position: [0, 0, 12]
-        ]
+        ],
         Background: [
             backUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
@@ -69,48 +69,46 @@ X3D:
             leftUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Transform: [
             ParticleSystem: [
                 maxParticles: 20
                 geometryType: "GEOMETRY"
                 BoundedPhysicsModel: [
-                    Sphere: [
+                    Sphere:
                         radius: 100.0
-                    ]
-                ]
-                ExplosionEmitter: [
+                ],
+                ExplosionEmitter:
                     speed: 2.0
                     variation: 0.75
-                ]
-                Sphere: [
-                ]
-                Appearance: [
-                    Material: [
+,
+                Sphere:
+,
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ]
-                    ComposedCubeMapTexture: [
+,
+                    ComposedCubeMapTexture:
                         DEF: "texture"
-                        ImageTexture: [
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                        ]
-                    ]
+,
                     ComposedShader: [
                         DEF: "fw"
                         language: "GLSL"
@@ -119,7 +117,7 @@ X3D:
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        ]
+                        ],
                         field: [
                             name: "cube"
                             type: "SFNode"
@@ -127,72 +125,71 @@ X3D:
                             ComposedCubeMapTexture: [
                                 USE: "texture"
                             ]
-                        ]
+                        ],
                         field: [
                             name: "bias"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "scale"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "power"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "2"
-                        ]
+                        ],
                         field: [
                             name: "a"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "2"
-                        ]
+                        ],
                         field: [
                             name: "b"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "1"
-                        ]
+                        ],
                         field: [
                             name: "c"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "5"
-                        ]
+                        ],
                         field: [
                             name: "d"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "5"
-                        ]
+                        ],
                         field: [
                             name: "tdelta"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "0"
-                        ]
+                        ],
                         field: [
                             name: "pdelta"
                             type: "SFFloat"
                             accessType: "inputOutput"
                             value: "0"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"]
                             type: "VERTEX"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]
                             type: "FRAGMENT"
                         ]
                     ]
-                ]
-            ]
+            ],
             Script: [
                 DEF: "Animate"
                 field: [
@@ -200,96 +197,98 @@ X3D:
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "velocity"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "set_fraction"
                     accessType: "inputOnly"
                     type: "SFFloat"
-                ]
+                ],
                 field: [
                     name: "a"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.5"
-                ]
+                ],
                 field: [
                     name: "b"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.5"
-                ]
+                ],
                 field: [
                     name: "c"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "3"
-                ]
+                ],
                 field: [
                     name: "d"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "3"
-                ]
+                ],
                 field: [
                     name: "tdelta"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.5"
-                ]
+                ],
                 field: [
                     name: "pdelta"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.5"
-                ]
-(.setSourceCode "\\newline\\newline			function initialize() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline			    for (var j = 0; j <= 2; j++) {\\newline				    if (Math.abs(translation.x) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.y) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.z) > 10) {\\newline					initialize();\\newline				    } else {\\newline					velocity.x += Math.random() * 0.2 - 0.1;\\newline					velocity.y += Math.random() * 0.2 - 0.1;\\newline					velocity.z += Math.random() * 0.2 - 0.1;\\newline				    }\\newline			    }\\newline			    animate_flowers();\\newline			}\\newline\\newline			function animate_flowers(fraction, eventTime) {\\newline				var choice = Math.floor(Math.random() * 4);\\newline				switch (choice) {\\newline				case 0:\\newline					a += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 1:\\newline					b += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 2:\\newline					c += Math.random() * 2 - 1;\\newline					break;\\newline				case 3:\\newline					d += Math.random() * 2 - 1;\\newline					break;\\newline				}\\newline				tdelta = tdelta + 0.05;\\newline				pdelta = pdelta + 0.05;\\newline				if (a > 1) {\\newline					a =  0.5;\\newline				}\\newline				if (b > 1) {\\newline					b =  0.5;\\newline				}\\newline				if (c < 1) {\\newline					c =  4;\\newline				}\\newline				if (d < 1) {\\newline					d =  4;\\newline				}\\newline				if (c > 10) {\\newline					c = 4;\\newline				}\\newline				if (d > 10) {\\newline					d = 4;\\newline				}\\newline			}\\newline")            ]
+                ],
+
+#sourceCode "\\newline\\newline			function initialize() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline			    for (var j = 0; j <= 2; j++) {\\newline				    if (Math.abs(translation.x) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.y) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.z) > 10) {\\newline					initialize();\\newline				    } else {\\newline					velocity.x += Math.random() * 0.2 - 0.1;\\newline					velocity.y += Math.random() * 0.2 - 0.1;\\newline					velocity.z += Math.random() * 0.2 - 0.1;\\newline				    }\\newline			    }\\newline			    animate_flowers();\\newline			}\\newline\\newline			function animate_flowers(fraction, eventTime) {\\newline				var choice = Math.floor(Math.random() * 4);\\newline				switch (choice) {\\newline				case 0:\\newline					a += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 1:\\newline					b += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 2:\\newline					c += Math.random() * 2 - 1;\\newline					break;\\newline				case 3:\\newline					d += Math.random() * 2 - 1;\\newline					break;\\newline				}\\newline				tdelta = tdelta + 0.05;\\newline				pdelta = pdelta + 0.05;\\newline				if (a > 1) {\\newline					a =  0.5;\\newline				}\\newline				if (b > 1) {\\newline					b =  0.5;\\newline				}\\newline				if (c < 1) {\\newline					c =  4;\\newline				}\\newline				if (d < 1) {\\newline					d =  4;\\newline				}\\newline				if (c > 10) {\\newline					c = 4;\\newline				}\\newline				if (d > 10) {\\newline					d = 4;\\newline				}\\newline			}\\newline"
+            ],
             TimeSensor: [
                 DEF: "TourTime"
                 cycleInterval: 5.0
                 loop: true
-            ]
+            ],
             ROUTE: [
                 fromNode: "TourTime"
                 fromField: "fraction_changed"
                 toNode: "Animate"
                 toField: "set_fraction"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "a"
                 toNode: "fw"
                 toField: "a"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "b"
                 toNode: "fw"
                 toField: "b"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "c"
                 toNode: "fw"
                 toField: "c"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "d"
                 toNode: "fw"
                 toField: "d"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "pdelta"
                 toNode: "fw"
                 toField: "pdelta"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "tdelta"
@@ -297,4 +296,3 @@ X3D:
                 toField: "tdelta"
             ]
         ]
-    ]

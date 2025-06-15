@@ -1,67 +1,67 @@
 X3D:
     profile: "Full"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         component: [
             name: "ParticleSystems"
             level: 3
-        ]
+        ],
         meta: [
             name: "title"
             content: "particleflowers.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "description"
             content: "A flower proto with configurable shaders"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         WorldInfo: [
             title: "particleflowers.x3d"
-        ]
+        ],
         NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        ]
+        ],
         Viewpoint: [
             description: "Tour Views"
             position: [0, 0, 12]
-        ]
+        ],
         Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
@@ -69,46 +69,49 @@ X3D:
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Transform: [
             ParticleSystem: [
                 maxParticles: 100
                 geometryType: "GEOMETRY"
+
 #* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values * lastFrame - last frame that was rendered (0 for default) * updateRate - update rate is amount of time between frames
+
 #<VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'> </VariationPhysicsModel>
-                ExplosionEmitter: [
+                ExplosionEmitter:
                     speed: 1.0
                     variation: 0.75
-                ]
-                Sphere: [
-                ]
-                Appearance: [
-                    Material: [
+,
+                Sphere:
+,
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ]
-                    ComposedCubeMapTexture: [
+,
+                    ComposedCubeMapTexture:
                         DEF: "texture"
-                        ImageTexture: [
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                        ]
-                    ]
+,
+
 #<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
+
 #<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart type=\"VERTEX\" url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>
                     ComposedShader: [
                         DEF: "x_ite"
@@ -118,7 +121,7 @@ X3D:
                             accessType: "initializeOnly"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        ]
+                        ],
                         field: [
                             name: "cube"
                             type: "SFNode"
@@ -126,85 +129,86 @@ X3D:
                             ComposedCubeMapTexture: [
                                 USE: "texture"
                             ]
-                        ]
+                        ],
                         field: [
                             name: "bias"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "scale"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "power"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "2"
-                        ]
+                        ],
                         field: [
                             name: "x3d_ParticleValues"
                             type: "MFFloat"
                             accessType: "inputOutput"
                             value: "2 1 4 4 0 0"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["../shaders/x_ite_variations.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_variations.vs"]
                             type: "VERTEX"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["../shaders/commonnew.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"]
                             type: "FRAGMENT"
                         ]
                     ]
-                ]
-            ]
+            ],
             Script: [
                 DEF: "Animate"
                 field: [
                     name: "set_fraction"
                     accessType: "inputOnly"
                     type: "SFFloat"
-                ]
+                ],
                 field: [
                     name: "values"
                     type: "MFFloat"
                     accessType: "inputOutput"
                     value: "2 2 5 5 0 0"
-                ]
+                ],
                 field: [
                     name: "variations"
                     type: "MFFloat"
                     accessType: "inputOutput"
                     value: "0.2 0.1 0.3 0.3 0.01 0.01"
-                ]
+                ],
                 field: [
                     name: "lastframe"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0"
-                ]
+                ],
                 field: [
                     name: "updaterate"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.1"
-                ]
-(.setSourceCode "\\newline			function set_fraction(f, tm) {\\newline			    if (lastframe + updaterate < tm) {\\newline			  	lastframe = tm;\\newline				for (let v in values) {\\newline					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\\newline				}\\newline			    }\\newline			}\\newline")            ]
+                ],
+
+#sourceCode "\\newline			function set_fraction(f, tm) {\\newline			    if (lastframe + updaterate < tm) {\\newline			  	lastframe = tm;\\newline				for (let v in values) {\\newline					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\\newline				}\\newline			    }\\newline			}\\newline"
+            ],
             TimeSensor: [
                 DEF: "TourTime"
                 cycleInterval: 45.0
                 loop: true
-            ]
+            ],
             ROUTE: [
                 fromNode: "TourTime"
                 fromField: "fraction_changed"
                 toNode: "Animate"
                 toField: "set_fraction"
-            ]
+            ],
             ROUTE: [
                 fromNode: "Animate"
                 fromField: "values"
@@ -212,4 +216,3 @@ X3D:
                 toField: "x3d_ParticleValues"
             ]
         ]
-    ]

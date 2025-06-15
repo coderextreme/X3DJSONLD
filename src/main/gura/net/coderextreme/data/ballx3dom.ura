@@ -1,70 +1,70 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "Scripting"
             level: 1
-        ]
+        ],
         component: [
             name: "EnvironmentalEffects"
             level: 3
-        ]
+        ],
         component: [
             name: "Shaders"
             level: 1
-        ]
+        ],
         component: [
             name: "CubeMapTexturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Texturing"
             level: 1
-        ]
+        ],
         component: [
             name: "Rendering"
             level: 1
-        ]
+        ],
         component: [
             name: "Grouping"
             level: 3
-        ]
+        ],
         component: [
             name: "Core"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "ballx3dom.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "manual"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "a prismatic sphere"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         WorldInfo: [
             title: "ball.x3d"
-        ]
+        ],
         NavigationInfo: [
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        ]
+        ],
         Viewpoint: [
             description: "Tour Views"
-        ]
+        ],
         Background: [
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
@@ -72,37 +72,36 @@ X3D:
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ]
+        ],
         Transform: [
             Shape: [
-                Sphere: [
-                ]
-                Appearance: [
-                    Material: [
+                Sphere:
+                ,
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    ]
-                    ComposedCubeMapTexture: [
+,
+                    ComposedCubeMapTexture:
                         DEF: "texture"
-                        ImageTexture: [
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ]
-                        ImageTexture: [
+,
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                        ]
-                    ]
+,
                     ComposedShader: [
                         language: "GLSL"
                         field: [
@@ -110,7 +109,7 @@ X3D:
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        ]
+                        ],
                         field: [
                             name: "cube"
                             type: "SFNode"
@@ -118,36 +117,34 @@ X3D:
                             ComposedCubeMapTexture: [
                                 USE: "texture"
                             ]
-                        ]
+                        ],
                         field: [
                             name: "bias"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "scale"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "0.5"
-                        ]
+                        ],
                         field: [
                             name: "power"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "2"
-                        ]
+                        ],
                         ShaderPart: [
                             url: ["../shaders/x3dom.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
                             type: "VERTEX"
-                        ]
+                        ],
                         ShaderPart: [
                             DEF: "common"
                             url: ["../shaders/common.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
                             type: "FRAGMENT"
                         ]
                     ]
-                ]
             ]
         ]
-    ]
