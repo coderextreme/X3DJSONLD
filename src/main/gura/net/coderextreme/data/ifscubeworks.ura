@@ -1,42 +1,42 @@
-X3D0: "X3D"
+X3D:
     profile: "Interchange"
     version: "3.3"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "title"
             content: "ifscubeworks.x3d"
-        meta: meta
+        meta:
             name: "identifier"
             content: "http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "Template for an Indexed Face Set"
-        meta: meta
+        meta:
             name: "creator"
             content: "John Carlson"
-        meta: meta
+        meta:
             name: "created"
             content: "4 April 2017"
-        meta: meta
+        meta:
             name: "license"
             content: "https://www.web3d.org/x3d/content/examples/license.html"
-        meta: meta
+        meta:
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-    scene: Scene
-        children: WorldInfo
+    Scene:
+        WorldInfo:
             title: "ifscubeworks.x3d"
-        children: Group
-            children: Shape
-                geometry: IndexedFaceSet
+        Group:
+            Shape:
+                IndexedFaceSet:
                     DEF: "IndexedFaceSet"
                     coordIndex: [0, 0, 1, -1, 0, 1, 1, -1, 2, 2, 3, 3, -1, 0, 3, 3, 0, -1, 0, 3, 2, 1, -1, 1, 2, 2, 1, -1, 1, 2, 3, 0, -1]
                     normalIndex: [0, 0, 1, 2, 3, 4, 5]
                     normalPerVertex: false
                     colorIndex: [0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1]
-                    coord: Coordinate
+                    Coordinate:
                         point: [0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
-                    normal: Normal
+                    Normal:
                         vector: [1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -1, 0, 0, 0, 1]
-                    color: Color
+                    Color:
                         color: [0, 1, 0]

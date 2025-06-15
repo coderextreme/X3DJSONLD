@@ -1,111 +1,111 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "4.0"
-    head: head
-        component: component
+    head:
+        component:
             name: "Scripting"
             level: 1
-        component: component
+        component:
             name: "EnvironmentalEffects"
             level: 3
-        component: component
+        component:
             name: "Shaders"
             level: 1
-        component: component
+        component:
             name: "CubeMapTexturing"
             level: 1
-        component: component
+        component:
             name: "Texturing"
             level: 1
-        component: component
+        component:
             name: "Rendering"
             level: 1
-        component: component
+        component:
             name: "Grouping"
             level: 3
-        component: component
+        component:
             name: "Core"
             level: 1
-        meta: meta
+        meta:
             name: "title"
             content: "sphereflowers.x3d"
-        meta: meta
+        meta:
             name: "creator"
             content: "John Carlson"
-        meta: meta
+        meta:
             name: "created"
             content: "Jan 17 2022"
-        meta: meta
+        meta:
             name: "modified"
             content: "Sep 3 2023"
-        meta: meta
+        meta:
             name: "description"
             content: "5 or more prismatic flowers"
-        meta: meta
+        meta:
             name: "generator"
             content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
-    scene: Scene
-        children: NavigationInfo
-        children: Background
+    Scene:
+        NavigationInfo:
+        Background:
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
             frontUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        children: Group
-            children: ExternProtoDeclare
+        Group:
+            ExternProtoDeclare:
                 name: "FlowerProto"
                 url: ["../data/flowerproto.x3d#FlowerProto", "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"]
-                field: field
+                field:
                     name: "vertex"
                     accessType: "inputOutput"
                     type: "MFString"
-                field: field
+                field:
                     name: "fragment"
                     accessType: "inputOutput"
                     type: "MFString"
-            children: ProtoDeclare
+            ProtoDeclare:
                 name: "flower"
-                protoBody: ProtoBody
-                    children: Group
-                        children: ProtoInstance
+                ProtoBody:
+                    Group:
+                        ProtoInstance:
                             name: "FlowerProto"
-                            fieldValue: fieldValue
+                            fieldValue:
                                 name: "vertex"
                                 value: "\"../shaders/x_ite_flowers_chromatic.vs\""
-                            fieldValue: fieldValue
+                            fieldValue:
                                 name: "fragment"
                                 value: "\"../shaders/x_ite.fs\""
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "flower"
-            children: TimeSensor
+            TimeSensor:
                 DEF: "SongTime"
                 loop: true
-            children: Sound
+            Sound:
                 maxBack: 100.0
                 maxFront: 100.0
                 minBack: 20.0
                 minFront: 20.0
                 location: [0, 1, 0]
-                source: AudioClip
+                AudioClip:
                     DEF: "AudioClip"
                     description: "Chandubabamusic #1"
                     url: ["../resources/chandubabamusic1.wav", "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
-            children: ROUTE
+            ROUTE:
                 fromField: "cycleTime"
                 fromNode: "SongTime"
                 toField: "startTime"
