@@ -1,0 +1,192 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "4.0"
+    head: head
+        component: component
+            name: "Scripting"
+            level: 1
+        meta: meta
+            name: "title"
+            content: "flowers2.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "created"
+            content: "23 January 2005"
+        meta: meta
+            name: "modified"
+            content: "9 November 2024"
+        meta: meta
+            name: "description"
+            content: "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"
+        meta: meta
+            name: "generator"
+            content: "manually written"
+        meta: meta
+            name: "license"
+            content: "https://www.web3d.org/x3d/content/examples/license.html"
+    scene: Scene
+        children: NavigationInfo
+        children: Viewpoint
+            description: "Two mathematical orbitals"
+            position: [0, 0, 50]
+        children: Group
+            children: DirectionalLight
+                direction: [1, 1, 1]
+            children: ProtoDeclare
+                name: "orbit"
+                protoInterface: ProtoInterface
+                    field: field
+                        name: "translation"
+                        accessType: "inputOutput"
+                        type: "SFVec3f"
+                        value: "-8 0 0"
+                    field: field
+                        name: "diffuseColor"
+                        accessType: "inputOutput"
+                        type: "SFColor"
+                        value: "1 0.5 0"
+                    field: field
+                        name: "specularColor"
+                        accessType: "inputOutput"
+                        type: "SFColor"
+                        value: "1 0.5 0"
+                    field: field
+                        name: "transparency"
+                        accessType: "inputOutput"
+                        type: "SFFloat"
+                        value: "0.75"
+                protoBody: ProtoBody
+                    children: Group
+                        children: TimeSensor
+                            DEF: "Clock"
+                            cycleInterval: 16.0
+                            loop: true
+                        children: OrientationInterpolator
+                            DEF: "OrbitPath"
+                            key: [0, 0.5, 1]
+                            keyValue: [1, 0, 0, 0, 1, 0, 0, 3.14, 1, 0, 0, 6.28]
+                        children: Transform
+                            DEF: "OrbitTransform"
+                            IS: IS
+                                connect: connect
+                                    nodeField: "translation"
+                                    protoField: "translation"
+                            child: Shape
+                                appearance: Appearance
+                                    material: Material
+                                        IS: IS
+                                            connect: connect
+                                                nodeField: "diffuseColor"
+                                                protoField: "diffuseColor"
+                                            connect: connect
+                                                nodeField: "specularColor"
+                                                protoField: "specularColor"
+                                            connect: connect
+                                                nodeField: "transparency"
+                                                protoField: "transparency"
+;<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+                                geometry: IndexedFaceSet
+                                    ccw: false
+                                    convex: false
+                                    coordIndex: [0, 1, 2, -1]
+                                    DEF: "Orbit"
+                                    coord: Coordinate
+                                        DEF: "OrbitCoordinates"
+                                        point: [0, 0, 1, 0, 1, 0, 1, 0, 0]
+                        children: Script
+                            DEF: "OrbitScript"
+                            field: field
+                                name: "set_fraction"
+                                accessType: "inputOnly"
+                                type: "SFFloat"
+                            field: field
+                                name: "coordinates"
+                                accessType: "inputOutput"
+                                type: "MFVec3f"
+                            field: field
+                                name: "coordIndexes"
+                                accessType: "inputOutput"
+                                type: "MFInt32"
+                            field: field
+                                name: "e"
+                                accessType: "inputOutput"
+                                type: "SFFloat"
+                                value: "5"
+                            field: field
+                                name: "f"
+                                accessType: "inputOutput"
+                                type: "SFFloat"
+                                value: "5"
+                            field: field
+                                name: "g"
+                                accessType: "inputOutput"
+                                type: "SFFloat"
+                                value: "5"
+                            field: field
+                                name: "h"
+                                accessType: "inputOutput"
+                                type: "SFFloat"
+                                value: "5"
+                            field: field
+                                name: "resolution"
+                                accessType: "inputOutput"
+                                type: "SFInt32"
+                                value: "50"
+(.setSourceCode "\\newline\\newline			function initialize() {\\newline			     generateCoordinates();\\newline			     var arrIndex = 0;\\newline			     for (var i = 0; i < resolution-1; i++) {\\newline				for (var j = 0; j < resolution-1; j++) {\\newline				     coordIndexes[arrIndex++] = i*resolution+j;\\newline				     coordIndexes[arrIndex++] = i*resolution+j+1;\\newline				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;\\newline				     coordIndexes[arrIndex++] = (i+1)*resolution+j;\\newline				     coordIndexes[arrIndex++] = -1;\\newline				}\\newline			    }\\newline			}\\newline\\newline			function generateCoordinates() {\\newline			     var theta = 0.0;\\newline			     var phi = 0.0;\\newline			     var delta = (2 * 3.141592653) / (resolution-1);\\newline			     var arrIndex = 0;\\newline			     for (var i = 0; i < resolution; i++) {\\newline				for (var j = 0; j < resolution; j++) {\\newline					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\\newline					coordinates[arrIndex++] = new SFVec3f(\\newline						rho * Math.cos(phi) * Math.cos(theta),\\newline						rho * Math.cos(phi) * Math.sin(theta),\\newline						rho * Math.sin(phi)\\newline					);\\newline					theta += delta;\\newline				}\\newline				phi += delta;\\newline			     }\\newline			}\\newline\\newline			function set_fraction(fraction, eventTime) {\\newline				var choice = Math.floor(Math.random() * 4);\\newline				switch (choice) {\\newline				case 0:\\newline					e += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 1:\\newline					f += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 2:\\newline					g += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				case 3:\\newline					h += Math.floor(Math.random() * 2) * 2 - 1;\\newline					break;\\newline				}\\newline				if (e < 1) {\\newline					f = 10;\\newline				}\\newline				if (f < 1) {\\newline					f = 10;\\newline				}\\newline				if (g < 1) {\\newline					g = 4;\\newline				}\\newline				if (h < 1) {\\newline					h = 4;\\newline				}\\newline				generateCoordinates();\\newline			}\\newline")                        children: ROUTE
+                            fromNode: "OrbitScript"
+                            fromField: "coordIndexes"
+                            toNode: "Orbit"
+                            toField: "set_coordIndex"
+                        children: ROUTE
+                            fromNode: "OrbitScript"
+                            fromField: "coordinates"
+                            toNode: "OrbitCoordinates"
+                            toField: "point"
+                        children: ROUTE
+                            fromNode: "Clock"
+                            fromField: "fraction_changed"
+                            toNode: "OrbitScript"
+                            toField: "set_fraction"
+                        children: ROUTE
+                            fromNode: "OrbitPath"
+                            fromField: "value_changed"
+                            toNode: "OrbitTransform"
+                            toField: "rotation"
+                        children: ROUTE
+                            fromNode: "Clock"
+                            fromField: "fraction_changed"
+                            toNode: "OrbitPath"
+                            toField: "set_fraction"
+            children: ProtoInstance
+                name: "orbit"
+                fieldValue: fieldValue
+                    name: "translation"
+                    value: "-8 0 0"
+                fieldValue: fieldValue
+                    name: "diffuseColor"
+                    value: "1 0.5 0"
+                fieldValue: fieldValue
+                    name: "specularColor"
+                    value: "1 0.5 0"
+                fieldValue: fieldValue
+                    name: "transparency"
+                    value: "0.75"
+            children: ProtoInstance
+                name: "orbit"
+                fieldValue: fieldValue
+                    name: "translation"
+                    value: "8 0 0"
+                fieldValue: fieldValue
+                    name: "diffuseColor"
+                    value: "0 0.5 1"
+                fieldValue: fieldValue
+                    name: "specularColor"
+                    value: "0 0.5 1"
+                fieldValue: fieldValue
+                    name: "transparency"
+                    value: "0.5"

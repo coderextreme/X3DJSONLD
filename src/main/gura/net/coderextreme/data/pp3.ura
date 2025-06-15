@@ -1,0 +1,227 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "pp3.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "translator"
+            content: "John Carlson"
+        meta: meta
+            name: "created"
+            content: "5 May 2015"
+        meta: meta
+            name: "modified"
+            content: "23 Dec 2022"
+        meta: meta
+            name: "description"
+            content: "A process pipeline between three spheres (try typing on spheres and blue"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/x3d/pp3.x3d"
+        meta: meta
+            name: "generator"
+            content: "manual"
+    scene: Scene
+        children: ProtoDeclare
+            name: "Process"
+            protoBody: ProtoBody
+                children: Group
+;left
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0.7, 1, 0]
+                                    transparency: 0.5
+                            geometry: Extrusion
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                                spine: [-2.5, 0, 0, -1.5, 0, 0]
+;<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>
+;right
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0, 0.7, 1]
+                                    transparency: 0.5
+                            geometry: Extrusion
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                                spine: [1.5, 0, 0, 2.5, 0, 0]
+                        children: Transform
+                            translation: [2, 0, 0]
+                            child: Shape
+                                appearance: Appearance
+                                    material: Material
+                                        DEF: "MaterialLightBlue"
+                                        diffuseColor: [1, 1, 1]
+                                geometry: Text
+                                    DEF: "RightString"
+                                    string: ["r"]
+                        children: StringSensor
+                            DEF: "RightSensor"
+                            enabled: false
+                        children: TouchSensor
+                            description: "touch to activate"
+                            DEF: "RightTouch"
+;up
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0, 0.7, 1]
+                                    transparency: 0.5
+                            geometry: Extrusion
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                                spine: [0, 1.5, 0, 0, 2.5, 0]
+                        children: Transform
+                            translation: [-0.5, 2, 0]
+                            child: Shape
+                                appearance: Appearance
+                                    material: Material
+                                        USE: "MaterialLightBlue"
+                                geometry: Text
+                                    DEF: "UpString"
+                                    string: ["u"]
+                        children: StringSensor
+                            DEF: "UpSensor"
+                            enabled: false
+                        children: TouchSensor
+                            description: "touch to activate"
+                            DEF: "UpTouch"
+;down
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0.7, 1, 0]
+                                    transparency: 0.5
+                            geometry: Extrusion
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                                spine: [0, -2.5, 0, 0, -1.5, 0]
+;<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>
+;center
+                    children: Transform
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [1, 0, 0.7]
+                            geometry: Sphere
+                        children: Transform
+                            scale: [0.5, 0.5, 0.5]
+                            translation: [-0.5, 0, 1]
+                            child: Shape
+                                appearance: Appearance
+                                    material: Material
+                                        USE: "MaterialLightBlue"
+                                geometry: Text
+                                    DEF: "CenterString"
+                        children: StringSensor
+                            DEF: "CenterSensor"
+                            enabled: false
+                        children: TouchSensor
+                            description: "touch to activate"
+                            DEF: "CenterTouch"
+                children: Script
+                    DEF: "RightSingleToMultiString"
+                    field: field
+                        name: "set_rightstring"
+                        accessType: "inputOnly"
+                        type: "SFString"
+                    field: field
+                        name: "rightlines"
+                        accessType: "outputOnly"
+                        type: "MFString"
+(.setSourceCode "\\newline\\newlinefunction initialize() {\\newline	rightlines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_rightstring(rightstr) {\\newline	rightlines = new MFString(rightstr);\\newline}\\newline")                children: Script
+                    DEF: "UpSingleToMultiString"
+                    field: field
+                        name: "set_upstring"
+                        accessType: "inputOnly"
+                        type: "SFString"
+                    field: field
+                        name: "uplines"
+                        accessType: "outputOnly"
+                        type: "MFString"
+(.setSourceCode "\\newline\\newlinefunction initialize() {\\newline	uplines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_upstring(upstr) {\\newline	uplines = new MFString(upstr);\\newline}\\newline")                children: Script
+                    DEF: "CenterSingleToMultiString"
+                    field: field
+                        name: "set_centerstring"
+                        accessType: "inputOnly"
+                        type: "SFString"
+                    field: field
+                        name: "centerlines"
+                        accessType: "outputOnly"
+                        type: "MFString"
+(.setSourceCode "\\newline\\newlinefunction initialize() {\\newline	centerlines = new MFString(\"\");\\newline}\\newline\\newlinefunction set_centerstring(centerstr) {\\newline	centerlines = new MFString(centerstr);\\newline}\\newline")                children: ROUTE
+                    fromField: "enteredText"
+                    fromNode: "CenterSensor"
+                    toField: "set_centerstring"
+                    toNode: "CenterSingleToMultiString"
+                children: ROUTE
+                    fromField: "centerlines"
+                    fromNode: "CenterSingleToMultiString"
+                    toField: "set_string"
+                    toNode: "CenterString"
+                children: ROUTE
+                    fromField: "isOver"
+                    fromNode: "CenterTouch"
+                    toField: "set_enabled"
+                    toNode: "CenterSensor"
+                children: ROUTE
+                    fromField: "enteredText"
+                    fromNode: "RightSensor"
+                    toField: "set_rightstring"
+                    toNode: "RightSingleToMultiString"
+                children: ROUTE
+                    fromField: "rightlines"
+                    fromNode: "RightSingleToMultiString"
+                    toField: "set_string"
+                    toNode: "RightString"
+                children: ROUTE
+                    fromField: "isOver"
+                    fromNode: "RightTouch"
+                    toField: "set_enabled"
+                    toNode: "RightSensor"
+                children: ROUTE
+                    fromField: "enteredText"
+                    fromNode: "UpSensor"
+                    toField: "set_upstring"
+                    toNode: "UpSingleToMultiString"
+                children: ROUTE
+                    fromField: "uplines"
+                    fromNode: "UpSingleToMultiString"
+                    toField: "set_string"
+                    toNode: "UpString"
+                children: ROUTE
+                    fromField: "isOver"
+                    fromNode: "UpTouch"
+                    toField: "set_enabled"
+                    toNode: "UpSensor"
+        children: NavigationInfo
+        children: Viewpoint
+            description: "Process pipes"
+            orientation: [1, 0, 0, -0.4]
+            position: [0, 5, 12]
+        children: Transform
+            translation: [0, -2.5, 0]
+            children: ProtoInstance
+                name: "Process"
+        children: Transform
+            children: ProtoInstance
+                name: "Process"
+        children: Transform
+            translation: [0, 2.5, 0]
+            children: ProtoInstance
+                name: "Process"

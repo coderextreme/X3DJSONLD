@@ -1,0 +1,199 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "rubikOnFire.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "generator"
+            content: "manual"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"
+        meta: meta
+            name: "description"
+            content: "a white rubik cube"
+    scene: Scene
+        children: NavigationInfo
+            type: ["EXAMINE"]
+        children: Viewpoint
+            description: "Rubiks Cube on Fire"
+            position: [0, 0, 12]
+        children: ProtoDeclare
+            name: "anyShape"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "xtranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "SFNode"
+                    children: Sphere
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "xtranslation"
+                    child: Shape
+                        IS: IS
+                            connect: connect
+                                nodeField: "geometry"
+                                protoField: "myShape"
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [1, 1, 1]
+        children: ProtoDeclare
+            name: "three"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ytranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "SFNode"
+                    children: Sphere
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ytranslation"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "0 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "2 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "-2 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+        children: ProtoDeclare
+            name: "nine"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ztranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "SFNode"
+                    children: Sphere
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ztranslation"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 2 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 -2 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+        children: ProtoDeclare
+            name: "twentyseven"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ttranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "SFNode"
+                    children: Sphere
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ttranslation"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 2"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 -2"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+        children: ProtoInstance
+            name: "twentyseven"
+            fieldValue: fieldValue
+                name: "ttranslation"
+                value: "0 0 0"
+            fieldValue: fieldValue
+                name: "myShape"
+                children: Box
+                    size: [1, 1, 1]
