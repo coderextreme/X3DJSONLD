@@ -1,59 +1,89 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        meta:
+    head: [
+        meta: [
             name: "title"
             content: "abox.x3d"
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "John Carlson"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "manual"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "a box"
-    Scene:
-        ProtoDeclare:
+        ]
+    ]
+    Scene: [
+        ProtoDeclare: [
             name: "anyShape"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Sphere:
-            ProtoBody:
-                Transform:
-                    IS:
-                        connect:
+                    Shape: [
+                        Sphere: [
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    IS: [
+                        connect: [
                             nodeField: "children"
                             protoField: "myShape"
-        ProtoDeclare:
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoDeclare: [
             name: "one"
-            ProtoInterface:
-                field:
+            ProtoInterface: [
+                field: [
                     name: "myShape"
                     accessType: "inputOutput"
                     type: "MFNode"
-                    Shape:
-                        Cylinder:
-            ProtoBody:
-                Transform:
-                    ProtoInstance:
+                    Shape: [
+                        Cylinder: [
+                        ]
+                    ]
+                ]
+            ]
+            ProtoBody: [
+                Transform: [
+                    ProtoInstance: [
                         name: "anyShape"
-                        IS:
-                            connect:
+                        IS: [
+                            connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
-        ProtoInstance:
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        ProtoInstance: [
             name: "one"
-            fieldValue:
+            fieldValue: [
                 name: "myShape"
-                Shape:
-                    Box:
+                Shape: [
+                    Box: [
                         size: [140, 140, 140]
+                    ]
+                ]
+            ]
+        ]
+    ]

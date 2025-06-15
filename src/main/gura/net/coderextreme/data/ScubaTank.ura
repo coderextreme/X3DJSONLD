@@ -1,126 +1,182 @@
 X3D:
     profile: "Interchange"
     version: "3.3"
-    head:
-        meta:
+    head: [
+        meta: [
             name: "title"
             content: "ScubaTank.x3d"
-        meta:
+        ]
+        meta: [
             name: "description"
             content: "Scuba gear used by Nancy Diving example."
-        meta:
+        ]
+        meta: [
             name: "creator"
             content: "Etsuko Lippi"
-        meta:
+        ]
+        meta: [
             name: "created"
             content: "24 January 2001"
-        meta:
+        ]
+        meta: [
             name: "modified"
             content: "23 May 2020"
-        meta:
+        ]
+        meta: [
             name: "identifier"
             content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
-        meta:
+        ]
+        meta: [
             name: "generator"
             content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        meta:
+        ]
+        meta: [
             name: "license"
             content: "../license.html"
-    Scene:
-        WorldInfo:
+        ]
+    ]
+    Scene: [
+        WorldInfo: [
             title: "ScubaTank.x3d"
-        Transform:
+        ]
+        Transform: [
             DEF: "ScubaTank"
-            Transform:
-                Shape:
-                    Appearance:
-                        Material:
+            Transform: [
+                Shape: [
+                    Appearance: [
+                        Material: [
                             DEF: "tank"
                             ambientIntensity: 0.3
                             diffuseColor: [0.3, 0.3, 0.5]
                             shininess: 0.1
                             specularColor: [0.7, 0.7, 0.8]
-                    Cylinder:
+                        ]
+                    ]
+                    Cylinder: [
                         height: 0.7
                         radius: 0.1
-            Transform:
+                    ]
+                ]
+            ]
+            Transform: [
                 translation: [0, 0.35, 0]
-                Shape:
-                    Appearance:
-                        Material:
+                Shape: [
+                    Appearance: [
+                        Material: [
                             USE: "tank"
-                    Sphere:
+                        ]
+                    ]
+                    Sphere: [
                         radius: 0.098
-            Transform:
+                    ]
+                ]
+            ]
+            Transform: [
                 translation: [0, -0.35, 0]
-                Shape:
+                Shape: [
                     DEF: "tankBottom"
-                    Appearance:
-                        Material:
+                    Appearance: [
+                        Material: [
                             DEF: "black"
                             ambientIntensity: 0.3
                             diffuseColor: [0, 0, 0]
-                    Cylinder:
+                        ]
+                    ]
+                    Cylinder: [
                         height: 0.06
                         radius: 0.115
-            Group:
+                    ]
+                ]
+            ]
+            Group: [
                 DEF: "tankNozzle"
-                Transform:
-                    Transform:
+                Transform: [
+                    Transform: [
                         translation: [0, 0.45, 0]
-                        Shape:
+                        Shape: [
                             DEF: "pressure"
-                            Appearance:
-                                Material:
+                            Appearance: [
+                                Material: [
                                     DEF: "pressureColor"
                                     ambientIntensity: 0.4
                                     diffuseColor: [0.91, 0.91, 0.91]
                                     shininess: 0.16
                                     specularColor: [0.91, 0.9, 0.91]
-                            Cylinder:
+                                ]
+                            ]
+                            Cylinder: [
                                 height: 0.1
                                 radius: 0.015
-                    Transform:
+                            ]
+                        ]
+                    ]
+                    Transform: [
                         translation: [0, 0.5, 0]
-                        Shape:
+                        Shape: [
                             DEF: "pressureTop"
-                            Appearance:
-                                Material:
+                            Appearance: [
+                                Material: [
                                     USE: "black"
-                            Cylinder:
+                                ]
+                            ]
+                            Cylinder: [
                                 height: 0.02
                                 radius: 0.025
-                    Transform:
+                            ]
+                        ]
+                    ]
+                    Transform: [
                         rotation: [0, 0, 1, 1.57]
                         translation: [-0.028, 0.462, 0]
-                        Transform:
-                            Shape:
+                        Transform: [
+                            Shape: [
                                 DEF: "connectorToRegulator"
-                                Appearance:
-                                    Material:
+                                Appearance: [
+                                    Material: [
                                         USE: "pressureColor"
-                                Cylinder:
+                                    ]
+                                ]
+                                Cylinder: [
                                     height: 0.03
                                     radius: 0.01
-                        Transform:
+                                ]
+                            ]
+                        ]
+                        Transform: [
                             translation: [0, 0.02, 0]
-                            Shape:
+                            Shape: [
                                 DEF: "connectorToRegulatorTop"
-                                Appearance:
-                                    Material:
+                                Appearance: [
+                                    Material: [
                                         USE: "black"
-                                Cylinder:
+                                    ]
+                                ]
+                                Cylinder: [
                                     height: 0.02
                                     radius: 0.02
-            Transform:
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            Transform: [
                 translation: [0, 0.2, 0]
-                Shape:
+                Shape: [
                     DEF: "tankHoldBelt"
-                    Appearance:
-                        Material:
+                    Appearance: [
+                        Material: [
                             USE: "black"
-                    Cylinder:
+                        ]
+                    ]
+                    Cylinder: [
                         height: 0.1
                         radius: 0.115
-        Background:
+                    ]
+                ]
+            ]
+        ]
+        Background: [
             skyColor: [0.6, 0.6, 0.6]
+        ]
+    ]
