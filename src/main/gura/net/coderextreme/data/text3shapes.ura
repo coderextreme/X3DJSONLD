@@ -1,47 +1,47 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "3.3"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "creator"
             content: "John W Carlson"
-        meta: meta
+        meta:
             name: "created"
             content: "December 13 2015"
-        meta: meta
+        meta:
             name: "title"
             content: "text3shapes.x3d"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "3 text shapes"
-        meta: meta
+        meta:
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-    scene: Scene
-        children: Transform
-            child: Shape
-                geometry: Text
+    Scene:
+        Transform:
+            Shape:
+                Text:
                     string: ["Node\"\"\""]
-                    fontStyle: FontStyle
-                appearance: Appearance
-                    material: Material
-            child: Shape
-                geometry: Text
+                    FontStyle:
+                Appearance:
+                    Material:
+            Shape:
+                Text:
                     string: ["Node2", "\\\\", "\\\\\\\\", "Node2"]
-                    fontStyle: FontStyle
-                appearance: Appearance
-                    material: Material
-            child: Shape
-                geometry: Text
+                    FontStyle:
+                Appearance:
+                    Material:
+            Shape:
+                Text:
                     string: ["Node3 \\\\\\\\ \\\\ ", "Node3\"\"\""]
-                    fontStyle: FontStyle
-                appearance: Appearance
-                    material: Material
-            children: Script
-                field: field
+                    FontStyle:
+                Appearance:
+                    Material:
+            Script:
+                field:
                     name: "frontUrls"
                     type: "MFString"
                     accessType: "initializeOnly"

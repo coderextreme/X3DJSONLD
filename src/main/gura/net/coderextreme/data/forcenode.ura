@@ -1,262 +1,262 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "3.3"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "creator"
             content: "John W Carlson"
-        meta: meta
+        meta:
             name: "created"
             content: "December 13 2015"
-        meta: meta
+        meta:
             name: "title"
             content: "forcenode.x3d"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "beginnings of a force directed graph in 3D"
-        meta: meta
+        meta:
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-    scene: Scene
-        children: ProtoDeclare
+    Scene:
+        ProtoDeclare:
             name: "node"
-            protoInterface: ProtoInterface
-                field: field
+            ProtoInterface:
+                field:
                     name: "position"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-            protoBody: ProtoBody
-                children: Group
-                    children: Transform
+            ProtoBody:
+                Group:
+                    Transform:
                         DEF: "transform"
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "translation"
                                 protoField: "position"
-                        child: Shape
-                            geometry: Sphere
-                            appearance: Appearance
-                                material: Material
+                        Shape:
+                            Sphere:
+                            Appearance:
+                                Material:
                                     diffuseColor: [1, 0, 0]
-                        children: Transform
+                        Transform:
                             translation: [1, 0, 1]
-                            child: Shape
-                                geometry: Text
+                            Shape:
+                                Text:
                                     string: ["Node"]
-                                    fontStyle: FontStyle
+                                    FontStyle:
                                         justify: ["MIDDLE", "MIDDLE"]
                                         size: 5.0
-                                appearance: Appearance
-                                    material: Material
+                                Appearance:
+                                    Material:
                                         diffuseColor: [0, 0, 1]
-                    children: PositionInterpolator
+                    PositionInterpolator:
                         DEF: "NodePosition"
                         key: [0, 1]
                         keyValue: [0, 0, 0, 0, 5, 0]
-                    children: Script
+                    Script:
                         DEF: "MoveBall"
-                        field: field
+                        field:
                             name: "translation"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "50 50 0"
-                        field: field
+                        field:
                             name: "old"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0"
-                        field: field
+                        field:
                             name: "set_cycle"
                             accessType: "inputOnly"
                             type: "SFTime"
-                        field: field
+                        field:
                             name: "keyValue"
                             accessType: "outputOnly"
                             type: "MFVec3f"
-(.setSourceCode "\\newline					function set_cycle(value) {\\newline                                                old = translation;\\newline						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\\newline                                                keyValue = new MFVec3f(...[old, translation]);\\newline						// Browser.println(translation);\\newline					}\\newline")                    children: TimeSensor
+(.setSourceCode "\\newline					function set_cycle(value) {\\newline                                                old = translation;\\newline						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\\newline                                                keyValue = new MFVec3f(...[old, translation]);\\newline						// Browser.println(translation);\\newline					}\\newline")                    TimeSensor:
                         DEF: "nodeClock"
                         cycleInterval: 3.0
                         loop: true
-                    children: ROUTE
+                    ROUTE:
                         fromNode: "nodeClock"
                         fromField: "cycleTime"
                         toNode: "MoveBall"
                         toField: "set_cycle"
-                    children: ROUTE
+                    ROUTE:
                         fromNode: "nodeClock"
                         fromField: "fraction_changed"
                         toNode: "NodePosition"
                         toField: "set_fraction"
-                    children: ROUTE
+                    ROUTE:
                         fromNode: "MoveBall"
                         fromField: "keyValue"
                         toNode: "NodePosition"
                         toField: "keyValue"
-                    children: ROUTE
+                    ROUTE:
                         fromNode: "NodePosition"
                         fromField: "value_changed"
                         toNode: "transform"
                         toField: "set_translation"
-        children: ProtoDeclare
+        ProtoDeclare:
             name: "cylinder"
-            protoInterface: ProtoInterface
-                field: field
+            ProtoInterface:
+                field:
                     name: "set_positionA"
                     accessType: "inputOnly"
                     type: "SFVec3f"
-                field: field
+                field:
                     name: "set_positionB"
                     accessType: "inputOnly"
                     type: "SFVec3f"
-            protoBody: ProtoBody
-                children: Group
-                    children: Shape
-                        geometry: Extrusion
+            ProtoBody:
+                Group:
+                    Shape:
+                        Extrusion:
                             DEF: "extrusion"
                             creaseAngle: 0.785
                             crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                             spine: [0, -50, 0, 0, 50, 0]
-                        appearance: Appearance
-                            material: Material
+                        Appearance:
+                            Material:
                                 diffuseColor: [0, 1, 0]
-                    children: Script
+                    Script:
                         DEF: "MoveCylinder"
-                        field: field
+                        field:
                             name: "spine"
                             accessType: "inputOutput"
                             type: "MFVec3f"
                             value: "0 -50 0 0 50 0"
-                        field: field
+                        field:
                             name: "set_endA"
                             accessType: "inputOnly"
                             type: "SFVec3f"
-                        field: field
+                        field:
                             name: "set_endB"
                             accessType: "inputOnly"
                             type: "SFVec3f"
-                        IS: IS
-                            connect: connect
+                        IS:
+                            connect:
                                 nodeField: "set_endA"
                                 protoField: "set_positionA"
-                            connect: connect
+                            connect:
                                 nodeField: "set_endB"
                                 protoField: "set_positionB"
-(.setSourceCode "\\newline\\newline                function set_endA(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f(...[value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f(...[value, spine[1]]);\\newline		    }\\newline                }\\newline\\newline                function set_endB(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f(...[value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f(...[spine[0], value]);\\newline		    }\\newline                }\\newline\\newline                function set_spine(value) {\\newline                    spine = value;\\newline                }\\newline")                    children: ROUTE
+(.setSourceCode "\\newline\\newline                function set_endA(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f(...[value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f(...[value, spine[1]]);\\newline		    }\\newline                }\\newline\\newline                function set_endB(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		        spine = new MFVec3f(...[value, value]);\\newline		    } else {\\newline		        spine = new MFVec3f(...[spine[0], value]);\\newline		    }\\newline                }\\newline\\newline                function set_spine(value) {\\newline                    spine = value;\\newline                }\\newline")                    ROUTE:
                         fromNode: "MoveCylinder"
                         fromField: "spine"
                         toNode: "extrusion"
                         toField: "set_spine"
-        children: Transform
+        Transform:
             DEF: "HoldsContent"
             scale: [0.1, 0.1, 0.1]
-            children: PlaneSensor
+            PlaneSensor:
                 DEF: "clickGenerator"
                 minPosition: [-50, -50]
                 maxPosition: [50, 50]
                 description: "click on background to add nodes, click on nodes to add links"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "node"
                 DEF: "nodeA"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "position"
                     value: "0 0 0"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "node"
                 DEF: "nodeB"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "position"
                     value: "50 50 50"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "node"
                 DEF: "nodeC"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "position"
                     value: "-50 -50 -50"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "node"
                 DEF: "nodeD"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "position"
                     value: "50 50 -50"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "cylinder"
                 DEF: "linkA"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionA"
                     value: "0 0 0"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionB"
                     value: "50 50 50"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "cylinder"
                 DEF: "linkB"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionA"
                     value: "0 0 0"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionB"
                     value: "-50 -50 -50"
-            children: ProtoInstance
+            ProtoInstance:
                 name: "cylinder"
                 DEF: "linkC"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionA"
                     value: "50 50 50"
-                fieldValue: fieldValue
+                fieldValue:
                     name: "set_positionB"
                     value: "50 50 -50"
-        children: Script
+        Script:
             DEF: "clickHandler"
-            field: field
+            field:
                 name: "counter"
                 accessType: "inputOutput"
                 value: "0"
                 type: "SFInt32"
-            field: field
+            field:
                 name: "node_changed"
                 accessType: "outputOnly"
                 type: "SFNode"
-            field: field
+            field:
                 name: "add_node"
                 accessType: "inputOnly"
                 value: "false"
                 type: "SFBool"
-;<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
-(.setSourceCode "\\newline	function add_node(value) {\\newline                // Browser.print('hey ', counter);\\newline                counter = counter++;\\newline		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\\newline			{ \"ProtoInstance\":\\newline				{ \"@name\":\"node\",\\newline				  \"@DEF\":\"node'+counter+'\",\\newline				  \"fieldValue\": [\\newline					{\\newline						 \"@name\":\"position\",\\newline						 \"@value\":[0.0,0.0,0.0]\\newline					}\\newline				  ]\\newline				}\\newline			});\\newline\\newline        }\\newline")        children: ROUTE
+#<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+(.setSourceCode "\\newline	function add_node(value) {\\newline                // Browser.print('hey ', counter);\\newline                counter = counter++;\\newline		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\\newline			{ \"ProtoInstance\":\\newline				{ \"@name\":\"node\",\\newline				  \"@DEF\":\"node'+counter+'\",\\newline				  \"fieldValue\": [\\newline					{\\newline						 \"@name\":\"position\",\\newline						 \"@value\":[0.0,0.0,0.0]\\newline					}\\newline				  ]\\newline				}\\newline			});\\newline\\newline        }\\newline")        ROUTE:
             fromNode: "clickGenerator"
             fromField: "isActive"
             toNode: "clickHandler"
             toField: "add_node"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeA"
             fromField: "position"
             toNode: "linkA"
             toField: "set_positionA"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeB"
             fromField: "position"
             toNode: "linkA"
             toField: "set_positionB"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeA"
             fromField: "position"
             toNode: "linkB"
             toField: "set_positionA"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeC"
             fromField: "position"
             toNode: "linkB"
             toField: "set_positionB"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeA"
             fromField: "position"
             toNode: "linkC"
             toField: "set_positionA"
-        children: ROUTE
+        ROUTE:
             fromNode: "nodeD"
             fromField: "position"
             toNode: "linkC"

@@ -1,164 +1,164 @@
-X3D0: "X3D"
+X3D:
     profile: "Full"
     version: "4.0"
-    head: head
-        component: component
+    head:
+        component:
             name: "EnvironmentalEffects"
             level: 3
-        component: component
+        component:
             name: "Shaders"
             level: 1
-        component: component
+        component:
             name: "CubeMapTexturing"
             level: 1
-        component: component
+        component:
             name: "Texturing"
             level: 1
-        component: component
+        component:
             name: "Rendering"
             level: 1
-        component: component
+        component:
             name: "Grouping"
             level: 3
-        component: component
+        component:
             name: "Core"
             level: 1
-        component: component
+        component:
             name: "ParticleSystems"
             level: 3
-        meta: meta
+        meta:
             name: "title"
             content: "variationalflowers.x3d"
-        meta: meta
+        meta:
             name: "creator"
             content: "John Carlson"
-        meta: meta
+        meta:
             name: "description"
             content: "A flower particle system"
-        meta: meta
+        meta:
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d"
-    scene: Scene
-        children: WorldInfo
+    Scene:
+        WorldInfo:
             title: "variationalflowers.x3d"
-        children: NavigationInfo
+        NavigationInfo:
             type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        children: Viewpoint
+        Viewpoint:
             description: "Tour Views"
             position: [0, 0, 12]
-        children: Background
+        Background:
             backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
             bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
             frontUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
             leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
             rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
             topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        children: Transform
-            children: ParticleSystem
+        Transform:
+            ParticleSystem:
                 maxParticles: 20
                 geometryType: "GEOMETRY"
-;* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
-                VariationPhysicsModel: VariationPhysicsModel
+#* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
+                VariationPhysicsModel:
                     values: "2 2 5 5 0 0"
                     variations: "0.2 0.1 0.3 0.3 0.01 0.01"
-                emitter: ExplosionEmitter
+                ExplosionEmitter:
                     speed: 1.0
                     variation: 0.75
-                geometry: Sphere
-                appearance: Appearance
-                    material: Material
+                Sphere:
+                Appearance:
+                    Material:
                         diffuseColor: [0.7, 0.7, 0.7]
                         specularColor: [0.5, 0.5, 0.5]
-                    texture: ComposedCubeMapTexture
+                    ComposedCubeMapTexture:
                         DEF: "texture"
-                        backTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        bottomTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        frontTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        leftTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        rightTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        topTexture: ImageTexture
+                        ImageTexture:
                             url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                    shaders: ComposedShader
+                    ComposedShader:
                         DEF: "x_ite"
                         language: "GLSL"
-                        field: field
+                        field:
                             name: "chromaticDispertion"
                             accessType: "initializeOnly"
                             type: "SFVec3f"
                             value: "0.98 1 1.033"
-                        field: field
+                        field:
                             name: "cube"
                             type: "SFNode"
                             accessType: "initializeOnly"
-                            children: ComposedCubeMapTexture
+                            ComposedCubeMapTexture:
                                 USE: "texture"
-                        field: field
+                        field:
                             name: "bias"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        field: field
+                        field:
                             name: "scale"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "0.5"
-                        field: field
+                        field:
                             name: "power"
                             accessType: "initializeOnly"
                             type: "SFFloat"
                             value: "2"
-                        field: field
+                        field:
                             name: "x3d_ParticleValues"
                             type: "MFFloat"
                             accessType: "inputOutput"
                             value: "2 1 4 4 0 0"
-                        parts: ShaderPart
+                        ShaderPart:
                             url: ["../shaders/x_ite_variations.vs"]
                             type: "VERTEX"
-                        parts: ShaderPart
+                        ShaderPart:
                             url: ["../shaders/commonnew.fs"]
                             type: "FRAGMENT"
-            children: Script
+            Script:
                 DEF: "Animate"
-                field: field
+                field:
                     name: "set_fraction"
                     accessType: "inputOnly"
                     type: "SFFloat"
-                field: field
+                field:
                     name: "values"
                     type: "MFFloat"
                     accessType: "inputOutput"
                     value: "2 2 5 5 0 0"
-                field: field
+                field:
                     name: "variations"
                     type: "MFFloat"
                     accessType: "inputOutput"
                     value: "0.2 0.1 0.3 0.3 0.01 0.01"
-                field: field
+                field:
                     name: "lastframe"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0"
-                field: field
+                field:
                     name: "updaterate"
                     type: "SFFloat"
                     accessType: "inputOutput"
                     value: "0.1"
-(.setSourceCode "\\newline			function set_fraction(f, tm) {\\newline			    if (lastframe + updaterate < tm) {\\newline			  	lastframe = tm;\\newline				for (let v in values) {\\newline					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\\newline				}\\newline			    }\\newline			}\\newline")            children: TimeSensor
+(.setSourceCode "\\newline			function set_fraction(f, tm) {\\newline			    if (lastframe + updaterate < tm) {\\newline			  	lastframe = tm;\\newline				for (let v in values) {\\newline					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\\newline				}\\newline			    }\\newline			}\\newline")            TimeSensor:
                 DEF: "TourTime"
                 cycleInterval: 45.0
                 loop: true
-            children: ROUTE
+            ROUTE:
                 fromNode: "TourTime"
                 fromField: "fraction_changed"
                 toNode: "Animate"
                 toField: "set_fraction"
-            children: ROUTE
+            ROUTE:
                 fromNode: "Animate"
                 fromField: "values"
                 toNode: "x_ite"

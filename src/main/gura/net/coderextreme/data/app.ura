@@ -1,27 +1,27 @@
-X3D0: "X3D"
+X3D:
     profile: "Immersive"
     version: "4.0"
-    head: head
-        meta: meta
+    head:
+        meta:
             name: "title"
             content: "app.x3d"
-        meta: meta
+        meta:
             name: "creator"
             content: "Carlson, I"
-        meta: meta
+        meta:
             name: "creator"
             content: "Carlson, II"
-        meta: meta
+        meta:
             name: "creator"
             content: "Carlson, III"
-    scene: Scene
-        children: Group
-            children: Shape
-                appearance: Appearance
-                    material: Material
+    Scene:
+        Group:
+            Shape:
+                Appearance:
+                    Material:
                         diffuseColor: [1, 0, 0]
-                geometry: Box
-        children: Transform
+                Box:
+        Transform:
             rotation: [7, 8, 9, 3.14]
             scale: [4, 5, 6]
             translation: [1, 2, 3]

@@ -1,695 +1,695 @@
-X3D0: "X3D"
+X3D:
     profile: "Full"
     version: "4.0"
-    head: head
-        component: component
+    head:
+        component:
             name: "Scripting"
             level: 1
-        component: component
+        component:
             name: "EnvironmentalEffects"
             level: 3
-        component: component
+        component:
             name: "Shaders"
             level: 1
-        component: component
+        component:
             name: "CubeMapTexturing"
             level: 1
-        component: component
+        component:
             name: "Texturing"
             level: 1
-        component: component
+        component:
             name: "Rendering"
             level: 1
-        component: component
+        component:
             name: "Grouping"
             level: 3
-        component: component
+        component:
             name: "Core"
             level: 1
-        component: component
+        component:
             name: "DIS"
             level: 2
-;<component name='Shape' level='4'></component>
-;Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
-        meta: meta
+#<component name='Shape' level='4'></component>
+#Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
+        meta:
             name: "title"
             content: "bumpyfreewrljsonverse.x3d"
-        meta: meta
+        meta:
             name: "description"
             content: "*enter description here, short-sentence summaries preferred*"
-        meta: meta
+        meta:
             name: "creator"
             content: "Doug Sanden, Christoph Valentin, John Carlson"
-        meta: meta
+        meta:
             name: "translator"
             content: "*if manually translating VRML-to-X3D, enter name of person translating here*"
-        meta: meta
+        meta:
             name: "created"
             content: "*enter date of initial version here*"
-        meta: meta
+        meta:
             name: "translated"
             content: "*enter date of translation here*"
-        meta: meta
+        meta:
             name: "modified"
             content: "*enter date of latest revision here*"
-        meta: meta
+        meta:
             name: "version"
             content: "*enter version here, if any*"
-        meta: meta
+        meta:
             name: "reference"
             content: "*enter reference citation or relative/online url here*"
-        meta: meta
+        meta:
             name: "reference"
             content: "*enter additional url/bibliographic reference information here*"
-        meta: meta
+        meta:
             name: "requires"
             content: "*enter reference resource here if required to support function, delivery, or coherence of content*"
-        meta: meta
+        meta:
             name: "rights"
             content: "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"
-        meta: meta
+        meta:
             name: "drawing"
             content: "*enter drawing filename/url here*"
-        meta: meta
+        meta:
             name: "MovingImage"
             content: "*enter movie filename/url here*"
-        meta: meta
+        meta:
             name: "photo"
             content: "*enter photo filename/url here*"
-        meta: meta
+        meta:
             name: "subject"
             content: "*enter subject keywords here*"
-        meta: meta
+        meta:
             name: "accessRights"
             content: "*enter permission statements or url here*"
-        meta: meta
+        meta:
             name: "identifier"
             content: "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"
-        meta: meta
+        meta:
             name: "generator"
             content: "PSPad, http://www.pspad.com/"
-        meta: meta
+        meta:
             name: "license"
             content: "license.html"
-;\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
-    scene: Scene
-;basic nodes, which might be present in any scene
-        children: NavigationInfo
+#\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+    Scene:
+#basic nodes, which might be present in any scene
+        NavigationInfo:
             type: ["EXAMINE"]
             avatarSize: [0.25, 1.75, 0.75]
-        children: DirectionalLight
+        DirectionalLight:
             ambientIntensity: 0.2
             direction: [0, -1, 0]
-        children: DirectionalLight
+        DirectionalLight:
             ambientIntensity: 0.2
             direction: [-1, -0.1, -1]
-        children: Viewpoint
+        Viewpoint:
             description: "My Overview"
             fieldOfView: 1.570796
             position: [0, 1.75, 60]
-;LayerSet with two layers, navigation happens in layer 1
-        layerSet: LayerSet
+#LayerSet with two layers, navigation happens in layer 1
+        LayerSet:
             activeLayer: 1
             order: [1, 2]
-;the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-;the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
-            layers: Layer
+#the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
+#the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+            Layer:
                 pickable: true
                 objectType: ["ALL"]
-;this group contains the red/green/blue 3D crosshair
-                children: Group
-;Arrow X
-                    children: Transform
+#this group contains the red/green/blue 3D crosshair
+                Group:
+#Arrow X
+                    Transform:
                         translation: [25, 0, 0]
                         rotation: [0, 0, -1, 1.57]
-                        child: Shape
-                            geometry: Cylinder
+                        Shape:
+                            Cylinder:
                                 DEF: "Shaft"
                                 radius: 0.35
                                 height: 50.0
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     DEF: "RED"
                                     diffuseColor: [1, 0, 0]
                                     emissiveColor: [1, 0, 0]
-                    children: Transform
+                    Transform:
                         translation: [50, 0, 0]
                         rotation: [0, 0, -1, 1.57]
-                        child: Shape
-                            geometry: Cone
+                        Shape:
+                            Cone:
                                 DEF: "Tip"
                                 bottomRadius: 0.8
                                 height: 3.0
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     USE: "RED"
-;Arrow Y
-                    children: Transform
+#Arrow Y
+                    Transform:
                         translation: [0, 25, 0]
-                        child: Shape
-                            geometry: Cylinder
+                        Shape:
+                            Cylinder:
                                 USE: "Shaft"
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     DEF: "GREEN"
                                     diffuseColor: [0, 1, 0]
                                     emissiveColor: [0, 1, 0]
-                    children: Transform
+                    Transform:
                         translation: [0, 50, 0]
-                        child: Shape
-                            geometry: Cone
+                        Shape:
+                            Cone:
                                 USE: "Tip"
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     USE: "GREEN"
-;Arrow Z
-                    children: Transform
+#Arrow Z
+                    Transform:
                         translation: [0, 0, 25]
                         rotation: [1, 0, 0, 1.57]
-                        child: Shape
-                            geometry: Cylinder
+                        Shape:
+                            Cylinder:
                                 USE: "Shaft"
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     DEF: "BLUE"
                                     diffuseColor: [0, 0, 1]
                                     emissiveColor: [0, 0, 1]
-                    children: Transform
+                    Transform:
                         translation: [0, 0, 50]
                         rotation: [1, 0, 0, 1.57]
-                        child: Shape
-                            geometry: Cone
+                        Shape:
+                            Cone:
                                 USE: "Tip"
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     USE: "BLUE"
-;the model that is being reviewed by the users of this scene
-                children: Transform
+#the model that is being reviewed by the users of this scene
+                Transform:
                     DEF: "FlowerTransform"
-;<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />
-;Images courtesy of Paul Debevec's Light Probe Image Gallery
-                    children: Background
+#<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />
+#Images courtesy of Paul Debevec's Light Probe Image Gallery
+                    Background:
                         backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                         bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                         frontUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                         leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                         rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                         topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                    children: Transform
-                        child: Shape
-;<Sphere radius='40'></Sphere>
-                            geometry: IndexedFaceSet
+                    Transform:
+                        Shape:
+#<Sphere radius='40'></Sphere>
+                            IndexedFaceSet:
                                 convex: false
                                 DEF: "Orbit"
-                                coord: Coordinate
+                                Coordinate:
                                     DEF: "OrbitCoordinates"
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     diffuseColor: [0.7, 0.7, 0.7]
                                     specularColor: [0.5, 0.5, 0.5]
-                                texture: ComposedCubeMapTexture
+                                ComposedCubeMapTexture:
                                     DEF: "texture"
-                                    backTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                                    bottomTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                                    frontTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                                    leftTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                                    rightTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                                    topTexture: ImageTexture
+                                    ImageTexture:
                                         url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                                shaders: ComposedShader
+                                ComposedShader:
                                     DEF: "freewrlShader"
                                     language: "GLSL"
-                                    field: field
+                                    field:
                                         name: "chromaticDispertion"
                                         accessType: "inputOnly"
                                         type: "SFVec3f"
                                         value: "0.98 1 1.033"
-                                    field: field
+                                    field:
                                         name: "fw_textureCoordGenType"
                                         accessType: "inputOnly"
                                         type: "SFInt32"
                                         value: "0"
-                                    field: field
+                                    field:
                                         name: "bias"
                                         type: "SFFloat"
                                         accessType: "inputOnly"
                                         value: "0.5"
-                                    field: field
+                                    field:
                                         name: "scale"
                                         type: "SFFloat"
                                         accessType: "inputOnly"
                                         value: "0.5"
-                                    field: field
+                                    field:
                                         name: "power"
                                         type: "SFFloat"
                                         accessType: "inputOnly"
                                         value: "2"
-                                    field: field
+                                    field:
                                         name: "a"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "15"
-                                    field: field
+                                    field:
                                         name: "b"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "5"
-                                    field: field
+                                    field:
                                         name: "c"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "5"
-                                    field: field
+                                    field:
                                         name: "d"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "5"
-                                    field: field
+                                    field:
                                         name: "tdelta"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "0"
-                                    field: field
+                                    field:
                                         name: "pdelta"
                                         type: "SFFloat"
                                         accessType: "inputOutput"
                                         value: "0"
-                                    parts: ShaderPart
+                                    ShaderPart:
                                         url: ["../shaders/freewrl_flowers_chromatic.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]
                                         type: "VERTEX"
-                                    parts: ShaderPart
+                                    ShaderPart:
                                         url: ["../shaders/freewrl.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"]
                                         type: "FRAGMENT"
-;TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                children: Script
+#TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                Script:
                     DEF: "OrbitScript"
-                    field: field
+                    field:
                         name: "coordinates"
                         accessType: "inputOutput"
                         type: "MFVec3f"
-                    field: field
+                    field:
                         name: "coordIndexes"
                         accessType: "outputOnly"
                         type: "MFInt32"
-                    field: field
+                    field:
                         name: "a"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "10"
-                    field: field
+                    field:
                         name: "b"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "10"
-                    field: field
+                    field:
                         name: "c"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "2"
-                    field: field
+                    field:
                         name: "d"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "2"
-                    field: field
+                    field:
                         name: "pdelta"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "0"
-                    field: field
+                    field:
                         name: "tdelta"
                         type: "SFFloat"
                         accessType: "inputOutput"
                         value: "0"
-(.setSourceCode "\\newlinefunction initialize() {\\newline     var resolution = 100;\\newline     var theta = 0.0;\\newline     var phi = 0.0;\\newline     var delta = (2 * 3.141592653) / (resolution-1);\\newline     var crds = new MFVec3f();\\newline     var vecCount = 0;\\newline     for ( i = 0; i < resolution; i++) {\\newline     	for ( j = 0; j < resolution; j++) {\\newline		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);\\newline		crds[vecCount] = new SFVec3f(\\newline			rho * Math.cos(phi) * Math.cos(theta),\\newline			rho * Math.cos(phi) * Math.sin(theta),\\newline			rho * Math.sin(phi)\\newline		);\\newline		vecCount++;\\newline		theta += delta;\\newline	}\\newline	phi += delta;\\newline     }\\newline     coordinates = crds;\\newline     // coordinates = new MFVec3f(...crds);\\newline\\newline\\newline     var cis = new MFInt32();\\newline     var intCount = 0;\\newline     for ( i = 0; i < resolution-1; i++) {\\newline     	for ( j = 0; j < resolution-1; j++) {\\newline	     cis[intCount++] = i*resolution+j;\\newline	     cis[intCount++] = i*resolution+j+1;\\newline	     cis[intCount++] = (i+1)*resolution+j+1;\\newline	     cis[intCount++] = (i+1)*resolution+j;\\newline	     cis[intCount++] = -1;\\newline	}\\newline    }\\newline    coordIndexes = cis;\\newline    // coordIndexes = new MFInt32(...cis);\\newline}\\newline")                children: ROUTE
+(.setSourceCode "\\newlinefunction initialize() {\\newline     var resolution = 100;\\newline     var theta = 0.0;\\newline     var phi = 0.0;\\newline     var delta = (2 * 3.141592653) / (resolution-1);\\newline     var crds = new MFVec3f();\\newline     var vecCount = 0;\\newline     for ( i = 0; i < resolution; i++) {\\newline     	for ( j = 0; j < resolution; j++) {\\newline		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);\\newline		crds[vecCount] = new SFVec3f(\\newline			rho * Math.cos(phi) * Math.cos(theta),\\newline			rho * Math.cos(phi) * Math.sin(theta),\\newline			rho * Math.sin(phi)\\newline		);\\newline		vecCount++;\\newline		theta += delta;\\newline	}\\newline	phi += delta;\\newline     }\\newline     coordinates = crds;\\newline     // coordinates = new MFVec3f(...crds);\\newline\\newline\\newline     var cis = new MFInt32();\\newline     var intCount = 0;\\newline     for ( i = 0; i < resolution-1; i++) {\\newline     	for ( j = 0; j < resolution-1; j++) {\\newline	     cis[intCount++] = i*resolution+j;\\newline	     cis[intCount++] = i*resolution+j+1;\\newline	     cis[intCount++] = (i+1)*resolution+j+1;\\newline	     cis[intCount++] = (i+1)*resolution+j;\\newline	     cis[intCount++] = -1;\\newline	}\\newline    }\\newline    coordIndexes = cis;\\newline    // coordIndexes = new MFInt32(...cis);\\newline}\\newline")                ROUTE:
                     fromField: "coordIndexes"
                     fromNode: "OrbitScript"
                     toField: "set_coordIndex"
                     toNode: "Orbit"
-                children: ROUTE
+                ROUTE:
                     fromField: "coordinates"
                     fromNode: "OrbitScript"
                     toField: "set_point"
                     toNode: "OrbitCoordinates"
-;DIS multiuser facilities
-                children: DISEntityManager
+#DIS multiuser facilities
+                DISEntityManager:
                     DEF: "EntityManager"
                     networkMode: "networkReader"
-                    children: DISEntityTypeMapping
+                    DISEntityTypeMapping:
                         readInterval: "3"
                         category: 77
                         specific: 1
                         url: ["../data/Gramps8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]
-                    children: DISEntityTypeMapping
+                    DISEntityTypeMapping:
                         readInterval: "3"
                         category: 77
                         specific: 2
                         url: ["../data/Leif8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]
-                    children: DISEntityTypeMapping
+                    DISEntityTypeMapping:
                         readInterval: "3"
                         category: 77
                         specific: 3
                         url: ["../data/Lily8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]
-                    children: DISEntityTypeMapping
+                    DISEntityTypeMapping:
                         readInterval: "3"
                         category: 77
                         specific: 4
                         url: ["../data/Tufani8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]
-                children: Collision
+                Collision:
                     enabled: false
-                    proxy: Group
+                    Group:
                         DEF: "AvatarHolder"
-                children: ROUTE
+                ROUTE:
                     fromField: "addedEntities"
                     fromNode: "EntityManager"
                     toField: "addChildren"
                     toNode: "AvatarHolder"
-                children: ROUTE
+                ROUTE:
                     fromField: "removedEntities"
                     fromNode: "EntityManager"
                     toField: "removeChildren"
                     toNode: "AvatarHolder"
-            layers: LayoutLayer
+            LayoutLayer:
                 pickable: true
                 objectType: ["ALL"]
-;positioning the LayoutLayer
-;clipping the LayoutLayer
-;the content (children) of the LayoutLayer
-;first, the slider for scaling the model
-                children: Transform
+#positioning the LayoutLayer
+#clipping the LayoutLayer
+#the content (children) of the LayoutLayer
+#first, the slider for scaling the model
+                Transform:
                     translation: [0, 0, -3]
-                    child: Shape
-                        appearance: Appearance
-                            material: Material
+                    Shape:
+                        Appearance:
+                            Material:
                                 diffuseColor: [0, 0, 0]
                                 transparency: 0.7
-                        geometry: Box
+                        Box:
                             size: [100, 100, 0.02]
-                children: Transform
+                Transform:
                     DEF: "equationTransform"
-                    children: Transform
+                    Transform:
                         translation: [0, 0, -20]
-                        child: Shape
-                            geometry: Text
+                        Shape:
+                            Text:
                                 DEF: "equation"
                                 string: ["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"]
-                                fontStyle: FontStyle
+                                FontStyle:
                                     size: 0.09
-                            appearance: Appearance
-                                material: Material
+                            Appearance:
+                                Material:
                                     diffuseColor: [1, 1, 0]
-                children: ProtoDeclare
+                ProtoDeclare:
                     name: "SliderProto"
-                    protoInterface: ProtoInterface
-                        field: field
+                    ProtoInterface:
+                        field:
                             name: "sliderTranslation"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0.7 0"
-                        field: field
+                        field:
                             name: "transformTranslation"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0.1"
-                        field: field
+                        field:
                             name: "sensorTranslation"
                             accessType: "inputOutput"
                             type: "SFVec3f"
                             value: "0 0 0"
-                        field: field
+                        field:
                             name: "textString"
                             accessType: "inputOutput"
                             type: "MFString"
                             value: "\"a=\""
-                        field: field
+                        field:
                             name: "parameterScale"
                             accessType: "inputOutput"
                             type: "SFFloat"
                             value: "30"
-                        field: field
+                        field:
                             name: "parameterName"
                             accessType: "inputOutput"
                             type: "SFString"
                             value: "a"
-                        field: field
+                        field:
                             name: "shaderNode"
                             accessType: "inputOutput"
                             type: "SFNode"
-                    protoBody: ProtoBody
-                        children: Group
-                            children: Transform
+                    ProtoBody:
+                        Group:
+                            Transform:
                                 DEF: "protoSlider"
                                 translation: [0, 0.7, 0]
-                                IS: IS
-                                    connect: connect
+                                IS:
+                                    connect:
                                         nodeField: "translation"
                                         protoField: "sliderTranslation"
-                                children: Transform
+                                Transform:
                                     DEF: "protoTransform"
                                     translation: [0, 0, 0.1]
-                                    IS: IS
-                                        connect: connect
+                                    IS:
+                                        connect:
                                             nodeField: "translation"
                                             protoField: "sensorTranslation"
-                                    children: PlaneSensor
+                                    PlaneSensor:
                                         DEF: "protoSensor"
                                         maxPosition: [1, 0]
-                                    children: Transform
+                                    Transform:
                                         translation: [0, 0, 0]
-                                        children: TouchSensor
+                                        TouchSensor:
                                             DEF: "protoTS"
-                                    children: Transform
-                                        child: Shape
-                                            geometry: Text
+                                    Transform:
+                                        Shape:
+                                            Text:
                                                 DEF: "protoText"
                                                 string: ["a="]
-                                                IS: IS
-                                                    connect: connect
+                                                IS:
+                                                    connect:
                                                         nodeField: "string"
                                                         protoField: "textString"
-                                                fontStyle: FontStyle
+                                                FontStyle:
                                                     size: 0.23
-                                            appearance: Appearance
-                                                material: Material
-                            children: Script
+                                            Appearance:
+                                                Material:
+                            Script:
                                 DEF: "protoValueTransformerScript"
                                 directOutput: true
                                 mustEvaluate: true
-                                field: field
+                                field:
                                     name: "protoScale"
                                     accessType: "inputOutput"
                                     type: "SFFloat"
                                     value: "30"
-                                field: field
+                                field:
                                     name: "protoParameterName"
                                     accessType: "inputOutput"
                                     type: "SFString"
                                     value: "a"
-                                field: field
+                                field:
                                     name: "shader"
                                     accessType: "inputOutput"
                                     type: "SFNode"
-                                field: field
+                                field:
                                     name: "newTranslation"
                                     accessType: "inputOnly"
                                     type: "SFVec3f"
                                     value: "1 1 1"
-                                field: field
+                                field:
                                     name: "protoValue_changed"
                                     accessType: "outputOnly"
                                     type: "SFFloat"
                                     value: "1"
-                                field: field
+                                field:
                                     name: "protoText_changed"
                                     accessType: "outputOnly"
                                     type: "MFString"
                                     value: "\"1.0\""
-                                IS: IS
-                                    connect: connect
+                                IS:
+                                    connect:
                                         nodeField: "protoScale"
                                         protoField: "parameterScale"
-                                    connect: connect
+                                    connect:
                                         nodeField: "protoParameterName"
                                         protoField: "parameterName"
-                                    connect: connect
+                                    connect:
                                         nodeField: "shader"
                                         protoField: "shaderNode"
-(.setSourceCode "\\newlineconst newTranslation = function(Value) {\\newline	'use strict';\\newline	protoValue_changed = Value.x * protoScale;\\newline	protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));\\newline\\newline        var orientation = Value.x;\\newline\\newline        var ps = Browser.currentScene.getNamedNode(\"protoSensor\");\\newline        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\\newline        var txt = Browser.currentScene.getNamedNode(\"protoText\");\\newline        if (shader) {\\newline            shader.getField(protoParameterName).setValue(orientation * protoScale);\\newline        }\\newline        if (txt) {\\newline            var stringField = txt.getField(\"string\");\\newline            var label = protoParameterName;\\newline            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\\newline        }\\newline        if (ps) {\\newline            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\\newline        }\\newline        if (t) {\\newline            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\\newline        }\\newline}\\newline")                            children: ROUTE
+(.setSourceCode "\\newlineconst newTranslation = function(Value) {\\newline	'use strict';\\newline	protoValue_changed = Value.x * protoScale;\\newline	protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));\\newline\\newline        var orientation = Value.x;\\newline\\newline        var ps = Browser.currentScene.getNamedNode(\"protoSensor\");\\newline        var t = Browser.currentScene.getNamedNode(\"protoTransform\");\\newline        var txt = Browser.currentScene.getNamedNode(\"protoText\");\\newline        if (shader) {\\newline            shader.getField(protoParameterName).setValue(orientation * protoScale);\\newline        }\\newline        if (txt) {\\newline            var stringField = txt.getField(\"string\");\\newline            var label = protoParameterName;\\newline            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));\\newline        }\\newline        if (ps) {\\newline            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);\\newline        }\\newline        if (t) {\\newline            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);\\newline        }\\newline}\\newline")                            ROUTE:
                                 fromField: "translation_changed"
                                 fromNode: "protoSensor"
                                 toField: "set_translation"
                                 toNode: "protoTransform"
-                            children: ROUTE
+                            ROUTE:
                                 fromField: "translation_changed"
                                 fromNode: "protoSensor"
                                 toField: "newTranslation"
                                 toNode: "protoValueTransformerScript"
-                            children: ROUTE
+                            ROUTE:
                                 fromField: "protoText_changed"
                                 fromNode: "protoValueTransformerScript"
                                 toField: "string"
                                 toNode: "protoText"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "aPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 0.7 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"a=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "30"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "a"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "bPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 0.4 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"b=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "30"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "b"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "cPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 0.1 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"c=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "20"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "c"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "dPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 -0.2 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"d=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "20"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "d"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "tdeltaPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 -0.5 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"tdelta=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "6.28"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "tdelta"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                children: ProtoInstance
+                ProtoInstance:
                     name: "SliderProto"
                     DEF: "pdeltaPI"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sliderTranslation"
                         value: "0 -0.8 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "transformTranslation"
                         value: "0 0 0.1"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "sensorTranslation"
                         value: "0 0 0"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "textString"
                         value: "\"pdelta=\""
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterScale"
                         value: "6.28"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "parameterName"
                         value: "pdelta"
-                    fieldValue: fieldValue
+                    fieldValue:
                         name: "shaderNode"
-                        children: ComposedShader
+                        ComposedShader:
                             USE: "freewrlShader"
-                layout: Layout
+                Layout:
                     align: ["LEFT", "BOTTOM"]
                     offset: [-0.2, 0.19]
                     offsetUnits: ["WORLD", "WORLD"]
                     scaleMode: ["NONE", "NONE"]
                     size: [0.4, 0.6]
                     sizeUnits: ["WORLD", "WORLD"]
-                viewport: Viewport
+                Viewport:
                     clipBoundary: [0, 1, 0, 1]
