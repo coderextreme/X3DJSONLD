@@ -1,45 +1,45 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head: [
+    head:
         meta: [
             name: "title"
             content: "rubikOnFire.x3d"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "John Carlson"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "manual"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "a white rubik cube"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         NavigationInfo: [
             type: ["EXAMINE"]
-        ]
+        ],
         Viewpoint: [
             description: "Rubiks Cube on Fire"
             position: [0, 0, 12]
-        ]
+        ],
         ProtoDeclare: [
             name: "anyShape"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "xtranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "myShape"
                     accessType: "inputOutput"
@@ -47,40 +47,37 @@ X3D:
                     Sphere: [
                     ]
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Transform: [
-                    IS: [
+                    IS:
                         connect: [
                             nodeField: "translation"
                             protoField: "xtranslation"
                         ]
-                    ]
+,
                     Shape: [
-                        IS: [
+                        IS:
                             connect: [
                                 nodeField: "geometry"
                                 protoField: "myShape"
                             ]
-                        ]
-                        Appearance: [
-                            Material: [
+                        ,
+                        Appearance:
+                            Material:
                                 diffuseColor: [1, 1, 1]
-                            ]
-                        ]
                     ]
                 ]
-            ]
-        ]
+        ],
         ProtoDeclare: [
             name: "three"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "ytranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "myShape"
                     accessType: "inputOutput"
@@ -88,66 +85,62 @@ X3D:
                     Sphere: [
                     ]
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Transform: [
-                    IS: [
+                    IS:
                         connect: [
                             nodeField: "translation"
                             protoField: "ytranslation"
                         ]
-                    ]
+,
                     ProtoInstance: [
                         name: "anyShape"
                         fieldValue: [
                             name: "xtranslation"
                             value: "0 0 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "anyShape"
                         fieldValue: [
                             name: "xtranslation"
                             value: "2 0 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "anyShape"
                         fieldValue: [
                             name: "xtranslation"
                             value: "-2 0 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
                     ]
                 ]
-            ]
-        ]
+        ],
         ProtoDeclare: [
             name: "nine"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "ztranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "myShape"
                     accessType: "inputOutput"
@@ -155,66 +148,62 @@ X3D:
                     Sphere: [
                     ]
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Transform: [
-                    IS: [
+                    IS:
                         connect: [
                             nodeField: "translation"
                             protoField: "ztranslation"
                         ]
-                    ]
+,
                     ProtoInstance: [
                         name: "three"
                         fieldValue: [
                             name: "ytranslation"
                             value: "0 0 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "three"
                         fieldValue: [
                             name: "ytranslation"
                             value: "0 2 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "three"
                         fieldValue: [
                             name: "ytranslation"
                             value: "0 -2 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
                     ]
                 ]
-            ]
-        ]
+        ],
         ProtoDeclare: [
             name: "twentyseven"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "ttranslation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                     value: "0 0 0"
-                ]
+                ],
                 field: [
                     name: "myShape"
                     accessType: "inputOutput"
@@ -222,63 +211,59 @@ X3D:
                     Sphere: [
                     ]
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Transform: [
-                    IS: [
+                    IS:
                         connect: [
                             nodeField: "translation"
                             protoField: "ttranslation"
                         ]
-                    ]
+,
                     ProtoInstance: [
                         name: "nine"
                         fieldValue: [
                             name: "ztranslation"
                             value: "0 0 0"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "nine"
                         fieldValue: [
                             name: "ztranslation"
                             value: "0 0 2"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
-                    ]
+                    ],
                     ProtoInstance: [
                         name: "nine"
                         fieldValue: [
                             name: "ztranslation"
                             value: "0 0 -2"
-                        ]
-                        IS: [
+                        ],
+                        IS:
                             connect: [
                                 nodeField: "myShape"
                                 protoField: "myShape"
                             ]
-                        ]
                     ]
                 ]
-            ]
-        ]
+        ],
         ProtoInstance: [
             name: "twentyseven"
             fieldValue: [
                 name: "ttranslation"
                 value: "0 0 0"
-            ]
+            ],
             fieldValue: [
                 name: "myShape"
                 Box: [
@@ -286,4 +271,3 @@ X3D:
                 ]
             ]
         ]
-    ]

@@ -1,75 +1,75 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         meta: [
             name: "creator"
             content: "John W Carlson"
-        ]
+        ],
         meta: [
             name: "created"
             content: "December 13 2015"
-        ]
+        ],
         meta: [
             name: "modified"
             content: "November 9 2024"
-        ]
+        ],
         meta: [
             name: "title"
             content: "myextrusion.x3d"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "beginnings of a force directed graph in 3D"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         Group: [
             Shape: [
-                Extrusion: [
+                Extrusion:
                     DEF: "myextrusion"
                     spine: [-50, -50, 0, 50, 50, 0]
                     creaseAngle: 0.785
                     crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
-                ]
-                Appearance: [
-                    Material: [
+                ,
+                Appearance:
+                    Material:
                         diffuseColor: [0, 1, 0]
-                    ]
-                ]
-            ]
+            ],
             TimeSensor: [
                 DEF: "TourTime"
                 loop: true
-            ]
+            ],
             Script: [
                 DEF: "MoveCylinder"
                 field: [
                     name: "set_cycle"
                     accessType: "inputOnly"
                     type: "SFTime"
-                ]
+                ],
                 field: [
                     name: "spine"
                     accessType: "inputOutput"
                     type: "MFVec3f"
                     value: "-50 -50 0 50 50 0"
-                ]
-(.setSourceCode "\\newline\\newline                function set_cycle(value) {\\newline                        Browser.print(value);\\newline                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\\newline                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\\newline                        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = endA;\\newline			tmpspine[1] = endB;\\newline                        spine = tmpspine;\\newline                }\\newline")            ]
+                ],
+
+#sourceCode "\\newline\\newline                function set_cycle(value) {\\newline                        Browser.print(value);\\newline                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\\newline                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\\newline                        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = endA;\\newline			tmpspine[1] = endB;\\newline                        spine = tmpspine;\\newline                }\\newline"
+            ],
             ROUTE: [
                 fromNode: "TourTime"
                 fromField: "cycleTime"
                 toNode: "MoveCylinder"
                 toField: "set_cycle"
-            ]
+            ],
             ROUTE: [
                 fromNode: "MoveCylinder"
                 fromField: "spine_changed"
@@ -77,4 +77,3 @@ X3D:
                 toField: "set_spine"
             ]
         ]
-    ]

@@ -1,120 +1,122 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head: [
+    head:
         component: [
             name: "HAnim"
             level: 1
-        ]
+        ],
         meta: [
             name: "title"
             content: "HAnimModelHandLeft.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "Left hand, using high-fidelity definitions for HAnim version 2.0"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "Kwan-Hee YOO, Don Brutzman and Joe Williams"
-        ]
+        ],
         meta: [
             name: "created"
             content: "26 January 2015"
-        ]
+        ],
         meta: [
             name: "modified"
             content: "23 December 2021"
-        ]
+        ],
         meta: [
             name: "TODO"
             content: "fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"
-        ]
+        ],
         meta: [
             name: "Image"
             content: "HAnimModelHandRightSegmentVisualizationError.png"
-        ]
+        ],
         meta: [
             name: "error"
             content: "not yet to scale, also relatively flat"
-        ]
+        ],
         meta: [
             name: "warning"
             content: "TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
-        ]
+        ],
         meta: [
             name: "info"
             content: "TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/working-groups/humanoid-animation-HAnim"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/documents/specifications/19774/V2.0"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"
-        ]
+        ],
         meta: [
             name: "reference"
             content: "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"
-        ]
+        ],
         meta: [
             name: "subject"
             content: "X3D HAnim humanoid animation"
-        ]
+        ],
         meta: [
             name: "TODO"
             content: "Integrate and confirm Segment/Joint names, Viewpoints."
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        ]
+        ],
         meta: [
             name: "license"
             content: "../license.html"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         WorldInfo: [
             title: "HAnimModelHandLeft.x3d"
-        ]
+        ],
         HAnimHumanoid: [
             name: "Hand_Left"
             DEF: "hanim_Hand_Left"
             loa: 4
             version: "2.0"
+
 #original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'
-            MetadataSet: [
+            MetadataSet:
                 name: "HAnimHumanoid.info"
                 reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
                 MetadataString: [
                     name: "authorName"
                     value: ["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
                 ]
-            ]
+,
             HAnimJoint: [
                 name: "humanoid_root"
                 DEF: "hanim_humanoid_root"
                 ulimit: [0, 0, 0]
                 llimit: [0, 0, 0]
                 containerFieldOverride: "skeleton"
+
 #Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
                 HAnimJoint: [
                     name: "l_radiocarpal"
@@ -128,60 +130,50 @@ X3D:
                         Transform: [
                             Shape: [
                                 DEF: "HAnimJointShape"
-                                Sphere: [
+                                Sphere:
                                     radius: 0.025
-                                ]
-                                Appearance: [
+                                ,
+                                Appearance:
                                     DEF: "HAnimJointAppearanceBlue"
-                                    Material: [
+                                    Material:
                                         diffuseColor: [0, 0, 1]
-                                    ]
-                                ]
                             ]
-                        ]
+                        ],
                         Shape: [
-                            Appearance: [
-                                Material: [
+                            Appearance:
+                                Material:
                                     emissiveColor: [1, 1, 1]
-                                ]
-                            ]
-                            IndexedLineSet: [
+                            ,
+                            IndexedLineSet:
                                 DEF: "RCToMC12"
                                 coordIndex: [0, 1]
-                                Coordinate: [
+                                Coordinate:
                                     point: [0, 0, 0, 0.1, 0.1, 0]
-                                ]
-                            ]
-                        ]
+                        ],
                         Shape: [
-                            Appearance: [
-                                Material: [
+                            Appearance:
+                                Material:
                                     emissiveColor: [1, 1, 1]
-                                ]
-                            ]
-                            IndexedLineSet: [
+                            ,
+                            IndexedLineSet:
                                 DEF: "RCToMC3"
                                 coordIndex: [0, 1]
-                                Coordinate: [
+                                Coordinate:
                                     point: [0, 0, 0, 0, 0.07, 0]
-                                ]
-                            ]
-                        ]
+                        ],
                         Shape: [
-                            Appearance: [
-                                Material: [
+                            Appearance:
+                                Material:
                                     emissiveColor: [1, 1, 1]
-                                ]
-                            ]
-                            IndexedLineSet: [
+                            ,
+                            IndexedLineSet:
                                 DEF: "RCToMC45"
                                 coordIndex: [0, 1]
-                                Coordinate: [
+                                Coordinate:
                                     point: [0, 0, 0, -0.1, 0.1, 0]
-                                ]
-                            ]
                         ]
-                    ]
+                    ],
+
 #MC1
                     HAnimJoint: [
                         name: "l_midcarpal_1"
@@ -196,46 +188,39 @@ X3D:
                                 translation: [0.14, 0.09, 0]
                                 Shape: [
                                     DEF: "HAnimNewJointShape"
-                                    Sphere: [
+                                    Sphere:
                                         radius: 0.025
-                                    ]
-                                    Appearance: [
+                                    ,
+                                    Appearance:
                                         DEF: "HAnimJointAppearanceRed"
-                                        Material: [
+                                        Material:
                                             diffuseColor: [1, 0, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC12toCMC1"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [0.1, 0.1, 0, 0.2, 0.15, 0]
-                                    ]
-                                ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC1toCMC1"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [0.1, 0.1, 0, 0.1, 0.2, 0]
-                                    ]
-                                ]
                             ]
-                        ]
+                        ],
+
 #thumb finger
                         HAnimJoint: [
                             name: "l_carpometacarpal_1"
@@ -251,22 +236,19 @@ X3D:
                                     Shape: [
                                         USE: "HAnimJointShape"
                                     ]
-                                ]
+                                ],
                                 Shape: [
-                                    Appearance: [
-                                        Material: [
+                                    Appearance:
+                                        Material:
                                             emissiveColor: [1, 1, 1]
-                                        ]
-                                    ]
-                                    IndexedLineSet: [
+                                    ,
+                                    IndexedLineSet:
                                         DEF: "CMC1toMCP1"
                                         coordIndex: [0, 1]
-                                        Coordinate: [
+                                        Coordinate:
                                             point: [0.2, 0.15, 0, 0.3, 0.3, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             HAnimJoint: [
                                 name: "l_metacarpophalangeal_1"
                                 DEF: "hanim_l_metacarpophalangeal_1"
@@ -281,22 +263,19 @@ X3D:
                                         Shape: [
                                             USE: "HAnimJointShape"
                                         ]
-                                    ]
+                                    ],
                                     Shape: [
-                                        Appearance: [
-                                            Material: [
+                                        Appearance:
+                                            Material:
                                                 emissiveColor: [1, 1, 1]
-                                            ]
-                                        ]
-                                        IndexedLineSet: [
+                                        ,
+                                        IndexedLineSet:
                                             DEF: "MCP11toIP1"
                                             coordIndex: [0, 1]
-                                            Coordinate: [
+                                            Coordinate:
                                                 point: [0.3, 0.3, 0, 0.35, 0.4, 0]
-                                            ]
-                                        ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_carpal_interphalangeal_1"
                                     DEF: "hanim_l_carpal_interphalangeal_1"
@@ -311,26 +290,24 @@ X3D:
                                             Shape: [
                                                 USE: "HAnimJointShape"
                                             ]
-                                        ]
+                                        ],
                                         Shape: [
-                                            Appearance: [
-                                                Material: [
+                                            Appearance:
+                                                Material:
                                                     emissiveColor: [1, 1, 1]
-                                                ]
-                                            ]
-                                            IndexedLineSet: [
+                                            ,
+                                            IndexedLineSet:
                                                 DEF: "fingertip_l_carpal_interphalangeal_1"
                                                 coordIndex: [0, 1]
-                                                Coordinate: [
+                                                Coordinate:
                                                     point: [0.35, 0.4, 0, 0.36, 0.45, 0]
-                                                ]
-                                            ]
                                         ]
                                     ]
                                 ]
                             ]
                         ]
-                    ]
+                    ],
+
 #MC2
                     HAnimJoint: [
                         name: "l_midcarpal_2"
@@ -346,22 +323,20 @@ X3D:
                                 Shape: [
                                     USE: "HAnimNewJointShape"
                                 ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC2toCMC2"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [-0.1, 0.1, 0, -0.1, 0.2, 0]
-                                    ]
-                                ]
                             ]
-                        ]
+                        ],
+
 #index finger
                         HAnimJoint: [
                             name: "l_carpometacarpal_2"
@@ -377,22 +352,19 @@ X3D:
                                     Shape: [
                                         USE: "HAnimJointShape"
                                     ]
-                                ]
+                                ],
                                 Shape: [
-                                    Appearance: [
-                                        Material: [
+                                    Appearance:
+                                        Material:
                                             emissiveColor: [1, 1, 1]
-                                        ]
-                                    ]
-                                    IndexedLineSet: [
+                                    ,
+                                    IndexedLineSet:
                                         DEF: "CMC2toMCP2"
                                         coordIndex: [0, 1]
-                                        Coordinate: [
+                                        Coordinate:
                                             point: [0.1, 0.2, 0, 0.15, 0.5, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             HAnimJoint: [
                                 name: "l_metacarpophalangeal_2"
                                 DEF: "hanim_l_metacarpophalangeal_2"
@@ -407,22 +379,19 @@ X3D:
                                         Shape: [
                                             USE: "HAnimJointShape"
                                         ]
-                                    ]
+                                    ],
                                     Shape: [
-                                        Appearance: [
-                                            Material: [
+                                        Appearance:
+                                            Material:
                                                 emissiveColor: [1, 1, 1]
-                                            ]
-                                        ]
-                                        IndexedLineSet: [
+                                        ,
+                                        IndexedLineSet:
                                             DEF: "MCP2toPIP2"
                                             coordIndex: [0, 1]
-                                            Coordinate: [
+                                            Coordinate:
                                                 point: [0.15, 0.5, 0, 0.2, 0.7, 0]
-                                            ]
-                                        ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_carpal_proximal_interphalangeal_2"
                                     DEF: "hanim_l_carpal_proximal_interphalangeal_2"
@@ -437,22 +406,19 @@ X3D:
                                             Shape: [
                                                 USE: "HAnimJointShape"
                                             ]
-                                        ]
+                                        ],
                                         Shape: [
-                                            Appearance: [
-                                                Material: [
+                                            Appearance:
+                                                Material:
                                                     emissiveColor: [1, 1, 1]
-                                                ]
-                                            ]
-                                            IndexedLineSet: [
+                                            ,
+                                            IndexedLineSet:
                                                 DEF: "PIP2toDIP2"
                                                 coordIndex: [0, 1]
-                                                Coordinate: [
+                                                Coordinate:
                                                     point: [0.2, 0.7, 0, 0.24, 0.87, 0]
-                                                ]
-                                            ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_carpal_distal_interphalangeal_2"
                                         DEF: "hanim_l_carpal_distal_interphalangeal_2"
@@ -467,27 +433,25 @@ X3D:
                                                 Shape: [
                                                     USE: "HAnimJointShape"
                                                 ]
-                                            ]
+                                            ],
                                             Shape: [
-                                                Appearance: [
-                                                    Material: [
+                                                Appearance:
+                                                    Material:
                                                         emissiveColor: [1, 1, 1]
-                                                    ]
-                                                ]
-                                                IndexedLineSet: [
+                                                ,
+                                                IndexedLineSet:
                                                     DEF: "fingertip_l_carpal_distal_interphalangeal_2"
                                                     coordIndex: [0, 1]
-                                                    Coordinate: [
+                                                    Coordinate:
                                                         point: [0.24, 0.87, 0, 0.26, 0.93, 0]
-                                                    ]
-                                                ]
                                             ]
                                         ]
                                     ]
                                 ]
                             ]
                         ]
-                    ]
+                    ],
+
 #MC3
                     HAnimJoint: [
                         name: "l_midcarpal_3"
@@ -503,22 +467,20 @@ X3D:
                                 Shape: [
                                     USE: "HAnimNewJointShape"
                                 ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC3toCMC3"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [0, 0.07, 0, 0, 0.2, 0]
-                                    ]
-                                ]
                             ]
-                        ]
+                        ],
+
 #Middle fingle
                         HAnimJoint: [
                             name: "l_carpometacarpal_3"
@@ -534,22 +496,19 @@ X3D:
                                     Shape: [
                                         USE: "HAnimJointShape"
                                     ]
-                                ]
+                                ],
                                 Shape: [
-                                    Appearance: [
-                                        Material: [
+                                    Appearance:
+                                        Material:
                                             emissiveColor: [1, 1, 1]
-                                        ]
-                                    ]
-                                    IndexedLineSet: [
+                                    ,
+                                    IndexedLineSet:
                                         DEF: "CMC3toMCP3"
                                         coordIndex: [0, 1]
-                                        Coordinate: [
+                                        Coordinate:
                                             point: [0, 0.2, 0, 0.03, 0.5, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             HAnimJoint: [
                                 name: "l_metacarpophalangeal_3"
                                 DEF: "hanim_l_metacarpophalangeal_3"
@@ -564,22 +523,19 @@ X3D:
                                         Shape: [
                                             USE: "HAnimJointShape"
                                         ]
-                                    ]
+                                    ],
                                     Shape: [
-                                        Appearance: [
-                                            Material: [
+                                        Appearance:
+                                            Material:
                                                 emissiveColor: [1, 1, 1]
-                                            ]
-                                        ]
-                                        IndexedLineSet: [
+                                        ,
+                                        IndexedLineSet:
                                             DEF: "MCP3toPIP3"
                                             coordIndex: [0, 1]
-                                            Coordinate: [
+                                            Coordinate:
                                                 point: [0.03, 0.5, 0, 0.05, 0.75, 0]
-                                            ]
-                                        ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_carpal_proximal_interphalangeal_3"
                                     DEF: "hanim_l_carpal_proximal_interphalangeal_3"
@@ -594,22 +550,19 @@ X3D:
                                             Shape: [
                                                 USE: "HAnimJointShape"
                                             ]
-                                        ]
+                                        ],
                                         Shape: [
-                                            Appearance: [
-                                                Material: [
+                                            Appearance:
+                                                Material:
                                                     emissiveColor: [1, 1, 1]
-                                                ]
-                                            ]
-                                            IndexedLineSet: [
+                                            ,
+                                            IndexedLineSet:
                                                 DEF: "PIP3toDIP3"
                                                 coordIndex: [0, 1]
-                                                Coordinate: [
+                                                Coordinate:
                                                     point: [0.05, 0.75, 0, 0.08, 0.96, 0]
-                                                ]
-                                            ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_carpal_distal_interphalangeal_3"
                                         DEF: "hanim_l_carpal_distal_interphalangeal_3"
@@ -624,27 +577,25 @@ X3D:
                                                 Shape: [
                                                     USE: "HAnimJointShape"
                                                 ]
-                                            ]
+                                            ],
                                             Shape: [
-                                                Appearance: [
-                                                    Material: [
+                                                Appearance:
+                                                    Material:
                                                         emissiveColor: [1, 1, 1]
-                                                    ]
-                                                ]
-                                                IndexedLineSet: [
+                                                ,
+                                                IndexedLineSet:
                                                     DEF: "fingertip_l_carpal_distal_interphalangeal_3"
                                                     coordIndex: [0, 1]
-                                                    Coordinate: [
+                                                    Coordinate:
                                                         point: [0.08, 0.96, 0, 0.09, 1.05, 0]
-                                                    ]
-                                                ]
                                             ]
                                         ]
                                     ]
                                 ]
                             ]
                         ]
-                    ]
+                    ],
+
 #MC45
                     HAnimJoint: [
                         name: "l_midcarpal_4_5"
@@ -660,36 +611,31 @@ X3D:
                                 Shape: [
                                     USE: "HAnimNewJointShape"
                                 ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC45toCMC4"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [-0.1, 0.1, 0, -0.1, 0.2, 0]
-                                    ]
-                                ]
-                            ]
+                            ],
                             Shape: [
-                                Appearance: [
-                                    Material: [
+                                Appearance:
+                                    Material:
                                         emissiveColor: [1, 1, 1]
-                                    ]
-                                ]
-                                IndexedLineSet: [
+                                ,
+                                IndexedLineSet:
                                     DEF: "MC45toCMC5"
                                     coordIndex: [0, 1]
-                                    Coordinate: [
+                                    Coordinate:
                                         point: [-0.1, 0.1, 0, -0.15, 0.17, 0]
-                                    ]
-                                ]
                             ]
-                        ]
+                        ],
+
 #ring finger
                         HAnimJoint: [
                             name: "l_carpometacarpal_4"
@@ -705,22 +651,19 @@ X3D:
                                     Shape: [
                                         USE: "HAnimJointShape"
                                     ]
-                                ]
+                                ],
                                 Shape: [
-                                    Appearance: [
-                                        Material: [
+                                    Appearance:
+                                        Material:
                                             emissiveColor: [1, 1, 1]
-                                        ]
-                                    ]
-                                    IndexedLineSet: [
+                                    ,
+                                    IndexedLineSet:
                                         DEF: "CMC4toMCP4"
                                         coordIndex: [0, 1]
-                                        Coordinate: [
+                                        Coordinate:
                                             point: [-0.1, 0.2, 0, -0.1, 0.47, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             HAnimJoint: [
                                 name: "l_metacarpophalangeal_4"
                                 DEF: "hanim_l_metacarpophalangeal_4"
@@ -735,22 +678,19 @@ X3D:
                                         Shape: [
                                             USE: "HAnimJointShape"
                                         ]
-                                    ]
+                                    ],
                                     Shape: [
-                                        Appearance: [
-                                            Material: [
+                                        Appearance:
+                                            Material:
                                                 emissiveColor: [1, 1, 1]
-                                            ]
-                                        ]
-                                        IndexedLineSet: [
+                                        ,
+                                        IndexedLineSet:
                                             DEF: "MCP4toPIP4"
                                             coordIndex: [0, 1]
-                                            Coordinate: [
+                                            Coordinate:
                                                 point: [-0.1, 0.47, 0, -0.1, 0.7, 0]
-                                            ]
-                                        ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_carpal_proximal_interphalangeal_4"
                                     DEF: "hanim_l_carpal_proximal_interphalangeal_4"
@@ -765,22 +705,19 @@ X3D:
                                             Shape: [
                                                 USE: "HAnimJointShape"
                                             ]
-                                        ]
+                                        ],
                                         Shape: [
-                                            Appearance: [
-                                                Material: [
+                                            Appearance:
+                                                Material:
                                                     emissiveColor: [1, 1, 1]
-                                                ]
-                                            ]
-                                            IndexedLineSet: [
+                                            ,
+                                            IndexedLineSet:
                                                 DEF: "PIP4toDIP4"
                                                 coordIndex: [0, 1]
-                                                Coordinate: [
+                                                Coordinate:
                                                     point: [-0.1, 0.7, 0, -0.1, 0.93, 0]
-                                                ]
-                                            ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_carpal_distal_interphalangeal_4"
                                         DEF: "hanim_l_carpal_distal_interphalangeal_4"
@@ -795,26 +732,24 @@ X3D:
                                                 Shape: [
                                                     USE: "HAnimJointShape"
                                                 ]
-                                            ]
+                                            ],
                                             Shape: [
-                                                Appearance: [
-                                                    Material: [
+                                                Appearance:
+                                                    Material:
                                                         emissiveColor: [1, 1, 1]
-                                                    ]
-                                                ]
-                                                IndexedLineSet: [
+                                                ,
+                                                IndexedLineSet:
                                                     DEF: "fingertip_l_carpal_distal_interphalangeal_4"
                                                     coordIndex: [0, 1]
-                                                    Coordinate: [
+                                                    Coordinate:
                                                         point: [-0.1, 0.93, 0, -0.1, 1, 0]
-                                                    ]
-                                                ]
                                             ]
                                         ]
                                     ]
                                 ]
                             ]
-                        ]
+                        ],
+
 #pinky finger
                         HAnimJoint: [
                             name: "l_carpometacarpal_5"
@@ -830,22 +765,19 @@ X3D:
                                     Shape: [
                                         USE: "HAnimJointShape"
                                     ]
-                                ]
+                                ],
                                 Shape: [
-                                    Appearance: [
-                                        Material: [
+                                    Appearance:
+                                        Material:
                                             emissiveColor: [1, 1, 1]
-                                        ]
-                                    ]
-                                    IndexedLineSet: [
+                                    ,
+                                    IndexedLineSet:
                                         DEF: "CMC5toMCP5"
                                         coordIndex: [0, 1]
-                                        Coordinate: [
+                                        Coordinate:
                                             point: [-0.15, 0.17, 0, -0.2, 0.4, 0]
-                                        ]
-                                    ]
                                 ]
-                            ]
+                            ],
                             HAnimJoint: [
                                 name: "l_metacarpophalangeal_5"
                                 DEF: "hanim_l_metacarpophalangeal_5"
@@ -860,22 +792,19 @@ X3D:
                                         Shape: [
                                             USE: "HAnimJointShape"
                                         ]
-                                    ]
+                                    ],
                                     Shape: [
-                                        Appearance: [
-                                            Material: [
+                                        Appearance:
+                                            Material:
                                                 emissiveColor: [1, 1, 1]
-                                            ]
-                                        ]
-                                        IndexedLineSet: [
+                                        ,
+                                        IndexedLineSet:
                                             DEF: "MCP5toPIP5"
                                             coordIndex: [0, 1]
-                                            Coordinate: [
+                                            Coordinate:
                                                 point: [-0.2, 0.4, 0, -0.23, 0.63, 0]
-                                            ]
-                                        ]
                                     ]
-                                ]
+                                ],
                                 HAnimJoint: [
                                     name: "l_carpal_proximal_interphalangeal_5"
                                     DEF: "hanim_l_carpal_proximal_interphalangeal_5"
@@ -890,22 +819,19 @@ X3D:
                                             Shape: [
                                                 USE: "HAnimJointShape"
                                             ]
-                                        ]
+                                        ],
                                         Shape: [
-                                            Appearance: [
-                                                Material: [
+                                            Appearance:
+                                                Material:
                                                     emissiveColor: [1, 1, 1]
-                                                ]
-                                            ]
-                                            IndexedLineSet: [
+                                            ,
+                                            IndexedLineSet:
                                                 DEF: "PIP5toDIP5"
                                                 coordIndex: [0, 1]
-                                                Coordinate: [
+                                                Coordinate:
                                                     point: [-0.23, 0.63, 0, -0.25, 0.79, 0]
-                                                ]
-                                            ]
                                         ]
-                                    ]
+                                    ],
                                     HAnimJoint: [
                                         name: "l_carpal_distal_interphalangeal_5"
                                         DEF: "hanim_l_carpal_distal_interphalangeal_5"
@@ -920,20 +846,17 @@ X3D:
                                                 Shape: [
                                                     USE: "HAnimJointShape"
                                                 ]
-                                            ]
+                                            ],
                                             Shape: [
-                                                Appearance: [
-                                                    Material: [
+                                                Appearance:
+                                                    Material:
                                                         emissiveColor: [1, 1, 1]
-                                                    ]
-                                                ]
-                                                IndexedLineSet: [
+                                                ,
+                                                IndexedLineSet:
                                                     DEF: "fingertip_l_carpal_distal_interphalangeal_5"
                                                     coordIndex: [0, 1]
-                                                    Coordinate: [
+                                                    Coordinate:
                                                         point: [-0.25, 0.79, 0, -0.26, 0.85, 0]
-                                                    ]
-                                                ]
                                             ]
                                         ]
                                     ]
@@ -942,202 +865,201 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_humanoid_root"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_interphalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_carpometacarpal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_4"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_metacarpophalangeal_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_1"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_2"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_3"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_midcarpal_4_5"
-            ]
+            ],
             HAnimJoint: [
                 containerFieldOverride: "joints"
                 USE: "hanim_l_radiocarpal"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_capitate"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_1"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_2"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_3"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_4"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_5"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_2"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_3"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_4"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_5"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_1"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_2"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_3"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_4"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_5"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_hamate"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_metacarpal_1"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_metacarpal_2"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_metacarpal_3"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_metacarpal_4"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_metacarpal_5"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_trapezium"
-            ]
+            ],
             HAnimSegment: [
                 containerFieldOverride: "segments"
                 USE: "hanim_l_trapezoid"
             ]
         ]
-    ]

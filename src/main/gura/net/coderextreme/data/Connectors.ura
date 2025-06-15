@@ -1,71 +1,70 @@
 X3D:
     profile: "Full"
     version: "4.0"
-    head: [
+    head:
         meta: [
             name: "comment"
             content: "World of Titania"
-        ]
+        ],
         meta: [
             name: "created"
             content: "Fri, 04 Sep 2015 10:19:01 GMT"
-        ]
+        ],
         meta: [
             name: "creator"
             content: "Holger Seelig"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "Titania V3.0.4, http://titania.create3000.de"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"
-        ]
+        ],
         meta: [
             name: "modified"
             content: "Tue, 25 Jul 2017 09:42:17 GMT"
-        ]
+        ],
         meta: [
             name: "title"
             content: "Connectors"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         ProtoDeclare: [
             name: "RoundedRectangle2D"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "cornerRadius"
                     accessType: "initializeOnly"
                     type: "SFFloat"
                     value: "1"
-                ]
+                ],
                 field: [
                     name: "size"
                     accessType: "initializeOnly"
                     type: "SFVec2f"
                     value: "2 2"
-                ]
+                ],
                 field: [
                     name: "solid"
                     accessType: "initializeOnly"
                     type: "SFBool"
                     value: "true"
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 IndexedFaceSet: [
                     DEF: "Geometry"
-                    IS: [
+                    IS:
                         connect: [
                             nodeField: "solid"
                             protoField: "solid"
                         ]
-                    ]
-                    Coordinate: [
-                    ]
-                ]
+,
+                    Coordinate:
+                ],
                 Script: [
                     DEF: "RoundedRectangle2D"
                     directOutput: true
@@ -74,17 +73,17 @@ X3D:
                         accessType: "initializeOnly"
                         type: "SFFloat"
                         value: "10"
-                    ]
+                    ],
                     field: [
                         name: "cornerRadius"
                         accessType: "initializeOnly"
                         type: "SFFloat"
-                    ]
+                    ],
                     field: [
                         name: "size"
                         accessType: "initializeOnly"
                         type: "SFVec2f"
-                    ]
+                    ],
                     field: [
                         name: "geometry"
                         accessType: "initializeOnly"
@@ -92,124 +91,117 @@ X3D:
                         IndexedFaceSet: [
                             USE: "Geometry"
                         ]
-                    ]
-                    IS: [
+                    ],
+                    IS:
                         connect: [
                             nodeField: "cornerRadius"
                             protoField: "cornerRadius"
-                        ]
+                        ],
                         connect: [
                             nodeField: "size"
                             protoField: "size"
                         ]
-                    ]
-(.setSourceCode "vrmlscript:\\newline\\newlinefunction initialize ()\\newline{\\newline	var point         = new SFVec3f (cornerRadius, 0, 0);\\newline	var startRotation = new SFRotation ();\\newline	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);\\newline	var corner        = new MFVec3f ();\\newline	var coordIndex    = new MFInt32 ();\\newline	var points        = new MFVec3f ();\\newline\\newline	for (var i = 0; i < cornerDimension * 4; ++ i)\\newline		coordIndex [coordIndex .length] = i;\\newline\\newline	geometry .coordIndex = coordIndex;\\newline\\newline	for (var i = 0; i < cornerDimension; ++i)\\newline		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);\\newline\\newline	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = corner [i] .add (translation);\\newline\\newline	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	geometry .coord .point = points;\\newline}\\newline")                ]
-            ]
-        ]
+,
+
+#sourceCode "vrmlscript:\\newline\\newlinefunction initialize ()\\newline{\\newline	var point         = new SFVec3f (cornerRadius, 0, 0);\\newline	var startRotation = new SFRotation ();\\newline	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);\\newline	var corner        = new MFVec3f ();\\newline	var coordIndex    = new MFInt32 ();\\newline	var points        = new MFVec3f ();\\newline\\newline	for (var i = 0; i < cornerDimension * 4; ++ i)\\newline		coordIndex [coordIndex .length] = i;\\newline\\newline	geometry .coordIndex = coordIndex;\\newline\\newline	for (var i = 0; i < cornerDimension; ++i)\\newline		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);\\newline\\newline	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = corner [i] .add (translation);\\newline\\newline	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);\\newline	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);\\newline\\newline	for (var i = 0; i < cornerDimension; ++ i)\\newline		points [points .length] = rotation .multVec (corner [i]) .add (translation);\\newline\\newline	geometry .coord .point = points;\\newline}\\newline"
+                ]
+        ],
         ProtoDeclare: [
             name: "Widget"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "fillColor"
                     accessType: "inputOutput"
                     type: "SFColor"
                     value: "0.1 0.1 0.1"
-                ]
+                ],
                 field: [
                     name: "lineColor"
                     accessType: "inputOutput"
                     type: "SFColor"
                     value: "0.4 0.4 0.4"
-                ]
+                ],
                 field: [
                     name: "linewidthScaleFactor"
                     accessType: "inputOutput"
                     type: "SFFloat"
                     value: "1"
-                ]
+                ],
                 field: [
                     name: "geometry"
                     accessType: "inputOutput"
                     type: "SFNode"
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Transform: [
                     DEF: "Shape"
                     Shape: [
-                        IS: [
+                        IS:
                             connect: [
                                 nodeField: "geometry"
                                 protoField: "geometry"
                             ]
-                        ]
-                        Appearance: [
-                            Material: [
-                                IS: [
+                        ,
+                        Appearance:
+                            Material:
+                                IS:
                                     connect: [
                                         nodeField: "diffuseColor"
                                         protoField: "fillColor"
                                     ]
-                                ]
-                            ]
-                        ]
-                    ]
+                    ],
                     Shape: [
-                        IS: [
+                        IS:
                             connect: [
                                 nodeField: "geometry"
                                 protoField: "geometry"
                             ]
-                        ]
-                        Appearance: [
-                            FillProperties: [
+                        ,
+                        Appearance:
+                            FillProperties:
                                 filled: false
                                 hatched: false
-                            ]
-                            LineProperties: [
-                                IS: [
+,
+                            LineProperties:
+                                IS:
                                     connect: [
                                         nodeField: "linewidthScaleFactor"
                                         protoField: "linewidthScaleFactor"
                                     ]
-                                ]
-                            ]
-                            Material: [
+,
+                            Material:
                                 diffuseColor: [0, 0, 0]
-                                IS: [
+                                IS:
                                     connect: [
                                         nodeField: "emissiveColor"
                                         protoField: "lineColor"
                                     ]
-                                ]
-                            ]
-                        ]
                     ]
                 ]
-            ]
-        ]
+        ],
         ProtoDeclare: [
             name: "Node"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "translation"
                     accessType: "inputOutput"
                     type: "SFVec3f"
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Group: [
                     PlaneSensor: [
                         DEF: "PlaneSensor"
-                    ]
+                    ],
                     Transform: [
                         DEF: "Node"
-                        IS: [
+                        IS:
                             connect: [
                                 nodeField: "translation"
                                 protoField: "translation"
                             ]
-                        ]
+,
                         ProtoInstance: [
                             name: "Widget"
                             fieldValue: [
@@ -219,14 +211,14 @@ X3D:
                                     fieldValue: [
                                         name: "cornerRadius"
                                         value: "0.12"
-                                    ]
+                                    ],
                                     fieldValue: [
                                         name: "size"
                                         value: "2 1"
                                     ]
                                 ]
                             ]
-                        ]
+                        ],
                         Transform: [
                             DEF: "Input"
                             translation: [-1, 0, 0]
@@ -235,7 +227,7 @@ X3D:
                                 fieldValue: [
                                     name: "lineColor"
                                     value: "0.72 0.14 0.23"
-                                ]
+                                ],
                                 fieldValue: [
                                     name: "geometry"
                                     Disk2D: [
@@ -244,7 +236,7 @@ X3D:
                                     ]
                                 ]
                             ]
-                        ]
+                        ],
                         Transform: [
                             DEF: "Output"
                             translation: [1, 0, 0]
@@ -253,7 +245,7 @@ X3D:
                                 fieldValue: [
                                     name: "lineColor"
                                     value: "0.44 0.5 0.72"
-                                ]
+                                ],
                                 fieldValue: [
                                     name: "geometry"
                                     Disk2D: [
@@ -263,14 +255,14 @@ X3D:
                             ]
                         ]
                     ]
-                ]
+                ],
                 Script: [
                     directOutput: true
                     field: [
                         name: "translation"
                         accessType: "inputOutput"
                         type: "SFVec3f"
-                    ]
+                    ],
                     field: [
                         name: "sensor"
                         accessType: "initializeOnly"
@@ -278,7 +270,7 @@ X3D:
                         PlaneSensor: [
                             USE: "PlaneSensor"
                         ]
-                    ]
+                    ],
                     field: [
                         name: "transform"
                         accessType: "initializeOnly"
@@ -286,77 +278,73 @@ X3D:
                         Transform: [
                             USE: "Node"
                         ]
-                    ]
-                    IS: [
+                    ],
+                    IS:
                         connect: [
                             nodeField: "translation"
                             protoField: "translation"
                         ]
-                    ]
-(.setSourceCode "vrmlscript:\\newlinefunction initialize ()\\newline{\\newline	sensor .offset = translation;\\newline}\\newline")                ]
+,
+
+#sourceCode "vrmlscript:\\newlinefunction initialize ()\\newline{\\newline	sensor .offset = translation;\\newline}\\newline"
+                ],
                 ROUTE: [
                     fromNode: "PlaneSensor"
                     fromField: "translation_changed"
                     toNode: "Node"
                     toField: "set_translation"
                 ]
-            ]
-        ]
+        ],
         ProtoDeclare: [
             name: "Route"
-            ProtoInterface: [
+            ProtoInterface:
                 field: [
                     name: "lineColor"
                     accessType: "inputOutput"
                     type: "SFColor"
                     value: "0.43 0.43 0.98"
-                ]
+                ],
                 field: [
                     name: "linewidthScaleFactor"
                     accessType: "inputOutput"
                     type: "SFFloat"
                     value: "2"
-                ]
+                ],
                 field: [
                     name: "output"
                     accessType: "initializeOnly"
                     type: "SFNode"
-                ]
+                ],
                 field: [
                     name: "input"
                     accessType: "initializeOnly"
                     type: "SFNode"
                 ]
-            ]
-            ProtoBody: [
+,
+            ProtoBody:
                 Shape: [
-                    Appearance: [
-                        LineProperties: [
-                            IS: [
+                    Appearance:
+                        LineProperties:
+                            IS:
                                 connect: [
                                     nodeField: "linewidthScaleFactor"
                                     protoField: "linewidthScaleFactor"
                                 ]
-                            ]
-                        ]
-                        Material: [
+,
+                        Material:
                             diffuseColor: [0, 0, 0]
-                            IS: [
+                            IS:
                                 connect: [
                                     nodeField: "emissiveColor"
                                     protoField: "lineColor"
                                 ]
-                            ]
-                        ]
-                    ]
-                    LineSet: [
+                    ,
+                    LineSet:
                         DEF: "Geometry_1"
                         vertexCount: [2]
-                        Coordinate: [
+                        Coordinate:
                             point: [-1, 0, 0, 1, 0, 0]
-                        ]
-                    ]
-                ]
+                ],
                 Script: [
                     DEF: "Route"
                     directOutput: true
@@ -364,23 +352,23 @@ X3D:
                         name: "set_translation"
                         accessType: "inputOnly"
                         type: "SFVec3f"
-                    ]
+                    ],
                     field: [
                         name: "routeDimension"
                         accessType: "initializeOnly"
                         type: "SFInt32"
                         value: "21"
-                    ]
+                    ],
                     field: [
                         name: "output"
                         accessType: "initializeOnly"
                         type: "SFNode"
-                    ]
+                    ],
                     field: [
                         name: "input"
                         accessType: "initializeOnly"
                         type: "SFNode"
-                    ]
+                    ],
                     field: [
                         name: "geometry"
                         accessType: "initializeOnly"
@@ -388,7 +376,7 @@ X3D:
                         LineSet: [
                             USE: "Geometry_1"
                         ]
-                    ]
+                    ],
                     field: [
                         name: "self"
                         accessType: "initializeOnly"
@@ -396,35 +384,36 @@ X3D:
                         Script: [
                             USE: "Route"
                         ]
-                    ]
-                    IS: [
+                    ],
+                    IS:
                         connect: [
                             nodeField: "output"
                             protoField: "output"
-                        ]
+                        ],
                         connect: [
                             nodeField: "input"
                             protoField: "input"
                         ]
-                    ]
-(.setSourceCode "vrmlscript:\\newlinefunction initialize ()\\newline{\\newline	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\\newline	Browser .addRoute (input,  'translation_changed', self, 'set_translation');\\newline\\newline	set_translation ();\\newline}\\newline\\newlinefunction set_translation ()\\newline{\\newline	geometry .vertexCount [0] = routeDimension;\\newline\\newline	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));\\newline	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));\\newline\\newline	var w = inPoint .x - outPoint .x;\\newline	var h = outPoint .y - inPoint .y;\\newline\\newline	for (var i = 0; i < routeDimension; ++ i)\\newline	{\\newline		var t = i / (routeDimension - 1);\\newline		var y = h / 2 * (Math .cos (t * Math .PI) - 1);\\newline\\newline		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));\\newline	}\\newline}\\newline")                ]
-            ]
-        ]
+,
+
+#sourceCode "vrmlscript:\\newlinefunction initialize ()\\newline{\\newline	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\\newline	Browser .addRoute (input,  'translation_changed', self, 'set_translation');\\newline\\newline	set_translation ();\\newline}\\newline\\newlinefunction set_translation ()\\newline{\\newline	geometry .vertexCount [0] = routeDimension;\\newline\\newline	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));\\newline	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));\\newline\\newline	var w = inPoint .x - outPoint .x;\\newline	var h = outPoint .y - inPoint .y;\\newline\\newline	for (var i = 0; i < routeDimension; ++ i)\\newline	{\\newline		var t = i / (routeDimension - 1);\\newline		var y = h / 2 * (Math .cos (t * Math .PI) - 1);\\newline\\newline		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));\\newline	}\\newline}\\newline"
+                ]
+        ],
         NavigationInfo: [
             type: [", ", "PLANE_create3000.deANY"]
-        ]
+        ],
         Background: [
             skyColor: [0.2, 0.2, 0.2]
-        ]
+        ],
         OrthoViewpoint: [
             description: "OthoViewpoint"
             position: [-3.13496, -4.19776, 10]
             centerOfRotation: [-3.13496, -4.19776, 0]
             fieldOfView: [0, 0, 10, 10]
-        ]
+        ],
         Viewpoint: [
             description: "Viewpoint"
-        ]
+        ],
         Transform: [
             DEF: "Connectors"
             ProtoInstance: [
@@ -439,7 +428,7 @@ X3D:
                             value: "-3.98323 2.88948 0"
                         ]
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -451,7 +440,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -460,7 +449,7 @@ X3D:
                         name: "Node"
                         USE: "N1"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -472,7 +461,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -481,7 +470,7 @@ X3D:
                         name: "Node"
                         USE: "N1"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -493,7 +482,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -502,7 +491,7 @@ X3D:
                         name: "Node"
                         USE: "N1"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -514,7 +503,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -523,7 +512,7 @@ X3D:
                         name: "Node"
                         USE: "N2"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -535,7 +524,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -544,7 +533,7 @@ X3D:
                         name: "Node"
                         USE: "N3"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -552,7 +541,7 @@ X3D:
                         USE: "N6"
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -561,7 +550,7 @@ X3D:
                         name: "Node"
                         USE: "N4"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -573,7 +562,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -582,7 +571,7 @@ X3D:
                         name: "Node"
                         USE: "N5"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -590,7 +579,7 @@ X3D:
                         USE: "N7"
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -599,7 +588,7 @@ X3D:
                         name: "Node"
                         USE: "N6"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -611,7 +600,7 @@ X3D:
                         ]
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Route"
                 fieldValue: [
@@ -620,7 +609,7 @@ X3D:
                         name: "Node"
                         USE: "N7"
                     ]
-                ]
+                ],
                 fieldValue: [
                     name: "input"
                     ProtoInstance: [
@@ -628,38 +617,37 @@ X3D:
                         USE: "N8"
                     ]
                 ]
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N1"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N2"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N3"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N4"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N5"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N6"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N7"
-            ]
+            ],
             ProtoInstance: [
                 name: "Node"
                 USE: "N8"
             ]
         ]
-    ]

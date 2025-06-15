@@ -1,74 +1,66 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head: [
+    head:
         meta: [
             name: "creator"
             content: "John W Carlson"
-        ]
+        ],
         meta: [
             name: "created"
             content: "December 13 2015"
-        ]
+        ],
         meta: [
             name: "title"
             content: "text3shapes.x3d"
-        ]
+        ],
         meta: [
             name: "identifier"
             content: "https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d"
-        ]
+        ],
         meta: [
             name: "description"
             content: "3 text shapes"
-        ]
+        ],
         meta: [
             name: "generator"
             content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
         ]
-    ]
-    Scene: [
+    ,
+    Scene:
         Transform: [
             Shape: [
-                Text: [
+                Text:
                     string: ["Node\"\"\""]
-                    FontStyle: [
-                    ]
-                ]
-                Appearance: [
-                    Material: [
-                    ]
-                ]
-            ]
+                    FontStyle:
+                ,
+                Appearance:
+                    Material:
+            ],
             Shape: [
-                Text: [
+                Text:
                     string: ["Node2", "\\\\", "\\\\\\\\", "Node2"]
-                    FontStyle: [
-                    ]
-                ]
-                Appearance: [
-                    Material: [
-                    ]
-                ]
-            ]
+                    FontStyle:
+                ,
+                Appearance:
+                    Material:
+            ],
             Shape: [
-                Text: [
+                Text:
                     string: ["Node3 \\\\\\\\ \\\\ ", "Node3\"\"\""]
-                    FontStyle: [
-                    ]
-                ]
-                Appearance: [
-                    Material: [
-                    ]
-                ]
-            ]
+                    FontStyle:
+                ,
+                Appearance:
+                    Material:
+            ],
             Script: [
                 field: [
                     name: "frontUrls"
                     type: "MFString"
                     accessType: "initializeOnly"
                     value: "\"rnl_front.png\" \"uffizi_front.png\""
-                ]
-(.setSourceCode "\\newline			    var me = '\"1\" \"\"2\" \"\\n3\"';\\newline")            ]
+                ],
+
+#sourceCode "\\newline			    var me = '\"1\" \"\"2\" \"\\n3\"';\\newline"
+            ]
         ]
-    ]
