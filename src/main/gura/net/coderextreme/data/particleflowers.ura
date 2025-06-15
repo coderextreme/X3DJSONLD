@@ -1,0 +1,234 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "4.0"
+    head: head
+        component: component
+            name: "EnvironmentalEffects"
+            level: 3
+        component: component
+            name: "Shaders"
+            level: 1
+        component: component
+            name: "CubeMapTexturing"
+            level: 1
+        component: component
+            name: "Texturing"
+            level: 1
+        component: component
+            name: "Rendering"
+            level: 1
+        component: component
+            name: "Grouping"
+            level: 3
+        component: component
+            name: "Core"
+            level: 1
+        component: component
+            name: "ParticleSystems"
+            level: 3
+        meta: meta
+            name: "title"
+            content: "particleflowers.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "description"
+            content: "A flower particle system"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
+    scene: Scene
+        children: WorldInfo
+            title: "particleflowers.x3d"
+        children: NavigationInfo
+            type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
+        children: Viewpoint
+            description: "Tour Views"
+            position: [0, 0, 12]
+        children: Background
+            backUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png", "../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+            bottomUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+            frontUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png", "../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+            leftUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png", "../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+            rightUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png", "../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+            topUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png", "../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+        children: Group
+            children: ParticleSystem
+                maxParticles: 20
+                geometryType: "GEOMETRY"
+                physics: BoundedPhysicsModel
+                    geometry: Sphere
+                        radius: 100.0
+                emitter: ExplosionEmitter
+                    speed: 2.0
+                    variation: 0.75
+                appearance: Appearance
+                    material: Material
+                        diffuseColor: [0.7, 0.7, 0.7]
+                        specularColor: [0.5, 0.5, 0.5]
+                    texture: ComposedCubeMapTexture
+                        DEF: "texture"
+                        backTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png", "../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                        bottomTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                        frontTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png", "../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                        leftTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png", "../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                        rightTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png", "../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                        topTexture: ImageTexture
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png", "../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                    shaders: ComposedShader
+                        DEF: "x_ite"
+                        language: "GLSL"
+                        field: field
+                            name: "chromaticDispertion"
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            value: "0.98 1 1.033"
+                        field: field
+                            name: "cube"
+                            type: "SFNode"
+                            accessType: "initializeOnly"
+                            children: ComposedCubeMapTexture
+                                USE: "texture"
+                        field: field
+                            name: "bias"
+                            accessType: "initializeOnly"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "scale"
+                            accessType: "initializeOnly"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "power"
+                            accessType: "initializeOnly"
+                            type: "SFFloat"
+                            value: "2"
+                        field: field
+                            name: "a"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "2"
+                        field: field
+                            name: "b"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "1"
+                        field: field
+                            name: "c"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "5"
+                        field: field
+                            name: "d"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "5"
+                        field: field
+                            name: "tdelta"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "0"
+                        field: field
+                            name: "pdelta"
+                            type: "SFFloat"
+                            accessType: "inputOutput"
+                            value: "0"
+                        parts: ShaderPart
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs", "../shaders/x_ite_flower_particles.vs"]
+                            type: "VERTEX"
+                        parts: ShaderPart
+                            url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs", "../shaders/commonnew.fs"]
+                            type: "FRAGMENT"
+                geometry: Sphere
+            children: Script
+                DEF: "Animate"
+                field: field
+                    name: "translation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "velocity"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "set_fraction"
+                    accessType: "inputOnly"
+                    type: "SFFloat"
+                field: field
+                    name: "a"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "0.5"
+                field: field
+                    name: "b"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "0.5"
+                field: field
+                    name: "c"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "3"
+                field: field
+                    name: "d"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "3"
+                field: field
+                    name: "tdelta"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "0.5"
+                field: field
+                    name: "pdelta"
+                    type: "SFFloat"
+                    accessType: "inputOutput"
+                    value: "0.5"
+(.setSourceCode "\\newline\\newline			function initialize() {\\newline			    translation = new SFVec3f(0, 0, 0);\\newline			    velocity = new SFVec3f(\\newline			    	Math.random() - 0.5,\\newline				Math.random() - 0.5,\\newline				Math.random() - 0.5);\\newline			}\\newline			function set_fraction() {\\newline			    translation = new SFVec3f(\\newline			    	translation.x + velocity.x,\\newline				translation.y + velocity.y,\\newline				translation.z + velocity.z);\\newline			    for (var j = 0; j <= 2; j++) {\\newline				    if (Math.abs(translation.x) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.y) > 10) {\\newline					initialize();\\newline				    } else if (Math.abs(translation.z) > 10) {\\newline					initialize();\\newline				    } else {\\newline					velocity.x += Math.random() * 0.2 - 0.1;\\newline					velocity.y += Math.random() * 0.2 - 0.1;\\newline					velocity.z += Math.random() * 0.2 - 0.1;\\newline				    }\\newline			    }\\newline			    animate_flowers();\\newline			}\\newline\\newline			function animate_flowers(fraction, eventTime) {\\newline				var choice = Math.floor(Math.random() * 4);\\newline				switch (choice) {\\newline				case 0:\\newline					a += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 1:\\newline					b += Math.random() * 0.2 - 0.1;\\newline					break;\\newline				case 2:\\newline					c += Math.random() * 2 - 1;\\newline					break;\\newline				case 3:\\newline					d += Math.random() * 2 - 1;\\newline					break;\\newline				}\\newline				tdelta = tdelta + 0.05;\\newline				pdelta = pdelta + 0.05;\\newline				if (a > 1) {\\newline					a =  0.5;\\newline				}\\newline				if (b > 1) {\\newline					b =  0.5;\\newline				}\\newline				if (c < 1) {\\newline					c =  4;\\newline				}\\newline				if (d < 1) {\\newline					d =  4;\\newline				}\\newline				if (c > 10) {\\newline					c = 4;\\newline				}\\newline				if (d > 10) {\\newline					d = 4;\\newline				}\\newline			}\\newline")            children: TimeSensor
+                DEF: "TourTime"
+                cycleInterval: 5.0
+                loop: true
+            children: ROUTE
+                fromNode: "TourTime"
+                fromField: "fraction_changed"
+                toNode: "Animate"
+                toField: "set_fraction"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "a"
+                toNode: "x_ite"
+                toField: "a"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "b"
+                toNode: "x_ite"
+                toField: "b"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "c"
+                toNode: "x_ite"
+                toField: "c"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "d"
+                toNode: "x_ite"
+                toField: "d"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "pdelta"
+                toNode: "x_ite"
+                toField: "pdelta"
+            children: ROUTE
+                fromNode: "Animate"
+                fromField: "tdelta"
+                toNode: "x_ite"
+                toField: "tdelta"

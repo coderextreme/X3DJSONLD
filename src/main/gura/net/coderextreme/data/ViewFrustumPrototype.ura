@@ -1,0 +1,266 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "ViewFrustumPrototype.x3d"
+        meta: meta
+            name: "description"
+            content: "Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."
+        meta: meta
+            name: "creator"
+            content: "Don Brutzman"
+        meta: meta
+            name: "translated"
+            content: "16 August 2008"
+        meta: meta
+            name: "modified"
+            content: "20 October 2019"
+        meta: meta
+            name: "reference"
+            content: "ViewFrustumExample.x3d"
+        meta: meta
+            name: "drawing"
+            content: "ViewFrustumComputation.png"
+        meta: meta
+            name: "Image"
+            content: "ViewFrustumOverheadView.png"
+        meta: meta
+            name: "Image"
+            content: "ViewFrustumObliqueView.png"
+        meta: meta
+            name: "subject"
+            content: "view culling frustum"
+        meta: meta
+            name: "identifier"
+            content: "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
+        meta: meta
+            name: "generator"
+            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        meta: meta
+            name: "license"
+            content: "../license.html"
+    scene: Scene
+        children: WorldInfo
+            title: "ViewFrustumPrototype.x3d"
+        children: ProtoDeclare
+            name: "ViewFrustum"
+            appinfo: "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ViewpointNode"
+                    accessType: "initializeOnly"
+                    appinfo: "required: insert Viewpoint DEF or USE node for view of interest"
+                    type: "SFNode"
+;NULL node, ProtoInstance must provide
+                field: field
+                    name: "NavigationInfoNode"
+                    accessType: "initializeOnly"
+                    appinfo: "required: insert NavigationInfo DEF or USE node of interest"
+                    type: "SFNode"
+;NULL node, ProtoInstance must provide
+                field: field
+                    name: "visible"
+                    accessType: "inputOutput"
+                    appinfo: "whether or not frustum geometry is rendered"
+                    type: "SFBool"
+                    value: "true"
+                field: field
+                    name: "lineColor"
+                    accessType: "inputOutput"
+                    appinfo: "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"
+                    type: "SFColor"
+                    value: "0.9 0.9 0.9"
+                field: field
+                    name: "frustumColor"
+                    accessType: "inputOutput"
+                    appinfo: "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"
+                    type: "SFColor"
+                    value: "0.8 0.8 0.8"
+                field: field
+                    name: "transparency"
+                    accessType: "inputOutput"
+                    appinfo: "transparency of ViewFrustum hull geometry, default value 0.5"
+                    type: "SFFloat"
+                    value: "0.5"
+                field: field
+                    name: "aspectRatio"
+                    accessType: "inputOutput"
+                    appinfo: "assumed ratio height/width, default value 0.75"
+                    type: "SFFloat"
+                    value: "0.75"
+                field: field
+                    name: "trace"
+                    accessType: "initializeOnly"
+                    appinfo: "debug support, default false"
+                    type: "SFBool"
+                    value: "false"
+            protoBody: ProtoBody
+                children: Switch
+                    DEF: "VisibilitySwitch"
+                    whichChoice: -1
+                    children: Transform
+                        DEF: "PositionTransform"
+                        rotation: [0, 1, 0, 3.14159]
+                        children: Transform
+                            DEF: "OrientationTransform"
+                            child: Shape
+                                geometry: IndexedLineSet
+                                    DEF: "FrustumLines"
+                                    coordIndex: [0, 1, 2, 3, 0, -1, 4, 5, 6, 7, 4, -1, 0, 4, -1, 1, 5, -1, 2, 6, -1, 3, 7, -1]
+                                    coord: Coordinate
+                                        DEF: "FrustumCoordinate"
+                                        point: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                                appearance: Appearance
+                                    material: Material
+                                        IS: IS
+                                            connect: connect
+                                                nodeField: "emissiveColor"
+                                                protoField: "lineColor"
+                            child: Shape
+                                geometry: Extrusion
+                                    DEF: "FrustumExtrusion"
+                                appearance: Appearance
+                                    DEF: "FrustumAppearance"
+                                    material: Material
+                                        IS: IS
+                                            connect: connect
+                                                nodeField: "diffuseColor"
+                                                protoField: "frustumColor"
+                                            connect: connect
+                                                nodeField: "transparency"
+                                                protoField: "transparency"
+                            child: Shape
+                                geometry: Sphere
+                                    radius: 0.08
+                                appearance: Appearance
+                                    USE: "FrustumAppearance"
+                children: Script
+                    DEF: "GeometryComputationScript"
+                    directOutput: true
+                    url: ["ViewFrustumPrototypeScript.js"]
+                    field: field
+                        name: "visible"
+                        accessType: "inputOutput"
+                        appinfo: "Whether or not frustum geometry is rendered"
+                        type: "SFBool"
+                    field: field
+                        name: "visibilitySwitchSelection"
+                        accessType: "outputOnly"
+                        appinfo: "Adjust Switch selection to make geometry visible or not"
+                        type: "SFInt32"
+                    field: field
+                        name: "ViewpointNode"
+                        accessType: "initializeOnly"
+                        type: "SFNode"
+;initialization node (if any) goes here
+                    field: field
+                        name: "NavigationInfoNode"
+                        accessType: "initializeOnly"
+                        type: "SFNode"
+;initialization node (if any) goes here
+                    field: field
+                        name: "FrustumCoordinate"
+                        accessType: "initializeOnly"
+                        type: "SFNode"
+                        children: Coordinate
+                            USE: "FrustumCoordinate"
+                    field: field
+                        name: "FrustumExtrusion"
+                        accessType: "initializeOnly"
+                        type: "SFNode"
+                        children: Extrusion
+                            USE: "FrustumExtrusion"
+                    field: field
+                        name: "recompute"
+                        accessType: "inputOnly"
+                        type: "SFBool"
+                    field: field
+                        name: "aspectRatio"
+                        accessType: "inputOutput"
+                        appinfo: "assumed ratio height/width"
+                        type: "SFFloat"
+                    field: field
+                        name: "position_changed"
+                        accessType: "outputOnly"
+                        type: "SFVec3f"
+                    field: field
+                        name: "orientation_changed"
+                        accessType: "outputOnly"
+                        type: "SFRotation"
+                    field: field
+                        name: "spine_changed"
+                        accessType: "outputOnly"
+                        type: "MFVec3f"
+                    field: field
+                        name: "scale_changed"
+                        accessType: "outputOnly"
+                        type: "MFVec2f"
+                    field: field
+                        name: "point_changed"
+                        accessType: "outputOnly"
+                        type: "MFVec3f"
+                    field: field
+                        name: "trace"
+                        accessType: "initializeOnly"
+                        type: "SFBool"
+                    IS: IS
+                        connect: connect
+                            nodeField: "visible"
+                            protoField: "visible"
+                        connect: connect
+                            nodeField: "ViewpointNode"
+                            protoField: "ViewpointNode"
+                        connect: connect
+                            nodeField: "NavigationInfoNode"
+                            protoField: "NavigationInfoNode"
+                        connect: connect
+                            nodeField: "aspectRatio"
+                            protoField: "aspectRatio"
+                        connect: connect
+                            nodeField: "trace"
+                            protoField: "trace"
+                children: ROUTE
+                    fromField: "visibilitySwitchSelection"
+                    fromNode: "GeometryComputationScript"
+                    toField: "whichChoice"
+                    toNode: "VisibilitySwitch"
+                children: ROUTE
+                    fromField: "position_changed"
+                    fromNode: "GeometryComputationScript"
+                    toField: "translation"
+                    toNode: "PositionTransform"
+                children: ROUTE
+                    fromField: "orientation_changed"
+                    fromNode: "GeometryComputationScript"
+                    toField: "rotation"
+                    toNode: "OrientationTransform"
+                children: ROUTE
+                    fromField: "spine_changed"
+                    fromNode: "GeometryComputationScript"
+                    toField: "set_spine"
+                    toNode: "FrustumExtrusion"
+                children: ROUTE
+                    fromField: "scale_changed"
+                    fromNode: "GeometryComputationScript"
+                    toField: "set_scale"
+                    toNode: "FrustumExtrusion"
+                children: ROUTE
+                    fromField: "point_changed"
+                    fromNode: "GeometryComputationScript"
+                    toField: "point"
+                    toNode: "FrustumCoordinate"
+;Example use is in separate scene
+        children: Anchor
+            description: "ViewFrustum Example"
+            url: ["ViewFrustumExample.x3d"]
+            children: Shape
+                appearance: Appearance
+                    material: Material
+                        diffuseColor: [0.8, 0.4, 0]
+                geometry: Text
+                    string: ["ViewFrustumPrototype.x3d", "is a Prototype declaration file.", "For an example scene using the prototype,", "click this text and view", "ViewFrustumExample.x3d"]
+                    fontStyle: FontStyle
+                        justify: ["MIDDLE", "MIDDLE"]
+                        size: 0.8

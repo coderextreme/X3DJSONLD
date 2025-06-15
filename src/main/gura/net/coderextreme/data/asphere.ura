@@ -1,0 +1,29 @@
+X3D0: "X3D"
+    profile: "Interchange"
+    version: "3.3"
+    head: head
+        component: component
+            name: "Scripting"
+            level: 1
+        meta: meta
+            name: "title"
+            content: "asphere.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "generator"
+            content: "manual"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"
+        meta: meta
+            name: "description"
+            content: "a sphere"
+    scene: Scene
+        children: Group
+            children: Shape
+                appearance: Appearance
+                    material: Material
+                        diffuseColor: [1, 1, 1]
+                geometry: Sphere

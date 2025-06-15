@@ -1,0 +1,57 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+;All head/meta tags are optional, WorldInfo is also optional
+;Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
+    head: head
+        meta: meta
+            name: "title"
+            content: "HelloWorldMinimal.x3d"
+        meta: meta
+            name: "description"
+            content: "Hello World minimal example scene."
+        meta: meta
+            name: "creator"
+            content: "Don Brutzman"
+        meta: meta
+            name: "created"
+            content: "19 January 2020"
+        meta: meta
+            name: "modified"
+            content: "24 January 2020"
+        meta: meta
+            name: "reference"
+            content: "https://helloworldcollection.de"
+        meta: meta
+            name: "reference"
+            content: "https://en.wiktionary.org/wiki/Hello_World"
+        meta: meta
+            name: "reference"
+            content: "https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"
+        meta: meta
+            name: "reference"
+            content: "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+        meta: meta
+            name: "reference"
+            content: "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)"
+        meta: meta
+            name: "reference"
+            content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"
+        meta: meta
+            name: "reference"
+            content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"
+        meta: meta
+            name: "identifier"
+            content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"
+        meta: meta
+            name: "generator"
+            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        meta: meta
+            name: "license"
+            content: "../license.html"
+    scene: Scene
+        children: WorldInfo
+            title: "HelloWorldMinimal.x3d"
+        children: Shape
+            geometry: Text
+                string: ["hello, world"]

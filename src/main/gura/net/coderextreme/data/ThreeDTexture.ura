@@ -1,0 +1,136 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "ThreeDTexture.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "generator"
+            content: "manual"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d"
+        meta: meta
+            name: "description"
+            content: "a kind of ThreeDTexture cube with spheres"
+    scene: Scene
+        children: NavigationInfo
+            type: ["EXAMINE"]
+        children: Viewpoint
+            description: "Rubiks Cube"
+            position: [0, 0, 12]
+        children: ProtoDeclare
+            name: "sphereproto"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "xtranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "xtranslation"
+                    child: Shape
+                        geometry: Sphere
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [1, 1, 1]
+        children: ProtoDeclare
+            name: "three"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ytranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ytranslation"
+                    children: ProtoInstance
+                        name: "sphereproto"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "0 0 0"
+                    children: ProtoInstance
+                        name: "sphereproto"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "2 0 0"
+                    children: ProtoInstance
+                        name: "sphereproto"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "-2 0 0"
+        children: ProtoDeclare
+            name: "nine"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ztranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ztranslation"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 0 0"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 2 0"
+                    children: ProtoInstance
+                        name: "three"
+                        fieldValue: fieldValue
+                            name: "ytranslation"
+                            value: "0 -2 0"
+        children: ProtoDeclare
+            name: "twentyseven"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ttranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ttranslation"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 0"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 2"
+                    children: ProtoInstance
+                        name: "nine"
+                        fieldValue: fieldValue
+                            name: "ztranslation"
+                            value: "0 0 -2"
+        children: ProtoInstance
+            name: "twentyseven"
+            fieldValue: fieldValue
+                name: "ttranslation"
+                value: "0 0 0"

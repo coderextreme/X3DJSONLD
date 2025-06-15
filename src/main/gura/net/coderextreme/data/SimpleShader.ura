@@ -1,0 +1,155 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.2"
+    head: head
+        component: component
+            name: "Shaders"
+            level: 1
+        meta: meta
+            name: "title"
+            content: "SimpleShader.x3d"
+        meta: meta
+            name: "description"
+            content: "Simple shader example"
+        meta: meta
+            name: "creator"
+            content: "John Stewart"
+        meta: meta
+            name: "translator"
+            content: "Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"
+        meta: meta
+            name: "created"
+            content: "26 May 2009"
+        meta: meta
+            name: "translated"
+            content: "15 October 2009"
+        meta: meta
+            name: "modified"
+            content: "20 October 2019"
+        meta: meta
+            name: "reference"
+            content: "http://www.opengl.org/wiki/Fragment_Shader"
+        meta: meta
+            name: "reference"
+            content: "http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"
+        meta: meta
+            name: "reference"
+            content: "https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
+        meta: meta
+            name: "subject"
+            content: "X3D shader example"
+        meta: meta
+            name: "reference"
+            content: "originals/simpleShader.x3dv"
+        meta: meta
+            name: "reference"
+            content: "ShaderTutorialInstantReality.pdf"
+        meta: meta
+            name: "generator"
+            content: "Titania V3.0.3, http://titania.create3000.de"
+        meta: meta
+            name: "info"
+            content: "World of Titania"
+        meta: meta
+            name: "outputStyle"
+            content: "nicest"
+        meta: meta
+            name: "generator"
+            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        meta: meta
+            name: "identifier"
+            content: "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
+        meta: meta
+            name: "license"
+            content: "../../license.html"
+;meta content='under development' name='warning'/
+    scene: Scene
+        children: ProtoDeclare
+            name: "myPrototype"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "myInputRange"
+                    accessType: "initializeOnly"
+                    type: "SFVec3f"
+                    value: "0.95 0.44 0.22"
+            protoBody: ProtoBody
+                children: Transform
+                    DEF: "TR"
+                    child: Shape
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [0.5, 0.5, 0.9]
+                            shaders: ComposedShader
+                                language: "GLSL"
+                                field: field
+                                    name: "decis"
+                                    accessType: "initializeOnly"
+                                    type: "SFVec3f"
+                                IS: IS
+                                    connect: connect
+                                        nodeField: "decis"
+                                        protoField: "myInputRange"
+                                parts: ShaderPart
+                                    type: "VERTEX"
+                                parts: ShaderPart
+                                    type: "FRAGMENT"
+                            shaders: ComposedShader
+                                DEF: "Cobweb"
+                                language: "GLSL"
+                                field: field
+                                    name: "decis"
+                                    accessType: "initializeOnly"
+                                    type: "SFVec3f"
+                                    value: "0.95 0.77 0.44"
+                                parts: ShaderPart
+                                    type: "VERTEX"
+                                parts: ShaderPart
+                                    DEF: "_1"
+                                    type: "FRAGMENT"
+                        geometry: Sphere
+                            radius: 1.75
+        children: WorldInfo
+            title: "SimpleShader"
+            metadata: MetadataSet
+                name: "Titania"
+                DEF: "Titania"
+                reference: "http://titania.create3000.de"
+                value: MetadataSet
+                    name: "Selection"
+                    DEF: "Selection"
+                    reference: "http://titania.create3000.de"
+                    value: MetadataSet
+                        name: "nodes"
+                        DEF: "nodes"
+                        reference: "http://titania.create3000.de"
+;NULL
+                value: MetadataSet
+                    name: "NavigationInfo"
+                    DEF: "NavigationInfo"
+                    reference: "http://titania.create3000.de"
+                    value: MetadataString
+                        name: "type"
+                        DEF: "type"
+                        reference: "http://titania.create3000.de"
+                        value: ["EXAMINE"]
+                value: MetadataSet
+                    name: "Viewpoint"
+                    DEF: "Viewpoint"
+                    reference: "http://titania.create3000.de"
+                    value: MetadataDouble
+                        name: "position"
+                        DEF: "position"
+                        reference: "http://titania.create3000.de"
+                        value: [6.24067728185014, 0.00250837343276661, 2.92117542307615]
+                    value: MetadataDouble
+                        name: "orientation"
+                        DEF: "orientation"
+                        reference: "http://titania.create3000.de"
+                        value: [-0.110173424710488, 0.990158061907379, -0.0863065984000336, 1.21146676119191]
+                    value: MetadataDouble
+                        name: "centerOfRotation"
+                        DEF: "centerOfRotation"
+                        reference: "http://titania.create3000.de"
+                        value: [-0.808320198626341, -0.358072370409949, 0.22817191560906]
+        children: ProtoInstance
+            name: "myPrototype"

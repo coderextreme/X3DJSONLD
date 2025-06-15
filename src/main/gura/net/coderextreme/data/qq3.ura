@@ -1,0 +1,82 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "qq3.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "translator"
+            content: "John Carlson"
+        meta: meta
+            name: "created"
+            content: "11 Jan 2015"
+        meta: meta
+            name: "modified"
+            content: "05 May 2017"
+        meta: meta
+            name: "description"
+            content: "12 extrusions"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/x3d/qq3.x3d"
+        meta: meta
+            name: "generator"
+            content: "manual"
+    scene: Scene
+        children: ProtoDeclare
+            name: "Process"
+            protoBody: ProtoBody
+                children: Group
+;left
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            DEF: "ShapeLeftDown"
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0.7, 1, 0]
+                            geometry: Extrusion
+                                spine: [-2.5, 0, 0, -1.5, 0, 0]
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+;right
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            DEF: "ShapeUpRight"
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [0, 0.7, 1]
+                            geometry: Extrusion
+                                spine: [1.5, 0, 0, 2.5, 0, 0]
+                                creaseAngle: 0.785
+                                crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+;up
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            USE: "ShapeUpRight"
+;down
+                    children: Transform
+                        scale: [0.5, 0.5, 0.5]
+                        child: Shape
+                            USE: "ShapeLeftDown"
+        children: Viewpoint
+            description: "Process pipes"
+            orientation: [1, 0, 0, -0.4]
+            position: [0, 5, 12]
+        children: Transform
+            translation: [0, -2.5, 0]
+            children: ProtoInstance
+                name: "Process"
+        children: Transform
+            children: ProtoInstance
+                name: "Process"
+        children: Transform
+            translation: [0, 2.5, 0]
+            children: ProtoInstance
+                name: "Process"
