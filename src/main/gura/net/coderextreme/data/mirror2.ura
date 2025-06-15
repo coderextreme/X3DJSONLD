@@ -1,0 +1,287 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "4.0"
+    head: head
+        component: component
+            name: "Scripting"
+            level: 1
+        component: component
+            name: "EnvironmentalEffects"
+            level: 3
+        component: component
+            name: "Shaders"
+            level: 1
+        component: component
+            name: "CubeMapTexturing"
+            level: 1
+        component: component
+            name: "Texturing"
+            level: 1
+        component: component
+            name: "Rendering"
+            level: 1
+        component: component
+            name: "Grouping"
+            level: 3
+        component: component
+            name: "Core"
+            level: 1
+;<component name='Shape' level='4'></component>
+        meta: meta
+            name: "title"
+            content: "mirror2.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "generator"
+            content: "manual"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"
+        meta: meta
+            name: "description"
+            content: "a mirrored sphere"
+    scene: Scene
+        children: Viewpoint
+            position: [0, 5, 100]
+            description: "Switch background and images texture"
+        children: Background
+            DEF: "cube"
+            leftUrl: ["../resources/images/all_probes/beach_cross/beach_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+            rightUrl: ["../resources/images/all_probes/beach_cross/beach_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+            frontUrl: ["../resources/images/all_probes/beach_cross/beach_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+            backUrl: ["../resources/images/all_probes/beach_cross/beach_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+            topUrl: ["../resources/images/all_probes/beach_cross/beach_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+            bottomUrl: ["../resources/images/all_probes/beach_cross/beach_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+        children: Transform
+            child: Shape
+                appearance: Appearance
+                    material: Material
+                        diffuseColor: [0.7, 0.7, 0.7]
+                        specularColor: [0.5, 0.5, 0.5]
+                    texture: ComposedCubeMapTexture
+                        backTexture: ImageTexture
+                            DEF: "backShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+                        bottomTexture: ImageTexture
+                            DEF: "bottomShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+                        frontTexture: ImageTexture
+                            DEF: "frontShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+                        leftTexture: ImageTexture
+                            DEF: "leftShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+                        rightTexture: ImageTexture
+                            DEF: "rightShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+                        topTexture: ImageTexture
+                            DEF: "topShader"
+                            url: ["../resources/images/all_probes/beach_cross/beach_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+                    shaders: ComposedShader
+                        DEF: "x_ite"
+                        language: "GLSL"
+;http://hypertextbook.com/facts/2005/JustinChe.shtml
+                        field: field
+                            name: "chromaticDispertion"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0.98 1 1.033"
+                        field: field
+                            name: "cube"
+                            accessType: "inputOutput"
+                            type: "SFInt32"
+                            value: "0"
+                        field: field
+                            name: "bias"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "scale"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "power"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "2"
+                        parts: ShaderPart
+                            url: ["../shaders/x_ite.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
+                            type: "VERTEX"
+                        parts: ShaderPart
+                            url: ["../shaders/x_itemix.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]
+                            type: "FRAGMENT"
+                    shaders: ComposedShader
+                        DEF: "x3dom"
+                        language: "GLSL"
+                        field: field
+                            name: "chromaticDispertion"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0.98 1 1.033"
+                        field: field
+                            name: "cube"
+                            accessType: "inputOutput"
+                            type: "SFInt32"
+                            value: "0"
+                        field: field
+                            name: "bias"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "scale"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "0.5"
+                        field: field
+                            name: "power"
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            value: "2"
+                        parts: ShaderPart
+                            url: ["../shaders/x3dom.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
+                            type: "VERTEX"
+                        parts: ShaderPart
+                            url: ["../shaders/mix.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]
+                            type: "FRAGMENT"
+                geometry: Sphere
+                    radius: 30.0
+            children: Script
+                DEF: "UrlSelector"
+                directOutput: true
+                field: field
+                    name: "frontUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""
+                field: field
+                    name: "backUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\""
+                field: field
+                    name: "leftUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\""
+                field: field
+                    name: "rightUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\""
+                field: field
+                    name: "topUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\""
+                field: field
+                    name: "bottomUrls"
+                    type: "MFString"
+                    accessType: "initializeOnly"
+                    value: "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\""
+                field: field
+                    name: "front_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "back_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "left_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "right_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "top_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "bottom_changed"
+                    type: "MFString"
+                    accessType: "outputOnly"
+                field: field
+                    name: "set_fraction"
+                    type: "SFFloat"
+                    accessType: "inputOnly"
+                field: field
+                    name: "old"
+                    type: "SFInt32"
+                    accessType: "inputOutput"
+                    value: "-1"
+(.setSourceCode "\\newline        function set_fraction( f, tm ) {\\newline	    var side = Math.floor(f*frontUrls.length);\\newline	    if (side > frontUrls.length-1) {\\newline	    	side = 0;\\newline	    }\\newline	    if (side != old) {\\newline	    	    // Browser.print(f+\" \"+side);\\newline	    	    old = side;\\newline		    front_changed[0] = frontUrls[side];\\newline		    back_changed[0] = backUrls[side];\\newline		    left_changed[0] = leftUrls[side];\\newline		    right_changed[0] = rightUrls[side];\\newline		    top_changed[0] = topUrls[side];\\newline		    bottom_changed[0] = bottomUrls[side];\\newline            }\\newline        }\\newline")            children: TimeSensor
+                DEF: "Clock"
+                cycleInterval: 45.0
+                loop: true
+            children: ROUTE
+                fromNode: "Clock"
+                fromField: "fraction_changed"
+                toNode: "UrlSelector"
+                toField: "set_fraction"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "front_changed"
+                toNode: "cube"
+                toField: "frontUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "back_changed"
+                toNode: "cube"
+                toField: "backUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "left_changed"
+                toNode: "cube"
+                toField: "leftUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "right_changed"
+                toNode: "cube"
+                toField: "rightUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "top_changed"
+                toNode: "cube"
+                toField: "topUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "bottom_changed"
+                toNode: "cube"
+                toField: "bottomUrl"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "front_changed"
+                toNode: "frontShader"
+                toField: "url"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "back_changed"
+                toNode: "backShader"
+                toField: "url"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "left_changed"
+                toNode: "leftShader"
+                toField: "url"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "right_changed"
+                toNode: "rightShader"
+                toField: "url"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "top_changed"
+                toNode: "topShader"
+                toField: "url"
+            children: ROUTE
+                fromNode: "UrlSelector"
+                fromField: "bottom_changed"
+                toNode: "bottomShader"
+                toField: "url"

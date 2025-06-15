@@ -1,0 +1,249 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "4.0"
+    head: head
+        component: component
+            name: "Scripting"
+            level: 1
+        meta: meta
+            name: "creator"
+            content: "John W Carlson"
+        meta: meta
+            name: "created"
+            content: "December 13 2015"
+        meta: meta
+            name: "title"
+            content: "force.x3d"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
+        meta: meta
+            name: "description"
+            content: "beginnings of a force directed graph in 3D"
+        meta: meta
+            name: "generator"
+            content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        meta: meta
+            name: "generator"
+            content: "x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy"
+        meta: meta
+            name: "modified"
+            content: "Sat, 9 Nov 2024 19:29:39 GMT"
+    scene: Scene
+        children: ProtoDeclare
+            name: "node"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "position"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+            protoBody: ProtoBody
+                children: Group
+                    children: Transform
+                        DEF: "transform"
+                        IS: IS
+                            connect: connect
+                                nodeField: "translation"
+                                protoField: "position"
+                        child: Shape
+                            appearance: Appearance
+                                material: Material
+                                    diffuseColor: [1, 0, 0]
+                            geometry: Sphere
+                        children: Transform
+                            translation: [1, 0, 0]
+                            child: Shape
+                                appearance: Appearance
+                                    material: Material
+                                        diffuseColor: [0, 0, 1]
+                                geometry: Text
+                                    string: ["Node"]
+                                    fontStyle: FontStyle
+                                        size: 5.0
+                                        justify: ["MIDDLE", "MIDDLE"]
+                    children: PositionInterpolator
+                        DEF: "NodePosition"
+                        key: [0, 1]
+                        keyValue: [0, 0, 0, 0, 5, 0]
+                    children: Script
+                        DEF: "MoveBall"
+                        field: field
+                            name: "translation"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "50 50 0"
+                        field: field
+                            name: "old"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                        field: field
+                            name: "set_cycle"
+                            accessType: "inputOnly"
+                            type: "SFTime"
+                        field: field
+                            name: "keyValue"
+                            accessType: "outputOnly"
+                            type: "MFVec3f"
+(.setSourceCode "\\newline					function set_cycle(value) {\\newline                                                old = translation;\\newline						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\\newline		    				/*\\newline                                                var tmpkeyValue = new MFVec3f();\\newline			    			tmpkeyValue[0] = old;\\newline			    			tmpkeyValue[1] = translation;\\newline                                                keyValue = tmpkeyValue;\\newline		    				*/\\newline                                                keyValue = new MFVec3f([old, translation]);\\newline			    		\\newline						// Browser.println(translation);\\newline					}\\newline")                    children: TimeSensor
+                        DEF: "nodeClock"
+                        cycleInterval: 3.0
+                        loop: true
+                children: ROUTE
+                    fromNode: "nodeClock"
+                    fromField: "cycleTime"
+                    toNode: "MoveBall"
+                    toField: "set_cycle"
+                children: ROUTE
+                    fromNode: "nodeClock"
+                    fromField: "fraction_changed"
+                    toNode: "NodePosition"
+                    toField: "set_fraction"
+                children: ROUTE
+                    fromNode: "MoveBall"
+                    fromField: "keyValue"
+                    toNode: "NodePosition"
+                    toField: "set_keyValue"
+                children: ROUTE
+                    fromNode: "NodePosition"
+                    fromField: "value_changed"
+                    toNode: "transform"
+                    toField: "set_translation"
+        children: ProtoDeclare
+            name: "cyl"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "set_positionA"
+                    accessType: "inputOnly"
+                    type: "SFVec3f"
+                field: field
+                    name: "set_positionB"
+                    accessType: "inputOnly"
+                    type: "SFVec3f"
+            protoBody: ProtoBody
+                children: Group
+                    children: Shape
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [0, 1, 0]
+                        geometry: Extrusion
+                            DEF: "extrusion"
+                            creaseAngle: 0.785
+                            crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                            spine: [0, -50, 0, 0, 50, 0]
+                    children: Script
+                        DEF: "MoveCylinder"
+                        field: field
+                            name: "spine"
+                            accessType: "inputOutput"
+                            type: "MFVec3f"
+                            value: "0 -50 0 0 50 0"
+                        field: field
+                            name: "set_endA"
+                            accessType: "inputOnly"
+                            type: "SFVec3f"
+                        field: field
+                            name: "set_endB"
+                            accessType: "inputOnly"
+                            type: "SFVec3f"
+                        IS: IS
+                            connect: connect
+                                nodeField: "set_endA"
+                                protoField: "set_positionA"
+                            connect: connect
+                                nodeField: "set_endB"
+                                protoField: "set_positionB"
+(.setSourceCode "\\newline\\newline                function set_endA(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		    	/*\\newline		        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = value;\\newline			tmpspine[1] = value;\\newline			spine = tmpspine;\\newline		    	*/\\newline		        spine = new MFVec3f([value, value]);\\newline		    } else {\\newline		    	/*\\newline		        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = value;\\newline			tmpspine[1] = spine[1];\\newline			spine = tmpspine;\\newline		        */\\newline		        spine = new MFVec3f([value, spine[1]]);\\newline		    }\\newline                }\\newline\\newline                function set_endB(value) {\\newline		    if (typeof spine === 'undefined') {\\newline		    	/*\\newline		        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = value;\\newline			tmpspine[1] = value;\\newline			spine = tmpspine;\\newline		        */\\newline		        spine = new MFVec3f([value, value]);\\newline		    } else {\\newline		    	/*\\newline		        var tmpspine = new MFVec3f();\\newline			tmpspine[0] = spine[0];\\newline			tmpspine[1] = value;\\newline			spine = tmpspine;\\newline		    	*/\\newline		        spine = new MFVec3f([spine[0], value]);\\newline		    }\\newline                }\\newline\\newline                function set_spine(value) {\\newline                    spine = value;\\newline                }\\newline")                children: ROUTE
+                    fromNode: "MoveCylinder"
+                    fromField: "spine_changed"
+                    toNode: "extrusion"
+                    toField: "set_spine"
+        children: Transform
+            DEF: "HoldsContent"
+            scale: [0.1, 0.1, 0.1]
+            children: PlaneSensor
+                DEF: "clickGenerator"
+                description: "click on background to add nodes, click on nodes to add links"
+                minPosition: [-50, -50]
+                maxPosition: [50, 50]
+            children: ProtoInstance
+                name: "node"
+                DEF: "nodeA"
+                fieldValue: fieldValue
+                    name: "position"
+                    value: "0 1.388333 0"
+            children: ProtoInstance
+                name: "node"
+                DEF: "nodeB"
+                fieldValue: fieldValue
+                    name: "position"
+                    value: "0 1.388333 0"
+            children: ProtoInstance
+                name: "node"
+                DEF: "nodeC"
+                fieldValue: fieldValue
+                    name: "position"
+                    value: "0 1.388333 0"
+            children: ProtoInstance
+                name: "node"
+                DEF: "nodeD"
+                fieldValue: fieldValue
+                    name: "position"
+                    value: "0 1.388333 0"
+            children: ProtoInstance
+                name: "cyl"
+                DEF: "linkA"
+            children: ProtoInstance
+                name: "cyl"
+                DEF: "linkB"
+            children: ProtoInstance
+                name: "cyl"
+                DEF: "linkC"
+        children: Script
+            DEF: "clickHandler"
+            field: field
+                name: "counter"
+                accessType: "inputOutput"
+                type: "SFInt32"
+            field: field
+                name: "node_changed"
+                accessType: "outputOnly"
+                type: "SFNode"
+            field: field
+                name: "add_node"
+                accessType: "inputOnly"
+                type: "SFBool"
+(.setSourceCode "\\newline	function add_node(value) {\\newline                // Browser.print('hey ', counter);\\newline                counter = counter++;\\newline		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\\newline			{ \"ProtoInstance\":\\newline				{ \"@name\":\"node\",\\newline				  \"@DEF\":\"node'+counter+'\",\\newline				  \"fieldValue\": [\\newline					{\\newline						 \"@name\":\"position\",\\newline						 \"@value\":[0.0,0.0,0.0]\\newline					}\\newline				  ]\\newline				}\\newline			});\\newline\\newline        }\\newline")        children: ROUTE
+            fromNode: "clickGenerator"
+            fromField: "isActive"
+            toNode: "clickHandler"
+            toField: "add_node"
+        children: ROUTE
+            fromNode: "nodeA"
+            fromField: "position_changed"
+            toNode: "linkA"
+            toField: "set_positionA"
+        children: ROUTE
+            fromNode: "nodeB"
+            fromField: "position_changed"
+            toNode: "linkA"
+            toField: "set_positionB"
+        children: ROUTE
+            fromNode: "nodeA"
+            fromField: "position_changed"
+            toNode: "linkB"
+            toField: "set_positionA"
+        children: ROUTE
+            fromNode: "nodeC"
+            fromField: "position_changed"
+            toNode: "linkB"
+            toField: "set_positionB"
+        children: ROUTE
+            fromNode: "nodeA"
+            fromField: "position_changed"
+            toNode: "linkC"
+            toField: "set_positionA"
+        children: ROUTE
+            fromNode: "nodeD"
+            fromField: "position_changed"
+            toNode: "linkC"
+            toField: "set_positionB"

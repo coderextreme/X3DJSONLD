@@ -1,0 +1,96 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "HelloWorldCommented.x3d"
+        meta: meta
+            name: "description"
+            content: "Numerous comments added to simple X3D scene example for testing JSON encoding alternatives."
+        meta: meta
+            name: "created"
+            content: "19 December 2015"
+        meta: meta
+            name: "modified"
+            content: "20 October 2019"
+        meta: meta
+            name: "creator"
+            content: "Don Brutzman"
+        meta: meta
+            name: "info"
+            content: "HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental."
+        meta: meta
+            name: "reference"
+            content: "HelloWorldCommented.json"
+        meta: meta
+            name: "reference"
+            content: "HelloWorldCommentedOriginalEncoding.json"
+        meta: meta
+            name: "reference"
+            content: "HelloWorldCommentedAlternativeEncoding.json"
+        meta: meta
+            name: "identifier"
+            content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"
+        meta: meta
+            name: "license"
+            content: "https://www.web3d.org/x3d/content/examples/license.html"
+        meta: meta
+            name: "generator"
+            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+    scene: Scene
+;Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)
+;WorldInfo begin
+        children: WorldInfo
+            title: "Hello world!"
+;WorldInfo complete, Group begin
+        children: Group
+;Viewpoint begin
+            children: Viewpoint
+                DEF: "ViewUpClose"
+                centerOfRotation: [0, -1, 0]
+                description: "Hello world!"
+                position: [0, -1, 7]
+;Viewpoint complete, Transform begin
+            children: Transform
+                rotation: [0, 1, 0, 3]
+;Shape begin
+                child: Shape
+;Sphere begin
+;Sphere complete, Appearance begin
+;Appearance complete
+                    geometry: Sphere
+                    appearance: Appearance
+;Material begin
+;Material complete, ImageTexture begin
+;ImageTexture complete
+                        material: Material
+                            DEF: "MaterialLightBlue"
+                            diffuseColor: [0.1, 0.5, 1]
+                        texture: ImageTexture
+                            DEF: "ImageCloudlessEarth"
+                            url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+;Shape complete
+;Transform complete, Transform begin
+            children: Transform
+                translation: [0, -2, 0]
+;Shape begin
+                child: Shape
+;Text begin
+;Text complete, Appearance begin
+;Appearance complete
+                    geometry: Text
+                        DEF: "TextMessage"
+                        string: ["Hello", "world!"]
+;FontStyle begin
+;FontStyle complete
+                        fontStyle: FontStyle
+                            justify: ["MIDDLE", "MIDDLE"]
+                    appearance: Appearance
+;Material begin
+;Material complete
+                        material: Material
+                            USE: "MaterialLightBlue"
+;Shape complete
+;Transform complete
+;Group complete

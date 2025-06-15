@@ -1,0 +1,120 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "BoxEm.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "generator"
+            content: "manual"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"
+        meta: meta
+            name: "description"
+            content: "3 boxes"
+    scene: Scene
+        children: NavigationInfo
+            type: ["EXAMINE"]
+        children: Viewpoint
+            description: "Cubes on Fire"
+            position: [0, 0, 12]
+        children: ProtoDeclare
+            name: "anyShape"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "xtranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "MFNode"
+                    children: Shape
+                        geometry: Sphere
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [1, 1, 1]
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "xtranslation"
+                        connect: connect
+                            nodeField: "children"
+                            protoField: "myShape"
+        children: ProtoDeclare
+            name: "three"
+            protoInterface: ProtoInterface
+                field: field
+                    name: "ytranslation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                field: field
+                    name: "myShape"
+                    accessType: "inputOutput"
+                    type: "MFNode"
+                    children: Shape
+                        geometry: Cylinder
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [1, 1, 1]
+            protoBody: ProtoBody
+                children: Transform
+                    IS: IS
+                        connect: connect
+                            nodeField: "translation"
+                            protoField: "ytranslation"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "0 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "2 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+                    children: ProtoInstance
+                        name: "anyShape"
+                        fieldValue: fieldValue
+                            name: "xtranslation"
+                            value: "-2 0 0"
+                        IS: IS
+                            connect: connect
+                                nodeField: "myShape"
+                                protoField: "myShape"
+        children: ProtoInstance
+            name: "three"
+            DEF: "threepi"
+            fieldValue: fieldValue
+                name: "ytranslation"
+                value: "0 0 0"
+            fieldValue: fieldValue
+                name: "myShape"
+                children: Shape
+                    DEF: "box"
+                    geometry: Box
+                        size: [1, 1, 1]
+                    appearance: Appearance
+                        material: Material
+                            diffuseColor: [0, 1, 0]
+        children: Transform
+            translation: [0, 2, 0]
+            child: Shape
+                USE: "box"

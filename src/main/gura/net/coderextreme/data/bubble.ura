@@ -1,0 +1,86 @@
+X3D0: "X3D"
+    profile: "Immersive"
+    version: "3.3"
+    head: head
+        meta: meta
+            name: "title"
+            content: "bubble.x3d"
+        meta: meta
+            name: "creator"
+            content: "John Carlson"
+        meta: meta
+            name: "description"
+            content: "Tour around a prismatic sphere"
+        meta: meta
+            name: "generator"
+            content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        meta: meta
+            name: "identifier"
+            content: "https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d"
+    scene: Scene
+        children: NavigationInfo
+            type: ["EXAMINE"]
+        children: Viewpoint
+            position: [0, 0, 4]
+            orientation: [1, 0, 0, 0]
+            description: "Bubble in action"
+        children: ProtoDeclare
+            name: "Bubble"
+            protoBody: ProtoBody
+                children: Transform
+                    DEF: "transform"
+                    child: Shape
+                        geometry: Sphere
+                            radius: 0.25
+                        appearance: Appearance
+                            material: Material
+                                diffuseColor: [1, 0, 0]
+                                transparency: 0.2
+                    children: Script
+                        DEF: "bounce"
+                        field: field
+                            name: "scale"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "1 1 1"
+                        field: field
+                            name: "translation"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0 0 0"
+                        field: field
+                            name: "velocity"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0 0 0"
+                        field: field
+                            name: "scalvel"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0 0 0"
+                        field: field
+                            name: "set_fraction"
+                            accessType: "inputOnly"
+                            type: "SFFloat"
+(.setSourceCode "\\newlinefunction initialize() {\\newline    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\\newline\\newline    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\\newline}\\newline\\newlinefunction set_fraction(value) {\\newline	translation = new SFVec3f(\\newline		translation.x + velocity.x,\\newline		translation.y + velocity.y,\\newline		translation.z + velocity.z);\\newline	scale = new SFVec3f(\\newline		scale.x + scalvel.x,\\newline		scale.y + scalvel.y,\\newline		scale.z + scalvel.z);\\newline        // if you get to far away or too big, explode\\newline        if ( Math.abs(translation.x) > 256) {\\newline		translation.x = 0;\\newline		initialize();\\newline	}\\newline        if ( Math.abs(translation.y) > 256) {\\newline		translation.y = 0;\\newline		initialize();\\newline	}\\newline        if ( Math.abs(translation.z) > 256) {\\newline		translation.z = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.x) > 20) {\\newline		scale.x = scale.x/2;\\newline		translation.x = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.y) > 20) {\\newline		scale.y = scale.y/2;\\newline		translation.y = 0;\\newline		initialize();\\newline	}\\newline	if (Math.abs(scale.z) > 20) {\\newline		scale.z = scale.z/2;\\newline		translation.z = 0;\\newline		initialize();\\newline	}\\newline}\\newline")                    children: TimeSensor
+                        DEF: "bubbleClock"
+                        cycleInterval: 10.0
+                        loop: true
+                    children: ROUTE
+                        fromNode: "bounce"
+                        fromField: "translation_changed"
+                        toNode: "transform"
+                        toField: "set_translation"
+                    children: ROUTE
+                        fromNode: "bounce"
+                        fromField: "scale_changed"
+                        toNode: "transform"
+                        toField: "set_scale"
+                    children: ROUTE
+                        fromNode: "bubbleClock"
+                        fromField: "fraction_changed"
+                        toNode: "bounce"
+                        toField: "set_fraction"
+        children: ProtoInstance
+            name: "Bubble"
+            DEF: "bubbleA"
