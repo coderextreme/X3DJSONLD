@@ -85,7 +85,7 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                         Shape: [
@@ -113,7 +113,7 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                         Shape: [
@@ -132,14 +132,14 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
                 IndexedFaceSet: [
                     DEF: "SkinMeshIFS"
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                 ]
             ],
 #==============================
@@ -151,13 +151,13 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
                 Shape: [
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                     IndexedFaceSet:
                         USE: "SkinMeshIFS"
                 ]
@@ -171,14 +171,14 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
 #TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
                 Shape: [
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                     IndexedFaceSet:
                         DEF: "IndexedSkinMeshIFS"
                         Coordinate:
@@ -195,13 +195,13 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
                 Shape: [
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                     IndexedFaceSet:
                         DEF: "TwoPartIndexedSkinMesh"
                         Coordinate:
@@ -217,13 +217,13 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
                 Shape: [
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                 ],
 #allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
 #TODO proposed for X3D4.1 <Shape containerField='apparel'/>
@@ -237,14 +237,14 @@ X3D:
                     name: "humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     HAnimSegment: [
                         name: "sacrum"
                     ]
                 ],
 #allow multiple Shape nodes with containerField='skin', one for each layer of skin
                 Shape: [
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                 ]
             ],
 #==============================
