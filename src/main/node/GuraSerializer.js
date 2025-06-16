@@ -261,7 +261,7 @@ GuraSerializer.prototype = {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
-						attr = "containerFieldOverride";
+						attr = "containerField";
 					} else if (attr === "xmlns:xsd") {
 						continue;
 					} else if (attr === "xsd:noNamespaceSchemaLocation" ) {
@@ -300,7 +300,7 @@ GuraSerializer.prototype = {
 						method = "CssClass";
 					}
 					str += "    ".repeat(n)+method+": "+strval+"\n";
-					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+					if (attr === 'containerField' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
 						// str += ")"; // for cast
 					}
 				}
