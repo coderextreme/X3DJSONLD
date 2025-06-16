@@ -146,7 +146,7 @@ X3D:
                     center: [0, 0.875, 0]
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
-                    containerFieldOverride: "skeleton"
+                    containerField: "skeleton"
                     MetadataSet:
                         name: "warnings"
                         reference: "HAnim"
@@ -982,7 +982,7 @@ X3D:
                 ],
                 Shape: [
                     DEF: "Joe_Shape"
-                    containerFieldOverride: "skin"
+                    containerField: "skin"
                     Appearance:
                         DEF: "Joe_skin_Appearance"
                         Material:
@@ -1005,390 +1005,390 @@ X3D:
                             point: [0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0.5]
                 ],
                 Coordinate:
-                    containerFieldOverride: "skinCoord"
+                    containerField: "skinCoord"
                     USE: "Joe_SkinCoord"
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_HumanoidRoot"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_sacroiliac"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vl5"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vl4"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vl3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vl2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vl1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt12"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt11"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt10"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt9"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt8"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt7"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt6"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt5"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt4"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vt1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc7"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc6"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc5"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc4"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_vc1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_skullbase"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_temporomandibular"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_acromioclavicular"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_acromioclavicular"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_ankle"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_ankle"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_elbow"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_elbow"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_eyeball_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_eyeball_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_eyebrow_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_eyebrow_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_eyelid_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_eyelid_joint"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_hip"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_hip"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_index0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_index0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_index1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_index1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_index2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_index2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_index3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_index3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_knee"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_knee"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_metatarsal"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_metatarsal"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_middle0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_middle0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_middle1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_middle1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_middle2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_middle2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_middle3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_middle3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_midtarsal"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_midtarsal"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_pinky0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_pinky0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_pinky1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_pinky1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_pinky2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_pinky2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_pinky3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_pinky3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_ring0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_ring0"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_ring1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_ring1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_ring2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_ring2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_ring3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_ring3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_shoulder"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_shoulder"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_sternoclavicular"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_sternoclavicular"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_subtalar"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_subtalar"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_thumb1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_thumb1"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_thumb2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_thumb2"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_thumb3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_thumb3"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_l_wrist"
                 ],
                 HAnimJoint: [
-                    containerFieldOverride: "joints"
+                    containerField: "joints"
                     USE: "Joe_r_wrist"
                 ],
                 HAnimSegment: [
-                    containerFieldOverride: "segments"
+                    containerField: "segments"
                     USE: "Joe_sacrum"
                 ],
                 HAnimSite: [
-                    containerFieldOverride: "sites"
+                    containerField: "sites"
                     USE: "Joe_RootFront_view"
                 ]
             ]

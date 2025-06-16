@@ -120,7 +120,7 @@ X3D:
                 center: [0, 1.0242089721, -0.015921]
                 ulimit: [0, 0, 0]
                 llimit: [0, 0, 0]
-                containerFieldOverride: "skeleton"
+                containerField: "skeleton"
                 HAnimSegment: [
                     name: "sacrum"
                     DEF: "hanim_sacrum"
@@ -4351,1171 +4351,1171 @@ X3D:
                 ]
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_humanoid_root"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_sacroiliac"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vl5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vl4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vl3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vl2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vl1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt12"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt11"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt10"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt9"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt8"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt7"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt6"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vt1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc7"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc6"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_vc1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_skullbase"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_temporomandibular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_acromioclavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_acromioclavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_calcaneocuboid"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_calcaneocuboid"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_distal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_distal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_interphalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_interphalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpal_proximal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpal_proximal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpometacarpal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpometacarpal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpometacarpal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpometacarpal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpometacarpal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpometacarpal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpometacarpal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpometacarpal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_carpometacarpal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_carpometacarpal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_cuneonavicular_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_cuneonavicular_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_cuneonavicular_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_cuneonavicular_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_cuneonavicular_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_cuneonavicular_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_elbow"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_elbow"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_eyeball_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_eyeball_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_eyebrow_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_eyebrow_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_eyelid_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_eyelid_joint"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_hip"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_hip"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_knee"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_knee"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metacarpophalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metacarpophalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metacarpophalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metacarpophalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metacarpophalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metacarpophalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metacarpophalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metacarpophalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metacarpophalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metacarpophalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metatarsophalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metatarsophalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metatarsophalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metatarsophalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metatarsophalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metatarsophalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metatarsophalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metatarsophalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_metatarsophalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_metatarsophalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_midcarpal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_midcarpal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_midcarpal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_midcarpal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_midcarpal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_midcarpal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_midcarpal_4_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_midcarpal_4_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_radiocarpal"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_radiocarpal"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_shoulder"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_shoulder"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_sternoclavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_sternoclavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_talocalcaneonavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_talocalcaneonavicular"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_talocrural"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_talocrural"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_distal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_distal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsal_proximal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsal_proximal_interphalangeal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsometatarsal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsometatarsal_1"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsometatarsal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsometatarsal_2"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsometatarsal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsometatarsal_3"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsometatarsal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsometatarsal_4"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_tarsometatarsal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_tarsometatarsal_5"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_l_transversetarsal"
             ],
             HAnimJoint: [
-                containerFieldOverride: "joints"
+                containerField: "joints"
                 USE: "hanim_r_transversetarsal"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_sacrum"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_pelvis"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t12"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t11"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t10"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t9"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t8"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t7"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t6"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_t1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c7"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c6"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_c1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_skull"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_jaw"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_calcaneus"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_calcaneus"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_calf"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_calf"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_capitate"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_capitate"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_distal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_distal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_distal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_distal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_distal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_distal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_middle_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_middle_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_middle_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_middle_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_middle_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_proximal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_proximal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_proximal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_proximal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_carpal_proximal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_carpal_proximal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_clavicle"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_clavicle"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_cuboid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_cuboid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_cuneiform_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_cuneiform_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_cuneiform_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_cuneiform_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_cuneiform_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_cuneiform_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_eyeball"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_eyeball"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_eyebrow"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_eyebrow"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_eyelid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_eyelid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_forearm"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_forearm"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_hamate"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_hamate"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metacarpal_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metacarpal_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metacarpal_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metacarpal_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metacarpal_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metacarpal_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metacarpal_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metacarpal_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metacarpal_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metacarpal_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metatarsal_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metatarsal_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metatarsal_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metatarsal_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metatarsal_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metatarsal_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metatarsal_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metatarsal_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_metatarsal_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_metatarsal_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_navicular"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_navicular"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_scapula"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_scapula"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_talus"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_talus"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_distal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_distal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_distal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_distal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_distal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_distal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_distal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_distal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_distal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_distal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_middle_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_middle_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_middle_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_middle_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_middle_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_middle_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_middle_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_middle_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_proximal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_proximal_phalanx_1"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_proximal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_proximal_phalanx_2"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_proximal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_proximal_phalanx_3"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_proximal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_proximal_phalanx_4"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_tarsal_proximal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_tarsal_proximal_phalanx_5"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_thigh"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_thigh"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_trapezium"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_trapezium"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_trapezoid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_trapezoid"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_l_upperarm"
             ],
             HAnimSegment: [
-                containerFieldOverride: "segments"
+                containerField: "segments"
                 USE: "hanim_r_upperarm"
             ]
         ]

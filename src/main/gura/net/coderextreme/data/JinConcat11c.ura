@@ -6361,7 +6361,7 @@ X3D:
                 center: [0, 0.77, 0]
                 llimit: [0, 0, 0]
                 ulimit: [0, 0, 0]
-                containerFieldOverride: "skeleton"
+                containerField: "skeleton"
                 HAnimSegment: [
                     name: "sacrum"
                     DEF: "hanim_sacrum"
