@@ -227,6 +227,7 @@ function magic(path, type) {
 		path = path.substr(hash);
     }
     app.get(path, async function(req, res, next) {
+	res.setHeader('Content-Type', type); // Explicitly set without charset
 	var url = req._parsedUrl.pathname;
 	try {
 		while (url.startsWith("/")) {
@@ -313,6 +314,8 @@ magic("*.wrl", "model/vrml");
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
 magic("*.bin", "application/octet-stream");
+magic("*.zip", "application/zip");
+magic("*.wasm", "application/octet-stream");
 /*
 magic("*.xml", "text/xml");
 */

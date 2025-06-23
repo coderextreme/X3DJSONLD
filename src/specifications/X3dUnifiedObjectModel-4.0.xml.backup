@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2024-04-28-07:00 13:15:28.386754-07:00 -->
+<!-- Generated 2025-02-14-08:00 18:39:56.6470403-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -9301,6 +9301,10 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTexture2DNode"/>
+            <field name="upVector"
+                   type="SFVec3f"
+                   accessType="inputOutput"
+                   default="0 1 0"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -10434,7 +10438,8 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DMaterialNode"/>
+                   acceptableNodeTypes="X3DMaterialNode"
+                   description="Single contained Material, PhysicalMaterial or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc."/>
             <field name="fillProperties"
                    type="SFNode"
                    accessType="inputOutput"
@@ -10462,7 +10467,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMaterialNode"
-                   description="Single contained Material node that can specify visual attributes for lighting response (color types, transparency, etc."/>
+                   description="Single contained Material, PhysicalMaterial, TwoSidedMaterial (deprecated), or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -21317,7 +21322,6 @@
                    type="SFVec3f"
                    accessType="inputOutput"
                    default="1 1 1"
-                   minExclusive="0"
                    description="Non-uniform x-y-z scale of child coordinate system, adjusted by center and scaleOrientation."/>
             <field name="scaleOrientation"
                    type="SFRotation"
@@ -24795,7 +24799,7 @@
                    type="MFInt32"
                    accessType="initializeOnly"
                    minInclusive="-1"
-                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)."/>
+                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -24860,7 +24864,7 @@
                    type="MFInt32"
                    accessType="initializeOnly"
                    minInclusive="-1"
-                   description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices).">
+                   description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true.">
                <componentInfo name="Geometry3D" level="4"/>
             </field>
             <field name="normalPerVertex"
@@ -24873,7 +24877,7 @@
                    type="MFInt32"
                    accessType="inputOnly"
                    minInclusive="-1"
-                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices).">
+                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.">
                <componentInfo name="Geometry3D" level="4"/>
             </field>
             <field name="set_coordIndex"
@@ -24885,7 +24889,7 @@
                    type="MFInt32"
                    accessType="inputOnly"
                    minInclusive="-1"
-                   description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices).">
+                   description="normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true.">
                <componentInfo name="Geometry3D" level="4"/>
             </field>
             <field name="set_texCoordIndex"
@@ -24969,7 +24973,7 @@
                    type="MFInt32"
                    accessType="initializeOnly"
                    minInclusive="-1"
-                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices)."/>
+                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -25015,7 +25019,7 @@
                    type="MFInt32"
                    accessType="inputOnly"
                    minInclusive="-1"
-                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices).">
+                   description="colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.">
                <componentInfo name="Rendering" level="3"/>
             </field>
             <field name="set_coordIndex"
@@ -33505,6 +33509,7 @@
             <field name="name"
                    type="SFString"
                    accessType="inputOutput"
+                   use="required"
                    baseType="xs:NMTOKEN"
                    description="name of the prototype node being instanced."/>
             <field name="DEF"
@@ -38524,8 +38529,9 @@
             <field name="upVector"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 1"
-                   description="upVector describes the roll of the camera by saying which direction is up for the camera's orientation."/>
+                   default="0 1 0"
+                   inheritedFrom="X3DTextureProjectorNode"
+                   description="upVector describes the roll of the camera by defining which direction is up for camera orientation."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -38683,6 +38689,12 @@
                    acceptableNodeTypes="X3DTexture2DNode"
                    inheritedFrom="X3DTextureProjectorNode"
                    description="Single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry."/>
+            <field name="upVector"
+                   type="SFVec3f"
+                   accessType="inputOutput"
+                   default="0 1 0"
+                   inheritedFrom="X3DTextureProjectorNode"
+                   description="upVector describes the roll of the camera by defining which direction is up for camera orientation."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
