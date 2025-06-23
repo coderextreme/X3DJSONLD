@@ -1,71 +1,84 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head:
-        component: [
-            name: "Scripting"
-            level: 1
-        ],
-        meta: [
-            name: "title"
-            content: "MyBounce.x3d"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "description"
-            content: "3 prismatic spheres"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"
-        ]
-    Scene:
-        NavigationInfo: [
-        ],
-        Transform: [
-            DEF: "transform"
-            Shape: [
-                Appearance:
-                    Material:
-                        diffuseColor: [0.7, 0.7, 0.7]
-                        specularColor: [0.5, 0.5, 0.5]
-                Sphere:
+    setHead: [
+        head: [
+            component: [
+                name: "Scripting"
+                level: 1
+            ],
+            meta: [
+                name: "title"
+                content: "MyBounce.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "description"
+                content: "3 prismatic spheres"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"
             ]
-        ],
-        Script: [
-            DEF: "Bounce2"
-            field: [
-                name: "set_translation"
-                accessType: "inputOnly"
-                type: "SFVec3f"
-                value: "0 0 0"
+        ]
+    ]
+    setScene: [
+        Scene: [
+            NavigationInfo: [ empty
             ],
-            field: [
-                name: "translation_changed"
-                accessType: "outputOnly"
-                type: "SFVec3f"
-                value: "0 0 0"
+            Transform: [
+                DEF: "transform"
+                Shape: [
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.7, 0.7, 0.7]
+                                    specularColor: [0.5, 0.5, 0.5]
+                                ]
+                            ]
+                        ]
+                    ]
+                    setGeometry: [
+                        Sphere: [ empty
+                        ]
+                    ]
+                ]
             ],
-            field: [
-                name: "translation"
-                accessType: "inputOutput"
-                type: "SFVec3f"
-                value: "0 0 0"
-            ],
-            field: [
-                name: "velocity"
-                accessType: "inputOutput"
-                type: "SFVec3f"
-                value: "0 0 0"
-            ],
-            field: [
-                name: "set_fraction"
-                accessType: "inputOnly"
-                type: "SFTime"
-            ],
+            Script: [
+                DEF: "Bounce2"
+                field: [
+                    name: "set_translation"
+                    accessType: "inputOnly"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                ],
+                field: [
+                    name: "translation_changed"
+                    accessType: "outputOnly"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                ],
+                field: [
+                    name: "translation"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                ],
+                field: [
+                    name: "velocity"
+                    accessType: "inputOutput"
+                    type: "SFVec3f"
+                    value: "0 0 0"
+                ],
+                field: [
+                    name: "set_fraction"
+                    accessType: "inputOnly"
+                    type: "SFTime"
+                ],
 #ecmascript:
 #			function newBubble() {
 #			    translation = new SFVec3f(0, 0, 0);
@@ -97,21 +110,23 @@ X3D:
 #			function initialize() {
 #			     newBubble();
 #			}
-        ],
-        TimeSensor: [
-            DEF: "TourTime"
-            cycleInterval: 0.15
-            loop: true
-        ],
-        ROUTE: [
-            fromNode: "TourTime"
-            fromField: "cycleTime"
-            toNode: "Bounce2"
-            toField: "set_fraction"
-        ],
-        ROUTE: [
-            fromNode: "Bounce2"
-            fromField: "translation_changed"
-            toNode: "transform"
-            toField: "set_translation"
+            ],
+            TimeSensor: [
+                DEF: "TourTime"
+                cycleInterval: 0.15
+                loop: true
+            ],
+            ROUTE: [
+                fromNode: "TourTime"
+                fromField: "cycleTime"
+                toNode: "Bounce2"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Bounce2"
+                fromField: "translation_changed"
+                toNode: "transform"
+                toField: "set_translation"
+            ]
         ]
+    ]

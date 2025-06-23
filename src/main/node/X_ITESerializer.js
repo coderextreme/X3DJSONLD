@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function X_ITESerializer () {
+export default function X_ITESerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -360,4 +360,3 @@ X_ITESerializer.prototype = {
 		return str;
 	}
 };
-module.exports = X_ITESerializer;

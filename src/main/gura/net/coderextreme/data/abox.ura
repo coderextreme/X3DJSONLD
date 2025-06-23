@@ -1,80 +1,107 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        meta: [
-            name: "title"
-            content: "abox.x3d"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "generator"
-            content: "manual"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "a box"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "abox.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "a box"
+            ]
         ]
-    Scene:
-        ProtoDeclare: [
-            name: "anyShape"
-            ProtoInterface:
-                field: [
-                    name: "myShape"
-                    accessType: "inputOutput"
-                    type: "MFNode"
-                    Shape: [
-                        Sphere:
-                    ]
-                ]
-            ProtoBody:
-                Transform: [
-                    IS: [
-                        connect: [
-                            nodeField: "children"
-                            protoField: "myShape"
-                        ]
-                    ]
-                ]
-        ],
-        ProtoDeclare: [
-            name: "one"
-            ProtoInterface:
-                field: [
-                    name: "myShape"
-                    accessType: "inputOutput"
-                    type: "MFNode"
-                    Shape: [
-                        Cylinder:
-                    ]
-                ]
-            ProtoBody:
-                Transform: [
-                    ProtoInstance: [
-                        name: "anyShape"
-                        IS: [
-                            connect: [
-                                nodeField: "myShape"
-                                protoField: "myShape"
+    ]
+    setScene: [
+        Scene: [
+            ProtoDeclare: [
+                name: "anyShape"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            name: "myShape"
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            Shape: [
+                                setGeometry: [
+                                    Sphere: [ empty
+                                    ]
+                                ]
                             ]
                         ]
                     ]
                 ]
-        ],
-        ProtoInstance: [
-            name: "one"
-            fieldValue: [
-                name: "myShape"
-                Shape: [
-                    Box:
-                        size: [140, 140, 140]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            IS: [
+                                connect: [
+                                    nodeField: "children"
+                                    protoField: "myShape"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "one"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            name: "myShape"
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            Shape: [
+                                setGeometry: [
+                                    Cylinder: [ empty
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            ProtoInstance: [
+                                name: "anyShape"
+                                IS: [
+                                    connect: [
+                                        nodeField: "myShape"
+                                        protoField: "myShape"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoInstance: [
+                name: "one"
+                fieldValue: [
+                    name: "myShape"
+                    Shape: [
+                        setGeometry: [
+                            Box: [
+                                size: [140, 140, 140]
+                            ]
+                        ]
+                    ]
                 ]
             ]
         ]
+    ]

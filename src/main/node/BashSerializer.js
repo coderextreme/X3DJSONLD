@@ -6,7 +6,7 @@ const FLOAT_SUFFIX = '';
 var DOMSerializer = require('./DOMSerializer.js');
 let serializer = new DOMSerializer();
 
-function BashSerializer () {
+export default function BashSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -403,5 +403,3 @@ BashSerializer.prototype = {
 		return str;
 	}
 };
-
-module.exports = BashSerializer;

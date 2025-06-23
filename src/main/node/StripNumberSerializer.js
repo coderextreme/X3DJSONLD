@@ -5,7 +5,7 @@ if (typeof require === 'function') {
 	var XMLSerializer = new xmldom.XMLSerializer();
 }
 
-function StripNumberSerializer() {
+export default function StripNumberSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
 	try {
@@ -212,4 +212,3 @@ StripNumberSerializer.prototype = {
 		return xml;
 	}
 }
-module.exports StripNumberSerializer;

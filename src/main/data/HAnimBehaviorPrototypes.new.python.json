@@ -78,7 +78,7 @@ v2.2"
 },
 {
 "@name":"translated",
-"@content":"30 April 2024"
+"@content":"04 June 2025"
 },
 {
 "@name":"generator",
@@ -126,7 +126,8 @@ set of OrientationInterpolator values. Legal values 0 1 2 3.",
 "@name":"cycleInterval",
 "@accessType":"inputOutput",
 "@appinfo":"how long do these interpolators take to execute?",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":1.0
 },
 {
 "@name":"loop",
@@ -141,28 +142,32 @@ shake hands).",
 "@accessType":"inputOutput",
 "@appinfo":"when time now &gt;= startTime isActive becomes true and TimeSensor becomes
 active",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"stopTime",
 "@accessType":"inputOutput",
 "@appinfo":"when stopTime becomes &lt;= time now isActive becomes false and TimeSensor
 becomes inactive",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"pauseTime",
 "@accessType":"inputOutput",
 "@appinfo":"when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes
 paused",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"resumeTime",
 "@accessType":"inputOutput",
 "@appinfo":"when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor
 becomes inactive",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"cycleTime",
@@ -8672,12 +8677,14 @@ enabled true",
 {
 "@name":"startTime",
 "@accessType":"inputOutput",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"stopTime",
 "@accessType":"inputOutput",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 }
 ]
 },
@@ -8923,7 +8930,7 @@ enabled true",
 },
 {
 "@name":"enabledBehaviorsArray",
-"@value":true
+"@value":[true]
 }
 ]
 }

@@ -1,283 +1,330 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        meta: [
-            name: "title"
-            content: "DesignPatternsApparelMedicalSkinLayers.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "Design patterns for skin and apparel using HAnim2 standard in X3D4"
-        ],
-        meta: [
-            name: "creator"
-            content: "Don Brutzman"
-        ],
-        meta: [
-            name: "creator"
-            content: "Joe D. Williams"
-        ],
-        meta: [
-            name: "creator"
-            content: "Dick Puk"
-        ],
-        meta: [
-            name: "created"
-            content: "23 December 2022"
-        ],
-        meta: [
-            name: "modified"
-            content: "2 July 2023"
-        ],
-        meta: [
-            name: "reference"
-            content: "DesignPatternsApparelVariations.txt"
-        ],
-        meta: [
-            name: "reference"
-            content: "HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"
-        ],
-        meta: [
-            name: "reference"
-            content: "HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"
-        ],
-        meta: [
-            name: "reference"
-            content: "X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid"
-        ],
-        meta: [
-            name: "warning"
-            content: "Under development. This template example does not produce renderable HAnim models."
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"
-        ],
-        meta: [
-            name: "generator"
-            content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-        ],
-        meta: [
-            name: "license"
-            content: "../license.html"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "DesignPatternsApparelMedicalSkinLayers.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Design patterns for skin and apparel using HAnim2 standard in X3D4"
+            ],
+            meta: [
+                name: "creator"
+                content: "Don Brutzman"
+            ],
+            meta: [
+                name: "creator"
+                content: "Joe D. Williams"
+            ],
+            meta: [
+                name: "creator"
+                content: "Dick Puk"
+            ],
+            meta: [
+                name: "created"
+                content: "23 December 2022"
+            ],
+            meta: [
+                name: "modified"
+                content: "2 July 2023"
+            ],
+            meta: [
+                name: "reference"
+                content: "DesignPatternsApparelVariations.txt"
+            ],
+            meta: [
+                name: "reference"
+                content: "HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"
+            ],
+            meta: [
+                name: "reference"
+                content: "HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"
+            ],
+            meta: [
+                name: "reference"
+                content: "X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid"
+            ],
+            meta: [
+                name: "warning"
+                content: "Under development. This template example does not produce renderable HAnim models."
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+            ],
+            meta: [
+                name: "license"
+                content: "../license.html"
+            ]
         ]
-    Scene:
-        WorldInfo: [
-            title: "HAnimHumanoid skin design patterns for apparel, medical"
-        ],
-        Background: [
-            skyColor: [0, 0.6, 0.6]
-        ],
-        Group: [
-            DEF: "MultipleHumanoids"
-            MetadataString:
-                name: "HAnimArchitecture"
-                reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"
-                value: ["E.4 Multiple humanoids per file"]
-,
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "HAnimHumanoid skin design patterns for apparel, medical"
+            ],
+            Background: [
+                skyColor: [0, 0.6, 0.6]
+            ],
+            Group: [
+                DEF: "MultipleHumanoids"
+                setMetadata: [
+                    MetadataString: [
+                        name: "HAnimArchitecture"
+                        reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"
+                        value: ["E.4 Multiple humanoids per file"]
+                    ]
+                ],
 #==============================
-            HAnimHumanoid: [
-                name: "SimpleSkeleton"
-                DEF: "a_SimpleSkeleton"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                        Shape: [
-                            DEF: "JointVisualization"
-                        ],
-                        Shape: [
-                            DEF: "SegmentVisualization"
-                        ],
-                        HAnimSite: [
-                            name: "feature01_tip"
-                            DEF: "a_feature01_tip"
+                HAnimHumanoid: [
+                    name: "SimpleSkeleton"
+                    DEF: "a_SimpleSkeleton"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
                             Shape: [
-                                DEF: "SiteVisualization"
+                                DEF: "JointVisualization"
+                            ],
+                            Shape: [
+                                DEF: "SegmentVisualization"
+                            ],
+                            HAnimSite: [
+                                name: "feature01_tip"
+                                DEF: "a_feature01_tip"
+                                Shape: [
+                                    DEF: "SiteVisualization"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "SimpleSkeletonMesh"
+                    DEF: "b_SimpleSkeletonMesh"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                            Shape: [
+                                setGeometry: [
+                                    IndexedFaceSet: [
+                                        DEF: "SegmentBoneMesh"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "SkinIndexedGeometry"
+                    DEF: "c_SkinIndexedGeometry"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+                    IndexedFaceSet: [
+                        DEF: "SkinMeshIFS"
+                        containerField: "skin"
+                    ]
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "SkinShapeIndexedGeometry"
+                    DEF: "d_SkinShapeIndexedGeometry"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+                    Shape: [
+                        containerField: "skin"
+                        setGeometry: [
+                            IndexedFaceSet: [
+                                USE: "SkinMeshIFS"
+                            ]
+                        ]
+                    ]
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "SkinSwitchShapeIndexedGeometry"
+                    DEF: "e_SkinSwitchShapeIndexedGeometry"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+#TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
+                    Shape: [
+                        containerField: "skin"
+                        setGeometry: [
+                            IndexedFaceSet: [
+                                DEF: "IndexedSkinMeshIFS"
+                                setCoord: [
+                                    Coordinate: [
+                                        DEF: "SkinMeshCoordinate"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+#similarly for LOD
+#==============================
+                HAnimHumanoid: [
+                    name: "SynthesizedSkinShapeIndexedTwoPartGeometry"
+                    DEF: "f_SynthesizedSkinShapeIndexedTwoPartGeometry"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+                    Shape: [
+                        containerField: "skin"
+                        setGeometry: [
+                            IndexedFaceSet: [
+                                DEF: "TwoPartIndexedSkinMesh"
+                                setCoord: [
+                                    Coordinate: [
+                                        DEF: "TwoPartSkinMesh"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "ApparelSkinIndexedGeometryMultipleShapes"
+                    DEF: "g_ApparelSkinIndexedGeometryMultipleShapes"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+                    Shape: [
+                        containerField: "skin"
+                    ],
+#allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
+#TODO proposed for X3D4.1 <Shape containerField='apparel'/>
+                ],
+#==============================
+                HAnimHumanoid: [
+                    name: "AnatomySkinIndexedGeometryMultipleShapes"
+                    DEF: "h_AnatomySkinIndexedGeometryMultipleShapes"
+                    version: "2.0"
+                    HAnimJoint: [
+                        name: "humanoid_root"
+                        ulimit: [0, 0, 0]
+                        llimit: [0, 0, 0]
+                        containerField: "skeleton"
+                        HAnimSegment: [
+                            name: "sacrum"
+                        ]
+                    ],
+#allow multiple Shape nodes with containerField='skin', one for each layer of skin
+                    Shape: [
+                        containerField: "skin"
+                    ]
+                ],
+#==============================
+            ],
+            Viewpoint: [
+                DEF: "ViewHelpText"
+                description: "Select text to see website"
+                position: [0, 0, 12]
+            ],
+#Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
+            Anchor: [
+                description: "DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches"
+                parameter: ["target=blank"]
+                url: ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"]
+                Shape: [
+#TODO adjust Text string and Box size, then set Material transparency='1'
+                    setGeometry: [
+                        Text: [
+                            string: ["DesignPatternsApparelMedicalSkinLayers.x3d", "", "explores potential apparel approaches"]
+                            setFontStyle: [
+                                FontStyle: [
+                                    family: ["SANS"]
+                                    justify: ["MIDDLE", "MIDDLE"]
+                                    size: 0.6
+                                    style: "BOLD"
+                                ]
+                            ]
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.9, 0.9, 0.9]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                Shape: [
+#Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
+                    setGeometry: [
+                        Box: [
+                            size: [11, 2, 0.001]
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    transparency: 1.0
+                                ]
                             ]
                         ]
                     ]
                 ]
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "SimpleSkeletonMesh"
-                DEF: "b_SimpleSkeletonMesh"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                        Shape: [
-                            IndexedFaceSet:
-                                DEF: "SegmentBoneMesh"
-                        ]
-                    ]
-                ]
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "SkinIndexedGeometry"
-                DEF: "c_SkinIndexedGeometry"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-                IndexedFaceSet: [
-                    DEF: "SkinMeshIFS"
-                    containerField: "skin"
-                ]
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "SkinShapeIndexedGeometry"
-                DEF: "d_SkinShapeIndexedGeometry"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-                Shape: [
-                    containerField: "skin"
-                    IndexedFaceSet:
-                        USE: "SkinMeshIFS"
-                ]
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "SkinSwitchShapeIndexedGeometry"
-                DEF: "e_SkinSwitchShapeIndexedGeometry"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-#TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
-                Shape: [
-                    containerField: "skin"
-                    IndexedFaceSet:
-                        DEF: "IndexedSkinMeshIFS"
-                        Coordinate:
-                            DEF: "SkinMeshCoordinate"
-                ]
-            ],
-#similarly for LOD
-#==============================
-            HAnimHumanoid: [
-                name: "SynthesizedSkinShapeIndexedTwoPartGeometry"
-                DEF: "f_SynthesizedSkinShapeIndexedTwoPartGeometry"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-                Shape: [
-                    containerField: "skin"
-                    IndexedFaceSet:
-                        DEF: "TwoPartIndexedSkinMesh"
-                        Coordinate:
-                            DEF: "TwoPartSkinMesh"
-                ]
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "ApparelSkinIndexedGeometryMultipleShapes"
-                DEF: "g_ApparelSkinIndexedGeometryMultipleShapes"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-                Shape: [
-                    containerField: "skin"
-                ],
-#allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
-#TODO proposed for X3D4.1 <Shape containerField='apparel'/>
-            ],
-#==============================
-            HAnimHumanoid: [
-                name: "AnatomySkinIndexedGeometryMultipleShapes"
-                DEF: "h_AnatomySkinIndexedGeometryMultipleShapes"
-                version: "2.0"
-                HAnimJoint: [
-                    name: "humanoid_root"
-                    ulimit: [0, 0, 0]
-                    llimit: [0, 0, 0]
-                    containerField: "skeleton"
-                    HAnimSegment: [
-                        name: "sacrum"
-                    ]
-                ],
-#allow multiple Shape nodes with containerField='skin', one for each layer of skin
-                Shape: [
-                    containerField: "skin"
-                ]
-            ],
-#==============================
-        ],
-        Viewpoint: [
-            DEF: "ViewHelpText"
-            description: "Select text to see website"
-            position: [0, 0, 12]
-        ],
-#Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
-        Anchor: [
-            description: "DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches"
-            parameter: ["target=blank"]
-            url: ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"]
-            Shape: [
-#TODO adjust Text string and Box size, then set Material transparency='1'
-                Text:
-                    string: ["DesignPatternsApparelMedicalSkinLayers.x3d", "", "explores potential apparel approaches"]
-                    FontStyle:
-                        family: ["SANS"]
-                        justify: ["MIDDLE", "MIDDLE"]
-                        size: 0.6
-                        style: "BOLD"
-                Appearance:
-                    Material:
-                        diffuseColor: [0.9, 0.9, 0.9]
-            ],
-            Shape: [
-#Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
-                Box:
-                    size: [11, 2, 0.001]
-                Appearance:
-                    Material:
-                        transparency: 1.0
             ]
         ]
+    ]

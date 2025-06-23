@@ -2,7 +2,7 @@
 
 // var jsonlint = require("@prantlf/jsonlint");
 
-function DOM2JSONSerializer() {
+export default function DOM2JSONSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
 	try {
@@ -420,5 +420,3 @@ DOM2JSONSerializer.prototype = {
     		return object;
 	}
 }
-
-module.exports = DOM2JSONSerializer;

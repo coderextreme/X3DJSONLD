@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function NodeSerializer () {
+export default function NodeSerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -479,4 +479,3 @@ NodeSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = NodeSerializer;

@@ -3,10 +3,10 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-var DOMSerializer = require('./DOMSerializer.js');
+import DOMSerializer from './DOMSerializer.js';
 let serializer = new DOMSerializer();
 
-function CScriptSerializer () {
+export default function CScriptSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -406,4 +406,3 @@ CScriptSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = CScriptSerializer;

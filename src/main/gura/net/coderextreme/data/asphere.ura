@@ -1,37 +1,52 @@
 X3D:
     profile: "Interchange"
     version: "3.3"
-    head:
-        component: [
-            name: "Scripting"
-            level: 1
-        ],
-        meta: [
-            name: "title"
-            content: "asphere.x3d"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "generator"
-            content: "manual"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "a sphere"
-        ]
-    Scene:
-        Group: [
-            Shape: [
-                Appearance:
-                    Material:
-                        diffuseColor: [1, 1, 1]
-                Sphere:
+    setHead: [
+        head: [
+            component: [
+                name: "Scripting"
+                level: 1
+            ],
+            meta: [
+                name: "title"
+                content: "asphere.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "a sphere"
             ]
         ]
+    ]
+    setScene: [
+        Scene: [
+            Group: [
+                Shape: [
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [1, 1, 1]
+                                ]
+                            ]
+                        ]
+                    ]
+                    setGeometry: [
+                        Sphere: [ empty
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

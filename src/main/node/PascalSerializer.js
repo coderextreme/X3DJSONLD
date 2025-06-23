@@ -3,9 +3,9 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-var fs = require("fs");
+import fs from "fs";
 
-function PascalSerializer () {
+export default function PascalSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -745,9 +745,3 @@ PascalSerializer.prototype = {
 		return str;
 	}
 };
-
-
-if (typeof module === 'object')  {
-	module.exports = PascalSerializer;
-}
-

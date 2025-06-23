@@ -90,7 +90,7 @@
 },
 {
 "@name":"translated",
-"@content":"30 April 2024"
+"@content":"04 June 2025"
 },
 {
 "@name":"generator",
@@ -224,10 +224,59 @@
 "-value":[
 { "MetadataSet":
 {
+"@name":"Selection",
+"@DEF":"Selection",
+"@reference":"http://titania.create3000.de",
+"-value":[
+{ "MetadataSet":
+{
+"@name":"nodes",
+"@DEF":"nodes",
+"@reference":"http://titania.create3000.de"
+}
+}
+]
+}
+},
+{ "MetadataSet":
+{
+"@name":"NavigationInfo",
+"@DEF":"NavigationInfo",
+"@reference":"http://titania.create3000.de",
+"-value":[
+{ "MetadataString":
+{
+"@name":"type",
+"@DEF":"type",
+"@reference":"http://titania.create3000.de",
+"@value":["EXAMINE"]
+}
+}
+]
+}
+},
+{ "MetadataSet":
+{
 "@name":"Viewpoint",
 "@DEF":"Viewpoint",
 "@reference":"http://titania.create3000.de",
 "-value":[
+{ "MetadataDouble":
+{
+"@name":"position",
+"@DEF":"position",
+"@reference":"http://titania.create3000.de",
+"@value":[6,0,2]
+}
+},
+{ "MetadataDouble":
+{
+"@name":"orientation",
+"@DEF":"orientation",
+"@reference":"http://titania.create3000.de",
+"@value":[0,0,0,1]
+}
+},
 { "MetadataDouble":
 {
 "@name":"centerOfRotation",

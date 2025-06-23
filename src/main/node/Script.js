@@ -1,4 +1,4 @@
-class LOG {
+export class LOG {
 	constructor() {
 		this.array = [];
 	}
@@ -13,7 +13,7 @@ class LOG {
 	}
 }
 
-class Packages {
+export class Packages {
         constructor () {
 		this.packages = {};
 	}
@@ -29,7 +29,7 @@ class Packages {
 
 // there are multiple scripts per package
 
-let packages = new Packages();
+export let packages = new Packages();
 
 class Script {
 	constructor (mypackage, name) {
@@ -58,9 +58,9 @@ class Script {
 	}
 }
 
-var X3DJSON = {}; // global
+export let X3DJSON = {}; // global
 
-class Scripts {
+export class Scripts {
 	runAllRoutes() {
 		for (let r in X3DJSON.runRoutes) {
 			X3DJSON.runRoutes[r]();
@@ -776,11 +776,4 @@ class Scripts {
 
 }
 
-module.exports = {
-	LOG:LOG,
-	Packages:Packages,
-	packages:packages,
-	Script:Script,
-	Scripts:Scripts,
-	X3DJSON:X3DJSON
-}
+export default Script;
