@@ -18,7 +18,7 @@ var MFString = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       /*All head/meta tags are optional, WorldInfo is also optional*/
       /*Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1*/
       head : new SFNode(
