@@ -1,0 +1,4 @@
+/home/yottzumm/quarter/src/quarter/build/CMakeFiles/Rubik.dir
+/home/yottzumm/quarter/src/quarter/build/CMakeFiles/edit_cache.dir
+/home/yottzumm/quarter/src/quarter/build/CMakeFiles/rebuild_cache.dir
+/home/yottzumm/quarter/src/quarter/build/CMakeFiles/Rubik_autogen.dir
