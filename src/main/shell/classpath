@@ -9,11 +9,12 @@ export CLASSPATH=".;${X3DJSONLD}/src/main/java;${X3DJSONLD}/saxon-he-12.4.jar;${
 
 # GRAAL DOES NOT TAKE C:
 export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.4.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
-export PYTHONPATH="${PYTHONPATH-"."}:\\C\\Python311\\Lib:\\C\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\python"
+export PYTHONPATH="${PYTHONPATH-"."}:net/coderextreme/data:net/coderextreme/personal"
 export PATH="${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;${PATH}"
 
-export PYTHON=python
-alias python=python
+export PYTHON=graalpy
+alias python='${PYTHON} --jvm'
+source ${X3DJSONLD}/src/main/python/venv/Scripts/activate
 export PIP=pip3
 export NODE=node.exe
 export NODEDIR=${HOMESFOLDER}/$USERNAME/X3DJSONLD/src/main/node
