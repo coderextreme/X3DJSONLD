@@ -7,10 +7,10 @@ const NEW = ""; // new
 const PTR = ""; // *
 const REF = "&"; // *
 
-var DOMSerializer = require('./DOMSerializer.js');
+import DOMSerializer from './DOMSerializer.js';
 let serializer = new DOMSerializer();
 
-function CppScriptSerializer () {
+export default function CppScriptSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -762,4 +762,3 @@ CppScriptSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = CppScriptSerializer;

@@ -1,79 +1,95 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        meta: [
-            name: "title"
-            content: "flower.x3d"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "generator"
-            content: "manual"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "a flower"
-        ]
-    Scene:
-        NavigationInfo: [
-        ],
-        DirectionalLight: [
-            direction: [0, -0.8, -0.2]
-            intensity: 0.5
-        ],
-        Background: [
-            skyColor: [1, 1, 1]
-        ],
-        Viewpoint: [
-            description: "One mathematical orbital"
-            position: [0, 0, 50]
-        ],
-        Transform: [
-            translation: [0, -1, 1]
-            rotation: [0, 1, 0, 3.1415926]
-            scale: [1.5, 1.5, 1.5]
-            Shape: [
-                Appearance:
-                    Material:
-                        transparency: 0.1
-                        diffuseColor: [0.9, 0.3, 0.3]
-                        specularColor: [0.8, 0.8, 0.8]
-                        shininess: 0.145
-                IndexedFaceSet:
-                    ccw: false
-                    convex: false
-                    coordIndex: [0, 1, 2, -1]
-                    DEF: "Orbit"
-                    Coordinate:
-                        DEF: "OrbitCoordinates"
-                        point: [0, 0, 1, 0, 1, 0, 1, 0, 0]
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "flower.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "a flower"
             ]
-        ],
-        Script: [
-            DEF: "OrbitScript"
-            field: [
-                name: "set_fraction"
-                accessType: "inputOnly"
-                type: "SFFloat"
+        ]
+    ]
+    setScene: [
+        Scene: [
+            NavigationInfo: [ empty
             ],
-            field: [
-                name: "coordinates"
-                accessType: "outputOnly"
-                type: "MFVec3f"
+            DirectionalLight: [
+                direction: [0, -0.8, -0.2]
+                intensity: 0.5
             ],
-            field: [
-                name: "coordIndexes"
-                accessType: "outputOnly"
-                type: "MFInt32"
+            Background: [
+                skyColor: [1, 1, 1]
             ],
+            Viewpoint: [
+                description: "One mathematical orbital"
+                position: [0, 0, 50]
+            ],
+            Transform: [
+                translation: [0, -1, 1]
+                rotation: [0, 1, 0, 3.1415926]
+                scale: [1.5, 1.5, 1.5]
+                Shape: [
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    transparency: 0.1
+                                    diffuseColor: [0.9, 0.3, 0.3]
+                                    specularColor: [0.8, 0.8, 0.8]
+                                    shininess: 0.145
+                                ]
+                            ]
+                        ]
+                    ]
+                    setGeometry: [
+                        IndexedFaceSet: [
+                            ccw: false
+                            convex: false
+                            coordIndex: [0, 1, 2, -1]
+                            DEF: "Orbit"
+                            setCoord: [
+                                Coordinate: [
+                                    DEF: "OrbitCoordinates"
+                                    point: [0, 0, 1, 0, 1, 0, 1, 0, 0]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            Script: [
+                DEF: "OrbitScript"
+                field: [
+                    name: "set_fraction"
+                    accessType: "inputOnly"
+                    type: "SFFloat"
+                ],
+                field: [
+                    name: "coordinates"
+                    accessType: "outputOnly"
+                    type: "MFVec3f"
+                ],
+                field: [
+                    name: "coordIndexes"
+                    accessType: "outputOnly"
+                    type: "MFInt32"
+                ],
 #<field accessType="inputOutput" name="e" type="SFFloat" value="5"/> <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> <field accessType="inputOutput" name="resolution" type="SFInt32" value="150"/>
 #ecmascript:
 #
@@ -149,27 +165,29 @@ X3D:
 #	}
 #	generateCoordinates(resolution);
 #}
-        ],
-        TimeSensor: [
-            DEF: "Clock"
-            cycleInterval: 16.0
-            loop: true
-        ],
-        ROUTE: [
-            fromNode: "OrbitScript"
-            fromField: "coordIndexes"
-            toNode: "Orbit"
-            toField: "set_coordIndex"
-        ],
-        ROUTE: [
-            fromNode: "OrbitScript"
-            fromField: "coordinates"
-            toNode: "OrbitCoordinates"
-            toField: "point"
-        ],
-        ROUTE: [
-            fromNode: "Clock"
-            fromField: "fraction_changed"
-            toNode: "OrbitScript"
-            toField: "set_fraction"
+            ],
+            TimeSensor: [
+                DEF: "Clock"
+                cycleInterval: 16.0
+                loop: true
+            ],
+            ROUTE: [
+                fromNode: "OrbitScript"
+                fromField: "coordIndexes"
+                toNode: "Orbit"
+                toField: "set_coordIndex"
+            ],
+            ROUTE: [
+                fromNode: "OrbitScript"
+                fromField: "coordinates"
+                toNode: "OrbitCoordinates"
+                toField: "point"
+            ],
+            ROUTE: [
+                fromNode: "Clock"
+                fromField: "fraction_changed"
+                toNode: "OrbitScript"
+                toField: "set_fraction"
+            ]
         ]
+    ]

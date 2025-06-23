@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'>
   <head>
     <meta content='CameraPrototypes.x3d' name='title'/>
@@ -56,7 +57,7 @@
             <connect nodeField='isBound' protoField='isBound'/>
           </IS>
         </Viewpoint>
-        <NavigationInfo DEF='CameraNavInfo' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'>
+        <NavigationInfo DEF='CameraNavInfo' type='"EXAMINE" "FLY" "ANY"'>
           <IS>
             <connect nodeField='set_bind' protoField='set_bind'/>
             <connect nodeField='headlight' protoField='headlight'/>
@@ -120,8 +121,8 @@
           <field name='shotCount' accessType='initializeOnly' appinfo='how many CameraShot nodes are contained in shots array' type='SFInt32' value='0'/>
           <field name='movesCount' accessType='initializeOnly' appinfo='how many CameraMove nodes are contained in moves array' type='SFInt32' value='0'/>
           <field name='frameCount' accessType='initializeOnly' appinfo='how many frames were created in current loop' type='SFFloat' value='0.0'/>
-          <field name='startTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime'/>
-          <field name='priorTraceTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime'/>
+          <field name='startTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
+          <field name='priorTraceTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
           <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
           <IS>
             <connect nodeField='description' protoField='description'/>
@@ -1455,7 +1456,7 @@ ecmascript:
             <Material diffuseColor='1 1 0.2'/>
           </Appearance>
           <Text string='"CameraPrototypes.x3d" "defines multiple prototype nodes" "" "Click on this text to see" "CameraExamples.x3d scene"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>

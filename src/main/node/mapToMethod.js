@@ -1,4 +1,6 @@
-var mapToMethod = {"X3DNode" : {
+let mapToMethod;
+
+export default mapToMethod = {"X3DNode" : {
 	"IS" : "setIS",
 	"IS" : "setIS",
 	"X3DConcreteStatement" : "setIS",
@@ -34578,4 +34580,3 @@ var mapToMethod = {"X3DNode" : {
 	"X3DNode" : "setScene",
 },
 }
-module.exports = mapToMethod;

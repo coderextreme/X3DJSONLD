@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html' name='generator'/>
@@ -15,7 +16,7 @@
     <Viewpoint DEF='cam1' description='cam1 description' position='0 0 2000'/>
     <Viewpoint DEF='cam2' description='cam2 description' position='0 200 1000'/>
     <Background groundAngle='0 1 1' groundColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.51 0.81 0.95' skyAngle='0 1 1' skyColor='0.21 0.18 0.66 0.2 0.44 0.85 0.51 0.81 0.95 0.51 0.81 0.95'/>
-    <NavigationInfo DEF='user01' avatarSize='0.25 1.6 0.75' speed='50.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo DEF='user01' speed='50.0'/>
     <Fog/>
     <Transform DEF='trans' rotation='1 0 0 0.78'>
       <Shape>

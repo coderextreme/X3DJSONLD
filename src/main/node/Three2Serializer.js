@@ -1,6 +1,6 @@
 "use strict";
 
-function Three2Serializer () {
+export default function Three2Serializer () {
 };
 
 
@@ -238,4 +238,3 @@ Three2Serializer.prototype = {
 		return obj;
 	}
 }
-module.exports = Three2Serializer;

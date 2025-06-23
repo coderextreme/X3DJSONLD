@@ -1,113 +1,164 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        meta: [
-            name: "converter"
-            content: "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
-        ],
-        meta: [
-            name: "converted"
-            content: "Mon, 31 Jul 2023 03:48:04 GMT"
+    setHead: [
+        head: [
+            meta: [
+                name: "converter"
+                content: "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+            ],
+            meta: [
+                name: "converted"
+                content: "Mon, 31 Jul 2023 03:48:04 GMT"
+            ]
         ]
-    Scene:
-        NavigationInfo: [
-            headlight: false
-        ],
-        Group: [
+    ]
+    setScene: [
+        Scene: [
+            NavigationInfo: [
+                headlight: false
+            ],
             Group: [
-                DEF: "ARROW"
-                Shape: [
-                    Appearance:
-                        DEF: "ARROW_APPEARANCE"
-                        Material:
-                            diffuseColor: [0.3, 0.3, 1]
-                            emissiveColor: [0.3, 0.3, 0.33]
-                    Cylinder:
-                        top: false
-                        bottom: false
-                        radius: 0.025
-                ],
-                Transform: [
-                    translation: [0, 1, 0]
+                Group: [
+                    DEF: "ARROW"
                     Shape: [
-                        DEF: "ARROW_POINTER"
-                        Appearance:
-                            USE: "ARROW_APPEARANCE"
-                        Cone:
-                            height: 0.1
-                            bottomRadius: 0.05
+                        setAppearance: [
+                            Appearance: [
+                                DEF: "ARROW_APPEARANCE"
+                                setMaterial: [
+                                    Material: [
+                                        diffuseColor: [0.3, 0.3, 1]
+                                        emissiveColor: [0.3, 0.3, 0.33]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                top: false
+                                bottom: false
+                                radius: 0.025
+                            ]
+                        ]
+                    ],
+                    Transform: [
+                        translation: [0, 1, 0]
+                        Shape: [
+                            DEF: "ARROW_POINTER"
+                            setAppearance: [
+                                Appearance: [
+                                    USE: "ARROW_APPEARANCE"
+                                ]
+                            ]
+                            setGeometry: [
+                                Cone: [
+                                    height: 0.1
+                                    bottomRadius: 0.05
+                                ]
+                            ]
+                        ]
+                    ],
+                    Transform: [
+                        translation: [0, -1, 0]
+                        rotation: [1, 0, 0, 3.1416]
+                        Shape: [
+                            USE: "ARROW_POINTER"
+                        ]
                     ]
                 ],
                 Transform: [
-                    translation: [0, -1, 0]
-                    rotation: [1, 0, 0, 3.1416]
-                    Shape: [
-                        USE: "ARROW_POINTER"
+                    translation: [0, 1.08, 0]
+                    Billboard: [
+                        Shape: [
+                            setAppearance: [
+                                Appearance: [
+                                    DEF: "LABEL_APPEARANCE"
+                                    setMaterial: [
+                                        Material: [
+                                            diffuseColor: [1, 1, 0.3]
+                                            emissiveColor: [0.33, 0.33, 0.1]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                            setGeometry: [
+                                Text: [
+                                    string: ["Y"]
+                                    setFontStyle: [
+                                        FontStyle: [
+                                            DEF: "LABEL_FONT"
+                                            family: ["SANS"]
+                                            size: 0.2
+                                            justify: ["MIDDLE"]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
                     ]
                 ]
             ],
             Transform: [
-                translation: [0, 1.08, 0]
-                Billboard: [
-                    Shape: [
-                        Appearance:
-                            DEF: "LABEL_APPEARANCE"
-                            Material:
-                                diffuseColor: [1, 1, 0.3]
-                                emissiveColor: [0.33, 0.33, 0.1]
-                        Text:
-                            string: ["Y"]
-                            FontStyle:
-                                DEF: "LABEL_FONT"
-                                family: ["SANS"]
-                                size: 0.2
-                                justify: ["MIDDLE"]
-                    ]
-                ]
-            ]
-        ],
-        Transform: [
-            rotation: [0, 0, 1, -1.5708]
-            Group: [
+                rotation: [0, 0, 1, -1.5708]
                 Group: [
-                    USE: "ARROW"
-                ],
-                Transform: [
-                    translation: [0.072, 1.1, 0]
-                    rotation: [0, 0, 1, 1.5708]
-                    Billboard: [
-                        Shape: [
-                            Appearance:
-                                USE: "LABEL_APPEARANCE"
-                            Text:
-                                string: ["X"]
-                                FontStyle:
-                                    USE: "LABEL_FONT"
+                    Group: [
+                        USE: "ARROW"
+                    ],
+                    Transform: [
+                        translation: [0.072, 1.1, 0]
+                        rotation: [0, 0, 1, 1.5708]
+                        Billboard: [
+                            Shape: [
+                                setAppearance: [
+                                    Appearance: [
+                                        USE: "LABEL_APPEARANCE"
+                                    ]
+                                ]
+                                setGeometry: [
+                                    Text: [
+                                        string: ["X"]
+                                        setFontStyle: [
+                                            FontStyle: [
+                                                USE: "LABEL_FONT"
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
                         ]
                     ]
                 ]
-            ]
-        ],
-        Transform: [
-            rotation: [1, 0, 0, 1.5708]
-            Group: [
+            ],
+            Transform: [
+                rotation: [1, 0, 0, 1.5708]
                 Group: [
-                    USE: "ARROW"
-                ],
-                Transform: [
-                    translation: [0, 1.1, 0.072]
-                    rotation: [1, 0, 0, -1.5708]
-                    Billboard: [
-                        Shape: [
-                            Appearance:
-                                USE: "LABEL_APPEARANCE"
-                            Text:
-                                string: ["Z"]
-                                FontStyle:
-                                    USE: "LABEL_FONT"
+                    Group: [
+                        USE: "ARROW"
+                    ],
+                    Transform: [
+                        translation: [0, 1.1, 0.072]
+                        rotation: [1, 0, 0, -1.5708]
+                        Billboard: [
+                            Shape: [
+                                setAppearance: [
+                                    Appearance: [
+                                        USE: "LABEL_APPEARANCE"
+                                    ]
+                                ]
+                                setGeometry: [
+                                    Text: [
+                                        string: ["Z"]
+                                        setFontStyle: [
+                                            FontStyle: [
+                                                USE: "LABEL_FONT"
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
                         ]
                     ]
                 ]
             ]
         ]
+    ]

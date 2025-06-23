@@ -3,9 +3,9 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-let fs = require("fs");
+import fs from "fs";
 
-function GuraSerializer () {
+export default function GuraSerializer () {
 }
 
 
@@ -75,6 +75,10 @@ GuraSerializer.prototype = {
 			method = mapToMethod[element.nodeName];
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
+		}
+		if (method === "setProxy") {
+			method = "addChild";
+			addpre = "";
 		}
 		for (let a in node.attributes) {
 			let attrs = node.attributes;
@@ -246,6 +250,7 @@ GuraSerializer.prototype = {
 		let str = "";
 		let attrType = "";
 		let nodename = "";
+		let numChildren = 0;
 		for (let a in element.attributes) {
 			let attrs = element.attributes;
 			try {
@@ -303,6 +308,7 @@ GuraSerializer.prototype = {
 					if (attr === 'containerField' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
 						// str += ")"; // for cast
 					}
+					numChildren++;
 				}
 			} catch (e) {
 				console.error(e);
@@ -314,43 +320,65 @@ GuraSerializer.prototype = {
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			let ch = "";
-			if (first) {
-				first = false;
-			} else if (node.nodeType != 8 && node.nodeType != 4) {
-				let prevNode = childrenNodes[childrenNodes.length-1];
-				if (prevNode) {
-					let lastchar = prevNode.charAt(prevNode.length - 1);
-					let seclastchar = prevNode.charAt(prevNode.length - 2);
-					if (lastchar === '\n' && seclastchar !== ',') {
-						prevNode = prevNode.slice(0, -1)+lastchar;  // chop off newline, add comma
-						childrenNodes[childrenNodes.length-1] = prevNode;
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+				let method = this.printParentChild(element, node, cn, mapToMethod);
+
+				if (first) {
+					first = false;
+				} else {
+					let prevNode = childrenNodes[childrenNodes.length-1];
+					if (prevNode) {
+						let lastchar = prevNode.charAt(prevNode.length - 1);
+						let seclastchar = prevNode.charAt(prevNode.length - 2);
+						if (lastchar === '\n' && seclastchar !== ',') {
+							prevNode = prevNode.slice(0, -1)+lastchar;  // chop off newline, add comma
+							childrenNodes[childrenNodes.length-1] = prevNode;
+						} else if (!method.startsWith(".set")) {
+							ch +=  ",\n";
+						} else {
+							ch +=  "\n";
+						}
 					} else {
 						ch +=  ",\n";
 					}
-				} else {
-					ch +=  ",\n";
 				}
-			} else {
-				ch += ","; // because we do want a comma here
-			}
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-				let method = this.printParentChild(element, node, cn, mapToMethod);
+
 				let begin = "";
 				let end = "";
-				if (method.startsWith(".add")) {
+				//if (method.startsWith(".add")) {
 					begin = " [";
 					end = "]";
+				//}
+				if (method.startsWith(".set")) {
+					ch += "    ".repeat(n)+method.substr(1)+":"+begin+"\n";
+					n++;
 				}
 				ch += "    ".repeat(n)+node.nodeName+":"+begin+"\n";
 
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1);
+				if (ch.endsWith("empty\n")) {
+					ch = ch.slice(0, -7);
+					ch += " empty\n";
+				}
+				if (method.startsWith(".set")) {
+					if (end !== "") {
+						ch += "    ".repeat(n)+end+"\n";
+					}
+					n--;
+				}
 				if (end !== "") {
 					ch += "    ".repeat(n)+end;
 				}
 				childrenNodes.push(ch);
+				numChildren++;
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8
 			        || element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				// both comments and code are handled the same way
+				if (first) {
+					first = false;
+				} else if (element.nodeName !== "X3D") {
+					ch += ",\n"; // no comma after head
+				}
 				if (ch) {
 					let lastchar = ch.charAt(ch.length - 1);
 					if (lastchar === ',') {
@@ -370,6 +398,9 @@ GuraSerializer.prototype = {
 				console.error("Unhandled", node.nodeType, node.nodeName, node.nodeValue);
 			}
 		}
+		if (numChildren === 0) {
+			childrenNodes.push("empty");
+                }
 		let newcn = childrenNodes.join("");
 		if (newcn !== "") {
 			str += newcn;
@@ -380,9 +411,3 @@ GuraSerializer.prototype = {
 		return str;
 	}
 };
-
-
-if (typeof module === 'object')  {
-	module.exports = GuraSerializer;
-}
-

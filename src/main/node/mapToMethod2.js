@@ -78,4 +78,4 @@ var mapToMethod2 = {
 		"HAnimJoint" : "addChild"
 	}
 };
-module.exports = mapToMethod2;
+export default mapToMethod2;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='LOA1_JumpAnimation.x3d' name='title'/>
@@ -22,11 +23,11 @@
     <WorldInfo title='LOA1_JumpAnimation.x3d'/>
     <ProtoDeclare name='LOA1_JumpAnimation'>
       <ProtoInterface>
-        <field name='cycleInterval' accessType='inputOutput' type='SFTime'/>
+        <field name='cycleInterval' accessType='inputOutput' type='SFTime' value='2.0'/>
         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
         <field name='loop' accessType='inputOutput' type='SFBool' value='true'/>
-        <field name='startTime' accessType='inputOutput' type='SFTime'/>
-        <field name='stopTime' accessType='inputOutput' type='SFTime'/>
+        <field name='startTime' accessType='inputOutput' type='SFTime' value='0.0'/>
+        <field name='stopTime' accessType='inputOutput' type='SFTime' value='-1.0'/>
         <field name='fraction_changed' accessType='outputOnly' type='SFFloat'/>
         <field name='isActive' accessType='outputOnly' type='SFBool'/>
         <field name='HumanoidRoot_translation_changed' accessType='outputOnly' type='SFVec3f'/>
@@ -185,7 +186,7 @@
           <Material diffuseColor='1 1 0.2'/>
         </Appearance>
         <Text string='"LOA1_JumpAnimation.x3d" "defines a prototype" "for animating a humanoid." "" "Click this text to see" "InterchangableActorsViaDynamicRouting example."'>
-          <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
+          <FontStyle justify='"MIDDLE" "MIDDLE"' size='0.8'/>
         </Text>
       </Shape>
     </Anchor>

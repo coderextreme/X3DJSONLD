@@ -92,7 +92,7 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 },
 {
 "@name":"translated",
-"@content":"19 June 2024"
+"@content":"04 June 2025"
 },
 {
 "@name":"generator",
@@ -13519,14 +13519,14 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@DEF":"hanim_JinLOA4S",
 "@loa":4,
 "@version":"2.0",
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@name":"humanoid_root",
 "@DEF":"hanim_humanoid_root",
 "@center":[0,0.77,0],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -13561,8 +13561,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"sacroiliac",
 "@DEF":"hanim_sacroiliac",
 "@center":[0,0.826,0.02],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -13782,8 +13782,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_hip",
 "@DEF":"hanim_l_hip",
 "@center":[0.095,0.8266,-0.0183],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -13884,8 +13884,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_knee",
 "@DEF":"hanim_l_knee",
 "@center":[0.0926,0.4088,-0.01944],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -13972,8 +13972,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_talocrural",
 "@DEF":"hanim_l_talocrural",
 "@center":[0.0888,0.09545,-0.01045],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14041,8 +14041,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_talocalcaneonavicular",
 "@DEF":"hanim_l_talocalcaneonavicular",
 "@center":[0.0783,0.0369,0.0049],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14077,8 +14077,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_cuneonavicular_1",
 "@DEF":"hanim_l_cuneonavicular_1",
 "@center":[0.0674,0.0321,0.0184],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14103,8 +14103,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsometatarsal_1",
 "@DEF":"hanim_l_tarsometatarsal_1",
 "@center":[0.0646,0.02324,0.0442],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14129,8 +14129,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metatarsophalangeal_1",
 "@DEF":"hanim_l_metatarsophalangeal_1",
 "@center":[0.0621,0.01442,0.0936],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14174,8 +14174,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_interphalangeal_1",
 "@DEF":"hanim_l_tarsal_interphalangeal_1",
 "@center":[0.062,0.012,0.115],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14231,8 +14231,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_cuneonavicular_2",
 "@DEF":"hanim_l_cuneonavicular_2",
 "@center":[0.0814,0.0335,0.02143],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14257,8 +14257,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsometatarsal_2",
 "@DEF":"hanim_l_tarsometatarsal_2",
 "@center":[0.0802,0.0261,0.0411],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14283,8 +14283,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metatarsophalangeal_2",
 "@DEF":"hanim_l_metatarsophalangeal_2",
 "@center":[0.0825,0.01497,0.09783],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14309,8 +14309,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_proximal_interphalangeal_2",
 "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
 "@center":[0.0843,0.01265,0.114],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14335,8 +14335,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_distal_interphalangeal_2",
 "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
 "@center":[0.0843,0.00982,0.123435],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14395,8 +14395,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_cuneonavicular_3",
 "@DEF":"hanim_l_cuneonavicular_3",
 "@center":[0.09297,0.0334,0.01982],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14421,8 +14421,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsometatarsal_3",
 "@DEF":"hanim_l_tarsometatarsal_3",
 "@center":[0.09459,0.0261,0.0394],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14447,8 +14447,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metatarsophalangeal_3",
 "@DEF":"hanim_l_metatarsophalangeal_3",
 "@center":[0.0965,0.01505,0.0954],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14473,8 +14473,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_proximal_interphalangeal_3",
 "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
 "@center":[0.09886,0.01192,0.11047],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14499,8 +14499,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_distal_interphalangeal_3",
 "@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
 "@center":[0.1004,0.00983,0.1197],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14562,8 +14562,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_calcaneocuboid",
 "@DEF":"hanim_l_calcaneocuboid",
 "@center":[0.0891,0.05798,-0.0259],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14588,8 +14588,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_transversetarsal",
 "@DEF":"hanim_l_transversetarsal",
 "@center":[0.11063,0.03528,0.0021],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14619,8 +14619,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsometatarsal_4",
 "@DEF":"hanim_l_tarsometatarsal_4",
 "@center":[0.10649,0.02454,0.03843],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14645,8 +14645,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metatarsophalangeal_4",
 "@DEF":"hanim_l_metatarsophalangeal_4",
 "@center":[0.109867,0.01435,0.09117],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14671,8 +14671,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_proximal_interphalangeal_4",
 "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
 "@center":[0.11416,0.01224,0.10631],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14697,8 +14697,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_distal_interphalangeal_4",
 "@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
 "@center":[0.11567,0.00936,0.11369],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14754,8 +14754,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsometatarsal_5",
 "@DEF":"hanim_l_tarsometatarsal_5",
 "@center":[0.1208,0.02094,0.03474],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14780,8 +14780,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metatarsophalangeal_5",
 "@DEF":"hanim_l_metatarsophalangeal_5",
 "@center":[0.124065,0.01367,0.08656],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14806,8 +14806,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_proximal_interphalangeal_5",
 "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
 "@center":[0.12638,0.01086,0.09414],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14851,8 +14851,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_tarsal_distal_interphalangeal_5",
 "@DEF":"hanim_l_tarsal_distal_interphalangeal_5",
 "@center":[0.12728,0.00856,0.10188],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -14923,8 +14923,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_hip",
 "@DEF":"hanim_r_hip",
 "@center":[-0.09466,0.82665,-0.01835],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15025,8 +15025,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_knee",
 "@DEF":"hanim_r_knee",
 "@center":[-0.0926,0.408825,-0.01944],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15108,8 +15108,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_talocrural",
 "@DEF":"hanim_r_talocrural",
 "@center":[-0.08845,0.09544,-0.01045],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15177,8 +15177,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_talocalcaneonavicular",
 "@DEF":"hanim_r_talocalcaneonavicular",
 "@center":[-0.07794,0.0369,0.00486],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15213,8 +15213,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_cuneonavicular_1",
 "@DEF":"hanim_r_cuneonavicular_1",
 "@center":[-0.06698,0.032107,0.01839],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15239,8 +15239,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsometatarsal_1",
 "@DEF":"hanim_r_tarsometatarsal_1",
 "@center":[-0.064,0.02324,0.04419],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15265,8 +15265,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metatarsophalangeal_1",
 "@DEF":"hanim_r_metatarsophalangeal_1",
 "@center":[-0.06176,0.014425,0.09362],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15310,8 +15310,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_interphalangeal_1",
 "@DEF":"hanim_r_tarsal_interphalangeal_1",
 "@center":[-0.06174,0.0121,0.1153],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15367,8 +15367,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_cuneonavicular_2",
 "@DEF":"hanim_r_cuneonavicular_2",
 "@center":[-0.081,0.0335,0.02142],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15393,8 +15393,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsometatarsal_2",
 "@DEF":"hanim_r_tarsometatarsal_2",
 "@center":[-0.07983,0.0261,0.04106],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15419,8 +15419,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metatarsophalangeal_2",
 "@DEF":"hanim_r_metatarsophalangeal_2",
 "@center":[-0.0821,0.01497,0.09783],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15445,8 +15445,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_proximal_interphalangeal_2",
 "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
 "@center":[-0.0839,0.012647,0.114],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15471,8 +15471,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_distal_interphalangeal_2",
 "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
 "@center":[-0.0839,0.009825,0.123435],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15531,8 +15531,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_cuneonavicular_3",
 "@DEF":"hanim_r_cuneonavicular_3",
 "@center":[-0.09261,0.03339,0.01982],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15557,8 +15557,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsometatarsal_3",
 "@DEF":"hanim_r_tarsometatarsal_3",
 "@center":[-0.09423,0.0261,0.0394],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15583,8 +15583,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metatarsophalangeal_3",
 "@DEF":"hanim_r_metatarsophalangeal_3",
 "@center":[-0.0961,0.01505,0.09542],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15609,8 +15609,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_proximal_interphalangeal_3",
 "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
 "@center":[-0.0985,0.01192,0.11047],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15635,8 +15635,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_distal_interphalangeal_3",
 "@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
 "@center":[-0.100035,0.00982,0.1197],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15698,8 +15698,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_calcaneocuboid",
 "@DEF":"hanim_r_calcaneocuboid",
 "@center":[-0.088717,0.05798,-0.025965],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15724,8 +15724,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_transversetarsal",
 "@DEF":"hanim_r_transversetarsal",
 "@center":[-0.11027,0.03528,0.0021],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15750,8 +15750,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsometatarsal_4",
 "@DEF":"hanim_r_tarsometatarsal_4",
 "@center":[-0.10613,0.02454,0.03843],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15776,8 +15776,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metatarsophalangeal_4",
 "@DEF":"hanim_r_metatarsophalangeal_4",
 "@center":[-0.1095,0.01435,0.09117],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15802,8 +15802,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_proximal_interphalangeal_4",
 "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
 "@center":[-0.11378,0.01224,0.1063],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15828,8 +15828,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_distal_interphalangeal_4",
 "@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
 "@center":[-0.1153,0.00937,0.11369],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15885,8 +15885,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsometatarsal_5",
 "@DEF":"hanim_r_tarsometatarsal_5",
 "@center":[-0.12044,0.020945,0.03474],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15911,8 +15911,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metatarsophalangeal_5",
 "@DEF":"hanim_r_metatarsophalangeal_5",
 "@center":[-0.12368,0.01367,0.08656],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15937,8 +15937,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_proximal_interphalangeal_5",
 "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
 "@center":[-0.126,0.01086,0.09414],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -15982,8 +15982,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_tarsal_distal_interphalangeal_5",
 "@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
 "@center":[-0.1269,0.00856,0.10188],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16057,8 +16057,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vl5",
 "@DEF":"hanim_vl5",
 "@center":[0,0.9254,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16178,8 +16178,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vl4",
 "@DEF":"hanim_vl4",
 "@center":[0,0.9497,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16204,8 +16204,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vl3",
 "@DEF":"hanim_vl3",
 "@center":[0,0.9659,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16230,8 +16230,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vl2",
 "@DEF":"hanim_vl2",
 "@center":[0,0.98235,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16294,8 +16294,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vl1",
 "@DEF":"hanim_vl1",
 "@center":[0,0.99967,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16320,8 +16320,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt12",
 "@DEF":"hanim_vt12",
 "@center":[0,1.0231,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16346,8 +16346,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt11",
 "@DEF":"hanim_vt11",
 "@center":[0,1.0467,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16372,8 +16372,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt10",
 "@DEF":"hanim_vt10",
 "@center":[0,1.0638,-0.01378],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16436,8 +16436,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt9",
 "@DEF":"hanim_vt9",
 "@center":[0,1.0784,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16557,8 +16557,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt8",
 "@DEF":"hanim_vt8",
 "@center":[0,1.093,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16583,8 +16583,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt7",
 "@DEF":"hanim_vt7",
 "@center":[0,1.1088,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16609,8 +16609,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt6",
 "@DEF":"hanim_vt6",
 "@center":[0,1.1216,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16635,8 +16635,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt5",
 "@DEF":"hanim_vt5",
 "@center":[0,1.137,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16661,8 +16661,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt4",
 "@DEF":"hanim_vt4",
 "@center":[0,1.1524,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16687,8 +16687,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt3",
 "@DEF":"hanim_vt3",
 "@center":[0,1.1709,-0.01376],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16713,8 +16713,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt2",
 "@DEF":"hanim_vt2",
 "@center":[0,1.1956,-0.01378],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16739,8 +16739,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vt1",
 "@DEF":"hanim_vt1",
 "@center":[0,1.22,-0.0138],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16803,8 +16803,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc7",
 "@DEF":"hanim_vc7",
 "@center":[0,1.2453,-0.01506],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16877,8 +16877,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc6",
 "@DEF":"hanim_vc6",
 "@center":[0,1.2575,-0.01506],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16903,8 +16903,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc5",
 "@DEF":"hanim_vc5",
 "@center":[0,1.2699,-0.01506],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16929,8 +16929,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc4",
 "@DEF":"hanim_vc4",
 "@center":[0,1.28227,-0.01506],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16955,8 +16955,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc3",
 "@DEF":"hanim_vc3",
 "@center":[0,1.2951,-0.01506],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -16981,8 +16981,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc2",
 "@DEF":"hanim_vc2",
 "@center":[0,1.307,-0.015],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17026,8 +17026,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"vc1",
 "@DEF":"hanim_vc1",
 "@center":[0,1.3185,-0.0151],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17052,8 +17052,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"skullbase",
 "@DEF":"hanim_skullbase",
 "@center":[0,1.3126,-0.0154],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17317,8 +17317,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_eyelid_joint",
 "@DEF":"hanim_l_eyelid_joint",
 "@center":[0.0505,1.42425,0.03294],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17365,8 +17365,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_eyelid_joint",
 "@DEF":"hanim_r_eyelid_joint",
 "@center":[-0.0505,1.42425,0.03294],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17413,8 +17413,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_eyeball_joint",
 "@DEF":"hanim_l_eyeball_joint",
 "@center":[0.048127,1.4049,0.08305],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17461,8 +17461,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_eyeball_joint",
 "@DEF":"hanim_r_eyeball_joint",
 "@center":[-0.04813,1.4049,0.08305],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17509,8 +17509,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_eyebrow_joint",
 "@DEF":"hanim_l_eyebrow_joint",
 "@center":[0.02175,1.4139,0.1069],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17557,8 +17557,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_eyebrow_joint",
 "@DEF":"hanim_r_eyebrow_joint",
 "@center":[-0.02175,1.4139,0.10694],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17605,8 +17605,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"temporomandibular",
 "@DEF":"hanim_temporomandibular",
 "@center":[0,1.3128,0.01538],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17739,8 +17739,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_sternoclavicular",
 "@DEF":"hanim_l_sternoclavicular",
 "@center":[0.03847,1.2087,-0.01378],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17784,8 +17784,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_acromioclavicular",
 "@DEF":"hanim_l_acromioclavicular",
 "@center":[0.12294,1.191825,-0.0129],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17886,8 +17886,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_shoulder",
 "@DEF":"hanim_l_shoulder",
 "@center":[0.16506,1.17855,-0.00327],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -17988,8 +17988,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_elbow",
 "@DEF":"hanim_l_elbow",
 "@center":[0.18209,0.9288,-0.00563],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18052,8 +18052,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_radiocarpal",
 "@DEF":"hanim_l_radiocarpal",
 "@center":[0.1819,0.72427,-0.005],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18112,8 +18112,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_midcarpal_1",
 "@DEF":"hanim_l_midcarpal_1",
 "@center":[0.1813,0.706,0.0193],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18143,8 +18143,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpometacarpal_1",
 "@DEF":"hanim_l_carpometacarpal_1",
 "@center":[0.1805,0.69255,0.026],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18188,8 +18188,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metacarpophalangeal_1",
 "@DEF":"hanim_l_metacarpophalangeal_1",
 "@center":[0.181,0.6727,0.03577],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18214,8 +18214,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_interphalangeal_1",
 "@DEF":"hanim_l_carpal_interphalangeal_1",
 "@center":[0.1826,0.654,0.04966],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18271,8 +18271,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_midcarpal_2",
 "@DEF":"hanim_l_midcarpal_2",
 "@center":[0.18128,0.70695,0.00842],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18297,8 +18297,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpometacarpal_2",
 "@DEF":"hanim_l_carpometacarpal_2",
 "@center":[0.18128,0.6876,0.0098],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18323,8 +18323,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metacarpophalangeal_2",
 "@DEF":"hanim_l_metacarpophalangeal_2",
 "@center":[0.1837,0.6372,0.01507],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18349,8 +18349,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_proximal_interphalangeal_2",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
 "@center":[0.18171,0.6068,0.01418],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18375,8 +18375,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_distal_interphalangeal_2",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
 "@center":[0.18067,0.5816,0.01338],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18454,8 +18454,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_midcarpal_3",
 "@DEF":"hanim_l_midcarpal_3",
 "@center":[0.18108,0.708525,-0.0048],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18480,8 +18480,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpometacarpal_3",
 "@DEF":"hanim_l_carpometacarpal_3",
 "@center":[0.18108,0.6858,-0.00625],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18525,8 +18525,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metacarpophalangeal_3",
 "@DEF":"hanim_l_metacarpophalangeal_3",
 "@center":[0.18369,0.6349,-0.0039],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18551,8 +18551,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_proximal_interphalangeal_3",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
 "@center":[0.18171,0.6032,-0.0035],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18577,8 +18577,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_distal_interphalangeal_3",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
 "@center":[0.1807,0.5753,-0.0037],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18637,8 +18637,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_midcarpal_4_5",
 "@DEF":"hanim_l_midcarpal_4_5",
 "@center":[0.18108,0.70582,-0.02574],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18668,8 +18668,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpometacarpal_4",
 "@DEF":"hanim_l_carpometacarpal_4",
 "@center":[0.1811,0.68625,-0.0199],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18694,8 +18694,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metacarpophalangeal_4",
 "@DEF":"hanim_l_metacarpophalangeal_4",
 "@center":[0.18369,0.63405,-0.02144],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18720,8 +18720,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_proximal_interphalangeal_4",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
 "@center":[0.1817,0.6066,-0.02064],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18746,8 +18746,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_distal_interphalangeal_4",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
 "@center":[0.18067,0.580725,-0.01977],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18806,8 +18806,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpometacarpal_5",
 "@DEF":"hanim_l_carpometacarpal_5",
 "@center":[0.18164,0.68827,-0.03278],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18851,8 +18851,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_metacarpophalangeal_5",
 "@DEF":"hanim_l_metacarpophalangeal_5",
 "@center":[0.1833,0.6381,-0.037],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18877,8 +18877,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_proximal_interphalangeal_5",
 "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
 "@center":[0.18166,0.621,-0.03715],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18903,8 +18903,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"l_carpal_distal_interphalangeal_5",
 "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
 "@center":[0.1808,0.6023,-0.0369],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -18975,8 +18975,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_sternoclavicular",
 "@DEF":"hanim_r_sternoclavicular",
 "@center":[-0.03847,1.2087,-0.0138],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19020,8 +19020,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_acromioclavicular",
 "@DEF":"hanim_r_acromioclavicular",
 "@center":[-0.1229,1.19182,-0.0129],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19122,8 +19122,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_shoulder",
 "@DEF":"hanim_r_shoulder",
 "@center":[-0.1647,1.17855,-0.00327],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19224,8 +19224,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_elbow",
 "@DEF":"hanim_r_elbow",
 "@center":[-0.1817,0.9288,-0.00564],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19288,8 +19288,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_radiocarpal",
 "@DEF":"hanim_r_radiocarpal",
 "@center":[-0.1816,0.7242,-0.005],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19348,8 +19348,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_midcarpal_1",
 "@DEF":"hanim_r_midcarpal_1",
 "@center":[-0.18097,0.70605,0.0193],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19379,8 +19379,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpometacarpal_1",
 "@DEF":"hanim_r_carpometacarpal_1",
 "@center":[-0.18,0.69255,0.02598],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19424,8 +19424,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metacarpophalangeal_1",
 "@DEF":"hanim_r_metacarpophalangeal_1",
 "@center":[-0.18065,0.67275,0.03577],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19450,8 +19450,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_interphalangeal_1",
 "@DEF":"hanim_r_carpal_interphalangeal_1",
 "@center":[-0.18227,0.654,0.0496],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19507,8 +19507,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_midcarpal_2",
 "@DEF":"hanim_r_midcarpal_2",
 "@center":[-0.18097,0.70695,0.0084],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19533,8 +19533,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpometacarpal_2",
 "@DEF":"hanim_r_carpometacarpal_2",
 "@center":[-0.1809,0.6876,0.0097],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19559,8 +19559,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metacarpophalangeal_2",
 "@DEF":"hanim_r_metacarpophalangeal_2",
 "@center":[-0.18335,0.6372,0.01507],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19585,8 +19585,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_proximal_interphalangeal_2",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
 "@center":[-0.1813,0.6068,0.01418],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19611,8 +19611,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_distal_interphalangeal_2",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
 "@center":[-0.1803,0.5816,0.01338],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19690,8 +19690,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_midcarpal_3",
 "@DEF":"hanim_r_midcarpal_3",
 "@center":[-0.18072,0.708525,-0.004797],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19716,8 +19716,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpometacarpal_3",
 "@DEF":"hanim_r_carpometacarpal_3",
 "@center":[-0.18072,0.6858,-0.00625],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19761,8 +19761,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metacarpophalangeal_3",
 "@DEF":"hanim_r_metacarpophalangeal_3",
 "@center":[-0.1833,0.63495,-0.0039],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19787,8 +19787,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_proximal_interphalangeal_3",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
 "@center":[-0.1813,0.6032,-0.0035],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19813,8 +19813,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_distal_interphalangeal_3",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
 "@center":[-0.18029,0.5753,-0.00375],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19873,8 +19873,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_midcarpal_4_5",
 "@DEF":"hanim_r_midcarpal_4_5",
 "@center":[-0.18072,0.70583,-0.02574],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19904,8 +19904,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpometacarpal_4",
 "@DEF":"hanim_r_carpometacarpal_4",
 "@center":[-0.18072,0.68625,-0.01992],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19930,8 +19930,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metacarpophalangeal_4",
 "@DEF":"hanim_r_metacarpophalangeal_4",
 "@center":[-0.1833,0.63405,-0.02144],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19956,8 +19956,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_proximal_interphalangeal_4",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
 "@center":[-0.1813,0.6066,-0.02064],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -19982,8 +19982,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_distal_interphalangeal_4",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
 "@center":[-0.18029,0.5807,-0.01978],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -20042,8 +20042,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpometacarpal_5",
 "@DEF":"hanim_r_carpometacarpal_5",
 "@center":[-0.18126,0.68827,-0.03278],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -20087,8 +20087,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_metacarpophalangeal_5",
 "@DEF":"hanim_r_metacarpophalangeal_5",
 "@center":[-0.18297,0.6381,-0.0371],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -20113,8 +20113,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_proximal_interphalangeal_5",
 "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
 "@center":[-0.1813,0.621,-0.03715],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {
@@ -20139,8 +20139,8 @@ in place  in default HAnim coordinate space, and added v2 Sites"
 "@name":"r_carpal_distal_interphalangeal_5",
 "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
 "@center":[-0.18045,0.602325,-0.03697],
-"@llimit":[0,0,0],
 "@ulimit":[0,0,0],
+"@llimit":[0,0,0],
 "-children":[
 { "HAnimSegment":
 {

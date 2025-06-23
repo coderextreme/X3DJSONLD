@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 
-function JSONSerializer () {
+export default function JSONSerializer () {
 };
 
 JSONSerializer.prototype = {
@@ -270,4 +270,3 @@ function printParChilluns(par, chilluns, n) {
 	}
 	return str;
 }
-module.exports = JSONSerializer;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='ViewFrustumExample.x3d' name='title'/>
@@ -24,7 +25,7 @@
     <Viewpoint description='ViewFrustum from point of view'/>
     <Viewpoint description='ViewFrustum behind point of view' position='0 0 15'/>
     <Viewpoint description='ViewFrustum oblique side view' orientation='0.8005 0.5926 0.0898 -0.3743' position='-5 5 20'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'/>
+    <NavigationInfo type='"EXAMINE" "FLY" "ANY"'/>
     <ExternProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' url='"ViewFrustumPrototype.x3d#ViewFrustum"'>
       <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'/>
       <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'/>
@@ -40,7 +41,7 @@
         <Viewpoint description='ViewFrustum ViewpointNode'/>
       </fieldValue>
       <fieldValue name='NavigationInfoNode'>
-        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='15.0'/>
+        <NavigationInfo visibilityLimit='15.0'/>
       </fieldValue>
       <fieldValue name='visible' value='true'/>
       <fieldValue name='lineColor' value='0.9 0.9 0.9'/>

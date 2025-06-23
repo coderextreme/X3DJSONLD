@@ -1,52 +1,70 @@
 X3D:
     profile: "Interchange"
     version: "3.3"
-    head:
-        meta: [
-            name: "title"
-            content: "ifscubeworks.x3d"
-        ],
-        meta: [
-            name: "identifier"
-            content: "http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "Template for an Indexed Face Set"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "created"
-            content: "4 April 2017"
-        ],
-        meta: [
-            name: "license"
-            content: "https://www.web3d.org/x3d/content/examples/license.html"
-        ],
-        meta: [
-            name: "generator"
-            content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-        ]
-    Scene:
-        WorldInfo: [
-            title: "ifscubeworks.x3d"
-        ],
-        Group: [
-            Shape: [
-                IndexedFaceSet:
-                    DEF: "IndexedFaceSet"
-                    coordIndex: [0, 0, 1, -1, 0, 1, 1, -1, 2, 2, 3, 3, -1, 0, 3, 3, 0, -1, 0, 3, 2, 1, -1, 1, 2, 2, 1, -1, 1, 2, 3, 0, -1]
-                    normalIndex: [0, 0, 1, 2, 3, 4, 5]
-                    normalPerVertex: false
-                    colorIndex: [0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1]
-                    Coordinate:
-                        point: [0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
-                    Normal:
-                        vector: [1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -1, 0, 0, 0, 1]
-                    Color:
-                        color: [0, 1, 0]
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "ifscubeworks.x3d"
+            ],
+            meta: [
+                name: "identifier"
+                content: "http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Template for an Indexed Face Set"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "created"
+                content: "4 April 2017"
+            ],
+            meta: [
+                name: "license"
+                content: "https://www.web3d.org/x3d/content/examples/license.html"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
             ]
         ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "ifscubeworks.x3d"
+            ],
+            Group: [
+                Shape: [
+                    setGeometry: [
+                        IndexedFaceSet: [
+                            DEF: "IndexedFaceSet"
+                            coordIndex: [0, 0, 1, -1, 0, 1, 1, -1, 2, 2, 3, 3, -1, 0, 3, 3, 0, -1, 0, 3, 2, 1, -1, 1, 2, 2, 1, -1, 1, 2, 3, 0, -1]
+                            normalIndex: [0, 0, 1, 2, 3, 4, 5]
+                            normalPerVertex: false
+                            colorIndex: [0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1]
+                            setCoord: [
+                                Coordinate: [
+                                    point: [0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
+                                ]
+                            ]
+                            setNormal: [
+                                Normal: [
+                                    vector: [1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -1, 0, 0, 0, 1]
+                                ]
+                            ]
+                            setColor: [
+                                Color: [
+                                    color: [0, 1, 0]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

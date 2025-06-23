@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='DesignPatternsApparelMedicalSkinLayers.x3d' name='title'/>
@@ -24,8 +25,8 @@
     <Group DEF='MultipleHumanoids'>
       <MetadataString name='HAnimArchitecture' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
       <HAnimHumanoid DEF='a_SimpleSkeleton' name='SimpleSkeleton' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'>
             <Shape DEF='JointVisualization'/>
             <Shape DEF='SegmentVisualization'/>
             <HAnimSite DEF='a_feature01_tip' name='feature01_tip'>
@@ -35,8 +36,8 @@
         </HAnimJoint>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='b_SimpleSkeletonMesh' name='SimpleSkeletonMesh' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'>
             <Shape>
               <IndexedFaceSet DEF='SegmentBoneMesh'/>
             </Shape>
@@ -44,50 +45,50 @@
         </HAnimJoint>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='c_SkinIndexedGeometry' name='SkinIndexedGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <IndexedFaceSet DEF='SkinMeshIFS'/>
+        <IndexedFaceSet DEF='SkinMeshIFS' containerField='skin'/>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='d_SkinShapeIndexedGeometry' name='SkinShapeIndexedGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet USE='SkinMeshIFS'/>
         </Shape>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='e_SkinSwitchShapeIndexedGeometry' name='SkinSwitchShapeIndexedGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet DEF='IndexedSkinMeshIFS'>
             <Coordinate DEF='SkinMeshCoordinate'/>
           </IndexedFaceSet>
         </Shape>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry' name='SynthesizedSkinShapeIndexedTwoPartGeometry' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <Shape>
+        <Shape containerField='skin'>
           <IndexedFaceSet DEF='TwoPartIndexedSkinMesh'>
             <Coordinate DEF='TwoPartSkinMesh'/>
           </IndexedFaceSet>
         </Shape>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='g_ApparelSkinIndexedGeometryMultipleShapes' name='ApparelSkinIndexedGeometryMultipleShapes' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <Shape/>
+        <Shape containerField='skin'/>
       </HAnimHumanoid>
       <HAnimHumanoid DEF='h_AnatomySkinIndexedGeometryMultipleShapes' name='AnatomySkinIndexedGeometryMultipleShapes' version='2.0'>
-        <HAnimJoint name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment name='sacrum' momentsOfInertia='0 0 0 0 0 0 0 0 0'/>
+        <HAnimJoint name='humanoid_root' containerField='skeleton'>
+          <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <Shape/>
+        <Shape containerField='skin'/>
       </HAnimHumanoid>
     </Group>
     <Viewpoint DEF='ViewHelpText' description='Select text to see website' position='0 0 12'/>

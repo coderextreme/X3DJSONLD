@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='1'/>
@@ -32,9 +33,9 @@
       <MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Kwan-Hee YOO, Don Brutzman and Joe Williams"'/>
       </MetadataSet>
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-        <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' description='connection joint of foot to leg above' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-          <HAnimSegment DEF='hanim_r_talus' name='r_talus' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton'>
+        <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' description='connection joint of foot to leg above'>
+          <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
             <Transform>
               <Shape DEF='HAnimJointShape'>
                 <Appearance DEF='HAnimJointAppearance'>
@@ -60,8 +61,8 @@
               </IndexedLineSet>
             </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular' center='0 -0.3 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-            <HAnimSegment DEF='hanim_r_navicular' name='r_navicular' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+          <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular' center='0 -0.3 0'>
+            <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
               <Transform translation='0 -0.3 0'>
                 <Shape USE='HAnimJointShape'/>
               </Transform>
@@ -90,8 +91,8 @@
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1' center='0.1 -0.45 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1' center='0.1 -0.45 0'>
+              <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
                 <Transform translation='0.1 -0.45 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -104,8 +105,8 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1' center='0.1 -0.6 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1' center='0.1 -0.6 0'>
+                <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
                   <Transform translation='0.1 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -118,8 +119,8 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1' center='0.1 -0.9 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1' center='0.1 -0.9 0'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
                     <Transform translation='0.1 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -132,8 +133,8 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' name='r_tarsal_interphalangeal_1' center='0.1 -1.05 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                    <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' name='r_tarsal_interphalangeal_1' center='0.1 -1.05 0'>
+                    <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'>
                       <Transform translation='0.1 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -150,8 +151,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2' center='0 -0.45 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2' center='0 -0.45 0'>
+              <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
                 <Transform translation='0 -0.45 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -164,8 +165,8 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='-0.05 -0.6 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='-0.05 -0.6 0'>
+                <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
                   <Transform translation='-0.05 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -178,8 +179,8 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.05 -0.9 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.05 -0.9 0'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                     <Transform translation='-0.05 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -192,8 +193,8 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2' center='-0.05 -1.05 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2' center='-0.05 -1.05 0'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
                       <Transform translation='-0.05 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -206,8 +207,8 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='-0.05 -1.12 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='-0.05 -1.12 0'>
+                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2'>
                         <Transform translation='-0.05 -1.12 0'>
                           <Shape USE='HAnimJointShape'/>
                         </Transform>
@@ -225,8 +226,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3' center='-0.1 -0.4 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3' center='-0.1 -0.4 0'>
+              <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
                 <Transform translation='-0.1 -0.4 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -239,8 +240,8 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3' center='-0.15 -0.6 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3' center='-0.15 -0.6 0'>
+                <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
                   <Transform translation='-0.15 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -253,8 +254,8 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3' center='-0.15 -0.9 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3' center='-0.15 -0.9 0'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
                     <Transform translation='-0.15 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -267,8 +268,8 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3' center='-0.15 -1.05 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3' center='-0.15 -1.05 0'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
                       <Transform translation='-0.15 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -281,8 +282,8 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3' center='-0.15 -1.13 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3' center='-0.15 -1.13 0'>
+                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3'>
                         <Transform translation='-0.15 -1.13 0'>
                           <Shape USE='HAnimJointShape'/>
                         </Transform>
@@ -301,8 +302,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid' center='-0.2 0.3 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-            <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+          <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid' center='-0.2 0.3 0'>
+            <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
               <Transform translation='-0.2 0.3 0'>
                 <Shape USE='HAnimJointShape'/>
               </Transform>
@@ -315,8 +316,8 @@
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal' center='-0.21 -0.3 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-              <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+            <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal' center='-0.21 -0.3 0'>
+              <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
                 <Transform translation='-0.21 -0.3 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -337,8 +338,8 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4' center='-0.25 -0.58 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4' center='-0.25 -0.58 0'>
+                <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
                   <Transform translation='-0.25 -0.58 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -351,8 +352,8 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4' center='-0.25 -0.87 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4' center='-0.25 -0.87 0'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
                     <Transform translation='-0.25 -0.87 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -365,8 +366,8 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4' center='-0.25 -1 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4' center='-0.25 -1 0'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
                       <Transform translation='-0.25 -1 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -379,8 +380,8 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4' center='-0.25 -1.1 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4' center='-0.25 -1.1 0'>
+                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4'>
                         <Transform translation='-0.25 -1.1 0'>
                           <Shape USE='HAnimJointShape'/>
                         </Transform>
@@ -397,8 +398,8 @@
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5' center='-0.33 -0.52 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5' center='-0.33 -0.52 0'>
+                <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
                   <Transform translation='-0.33 -0.52 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -411,8 +412,8 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5' center='-0.34 -0.8 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5' center='-0.34 -0.8 0'>
+                  <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
                     <Transform translation='-0.34 -0.8 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -425,8 +426,8 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5' center='-0.34 -0.95 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5' center='-0.34 -0.95 0'>
+                    <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
                       <Transform translation='-0.34 -0.95 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -439,8 +440,8 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5' center='-0.34 -1.05 0' llimit='0 0 0' stiffness='0 0 0' ulimit='0 0 0'>
-                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5' momentsOfInertia='0 0 0 0 0 0 0 0 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5' center='-0.34 -1.05 0'>
+                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5'>
                         <Transform translation='-0.34 -1.05 0'>
                           <Shape USE='HAnimJointShape'/>
                         </Transform>
@@ -461,34 +462,59 @@
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
-      <HAnimJoint USE='hanim_humanoid_root'/>
-      <HAnimJoint USE='hanim_r_calcaneocuboid'/>
-      <HAnimJoint USE='hanim_r_cuneonavicular_1'/>
-      <HAnimJoint USE='hanim_r_cuneonavicular_2'/>
-      <HAnimJoint USE='hanim_r_cuneonavicular_3'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_1'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_2'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_3'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_4'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal_5'/>
-      <HAnimJoint USE='hanim_r_talocalcaneonavicular'/>
-      <HAnimJoint USE='hanim_r_talocrural'/>
-      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2'/>
-      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_3'/>
-      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_4'/>
-      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_5'/>
-      <HAnimJoint USE='hanim_r_tarsal_interphalangeal_1'/>
-      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2'/>
-      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_3'/>
-      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_4'/>
-      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_5'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_1'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_2'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_3'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_4'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_5'/>
-      <HAnimJoint USE='hanim_r_transversetarsal'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_5'/>
+      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_calcaneocuboid' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_cuneonavicular_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_cuneonavicular_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_cuneonavicular_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_talocalcaneonavicular' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_interphalangeal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_3' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_4' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_5' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_transversetarsal' containerField='joints'/>
+      <HAnimSegment USE='hanim_r_calcaneus' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_cuboid' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_cuneiform_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_cuneiform_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_cuneiform_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_navicular' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_1' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_3' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_4' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_5' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>

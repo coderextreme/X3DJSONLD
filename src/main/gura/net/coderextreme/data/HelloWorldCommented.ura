@@ -1,115 +1,145 @@
 X3D:
     profile: "Immersive"
     version: "3.3"
-    head:
-        meta: [
-            name: "title"
-            content: "HelloWorldCommented.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "Numerous comments added to simple X3D scene example for testing JSON encoding alternatives."
-        ],
-        meta: [
-            name: "created"
-            content: "19 December 2015"
-        ],
-        meta: [
-            name: "modified"
-            content: "20 October 2019"
-        ],
-        meta: [
-            name: "creator"
-            content: "Don Brutzman"
-        ],
-        meta: [
-            name: "info"
-            content: "HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental."
-        ],
-        meta: [
-            name: "reference"
-            content: "HelloWorldCommented.json"
-        ],
-        meta: [
-            name: "reference"
-            content: "HelloWorldCommentedOriginalEncoding.json"
-        ],
-        meta: [
-            name: "reference"
-            content: "HelloWorldCommentedAlternativeEncoding.json"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"
-        ],
-        meta: [
-            name: "license"
-            content: "https://www.web3d.org/x3d/content/examples/license.html"
-        ],
-        meta: [
-            name: "generator"
-            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "HelloWorldCommented.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Numerous comments added to simple X3D scene example for testing JSON encoding alternatives."
+            ],
+            meta: [
+                name: "created"
+                content: "19 December 2015"
+            ],
+            meta: [
+                name: "modified"
+                content: "20 October 2019"
+            ],
+            meta: [
+                name: "creator"
+                content: "Don Brutzman"
+            ],
+            meta: [
+                name: "info"
+                content: "HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental."
+            ],
+            meta: [
+                name: "reference"
+                content: "HelloWorldCommented.json"
+            ],
+            meta: [
+                name: "reference"
+                content: "HelloWorldCommentedOriginalEncoding.json"
+            ],
+            meta: [
+                name: "reference"
+                content: "HelloWorldCommentedAlternativeEncoding.json"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"
+            ],
+            meta: [
+                name: "license"
+                content: "https://www.web3d.org/x3d/content/examples/license.html"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            ]
         ]
-    Scene:
+    ]
+    setScene: [
+        Scene: [
 #Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)
 #WorldInfo begin
-        WorldInfo: [
-            title: "Hello world!"
-        ],
-#WorldInfo complete, Group begin
-        Group: [
-#Viewpoint begin
-            Viewpoint: [
-                DEF: "ViewUpClose"
-                centerOfRotation: [0, -1, 0]
-                description: "Hello world!"
-                position: [0, -1, 7]
+            WorldInfo: [
+                title: "Hello world!"
             ],
+#WorldInfo complete, Group begin
+            Group: [
+#Viewpoint begin
+                Viewpoint: [
+                    DEF: "ViewUpClose"
+                    centerOfRotation: [0, -1, 0]
+                    description: "Hello world!"
+                    position: [0, -1, 7]
+                ],
 #Viewpoint complete, Transform begin
-            Transform: [
-                rotation: [0, 1, 0, 3]
+                Transform: [
+                    rotation: [0, 1, 0, 3]
 #Shape begin
-                Shape: [
+                    Shape: [
 #Sphere begin
 #Sphere complete, Appearance begin
 #Appearance complete
-                    Sphere:
-                    Appearance:
+                        setGeometry: [
+                            Sphere: [ empty
+                            ]
+                        ]
+                        setAppearance: [
+                            Appearance: [
 #Material begin
 #Material complete, ImageTexture begin
 #ImageTexture complete
-                        Material:
-                            DEF: "MaterialLightBlue"
-                            diffuseColor: [0.1, 0.5, 1]
-                        ImageTexture:
-                            DEF: "ImageCloudlessEarth"
-                            url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
-                ],
+                                setMaterial: [
+                                    Material: [
+                                        DEF: "MaterialLightBlue"
+                                        diffuseColor: [0.1, 0.5, 1]
+                                    ]
+                                ]
+                                setTexture: [
+                                    ImageTexture: [
+                                        DEF: "ImageCloudlessEarth"
+                                        url: ["earth-topo.png", "earth-topo.jpg", "earth-topo-small.gif", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg", "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
 #Shape complete
-            ],
+                ],
 #Transform complete, Transform begin
-            Transform: [
-                translation: [0, -2, 0]
+                Transform: [
+                    translation: [0, -2, 0]
 #Shape begin
-                Shape: [
+                    Shape: [
 #Text begin
 #Text complete, Appearance begin
 #Appearance complete
-                    Text:
-                        DEF: "TextMessage"
-                        string: ["Hello", "world!"]
+                        setGeometry: [
+                            Text: [
+                                DEF: "TextMessage"
+                                string: ["Hello", "world!"]
 #FontStyle begin
 #FontStyle complete
-                        FontStyle:
-                            justify: ["MIDDLE", "MIDDLE"]
-                    Appearance:
+                                setFontStyle: [
+                                    FontStyle: [
+                                        justify: ["MIDDLE", "MIDDLE"]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setAppearance: [
+                            Appearance: [
 #Material begin
 #Material complete
-                        Material:
-                            USE: "MaterialLightBlue"
-                ],
+                                setMaterial: [
+                                    Material: [
+                                        USE: "MaterialLightBlue"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
 #Shape complete
-            ],
+                ],
 #Transform complete
-        ],
+            ],
 #Group complete
+        ]
+    ]

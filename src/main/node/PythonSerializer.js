@@ -3,7 +3,7 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-function PythonSerializer () {
+export default function PythonSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -355,4 +355,3 @@ PythonSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = PythonSerializer;

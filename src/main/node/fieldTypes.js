@@ -5953,4 +5953,4 @@ let fieldTypes = {"X3DNode" : {
 	"version" : "SFString",
 },
 };
-module.exports = fieldTypes;
+export default fieldTypes;

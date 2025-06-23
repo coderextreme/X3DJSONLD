@@ -1,11 +1,7 @@
 "use strict";
+import { XMLSerializer } from '@xmldom/xmldom';
 
-if (typeof require !== 'undefined' && typeof xmldom === 'undefined') {
-	var xmldom = require('@xmldom/xmldom');
-	var XMLSerializer = xmldom.XMLSerializer;
-}
-
-function DOMSerializer() {
+export default function DOMSerializer() {
 	this.serializeToString = function (json, element) {
 		var str = this.serializeDOM(json, element, true);
 		return str;
@@ -46,12 +42,4 @@ function DOMSerializer() {
 		xml = this.fixXML(xml);
 		return xml;
 	}
-}
-
-if (typeof window !== 'undefined') {
-	window.DOMSerializer = DOMSerializer;
-}
-
-if (typeof module === 'object')  {
-	module.exports = DOMSerializer;
 }

@@ -1,5 +1,11 @@
 "use strict";
 
+import xmldom from '@xmldom/xmldom';
+import http from "http";
+import https from "https";
+import fs from "fs";
+import DOMSerializer from './DOMSerializer.js';
+
 if (typeof window === 'undefined') {
 	var window = {};
 	if (typeof window.document === 'undefined') {
@@ -7,34 +13,8 @@ if (typeof window === 'undefined') {
 
 	}
 }
-if (typeof require !== 'function') {
-	window.require = function() {
-		console.log("Redefinining require on browser");
-		return undefined;
-	};
-}
-
-var xmldom = require('@xmldom/xmldom');
-if (typeof DOMSerializer === 'undefined') {
-	var DOMSerializer = require('./DOMSerializer.js');
-}
-if (typeof DOMSerializer === 'undefined') {
-	DOMSerializer = window.DOMSerializer;
-}
-var http = require("http");
-var https = require("https");
-// TODO this causes node-java 0.12.2 to hang
-// var runAndSend = require("./runAndSend");
-var fs = require('fs');
-
 
 if (typeof load !== 'function') {
-	fs = require("fs");
-	http = require("http");
-	https = require("https");
-	// TODO this causes node-java 0.12.2 to hang
-	// var runAndSend = require("./runAndSend");
-	var xmldom = require('@xmldom/xmldom');
 	if (typeof xmldom !== 'undefined') {
 		var domserializer = new xmldom.XMLSerializer();
 		var DOMParser = xmldom.DOMParser;
@@ -744,4 +724,4 @@ setDocument : function(doc) {
 var Browser = X3DJSONLD.Browser;
 window.X3DJSONLD = X3DJSONLD;
 
-module.exports = X3DJSONLD;
+export default X3DJSONLD;

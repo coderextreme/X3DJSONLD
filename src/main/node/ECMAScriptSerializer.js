@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function ECMAScriptSerializer () {
+export default function ECMAScriptSerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = {};
@@ -377,4 +377,3 @@ ECMAScriptSerializer.prototype = {
 
 	}
 };
-module.exports = ECMAScriptSerializer;
