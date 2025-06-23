@@ -75,8 +75,8 @@ Shape110: TShapeNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ObliqueStrategies.x3d';
 X3D0.Meta['description'] := 'Text scripting and animation example using Oblique Strategies card set by Brian Eno.';
 X3D0.Meta['creator'] := 'Don Brutzman, John Kelly, Ben Cheng';
