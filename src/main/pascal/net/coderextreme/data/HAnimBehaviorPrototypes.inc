@@ -1615,8 +1615,8 @@ fieldValue1817: TfieldValueNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
 X3D0.Meta['title'] := 'HAnimBehaviorPrototypes.x3d';
 X3D0.Meta['description'] := 'Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.';

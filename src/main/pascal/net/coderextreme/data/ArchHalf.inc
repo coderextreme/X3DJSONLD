@@ -11,8 +11,8 @@ Material18: TMaterialNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interchange';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ArchHalf.x3d';
 X3D0.Meta['description'] := 'Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.';
 X3D0.Meta['creator'] := 'Michele Foti, Don Brutzman';
