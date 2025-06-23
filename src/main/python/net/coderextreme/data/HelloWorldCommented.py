@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -77,14 +77,14 @@ Group16 = x3d.Group()
 #Viewpoint begin
 Viewpoint17 = x3d.Viewpoint()
 Viewpoint17.setDEF("ViewUpClose")
-Viewpoint17.setCenterOfRotation([0,-1,0])
+Viewpoint17.setCenterOfRotation(x3d.doubleToFloat([0,-1,0]))
 Viewpoint17.setDescription("Hello world!")
-Viewpoint17.setPosition([0,-1,7])
+Viewpoint17.setPosition(x3d.doubleToFloat([0,-1,7]))
 
 Group16.addChildren(Viewpoint17)
 #Viewpoint complete, Transform begin
 Transform18 = x3d.Transform()
-Transform18.setRotation([0,1,0,3])
+Transform18.setRotation(x3d.doubleToFloat([0,1,0,3]))
 #Shape begin
 Shape19 = x3d.Shape()
 #Sphere begin
@@ -99,7 +99,7 @@ Appearance21 = x3d.Appearance()
 #ImageTexture complete
 Material22 = x3d.Material()
 Material22.setDEF("MaterialLightBlue")
-Material22.setDiffuseColor([0.1,0.5,1])
+Material22.setDiffuseColor(x3d.doubleToFloat([0.1,0.5,1]))
 
 Appearance21.setMaterial(Material22)
 ImageTexture23 = x3d.ImageTexture()
@@ -116,7 +116,7 @@ Transform18.addChild(Shape19)
 Group16.addChildren(Transform18)
 #Transform complete, Transform begin
 Transform24 = x3d.Transform()
-Transform24.setTranslation([0,-2,0])
+Transform24.setTranslation(x3d.doubleToFloat([0,-2,0]))
 #Shape begin
 Shape25 = x3d.Shape()
 #Text begin

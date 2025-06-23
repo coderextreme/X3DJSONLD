@@ -28,7 +28,7 @@ X3D0.setHead(head1)
 Scene6 = x3d.Scene()
 Viewpoint7 = x3d.Viewpoint()
 Viewpoint7.setDescription("Tour Views")
-Viewpoint7.setPosition([0,0,12])
+Viewpoint7.setPosition(x3d.doubleToFloat([0,0,12]))
 
 Scene6.addChildren(Viewpoint7)
 Switch8 = x3d.Switch()

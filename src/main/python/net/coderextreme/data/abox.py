@@ -107,7 +107,7 @@ fieldValue28 = x3d.fieldValue()
 fieldValue28.setName("myShape")
 Shape29 = x3d.Shape()
 Box30 = x3d.Box()
-Box30.setSize([140,140,140])
+Box30.setSize(x3d.doubleToFloat([140,140,140]))
 
 Shape29.setGeometry(Box30)
 

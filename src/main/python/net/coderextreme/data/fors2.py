@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("creator")
@@ -75,7 +75,7 @@ Appearance19 = x3d.Appearance()
 #comment before Material
 #comment after Material
 Material20 = x3d.Material()
-Material20.setDiffuseColor([1,0,0])
+Material20.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
 
 Appearance19.setMaterial(Material20)
 
@@ -86,8 +86,8 @@ Transform14.addChild(Shape17)
 ProtoBody13.addChildren(Transform14)
 PositionInterpolator21 = x3d.PositionInterpolator()
 PositionInterpolator21.setDEF("NodePosition")
-PositionInterpolator21.setKey([0,1])
-PositionInterpolator21.setKeyValue([0,0,0,0,5,0])
+PositionInterpolator21.setKey(x3d.doubleToFloat([0,1]))
+PositionInterpolator21.setKeyValue(x3d.doubleToFloat([0,0,0,0,5,0]))
 
 ProtoBody13.addChildren(PositionInterpolator21)
 Script22 = x3d.Script()
@@ -188,13 +188,13 @@ Shape37 = x3d.Shape()
 Extrusion38 = x3d.Extrusion()
 Extrusion38.setDEF("extrusion")
 Extrusion38.setCreaseAngle(0.785)
-Extrusion38.setCrossSection([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])
-Extrusion38.setSpine([0,-50,0,0,0,0,0,50,0])
+Extrusion38.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
+Extrusion38.setSpine(x3d.doubleToFloat([0,-50,0,0,0,0,0,50,0]))
 
 Shape37.setGeometry(Extrusion38)
 Appearance39 = x3d.Appearance()
 Material40 = x3d.Material()
-Material40.setDiffuseColor([0,1,0])
+Material40.setDiffuseColor(x3d.doubleToFloat([0,1,0]))
 
 Appearance39.setMaterial(Material40)
 
@@ -272,7 +272,7 @@ ProtoDeclare32.setProtoBody(ProtoBody36)
 
 Scene9.addChildren(ProtoDeclare32)
 Transform49 = x3d.Transform()
-Transform49.setScale([0.1,0.1,0.1])
+Transform49.setScale(x3d.doubleToFloat([0.1,0.1,0.1]))
 ProtoInstance50 = x3d.ProtoInstance()
 ProtoInstance50.setName("node")
 ProtoInstance50.setDEF("nodeA")

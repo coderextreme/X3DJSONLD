@@ -91,7 +91,7 @@ Background18.setTopUrl(["../resources/images/all_probes/beach_cross/beach_top.pn
 
 Scene16.addChildren(Background18)
 Viewpoint19 = x3d.Viewpoint()
-Viewpoint19.setPosition([0,0,40])
+Viewpoint19.setPosition(x3d.doubleToFloat([0,0,40]))
 Viewpoint19.setDescription("Transparent rose")
 
 Scene16.addChildren(Viewpoint19)
@@ -99,8 +99,8 @@ Transform20 = x3d.Transform()
 Shape21 = x3d.Shape()
 Appearance22 = x3d.Appearance()
 Material23 = x3d.Material()
-Material23.setDiffuseColor([0.7,0.7,0.7])
-Material23.setSpecularColor([0.5,0.5,0.5])
+Material23.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
+Material23.setSpecularColor(x3d.doubleToFloat([0.5,0.5,0.5]))
 
 Appearance22.setMaterial(Material23)
 ComposedCubeMapTexture24 = x3d.ComposedCubeMapTexture()
