@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 //All head/meta tags are optional, WorldInfo is also optional
 //Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
 head& head1 =  head();

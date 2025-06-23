@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 //Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
 meta& meta2 =  meta();
