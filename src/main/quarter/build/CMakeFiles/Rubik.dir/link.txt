@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Rubik.dir/Rubik_autogen/mocs_compilation.cpp.o CMakeFiles/Rubik.dir/net/coderextreme/data/rubik.cpp.o -o Rubik  -lQuarter -lCoin -lQt6Widgets -lQt6Core 
