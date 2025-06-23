@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'>
   <head>
     <component name='Shaders' level='1'/>
@@ -54,7 +55,15 @@
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
       <MetadataSet DEF='Titania' name='Titania' containerField='metadata' reference='http://titania.create3000.de'>
+        <MetadataSet DEF='Selection' name='Selection' containerField='value' reference='http://titania.create3000.de'>
+          <MetadataSet DEF='nodes' name='nodes' containerField='value' reference='http://titania.create3000.de'/>
+        </MetadataSet>
+        <MetadataSet DEF='NavigationInfo' name='NavigationInfo' containerField='value' reference='http://titania.create3000.de'>
+          <MetadataString DEF='type' name='type' containerField='value' reference='http://titania.create3000.de' value='"EXAMINE"'/>
+        </MetadataSet>
         <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='value' reference='http://titania.create3000.de'>
+          <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6 0 2'/>
+          <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='0 0 0 1'/>
           <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='0 0 0'/>
         </MetadataSet>
       </MetadataSet>

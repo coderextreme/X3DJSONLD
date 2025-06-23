@@ -5,108 +5,107 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require("./convertJSON.js");
-console.log(convertJSON.convertJSON);
+import convertJSON from "./convertJSON.js";
 
-convertJSON.convertJSON([
+convertJSON([
 	{ 
-	serializer : "./GuraSerializer.js",
+	serializer : "GuraSerializer",
 	folder : "../gura/net/coderextreme/",
 	extension : ".ura",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : "./JavaSerializer.js",
+	serializer : "JavaSerializer",
 	folder : "../java/net/coderextreme/",
 	extension : ".java",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : "./DartSerializer.js",
+	serializer : "DartSerializer",
 	folder : "../dart/net/coderextreme/",
 	extension : ".dart",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : "./ECMAScriptSerializer.js",
+	serializer : "ECMAScriptSerializer",
 	folder : "../node/net/ecma/",
 	extension : ".mjs",
 	codeOutput : "../"
 	},
 	/*
 	{ 
-	serializer : './DOM2JSONSerializer.js',
+	serializer : 'DOM2JSONSerializer',
 	folder : "../",
 	extension : ".json.new"
 	},
 	*/
 	{ 
-	serializer : './DOMSerializer.js',
+	serializer : 'DOMSerializer',
 	folder : "../",
 	extension : ".x3d.new"
 	},
 	{ 
-	serializer : './VRMLScriptSerializer.js',
+	serializer : 'VRMLScriptSerializer',
 	folder : "../vrml/net/coderextreme/",
-	extension : ".js",
+	extension : "",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './NodeSerializer.js',
+	serializer : 'NodeSerializer',
 	folder : "../node/net/coderextreme/",
-	extension : ".js",
+	extension : "",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './CSerializer.js',
+	serializer : 'CSerializer',
 	folder : "../c/net/coderextreme/",
 	extension : ".c",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './CppSerializer.js',
+	serializer : 'CppSerializer',
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './CppFunctionBodySerializer.js',
+	serializer : 'CppFunctionBodySerializer',
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".h",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './QuarterSerializer.js',
+	serializer : 'QuarterSerializer',
 	folder : "../quarter/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './JavaScriptSerializer.js',
+	serializer : 'JavaScriptSerializer',
 	folder : "../graaljs/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './ClojureSerializer.js',
+	serializer : 'ClojureSerializer',
 	folder : "../clojure/net/coderextreme/",
 	extension : ".clj",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './JavaScriptSerializerNew.js',
+	serializer : 'JavaScriptSerializerNew',
 	folder : "../graaljs/net/remove/",
 	extension : ".js",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './PythonSerializerX3DJSAIL.js',
+	serializer : 'PythonSerializerX3DJSAIL',
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
 	codeOutput : "../"
 	},
 	{ 
-	serializer : './PascalSerializer.js',
+	serializer : 'PascalSerializer',
 	folder : "../pascal/net/coderextreme/",
 	extension : ".inc",
 	codeOutput : "../"

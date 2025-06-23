@@ -1,0 +1,224 @@
+use std::fs;
+
+fn parse_file<S: AsRef<str>>(s: S) {
+    let file_path = s.as_ref();
+    
+    println!("Reading {:?}", file_path);
+
+    let gura_string = match fs::read_to_string(file_path) {
+        Ok(content) => content,
+        Err(e) => {
+            eprintln!("Error reading file: {}", e);
+            return;
+        }
+    };
+
+    println!("Parsing {:?}", file_path);
+
+    // Parse the gura string
+    match gura::parse(&gura_string) {
+        Ok(_result) => {
+            println!("Parsed successfully!");
+        }
+        Err(e) => {
+            eprintln!("Error parsing gura: {:?}", e);
+        }
+    }
+}
+
+fn main() {
+    parse_file("../net/coderextreme/data/abox.ura");
+    parse_file("../net/coderextreme/data/AllenDutton.ura");
+    parse_file("../net/coderextreme/data/app.ura");
+    parse_file("../net/coderextreme/data/arc.ura");
+    parse_file("../net/coderextreme/data/arc1.ura");
+    parse_file("../net/coderextreme/data/arc2.ura");
+    parse_file("../net/coderextreme/data/arc3.ura");
+    parse_file("../net/coderextreme/data/arc4.ura");
+    parse_file("../net/coderextreme/data/ArchHalf.ura");
+    parse_file("../net/coderextreme/data/ArchPrototype.ura");
+    parse_file("../net/coderextreme/data/arcold.ura");
+    parse_file("../net/coderextreme/data/ArtDecoExamples.ura");
+    parse_file("../net/coderextreme/data/ArtDecoPrototypes.ura");
+    parse_file("../net/coderextreme/data/asmallbox.ura");
+    parse_file("../net/coderextreme/data/asphere.ura");
+    parse_file("../net/coderextreme/data/asteroids.ura");
+    parse_file("../net/coderextreme/data/ball.ura");
+    parse_file("../net/coderextreme/data/ballx3dom.ura");
+    parse_file("../net/coderextreme/data/ballx_ite.ura");
+    parse_file("../net/coderextreme/data/blenderSkeleton.ura");
+    parse_file("../net/coderextreme/data/BoxEm.ura");
+    parse_file("../net/coderextreme/data/BoxEm2.ura");
+    parse_file("../net/coderextreme/data/browser.ura");
+    parse_file("../net/coderextreme/data/bub.ura");
+    parse_file("../net/coderextreme/data/bubble.ura");
+    parse_file("../net/coderextreme/data/Bubbles.ura");
+    parse_file("../net/coderextreme/data/bubs.ura");
+    parse_file("../net/coderextreme/data/bubs2.ura");
+    parse_file("../net/coderextreme/data/bubs3.ura");
+    parse_file("../net/coderextreme/data/bumpyfreewrl.ura");
+    parse_file("../net/coderextreme/data/bumpyfreewrljsonverse.ura");
+    parse_file("../net/coderextreme/data/bumpyfreewrlsliders.ura");
+    parse_file("../net/coderextreme/data/bumpyx_ite.ura");
+    parse_file("../net/coderextreme/data/bumpyx_itesliders.ura");
+    parse_file("../net/coderextreme/data/Bushes.ura");
+    parse_file("../net/coderextreme/data/CADPartChildNoTransformation.ura");
+    parse_file("../net/coderextreme/data/CaliforniaCampuses.ura");
+    parse_file("../net/coderextreme/data/CameraPrototypes.ura");
+    parse_file("../net/coderextreme/data/CameraShape.ura");
+    parse_file("../net/coderextreme/data/Cane.ura");
+    parse_file("../net/coderextreme/data/cgeparticleflowers.ura");
+    parse_file("../net/coderextreme/data/Connectors.ura");
+    parse_file("../net/coderextreme/data/CoordinateAxes.ura");
+    parse_file("../net/coderextreme/data/DesignPatternsApparelMedicalSkinLayers.ura");
+    parse_file("../net/coderextreme/data/DonHumanoid.ura");
+    parse_file("../net/coderextreme/data/DonHumanoidNoSegSite.ura");
+    parse_file("../net/coderextreme/data/ExtrusionHeart.ura");
+    parse_file("../net/coderextreme/data/Filters.ura");
+    parse_file("../net/coderextreme/data/flipp.ura");
+    parse_file("../net/coderextreme/data/flower.ura");
+    parse_file("../net/coderextreme/data/flower3.ura");
+    parse_file("../net/coderextreme/data/flowerproto.ura");
+    parse_file("../net/coderextreme/data/flowers.ura");
+    parse_file("../net/coderextreme/data/flowers2.ura");
+    parse_file("../net/coderextreme/data/flowers4.ura");
+    parse_file("../net/coderextreme/data/flowers7.ura");
+    parse_file("../net/coderextreme/data/force.ura");
+    parse_file("../net/coderextreme/data/forcenode.ura");
+    parse_file("../net/coderextreme/data/force_tidy.ura");
+    parse_file("../net/coderextreme/data/fors.ura");
+    parse_file("../net/coderextreme/data/fors2.ura");
+    parse_file("../net/coderextreme/data/freewrlflowers.ura");
+    parse_file("../net/coderextreme/data/fwparticleflowers.ura");
+    parse_file("../net/coderextreme/data/gears.ura");
+    parse_file("../net/coderextreme/data/geo.ura");
+    parse_file("../net/coderextreme/data/geobubbles.ura");
+    parse_file("../net/coderextreme/data/glflowers.ura");
+    parse_file("../net/coderextreme/data/Gramps8Final.ura");
+    parse_file("../net/coderextreme/data/gridBack.ura");
+    parse_file("../net/coderextreme/data/HAnimBehaviorPrototypes.ura");
+    parse_file("../net/coderextreme/data/HAnimModelFootLeft.ura");
+    parse_file("../net/coderextreme/data/HAnimModelFootRight.ura");
+    parse_file("../net/coderextreme/data/HAnimModelHandLeft.ura");
+    parse_file("../net/coderextreme/data/HAnimModelHandRight.ura");
+    parse_file("../net/coderextreme/data/HelloWorld.ura");
+    parse_file("../net/coderextreme/data/HelloWorldCommented.ura");
+    parse_file("../net/coderextreme/data/HelloWorldMinimal.ura");
+    parse_file("../net/coderextreme/data/Humanoid0.ura");
+    parse_file("../net/coderextreme/data/Humanoid1.ura");
+    parse_file("../net/coderextreme/data/Humanoid1NoSegSite.ura");
+    parse_file("../net/coderextreme/data/Humanoid2.ura");
+    parse_file("../net/coderextreme/data/Humanoid2NoSegSite.ura");
+    parse_file("../net/coderextreme/data/Humanoid3.ura");
+    parse_file("../net/coderextreme/data/Humanoid3NoSegSite.ura");
+    parse_file("../net/coderextreme/data/Humanoid4.ura");
+    parse_file("../net/coderextreme/data/Humanoid4NoSegSite.ura");
+    parse_file("../net/coderextreme/data/Humanoid4_1.ura");
+    parse_file("../net/coderextreme/data/IcosahedronSubdivisionLevel5.ura");
+    parse_file("../net/coderextreme/data/IFS.ura");
+    parse_file("../net/coderextreme/data/ifscube.ura");
+    parse_file("../net/coderextreme/data/ifscubeworks.ura");
+    parse_file("../net/coderextreme/data/indexedfaceset_pixeltexture_entire.ura");
+    parse_file("../net/coderextreme/data/indexedfaceset_pixeltexture_part.ura");
+    parse_file("../net/coderextreme/data/indexedfaceset_pixeltexture_plus.ura");
+    parse_file("../net/coderextreme/data/indexedfaceset_pixeltexture_whole.ura");
+    parse_file("../net/coderextreme/data/InlineSoundSource.ura");
+    parse_file("../net/coderextreme/data/Jin20fSegmented.ura");
+    parse_file("../net/coderextreme/data/JinConcat11c.ura");
+    parse_file("../net/coderextreme/data/JinLOA1.ura");
+    parse_file("../net/coderextreme/data/JinLOA4.ura");
+    parse_file("../net/coderextreme/data/JinLOA4scaled1joe06c.ura");
+    parse_file("../net/coderextreme/data/JinLOA4_1.ura");
+    parse_file("../net/coderextreme/data/JinLOA4_3.ura");
+    parse_file("../net/coderextreme/data/JinLOA4_4.ura");
+    parse_file("../net/coderextreme/data/JinLOA4_5.ura");
+    parse_file("../net/coderextreme/data/JinLOA4_6.ura");
+    parse_file("../net/coderextreme/data/JinScaledV2L1LOA4OnlyMarkers11g.ura");
+    parse_file("../net/coderextreme/data/JinScaledV2L1LOA4Sites07f.ura");
+    parse_file("../net/coderextreme/data/JinScaledV2L1LOA4Sites08e.ura");
+    parse_file("../net/coderextreme/data/JinScaledV2L1LOA4Sites10h.ura");
+    parse_file("../net/coderextreme/data/JoeExample.ura");
+    parse_file("../net/coderextreme/data/JoeSkinTexcoordDisplacerKick.ura");
+    parse_file("../net/coderextreme/data/JoeSkinTexcoordDisplacerKickUpdate2.ura");
+    parse_file("../net/coderextreme/data/john.ura");
+    parse_file("../net/coderextreme/data/john2.ura");
+    parse_file("../net/coderextreme/data/john3.ura");
+    parse_file("../net/coderextreme/data/JohnJoint.ura");
+    parse_file("../net/coderextreme/data/JohnJoint2.ura");
+    parse_file("../net/coderextreme/data/JohnJoint20.ura");
+    parse_file("../net/coderextreme/data/JointCoordinateAxes.ura");
+    parse_file("../net/coderextreme/data/jumpcut_loadurl.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter01Jin.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter02Chul.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter03Hyun.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter04Young.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter05Ju.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter06Ga.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter07No.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter08Da.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter09Ru.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter10Mi.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter11Min.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacter12Sun.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacterMotionAnnexB01Jin.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacterMotionAnnexC01Jin.ura");
+    parse_file("../net/coderextreme/data/KoreanCharacterMotionAnnexD01Jin.ura");
+    parse_file("../net/coderextreme/data/Leif5Final.ura");
+    parse_file("../net/coderextreme/data/Leif8Final.ura");
+    parse_file("../net/coderextreme/data/Lily5Final.ura");
+    parse_file("../net/coderextreme/data/Lily8Final.ura");
+    parse_file("../net/coderextreme/data/LOA1_JumpAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_KneelAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_RunAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_StandAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_StopAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_SwimmingFlutterKickAnimation.ura");
+    parse_file("../net/coderextreme/data/LOA1_WalkAnimation.ura");
+    parse_file("../net/coderextreme/data/MainStage.ura");
+    parse_file("../net/coderextreme/data/Marine.ura");
+    parse_file("../net/coderextreme/data/MaskAndSnorkel.ura");
+    parse_file("../net/coderextreme/data/mirror.ura");
+    parse_file("../net/coderextreme/data/mirror2.ura");
+    parse_file("../net/coderextreme/data/MyBounce.ura");
+    parse_file("../net/coderextreme/data/myextrusion.ura");
+    parse_file("../net/coderextreme/data/New2Template.ura");
+    parse_file("../net/coderextreme/data/New2TemplateNoBoxes.ura");
+    parse_file("../net/coderextreme/data/ObliqueStrategies.ura");
+    parse_file("../net/coderextreme/data/particleballs.ura");
+    parse_file("../net/coderextreme/data/particleflowers.ura");
+    parse_file("../net/coderextreme/data/Pathway.ura");
+    parse_file("../net/coderextreme/data/personal.ura");
+    parse_file("../net/coderextreme/data/plainflowers.ura");
+    parse_file("../net/coderextreme/data/pp3.ura");
+    parse_file("../net/coderextreme/data/qq3.ura");
+    parse_file("../net/coderextreme/data/rgb_alpha.ura");
+    parse_file("../net/coderextreme/data/RotationTests.ura");
+    parse_file("../net/coderextreme/data/rubik.ura");
+    parse_file("../net/coderextreme/data/rubikFurnace.ura");
+    parse_file("../net/coderextreme/data/rubikOnFire.ura");
+    parse_file("../net/coderextreme/data/ScubaTank.ura");
+    parse_file("../net/coderextreme/data/SimpleShader.ura");
+    parse_file("../net/coderextreme/data/Size2tExample_revision2.ura");
+    parse_file("../net/coderextreme/data/SpatialAudioCameraAnimation.ura");
+    parse_file("../net/coderextreme/data/sphereflowers.ura");
+    parse_file("../net/coderextreme/data/SplitChannels.ura");
+    parse_file("../net/coderextreme/data/SquawLOD023.ura");
+    parse_file("../net/coderextreme/data/StandardHumanoid.ura");
+    parse_file("../net/coderextreme/data/StandardHumanoidNoSegSite.ura");
+    parse_file("../net/coderextreme/data/StringArrayEncodingExamples.ura");
+    parse_file("../net/coderextreme/data/Teapot.ura");
+    parse_file("../net/coderextreme/data/text3shapes.ura");
+    parse_file("../net/coderextreme/data/TextExamples.ura");
+    parse_file("../net/coderextreme/data/ThreeDTexture.ura");
+    parse_file("../net/coderextreme/data/Trebuchet.ura");
+    parse_file("../net/coderextreme/data/Tufani5Final.ura");
+    parse_file("../net/coderextreme/data/Tufani8Final.ura");
+    parse_file("../net/coderextreme/data/variationalflowers.ura");
+    parse_file("../net/coderextreme/data/variationalflowers2.ura");
+    parse_file("../net/coderextreme/data/ViewFrustumExample.ura");
+    parse_file("../net/coderextreme/data/ViewFrustumPrototype.ura");
+    parse_file("../net/coderextreme/data/VolumeEmitter.ura");
+    parse_file("../net/coderextreme/data/x3dconnector.ura");
+    parse_file("../net/coderextreme/data/x3dconnectorProto.ura");
+    parse_file("../net/coderextreme/data/x3domflowers.ura");
+}

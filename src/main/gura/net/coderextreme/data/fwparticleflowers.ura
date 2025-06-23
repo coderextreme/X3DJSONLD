@@ -1,240 +1,280 @@
 X3D:
     profile: "Immersive"
     version: "4.0"
-    head:
-        component: [
-            name: "EnvironmentalEffects"
-            level: 3
-        ],
-        component: [
-            name: "Shaders"
-            level: 1
-        ],
-        component: [
-            name: "CubeMapTexturing"
-            level: 1
-        ],
-        component: [
-            name: "Texturing"
-            level: 1
-        ],
-        component: [
-            name: "Rendering"
-            level: 1
-        ],
-        component: [
-            name: "Grouping"
-            level: 3
-        ],
-        component: [
-            name: "Core"
-            level: 1
-        ],
-        component: [
-            name: "ParticleSystems"
-            level: 3
-        ],
-        meta: [
-            name: "title"
-            content: "particleflowers.x3d"
-        ],
-        meta: [
-            name: "creator"
-            content: "John Carlson"
-        ],
-        meta: [
-            name: "description"
-            content: "A flower proto with configurable shaders"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
+    setHead: [
+        head: [
+            component: [
+                name: "EnvironmentalEffects"
+                level: 3
+            ],
+            component: [
+                name: "Shaders"
+                level: 1
+            ],
+            component: [
+                name: "CubeMapTexturing"
+                level: 1
+            ],
+            component: [
+                name: "Texturing"
+                level: 1
+            ],
+            component: [
+                name: "Rendering"
+                level: 1
+            ],
+            component: [
+                name: "Grouping"
+                level: 3
+            ],
+            component: [
+                name: "Core"
+                level: 1
+            ],
+            component: [
+                name: "ParticleSystems"
+                level: 3
+            ],
+            meta: [
+                name: "title"
+                content: "particleflowers.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "description"
+                content: "A flower proto with configurable shaders"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
+            ]
         ]
-    Scene:
-        WorldInfo: [
-            title: "particleflowers.x3d"
-        ],
-        NavigationInfo: [
-            type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
-        ],
-        Viewpoint: [
-            description: "Tour Views"
-            position: [0, 0, 12]
-        ],
-        Background: [
-            backUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-            bottomUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-            frontUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-            leftUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-            rightUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-            topUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-        ],
-        Transform: [
-            ParticleSystem: [
-                maxParticles: 20
-                geometryType: "GEOMETRY"
-                BoundedPhysicsModel: [
-                    Sphere:
-                        radius: 100.0
-                ],
-                ExplosionEmitter:
-                    speed: 2.0
-                    variation: 0.75
-                Sphere:
-                Appearance:
-                    Material:
-                        diffuseColor: [0.7, 0.7, 0.7]
-                        specularColor: [0.5, 0.5, 0.5]
-                    ComposedCubeMapTexture:
-                        DEF: "texture"
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-                        ImageTexture:
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-                    ComposedShader: [
-                        DEF: "fw"
-                        language: "GLSL"
-                        field: [
-                            name: "chromaticDispertion"
-                            accessType: "inputOutput"
-                            type: "SFVec3f"
-                            value: "0.98 1 1.033"
-                        ],
-                        field: [
-                            name: "cube"
-                            type: "SFNode"
-                            accessType: "inputOutput"
-                            ComposedCubeMapTexture: [
-                                USE: "texture"
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "particleflowers.x3d"
+            ],
+            NavigationInfo: [
+                type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
+            ],
+            Viewpoint: [
+                description: "Tour Views"
+                position: [0, 0, 12]
+            ],
+            Background: [
+                backUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                bottomUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                frontUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                leftUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                rightUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                topUrl: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+            ],
+            Transform: [
+                ParticleSystem: [
+                    maxParticles: 20
+                    geometryType: "GEOMETRY"
+                    BoundedPhysicsModel: [
+                        setGeometry: [
+                            Sphere: [
+                                radius: 100.0
                             ]
-                        ],
-                        field: [
-                            name: "bias"
-                            accessType: "inputOutput"
-                            type: "SFFloat"
-                            value: "0.5"
-                        ],
-                        field: [
-                            name: "scale"
-                            accessType: "inputOutput"
-                            type: "SFFloat"
-                            value: "0.5"
-                        ],
-                        field: [
-                            name: "power"
-                            accessType: "inputOutput"
-                            type: "SFFloat"
-                            value: "2"
-                        ],
-                        field: [
-                            name: "a"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "2"
-                        ],
-                        field: [
-                            name: "b"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "1"
-                        ],
-                        field: [
-                            name: "c"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "5"
-                        ],
-                        field: [
-                            name: "d"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "5"
-                        ],
-                        field: [
-                            name: "tdelta"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "0"
-                        ],
-                        field: [
-                            name: "pdelta"
-                            type: "SFFloat"
-                            accessType: "inputOutput"
-                            value: "0"
-                        ],
-                        ShaderPart: [
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"]
-                            type: "VERTEX"
-                        ],
-                        ShaderPart: [
-                            url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]
-                            type: "FRAGMENT"
                         ]
                     ]
-            ],
-            Script: [
-                DEF: "Animate"
-                field: [
-                    name: "translation"
-                    accessType: "inputOutput"
-                    type: "SFVec3f"
-                    value: "0 0 0"
+                    setEmitter: [
+                        ExplosionEmitter: [
+                            speed: 2.0
+                            variation: 0.75
+                        ]
+                    ]
+                    setGeometry: [
+                        Sphere: [ empty
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.7, 0.7, 0.7]
+                                    specularColor: [0.5, 0.5, 0.5]
+                                ]
+                            ]
+                            setTexture: [
+                                ComposedCubeMapTexture: [
+                                    DEF: "texture"
+                                    setBackTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                        ]
+                                    ]
+                                    setBottomTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                        ]
+                                    ]
+                                    setFrontTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                        ]
+                                    ]
+                                    setLeftTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                        ]
+                                    ]
+                                    setRightTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                        ]
+                                    ]
+                                    setTopTexture: [
+                                        ImageTexture: [
+                                            url: ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            ComposedShader: [
+                                DEF: "fw"
+                                language: "GLSL"
+                                field: [
+                                    name: "chromaticDispertion"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "0.98 1 1.033"
+                                ],
+                                field: [
+                                    name: "cube"
+                                    type: "SFNode"
+                                    accessType: "inputOutput"
+                                    ComposedCubeMapTexture: [
+                                        USE: "texture"
+                                    ]
+                                ],
+                                field: [
+                                    name: "bias"
+                                    accessType: "inputOutput"
+                                    type: "SFFloat"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "scale"
+                                    accessType: "inputOutput"
+                                    type: "SFFloat"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "power"
+                                    accessType: "inputOutput"
+                                    type: "SFFloat"
+                                    value: "2"
+                                ],
+                                field: [
+                                    name: "a"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "2"
+                                ],
+                                field: [
+                                    name: "b"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "1"
+                                ],
+                                field: [
+                                    name: "c"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "5"
+                                ],
+                                field: [
+                                    name: "d"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "5"
+                                ],
+                                field: [
+                                    name: "tdelta"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "0"
+                                ],
+                                field: [
+                                    name: "pdelta"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "0"
+                                ],
+                                ShaderPart: [
+                                    url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"]
+                                    type: "VERTEX"
+                                ],
+                                ShaderPart: [
+                                    url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"]
+                                    type: "FRAGMENT"
+                                ]
+                            ]
+                        ]
+                    ]
                 ],
-                field: [
-                    name: "velocity"
-                    accessType: "inputOutput"
-                    type: "SFVec3f"
-                    value: "0 0 0"
-                ],
-                field: [
-                    name: "set_fraction"
-                    accessType: "inputOnly"
-                    type: "SFFloat"
-                ],
-                field: [
-                    name: "a"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "0.5"
-                ],
-                field: [
-                    name: "b"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "0.5"
-                ],
-                field: [
-                    name: "c"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "3"
-                ],
-                field: [
-                    name: "d"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "3"
-                ],
-                field: [
-                    name: "tdelta"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "0.5"
-                ],
-                field: [
-                    name: "pdelta"
-                    type: "SFFloat"
-                    accessType: "inputOutput"
-                    value: "0.5"
-                ],
+                Script: [
+                    DEF: "Animate"
+                    field: [
+                        name: "translation"
+                        accessType: "inputOutput"
+                        type: "SFVec3f"
+                        value: "0 0 0"
+                    ],
+                    field: [
+                        name: "velocity"
+                        accessType: "inputOutput"
+                        type: "SFVec3f"
+                        value: "0 0 0"
+                    ],
+                    field: [
+                        name: "set_fraction"
+                        accessType: "inputOnly"
+                        type: "SFFloat"
+                    ],
+                    field: [
+                        name: "a"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "0.5"
+                    ],
+                    field: [
+                        name: "b"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "0.5"
+                    ],
+                    field: [
+                        name: "c"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "3"
+                    ],
+                    field: [
+                        name: "d"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "3"
+                    ],
+                    field: [
+                        name: "tdelta"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "0.5"
+                    ],
+                    field: [
+                        name: "pdelta"
+                        type: "SFFloat"
+                        accessType: "inputOutput"
+                        value: "0.5"
+                    ],
 #ecmascript:
 #
 #			function initialize() {
@@ -302,52 +342,54 @@ X3D:
 #					d = 4;
 #				}
 #			}
-            ],
-            TimeSensor: [
-                DEF: "TourTime"
-                cycleInterval: 5.0
-                loop: true
-            ],
-            ROUTE: [
-                fromNode: "TourTime"
-                fromField: "fraction_changed"
-                toNode: "Animate"
-                toField: "set_fraction"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "a"
-                toNode: "fw"
-                toField: "a"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "b"
-                toNode: "fw"
-                toField: "b"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "c"
-                toNode: "fw"
-                toField: "c"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "d"
-                toNode: "fw"
-                toField: "d"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "pdelta"
-                toNode: "fw"
-                toField: "pdelta"
-            ],
-            ROUTE: [
-                fromNode: "Animate"
-                fromField: "tdelta"
-                toNode: "fw"
-                toField: "tdelta"
+                ],
+                TimeSensor: [
+                    DEF: "TourTime"
+                    cycleInterval: 5.0
+                    loop: true
+                ],
+                ROUTE: [
+                    fromNode: "TourTime"
+                    fromField: "fraction_changed"
+                    toNode: "Animate"
+                    toField: "set_fraction"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "a"
+                    toNode: "fw"
+                    toField: "a"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "b"
+                    toNode: "fw"
+                    toField: "b"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "c"
+                    toNode: "fw"
+                    toField: "c"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "d"
+                    toNode: "fw"
+                    toField: "d"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "pdelta"
+                    toNode: "fw"
+                    toField: "pdelta"
+                ],
+                ROUTE: [
+                    fromNode: "Animate"
+                    fromField: "tdelta"
+                    toNode: "fw"
+                    toField: "tdelta"
+                ]
             ]
         ]
+    ]

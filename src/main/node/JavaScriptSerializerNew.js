@@ -4,7 +4,7 @@ if (typeof require !== 'undefined') {
 	var fs = require("fs")
 }
 
-function JavaScriptSerializer () {
+export default function JavaScriptSerializer () {
 this.DOUBLE_SUFFIX = '';
 this.FLOAT_SUFFIX = '';
 
@@ -504,4 +504,3 @@ JavaScriptSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = JavaScriptSerializer;

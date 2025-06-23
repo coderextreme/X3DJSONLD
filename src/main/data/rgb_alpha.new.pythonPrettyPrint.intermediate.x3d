@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Interchange' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
   <head>
     <meta content='rgb_alpha.x3d' name='title'/>
@@ -22,13 +23,13 @@
     <meta content='../../license.html' name='license'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "WALK" "FLY" "ANY"'/>
+    <NavigationInfo type='"EXAMINE" "WALK" "FLY" "ANY"'/>
     <Group>
       <Transform translation='6.14221 0.0694613 -9.99451E-4'>
         <Shape>
           <Appearance>
             <Material/>
-            <PixelTexture DEF='RgbOpacityCheckerboard' image='2 2 4 -16776961 -65536 -65536 -16776961'/>
+            <PixelTexture DEF='RgbOpacityCheckerboard'/>
           </Appearance>
           <Box/>
         </Shape>

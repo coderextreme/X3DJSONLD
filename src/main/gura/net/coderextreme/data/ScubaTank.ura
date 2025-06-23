@@ -1,156 +1,234 @@
 X3D:
     profile: "Interchange"
     version: "3.3"
-    head:
-        meta: [
-            name: "title"
-            content: "ScubaTank.x3d"
-        ],
-        meta: [
-            name: "description"
-            content: "Scuba gear used by Nancy Diving example."
-        ],
-        meta: [
-            name: "creator"
-            content: "Etsuko Lippi"
-        ],
-        meta: [
-            name: "created"
-            content: "24 January 2001"
-        ],
-        meta: [
-            name: "modified"
-            content: "23 May 2020"
-        ],
-        meta: [
-            name: "identifier"
-            content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
-        ],
-        meta: [
-            name: "generator"
-            content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        ],
-        meta: [
-            name: "license"
-            content: "../license.html"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "ScubaTank.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Scuba gear used by Nancy Diving example."
+            ],
+            meta: [
+                name: "creator"
+                content: "Etsuko Lippi"
+            ],
+            meta: [
+                name: "created"
+                content: "24 January 2001"
+            ],
+            meta: [
+                name: "modified"
+                content: "23 May 2020"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            ],
+            meta: [
+                name: "license"
+                content: "../license.html"
+            ]
         ]
-    Scene:
-        WorldInfo: [
-            title: "ScubaTank.x3d"
-        ],
-        Transform: [
-            DEF: "ScubaTank"
-            Transform: [
-                Shape: [
-                    Appearance:
-                        Material:
-                            DEF: "tank"
-                            ambientIntensity: 0.3
-                            diffuseColor: [0.3, 0.3, 0.5]
-                            shininess: 0.1
-                            specularColor: [0.7, 0.7, 0.8]
-                    Cylinder:
-                        height: 0.7
-                        radius: 0.1
-                ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "ScubaTank.x3d"
             ],
             Transform: [
-                translation: [0, 0.35, 0]
-                Shape: [
-                    Appearance:
-                        Material:
-                            USE: "tank"
-                    Sphere:
-                        radius: 0.098
-                ]
-            ],
-            Transform: [
-                translation: [0, -0.35, 0]
-                Shape: [
-                    DEF: "tankBottom"
-                    Appearance:
-                        Material:
-                            DEF: "black"
-                            ambientIntensity: 0.3
-                            diffuseColor: [0, 0, 0]
-                    Cylinder:
-                        height: 0.06
-                        radius: 0.115
-                ]
-            ],
-            Group: [
-                DEF: "tankNozzle"
+                DEF: "ScubaTank"
                 Transform: [
-                    Transform: [
-                        translation: [0, 0.45, 0]
-                        Shape: [
-                            DEF: "pressure"
-                            Appearance:
-                                Material:
-                                    DEF: "pressureColor"
-                                    ambientIntensity: 0.4
-                                    diffuseColor: [0.91, 0.91, 0.91]
-                                    shininess: 0.16
-                                    specularColor: [0.91, 0.9, 0.91]
-                            Cylinder:
-                                height: 0.1
-                                radius: 0.015
+                    Shape: [
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        DEF: "tank"
+                                        ambientIntensity: 0.3
+                                        diffuseColor: [0.3, 0.3, 0.5]
+                                        shininess: 0.1
+                                        specularColor: [0.7, 0.7, 0.8]
+                                    ]
+                                ]
+                            ]
                         ]
-                    ],
-                    Transform: [
-                        translation: [0, 0.5, 0]
-                        Shape: [
-                            DEF: "pressureTop"
-                            Appearance:
-                                Material:
-                                    USE: "black"
-                            Cylinder:
-                                height: 0.02
-                                radius: 0.025
+                        setGeometry: [
+                            Cylinder: [
+                                height: 0.7
+                                radius: 0.1
+                            ]
                         ]
-                    ],
+                    ]
+                ],
+                Transform: [
+                    translation: [0, 0.35, 0]
+                    Shape: [
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        USE: "tank"
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Sphere: [
+                                radius: 0.098
+                            ]
+                        ]
+                    ]
+                ],
+                Transform: [
+                    translation: [0, -0.35, 0]
+                    Shape: [
+                        DEF: "tankBottom"
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        DEF: "black"
+                                        ambientIntensity: 0.3
+                                        diffuseColor: [0, 0, 0]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                height: 0.06
+                                radius: 0.115
+                            ]
+                        ]
+                    ]
+                ],
+                Group: [
+                    DEF: "tankNozzle"
                     Transform: [
-                        rotation: [0, 0, 1, 1.57]
-                        translation: [-0.028, 0.462, 0]
                         Transform: [
+                            translation: [0, 0.45, 0]
                             Shape: [
-                                DEF: "connectorToRegulator"
-                                Appearance:
-                                    Material:
-                                        USE: "pressureColor"
-                                Cylinder:
-                                    height: 0.03
-                                    radius: 0.01
+                                DEF: "pressure"
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                DEF: "pressureColor"
+                                                ambientIntensity: 0.4
+                                                diffuseColor: [0.91, 0.91, 0.91]
+                                                shininess: 0.16
+                                                specularColor: [0.91, 0.9, 0.91]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                setGeometry: [
+                                    Cylinder: [
+                                        height: 0.1
+                                        radius: 0.015
+                                    ]
+                                ]
                             ]
                         ],
                         Transform: [
-                            translation: [0, 0.02, 0]
+                            translation: [0, 0.5, 0]
                             Shape: [
-                                DEF: "connectorToRegulatorTop"
-                                Appearance:
-                                    Material:
+                                DEF: "pressureTop"
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                USE: "black"
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                setGeometry: [
+                                    Cylinder: [
+                                        height: 0.02
+                                        radius: 0.025
+                                    ]
+                                ]
+                            ]
+                        ],
+                        Transform: [
+                            rotation: [0, 0, 1, 1.57]
+                            translation: [-0.028, 0.462, 0]
+                            Transform: [
+                                Shape: [
+                                    DEF: "connectorToRegulator"
+                                    setAppearance: [
+                                        Appearance: [
+                                            setMaterial: [
+                                                Material: [
+                                                    USE: "pressureColor"
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                    setGeometry: [
+                                        Cylinder: [
+                                            height: 0.03
+                                            radius: 0.01
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            Transform: [
+                                translation: [0, 0.02, 0]
+                                Shape: [
+                                    DEF: "connectorToRegulatorTop"
+                                    setAppearance: [
+                                        Appearance: [
+                                            setMaterial: [
+                                                Material: [
+                                                    USE: "black"
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                    setGeometry: [
+                                        Cylinder: [
+                                            height: 0.02
+                                            radius: 0.02
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                Transform: [
+                    translation: [0, 0.2, 0]
+                    Shape: [
+                        DEF: "tankHoldBelt"
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
                                         USE: "black"
-                                Cylinder:
-                                    height: 0.02
-                                    radius: 0.02
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                height: 0.1
+                                radius: 0.115
                             ]
                         ]
                     ]
                 ]
             ],
-            Transform: [
-                translation: [0, 0.2, 0]
-                Shape: [
-                    DEF: "tankHoldBelt"
-                    Appearance:
-                        Material:
-                            USE: "black"
-                    Cylinder:
-                        height: 0.1
-                        radius: 0.115
-                ]
+            Background: [
+                skyColor: [0.6, 0.6, 0.6]
             ]
-        ],
-        Background: [
-            skyColor: [0.6, 0.6, 0.6]
         ]
+    ]

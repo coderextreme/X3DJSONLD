@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='Marine.x3d' name='title'/>
@@ -19,7 +20,7 @@
       <Group DEF='GROUND'>
         <Transform DEF='dad_Import_Base'>
           <Group DEF='Import_Base'>
-            <NavigationInfo DEF='NavInfo1' avatarSize='0 1 0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+            <NavigationInfo DEF='NavInfo1'/>
             <Transform DEF='dad_Transform5' rotation='0 1 0 1.569'>
               <Group DEF='Transform5'>
                 <Transform DEF='dad_Cover_FACES01_FACES' rotation='0 -0.716 0.698 3.141' scale='0.1097 0.09537 0.09537' scaleOrientation='0.577 -0.577 0.577 2.094' translation='-0.189 1.74359 -0.02274'>

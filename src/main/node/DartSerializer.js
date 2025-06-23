@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function DartSerializer () {
+export default function DartSerializer () {
 	this.postcode = [];
 }
 
@@ -402,5 +402,3 @@ DartSerializer.prototype = {
 
 	}
 };
-
-module.exports = DartSerializer;

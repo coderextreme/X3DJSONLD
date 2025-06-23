@@ -98,7 +98,7 @@ side up in its entirety to each face of the box."
 },
 {
 "@name":"translated",
-"@content":"30 April 2024"
+"@content":"04 June 2025"
 },
 {
 "@name":"generator",
@@ -137,8 +137,7 @@ side up in its entirety to each face of the box."
 "-texture":
 { "PixelTexture":
 {
-"@DEF":"RgbOpacityCheckerboard",
-"@image":[2,2,4,-16776961,-65536,-65536,-16776961]
+"@DEF":"RgbOpacityCheckerboard"
 }
 }
 }

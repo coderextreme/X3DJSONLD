@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='pp3.x3d' name='title'/>
@@ -166,7 +167,7 @@ ecmascript:
         <ROUTE fromField='isOver' fromNode='UpTouch' toField='set_enabled' toNode='UpSensor'/>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Viewpoint description='Process pipes' orientation='1 0 0 -0.4' position='0 5 12'/>
     <Transform translation='0 -2.5 0'>
       <ProtoInstance name='Process'/>

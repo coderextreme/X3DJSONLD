@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <component name='HAnim' level='1'/>
@@ -25,12 +26,12 @@
       <ProtoInterface>
         <field name='supportedLOA' accessType='inputOutput' appinfo='Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' type='SFInt32' value='-1'/>
         <field name='enabled' accessType='inputOutput' appinfo='is this behavior enabled?' type='SFBool' value='true'/>
-        <field name='cycleInterval' accessType='inputOutput' appinfo='how long do these interpolators take to execute?' type='SFTime'/>
+        <field name='cycleInterval' accessType='inputOutput' appinfo='how long do these interpolators take to execute?' type='SFTime' value='1.0'/>
         <field name='loop' accessType='inputOutput' appinfo='whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).' type='SFBool' value='false'/>
-        <field name='startTime' accessType='inputOutput' appinfo='when time now &gt;= startTime isActive becomes true and TimeSensor becomes active' type='SFTime'/>
-        <field name='stopTime' accessType='inputOutput' appinfo='when stopTime becomes &lt;= time now isActive becomes false and TimeSensor becomes inactive' type='SFTime'/>
-        <field name='pauseTime' accessType='inputOutput' appinfo='when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes paused' type='SFTime'/>
-        <field name='resumeTime' accessType='inputOutput' appinfo='when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor becomes inactive' type='SFTime'/>
+        <field name='startTime' accessType='inputOutput' appinfo='when time now &gt;= startTime isActive becomes true and TimeSensor becomes active' type='SFTime' value='0.0'/>
+        <field name='stopTime' accessType='inputOutput' appinfo='when stopTime becomes &lt;= time now isActive becomes false and TimeSensor becomes inactive' type='SFTime' value='0.0'/>
+        <field name='pauseTime' accessType='inputOutput' appinfo='when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes paused' type='SFTime' value='0.0'/>
+        <field name='resumeTime' accessType='inputOutput' appinfo='when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor becomes inactive' type='SFTime' value='0.0'/>
         <field name='cycleTime' accessType='outputOnly' appinfo='cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle' type='SFTime'/>
         <field name='isActive' accessType='outputOnly' appinfo='isActive true/false events are sent when TimeSensor starts/stops running' type='SFBool'/>
         <field name='isPaused' accessType='outputOnly' appinfo='isPaused true/false events are sent when TimeSensor is paused/resumed' type='SFBool'/>
@@ -2153,8 +2154,8 @@
         <field name='enabledBehaviorsArray' accessType='initializeOnly' appinfo='indicate which HAnimBehavior nodes are activated, empty indicates all enabled true' type='MFBool'/>
         <field name='enableBehavior' accessType='inputOnly' appinfo='enable corresponding behavior identified by index number' type='SFInt32'/>
         <field name='disableBehavior' accessType='inputOnly' appinfo='disable corresponding behavior identified by index number' type='SFInt32'/>
-        <field name='startTime' accessType='inputOutput' type='SFTime'/>
-        <field name='stopTime' accessType='inputOutput' type='SFTime'/>
+        <field name='startTime' accessType='inputOutput' type='SFTime' value='0.0'/>
+        <field name='stopTime' accessType='inputOutput' type='SFTime' value='0.0'/>
       </ProtoInterface>
       <ProtoBody>
         <Switch DEF='BodySwitch'>

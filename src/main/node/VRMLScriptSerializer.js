@@ -3,10 +3,10 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-var DOMSerializer = require('./DOMSerializer.js');
+import DOMSerializer from './DOMSerializer.js';
 let serializer = new DOMSerializer();
 
-function VRMLScriptSerializer () {
+export default function VRMLScriptSerializer () {
 this.code = [];
 this.codeno = 0;
 this.preno = 0;
@@ -550,4 +550,3 @@ VRMLScriptSerializer.prototype = {
 		return str;
 	}
 };
-module.exports = VRMLScriptSerializer;

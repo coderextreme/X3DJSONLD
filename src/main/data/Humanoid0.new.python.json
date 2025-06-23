@@ -14,11 +14,11 @@
 "meta": [
 {
 "@name":"title",
-"@content":"JohnBoy.x3d"
+"@content":"Humanoid0.x3d"
 },
 {
 "@name":"identifier",
-"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
+"@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"
 },
 {
 "@name":"description",
@@ -46,7 +46,7 @@
 },
 {
 "@name":"translated",
-"@content":"30 April 2024"
+"@content":"04 June 2025"
 },
 {
 "@name":"generator",
@@ -228,25 +228,23 @@
 "@DEF":"hanim_HAnim",
 "@info":["humanoidVersion=2.0"],
 "@version":"2.0",
-"-coord":
-{ "Coordinate":
-{
-"@USE":"TheSkinCoord"
-}
-},
-"-children":[
+"-skeleton":[
 { "HAnimJoint":
 {
 "@DEF":"hanim_",
-"@llimit":[0,0,0],
-"@ulimit":[0,0,0]
+"@ulimit":[0,0,0],
+"@llimit":[0,0,0]
 }
-},
+}
+],
+"-joints":[
 { "HAnimJoint":
 {
 "@USE":"hanim_"
 }
-},
+}
+],
+"-skin":[
 { "Shape":
 {
 "@DEF":"SkinShape",
@@ -296,7 +294,13 @@
 }
 }
 }
-]
+],
+"-skinCoord":
+{ "Coordinate":
+{
+"@USE":"TheSkinCoord"
+}
+}
 }
 }
 ]

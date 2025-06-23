@@ -3,7 +3,7 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-function JavaSerializer() {
+export default function JavaSerializer() {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -365,7 +365,7 @@ JavaSerializer.prototype = {
 									return y;
 								}), this.codeno, '","', '"', '"');
 							*/
-							console.error("chopped rejoined", strval);
+							// console.error("chopped rejoined", strval);
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							strval = '"'+attrs[a].nodeValue+'"';
 						} else {
@@ -643,5 +643,3 @@ JavaSerializer.prototype = {
 		return str;
 	}
 };
-
-module.exports = JavaSerializer;
