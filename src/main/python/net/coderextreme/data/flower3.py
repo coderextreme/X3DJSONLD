@@ -35,27 +35,27 @@ NavigationInfo8 = x3d.NavigationInfo()
 
 Scene7.addChildren(NavigationInfo8)
 DirectionalLight9 = x3d.DirectionalLight()
-DirectionalLight9.setDirection([0,-0.8,-0.2])
+DirectionalLight9.setDirection(x3d.doubleToFloat([0,-0.8,-0.2]))
 DirectionalLight9.setIntensity(0.5)
 
 Scene7.addChildren(DirectionalLight9)
 Background10 = x3d.Background()
-Background10.setSkyColor([1,1,1])
+Background10.setSkyColor(x3d.doubleToFloat([1,1,1]))
 
 Scene7.addChildren(Background10)
 Viewpoint11 = x3d.Viewpoint()
 Viewpoint11.setDescription("One mathematical orbital")
-Viewpoint11.setPosition([0,0,50])
+Viewpoint11.setPosition(x3d.doubleToFloat([0,0,50]))
 
 Scene7.addChildren(Viewpoint11)
 Transform12 = x3d.Transform()
 Transform12.setDEF("OrbitTransform")
-Transform12.setTranslation([8,0,0])
+Transform12.setTranslation(x3d.doubleToFloat([8,0,0]))
 Shape13 = x3d.Shape()
 Appearance14 = x3d.Appearance()
 Material15 = x3d.Material()
-Material15.setDiffuseColor([0,0.5,1])
-Material15.setSpecularColor([0,0.5,1])
+Material15.setDiffuseColor(x3d.doubleToFloat([0,0.5,1]))
+Material15.setSpecularColor(x3d.doubleToFloat([0,0.5,1]))
 
 Appearance14.setMaterial(Material15)
 

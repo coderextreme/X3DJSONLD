@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -41,15 +41,15 @@ IndexedFaceSet10.setNormalIndex([0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1])
 IndexedFaceSet10.setNormalPerVertex(False)
 IndexedFaceSet10.setColorIndex([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1])
 Coordinate11 = x3d.Coordinate()
-Coordinate11.setPoint([0,0,1,0,1,1,1,1,1,1,0,1])
+Coordinate11.setPoint(x3d.doubleToFloat([0,0,1,0,1,1,1,1,1,1,0,1]))
 
 IndexedFaceSet10.setCoord(Coordinate11)
 Normal12 = x3d.Normal()
-Normal12.setVector([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1])
+Normal12.setVector(x3d.doubleToFloat([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]))
 
 IndexedFaceSet10.setNormal(Normal12)
 Color13 = x3d.Color()
-Color13.setColor([0,1,0])
+Color13.setColor(x3d.doubleToFloat([0,1,0]))
 
 IndexedFaceSet10.setColor(Color13)
 

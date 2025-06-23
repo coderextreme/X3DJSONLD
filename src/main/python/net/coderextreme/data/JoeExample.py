@@ -57,7 +57,7 @@ Scene3.addChildren(Script4)
 Shape9 = x3d.Shape()
 Appearance10 = x3d.Appearance()
 Material11 = x3d.Material()
-Material11.setDiffuseColor([1,0,0])
+Material11.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
 
 Appearance10.setMaterial(Material11)
 
