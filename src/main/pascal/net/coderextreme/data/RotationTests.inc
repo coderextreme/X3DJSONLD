@@ -27,8 +27,8 @@ OrientationInterpolator40: TOrientationInterpolatorNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
 X3D0.Meta['title'] := 'RotationTests.x3d';
 X3D0.Meta['description'] := 'BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values.';

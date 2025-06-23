@@ -8,8 +8,8 @@ Text20: TTextNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 { All head/meta tags are optional, WorldInfo is also optional }
 { Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1 }
 X3D0.Meta['title'] := 'HelloWorldMinimal.x3d';

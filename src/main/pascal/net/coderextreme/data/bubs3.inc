@@ -56,8 +56,8 @@ TimeSensor67: TTimeSensorNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'bubs3.x3d';
 X3D0.Meta['creator'] := 'John Carlson';
 X3D0.Meta['description'] := 'Tour around a prismatic sphere';

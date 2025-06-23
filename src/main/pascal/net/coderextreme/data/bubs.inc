@@ -26,8 +26,8 @@ ProtoInstance32: TProtoInstanceNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 3;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Components['Scripting'] := 1;
 X3D0.Meta['title'] := 'bubs.x3d';
 X3D0.Meta['creator'] := 'John Carlson';
