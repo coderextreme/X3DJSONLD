@@ -74,7 +74,13 @@ PythonSerializerX3DJSAIL.prototype = {
 			values.pop();
 		}
 
-		return '['+lead+values.join(j)+trail+']';
+		if (type === "float") {
+			return 'x3d.doubleToFloat(['+lead+values.join(j)+trail+'])';
+		} else if (type === "double") {
+			return 'x3d.doubleToDouble(['+lead+values.join(j)+trail+'])';
+		} else {
+			return '['+lead+values.join(j)+trail+']';
+		}
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
@@ -116,7 +122,6 @@ PythonSerializerX3DJSAIL.prototype = {
 							if (attrs[a].nodeValue === "joints" 
 								|| attrs[a].nodeValue === "sites" 
 								|| attrs[a].nodeValue === "skin" 
-								|| attrs[a].nodeValue === "viewpoints" 
 								|| attrs[a].nodeValue === "skeleton" 
 								|| attrs[a].nodeValue === "segments" 
 							) {
@@ -262,7 +267,6 @@ PythonSerializerX3DJSAIL.prototype = {
 						attrs[a].nodeValue === "joints" ||
 						attrs[a].nodeValue === "skeleton" ||
 						attrs[a].nodeValue === "segments" ||
-						attrs[a].nodeValue === "viewpoints" ||
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
@@ -305,7 +309,7 @@ PythonSerializerX3DJSAIL.prototype = {
 					}
 					str += element.nodeName+stack[0];
 					str += '.set'+method+"("+strval+")\n";
-					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
 						// str += ")"; // for cast
 					}
 				}
