@@ -1,7 +1,7 @@
 "use strict";
 
-var parseString = require('xml2js').parseString;
-var fs = require('fs');
+import { parseString } from "xml2js";
+import fs from "fs";
 //const { glob, globSync } = require('glob');
 
 var program = process.argv[1];
