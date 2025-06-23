@@ -1,82 +1,29 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "4.0";
-let head1 = browser.currentScene.createNode("head");
-let component2 = browser.currentScene.createNode("component");
-component2.name = "H-Anim";
-component2.level = 1;
-head1.component = new MFNode();
-
-head1.component[0] = component2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "title";
-meta3.content = "JoeSkinTexcoordDisplacerKick.x3d";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "info";
-meta4.content = "Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "description";
-meta5.content = "The Joe model is a Humanoid with textured skin.";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "creator";
-meta6.content = "Joe Williams";
-head1.meta[4] = meta6;
-
-let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "created";
-meta7.content = "9 January 2014";
-head1.meta[5] = meta7;
-
-let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "translated";
-meta8.content = "12 January 2017";
-head1.meta[6] = meta8;
-
-let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "modified";
-meta9.content = "09 July 2020";
-head1.meta[7] = meta9;
-
-let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "TODO";
-meta10.content = "Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes";
-head1.meta[8] = meta10;
-
-let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "translators";
-meta11.content = "Roy Walmsley and Don Brutzman";
-head1.meta[9] = meta11;
-
-let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d";
-head1.meta[10] = meta12;
-
-let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "generator";
-meta13.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
-head1.meta[11] = meta13;
-
-let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "license";
-meta14.content = "../license.html";
-head1.meta[12] = meta14;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene .addComponent (browser .getComponent ("H-Anim", 1));
+scene.addMetaData("title", "JoeSkinTexcoordDisplacerKick.x3d");
+scene.addMetaData("info", "Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim");
+scene.addMetaData("description", "The Joe model is a Humanoid with textured skin.");
+scene.addMetaData("creator", "Joe Williams");
+scene.addMetaData("created", "9 January 2014");
+scene.addMetaData("translated", "12 January 2017");
+scene.addMetaData("modified", "09 July 2020");
+scene.addMetaData("TODO", "Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes");
+scene.addMetaData("translators", "Roy Walmsley and Don Brutzman");
+scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("license", "../license.html");
 //BS studio translation from .x3dv by Joe using BS Contact
-head = head1;
-
+await browser .loadComponents (scene);
 let WorldInfo16 = browser.currentScene.createNode("WorldInfo");
-WorldInfo16.info = new MFString(new java.lang.String["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]);
+WorldInfo16.info = new X3D.MFString([new X3D.SFString("X3D Humanoid V1 LOA3 skeleton"), new X3D.SFString("skin from hanim sites, surface features, and some added points"), new X3D.SFString("390 points")]);
 WorldInfo16.title = "X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe";
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = WorldInfo16;
 
@@ -94,58 +41,58 @@ let SpotLight19 = browser.currentScene.createNode("SpotLight");
 SpotLight19.DEF = "light1";
 SpotLight19.ambientIntensity = 0.7;
 SpotLight19.beamWidth = 1.5;
-SpotLight19.color = new SFColor(new float[0.8,0.8,1]);
+SpotLight19.color = new X3D.SFColor([0.8,0.8,1]);
 SpotLight19.cutOffAngle = 0.6;
-SpotLight19.direction = new SFVec3f(new float[0,0,0]);
-SpotLight19.location = new SFVec3f(new float[0,3,3]);
+SpotLight19.direction = new X3D.SFVec3f([0,0,0]);
+SpotLight19.location = new X3D.SFVec3f([0,3,3]);
 SpotLight19.radius = 10;
 browser.currentScene.children[3] = SpotLight19;
 
 let PointLight20 = browser.currentScene.createNode("PointLight");
 PointLight20.DEF = "light2";
 PointLight20.ambientIntensity = 0.7;
-PointLight20.color = new SFColor(new float[0.8,0.8,1]);
-PointLight20.location = new SFVec3f(new float[0,10,-7]);
+PointLight20.color = new X3D.SFColor([0.8,0.8,1]);
+PointLight20.location = new X3D.SFVec3f([0,10,-7]);
 browser.currentScene.children[4] = PointLight20;
 
 //External from the Humanoid viewpoints
 let Viewpoint21 = browser.currentScene.createNode("Viewpoint");
 Viewpoint21.DEF = "Scene_InclinedView";
-Viewpoint21.centerOfRotation = new SFVec3f(new float[0,0.85,0]);
+Viewpoint21.centerOfRotation = new X3D.SFVec3f([0,0.85,0]);
 Viewpoint21.description = "Scene_Inclined View";
-Viewpoint21.orientation = new SFRotation(new float[-0.113,0.993,0.0347,0.671]);
-Viewpoint21.position = new SFVec3f(new float[1.62,1.05,3.06]);
+Viewpoint21.orientation = new X3D.SFRotation([-0.113,0.993,0.0347,0.671]);
+Viewpoint21.position = new X3D.SFVec3f([1.62,1.05,3.06]);
 browser.currentScene.children[5] = Viewpoint21;
 
 let Viewpoint22 = browser.currentScene.createNode("Viewpoint");
 Viewpoint22.DEF = "Scene_IFrontView";
-Viewpoint22.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
+Viewpoint22.centerOfRotation = new X3D.SFVec3f([0,0.8,0]);
 Viewpoint22.description = "Scene_Front View";
-Viewpoint22.position = new SFVec3f(new float[0,0.8,2.58]);
+Viewpoint22.position = new X3D.SFVec3f([0,0.8,2.58]);
 browser.currentScene.children[6] = Viewpoint22;
 
 let Viewpoint23 = browser.currentScene.createNode("Viewpoint");
 Viewpoint23.DEF = "Scene_ISideView";
-Viewpoint23.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
+Viewpoint23.centerOfRotation = new X3D.SFVec3f([0,0.8,0]);
 Viewpoint23.description = "Scene_Side View";
-Viewpoint23.orientation = new SFRotation(new float[0,1,0,1.5708]);
-Viewpoint23.position = new SFVec3f(new float[2.6,0.5,0]);
+Viewpoint23.orientation = new X3D.SFRotation([0,1,0,1.5708]);
+Viewpoint23.position = new X3D.SFVec3f([2.6,0.5,0]);
 browser.currentScene.children[7] = Viewpoint23;
 
 let Viewpoint24 = browser.currentScene.createNode("Viewpoint");
 Viewpoint24.DEF = "Scene_BackView";
-Viewpoint24.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
+Viewpoint24.centerOfRotation = new X3D.SFVec3f([0,1.5,0]);
 Viewpoint24.description = "Scene_Back View";
-Viewpoint24.orientation = new SFRotation(new float[0,1,0,3.14]);
-Viewpoint24.position = new SFVec3f(new float[0,2.5,-3]);
+Viewpoint24.orientation = new X3D.SFRotation([0,1,0,3.14]);
+Viewpoint24.position = new X3D.SFVec3f([0,2.5,-3]);
 browser.currentScene.children[8] = Viewpoint24;
 
 let Viewpoint25 = browser.currentScene.createNode("Viewpoint");
 Viewpoint25.DEF = "Scene_TopView";
-Viewpoint25.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
+Viewpoint25.centerOfRotation = new X3D.SFVec3f([0,1.5,0]);
 Viewpoint25.description = "Scene_Top View";
-Viewpoint25.orientation = new SFRotation(new float[1,0,0,-1.5708]);
-Viewpoint25.position = new SFVec3f(new float[0,3.5,0]);
+Viewpoint25.orientation = new X3D.SFRotation([1,0,0,-1.5708]);
+Viewpoint25.position = new X3D.SFVec3f([0,3.5,0]);
 browser.currentScene.children[9] = Viewpoint25;
 
 let Group26 = browser.currentScene.createNode("Group");
@@ -157,9 +104,9 @@ HAnimHumanoid27.version = "2.0";
 let HAnimJoint28 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint28.name = "HumanoidRoot";
 HAnimJoint28.DEF = "Joe_HumanoidRoot";
-HAnimJoint28.center = new SFVec3f(new float[0,0.875,0]);
-HAnimJoint28.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint28.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint28.center = new X3D.SFVec3f([0,0.875,0]);
+HAnimJoint28.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint28.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimSegment29 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment29.name = "sacrum";
 HAnimSegment29.DEF = "Joe_sacrum";
@@ -168,1084 +115,1084 @@ HAnimSite30.name = "RootFront";
 HAnimSite30.DEF = "Joe_RootFront";
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.DEF = "hanimcordsys";
-Transform31.scale = new SFVec3f(new float[0.175,0.175,0.175]);
+Transform31.scale = new X3D.SFVec3f([0.175,0.175,0.175]);
 let Viewpoint32 = browser.currentScene.createNode("Viewpoint");
 Viewpoint32.DEF = "ViewBodyRootAxes";
 Viewpoint32.description = "Joe_HAnim Root Coordinate Axes View";
-Transform31.children = new MFNode();
+Transform31YYY.children = new X3D.MFNode();
 
-Transform31.children[0] = Viewpoint32;
+Transform31ZZZ.children[0] = Viewpoint32;
 
 let Shape33 = browser.currentScene.createNode("Shape");
 Shape33.DEF = "AxisLinesShape";
 let IndexedLineSet34 = browser.currentScene.createNode("IndexedLineSet");
-IndexedLineSet34.colorIndex = new MFInt32(new int[0,1,2]);
+IndexedLineSet34.colorIndex = new X3D.MFInt32([0,1,2]);
 IndexedLineSet34.colorPerVertex = False;
-IndexedLineSet34.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
+IndexedLineSet34.coordIndex = new X3D.MFInt32([0,1,-1,0,2,-1,0,3,-1]);
 let Coordinate35 = browser.currentScene.createNode("Coordinate");
-Coordinate35.point = new MFVec3f(new float[0,0,0,1,0,0,0,1,0,0,0,1]);
-IndexedLineSet34.coord = Coordinate35;
+Coordinate35.point = new X3D.MFVec3f([0,0,0,1,0,0,0,1,0,0,0,1]);
+coord = Coordinate35;
 
 let Color36 = browser.currentScene.createNode("Color");
-Color36.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
-IndexedLineSet34.color = Color36;
+Color36.color = new X3D.MFColor([1,0,0,0,0.6,0,0,0,1]);
+color = Color36;
 
-Shape33.geometry = IndexedLineSet34;
+geometry = IndexedLineSet34;
 
-Transform31.child[1] = Shape33;
+Transform31ZZZ.child[1] = Shape33;
 
-HAnimSite30.children = new MFNode();
+HAnimSite30YYY.children = new X3D.MFNode();
 
-HAnimSite30.children[0] = Transform31;
+HAnimSite30ZZZ.children[0] = Transform31;
 
-HAnimSegment29.children = new MFNode();
+HAnimSegment29YYY.children = new X3D.MFNode();
 
-HAnimSegment29.children[0] = HAnimSite30;
+HAnimSegment29ZZZ.children[0] = HAnimSite30;
 
-HAnimJoint28.children = new MFNode();
+HAnimJoint28YYY.children = new X3D.MFNode();
 
-HAnimJoint28.children[0] = HAnimSegment29;
+HAnimJoint28ZZZ.children[0] = HAnimSegment29;
 
 let HAnimJoint37 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint37.name = "sacroiliac";
 HAnimJoint37.DEF = "Joe_sacroiliac";
-HAnimJoint37.center = new SFVec3f(new float[0,0.92,0]);
-HAnimJoint37.skinCoordIndex = new MFInt32(new int[17,19,20,21,22,23,26,27,73,82,89,91,93]);
-HAnimJoint37.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
-HAnimJoint37.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint37.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint37.center = new X3D.SFVec3f([0,0.92,0]);
+HAnimJoint37.skinCoordIndex = new X3D.MFInt32([17,19,20,21,22,23,26,27,73,82,89,91,93]);
+HAnimJoint37.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
+HAnimJoint37.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint37.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint38 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint38.name = "l_hip";
 HAnimJoint38.DEF = "Joe_l_hip";
-HAnimJoint38.center = new SFVec3f(new float[0.1,0.92,0]);
-HAnimJoint38.skinCoordIndex = new MFInt32(new int[89,90,94,95,96,97]);
-HAnimJoint38.skinCoordWeight = new MFFloat(new float[0.65,1,1,1,1,1]);
-HAnimJoint38.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint38.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint38.center = new X3D.SFVec3f([0.1,0.92,0]);
+HAnimJoint38.skinCoordIndex = new X3D.MFInt32([89,90,94,95,96,97]);
+HAnimJoint38.skinCoordWeight = new X3D.MFFloat([0.65,1,1,1,1,1]);
+HAnimJoint38.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint38.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint39 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint39.name = "l_knee";
 HAnimJoint39.DEF = "Joe_l_knee";
-HAnimJoint39.center = new SFVec3f(new float[0.115,0.466,0]);
-HAnimJoint39.skinCoordIndex = new MFInt32(new int[334,335,336,337,338,339,340,341]);
-HAnimJoint39.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint39.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint39.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint39.center = new X3D.SFVec3f([0.115,0.466,0]);
+HAnimJoint39.skinCoordIndex = new X3D.MFInt32([334,335,336,337,338,339,340,341]);
+HAnimJoint39.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1]);
+HAnimJoint39.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint39.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint40 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint40.name = "l_ankle";
 HAnimJoint40.DEF = "Joe_l_ankle";
-HAnimJoint40.center = new SFVec3f(new float[0.115,0.069,0]);
-HAnimJoint40.skinCoordIndex = new MFInt32(new int[342,343,344,345]);
-HAnimJoint40.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint40.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint40.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint40.center = new X3D.SFVec3f([0.115,0.069,0]);
+HAnimJoint40.skinCoordIndex = new X3D.MFInt32([342,343,344,345]);
+HAnimJoint40.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint40.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint40.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint41 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint41.name = "l_subtalar";
 HAnimJoint41.DEF = "Joe_l_subtalar";
-HAnimJoint41.center = new SFVec3f(new float[0.115,0.031,0.03]);
-HAnimJoint41.skinCoordIndex = new MFInt32(new int[346,347,348,71]);
-HAnimJoint41.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint41.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint41.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint41.center = new X3D.SFVec3f([0.115,0.031,0.03]);
+HAnimJoint41.skinCoordIndex = new X3D.MFInt32([346,347,348,71]);
+HAnimJoint41.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint41.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint41.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint42 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint42.name = "l_midtarsal";
 HAnimJoint42.DEF = "Joe_l_midtarsal";
-HAnimJoint42.center = new SFVec3f(new float[0.115,0.037,0.09]);
-HAnimJoint42.skinCoordIndex = new MFInt32(new int[349,350,351,352]);
-HAnimJoint42.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint42.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint42.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint42.center = new X3D.SFVec3f([0.115,0.037,0.09]);
+HAnimJoint42.skinCoordIndex = new X3D.MFInt32([349,350,351,352]);
+HAnimJoint42.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint42.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint42.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint43 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint43.name = "l_metatarsal";
 HAnimJoint43.DEF = "Joe_l_metatarsal";
-HAnimJoint43.center = new SFVec3f(new float[0.115,0.02,0.122]);
-HAnimJoint43.skinCoordIndex = new MFInt32(new int[353,354,355,356,357,358,359,360,361]);
-HAnimJoint43.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint43.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint43.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint42.children = new MFNode();
+HAnimJoint43.center = new X3D.SFVec3f([0.115,0.02,0.122]);
+HAnimJoint43.skinCoordIndex = new X3D.MFInt32([353,354,355,356,357,358,359,360,361]);
+HAnimJoint43.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint43.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint43.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint42YYY.children = new X3D.MFNode();
 
-HAnimJoint42.children[0] = HAnimJoint43;
+HAnimJoint42ZZZ.children[0] = HAnimJoint43;
 
-HAnimJoint41.children = new MFNode();
+HAnimJoint41YYY.children = new X3D.MFNode();
 
-HAnimJoint41.children[0] = HAnimJoint42;
+HAnimJoint41ZZZ.children[0] = HAnimJoint42;
 
-HAnimJoint40.children = new MFNode();
+HAnimJoint40YYY.children = new X3D.MFNode();
 
-HAnimJoint40.children[0] = HAnimJoint41;
+HAnimJoint40ZZZ.children[0] = HAnimJoint41;
 
-HAnimJoint39.children = new MFNode();
+HAnimJoint39YYY.children = new X3D.MFNode();
 
-HAnimJoint39.children[0] = HAnimJoint40;
+HAnimJoint39ZZZ.children[0] = HAnimJoint40;
 
-HAnimJoint38.children = new MFNode();
+HAnimJoint38YYY.children = new X3D.MFNode();
 
-HAnimJoint38.children[0] = HAnimJoint39;
+HAnimJoint38ZZZ.children[0] = HAnimJoint39;
 
-HAnimJoint37.children = new MFNode();
+HAnimJoint37YYY.children = new X3D.MFNode();
 
-HAnimJoint37.children[0] = HAnimJoint38;
+HAnimJoint37ZZZ.children[0] = HAnimJoint38;
 
 let HAnimJoint44 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint44.name = "r_hip";
 HAnimJoint44.DEF = "Joe_r_hip";
-HAnimJoint44.center = new SFVec3f(new float[-0.1,0.92,0]);
-HAnimJoint44.skinCoordIndex = new MFInt32(new int[91,92,98,99,100,101,362,363]);
-HAnimJoint44.skinCoordWeight = new MFFloat(new float[0.65,1,0.8,1,1,1,0.4,0.8]);
-HAnimJoint44.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint44.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint44.center = new X3D.SFVec3f([-0.1,0.92,0]);
+HAnimJoint44.skinCoordIndex = new X3D.MFInt32([91,92,98,99,100,101,362,363]);
+HAnimJoint44.skinCoordWeight = new X3D.MFFloat([0.65,1,0.8,1,1,1,0.4,0.8]);
+HAnimJoint44.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint44.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint45 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint45.name = "r_knee";
 HAnimJoint45.DEF = "Joe_r_knee";
-HAnimJoint45.center = new SFVec3f(new float[-0.05,0.466,0]);
-HAnimJoint45.skinCoordIndex = new MFInt32(new int[362,363,364,365,366,367,368,369,98]);
-HAnimJoint45.skinCoordWeight = new MFFloat(new float[0.6,0.2,1,1,1,1,1,1,0.2]);
-HAnimJoint45.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint45.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint45.center = new X3D.SFVec3f([-0.05,0.466,0]);
+HAnimJoint45.skinCoordIndex = new X3D.MFInt32([362,363,364,365,366,367,368,369,98]);
+HAnimJoint45.skinCoordWeight = new X3D.MFFloat([0.6,0.2,1,1,1,1,1,1,0.2]);
+HAnimJoint45.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint45.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint46 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint46.name = "r_ankle";
 HAnimJoint46.DEF = "Joe_r_ankle";
-HAnimJoint46.center = new SFVec3f(new float[-0.115,0.069,0]);
-HAnimJoint46.skinCoordIndex = new MFInt32(new int[370,371,372,373]);
-HAnimJoint46.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint46.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint46.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint46.center = new X3D.SFVec3f([-0.115,0.069,0]);
+HAnimJoint46.skinCoordIndex = new X3D.MFInt32([370,371,372,373]);
+HAnimJoint46.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint46.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint46.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint47 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint47.name = "r_subtalar";
 HAnimJoint47.DEF = "Joe_r_subtalar";
-HAnimJoint47.center = new SFVec3f(new float[-0.1,0.015,-0.01]);
-HAnimJoint47.skinCoordIndex = new MFInt32(new int[374,375,376]);
-HAnimJoint47.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint47.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint47.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint47.center = new X3D.SFVec3f([-0.1,0.015,-0.01]);
+HAnimJoint47.skinCoordIndex = new X3D.MFInt32([374,375,376]);
+HAnimJoint47.skinCoordWeight = new X3D.MFFloat([1,1,1]);
+HAnimJoint47.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint47.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint48 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint48.name = "r_midtarsal";
 HAnimJoint48.DEF = "Joe_r_midtarsal";
-HAnimJoint48.center = new SFVec3f(new float[-0.115,0.037,0.09]);
-HAnimJoint48.skinCoordIndex = new MFInt32(new int[377,378,379,380]);
-HAnimJoint48.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint48.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint48.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint48.center = new X3D.SFVec3f([-0.115,0.037,0.09]);
+HAnimJoint48.skinCoordIndex = new X3D.MFInt32([377,378,379,380]);
+HAnimJoint48.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint48.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint48.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint49 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint49.name = "r_metatarsal";
 HAnimJoint49.DEF = "Joe_r_metatarsal";
-HAnimJoint49.center = new SFVec3f(new float[-0.1,0.01,0.14]);
-HAnimJoint49.skinCoordIndex = new MFInt32(new int[381,382,383,384,385,386,387,388,389]);
-HAnimJoint49.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint49.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint49.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint48.children = new MFNode();
+HAnimJoint49.center = new X3D.SFVec3f([-0.1,0.01,0.14]);
+HAnimJoint49.skinCoordIndex = new X3D.MFInt32([381,382,383,384,385,386,387,388,389]);
+HAnimJoint49.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint49.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint49.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint48YYY.children = new X3D.MFNode();
 
-HAnimJoint48.children[0] = HAnimJoint49;
+HAnimJoint48ZZZ.children[0] = HAnimJoint49;
 
-HAnimJoint47.children = new MFNode();
+HAnimJoint47YYY.children = new X3D.MFNode();
 
-HAnimJoint47.children[0] = HAnimJoint48;
+HAnimJoint47ZZZ.children[0] = HAnimJoint48;
 
-HAnimJoint46.children = new MFNode();
+HAnimJoint46YYY.children = new X3D.MFNode();
 
-HAnimJoint46.children[0] = HAnimJoint47;
+HAnimJoint46ZZZ.children[0] = HAnimJoint47;
 
-HAnimJoint45.children = new MFNode();
+HAnimJoint45YYY.children = new X3D.MFNode();
 
-HAnimJoint45.children[0] = HAnimJoint46;
+HAnimJoint45ZZZ.children[0] = HAnimJoint46;
 
-HAnimJoint44.children = new MFNode();
+HAnimJoint44YYY.children = new X3D.MFNode();
 
-HAnimJoint44.children[0] = HAnimJoint45;
+HAnimJoint44ZZZ.children[0] = HAnimJoint45;
 
-HAnimJoint37.children[1] = HAnimJoint44;
+HAnimJoint37ZZZ.children[1] = HAnimJoint44;
 
-HAnimJoint28.children[1] = HAnimJoint37;
+HAnimJoint28ZZZ.children[1] = HAnimJoint37;
 
 let HAnimJoint50 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint50.name = "vl5";
 HAnimJoint50.DEF = "Joe_vl5";
-HAnimJoint50.center = new SFVec3f(new float[0,1.045,-0.095]);
-HAnimJoint50.skinCoordIndex = new MFInt32(new int[28,76]);
-HAnimJoint50.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint50.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint50.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint50.center = new X3D.SFVec3f([0,1.045,-0.095]);
+HAnimJoint50.skinCoordIndex = new X3D.MFInt32([28,76]);
+HAnimJoint50.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint50.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint50.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint51 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint51.name = "vl4";
 HAnimJoint51.DEF = "Joe_vl4";
-HAnimJoint51.center = new SFVec3f(new float[0,1.068,-0.085]);
-HAnimJoint51.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint51.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint51.center = new X3D.SFVec3f([0,1.068,-0.085]);
+HAnimJoint51.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint51.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint52 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint52.name = "vl3";
 HAnimJoint52.DEF = "Joe_vl3";
-HAnimJoint52.center = new SFVec3f(new float[0,1.092,-0.0725]);
-HAnimJoint52.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint52.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint52.center = new X3D.SFVec3f([0,1.092,-0.0725]);
+HAnimJoint52.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint52.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint53 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint53.name = "vl2";
 HAnimJoint53.DEF = "Joe_vl2";
-HAnimJoint53.center = new SFVec3f(new float[0,1.12,-0.065]);
-HAnimJoint53.skinCoordIndex = new MFInt32(new int[16,18,25,83,84,85,86,87,88]);
-HAnimJoint53.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,0.7,1,0.8]);
-HAnimJoint53.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint53.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint53.center = new X3D.SFVec3f([0,1.12,-0.065]);
+HAnimJoint53.skinCoordIndex = new X3D.MFInt32([16,18,25,83,84,85,86,87,88]);
+HAnimJoint53.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,0.7,1,0.8]);
+HAnimJoint53.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint53.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint54 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint54.name = "vl1";
 HAnimJoint54.DEF = "Joe_vl1";
-HAnimJoint54.center = new SFVec3f(new float[0,1.1459,-0.0625]);
-HAnimJoint54.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint54.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint54.center = new X3D.SFVec3f([0,1.1459,-0.0625]);
+HAnimJoint54.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint54.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint55 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint55.name = "vt12";
 HAnimJoint55.DEF = "Joe_vt12";
-HAnimJoint55.center = new SFVec3f(new float[0,1.179,-0.068]);
-HAnimJoint55.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint55.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint55.center = new X3D.SFVec3f([0,1.179,-0.068]);
+HAnimJoint55.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint55.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint56 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint56.name = "vt11";
 HAnimJoint56.DEF = "Joe_vt11";
-HAnimJoint56.center = new SFVec3f(new float[0,1.2679,-0.081]);
-HAnimJoint56.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint56.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint56.center = new X3D.SFVec3f([0,1.2679,-0.081]);
+HAnimJoint56.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint56.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint57 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint57.name = "vt10";
 HAnimJoint57.DEF = "Joe_vt10";
-HAnimJoint57.center = new SFVec3f(new float[0,1.242,-0.09]);
-HAnimJoint57.skinCoordIndex = new MFInt32(new int[15]);
-HAnimJoint57.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint57.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint57.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint57.center = new X3D.SFVec3f([0,1.242,-0.09]);
+HAnimJoint57.skinCoordIndex = new X3D.MFInt32([15]);
+HAnimJoint57.skinCoordWeight = new X3D.MFFloat([1]);
+HAnimJoint57.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint57.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint58 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint58.name = "vt9";
 HAnimJoint58.DEF = "Joe_vt9";
-HAnimJoint58.center = new SFVec3f(new float[0,1.268,-0.1]);
-HAnimJoint58.skinCoordIndex = new MFInt32(new int[13,14]);
-HAnimJoint58.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint58.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint58.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint58.center = new X3D.SFVec3f([0,1.268,-0.1]);
+HAnimJoint58.skinCoordIndex = new X3D.MFInt32([13,14]);
+HAnimJoint58.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint58.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint58.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint59 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint59.name = "vt8";
 HAnimJoint59.DEF = "Joe_vt8";
-HAnimJoint59.center = new SFVec3f(new float[0,1.294,-0.11]);
-HAnimJoint59.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint59.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint59.center = new X3D.SFVec3f([0,1.294,-0.11]);
+HAnimJoint59.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint59.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint60 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint60.name = "vt7";
 HAnimJoint60.DEF = "Joe_vt7";
-HAnimJoint60.center = new SFVec3f(new float[0,1.323,-0.1155]);
-HAnimJoint60.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint60.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint60.center = new X3D.SFVec3f([0,1.323,-0.1155]);
+HAnimJoint60.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint60.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint61 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint61.name = "vt6";
 HAnimJoint61.DEF = "Joe_vt6";
-HAnimJoint61.center = new SFVec3f(new float[0,1.352,-0.12]);
-HAnimJoint61.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint61.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint61.center = new X3D.SFVec3f([0,1.352,-0.12]);
+HAnimJoint61.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint61.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint62 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint62.name = "vt5";
 HAnimJoint62.DEF = "Joe_vt5";
-HAnimJoint62.center = new SFVec3f(new float[0,1.381,-0.1235]);
-HAnimJoint62.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint62.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint62.center = new X3D.SFVec3f([0,1.381,-0.1235]);
+HAnimJoint62.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint62.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint63 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint63.name = "vt4";
 HAnimJoint63.DEF = "Joe_vt4";
-HAnimJoint63.center = new SFVec3f(new float[0,1.41,-0.1235]);
-HAnimJoint63.skinCoordIndex = new MFInt32(new int[81]);
-HAnimJoint63.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint63.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint63.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint63.center = new X3D.SFVec3f([0,1.41,-0.1235]);
+HAnimJoint63.skinCoordIndex = new X3D.MFInt32([81]);
+HAnimJoint63.skinCoordWeight = new X3D.MFFloat([1]);
+HAnimJoint63.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint63.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint64 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint64.name = "vt3";
 HAnimJoint64.DEF = "Joe_vt3";
-HAnimJoint64.center = new SFVec3f(new float[0,1.438,-0.12]);
-HAnimJoint64.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint64.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint64.center = new X3D.SFVec3f([0,1.438,-0.12]);
+HAnimJoint64.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint64.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint65 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint65.name = "vt2";
 HAnimJoint65.DEF = "Joe_vt2";
-HAnimJoint65.center = new SFVec3f(new float[0,1.468,-0.105]);
-HAnimJoint65.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint65.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint65.center = new X3D.SFVec3f([0,1.468,-0.105]);
+HAnimJoint65.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint65.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint66 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint66.name = "vt1";
 HAnimJoint66.DEF = "Joe_vt1";
-HAnimJoint66.center = new SFVec3f(new float[0,1.497,-0.09]);
-HAnimJoint66.skinCoordIndex = new MFInt32(new int[11,24]);
-HAnimJoint66.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint66.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint66.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint66.center = new X3D.SFVec3f([0,1.497,-0.09]);
+HAnimJoint66.skinCoordIndex = new X3D.MFInt32([11,24]);
+HAnimJoint66.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint66.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint66.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint67 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint67.name = "vc7";
 HAnimJoint67.DEF = "Joe_vc7";
-HAnimJoint67.center = new SFVec3f(new float[0,1.525,-0.072]);
-HAnimJoint67.skinCoordIndex = new MFInt32(new int[74,75]);
-HAnimJoint67.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint67.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint67.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint67.center = new X3D.SFVec3f([0,1.525,-0.072]);
+HAnimJoint67.skinCoordIndex = new X3D.MFInt32([74,75]);
+HAnimJoint67.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint67.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint67.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint68 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint68.name = "vc6";
 HAnimJoint68.DEF = "Joe_vc6";
-HAnimJoint68.center = new SFVec3f(new float[0,1.54,-0.05]);
-HAnimJoint68.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint68.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint68.center = new X3D.SFVec3f([0,1.54,-0.05]);
+HAnimJoint68.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint68.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint69 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint69.name = "vc5";
 HAnimJoint69.DEF = "Joe_vc5";
-HAnimJoint69.center = new SFVec3f(new float[0,1.552,-0.035]);
-HAnimJoint69.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint69.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint69.center = new X3D.SFVec3f([0,1.552,-0.035]);
+HAnimJoint69.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint69.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint70 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint70.name = "vc4";
 HAnimJoint70.DEF = "Joe_vc4";
-HAnimJoint70.center = new SFVec3f(new float[0,1.5675,-0.0256]);
-HAnimJoint70.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint70.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint70.center = new X3D.SFVec3f([0,1.5675,-0.0256]);
+HAnimJoint70.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint70.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint71 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint71.name = "vc3";
 HAnimJoint71.DEF = "Joe_vc3";
-HAnimJoint71.center = new SFVec3f(new float[0,1.58225,-0.0185]);
-HAnimJoint71.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint71.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint71.center = new X3D.SFVec3f([0,1.58225,-0.0185]);
+HAnimJoint71.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint71.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint72 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint72.name = "vc2";
 HAnimJoint72.DEF = "Joe_vc2";
-HAnimJoint72.center = new SFVec3f(new float[0,1.595,-0.0175]);
-HAnimJoint72.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint72.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint72.center = new X3D.SFVec3f([0,1.595,-0.0175]);
+HAnimJoint72.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint72.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint73 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint73.name = "vc1";
 HAnimJoint73.DEF = "Joe_vc1";
-HAnimJoint73.center = new SFVec3f(new float[0,1.61,-0.015]);
-HAnimJoint73.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint73.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint73.center = new X3D.SFVec3f([0,1.61,-0.015]);
+HAnimJoint73.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint73.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint74 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint74.name = "skullbase";
 HAnimJoint74.DEF = "Joe_skullbase";
-HAnimJoint74.center = new SFVec3f(new float[0,1.63,-0.01]);
-HAnimJoint74.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
-HAnimJoint74.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint74.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint74.center = new X3D.SFVec3f([0,1.63,-0.01]);
+HAnimJoint74.skinCoordIndex = new X3D.MFInt32([0,1,2,3,4,5,6,7,8,9]);
+HAnimJoint74.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1,1]);
+HAnimJoint74.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimDisplacer75 = browser.currentScene.createNode("HAnimDisplacer");
 HAnimDisplacer75.name = "skull_tip_raiser_action";
 HAnimDisplacer75.DEF = "Joe_skull_tipTest";
-HAnimDisplacer75.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
-HAnimDisplacer75.displacements = new MFVec3f(new float[0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15]);
-HAnimJoint74.displacers = new MFNode();
+HAnimDisplacer75.coordIndex = new X3D.MFInt32([0,1,2,3,4,5,6,7,8,9]);
+HAnimDisplacer75.displacements = new X3D.MFVec3f([0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15]);
+HAnimJoint74YYY.displacers = new X3D.MFNode();
 
-HAnimJoint74.displacers[0] = HAnimDisplacer75;
+HAnimJoint74ZZZ.displacers[0] = HAnimDisplacer75;
 
 let HAnimJoint76 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint76.name = "l_eyelid_joint";
 HAnimJoint76.DEF = "Joe_l_eyelid_joint";
-HAnimJoint76.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint76.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint76.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[1] = HAnimJoint76;
+HAnimJoint76.center = new X3D.SFVec3f([0.034,1.659,0.06]);
+HAnimJoint76.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint76.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[1] = HAnimJoint76;
 
 let HAnimJoint77 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint77.name = "l_eyeball_joint";
 HAnimJoint77.DEF = "Joe_l_eyeball_joint";
-HAnimJoint77.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint77.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[2] = HAnimJoint77;
+HAnimJoint77.center = new X3D.SFVec3f([0.034,1.659,0.06]);
+HAnimJoint77.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint77.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[2] = HAnimJoint77;
 
 let HAnimJoint78 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint78.name = "l_eyebrow_joint";
 HAnimJoint78.DEF = "Joe_l_eyebrow_joint";
-HAnimJoint78.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint78.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint78.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[3] = HAnimJoint78;
+HAnimJoint78.center = new X3D.SFVec3f([0.034,1.659,0.06]);
+HAnimJoint78.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint78.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[3] = HAnimJoint78;
 
 let HAnimJoint79 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint79.name = "l_eyelid_joint";
 HAnimJoint79.DEF = "Joe_r_eyelid_joint";
-HAnimJoint79.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint79.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint79.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[4] = HAnimJoint79;
+HAnimJoint79.center = new X3D.SFVec3f([-0.034,1.659,0.06]);
+HAnimJoint79.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint79.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[4] = HAnimJoint79;
 
 let HAnimJoint80 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint80.name = "l_eyeball_joint";
 HAnimJoint80.DEF = "Joe_r_eyeball_joint";
-HAnimJoint80.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint80.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint80.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[5] = HAnimJoint80;
+HAnimJoint80.center = new X3D.SFVec3f([-0.034,1.659,0.06]);
+HAnimJoint80.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint80.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[5] = HAnimJoint80;
 
 let HAnimJoint81 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint81.name = "l_eyebrow_joint";
 HAnimJoint81.DEF = "Joe_r_eyebrow_joint";
-HAnimJoint81.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint81.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint81.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[6] = HAnimJoint81;
+HAnimJoint81.center = new X3D.SFVec3f([-0.034,1.659,0.06]);
+HAnimJoint81.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint81.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[6] = HAnimJoint81;
 
 let HAnimJoint82 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint82.name = "temporomandibular";
 HAnimJoint82.DEF = "Joe_temporomandibular";
-HAnimJoint82.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint82.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint82.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.children[7] = HAnimJoint82;
+HAnimJoint82.center = new X3D.SFVec3f([0.034,1.659,0.06]);
+HAnimJoint82.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint82.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint74ZZZ.children[7] = HAnimJoint82;
 
-HAnimJoint73.children = new MFNode();
+HAnimJoint73YYY.children = new X3D.MFNode();
 
-HAnimJoint73.children[0] = HAnimJoint74;
+HAnimJoint73ZZZ.children[0] = HAnimJoint74;
 
-HAnimJoint72.children = new MFNode();
+HAnimJoint72YYY.children = new X3D.MFNode();
 
-HAnimJoint72.children[0] = HAnimJoint73;
+HAnimJoint72ZZZ.children[0] = HAnimJoint73;
 
-HAnimJoint71.children = new MFNode();
+HAnimJoint71YYY.children = new X3D.MFNode();
 
-HAnimJoint71.children[0] = HAnimJoint72;
+HAnimJoint71ZZZ.children[0] = HAnimJoint72;
 
-HAnimJoint70.children = new MFNode();
+HAnimJoint70YYY.children = new X3D.MFNode();
 
-HAnimJoint70.children[0] = HAnimJoint71;
+HAnimJoint70ZZZ.children[0] = HAnimJoint71;
 
-HAnimJoint69.children = new MFNode();
+HAnimJoint69YYY.children = new X3D.MFNode();
 
-HAnimJoint69.children[0] = HAnimJoint70;
+HAnimJoint69ZZZ.children[0] = HAnimJoint70;
 
-HAnimJoint68.children = new MFNode();
+HAnimJoint68YYY.children = new X3D.MFNode();
 
-HAnimJoint68.children[0] = HAnimJoint69;
+HAnimJoint68ZZZ.children[0] = HAnimJoint69;
 
-HAnimJoint67.children = new MFNode();
+HAnimJoint67YYY.children = new X3D.MFNode();
 
-HAnimJoint67.children[0] = HAnimJoint68;
+HAnimJoint67ZZZ.children[0] = HAnimJoint68;
 
 let HAnimJoint83 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint83.name = "l_sternoclavicular";
 HAnimJoint83.DEF = "Joe_l_sternoclavicular";
-HAnimJoint83.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-HAnimJoint83.skinCoordIndex = new MFInt32(new int[12]);
-HAnimJoint83.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint83.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint83.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint83.center = new X3D.SFVec3f([0.082,1.4488,-0.0353]);
+HAnimJoint83.skinCoordIndex = new X3D.MFInt32([12]);
+HAnimJoint83.skinCoordWeight = new X3D.MFFloat([1]);
+HAnimJoint83.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint83.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint84 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint84.name = "l_acromioclavicular";
 HAnimJoint84.DEF = "Joe_l_acromioclavicular";
-HAnimJoint84.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-HAnimJoint84.skinCoordIndex = new MFInt32(new int[79]);
-HAnimJoint84.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint84.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint84.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint84.center = new X3D.SFVec3f([0.0962,1.4269,-0.0424]);
+HAnimJoint84.skinCoordIndex = new X3D.MFInt32([79]);
+HAnimJoint84.skinCoordWeight = new X3D.MFFloat([1]);
+HAnimJoint84.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint84.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint85 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint85.name = "l_shoulder";
 HAnimJoint85.DEF = "Joe_l_shoulder";
-HAnimJoint85.center = new SFVec3f(new float[0.2,1.44,-0.04]);
-HAnimJoint85.skinCoordIndex = new MFInt32(new int[41,42,44,80,102,103,104,105]);
-HAnimJoint85.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint85.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint85.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint85.center = new X3D.SFVec3f([0.2,1.44,-0.04]);
+HAnimJoint85.skinCoordIndex = new X3D.MFInt32([41,42,44,80,102,103,104,105]);
+HAnimJoint85.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1]);
+HAnimJoint85.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint85.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint86 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint86.name = "l_elbow";
 HAnimJoint86.DEF = "Joe_l_elbow";
-HAnimJoint86.center = new SFVec3f(new float[0.2,1.1388,-0.04]);
-HAnimJoint86.skinCoordIndex = new MFInt32(new int[45,46,47,109,110,111,112,113,115,116,117,118]);
-HAnimJoint86.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint86.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint86.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint86.center = new X3D.SFVec3f([0.2,1.1388,-0.04]);
+HAnimJoint86.skinCoordIndex = new X3D.MFInt32([45,46,47,109,110,111,112,113,115,116,117,118]);
+HAnimJoint86.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
+HAnimJoint86.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint86.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint87 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint87.name = "l_wrist";
 HAnimJoint87.DEF = "Joe_l_wrist";
-HAnimJoint87.center = new SFVec3f(new float[0.2,0.87,-0.04]);
-HAnimJoint87.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
-HAnimJoint87.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint87.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint87.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint87.center = new X3D.SFVec3f([0.2,0.87,-0.04]);
+HAnimJoint87.skinCoordIndex = new X3D.MFInt32([119,120,121,122,123,124,125,126]);
+HAnimJoint87.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1]);
+HAnimJoint87.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint87.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint88 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint88.name = "l_thumb1";
 HAnimJoint88.DEF = "Joe_l_thumb1";
-HAnimJoint88.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-HAnimJoint88.skinCoordIndex = new MFInt32(new int[127,128]);
-HAnimJoint88.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint88.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint88.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint88.center = new X3D.SFVec3f([0.1924,0.8472,-0.0534]);
+HAnimJoint88.skinCoordIndex = new X3D.MFInt32([127,128]);
+HAnimJoint88.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint88.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint88.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint89 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint89.name = "l_thumb2";
 HAnimJoint89.DEF = "Joe_l_thumb2";
-HAnimJoint89.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-HAnimJoint89.skinCoordIndex = new MFInt32(new int[138,139,140,141,142,143]);
-HAnimJoint89.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint89.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint89.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint89.center = new X3D.SFVec3f([0.1951,0.8226,0.0246]);
+HAnimJoint89.skinCoordIndex = new X3D.MFInt32([138,139,140,141,142,143]);
+HAnimJoint89.skinCoordWeight = new X3D.MFFloat([0.5,0.5,0.5,1,1,1]);
+HAnimJoint89.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint89.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint90 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint90.name = "l_thumb3";
 HAnimJoint90.DEF = "Joe_l_thumb3";
-HAnimJoint90.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
-HAnimJoint90.skinCoordIndex = new MFInt32(new int[144,145,146,147,148,149,150,151,152]);
-HAnimJoint90.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint90.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint90.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint89.children = new MFNode();
+HAnimJoint90.center = new X3D.SFVec3f([0.1955,0.8159,0.0464]);
+HAnimJoint90.skinCoordIndex = new X3D.MFInt32([144,145,146,147,148,149,150,151,152]);
+HAnimJoint90.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint90.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint90.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint89YYY.children = new X3D.MFNode();
 
-HAnimJoint89.children[0] = HAnimJoint90;
+HAnimJoint89ZZZ.children[0] = HAnimJoint90;
 
-HAnimJoint88.children = new MFNode();
+HAnimJoint88YYY.children = new X3D.MFNode();
 
-HAnimJoint88.children[0] = HAnimJoint89;
+HAnimJoint88ZZZ.children[0] = HAnimJoint89;
 
-HAnimJoint87.children = new MFNode();
+HAnimJoint87YYY.children = new X3D.MFNode();
 
-HAnimJoint87.children[0] = HAnimJoint88;
+HAnimJoint87ZZZ.children[0] = HAnimJoint88;
 
 let HAnimJoint91 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint91.name = "l_index0";
 HAnimJoint91.DEF = "Joe_l_index0";
-HAnimJoint91.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-HAnimJoint91.skinCoordIndex = new MFInt32(new int[129,130]);
-HAnimJoint91.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint91.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint91.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint91.center = new X3D.SFVec3f([0.1983,0.8024,-0.028]);
+HAnimJoint91.skinCoordIndex = new X3D.MFInt32([129,130]);
+HAnimJoint91.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint91.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint91.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint92 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint92.name = "l_index1";
 HAnimJoint92.DEF = "Joe_l_index1";
-HAnimJoint92.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-HAnimJoint92.skinCoordIndex = new MFInt32(new int[138,139,140,153,154,155,163]);
-HAnimJoint92.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint92.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint92.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint92.center = new X3D.SFVec3f([0.1983,0.7815,-0.028]);
+HAnimJoint92.skinCoordIndex = new X3D.MFInt32([138,139,140,153,154,155,163]);
+HAnimJoint92.skinCoordWeight = new X3D.MFFloat([0.5,0.5,0.5,1,1,1,0.5]);
+HAnimJoint92.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint92.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint93 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint93.name = "l_index2";
 HAnimJoint93.DEF = "Joe_l_index2";
-HAnimJoint93.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-HAnimJoint93.skinCoordIndex = new MFInt32(new int[166,167,168,169]);
-HAnimJoint93.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint93.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint93.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint93.center = new X3D.SFVec3f([0.2017,0.7363,-0.0248]);
+HAnimJoint93.skinCoordIndex = new X3D.MFInt32([166,167,168,169]);
+HAnimJoint93.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint93.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint93.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint94 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint94.name = "l_index3";
 HAnimJoint94.DEF = "Joe_l_index3";
-HAnimJoint94.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
-HAnimJoint94.skinCoordIndex = new MFInt32(new int[170,171,172,173,174,175,176,177,178]);
-HAnimJoint94.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint94.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint94.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint93.children = new MFNode();
+HAnimJoint94.center = new X3D.SFVec3f([0.2028,0.7139,-0.0236]);
+HAnimJoint94.skinCoordIndex = new X3D.MFInt32([170,171,172,173,174,175,176,177,178]);
+HAnimJoint94.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint94.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint94.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint93YYY.children = new X3D.MFNode();
 
-HAnimJoint93.children[0] = HAnimJoint94;
+HAnimJoint93ZZZ.children[0] = HAnimJoint94;
 
-HAnimJoint92.children = new MFNode();
+HAnimJoint92YYY.children = new X3D.MFNode();
 
-HAnimJoint92.children[0] = HAnimJoint93;
+HAnimJoint92ZZZ.children[0] = HAnimJoint93;
 
-HAnimJoint91.children = new MFNode();
+HAnimJoint91YYY.children = new X3D.MFNode();
 
-HAnimJoint91.children[0] = HAnimJoint92;
+HAnimJoint91ZZZ.children[0] = HAnimJoint92;
 
-HAnimJoint87.children[1] = HAnimJoint91;
+HAnimJoint87ZZZ.children[1] = HAnimJoint91;
 
 let HAnimJoint95 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint95.name = "l_middle0";
 HAnimJoint95.DEF = "Joe_l_middle0";
-HAnimJoint95.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-HAnimJoint95.skinCoordIndex = new MFInt32(new int[131,132]);
-HAnimJoint95.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint95.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint95.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint95.center = new X3D.SFVec3f([0.1987,0.8029,-0.053]);
+HAnimJoint95.skinCoordIndex = new X3D.MFInt32([131,132]);
+HAnimJoint95.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint95.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint95.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint96 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint96.name = "l_middle1";
 HAnimJoint96.DEF = "Joe_l_middle1";
-HAnimJoint96.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-HAnimJoint96.skinCoordIndex = new MFInt32(new int[156,157,163,164]);
-HAnimJoint96.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint96.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint96.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint96.center = new X3D.SFVec3f([0.1987,0.7818,-0.053]);
+HAnimJoint96.skinCoordIndex = new X3D.MFInt32([156,157,163,164]);
+HAnimJoint96.skinCoordWeight = new X3D.MFFloat([1,1,0.5,0.5]);
+HAnimJoint96.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint96.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint97 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint97.name = "l_middle2";
 HAnimJoint97.DEF = "Joe_l_middle2";
-HAnimJoint97.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-HAnimJoint97.skinCoordIndex = new MFInt32(new int[179,180,181,182]);
-HAnimJoint97.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint97.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint97.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint97.center = new X3D.SFVec3f([0.2013,0.7273,-0.0503]);
+HAnimJoint97.skinCoordIndex = new X3D.MFInt32([179,180,181,182]);
+HAnimJoint97.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint97.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint97.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint98 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint98.name = "l_middle3";
 HAnimJoint98.DEF = "Joe_l_middle3";
-HAnimJoint98.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
-HAnimJoint98.skinCoordIndex = new MFInt32(new int[183,184,185,186,187,188,189,190,191]);
-HAnimJoint98.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint98.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint98.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint97.children = new MFNode();
+HAnimJoint98.center = new X3D.SFVec3f([0.2026,0.7011,-0.0494]);
+HAnimJoint98.skinCoordIndex = new X3D.MFInt32([183,184,185,186,187,188,189,190,191]);
+HAnimJoint98.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint98.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint98.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint97YYY.children = new X3D.MFNode();
 
-HAnimJoint97.children[0] = HAnimJoint98;
+HAnimJoint97ZZZ.children[0] = HAnimJoint98;
 
-HAnimJoint96.children = new MFNode();
+HAnimJoint96YYY.children = new X3D.MFNode();
 
-HAnimJoint96.children[0] = HAnimJoint97;
+HAnimJoint96ZZZ.children[0] = HAnimJoint97;
 
-HAnimJoint95.children = new MFNode();
+HAnimJoint95YYY.children = new X3D.MFNode();
 
-HAnimJoint95.children[0] = HAnimJoint96;
+HAnimJoint95ZZZ.children[0] = HAnimJoint96;
 
-HAnimJoint87.children[2] = HAnimJoint95;
+HAnimJoint87ZZZ.children[2] = HAnimJoint95;
 
 let HAnimJoint99 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint99.name = "l_ring0";
 HAnimJoint99.DEF = "Joe_l_ring0";
-HAnimJoint99.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-HAnimJoint99.skinCoordIndex = new MFInt32(new int[133,134]);
-HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint99.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint99.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint99.center = new X3D.SFVec3f([0.1956,0.8019,-0.0794]);
+HAnimJoint99.skinCoordIndex = new X3D.MFInt32([133,134]);
+HAnimJoint99.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint99.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint99.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint100 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint100.name = "l_ring1";
 HAnimJoint100.DEF = "Joe_l_ring1";
-HAnimJoint100.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-HAnimJoint100.skinCoordIndex = new MFInt32(new int[158,159,164,165]);
-HAnimJoint100.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint100.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint100.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint100.center = new X3D.SFVec3f([0.1956,0.7815,-0.0794]);
+HAnimJoint100.skinCoordIndex = new X3D.MFInt32([158,159,164,165]);
+HAnimJoint100.skinCoordWeight = new X3D.MFFloat([1,1,0.5,0.5]);
+HAnimJoint100.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint100.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint101 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint101.name = "l_ring2";
 HAnimJoint101.DEF = "Joe_l_ring2";
-HAnimJoint101.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-HAnimJoint101.skinCoordIndex = new MFInt32(new int[192,193,194,195]);
-HAnimJoint101.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint101.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint101.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint101.center = new X3D.SFVec3f([0.1973,0.7287,-0.0777]);
+HAnimJoint101.skinCoordIndex = new X3D.MFInt32([192,193,194,195]);
+HAnimJoint101.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint101.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint101.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint102 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint102.name = "l_ring3";
 HAnimJoint102.DEF = "Joe_l_ring3";
-HAnimJoint102.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
-HAnimJoint102.skinCoordIndex = new MFInt32(new int[196,197,198,199,200,201,202,203,204]);
-HAnimJoint102.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint102.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint102.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint101.children = new MFNode();
+HAnimJoint102.center = new X3D.SFVec3f([0.1983,0.7045,-0.0767]);
+HAnimJoint102.skinCoordIndex = new X3D.MFInt32([196,197,198,199,200,201,202,203,204]);
+HAnimJoint102.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint102.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint102.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint101YYY.children = new X3D.MFNode();
 
-HAnimJoint101.children[0] = HAnimJoint102;
+HAnimJoint101ZZZ.children[0] = HAnimJoint102;
 
-HAnimJoint100.children = new MFNode();
+HAnimJoint100YYY.children = new X3D.MFNode();
 
-HAnimJoint100.children[0] = HAnimJoint101;
+HAnimJoint100ZZZ.children[0] = HAnimJoint101;
 
-HAnimJoint99.children = new MFNode();
+HAnimJoint99YYY.children = new X3D.MFNode();
 
-HAnimJoint99.children[0] = HAnimJoint100;
+HAnimJoint99ZZZ.children[0] = HAnimJoint100;
 
-HAnimJoint87.children[3] = HAnimJoint99;
+HAnimJoint87ZZZ.children[3] = HAnimJoint99;
 
 let HAnimJoint103 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint103.name = "l_pinky0";
 HAnimJoint103.DEF = "Joe_l_pinky0";
-HAnimJoint103.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-HAnimJoint103.skinCoordIndex = new MFInt32(new int[135,136,137,165]);
-HAnimJoint103.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint103.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint103.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint103.center = new X3D.SFVec3f([0.1925,0.8066,-0.1036]);
+HAnimJoint103.skinCoordIndex = new X3D.MFInt32([135,136,137,165]);
+HAnimJoint103.skinCoordWeight = new X3D.MFFloat([1,1,1,0.5]);
+HAnimJoint103.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint103.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint104 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint104.name = "l_pinky1";
 HAnimJoint104.DEF = "Joe_l_pinky1";
-HAnimJoint104.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-HAnimJoint104.skinCoordIndex = new MFInt32(new int[160,161,162]);
-HAnimJoint104.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint104.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint104.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint104.center = new X3D.SFVec3f([0.1925,0.7866,-0.1036]);
+HAnimJoint104.skinCoordIndex = new X3D.MFInt32([160,161,162]);
+HAnimJoint104.skinCoordWeight = new X3D.MFFloat([1,1,1]);
+HAnimJoint104.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint104.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint105 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint105.name = "l_pinky2";
 HAnimJoint105.DEF = "Joe_l_pinky2";
-HAnimJoint105.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-HAnimJoint105.skinCoordIndex = new MFInt32(new int[205,206,207,208]);
-HAnimJoint105.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint105.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint105.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint105.center = new X3D.SFVec3f([0.1938,0.7452,-0.1024]);
+HAnimJoint105.skinCoordIndex = new X3D.MFInt32([205,206,207,208]);
+HAnimJoint105.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint105.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint105.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint106 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint106.name = "l_pinky3";
 HAnimJoint106.DEF = "Joe_l_pinky3";
-HAnimJoint106.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
-HAnimJoint106.skinCoordIndex = new MFInt32(new int[209,210,211,212,213,214,215,216,217]);
-HAnimJoint106.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint106.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint106.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint105.children = new MFNode();
+HAnimJoint106.center = new X3D.SFVec3f([0.1948,0.7277,-0.1017]);
+HAnimJoint106.skinCoordIndex = new X3D.MFInt32([209,210,211,212,213,214,215,216,217]);
+HAnimJoint106.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint106.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint106.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint105YYY.children = new X3D.MFNode();
 
-HAnimJoint105.children[0] = HAnimJoint106;
+HAnimJoint105ZZZ.children[0] = HAnimJoint106;
 
-HAnimJoint104.children = new MFNode();
+HAnimJoint104YYY.children = new X3D.MFNode();
 
-HAnimJoint104.children[0] = HAnimJoint105;
+HAnimJoint104ZZZ.children[0] = HAnimJoint105;
 
-HAnimJoint103.children = new MFNode();
+HAnimJoint103YYY.children = new X3D.MFNode();
 
-HAnimJoint103.children[0] = HAnimJoint104;
+HAnimJoint103ZZZ.children[0] = HAnimJoint104;
 
-HAnimJoint87.children[4] = HAnimJoint103;
+HAnimJoint87ZZZ.children[4] = HAnimJoint103;
 
-HAnimJoint86.children = new MFNode();
+HAnimJoint86YYY.children = new X3D.MFNode();
 
-HAnimJoint86.children[0] = HAnimJoint87;
+HAnimJoint86ZZZ.children[0] = HAnimJoint87;
 
-HAnimJoint85.children = new MFNode();
+HAnimJoint85YYY.children = new X3D.MFNode();
 
-HAnimJoint85.children[0] = HAnimJoint86;
+HAnimJoint85ZZZ.children[0] = HAnimJoint86;
 
-HAnimJoint84.children = new MFNode();
+HAnimJoint84YYY.children = new X3D.MFNode();
 
-HAnimJoint84.children[0] = HAnimJoint85;
+HAnimJoint84ZZZ.children[0] = HAnimJoint85;
 
-HAnimJoint83.children = new MFNode();
+HAnimJoint83YYY.children = new X3D.MFNode();
 
-HAnimJoint83.children[0] = HAnimJoint84;
+HAnimJoint83ZZZ.children[0] = HAnimJoint84;
 
-HAnimJoint67.children[1] = HAnimJoint83;
+HAnimJoint67ZZZ.children[1] = HAnimJoint83;
 
 let HAnimJoint107 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint107.name = "r_sternoclavicular";
 HAnimJoint107.DEF = "Joe_r_sternoclavicular";
-HAnimJoint107.center = new SFVec3f(new float[-0.03,1.46,0]);
-HAnimJoint107.skinCoordIndex = new MFInt32(new int[10]);
-HAnimJoint107.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint107.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint107.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint107.center = new X3D.SFVec3f([-0.03,1.46,0]);
+HAnimJoint107.skinCoordIndex = new X3D.MFInt32([10]);
+HAnimJoint107.skinCoordWeight = new X3D.MFFloat([1]);
+HAnimJoint107.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint107.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint108 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint108.name = "r_acromioclavicular";
 HAnimJoint108.DEF = "Joe_r_acromioclavicular";
-HAnimJoint108.center = new SFVec3f(new float[-0.09,1.41,-0.11]);
-HAnimJoint108.skinCoordIndex = new MFInt32(new int[77,29]);
-HAnimJoint108.skinCoordWeight = new MFFloat(new float[1,0.9]);
-HAnimJoint108.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint108.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint108.center = new X3D.SFVec3f([-0.09,1.41,-0.11]);
+HAnimJoint108.skinCoordIndex = new X3D.MFInt32([77,29]);
+HAnimJoint108.skinCoordWeight = new X3D.MFFloat([1,0.9]);
+HAnimJoint108.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint108.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint109 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint109.name = "r_shoulder";
 HAnimJoint109.DEF = "Joe_r_shoulder";
-HAnimJoint109.center = new SFVec3f(new float[-0.2,1.44,-0.04]);
-HAnimJoint109.skinCoordIndex = new MFInt32(new int[29,30,32,78,218,219,220,221,86,88]);
-HAnimJoint109.skinCoordWeight = new MFFloat(new float[0.1,1,1,1,1,1,1,1,0.3,0.2]);
-HAnimJoint109.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint109.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint109.center = new X3D.SFVec3f([-0.2,1.44,-0.04]);
+HAnimJoint109.skinCoordIndex = new X3D.MFInt32([29,30,32,78,218,219,220,221,86,88]);
+HAnimJoint109.skinCoordWeight = new X3D.MFFloat([0.1,1,1,1,1,1,1,1,0.3,0.2]);
+HAnimJoint109.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint109.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint110 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint110.name = "r_elbow";
 HAnimJoint110.DEF = "Joe_r_elbow";
-HAnimJoint110.center = new SFVec3f(new float[-0.2,1.1388,-0.04]);
-HAnimJoint110.skinCoordIndex = new MFInt32(new int[33,34,35,225,226,227,228,229,231,232,233,234]);
-HAnimJoint110.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint110.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint110.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint110.center = new X3D.SFVec3f([-0.2,1.1388,-0.04]);
+HAnimJoint110.skinCoordIndex = new X3D.MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]);
+HAnimJoint110.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]);
+HAnimJoint110.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint110.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint111 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint111.name = "r_wrist";
 HAnimJoint111.DEF = "Joe_r_wrist";
-HAnimJoint111.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
-HAnimJoint111.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
-HAnimJoint111.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint111.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint111.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint111.center = new X3D.SFVec3f([-0.2,0.89,-0.04]);
+HAnimJoint111.skinCoordIndex = new X3D.MFInt32([235,236,237,238,239,240,241,242]);
+HAnimJoint111.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1]);
+HAnimJoint111.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint111.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint112 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint112.name = "r_thumb1";
 HAnimJoint112.DEF = "Joe_r_thumb1";
-HAnimJoint112.center = new SFVec3f(new float[-0.2,0.85,0]);
-HAnimJoint112.skinCoordIndex = new MFInt32(new int[243,244]);
-HAnimJoint112.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint112.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint112.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint112.center = new X3D.SFVec3f([-0.2,0.85,0]);
+HAnimJoint112.skinCoordIndex = new X3D.MFInt32([243,244]);
+HAnimJoint112.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint112.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint112.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint113 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint113.name = "r_thumb2";
 HAnimJoint113.DEF = "Joe_r_thumb2";
-HAnimJoint113.center = new SFVec3f(new float[-0.2,0.82,0.03]);
-HAnimJoint113.skinCoordIndex = new MFInt32(new int[254,255,256,257,258,259]);
-HAnimJoint113.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint113.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint113.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint113.center = new X3D.SFVec3f([-0.2,0.82,0.03]);
+HAnimJoint113.skinCoordIndex = new X3D.MFInt32([254,255,256,257,258,259]);
+HAnimJoint113.skinCoordWeight = new X3D.MFFloat([0.5,0.5,0.5,1,1,1]);
+HAnimJoint113.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint113.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint114 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint114.name = "r_thumb3";
 HAnimJoint114.DEF = "Joe_r_thumb3";
-HAnimJoint114.center = new SFVec3f(new float[-0.2,0.8,0.05]);
-HAnimJoint114.skinCoordIndex = new MFInt32(new int[260,261,262,263,264,265,266,267,268]);
-HAnimJoint114.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint114.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint114.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint113.children = new MFNode();
+HAnimJoint114.center = new X3D.SFVec3f([-0.2,0.8,0.05]);
+HAnimJoint114.skinCoordIndex = new X3D.MFInt32([260,261,262,263,264,265,266,267,268]);
+HAnimJoint114.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint114.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint114.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint113YYY.children = new X3D.MFNode();
 
-HAnimJoint113.children[0] = HAnimJoint114;
+HAnimJoint113ZZZ.children[0] = HAnimJoint114;
 
-HAnimJoint112.children = new MFNode();
+HAnimJoint112YYY.children = new X3D.MFNode();
 
-HAnimJoint112.children[0] = HAnimJoint113;
+HAnimJoint112ZZZ.children[0] = HAnimJoint113;
 
-HAnimJoint111.children = new MFNode();
+HAnimJoint111YYY.children = new X3D.MFNode();
 
-HAnimJoint111.children[0] = HAnimJoint112;
+HAnimJoint111ZZZ.children[0] = HAnimJoint112;
 
 let HAnimJoint115 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint115.name = "r_index0";
 HAnimJoint115.DEF = "Joe_r_index0";
-HAnimJoint115.center = new SFVec3f(new float[-0.2,0.84,-0.015]);
-HAnimJoint115.skinCoordIndex = new MFInt32(new int[245,246]);
-HAnimJoint115.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint115.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint115.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint115.center = new X3D.SFVec3f([-0.2,0.84,-0.015]);
+HAnimJoint115.skinCoordIndex = new X3D.MFInt32([245,246]);
+HAnimJoint115.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint115.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint115.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint116 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint116.name = "r_index1";
 HAnimJoint116.DEF = "Joe_r_index1";
-HAnimJoint116.center = new SFVec3f(new float[-0.2,0.793,-0.015]);
-HAnimJoint116.skinCoordIndex = new MFInt32(new int[254,255,256,269,270,271,279]);
-HAnimJoint116.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint116.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint116.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint116.center = new X3D.SFVec3f([-0.2,0.793,-0.015]);
+HAnimJoint116.skinCoordIndex = new X3D.MFInt32([254,255,256,269,270,271,279]);
+HAnimJoint116.skinCoordWeight = new X3D.MFFloat([0.5,0.5,0.5,1,1,1,0.5]);
+HAnimJoint116.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint116.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint117 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint117.name = "r_index2";
 HAnimJoint117.DEF = "Joe_r_index2";
-HAnimJoint117.center = new SFVec3f(new float[-0.2,0.745,-0.015]);
-HAnimJoint117.skinCoordIndex = new MFInt32(new int[282,283,284,285]);
-HAnimJoint117.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint117.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint117.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint117.center = new X3D.SFVec3f([-0.2,0.745,-0.015]);
+HAnimJoint117.skinCoordIndex = new X3D.MFInt32([282,283,284,285]);
+HAnimJoint117.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint117.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint117.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint118 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint118.name = "r_index3";
 HAnimJoint118.DEF = "Joe_r_index3";
-HAnimJoint118.center = new SFVec3f(new float[-0.2,0.72,-0.015]);
-HAnimJoint118.skinCoordIndex = new MFInt32(new int[286,287,288,289,290,291,292,293,294]);
-HAnimJoint118.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint118.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint118.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint117.children = new MFNode();
+HAnimJoint118.center = new X3D.SFVec3f([-0.2,0.72,-0.015]);
+HAnimJoint118.skinCoordIndex = new X3D.MFInt32([286,287,288,289,290,291,292,293,294]);
+HAnimJoint118.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint118.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint118.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint117YYY.children = new X3D.MFNode();
 
-HAnimJoint117.children[0] = HAnimJoint118;
+HAnimJoint117ZZZ.children[0] = HAnimJoint118;
 
-HAnimJoint116.children = new MFNode();
+HAnimJoint116YYY.children = new X3D.MFNode();
 
-HAnimJoint116.children[0] = HAnimJoint117;
+HAnimJoint116ZZZ.children[0] = HAnimJoint117;
 
-HAnimJoint115.children = new MFNode();
+HAnimJoint115YYY.children = new X3D.MFNode();
 
-HAnimJoint115.children[0] = HAnimJoint116;
+HAnimJoint115ZZZ.children[0] = HAnimJoint116;
 
-HAnimJoint111.children[1] = HAnimJoint115;
+HAnimJoint111ZZZ.children[1] = HAnimJoint115;
 
 let HAnimJoint119 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint119.name = "r_middle0";
 HAnimJoint119.DEF = "Joe_r_middle0";
-HAnimJoint119.center = new SFVec3f(new float[-0.2,0.835,-0.04]);
-HAnimJoint119.skinCoordIndex = new MFInt32(new int[247,248]);
-HAnimJoint119.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint119.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint119.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint119.center = new X3D.SFVec3f([-0.2,0.835,-0.04]);
+HAnimJoint119.skinCoordIndex = new X3D.MFInt32([247,248]);
+HAnimJoint119.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint119.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint119.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint120 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint120.name = "r_middle1";
 HAnimJoint120.DEF = "Joe_r_middle1";
-HAnimJoint120.center = new SFVec3f(new float[-0.2,0.788,-0.04]);
-HAnimJoint120.skinCoordIndex = new MFInt32(new int[272,273,279,280]);
-HAnimJoint120.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint120.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint120.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint120.center = new X3D.SFVec3f([-0.2,0.788,-0.04]);
+HAnimJoint120.skinCoordIndex = new X3D.MFInt32([272,273,279,280]);
+HAnimJoint120.skinCoordWeight = new X3D.MFFloat([1,1,0.5,0.5]);
+HAnimJoint120.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint120.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint121 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint121.name = "r_middle2";
 HAnimJoint121.DEF = "Joe_r_middle2";
-HAnimJoint121.center = new SFVec3f(new float[-0.2,0.74,-0.04]);
-HAnimJoint121.skinCoordIndex = new MFInt32(new int[295,296,297,298]);
-HAnimJoint121.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint121.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint121.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint121.center = new X3D.SFVec3f([-0.2,0.74,-0.04]);
+HAnimJoint121.skinCoordIndex = new X3D.MFInt32([295,296,297,298]);
+HAnimJoint121.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint121.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint121.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint122 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint122.name = "r_middle3";
 HAnimJoint122.DEF = "Joe_r_middle3";
-HAnimJoint122.center = new SFVec3f(new float[-0.2,0.7142,-0.04]);
-HAnimJoint122.skinCoordIndex = new MFInt32(new int[299,300,301,302,303,304,305,306,307]);
-HAnimJoint122.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint122.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint122.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint121.children = new MFNode();
+HAnimJoint122.center = new X3D.SFVec3f([-0.2,0.7142,-0.04]);
+HAnimJoint122.skinCoordIndex = new X3D.MFInt32([299,300,301,302,303,304,305,306,307]);
+HAnimJoint122.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint122.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint122.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint121YYY.children = new X3D.MFNode();
 
-HAnimJoint121.children[0] = HAnimJoint122;
+HAnimJoint121ZZZ.children[0] = HAnimJoint122;
 
-HAnimJoint120.children = new MFNode();
+HAnimJoint120YYY.children = new X3D.MFNode();
 
-HAnimJoint120.children[0] = HAnimJoint121;
+HAnimJoint120ZZZ.children[0] = HAnimJoint121;
 
-HAnimJoint119.children = new MFNode();
+HAnimJoint119YYY.children = new X3D.MFNode();
 
-HAnimJoint119.children[0] = HAnimJoint120;
+HAnimJoint119ZZZ.children[0] = HAnimJoint120;
 
-HAnimJoint111.children[2] = HAnimJoint119;
+HAnimJoint111ZZZ.children[2] = HAnimJoint119;
 
 let HAnimJoint123 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint123.name = "r_ring0";
 HAnimJoint123.DEF = "Joe_r_ring0";
-HAnimJoint123.center = new SFVec3f(new float[-0.2,0.835,-0.065]);
-HAnimJoint123.skinCoordIndex = new MFInt32(new int[249,250]);
-HAnimJoint123.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint123.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint123.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint123.center = new X3D.SFVec3f([-0.2,0.835,-0.065]);
+HAnimJoint123.skinCoordIndex = new X3D.MFInt32([249,250]);
+HAnimJoint123.skinCoordWeight = new X3D.MFFloat([1,1]);
+HAnimJoint123.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint123.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint124 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint124.name = "r_ring1";
 HAnimJoint124.DEF = "Joe_r_ring1";
-HAnimJoint124.center = new SFVec3f(new float[-0.2,0.793,-0.065]);
-HAnimJoint124.skinCoordIndex = new MFInt32(new int[274,275,280,281]);
-HAnimJoint124.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint124.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint124.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint124.center = new X3D.SFVec3f([-0.2,0.793,-0.065]);
+HAnimJoint124.skinCoordIndex = new X3D.MFInt32([274,275,280,281]);
+HAnimJoint124.skinCoordWeight = new X3D.MFFloat([1,1,0.5,0.5]);
+HAnimJoint124.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint124.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint125 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint125.name = "r_ring2";
 HAnimJoint125.DEF = "Joe_r_ring2";
-HAnimJoint125.center = new SFVec3f(new float[-0.2,0.74,-0.065]);
-HAnimJoint125.skinCoordIndex = new MFInt32(new int[308,309,310,311]);
-HAnimJoint125.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint125.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint125.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint125.center = new X3D.SFVec3f([-0.2,0.74,-0.065]);
+HAnimJoint125.skinCoordIndex = new X3D.MFInt32([308,309,310,311]);
+HAnimJoint125.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint125.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint125.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint126 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint126.name = "r_ring3";
 HAnimJoint126.DEF = "Joe_r_ring3";
-HAnimJoint126.center = new SFVec3f(new float[-0.2,0.7177,-0.065]);
-HAnimJoint126.skinCoordIndex = new MFInt32(new int[312,313,314,315,316,317,318,319,320]);
-HAnimJoint126.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint126.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint126.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint125.children = new MFNode();
+HAnimJoint126.center = new X3D.SFVec3f([-0.2,0.7177,-0.065]);
+HAnimJoint126.skinCoordIndex = new X3D.MFInt32([312,313,314,315,316,317,318,319,320]);
+HAnimJoint126.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint126.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint126.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint125YYY.children = new X3D.MFNode();
 
-HAnimJoint125.children[0] = HAnimJoint126;
+HAnimJoint125ZZZ.children[0] = HAnimJoint126;
 
-HAnimJoint124.children = new MFNode();
+HAnimJoint124YYY.children = new X3D.MFNode();
 
-HAnimJoint124.children[0] = HAnimJoint125;
+HAnimJoint124ZZZ.children[0] = HAnimJoint125;
 
-HAnimJoint123.children = new MFNode();
+HAnimJoint123YYY.children = new X3D.MFNode();
 
-HAnimJoint123.children[0] = HAnimJoint124;
+HAnimJoint123ZZZ.children[0] = HAnimJoint124;
 
-HAnimJoint111.children[3] = HAnimJoint123;
+HAnimJoint111ZZZ.children[3] = HAnimJoint123;
 
 let HAnimJoint127 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint127.name = "r_pinky0";
 HAnimJoint127.DEF = "Joe_r_pinky0";
-HAnimJoint127.center = new SFVec3f(new float[-0.2,0.84,-0.085]);
-HAnimJoint127.skinCoordIndex = new MFInt32(new int[251,252,253,281]);
-HAnimJoint127.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint127.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint127.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint127.center = new X3D.SFVec3f([-0.2,0.84,-0.085]);
+HAnimJoint127.skinCoordIndex = new X3D.MFInt32([251,252,253,281]);
+HAnimJoint127.skinCoordWeight = new X3D.MFFloat([1,1,1,0.5]);
+HAnimJoint127.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint127.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint128 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint128.name = "r_pinky1";
 HAnimJoint128.DEF = "Joe_r_pinky1";
-HAnimJoint128.center = new SFVec3f(new float[-0.2,0.79,-0.085]);
-HAnimJoint128.skinCoordIndex = new MFInt32(new int[276,277,278]);
-HAnimJoint128.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint128.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint128.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint128.center = new X3D.SFVec3f([-0.2,0.79,-0.085]);
+HAnimJoint128.skinCoordIndex = new X3D.MFInt32([276,277,278]);
+HAnimJoint128.skinCoordWeight = new X3D.MFFloat([1,1,1]);
+HAnimJoint128.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint128.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint129 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint129.name = "r_pinky2";
 HAnimJoint129.DEF = "Joe_r_pinky2";
-HAnimJoint129.center = new SFVec3f(new float[-0.2,0.755,-0.085]);
-HAnimJoint129.skinCoordIndex = new MFInt32(new int[321,322,323,324]);
-HAnimJoint129.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint129.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint129.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint129.center = new X3D.SFVec3f([-0.2,0.755,-0.085]);
+HAnimJoint129.skinCoordIndex = new X3D.MFInt32([321,322,323,324]);
+HAnimJoint129.skinCoordWeight = new X3D.MFFloat([1,1,1,1]);
+HAnimJoint129.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint129.llimit = new X3D.MFFloat([0,0,0]);
 let HAnimJoint130 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint130.name = "r_pinky3";
 HAnimJoint130.DEF = "Joe_r_pinky3";
-HAnimJoint130.center = new SFVec3f(new float[-0.2,0.735,-0.09]);
-HAnimJoint130.skinCoordIndex = new MFInt32(new int[325,326,327,328,329,330,331,332,333]);
-HAnimJoint130.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint130.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint130.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint129.children = new MFNode();
+HAnimJoint130.center = new X3D.SFVec3f([-0.2,0.735,-0.09]);
+HAnimJoint130.skinCoordIndex = new X3D.MFInt32([325,326,327,328,329,330,331,332,333]);
+HAnimJoint130.skinCoordWeight = new X3D.MFFloat([1,1,1,1,1,1,1,1,1]);
+HAnimJoint130.ulimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint130.llimit = new X3D.MFFloat([0,0,0]);
+HAnimJoint129YYY.children = new X3D.MFNode();
 
-HAnimJoint129.children[0] = HAnimJoint130;
+HAnimJoint129ZZZ.children[0] = HAnimJoint130;
 
-HAnimJoint128.children = new MFNode();
+HAnimJoint128YYY.children = new X3D.MFNode();
 
-HAnimJoint128.children[0] = HAnimJoint129;
+HAnimJoint128ZZZ.children[0] = HAnimJoint129;
 
-HAnimJoint127.children = new MFNode();
+HAnimJoint127YYY.children = new X3D.MFNode();
 
-HAnimJoint127.children[0] = HAnimJoint128;
+HAnimJoint127ZZZ.children[0] = HAnimJoint128;
 
-HAnimJoint111.children[4] = HAnimJoint127;
+HAnimJoint111ZZZ.children[4] = HAnimJoint127;
 
-HAnimJoint110.children = new MFNode();
+HAnimJoint110YYY.children = new X3D.MFNode();
 
-HAnimJoint110.children[0] = HAnimJoint111;
+HAnimJoint110ZZZ.children[0] = HAnimJoint111;
 
-HAnimJoint109.children = new MFNode();
+HAnimJoint109YYY.children = new X3D.MFNode();
 
-HAnimJoint109.children[0] = HAnimJoint110;
+HAnimJoint109ZZZ.children[0] = HAnimJoint110;
 
-HAnimJoint108.children = new MFNode();
+HAnimJoint108YYY.children = new X3D.MFNode();
 
-HAnimJoint108.children[0] = HAnimJoint109;
+HAnimJoint108ZZZ.children[0] = HAnimJoint109;
 
-HAnimJoint107.children = new MFNode();
+HAnimJoint107YYY.children = new X3D.MFNode();
 
-HAnimJoint107.children[0] = HAnimJoint108;
+HAnimJoint107ZZZ.children[0] = HAnimJoint108;
 
-HAnimJoint67.children[2] = HAnimJoint107;
+HAnimJoint67ZZZ.children[2] = HAnimJoint107;
 
-HAnimJoint66.children = new MFNode();
+HAnimJoint66YYY.children = new X3D.MFNode();
 
-HAnimJoint66.children[0] = HAnimJoint67;
+HAnimJoint66ZZZ.children[0] = HAnimJoint67;
 
-HAnimJoint65.children = new MFNode();
+HAnimJoint65YYY.children = new X3D.MFNode();
 
-HAnimJoint65.children[0] = HAnimJoint66;
+HAnimJoint65ZZZ.children[0] = HAnimJoint66;
 
-HAnimJoint64.children = new MFNode();
+HAnimJoint64YYY.children = new X3D.MFNode();
 
-HAnimJoint64.children[0] = HAnimJoint65;
+HAnimJoint64ZZZ.children[0] = HAnimJoint65;
 
-HAnimJoint63.children = new MFNode();
+HAnimJoint63YYY.children = new X3D.MFNode();
 
-HAnimJoint63.children[0] = HAnimJoint64;
+HAnimJoint63ZZZ.children[0] = HAnimJoint64;
 
-HAnimJoint62.children = new MFNode();
+HAnimJoint62YYY.children = new X3D.MFNode();
 
-HAnimJoint62.children[0] = HAnimJoint63;
+HAnimJoint62ZZZ.children[0] = HAnimJoint63;
 
-HAnimJoint61.children = new MFNode();
+HAnimJoint61YYY.children = new X3D.MFNode();
 
-HAnimJoint61.children[0] = HAnimJoint62;
+HAnimJoint61ZZZ.children[0] = HAnimJoint62;
 
-HAnimJoint60.children = new MFNode();
+HAnimJoint60YYY.children = new X3D.MFNode();
 
-HAnimJoint60.children[0] = HAnimJoint61;
+HAnimJoint60ZZZ.children[0] = HAnimJoint61;
 
-HAnimJoint59.children = new MFNode();
+HAnimJoint59YYY.children = new X3D.MFNode();
 
-HAnimJoint59.children[0] = HAnimJoint60;
+HAnimJoint59ZZZ.children[0] = HAnimJoint60;
 
-HAnimJoint58.children = new MFNode();
+HAnimJoint58YYY.children = new X3D.MFNode();
 
-HAnimJoint58.children[0] = HAnimJoint59;
+HAnimJoint58ZZZ.children[0] = HAnimJoint59;
 
-HAnimJoint57.children = new MFNode();
+HAnimJoint57YYY.children = new X3D.MFNode();
 
-HAnimJoint57.children[0] = HAnimJoint58;
+HAnimJoint57ZZZ.children[0] = HAnimJoint58;
 
-HAnimJoint56.children = new MFNode();
+HAnimJoint56YYY.children = new X3D.MFNode();
 
-HAnimJoint56.children[0] = HAnimJoint57;
+HAnimJoint56ZZZ.children[0] = HAnimJoint57;
 
-HAnimJoint55.children = new MFNode();
+HAnimJoint55YYY.children = new X3D.MFNode();
 
-HAnimJoint55.children[0] = HAnimJoint56;
+HAnimJoint55ZZZ.children[0] = HAnimJoint56;
 
-HAnimJoint54.children = new MFNode();
+HAnimJoint54YYY.children = new X3D.MFNode();
 
-HAnimJoint54.children[0] = HAnimJoint55;
+HAnimJoint54ZZZ.children[0] = HAnimJoint55;
 
-HAnimJoint53.children = new MFNode();
+HAnimJoint53YYY.children = new X3D.MFNode();
 
-HAnimJoint53.children[0] = HAnimJoint54;
+HAnimJoint53ZZZ.children[0] = HAnimJoint54;
 
-HAnimJoint52.children = new MFNode();
+HAnimJoint52YYY.children = new X3D.MFNode();
 
-HAnimJoint52.children[0] = HAnimJoint53;
+HAnimJoint52ZZZ.children[0] = HAnimJoint53;
 
-HAnimJoint51.children = new MFNode();
+HAnimJoint51YYY.children = new X3D.MFNode();
 
-HAnimJoint51.children[0] = HAnimJoint52;
+HAnimJoint51ZZZ.children[0] = HAnimJoint52;
 
-HAnimJoint50.children = new MFNode();
+HAnimJoint50YYY.children = new X3D.MFNode();
 
-HAnimJoint50.children[0] = HAnimJoint51;
+HAnimJoint50ZZZ.children[0] = HAnimJoint51;
 
-HAnimJoint28.children[2] = HAnimJoint50;
+HAnimJoint28ZZZ.children[2] = HAnimJoint50;
 
-HAnimHumanoid27.joints = new MFNode();
+HAnimHumanoid27.joints = new X3D.MFNode();
 
-HAnimHumanoid27.joints[0] = HAnimJoint28;
+HAnimHumanoid27XXX.joints[0] = HAnimJoint28;
 
 let Shape131 = browser.currentScene.createNode("Shape");
 Shape131.DEF = "Joe_Shape";
@@ -1253,45 +1200,45 @@ let Appearance132 = browser.currentScene.createNode("Appearance");
 Appearance132.DEF = "Joe_skin_Appearance";
 let Material133 = browser.currentScene.createNode("Material");
 Material133.DEF = "Joe_skin_Material";
-Material133.diffuseColor = new SFColor(new float[0.3,0.3,0.6]);
-Material133.emissiveColor = new SFColor(new float[0.3,0.3,0.6]);
-Appearance132.material = Material133;
+Material133.diffuseColor = new X3D.SFColor([0.3,0.3,0.6]);
+Material133.emissiveColor = new X3D.SFColor([0.3,0.3,0.6]);
+material = Material133;
 
 let ImageTexture134 = browser.currentScene.createNode("ImageTexture");
 ImageTexture134.DEF = "JoeSkinImageTexture";
-ImageTexture134.url = new MFString(new java.lang.String["bodytexture28.png"]);
-Appearance132.texture = ImageTexture134;
+ImageTexture134.url = new X3D.MFString([new X3D.SFString("bodytexture28.png")]);
+texture = ImageTexture134;
 
 let TextureTransform135 = browser.currentScene.createNode("TextureTransform");
 TextureTransform135.DEF = "kicktextrans";
-Appearance132.textureTransform = TextureTransform135;
+textureTransform = TextureTransform135;
 
-Shape131.appearance = Appearance132;
+appearance = Appearance132;
 
 let IndexedFaceSet136 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet136.DEF = "Joe_skin_IndexedFaceSet";
-IndexedFaceSet136.coordIndex = new MFInt32(new int[0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1,209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1,308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1]);
+IndexedFaceSet136.coordIndex = new X3D.MFInt32([0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1,209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1,308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1]);
 IndexedFaceSet136.creaseAngle = 3.14;
 let Coordinate137 = browser.currentScene.createNode("Coordinate");
 Coordinate137.DEF = "Joe_SkinCoord";
-Coordinate137.point = new MFVec3f(new float[0,1.77,0,0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0,1.625,-0.0925,-0.03,1.46,0.035,0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0,-0.05,0.466,0,-0.165,0.01,0.12,-0.15,0.07,0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0,0.05,0.4867,0,0.165,0.01,0.12,0.15,0.07,0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0,0.875,0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0,1.41,-0.145,0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0,0.87,0,0.171,0.65,0,0.02,0.65,0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0,-0.02,0.65,0,-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1,-0.01,0.225,1,-0.07,0.185,1,-0.01,0.185,1,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0,0.21,0.85,0,0.1854,0.85,0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549,0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.255,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1,-0.01,-0.225,1,-0.07,-0.185,1,-0.01,-0.185,1,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0,-0.21,0.85,0,-0.1854,0.85,0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04,-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0,0.05,0.466,0,0.17,0.3,0,0.06,0.3,0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0,0.07,0.165,0,0.07,0.095,0,0.07,0.115,0.04,0.13,0.125,0,0.12,0.165,0,0.12,0.087,0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0,-0.05,0.466,0,-0.17,0.3,0,-0.06,0.3,0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0,0.07,-0.165,0,0.07,-0.095,0,0.07,-0.115,0.04,0.13,-0.125,0,0.12,-0.165,0,0.12,-0.087,0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168]);
-IndexedFaceSet136.coord = Coordinate137;
+Coordinate137.point = new X3D.MFVec3f([0,1.77,0,0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0,1.625,-0.0925,-0.03,1.46,0.035,0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0,-0.05,0.466,0,-0.165,0.01,0.12,-0.15,0.07,0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0,0.05,0.4867,0,0.165,0.01,0.12,0.15,0.07,0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0,0.875,0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0,1.41,-0.145,0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0,0.87,0,0.171,0.65,0,0.02,0.65,0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0,-0.02,0.65,0,-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1,-0.01,0.225,1,-0.07,0.185,1,-0.01,0.185,1,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0,0.21,0.85,0,0.1854,0.85,0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549,0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.255,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1,-0.01,-0.225,1,-0.07,-0.185,1,-0.01,-0.185,1,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0,-0.21,0.85,0,-0.1854,0.85,0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04,-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0,0.05,0.466,0,0.17,0.3,0,0.06,0.3,0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0,0.07,0.165,0,0.07,0.095,0,0.07,0.115,0.04,0.13,0.125,0,0.12,0.165,0,0.12,0.087,0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0,-0.05,0.466,0,-0.17,0.3,0,-0.06,0.3,0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0,0.07,-0.165,0,0.07,-0.095,0,0.07,-0.115,0.04,0.13,-0.125,0,0.12,-0.165,0,0.12,-0.087,0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168]);
+coord = Coordinate137;
 
 let TextureCoordinate138 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate138.point = new MFVec2f(new float[0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5]);
-IndexedFaceSet136.texCoord = TextureCoordinate138;
+TextureCoordinate138.point = new X3D.MFVec2f([0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5]);
+texCoord = TextureCoordinate138;
 
-Shape131.geometry = IndexedFaceSet136;
+geometry = IndexedFaceSet136;
 
-HAnimHumanoid27.skin[1] = Shape131;
+skin[1] = Shape131;
 
 let Coordinate139 = browser.currentScene.createNode("Coordinate");
 Coordinate139.USE = "Joe_SkinCoord";
-HAnimHumanoid27.skinCoord = Coordinate139;
+skinCoord = Coordinate139;
 
-Group26.children = new MFNode();
+Group26YYY.children = new X3D.MFNode();
 
-Group26.children[0] = HAnimHumanoid27;
+Group26ZZZ.children[0] = HAnimHumanoid27;
 
 browser.currentScene.children[10] = Group26;
 
@@ -1300,580 +1247,580 @@ let TimeSensor141 = browser.currentScene.createNode("TimeSensor");
 TimeSensor141.DEF = "KickTimer";
 TimeSensor141.cycleInterval = 3.73;
 TimeSensor141.loop = True;
-Group140.children = new MFNode();
+Group140YYY.children = new X3D.MFNode();
 
-Group140.children[0] = TimeSensor141;
+Group140ZZZ.children[0] = TimeSensor141;
 
 //Interpolators
 let OrientationInterpolator142 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator142.DEF = "HumanoidRootRotInterp";
-OrientationInterpolator142.key = new MFFloat(new float[0,0.1,0.4,0.6,1]);
-OrientationInterpolator142.keyValue = new MFRotation(new float[1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5]);
-Group140.children[1] = OrientationInterpolator142;
+OrientationInterpolator142.key = new X3D.MFFloat([0,0.1,0.4,0.6,1]);
+OrientationInterpolator142.keyValue = new X3D.MFRotation([1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5]);
+Group140ZZZ.children[1] = OrientationInterpolator142;
 
 let PositionInterpolator143 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator143.DEF = "HumanoidRootTransInterp";
-PositionInterpolator143.key = new MFFloat(new float[0,0.2,0.6,1]);
-PositionInterpolator143.keyValue = new MFVec3f(new float[1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15]);
-Group140.children[2] = PositionInterpolator143;
+PositionInterpolator143.key = new X3D.MFFloat([0,0.2,0.6,1]);
+PositionInterpolator143.keyValue = new X3D.MFVec3f([1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15]);
+Group140ZZZ.children[2] = PositionInterpolator143;
 
 let OrientationInterpolator144 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator144.DEF = "sacroiliacRotInterp";
-OrientationInterpolator144.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator144.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[3] = OrientationInterpolator144;
+OrientationInterpolator144.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator144.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[3] = OrientationInterpolator144;
 
 let OrientationInterpolator145 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator145.DEF = "l_hipRotInterp";
-OrientationInterpolator145.key = new MFFloat(new float[0,0.1,0.3,0.45,1]);
-OrientationInterpolator145.keyValue = new MFRotation(new float[-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1]);
-Group140.children[4] = OrientationInterpolator145;
+OrientationInterpolator145.key = new X3D.MFFloat([0,0.1,0.3,0.45,1]);
+OrientationInterpolator145.keyValue = new X3D.MFRotation([-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1]);
+Group140ZZZ.children[4] = OrientationInterpolator145;
 
 let OrientationInterpolator146 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator146.DEF = "l_kneeRotInterp";
-OrientationInterpolator146.key = new MFFloat(new float[0,0.2,0.35,0.5,1]);
-OrientationInterpolator146.keyValue = new MFRotation(new float[1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4]);
-Group140.children[5] = OrientationInterpolator146;
+OrientationInterpolator146.key = new X3D.MFFloat([0,0.2,0.35,0.5,1]);
+OrientationInterpolator146.keyValue = new X3D.MFRotation([1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4]);
+Group140ZZZ.children[5] = OrientationInterpolator146;
 
 let OrientationInterpolator147 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator147.DEF = "l_ankleRotInterp";
-OrientationInterpolator147.key = new MFFloat(new float[0,0.25,1]);
-OrientationInterpolator147.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1]);
-Group140.children[6] = OrientationInterpolator147;
+OrientationInterpolator147.key = new X3D.MFFloat([0,0.25,1]);
+OrientationInterpolator147.keyValue = new X3D.MFRotation([-1,0,0,1,0,0,1,0,1,0,0,1]);
+Group140ZZZ.children[6] = OrientationInterpolator147;
 
 let OrientationInterpolator148 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator148.DEF = "l_subtalarRotInterp";
-OrientationInterpolator148.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator148.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[7] = OrientationInterpolator148;
+OrientationInterpolator148.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator148.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[7] = OrientationInterpolator148;
 
 let OrientationInterpolator149 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator149.DEF = "l_midtarsalRotInterp";
-OrientationInterpolator149.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator149.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[8] = OrientationInterpolator149;
+OrientationInterpolator149.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator149.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[8] = OrientationInterpolator149;
 
 let OrientationInterpolator150 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator150.DEF = "l_metatarsalRotInterp";
-OrientationInterpolator150.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator150.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[9] = OrientationInterpolator150;
+OrientationInterpolator150.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator150.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[9] = OrientationInterpolator150;
 
 let OrientationInterpolator151 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator151.DEF = "r_hipRotInterp";
-OrientationInterpolator151.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator151.keyValue = new MFRotation(new float[1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1]);
-Group140.children[10] = OrientationInterpolator151;
+OrientationInterpolator151.key = new X3D.MFFloat([0,0.25,0.5,0.75,1]);
+OrientationInterpolator151.keyValue = new X3D.MFRotation([1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1]);
+Group140ZZZ.children[10] = OrientationInterpolator151;
 
 let OrientationInterpolator152 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator152.DEF = "r_kneeRotInterp";
-OrientationInterpolator152.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator152.keyValue = new MFRotation(new float[1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5]);
-Group140.children[11] = OrientationInterpolator152;
+OrientationInterpolator152.key = new X3D.MFFloat([0,0.25,0.5,0.75,1]);
+OrientationInterpolator152.keyValue = new X3D.MFRotation([1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5]);
+Group140ZZZ.children[11] = OrientationInterpolator152;
 
 let OrientationInterpolator153 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator153.DEF = "r_ankleRotInterp";
-OrientationInterpolator153.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator153.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5]);
-Group140.children[12] = OrientationInterpolator153;
+OrientationInterpolator153.key = new X3D.MFFloat([0,0.25,0.5,0.75,1]);
+OrientationInterpolator153.keyValue = new X3D.MFRotation([-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5]);
+Group140ZZZ.children[12] = OrientationInterpolator153;
 
 let OrientationInterpolator154 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator154.DEF = "r_subtalarRotInterp";
-OrientationInterpolator154.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator154.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[13] = OrientationInterpolator154;
+OrientationInterpolator154.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator154.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[13] = OrientationInterpolator154;
 
 let OrientationInterpolator155 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator155.DEF = "r_midtarsalRotInterp";
-OrientationInterpolator155.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator155.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[14] = OrientationInterpolator155;
+OrientationInterpolator155.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator155.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[14] = OrientationInterpolator155;
 
 let OrientationInterpolator156 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator156.DEF = "r_metatarsalRotInterp";
-OrientationInterpolator156.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator156.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[15] = OrientationInterpolator156;
+OrientationInterpolator156.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator156.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[15] = OrientationInterpolator156;
 
 let OrientationInterpolator157 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator157.DEF = "vl5RotInterp";
-OrientationInterpolator157.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator157.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[16] = OrientationInterpolator157;
+OrientationInterpolator157.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator157.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[16] = OrientationInterpolator157;
 
 let OrientationInterpolator158 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator158.DEF = "vl4RotInterp";
-OrientationInterpolator158.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator158.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[17] = OrientationInterpolator158;
+OrientationInterpolator158.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator158.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[17] = OrientationInterpolator158;
 
 let OrientationInterpolator159 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator159.DEF = "vl3RotInterp";
-OrientationInterpolator159.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator159.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[18] = OrientationInterpolator159;
+OrientationInterpolator159.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator159.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[18] = OrientationInterpolator159;
 
 let OrientationInterpolator160 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator160.DEF = "vl2RotInterp";
-OrientationInterpolator160.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator160.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[19] = OrientationInterpolator160;
+OrientationInterpolator160.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator160.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[19] = OrientationInterpolator160;
 
 let OrientationInterpolator161 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator161.DEF = "vl1RotInterp";
-OrientationInterpolator161.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator161.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[20] = OrientationInterpolator161;
+OrientationInterpolator161.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator161.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[20] = OrientationInterpolator161;
 
 let OrientationInterpolator162 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator162.DEF = "vt12RotInterp";
-OrientationInterpolator162.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator162.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[21] = OrientationInterpolator162;
+OrientationInterpolator162.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator162.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[21] = OrientationInterpolator162;
 
 let OrientationInterpolator163 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator163.DEF = "vt11RotInterp";
-OrientationInterpolator163.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator163.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[22] = OrientationInterpolator163;
+OrientationInterpolator163.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator163.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[22] = OrientationInterpolator163;
 
 let OrientationInterpolator164 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator164.DEF = "vt10RotInterp";
-OrientationInterpolator164.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator164.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[23] = OrientationInterpolator164;
+OrientationInterpolator164.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator164.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[23] = OrientationInterpolator164;
 
 let OrientationInterpolator165 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator165.DEF = "vt9RotInterp";
-OrientationInterpolator165.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator165.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[24] = OrientationInterpolator165;
+OrientationInterpolator165.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator165.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[24] = OrientationInterpolator165;
 
 let OrientationInterpolator166 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator166.DEF = "vt8RotInterp";
-OrientationInterpolator166.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator166.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[25] = OrientationInterpolator166;
+OrientationInterpolator166.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator166.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[25] = OrientationInterpolator166;
 
 let OrientationInterpolator167 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator167.DEF = "vt7RotInterp";
-OrientationInterpolator167.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator167.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[26] = OrientationInterpolator167;
+OrientationInterpolator167.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator167.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[26] = OrientationInterpolator167;
 
 let OrientationInterpolator168 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator168.DEF = "vt6RotInterp";
-OrientationInterpolator168.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator168.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[27] = OrientationInterpolator168;
+OrientationInterpolator168.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator168.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[27] = OrientationInterpolator168;
 
 let OrientationInterpolator169 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator169.DEF = "vt5RotInterp";
-OrientationInterpolator169.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator169.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[28] = OrientationInterpolator169;
+OrientationInterpolator169.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator169.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[28] = OrientationInterpolator169;
 
 let OrientationInterpolator170 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator170.DEF = "vt4RotInterp";
-OrientationInterpolator170.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator170.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[29] = OrientationInterpolator170;
+OrientationInterpolator170.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator170.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[29] = OrientationInterpolator170;
 
 let OrientationInterpolator171 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator171.DEF = "vt3RotInterp";
-OrientationInterpolator171.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator171.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[30] = OrientationInterpolator171;
+OrientationInterpolator171.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator171.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[30] = OrientationInterpolator171;
 
 let OrientationInterpolator172 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator172.DEF = "vt2RotInterp";
-OrientationInterpolator172.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator172.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[31] = OrientationInterpolator172;
+OrientationInterpolator172.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator172.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[31] = OrientationInterpolator172;
 
 let OrientationInterpolator173 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator173.DEF = "vt1RotInterp";
-OrientationInterpolator173.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator173.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[32] = OrientationInterpolator173;
+OrientationInterpolator173.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator173.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[32] = OrientationInterpolator173;
 
 let OrientationInterpolator174 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator174.DEF = "vc7RotInterp";
-OrientationInterpolator174.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator174.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[33] = OrientationInterpolator174;
+OrientationInterpolator174.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator174.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[33] = OrientationInterpolator174;
 
 let OrientationInterpolator175 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator175.DEF = "vc6RotInterp";
-OrientationInterpolator175.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator175.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[34] = OrientationInterpolator175;
+OrientationInterpolator175.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator175.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[34] = OrientationInterpolator175;
 
 let OrientationInterpolator176 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator176.DEF = "vc5RotInterp";
-OrientationInterpolator176.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator176.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[35] = OrientationInterpolator176;
+OrientationInterpolator176.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator176.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[35] = OrientationInterpolator176;
 
 let OrientationInterpolator177 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator177.DEF = "vc4RotInterp";
-OrientationInterpolator177.key = new MFFloat(new float[0,0.3,0.4,1]);
-OrientationInterpolator177.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5]);
-Group140.children[36] = OrientationInterpolator177;
+OrientationInterpolator177.key = new X3D.MFFloat([0,0.3,0.4,1]);
+OrientationInterpolator177.keyValue = new X3D.MFRotation([1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5]);
+Group140ZZZ.children[36] = OrientationInterpolator177;
 
 let OrientationInterpolator178 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator178.DEF = "vc3RotInterp";
-OrientationInterpolator178.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator178.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[37] = OrientationInterpolator178;
+OrientationInterpolator178.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator178.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[37] = OrientationInterpolator178;
 
 let OrientationInterpolator179 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator179.DEF = "vc2RotInterp";
-OrientationInterpolator179.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator179.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[38] = OrientationInterpolator179;
+OrientationInterpolator179.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator179.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[38] = OrientationInterpolator179;
 
 let OrientationInterpolator180 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator180.DEF = "vc1RotInterp";
-OrientationInterpolator180.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator180.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[39] = OrientationInterpolator180;
+OrientationInterpolator180.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator180.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[39] = OrientationInterpolator180;
 
 let OrientationInterpolator181 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator181.DEF = "skullbaseRotInterp";
-OrientationInterpolator181.key = new MFFloat(new float[0,0.2,0.75,1]);
-OrientationInterpolator181.keyValue = new MFRotation(new float[0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35]);
-Group140.children[40] = OrientationInterpolator181;
+OrientationInterpolator181.key = new X3D.MFFloat([0,0.2,0.75,1]);
+OrientationInterpolator181.keyValue = new X3D.MFRotation([0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35]);
+Group140ZZZ.children[40] = OrientationInterpolator181;
 
 let OrientationInterpolator182 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator182.DEF = "l_eyelid_jointRotInterp";
-OrientationInterpolator182.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator182.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[41] = OrientationInterpolator182;
+OrientationInterpolator182.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator182.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[41] = OrientationInterpolator182;
 
 let OrientationInterpolator183 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator183.DEF = "l_eyeball_jointRotInterp";
-OrientationInterpolator183.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator183.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[42] = OrientationInterpolator183;
+OrientationInterpolator183.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator183.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[42] = OrientationInterpolator183;
 
 let OrientationInterpolator184 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator184.DEF = "l_eyebrow_jointRotInterp";
-OrientationInterpolator184.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator184.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[43] = OrientationInterpolator184;
+OrientationInterpolator184.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator184.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[43] = OrientationInterpolator184;
 
 let OrientationInterpolator185 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator185.DEF = "r_eyelid_jointRotInterp";
-OrientationInterpolator185.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator185.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[44] = OrientationInterpolator185;
+OrientationInterpolator185.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator185.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[44] = OrientationInterpolator185;
 
 let OrientationInterpolator186 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator186.DEF = "r_eyeball_jointRotInterp";
-OrientationInterpolator186.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator186.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[45] = OrientationInterpolator186;
+OrientationInterpolator186.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator186.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[45] = OrientationInterpolator186;
 
 let OrientationInterpolator187 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator187.DEF = "r_eyebrow_jointRotInterp";
-OrientationInterpolator187.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator187.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[46] = OrientationInterpolator187;
+OrientationInterpolator187.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator187.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[46] = OrientationInterpolator187;
 
 let OrientationInterpolator188 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator188.DEF = "temporomandibularRotInterp";
-OrientationInterpolator188.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator188.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[47] = OrientationInterpolator188;
+OrientationInterpolator188.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator188.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[47] = OrientationInterpolator188;
 
 let OrientationInterpolator189 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator189.DEF = "l_sternoclavicularRotInterp";
-OrientationInterpolator189.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator189.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[48] = OrientationInterpolator189;
+OrientationInterpolator189.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator189.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[48] = OrientationInterpolator189;
 
 let OrientationInterpolator190 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator190.DEF = "l_acromioclavicularRotInterp";
-OrientationInterpolator190.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator190.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[49] = OrientationInterpolator190;
+OrientationInterpolator190.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator190.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[49] = OrientationInterpolator190;
 
 let OrientationInterpolator191 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator191.DEF = "l_shoulderRotInterp";
-OrientationInterpolator191.key = new MFFloat(new float[0,0.4,1]);
-OrientationInterpolator191.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,-1,0,1,1.75]);
-Group140.children[50] = OrientationInterpolator191;
+OrientationInterpolator191.key = new X3D.MFFloat([0,0.4,1]);
+OrientationInterpolator191.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,1.5,-1,0,1,1.75]);
+Group140ZZZ.children[50] = OrientationInterpolator191;
 
 let OrientationInterpolator192 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator192.DEF = "l_elbowRotInterp";
-OrientationInterpolator192.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator192.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
-Group140.children[51] = OrientationInterpolator192;
+OrientationInterpolator192.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator192.keyValue = new X3D.MFRotation([-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
+Group140ZZZ.children[51] = OrientationInterpolator192;
 
 let OrientationInterpolator193 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator193.DEF = "l_wristRotInterp";
-OrientationInterpolator193.key = new MFFloat(new float[0,0.4,0.8,1]);
-OrientationInterpolator193.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0]);
-Group140.children[52] = OrientationInterpolator193;
+OrientationInterpolator193.key = new X3D.MFFloat([0,0.4,0.8,1]);
+OrientationInterpolator193.keyValue = new X3D.MFRotation([0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0]);
+Group140ZZZ.children[52] = OrientationInterpolator193;
 
 let OrientationInterpolator194 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator194.DEF = "l_thumb1RotInterp";
-OrientationInterpolator194.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator194.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[53] = OrientationInterpolator194;
+OrientationInterpolator194.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator194.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[53] = OrientationInterpolator194;
 
 let OrientationInterpolator195 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator195.DEF = "l_thumb2RotInterp";
-OrientationInterpolator195.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator195.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[54] = OrientationInterpolator195;
+OrientationInterpolator195.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator195.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[54] = OrientationInterpolator195;
 
 let OrientationInterpolator196 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator196.DEF = "l_thumb3RotInterp";
-OrientationInterpolator196.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator196.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[55] = OrientationInterpolator196;
+OrientationInterpolator196.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator196.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[55] = OrientationInterpolator196;
 
 let OrientationInterpolator197 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator197.DEF = "l_index0RotInterp";
-OrientationInterpolator197.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator197.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[56] = OrientationInterpolator197;
+OrientationInterpolator197.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator197.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[56] = OrientationInterpolator197;
 
 let OrientationInterpolator198 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator198.DEF = "l_index1RotInterp";
-OrientationInterpolator198.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator198.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[57] = OrientationInterpolator198;
+OrientationInterpolator198.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator198.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[57] = OrientationInterpolator198;
 
 let OrientationInterpolator199 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator199.DEF = "l_index2RotInterp";
-OrientationInterpolator199.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator199.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[58] = OrientationInterpolator199;
+OrientationInterpolator199.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator199.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[58] = OrientationInterpolator199;
 
 let OrientationInterpolator200 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator200.DEF = "l_index3RotInterp";
-OrientationInterpolator200.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator200.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[59] = OrientationInterpolator200;
+OrientationInterpolator200.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator200.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[59] = OrientationInterpolator200;
 
 let OrientationInterpolator201 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator201.DEF = "l_middle0RotInterp";
-OrientationInterpolator201.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator201.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[60] = OrientationInterpolator201;
+OrientationInterpolator201.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator201.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[60] = OrientationInterpolator201;
 
 let OrientationInterpolator202 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator202.DEF = "l_middle1RotInterp";
-OrientationInterpolator202.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator202.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[61] = OrientationInterpolator202;
+OrientationInterpolator202.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator202.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[61] = OrientationInterpolator202;
 
 let OrientationInterpolator203 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator203.DEF = "l_middle2RotInterp";
-OrientationInterpolator203.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator203.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[62] = OrientationInterpolator203;
+OrientationInterpolator203.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator203.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[62] = OrientationInterpolator203;
 
 let OrientationInterpolator204 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator204.DEF = "l_middle3RotInterp";
-OrientationInterpolator204.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator204.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[63] = OrientationInterpolator204;
+OrientationInterpolator204.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator204.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[63] = OrientationInterpolator204;
 
 let OrientationInterpolator205 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator205.DEF = "l_ring0RotInterp";
-OrientationInterpolator205.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator205.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[64] = OrientationInterpolator205;
+OrientationInterpolator205.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator205.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[64] = OrientationInterpolator205;
 
 let OrientationInterpolator206 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator206.DEF = "l_ring1RotInterp";
-OrientationInterpolator206.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator206.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[65] = OrientationInterpolator206;
+OrientationInterpolator206.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator206.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[65] = OrientationInterpolator206;
 
 let OrientationInterpolator207 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator207.DEF = "l_ring2RotInterp";
-OrientationInterpolator207.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator207.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[66] = OrientationInterpolator207;
+OrientationInterpolator207.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator207.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[66] = OrientationInterpolator207;
 
 let OrientationInterpolator208 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator208.DEF = "l_ring3RotInterp";
-OrientationInterpolator208.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator208.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[67] = OrientationInterpolator208;
+OrientationInterpolator208.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator208.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[67] = OrientationInterpolator208;
 
 let OrientationInterpolator209 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator209.DEF = "l_pinky0RotInterp";
-OrientationInterpolator209.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator209.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[68] = OrientationInterpolator209;
+OrientationInterpolator209.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator209.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[68] = OrientationInterpolator209;
 
 let OrientationInterpolator210 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator210.DEF = "l_pinky1RotInterp";
-OrientationInterpolator210.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator210.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[69] = OrientationInterpolator210;
+OrientationInterpolator210.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator210.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[69] = OrientationInterpolator210;
 
 let OrientationInterpolator211 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator211.DEF = "l_pinky2RotInterp";
-OrientationInterpolator211.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator211.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[70] = OrientationInterpolator211;
+OrientationInterpolator211.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator211.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[70] = OrientationInterpolator211;
 
 let OrientationInterpolator212 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator212.DEF = "l_pinky3RotInterp";
-OrientationInterpolator212.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator212.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[71] = OrientationInterpolator212;
+OrientationInterpolator212.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator212.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[71] = OrientationInterpolator212;
 
 let OrientationInterpolator213 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator213.DEF = "r_sternoclavicularRotInterp";
-OrientationInterpolator213.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator213.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[72] = OrientationInterpolator213;
+OrientationInterpolator213.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator213.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[72] = OrientationInterpolator213;
 
 let OrientationInterpolator214 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator214.DEF = "r_acromioclavicularRotInterp";
-OrientationInterpolator214.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator214.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[73] = OrientationInterpolator214;
+OrientationInterpolator214.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator214.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[73] = OrientationInterpolator214;
 
 let OrientationInterpolator215 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator215.DEF = "r_shoulderRotInterp";
-OrientationInterpolator215.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator215.keyValue = new MFRotation(new float[0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75]);
-Group140.children[74] = OrientationInterpolator215;
+OrientationInterpolator215.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator215.keyValue = new X3D.MFRotation([0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75]);
+Group140ZZZ.children[74] = OrientationInterpolator215;
 
 let OrientationInterpolator216 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator216.DEF = "r_elbowRotInterp";
-OrientationInterpolator216.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator216.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
-Group140.children[75] = OrientationInterpolator216;
+OrientationInterpolator216.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator216.keyValue = new X3D.MFRotation([-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
+Group140ZZZ.children[75] = OrientationInterpolator216;
 
 let OrientationInterpolator217 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator217.DEF = "r_wristRotInterp";
-OrientationInterpolator217.key = new MFFloat(new float[0,0.5,0.7,1]);
-OrientationInterpolator217.keyValue = new MFRotation(new float[0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3]);
-Group140.children[76] = OrientationInterpolator217;
+OrientationInterpolator217.key = new X3D.MFFloat([0,0.5,0.7,1]);
+OrientationInterpolator217.keyValue = new X3D.MFRotation([0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3]);
+Group140ZZZ.children[76] = OrientationInterpolator217;
 
 let OrientationInterpolator218 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator218.DEF = "r_thumb1RotInterp";
-OrientationInterpolator218.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator218.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[77] = OrientationInterpolator218;
+OrientationInterpolator218.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator218.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[77] = OrientationInterpolator218;
 
 let OrientationInterpolator219 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator219.DEF = "r_thumb2RotInterp";
-OrientationInterpolator219.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator219.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[78] = OrientationInterpolator219;
+OrientationInterpolator219.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator219.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[78] = OrientationInterpolator219;
 
 let OrientationInterpolator220 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator220.DEF = "r_thumb3RotInterp";
-OrientationInterpolator220.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator220.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group140.children[79] = OrientationInterpolator220;
+OrientationInterpolator220.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator220.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
+Group140ZZZ.children[79] = OrientationInterpolator220;
 
 let OrientationInterpolator221 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator221.DEF = "r_index0RotInterp";
-OrientationInterpolator221.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator221.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group140.children[80] = OrientationInterpolator221;
+OrientationInterpolator221.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator221.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group140ZZZ.children[80] = OrientationInterpolator221;
 
 let OrientationInterpolator222 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator222.DEF = "r_index1RotInterp";
-OrientationInterpolator222.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator222.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[81] = OrientationInterpolator222;
+OrientationInterpolator222.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator222.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[81] = OrientationInterpolator222;
 
 let OrientationInterpolator223 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator223.DEF = "r_index2RotInterp";
-OrientationInterpolator223.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator223.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[82] = OrientationInterpolator223;
+OrientationInterpolator223.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator223.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[82] = OrientationInterpolator223;
 
 let OrientationInterpolator224 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator224.DEF = "r_index3RotInterp";
-OrientationInterpolator224.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator224.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[83] = OrientationInterpolator224;
+OrientationInterpolator224.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator224.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[83] = OrientationInterpolator224;
 
 let OrientationInterpolator225 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator225.DEF = "r_middle0RotInterp";
-OrientationInterpolator225.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator225.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group140.children[84] = OrientationInterpolator225;
+OrientationInterpolator225.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator225.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group140ZZZ.children[84] = OrientationInterpolator225;
 
 let OrientationInterpolator226 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator226.DEF = "r_middle1RotInterp";
-OrientationInterpolator226.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator226.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[85] = OrientationInterpolator226;
+OrientationInterpolator226.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator226.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[85] = OrientationInterpolator226;
 
 let OrientationInterpolator227 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator227.DEF = "r_middle2RotInterp";
-OrientationInterpolator227.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator227.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[86] = OrientationInterpolator227;
+OrientationInterpolator227.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator227.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[86] = OrientationInterpolator227;
 
 let OrientationInterpolator228 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator228.DEF = "r_middle3RotInterp";
-OrientationInterpolator228.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator228.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[87] = OrientationInterpolator228;
+OrientationInterpolator228.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator228.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[87] = OrientationInterpolator228;
 
 let OrientationInterpolator229 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator229.DEF = "r_ring0RotInterp";
-OrientationInterpolator229.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator229.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group140.children[88] = OrientationInterpolator229;
+OrientationInterpolator229.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator229.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group140ZZZ.children[88] = OrientationInterpolator229;
 
 let OrientationInterpolator230 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator230.DEF = "r_ring1RotInterp";
-OrientationInterpolator230.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator230.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[89] = OrientationInterpolator230;
+OrientationInterpolator230.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator230.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[89] = OrientationInterpolator230;
 
 let OrientationInterpolator231 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator231.DEF = "r_ring2RotInterp";
-OrientationInterpolator231.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator231.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[90] = OrientationInterpolator231;
+OrientationInterpolator231.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator231.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[90] = OrientationInterpolator231;
 
 let OrientationInterpolator232 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator232.DEF = "r_ring3RotInterp";
-OrientationInterpolator232.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator232.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[91] = OrientationInterpolator232;
+OrientationInterpolator232.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator232.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[91] = OrientationInterpolator232;
 
 let OrientationInterpolator233 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator233.DEF = "r_pinky0RotInterp";
-OrientationInterpolator233.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator233.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group140.children[92] = OrientationInterpolator233;
+OrientationInterpolator233.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator233.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group140ZZZ.children[92] = OrientationInterpolator233;
 
 let OrientationInterpolator234 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator234.DEF = "r_pinky1RotInterp";
-OrientationInterpolator234.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator234.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[93] = OrientationInterpolator234;
+OrientationInterpolator234.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator234.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[93] = OrientationInterpolator234;
 
 let OrientationInterpolator235 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator235.DEF = "r_pinky2RotInterp";
-OrientationInterpolator235.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator235.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[94] = OrientationInterpolator235;
+OrientationInterpolator235.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator235.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[94] = OrientationInterpolator235;
 
 let OrientationInterpolator236 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator236.DEF = "r_pinky3RotInterp";
-OrientationInterpolator236.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator236.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group140.children[95] = OrientationInterpolator236;
+OrientationInterpolator236.key = new X3D.MFFloat([0,0.5,0.75,1]);
+OrientationInterpolator236.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group140ZZZ.children[95] = OrientationInterpolator236;
 
 browser.currentScene.children[11] = Group140;
 
@@ -3214,25 +3161,25 @@ Group427.DEF = "DisplacersAnimationGroup";
 //TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor
 let ScalarInterpolator428 = browser.currentScene.createNode("ScalarInterpolator");
 ScalarInterpolator428.DEF = "skull_tipTest";
-ScalarInterpolator428.key = new MFFloat(new float[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
-ScalarInterpolator428.keyValue = new MFFloat(new float[0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
-Group427.children = new MFNode();
+ScalarInterpolator428.key = new X3D.MFFloat([0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
+ScalarInterpolator428.keyValue = new X3D.MFFloat([0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
+Group427YYY.children = new X3D.MFNode();
 
-Group427.children[0] = ScalarInterpolator428;
+Group427ZZZ.children[0] = ScalarInterpolator428;
 
 let ROUTE429 = browser.currentScene.createNode("ROUTE");
 ROUTE429.fromField = "fraction_changed";
 ROUTE429.fromNode = "KickTimer";
 ROUTE429.toField = "set_fraction";
 ROUTE429.toNode = "skull_tipTest";
-Group427.children[1] = ROUTE429;
+Group427ZZZ.children[1] = ROUTE429;
 
 let ROUTE430 = browser.currentScene.createNode("ROUTE");
 ROUTE430.fromField = "value_changed";
 ROUTE430.fromNode = "skull_tipTest";
 ROUTE430.toField = "weight";
 ROUTE430.toNode = "Joe_skull_tipTest";
-Group427.children[2] = ROUTE430;
+Group427ZZZ.children[2] = ROUTE430;
 
 browser.currentScene.children[202] = Group427;
 
@@ -3240,85 +3187,85 @@ let Group431 = browser.currentScene.createNode("Group");
 Group431.DEF = "skintexturetransform_animation";
 let ScalarInterpolator432 = browser.currentScene.createNode("ScalarInterpolator");
 ScalarInterpolator432.DEF = "skinTexTransTest";
-ScalarInterpolator432.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
-ScalarInterpolator432.keyValue = new MFFloat(new float[0,0,0,0,0,1,2,0]);
-Group431.children = new MFNode();
+ScalarInterpolator432.key = new X3D.MFFloat([0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
+ScalarInterpolator432.keyValue = new X3D.MFFloat([0,0,0,0,0,1,2,0]);
+Group431YYY.children = new X3D.MFNode();
 
-Group431.children[0] = ScalarInterpolator432;
+Group431ZZZ.children[0] = ScalarInterpolator432;
 
 let ROUTE433 = browser.currentScene.createNode("ROUTE");
 ROUTE433.fromField = "fraction_changed";
 ROUTE433.fromNode = "KickTimer";
 ROUTE433.toField = "set_fraction";
 ROUTE433.toNode = "skinTexTransTest";
-Group431.children[1] = ROUTE433;
+Group431ZZZ.children[1] = ROUTE433;
 
 let ROUTE434 = browser.currentScene.createNode("ROUTE");
 ROUTE434.fromField = "value_changed";
 ROUTE434.fromNode = "skinTexTransTest";
 ROUTE434.toField = "rotation";
 ROUTE434.toNode = "kicktextrans";
-Group431.children[2] = ROUTE434;
+Group431ZZZ.children[2] = ROUTE434;
 
 browser.currentScene.children[203] = Group431;
 
 let Group435 = browser.currentScene.createNode("Group");
 let Transform436 = browser.currentScene.createNode("Transform");
 Transform436.DEF = "SBall";
-Transform436.rotation = new SFRotation(new float[0.7,0,0.7,0.1]);
-Transform436.scale = new SFVec3f(new float[0.23,0.23,0.23]);
-Transform436.translation = new SFVec3f(new float[-0.916,0.37,-0.92]);
+Transform436.rotation = new X3D.SFRotation([0.7,0,0.7,0.1]);
+Transform436.scale = new X3D.SFVec3f([0.23,0.23,0.23]);
+Transform436.translation = new X3D.SFVec3f([-0.916,0.37,-0.92]);
 let Shape437 = browser.currentScene.createNode("Shape");
 Shape437.DEF = "ball_Shape";
 let Appearance438 = browser.currentScene.createNode("Appearance");
 Appearance438.DEF = "ball_Appearance";
 let Material439 = browser.currentScene.createNode("Material");
 Material439.DEF = "ball_Material";
-Material439.diffuseColor = new SFColor(new float[0.3,0.3,1]);
-Material439.emissiveColor = new SFColor(new float[0.3,0.3,0.33]);
-Appearance438.material = Material439;
+Material439.diffuseColor = new X3D.SFColor([0.3,0.3,1]);
+Material439.emissiveColor = new X3D.SFColor([0.3,0.3,0.33]);
+material = Material439;
 
 let ImageTexture440 = browser.currentScene.createNode("ImageTexture");
 ImageTexture440.USE = "JoeSkinImageTexture";
-Appearance438.texture = ImageTexture440;
+texture = ImageTexture440;
 
-Shape437.appearance = Appearance438;
+appearance = Appearance438;
 
 let IndexedFaceSet441 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet441.DEF = "ball_IndexedFaceSet";
-IndexedFaceSet441.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+IndexedFaceSet441.coordIndex = new X3D.MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
 let Coordinate442 = browser.currentScene.createNode("Coordinate");
 Coordinate442.DEF = "Ball_Coordinates";
-Coordinate442.point = new MFVec3f(new float[0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0]);
-IndexedFaceSet441.coord = Coordinate442;
+Coordinate442.point = new X3D.MFVec3f([0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0]);
+coord = Coordinate442;
 
-Shape437.geometry = IndexedFaceSet441;
+geometry = IndexedFaceSet441;
 
-Transform436.child = new undefined();
+Transform436YYY.child = new X3D.undefined();
 
-Transform436.child[0] = Shape437;
+Transform436ZZZ.child[0] = Shape437;
 
 let Viewpoint443 = browser.currentScene.createNode("Viewpoint");
 Viewpoint443.DEF = "ballView_1";
 Viewpoint443.description = "Ball View";
-Transform436.children[1] = Viewpoint443;
+Transform436ZZZ.children[1] = Viewpoint443;
 
-Group435.children = new MFNode();
+Group435YYY.children = new X3D.MFNode();
 
-Group435.children[0] = Transform436;
+Group435ZZZ.children[0] = Transform436;
 
 //Ball Animation interpolators
 let PositionInterpolator444 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator444.DEF = "ballTransInterp";
-PositionInterpolator444.key = new MFFloat(new float[0,0.4,0.409,1]);
-PositionInterpolator444.keyValue = new MFVec3f(new float[-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10]);
-Group435.children[1] = PositionInterpolator444;
+PositionInterpolator444.key = new X3D.MFFloat([0,0.4,0.409,1]);
+PositionInterpolator444.keyValue = new X3D.MFVec3f([-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10]);
+Group435ZZZ.children[1] = PositionInterpolator444;
 
 let OrientationInterpolator445 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator445.DEF = "ballRotInterp";
-OrientationInterpolator445.key = new MFFloat(new float[0,0.4,0.41,0.71,1]);
-OrientationInterpolator445.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3]);
-Group435.children[2] = OrientationInterpolator445;
+OrientationInterpolator445.key = new X3D.MFFloat([0,0.4,0.41,0.71,1]);
+OrientationInterpolator445.keyValue = new X3D.MFRotation([1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3]);
+Group435ZZZ.children[2] = OrientationInterpolator445;
 
 //Ball Animation Routes
 let ROUTE446 = browser.currentScene.createNode("ROUTE");
@@ -3326,47 +3273,47 @@ ROUTE446.fromField = "fraction_changed";
 ROUTE446.fromNode = "KickTimer";
 ROUTE446.toField = "set_fraction";
 ROUTE446.toNode = "ballTransInterp";
-Group435.children[3] = ROUTE446;
+Group435ZZZ.children[3] = ROUTE446;
 
 let ROUTE447 = browser.currentScene.createNode("ROUTE");
 ROUTE447.fromField = "value_changed";
 ROUTE447.fromNode = "ballTransInterp";
 ROUTE447.toField = "set_translation";
 ROUTE447.toNode = "SBall";
-Group435.children[4] = ROUTE447;
+Group435ZZZ.children[4] = ROUTE447;
 
 let ROUTE448 = browser.currentScene.createNode("ROUTE");
 ROUTE448.fromField = "fraction_changed";
 ROUTE448.fromNode = "KickTimer";
 ROUTE448.toField = "set_fraction";
 ROUTE448.toNode = "ballRotInterp";
-Group435.children[5] = ROUTE448;
+Group435ZZZ.children[5] = ROUTE448;
 
 let ROUTE449 = browser.currentScene.createNode("ROUTE");
 ROUTE449.fromField = "value_changed";
 ROUTE449.fromNode = "ballRotInterp";
 ROUTE449.toField = "set_rotation";
 ROUTE449.toNode = "SBall";
-Group435.children[6] = ROUTE449;
+Group435ZZZ.children[6] = ROUTE449;
 
 browser.currentScene.children[204] = Group435;
 
 let Group450 = browser.currentScene.createNode("Group");
 let Transform451 = browser.currentScene.createNode("Transform");
-Transform451.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+Transform451.scale = new X3D.SFVec3f([0.2,0.2,0.2]);
 let Shape452 = browser.currentScene.createNode("Shape");
 Shape452.USE = "AxisLinesShape";
-Transform451.child = new undefined();
+Transform451YYY.child = new X3D.undefined();
 
-Transform451.child[0] = Shape452;
+Transform451ZZZ.child[0] = Shape452;
 
-Group450.children = new MFNode();
+Group450YYY.children = new X3D.MFNode();
 
-Group450.children[0] = Transform451;
+Group450ZZZ.children[0] = Transform451;
 
 let Transform453 = browser.currentScene.createNode("Transform");
 Transform453.DEF = "Circle0";
-Transform453.scale = new SFVec3f(new float[1.175,1,1.175]);
+Transform453.scale = new X3D.SFVec3f([1.175,1,1.175]);
 let Shape454 = browser.currentScene.createNode("Shape");
 Shape454.DEF = "circle_Shape";
 let Appearance455 = browser.currentScene.createNode("Appearance");
@@ -3374,77 +3321,79 @@ Appearance455.DEF = "circle0_Appearance";
 let Material456 = browser.currentScene.createNode("Material");
 Material456.DEF = "circle0_Material";
 Material456.ambientIntensity = 0.9;
-Material456.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material456.emissiveColor = new SFColor(new float[0.425,0.486,1]);
-Appearance455.material = Material456;
+Material456.diffuseColor = new X3D.SFColor([0.9,0,0.7]);
+Material456.emissiveColor = new X3D.SFColor([0.425,0.486,1]);
+material = Material456;
 
-Shape454.appearance = Appearance455;
+appearance = Appearance455;
 
 let IndexedLineSet457 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet457.DEF = "Orbit1";
-IndexedLineSet457.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
+IndexedLineSet457.coordIndex = new X3D.MFInt32([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
 let Coordinate458 = browser.currentScene.createNode("Coordinate");
 Coordinate458.DEF = "circle_Coordinates";
-Coordinate458.point = new MFVec3f(new float[1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0]);
-IndexedLineSet457.coord = Coordinate458;
+Coordinate458.point = new X3D.MFVec3f([1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0]);
+coord = Coordinate458;
 
-Shape454.geometry = IndexedLineSet457;
+geometry = IndexedLineSet457;
 
-Transform453.child = new undefined();
+Transform453YYY.child = new X3D.undefined();
 
-Transform453.child[0] = Shape454;
+Transform453ZZZ.child[0] = Shape454;
 
-Group450.children[1] = Transform453;
+Group450ZZZ.children[1] = Transform453;
 
 let Transform459 = browser.currentScene.createNode("Transform");
 Transform459.DEF = "Circle1";
-Transform459.scale = new SFVec3f(new float[0.5,1,0.5]);
+Transform459.scale = new X3D.SFVec3f([0.5,1,0.5]);
 let Shape460 = browser.currentScene.createNode("Shape");
 Shape460.DEF = "circle1_Shape";
 let Appearance461 = browser.currentScene.createNode("Appearance");
 Appearance461.DEF = "circle1_Appearance";
 let Material462 = browser.currentScene.createNode("Material");
 Material462.DEF = "circle1_Material";
-Material462.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material462.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
-Appearance461.material = Material462;
+Material462.diffuseColor = new X3D.SFColor([0.9,0,0.7]);
+Material462.emissiveColor = new X3D.SFColor([0.424956,0.483976,1]);
+material = Material462;
 
-Shape460.appearance = Appearance461;
+appearance = Appearance461;
 
 let IndexedLineSet463 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet463.USE = "Orbit1";
-Shape460.geometry = IndexedLineSet463;
+geometry = IndexedLineSet463;
 
-Transform459.child = new undefined();
+Transform459YYY.child = new X3D.undefined();
 
-Transform459.child[0] = Shape460;
+Transform459ZZZ.child[0] = Shape460;
 
-Group450.children[2] = Transform459;
+Group450ZZZ.children[2] = Transform459;
 
 let Transform464 = browser.currentScene.createNode("Transform");
 Transform464.DEF = "Circle2";
-Transform464.scale = new SFVec3f(new float[0.25,1,0.25]);
+Transform464.scale = new X3D.SFVec3f([0.25,1,0.25]);
 let Shape465 = browser.currentScene.createNode("Shape");
 Shape465.DEF = "circle2_Shape";
 let Appearance466 = browser.currentScene.createNode("Appearance");
 Appearance466.DEF = "circle2_Appearance";
 let Material467 = browser.currentScene.createNode("Material");
 Material467.DEF = "circle2_Material";
-Material467.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material467.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
-Appearance466.material = Material467;
+Material467.diffuseColor = new X3D.SFColor([0.9,0,0.7]);
+Material467.emissiveColor = new X3D.SFColor([0.424956,0.483976,1]);
+material = Material467;
 
-Shape465.appearance = Appearance466;
+appearance = Appearance466;
 
 let IndexedLineSet468 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet468.USE = "Orbit1";
-Shape465.geometry = IndexedLineSet468;
+geometry = IndexedLineSet468;
 
-Transform464.child = new undefined();
+Transform464YYY.child = new X3D.undefined();
 
-Transform464.child[0] = Shape465;
+Transform464ZZZ.child[0] = Shape465;
 
-Group450.children[3] = Transform464;
+Group450ZZZ.children[3] = Transform464;
 
 browser.currentScene.children[205] = Group450;
 
+}
+main ();
