@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -37,7 +37,7 @@ NavigationInfo8.setType(["EXAMINE"])
 Scene7.addChildren(NavigationInfo8)
 Viewpoint9 = x3d.Viewpoint()
 Viewpoint9.setDescription("Rubiks Cube on Fire")
-Viewpoint9.setPosition([0,0,12])
+Viewpoint9.setPosition(x3d.doubleToFloat([0,0,12]))
 
 Scene7.addChildren(Viewpoint9)
 ProtoDeclare10 = x3d.ProtoDeclare()
@@ -60,7 +60,7 @@ Sphere15 = x3d.Sphere()
 Shape14.setGeometry(Sphere15)
 Appearance16 = x3d.Appearance()
 Material17 = x3d.Material()
-Material17.setDiffuseColor([1,1,1])
+Material17.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance16.setMaterial(Material17)
 
@@ -112,7 +112,7 @@ Sphere28 = x3d.Sphere()
 Shape27.setGeometry(Sphere28)
 Appearance29 = x3d.Appearance()
 Material30 = x3d.Material()
-Material30.setDiffuseColor([1,1,1])
+Material30.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance29.setMaterial(Material30)
 
@@ -210,7 +210,7 @@ Sphere52 = x3d.Sphere()
 Shape51.setGeometry(Sphere52)
 Appearance53 = x3d.Appearance()
 Material54 = x3d.Material()
-Material54.setDiffuseColor([1,1,1])
+Material54.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance53.setMaterial(Material54)
 
@@ -308,7 +308,7 @@ Sphere76 = x3d.Sphere()
 Shape75.setGeometry(Sphere76)
 Appearance77 = x3d.Appearance()
 Material78 = x3d.Material()
-Material78.setDiffuseColor([1,1,1])
+Material78.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance77.setMaterial(Material78)
 
@@ -397,12 +397,12 @@ fieldValue97 = x3d.fieldValue()
 fieldValue97.setName("myShape")
 Shape98 = x3d.Shape()
 Box99 = x3d.Box()
-Box99.setSize([1,1,1])
+Box99.setSize(x3d.doubleToFloat([1,1,1]))
 
 Shape98.setGeometry(Box99)
 Appearance100 = x3d.Appearance()
 Material101 = x3d.Material()
-Material101.setDiffuseColor([0,1,0])
+Material101.setDiffuseColor(x3d.doubleToFloat([0,1,0]))
 
 Appearance100.setMaterial(Material101)
 

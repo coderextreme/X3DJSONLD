@@ -85,7 +85,7 @@ Background17.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_
 
 Scene15.addChildren(Background17)
 Viewpoint18 = x3d.Viewpoint()
-Viewpoint18.setPosition([0,0,20])
+Viewpoint18.setPosition(x3d.doubleToFloat([0,0,20]))
 Viewpoint18.setDescription("Look at the bubbles flying")
 
 Scene15.addChildren(Viewpoint18)
@@ -98,8 +98,8 @@ Shape22 = x3d.Shape()
 Shape22.setDEF("myShape")
 Appearance23 = x3d.Appearance()
 Material24 = x3d.Material()
-Material24.setDiffuseColor([0.7,0.7,0.7])
-Material24.setSpecularColor([0.5,0.5,0.5])
+Material24.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
+Material24.setSpecularColor(x3d.doubleToFloat([0.5,0.5,0.5]))
 
 Appearance23.setMaterial(Material24)
 ComposedCubeMapTexture25 = x3d.ComposedCubeMapTexture()

@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")

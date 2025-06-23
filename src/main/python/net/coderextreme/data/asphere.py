@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 component2 = x3d.component()
 component2.setName("Scripting")
@@ -40,7 +40,7 @@ Group9 = x3d.Group()
 Shape10 = x3d.Shape()
 Appearance11 = x3d.Appearance()
 Material12 = x3d.Material()
-Material12.setDiffuseColor([1,1,1])
+Material12.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance11.setMaterial(Material12)
 

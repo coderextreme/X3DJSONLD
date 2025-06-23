@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -87,7 +87,7 @@ Viewpoint18.setDescription("Hello MFString syntax")
 
 Scene17.addChildren(Viewpoint18)
 Background19 = x3d.Background()
-Background19.setSkyColor([0.6,1,0.8])
+Background19.setSkyColor(x3d.doubleToFloat([0.6,1,0.8]))
 
 Scene17.addChildren(Background19)
 Shape20 = x3d.Shape()
@@ -104,7 +104,7 @@ Text21.setFontStyle(FontStyle22)
 Shape20.setGeometry(Text21)
 Appearance23 = x3d.Appearance()
 Material24 = x3d.Material()
-Material24.setDiffuseColor([0.6,0.4,0.2])
+Material24.setDiffuseColor(x3d.doubleToFloat([0.6,0.4,0.2]))
 
 Appearance23.setMaterial(Material24)
 

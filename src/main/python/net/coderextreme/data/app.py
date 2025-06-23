@@ -30,7 +30,7 @@ Group7 = x3d.Group()
 Shape8 = x3d.Shape()
 Appearance9 = x3d.Appearance()
 Material10 = x3d.Material()
-Material10.setDiffuseColor([1,0,0])
+Material10.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
 
 Appearance9.setMaterial(Material10)
 
@@ -43,9 +43,9 @@ Group7.addChildren(Shape8)
 
 Scene6.addChildren(Group7)
 Transform12 = x3d.Transform()
-Transform12.setRotation([7,8,9,3.14])
-Transform12.setScale([4,5,6])
-Transform12.setTranslation([1,2,3])
+Transform12.setRotation(x3d.doubleToFloat([7,8,9,3.14]))
+Transform12.setScale(x3d.doubleToFloat([4,5,6]))
+Transform12.setTranslation(x3d.doubleToFloat([1,2,3]))
 
 Scene6.addChildren(Transform12)
 

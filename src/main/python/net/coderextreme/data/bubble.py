@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -36,8 +36,8 @@ NavigationInfo8.setType(["EXAMINE"])
 
 Scene7.addChildren(NavigationInfo8)
 Viewpoint9 = x3d.Viewpoint()
-Viewpoint9.setPosition([0,0,4])
-Viewpoint9.setOrientation([1,0,0,0])
+Viewpoint9.setPosition(x3d.doubleToFloat([0,0,4]))
+Viewpoint9.setOrientation(x3d.doubleToFloat([1,0,0,0]))
 Viewpoint9.setDescription("Bubble in action")
 
 Scene7.addChildren(Viewpoint9)
@@ -53,7 +53,7 @@ Sphere14.setRadius(0.25)
 Shape13.setGeometry(Sphere14)
 Appearance15 = x3d.Appearance()
 Material16 = x3d.Material()
-Material16.setDiffuseColor([1,0,0])
+Material16.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
 Material16.setTransparency(0.2)
 
 Appearance15.setMaterial(Material16)

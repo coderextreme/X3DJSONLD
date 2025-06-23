@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 component2 = x3d.component()
 component2.setName("Scripting")
@@ -39,8 +39,8 @@ Transform9.setDEF("transform")
 Shape10 = x3d.Shape()
 Appearance11 = x3d.Appearance()
 Material12 = x3d.Material()
-Material12.setDiffuseColor([0.7,0.7,0.7])
-Material12.setSpecularColor([0.5,0.5,0.5])
+Material12.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
+Material12.setSpecularColor(x3d.doubleToFloat([0.5,0.5,0.5]))
 
 Appearance11.setMaterial(Material12)
 

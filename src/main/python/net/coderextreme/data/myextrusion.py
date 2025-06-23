@@ -45,14 +45,14 @@ Group10 = x3d.Group()
 Shape11 = x3d.Shape()
 Extrusion12 = x3d.Extrusion()
 Extrusion12.setDEF("myextrusion")
-Extrusion12.setSpine([-50,-50,0,50,50,0])
+Extrusion12.setSpine(x3d.doubleToFloat([-50,-50,0,50,50,0]))
 Extrusion12.setCreaseAngle(0.785)
-Extrusion12.setCrossSection([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])
+Extrusion12.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
 
 Shape11.setGeometry(Extrusion12)
 Appearance13 = x3d.Appearance()
 Material14 = x3d.Material()
-Material14.setDiffuseColor([0,1,0])
+Material14.setDiffuseColor(x3d.doubleToFloat([0,1,0]))
 
 Appearance13.setMaterial(Material14)
 

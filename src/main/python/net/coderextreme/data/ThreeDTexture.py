@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("title")
@@ -37,7 +37,7 @@ NavigationInfo8.setType(["EXAMINE"])
 Scene7.addChildren(NavigationInfo8)
 Viewpoint9 = x3d.Viewpoint()
 Viewpoint9.setDescription("Rubiks Cube")
-Viewpoint9.setPosition([0,0,12])
+Viewpoint9.setPosition(x3d.doubleToFloat([0,0,12]))
 
 Scene7.addChildren(Viewpoint9)
 ProtoDeclare10 = x3d.ProtoDeclare()
@@ -68,7 +68,7 @@ Sphere18 = x3d.Sphere()
 Shape17.setGeometry(Sphere18)
 Appearance19 = x3d.Appearance()
 Material20 = x3d.Material()
-Material20.setDiffuseColor([1,1,1])
+Material20.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
 
 Appearance19.setMaterial(Material20)
 
