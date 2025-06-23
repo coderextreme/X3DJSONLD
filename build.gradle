@@ -28,6 +28,7 @@ repositories {
 }
 
 dependencies {
+/*
     api libs.org.apache.commons.commons.lang3
     api libs.org.slf4j.slf4j.log4j12
     api libs.net.sf.saxon.saxon.he
@@ -35,10 +36,12 @@ dependencies {
     api libs.org.glassfish.javax.json
     api libs.org.graalvm.js.js
     runtimeOnly libs.org.graalvm.polyglot.js.community
+*/
 
     implementation gradleApi()
     implementation 'net.sf.saxon:Saxon-HE:12.5'
     implementation 'xml-resolver:xml-resolver:1.2'
+    implementation "org.web3d.x3d:X3DJSAIL:4.0-classes"
     // saxon 'net.sf.saxon:Saxon-HE:9.9.1-5'
     testImplementation gradleTestKit()
 }
@@ -46,7 +49,7 @@ dependencies {
 group = 'net.coderextreme'
 version = '11.0-SNAPSHOT'
 description = 'X3DJSONLD'
-java.sourceCompatibility = JavaVersion.VERSION_20
+java.sourceCompatibility = JavaVersion.VERSION_23
 
 publishing {
     publications {
