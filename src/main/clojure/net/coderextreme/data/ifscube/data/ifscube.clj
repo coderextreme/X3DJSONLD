@@ -41,7 +41,7 @@
 (def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)
 (def X3D0 (doto (X3D.)
     (.setProfile "Interchange")
-    (.setVersion "3.3")
+    (.setVersion "4.0")
     (.setHead (doto (head. )
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )
             (.setName "title")
