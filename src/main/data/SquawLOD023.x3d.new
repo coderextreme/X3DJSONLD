@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="Geospatial" level="1"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Geospatial" level="1"></component>
 <meta name="title" content="SquawLOD023.x3d"></meta>
 <meta name="description" content="ESRI GeoVRML export subscene of Squaw Valley California USA."></meta>
 <meta name="creator" content="Salvador Bayarri, ESRI"></meta>
@@ -11,7 +11,7 @@
 <meta name="subject" content="X3D geospatial example"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d"></meta>
 <meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="SquawLOD023.x3d"></WorldInfo>
