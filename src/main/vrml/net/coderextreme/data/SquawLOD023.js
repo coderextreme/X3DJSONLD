@@ -16,7 +16,7 @@ scene.addMetaData("reference", "http://www.geovrml.org/examples");
 scene.addMetaData("subject", "X3D geospatial example");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d");
 scene.addMetaData("generator", "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
 await browser .loadComponents (scene);
 let WorldInfo16 = browser.currentScene.createNode("WorldInfo");

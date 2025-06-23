@@ -1,269 +1,220 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Full";
-X3D0.version = "4.0";
-let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "SplitChannels.x3d";
-head1.meta = new MFNode();
-
-head1.meta[0] = meta2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "description";
-meta3.content = "This X3D scene includes a simple sound source which can be moved right and left. Depending on the position of the sound source, the user can hear the produced sound from the corresponding output speaker. Accordingly, there is a source that can be passed through a SpatialSound for the spatialization of the input audio. The approach is based on the relative position of the source and the listener, in comparison to the panner.";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "info";
-meta4.content = "This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "creator";
-meta5.content = "Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "created";
-meta6.content = "28 October 2020";
-head1.meta[4] = meta6;
-
-let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "modified";
-meta7.content = "23 April 2023";
-head1.meta[5] = meta7;
-
-let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "reference";
-meta8.content = "CHANGELOG.txt";
-head1.meta[6] = meta8;
-
-let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "TODO";
-meta9.content = "credit for audio files";
-head1.meta[7] = meta9;
-
-let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "reference";
-meta10.content = "http://www.medialab.hmu.gr/minipages/x3domAudio";
-head1.meta[8] = meta10;
-
-let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "identifier";
-meta11.content = "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d";
-head1.meta[9] = meta11;
-
-let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "generator";
-meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
-head1.meta[10] = meta12;
-
-let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "license";
-meta13.content = "../license.html";
-head1.meta[11] = meta13;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Full"));
+scene.addMetaData("title", "SplitChannels.x3d");
+scene.addMetaData("description", "This X3D scene includes a simple sound source which can be moved right and left. Depending on the position of the sound source, the user can hear the produced sound from the corresponding output speaker. Accordingly, there is a source that can be passed through a SpatialSound for the spatialization of the input audio. The approach is based on the relative position of the source and the listener, in comparison to the panner.");
+scene.addMetaData("info", "This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.");
+scene.addMetaData("creator", "Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman");
+scene.addMetaData("created", "28 October 2020");
+scene.addMetaData("modified", "23 April 2023");
+scene.addMetaData("reference", "CHANGELOG.txt");
+scene.addMetaData("TODO", "credit for audio files");
+scene.addMetaData("reference", "http://www.medialab.hmu.gr/minipages/x3domAudio");
+scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("license", "../license.html");
+await browser .loadComponents (scene);
 let WorldInfo15 = browser.currentScene.createNode("WorldInfo");
 WorldInfo15.title = "SplitChannels.x3d";
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = WorldInfo15;
 
 let NavigationInfo16 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo16.type = new MFString(new java.lang.String["NONE"]);
+NavigationInfo16.type = new X3D.MFString([new X3D.SFString("NONE")]);
 browser.currentScene.children[1] = NavigationInfo16;
 
 let Background17 = browser.currentScene.createNode("Background");
-Background17.skyColor = new MFColor(new float[0.2,0.2,0.21]);
+Background17.skyColor = new X3D.MFColor([0.2,0.2,0.21]);
 browser.currentScene.children[2] = Background17;
 
 let Viewpoint18 = browser.currentScene.createNode("Viewpoint");
-Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.5]);
-Viewpoint18.position = new SFVec3f(new float[0,500,600]);
+Viewpoint18.orientation = new X3D.SFRotation([1,0,0,-0.5]);
+Viewpoint18.position = new X3D.SFVec3f([0,500,600]);
 Viewpoint18.retainUserOffsets = True;
 browser.currentScene.children[3] = Viewpoint18;
 
 let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "PowerR";
-Transform19.translation = new SFVec3f(new float[100,400,400]);
+Transform19.translation = new X3D.SFVec3f([100,400,400]);
 let Transform20 = browser.currentScene.createNode("Transform");
-Transform20.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform20.translation = new SFVec3f(new float[0,40,0]);
+Transform20.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform20.translation = new X3D.SFVec3f([0,40,0]);
 let Shape21 = browser.currentScene.createNode("Shape");
 let Appearance22 = browser.currentScene.createNode("Appearance");
 Appearance22.DEF = "audio_emit";
 let Material23 = browser.currentScene.createNode("Material");
-Material23.diffuseColor = new SFColor(new float[0,1,0]);
-Material23.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material23.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance22.material = Material23;
+Material23.diffuseColor = new X3D.SFColor([0,1,0]);
+Material23.emissiveColor = new X3D.SFColor([0.8,0.8,0.8]);
+Material23.specularColor = new X3D.SFColor([0.01,0.01,0.01]);
+material = Material23;
 
-Shape21.appearance = Appearance22;
+appearance = Appearance22;
 
 let Box24 = browser.currentScene.createNode("Box");
-Box24.size = new SFVec3f(new float[10,80,0.01]);
-Shape21.geometry = Box24;
+Box24.size = new X3D.SFVec3f([10,80,0.01]);
+geometry = Box24;
 
-Transform20.child = new undefined();
+Transform20YYY.child = new X3D.undefined();
 
-Transform20.child[0] = Shape21;
+Transform20ZZZ.child[0] = Shape21;
 
-Transform19.children = new MFNode();
+Transform19YYY.children = new X3D.MFNode();
 
-Transform19.children[0] = Transform20;
+Transform19ZZZ.children[0] = Transform20;
 
 let Transform25 = browser.currentScene.createNode("Transform");
-Transform25.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform25.translation = new SFVec3f(new float[-2.7,37,0]);
+Transform25.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform25.translation = new X3D.SFVec3f([-2.7,37,0]);
 let Shape26 = browser.currentScene.createNode("Shape");
 let Appearance27 = browser.currentScene.createNode("Appearance");
 Appearance27.DEF = "audio_emit2";
 let Material28 = browser.currentScene.createNode("Material");
-Material28.diffuseColor = new SFColor(new float[0,1,0]);
-Material28.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material28.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance27.material = Material28;
+Material28.diffuseColor = new X3D.SFColor([0,1,0]);
+Material28.emissiveColor = new X3D.SFColor([0.8,0.8,0.8]);
+Material28.specularColor = new X3D.SFColor([0.01,0.01,0.01]);
+material = Material28;
 
 let ImageTexture29 = browser.currentScene.createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
-Appearance27.texture = ImageTexture29;
+ImageTexture29.url = new X3D.MFString([new X3D.SFString("images/line.png"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]);
+texture = ImageTexture29;
 
-Shape26.appearance = Appearance27;
+appearance = Appearance27;
 
 let Box30 = browser.currentScene.createNode("Box");
-Box30.size = new SFVec3f(new float[25,83,0.01]);
-Shape26.geometry = Box30;
+Box30.size = new X3D.SFVec3f([25,83,0.01]);
+geometry = Box30;
 
-Transform25.child = new undefined();
+Transform25YYY.child = new X3D.undefined();
 
-Transform25.child[0] = Shape26;
+Transform25ZZZ.child[0] = Shape26;
 
-Transform19.children[1] = Transform25;
+Transform19ZZZ.children[1] = Transform25;
 
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.DEF = "volumeRight";
-Transform31.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform31.scale = new SFVec3f(new float[10,10,10]);
-Transform31.translation = new SFVec3f(new float[0,-10,0]);
+Transform31.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform31.scale = new X3D.SFVec3f([10,10,10]);
+Transform31.translation = new X3D.SFVec3f([0,-10,0]);
 let Shape32 = browser.currentScene.createNode("Shape");
 let Appearance33 = browser.currentScene.createNode("Appearance");
 let Material34 = browser.currentScene.createNode("Material");
 Material34.ambientIntensity = 0.0933;
-Material34.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
+Material34.diffuseColor = new X3D.SFColor([0.345,0.345,0.882]);
 Material34.shininess = 0.51;
-Material34.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Appearance33.material = Material34;
+Material34.specularColor = new X3D.SFColor([0.46,0.46,0.46]);
+material = Material34;
 
-Shape32.appearance = Appearance33;
+appearance = Appearance33;
 
 let Text35 = browser.currentScene.createNode("Text");
-Text35.string = new MFString(new java.lang.String["Right Channel Volume"]);
+Text35.string = new X3D.MFString([new X3D.SFString("Right Channel Volume")]);
 let FontStyle36 = browser.currentScene.createNode("FontStyle");
 FontStyle36.DEF = "VolumeFontStyle";
-FontStyle36.family = new MFString(new java.lang.String["Times","SERIF"]);
+FontStyle36.family = new X3D.MFString([new X3D.SFString("Times"), new X3D.SFString("SERIF")]);
 FontStyle36.style = "BOLD";
-Text35.fontStyle = FontStyle36;
+fontStyle = FontStyle36;
 
-Shape32.geometry = Text35;
+geometry = Text35;
 
-Transform31.child = new undefined();
+Transform31YYY.child = new X3D.undefined();
 
-Transform31.child[0] = Shape32;
+Transform31ZZZ.child[0] = Shape32;
 
-Transform19.children[2] = Transform31;
+Transform19ZZZ.children[2] = Transform31;
 
 browser.currentScene.children[4] = Transform19;
 
 let Transform37 = browser.currentScene.createNode("Transform");
 Transform37.DEF = "PowerL";
-Transform37.translation = new SFVec3f(new float[-100,400,400]);
+Transform37.translation = new X3D.SFVec3f([-100,400,400]);
 let Transform38 = browser.currentScene.createNode("Transform");
-Transform38.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform38.translation = new SFVec3f(new float[0,40,0]);
+Transform38.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform38.translation = new X3D.SFVec3f([0,40,0]);
 let Shape39 = browser.currentScene.createNode("Shape");
 let Appearance40 = browser.currentScene.createNode("Appearance");
 Appearance40.DEF = "audio_emit3";
 let Material41 = browser.currentScene.createNode("Material");
-Material41.diffuseColor = new SFColor(new float[0,1,0]);
-Material41.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material41.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance40.material = Material41;
+Material41.diffuseColor = new X3D.SFColor([0,1,0]);
+Material41.emissiveColor = new X3D.SFColor([0.8,0.8,0.8]);
+Material41.specularColor = new X3D.SFColor([0.01,0.01,0.01]);
+material = Material41;
 
-Shape39.appearance = Appearance40;
+appearance = Appearance40;
 
 let Box42 = browser.currentScene.createNode("Box");
-Box42.size = new SFVec3f(new float[10,80,0.01]);
-Shape39.geometry = Box42;
+Box42.size = new X3D.SFVec3f([10,80,0.01]);
+geometry = Box42;
 
-Transform38.child = new undefined();
+Transform38YYY.child = new X3D.undefined();
 
-Transform38.child[0] = Shape39;
+Transform38ZZZ.child[0] = Shape39;
 
-Transform37.children = new MFNode();
+Transform37YYY.children = new X3D.MFNode();
 
-Transform37.children[0] = Transform38;
+Transform37ZZZ.children[0] = Transform38;
 
 let Transform43 = browser.currentScene.createNode("Transform");
-Transform43.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform43.translation = new SFVec3f(new float[13.2,37,0]);
+Transform43.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform43.translation = new X3D.SFVec3f([13.2,37,0]);
 let Shape44 = browser.currentScene.createNode("Shape");
 let Appearance45 = browser.currentScene.createNode("Appearance");
 Appearance45.DEF = "audio_emit4";
 let Material46 = browser.currentScene.createNode("Material");
-Material46.diffuseColor = new SFColor(new float[0,1,0]);
-Material46.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material46.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance45.material = Material46;
+Material46.diffuseColor = new X3D.SFColor([0,1,0]);
+Material46.emissiveColor = new X3D.SFColor([0.8,0.8,0.8]);
+Material46.specularColor = new X3D.SFColor([0.01,0.01,0.01]);
+material = Material46;
 
 let ImageTexture47 = browser.currentScene.createNode("ImageTexture");
-ImageTexture47.url = new MFString(new java.lang.String["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
-Appearance45.texture = ImageTexture47;
+ImageTexture47.url = new X3D.MFString([new X3D.SFString("images/line.png"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]);
+texture = ImageTexture47;
 
-Shape44.appearance = Appearance45;
+appearance = Appearance45;
 
 let Box48 = browser.currentScene.createNode("Box");
-Box48.size = new SFVec3f(new float[25,83,0.01]);
-Shape44.geometry = Box48;
+Box48.size = new X3D.SFVec3f([25,83,0.01]);
+geometry = Box48;
 
-Transform43.child = new undefined();
+Transform43YYY.child = new X3D.undefined();
 
-Transform43.child[0] = Shape44;
+Transform43ZZZ.child[0] = Shape44;
 
-Transform37.children[1] = Transform43;
+Transform37ZZZ.children[1] = Transform43;
 
 let Transform49 = browser.currentScene.createNode("Transform");
 Transform49.DEF = "volumeLeft";
-Transform49.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform49.scale = new SFVec3f(new float[10,10,10]);
-Transform49.translation = new SFVec3f(new float[0,-10,0]);
+Transform49.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform49.scale = new X3D.SFVec3f([10,10,10]);
+Transform49.translation = new X3D.SFVec3f([0,-10,0]);
 let Shape50 = browser.currentScene.createNode("Shape");
 let Appearance51 = browser.currentScene.createNode("Appearance");
 let Material52 = browser.currentScene.createNode("Material");
 Material52.ambientIntensity = 0.0933;
-Material52.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
+Material52.diffuseColor = new X3D.SFColor([0.345,0.345,0.882]);
 Material52.shininess = 0.51;
-Material52.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Appearance51.material = Material52;
+Material52.specularColor = new X3D.SFColor([0.46,0.46,0.46]);
+material = Material52;
 
-Shape50.appearance = Appearance51;
+appearance = Appearance51;
 
 let Text53 = browser.currentScene.createNode("Text");
-Text53.string = new MFString(new java.lang.String["Left Channel Volume"]);
+Text53.string = new X3D.MFString([new X3D.SFString("Left Channel Volume")]);
 let FontStyle54 = browser.currentScene.createNode("FontStyle");
 FontStyle54.USE = "VolumeFontStyle";
-Text53.fontStyle = FontStyle54;
+fontStyle = FontStyle54;
 
-Shape50.geometry = Text53;
+geometry = Text53;
 
-Transform49.child = new undefined();
+Transform49YYY.child = new X3D.undefined();
 
-Transform49.child[0] = Shape50;
+Transform49ZZZ.child[0] = Shape50;
 
-Transform37.children[2] = Transform49;
+Transform37ZZZ.children[2] = Transform49;
 
 browser.currentScene.children[5] = Transform37;
 
@@ -272,20 +223,20 @@ let Shape56 = browser.currentScene.createNode("Shape");
 let Appearance57 = browser.currentScene.createNode("Appearance");
 Appearance57.DEF = "floor";
 let Material58 = browser.currentScene.createNode("Material");
-Material58.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material58.diffuseColor = new X3D.SFColor([0.1,0.1,0.1]);
 Material58.shininess = 0.8;
-Material58.specularColor = new SFColor(new float[0.5,0.6,0.7]);
-Appearance57.material = Material58;
+Material58.specularColor = new X3D.SFColor([0.5,0.6,0.7]);
+material = Material58;
 
-Shape56.appearance = Appearance57;
+appearance = Appearance57;
 
 let Box59 = browser.currentScene.createNode("Box");
-Box59.size = new SFVec3f(new float[1500,10,500]);
-Shape56.geometry = Box59;
+Box59.size = new X3D.SFVec3f([1500,10,500]);
+geometry = Box59;
 
-Transform55.child = new undefined();
+Transform55YYY.child = new X3D.undefined();
 
-Transform55.child[0] = Shape56;
+Transform55ZZZ.child[0] = Shape56;
 
 browser.currentScene.children[6] = Transform55;
 
@@ -299,31 +250,31 @@ let ChannelMerger63 = browser.currentScene.createNode("ChannelMerger");
 let ChannelSelector64 = browser.currentScene.createNode("ChannelSelector");
 let Gain65 = browser.currentScene.createNode("Gain");
 Gain65.USE = "ChannelSplitter";
-ChannelSelector64.children = new MFNode();
+ChannelSelector64YYY.children = new X3D.MFNode();
 
-ChannelSelector64.children[0] = Gain65;
+ChannelSelector64ZZZ.children[0] = Gain65;
 
-ChannelMerger63.children = new MFNode();
+ChannelMerger63YYY.children = new X3D.MFNode();
 
-ChannelMerger63.children[0] = ChannelSelector64;
+ChannelMerger63ZZZ.children[0] = ChannelSelector64;
 
 let ChannelSelector66 = browser.currentScene.createNode("ChannelSelector");
 ChannelSelector66.channelSelection = 1;
 let Gain67 = browser.currentScene.createNode("Gain");
 Gain67.USE = "ChannelSplitter";
-ChannelSelector66.children = new MFNode();
+ChannelSelector66YYY.children = new X3D.MFNode();
 
-ChannelSelector66.children[0] = Gain67;
+ChannelSelector66ZZZ.children[0] = Gain67;
 
-ChannelMerger63.children[1] = ChannelSelector66;
+ChannelMerger63ZZZ.children[1] = ChannelSelector66;
 
-Gain62.children = new MFNode();
+Gain62YYY.children = new X3D.MFNode();
 
-Gain62.children[0] = ChannelMerger63;
+Gain62ZZZ.children[0] = ChannelMerger63;
 
-StreamAudioDestination61.children = new MFNode();
+StreamAudioDestination61YYY.children = new X3D.MFNode();
 
-StreamAudioDestination61.children[0] = Gain62;
+StreamAudioDestination61ZZZ.children[0] = Gain62;
 
 browser.currentScene.children[8] = StreamAudioDestination61;
 
@@ -332,39 +283,41 @@ ChannelSplitter68.DEF = "ChannelSplitter";
 ChannelSplitter68.channelCountMode = "EXPLICIT";
 let AudioClip69 = browser.currentScene.createNode("AudioClip");
 AudioClip69.description = "Violin";
-AudioClip69.url = new MFString(new java.lang.String["sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
-ChannelSplitter68.outputs = new MFNode();
+AudioClip69.url = new X3D.MFString([new X3D.SFString("sound/violin.mp3"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")]);
+ChannelSplitter68YYY.outputs = new X3D.MFNode();
 
-ChannelSplitter68.outputs[0] = AudioClip69;
+ChannelSplitter68ZZZ.outputs[0] = AudioClip69;
 
 browser.currentScene.children[9] = ChannelSplitter68;
 
 let Transform70 = browser.currentScene.createNode("Transform");
 Transform70.DEF = "Audio3";
-Transform70.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform70.translation = new SFVec3f(new float[0,100,0]);
+Transform70.rotation = new X3D.SFRotation([1,0,0,-0.5]);
+Transform70.translation = new X3D.SFVec3f([0,100,0]);
 let Shape71 = browser.currentScene.createNode("Shape");
 let Appearance72 = browser.currentScene.createNode("Appearance");
 Appearance72.DEF = "audio_emit5";
 let Material73 = browser.currentScene.createNode("Material");
-Material73.diffuseColor = new SFColor(new float[0.3,1,0.3]);
-Material73.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material73.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance72.material = Material73;
+Material73.diffuseColor = new X3D.SFColor([0.3,1,0.3]);
+Material73.emissiveColor = new X3D.SFColor([0.8,0.8,0.8]);
+Material73.specularColor = new X3D.SFColor([0.01,0.01,0.01]);
+material = Material73;
 
 let ImageTexture74 = browser.currentScene.createNode("ImageTexture");
-ImageTexture74.url = new MFString(new java.lang.String["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]);
-Appearance72.texture = ImageTexture74;
+ImageTexture74.url = new X3D.MFString([new X3D.SFString("images/loudspeaker.png"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png")]);
+texture = ImageTexture74;
 
-Shape71.appearance = Appearance72;
+appearance = Appearance72;
 
 let Box75 = browser.currentScene.createNode("Box");
-Box75.size = new SFVec3f(new float[100,100,0.001]);
-Shape71.geometry = Box75;
+Box75.size = new X3D.SFVec3f([100,100,0.001]);
+geometry = Box75;
 
-Transform70.child = new undefined();
+Transform70YYY.child = new X3D.undefined();
 
-Transform70.child[0] = Shape71;
+Transform70ZZZ.child[0] = Shape71;
 
 browser.currentScene.children[10] = Transform70;
 
+}
+main ();

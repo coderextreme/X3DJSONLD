@@ -1,45 +1,22 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.version = "3.0";
-X3D0.profile = "Immersive";
-let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "Scripting.x3d";
-head1.meta = new MFNode();
-
-head1.meta[0] = meta2;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene.addMetaData("title", "Scripting.x3d");
+await browser .loadComponents (scene);
 let Script4 = browser.currentScene.createNode("Script");
 Script4.DEF = "OpenVault";
-let field5 = browser.currentScene.createNode("field");
-field5.name = "openVault";
-field5.type = "SFTime";
-field5.accessType = "inputOnly";
-Script4.field = new MFNode();
+Script5.getField("openVault")Script4YYY.field = new X3D.MFNode();
 
-Script4.field[0] = field5;
+Script6.getField("combinationEntered")Script4YYY.field = new X3D.MFNode();
 
-let field6 = browser.currentScene.createNode("field");
-field6.name = "combinationEntered";
-field6.type = "SFBool";
-field6.accessType = "inputOnly";
-Script4.field[1] = field6;
+Script7.getField("vaultUnlocked")Script4YYY.field = new X3D.MFNode();
 
-let field7 = browser.currentScene.createNode("field");
-field7.name = "vaultUnlocked";
-field7.type = "SFTime";
-field7.accessType = "outputOnly";
-Script4.field[2] = field7;
-
-let field8 = browser.currentScene.createNode("field");
-field8.name = "unlocked";
-field8.type = "SFBool";
-field8.value = "false";
-field8.accessType = "initializeOnly";
-Script4.field[3] = field8;
+Script8.getField("unlocked").setValue("false");
+Script4YYY.field = new X3D.MFNode();
 
 
 Script4.setSourceCode(`ecmascript:\n"+
@@ -55,20 +32,20 @@ Script4.setSourceCode(`ecmascript:\n"+
 "      if (unlocked) vaultUnlocked = value;\n"+
 "\n"+
 "      }`)
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = Script4;
 
 let Shape9 = browser.currentScene.createNode("Shape");
 let Appearance10 = browser.currentScene.createNode("Appearance");
 let Material11 = browser.currentScene.createNode("Material");
-Material11.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance10.material = Material11;
+Material11.diffuseColor = new X3D.SFColor([1,0,0]);
+material = Material11;
 
-Shape9.appearance = Appearance10;
+appearance = Appearance10;
 
 let Sphere12 = browser.currentScene.createNode("Sphere");
-Shape9.geometry = Sphere12;
+geometry = Sphere12;
 
 browser.currentScene.children[1] = Shape9;
 
@@ -81,8 +58,8 @@ let AudioClip14 = browser.currentScene.createNode("AudioClip");
 AudioClip14.DEF = "Click";
 AudioClip14.stopTime = 1;
 AudioClip14.description = "clicking sound";
-AudioClip14.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav"]);
-Sound13.source = AudioClip14;
+AudioClip14.url = new X3D.MFString([new X3D.SFString("../resources/chandubabamusic1.wav")]);
+source = AudioClip14;
 
 browser.currentScene.children[2] = Sound13;
 
@@ -111,3 +88,5 @@ ROUTE18.toNode = "Click";
 ROUTE18.toField = "startTime";
 browser.currentScene.children[6] = ROUTE18;
 
+}
+main ();
