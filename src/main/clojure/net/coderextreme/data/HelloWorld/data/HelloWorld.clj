@@ -41,7 +41,7 @@
 (def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)
 (def X3D0 (doto (X3D.)
     (.setProfile "Immersive")
-    (.setVersion "3.3")
+    (.setVersion "4.0")
     (.setHead (doto (head. )
 ;Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
         (.addMeta (doto (org.web3d.x3d.jsail.Core.meta. )

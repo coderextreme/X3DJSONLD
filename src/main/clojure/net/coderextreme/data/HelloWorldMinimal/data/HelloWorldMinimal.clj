@@ -41,7 +41,7 @@
 (def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)
 (def X3D0 (doto (X3D.)
     (.setProfile "Immersive")
-    (.setVersion "3.3")
+    (.setVersion "4.0")
 ;All head/meta tags are optional, WorldInfo is also optional
 ;Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
     (.setHead (doto (head. )
