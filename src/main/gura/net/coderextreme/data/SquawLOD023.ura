@@ -1,6 +1,6 @@
 X3D:
     profile: "Immersive"
-    version: "3.3"
+    version: "4.0"
     setHead: [
         head: [
             component: [
@@ -49,7 +49,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
             ],
             meta: [
                 name: "license"

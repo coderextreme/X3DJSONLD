@@ -8,6 +8,13 @@ process.argv.shift();
 import convertJSON from "./convertJSON.js";
 
 convertJSON([
+	/*
+	{ 
+	serializer : 'DOM2JSONSerializer',
+	folder : "../",
+	extension : ".json.new"
+	},
+	*/
 	{ 
 	serializer : "GuraSerializer",
 	folder : "../gura/net/coderextreme/",
@@ -32,13 +39,6 @@ convertJSON([
 	extension : ".mjs",
 	codeOutput : "../"
 	},
-	/*
-	{ 
-	serializer : 'DOM2JSONSerializer',
-	folder : "../",
-	extension : ".json.new"
-	},
-	*/
 	{ 
 	serializer : 'DOMSerializer',
 	folder : "../",
@@ -47,13 +47,13 @@ convertJSON([
 	{ 
 	serializer : 'VRMLScriptSerializer',
 	folder : "../vrml/net/coderextreme/",
-	extension : "",
+	extension : ".mjs",
 	codeOutput : "../"
 	},
 	{ 
 	serializer : 'NodeSerializer',
 	folder : "../node/net/coderextreme/",
-	extension : "",
+	extension : ".js",
 	codeOutput : "../"
 	},
 	{ 
@@ -92,12 +92,14 @@ convertJSON([
 	extension : ".clj",
 	codeOutput : "../"
 	},
+	/*
 	{ 
 	serializer : 'JavaScriptSerializerNew',
 	folder : "../graaljs/net/remove/",
 	extension : ".js",
 	codeOutput : "../"
 	},
+	*/
 	{ 
 	serializer : 'PythonSerializerX3DJSAIL',
 	folder : "../python/net/coderextreme/",
