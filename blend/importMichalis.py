@@ -56,9 +56,9 @@ bpy.ops.export_scene.x3d(filepath="skinned_animation_from_scratchExportB.x3d")
 # bpy.ops.export_scene.x3dv(filepath="gramps_animated_full_1.scaledExport.x3d", export_round_precision=20, export_yup=False, export_normals=True, export_format="X3D")
 #bpy.ops.export_scene.x3d(filepath="gramps_animated_full_1.scaledExportB.x3d")
 
-bpy.ops.wm.open_mainfile(filepath="sandrunner_bike.blend")
+#bpy.ops.wm.open_mainfile(filepath="sandrunner_bike.blend")
 #bpy.ops.export_scene.x3dv(filepath="sandrunner_bikeExport.x3d", export_round_precision=20, export_yup=False, export_normals=True, export_format="X3D")
-bpy.ops.export_scene.x3d(filepath="sandrunner_bikeExportB.x3d")
+#bpy.ops.export_scene.x3d(filepath="sandrunner_bikeExportB.x3d")
 
 #bpy.ops.wm.open_mainfile(filepath="level.blend")
 #bpy.ops.export_scene.x3dv(filepath="levelExport.x3d", export_round_precision=20, export_yup=False, export_normals=True, export_format="X3D")
