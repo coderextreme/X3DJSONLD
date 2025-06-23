@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .addComments((new autoclass.CommentsBlock("All head/meta tags are optional, WorldInfo is also optional")))
       .addComments((new autoclass.CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1")))
       .setHead(new autoclass.head()

@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 var ProtoInstance0 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("ArchPrototype.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."))

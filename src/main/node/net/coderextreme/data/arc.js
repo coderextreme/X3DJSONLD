@@ -27,7 +27,7 @@ var ProtoInstance9 = null;
 var ProtoInstance10 = null;
 var ProtoInstance11 = null;
 var ProtoInstance12 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("arc.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("Lost, Doug Sanden I think"))
