@@ -17,7 +17,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("x3dconnectorProto.x3d"))
         .addMeta(new autoclass.meta().setName("creator").setContent("Lost, Doug Sanden I think"))
