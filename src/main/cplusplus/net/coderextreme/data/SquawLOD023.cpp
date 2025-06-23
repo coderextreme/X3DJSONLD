@@ -1,13 +1,23 @@
+#ifndef WIN32
+#define WINAPI
+#define AFX_EXT_CLASS
+#define EXPORT32
+#define WINGDIAPI
+#define APIENTRY
+#endif
+#define FALSE false
+#define TRUE true
+#define BOOL bool
 #define False false
 #define True true
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
+#include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
+#include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/framework.h"
+#include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/glut.h"
+#include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("Geospatial"));
@@ -66,7 +76,7 @@ head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
 meta13.setName(CString("generator"));
-meta13.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta13.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
