@@ -14,7 +14,7 @@ class ClassPrinter:
         self.metaInfo = metaInfo
         self.printed = False
         try:
-            if self.node:
+            if self.node is not None:
                 self.package = "fields"
                 i = 0
                 for ver in self.node.findall('.//InterfaceDefinition/componentInfo'):
@@ -28,7 +28,7 @@ class ClassPrinter:
             raise
 
         self.package = re.sub(r"-", "", self.package)
-        if not self.node.get('name').startswith("X3D")  or self.node.get('name') == "X3D":
+        if self.node.get('name') != "VariationPhysicsModel" and (not self.node.get('name').startswith("X3D") or self.node.get('name') == "X3D"):
             self.imprt = "import org.web3d.x3d.jsail."+self.package+"."+self.node.get("name")+";\n"
         elif self.node.get("name") in [ "X3DField", "X3DArrayField" ]:
 
@@ -47,7 +47,6 @@ class ClassPrinter:
             except:
                 pass
         if not self.node.get('name').startswith("X3D")  or self.node.get('name') == "X3D":
-            java = open("C:/Users/john/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
             jstr = ""
             astr = '\tpublic void removeAll(HashSet toRemove) {\n'
             jstr += imports
@@ -188,6 +187,10 @@ class ClassPrinter:
             astr += "\t}\n"
             jstr += astr
             jstr += "}\n"
+            java = open("C:/Users/jcarl/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
+            java.write(jstr)
+            java.close()
+            java = open("C:/Users/jcarl/X3DJSONLD/src/main/java/net/coderextreme/New"+self.node.get("name")+".java", "w")
             java.write(jstr)
             java.close()
         self.printed = True
@@ -259,6 +262,9 @@ code += '''
 '''
 code += "}\n"
 
-f = open("C:/Users/john/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
+f = open("C:/Users/jcarl/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
+f.write(code)
+f.close()
+f = open("C:/Users/jcarl/X3DJSONLD/src/main/java/net/coderextreme/Remove.java", "w")
 f.write(code)
 f.close()

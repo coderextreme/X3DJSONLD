@@ -1,5 +1,20 @@
 import java
+FloatArray = java.type("float[]")
+DoubleArray = java.type("double[]")
+JavaFloat = java.type("java.lang.Float")
+JavaDouble = java.type("java.lang.Double")
 
+def doubleToFloat(d):
+    arr = FloatArray(len(d))
+    for i, value in enumerate(d):
+        arr[i] = JavaFloat(value)  # Use Java Float wrapper
+    return arr
+
+def doubleToDouble(d):
+    arr = DoubleArray(len(d))
+    for i, value in enumerate(d):
+        arr[i] = JavaDouble(value)  # Use Java Double wrapper
+    return arr
 CommentsBlock = java.type('org.web3d.x3d.jsail.Core.CommentsBlock')
 ConfigurationProperties = java.type('org.web3d.x3d.jsail.ConfigurationProperties')
 AcousticProperties = java.type('org.web3d.x3d.jsail.Shape.AcousticProperties')
@@ -321,20 +336,3 @@ SFVec4d = java.type('org.web3d.x3d.jsail.fields.SFVec4d')
 MFVec4d = java.type('org.web3d.x3d.jsail.fields.MFVec4d')
 SFVec4f = java.type('org.web3d.x3d.jsail.fields.SFVec4f')
 MFVec4f = java.type('org.web3d.x3d.jsail.fields.MFVec4f')
-
-FloatArray = java.type("float[]")
-DoubleArray = java.type("double[]")
-JavaFloat = java.type("java.lang.Float")
-JavaDouble = java.type("java.lang.Double")
-
-def doubleToFloat(d):
-    arr = FloatArray(len(d))
-    for i, value in enumerate(d):
-        arr[i] = JavaFloat(value)  # Use Java Float wrapper
-    return arr
-
-def doubleToDouble(d):
-    arr = DoubleArray(len(d))
-    for i, value in enumerate(d):
-        arr[i] = JavaDouble(value)  # Use Java Float wrapper
-    return arr

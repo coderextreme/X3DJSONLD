@@ -39,17 +39,17 @@ class ClassPrinter:
         try:
             if self.node['name'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['name'].endswith("Node") and not self.node['name'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
                 superpackage = "sai"
-            str += self.node['name'] + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node['name'] + self.metaInfo + "')\n"
+            str += self.node['name'] + " = java.type('org.web3d.x3d."+superpackage+"."+package+"." + self.node['name'] + self.metaInfo + "')\n"
         except:
             if self.node['type'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['type'].endswith("Node") and not self.node['type'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
                 superpackage = "sai"
-            str += self.node['type'] + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node['type'] + self.metaInfo + "')\n"
+            str += self.node['type'] + " = java.type('org.web3d.x3d."+superpackage+"."+package+"." + self.node['type'] + self.metaInfo + "')\n"
         self.printed = True
         return str
 
 code = ""
-code += "CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
-code += "ConfigurationProperties = autoclass('org.web3d.x3d.jsail.ConfigurationProperties')\n"
+code += "CommentsBlock = java.type('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
+code += "ConfigurationProperties = java.type('org.web3d.x3d.jsail.ConfigurationProperties')\n"
 
 classes = {}
 
@@ -83,9 +83,22 @@ for k,v in classes.items():
         code +=  cls
 
 f = open("x3dpsail.py", "w")
-f.write("import jnius_config\n")
-f.write("jnius_config.set_classpath('.', 'c:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '/c/Users/jcarl/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')\n")
-
-f.write('from jnius import autoclass\n')
+f.write("import java\n")
+f.write('FloatArray = java.type("float[]")\n')
+f.write('DoubleArray = java.type("double[]")\n')
+f.write('JavaFloat = java.type("java.lang.Float")\n')
+f.write('JavaDouble = java.type("java.lang.Double")\n')
+f.write('\n')
+f.write('def doubleToFloat(d):\n')
+f.write('    arr = FloatArray(len(d))\n')
+f.write('    for i, value in enumerate(d):\n')
+f.write('        arr[i] = JavaFloat(value)  # Use Java Float wrapper\n')
+f.write('    return arr\n')
+f.write('\n')
+f.write('def doubleToDouble(d):\n')
+f.write('    arr = DoubleArray(len(d))\n')
+f.write('    for i, value in enumerate(d):\n')
+f.write('        arr[i] = JavaDouble(value)  # Use Java Double wrapper\n')
+f.write('    return arr\n')
 f.write(code)
 f.close()

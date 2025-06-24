@@ -165,7 +165,7 @@ newModel=X3D(profile='Full',version='4.0',
                   
                   )]))])]),
         #  DIS multiuser facilities 
-        DISEntityManager(DEF='EntityManager',networkMode='networkReader',
+        DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["Leif8Final.x3d"]),
           DISEntityTypeMapping(category=77,specific=2,url=["Lily8Final.x3d"])]),
@@ -178,7 +178,7 @@ newModel=X3D(profile='Full',version='4.0',
          like a HUD (heads up display) 
       LayoutLayer(pickable=True,objectType=["ALL"],
         #  positioning the LayoutLayer 
-        layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.2],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,0.6],sizeUnits=["WORLD","WORLD"]),
+        layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.2],size=[0.4,0.6]),
         #  clipping the LayoutLayer 
         viewport=Viewport(clipBoundary=[0,1,0,1]),
         #  the content (children) of the LayoutLayer 
