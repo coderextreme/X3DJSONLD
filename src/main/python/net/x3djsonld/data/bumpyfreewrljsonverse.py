@@ -221,12 +221,12 @@ function initialize() {
         ROUTE(fromField='coordIndexes',fromNode='OrbitScript',toField='set_coordIndex',toNode='Orbit'),
         ROUTE(fromField='coordinates',fromNode='OrbitScript',toField='set_point',toNode='OrbitCoordinates'),
         #  DIS multiuser facilities 
-        DISEntityManager(DEF='EntityManager',networkMode='networkReader',
+        DISEntityManager(DEF='EntityManager',
           children=[
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=2,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=3,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=4,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])]),
+          DISEntityTypeMapping(category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=2,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=3,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=4,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])]),
         Collision(enabled=False,
           children=[
           Group(DEF='AvatarHolder')]),
@@ -236,7 +236,7 @@ function initialize() {
          like a HUD (heads up display) 
       LayoutLayer(pickable=True,objectType=["ALL"],
         #  positioning the LayoutLayer 
-        layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.2,0.19],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,0.6],sizeUnits=["WORLD","WORLD"]),
+        layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.2,0.19],size=[0.4,0.6]),
         #  clipping the LayoutLayer 
         viewport=Viewport(clipBoundary=[0,1,0,1]),
         #  the content (children) of the LayoutLayer 

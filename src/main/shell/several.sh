@@ -189,7 +189,9 @@ do
 	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
 	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 	echo "${PYTHON}" "$PY"
-	"${PYTHON}" "$PY"
+	( "${PYTHON}" --jvm --vm.cp="${CLASSPATH}" "$PY") &
+	JOB_PID=$!
+	wait $JOB_PID
 done
 
 echo Diffing .new.python.x3d .py with original x3d

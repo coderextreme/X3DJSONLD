@@ -50,7 +50,7 @@ code = "import java from 'java';\n"
 code += 'java.options.push("-Djava.awt.headless=true");\n'
 code += 'java.options.push("-Xmx1000m");\n'
 code += '//java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");\n'
-code += 'java.classpath.push("C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar");\n'
+code += 'java.classpath.push("C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar");\n'
 code += 'java.classpath.push("X3DJSAIL.4.0.full.jar");\n'
 code += 'java.classpath.push("pythonSAI/X3DJSAIL.4.0.full.jar");\n'
 code += 'java.classpath.push("../pythonSAI/X3DJSAIL.4.0.full.jar");\n'
