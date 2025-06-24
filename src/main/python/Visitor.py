@@ -24,7 +24,7 @@ class ClassPrinter:
                 self.name = node.get("type")
             self.node = node
             try:
-                if self.node:
+                if self.node is not None:
                     self.package = "fields"
                     i = 0
                     for ver in self.node.findall('.//InterfaceDefinition/componentInfo'):
@@ -73,7 +73,7 @@ class ClassPrinter:
         str = ""
         if not self.printed:
             self.printed = True
-            if self.node:
+            if self.node is not None:
                 self.package = re.sub(r"-", "", self.package)
                 superpackage = "jsail."
                 inheritance = "extends"
@@ -111,15 +111,15 @@ class ClassPrinter:
 
                     str += "\tprivate org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate = null;\n"
 
-                    str += "\tpublic "+self.name+"Element<P>(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
+                    str += "\tpublic "+self.name+"Element(org.web3d.x3d."+superpackage+""+self.package+"."+self.name+" delegate) {\n"
                     str += "\t\tthis.delegate = delegate;\n"
                     str += "\t}\n"
 
-                    str += "\tpublic "+self.name+"Element<P>(P[] delegate) {\n"
+                    str += "\tpublic "+self.name+"Element(P[] delegate) {\n"
                     str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate);\n"
                     str += "\t}\n"
 
-                    str += "\tpublic "+self.name+"Element<P>(java.util.ArrayList<P> delegate) {\n"
+                    str += "\tpublic "+self.name+"Element(java.util.ArrayList<P> delegate) {\n"
                     str += "\t\tthis.delegate = new org.web3d.x3d."+superpackage+""+self.package+"."+self.name+"(delegate.toArray(new P[0]));\n"
                     str += "\t}\n"
 
@@ -182,6 +182,7 @@ class ClassPrinter:
                     fieldname = re.sub(r"^class$", "cssClass", fieldname)
                     fieldname = re.sub(r"^style$", "cssStyle", fieldname)
                     returntype = field.get("type")+"Element"
+                    returntype = returntype.replace('xs:NMTOKEN', "SFString");
                     newobject = "new "+returntype
                     fieldtype = field.get("type")
                     basefieldtype = fieldtype
@@ -211,7 +212,13 @@ class ClassPrinter:
                         str += "\tpublic "+returntype+" get"+fieldname[0].upper()+fieldname[1:]+"Element() { "
                         match basefieldtype:
                             case "MFNode":
-                                if fieldname in [ "children", "field" ]:
+                                if fieldtype == "xs:NMTOKEN":
+                                    print(f"{fieldtype} {newobject} {fieldname} {returntype}")
+                                    newobject = newobject.replace('xs:NMTOKEN', "SFString");
+                                    fieldname = fieldname.replace('xs:NMTOKEN', "SFString");
+                                    fieldtype = fieldtype.replace('xs:NMTOKEN', "SFString");
+                                    str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
+                                elif fieldname in [ "children", "field" ]:
                                     str += "\t\t return "+newobject+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"());\n"
                                 elif fieldname in [ "org.web3d.x3d.jsail.Core.component", "org.web3d.x3d.jsail.Core.unit", "org.web3d.x3d.jsail.Core.meta" ]:
                                     lst = fieldname[fieldname.rfind(".")+1]
@@ -220,11 +227,20 @@ class ClassPrinter:
                                     print(basefieldtype)
                                     print(fieldname)
                                     str += "\t\t return "+newobject+"<org.web3d.x3d.jsail.Core."+fieldname+">("+fieldtype+"((java.util.ArrayList<org.web3d.x3d.jsail.Core."+fieldname+">)delegate.get"+fieldname[0].upper()+fieldname[1:]+"List()));\n"
+                                elif fieldname in ("attrib", "bodies", "collidables", "component", "contacts", "data", "displacers", "fieldValue", "geometry", "intersections", "joints", "layers", "meta", "motions", "org.web3d.x3d.jsail.Core.connect", "outputs", "parts", "physics", "pickedGeometry", "pickTarget", "programs", "renderStyle", "rootNode", "segments", "shaders", "sites", "skeleton", "skin", "texCoord", "texture", "textureTransform", "trimmingContour", "unit", "value", "viewpoints"):
+                                    fieldtype = fieldtype.replace('xs:NMTOKEN', "SFString");
+                                    str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
                                 else:
                                     str += "\t\t return "+newobject+"<"+fieldname+">("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
                             case _:
-                                # print(str)
-                                str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
+                                # print(fieldtype)
+                                if fieldtype.endswith("xs:NMTOKEN"):
+                                    newobject = newobject.replace('xs:NMTOKEN', "SFString");
+                                    fieldname = fieldname.replace('xs:NMTOKEN', "SFString");
+                                    fieldtype = fieldtype.replace('xs:NMTOKEN', "SFString");
+                                    str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
+                                else:
+                                    str += "\t\t return "+newobject+"("+fieldtype+"(delegate.get"+fieldname[0].upper()+fieldname[1:]+"()));\n"
                         str += "}\n"
                 str += "}\n"
         return str

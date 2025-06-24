@@ -156,7 +156,7 @@ newModel=X3D(profile='Full',version='4.0',
                 ShaderPart(url=["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]),
                 ShaderPart(url=["../shaders/freewrl_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"],type='FRAGMENT')])]))]),
         #  DIS multiuser facilities 
-        DISEntityManager(DEF='EntityManager',networkMode='networkReader',
+        DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
           DISEntityTypeMapping(category=77,specific=2,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
@@ -171,7 +171,7 @@ newModel=X3D(profile='Full',version='4.0',
          like a HUD (heads up display) 
       LayoutLayer(pickable=True,objectType=["ALL"],
         #  positioning the LayoutLayer 
-        layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.0],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,1.0],sizeUnits=["WORLD","WORLD"]),
+        layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.0],size=[0.4,1.0]),
         #  clipping the LayoutLayer 
         viewport=Viewport(clipBoundary=[0,1,0,1]),
         #  the content (children) of the LayoutLayer 
