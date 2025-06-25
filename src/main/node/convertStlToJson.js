@@ -1,4 +1,4 @@
-function convertStlToJson(file) {
+export default function convertStlToJson(file) {
 	var IFS = {};
 	IFS.normalIndex = [];
 	IFS.vector = [];
@@ -70,7 +70,7 @@ function convertStlToJson(file) {
 
 			line = [ 0, 1, 0 ]
 			coords = line.join(" ");
-			c = IFS.co[coords];
+			let c = IFS.co[coords];
 			if (typeof c === 'undefined') {
 				IFS.co[coords] = IFS.color.length;
 				c = IFS.co[coords];
@@ -198,5 +198,3 @@ function transformNormalsToIFS(json) {
 	IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : json.color.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
 	return IFS;
 }
-
-module.exports = convertStlToJson;
