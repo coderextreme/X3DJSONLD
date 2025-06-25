@@ -4,7 +4,8 @@ import X3DJSONLD from "./X3DJSONLD.js";
 import xmldom from '@xmldom/xmldom';
 import convertPlyToJson from './convertPlyToJson.js';
 import convertStlToJson from "./convertStlToJson.js";
-import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
+import convertJsonToStl from "./convertJsonToStl.js";
+// import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
 
 if (typeof xmldom !== 'undefined') {
 	var DOMImplementation = new xmldom.DOMImplementation();
@@ -394,6 +395,8 @@ export async function updateFromJson(json, path) {
 	}
 }
 
+window.updateFromJson = updateFromJson;
+
 window.updateFromStl = function updateFromStl(path) {
 	var json = convertStlToJson($('#stl').val());
 	updateFromJson(json, path);
@@ -403,6 +406,8 @@ function updateFromPly(path) {
 	var json = convertPlyToJson($('#ply').val());
 	updateFromJson(json, path);
 }
+
+window.updateFromPly = updateFromPly;
 
 window.updateFromXml = async function updateFromXml(path) {
 	try {

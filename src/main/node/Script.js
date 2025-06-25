@@ -31,7 +31,7 @@ export class Packages {
 
 export let packages = new Packages();
 
-class Script {
+export class Script {
 	constructor (mypackage, name) {
 		// this.setters = {};
 		// this.getters = {};
@@ -256,9 +256,6 @@ export class Scripts {
 		classes.log("		};");	
 		classes.log("	}};");
 		classes.log("}");
-		classes.log("if (typeof $ !== 'function') {");
-		classes.log("	$ = function() { return { attr : function() {}, 0 : null }; };");
-		classes.log("}");
 		classes.log(this.nodeUtil(selector, true)+" = function(selector, node, field, value) {");
 		classes.log("		if (typeof selector === 'undefined') {");
 		classes.log("			selector = \"\";");
@@ -280,7 +277,7 @@ export class Scripts {
 		classes.log("			if (value && typeof value.toString === 'function') {");
 		classes.log("				value = value.toString();");
 		classes.log("			}");
-		classes.log("			$(selector).attr(field, value);");
+		classes.log("			document.querySelector(selector).setAttribute(field, value);");
 		classes.log("			// console.log('set', node, '.', field, '=', value);");
 		classes.log("			*/");
 		classes.log("			try {");
@@ -311,7 +308,7 @@ export class Scripts {
 		classes.log("			// console.log('get', node, '.', field,'=',value);");
 		classes.log("			return value;");
 		classes.log("		} else if (arguments.length > 0) {");
-		classes.log("			return $(selector)[0];");
+		classes.log("			return document.querySelector(selector);");
 		classes.log("		} else {");
 		classes.log("			return;");
 		classes.log("		}");
@@ -775,5 +772,3 @@ export class Scripts {
 	}
 
 }
-
-export default Script;

@@ -1,4 +1,6 @@
-function convertJsonToStl(json) {
+import Matrix from './matrix.js';
+
+export default function convertJsonToStl(json) {
 	var LDNodeList = [];
 	var LDNode = initializeLDNode(json, "X3D");
 	LDNodeList.push(LDNode);
@@ -256,12 +258,15 @@ function normalize(v) {
 
 function triangle_normal(a, b, c) {
 	if (typeof a === 'undefined') {
+		console.error('a', a, 'b', b, 'c', c);
 		throw "Bad a";
 	}
 	if (typeof b === 'undefined') {
+		console.error('a', a, 'b', b, 'c', c);
 		throw "Bad b";
 	}
 	if (typeof c === 'undefined') {
+		console.error('a', a, 'b', b, 'c', c);
 		throw "Bad c";
 	}
 	var ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
@@ -290,18 +295,22 @@ function IndexedTriangle(LDNode, output, transform) {
 			// normalPerVertex === false
 			if (typeof LDNode.Normal === 'undefined') {
 				// compute the normal for the face with 3 points
-				var normal = triangle_normal(
-					LDNode.Coordinate.point[f[0]],
-					LDNode.Coordinate.point[f[1]],
-					LDNode.Coordinate.point[f[2]],
-					output,
-					transform);
-				printNormal("  facet normal",
-					normal[0],
-					normal[1],
-					normal[2],
-					output,
-					transform);
+				try {
+					var normal = triangle_normal(
+						LDNode.Coordinate.point[f[0]],
+						LDNode.Coordinate.point[f[1]],
+						LDNode.Coordinate.point[f[2]],
+						output,
+						transform);
+					printNormal("  facet normal",
+						normal[0],
+						normal[1],
+						normal[2],
+						output,
+						transform);
+				} catch (e) {
+					console.log(e);
+				}
 			} else {
 				printNormal("  facet normal",
 					LDNode.Normal.vector[f[0]][0],
@@ -338,16 +347,20 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 					var f = LDNode.coordIndex[face];
 			// just pick a close vector for now, average later
 					if (typeof LDNode.normalIndex === 'undefined') {
-						var normal = triangle_normal(
-							LDNode.Coordinate.point[f[0]],
-							LDNode.Coordinate.point[f[1]],
-							LDNode.Coordinate.point[f[2]]);
-						printNormal("  facet normal",
-							normal[0],
-							normal[1],
-							normal[2],
-							output,
-							transform);
+						try {
+							var normal = triangle_normal(
+								LDNode.Coordinate.point[f[0]],
+								LDNode.Coordinate.point[f[1]],
+								LDNode.Coordinate.point[f[2]]);
+							printNormal("  facet normal",
+								normal[0],
+								normal[1],
+								normal[2],
+								output,
+								transform);
+						} catch (e) {
+							console.log(e);
+						}
 					} else {
 						var fn = LDNode.normalIndex[parseInt(face)];
 						printNormal("  facet normal",
@@ -467,16 +480,20 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 				);
 		},
 		Triangle: function(LDNode, output, transform, coords) {
-			var normal = triangle_normal(
-				coords[0], coords[1], coords[2],
-				output,
-				transform);
-			printNormal("  facet normal",
-				normal[0],
-				normal[1],
-				normal[2],
-				output,
-				transform);
+			try {
+				var normal = triangle_normal(
+					coords[0], coords[1], coords[2],
+					output,
+					transform);
+				printNormal("  facet normal",
+					normal[0],
+					normal[1],
+					normal[2],
+					output,
+					transform);
+			} catch (e) {
+				console.log(e);
+			}
 			output.push("    outer loop");
 			printSFVec3f("      vertex",
 				coords[0][0],
@@ -522,4 +539,3 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 		transformLDNodesToTriangles(CNode, output, transform);
 	}
 }
-module.exports = convertJsonToStl;
