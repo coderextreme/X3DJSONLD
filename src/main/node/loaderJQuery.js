@@ -1,21 +1,34 @@
 // let SaxonJS = require("saxon-js");
+import { loadX3DJS, loadSchema } from "./loadValidate.js";
+import X3DJSONLD from "./X3DJSONLD.js";
+import xmldom from '@xmldom/xmldom';
+import convertPlyToJson from './convertPlyToJson.js';
+import convertStlToJson from "./convertStlToJson.js";
+import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
 
-if (typeof loadSchema === 'undefined' && typeof window !== 'undefined') {
-	loadSchema = window.loadSchema;
-}
-
-if (typeof window === 'undefined') {
-	window = {};
-}
-
-X3DJSONLD = window.X3DJSONLD;
-
-
-var xmldom = require('@xmldom/xmldom');
 if (typeof xmldom !== 'undefined') {
 	var DOMImplementation = new xmldom.DOMImplementation();
 }
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
+//
+
+let IS_X_ITE = false;
+
+export function setIS_X_ITE(b) {
+	IS_X_ITE = b;
+	if (!IS_X_ITE) {
+		console.warn("X_ITE turned off");
+	}
+}
+
+let IS_X3DOM = false;
+
+export function setIS_X3DOM(b) {
+	IS_X3DOM = b;
+	if (!IS_X3DOM) {
+		console.warn("X3DOM turned off");
+	}
+}
 
 function myGetJSON(url, data, success) {
 	fetch(url).then(response => {
@@ -30,69 +43,6 @@ if (typeof myGetJSON === 'undefined' || myGetJSON === null) {
 }
 
 window.myGetJSON = myGetJSON;
-
-
-// https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
-var getFirstBrowserLanguage = function () {
-    var nav = window.navigator,
-    browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
-    i,
-    language;
-
-    // support for HTML 5.1 "navigator.languages"
-    if (Array.isArray(nav.languages)) {
-      for (i = 0; i < nav.languages.length; i++) {
-        language = nav.languages[i];
-        if (language && language.length) {
-          return language;
-        }
-      }
-    }
-
-    // support for other well known properties in browsers
-    for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
-      language = nav[browserLanguagePropertyKeys[i]];
-      if (language && language.length) {
-        return language;
-      }
-    }
-
-    return null;
-  };
-
-
-
-
-// From: https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
-function loadScript(url, callback)
-{
-    // Adding the script tag to the head as suggested before
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-
-    // Then bind the event to the callback function.
-    // There are several events for cross browser compatibility.
-    script.onreadystatechange = callback;
-    script.onload = callback;
-
-    // Fire the loading
-    head.appendChild(script);
-}
-
-var lang = getFirstBrowserLanguage();
-
-var localize = "en";
-function loadLocalize(lang) {
-	lang = lang.replace(/-.*/, "");
-	return;
-	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
-		localize = module.exports;
-	});
-}
-
-loadLocalize(lang);
 
 function loadXmlBrowsers(xml, document) {
 	if (typeof xml !== 'undefined' && xml !== null) {
@@ -125,10 +75,8 @@ function loadXmlBrowsers(xml, document) {
 			}
 		}
 
-		if (typeof x3dom !== 'undefined') {
+		if (IS_X3DOM && typeof x3dom !== 'undefined') {
 			x3dom.reload();
-		} else {
-			console.warn("Couldn't reload x3dom");
 		}
 	}
 }
@@ -205,7 +153,7 @@ if (typeof mapToMethod !== 'undefined') {
 window.loadX3DJS_X3DOM = function (selector, id, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, function() {
-		if (document.getElementById(id) !== null) {
+		if (IS_X3DOM && document.getElementById(id) !== null) {
 			var doc = $(selector)[0];
 			if (doc && doc.hasRuntime && doc.runtime.ready) {
 				var child = doc.runtime.createX3DFromJS(jsobj, path);
@@ -213,7 +161,6 @@ window.loadX3DJS_X3DOM = function (selector, id, DOMImplementation, jsobj, path,
 				callback(child, xml);
 			}
 		} else {
-			console.warn("Cannot find X3DOM document in loadX3DJS_X3DOM(), no id", id);
 			// if no X3DOM, try our techniques.
 			var child;
 			var xml;
@@ -233,6 +180,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, function() {
 		try {
+		    if (IS_X_ITE) {
 			X3D(function() {
 				if (typeof X3D.getBrowser !== 'undefined') {
 					const browser = X3D.getBrowser(selector);
@@ -250,6 +198,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 			}, function() {
 				alert("Failed to render JSON to X_ITE");
 			});
+		    }
 		} catch (e) {
 			console.error(e);
 		}
@@ -426,7 +375,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, id, json, url, NS, nex
 	});
 }
 
-window.updateFromJson = async function updateFromJson(json, path) {
+export async function updateFromJson(json, path) {
 	try {
 		console.log("updateFromJson", json);
 		if (typeof json === 'undefined') {
@@ -550,7 +499,7 @@ function loadImage(url) {
 */
 	}
 }
-window.myLoadJson = function myLoadJson(url) {
+export function myLoadJson(url) {
 	fetch(url).then(response => {
 	  let jsonresponse =  response.json();
 	  console.log(jsonresponse);
@@ -566,7 +515,7 @@ window.myLoadJson = function myLoadJson(url) {
 
 myLoadJson("../personal/rubikFurnace.json");
 
-function updateXml(json, path) {
+export function updateXml(json, path) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
 		$('#xml').val(xml);
@@ -591,10 +540,10 @@ function updateStl(json) {
 $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
-		window.myLoadJson(url);
+		myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3dj")) {
-		window.myLoadJson(url);
+		myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
@@ -753,4 +702,3 @@ window.validator = function validator() {
 		alert(je);
 	}
 }
-module.exports = localize;

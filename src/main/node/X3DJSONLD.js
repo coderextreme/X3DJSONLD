@@ -1,18 +1,12 @@
 "use strict";
 
 import xmldom from '@xmldom/xmldom';
-import http from "http";
-import https from "https";
-import fs from "fs";
-import DOMSerializer from './DOMSerializer.js';
-
 if (typeof window === 'undefined') {
-	var window = {};
-	if (typeof window.document === 'undefined') {
-	       window.document = {};
-
-	}
+  var fs = await import('fs');
+  var http = await import('http');
+  var https = await import('https');
 }
+import DOMSerializer from './DOMSerializer.js';
 
 if (typeof load !== 'function') {
 	if (typeof xmldom !== 'undefined') {
@@ -166,7 +160,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else if (typeof http !== 'undefined') {
+						} else if (typeof http === 'object') {
 							http.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
@@ -184,7 +178,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							$.get(url, function(data) {
 								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
-						} else if (typeof https !== 'undefined') {
+						} else if (typeof https === 'object') {
 							https.get({ host: host, path: path}, function(res) {
 								var data = '';
 								res.on('data', function (d) {
@@ -196,7 +190,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							});
 					
 						}
-					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
+					} else if (typeof fs === 'object' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
 						// console.error("Loading FILE URL", url);
 						var hash = url.indexOf("#");
@@ -676,9 +670,6 @@ serializeDOM : function(json, element, appendDocType) {
 	if (typeof element === 'string') {
 		xml += element;
 	} else if (typeof element !== 'undefined') {
-		if (typeof DOMSerializer === 'undefined') {
-			DOMSerializer = window.DOMSerializer;
-		}
 		var domserial = new DOMSerializer();
 		xml += domserial.serializeToString(json, element);
 	}
@@ -722,6 +713,5 @@ setDocument : function(doc) {
 }
 
 var Browser = X3DJSONLD.Browser;
-window.X3DJSONLD = X3DJSONLD;
 
 export default X3DJSONLD;

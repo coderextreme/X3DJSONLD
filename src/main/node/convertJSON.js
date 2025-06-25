@@ -1,6 +1,8 @@
 "use strict";
 
-import fs from 'fs';
+if (typeof window === 'undefined') {
+  var fs = await import('fs');
+}
 import mkdirp from 'node-mkdirp';
 import mapToMethod from './mapToMethod.js';
 import config from './config.js';
@@ -8,14 +10,13 @@ import mapToMethod2 from './mapToMethod2.js';
 import fieldTypes from './fieldTypes.js';
 import X3DJSONLD from './X3DJSONLD.js';
 import Script from './Script.js';
-import { replaceX3DJSON, loadSchema, loadX3DJS, doValidate } from "./loadValidate.js";
+import { replaceX3DJSON, loadSchema, loadX3DJS, doValidate } from "./loadValidateServer.js";
 import { DOMParser, XMLSerializer, DOMImplementation } from '@xmldom/xmldom';
 
 import GuraSerializer from './GuraSerializer.js';
 import JavaSerializer from './JavaSerializer.js';
 import DartSerializer from './DartSerializer.js';
 import ECMAScriptSerializer from './ECMAScriptSerializer.js';
-import DOM2JSONSerializer from './DOM2JSONSerializer.js';
 import DOMSerializer from './DOMSerializer.js';
 import VRMLScriptSerializer from './VRMLScriptSerializer.js';
 import NodeSerializer from './NodeSerializer.js';
@@ -61,9 +62,12 @@ export default function convertJSON(options) {
 			var basefile = file.substr(0, file.lastIndexOf("."));
 			var file = basefile+".json";
 			// console.error("Reading", file, domImpl);
-			var str = fs.readFileSync(file).toString();
-			if (typeof str === 'undefined') {
-				throw("Read nothing, or possbile error");
+			var str = null;
+			if (typeof fs === 'object') {
+				str = fs.readFileSync(file).toString();
+				if (str === null) {
+					throw("Read nothing, or possbile error");
+				}
 			}
 			var json = null;
 			try {  
@@ -116,7 +120,9 @@ export default function convertJSON(options) {
 						try {
 							mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 							// console.log("Writing", outfile);
-							fs.writeFileSync(outfile, str);
+							if (typeof fs === 'object') {
+								fs.writeFileSync(outfile, str);
+							}
 						} catch (e) {
 							console.error("Problems creating folder or writing file for", outfile);
 						}
