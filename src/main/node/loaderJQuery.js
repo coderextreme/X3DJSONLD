@@ -5,6 +5,10 @@ import xmldom from '@xmldom/xmldom';
 import convertPlyToJson from './convertPlyToJson.js';
 import convertStlToJson from "./convertStlToJson.js";
 import convertJsonToStl from "./convertJsonToStl.js";
+import JavaScriptSerializer from "./JavaScriptSerializer.js";
+import fieldTypes from "./fieldTypes.js";
+import mapToMethod from "./mapToMethod.js";
+import mapToMethod2 from "./mapToMethod2.js";
 // import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
 
 if (typeof xmldom !== 'undefined') {
