@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 April 2025"
+          "@content": "25 June 2025"
         },
         {
           "@name": "generator",
@@ -78,7 +78,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco00",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco00",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00",
               "ArtDecoPrototypes.wrl#ArtDeco00",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"
@@ -91,7 +91,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco01",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco01",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01",
               "ArtDecoPrototypes.wrl#ArtDeco01",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"
@@ -104,7 +104,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco02",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco02",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02",
               "ArtDecoPrototypes.wrl#ArtDeco02",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"
@@ -117,7 +117,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco03",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco03",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03",
               "ArtDecoPrototypes.wrl#ArtDeco03",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"
@@ -130,7 +130,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco04",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco04",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04",
               "ArtDecoPrototypes.wrl#ArtDeco04",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"
@@ -143,7 +143,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco05",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco05",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05",
               "ArtDecoPrototypes.wrl#ArtDeco05",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"
@@ -156,7 +156,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco06",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco06",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06",
               "ArtDecoPrototypes.wrl#ArtDeco06",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"
@@ -169,7 +169,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco07",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco07",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07",
               "ArtDecoPrototypes.wrl#ArtDeco07",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"
@@ -182,7 +182,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco08",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco08",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08",
               "ArtDecoPrototypes.wrl#ArtDeco08",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"
@@ -195,7 +195,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco09",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco09",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09",
               "ArtDecoPrototypes.wrl#ArtDeco09",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"
@@ -208,7 +208,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco10",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco10",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10",
               "ArtDecoPrototypes.wrl#ArtDeco10",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"
@@ -221,7 +221,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco11",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco11",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11",
               "ArtDecoPrototypes.wrl#ArtDeco11",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"
@@ -234,7 +234,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco12",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco12",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12",
               "ArtDecoPrototypes.wrl#ArtDeco12",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"
@@ -247,7 +247,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco13",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco13",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13",
               "ArtDecoPrototypes.wrl#ArtDeco13",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"
@@ -260,7 +260,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco14",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco14",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14",
               "ArtDecoPrototypes.wrl#ArtDeco14",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"
@@ -273,7 +273,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco15",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco15",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15",
               "ArtDecoPrototypes.wrl#ArtDeco15",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"
@@ -286,7 +286,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco16",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco16",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16",
               "ArtDecoPrototypes.wrl#ArtDeco16",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"
@@ -299,7 +299,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco17",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco17",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17",
               "ArtDecoPrototypes.wrl#ArtDeco17",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"
@@ -312,7 +312,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco18",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco18",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18",
               "ArtDecoPrototypes.wrl#ArtDeco18",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"
@@ -325,7 +325,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco19",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco19",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19",
               "ArtDecoPrototypes.wrl#ArtDeco19",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"
@@ -338,7 +338,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco20",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco20",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20",
               "ArtDecoPrototypes.wrl#ArtDeco20",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"
@@ -351,7 +351,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco21",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco21",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21",
               "ArtDecoPrototypes.wrl#ArtDeco21",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"
@@ -364,7 +364,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco22",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco22",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22",
               "ArtDecoPrototypes.wrl#ArtDeco22",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"
@@ -377,7 +377,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco23",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco23",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23",
               "ArtDecoPrototypes.wrl#ArtDeco23",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"
@@ -390,7 +390,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco24",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco24",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24",
               "ArtDecoPrototypes.wrl#ArtDeco24",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"
@@ -403,7 +403,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco25",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco25",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25",
               "ArtDecoPrototypes.wrl#ArtDeco25",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"
@@ -416,7 +416,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco26",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco26",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26",
               "ArtDecoPrototypes.wrl#ArtDeco26",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"
@@ -429,7 +429,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco27",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco27",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27",
               "ArtDecoPrototypes.wrl#ArtDeco27",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"
@@ -442,7 +442,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco28",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco28",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28",
               "ArtDecoPrototypes.wrl#ArtDeco28",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"
@@ -455,7 +455,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco29",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco29",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29",
               "ArtDecoPrototypes.wrl#ArtDeco29",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"
@@ -468,7 +468,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco30",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco30",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30",
               "ArtDecoPrototypes.wrl#ArtDeco30",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"
@@ -481,7 +481,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco31",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco31",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31",
               "ArtDecoPrototypes.wrl#ArtDeco31",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"
@@ -494,7 +494,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco32",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco32",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32",
               "ArtDecoPrototypes.wrl#ArtDeco32",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"
@@ -507,7 +507,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco33",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco33",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33",
               "ArtDecoPrototypes.wrl#ArtDeco33",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"
@@ -520,7 +520,7 @@
             "@appinfo": "UniversalMediaMaterials prototype",
             "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
             "@url": [
-              "ArtDecoPrototypes.x3d#ArtDeco34",
+              "../data/ArtDecoPrototypes.x3d#ArtDeco34",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34",
               "ArtDecoPrototypes.wrl#ArtDeco34",
               "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"
