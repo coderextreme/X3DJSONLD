@@ -69,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 April 2025"
+          "@content": "25 June 2025"
         },
         {
           "@name": "generator",
@@ -3215,10 +3215,10 @@
                           "{",
                           "\tvar TrebuchetHeight=45;",
                           "\tvar Height =25;",
-                          "      \tx = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;",
+                          "      \tvar x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;",
                           "\t// start at TrebuchetHeight and keep along z axis (z=zero)",
-                          "\ty =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);",
-                          "        z = 0;",
+                          "\tvar y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);",
+                          "        var z = 0;",
                           "        transparent = new SFVec3f (1,1,1);",
                           "     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)",
                           "\t\t{",
