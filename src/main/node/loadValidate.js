@@ -2,8 +2,6 @@ const Ajv2020 = window.Ajv2020;
 const addFormats = window.addFormats;
 import X3DJSONLD from './X3DJSONLD.js';
 
-console.log(Ajv2020);
-
 var ajv = new Ajv2020({ strict: false });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
 var schemajson = await loadSchemaJson("4.0");
