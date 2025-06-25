@@ -1,4 +1,4 @@
-let fieldTypes = {"X3DNode" : {
+var fieldTypes = {"X3DNode" : {
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
 	"DEF" : "SFString",

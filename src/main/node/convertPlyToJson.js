@@ -1,4 +1,18 @@
-function convertPlyToJson(file) {
+function colorComponentParseFloat(cc) {
+	if (isNaN(cc)) {
+		return 255.0;
+	}
+	return parseFloat(cc);
+}
+
+function colorComponentParseInt(cc) {
+	if (isNaN(cc)) {
+		return 1;
+	}
+	return parseInt(cc);
+}
+
+export default function convertPlyToJson(file) {
 	var elements = [];
 	var e;
 	var o;
@@ -160,10 +174,10 @@ function convertPlyToJson(file) {
 
 function transformToILS(elements) {
 	var ILS = {};
-	coordIndex = [];
-	colorIndex = [];
-	point = [];
-	color = [];
+	var coordIndex = [];
+	var colorIndex = [];
+	var point = [];
+	var color = [];
 	var dispatchTable = {
 		edge : function(element, ILS) {
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
@@ -180,9 +194,9 @@ function transformToILS(elements) {
 						array.push(-1);
 						for (var c = 2; c < 5; c++) { 
 							if (element.property[c].type[0] === 'uchar') {
-								color.push(parseFloat(element[index][c])/255.0);
+								color.push(colorComponentParseFloat(element[index][c])/255.0);
 							} else {
-								color.push(parseInt(element[index][c]));
+								color.push(colorComponentParseInt(element[index][c]));
 							}
 						}
 					}
@@ -221,7 +235,7 @@ function transformToILS(elements) {
 			return ILS;
 		}
 	}
-	for (e in elements) {
+	for (var e in elements) {
 		console.error(elements[e]);
 		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
@@ -233,10 +247,10 @@ function transformToILS(elements) {
 
 function transformToIFS(elements) {
 	var IFS = {};
-	coordIndex = [];
-	colorIndex = [];
-	point = [];
-	color = [];
+	var coordIndex = [];
+	var colorIndex = [];
+	var point = [];
+	var color = [];
 	var dispatchTable = {
 		face : function(element, IFS) {
 			var array = [];
@@ -274,10 +288,10 @@ function transformToIFS(elements) {
 							point.push(parseFloat(element[index][p]));
 						}
 						for (var c = 3; c < 6; c++) { 
-							if (element.property[c].type[0] === 'uchar') {
-								color.push(parseFloat(element[index][c])/255.0);
+							if (element.property[c] && element.property[c].type[0] === 'uchar') {
+								color.push(colorComponentParseFloat(element[index][c])/255.0);
 							} else {
-								color.push(parseInt(element[index][c]));
+								color.push(colorComponentParseInt(element[index][c]));
 							}
 						}
 					}
@@ -297,7 +311,7 @@ function transformToIFS(elements) {
 			return IFS;
 		}
 	};
-	for (e in elements) {
+	for (var e in elements) {
 		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			IFS = table(elements[e], IFS);
@@ -439,5 +453,3 @@ end_header
   }
 }
 */
-
-module.exports = convertPlyToJson;
