@@ -1,5 +1,5 @@
 #!/bin/bash -x
-set -euo pipefail
+# set -euo pipefail
 IFS=$'\n\t'
 
 # run the proto preprocessor
@@ -10,6 +10,8 @@ EXAMPLES=/c/x3d-code/www.web3d.org/x3d/content/examples/
 # Now does scripts too!
 echo ===================PPP.js Local=================================== 1>&2
 ls ../data/*.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs ${NODE} ${NODEDIR}/PPP.js
+
+ls ../ppp/*.mjs | xargs -L 1 ./testjs.sh
 
 echo ===================CompleteXMLPrototypeExpander.js Local========== 1>&2
 ls ../data/*.x3d | grep -v intermediate | grep -v "\.new" | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/CompleteXMLPrototypeExpander.js

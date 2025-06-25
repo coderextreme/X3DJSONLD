@@ -1,23 +1,17 @@
-// X3D JSON Prototype and Script preprocessor
+// X3D JSON Script preprocessor
 
-// set up XML DOM
-var fs = require('fs');
+import fs from 'fs';
+import X3DJSONLD from './X3DJSONLD.js';
+import { Scripts, LOG } from './Script.js';
+import xmldom from '@xmldom/xmldom';
+import convertJSON from './convertJSON.js';
+import { loadX3DJS } from './loadValidateServer.js';
+import { x3dom } from '../node/fields.js';
+import { exec } from 'child_process';
 
-var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
-
-var Scripts = require('./Script.js');
-var LOG = Scripts.LOG;
-var scripts = new Scripts.Scripts();
-var processScripts = Scripts.processScripts;
-
-var xmldom = require('@xmldom/xmldom');
+var scripts = new Scripts();
 var DOMImplementation = new xmldom.DOMImplementation();
-
-var convertJSON = require('./convertJSON.js');
-var loadX3DJS = convertJSON.loadX3DJS;
-
-var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
 	var outfile = file.replace(/data/, "ppp");
@@ -35,7 +29,12 @@ function ProcessJSON(json, file) {
 		var loopItems = new LOG();
 		console.error("OUTPUTTING", outfile);
 
-		classes.push("var x3dom = require('../node/fields.js');");
+		classes.push(fs.readFileSync('../node/fields.js').toString().replace("export var x3dom", "var x3dom"));
+		classes.push("import { JSDOM } from 'jsdom';");
+    		classes.push("const dom = new JSDOM(`<!DOCTYPE html><html><body><div id=\"myDiv\">Hello JSDOM</div></body></html>`);")
+    		classes.push("const document = dom.window.document;")
+
+    // Now you can us
 		classes.push("if (typeof X3DJSON === 'undefined') {");
 		classes.push("	var X3DJSON = {};");
 		classes.push("}");
@@ -50,13 +49,8 @@ function ProcessJSON(json, file) {
 		var route = routecode.join('\n');
 		var loop = loopItems.join('\n');
 		var totalcode = code+"\n"+route+"\n"+loop;
-		try {
-			eval(totalcode);
-			fs.writeFileSync(outfile+".good.js", totalcode);
-		} catch (e) {
-			fs.writeFileSync(outfile+".js", totalcode);
-			console.error("See "+outfile+".js for bad code", e);
-		}
+		let oldFilePath = outfile+".mjs";
+		fs.writeFileSync(oldFilePath, totalcode);
 	});
 	return json;
 }
