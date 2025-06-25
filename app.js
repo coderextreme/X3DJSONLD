@@ -1,21 +1,22 @@
 var port = process.env.PORT || 3000;
 
-var config = require("./src/main/node/config.js");
-var fieldTypes = require("./src/main/node/fieldTypes.js");
-var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
-var { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
-var path = require('path');
-var express = require('express');
-var fs = require('fs');
-var https = require('https');
-const { glob, globSync } = require('glob');
-var path = require('path');
-var fileURLToPath = require('url');
-var DOMParser = require('@xmldom/xmldom');
-var DOM2JSONSerializer = require("./src/main/node/DOM2JSONSerializer.js");
-var mapToMethod = require("./src/main/node/mapToMethod.js");
+import config from "./src/main/node/config.js";
+import fieldTypes from "./src/main/node/fieldTypes.js";
+import X3DJSONLD from './src/main/node/X3DJSONLD.js';
+import { DOMParser, XMLSerializer } from '@xmldom/xmldom';
+import { dirname } from 'path';
+import path from 'path';
+import express from 'express';
+import fs from 'fs';
+import https from 'https';
+import { glob, globSync } from 'glob';
+import { fileURLToPath } from 'url';
+import DOM2JSONSerializer from "./src/main/node/DOM2JSONSerializer.js";
+import mapToMethod from "./src/main/node/mapToMethod.js";
 
-// var { runAndSend } = require( './src/main/node/runAndSend';
+// import { runAndSend } from './src/main/node/runAndSend';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 
 var www = config.x3dcode();
@@ -218,7 +219,7 @@ app.get("/files", function(req, res, next) {
 });
 
 function magic(path, type) {
-    query = path.indexOf("?");
+    let query = path.indexOf("?");
     if (query >= 0) {
 	    path = path.substr(query);
     }
@@ -335,6 +336,9 @@ app.get("*.json", async function(req, res, next) {
 		outfile = www +"/"+file.substr(file.indexOf("www.web3d.org"));
 	}
 	try {
+		if (url.startsWith(".wellknown")) {
+			throw ".wellknown not supported by server.  See app.js";
+		}
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
@@ -352,7 +356,7 @@ app.get("*.json", async function(req, res, next) {
 	}
 	*/
 	} catch (e) {
-		console.error("Couldn't read JSON.  Consider creating a JSON file", url);
+		console.error("Couldn't read JSON, ", outfile, ".  Consider creating a JSON file", url, e);
 		next();
 	}
 });

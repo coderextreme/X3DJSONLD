@@ -3,8 +3,6 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-import fs from "fs";
-
 export default function GuraSerializer () {
 }
 

@@ -115,4 +115,4 @@ class Matrix extends Array {
 	}
 }
 
-module.exports = Matrix;
+// module.exports = Matrix;

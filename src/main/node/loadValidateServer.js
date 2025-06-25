@@ -1,6 +1,7 @@
-const Ajv2020 = window.Ajv2020;
-const addFormats = window.addFormats;
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats-draft2019";
 import X3DJSONLD from './X3DJSONLD.js';
+import fs from 'fs';
 
 console.log(Ajv2020);
 
@@ -130,11 +131,15 @@ function addSchema(ajv, schemajson, version) {
 
 async function loadSchemaJson(version) {
   try {
-	  const response = await fetch("../schema/x3d-"+version+"-JSONSchema.json");
-	  const jsonData = await response.json();
+	  const response = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json").toString();
+	  const jsonData = JSON.parse(response);
 	  return jsonData;
   } catch (e) {
-	  alert("Failed to load schema"+e);
+	if (typeof alert === 'function') {
+	    alert("Failed to load schema"+e);
+	} else {
+	    console.error("Failed to load schema"+e);
+	}
   }
 }
 

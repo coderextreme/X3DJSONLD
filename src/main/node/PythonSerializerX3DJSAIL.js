@@ -3,8 +3,6 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-import fs from "fs";
-
 export default function PythonSerializerX3DJSAIL () {
 this.code = [];
 this.codeno = 0;
@@ -165,6 +163,9 @@ PythonSerializerX3DJSAIL.prototype = {
 		var nodeValue = attrsa.nodeValue;
 		if (nodeValue === 'NULL') {
 			strval = "";
+		} else if (attr === "readInterval") {
+			strval = nodeValue+DOUBLE_SUFFIX;
+			console.error(strval);
 		} else if (attrType === "SFString") {
 			if (attr === "accessType") {
 				strval = '"'+nodeValue+'"';
