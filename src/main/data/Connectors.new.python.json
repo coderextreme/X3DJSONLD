@@ -36,7 +36,7 @@
 },
 {
 "@name":"translated",
-"@content":"04 June 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -850,7 +850,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N1"
 }
 }
@@ -885,7 +884,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N1"
 }
 }
@@ -920,7 +918,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N1"
 }
 }
@@ -955,7 +952,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N2"
 }
 }
@@ -990,7 +986,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N3"
 }
 }
@@ -1001,7 +996,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N6"
 }
 }
@@ -1019,7 +1013,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N4"
 }
 }
@@ -1054,7 +1047,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N5"
 }
 }
@@ -1065,7 +1057,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N7"
 }
 }
@@ -1083,7 +1074,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N6"
 }
 }
@@ -1118,7 +1108,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N7"
 }
 }
@@ -1129,7 +1118,6 @@
 "-children":[
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N8"
 }
 }
@@ -1140,49 +1128,41 @@
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N1"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N2"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N3"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N4"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N5"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N6"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N7"
 }
 },
 { "ProtoInstance":
 {
-"@name":"Node",
 "@USE":"N8"
 }
 }

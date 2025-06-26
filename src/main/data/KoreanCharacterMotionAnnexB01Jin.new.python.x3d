@@ -321,10 +321,10 @@
       <PositionInterpolator DEF='Keyframe_HumanoidRootTranslation' key='0 1' keyValue='0 0 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_HumanoidRootOrientation' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_sacroiliac' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_shoulder' key='0 0 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
+      <OrientationInterpolator DEF='Keyframe_l_shoulder' key='0 0.5 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_l_elbow' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_l_radiocarpal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_shoulder' key='0 0 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
+      <OrientationInterpolator DEF='Keyframe_r_shoulder' key='0 0.5 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_r_elbow' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_r_radiocarpal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
       <OrientationInterpolator DEF='Keyframe_vl5' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>

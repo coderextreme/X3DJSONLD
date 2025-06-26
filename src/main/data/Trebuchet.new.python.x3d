@@ -21,7 +21,7 @@
   </head>
   <Scene>
     <WorldInfo title='Trebuchet.x3d'/>
-    <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1 1' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1 1' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
+    <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1.309 1.57079' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
     <Sound maxBack='1000.0' maxFront='1000.0'>
       <AudioClip DEF='HolyGrail' description='HolyGrail' loop='true' url='"holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"'/>
     </Sound>
@@ -683,13 +683,13 @@ ecmascript:
 "+
 "	var Height =25;
 "+
-"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+"      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
 "+
 "	// start at TrebuchetHeight and keep along z axis (z=zero)
 "+
-"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+"	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
 "+
-"        z = 0;
+"        var z = 0;
 "+
 "        transparent = new SFVec3f (1,1,1);
 "+
@@ -717,11 +717,11 @@ ecmascript:
       </Transform>
     </Transform>
     <TimeSensor DEF='clock' cycleInterval='10.0'/>
-    <PositionInterpolator DEF='verticalweightpath' key='0 0 0 0 0 0' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
-    <OrientationInterpolator DEF='flingerangles' key='0 0 0 0 0 0' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
-    <PositionInterpolator DEF='pinpath' key='0 0 0 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
-    <OrientationInterpolator DEF='RnSAngels' key='0 0 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
-    <PositionInterpolator DEF='invisiable' key='0 0 0 0' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
+    <PositionInterpolator DEF='verticalweightpath' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
+    <OrientationInterpolator DEF='flingerangles' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
+    <PositionInterpolator DEF='pinpath' key='0 0.01 0.95 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
+    <OrientationInterpolator DEF='RnSAngels' key='0 0.7 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
+    <PositionInterpolator DEF='invisiable' key='0 0.2 0.98 0.99' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='invisiable'/>
     <ROUTE fromField='value_changed' fromNode='invisiable' toField='set_scale' toNode='projectiletransform'/>
     <ROUTE fromField='CounterWeight' fromNode='WeightScript' toField='set_MassCounterWeight' toNode='Mover'/>

@@ -28,7 +28,7 @@
 },
 {
 "@name":"translated",
-"@content":"23 June 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -125,7 +125,7 @@
 "                    old = translation;",
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5,
 Math.random()*10-5);",
-"                    keyValue = new MFVec3f(old, translation);",
+"                    keyValue = new MFVec3f([old, translation]);",
 "               }",
 "",
 ""
@@ -257,7 +257,7 @@ Math.random()*10-5);",
 "                    old = translation;",
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5,
 Math.random()*10-5);",
-"                    keyValue = new MFVec3f(old, translation);",
+"                    keyValue = new MFVec3f([old, translation]);",
 "               }",
 "",
 ""
