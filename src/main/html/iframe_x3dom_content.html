@@ -11,52 +11,123 @@
     </style>
 </head>
 <body>
-    <X3D id="x3dom_canvas_dynamic" showProgress="false" showStat="false" showLog="false" backend="webgl">
+    <X3D id="x3dom_canvas_dynamic_iframe" showProgress="false" showStat="false" showLog="false" backend="webgl">
         <Scene>
             <!-- Content will be loaded here by parent -->
         </Scene>
     </X3D>
 
     <script>
-        function loadContentInX3dom(xmlString) {
-            var x3dElement = document.getElementById('x3dom_canvas_dynamic');
-            var sceneElement = x3dElement.querySelector('Scene');
+        let x3dElement = null; // Store the X3D element
 
-            if (sceneElement) {
-                // Clear previous scene children
-                while (sceneElement.firstChild) {
-                    sceneElement.removeChild(sceneElement.firstChild);
+        document.addEventListener('DOMContentLoaded', () => {
+            x3dElement = document.getElementById('x3dom_canvas_dynamic_iframe');
+            if (!x3dElement) {
+                console.error("X3DOM element 'x3dom_canvas_dynamic_iframe' not found!");
+            }
+            // X3DOM initializes itself. We can check for runtime readiness when loading.
+        });
+
+        /**
+         * Loads content into the X3DOM scene.
+         * @param {string|object} content - The content to load (XML string or JavaScript object).
+         * @param {string} type - 'xml' or 'json_obj'.
+         * @param {string} [scenePath] - Optional path for createX3DFromJS, defaults to current document URI.
+         */
+        function loadContentInX3dom(content, type = 'xml', scenePath = null) {
+            if (!x3dElement) {
+                x3dElement = document.getElementById('x3dom_canvas_dynamic_iframe'); // Try to get it again
+                if (!x3dElement) {
+                    console.error("X3DOM element 'x3dom_canvas_dynamic_iframe' not found for loadContentInX3dom.");
+                    return;
                 }
-                
-                if (xmlString) {
-                    try {
-                        const parser = new DOMParser();
-                        const xmlDoc = parser.parseFromString(xmlString, "application/xml");
-                        const newSceneContent = xmlDoc.querySelector('X3D > Scene'); // Get the Scene element itself
-                        
-                        if (newSceneContent && newSceneContent.childNodes) {
-                             Array.from(newSceneContent.childNodes).forEach(child => {
-                                sceneElement.appendChild(document.importNode(child, true));
-                            });
-                        } else {
-                            console.warn("Could not find Scene content in provided XML for X3DOM.");
-                        }
-                        
-                        if (x3dElement.runtime && x3dElement.runtime.ready) {
-                           // Notify X3DOM to update the scene
-                           x3dElement.runtime.recollectNamedNodes();
-                           x3dElement.runtime.canvas.doc.needRender = true;
-                        } else if (typeof x3dom !== 'undefined' && x3dom.reload) {
-                            x3dom.reload(); // Fallback if runtime direct access is tricky
-                        }
+            }
 
-                    } catch (e) {
-                        console.error("Error parsing or loading XML into X3DOM:", e, xmlString);
-                        sceneElement.appendChild(document.createTextNode("Error loading content."));
+            if (!x3dElement.runtime || !x3dElement.runtime.ready) {
+                console.warn("X3DOM runtime not ready for loadContentInX3dom. Content loading might be delayed or fail.");
+                // Consider a small delay and retry, or rely on parent's iframe load queue.
+                // For now, proceed if called.
+            }
+
+            console.log(`X3DOM iframe: loadContentInX3dom called with type: ${type}`);
+
+            try {
+                let newSceneNode = null; // This will be the <X3D> element or a document fragment containing the scene
+
+                if (type === 'json_obj' && typeof content === 'object') {
+                    if (x3dElement.runtime && typeof x3dElement.runtime.createX3DFromJS === 'function') {
+                        console.log("X3DOM: Creating X3D from JavaScript object.");
+                        // The path argument is for resolving relative URLs within the loaded content.
+                        // If your JSON doesn't have relative URLs, null or document.location.href might be fine.
+                        newSceneNode = x3dElement.runtime.createX3DFromJS(content, scenePath || document.location.href);
+                    } else {
+                        console.error("X3DOM: runtime.createX3DFromJS is not available.");
+                        return; // Cannot proceed
                     }
+                } else if (type === 'xml' && typeof content === 'string') {
+                    if (content.trim() === "") { // Handle empty string to clear scene
+                        console.log("X3DOM: Received empty XML string, preparing to clear scene.");
+                        // Create a minimal valid X3D structure to clear by replacing world with it
+                        const emptyX3D = x3dElement.runtime.createX3DFromString('<X3D profile="Immersive" version="4.0"><Scene/></X3D>');
+                        if (x3dElement.runtime && typeof x3dElement.runtime.replaceWorld === 'function') {
+                            x3dElement.runtime.replaceWorld(emptyX3D);
+                             console.log("X3DOM: Scene cleared using empty X3D via replaceWorld.");
+                        } else {
+                            console.warn("X3DOM: replaceWorld not available to clear scene.");
+                        }
+                        return; // Scene cleared
+                    }
+                    console.log("X3DOM: Creating X3D from XML string (for replaceWorld or direct DOM manipulation).");
+                    // createX3DFromString typically returns an X3DDocument, from which we need the X3D element
+                    // or we parse and inject children into the existing Scene.
+                    // For replaceWorld, we usually pass the new X3D root DOM element.
+                     const parser = new DOMParser();
+                     const xmlDoc = parser.parseFromString(content, "application/xml");
+                     newSceneNode = xmlDoc.documentElement; // This should be the <X3D> element
+                     if (!newSceneNode || newSceneNode.nodeName.toLowerCase() !== 'x3d'){
+                        console.error("X3DOM: Parsed XML does not result in an X3D root element for replaceWorld.");
+                        const errorX3D = x3dElement.runtime.createX3DFromString('<X3D profile="Immersive" version="4.0"><Scene><Shape><Text string="XML Parse Error for X3DOM"/></Shape></Scene></X3D>');
+                        if (x3dElement.runtime.replaceWorld) x3dElement.runtime.replaceWorld(errorX3D);
+                        return;
+                     }
+
+                } else {
+                    console.error("X3DOM: Invalid content type for loadContentInX3dom. Expected 'xml' (string) or 'json_obj' (object). Got type:", type);
+                    return;
                 }
-            } else {
-                console.error("X3DOM element or scene not found.");
+
+                if (newSceneNode && x3dElement.runtime && typeof x3dElement.runtime.replaceWorld === 'function') {
+                    console.log("X3DOM: Calling runtime.replaceWorld().");
+                    x3dElement.runtime.replaceWorld(newSceneNode);
+                    console.log("X3DOM: runtime.replaceWorld() completed.");
+                } else if (newSceneNode) {
+                    // Fallback to DOM manipulation if replaceWorld isn't ideal or available for some reason
+                    // This path was used before and might be less robust for full scene replacement.
+                    console.warn("X3DOM: runtime.replaceWorld not available or newSceneNode is null. Attempting DOM manipulation (less ideal).");
+                    var oldSceneElement = x3dElement.querySelector('Scene');
+                    if (oldSceneElement) {
+                        while (oldSceneElement.firstChild) oldSceneElement.removeChild(oldSceneElement.firstChild);
+                        // newSceneNode here would be the <X3D> element. We need its <Scene> content.
+                        const sceneContent = newSceneNode.querySelector('Scene');
+                        if (sceneContent) {
+                            Array.from(sceneContent.childNodes).forEach(child => oldSceneElement.appendChild(document.importNode(child, true)));
+                        }
+                        if (x3dElement.runtime && x3dElement.runtime.canvas && x3dElement.runtime.canvas.doc) {
+                             x3dElement.runtime.canvas.doc.needRender = true;
+                        }
+                    }
+                } else {
+                    console.error("X3DOM: New scene node was not created from content.");
+                }
+
+            } catch (e) {
+                console.error(`X3DOM: Error during ${type} content loading:`, e);
+                if (x3dElement.runtime && typeof x3dElement.runtime.createX3DFromString === 'function') {
+                    try {
+                        const errorX3D = x3dElement.runtime.createX3DFromString(`<X3D profile="Immersive" version="4.0"><Scene><Shape><Text string="X3DOM Load Error: ${String(e.message).replace(/"/g,"'")}"/><Appearance><Material diffuseColor="1 0 0"/></Appearance></Shape></Scene></X3D>`);
+                        if (x3dElement.runtime.replaceWorld) x3dElement.runtime.replaceWorld(errorX3D);
+                    } catch (e2) { console.error("X3DOM: Failed to display error scene", e2); }
+                }
             }
         }
     </script>

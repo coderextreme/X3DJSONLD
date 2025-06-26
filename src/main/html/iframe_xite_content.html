@@ -14,58 +14,47 @@
     <x3d-canvas id="xite_canvas_in_iframe" cache="false">
         <X3D profile="Immersive" version="4.0">
             <Scene>
-                <!-- Content will be loaded here by parent -->
+                <!-- Initial empty scene -->
             </Scene>
         </X3D>
     </x3d-canvas>
 
     <script>
-        let x3dCanvasElement = null;
-        let xiteBrowserInstance = null; // To store the obtained browser instance
+        let x3dCanvasDOMElement = null;
+        let xiteBrowserInstance = null;
+        let isXiteReady = false; // Flag to track full X_ITE readiness
 
-        // Helper to get the canvas DOM element
         function getX3dCanvasDOMElement() {
-            if (!x3dCanvasElement) {
-                x3dCanvasElement = document.getElementById('xite_canvas_in_iframe');
+            if (!x3dCanvasDOMElement) {
+                x3dCanvasDOMElement = document.getElementById('xite_canvas_in_iframe');
             }
-            return x3dCanvasElement;
+            return x3dCanvasDOMElement;
         }
 
-        // Function to get the X_ITE Browser instance asynchronously
         async function getXiteBrowser() {
-            if (xiteBrowserInstance) {
+            if (xiteBrowserInstance && isXiteReady) {
                 return xiteBrowserInstance;
             }
             try {
                 const canvasElement = getX3dCanvasDOMElement();
-                if (!canvasElement) {
-                    console.error("X_ITE Canvas DOM element not found to get browser.");
-                    return null;
-                }
+                if (!canvasElement) { console.error("X_ITE Canvas DOM element not found to get browser."); return null; }
 
-                // Standard X3D SAI pattern: await X3D() if X3D is a promise (often the case for library readiness)
-                // then X3D.getBrowser(selector).
-                // For X_ITE, after the x_ite.js script runs, X3D should be globally available.
-                // The runtime on the element is usually the entry point.
                 if (typeof X3D !== 'undefined' && typeof X3D.getBrowser === 'function') {
-                     // If X3D() itself is a promise that needs to resolve for the environment
-                    if (typeof X3D === 'function' && X3D.constructor.name === 'AsyncFunction' || (typeof X3D === 'function' && X3D() instanceof Promise) ) {
-                        await X3D(); // Wait for the X3D environment to be ready
+                    if (typeof X3D === 'function' && (X3D.constructor.name === 'AsyncFunction' || (typeof X3D === 'function' && X3D() instanceof Promise)) ) {
+                        console.log("X_ITE Iframe: Waiting for X3D() promise...");
+                        await X3D();
+                        console.log("X_ITE Iframe: X3D() promise resolved.");
                     }
-                    xiteBrowserInstance = X3D.getBrowser(canvasElement); // Pass the DOM element
+                    xiteBrowserInstance = X3D.getBrowser(canvasElement);
                 } else if (canvasElement.runtime && canvasElement.runtime.browser) {
-                    // Fallback or direct X_ITE way if X3D.getBrowser isn't the primary method for an already init'd canvas
                     xiteBrowserInstance = canvasElement.runtime.browser;
                 }
 
-                if (!xiteBrowserInstance) {
-                    console.warn("Could not obtain X_ITE browser instance.");
-                } else {
-                    console.log("X_ITE Browser instance obtained.");
-                }
+                if (xiteBrowserInstance) console.log("X_ITE Iframe: Browser instance obtained/re-confirmed.");
+                else console.warn("X_ITE Iframe: Could not obtain X_ITE browser instance yet.");
                 return xiteBrowserInstance;
             } catch (e) {
-                console.error("Error getting X_ITE browser instance:", e);
+                console.error("X_ITE Iframe: Error getting X_ITE browser instance:", e);
                 return null;
             }
         }
@@ -73,86 +62,88 @@
         document.addEventListener('DOMContentLoaded', () => {
             const canvas = getX3dCanvasDOMElement();
             if (canvas) {
-                canvas.addEventListener('load', async function() { // Make this async
-                    console.log("X_ITE canvas in iframe is fully loaded (load event).");
-                    await getXiteBrowser(); // Ensure browser instance is ready after X_ITE load
-                    // If parent tried to convert XML to JSON before this, it might be queued.
-                    // The parent's onload handler for the iframe should manage this.
+                canvas.addEventListener('load', async function() {
+                    console.log("X_ITE Iframe: X_ITE canvas 'load' event fired. Runtime should be fully ready.");
+                    isXiteReady = true;
+                    await getXiteBrowser(); // Get/confirm browser instance after X_ITE is fully loaded
+                    if (window.parent && typeof window.parent.xiteIframeReadyForAdvancedOps === 'function') {
+                        window.parent.xiteIframeReadyForAdvancedOps();
+                    }
                 });
             }
-            // Eagerly try to get browser instance too, in case 'load' is slow or already fired
-            getXiteBrowser();
+            getXiteBrowser(); // Early attempt
         });
 
-        async function loadContentInXite(xmlString) { // Make async to ensure browser is available
-            const canvas = getX3dCanvasDOMElement();
-            if (!canvas) return;
-
-            const browser = await getXiteBrowser(); // Ensure we have the browser
+        /**
+         * Loads XML content into the X_ITE scene using browser API.
+         * @param {string} xmlString - The XML content string to load.
+         */
+        async function loadContentInXite(xmlString) { // Simplified: this iframe function now only expects XML string
+            console.log(`X_ITE Iframe: loadContentInXite called.`);
+            const browser = await getXiteBrowser();
             if (!browser) {
-                console.error("X_ITE Browser not available for loadContentInXite. Load aborted.");
+                console.error("X_ITE Iframe: Browser not available for loadContent. Load aborted.");
                 return;
             }
+            if (!isXiteReady) {
+                console.warn("X_ITE Iframe: isXiteReady is false. Waiting briefly for full X_ITE initialization.");
+                await new Promise(resolve => setTimeout(resolve, 300));
+                if (!isXiteReady) {
+                     console.error("X_ITE Iframe: Still not fully ready after delay. Aborting loadContentInXite.");
+                     return;
+                }
+                 // Try getting browser again if it wasn't ready
+                if (!xiteBrowserInstance) await getXiteBrowser();
+                 if (!xiteBrowserInstance) {
+                    console.error("X_ITE Iframe: Browser still not available after delay.");
+                    return;
+                 }
+            }
 
-            const scene = canvas.querySelector('Scene'); // Or browser.currentScene if more appropriate
-
-            if (scene) {
-                // Clear previous content more safely if using browser API
-                // browser.replaceWorld(browser.createX3DFromString(newSceneXml)); is another option
-                while (scene.firstChild) {
-                    scene.removeChild(scene.firstChild);
+            try {
+                let sceneToLoad;
+                if (xmlString && xmlString.trim() !== "") {
+                    console.log("X_ITE Iframe: Creating X3D from XML string.");
+                    sceneToLoad = await browser.createX3DFromString(xmlString);
+                } else {
+                    console.log("X_ITE Iframe: Received empty XML string, creating minimal empty scene.");
+                    sceneToLoad = await browser.createX3DFromString('<X3D profile="Immersive" version="4.0"><Scene></Scene></X3D>');
                 }
 
-                if (xmlString) {
-                    try {
-                        const parser = new DOMParser();
-                        const xmlDoc = parser.parseFromString(xmlString, "application/xml");
-                        const newSceneRootNode = xmlDoc.documentElement;
-
-                        if (newSceneRootNode && newSceneRootNode.nodeName === 'X3D') {
-                            const newSceneContent = newSceneRootNode.querySelector('Scene');
-                            if (newSceneContent && newSceneContent.childNodes) {
-                                Array.from(newSceneContent.childNodes).forEach(child => {
-                                   scene.appendChild(document.importNode(child, true));
-                                });
-                            }
-                            // For X_ITE, after modifying the DOM scene directly,
-                            // you might need to tell the runtime to re-evaluate.
-                            if (canvas.runtime && typeof canvas.runtime.reload === 'function') {
-                                canvas.runtime.reload();
-                            } else {
-                                // If direct DOM manipulation isn't picked up, this is an alternative:
-                                // browser.replaceWorld(browser.createX3DFromString(xmlString));
-                                console.warn("X_ITE runtime.reload not available, hoping for reactive update or consider browser.replaceWorld.");
-                            }
-                        } else {
-                             console.warn("Provided XML for X_ITE does not have an X3D root element or Scene properly.");
-                        }
-                    } catch (e) {
-                        console.error("Error parsing or loading XML into X_ITE:", e, xmlString.substring(0,200));
-                         if(scene) scene.appendChild(document.createTextNode("Error loading content."));
-                    }
+                if (sceneToLoad) {
+                    console.log("X_ITE Iframe: Replacing world.");
+                    await browser.replaceWorld(sceneToLoad);
+                    console.log("X_ITE Iframe: World replaced successfully.");
+                } else {
+                    console.error("X_ITE Iframe: Scene creation from XML string failed (sceneToLoad is null/undefined).");
                 }
-            } else {
-                console.error("X_ITE scene element not found for loadContentInXite.");
+            } catch (e) {
+                console.error(`X_ITE Iframe: Error during XML content loading or world replacement:`, e);
+                try {
+                    const errorXml = `<X3D profile="Immersive" version="4.0"><Scene><Transform translation="0 0 -5"><Shape><Text string='"X_ITE Error: ${String(e.message).replace(/"/g, "'")}"'/><Appearance><Material diffuseColor="1 0 0"/></Appearance></Shape></Transform></Scene></X3D>`;
+                    const errorScene = await browser.createX3DFromString(errorXml);
+                    if (errorScene) await browser.replaceWorld(errorScene);
+                } catch (e2) { console.error("X_ITE Iframe: Failed to display error scene.", e2); }
             }
         }
 
-        async function getSceneAsJsonString() { // Make async
-            const browser = await getXiteBrowser(); // Crucial: Wait for browser instance
-            if (browser && typeof browser.toJSONString === 'function') {
+        async function getSceneAsJsonString() {
+            console.log("X_ITE Iframe: getSceneAsJsonString called.");
+            const browser = await getXiteBrowser(); // Ensure browser is available
+            if (browser && typeof browser.toJSONString === 'function' && isXiteReady) {
                 try {
                     const jsonString = browser.toJSONString();
-                    console.log("X_ITE successfully converted current scene to JSON string via browser API.");
+                    console.log("X_ITE Iframe: Scene successfully converted to JSON string.");
                     return jsonString;
                 } catch (e) {
-                    console.error("Error getting JSON string from X_ITE browser.toJSONString():", e);
+                    console.error("X_ITE Iframe: Error calling browser.toJSONString():", e);
                     return null;
                 }
             } else {
-                let reason = "X_ITE ";
-                if (!browser) reason += "browser instance not obtained. ";
-                else if (typeof browser.toJSONString !== 'function') reason += "browser.toJSONString method not found. ";
+                let reason = "X_ITE Iframe: ";
+                if (!isXiteReady) reason += "not fully ready (internal 'load' event). ";
+                else if (!browser) reason += "browser instance not obtained. ";
+                else if (typeof browser.toJSONString !== 'function') reason += "toJSONString method not found. ";
                 console.warn(reason + "Cannot get JSON string.");
                 return null;
             }
