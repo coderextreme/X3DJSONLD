@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ViewpointU-a-entity position="0,0,5" description="a moving graph"/><BackgroundU-a-entity skyColor="0.4,0.4,0.4"/><a-entity DEF="trans1"><a-entity DEF="rotscale1"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: cylinder; radius: 0.1" material="radius: 0.1"/></a-entity></a-entity></a-entity><a-entity DEF="trans2"><a-entity DEF="rotscale2"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: cylinder; radius: 0.1" material="radius: 0.1"/></a-entity></a-entity></a-entity><a-entity DEF="trans3"><a-entity DEF="rotscale3"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: cylinder; radius: 0.1" material="radius: 0.1"/></a-entity></a-entity></a-entity><ProtoDeclareU-a-entity name="point"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity DEF="node"><ISU-a-entity><connectU-a-entity/></ISU-a-entity><a-entity><a-entity radius="0.1" geometry="primitive: sphere"/><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0"/></AppearanceU-a-entity></a-entity><PositionInterpolatorU-a-entity DEF="PI1" key="0,1" keyValue="0,0,0,0,5,0"/><ScriptU-a-entity DEF="MB1"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="CL1" cycleInterval="3" loop="true"/><ROUTEU-a-entity fromNode="CL1" fromField="cycleTime" toNode="MB1" toField="set_location"/><ROUTEU-a-entity fromNode="CL1" fromField="fraction_changed" toNode="PI1" toField="set_fraction"/><ROUTEU-a-entity fromNode="MB1" fromField="keyValue" toNode="PI1" toField="keyValue"/><ROUTEU-a-entity fromNode="PI1" fromField="value_changed" toNode="node" toField="set_translation"/></a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><!--from doug sanden--><ProtoDeclareU-a-entity name="x3dconnector"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><ScriptU-a-entity DEF="S1"><fieldU-a-entity/><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+            ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+		var trafo = recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			transnode.translation = trafo.translation;
+			rotscalenode.rotation = trafo.rotation;
+			rotscalenode.scale = trafo.scale;
+		} else {
+			Browser.print("recompute returned undefined");
+		}
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val || startnode.translation,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val || endnode.translation);
+        }
+
+]]></ScriptU-a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoInstanceU-a-entity name="point" DEF="G1"/><ProtoInstanceU-a-entity name="point" DEF="G2"/><ProtoInstanceU-a-entity name="point" DEF="G3"/><ProtoInstanceU-a-entity name="point" DEF="G4"/><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector1"><fieldValueU-a-entity><ProtoInstanceU-a-entity USE="G1"/><ProtoInstanceU-a-entity USE="G2"/><a-entity USE="trans1"/><a-entity USE="rotscale1"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector2"><fieldValueU-a-entity><ProtoInstanceU-a-entity USE="G1"/><ProtoInstanceU-a-entity USE="G3"/><a-entity USE="trans2"/><a-entity USE="rotscale2"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector3"><fieldValueU-a-entity><ProtoInstanceU-a-entity USE="G1"/><ProtoInstanceU-a-entity USE="G4"/><a-entity USE="trans3"/><a-entity USE="rotscale3"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector1" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G2" fromField="translation_changed" toNode="connector1" toField="set_endpoint"/><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector2" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G3" fromField="translation_changed" toNode="connector2" toField="set_endpoint"/><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector3" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G4" fromField="translation_changed" toNode="connector3" toField="set_endpoint"/></a-scene></div></body></html>

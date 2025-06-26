@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="RoundedRectangle2D"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><IndexedFaceSetU-a-entity DEF="Geometry"><ISU-a-entity><connectU-a-entity/></ISU-a-entity><CoordinateU-a-entity/></IndexedFaceSetU-a-entity><ScriptU-a-entity DEF="RoundedRectangle2D" directOutput="true"><fieldU-a-entity><IndexedFaceSetU-a-entity USE="Geometry"/></fieldU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+vrmlscript:
+
+function initialize ()
+{
+	var point         = new SFVec3f (cornerRadius, 0, 0);
+	var startRotation = new SFRotation ();
+	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);
+	var corner        = new MFVec3f ();
+	var coordIndex    = new MFInt32 ();
+	var points        = new MFVec3f ();
+
+	for (var i = 0; i < cornerDimension * 4; ++ i)
+		coordIndex [coordIndex .length] = i;
+
+	geometry .coordIndex = coordIndex;
+
+	for (var i = 0; i < cornerDimension; ++i)
+		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);
+
+	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);
+
+	for (var i = 0; i < cornerDimension; ++ i)
+		points [points .length] = corner [i] .add (translation);
+
+	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);
+	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);
+
+	for (var i = 0; i < cornerDimension; ++ i)
+		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+
+	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);
+	var rotation    = new SFRotation (0, 0, 1, Math .PI);
+
+	for (var i = 0; i < cornerDimension; ++ i)
+		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+
+	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);
+	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);
+
+	for (var i = 0; i < cornerDimension; ++ i)
+		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+
+	geometry .coord .point = points;
+}
+
+]]></ScriptU-a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoDeclareU-a-entity name="Widget"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity DEF="Shape"><a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity><AppearanceU-a-entity><MaterialU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></MaterialU-a-entity></AppearanceU-a-entity></a-entity><a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity><AppearanceU-a-entity><FillPropertiesU-a-entity filled="false" hatched="false"/><LinePropertiesU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></LinePropertiesU-a-entity><MaterialU-a-entity diffuseColor="0,0,0"><ISU-a-entity><connectU-a-entity/></ISU-a-entity></MaterialU-a-entity></AppearanceU-a-entity></a-entity></a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoDeclareU-a-entity name="Node"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><PlaneSensorU-a-entity DEF="PlaneSensor"/><a-entity DEF="Node"><ISU-a-entity><connectU-a-entity/></ISU-a-entity><ProtoInstanceU-a-entity name="Widget"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="RoundedRectangle2D"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><a-entity DEF="Input" position="-1,0,0"><ProtoInstanceU-a-entity name="Widget"><fieldValueU-a-entity><a-entity DEF="Connector" outerRadius="0.2" geometry="primitive: ring"/></fieldValueU-a-entity></ProtoInstanceU-a-entity></a-entity><a-entity DEF="Output" position="1,0,0"><ProtoInstanceU-a-entity name="Widget"><fieldValueU-a-entity><a-entity USE="Connector" geometry="primitive: ring"/></fieldValueU-a-entity></ProtoInstanceU-a-entity></a-entity></a-entity></a-entity><ScriptU-a-entity directOutput="true"><fieldU-a-entity><PlaneSensorU-a-entity USE="PlaneSensor"/><a-entity USE="Node"/></fieldU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+vrmlscript:
+function initialize ()
+{
+	sensor .offset = translation;
+}
+
+]]></ScriptU-a-entity><ROUTEU-a-entity fromNode="PlaneSensor" fromField="translation_changed" toNode="Node" toField="set_translation"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoDeclareU-a-entity name="Route"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><AppearanceU-a-entity><LinePropertiesU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></LinePropertiesU-a-entity><MaterialU-a-entity diffuseColor="0,0,0"><ISU-a-entity><connectU-a-entity/></ISU-a-entity></MaterialU-a-entity></AppearanceU-a-entity><LineSetU-a-entity DEF="Geometry_1" vertexCount="2"><CoordinateU-a-entity point="-1,0,0,1,0,0"/></LineSetU-a-entity></a-entity><ScriptU-a-entity DEF="Route" directOutput="true"><fieldU-a-entity><LineSetU-a-entity USE="Geometry_1"/><ScriptU-a-entity USE="Route"/></fieldU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+vrmlscript:
+function initialize ()
+{
+	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
+	Browser .addRoute (input,  'translation_changed', self, 'set_translation');
+
+	set_translation ();
+}
+
+function set_translation ()
+{
+	geometry .vertexCount [0] = routeDimension;
+
+	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));
+	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));
+
+	var w = inPoint .x - outPoint .x;
+	var h = outPoint .y - inPoint .y;
+
+	for (var i = 0; i < routeDimension; ++ i)
+	{
+		var t = i / (routeDimension - 1);
+		var y = h / 2 * (Math .cos (t * Math .PI) - 1);
+
+		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));
+	}
+}
+
+]]></ScriptU-a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><NavigationInfoU-a-entity/><BackgroundU-a-entity skyColor="0.2,0.2,0.2"/><OrthoViewpointU-a-entity description="OthoViewpoint" position="-3.13496,-4.19776,10" centerOfRotation="-3.13496,-4.19776,0" fieldOfView="0,0,10,10"/><ViewpointU-a-entity description="Viewpoint"/><a-entity DEF="Connectors"><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" DEF="N1"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Node" DEF="N2"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N1"/><ProtoInstanceU-a-entity name="Node" DEF="N3"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N1"/><ProtoInstanceU-a-entity name="Node" DEF="N4"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N1"/><ProtoInstanceU-a-entity name="Node" DEF="N5"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N2"/><ProtoInstanceU-a-entity name="Node" DEF="N6"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N3"/><ProtoInstanceU-a-entity name="Node" USE="N6"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N4"/><ProtoInstanceU-a-entity name="Node" DEF="N7"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N5"/><ProtoInstanceU-a-entity name="Node" USE="N7"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N6"/><ProtoInstanceU-a-entity name="Node" DEF="N8"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Route"><fieldValueU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N7"/><ProtoInstanceU-a-entity name="Node" USE="N8"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="Node" USE="N1"/><ProtoInstanceU-a-entity name="Node" USE="N2"/><ProtoInstanceU-a-entity name="Node" USE="N3"/><ProtoInstanceU-a-entity name="Node" USE="N4"/><ProtoInstanceU-a-entity name="Node" USE="N5"/><ProtoInstanceU-a-entity name="Node" USE="N6"/><ProtoInstanceU-a-entity name="Node" USE="N7"/><ProtoInstanceU-a-entity name="Node" USE="N8"/></a-entity></a-scene></div></body></html>

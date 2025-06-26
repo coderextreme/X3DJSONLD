@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><!--All head/meta tags are optional, WorldInfo is also optional--><!--Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1--><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><WorldInfoU-a-entity title="HelloWorldMinimal.x3d"/><a-entity><a-entity value="hello, world" geometry="primitive: text"/></a-entity></a-scene></div></body></html>

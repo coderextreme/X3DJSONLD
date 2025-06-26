@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="Process"><ProtoBodyU-a-entity><a-entity><!--left--><a-entity scale="0.5,0.5,0.5"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,1,0" transparency="0.5"/></AppearanceU-a-entity><ExtrusionU-a-entity creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="-2.5,0,0,-1.5,0,0"/></a-entity><!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>--></a-entity><!--right--><a-entity scale="0.5,0.5,0.5"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0.7,1" transparency="0.5"/></AppearanceU-a-entity><ExtrusionU-a-entity creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="1.5,0,0,2.5,0,0"/></a-entity><a-entity position="2,0,0"><a-entity><AppearanceU-a-entity><MaterialU-a-entity DEF="MaterialLightBlue" diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity DEF="RightString" value="r" geometry="primitive: text"/></a-entity></a-entity><StringSensorU-a-entity DEF="RightSensor" enabled="false"/><TouchSensorU-a-entity description="touch to activate" DEF="RightTouch"/></a-entity><!--up--><a-entity scale="0.5,0.5,0.5"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0.7,1" transparency="0.5"/></AppearanceU-a-entity><ExtrusionU-a-entity creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="0,1.5,0,0,2.5,0"/></a-entity><a-entity position="-0.5,2,0"><a-entity><AppearanceU-a-entity><MaterialU-a-entity USE="MaterialLightBlue"/></AppearanceU-a-entity><a-entity DEF="UpString" value="u" geometry="primitive: text"/></a-entity></a-entity><StringSensorU-a-entity DEF="UpSensor" enabled="false"/><TouchSensorU-a-entity description="touch to activate" DEF="UpTouch"/></a-entity><!--down--><a-entity scale="0.5,0.5,0.5"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,1,0" transparency="0.5"/></AppearanceU-a-entity><ExtrusionU-a-entity creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="0,-2.5,0,0,-1.5,0"/></a-entity><!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>--></a-entity><!--center--><a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0.7"/></AppearanceU-a-entity><a-entity geometry="primitive: sphere"/></a-entity><a-entity scale="0.5,0.5,0.5" position="-0.5,0,1"><a-entity><AppearanceU-a-entity><MaterialU-a-entity USE="MaterialLightBlue"/></AppearanceU-a-entity><a-entity DEF="CenterString" geometry="primitive: text"/></a-entity></a-entity><StringSensorU-a-entity DEF="CenterSensor" enabled="false"/><TouchSensorU-a-entity description="touch to activate" DEF="CenterTouch"/></a-entity></a-entity><ScriptU-a-entity DEF="RightSingleToMultiString"><fieldU-a-entity/><![CDATA[
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+]]></ScriptU-a-entity><ScriptU-a-entity DEF="UpSingleToMultiString"><fieldU-a-entity/><![CDATA[
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+]]></ScriptU-a-entity><ScriptU-a-entity DEF="CenterSingleToMultiString"><fieldU-a-entity/><![CDATA[
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+]]></ScriptU-a-entity><ROUTEU-a-entity fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"/><ROUTEU-a-entity fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"/><ROUTEU-a-entity fromField="isOver" fromNode="CenterTouch" toField="set_enabled" toNode="CenterSensor"/><ROUTEU-a-entity fromField="enteredText" fromNode="RightSensor" toField="set_rightstring" toNode="RightSingleToMultiString"/><ROUTEU-a-entity fromField="rightlines" fromNode="RightSingleToMultiString" toField="set_string" toNode="RightString"/><ROUTEU-a-entity fromField="isOver" fromNode="RightTouch" toField="set_enabled" toNode="RightSensor"/><ROUTEU-a-entity fromField="enteredText" fromNode="UpSensor" toField="set_upstring" toNode="UpSingleToMultiString"/><ROUTEU-a-entity fromField="uplines" fromNode="UpSingleToMultiString" toField="set_string" toNode="UpString"/><ROUTEU-a-entity fromField="isOver" fromNode="UpTouch" toField="set_enabled" toNode="UpSensor"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><NavigationInfoU-a-entity/><ViewpointU-a-entity description="Process pipes" orientation="1,0,0,-0.4" position="0,5,12"/><a-entity position="0,-2.5,0"><ProtoInstanceU-a-entity name="Process"/></a-entity><a-entity><ProtoInstanceU-a-entity name="Process"/></a-entity><a-entity position="0,2.5,0"><ProtoInstanceU-a-entity name="Process"/></a-entity></a-scene></div></body></html>
