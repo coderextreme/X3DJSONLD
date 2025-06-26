@@ -5,10 +5,10 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js');
+import convertJSON from "./convertJSON.js";
 
 convertJSON([{ 
-	serializer : './ECMAScriptSerializer.js',
+	serializer : 'ECMAScriptSerializer',
 	folder : "../node/net/ecma/",
 	extension : ".mjs",
 	codeOutput : "../",

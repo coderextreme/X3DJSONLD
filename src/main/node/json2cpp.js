@@ -5,16 +5,16 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js').convertJSON;
+import convertJSON from "./convertJSON.js";
 
 convertJSON([{ 
-	serializer : './CppSerializer.js',
+	serializer : 'CppSerializer',
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../",
 	},
 	{ 
-	serializer : './CppFunctionBodySerializer.js',
+	serializer : 'CppFunctionBodySerializer',
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".h",
 	codeOutput : "../"

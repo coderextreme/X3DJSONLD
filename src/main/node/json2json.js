@@ -2,7 +2,7 @@
 
 // Convert JSON to JSON
 
-var fs = require('fs');
+import fs from 'fs';
 
 process.argv.shift();
 process.argv.shift();
