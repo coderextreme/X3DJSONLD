@@ -5,10 +5,10 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js').convertJSON;
+import convertJSON from "./convertJSON.js";
 
 convertJSON([{ 
-	serializer : './JavaSerializer.js',
+	serializer : 'JavaSerializer',
 	folder : "../java/net/coderextreme/",
 	extension : ".java",
 	codeOutput : "../",

@@ -8,13 +8,6 @@ process.argv.shift();
 import convertJSON from "./convertJSON.js";
 
 convertJSON([
-	/*
-	{ 
-	serializer : 'DOM2JSONSerializer',
-	folder : "../",
-	extension : ".json.new"
-	},
-	*/
 	{ 
 	serializer : "GuraSerializer",
 	folder : "../gura/net/coderextreme/",
@@ -92,14 +85,12 @@ convertJSON([
 	extension : ".clj",
 	codeOutput : "../"
 	},
-	/*
 	{ 
 	serializer : 'JavaScriptSerializerNew',
 	folder : "../graaljs/net/remove/",
 	extension : ".js",
 	codeOutput : "../"
 	},
-	*/
 	{ 
 	serializer : 'PythonSerializerX3DJSAIL',
 	folder : "../python/net/coderextreme/",

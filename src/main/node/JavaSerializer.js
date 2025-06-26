@@ -1,7 +1,7 @@
 "use strict";
 
-const DOUBLE_SUFFIX = '';
-const FLOAT_SUFFIX = '';
+const DOUBLE_SUFFIX = 'd';
+const FLOAT_SUFFIX = 'f';
 
 export default function JavaSerializer() {
 this.code = [];
@@ -431,6 +431,9 @@ JavaSerializer.prototype = {
 					var strval;
 					if (attrs[a].nodeValue === 'NULL') {
 						strval = "";
+					} else if (attr === "readInterval") {
+						strval = "new SFTime("+attrs[a].nodeValue+DOUBLE_SUFFIX+")";
+						console.error(strval);
 					} else if (attrType === "SFString") {
 						if (attr === "accessType") {
 							strval = "field.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();

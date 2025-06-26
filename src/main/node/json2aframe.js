@@ -5,11 +5,11 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js').convertJSON;
+import convertJSON from "./convertJSON.js";
 
 convertJSON([{ 
-	serializer : './AframeSerilizer.js',
-	folder : "../aframe/",
+	serializer : 'AframeSerializer',
+	folder : "../aframe/net/coderextreme/",
 	extension : ".aframe",
-	codeOutput : "",
+	codeOutput : "../"
 	}]);

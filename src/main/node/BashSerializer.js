@@ -3,7 +3,7 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-var DOMSerializer = require('./DOMSerializer.js');
+import DOMSerializer from './DOMSerializer.js';
 let serializer = new DOMSerializer();
 
 export default function BashSerializer () {
