@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consolidated X3D Viewer</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">var exports = {};</script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@xmldom/xmldom": "https://esm.sh/@xmldom/xmldom@0.9.8/es2022/xmldom.mjs"
+      }
+    }
+    </script>
+    <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
+    <style>
+        /* ... CSS from your last provided master_viewer.html ... */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        .container {
+            display: flex;
+            height: 100vh; /* Full viewport height */
+        }
+        .content-area {
+            flex-grow: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto; /* scroll if content overflows */
+        }
+        .menu-panel {
+            width: 350px; /* Fixed width for menu */
+            min-width: 250px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            overflow-y: auto; /* Scroll for long menus */
+            border-left: 1px solid #ccc;
+        }
+        .control-panel table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .control-panel td {
+            vertical-align: top;
+            padding: 5px;
+            border: 1px solid #eee;
+        }
+        .iframes-container {
+            display: flex;
+            flex-grow: 1; /* Takes up remaining space */
+            gap: 10px; /* Space between iframes */
+            min-height: 200px; /* Ensure iframes have some height */
+        }
+        .iframes-container iframe {
+            flex: 1; /* Each iframe takes half of the container space */
+            border: 1px solid #ccc;
+        }
+        textarea {
+            width: 98%;
+            box-sizing: border-box;
+        }
+        #image {
+            background: #000;
+            display: block; /* To respect width/height */
+        }
+
+        /* Menu Styles */
+        .menu-panel ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .menu-panel li {
+            padding: 2px 0;
+        }
+        .menu-panel .folder > span {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .menu-panel .folder > span::before {
+            content: '► '; /* Collapsed */
+            display: inline-block;
+            width: 1em;
+        }
+        .menu-panel .folder.open > span::before {
+            content: '▼ '; /* Expanded */
+        }
+        .menu-panel .folder > ul {
+            padding-left: 20px;
+            display: none; /* Hidden by default */
+        }
+        .menu-panel .folder.open > ul {
+            display: block; /* Shown when open */
+        }
+        .menu-panel .file-item {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        .menu-panel .file-item:hover {
+            color: hotpink;
+        }
+        #filterMenu { /* Client-side tree filter */
+            width: 95%;
+            margin-bottom: 10px;
+        }
+        #filter { /* Server-side pattern filter */
+             width: 95%;
+             margin-bottom: 5px;
+        }
+         /* Link styles from original */
+        a:link { color: red; }
+        a:visited { color: green; }
+        a:hover { color: hotpink; }
+        a:active { color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-area">
+            <div class="control-panel">
+                <table>
+                    <tr>
+                        <td>
+                            Current File: <strong id="currentFileName">None</strong><br>
+                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event)" placeholder="e.g., *.json or personal/*">
+                        </td>
+                        <td>
+                            JSON Scripts? <input id="scripting" type="checkbox" checked>
+                            Use Namespace: <select id="namespace">
+                                <option>https://www.web3d.org/specifications/x3d</option>
+                                <option>http://www.w3.org/1999/xhtml</option>
+                                <option>https://www.x3dom.org/x3dom</option>
+                                <option>https://www.web3d.org/specifications/x3d-namespace</option>
+                                <option>none</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Click <a href="#" onclick='window.doJsonActions(); return false;'>here</a> to load JSON from textarea into viewers & convert.
+                        </td>
+                        <td>
+                            Click <a href="#" onclick='window.doXmlActions(); return false;'>here</a> to load XML from textarea into viewers & convert.
+                        </td>
+                        <td>
+                            Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON, then load.
+                        </td>
+                    </tr>
+                </table>
+                 <table>
+                    <tr>
+                        <td>JSON:<br><textarea id="json" rows="10" cols="70"></textarea></td>
+                        <td>XML:<br><textarea id="xml" rows="10" cols="70"></textarea></td>
+                        <td>EXI:<br><textarea id="exi" rows="10" cols="70"></textarea></td>
+                    </tr>
+                     <tr>
+                        <td>STL:<br><textarea id="stl" rows="10" cols="70"></textarea></td>
+                        <td>PLY:<br><textarea id="ply" rows="10" cols="70"></textarea></td>
+                        <td>
+                            Image:<br><img height="150px" width="300px" id="image" src="" alt="Snapshot">
+                            <br><button onclick="captureSnapshot()">Capture Snapshot (X3DOM)</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            Java (from JSON):<br>
+                            <a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
+                            <br><textarea id="java" rows="10" cols="140"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="iframes-container">
+                <iframe id="xite_iframe_id" src="iframe_xite_content.html" title="X_ITE Viewer"></iframe>
+                <iframe id="x3dom_iframe_id" src="iframe_x3dom_content.html" title="X3DOM Viewer"></iframe>
+            </div>
+        </div>
+
+        <div class="menu-panel">
+            <h3>Select File</h3>
+            Client-side Filter: <input type="text" id="filterMenu" placeholder="Filter current tree..." onkeyup="filterMenuTree()">
+            <div id="fileMenuContainer"></div>
+        </div>
+    </div>
+
+    <!-- Module Scripts (same as your last provided version) -->
+    <script type="module" src="../node/ajv2020.js"></script>
+    <script type="module" src="../node/ajvAddFormats.js"></script>
+    <script type="module" src="../node/config.js"></script>
+    <script type="module" src="../node/fieldTypes.js"></script>
+    <script type="module" src="../node/X3DJSONLD.js"></script>
+    <script type="module" src="../node/matrix.js"></script>
+    <script type="module" src="../node/convertJsonToStl.js"></script>
+    <script type="module" src="../node/convertPlyToJson.js"></script>
+    <script type="module" src="../node/convertStlToJson.js"></script>
+    <script type="module" src="../node/JavaScriptSerializer.js"></script>
+    <script type="module" src="../node/mapToMethod.js"></script>
+    <script type="module" src="../node/mapToMethod2.js"></script>
+    <script type="module" src="../node/PythonSerializer.js"></script>
+    <script type="module" src="../node/Script.js"></script>
+    <script type="module" src="../node/Three2Serializer.js"></script>
+    <script type="module" src="../node/DOM2JSONSerializer.js"></script>
+    <script type="module" src="../node/loadValidate.js"></script>
+
+    <script type="module">
+        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly, encodeJSON as encodeJsonToExi, decodeEXI4JSON as decodeExiToJson,
+                 setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
+        } from './master_loader.js';
+
+        window.doJsonActions = () => { /* ... same as previous ... */ };
+        window.doXmlActions = () => { /* ... same as previous ... */ };
+        window.doExiActions = () => { /* ... same as previous ... */ };
+
+        const initialFileData = [
+            { name: "Personal Files (index3dom.html)", files: [
+                "../personal/app.json", "../personal/asmallbox.json", "../personal/BoxEm.json", "../personal/ifscubeworks.json",
+                "../personal/qq3.json", "../personal/rubik.json", "../personal/rubikFurnace.json", "../personal/rubikOnFire.json",
+                "../personal/app.x3d", "../personal/asmallbox.x3d", "../personal/BoxEm.x3d", "../personal/ifscubeworks.x3d",
+                "../personal/qq3.x3d", "../personal/rubik.x3d", "../personal/rubikFurnace.x3d", "../personal/rubikOnFire.x3d"
+            ]},
+            { name: "STL Files (index3dom.html)", files: [
+                "../stl/cleat_clamp.stl", "../stl/example.stl", "../stl/UavBeehive.stl"
+            ]},
+            { name: "PLY Files (index3dom.html)", files: [
+                "../ply/Dodecahedron.ply", "../ply/example.ply", "../ply/Icosahedron.ply",
+                "../ply/IcosahedronSubdivisionLevel1.ply", "../ply/IcosahedronSubdivisionLevel2.ply",
+                "../ply/IcosahedronSubdivisionLevel3.ply", "../ply/IcosahedronSubdivisionLevel4.ply",
+                "../ply/IcosahedronSubdivisionLevel5.ply", "../ply/Octahedron.ply",
+                "../ply/OrigamiCrane.ply", "../ply/Tetrahedron.ply"
+            ]},
+            { name: "General Data (three.html / index.html)", files: [
+                "../data/abox.json", "../data/AllenDutton.json", "../data/app.json", "../data/arc.json",
+                "../data/rubikFurnace.json", "../data/sphereflowers.json",
+                "../data/arc2.x3d", "../data/ArchHalf.x3d", "../data/BindingOperations.x3d","../data/browser.x3d",
+                "../data/bubbles.x3d", "../data/bubs3.x3d", "../data/CloudsProcedural4.x3d", "../data/extrusion.x3d",
+                "../data/flower.x3d", "../data/flower3.x3d", "../data/flowers4.x3d", "../data/flowers7.x3d",
+                "../data/geobubbles.x3d", "../data/mirror.x3d", "../data/mirror2.x3d", "../data/MyBounce.x3d",
+                "../data/ObliqueStrategies.x3d", "../data/text.x3d"
+            ]},
+            { name: "X3D Examples Viewer (X3DExamplesViewer.html)", files: [
+                "../data/force.json",
+            ]},
+            { name: "Proto Examples (proto.html)", files: [
+                 "../data/abox.x3d", "../data/arc.x3d", "../data/flowerproto.x3d",
+            ]}
+        ];
+
+        const menuContainer = document.getElementById('fileMenuContainer');
+
+        function buildMenu(data, parentElement) {
+            const ul = document.createElement('ul');
+            data.forEach(item => {
+                const li = document.createElement('li');
+                if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
+                    li.classList.add('folder');
+                    const span = document.createElement('span');
+                    span.textContent = item.name;
+                    span.onclick = function() { li.classList.toggle('open'); };
+                    li.appendChild(span);
+                    buildMenu(item.files, li);
+                } else if (typeof item === 'string') {
+                    const filePath = item;
+                    const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
+                    li.textContent = fileName;
+                    li.title = filePath;
+                    li.classList.add('file-item');
+                    li.onclick = function() {
+                        document.getElementById('currentFileName').textContent = filePath;
+                        loadX3DFile(filePath);
+                    };
+                }
+                 ul.appendChild(li);
+            });
+            parentElement.appendChild(ul);
+        }
+
+        window.filterMenuTree = function() { /* ... same as previous correct version ... */ };
+
+        // SIMULATE SERVER-SIDE /files?pattern FETCH - this version returns a flat list of paths
+        async function simulateFetchFilesFlatList(pattern) {
+            console.log("Simulating fetch for pattern (flat list output):", pattern);
+            const isWildcard = pattern.includes('*');
+            let simplePattern = pattern.replace(/\*/g, '').toLowerCase();
+            let patternIsOnlyWildcard = (pattern === "*" || pattern === "*.*");
+
+            let allFilePaths = [];
+            function collectAllFilePathsRecursive(dataArray) {
+                dataArray.forEach(item => {
+                    if (item.files && Array.isArray(item.files)) {
+                        collectAllFilePathsRecursive(item.files);
+                    } else if (typeof item === 'string') { // It's a file path
+                        allFilePaths.push(item);
+                    }
+                });
+            }
+            collectAllFilePathsRecursive(initialFileData); // Populate allFilePaths
+
+            if (!pattern || patternIsOnlyWildcard) {
+                 return Promise.resolve([...new Set(allFilePaths)]); // Return unique paths
+            }
+
+            const results = allFilePaths.filter(filePath => {
+                let p = filePath.toLowerCase();
+                if (isWildcard) {
+                    if (pattern.startsWith("*.")) { return p.endsWith(simplePattern.substring(1)); }
+                    if (pattern.endsWith("/*")) { return p.startsWith(simplePattern.substring(0, simplePattern.length - 1));}
+                }
+                return p.includes(simplePattern);
+            });
+            return Promise.resolve([...new Set(results)]); // Ensure unique results
+        }
+
+        // Function to group a flat list of files under their original top-level categories
+        function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) {
+            const newHierarchicalData = [];
+            const filesProcessedForGrouping = new Set();
+
+            originalFullHierarchy.forEach(category => {
+                // Create a new category entry for the filtered results
+                const newCategoryFiles = [];
+                if (category.files && Array.isArray(category.files)) {
+                    category.files.forEach(originalFilePath => {
+                        // If this original file is in our flat filtered list, add it
+                        if (flatFilteredFiles.includes(originalFilePath) && !filesProcessedForGrouping.has(originalFilePath)) {
+                            newCategoryFiles.push(originalFilePath);
+                            filesProcessedForGrouping.add(originalFilePath);
+                        }
+                    });
+                }
+                // Only add the category to the new hierarchy if it has any matched files
+                if (newCategoryFiles.length > 0) {
+                    newHierarchicalData.push({
+                        name: category.name, // Use the original category name
+                        files: newCategoryFiles
+                    });
+                }
+            });
+
+            // Handle files that were in flatFilteredFiles but didn't match any original category's files
+            // This can happen if the server returns paths not perfectly matching the initialFileData structure
+            const remainingUncategorized = flatFilteredFiles.filter(f => !filesProcessedForGrouping.has(f));
+            if (remainingUncategorized.length > 0) {
+                 newHierarchicalData.push({ name: "Other Matched Files", files: remainingUncategorized });
+            }
+
+            return newHierarchicalData;
+        }
+
+
+        window.fetchAndUpdateHierarchicalMenu = async function(event) {
+            const pattern = event.target.value;
+
+            if (!pattern && event.type === 'change') {
+                // menuContainer.innerHTML = '';
+                buildMenu(initialFileData, menuContainer);
+                if (document.getElementById('filterMenu').value) filterMenuTree();
+                return;
+            }
+            if (!pattern && event.type !== 'change') return;
+
+            try {
+                // 1. Get flat list of filtered files (simulated or real)
+                // const flatFilteredListFromServer = await simulateFetchFilesFlatList(pattern); // SIMULATION
+
+                const response = await fetch(`/files?pattern=${encodeURIComponent(pattern)}`); // REAL FETCH
+                if (!response.ok) {
+                    throw new Error(`Server error fetching files: ${response.status} ${response.statusText}`);
+                }
+                const flatFilteredListFromServer = await response.json(); // Expects array of strings
+
+                // 2. Reconstruct a hierarchical structure based on the original categories
+                const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
+
+                // 3. Build the menu with this new hierarchical structure
+                // menuContainer.innerHTML = '';
+                buildMenu(newHierarchicalMenuData, menuContainer);
+
+                if (document.getElementById('filterMenu').value) filterMenuTree();
+
+            } catch (error) {
+                console.error("Error fetching or building menu:", error);
+                menuContainer.innerHTML = `<li>Error loading file list: ${error.message}</li>`;
+            }
+        };
+
+        window.captureSnapshot = function() { /* ... same as previous ... */ };
+
+        $(document).ready(function() {
+            buildMenu(initialFileData, menuContainer);
+            setXITEIFrame(document.getElementById('xite_iframe_id'));
+            setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
+        });
+    </script>
+</body>
+</html>
