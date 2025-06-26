@@ -9,7 +9,7 @@ import config from './config.js';
 import mapToMethod2 from './mapToMethod2.js';
 import fieldTypes from './fieldTypes.js';
 import X3DJSONLD from './X3DJSONLD.js';
-import Script from './Script.js';
+import { Script, LOG } from './Script.js';
 import { replaceX3DJSON, loadSchema, loadX3DJS, doValidate } from "./loadValidateServer.js";
 import { DOMParser, XMLSerializer, DOMImplementation } from '@xmldom/xmldom';
 
@@ -34,7 +34,6 @@ import PascalSerializer from './PascalSerializer.js';
 var domImpl = new DOMImplementation();
 //console.error("DOM Impl", domImpl);
 
-var LOG = Script.LOG;
 X3DJSONLD.processURLs = function(urls) { return urls; };
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 
