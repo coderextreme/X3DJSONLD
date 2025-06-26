@@ -6,13 +6,19 @@ export default function ThreeSerializer () {
 
 ThreeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		for (var cn in element.childNodes) {
-			var node = element.childNodes[cn];
-			if (node.nodeName === 'Scene') {
-				var obj = printObject(node, fieldTypes);
-				console.error(JSON.stringify(obj, null, 2));
-				// dump after we find first scene
-				return JSON.stringify(obj, null, 2);
+		if (element) {
+			for (var cn in element.childNodes) {
+				var node = element.childNodes[cn];
+				if (node.nodeName === 'Scene') {
+					var obj = printObject(node, fieldTypes);
+					// console.error(JSON.stringify(obj, null, 2));
+					// dump after we find first scene
+					if (obj) {
+						return JSON.stringify(obj, null, 2);
+					} else {
+						throw "No object "+clazz;
+					}
+				}
 			}
 		}
 	}
