@@ -350,7 +350,7 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N1' name='Node'/>
+          <ProtoInstance USE='N1'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N3' name='Node'>
@@ -360,7 +360,7 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N1' name='Node'/>
+          <ProtoInstance USE='N1'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N4' name='Node'>
@@ -370,7 +370,7 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N1' name='Node'/>
+          <ProtoInstance USE='N1'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N5' name='Node'>
@@ -380,7 +380,7 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N2' name='Node'/>
+          <ProtoInstance USE='N2'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N6' name='Node'>
@@ -390,15 +390,15 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N3' name='Node'/>
+          <ProtoInstance USE='N3'/>
         </fieldValue>
         <fieldValue name='input'>
-          <ProtoInstance USE='N6' name='Node'/>
+          <ProtoInstance USE='N6'/>
         </fieldValue>
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N4' name='Node'/>
+          <ProtoInstance USE='N4'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N7' name='Node'>
@@ -408,15 +408,15 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N5' name='Node'/>
+          <ProtoInstance USE='N5'/>
         </fieldValue>
         <fieldValue name='input'>
-          <ProtoInstance USE='N7' name='Node'/>
+          <ProtoInstance USE='N7'/>
         </fieldValue>
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N6' name='Node'/>
+          <ProtoInstance USE='N6'/>
         </fieldValue>
         <fieldValue name='input'>
           <ProtoInstance DEF='N8' name='Node'>
@@ -426,20 +426,20 @@ vrmlscript:
       </ProtoInstance>
       <ProtoInstance name='Route'>
         <fieldValue name='output'>
-          <ProtoInstance USE='N7' name='Node'/>
+          <ProtoInstance USE='N7'/>
         </fieldValue>
         <fieldValue name='input'>
-          <ProtoInstance USE='N8' name='Node'/>
+          <ProtoInstance USE='N8'/>
         </fieldValue>
       </ProtoInstance>
-      <ProtoInstance USE='N1' name='Node'/>
-      <ProtoInstance USE='N2' name='Node'/>
-      <ProtoInstance USE='N3' name='Node'/>
-      <ProtoInstance USE='N4' name='Node'/>
-      <ProtoInstance USE='N5' name='Node'/>
-      <ProtoInstance USE='N6' name='Node'/>
-      <ProtoInstance USE='N7' name='Node'/>
-      <ProtoInstance USE='N8' name='Node'/>
+      <ProtoInstance USE='N1'/>
+      <ProtoInstance USE='N2'/>
+      <ProtoInstance USE='N3'/>
+      <ProtoInstance USE='N4'/>
+      <ProtoInstance USE='N5'/>
+      <ProtoInstance USE='N6'/>
+      <ProtoInstance USE='N7'/>
+      <ProtoInstance USE='N8'/>
     </Transform>
   </Scene>
 </X3D>

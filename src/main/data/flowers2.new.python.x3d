@@ -28,7 +28,7 @@
         <ProtoBody>
           <Group>
             <TimeSensor DEF='Clock' cycleInterval='16.0' loop='true'/>
-            <OrientationInterpolator DEF='OrbitPath' key='0 0 1' keyValue='1 0 0 0 1 0 0 3.14 1 0 0 6.28'/>
+            <OrientationInterpolator DEF='OrbitPath' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 3.14 1 0 0 6.28'/>
             <Transform DEF='OrbitTransform'>
               <IS>
                 <connect nodeField='translation' protoField='translation'/>

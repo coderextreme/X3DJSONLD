@@ -53,7 +53,7 @@ originally converted from SGI's Open Inventor material examples."
 },
 {
 "@name":"translated",
-"@content":"04 June 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -77,7 +77,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco00",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
 }
 },
 { "ExternProtoDeclare":
@@ -85,7 +85,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco01",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
 }
 },
 { "ExternProtoDeclare":
@@ -93,7 +93,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco02",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
 }
 },
 { "ExternProtoDeclare":
@@ -101,7 +101,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco03",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
 }
 },
 { "ExternProtoDeclare":
@@ -109,7 +109,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco04",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
 }
 },
 { "ExternProtoDeclare":
@@ -117,7 +117,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco05",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
 }
 },
 { "ExternProtoDeclare":
@@ -125,7 +125,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco06",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
 }
 },
 { "ExternProtoDeclare":
@@ -133,7 +133,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco07",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
 }
 },
 { "ExternProtoDeclare":
@@ -141,7 +141,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco08",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
 }
 },
 { "ExternProtoDeclare":
@@ -149,7 +149,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco09",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
 }
 },
 { "ExternProtoDeclare":
@@ -157,7 +157,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco10",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
 }
 },
 { "ExternProtoDeclare":
@@ -165,7 +165,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco11",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
 }
 },
 { "ExternProtoDeclare":
@@ -173,7 +173,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco12",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
 }
 },
 { "ExternProtoDeclare":
@@ -181,7 +181,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco13",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
 }
 },
 { "ExternProtoDeclare":
@@ -189,7 +189,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco14",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
 }
 },
 { "ExternProtoDeclare":
@@ -197,7 +197,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco15",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
 }
 },
 { "ExternProtoDeclare":
@@ -205,7 +205,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco16",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
 }
 },
 { "ExternProtoDeclare":
@@ -213,7 +213,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco17",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
 }
 },
 { "ExternProtoDeclare":
@@ -221,7 +221,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco18",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
 }
 },
 { "ExternProtoDeclare":
@@ -229,7 +229,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco19",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
 }
 },
 { "ExternProtoDeclare":
@@ -237,7 +237,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco20",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
 }
 },
 { "ExternProtoDeclare":
@@ -245,7 +245,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco21",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
 }
 },
 { "ExternProtoDeclare":
@@ -253,7 +253,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco22",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
 }
 },
 { "ExternProtoDeclare":
@@ -261,7 +261,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco23",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
 }
 },
 { "ExternProtoDeclare":
@@ -269,7 +269,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco24",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
 }
 },
 { "ExternProtoDeclare":
@@ -277,7 +277,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco25",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
 }
 },
 { "ExternProtoDeclare":
@@ -285,7 +285,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco26",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
 }
 },
 { "ExternProtoDeclare":
@@ -293,7 +293,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco27",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
 }
 },
 { "ExternProtoDeclare":
@@ -301,7 +301,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco28",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
 }
 },
 { "ExternProtoDeclare":
@@ -309,7 +309,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco29",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
 }
 },
 { "ExternProtoDeclare":
@@ -317,7 +317,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco30",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
 }
 },
 { "ExternProtoDeclare":
@@ -325,7 +325,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco31",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
 }
 },
 { "ExternProtoDeclare":
@@ -333,7 +333,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco32",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
 }
 },
 { "ExternProtoDeclare":
@@ -341,7 +341,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco33",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
 }
 },
 { "ExternProtoDeclare":
@@ -349,7 +349,7 @@ originally converted from SGI's Open Inventor material examples."
 "@name":"ArtDeco34",
 "@appinfo":"UniversalMediaMaterials prototype",
 "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
-"@url":["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
+"@url":["../data/ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
 }
 },
 { "Group":
@@ -398,7 +398,7 @@ originally converted from SGI's Open Inventor material examples."
 { "PositionInterpolator":
 {
 "@DEF":"Close_Mover",
-"@key":[0,0,0,0,1],
+"@key":[0,0.25,0.5,0.75,1],
 "@keyValue":[0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0]
 }
 },

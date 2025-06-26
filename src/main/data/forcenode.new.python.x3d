@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
@@ -53,7 +53,11 @@ ecmascript:
 "+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
 "+
-"                                                keyValue = new MFVec3f(...[old, translation]);
+"			    			keyValue = new MFVec3f();
+"+
+"			    			keyValue[0] = old;
+"+
+"			    			keyValue[1] = translation;
 "+
 "						// Browser.println(translation);
 "+
@@ -98,11 +102,17 @@ ecmascript:
 "+
 "		    if (typeof spine === 'undefined') {
 "+
-"		        spine = new MFVec3f(...[value, value]);
+"		        spine = new MFVec3f();
+"+
+"			spine[0] = value;
+"+
+"			spine[1] = value;
 "+
 "		    } else {
 "+
-"		        spine = new MFVec3f(...[value, spine[1]]);
+"		        spine = new MFVec3f();
+"+
+"			spine[0] = value;
 "+
 "		    }
 "+
@@ -114,11 +124,17 @@ ecmascript:
 "+
 "		    if (typeof spine === 'undefined') {
 "+
-"		        spine = new MFVec3f(...[value, value]);
+"		        spine = new MFVec3f();
+"+
+"			spine[0] = value;
+"+
+"			spine[1] = value;
 "+
 "		    } else {
 "+
-"		        spine = new MFVec3f(...[spine[0], value]);
+"		        spine = new MFVec3f();
+"+
+"			spine[1] = value;
 "+
 "		    }
 "+

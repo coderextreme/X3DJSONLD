@@ -64,7 +64,7 @@ the structure of Web Audio API."
 },
 {
 "@name":"translated",
-"@content":"04 June 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -118,14 +118,14 @@ current view",
 { "PositionInterpolator":
 {
 "@DEF":"Camera001-POS-INTERP",
-"@key":[0,0,0,0,1],
+"@key":[0,0.25,0.5,0.75,1],
 "@keyValue":[0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500]
 }
 },
 { "OrientationInterpolator":
 {
 "@DEF":"Camera001-ROT-INTERP",
-"@key":[0,0,0,0,1],
+"@key":[0,0.25,0.5,0.75,1],
 "@keyValue":[1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-1.0E-6,0,-0.523599]
 }
 },

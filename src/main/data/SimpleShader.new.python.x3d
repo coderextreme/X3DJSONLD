@@ -62,9 +62,9 @@
           <MetadataString DEF='type' name='type' containerField='value' reference='http://titania.create3000.de' value='"EXAMINE"'/>
         </MetadataSet>
         <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='value' reference='http://titania.create3000.de'>
-          <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6 0 2'/>
-          <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='0 0 0 1'/>
-          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='0 0 0'/>
+          <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
+          <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
+          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>
         </MetadataSet>
       </MetadataSet>
     </WorldInfo>
