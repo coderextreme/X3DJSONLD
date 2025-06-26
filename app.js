@@ -46,11 +46,11 @@ async function convertX3dToJson(res, infile, outfile, next) {
 		var domParser = new DOMParser();
 		doc = domParser.parseFromString (data.toString(), 'application/xml');
 		var element = doc.documentElement;
-		console.error("Calling converter "+serializer+" on "+infile);
+		console.log("Calling converter "+serializer+" on "+infile);
 		var serializer = new DOM2JSONSerializer();
 		var str = serializer.serializeToString(null, element, outfile, mapToMethod, fieldTypes);
 		var json = JSON.parse(str);
-		send(res, json, "text/json", next);
+		send(res, json, "text/json", next, outfile+".json");
 	} catch (e) {
 		next();
 		console.error(e, "Problems converting", infile, "to", outfile);
@@ -63,12 +63,12 @@ async function convertX3dToJson(res, infile, outfile, next) {
 	*/
 }
 
-function send(res, data, type, next) {
-	sendNoNext(res, data, type);
+function send(res, data, type, next, outfile) {
+	sendNoNext(res, data, type, outfile);
 	next();
 }
 
-function sendNoNext(res, data, type) {
+function sendNoNext(res, data, type, outfile) {
 	// console.error("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
@@ -78,6 +78,7 @@ function sendNoNext(res, data, type) {
 	} catch (e) {
 		console.error(e);
 	}
+	console.log("    Replied with File", outfile);
 	res.send(data);
 }
 
@@ -144,7 +145,7 @@ app.get("/www.web3d.org/*.wrl", async function(req, res, next) {
 	}
 	infile = www + "/" + infile;
 	var data = await fs.promises.readFile(infile);
-	sendNoNext(res, data.toString(), "model/vrml");
+	sendNoNext(res, data.toString(), "model/vrml", infile);
 });
 
 /*
@@ -215,7 +216,7 @@ app.get("/files", function(req, res, next) {
 		});
 	}
 	console.log("Sending ", json.length, "files");
-	send(res, json, "text/json", next);
+	send(res, json, "text/json", next, json);
 });
 
 function magic(path, type) {
@@ -234,7 +235,7 @@ function magic(path, type) {
 		while (url.startsWith("/")) {
 			url = url.substr(1);
 		}
-		console.error(req.ip+":  Requested", url);
+		console.log(req.ip+":  Requested", url);
 		var wind = url.indexOf("www.web3d.org");
 		if (wind >= 0) {
 			url = url.substring(wind);
@@ -244,12 +245,12 @@ function magic(path, type) {
 			url = __dirname+"/"+ url;
 		}
 		if (fs.existsSync(url)) {
-			console.error("Reading", url);
+			console.log("Reading", url);
 			var data = await fs.promises.readFile(url);
 			if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
-				sendNoNext(res, data, type);
+				sendNoNext(res, data, type, url);
 			} else {
-				sendNoNext(res, data.toString(), type);
+				sendNoNext(res, data.toString(), type, url);
 			}
 		} else {
 			console.error("File does not exist", url);
@@ -324,7 +325,7 @@ magic("*.xml", "text/xml");
 
 app.get("*.json", async function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error(req.ip+":  Requested JSON File", url);
+	console.log(req.ip+":  Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
@@ -347,7 +348,7 @@ app.get("*.json", async function(req, res, next) {
 		var json = JSON.parse(data.toString());
 		// console.error(JSON.stringify(json));
 		// console.error(JSON.stringify(json));
-                send(res, json, "text/json", next);
+                send(res, json, "text/json", next, outfile);
 	/*
 	} else {
 		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
@@ -363,7 +364,7 @@ app.get("*.json", async function(req, res, next) {
 
 app.get("*.x3dj", async function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error(req.ip+":  Requested JSON File", url);
+	console.log(req.ip+":  Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
@@ -375,6 +376,9 @@ app.get("*.x3dj", async function(req, res, next) {
 		outfile = www +"/"+file.substr(file.indexOf("www.web3d.org"));
 	}
 	try {
+		if (url.startsWith(".wellknown")) {
+			throw ".wellknown not supported by server.  See app.js";
+		}
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
@@ -382,7 +386,7 @@ app.get("*.x3dj", async function(req, res, next) {
 		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
 		// console.error(JSON.stringify(json));
-                send(res, json, "text/json", next);
+                send(res, json, "text/json", next, outfile);
 	/*
 	} else {
 		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
