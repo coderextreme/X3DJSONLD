@@ -32,7 +32,7 @@
     <Background DEF='Gray' skyColor='0.2 0.2 0.2'/>
     <OrthoViewpoint description='OrthoViewpoint'/>
     <Viewpoint description='Viewpoint' position='0 0 8'/>
-    <ParticleSystem colorKey='0 0 0 1' geometryType='POINT' lifetimeVariation='0.01' maxParticles='100000' particleLifetime='60.0' particleSize='0.1 0.1'>
+    <ParticleSystem colorKey='0 0.1 0.4 1' geometryType='POINT' lifetimeVariation='0.01' maxParticles='100000' particleLifetime='60.0' particleSize='0.1 0.1'>
       <Appearance>
         <PointProperties pointSizeMaxValue='2.0' pointSizeScaleFactor='2.0'/>
       </Appearance>

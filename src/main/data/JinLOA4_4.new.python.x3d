@@ -31,7 +31,7 @@
         <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
         <MetadataString name='creationDate' value='"31 March 2011"'/>
         <MetadataString name='gender' value='"female"'/>
-        <MetadataFloat name='height' value='1'/>
+        <MetadataFloat name='height' value='1.86'/>
         <MetadataString name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 1.024209 -0.015921'>

@@ -78,7 +78,7 @@
 },
 {
 "@name":"translated",
-"@content":"04 June 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -148,7 +148,7 @@
 { "MetadataFloat":
 {
 "@name":"height",
-"@value":[1]
+"@value":[1.5]
 }
 },
 { "MetadataString":

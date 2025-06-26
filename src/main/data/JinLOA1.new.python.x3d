@@ -32,7 +32,7 @@
         <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
         <MetadataString name='creationDate' value='"31 March 2011"'/>
         <MetadataString name='gender' value='"female"'/>
-        <MetadataFloat name='height' value='1'/>
+        <MetadataFloat name='height' value='1.5'/>
         <MetadataFloat name='weight' value='50'/>
         <MetadataString name='humanoidVersion' value='"validation testing"'/>
       </MetadataSet>

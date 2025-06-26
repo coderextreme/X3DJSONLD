@@ -65,27 +65,29 @@ ecmascript:
 "+
 "     updateCoordinates(resolution);
 "+
-"     var cis = [];
+"     var localci = new MFInt32();
 "+
-"     for ( i = 0; i < resolution-1; i++) {
+"     var arrIndex = 0;
 "+
-"     	for ( j = 0; j < resolution-1; j++) {
+"     for (var i = 0; i < resolution-1; i++) {
 "+
-"	     cis.push(i*resolution+j);
+"     	for (var j = 0; j < resolution-1; j++) {
 "+
-"	     cis.push(i*resolution+j+1);
+"	     localci[arrIndex++] = i*resolution+j;
 "+
-"	     cis.push((i+1)*resolution+j+1);
+"	     localci[arrIndex++] = i*resolution+j+1;
 "+
-"	     cis.push((i+1)*resolution+j);
+"	     localci[arrIndex++] = (i+1)*resolution+j+1;
 "+
-"	     cis.push(-1);
+"	     localci[arrIndex++] = (i+1)*resolution+j;
+"+
+"	     localci[arrIndex++] = -1;
 "+
 "	}
 "+
 "    }
 "+
-"    coordIndexes = new MFInt32(...cis);
+"    coordIndexes = localci;
 "+
 "}
 "+
@@ -99,15 +101,17 @@ ecmascript:
 "+
 "     var delta = (2 * 3.141592653) / (resolution-1);
 "+
-"     var crds = [];
+"     var localc = new MFVec3f();
 "+
-"     for ( i = 0; i < resolution; i++) {
+"     var arrIndex = 0;
 "+
-"     	for ( j = 0; j < resolution; j++) {
+"     for (var i = 0; i < resolution; i++) {
+"+
+"     	for (var j = 0; j < resolution; j++) {
 "+
 "		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
 "+
-"		crds.push(new SFVec3f(
+"		localc[arrIndex++] = new SFVec3f(
 "+
 "			rho * Math.cos(phi) * Math.cos(theta),
 "+
@@ -115,7 +119,7 @@ ecmascript:
 "+
 "			rho * Math.sin(phi)
 "+
-"		));
+"		);
 "+
 "		theta += delta;
 "+
@@ -125,7 +129,7 @@ ecmascript:
 "+
 "     }
 "+
-"     coordinates = new MFVec3f(...crds);
+"     coordinates = localc;
 "+
 "}
 "+
