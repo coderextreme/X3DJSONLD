@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><NavigationInfoU-a-entity/><DirectionalLightU-a-entity direction="0,-0.8,-0.2" intensity="0.5"/><BackgroundU-a-entity skyColor="1,1,1"/><ViewpointU-a-entity description="One mathematical orbital" position="0,0,50"/><a-entity DEF="OrbitTransform" position="8,0,0"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0.5,1" specularColor="0,0.5,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity convex="false" DEF="Orbit"><CoordinateU-a-entity DEF="OrbitCoordinates"/></IndexedFaceSetU-a-entity></a-entity></a-entity><ScriptU-a-entity DEF="OrbitScript"><fieldU-a-entity/><!--<field accessType="inputOutput" name="e" type="SFFloat" value="5"/> <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/>--><![CDATA[
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
+var t = 0;
+var p = 0;
+
+function initialize() {
+     generateCoordinates(resolution);
+     var localci = new MFInt32();
+     var arrIndex = 0;
+     for (var i = 0; i < resolution-1; i++) {
+     	for (var j = 0; j < resolution-1; j++) {
+	     localci[arrIndex++] = i*resolution+j;
+	     localci[arrIndex++] = i*resolution+j+1;
+	     localci[arrIndex++] = (i+1)*resolution+j+1;
+	     localci[arrIndex++] = (i+1)*resolution+j;
+	     localci[arrIndex++] = -1;
+	}
+    }
+    coordIndexes = localci;
+}
+
+function generateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var localc = new MFVec3f();
+     var arrIndex = 0;
+     for (var  i = 0; i < resolution; i++) {
+     	for (var  j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc[arrIndex++] = new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = localc;
+}
+
+function set_fraction(fraction, eventTime) {
+	t += 0.5;
+	p += 0.5;
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	generateCoordinates(resolution);
+}
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="Clock" cycleInterval="16" loop="true"/><ROUTEU-a-entity fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="set_coordIndex"/><ROUTEU-a-entity fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"/><ROUTEU-a-entity fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"/></a-scene></div></body></html>

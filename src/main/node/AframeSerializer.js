@@ -1,6 +1,6 @@
 "use strict";
 
-var xmldom = require('@xmldom/xmldom');
+import xmldom from '@xmldom/xmldom';
 var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 
@@ -83,7 +83,7 @@ AframeSerializer.prototype = {
 	},
 		*/
 	jsonCopy : function(from) {
-		return structuredClonefrom);
+		return structuredClonefrom;
 	},
 	componentsToAttributes : function(element, components) {
 		var componentCollector = {};

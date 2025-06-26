@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ScriptU-a-entity DEF="OpenVault"><fieldU-a-entity/><![CDATA[
+
+
+
+      ecmascript:
+
+      function combinationEntered (value) {
+
+        unlocked = value;
+
+      }
+
+      function openVault(value) {
+
+      if (unlocked) vaultUnlocked = value;
+
+      }
+
+
+
+]]></ScriptU-a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0"/></AppearanceU-a-entity><a-entity geometry="primitive: sphere"/></a-entity><SoundU-a-entity maxBack="1000" maxFront="1000" minBack="1000" minFront="1000"><AudioClipU-a-entity DEF="Click" stopTime="1" description="clicking sound" url="../resources/chandubabamusic1.wav"/></SoundU-a-entity><TouchSensorU-a-entity DEF="TS"/><ROUTEU-a-entity fromNode="TS" fromField="isOver" toNode="OpenVault" toField="combinationEntered"/><ROUTEU-a-entity fromNode="TS" fromField="touchTime" toNode="OpenVault" toField="openVault"/><ROUTEU-a-entity fromNode="OpenVault" fromField="vaultUnlocked" toNode="Click" toField="startTime"/></a-scene></div></body></html>

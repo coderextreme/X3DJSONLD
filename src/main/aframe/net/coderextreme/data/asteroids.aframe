@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="anyShape"><ProtoInterfaceU-a-entity><fieldU-a-entity><a-entity><a-entity geometry="primitive: sphere"/></a-entity></fieldU-a-entity></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoInstanceU-a-entity name="anyShape"/></a-scene></div></body></html>

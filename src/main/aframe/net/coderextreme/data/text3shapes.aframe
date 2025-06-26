@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><a-entity><a-entity><a-entity value="Node&quot;&quot;&quot;" geometry="primitive: text"><FontStyleU-a-entity/></a-entity><AppearanceU-a-entity><MaterialU-a-entity/></AppearanceU-a-entity></a-entity><a-entity><a-entity value="Node2,\,\\,Node2" geometry="primitive: text"><FontStyleU-a-entity/></a-entity><AppearanceU-a-entity><MaterialU-a-entity/></AppearanceU-a-entity></a-entity><a-entity><a-entity value="Node3 \\ \ ,Node3&quot;&quot;&quot;" geometry="primitive: text"><FontStyleU-a-entity/></a-entity><AppearanceU-a-entity><MaterialU-a-entity/></AppearanceU-a-entity></a-entity><ScriptU-a-entity><fieldU-a-entity/><![CDATA[
+			    ecmascript:
+			    var me = '"1" ""2" "\n3"';
+			    
+			]]></ScriptU-a-entity></a-entity></a-scene></div></body></html>

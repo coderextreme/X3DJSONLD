@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><componentU-a-entity/><metaU-a-entity/></headU-a-entity><a-scene><NavigationInfoU-a-entity/><!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><BackgroundU-a-entity DEF="background" backUrl="../resources/images/all_probes/beach_cross/beach_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png" bottomUrl="../resources/images/all_probes/beach_cross/beach_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png" frontUrl="../resources/images/all_probes/beach_cross/beach_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png" leftUrl="../resources/images/all_probes/beach_cross/beach_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png" rightUrl="../resources/images/all_probes/beach_cross/beach_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png" topUrl="../resources/images/all_probes/beach_cross/beach_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"/><ViewpointU-a-entity position="0,0,40" description="Transparent rose"/><a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,0.7,0.7" specularColor="0.5,0.5,0.5"/><ComposedCubeMapTextureU-a-entity DEF="texture"><a-image DEF="backShader" url="../resources/images/all_probes/beach_cross/beach_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png" material="src: ../resources/images/all_probes/beach_cross/beach_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"/><a-image DEF="bottomShader" url="../resources/images/all_probes/beach_cross/beach_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png" material="src: ../resources/images/all_probes/beach_cross/beach_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"/><a-image DEF="frontShader" url="../resources/images/all_probes/beach_cross/beach_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png" material="src: ../resources/images/all_probes/beach_cross/beach_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"/><a-image DEF="leftShader" url="../resources/images/all_probes/beach_cross/beach_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png" material="src: ../resources/images/all_probes/beach_cross/beach_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"/><a-image DEF="rightShader" url="../resources/images/all_probes/beach_cross/beach_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png" material="src: ../resources/images/all_probes/beach_cross/beach_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"/><a-image DEF="topShader" url="../resources/images/all_probes/beach_cross/beach_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png" geometry="src: ../resources/images/all_probes/beach_cross/beach_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png" material="src: ../resources/images/all_probes/beach_cross/beach_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"/></ComposedCubeMapTextureU-a-entity><ComposedShaderU-a-entity DEF="x3dom" language="GLSL"><!--TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>--><fieldU-a-entity><ComposedCubeMapTextureU-a-entity USE="texture"/></fieldU-a-entity><ShaderPartU-a-entity url="https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs,https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"/><ShaderPartU-a-entity url="https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs,https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"/></ComposedShaderU-a-entity><ComposedShaderU-a-entity DEF="x_ite" language="GLSL"><fieldU-a-entity><ComposedCubeMapTextureU-a-entity USE="texture"/></fieldU-a-entity><ShaderPartU-a-entity url="https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs,https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"/><ShaderPartU-a-entity url="https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs,https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"/></ComposedShaderU-a-entity></AppearanceU-a-entity><a-entity geometry="primitive: sphere"/></a-entity></a-entity><ScriptU-a-entity DEF="UrlSelector" directOutput="true"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+        function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }
+
+]]></ScriptU-a-entity><!--<TimeSensor DEF="Clock" cycleInterval="45" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>--><ScriptU-a-entity DEF="Animate" directOutput="true"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+
+function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}
+
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="TourTime" cycleInterval="5" loop="true"/><ROUTEU-a-entity fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"/><ROUTEU-a-entity fromNode="Animate" fromField="a" toNode="x_ite" toField="a"/><ROUTEU-a-entity fromNode="Animate" fromField="b" toNode="x_ite" toField="b"/><ROUTEU-a-entity fromNode="Animate" fromField="c" toNode="x_ite" toField="c"/><ROUTEU-a-entity fromNode="Animate" fromField="d" toNode="x_ite" toField="d"/><ROUTEU-a-entity fromNode="Animate" fromField="pdelta" toNode="x_ite" toField="pdelta"/><ROUTEU-a-entity fromNode="Animate" fromField="tdelta" toNode="x_ite" toField="tdelta"/><ROUTEU-a-entity fromNode="Animate" fromField="a" toNode="x3dom" toField="a"/><ROUTEU-a-entity fromNode="Animate" fromField="b" toNode="x3dom" toField="b"/><ROUTEU-a-entity fromNode="Animate" fromField="c" toNode="x3dom" toField="c"/><ROUTEU-a-entity fromNode="Animate" fromField="d" toNode="x3dom" toField="d"/><ROUTEU-a-entity fromNode="Animate" fromField="pdelta" toNode="x3dom" toField="pdelta"/><ROUTEU-a-entity fromNode="Animate" fromField="tdelta" toNode="x3dom" toField="tdelta"/></a-scene></div></body></html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><WorldInfoU-a-entity title="Connector Proto"/><ViewpointU-a-entity position="0,0,5" description="Only Viewpoint"/><BackgroundU-a-entity skyColor="0.4,0.4,0.4"/><a-entity DEF="G1"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,0.2,0.2"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: sphere"/></a-entity><PlaneSensorU-a-entity description="Grab to move" DEF="PS1"/><ROUTEU-a-entity fromNode="PS1" fromField="translation_changed" toNode="G1" toField="set_translation"/></a-entity><a-entity DEF="G2" position="1,-1,0.01"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.2"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: sphere"/></a-entity><PlaneSensorU-a-entity description="Grab to move" offset="1,-1,0.01" DEF="PS2"/><ROUTEU-a-entity fromNode="PS2" fromField="translation_changed" toNode="G2" toField="set_translation"/></a-entity><a-entity DEF="G3" position="1,1,0.01"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.2"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: sphere"/></a-entity><PlaneSensorU-a-entity description="Grab to move" offset="1,1,0.01" DEF="PS3"/><ROUTEU-a-entity fromNode="PS3" fromField="translation_changed" toNode="G3" toField="set_translation"/></a-entity><a-entity DEF="G4" position="-1,1,0.01"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.2"/></AppearanceU-a-entity><a-entity radius="0.1" geometry="primitive: sphere"/></a-entity><PlaneSensorU-a-entity description="Grab to move" offset="-1,1,0.01" DEF="PS4"/><ROUTEU-a-entity fromNode="PS4" fromField="translation_changed" toNode="G4" toField="set_translation"/></a-entity><a-entity DEF="transC1"><a-entity DEF="rotscaleC1"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7" transparency="0.5"/></AppearanceU-a-entity><a-entity radius="0.05" geometry="primitive: cylinder; radius: 0.05" material="radius: 0.05"/></a-entity></a-entity></a-entity><a-entity DEF="transC2"><a-entity DEF="rotscaleC2"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7" transparency="0.5"/></AppearanceU-a-entity><a-entity radius="0.05" geometry="primitive: cylinder; radius: 0.05" material="radius: 0.05"/></a-entity></a-entity></a-entity><a-entity DEF="transC3"><a-entity DEF="rotscaleC3"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.2,0.7,0.7" transparency="0.5"/></AppearanceU-a-entity><a-entity radius="0.05" geometry="primitive: cylinder; radius: 0.05" material="radius: 0.05"/></a-entity></a-entity></a-entity><ProtoDeclareU-a-entity name="x3dconnector"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><ScriptU-a-entity DEF="S1" directOutput="true"><fieldU-a-entity/><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+            ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+
+]]></ScriptU-a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector1"><fieldValueU-a-entity><a-entity USE="G1"/><a-entity USE="G2"/><a-entity USE="transC1"/><a-entity USE="rotscaleC1"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector2"><fieldValueU-a-entity><a-entity USE="G1"/><a-entity USE="G3"/><a-entity USE="transC2"/><a-entity USE="rotscaleC2"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="x3dconnector" DEF="connector3"><fieldValueU-a-entity><a-entity USE="G1"/><a-entity USE="G4"/><a-entity USE="transC3"/><a-entity USE="rotscaleC3"/></fieldValueU-a-entity></ProtoInstanceU-a-entity><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector1" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G2" fromField="translation_changed" toNode="connector1" toField="set_endpoint"/><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector2" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G3" fromField="translation_changed" toNode="connector2" toField="set_endpoint"/><ROUTEU-a-entity fromNode="G1" fromField="translation_changed" toNode="connector3" toField="set_startpoint"/><ROUTEU-a-entity fromNode="G4" fromField="translation_changed" toNode="connector3" toField="set_endpoint"/></a-scene></div></body></html>

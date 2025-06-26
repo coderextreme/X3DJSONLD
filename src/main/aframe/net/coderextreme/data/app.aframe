@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0"/></AppearanceU-a-entity><a-entity geometry="primitive: box"/></a-entity></a-entity><a-entity rotation="7,8,9,3.14" scale="4,5,6" position="1,2,3"/></a-scene></div></body></html>

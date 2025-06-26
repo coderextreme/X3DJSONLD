@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><componentU-a-entity/><metaU-a-entity/></headU-a-entity><a-scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/--><GeoViewpointU-a-entity DEF="Tour" position="0,0,4" orientation="1,0,0,0" description="Tour Views"/><BackgroundU-a-entity backUrl="../resources/images/BK.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png" bottomUrl="../resources/images/BT.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png" frontUrl="../resources/images/FR.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png" leftUrl="../resources/images/LF.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png" rightUrl="../resources/images/RT.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png" topUrl="../resources/images/TP.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"/><a-entity><a-entity><a-entity geometry="primitive: sphere"/><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,0.7,0.7" specularColor="0.5,0.5,0.5"/></AppearanceU-a-entity></a-entity></a-entity><TimeSensorU-a-entity DEF="TourTime" cycleInterval="5" loop="true"/><GeoPositionInterpolatorU-a-entity DEF="TourPosition" key="0,1" keyValue="0.0015708,0,4,0,0.0015708,4"/><ScriptU-a-entity DEF="RandomTourTime"><fieldU-a-entity/><![CDATA[ecmascript:
+
+               function set_cycle(value) {
+                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
+                        var ov = val;
+			// Browser.print('old '+ov);
+                        do {
+                                val = Math.floor(Math.random()*2);
+                                var vc = val;
+                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
+                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
+			// Browser.println(positions[ov]);
+			// Browser.println(positions[vc]);
+                        position = new MFVec3d();
+                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
+                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
+               }]]></ScriptU-a-entity><ROUTEU-a-entity fromNode="TourTime" fromField="cycleTime" toNode="RandomTourTime" toField="set_cycle"/><ROUTEU-a-entity fromNode="RandomTourTime" fromField="position" toNode="TourPosition" toField="keyValue"/><ROUTEU-a-entity fromNode="TourTime" fromField="fraction_changed" toNode="TourPosition" toField="set_fraction"/><ROUTEU-a-entity fromNode="TourPosition" fromField="geovalue_changed" toNode="Tour" toField="set_position"/></a-scene></div></body></html>
