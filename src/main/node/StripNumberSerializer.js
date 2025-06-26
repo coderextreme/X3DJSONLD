@@ -1,9 +1,7 @@
 "use strict";
 
-if (typeof require === 'function') {
-	var xmldom = require('@xmldom/xmldom');
-	var XMLSerializer = new xmldom.XMLSerializer();
-}
+import xmldom from '@xmldom/xmldom';
+let XMLSerializer = new xmldom.XMLSerializer();
 
 export default function StripNumberSerializer() {
 	var fieldTypeMapping = {};
