@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="node"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity DEF="transform"><ISU-a-entity><connectU-a-entity/></ISU-a-entity><a-entity><a-entity geometry="primitive: sphere"/><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0"/></AppearanceU-a-entity></a-entity><a-entity position="1,0,0"><a-entity><a-entity value="Node" geometry="primitive: text"><FontStyleU-a-entity justify="MIDDLE,MIDDLE" size="5"/></a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity></a-entity></a-entity></a-entity><PositionInterpolatorU-a-entity DEF="NodePosition" key="0,1" keyValue="0,0,0,0,5,0"/><ScriptU-a-entity DEF="MoveBall"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+					function set_cycle(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f([old, translation]);
+						// Browser.println(translation);
+					}
+
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="nodeClock" cycleInterval="3" loop="true"/><ROUTEU-a-entity fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"/><ROUTEU-a-entity fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"/><ROUTEU-a-entity fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"/><ROUTEU-a-entity fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoDeclareU-a-entity name="cyl"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><ExtrusionU-a-entity DEF="extrusion" creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="0,-50,0,0,50,0"/><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,1,0"/></AppearanceU-a-entity></a-entity><ScriptU-a-entity DEF="MoveCylinder"><fieldU-a-entity/><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+
+ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([value, spine[1]]);
+		    }
+                }
+
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([spine[0], value]);
+		    }
+                }
+
+                function set_spine(value) {
+                    spine = value;
+                }
+
+]]></ScriptU-a-entity><ROUTEU-a-entity fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><a-entity DEF="HoldsContent" scale="0.1,0.1,0.1"><PlaneSensorU-a-entity DEF="clickGenerator" minPosition="-50,-50" maxPosition="50,50" description="click on background to add nodes, click on nodes to add links"/><ProtoInstanceU-a-entity name="node" DEF="nodeA"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="node" DEF="nodeB"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="cyl" DEF="linkA"><fieldValueU-a-entity/></ProtoInstanceU-a-entity></a-entity><ROUTEU-a-entity fromNode="nodeA" fromField="position" toNode="linkA" toField="set_positionA"/><ROUTEU-a-entity fromNode="nodeB" fromField="position" toNode="linkA" toField="set_positionB"/></a-scene></div></body></html>

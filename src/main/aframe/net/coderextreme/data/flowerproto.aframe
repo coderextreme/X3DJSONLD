@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><componentU-a-entity/><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="FlowerProto"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity DEF="transform"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0.7,0.7,0.7" specularColor="0.5,0.5,0.5"/><ComposedCubeMapTextureU-a-entity DEF="texture"><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_back.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"/><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_bottom.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"/><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_front.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"/><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_left.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"/><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_right.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"/><a-image url="../resources/images/all_probes/stpeters_cross/stpeters_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" geometry="src: ../resources/images/all_probes/stpeters_cross/stpeters_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" material="src: ../resources/images/all_probes/stpeters_cross/stpeters_top.png,https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"/></ComposedCubeMapTextureU-a-entity><ComposedShaderU-a-entity DEF="shader" language="GLSL"><fieldU-a-entity/><!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field>--><ShaderPartU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></ShaderPartU-a-entity><ShaderPartU-a-entity><ISU-a-entity><connectU-a-entity/></ISU-a-entity></ShaderPartU-a-entity></ComposedShaderU-a-entity></AppearanceU-a-entity><a-entity geometry="primitive: sphere"/></a-entity><ScriptU-a-entity DEF="Animate"><fieldU-a-entity/><![CDATA[
+
+
+ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+
+
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="TourTime" cycleInterval="5" loop="true"/><ROUTEU-a-entity fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"/><ROUTEU-a-entity fromNode="Animate" fromField="translation_changed" toNode="transform" toField="set_translation"/><ROUTEU-a-entity fromNode="Animate" fromField="a" toNode="shader" toField="a"/><ROUTEU-a-entity fromNode="Animate" fromField="b" toNode="shader" toField="b"/><ROUTEU-a-entity fromNode="Animate" fromField="c" toNode="shader" toField="c"/><ROUTEU-a-entity fromNode="Animate" fromField="d" toNode="shader" toField="d"/><ROUTEU-a-entity fromNode="Animate" fromField="tdelta" toNode="shader" toField="tdelta"/><ROUTEU-a-entity fromNode="Animate" fromField="pdelta" toNode="shader" toField="pdelta"/></a-entity></ProtoBodyU-a-entity></ProtoDeclareU-a-entity></a-scene></div></body></html>

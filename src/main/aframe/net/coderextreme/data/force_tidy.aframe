@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><componentU-a-entity/><metaU-a-entity/></headU-a-entity><a-scene><ProtoDeclareU-a-entity name="node"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><a-entity DEF="transform"><ISU-a-entity><connectU-a-entity/></ISU-a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,0,0"/></AppearanceU-a-entity><a-entity geometry="primitive: sphere"/></a-entity><a-entity position="1,0,0"><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><a-entity value="Node" geometry="primitive: text"><FontStyleU-a-entity size="5" justify="MIDDLE,MIDDLE"/></a-entity></a-entity></a-entity></a-entity><PositionInterpolatorU-a-entity DEF="NodePosition" key="0,1" keyValue="0,0,0,0,5,0"/><ScriptU-a-entity DEF="MoveBall"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+					function set_cycle(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+		    				/*
+                                                var tmpkeyValue = new MFVec3f();
+			    			tmpkeyValue[0] = old;
+			    			tmpkeyValue[1] = translation;
+                                                keyValue = tmpkeyValue;
+		    				*/
+                                                keyValue = new MFVec3f([old, translation]);
+			    		
+						// Browser.println(translation);
+					}
+
+]]></ScriptU-a-entity><TimeSensorU-a-entity DEF="nodeClock" cycleInterval="3" loop="true"/></a-entity><ROUTEU-a-entity fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"/><ROUTEU-a-entity fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"/><ROUTEU-a-entity fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="set_keyValue"/><ROUTEU-a-entity fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><ProtoDeclareU-a-entity name="cyl"><ProtoInterfaceU-a-entity><fieldU-a-entity/></ProtoInterfaceU-a-entity><ProtoBodyU-a-entity><a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,1,0"/></AppearanceU-a-entity><ExtrusionU-a-entity DEF="extrusion" creaseAngle="0.785" crossSection="1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0" spine="0,-50,0,0,50,0"/></a-entity><ScriptU-a-entity DEF="MoveCylinder"><fieldU-a-entity/><ISU-a-entity><connectU-a-entity/></ISU-a-entity><![CDATA[
+
+ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		    	/*
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
+		    	*/
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		    	/*
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = spine[1];
+			spine = tmpspine;
+		        */
+		        spine = new MFVec3f([value, spine[1]]);
+		    }
+                }
+
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		    	/*
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = value;
+			tmpspine[1] = value;
+			spine = tmpspine;
+		        */
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		    	/*
+		        var tmpspine = new MFVec3f();
+			tmpspine[0] = spine[0];
+			tmpspine[1] = value;
+			spine = tmpspine;
+		    	*/
+		        spine = new MFVec3f([spine[0], value]);
+		    }
+                }
+
+                function set_spine(value) {
+                    spine = value;
+                }
+
+]]></ScriptU-a-entity></a-entity><ROUTEU-a-entity fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="set_spine"/></ProtoBodyU-a-entity></ProtoDeclareU-a-entity><a-entity DEF="HoldsContent" scale="0.1,0.1,0.1"><PlaneSensorU-a-entity DEF="clickGenerator" description="click on background to add nodes, click on nodes to add links" minPosition="-50,-50" maxPosition="50,50"/><ProtoInstanceU-a-entity name="node" DEF="nodeA"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="node" DEF="nodeB"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="node" DEF="nodeC"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="node" DEF="nodeD"><fieldValueU-a-entity/></ProtoInstanceU-a-entity><ProtoInstanceU-a-entity name="cyl" DEF="linkA"/><ProtoInstanceU-a-entity name="cyl" DEF="linkB"/><ProtoInstanceU-a-entity name="cyl" DEF="linkC"/></a-entity><ScriptU-a-entity DEF="clickHandler"><fieldU-a-entity/><![CDATA[
+
+ecmascript:
+	function add_node(value) {
+                // Browser.print('hey ', counter);
+                counter = counter++;
+		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
+			{ "ProtoInstance":
+				{ "@name":"node",
+				  "@DEF":"node'+counter+'",
+				  "fieldValue": [
+					{
+						 "@name":"position",
+						 "@value":[0.0,0.0,0.0]
+					}
+				  ]
+				}
+			});
+
+        }
+	
+]]></ScriptU-a-entity><ROUTEU-a-entity fromNode="clickGenerator" fromField="isActive" toNode="clickHandler" toField="add_node"/><ROUTEU-a-entity fromNode="nodeA" fromField="position_changed" toNode="linkA" toField="set_positionA"/><ROUTEU-a-entity fromNode="nodeB" fromField="position_changed" toNode="linkA" toField="set_positionB"/><ROUTEU-a-entity fromNode="nodeA" fromField="position_changed" toNode="linkB" toField="set_positionA"/><ROUTEU-a-entity fromNode="nodeC" fromField="position_changed" toNode="linkB" toField="set_positionB"/><ROUTEU-a-entity fromNode="nodeA" fromField="position_changed" toNode="linkC" toField="set_positionA"/><ROUTEU-a-entity fromNode="nodeD" fromField="position_changed" toNode="linkC" toField="set_positionB"/></a-scene></div></body></html>
