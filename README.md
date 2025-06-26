@@ -132,3 +132,28 @@ sum.sh -- sum lines on standard input
 unknown.sh -- report on UNKNOWN routes from *.runerr.txt and *.runout.txt
 x3d2py.sh -- convert files from x3d to python
 ```
+
+
+#To convert X3D JSON to DOM to Bindings in X3DJSONLD:
+
+$ cd X3DJSONLD/src/main
+
+Place X3D JSON files in ./data/.  The name should end in .json, and not include “new.”
+
+$ cd ./shell/.
+
+Edit classpath file to taste.
+
+Convert files:
+
+$ bash runjson.sh
+
+Look at log for errors.
+
+$ cd ../.
+
+Look in */net/coderextreme/data/. for your output.
+
+Edit ./node/json2all.js to add or configure serializers converting from DOM.
+
+Recent Serializers include ./node/PythonSerializerX3DJSAIL.js and ./node/GuraSerializer.js
