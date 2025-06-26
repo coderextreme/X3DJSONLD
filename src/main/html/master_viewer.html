@@ -15,7 +15,6 @@
     </script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style>
-        /* ... CSS from your last provided master_viewer.html ... */
         body, html {
             margin: 0;
             padding: 0;
@@ -190,7 +189,7 @@
         </div>
     </div>
 
-    <!-- Module Scripts (same as your last provided version) -->
+    <!-- Module Scripts -->
     <script type="module" src="../node/ajv2020.js"></script>
     <script type="module" src="../node/ajvAddFormats.js"></script>
     <script type="module" src="../node/config.js"></script>
@@ -208,15 +207,38 @@
     <script type="module" src="../node/Three2Serializer.js"></script>
     <script type="module" src="../node/DOM2JSONSerializer.js"></script>
     <script type="module" src="../node/loadValidate.js"></script>
+    <!-- exificient.js is loaded as a global script via regular <script> tag -->
 
     <script type="module">
-        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly, encodeJSON as encodeJsonToExi, decodeEXI4JSON as decodeExiToJson,
+        // Using the direct export names from master_loader.js for EXI
+        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
+                 encodeJSONEXI, decodeJSON, // Direct names from master_loader.js for EXI
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
 
-        window.doJsonActions = () => { /* ... same as previous ... */ };
-        window.doXmlActions = () => { /* ... same as previous ... */ };
-        window.doExiActions = () => { /* ... same as previous ... */ };
+        window.doJsonActions = async () => {
+            const jsonText = document.getElementById('json').value;
+            if (jsonText) {
+                try {
+                    const jsonObj = JSON.parse(jsonText);
+                    await updateFromJson(jsonObj, document.getElementById('currentFileName').textContent || "from_textarea.json");
+                } catch (e) {
+                    alert("Invalid JSON in textarea."); console.error(e);
+                }
+            } else { alert("JSON textarea is empty."); }
+        };
+        window.doXmlActions = async () => {
+             const xmlText = document.getElementById('xml').value;
+             if (xmlText) {
+                await updateFromXml(xmlText, document.getElementById('currentFileName').textContent || "from_textarea.xml");
+             } else { alert("XML textarea is empty."); }
+        };
+         window.doExiActions = () => {
+            decodeJSON(); // Use the direct imported name from master_loader.js
+            // decodeJSON updates currentJSONObject and the JSON textarea.
+            // Then doJsonActions will use this updated data.
+            setTimeout(window.doJsonActions, 150); // Give a moment for UI update, then process
+        };
 
         const initialFileData = [
             { name: "Personal Files (index3dom.html)", files: [
@@ -254,17 +276,24 @@
 
         const menuContainer = document.getElementById('fileMenuContainer');
 
-        function buildMenu(data, parentElement) {
-            const ul = document.createElement('ul');
-            data.forEach(item => {
+        function buildMenu(dataArray, parentUlElement) {
+            dataArray.forEach(item => {
                 const li = document.createElement('li');
                 if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
                     li.classList.add('folder');
                     const span = document.createElement('span');
                     span.textContent = item.name;
-                    span.onclick = function() { li.classList.toggle('open'); };
+                    span.onclick = function() {
+                        li.classList.toggle('open');
+                        if (li.classList.contains('open')) li.classList.add('manually-opened');
+                        else li.classList.remove('manually-opened');
+                    };
                     li.appendChild(span);
-                    buildMenu(item.files, li);
+
+                    const subUl = document.createElement('ul');
+                    buildMenu(item.files, subUl);
+                    li.appendChild(subUl);
+
                 } else if (typeof item === 'string') {
                     const filePath = item;
                     const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
@@ -276,16 +305,36 @@
                         loadX3DFile(filePath);
                     };
                 }
-                 ul.appendChild(li);
+                parentUlElement.appendChild(li);
             });
-            parentElement.appendChild(ul);
         }
 
-        window.filterMenuTree = function() { /* ... same as previous correct version ... */ };
+        window.filterMenuTree = function() {
+            const filterText = document.getElementById('filterMenu').value.toLowerCase();
+            const items = menuContainer.querySelectorAll('.file-item');
+            // const folders = menuContainer.querySelectorAll('.folder > span'); // Not needed for just hiding folder LI
 
-        // SIMULATE SERVER-SIDE /files?pattern FETCH - this version returns a flat list of paths
+            items.forEach(item => {
+                const match = item.textContent.toLowerCase().includes(filterText) ||
+                              (item.title && item.title.toLowerCase().includes(filterText));
+                item.style.display = match ? '' : 'none';
+            });
+
+            menuContainer.querySelectorAll('.folder').forEach(folderElement => {
+                const subItems = folderElement.querySelectorAll('.file-item');
+                let hasVisibleChild = false;
+                subItems.forEach(subItem => {
+                    if (subItem.style.display !== 'none') hasVisibleChild = true;
+                });
+                folderElement.style.display = hasVisibleChild ? '' : 'none';
+                if (hasVisibleChild && filterText && !folderElement.classList.contains('manually-opened')) {
+                    folderElement.classList.add('open'); // Auto-open if filtering and has visible children
+                }
+            });
+        };
+
         async function simulateFetchFilesFlatList(pattern) {
-            console.log("Simulating fetch for pattern (flat list output):", pattern);
+            console.log("Simulating server fetch for pattern (flat list output):", pattern);
             const isWildcard = pattern.includes('*');
             let simplePattern = pattern.replace(/\*/g, '').toLowerCase();
             let patternIsOnlyWildcard = (pattern === "*" || pattern === "*.*");
@@ -295,15 +344,15 @@
                 dataArray.forEach(item => {
                     if (item.files && Array.isArray(item.files)) {
                         collectAllFilePathsRecursive(item.files);
-                    } else if (typeof item === 'string') { // It's a file path
+                    } else if (typeof item === 'string') {
                         allFilePaths.push(item);
                     }
                 });
             }
-            collectAllFilePathsRecursive(initialFileData); // Populate allFilePaths
+            collectAllFilePathsRecursive(initialFileData);
 
             if (!pattern || patternIsOnlyWildcard) {
-                 return Promise.resolve([...new Set(allFilePaths)]); // Return unique paths
+                 return Promise.resolve([...new Set(allFilePaths)]);
             }
 
             const results = allFilePaths.filter(filePath => {
@@ -314,73 +363,70 @@
                 }
                 return p.includes(simplePattern);
             });
-            return Promise.resolve([...new Set(results)]); // Ensure unique results
+            return Promise.resolve([...new Set(results)]);
         }
 
-        // Function to group a flat list of files under their original top-level categories
         function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) {
             const newHierarchicalData = [];
             const filesProcessedForGrouping = new Set();
 
             originalFullHierarchy.forEach(category => {
-                // Create a new category entry for the filtered results
                 const newCategoryFiles = [];
                 if (category.files && Array.isArray(category.files)) {
                     category.files.forEach(originalFilePath => {
-                        // If this original file is in our flat filtered list, add it
                         if (flatFilteredFiles.includes(originalFilePath) && !filesProcessedForGrouping.has(originalFilePath)) {
                             newCategoryFiles.push(originalFilePath);
                             filesProcessedForGrouping.add(originalFilePath);
                         }
                     });
                 }
-                // Only add the category to the new hierarchy if it has any matched files
                 if (newCategoryFiles.length > 0) {
                     newHierarchicalData.push({
-                        name: category.name, // Use the original category name
+                        name: category.name,
                         files: newCategoryFiles
                     });
                 }
             });
 
-            // Handle files that were in flatFilteredFiles but didn't match any original category's files
-            // This can happen if the server returns paths not perfectly matching the initialFileData structure
             const remainingUncategorized = flatFilteredFiles.filter(f => !filesProcessedForGrouping.has(f));
             if (remainingUncategorized.length > 0) {
-                 newHierarchicalData.push({ name: "Other Matched Files", files: remainingUncategorized });
+                 newHierarchicalData.push({ name: "Other Matched Files (from Server Filter)", files: remainingUncategorized });
             }
-
             return newHierarchicalData;
         }
-
 
         window.fetchAndUpdateHierarchicalMenu = async function(event) {
             const pattern = event.target.value;
 
             if (!pattern && event.type === 'change') {
-                // menuContainer.innerHTML = '';
-                buildMenu(initialFileData, menuContainer);
+                menuContainer.innerHTML = '';
+                const topUl = document.createElement('ul');
+                menuContainer.appendChild(topUl);
+                buildMenu(initialFileData, topUl);
                 if (document.getElementById('filterMenu').value) filterMenuTree();
                 return;
             }
             if (!pattern && event.type !== 'change') return;
 
             try {
-                // 1. Get flat list of filtered files (simulated or real)
-                // const flatFilteredListFromServer = await simulateFetchFilesFlatList(pattern); // SIMULATION
+                // To use simulation:
+                const flatFilteredListFromServer = await simulateFetchFilesFlatList(pattern);
 
-                const response = await fetch(`/files?pattern=${encodeURIComponent(pattern)}`); // REAL FETCH
+                // To use real fetch (ensure your server at /files?pattern=... returns a JSON array of strings):
+                /*
+                const response = await fetch(`/files?pattern=${encodeURIComponent(pattern)}`);
                 if (!response.ok) {
                     throw new Error(`Server error fetching files: ${response.status} ${response.statusText}`);
                 }
-                const flatFilteredListFromServer = await response.json(); // Expects array of strings
+                const flatFilteredListFromServer = await response.json();
+                */
 
-                // 2. Reconstruct a hierarchical structure based on the original categories
                 const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
 
-                // 3. Build the menu with this new hierarchical structure
-                // menuContainer.innerHTML = '';
-                buildMenu(newHierarchicalMenuData, menuContainer);
+                menuContainer.innerHTML = '';
+                const topUl = document.createElement('ul');
+                menuContainer.appendChild(topUl);
+                buildMenu(newHierarchicalMenuData, topUl);
 
                 if (document.getElementById('filterMenu').value) filterMenuTree();
 
@@ -390,10 +436,30 @@
             }
         };
 
-        window.captureSnapshot = function() { /* ... same as previous ... */ };
+        window.captureSnapshot = function() {
+            const x3domIframeEl = getX3DOMIFrame();
+            if (x3domIframeEl && x3domIframeEl.contentWindow) {
+                const x3domCanvas = x3domIframeEl.contentWindow.document.querySelector("canvas");
+                if (x3domCanvas) {
+                    try {
+                        document.getElementById('image').src = x3domCanvas.toDataURL('image/png');
+                    } catch (e) {
+                        alert("Snapshot failed. This might be a security restriction if content is from another domain. " + e.message);
+                        console.error("Snapshot error:", e);
+                    }
+                } else {
+                    alert("X3DOM canvas not found in iframe.");
+                }
+            } else {
+                alert("X3DOM iframe not found or not loaded.");
+            }
+        };
 
         $(document).ready(function() {
-            buildMenu(initialFileData, menuContainer);
+            const topUl = document.createElement('ul');
+            menuContainer.appendChild(topUl);
+            buildMenu(initialFileData, topUl);
+
             setXITEIFrame(document.getElementById('xite_iframe_id'));
             setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
         });
