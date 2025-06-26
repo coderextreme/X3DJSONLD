@@ -540,7 +540,9 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
 				for (var str in localArray) {
-					localArray[str] = X3DJSONLD.SFStringToXML(localArray[str]);
+					if (typeof localArray[str] === 'string') {
+						localArray[str] = X3DJSONLD.SFStringToXML(localArray[str]);
+					}
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					// console.error("Load array  is",localArray);

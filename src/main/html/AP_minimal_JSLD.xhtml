@@ -50,8 +50,9 @@
 	<script src="../node/loaderJQuery.js"></script>
     
     <script type="text/javascript">
-		let IS_X3DOM = false;
-		let IS_X_ITE = true;
+	    import { setIS_X3DOM, setIS_X_ITE } from '../node/loaderJQuery.js';
+		setIS_X3DOM(false);
+		setIS_X_ITE(true);
 	    
     	var url = "../data/ArchHalf.json";
 	var selector = "#x_itedom";

@@ -9,12 +9,10 @@
  * Philip Taylor: http://philip.html5.org
  */
 /** If used as standalone lib, define some basics first. */
-if (typeof x3dom === "undefined")
-{
     /**
      * @namespace x3dom
      */
-    x3dom = {
+export var x3dom = {
         extend: function(f) {
             function G() {}
             G.prototype = f.prototype || f;
@@ -42,7 +40,6 @@ if (typeof x3dom === "undefined")
     }
 
     console.log("Using x3dom fields.js as standalone math and/or base types library.");
-}
 /**
  * The x3dom.fields namespace.
  * @namespace x3dom.fields
@@ -7005,5 +7002,3 @@ x3dom.fields.FrustumVolume.prototype.intersect = function ( vol, planeMask )
 
     return planeMask;
 };
-
-module.exports = x3dom;

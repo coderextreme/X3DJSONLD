@@ -1,35 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html>
 <head>
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css">
-    <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
-<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
-   <script
-	     src="https://code.jquery.com/jquery-3.7.1.js"
-	       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-	         crossorigin="anonymous"></script>
-<!--
-    <script type="text/javascript" src="../../../node_modules/saxon-js/SaxonJS2N.js"></script>
--->
+    <meta name="viewport"/>
+    <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
+    <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/x_ite.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript">var exports = {};</script>
+    <script type="importmap">
+{
+  "imports": {
+    "@xmldom/xmldom": "https://esm.sh/@xmldom/xmldom@0.9.8/es2022/xmldom.mjs"
+  }
+}
+</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
-    x3d-canvas {
+    x3d-canvas, X3D, #image {
         background:#000;
-	width: 150px;
-	height:75px;
+	width: 300px;
+	height:150px;
     }
-    X3D {
-        background:#000;
-	width: 150px;
-	height:75px;
+    #dummy {
+	display:none;
+	width: 0px;
+	height:0px;
     }
-    #image {
-        background:#000;
-	width: 150px;
-	height:75px;
+    #x3domjson {
+	display:none;
+	width: 0px;
+	height:0px;
+    }
+    #x3domxml {
+	display:none;
+	width: 0px;
+	height:0px;
     }
     table td, table td * {
         vertical-align: top;
@@ -60,300 +67,954 @@ a:active {
 <tr>
 <td>
 <select id="file">
+<option>DO NOT LOAD</option>
 <option>../data/abox.json</option>
-<option>../data/abox.new.json</option>
-<option>../data/AllAudioGraphNodesTest.json</option>
-<option>../data/AllAudioGraphNodesTest.new.json</option>
-<option>../data/AllenDuttonProtoInstances.json</option>
-<option>../data/AllenDuttonProtoInstances.new.json</option>
-<option>../data/AllenStandShootRifleM24.json</option>
+<option>../data/abox.new.D2J.json</option>
+<option>../data/abox.new.graal.json</option>
+<option>../data/abox.new.java.json</option>
+<option>../data/abox.new.node.json</option>
+<option>../data/abox.new.python.json</option>
+<option>../data/AllenDutton.json</option>
+<option>../data/AllenDutton.new.graal.json</option>
+<option>../data/AllenDutton.new.java.json</option>
+<option>../data/AllenDutton.new.node.json</option>
+<option>../data/AllenDutton.new.python.json</option>
 <option>../data/app.json</option>
-<option>../data/app.new.json</option>
-<option>../data/arc1.json</option>
-<option>../data/arc1.new.json</option>
-<option>../data/arc2.json</option>
-<option>../data/arc2.new.json</option>
-<option>../data/arc3.json</option>
-<option>../data/arc3.new.json</option>
-<option>../data/arc4.json</option>
-<option>../data/arc4.new.json</option>
-<option>../data/ArchHalf.json</option>
-<option>../data/ArchHalf.new.json</option>
-<option>../data/ArchPrototype.json</option>
-<option>../data/ArchPrototype.new.json</option>
+<option>../data/app.new.graal.json</option>
+<option>../data/app.new.java.json</option>
+<option>../data/app.new.node.json</option>
+<option>../data/app.new.python.json</option>
 <option>../data/arc.json</option>
-<option>../data/arc.new.json</option>
+<option>../data/arc.new.graal.json</option>
+<option>../data/arc.new.java.json</option>
+<option>../data/arc.new.node.json</option>
+<option>../data/arc.new.python.json</option>
+<option>../data/arc1.json</option>
+<option>../data/arc1.new.graal.json</option>
+<option>../data/arc1.new.java.json</option>
+<option>../data/arc1.new.node.json</option>
+<option>../data/arc1.new.python.json</option>
+<option>../data/arc2.json</option>
+<option>../data/arc2.new.graal.json</option>
+<option>../data/arc2.new.java.json</option>
+<option>../data/arc2.new.node.json</option>
+<option>../data/arc2.new.python.json</option>
+<option>../data/arc3.json</option>
+<option>../data/arc3.new.graal.json</option>
+<option>../data/arc3.new.java.json</option>
+<option>../data/arc3.new.node.json</option>
+<option>../data/arc3.new.python.json</option>
+<option>../data/arc4.json</option>
+<option>../data/arc4.new.graal.json</option>
+<option>../data/arc4.new.java.json</option>
+<option>../data/arc4.new.node.json</option>
+<option>../data/arc4.new.python.json</option>
+<option>../data/ArchHalf.json</option>
+<option>../data/ArchHalf.new.graal.json</option>
+<option>../data/ArchHalf.new.java.json</option>
+<option>../data/ArchHalf.new.node.json</option>
+<option>../data/ArchHalf.new.python.json</option>
+<option>../data/ArchPrototype.json</option>
+<option>../data/ArchPrototype.new.graal.json</option>
+<option>../data/ArchPrototype.new.java.json</option>
+<option>../data/ArchPrototype.new.node.json</option>
+<option>../data/ArchPrototype.new.python.json</option>
 <option>../data/arcold.json</option>
-<option>../data/arcold.new.json</option>
+<option>../data/arcold.new.graal.json</option>
+<option>../data/arcold.new.java.json</option>
+<option>../data/arcold.new.node.json</option>
+<option>../data/arcold.new.python.json</option>
 <option>../data/ArtDecoExamples.json</option>
-<option>../data/ArtDecoExamples.new.json</option>
+<option>../data/ArtDecoExamples.new.graal.json</option>
+<option>../data/ArtDecoExamples.new.java.json</option>
+<option>../data/ArtDecoExamples.new.node.json</option>
+<option>../data/ArtDecoExamples.new.python.json</option>
 <option>../data/ArtDecoPrototypes.json</option>
-<option>../data/ArtDecoPrototypes.new.json</option>
+<option>../data/ArtDecoPrototypes.new.graal.json</option>
+<option>../data/ArtDecoPrototypes.new.java.json</option>
+<option>../data/ArtDecoPrototypes.new.node.json</option>
+<option>../data/ArtDecoPrototypes.new.python.json</option>
 <option>../data/asmallbox.json</option>
-<option>../data/asmallbox.new.json</option>
+<option>../data/asmallbox.new.graal.json</option>
+<option>../data/asmallbox.new.java.json</option>
+<option>../data/asmallbox.new.node.json</option>
+<option>../data/asmallbox.new.python.json</option>
+<option>../data/asphere.json</option>
+<option>../data/asphere.new.graal.json</option>
+<option>../data/asphere.new.java.json</option>
+<option>../data/asphere.new.node.json</option>
+<option>../data/asphere.new.python.json</option>
 <option>../data/asteroids.json</option>
-<option>../data/asteroids.new.json</option>
+<option>../data/asteroids.new.graal.json</option>
+<option>../data/asteroids.new.java.json</option>
+<option>../data/asteroids.new.node.json</option>
+<option>../data/asteroids.new.python.json</option>
 <option>../data/ball.json</option>
-<option>../data/ball.new.json</option>
-<option>../data/BindingOperations.json</option>
-<option>../data/BindingOperations.new.json</option>
+<option>../data/ball.new.graal.json</option>
+<option>../data/ball.new.java.json</option>
+<option>../data/ball.new.node.json</option>
+<option>../data/ball.new.python.json</option>
+<option>../data/ballx_ite.json</option>
+<option>../data/ballx_ite.new.graal.json</option>
+<option>../data/ballx_ite.new.java.json</option>
+<option>../data/ballx_ite.new.node.json</option>
+<option>../data/ballx_ite.new.python.json</option>
+<option>../data/ballx3dom.json</option>
+<option>../data/ballx3dom.new.graal.json</option>
+<option>../data/ballx3dom.new.java.json</option>
+<option>../data/ballx3dom.new.node.json</option>
+<option>../data/ballx3dom.new.python.json</option>
+<option>../data/blenderSkeleton.json</option>
+<option>../data/blenderSkeleton.new.graal.json</option>
+<option>../data/blenderSkeleton.new.java.json</option>
+<option>../data/blenderSkeleton.new.node.json</option>
+<option>../data/blenderSkeleton.new.python.json</option>
 <option>../data/BoxEm.json</option>
-<option>../data/BoxEm.new.json</option>
+<option>../data/BoxEm.new.graal.json</option>
+<option>../data/BoxEm.new.java.json</option>
+<option>../data/BoxEm.new.node.json</option>
+<option>../data/BoxEm.new.python.json</option>
+<option>../data/BoxEm2.json</option>
+<option>../data/BoxEm2.new.graal.json</option>
+<option>../data/BoxEm2.new.java.json</option>
+<option>../data/BoxEm2.new.node.json</option>
+<option>../data/BoxEm2.new.python.json</option>
 <option>../data/browser.json</option>
-<option>../data/browser.new.json</option>
-<option>../data/bubble.json</option>
-<option>../data/bubble.new.json</option>
-<option>../data/bubbles.json</option>
-<option>../data/bubbles.new.json</option>
+<option>../data/browser.new.graal.json</option>
+<option>../data/browser.new.java.json</option>
+<option>../data/browser.new.node.json</option>
+<option>../data/browser.new.python.json</option>
 <option>../data/bub.json</option>
-<option>../data/bub.new.json</option>
-<option>../data/bubs2.json</option>
-<option>../data/bubs2.new.json</option>
-<option>../data/bubs3.json</option>
-<option>../data/bubs3.new.json</option>
+<option>../data/bub.new.graal.json</option>
+<option>../data/bub.new.java.json</option>
+<option>../data/bub.new.node.json</option>
+<option>../data/bub.new.python.json</option>
+<option>../data/bubble.json</option>
+<option>../data/bubble.new.graal.json</option>
+<option>../data/bubble.new.java.json</option>
+<option>../data/bubble.new.node.json</option>
+<option>../data/bubble.new.python.json</option>
+<option>../data/Bubbles.json</option>
+<option>../data/Bubbles.new.graal.json</option>
+<option>../data/Bubbles.new.java.json</option>
+<option>../data/Bubbles.new.node.json</option>
+<option>../data/Bubbles.new.python.json</option>
 <option>../data/bubs.json</option>
-<option>../data/bubs.new.json</option>
-<option>../data/BvhConversion1Illustrated.json</option>
-<option>../data/BvhConversion1Invisible.json</option>
-<option>../data/BvhConversion1.json</option>
-<option>../data/BvhSeamless3dExport1.json</option>
-<option>../data/CameraExamples.json</option>
-<option>../data/CameraExamples.new.json</option>
+<option>../data/bubs.new.graal.json</option>
+<option>../data/bubs.new.java.json</option>
+<option>../data/bubs.new.node.json</option>
+<option>../data/bubs.new.python.json</option>
+<option>../data/bubs2.json</option>
+<option>../data/bubs2.new.graal.json</option>
+<option>../data/bubs2.new.java.json</option>
+<option>../data/bubs2.new.node.json</option>
+<option>../data/bubs2.new.python.json</option>
+<option>../data/bubs3.json</option>
+<option>../data/bubs3.new.graal.json</option>
+<option>../data/bubs3.new.java.json</option>
+<option>../data/bubs3.new.node.json</option>
+<option>../data/bubs3.new.python.json</option>
+<option>../data/bumpyfreewrl.json</option>
+<option>../data/bumpyfreewrl.new.graal.json</option>
+<option>../data/bumpyfreewrl.new.java.json</option>
+<option>../data/bumpyfreewrl.new.node.json</option>
+<option>../data/bumpyfreewrl.new.python.json</option>
+<option>../data/bumpyfreewrljsonverse.json</option>
+<option>../data/bumpyfreewrlsliders.json</option>
+<option>../data/bumpyx_ite.json</option>
+<option>../data/bumpyx_ite.new.graal.json</option>
+<option>../data/bumpyx_ite.new.java.json</option>
+<option>../data/bumpyx_ite.new.node.json</option>
+<option>../data/bumpyx_ite.new.python.json</option>
+<option>../data/bumpyx_itesliders.json</option>
+<option>../data/Bushes.json</option>
+<option>../data/Bushes.new.graal.json</option>
+<option>../data/Bushes.new.java.json</option>
+<option>../data/Bushes.new.node.json</option>
+<option>../data/Bushes.new.python.json</option>
+<option>../data/CADPartChildNoTransformation.json</option>
+<option>../data/CADPartChildNoTransformation.new.graal.json</option>
+<option>../data/CADPartChildNoTransformation.new.java.json</option>
+<option>../data/CADPartChildNoTransformation.new.node.json</option>
+<option>../data/CADPartChildNoTransformation.new.python.json</option>
+<option>../data/CaliforniaCampuses.json</option>
+<option>../data/CaliforniaCampuses.new.graal.json</option>
+<option>../data/CaliforniaCampuses.new.java.json</option>
+<option>../data/CaliforniaCampuses.new.python.json</option>
 <option>../data/CameraPrototypes.json</option>
-<option>../data/CameraPrototypes.new.json</option>
+<option>../data/CameraPrototypes.new.graal.json</option>
+<option>../data/CameraPrototypes.new.java.json</option>
+<option>../data/CameraPrototypes.new.node.json</option>
+<option>../data/CameraPrototypes.new.python.json</option>
 <option>../data/CameraShape.json</option>
-<option>../data/CameraShape.new.json</option>
-<option>../data/CloudsProcedural4.json</option>
-<option>../data/CloudsProcedural4.new.json</option>
+<option>../data/CameraShape.new.graal.json</option>
+<option>../data/CameraShape.new.java.json</option>
+<option>../data/CameraShape.new.node.json</option>
+<option>../data/CameraShape.new.python.json</option>
+<option>../data/Cane.json</option>
+<option>../data/Cane.new.graal.json</option>
+<option>../data/Cane.new.java.json</option>
+<option>../data/Cane.new.node.json</option>
+<option>../data/Cane.new.python.json</option>
+<option>../data/cgeparticleflowers.json</option>
+<option>../data/cgeparticleflowers.new.graal.json</option>
+<option>../data/cgeparticleflowers.new.java.json</option>
+<option>../data/cgeparticleflowers.new.node.json</option>
+<option>../data/cgeparticleflowers.new.python.json</option>
+<option>../data/Connectors.json</option>
+<option>../data/Connectors.new.graal.json</option>
+<option>../data/Connectors.new.java.json</option>
+<option>../data/Connectors.new.python.json</option>
 <option>../data/CoordinateAxes.json</option>
-<option>../data/CoordinateAxes.new.json</option>
-<option>../data/cube.json</option>
-<option>../data/cube.new.json</option>
-<option>../data/DiamondManLOA0.json</option>
-<option>../data/DiamondManLOA1.json</option>
-<option>../data/DiamondManLOA2.json</option>
+<option>../data/CoordinateAxes.new.graal.json</option>
+<option>../data/CoordinateAxes.new.java.json</option>
+<option>../data/CoordinateAxes.new.node.json</option>
+<option>../data/CoordinateAxes.new.python.json</option>
+<option>../data/cube.new.graal.json</option>
+<option>../data/DesignPatternsApparelMedicalSkinLayers.json</option>
+<option>../data/DesignPatternsApparelMedicalSkinLayers.new.graal.json</option>
+<option>../data/DesignPatternsApparelMedicalSkinLayers.new.java.json</option>
+<option>../data/DesignPatternsApparelMedicalSkinLayers.new.node.json</option>
+<option>../data/DesignPatternsApparelMedicalSkinLayers.new.python.json</option>
+<option>../data/DonHumanoid.json</option>
+<option>../data/DonHumanoid.new.graal.json</option>
+<option>../data/DonHumanoid.new.java.json</option>
+<option>../data/DonHumanoid.new.node.json</option>
+<option>../data/DonHumanoid.new.python.json</option>
+<option>../data/DonHumanoidNoSegSite.json</option>
+<option>../data/DonHumanoidNoSegSite.new.graal.json</option>
+<option>../data/DonHumanoidNoSegSite.new.java.json</option>
+<option>../data/DonHumanoidNoSegSite.new.node.json</option>
+<option>../data/DonHumanoidNoSegSite.new.python.json</option>
+<option>../data/extrusion.new.graal.json</option>
 <option>../data/ExtrusionHeart.json</option>
-<option>../data/ExtrusionHeart.new.json</option>
-<option>../data/extrusion.json</option>
-<option>../data/extrusion.new.json</option>
-<option>../data/F16.json</option>
-<option>../data/F16.new.json</option>
-<option>../data/Figure31_9SpinGroupPrototype.json</option>
-<option>../data/Figure31_9SpinGroupPrototype.new.json</option>
+<option>../data/ExtrusionHeart.new.graal.json</option>
+<option>../data/ExtrusionHeart.new.java.json</option>
+<option>../data/ExtrusionHeart.new.node.json</option>
+<option>../data/ExtrusionHeart.new.python.json</option>
 <option>../data/Filters.json</option>
-<option>../data/Filters.new.json</option>
+<option>../data/Filters.new.graal.json</option>
+<option>../data/Filters.new.java.json</option>
+<option>../data/Filters.new.node.json</option>
+<option>../data/Filters.new.python.json</option>
 <option>../data/flipp.json</option>
-<option>../data/flipp.new.json</option>
-<option>../data/flower3.json</option>
-<option>../data/flower3.new.json</option>
+<option>../data/flipp.new.graal.json</option>
+<option>../data/flipp.new.java.json</option>
+<option>../data/flipp.new.node.json</option>
+<option>../data/flipp.new.python.json</option>
 <option>../data/flower.json</option>
-<option>../data/flower.new.json</option>
+<option>../data/flower.new.graal.json</option>
+<option>../data/flower.new.java.json</option>
+<option>../data/flower.new.node.json</option>
+<option>../data/flower.new.python.json</option>
+<option>../data/flower3.json</option>
+<option>../data/flower3.new.graal.json</option>
+<option>../data/flower3.new.java.json</option>
+<option>../data/flower3.new.node.json</option>
+<option>../data/flower3.new.python.json</option>
 <option>../data/flowerproto.json</option>
-<option>../data/flowerproto.new.json</option>
-<option>../data/flowers2.json</option>
-<option>../data/flowers2.new.json</option>
-<option>../data/flowers4.json</option>
-<option>../data/flowers4.new.json</option>
-<option>../data/flowers7.json</option>
-<option>../data/flowers7.new.json</option>
+<option>../data/flowerproto.new.graal.json</option>
+<option>../data/flowerproto.new.java.json</option>
+<option>../data/flowerproto.new.node.json</option>
+<option>../data/flowerproto.new.python.json</option>
 <option>../data/flowers.json</option>
-<option>../data/flowers.new.json</option>
-<option>../data/foo.json</option>
-<option>../data/foo.new.json</option>
+<option>../data/flowers.new.graal.json</option>
+<option>../data/flowers.new.java.json</option>
+<option>../data/flowers.new.node.json</option>
+<option>../data/flowers.new.python.json</option>
+<option>../data/flowers2.json</option>
+<option>../data/flowers2.new.graal.json</option>
+<option>../data/flowers2.new.java.json</option>
+<option>../data/flowers2.new.node.json</option>
+<option>../data/flowers2.new.python.json</option>
+<option>../data/flowers4.json</option>
+<option>../data/flowers4.new.graal.json</option>
+<option>../data/flowers4.new.java.json</option>
+<option>../data/flowers4.new.node.json</option>
+<option>../data/flowers4.new.python.json</option>
+<option>../data/flowers7.json</option>
+<option>../data/flowers7.new.graal.json</option>
+<option>../data/flowers7.new.java.json</option>
+<option>../data/flowers7.new.node.json</option>
+<option>../data/flowers7.new.python.json</option>
 <option>../data/force.json</option>
-<option>../data/force.new.json</option>
+<option>../data/force.new.graal.json</option>
+<option>../data/force.new.java.json</option>
+<option>../data/force.new.node.json</option>
+<option>../data/force.new.python.json</option>
+<option>../data/force_tidy.json</option>
+<option>../data/force_tidy.new.graal.json</option>
+<option>../data/force_tidy.new.java.json</option>
+<option>../data/force_tidy.new.python.json</option>
 <option>../data/forcenode.json</option>
-<option>../data/forcenode.new.json</option>
-<option>../data/fors2.json</option>
-<option>../data/fors2.new.json</option>
+<option>../data/forcenode.new.graal.json</option>
+<option>../data/forcenode.new.java.json</option>
+<option>../data/forcenode.new.node.json</option>
+<option>../data/forcenode.new.python.json</option>
 <option>../data/fors.json</option>
-<option>../data/fors.new.json</option>
+<option>../data/fors.new.graal.json</option>
+<option>../data/fors.new.java.json</option>
+<option>../data/fors.new.node.json</option>
+<option>../data/fors.new.python.json</option>
+<option>../data/fors2.json</option>
+<option>../data/fors2.new.graal.json</option>
+<option>../data/fors2.new.java.json</option>
+<option>../data/fors2.new.node.json</option>
+<option>../data/fors2.new.python.json</option>
 <option>../data/freewrlflowers.json</option>
-<option>../data/freewrlflowers.new.json</option>
+<option>../data/freewrlflowers.new.graal.json</option>
+<option>../data/freewrlflowers.new.java.json</option>
+<option>../data/freewrlflowers.new.node.json</option>
+<option>../data/freewrlflowers.new.python.json</option>
+<option>../data/fwparticleflowers.json</option>
+<option>../data/fwparticleflowers.new.graal.json</option>
+<option>../data/fwparticleflowers.new.java.json</option>
+<option>../data/fwparticleflowers.new.node.json</option>
+<option>../data/fwparticleflowers.new.python.json</option>
 <option>../data/gears.json</option>
-<option>../data/gears.new.json</option>
-<option>../data/geobubbles.json</option>
-<option>../data/geobubbles.new.json</option>
+<option>../data/gears.new.graal.json</option>
+<option>../data/gears.new.java.json</option>
+<option>../data/gears.new.node.json</option>
+<option>../data/gears.new.python.json</option>
 <option>../data/geo.json</option>
-<option>../data/geo.new.json</option>
+<option>../data/geo.new.graal.json</option>
+<option>../data/geo.new.java.json</option>
+<option>../data/geo.new.node.json</option>
+<option>../data/geo.new.python.json</option>
+<option>../data/geobubbles.json</option>
+<option>../data/geobubbles.new.graal.json</option>
+<option>../data/geobubbles.new.java.json</option>
+<option>../data/geobubbles.new.node.json</option>
+<option>../data/geobubbles.new.python.json</option>
 <option>../data/glflowers.json</option>
-<option>../data/glflowers.new.json</option>
+<option>../data/glflowers.new.graal.json</option>
+<option>../data/glflowers.new.java.json</option>
+<option>../data/glflowers.new.node.json</option>
+<option>../data/glflowers.new.python.json</option>
+<option>../data/Gramps8Final.json</option>
+<option>../data/Gramps8Final.new.graal.json</option>
+<option>../data/Gramps8Final.new.node.json</option>
+<option>../data/Gramps8Final.new.python.json</option>
 <option>../data/gridBack.json</option>
-<option>../data/gridBack.new.json</option>
-<option>../data/GridXZ_20x20Fixed.json</option>
-<option>../data/GridXZ_20x20Fixed.new.json</option>
-<option>../data/HAnim1SpecificationLOA3Animation.json</option>
-<option>../data/HAnim1SpecificationLOA3Illustrated.json</option>
-<option>../data/HAnim1SpecificationLOA3Invisible.json</option>
-<option>../data/HAnim2SpecificationLOA3Illustrated.json</option>
-<option>../data/HAnim2SpecificationLOA3Invisible.json</option>
+<option>../data/gridBack.new.graal.json</option>
+<option>../data/gridBack.new.java.json</option>
+<option>../data/gridBack.new.node.json</option>
+<option>../data/gridBack.new.python.json</option>
 <option>../data/HAnimBehaviorPrototypes.json</option>
-<option>../data/HAnimBehaviorPrototypes.new.json</option>
+<option>../data/HAnimBehaviorPrototypes.new.graal.json</option>
+<option>../data/HAnimBehaviorPrototypes.new.java.json</option>
+<option>../data/HAnimBehaviorPrototypes.new.node.json</option>
+<option>../data/HAnimBehaviorPrototypes.new.python.json</option>
 <option>../data/HAnimModelFootLeft.json</option>
+<option>../data/HAnimModelFootLeft.new.graal.json</option>
+<option>../data/HAnimModelFootLeft.new.java.json</option>
+<option>../data/HAnimModelFootLeft.new.node.json</option>
+<option>../data/HAnimModelFootLeft.new.python.json</option>
 <option>../data/HAnimModelFootRight.json</option>
+<option>../data/HAnimModelFootRight.new.graal.json</option>
+<option>../data/HAnimModelFootRight.new.java.json</option>
+<option>../data/HAnimModelFootRight.new.node.json</option>
+<option>../data/HAnimModelFootRight.new.python.json</option>
 <option>../data/HAnimModelHandLeft.json</option>
+<option>../data/HAnimModelHandLeft.new.graal.json</option>
+<option>../data/HAnimModelHandLeft.new.java.json</option>
+<option>../data/HAnimModelHandLeft.new.node.json</option>
+<option>../data/HAnimModelHandLeft.new.python.json</option>
 <option>../data/HAnimModelHandRight.json</option>
-<option>../data/HAnimModelsHandsFeet.json</option>
-<option>../data/HAnimModelsHandsFeet.new.json</option>
-<option>../data/HAnimPrototypes.json</option>
-<option>../data/HAnimPrototypes.new.json</option>
-<option>../data/HeadsUpDisplayExample.json</option>
-<option>../data/HeadsUpDisplayExample.new.json</option>
-<option>../data/HeadsUpDisplayPrototype.json</option>
-<option>../data/HeadsUpDisplayPrototype.new.json</option>
-<option>../data/HelloWorldCommented.json</option>
-<option>../data/HelloWorldCommented.new.json</option>
+<option>../data/HAnimModelHandRight.new.graal.json</option>
+<option>../data/HAnimModelHandRight.new.java.json</option>
+<option>../data/HAnimModelHandRight.new.node.json</option>
+<option>../data/HAnimModelHandRight.new.python.json</option>
 <option>../data/HelloWorld.json</option>
+<option>../data/HelloWorld.new.graal.json</option>
+<option>../data/HelloWorld.new.java.json</option>
+<option>../data/HelloWorld.new.node.json</option>
+<option>../data/HelloWorld.new.python.json</option>
+<option>../data/HelloWorldCommented.json</option>
+<option>../data/HelloWorldCommented.new.graal.json</option>
+<option>../data/HelloWorldCommented.new.java.json</option>
+<option>../data/HelloWorldCommented.new.node.json</option>
+<option>../data/HelloWorldCommented.new.python.json</option>
 <option>../data/HelloWorldMinimal.json</option>
-<option>../data/HelloWorldMinimal.new.json</option>
-<option>../data/HelloWorld.new.json</option>
-<option>../data/HelloWorldProgramOutputCanonical.json</option>
-<option>../data/HelloWorldProgramOutputCanonical.new.json</option>
-<option>../data/HelloWorldProgramOutput.json</option>
-<option>../data/HelloWorldProgramOutput.new.json</option>
+<option>../data/HelloWorldMinimal.new.graal.json</option>
+<option>../data/HelloWorldMinimal.new.java.json</option>
+<option>../data/HelloWorldMinimal.new.node.json</option>
+<option>../data/HelloWorldMinimal.new.python.json</option>
+<option>../data/holgerProto.new.graal.json</option>
+<option>../data/Humanoid0.json</option>
+<option>../data/Humanoid0.new.graal.json</option>
+<option>../data/Humanoid0.new.java.json</option>
+<option>../data/Humanoid0.new.node.json</option>
+<option>../data/Humanoid0.new.python.json</option>
+<option>../data/Humanoid1.json</option>
+<option>../data/Humanoid1.new.graal.json</option>
+<option>../data/Humanoid1.new.java.json</option>
+<option>../data/Humanoid1.new.node.json</option>
+<option>../data/Humanoid1.new.python.json</option>
+<option>../data/Humanoid1NoSegSite.json</option>
+<option>../data/Humanoid1NoSegSite.new.graal.json</option>
+<option>../data/Humanoid1NoSegSite.new.java.json</option>
+<option>../data/Humanoid1NoSegSite.new.node.json</option>
+<option>../data/Humanoid1NoSegSite.new.python.json</option>
+<option>../data/Humanoid2.json</option>
+<option>../data/Humanoid2.new.graal.json</option>
+<option>../data/Humanoid2.new.java.json</option>
+<option>../data/Humanoid2.new.node.json</option>
+<option>../data/Humanoid2.new.python.json</option>
+<option>../data/Humanoid2NoSegSite.json</option>
+<option>../data/Humanoid2NoSegSite.new.graal.json</option>
+<option>../data/Humanoid2NoSegSite.new.java.json</option>
+<option>../data/Humanoid2NoSegSite.new.node.json</option>
+<option>../data/Humanoid2NoSegSite.new.python.json</option>
+<option>../data/Humanoid3.json</option>
+<option>../data/Humanoid3.new.graal.json</option>
+<option>../data/Humanoid3.new.java.json</option>
+<option>../data/Humanoid3.new.node.json</option>
+<option>../data/Humanoid3.new.python.json</option>
+<option>../data/Humanoid3NoSegSite.json</option>
+<option>../data/Humanoid3NoSegSite.new.graal.json</option>
+<option>../data/Humanoid3NoSegSite.new.java.json</option>
+<option>../data/Humanoid3NoSegSite.new.node.json</option>
+<option>../data/Humanoid3NoSegSite.new.python.json</option>
+<option>../data/Humanoid4.json</option>
+<option>../data/Humanoid4.new.graal.json</option>
+<option>../data/Humanoid4.new.java.json</option>
+<option>../data/Humanoid4.new.node.json</option>
+<option>../data/Humanoid4.new.python.json</option>
+<option>../data/Humanoid4_1.json</option>
+<option>../data/Humanoid4_1.new.graal.json</option>
+<option>../data/Humanoid4_1.new.java.json</option>
+<option>../data/Humanoid4_1.new.node.json</option>
+<option>../data/Humanoid4_1.new.python.json</option>
+<option>../data/Humanoid4NoSegSite.json</option>
+<option>../data/Humanoid4NoSegSite.new.graal.json</option>
+<option>../data/Humanoid4NoSegSite.new.java.json</option>
+<option>../data/Humanoid4NoSegSite.new.node.json</option>
+<option>../data/Humanoid4NoSegSite.new.python.json</option>
 <option>../data/IcosahedronSubdivisionLevel5.json</option>
-<option>../data/IcosahedronSubdivisionLevel5.new.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.new.graal.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.new.java.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.new.node.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.new.python.json</option>
+<option>../data/IFS.json</option>
+<option>../data/IFS.new.graal.json</option>
+<option>../data/IFS.new.java.json</option>
+<option>../data/IFS.new.node.json</option>
+<option>../data/IFS.new.python.json</option>
 <option>../data/ifscube.json</option>
-<option>../data/ifscube.new.json</option>
+<option>../data/ifscube.new.graal.json</option>
+<option>../data/ifscube.new.java.json</option>
+<option>../data/ifscube.new.node.json</option>
+<option>../data/ifscube.new.python.json</option>
 <option>../data/ifscubeworks.json</option>
-<option>../data/ifscubeworks.new.json</option>
+<option>../data/ifscubeworks.new.graal.json</option>
+<option>../data/ifscubeworks.new.java.json</option>
+<option>../data/ifscubeworks.new.node.json</option>
+<option>../data/ifscubeworks.new.python.json</option>
 <option>../data/indexedfaceset_pixeltexture_entire.json</option>
-<option>../data/indexedfaceset_pixeltexture_entire.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.new.graal.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.new.java.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.new.node.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.new.python.json</option>
 <option>../data/indexedfaceset_pixeltexture_part.json</option>
-<option>../data/indexedfaceset_pixeltexture_part.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.new.graal.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.new.java.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.new.node.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.new.python.json</option>
 <option>../data/indexedfaceset_pixeltexture_plus.json</option>
-<option>../data/indexedfaceset_pixeltexture_plus.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.new.graal.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.new.java.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.new.node.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.new.python.json</option>
 <option>../data/indexedfaceset_pixeltexture_whole.json</option>
-<option>../data/indexedfaceset_pixeltexture_whole.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.new.graal.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.new.java.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.new.node.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.new.python.json</option>
 <option>../data/InlineSoundSource.json</option>
-<option>../data/InlineSoundSource.new.json</option>
-<option>../data/InterchangableActorsViaDynamicRoutingPrototypes.json</option>
-<option>../data/Java.json</option>
-<option>../data/Java.new.json</option>
+<option>../data/InlineSoundSource.new.graal.json</option>
+<option>../data/InlineSoundSource.new.java.json</option>
+<option>../data/InlineSoundSource.new.node.json</option>
+<option>../data/InlineSoundSource.new.python.json</option>
+<option>../data/Jin20fSegmented.json</option>
+<option>../data/Jin20fSegmented.new.graal.json</option>
+<option>../data/Jin20fSegmented.new.java.json</option>
+<option>../data/Jin20fSegmented.new.python.json</option>
+<option>../data/JinConcat11c.json</option>
+<option>../data/JinConcat11c.new.graal.json</option>
+<option>../data/JinConcat11c.new.node.json</option>
+<option>../data/JinConcat11c.new.python.json</option>
 <option>../data/JinLOA1.json</option>
-<option>../data/JinLOA2.json</option>
-<option>../data/JinLOA3.json</option>
+<option>../data/JinLOA1.new.graal.json</option>
+<option>../data/JinLOA1.new.java.json</option>
+<option>../data/JinLOA1.new.node.json</option>
+<option>../data/JinLOA1.new.python.json</option>
 <option>../data/JinLOA4.json</option>
-<option>../data/JoeKick.json</option>
-<option>../data/Json.json</option>
-<option>../data/Json.new.json</option>
+<option>../data/JinLOA4.new.graal.json</option>
+<option>../data/JinLOA4.new.node.json</option>
+<option>../data/JinLOA4.new.python.json</option>
+<option>../data/JinLOA4_1.json</option>
+<option>../data/JinLOA4_1.new.graal.json</option>
+<option>../data/JinLOA4_1.new.java.json</option>
+<option>../data/JinLOA4_1.new.node.json</option>
+<option>../data/JinLOA4_1.new.python.json</option>
+<option>../data/JinLOA4_3.json</option>
+<option>../data/JinLOA4_3.new.graal.json</option>
+<option>../data/JinLOA4_3.new.java.json</option>
+<option>../data/JinLOA4_3.new.node.json</option>
+<option>../data/JinLOA4_3.new.python.json</option>
+<option>../data/JinLOA4_4.json</option>
+<option>../data/JinLOA4_4.new.graal.json</option>
+<option>../data/JinLOA4_4.new.java.json</option>
+<option>../data/JinLOA4_4.new.node.json</option>
+<option>../data/JinLOA4_4.new.python.json</option>
+<option>../data/JinLOA4_5.json</option>
+<option>../data/JinLOA4_5.new.graal.json</option>
+<option>../data/JinLOA4_5.new.java.json</option>
+<option>../data/JinLOA4_5.new.node.json</option>
+<option>../data/JinLOA4_5.new.python.json</option>
+<option>../data/JinLOA4_6.json</option>
+<option>../data/JinLOA4_6.new.graal.json</option>
+<option>../data/JinLOA4_6.new.java.json</option>
+<option>../data/JinLOA4_6.new.node.json</option>
+<option>../data/JinLOA4_6.new.python.json</option>
+<option>../data/JinLOA4scaled1joe06c.json</option>
+<option>../data/JinLOA4scaled1joe06c.new.graal.json</option>
+<option>../data/JinLOA4scaled1joe06c.new.node.json</option>
+<option>../data/JinLOA4scaled1joe06c.new.python.json</option>
+<option>../data/JinScaledV2L1LOA4OnlyMarkers11g.json</option>
+<option>../data/JinScaledV2L1LOA4OnlyMarkers11g.new.graal.json</option>
+<option>../data/JinScaledV2L1LOA4OnlyMarkers11g.new.python.json</option>
+<option>../data/JinScaledV2L1LOA4Sites07f.json</option>
+<option>../data/JinScaledV2L1LOA4Sites07f.new.graal.json</option>
+<option>../data/JinScaledV2L1LOA4Sites07f.new.node.json</option>
+<option>../data/JinScaledV2L1LOA4Sites07f.new.python.json</option>
+<option>../data/JinScaledV2L1LOA4Sites08e.json</option>
+<option>../data/JinScaledV2L1LOA4Sites08e.new.graal.json</option>
+<option>../data/JinScaledV2L1LOA4Sites08e.new.node.json</option>
+<option>../data/JinScaledV2L1LOA4Sites08e.new.python.json</option>
+<option>../data/JinScaledV2L1LOA4Sites10h.json</option>
+<option>../data/JinScaledV2L1LOA4Sites10h.new.graal.json</option>
+<option>../data/JinScaledV2L1LOA4Sites10h.new.node.json</option>
+<option>../data/JinScaledV2L1LOA4Sites10h.new.python.json</option>
+<option>../data/JoeExample.json</option>
+<option>../data/JoeExample.new.graal.json</option>
+<option>../data/JoeExample.new.java.json</option>
+<option>../data/JoeExample.new.node.json</option>
+<option>../data/JoeExample.new.python.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKick.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKick.new.graal.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKick.new.java.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKick.new.node.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKick.new.python.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKickUpdate2.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graal.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKickUpdate2.new.java.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKickUpdate2.new.node.json</option>
+<option>../data/JoeSkinTexcoordDisplacerKickUpdate2.new.python.json</option>
+<option>../data/john.json</option>
+<option>../data/john.new.graal.json</option>
+<option>../data/john.new.java.json</option>
+<option>../data/john.new.node.json</option>
+<option>../data/john.new.python.json</option>
+<option>../data/john2.json</option>
+<option>../data/john2.new.graal.json</option>
+<option>../data/john2.new.java.json</option>
+<option>../data/john2.new.node.json</option>
+<option>../data/john2.new.python.json</option>
+<option>../data/john3.json</option>
+<option>../data/john3.new.graal.json</option>
+<option>../data/john3.new.java.json</option>
+<option>../data/john3.new.node.json</option>
+<option>../data/john3.new.python.json</option>
+<option>../data/JohnJoint.json</option>
+<option>../data/JohnJoint.new.graal.json</option>
+<option>../data/JohnJoint.new.java.json</option>
+<option>../data/JohnJoint.new.node.json</option>
+<option>../data/JohnJoint.new.python.json</option>
+<option>../data/JohnJoint2.json</option>
+<option>../data/JohnJoint2.new.graal.json</option>
+<option>../data/JohnJoint2.new.java.json</option>
+<option>../data/JohnJoint2.new.node.json</option>
+<option>../data/JohnJoint2.new.python.json</option>
+<option>../data/JohnJoint20.json</option>
+<option>../data/JohnJoint20.new.graal.json</option>
+<option>../data/JohnJoint20.new.java.json</option>
+<option>../data/JohnJoint20.new.node.json</option>
+<option>../data/JohnJoint20.new.python.json</option>
+<option>../data/JointCoordinateAxes.json</option>
+<option>../data/JointCoordinateAxes.new.graal.json</option>
+<option>../data/JointCoordinateAxes.new.java.json</option>
+<option>../data/JointCoordinateAxes.new.node.json</option>
+<option>../data/JointCoordinateAxes.new.python.json</option>
+<option>../data/jumpcut_loadurl.json</option>
+<option>../data/jumpcut_loadurl.new.graal.json</option>
+<option>../data/jumpcut_loadurl.new.java.json</option>
+<option>../data/jumpcut_loadurl.new.node.json</option>
+<option>../data/jumpcut_loadurl.new.python.json</option>
 <option>../data/KoreanCharacter01Jin.json</option>
+<option>../data/KoreanCharacter01Jin.new.graal.json</option>
+<option>../data/KoreanCharacter01Jin.new.java.json</option>
+<option>../data/KoreanCharacter01Jin.new.node.json</option>
+<option>../data/KoreanCharacter01Jin.new.python.json</option>
 <option>../data/KoreanCharacter02Chul.json</option>
+<option>../data/KoreanCharacter02Chul.new.graal.json</option>
+<option>../data/KoreanCharacter02Chul.new.java.json</option>
+<option>../data/KoreanCharacter02Chul.new.node.json</option>
+<option>../data/KoreanCharacter02Chul.new.python.json</option>
 <option>../data/KoreanCharacter03Hyun.json</option>
+<option>../data/KoreanCharacter03Hyun.new.graal.json</option>
+<option>../data/KoreanCharacter03Hyun.new.java.json</option>
+<option>../data/KoreanCharacter03Hyun.new.node.json</option>
+<option>../data/KoreanCharacter03Hyun.new.python.json</option>
 <option>../data/KoreanCharacter04Young.json</option>
+<option>../data/KoreanCharacter04Young.new.graal.json</option>
+<option>../data/KoreanCharacter04Young.new.java.json</option>
+<option>../data/KoreanCharacter04Young.new.node.json</option>
+<option>../data/KoreanCharacter04Young.new.python.json</option>
 <option>../data/KoreanCharacter05Ju.json</option>
+<option>../data/KoreanCharacter05Ju.new.graal.json</option>
+<option>../data/KoreanCharacter05Ju.new.java.json</option>
+<option>../data/KoreanCharacter05Ju.new.node.json</option>
+<option>../data/KoreanCharacter05Ju.new.python.json</option>
 <option>../data/KoreanCharacter06Ga.json</option>
+<option>../data/KoreanCharacter06Ga.new.graal.json</option>
+<option>../data/KoreanCharacter06Ga.new.java.json</option>
+<option>../data/KoreanCharacter06Ga.new.node.json</option>
+<option>../data/KoreanCharacter06Ga.new.python.json</option>
 <option>../data/KoreanCharacter07No.json</option>
+<option>../data/KoreanCharacter07No.new.graal.json</option>
+<option>../data/KoreanCharacter07No.new.java.json</option>
+<option>../data/KoreanCharacter07No.new.node.json</option>
+<option>../data/KoreanCharacter07No.new.python.json</option>
 <option>../data/KoreanCharacter08Da.json</option>
+<option>../data/KoreanCharacter08Da.new.graal.json</option>
+<option>../data/KoreanCharacter08Da.new.java.json</option>
+<option>../data/KoreanCharacter08Da.new.node.json</option>
+<option>../data/KoreanCharacter08Da.new.python.json</option>
 <option>../data/KoreanCharacter09Ru.json</option>
+<option>../data/KoreanCharacter09Ru.new.graal.json</option>
+<option>../data/KoreanCharacter09Ru.new.java.json</option>
+<option>../data/KoreanCharacter09Ru.new.node.json</option>
+<option>../data/KoreanCharacter09Ru.new.python.json</option>
 <option>../data/KoreanCharacter10Mi.json</option>
+<option>../data/KoreanCharacter10Mi.new.graal.json</option>
+<option>../data/KoreanCharacter10Mi.new.java.json</option>
+<option>../data/KoreanCharacter10Mi.new.node.json</option>
+<option>../data/KoreanCharacter10Mi.new.python.json</option>
 <option>../data/KoreanCharacter11Min.json</option>
+<option>../data/KoreanCharacter11Min.new.graal.json</option>
+<option>../data/KoreanCharacter11Min.new.java.json</option>
+<option>../data/KoreanCharacter11Min.new.node.json</option>
+<option>../data/KoreanCharacter11Min.new.python.json</option>
 <option>../data/KoreanCharacter12Sun.json</option>
+<option>../data/KoreanCharacter12Sun.new.graal.json</option>
+<option>../data/KoreanCharacter12Sun.new.java.json</option>
+<option>../data/KoreanCharacter12Sun.new.node.json</option>
+<option>../data/KoreanCharacter12Sun.new.python.json</option>
+<option>../data/KoreanCharacterMotionAnnexB01Jin.json</option>
+<option>../data/KoreanCharacterMotionAnnexB01Jin.new.graal.json</option>
+<option>../data/KoreanCharacterMotionAnnexB01Jin.new.java.json</option>
+<option>../data/KoreanCharacterMotionAnnexB01Jin.new.node.json</option>
+<option>../data/KoreanCharacterMotionAnnexB01Jin.new.python.json</option>
 <option>../data/KoreanCharacterMotionAnnexC01Jin.json</option>
+<option>../data/KoreanCharacterMotionAnnexC01Jin.new.graal.json</option>
+<option>../data/KoreanCharacterMotionAnnexC01Jin.new.java.json</option>
+<option>../data/KoreanCharacterMotionAnnexC01Jin.new.node.json</option>
+<option>../data/KoreanCharacterMotionAnnexC01Jin.new.python.json</option>
 <option>../data/KoreanCharacterMotionAnnexD01Jin.json</option>
+<option>../data/KoreanCharacterMotionAnnexD01Jin.new.graal.json</option>
+<option>../data/KoreanCharacterMotionAnnexD01Jin.new.java.json</option>
+<option>../data/KoreanCharacterMotionAnnexD01Jin.new.node.json</option>
+<option>../data/KoreanCharacterMotionAnnexD01Jin.new.python.json</option>
+<option>../data/Leif5Final.json</option>
+<option>../data/Leif5Final.new.graal.json</option>
+<option>../data/Leif5Final.new.java.json</option>
+<option>../data/Leif5Final.new.node.json</option>
+<option>../data/Leif5Final.new.python.json</option>
+<option>../data/Leif8Final.json</option>
+<option>../data/Leif8Final.new.graal.json</option>
+<option>../data/Leif8Final.new.java.json</option>
+<option>../data/Leif8Final.new.node.json</option>
+<option>../data/Leif8Final.new.python.json</option>
+<option>../data/Lily5Final.json</option>
+<option>../data/Lily5Final.new.graal.json</option>
+<option>../data/Lily5Final.new.java.json</option>
+<option>../data/Lily5Final.new.node.json</option>
+<option>../data/Lily5Final.new.python.json</option>
+<option>../data/Lily8Final.json</option>
+<option>../data/Lily8Final.new.graal.json</option>
+<option>../data/Lily8Final.new.java.json</option>
+<option>../data/Lily8Final.new.node.json</option>
+<option>../data/Lily8Final.new.python.json</option>
 <option>../data/LOA1_JumpAnimation.json</option>
-<option>../data/LOA1_JumpAnimation.new.json</option>
+<option>../data/LOA1_JumpAnimation.new.graal.json</option>
+<option>../data/LOA1_JumpAnimation.new.java.json</option>
+<option>../data/LOA1_JumpAnimation.new.node.json</option>
+<option>../data/LOA1_JumpAnimation.new.python.json</option>
 <option>../data/LOA1_KneelAnimation.json</option>
-<option>../data/LOA1_KneelAnimation.new.json</option>
+<option>../data/LOA1_KneelAnimation.new.graal.json</option>
+<option>../data/LOA1_KneelAnimation.new.java.json</option>
+<option>../data/LOA1_KneelAnimation.new.node.json</option>
+<option>../data/LOA1_KneelAnimation.new.python.json</option>
 <option>../data/LOA1_RunAnimation.json</option>
-<option>../data/LOA1_RunAnimation.new.json</option>
+<option>../data/LOA1_RunAnimation.new.graal.json</option>
+<option>../data/LOA1_RunAnimation.new.java.json</option>
+<option>../data/LOA1_RunAnimation.new.node.json</option>
+<option>../data/LOA1_RunAnimation.new.python.json</option>
 <option>../data/LOA1_StandAnimation.json</option>
-<option>../data/LOA1_StandAnimation.new.json</option>
+<option>../data/LOA1_StandAnimation.new.graal.json</option>
+<option>../data/LOA1_StandAnimation.new.java.json</option>
+<option>../data/LOA1_StandAnimation.new.node.json</option>
+<option>../data/LOA1_StandAnimation.new.python.json</option>
 <option>../data/LOA1_StopAnimation.json</option>
-<option>../data/LOA1_StopAnimation.new.json</option>
+<option>../data/LOA1_StopAnimation.new.graal.json</option>
+<option>../data/LOA1_StopAnimation.new.java.json</option>
+<option>../data/LOA1_StopAnimation.new.node.json</option>
+<option>../data/LOA1_StopAnimation.new.python.json</option>
 <option>../data/LOA1_SwimmingFlutterKickAnimation.json</option>
-<option>../data/LOA1_SwimmingFlutterKickAnimation.new.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.new.graal.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.new.java.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.new.node.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.new.python.json</option>
 <option>../data/LOA1_WalkAnimation.json</option>
-<option>../data/LOA1_WalkAnimation.new.json</option>
+<option>../data/LOA1_WalkAnimation.new.graal.json</option>
+<option>../data/LOA1_WalkAnimation.new.java.json</option>
+<option>../data/LOA1_WalkAnimation.new.node.json</option>
+<option>../data/LOA1_WalkAnimation.new.python.json</option>
+<option>../data/MainStage.json</option>
+<option>../data/MainStage.new.graal.json</option>
+<option>../data/MainStage.new.java.json</option>
+<option>../data/MainStage.new.node.json</option>
+<option>../data/MainStage.new.python.json</option>
 <option>../data/Marine.json</option>
-<option>../data/Marine.new.json</option>
-<option>../data/mirror2.json</option>
-<option>../data/mirror2.new.json</option>
+<option>../data/Marine.new.graal.json</option>
+<option>../data/Marine.new.java.json</option>
+<option>../data/Marine.new.node.json</option>
+<option>../data/Marine.new.python.json</option>
+<option>../data/MaskAndSnorkel.json</option>
+<option>../data/MaskAndSnorkel.new.graal.json</option>
+<option>../data/MaskAndSnorkel.new.java.json</option>
+<option>../data/MaskAndSnorkel.new.node.json</option>
+<option>../data/MaskAndSnorkel.new.python.json</option>
 <option>../data/mirror.json</option>
-<option>../data/mirror.new.json</option>
+<option>../data/mirror.new.graal.json</option>
+<option>../data/mirror.new.java.json</option>
+<option>../data/mirror.new.node.json</option>
+<option>../data/mirror.new.python.json</option>
+<option>../data/mirror2.json</option>
+<option>../data/mirror2.new.graal.json</option>
+<option>../data/mirror2.new.java.json</option>
+<option>../data/mirror2.new.node.json</option>
+<option>../data/mirror2.new.python.json</option>
 <option>../data/MyBounce.json</option>
-<option>../data/MyBounce.new.json</option>
-<option>../data/NancyDivingProtoInstances.json</option>
-<option>../data/NancyDivingProtoInstances.new.json</option>
-<option>../data/NancyPrototypes.json</option>
-<option>../data/NancyPrototypes.new.json</option>
+<option>../data/MyBounce.new.graal.json</option>
+<option>../data/MyBounce.new.java.json</option>
+<option>../data/MyBounce.new.node.json</option>
+<option>../data/MyBounce.new.python.json</option>
+<option>../data/myextrusion.json</option>
+<option>../data/myextrusion.new.graal.json</option>
+<option>../data/myextrusion.new.java.json</option>
+<option>../data/myextrusion.new.python.json</option>
+<option>../data/New2Template.json</option>
+<option>../data/New2TemplateNoBoxes.json</option>
+<option>../data/New2TemplateNoBoxes.new.graal.json</option>
+<option>../data/New2TemplateNoBoxes.new.java.json</option>
+<option>../data/New2TemplateNoBoxes.new.node.json</option>
+<option>../data/New2TemplateNoBoxes.new.python.json</option>
 <option>../data/ObliqueStrategies.json</option>
-<option>../data/ObliqueStrategies.new.json</option>
-<option>../data/PixelTextureComponentExamples.json</option>
-<option>../data/PixelTextureComponentExamples.new.json</option>
+<option>../data/ObliqueStrategies.new.graal.json</option>
+<option>../data/ObliqueStrategies.new.java.json</option>
+<option>../data/ObliqueStrategies.new.node.json</option>
+<option>../data/ObliqueStrategies.new.python.json</option>
+<option>../data/particleballs.json</option>
+<option>../data/particleballs.new.graal.json</option>
+<option>../data/particleballs.new.java.json</option>
+<option>../data/particleballs.new.node.json</option>
+<option>../data/particleballs.new.python.json</option>
+<option>../data/particleflowers.json</option>
+<option>../data/particleflowers.new.graal.json</option>
+<option>../data/particleflowers.new.java.json</option>
+<option>../data/particleflowers.new.node.json</option>
+<option>../data/particleflowers.new.python.json</option>
+<option>../data/Pathway.json</option>
+<option>../data/Pathway.new.graal.json</option>
+<option>../data/Pathway.new.java.json</option>
+<option>../data/Pathway.new.node.json</option>
+<option>../data/Pathway.new.python.json</option>
+<option>../data/personal.json</option>
+<option>../data/personal.new.graal.json</option>
+<option>../data/personal.new.java.json</option>
+<option>../data/personal.new.python.json</option>
 <option>../data/plainflowers.json</option>
-<option>../data/plainflowers.new.json</option>
+<option>../data/plainflowers.new.graal.json</option>
+<option>../data/plainflowers.new.java.json</option>
+<option>../data/plainflowers.new.node.json</option>
+<option>../data/plainflowers.new.python.json</option>
 <option>../data/pp3.json</option>
-<option>../data/pp3.new.json</option>
+<option>../data/pp3.new.graal.json</option>
+<option>../data/pp3.new.java.json</option>
+<option>../data/pp3.new.node.json</option>
+<option>../data/pp3.new.python.json</option>
 <option>../data/qq3.json</option>
-<option>../data/qq3.new.json</option>
-<option>../data/Quotes.json</option>
-<option>../data/Quotes.new.json</option>
+<option>../data/qq3.new.graal.json</option>
+<option>../data/qq3.new.java.json</option>
+<option>../data/qq3.new.node.json</option>
+<option>../data/qq3.new.python.json</option>
 <option>../data/rgb_alpha.json</option>
-<option>../data/rgb_alpha.new.json</option>
+<option>../data/rgb_alpha.new.graal.json</option>
+<option>../data/rgb_alpha.new.java.json</option>
+<option>../data/rgb_alpha.new.node.json</option>
+<option>../data/rgb_alpha.new.python.json</option>
 <option>../data/RotationTests.json</option>
-<option>../data/RotationTests.new.json</option>
-<option>../data/rubikFurnace.json</option>
-<option>../data/rubikFurnace.new.json</option>
+<option>../data/RotationTests.new.graal.json</option>
+<option>../data/RotationTests.new.java.json</option>
+<option>../data/RotationTests.new.node.json</option>
+<option>../data/RotationTests.new.python.json</option>
 <option>../data/rubik.json</option>
-<option>../data/rubik.new.json</option>
+<option>../data/rubik.new.graal.json</option>
+<option>../data/rubik.new.java.json</option>
+<option>../data/rubik.new.node.json</option>
+<option>../data/rubik.new.python.json</option>
+<option>../data/rubikFurnace.json</option>
+<option>../data/rubikFurnace.new.graal.json</option>
+<option>../data/rubikFurnace.new.java.json</option>
+<option>../data/rubikFurnace.new.node.json</option>
+<option>../data/rubikFurnace.new.python.json</option>
 <option>../data/rubikOnFire.json</option>
-<option>../data/rubikOnFire.new.json</option>
+<option>../data/rubikOnFire.new.graal.json</option>
+<option>../data/rubikOnFire.new.java.json</option>
+<option>../data/rubikOnFire.new.node.json</option>
+<option>../data/rubikOnFire.new.python.json</option>
+<option>../data/ScubaTank.json</option>
+<option>../data/ScubaTank.new.graal.json</option>
+<option>../data/ScubaTank.new.java.json</option>
+<option>../data/ScubaTank.new.node.json</option>
+<option>../data/ScubaTank.new.python.json</option>
 <option>../data/SimpleShader.json</option>
-<option>../data/SimpleShader.new.json</option>
-<option>../data/SingleAudio.json</option>
-<option>../data/SingleAudio.new.json</option>
+<option>../data/SimpleShader.new.graal.json</option>
+<option>../data/SimpleShader.new.java.json</option>
+<option>../data/SimpleShader.new.node.json</option>
+<option>../data/SimpleShader.new.python.json</option>
+<option>../data/Size2tExample_revision2.json</option>
+<option>../data/Size2tExample_revision2.new.graal.json</option>
+<option>../data/Size2tExample_revision2.new.java.json</option>
+<option>../data/Size2tExample_revision2.new.node.json</option>
+<option>../data/Size2tExample_revision2.new.python.json</option>
 <option>../data/SpatialAudioCameraAnimation.json</option>
-<option>../data/SpatialAudioCameraAnimation.new.json</option>
+<option>../data/SpatialAudioCameraAnimation.new.graal.json</option>
+<option>../data/SpatialAudioCameraAnimation.new.java.json</option>
+<option>../data/SpatialAudioCameraAnimation.new.node.json</option>
+<option>../data/SpatialAudioCameraAnimation.new.python.json</option>
 <option>../data/sphereflowers.json</option>
-<option>../data/sphereflowers.new.json</option>
-<option>../data/sphere.json</option>
-<option>../data/sphere.new.json</option>
+<option>../data/sphereflowers.new.graal.json</option>
+<option>../data/sphereflowers.new.java.json</option>
+<option>../data/sphereflowers.new.node.json</option>
+<option>../data/sphereflowers.new.python.json</option>
 <option>../data/SplitChannels.json</option>
-<option>../data/SplitChannels.new.json</option>
+<option>../data/SplitChannels.new.graal.json</option>
+<option>../data/SplitChannels.new.java.json</option>
+<option>../data/SplitChannels.new.node.json</option>
+<option>../data/SplitChannels.new.python.json</option>
+<option>../data/SquawLOD023.json</option>
+<option>../data/SquawLOD023.new.graal.json</option>
+<option>../data/SquawLOD023.new.java.json</option>
+<option>../data/SquawLOD023.new.node.json</option>
+<option>../data/SquawLOD023.new.python.json</option>
+<option>../data/StandardHumanoid.json</option>
+<option>../data/StandardHumanoid.new.graal.json</option>
+<option>../data/StandardHumanoid.new.java.json</option>
+<option>../data/StandardHumanoid.new.node.json</option>
+<option>../data/StandardHumanoid.new.python.json</option>
+<option>../data/StandardHumanoidNoSegSite.json</option>
+<option>../data/StandardHumanoidNoSegSite.new.graal.json</option>
+<option>../data/StandardHumanoidNoSegSite.new.java.json</option>
+<option>../data/StandardHumanoidNoSegSite.new.node.json</option>
+<option>../data/StandardHumanoidNoSegSite.new.python.json</option>
 <option>../data/StringArrayEncodingExamples.json</option>
-<option>../data/StringArrayEncodingExamples.new.json</option>
-<option>../data/SuperCobraLightsOn.json</option>
-<option>../data/t1.json</option>
-<option>../data/t1.new.json</option>
-<option>../data/t2.json</option>
-<option>../data/t2.new.json</option>
-<option>../data/t3.json</option>
-<option>../data/t3.new.json</option>
-<option>../data/t4.json</option>
-<option>../data/t4.new.json</option>
-<option>../data/Table5_18PixelTexture.json</option>
-<option>../data/Table5_18PixelTexture.new.json</option>
+<option>../data/StringArrayEncodingExamples.new.graal.json</option>
+<option>../data/StringArrayEncodingExamples.new.java.json</option>
+<option>../data/StringArrayEncodingExamples.new.node.json</option>
+<option>../data/StringArrayEncodingExamples.new.python.json</option>
 <option>../data/Teapot.json</option>
-<option>../data/Teapot.new.json</option>
+<option>../data/Teapot.new.graal.json</option>
+<option>../data/Teapot.new.java.json</option>
+<option>../data/Teapot.new.node.json</option>
+<option>../data/Teapot.new.python.json</option>
+<option>../data/text3shapes.json</option>
+<option>../data/text3shapes.new.graal.json</option>
+<option>../data/text3shapes.new.java.json</option>
+<option>../data/text3shapes.new.node.json</option>
+<option>../data/text3shapes.new.python.json</option>
 <option>../data/TextExamples.json</option>
-<option>../data/TextExamples.new.json</option>
-<option>../data/text.json</option>
-<option>../data/text.new.json</option>
-<option>../data/TextSpecialCharacters.json</option>
-<option>../data/TextSpecialCharacters.new.json</option>
+<option>../data/TextExamples.new.graal.json</option>
+<option>../data/TextExamples.new.java.json</option>
+<option>../data/TextExamples.new.node.json</option>
+<option>../data/TextExamples.new.python.json</option>
+<option>../data/ThreeDTexture.json</option>
+<option>../data/ThreeDTexture.new.graal.json</option>
+<option>../data/ThreeDTexture.new.java.json</option>
+<option>../data/ThreeDTexture.new.node.json</option>
+<option>../data/ThreeDTexture.new.python.json</option>
+<option>../data/Trebuchet.json</option>
+<option>../data/Trebuchet.new.graal.json</option>
+<option>../data/Trebuchet.new.java.json</option>
+<option>../data/Trebuchet.new.node.json</option>
+<option>../data/Trebuchet.new.python.json</option>
+<option>../data/Tufani5Final.json</option>
+<option>../data/Tufani5Final.new.graal.json</option>
+<option>../data/Tufani5Final.new.java.json</option>
+<option>../data/Tufani5Final.new.node.json</option>
+<option>../data/Tufani5Final.new.python.json</option>
+<option>../data/Tufani8Final.json</option>
+<option>../data/Tufani8Final.new.graal.json</option>
+<option>../data/Tufani8Final.new.java.json</option>
+<option>../data/Tufani8Final.new.node.json</option>
+<option>../data/Tufani8Final.new.python.json</option>
+<option>../data/variationalflowers.json</option>
+<option>../data/variationalflowers.new.graal.json</option>
+<option>../data/variationalflowers.new.java.json</option>
+<option>../data/variationalflowers.new.node.json</option>
+<option>../data/variationalflowers.new.python.json</option>
+<option>../data/variationalflowers2.json</option>
 <option>../data/ViewFrustumExample.json</option>
-<option>../data/ViewFrustumExample.new.json</option>
+<option>../data/ViewFrustumExample.new.graal.json</option>
+<option>../data/ViewFrustumExample.new.java.json</option>
+<option>../data/ViewFrustumExample.new.node.json</option>
+<option>../data/ViewFrustumExample.new.python.json</option>
 <option>../data/ViewFrustumPrototype.json</option>
-<option>../data/ViewFrustumPrototype.new.json</option>
+<option>../data/ViewFrustumPrototype.new.graal.json</option>
+<option>../data/ViewFrustumPrototype.new.java.json</option>
+<option>../data/ViewFrustumPrototype.new.node.json</option>
+<option>../data/ViewFrustumPrototype.new.python.json</option>
+<option>../data/VolumeEmitter.json</option>
+<option>../data/VolumeEmitter.new.graal.json</option>
+<option>../data/VolumeEmitter.new.python.json</option>
 <option>../data/x3dconnector.json</option>
-<option>../data/x3dconnector.new.json</option>
+<option>../data/x3dconnector.new.graal.json</option>
+<option>../data/x3dconnector.new.java.json</option>
+<option>../data/x3dconnector.new.node.json</option>
+<option>../data/x3dconnector.new.python.json</option>
 <option>../data/x3dconnectorProto.json</option>
-<option>../data/x3dconnectorProto.new.json</option>
-<option>../data/X3dHeaderPrototypeSyntaxExamples.json</option>
-<option>../data/X3dHeaderPrototypeSyntaxExamples.new.json</option>
+<option>../data/x3dconnectorProto.new.graal.json</option>
+<option>../data/x3dconnectorProto.new.java.json</option>
+<option>../data/x3dconnectorProto.new.node.json</option>
+<option>../data/x3dconnectorProto.new.python.json</option>
 <option>../data/x3domflowers.json</option>
-<option>../data/x3domflowers.new.json</option>
+<option>../data/x3domflowers.new.graal.json</option>
+<option>../data/x3domflowers.new.java.json</option>
+<option>../data/x3domflowers.new.node.json</option>
+<option>../data/x3domflowers.new.python.json</option>
 </select>
-<input type="text" onchange="filter(event)">
+<input type="text" id="filter" onchange="window.filterFiles(event)">
 </td>
 <td>
-JSON Scripts? <input id="scripting" type="checkbox" checked="true">
+<span style="display:none">JSON Scripts? <input style="display:none" id="scripting" type="checkbox"></span>
 Use Namespace: <select id="namespace">
-<option>http://www.web3d.org/specifications/x3d</option>
+<option>https://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
 <option>https://www.x3dom.org/x3dom</option>
-<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
+<option>https://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
 <option>none</option> <!-- X3DOM HTML -->
 </select>
 </td>
@@ -363,16 +1024,16 @@ Use Namespace: <select id="namespace">
 		Click <a onclick='window.updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
 	</td>
 	<td>
-		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
+		Click <a onclick='window.updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
 	</td>
 	<td>
-		Click <a onclick='decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+		Click <a onclick='window.decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
 	</td>
 </tr>
 <tr>
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
-    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
 		<Scene>
 		</Scene>
     </X3D>
@@ -386,11 +1047,18 @@ Use Namespace: <select id="namespace">
 </td>
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
 		<Scene id="x3domxml">
 		</Scene>
     </X3D>
     <x3d-canvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </x3d-canvas>
+    <x3d-canvas id='dummy' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
 	   <Scene>
@@ -407,16 +1075,16 @@ Use Namespace: <select id="namespace">
 </tr>
 <tr>
 <td>
-	<a href="../node/X3Dautoclass.js">X3Dautoclass.js</a>
+<a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
 	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.4.0.full.jar and saxon-he-12.4.jar to the same folder and run:  $ jjs -cp X3DJSAIL.4.0.full.jar your_file_name.js .
 <textarea id="java" rows="15" cols="80"></textarea><br>
 </td>
 <td>
-	Click <a onclick='updateFromStl($("#file option:selected").text());'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+	Click <a onclick='window.updateFromStl($("#file option:selected").text()); return false;'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
 <textarea id="stl" rows="15" cols="80"></textarea><br>
 </td>
 <td>
-Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+Click <a onclick='window.updateFromPly($("#file option:selected").text()); return false;'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
 <textarea id="ply" rows="15" cols="80"></textarea><br>
 </td>
 <td>
@@ -424,39 +1092,42 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 </tr>
 </table>
 </body>
-	<script src="../node/ajvAll.js"></script>
-	<script src="../node/config.js"></script>
-	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/DOMSerializer.js"></script>
-	<script src="../node/X3DJSONLD.js"></script>
-	<script src="../node/matrix.js"></script>
-	<script src="../node/convertJsonToStl.js"></script>
-	<script src="../node/convertPlyToJson.js"></script>
-	<script src="../node/convertStlToJson.js"></script>
-	<script src="../node/exi.js"></script>
-	<script src="../node/JavaScriptSerializer.js"></script>
-	<script src="../node/mapToMethod.js"></script>
-	<script src="../node/mapToMethod2.js"></script>
-	<script src="../node/PythonSerializer.js"></script>
-	<script src="../node/Script.js"></script>
-	<script src="../node/Three2Serializer.js"></script>
-	<script src="../node/DOM2JSONSerializer.js"></script>
-	<script src="../node/loadValidate.js"></script>
-	<script src="../node/loaderJQuery.js"></script>
+	<script type="module" src="../node/ajv2020.js"></script>
+	<script type="module" src="../node/ajvAddFormats.js"></script>
+	<script type="module" src="../node/config.js"></script>
+	<script type="module" src="../node/fieldTypes.js"></script>
+	<script type="module" src="../node/DOMSerializer.js"></script>
+	<script type="module" src="../node/X3DJSONLD.js"></script>
+	<script type="module" src="../node/matrix.js"></script>
+	<script type="module" src="../node/convertJsonToStl.js"></script>
+	<script type="module" src="../node/convertPlyToJson.js"></script>
+	<script type="module" src="../node/convertStlToJson.js"></script>
+	<script type="module" src="../node/exi.js"></script>
+	<script type="module" src="../node/JavaScriptSerializer.js"></script>
+	<script type="module" src="../node/mapToMethod.js"></script>
+	<script type="module" src="../node/mapToMethod2.js"></script>
+	<script type="module" src="../node/PythonSerializer.js"></script>
+	<script type="module" src="../node/Script.js"></script>
+	<script type="module" src="../node/Three2Serializer.js"></script>
+	<script type="module" src="../node/DOM2JSONSerializer.js"></script>
+	<script type="module" src="../node/loadValidate.js"></script>
+	<script type="module" src="../node/loaderJQuery.js"></script>
     <script src="../../../node_modules/three/build/three.js"></script>
     <!--
     <script type="module" src="../../../node_modules/three/examples/jsm/libs/chevrotain.module.min.js"></script>
     -->
     <script src="../node/x3d-parser.js"></script>
     <!--
-    <script type="module" src="../node/threex3dloader.mjs"></script>
-    -->
-    <script>
-	let IS_X3DOM = true;
-	let IS_X_ITE = true;
-	$(document).ready(function() {
-		myLoadJson('../data/flipp.json'); // does load flipp.json
-	});
-    </script>
+-    <script type="module" src="../node/threex3dloader.mjs"></script>
+-    -->
+        <script type="module">
+		import loadJson from '../node/loadJson.js';
+		import { setIS_X3DOM, setIS_X_ITE } from '../node/loaderJQuery.js';
+		setIS_X3DOM(false);
+		setIS_X_ITE(true);
+		$(document).ready(function() {
+			loadJson('../personal/rubikFurnace.json');
+		});
+	</script>
 </html>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->

@@ -4,12 +4,12 @@
 Use the following function in bash, and insure the correct path to js.exe and X3DJSAIL.4.0.full.jar.  Also make sure your classpath is correct for your platform (/ versus \ and ; versus :)
 <pre>
 function jjs() {
-        /c/graaljs-community-jvm-24.0.0-windows-amd64/graaljs-community-24.0.0-windows-amd64/bin/js.exe --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar;." --experimental-options --polyglot --vm.Djs.allowAllAccess=true "$@"
+        /c/graaljs-community-jvm-24.0.0-windows-amd64/graaljs-community-24.0.0-windows-amd64/bin/js.exe --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar;." --experimental-options --polyglot --vm.Djs.allowAllAccess=true "$@"
 }
 </pre>
 <h2>Download X3Dautoclass.js</h2>
 
-<a href="/X3DJSONLD/src/main/graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
+<a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
 <h2>Run your JavaScript</h2>
 <pre>
 $ jjs your_file_name.js

@@ -363,12 +363,16 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 						}
 					} else {
 						var fn = LDNode.normalIndex[parseInt(face)];
-						printNormal("  facet normal",
-							LDNode.Normal.vector[fn[0]][0], 
-							LDNode.Normal.vector[fn[0]][1],
-							LDNode.Normal.vector[fn[0]][2],
-							output,
-							transform);
+						if (fn) {
+							printNormal("  facet normal",
+								LDNode.Normal.vector[fn[0]][0], 
+								LDNode.Normal.vector[fn[0]][1],
+								LDNode.Normal.vector[fn[0]][2],
+								output,
+								transform);
+						} else {
+							console.warn("fn is falsey", fn);
+						}
 					}
 					output.push("    outer loop");
 					// TODO add triangularization here.
