@@ -35,7 +35,7 @@ JavaScriptSerializer.prototype = {
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
-		if (typeof fs !== 'undefined') {
+		if (typeof fs === 'object') {
 			str += fs.readFileSync("../graaljs/net/coderextreme/data/X3Dautoclass.js").toString();
 		} else {
 			str += "load('X3Dautoclass.js');\n";

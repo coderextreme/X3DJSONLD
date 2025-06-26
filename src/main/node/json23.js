@@ -5,10 +5,10 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js').convertJSON;
+import convertJSON from './convertJSON.js';
 
 convertJSON([{ 
-	serializer : './Three2Serializer.js',
+	serializer : 'Three2Serializer',
 	folder : "../three2/",
 	extension : ".three2.js",
 	codeOutput : "",

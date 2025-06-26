@@ -3,7 +3,9 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-import fs from "fs";
+if (typeof window === 'undefined') {
+  var fs = await import('fs');
+}
 
 export default function ClojureSerializer () {
 this.code = [];
@@ -24,7 +26,7 @@ ClojureSerializer.prototype = {
 
 		str += "(ns x3dclsail."+clazz.substring(clazz.lastIndexOf("/")+1)+"\n";
 		str += "  (:import ";
-		if (typeof fs !== 'undefined') {
+		if (typeof fs === 'object') {
 			str += fs.readFileSync("../clojure/net/coderextreme/data/X3Dautoclass.clj").toString();
 		}
 		str += "))";
