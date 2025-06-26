@@ -6,9 +6,11 @@ import convertPlyToJson from './convertPlyToJson.js';
 import convertStlToJson from "./convertStlToJson.js";
 import convertJsonToStl from "./convertJsonToStl.js";
 import JavaScriptSerializer from "./JavaScriptSerializer.js";
+import DOM2JSONSerializer from "./DOM2JSONSerializer.js";
 import fieldTypes from "./fieldTypes.js";
 import mapToMethod from "./mapToMethod.js";
 import mapToMethod2 from "./mapToMethod2.js";
+import { Scripts } from './Script.js';
 // import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
 
 if (typeof xmldom !== 'undefined') {
@@ -398,30 +400,27 @@ export async function updateFromJson(json, path) {
 		console.error(e);
 	}
 }
-
 window.updateFromJson = updateFromJson;
 
-window.updateFromStl = function updateFromStl(path) {
+function updateFromStl(path) {
 	var json = convertStlToJson($('#stl').val());
 	updateFromJson(json, path);
 }
+window.updateFromStl = updateFromStl;
 
 function updateFromPly(path) {
 	var json = convertPlyToJson($('#ply').val());
 	updateFromJson(json, path);
 }
-
 window.updateFromPly = updateFromPly;
 
 window.updateFromXml = async function updateFromXml(path) {
 	try {
-		/*
 		if (IS_X3DOM) {
 			var json = convertXmlToJson($('#xml').val(), path, document);
 			updateFromJson(json, path);
 		}
 		if (IS_X_ITE) {
-		*/
 			await X3D();
 			let browser = null;
 			if (!IS_X_ITE) {
@@ -440,9 +439,7 @@ window.updateFromXml = async function updateFromXml(path) {
 			} else {
 				alert("X_ITE could not replaceWorld in load_X_ITE_XML() #x_itexml");
 			}
-		/*
 		}
-		*/
 	} catch (e) {
 		console.error(e);
 	}

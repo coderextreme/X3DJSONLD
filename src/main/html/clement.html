@@ -49,8 +49,9 @@
 	<script src="../node/loadValidate.js"></script>
 	<script src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
-	let IS_X3DOM = true;
-	let IS_X_ITE = true;
+	    import { setIS_X3DOM, setIS_X_ITE } from '../node/loaderJQuery.js';
+		setIS_X3DOM(true);
+		setIS_X_ITE(true);
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
 			window.replaceX3DJSON(selector, json, url, "", function(element) {

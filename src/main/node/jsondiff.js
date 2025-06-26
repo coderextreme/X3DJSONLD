@@ -1,7 +1,9 @@
 "use strict";
 
-var fs = require('fs');
-const { glob, globSync } = require('glob');
+if (typeof window === 'undefined') {
+  var fs = await import('fs');
+}
+import { glob, globSync } from 'glob';
 
 function parseString(string, callback) {
 	try {
@@ -144,35 +146,37 @@ function compare(obj1, p1, obj2, p2) {
 }
 
 try {
-	var right = fs.readFileSync(files[1]);
-	parseString(right, function(err, resultright) {
-		if (err) throw "RIGHT FILE "+files[1]+" "+err;
-		const filesglobs = globSync(files[0]);
-		filesglobs.forEach(function(file) {
-			var left = fs.readFileSync(file);
-			parseString(left, function(err, resultleft) {
-				if (err) throw "LEFT FILE "+file+" "+err;
-				var ret;
-				var str;
-				[ ret, str ] = compare(resultleft, '', resultright, '');
-				if (!ret) {
-					try {
-						console.log("================================================================================");
-						console.log(program, files[0], files[1]);
-						console.log(str);
-						console.log("Different");
-					} catch (e) {
-						console.error("Quit pipe");
+	if (typeof fs === 'object') {
+		var right = fs.readFileSync(files[1]);
+		parseString(right, function(err, resultright) {
+			if (err) throw "RIGHT FILE "+files[1]+" "+err;
+			const filesglobs = globSync(files[0]);
+			filesglobs.forEach(function(file) {
+				var left = fs.readFileSync(file);
+				parseString(left, function(err, resultleft) {
+					if (err) throw "LEFT FILE "+file+" "+err;
+					var ret;
+					var str;
+					[ ret, str ] = compare(resultleft, '', resultright, '');
+					if (!ret) {
+						try {
+							console.log("================================================================================");
+							console.log(program, files[0], files[1]);
+							console.log(str);
+							console.log("Different");
+						} catch (e) {
+							console.error("Quit pipe");
+						}
+						/*
+					} else {
+						console.log("Same");
+						*/
 					}
-					/*
-				} else {
-					console.log("Same");
-					*/
-				}
-				process.exit();
+					process.exit();
+				});
 			});
 		});
-	});
+	}
 } catch (e) {
 	console.error(e, files[0], files[1]);
 }

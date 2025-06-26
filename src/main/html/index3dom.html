@@ -3,20 +3,22 @@
 <head>
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-   <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-   <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
-   <script type="text/javascript" _src="https://x3dom.github.io/x3dom-dev/dist/x3dom-full.debug.js"
-            src="https://andreasplesch.github.io/x3dom/dist/x3dom-full.debug.js"></script>
-<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
-   <!--
-    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
-    <script type="text/javascript" src="../../../node_modules/saxon-js/SaxonJS2N.js"></script>
+    <meta name="viewport"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <!--
+    <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
     -->
-   <script
-	     src="https://code.jquery.com/jquery-3.7.1.js"
-	       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-	       crossorigin="anonymous"></script>
+    <script type="text/javascript" _src="https://x3dom.github.io/x3dom-dev/dist/x3dom-full.debug.js"
+            src="https://andreasplesch.github.io/x3dom/dist/x3dom-full.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript">var exports = {};</script>
+    <script type="importmap">
+{
+  "imports": {
+    "@xmldom/xmldom": "https://esm.sh/@xmldom/xmldom@0.9.8/es2022/xmldom.mjs"
+  }
+}
+</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
     x3d-canvas, X3D, #image {
@@ -29,7 +31,6 @@
 	width: 0px;
 	height:0px;
     }
-    }
     #x_itejson {
 	display:none;
 	width: 0px;
@@ -40,26 +41,6 @@
 	width: 0px;
 	height:0px;
     }
-    table td, table td * {
-        vertical-align: top;
-    }
-/* unvisited link */
-a:link {
-    color: red;
-}
-
-/* visited link */
-a:visited {
-    color: green;
-}
-
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
-
-/* selected link */
-a:active {
     table td, table td * {
         vertical-align: top;
     }
@@ -124,15 +105,15 @@ a:active {
 <option>../ply/OrigamiCrane.ply</option>
 <option>../ply/Tetrahedron.ply</option>
 </select>
-<input type="text" onchange="filter(event)"></input>
+<input type="text" id="filter" onchange="window.filterFiles(event)">
 </td>
 <td>
-JSON Scripts? <input id="scripting" type="checkbox" checked></input>
+JSON Scripts? <input id="scripting" type="checkbox" checked>
 Use Namespace: <select id="namespace">
-<option>http://www.web3d.org/specifications/x3d</option>
+<option>https://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
 <option>https://www.x3dom.org/x3dom</option>
-<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
+<option>https://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
 <option>none</option> <!-- X3DOM HTML -->
 </select>
 </td>
@@ -151,11 +132,10 @@ Use Namespace: <select id="namespace">
 <tr>
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
-    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
 		<Scene>
 		</Scene>
     </X3D>
-    <!--
     <x3d-canvas id='x_itejson' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -163,15 +143,13 @@ Use Namespace: <select id="namespace">
 	   </Scene>
 	   </X3D>
     </x3d-canvas>
-    -->
 </td>
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
-    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
 		<Scene id="x3domxml">
 		</Scene>
     </X3D>
-    <!--
     <x3d-canvas id='x_itexml' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -179,7 +157,6 @@ Use Namespace: <select id="namespace">
 	   </Scene>
 	   </X3D>
     </x3d-canvas>
-    -->
     <x3d-canvas id='dummy' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -187,6 +164,7 @@ Use Namespace: <select id="namespace">
 	   </Scene>
 	   </X3D>
     </x3d-canvas>
+    	<div id="threejs"></div>
 </td>
 <td>
 		<textarea id="exi" rows="15" cols="80"></textarea>
@@ -196,7 +174,7 @@ Use Namespace: <select id="namespace">
 </tr>
 <tr>
 <td>
-	<a href="../node/X3Dautoclass.js">X3Dautoclass.js</a>
+<a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
 	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.4.0.full.jar and saxon-he-12.4.jar to the same folder and run:  $ jjs -cp X3DJSAIL.4.0.full.jar your_file_name.js .
 <textarea id="java" rows="15" cols="80"></textarea><br>
 </td>
@@ -213,30 +191,34 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 </tr>
 </table>
 </body>
-	<script src="../node/ajvAll.js"></script>
-	<script src="../node/config.js"></script>
-	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/DOMSerializer.js"></script>
-	<script src="../node/X3DJSONLD.js"></script>
-	<script src="../node/matrix.js"></script>
-	<script src="../node/convertJsonToStl.js"></script>
-	<script src="../node/convertPlyToJson.js"></script>
-	<script src="../node/convertStlToJson.js"></script>
-	<script src="../node/exi.js"></script>
-	<script src="../node/JavaScriptSerializer.js"></script>
-	<script src="../node/mapToMethod.js"></script>
-	<script src="../node/mapToMethod2.js"></script>
-	<script src="../node/PythonSerializer.js"></script>
-	<script src="../node/Script.js"></script>
-	<script src="../node/Three2Serializer.js"></script>
-	<script src="../node/DOM2JSONSerializer.js"></script>
-	<script src="../node/loadValidate.js"></script>
-	<script src="../node/loaderJQuery.js"></script>
-    <script>
-	let IS_X3DOM = true;
-	let IS_X_ITE = false;
-	$(document).ready(function() {
-		myLoadJson('../personal/rubikFurnace.json'); // does load sphereflowers.json
-	});
-    </script>
+	<script type="module" src="../node/ajv2020.js"></script>
+	<script type="module" src="../node/ajvAddFormats.js"></script>
+	<script type="module" src="../node/config.js"></script>
+	<script type="module" src="../node/fieldTypes.js"></script>
+	<script type="module" src="../node/DOMSerializer.js"></script>
+	<script type="module" src="../node/X3DJSONLD.js"></script>
+	<script type="module" src="../node/matrix.js"></script>
+	<script type="module" src="../node/convertJsonToStl.js"></script>
+	<script type="module" src="../node/convertPlyToJson.js"></script>
+	<script type="module" src="../node/convertStlToJson.js"></script>
+	<script type="module" src="../node/exi.js"></script>
+	<script type="module" src="../node/JavaScriptSerializer.js"></script>
+	<script type="module" src="../node/mapToMethod.js"></script>
+	<script type="module" src="../node/mapToMethod2.js"></script>
+	<script type="module" src="../node/PythonSerializer.js"></script>
+	<script type="module" src="../node/Script.js"></script>
+	<script type="module" src="../node/Three2Serializer.js"></script>
+	<script type="module" src="../node/DOM2JSONSerializer.js"></script>
+	<script type="module" src="../node/loadValidate.js"></script>
+	<script type="module" src="../node/loaderJQuery.js"></script>
+	<script type="module">
+		import loadJson from '../node/loadJson.js';
+		import { setIS_X3DOM, setIS_X_ITE } from '../node/loaderJQuery.js';
+		setIS_X3DOM(true);
+		setIS_X_ITE(false);
+		$(document).ready(function() {
+			loadJson('../personal/rubikFurnace.json');
+		});
+	</script>
 </html>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
