@@ -5,10 +5,8 @@ import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
-// IMPORT: Import the encode function from exi.js
 import { encodeJSON } from './exi.js';
 
-// EXPORT: Re-export the decode function so main_viewer.html can import it
 export { decodeJSON } from './exi.js';
 
 let x3domIframe = null;
@@ -20,14 +18,18 @@ let xiteLoadQueue = null;
 let x3domUrlLoadQueue = null;
 let globalXmlForJsonConversion = null;
 window.pendingXmlToJsonConversion = false;
-let lastBlobUrl = null; // To manage and revoke blob URLs
+let lastBlobUrl = null;
+let currentX3domUrl = '';
 
-export function resetX3DOMReadyState() {
-    console.log("Master_loader: Resetting X3DOM ready state for reload.");
+export function prepareForX3DOMReload() {
+    console.log("Master_loader: Preparing for X3DOM reload. Caching current URL for re-render.");
     x3domRuntimeFullyReady = false;
-    x3domUrlLoadQueue = null;
+    if (currentX3domUrl) {
+        x3domUrlLoadQueue = currentX3domUrl;
+    }
 }
 
+// THIS FUNCTION IS THE ONE WITH THE CHANGE
 async function processPendingXmlToJson() {
     if (!window.pendingXmlToJsonConversion || !globalXmlForJsonConversion || !xiteRuntimeFullyReady) {
         return;
@@ -39,16 +41,31 @@ async function processPendingXmlToJson() {
     try {
         const jsonString = await xiteIframe.contentWindow.getSceneAsJsonString();
         if (jsonString) {
-            // Only update the textarea. Do not trigger a re-render.
-            const prettyJson = JSON.stringify(JSON.parse(jsonString), null, 2);
-            $('#json').val(prettyJson);
-            // After populating JSON from XML, also convert it to EXI
-            encodeJSON();
+            // We have the JSON string, now parse it into an object to use for other conversions.
+            const jsonObj = JSON.parse(jsonString);
+
+            // Populate the JSON textarea with a prettified version.
+            $('#json').val(JSON.stringify(jsonObj, null, 2));
+
+            // Now, perform all other conversions that depend on the JSON object.
+            encodeJSON(); // JSON -> EXI
+
+            // THE NEWLY ADDED LOGIC: JSON -> STL
+            try {
+                $('#stl').val(convertJsonToStl(jsonObj));
+            } catch (e) {
+                // If STL conversion fails (e.g., no geometry), show an error in its textarea.
+                $('#stl').val("Error converting to STL: " + e.message);
+            }
+
         } else {
              throw new Error("X_ITE returned null/empty JSON string.");
         }
     } catch (e) {
         $('#json').val("Error during XML->JSON conversion: " + e.message);
+        // If JSON conversion fails, clear the dependent fields.
+        $('#stl').val('');
+        $('#exi').val('');
     }
 }
 
@@ -56,6 +73,7 @@ window.x3domIframeReadyForAdvancedOps = function() {
     console.log("Master_loader: X3DOM iframe reports fully ready.");
     x3domRuntimeFullyReady = true;
     if (x3domUrlLoadQueue && x3domIframe?.contentWindow?.loadUrl) {
+        console.log("Master_loader: Processing queued URL for reloaded X3DOM iframe.");
         const urlToLoad = x3domUrlLoadQueue;
         x3domUrlLoadQueue = null;
         x3domIframe.contentWindow.loadUrl(urlToLoad);
@@ -85,15 +103,14 @@ export function setXITEIFrame(iframeElement) {
 export function getXITEIFrame() { return xiteIframe; }
 
 async function displayInIframes(urlForX3dom, xmlContentForXite) {
-    // Revoke the previous blob URL to prevent memory leaks
     if (lastBlobUrl) {
         URL.revokeObjectURL(lastBlobUrl);
         lastBlobUrl = null;
     }
-    // If the new URL is a blob, store it for future revocation
     if (urlForX3dom.startsWith('blob:')) {
         lastBlobUrl = urlForX3dom;
     }
+    currentX3domUrl = urlForX3dom;
 
     const xitePromise = (async () => {
         if (xiteRuntimeFullyReady && xiteIframe?.contentWindow?.loadContentInXite) {
@@ -127,7 +144,6 @@ export async function loadX3DFile(filePath) {
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const fileExtension = filePath.split('.').pop().toLowerCase();
 
-        // Read content as text, suitable for JSON, XML, STL, and PLY
         const fileContent = await response.text();
 
         if (['json', 'x3dj'].includes(fileExtension)) {
@@ -167,26 +183,26 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
         effectiveUrlForX3dom = URL.createObjectURL(xmlBlob);
     }
 
-    // RENDER: X3DOM gets a URL (file path or blob URL), X_ITE gets the XML string.
     await displayInIframes(effectiveUrlForX3dom, xmlString);
 
-    // CONVERT: Update other textareas.
     try { $('#stl').val(convertJsonToStl(jsonObj)); } catch (e) { $('#stl').val("Error converting to STL: " + e.message); }
     try {
         let jsSerializer = new JavaScriptSerializer();
         $('#java').val(jsSerializer.serializeToString(jsonObj, baseFileName, "", []));
     } catch (e) { $('#java').val("Error generating Java: " + e.message); }
-    
-    // INTEGRATION: Automatically encode the final JSON to EXI.
     encodeJSON();
 }
 
 export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     document.getElementById('currentFileName').textContent = sourceFileName;
     $('#xml').val(xmlString);
+
+    // Clear dependent fields before starting async conversion
     $('#json').val('Converting from XML via X_ITE...');
-    // Clear EXI while converting
+    $('#stl').val('');
     $('#exi').val('');
+    $('#java').val('');
+    $('#ply').val('');
 
     await displayInIframes(urlForX3dom, xmlString);
 
@@ -195,29 +211,21 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     await processPendingXmlToJson();
 }
 
-/**
- * Handles STL file content. Converts to JSON and delegates to the JSON update pipeline.
- */
 export async function updateFromStl(stlText, sourceFileName) {
     try {
         const jsonObj = convertStlToJson(stlText);
-        // Delegate to the main JSON pipeline, which will create a blob for rendering.
         await updateFromJson(jsonObj, sourceFileName.replace(/\.stl$/i, ".json"));
-        $('#stl').val(stlText); // Populate the original STL text
+        $('#stl').val(stlText);
     } catch (e) {
         alert("Error converting STL: " + e.message);
     }
 }
 
-/**
- * Handles PLY file content. Converts to JSON and delegates to the JSON update pipeline.
- */
 export async function updateFromPly(plyText, sourceFileName) {
     try {
         const jsonObj = convertPlyToJson(plyText);
-        // Delegate to the main JSON pipeline, which will create a blob for rendering.
         await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".json"));
-        $('#ply').val(plyText); // Populate the original PLY text
+        $('#ply').val(plyText);
     } catch (e) {
         alert("Error converting PLY: ".concat(e.message));
     }
