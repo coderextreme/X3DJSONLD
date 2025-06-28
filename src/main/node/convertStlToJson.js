@@ -178,7 +178,7 @@ export default function convertStlToJson(file) {
 	    }
 	  }
 	};
-	console.error(x3d);
+	// console.error(x3d);
 	return x3d;
 }
 

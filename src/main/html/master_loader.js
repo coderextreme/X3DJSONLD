@@ -1,395 +1,224 @@
 // master_loader.js
 
-import X3DJSONLD from '../node/X3DJSONLD.js'; 
+import X3DJSONLD from '../node/X3DJSONLD.js';
 import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
-// EXI is global
+// IMPORT: Import the encode function from exi.js
+import { encodeJSON } from './exi.js';
+
+// EXPORT: Re-export the decode function so main_viewer.html can import it
+export { decodeJSON } from './exi.js';
 
 let x3domIframe = null;
 let xiteIframe = null;
-let x3domIframeLoaded = false;
-let xiteIframeLoaded = false; 
-let xiteRuntimeFullyReady = false; 
+let x3domRuntimeFullyReady = false;
+let xiteRuntimeFullyReady = false;
 
-let x3domLoadQueue = null; // Can be { content: data, type: 'xml'/'json_obj', path: scenePath }
-let xiteLoadQueue = null;  // Will always be XML string
+let xiteLoadQueue = null;
+let x3domUrlLoadQueue = null;
+let globalXmlForJsonConversion = null;
+window.pendingXmlToJsonConversion = false;
+let lastBlobUrl = null; // To manage and revoke blob URLs
 
-window.xiteIframeReadyForAdvancedOps = function() {
+export function resetX3DOMReadyState() {
+    console.log("Master_loader: Resetting X3DOM ready state for reload.");
+    x3domRuntimeFullyReady = false;
+    x3domUrlLoadQueue = null;
+}
+
+async function processPendingXmlToJson() {
+    if (!window.pendingXmlToJsonConversion || !globalXmlForJsonConversion || !xiteRuntimeFullyReady) {
+        return;
+    }
+    const xmlToConvert = globalXmlForJsonConversion;
+    globalXmlForJsonConversion = null;
+    window.pendingXmlToJsonConversion = false;
+
+    try {
+        const jsonString = await xiteIframe.contentWindow.getSceneAsJsonString();
+        if (jsonString) {
+            // Only update the textarea. Do not trigger a re-render.
+            const prettyJson = JSON.stringify(JSON.parse(jsonString), null, 2);
+            $('#json').val(prettyJson);
+            // After populating JSON from XML, also convert it to EXI
+            encodeJSON();
+        } else {
+             throw new Error("X_ITE returned null/empty JSON string.");
+        }
+    } catch (e) {
+        $('#json').val("Error during XML->JSON conversion: " + e.message);
+    }
+}
+
+window.x3domIframeReadyForAdvancedOps = function() {
+    console.log("Master_loader: X3DOM iframe reports fully ready.");
+    x3domRuntimeFullyReady = true;
+    if (x3domUrlLoadQueue && x3domIframe?.contentWindow?.loadUrl) {
+        const urlToLoad = x3domUrlLoadQueue;
+        x3domUrlLoadQueue = null;
+        x3domIframe.contentWindow.loadUrl(urlToLoad);
+    }
+};
+
+window.xiteIframeReadyForAdvancedOps = async function() {
     console.log("Master_loader: X_ITE iframe reports fully ready.");
     xiteRuntimeFullyReady = true;
-    if (xiteLoadQueue && xiteIframe.contentWindow && typeof xiteIframe.contentWindow.loadContentInXite === 'function') {
-        console.log("Master_loader: Processing X_ITE display queue (XML string) after full readiness signal.");
+    if (xiteLoadQueue && xiteIframe?.contentWindow?.loadContentInXite) {
         const xmlToLoad = xiteLoadQueue;
-        xiteLoadQueue = null; 
-        Promise.resolve(xiteIframe.contentWindow.loadContentInXite(xmlToLoad))
-            .catch(e => console.error("Error in queued X_ITE loadContentInXite (after ready signal):", e));
+        xiteLoadQueue = null;
+        await xiteIframe.contentWindow.loadContentInXite(xmlToLoad);
     }
-    if (window.pendingXmlToJsonConversion && globalXmlForJsonConversion) {
-        console.log("Master_loader: Processing pending XML to JSON (after X_ITE ready signal).");
-        window.processPendingXmlToJson();
-    }
+    await processPendingXmlToJson();
 };
 
 export function setX3DOMIFrame(iframeElement) {
     x3domIframe = iframeElement;
-    x3domIframe.onload = () => {
-        x3domIframeLoaded = true;
-        if (x3domLoadQueue && x3domIframe.contentWindow && typeof x3domIframe.contentWindow.loadContentInX3dom === 'function') {
-            console.log("X3DOM iframe loaded, processing display queue. Type:", x3domLoadQueue.type);
-            try { 
-                x3domIframe.contentWindow.loadContentInX3dom(x3domLoadQueue.content, x3domLoadQueue.type, x3domLoadQueue.path); 
-            } catch(e) { 
-                console.error("Error in X3DOM queued load:", e); 
-            }
-            x3domLoadQueue = null;
-        }
-    };
 }
 export function getX3DOMIFrame() { return x3domIframe; }
 
 export function setXITEIFrame(iframeElement) {
     xiteIframe = iframeElement;
-    xiteIframe.onload = async () => { 
-        xiteIframeLoaded = true; 
-        console.log("X_ITE iframe 'onload' event fired (basic DOM ready).");
-        if (xiteLoadQueue && xiteRuntimeFullyReady && xiteIframe.contentWindow && typeof xiteIframe.contentWindow.loadContentInXite === 'function') {
-             console.log("X_ITE iframe basic onload, runtime also fully ready, processing display queue.");
-            const xmlToLoad = xiteLoadQueue;
-            xiteLoadQueue = null;
-             await Promise.resolve(xiteIframe.contentWindow.loadContentInXite(xmlToLoad)) // await the async call
-                .catch(e => console.error("Error in X_ITE queued load (basic onload, runtime ready):", e));
-        } else if (xiteLoadQueue) {
-            console.log("X_ITE iframe basic onload, but runtime not yet signaled as fully ready. Display queue waits for 'xiteIframeReadyForAdvancedOps'.");
-        }
-        // If pending XML to JSON and X_ITE is now fully ready (though xiteIframeReadyForAdvancedOps should also trigger this)
-        if (window.pendingXmlToJsonConversion && globalXmlForJsonConversion && xiteRuntimeFullyReady) {
-             console.log("X_ITE iframe basic onload, also processing pending XML to JSON as runtime is now fully ready.");
-             await window.processPendingXmlToJson();
-        }
-    };
+    xiteIframe.onload = () => console.log("X_ITE iframe 'onload' fired. Waiting for full runtime signal.");
 }
 export function getXITEIFrame() { return xiteIframe; }
 
-let currentJSONObject = null;
-let currentFileNameForConversion = "converted.x3d";
-
-async function displayInIframes(contentForXiteXml, contentForX3dom, x3domContentType = 'xml', scenePathForX3dom = null) {
-    console.log(`Master_loader: displayInIframes called. X_ITE receives XML, X3DOM receives type: ${x3domContentType}`);
-    
-    if (typeof contentForXiteXml !== 'string') {
-        console.error("displayInIframes: contentForXiteXml MUST be an XML string. Received:", typeof contentForXiteXml, String(contentForXiteXml).substring(0,100));
-        // Fallback to ensure something is sent, or handle error more gracefully
-        contentForXiteXml = '<X3D profile="Immersive" version="4.0"><Scene><Shape><Text string="Error: Invalid XML for X_ITE."/><Appearance><Material diffuseColor="1 0 0"/></Appearance></Shape></Scene></X3D>';
+async function displayInIframes(urlForX3dom, xmlContentForXite) {
+    // Revoke the previous blob URL to prevent memory leaks
+    if (lastBlobUrl) {
+        URL.revokeObjectURL(lastBlobUrl);
+        lastBlobUrl = null;
     }
-    
-    // --- X_ITE Handling (always gets XML) ---
-    if (xiteRuntimeFullyReady && xiteIframe && xiteIframe.contentWindow && typeof xiteIframe.contentWindow.loadContentInXite === 'function') {
-        console.log("Attempting to load XML into X_ITE (runtime fully ready).");
-        await Promise.resolve(xiteIframe.contentWindow.loadContentInXite(contentForXiteXml))
-            .catch(e => console.error(`Error calling loadContentInXite for XML:`, e));
-    } else {
-        console.log(`X_ITE iframe not fully ready, queueing XML content for X_ITE.`);
-        xiteLoadQueue = contentForXiteXml; 
+    // If the new URL is a blob, store it for future revocation
+    if (urlForX3dom.startsWith('blob:')) {
+        lastBlobUrl = urlForX3dom;
     }
 
-    // --- X3DOM Handling ---
-    if (x3domIframeLoaded && x3domIframe.contentWindow && typeof x3domIframe.contentWindow.loadContentInX3dom === 'function') {
-        console.log(`Attempting to load into X3DOM iframe (type: ${x3domContentType}).`);
-        try { 
-            x3domIframe.contentWindow.loadContentInX3dom(contentForX3dom, x3domContentType, scenePathForX3dom); 
+    const xitePromise = (async () => {
+        if (xiteRuntimeFullyReady && xiteIframe?.contentWindow?.loadContentInXite) {
+            await xiteIframe.contentWindow.loadContentInXite(xmlContentForXite || '');
+        } else {
+            xiteLoadQueue = xmlContentForXite || '';
         }
-        catch (e) { console.error("Error calling loadContentInX3dom directly:", e); }
-    } else {
-        console.log(`X3DOM iframe not ready, queueing content for X3DOM (type: ${x3domContentType}).`);
-        x3domLoadQueue = { content: contentForX3dom, type: x3domContentType, path: scenePathForX3dom }; 
-    }
-    console.log("displayInIframes finished processing for iframes.");
-}
+    })();
 
+    const x3domPromise = (async () => {
+        if (x3domRuntimeFullyReady && x3domIframe?.contentWindow?.loadUrl) {
+            x3domIframe.contentWindow.loadUrl(urlForX3dom);
+        } else {
+            x3domUrlLoadQueue = urlForX3dom;
+        }
+    })();
+
+    await Promise.all([xitePromise, x3domPromise]);
+}
 
 export async function loadX3DFile(filePath) {
     document.getElementById('currentFileName').textContent = filePath || 'None';
-    if (!filePath || filePath === "DO NOT LOAD") return;
-    currentFileNameForConversion = filePath.substring(filePath.lastIndexOf('/') + 1);
+    if (!filePath) return;
 
-    $('#json').val(''); $('#xml').val(''); $('#stl').val(''); $('#ply').val(''); $('#exi').val(''); $('#java').val('');
+    $('.control-panel textarea').val('');
     window.pendingXmlToJsonConversion = false;
     globalXmlForJsonConversion = null;
 
     try {
         const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const fileExtension = filePath.split('.').pop().toLowerCase();
-        
-        if (fileExtension === 'json') {
-            const json = await response.json();
-            await updateFromJson(json, filePath);
+
+        // Read content as text, suitable for JSON, XML, STL, and PLY
+        const fileContent = await response.text();
+
+        if (['json', 'x3dj'].includes(fileExtension)) {
+            await updateFromJson(JSON.parse(fileContent), filePath, filePath);
         } else if (['x3d', 'xml', 'x3dv'].includes(fileExtension)) {
-            const xmlText = await response.text();
-            await updateFromXml(xmlText, filePath);
+            await updateFromXml(fileContent, filePath, filePath);
         } else if (fileExtension === 'stl') {
-            const stlText = await response.text();
-            await updateFromStl(stlText, filePath);
+            await updateFromStl(fileContent, filePath);
         } else if (fileExtension === 'ply') {
-             const plyText = await response.text();
-            await updateFromPly(plyText, filePath);
+            await updateFromPly(fileContent, filePath);
         } else {
             alert('Unsupported file type: ' + fileExtension);
         }
     } catch (error) {
-        console.error('Error loading file:', filePath, error);
         alert(`Error loading file: ${filePath}\n${error.message}`);
     }
 }
 
-export async function updateFromJson(jsonObj, sourceFileName) {
-    currentJSONObject = jsonObj; 
-    const baseFileName = sourceFileName ? sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1) : "from_textarea.json";
-    currentFileNameForConversion = baseFileName;
-    
-    $('#json').val(JSON.stringify(jsonObj, null, 2));
+export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null) {
+    document.getElementById('currentFileName').textContent = sourceFileName;
+    const baseFileName = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
+    const jsonString = JSON.stringify(jsonObj, null, 2);
+    $('#json').val(jsonString);
 
-    let xmlStringForXiteAndTextarea = "";
+    let xmlString = "";
     try {
-        xmlStringForXiteAndTextarea = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName || document.location.href); // Use sourceFileName for path hint
-        $('#xml').val(xmlStringForXiteAndTextarea); 
+        [, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
+        $('#xml').val(xmlString);
     } catch (e) {
-        console.error("Error converting JSON to XML:", e);
-        $('#xml').val("Error: " + e.message);
-        // Attempt to display JSON directly in X3DOM if XML conversion fails, clear X_ITE
-        await displayInIframes("", jsonObj, 'json_obj', sourceFileName || document.location.href); 
-        return; 
-    }
-
-    // For X3DOM: pass the original JavaScript object. Path is sourceFileName or document URI.
-    // For X_ITE: pass the converted XML string.
-    await displayInIframes(xmlStringForXiteAndTextarea, jsonObj, 'json_obj', sourceFileName || document.location.href);
-    
-    encodeJSONEXI(); 
-
-    if (convertJsonToStl && jsonObj) {
-        try { $('#stl').val(convertJsonToStl(jsonObj)); } 
-        catch (e) { console.error("JSON to STL Error:", e); $('#stl').val("Error: " + e.message); }
-    }
-    if (JavaScriptSerializer && jsonObj) {
-        try {
-            let jsSerializer = new JavaScriptSerializer();
-            $('#java').val(jsSerializer.serializeToString(jsonObj, পথে(), "", []));
-        } catch (e) { console.error("JSON to Java Error:", e); $('#java').val("Error: " + e.message); }
-    }
-}
-
-let globalXmlForJsonConversion = null; 
-window.pendingXmlToJsonConversion = false;
-
-window.processPendingXmlToJson = async function() { 
-    if (!globalXmlForJsonConversion) {
-        window.pendingXmlToJsonConversion = false; 
+        $('#xml').val("Error converting JSON to XML: " + e.message);
         return;
     }
-    if (xiteRuntimeFullyReady && xiteIframe.contentWindow && typeof xiteIframe.contentWindow.getSceneAsJsonString === 'function') {
-        console.log("Master_loader: Processing XML to JSON via X_ITE for:", currentFileNameForConversion);
-        try {
-            const jsonStringFromXite = await xiteIframe.contentWindow.getSceneAsJsonString();
 
-            if (jsonStringFromXite) {
-                currentJSONObject = JSON.parse(jsonStringFromXite);
-                $('#json').val(JSON.stringify(currentJSONObject, null, 2));
-                console.log("Master_loader: JSON obtained from X_ITE.");
-
-                encodeJSONEXI();
-                if (convertJsonToStl && currentJSONObject) { 
-                    try { $('#stl').val(convertJsonToStl(currentJSONObject)); }
-                    catch(e) { console.error("JSON to STL (from XML) Error:", e); $('#stl').val("Error: " + e.message); }
-                }
-                if (JavaScriptSerializer && currentJSONObject) { 
-                    try {
-                        let javaSerializer = new JavaScriptSerializer();
-                        $('#java').val(javaSerializer.serializeToString(currentJSONObject, পথে(), "", []));
-                    } catch(e) { console.error("JSON to Java (from XML) Error:", e); $('#java').val("Error: " + e.message); }
-                }
-            } else {
-                $('#json').val("X_ITE could not provide JSON. Check iframe console.");
-                console.warn("Master_loader: X_ITE's getSceneAsJsonString returned null or empty.");
-                currentJSONObject = null;
-            }
-        } catch (e) {
-            console.error("Master_loader: Error during X_ITE JSON conversion or subsequent processing:", e);
-            $('#json').val("Error processing JSON from X_ITE: " + e.message);
-            currentJSONObject = null;
-        } finally {
-            globalXmlForJsonConversion = null; 
-            window.pendingXmlToJsonConversion = false;
-        }
-    } else { 
-        console.log("Master_loader: X_ITE not fully ready for XML-to-JSON. Flagged.");
-        window.pendingXmlToJsonConversion = true; 
+    let effectiveUrlForX3dom = urlForX3dom;
+    if (!effectiveUrlForX3dom) {
+        const xmlBlob = new Blob([xmlString], { type: 'model/x3d+xml' });
+        effectiveUrlForX3dom = URL.createObjectURL(xmlBlob);
     }
+
+    // RENDER: X3DOM gets a URL (file path or blob URL), X_ITE gets the XML string.
+    await displayInIframes(effectiveUrlForX3dom, xmlString);
+
+    // CONVERT: Update other textareas.
+    try { $('#stl').val(convertJsonToStl(jsonObj)); } catch (e) { $('#stl').val("Error converting to STL: " + e.message); }
+    try {
+        let jsSerializer = new JavaScriptSerializer();
+        $('#java').val(jsSerializer.serializeToString(jsonObj, baseFileName, "", []));
+    } catch (e) { $('#java').val("Error generating Java: " + e.message); }
+    
+    // INTEGRATION: Automatically encode the final JSON to EXI.
+    encodeJSON();
 }
 
-export async function updateFromXml(xmlString, sourceFileName) {
-    if (sourceFileName) currentFileNameForConversion = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
-    else currentFileNameForConversion = "from_textarea.xml"; // Default if no sourceFileName
+export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
+    document.getElementById('currentFileName').textContent = sourceFileName;
     $('#xml').val(xmlString);
-    
-    // Both X_ITE and X3DOM will receive this XML string for display.
-    await displayInIframes(xmlString, xmlString, 'xml', sourceFileName || document.location.href); 
-    
-    globalXmlForJsonConversion = xmlString; 
+    $('#json').val('Converting from XML via X_ITE...');
+    // Clear EXI while converting
+    $('#exi').val('');
+
+    await displayInIframes(urlForX3dom, xmlString);
+
+    globalXmlForJsonConversion = xmlString;
     window.pendingXmlToJsonConversion = true;
-    
-    if (xiteRuntimeFullyReady) {
-        await window.processPendingXmlToJson(); 
-    } else {
-        console.log("Master_loader: X_ITE not yet fully ready for XML->JSON (from updateFromXml).");
-    }
+    await processPendingXmlToJson();
 }
 
+/**
+ * Handles STL file content. Converts to JSON and delegates to the JSON update pipeline.
+ */
 export async function updateFromStl(stlText, sourceFileName) {
-    const baseFileName = sourceFileName ? sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1) : "from_stl.stl";
-    currentFileNameForConversion = baseFileName;
-    $('#stl').val(stlText);
-    currentJSONObject = null;
-    let jsonFromStl = null;
-    let xmlStringForDisplay = "";
-    const derivedX3dPath = (sourceFileName || "converted_from_stl.x3d").replace(/\.stl$/i, ".x3d");
-
-
-    if (convertStlToJson) {
-        try {
-            jsonFromStl = convertStlToJson(stlText); 
-            currentJSONObject = jsonFromStl; 
-            $('#json').val(JSON.stringify(jsonFromStl, null, 2));
-
-            if (X3DJSONLD && jsonFromStl) {
-                try {
-                    xmlStringForDisplay = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonFromStl, derivedX3dPath);
-                    $('#xml').val(xmlStringForDisplay);
-                } catch (e) { console.error("JSON (from STL) to XML Error:", e); $('#xml').val("Error: " + e.message); }
-            }
-            
-            await displayInIframes(xmlStringForDisplay || "", jsonFromStl, 'json_obj', derivedX3dPath); 
-            
-            if (currentJSONObject) { 
-                encodeJSONEXI();
-                if (JavaScriptSerializer) {
-                     try {
-                        let jsSerializer = new JavaScriptSerializer();
-                        $('#java').val(jsSerializer.serializeToString(currentJSONObject, পথে(), "", []));
-                    } catch (e) { console.error("JSON to Java (from STL) Error:", e); $('#java').val("Error: " + e.message); }
-                }
-            }
-        } catch (e) { 
-            console.error("STL to JSON Error:", e); 
-            $('#json').val("Error: " + e.message); 
-            $('#xml').val(""); 
-            await displayInIframes("", null, 'json_obj'); // Clear X3DOM with null, X_ITE with empty XML
-            currentJSONObject = null;
-        }
+    try {
+        const jsonObj = convertStlToJson(stlText);
+        // Delegate to the main JSON pipeline, which will create a blob for rendering.
+        await updateFromJson(jsonObj, sourceFileName.replace(/\.stl$/i, ".json"));
+        $('#stl').val(stlText); // Populate the original STL text
+    } catch (e) {
+        alert("Error converting STL: " + e.message);
     }
 }
 
+/**
+ * Handles PLY file content. Converts to JSON and delegates to the JSON update pipeline.
+ */
 export async function updateFromPly(plyText, sourceFileName) {
-    const baseFileName = sourceFileName ? sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1) : "from_ply.ply";
-    currentFileNameForConversion = baseFileName;
-    $('#ply').val(plyText);
-    currentJSONObject = null;
-    let jsonFromPly = null;
-    let xmlStringForDisplay = "";
-    const derivedX3dPath = (sourceFileName || "converted_from_ply.x3d").replace(/\.ply$/i, ".x3d");
-
-     if (convertPlyToJson) {
-        try {
-            jsonFromPly = convertPlyToJson(plyText); 
-            currentJSONObject = jsonFromPly;
-            $('#json').val(JSON.stringify(jsonFromPly, null, 2));
-
-            if (X3DJSONLD && jsonFromPly) {
-                try {
-                    xmlStringForDisplay = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonFromPly, derivedX3dPath);
-                    $('#xml').val(xmlStringForDisplay);
-                } catch(e) {
-                     console.error("JSON (from PLY) to XML Error:", e);
-                    $('#xml').val("Error: " + e.message);
-                }
-            }
-            
-            await displayInIframes(xmlStringForDisplay || "", jsonFromPly, 'json_obj', derivedX3dPath);
-
-            if (currentJSONObject) {
-                encodeJSONEXI();
-                if (convertJsonToStl) { 
-                    try { $('#stl').val(convertJsonToStl(currentJSONObject));}
-                    catch(e){ console.error("JSON to STL (from PLY) Error:", e); $('#stl').val("Error: " + e.message); }
-                }
-                if (JavaScriptSerializer) { 
-                     try{
-                        let jsSerializer = new JavaScriptSerializer();
-                        $('#java').val(jsSerializer.serializeToString(currentJSONObject, পথে(), "", []));
-                     } catch(e){ console.error("JSON to Java (from PLY) Error:", e); $('#java').val("Error: " + e.message); }
-                }
-            }
-        } catch (e) { 
-            console.error("PLY to JSON Error:", e); 
-            $('#json').val("Error: " + e.message); 
-            $('#xml').val("");
-            await displayInIframes("", null, 'json_obj');
-            currentJSONObject = null;
-        }
+    try {
+        const jsonObj = convertPlyToJson(plyText);
+        // Delegate to the main JSON pipeline, which will create a blob for rendering.
+        await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".json"));
+        $('#ply').val(plyText); // Populate the original PLY text
+    } catch (e) {
+        alert("Error converting PLY: ".concat(e.message));
     }
 }
-
-export function encodeJSONEXI() {
-    if (currentJSONObject && typeof window === 'object' && typeof window.encodeJSON === 'function') {
-        try {
-            const exiOptions = {}; 
-            let exiStream = window.encodeJSON(currentJSONObject, exiOptions);
-            if (!exiStream || typeof exiStream.length === 'undefined') {
-                throw new Error("window.encodeJSON did not return a valid stream.");
-            }
-            let exiString = "";
-            for (let i = 0; i < exiStream.length; i++) {
-                let byte = exiStream[i];
-                if (byte < 0) byte += 256;
-                let hex = byte.toString(16);
-                if (hex.length === 1) hex = '0' + hex;
-                exiString += hex;
-            }
-            $('#exi').val(exiString);
-        } catch (e) {
-            console.error("Error encoding JSON to EXI:", e);
-            $('#exi').val("Error: " + e.message);
-        }
-    } else {
-        $('#exi').val(currentJSONObject ? "EXI library not loaded/ready. Global window object: " + (typeof window) : "No JSON data to encode.");
-    }
-}
-
-export function decodeJSON() { 
-    const exiVal = $('#exi').val();
-    if (exiVal && typeof window === 'object' && typeof window.decodeEXI4JSON === 'function') {
-        try {
-            const bytearray = [];
-            for (let i = 0; i < exiVal.length; i += 2) {
-                bytearray.push(parseInt(exiVal.substr(i, 2), 16));
-            }
-            const jsonDecoded = window.decodeEXI4JSON(bytearray);
-            currentJSONObject = jsonDecoded; 
-            $('#json').val(JSON.stringify(jsonDecoded, null, 2));
-        } catch (e) {
-            console.error("Error decoding EXI to JSON:", e);
-            $('#json').val("Error: " + e.message);
-            currentJSONObject = null;
-        }
-    } else {
-        alert("EXI textarea is empty or EXI library not ready.");
-    }
-}
-
-function পথে() { 
-    // Provide a sensible default path for createX3DFromJS if no source filename
-    return currentFileNameForConversion !== "converted.x3d" ? currentFileNameForConversion : (document.location.href);
-} 
-function শাখাsসমূহ() { return []; }
