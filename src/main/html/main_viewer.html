@@ -146,7 +146,6 @@
                         <td>
                             Click <a href="#" onclick='window.doXmlActions(); return false;'>here</a> to load XML from textarea into viewers & convert.
                         </td>
-                        <!-- NEW: Action link for EXI -> JSON conversion -->
                         <td>
                             Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON, then load.
                         </td>
@@ -207,20 +206,21 @@
     <script type="module" src="../node/Three2Serializer.js"></script>
     <script type="module" src="../node/DOM2JSONSerializer.js"></script>
     <script type="module" src="../node/loadValidate.js"></script>
-    <!-- NEW: Load the exi.js module. It will be bundled with master_loader.js logic -->
     <script type="module" src="./exi.js"></script>
-    <!-- exificient.js is loaded as a global script via regular <script> tag -->
 
     <script type="module">
+        // UPDATE: Import the new function for preparing the reload
         import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 decodeJSON, resetX3DOMReadyState,
+                 decodeJSON, prepareForX3DOMReload,
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
 
+        // UPDATE: This function now correctly prepares the state before reloading
         window.reloadX3DOM = function() {
             const x3domIframe = getX3DOMIFrame();
             if (x3domIframe) {
-                resetX3DOMReadyState();
+                // Prepare the loader by caching the current scene's URL
+                prepareForX3DOMReload();
                 const selectedUrl = document.getElementById('x3domVersion').value;
                 x3domIframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(selectedUrl)}`;
             }
@@ -243,11 +243,8 @@
                 await updateFromXml(xmlText, document.getElementById('currentFileName').textContent || "from_textarea.xml");
              } else { alert("XML textarea is empty."); }
         };
-        // NEW: Function to handle EXI -> JSON and then load the scene
          window.doExiActions = () => {
-            // First, convert the EXI in its textarea to JSON in its textarea
             decodeJSON();
-            // Then, call the JSON loading function after a brief delay to ensure the DOM has updated
             setTimeout(window.doJsonActions, 150);
         };
 
@@ -269,7 +266,8 @@
                 "../ply/OrigamiCrane.ply", "../ply/Tetrahedron.ply"
             ]},
             { name: "General Data (three.html / index.html)", files: [
-                "../data/abox.json", "../data/AllenDutton.json", "../data/app.json", "../data/arc.json",
+                "../data/abox.json", "../data/AllenDutton.json", "../data/AllenDutton.x3d",
+		"../data/app.json", "../data/arc.json",
                 "../data/rubikFurnace.json", "../data/sphereflowers.json",
                 "../data/arc2.x3d", "../data/ArchHalf.x3d", "../data/BindingOperations.x3d","../data/browser.x3d",
                 "../data/bubbles.x3d", "../data/bubs3.x3d", "../data/CloudsProcedural4.x3d", "../data/extrusion.x3d",
@@ -368,7 +366,7 @@
                 let p = filePath.toLowerCase();
                 if (isWildcard) {
                     if (pattern.startsWith("*.")) { return p.endsWith(simplePattern.substring(1)); }
-                    if (pattern.endsWith("/*")) { return p.startsWith(simplePattern.substring(0, simplePattern.length - 1));}
+                    if (pattern.endsWith("/*")) { return p.startsWith(simple-pattern.substring(0, simplePattern.length - 1));}
                 }
                 return p.includes(simplePattern);
             });
