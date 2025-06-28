@@ -236,7 +236,7 @@ function transformToILS(elements) {
 		}
 	}
 	for (var e in elements) {
-		console.error(elements[e]);
+		// console.error(elements[e]);
 		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			ILS = table(elements[e], ILS);

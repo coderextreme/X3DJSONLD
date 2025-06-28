@@ -130,13 +130,12 @@
                             Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event)" placeholder="e.g., *.json or personal/*">
                         </td>
                         <td>
-                            JSON Scripts? <input id="scripting" type="checkbox" checked>
-                            Use Namespace: <select id="namespace">
-                                <option>https://www.web3d.org/specifications/x3d</option>
-                                <option>http://www.w3.org/1999/xhtml</option>
-                                <option>https://www.x3dom.org/x3dom</option>
-                                <option>https://www.web3d.org/specifications/x3d-namespace</option>
-                                <option>none</option>
+                            X3DOM Version:
+                            <select id="x3domVersion" onchange="window.reloadX3DOM()">
+                                <option value="https://www.x3dom.org/download/dev/">Official Dev</option>
+                                <option value="https://x3dom.github.io/x3dom-dev/dist/">GitHub Dev</option>
+                                <option value="https://5efa06157960e80256fa5d6b--x3dom.netlify.app/">Netlify Branch</option>
+                                <option value="https://andreasplesch.github.io/x3dom/dist/">Andreas Plesch Fork</option>
                             </select>
                         </td>
                     </tr>
@@ -147,6 +146,7 @@
                         <td>
                             Click <a href="#" onclick='window.doXmlActions(); return false;'>here</a> to load XML from textarea into viewers & convert.
                         </td>
+                        <!-- NEW: Action link for EXI -> JSON conversion -->
                         <td>
                             Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON, then load.
                         </td>
@@ -207,14 +207,24 @@
     <script type="module" src="../node/Three2Serializer.js"></script>
     <script type="module" src="../node/DOM2JSONSerializer.js"></script>
     <script type="module" src="../node/loadValidate.js"></script>
+    <!-- NEW: Load the exi.js module. It will be bundled with master_loader.js logic -->
+    <script type="module" src="./exi.js"></script>
     <!-- exificient.js is loaded as a global script via regular <script> tag -->
 
     <script type="module">
-        // Using the direct export names from master_loader.js for EXI
         import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 encodeJSONEXI, decodeJSON, // Direct names from master_loader.js for EXI
+                 decodeJSON, resetX3DOMReadyState,
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
+
+        window.reloadX3DOM = function() {
+            const x3domIframe = getX3DOMIFrame();
+            if (x3domIframe) {
+                resetX3DOMReadyState();
+                const selectedUrl = document.getElementById('x3domVersion').value;
+                x3domIframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(selectedUrl)}`;
+            }
+        };
 
         window.doJsonActions = async () => {
             const jsonText = document.getElementById('json').value;
@@ -233,11 +243,12 @@
                 await updateFromXml(xmlText, document.getElementById('currentFileName').textContent || "from_textarea.xml");
              } else { alert("XML textarea is empty."); }
         };
+        // NEW: Function to handle EXI -> JSON and then load the scene
          window.doExiActions = () => {
-            decodeJSON(); // Use the direct imported name from master_loader.js
-            // decodeJSON updates currentJSONObject and the JSON textarea.
-            // Then doJsonActions will use this updated data.
-            setTimeout(window.doJsonActions, 150); // Give a moment for UI update, then process
+            // First, convert the EXI in its textarea to JSON in its textarea
+            decodeJSON();
+            // Then, call the JSON loading function after a brief delay to ensure the DOM has updated
+            setTimeout(window.doJsonActions, 150);
         };
 
         const initialFileData = [
@@ -312,8 +323,6 @@
         window.filterMenuTree = function() {
             const filterText = document.getElementById('filterMenu').value.toLowerCase();
             const items = menuContainer.querySelectorAll('.file-item');
-            // const folders = menuContainer.querySelectorAll('.folder > span'); // Not needed for just hiding folder LI
-
             items.forEach(item => {
                 const match = item.textContent.toLowerCase().includes(filterText) ||
                               (item.title && item.title.toLowerCase().includes(filterText));
@@ -328,7 +337,7 @@
                 });
                 folderElement.style.display = hasVisibleChild ? '' : 'none';
                 if (hasVisibleChild && filterText && !folderElement.classList.contains('manually-opened')) {
-                    folderElement.classList.add('open'); // Auto-open if filtering and has visible children
+                    folderElement.classList.add('open');
                 }
             });
         };
@@ -409,18 +418,7 @@
             if (!pattern && event.type !== 'change') return;
 
             try {
-                // To use simulation:
                 const flatFilteredListFromServer = await simulateFetchFilesFlatList(pattern);
-
-                // To use real fetch (ensure your server at /files?pattern=... returns a JSON array of strings):
-                /*
-                const response = await fetch(`/files?pattern=${encodeURIComponent(pattern)}`);
-                if (!response.ok) {
-                    throw new Error(`Server error fetching files: ${response.status} ${response.statusText}`);
-                }
-                const flatFilteredListFromServer = await response.json();
-                */
-
                 const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
 
                 menuContainer.innerHTML = '';
@@ -462,6 +460,8 @@
 
             setXITEIFrame(document.getElementById('xite_iframe_id'));
             setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
+
+            window.reloadX3DOM();
         });
     </script>
 </body>
