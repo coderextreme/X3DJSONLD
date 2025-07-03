@@ -1,10 +1,11 @@
 const Ajv2020 = window.Ajv2020;
 const addFormats = window.addFormats;
 import X3DJSONLD from './X3DJSONLD.js';
+import schemajson from '../schema/x3d-4.0-JSONSchema.json' with { type: 'json' };
 
 var ajv = new Ajv2020({ strict: false });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
-var schemajson = await loadSchemaJson("4.0");
+// var schemajson = await loadSchemaJson("4.0");
 let validated_version = addSchema(ajv, schemajson, "4.0");
 
 X3DJSONLD.processURLs = function(urls) { return urls; };
