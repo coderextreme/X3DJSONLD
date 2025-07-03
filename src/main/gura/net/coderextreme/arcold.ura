@@ -1,0 +1,492 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "arcold.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "an attempt to implement an arc in a graph"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            Viewpoint: [
+                position: [0, 0, 5]
+                description: "a moving graph"
+            ],
+            Background: [
+                skyColor: [0.4, 0.4, 0.4]
+            ],
+            Transform: [
+                DEF: "trans1"
+                Transform: [
+                    DEF: "rotscale1"
+                    Shape: [
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        diffuseColor: [0.2, 0.7, 0.7]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                radius: 0.1
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                DEF: "trans2"
+                Transform: [
+                    DEF: "rotscale2"
+                    Shape: [
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        diffuseColor: [0.2, 0.7, 0.7]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                radius: 0.1
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                DEF: "trans3"
+                Transform: [
+                    DEF: "rotscale3"
+                    Shape: [
+                        setAppearance: [
+                            Appearance: [
+                                setMaterial: [
+                                    Material: [
+                                        diffuseColor: [0.2, 0.7, 0.7]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        setGeometry: [
+                            Cylinder: [
+                                radius: 0.1
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "point"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            name: "translation"
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            value: "0 0 0"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            DEF: "node"
+                            IS: [
+                                connect: [
+                                    nodeField: "translation"
+                                    protoField: "translation"
+                                ]
+                            ],
+                            Shape: [
+                                setGeometry: [
+                                    Sphere: [
+                                        radius: 0.1
+                                    ]
+                                ]
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                diffuseColor: [1, 0, 0]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            PositionInterpolator: [
+                                DEF: "PI1"
+                                key: [0, 1]
+                                keyValue: [0, 0, 0, 0, 5, 0]
+                            ],
+                            Script: [
+                                DEF: "MB1"
+                                field: [
+                                    name: "translation"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "50 50 0"
+                                ],
+                                field: [
+                                    name: "old"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "0 0 0"
+                                ],
+                                field: [
+                                    name: "set_location"
+                                    accessType: "inputOnly"
+                                    type: "SFTime"
+                                ],
+                                field: [
+                                    name: "keyValue"
+                                    accessType: "outputOnly"
+                                    type: "MFVec3f"
+                                ],
+#ecmascript:
+#		function set_location(value) {
+#                    old = translation;
+#		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+#                    keyValue = new MFVec3f([old, translation]);
+#		    // Browser.println(translation);
+#		}
+                            ],
+                            TimeSensor: [
+                                DEF: "CL1"
+                                cycleInterval: 3.0
+                                loop: true
+                            ],
+                            ROUTE: [
+                                fromNode: "CL1"
+                                fromField: "cycleTime"
+                                toNode: "MB1"
+                                toField: "set_location"
+                            ],
+                            ROUTE: [
+                                fromNode: "CL1"
+                                fromField: "fraction_changed"
+                                toNode: "PI1"
+                                toField: "set_fraction"
+                            ],
+                            ROUTE: [
+                                fromNode: "MB1"
+                                fromField: "keyValue"
+                                toNode: "PI1"
+                                toField: "keyValue"
+                            ],
+                            ROUTE: [
+                                fromNode: "PI1"
+                                fromField: "value_changed"
+                                toNode: "node"
+                                toField: "set_translation"
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+#from doug sanden
+            ProtoDeclare: [
+                name: "x3dconnector"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            name: "startnode"
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                        ],
+                        field: [
+                            name: "endnode"
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                        ],
+                        field: [
+                            name: "transnode"
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                        ],
+                        field: [
+                            name: "rotscalenode"
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                        ],
+                        field: [
+                            name: "set_startpoint"
+                            accessType: "inputOnly"
+                            type: "SFVec3f"
+                        ],
+                        field: [
+                            name: "set_endpoint"
+                            accessType: "inputOnly"
+                            type: "SFVec3f"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Script: [
+                            DEF: "S1"
+                            field: [
+                                name: "startnode"
+                                accessType: "inputOutput"
+                                type: "SFNode"
+                            ],
+                            field: [
+                                name: "endnode"
+                                accessType: "inputOutput"
+                                type: "SFNode"
+                            ],
+                            field: [
+                                name: "transnode"
+                                accessType: "inputOutput"
+                                type: "SFNode"
+                            ],
+                            field: [
+                                name: "rotscalenode"
+                                accessType: "inputOutput"
+                                type: "SFNode"
+                            ],
+                            field: [
+                                name: "set_startpoint"
+                                accessType: "inputOnly"
+                                type: "SFVec3f"
+                            ],
+                            field: [
+                                name: "set_endpoint"
+                                accessType: "inputOnly"
+                                type: "SFVec3f"
+                            ],
+                            IS: [
+                                connect: [
+                                    nodeField: "startnode"
+                                    protoField: "startnode"
+                                ],
+                                connect: [
+                                    nodeField: "endnode"
+                                    protoField: "endnode"
+                                ],
+                                connect: [
+                                    nodeField: "transnode"
+                                    protoField: "transnode"
+                                ],
+                                connect: [
+                                    nodeField: "rotscalenode"
+                                    protoField: "rotscalenode"
+                                ],
+                                connect: [
+                                    nodeField: "set_startpoint"
+                                    protoField: "set_startpoint"
+                                ],
+                                connect: [
+                                    nodeField: "set_endpoint"
+                                    protoField: "set_endpoint"
+                                ]
+                            ],
+#ecmascript:
+#        function recompute(startpoint,endpoint){
+#	    if (typeof endpoint === 'undefined') {
+#		return;
+#	    }
+#            var dif = endpoint.subtract(startpoint);
+#            var dist = dif.length()*0.5;
+#            var dif2 = dif.multiply(0.5);
+#            var norm = dif.normalize();
+#            var transl = startpoint.add(dif2);
+#	    if (typeof Quaternion !== 'undefined') {
+#		    return {
+#			    scale : new SFVec3f(1.0,dist,1.0),
+#			    translation : transl,
+#			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+#		    };
+#	    } else {
+#		    return {
+#			    scale : new SFVec3f(1.0,dist,1.0),
+#			    translation : transl,
+#			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+#		    };
+#	    }
+#	}
+#	function recompute_and_route(startpoint, endpoint) {
+#		var trafo = recompute(startpoint, endpoint);
+#		if (typeof trafo !== 'undefined') {
+#			transnode.translation = trafo.translation;
+#			rotscalenode.rotation = trafo.rotation;
+#			rotscalenode.scale = trafo.scale;
+#		} else {
+#			Browser.print("recompute returned undefined");
+#		}
+#	}
+#        function initialize(){
+#            recompute_and_route(startnode.translation,endnode.translation);
+#        }
+#        function set_startpoint(val,t){
+#            recompute_and_route(val || startnode.translation,endnode.translation);
+#        }
+#        function set_endpoint(val,t){
+#            recompute_and_route(startnode.translation,val || endnode.translation);
+#        }
+                        ]
+                    ]
+                ]
+            ],
+            ProtoInstance: [
+                name: "point"
+                DEF: "G1"
+            ],
+            ProtoInstance: [
+                name: "point"
+                DEF: "G2"
+            ],
+            ProtoInstance: [
+                name: "point"
+                DEF: "G3"
+            ],
+            ProtoInstance: [
+                name: "point"
+                DEF: "G4"
+            ],
+            ProtoInstance: [
+                name: "x3dconnector"
+                DEF: "connector1"
+                fieldValue: [
+                    name: "startnode"
+                    ProtoInstance: [
+                        USE: "G1"
+                    ]
+                ],
+                fieldValue: [
+                    name: "endnode"
+                    ProtoInstance: [
+                        USE: "G2"
+                    ]
+                ],
+                fieldValue: [
+                    name: "transnode"
+                    Transform: [
+                        USE: "trans1"
+                    ]
+                ],
+                fieldValue: [
+                    name: "rotscalenode"
+                    Transform: [
+                        USE: "rotscale1"
+                    ]
+                ]
+            ],
+            ProtoInstance: [
+                name: "x3dconnector"
+                DEF: "connector2"
+                fieldValue: [
+                    name: "startnode"
+                    ProtoInstance: [
+                        USE: "G1"
+                    ]
+                ],
+                fieldValue: [
+                    name: "endnode"
+                    ProtoInstance: [
+                        USE: "G3"
+                    ]
+                ],
+                fieldValue: [
+                    name: "transnode"
+                    Transform: [
+                        USE: "trans2"
+                    ]
+                ],
+                fieldValue: [
+                    name: "rotscalenode"
+                    Transform: [
+                        USE: "rotscale2"
+                    ]
+                ]
+            ],
+            ProtoInstance: [
+                name: "x3dconnector"
+                DEF: "connector3"
+                fieldValue: [
+                    name: "startnode"
+                    ProtoInstance: [
+                        USE: "G1"
+                    ]
+                ],
+                fieldValue: [
+                    name: "endnode"
+                    ProtoInstance: [
+                        USE: "G4"
+                    ]
+                ],
+                fieldValue: [
+                    name: "transnode"
+                    Transform: [
+                        USE: "trans3"
+                    ]
+                ],
+                fieldValue: [
+                    name: "rotscalenode"
+                    Transform: [
+                        USE: "rotscale3"
+                    ]
+                ]
+            ],
+            ROUTE: [
+                fromNode: "G1"
+                fromField: "translation_changed"
+                toNode: "connector1"
+                toField: "set_startpoint"
+            ],
+            ROUTE: [
+                fromNode: "G2"
+                fromField: "translation_changed"
+                toNode: "connector1"
+                toField: "set_endpoint"
+            ],
+            ROUTE: [
+                fromNode: "G1"
+                fromField: "translation_changed"
+                toNode: "connector2"
+                toField: "set_startpoint"
+            ],
+            ROUTE: [
+                fromNode: "G3"
+                fromField: "translation_changed"
+                toNode: "connector2"
+                toField: "set_endpoint"
+            ],
+            ROUTE: [
+                fromNode: "G1"
+                fromField: "translation_changed"
+                toNode: "connector3"
+                toField: "set_startpoint"
+            ],
+            ROUTE: [
+                fromNode: "G4"
+                fromField: "translation_changed"
+                toNode: "connector3"
+                toField: "set_endpoint"
+            ]
+        ]
+    ]

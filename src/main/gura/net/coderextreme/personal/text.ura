@@ -1,0 +1,104 @@
+X3D:
+    profile: "Immersive"
+    version: "3.3"
+    setHead: [
+        head: [
+            meta: [
+                name: "creator"
+                content: "John W Carlson"
+            ],
+            meta: [
+                name: "created"
+                content: "December 13 2015"
+            ],
+            meta: [
+                name: "title"
+                content: "text.x3d"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/personal/text.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "test \\n text"
+            ],
+            meta: [
+                name: "generator"
+                content: "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            Transform: [
+                Shape: [
+                    setGeometry: [
+                        Text: [
+                            string: ["Node\"\"\""]
+                            setFontStyle: [
+                                FontStyle: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                Shape: [
+                    setGeometry: [
+                        Text: [
+                            string: ["Node2", "\\\\", "\\\\\\\\", "Node2"]
+                            setFontStyle: [
+                                FontStyle: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                Shape: [
+                    setGeometry: [
+                        Text: [
+                            string: ["Node3 \\\\\\\\ \\\\ ", "Node3\"\"\""]
+                            setFontStyle: [
+                                FontStyle: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                Script: [
+                    field: [
+                        name: "frontUrls"
+                        type: "MFString"
+                        accessType: "initializeOnly"
+                        value: "\"rnl_front.png\" \"uffizi_front.png\""
+                    ],
+#ecmascript:
+#			    var me = '"1" ""2" "\\n3"';
+                ]
+            ]
+        ]
+    ]

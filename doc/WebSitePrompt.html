@@ -1,0 +1,46 @@
+Project Prompt: Create a Comprehensive X3D Viewer and Converter
+Objective:
+Build a web-based tool for viewing and converting 3D files. The application will feature two side-by-side rendering windows (X_ITE and X3DOM) and will support conversions between JSON, XML, STL, PLY, and EXI formats. The system must be robust, handling asynchronous iframe loading and ensuring that all features work reliably on both the initial file load and all subsequent loads.
+File Structure:
+You are provided with the following files:
+main_viewer.html: The main application page containing the UI layout, iframes, textareas, and control panel.
+master_loader.js: The core ES module that manages all file loading, conversion logic, and communication with the iframes.
+iframe_xite_content.html: The content for the X_ITE rendering iframe.
+iframe_x3dom_content.html: The content for the X3DOM rendering iframe.
+exi.js: A module for handling JSON-to-EXI and EXI-to-JSON conversions.
+(Assume all other necessary modules like X3DJSONLD.js and various converters are available.)
+Core Functional Requirements:
+Unified Rendering Pipeline: The primary design principle is that the X3DOM iframe must always be sent an XML string for rendering, never a direct JSON object. This is to ensure its native prototype expansion capabilities are fully utilized. The X_ITE iframe also receives an XML string.
+JSON File Loading (.json, .x3dj):
+When a JSON file is selected, it is the "source of truth."
+The JSON is converted to an XML string.
+This XML string is then sent to both the X_ITE and X3DOM iframes for rendering.
+The JSON is also converted to all other supported formats (STL, Java, EXI), and the corresponding textareas are updated.
+XML File Loading (.x3d, .xml, .x3dv):
+When an XML file is selected, the raw XML string is immediately sent to both the X_ITE and X3DOM iframes for rendering.
+Simultaneously, a background conversion process is initiated:
+The X_ITE iframe is used to convert the rendered XML scene into a JSON object.
+When this conversion is complete, the resulting JSON object is used to trigger the full updateFromJson pipeline. This populates all other textareas (JSON, STL, Java, EXI) based on the newly converted JSON. This secondary update must not cause a re-render of the already displayed scene.
+PLY/STL File Loading (.ply, .stl):
+When a PLY or STL file is selected, it is first converted into an X3D JSON object.
+This new JSON object then follows the standard JSON File Loading pipeline (Requirement #2).
+The original PLY or STL content must be displayed in its respective textarea after all conversions are complete.
+EXI to JSON Conversion:
+A button must allow the user to convert the EXI text (hex string) in the EXI textarea into JSON.
+This action should update the JSON textarea and then trigger the standard JSON File Loading pipeline (Requirement #2).
+Critical Technical and UI Requirements:
+Asynchronous Iframe Management:
+Both the X_ITE and X3DOM iframes load their libraries and runtimes asynchronously.
+master_loader.js must implement a robust readiness-checking system. It should use flags (xiteRuntimeFullyReady, x3domRuntimeFullyReady) and a queuing mechanism (xiteLoadQueue, x3domLoadQueue) to hold rendering requests until the respective iframe signals that its runtime is fully initialized.
+Dynamic X3DOM Version Switching:
+main_viewer.html must include a dropdown menu to select from multiple versions of the X3DOM library (provide at least the four URLs from our discussion).
+Changing the selection in this dropdown must reload the iframe_x3dom_content.html with a URL parameter (e.g., ?x3dom_url=...) indicating the chosen library path.
+iframe_x3dom_content.html must dynamically create its <script> and <link> tags based on this URL parameter.
+Robust State Management on Reload (Handles "second click" bug):
+When the X3DOM version is changed and the iframe is reloaded, the x3domRuntimeFullyReady flag in master_loader.js must be reset to false.
+This ensures that any subsequent file load (the first one after the change, or any thereafter) will correctly wait for the new runtime to signal its readiness before attempting to render, preventing errors and blank screens. This behavior is critical for all subsequent file loads, not just the first.
+UI Controls:
+The UI must include textareas for JSON, XML, EXI, STL, PLY, and Java.
+A "Snapshot" button must capture the canvas content from the X3DOM iframe and display it in an <img> tag.
+The file menu should be a hierarchical, collapsible tree structure with a client-side filter.
+A server-side filter input should allow for filtering the file list by a pattern (can be simulated client-side for this task).
