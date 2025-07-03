@@ -1,0 +1,230 @@
+
+#include <Inventor/nodes/SoCone.h>
+#include <Inventor/nodes/SoBaseColor.h>
+#include <Inventor/nodes/SoSeparator.h>
+#include <Inventor/nodes/SoShape.h>
+#include <Inventor/nodes/SoTransform.h>
+#include <Inventor/nodes/SoSphere.h>
+#include <Inventor/nodes/SoMaterial.h>
+#include <Inventor/misc/SoProtoInstance.h>
+#include <Inventor/VRMLnodes/SoVRMLAppearance.h>
+#include <Quarter/Quarter.h>
+#include <Quarter/QuarterWidget.h>
+#include <QApplication>
+#include <QMainWindow>
+
+using namespace SIM::Coin3D::Quarter;
+int main(int argc, char ** argv) 
+{
+
+  QApplication app(argc, argv);
+  Quarter::init();
+
+  SoSeparator * root = new SoSeparator;
+  root->ref();
+
+  SoBaseColor * col = new SoBaseColor;
+  col->rgb = SbColor(1, 1, 0);
+  root->addChild(col);
+
+  root->addChild(new SoCone);
+
+  QMainWindow * mainwin = new QMainWindow();
+
+  QuarterWidget * viewer = new QuarterWidget(mainwin);
+  viewer->setNavigationModeFile();
+  mainwin->setCentralWidget(viewer);
+  viewer->setSceneGraph(root);
+
+  mainwin->show();
+  app.exec();
+  root->unref();
+  delete viewer;
+
+  Quarter::clean();
+SoSceneManager* SoSceneManager0 = new SoSceneManager();
+SoSceneManager0->setProfile(QString("Interchange"));
+SoSceneManager0->setVersion(QString("3.0"));
+Sohead* Sohead1 = new Sohead();
+Someta* Someta2 = new Someta();
+Someta2->setName(QString("title"));
+Someta2->setContent(QString("indexedfaceset_pixeltexture_whole.x3d"));
+Sohead1->addMeta(*Someta2);
+
+Someta* Someta3 = new Someta();
+Someta3->setName(QString("warning"));
+Someta3->setContent(QString("file did not transform to vrml97"));
+Sohead1->addMeta(*Someta3);
+
+Someta* Someta4 = new Someta();
+Someta4->setName(QString("Image"));
+Someta4->setContent(QString("indexedfaceset_pixeltexture_whole-front.jpg"));
+Sohead1->addMeta(*Someta4);
+
+Someta* Someta5 = new Someta();
+Someta5->setName(QString("Image"));
+Someta5->setContent(QString("indexedfaceset_pixeltexture_whole-rear.jpg"));
+Sohead1->addMeta(*Someta5);
+
+Someta* Someta6 = new Someta();
+Someta6->setName(QString("Image"));
+Someta6->setContent(QString("indexedfaceset_pixeltexture_whole-top.jpg"));
+Sohead1->addMeta(*Someta6);
+
+Someta* Someta7 = new Someta();
+Someta7->setName(QString("Image"));
+Someta7->setContent(QString("indexedfaceset_pixeltexture_whole-bottom.jpg"));
+Sohead1->addMeta(*Someta7);
+
+Someta* Someta8 = new Someta();
+Someta8->setName(QString("Image"));
+Someta8->setContent(QString("indexedfaceset_pixeltexture_whole-left.jpg"));
+Sohead1->addMeta(*Someta8);
+
+Someta* Someta9 = new Someta();
+Someta9->setName(QString("Image"));
+Someta9->setContent(QString("indexedfaceset_pixeltexture_whole-right.jpg"));
+Sohead1->addMeta(*Someta9);
+
+Someta* Someta10 = new Someta();
+Someta10->setName(QString("reference"));
+Someta10->setContent(QString("http://www.nist.gov/vrml.html"));
+Sohead1->addMeta(*Someta10);
+
+Someta* Someta11 = new Someta();
+Someta11->setName(QString("reference"));
+Someta11->setContent(QString("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"));
+Sohead1->addMeta(*Someta11);
+
+Someta* Someta12 = new Someta();
+Someta12->setName(QString("creator"));
+Someta12->setContent(QString("http://www.itl.nist.gov/div897/ctg/vrml/members.html"));
+Sohead1->addMeta(*Someta12);
+
+Someta* Someta13 = new Someta();
+Someta13->setName(QString("disclaimer"));
+Someta13->setContent(QString("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."));
+Sohead1->addMeta(*Someta13);
+
+Someta* Someta14 = new Someta();
+Someta14->setName(QString("info"));
+Someta14->setContent(QString("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"));
+Sohead1->addMeta(*Someta14);
+
+Someta* Someta15 = new Someta();
+Someta15->setName(QString("translator"));
+Someta15->setContent(QString("Michael Kass NIST, Don Brutzman NPS"));
+Sohead1->addMeta(*Someta15);
+
+Someta* Someta16 = new Someta();
+Someta16->setName(QString("translated"));
+Someta16->setContent(QString("21 January 2001"));
+Sohead1->addMeta(*Someta16);
+
+Someta* Someta17 = new Someta();
+Someta17->setName(QString("modified"));
+Someta17->setContent(QString("13 January 2014"));
+Sohead1->addMeta(*Someta17);
+
+Someta* Someta18 = new Someta();
+Someta18->setName(QString("description"));
+Someta18->setContent(QString("Test of browser ability to map the entire portion of an PixelTexture onto an IndexedFaceSet geometry. Four equal sized red (bottom left), green (bottom right) yellow (top left) and white (top right) squares in the pixel texture map all the faces of the cube."));
+Sohead1->addMeta(*Someta18);
+
+Someta* Someta19 = new Someta();
+Someta19->setName(QString("identifier"));
+Someta19->setContent(QString("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_whole.x3d"));
+Sohead1->addMeta(*Someta19);
+
+Someta* Someta20 = new Someta();
+Someta20->setName(QString("generator"));
+Someta20->setContent(QString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"));
+Sohead1->addMeta(*Someta20);
+
+Someta* Someta21 = new Someta();
+Someta21->setName(QString("generator"));
+Someta21->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Sohead1->addMeta(*Someta21);
+
+Someta* Someta22 = new Someta();
+Someta22->setName(QString("license"));
+Someta22->setContent(QString("../../license.html"));
+Sohead1->addMeta(*Someta22);
+
+SoSceneManager0->setHead(*Sohead1);
+
+SoNode* SoNode23 = new SoNode();
+SoViewpoint* SoViewpoint24 = new SoViewpoint();
+SoViewpoint24->setDescription(QString("Front View"));
+SoNode23->addChild(*SoViewpoint24);
+
+SoViewpoint* SoViewpoint25 = new SoViewpoint();
+SoViewpoint25->setDescription(QString("Rear View"));
+SoViewpoint25->setOrientation(new float[]{0.0,1.0,0.0,3.14});
+SoViewpoint25->setPosition(new float[]{0.0,0.0,-10.0});
+SoNode23->addChild(*SoViewpoint25);
+
+SoViewpoint* SoViewpoint26 = new SoViewpoint();
+SoViewpoint26->setDescription(QString("Top View"));
+SoViewpoint26->setOrientation(new float[]{1.0,0.0,0.0,-1.57});
+SoViewpoint26->setPosition(new float[]{0.0,10.0,0.0});
+SoNode23->addChild(*SoViewpoint26);
+
+SoViewpoint* SoViewpoint27 = new SoViewpoint();
+SoViewpoint27->setDescription(QString("Bottom View"));
+SoViewpoint27->setOrientation(new float[]{1.0,0.0,0.0,1.57});
+SoViewpoint27->setPosition(new float[]{0.0,-10.0,0.0});
+SoNode23->addChild(*SoViewpoint27);
+
+SoViewpoint* SoViewpoint28 = new SoViewpoint();
+SoViewpoint28->setDescription(QString("Right View"));
+SoViewpoint28->setOrientation(new float[]{0.0,1.0,0.0,1.57});
+SoViewpoint28->setPosition(new float[]{10.0,0.0,0.0});
+SoNode23->addChild(*SoViewpoint28);
+
+SoViewpoint* SoViewpoint29 = new SoViewpoint();
+SoViewpoint29->setDescription(QString("Left View"));
+SoViewpoint29->setOrientation(new float[]{0.0,1.0,0.0,-1.57});
+SoViewpoint29->setPosition(new float[]{-10.0,0.0,0.0});
+SoNode23->addChild(*SoViewpoint29);
+
+SoNavigationInfo* SoNavigationInfo30 = new SoNavigationInfo();
+SoNavigationInfo30->setType(new QString[]{QString("EXAMINE")}, 1);
+SoNode23->addChild(*SoNavigationInfo30);
+
+SoShape* SoShape31 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance32 = new SoVRMLAppearance();
+SoMaterial* SoMaterial33 = new SoMaterial();
+SoVRMLAppearance32->addChild(*SoMaterial33);
+
+SoPixelTexture* SoPixelTexture34 = new SoPixelTexture();
+SoPixelTexture34->setImage(QString("2 2 4 4278190335 16711935 4294967295 4294902015"));
+SoVRMLAppearance32->addChild(*SoPixelTexture34);
+
+SoShape31->addChild(*SoVRMLAppearance32);
+
+SoIndexedFaceSet* SoIndexedFaceSet35 = new SoIndexedFaceSet();
+SoIndexedFaceSet35->setColorPerVertex(false);
+SoIndexedFaceSet35->setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+SoIndexedFaceSet35->setCreaseAngle(0.5);
+SoIndexedFaceSet35->setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
+SoColor* SoColor36 = new SoColor();
+SoColor36->setColor(new float[]{0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0}, 18);
+SoIndexedFaceSet35->setColor(*SoColor36);
+
+SoCoordinate* SoCoordinate37 = new SoCoordinate();
+SoCoordinate37->setPoint(new float[]{-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0}, 24);
+SoIndexedFaceSet35->setCoord(*SoCoordinate37);
+
+SoTextureCoordinate* SoTextureCoordinate38 = new SoTextureCoordinate();
+SoTextureCoordinate38->setPoint(new float[]{0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0}, 8);
+SoIndexedFaceSet35->setTexCoord(*SoTextureCoordinate38);
+
+SoShape31->setGeometry(*SoIndexedFaceSet35);
+
+SoNode23->addChild(*SoShape31);
+
+SoSceneManager0->setSceneGraph(*SoNode23);
+
+return 0;
+}

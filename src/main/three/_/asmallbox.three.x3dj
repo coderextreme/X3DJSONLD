@@ -1,0 +1,153 @@
+{
+  "string": "Scene",
+  "children": [
+    {
+      "string": " protodeclare",
+      "nodeType": "protodeclare",
+      "name": "anyShape",
+      "children": [
+        {
+          "string": " protointerface",
+          "nodeType": "protointerface",
+          "children": [
+            {
+              "string": " field",
+              "nodeType": "field",
+              "name": "myShape",
+              "accessType": "inputOutput",
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "radius": "1.0",
+                      "solid": "true",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " protobody",
+          "nodeType": "protobody",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "children": [
+                {
+                  "string": " is",
+                  "nodeType": "is",
+                  "children": [
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "children",
+                      "protoField": "myShape",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " protodeclare",
+      "nodeType": "protodeclare",
+      "name": "one",
+      "children": [
+        {
+          "string": " protointerface",
+          "nodeType": "protointerface",
+          "children": [
+            {
+              "string": " field",
+              "nodeType": "field",
+              "name": "myShape",
+              "accessType": "inputOutput",
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " cylinder",
+                      "nodeType": "cylinder",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " protobody",
+          "nodeType": "protobody",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "children": [
+                {
+                  "string": " protoinstance",
+                  "nodeType": "protoinstance",
+                  "name": "anyShape",
+                  "children": [
+                    {
+                      "string": " is",
+                      "nodeType": "is",
+                      "children": [
+                        {
+                          "string": " connect",
+                          "nodeType": "connect",
+                          "nodeField": "myShape",
+                          "protoField": "myShape",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " protoinstance",
+      "nodeType": "protoinstance",
+      "name": "one",
+      "children": [
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "myShape",
+          "children": [
+            {
+              "string": " shape",
+              "nodeType": "shape",
+              "children": [
+                {
+                  "string": " box",
+                  "nodeType": "box",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+X3D:
+    profile: "Full"
+    version: "4.0"
+    setHead: [
+        head: [
+            component: [
+                name: "Scripting"
+                level: 1
+            ],
+            component: [
+                name: "EnvironmentalEffects"
+                level: 3
+            ],
+            component: [
+                name: "Shaders"
+                level: 1
+            ],
+            component: [
+                name: "CubeMapTexturing"
+                level: 1
+            ],
+            component: [
+                name: "Texturing"
+                level: 1
+            ],
+            component: [
+                name: "Rendering"
+                level: 1
+            ],
+            component: [
+                name: "Grouping"
+                level: 3
+            ],
+            component: [
+                name: "Core"
+                level: 1
+            ],
+#<component name='Shape' level='4'></component>
+            meta: [
+                name: "title"
+                content: "bumpyfreewrl.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "description"
+                content: "A flower"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/bumpfreewrl.x3d"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "bumpyx_ite.x3d"
+            ],
+            NavigationInfo: [ empty
+            ],
+            Viewpoint: [
+                position: [0, 0, 40]
+                description: "Transparent rose"
+            ],
+#Images courtesy of Paul Debevec's Light Probe Image Gallery
+            Background: [
+                backUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                bottomUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                frontUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                leftUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                rightUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                topUrl: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+            ],
+            Transform: [
+                Shape: [
+                    setGeometry: [
+                        Sphere: [
+                            radius: 5.0
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.7, 0.7, 0.7]
+                                    specularColor: [0.5, 0.5, 0.5]
+                                ]
+                            ]
+                            setTexture: [
+                                ComposedCubeMapTexture: [
+                                    DEF: "texture"
+                                    setBackTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                        ]
+                                    ]
+                                    setBottomTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                        ]
+                                    ]
+                                    setFrontTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                        ]
+                                    ]
+                                    setLeftTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                        ]
+                                    ]
+                                    setRightTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                        ]
+                                    ]
+                                    setTopTexture: [
+                                        ImageTexture: [
+                                            url: ["../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            ComposedShader: [
+                                DEF: "freewrlShader"
+                                language: "GLSL"
+                                field: [
+                                    name: "chromaticDispertion"
+                                    accessType: "inputOnly"
+                                    type: "SFVec3f"
+                                    value: "0.98 1 1.033"
+                                ],
+                                field: [
+                                    name: "fw_textureCoordGenType"
+                                    accessType: "inputOnly"
+                                    type: "SFInt32"
+                                    value: "0"
+                                ],
+                                field: [
+                                    name: "bias"
+                                    type: "SFFloat"
+                                    accessType: "inputOnly"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "scale"
+                                    type: "SFFloat"
+                                    accessType: "inputOnly"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "power"
+                                    type: "SFFloat"
+                                    accessType: "inputOnly"
+                                    value: "2"
+                                ],
+                                field: [
+                                    name: "a"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "10"
+                                ],
+                                field: [
+                                    name: "b"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "1"
+                                ],
+                                field: [
+                                    name: "c"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "5"
+                                ],
+                                field: [
+                                    name: "d"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "5"
+                                ],
+                                field: [
+                                    name: "tdelta"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "0"
+                                ],
+                                field: [
+                                    name: "pdelta"
+                                    type: "SFFloat"
+                                    accessType: "inputOutput"
+                                    value: "0"
+                                ],
+                                ShaderPart: [
+                                    url: ["../shaders/freewrl_flowers_chromatic.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]
+                                    type: "VERTEX"
+                                ],
+                                ShaderPart: [
+                                    url: ["../shaders/freewrl_bubbles.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"]
+                                    type: "FRAGMENT"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
