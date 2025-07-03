@@ -150,6 +150,16 @@
                             Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON, then load.
                         </td>
                     </tr>
+                    <!-- New row for STL and PLY actions -->
+                    <tr>
+                        <td>
+                            Click <a href="#" onclick='window.doStlActions(); return false;'>here</a> to load STL from textarea & convert to JSON.
+                        </td>
+                        <td>
+                           Click <a href="#" onclick='window.doPlyActions(); return false;'>here</a> to load PLY from textarea & convert to JSON.
+                        </td>
+                        <td></td>
+                    </tr>
                 </table>
                  <table>
                     <tr>
@@ -183,7 +193,7 @@
 
         <div class="menu-panel">
             <h3>Select File</h3>
-            Client-side Filter: <input type="text" id="filterMenu" placeholder="Filter current tree..." onkeyup="filterMenuTree()">
+            <input type="text" id="filterMenu" placeholder="Filter current tree...">
             <div id="fileMenuContainer"></div>
         </div>
     </div>
@@ -198,7 +208,8 @@
     <script type="module" src="../node/convertJsonToStl.js"></script>
     <script type="module" src="../node/convertPlyToJson.js"></script>
     <script type="module" src="../node/convertStlToJson.js"></script>
-    <script type="module" src="../node/convertX3dToJson.js"></script>
+    <!-- REMOVED: This unused script was causing a loading error. -->
+    <!-- <script type="module" src="../node/convertX3dToJson.js"></script> -->
     <script type="module" src="../node/JavaScriptSerializer.js"></script>
     <script type="module" src="../node/mapToMethod.js"></script>
     <script type="module" src="../node/mapToMethod2.js"></script>
@@ -210,17 +221,14 @@
     <script type="module" src="./exi.js"></script>
 
     <script type="module">
-        // UPDATE: Import the new function for preparing the reload
         import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
                  decodeJSON, prepareForX3DOMReload,
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
 
-        // UPDATE: This function now correctly prepares the state before reloading
         window.reloadX3DOM = function() {
             const x3domIframe = getX3DOMIFrame();
             if (x3domIframe) {
-                // Prepare the loader by caching the current scene's URL
                 prepareForX3DOMReload();
                 const selectedUrl = document.getElementById('x3domVersion').value;
                 x3domIframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(selectedUrl)}`;
@@ -248,6 +256,25 @@
             decodeJSON();
             setTimeout(window.doJsonActions, 150);
         };
+
+        window.doStlActions = async () => {
+            const stlText = document.getElementById('stl').value;
+            if (stlText) {
+                await updateFromStl(stlText, "from_textarea.stl");
+            } else {
+                alert("STL textarea is empty.");
+            }
+        };
+
+        window.doPlyActions = async () => {
+            const plyText = document.getElementById('ply').value;
+            if (plyText) {
+                await updateFromPly(plyText, "from_textarea.ply");
+            } else {
+                alert("PLY textarea is empty.");
+            }
+        };
+
 
         const initialFileData = [
             { name: "Personal Files (index3dom.html)", files: [
@@ -319,7 +346,7 @@
             });
         }
 
-        window.filterMenuTree = function() {
+        function filterMenuTree() {
             const filterText = document.getElementById('filterMenu').value.toLowerCase();
             const items = menuContainer.querySelectorAll('.file-item');
             items.forEach(item => {
@@ -367,7 +394,7 @@
                 let p = filePath.toLowerCase();
                 if (isWildcard) {
                     if (pattern.startsWith("*.")) { return p.endsWith(simplePattern.substring(1)); }
-                    if (pattern.endsWith("/*")) { return p.startsWith(simple-pattern.substring(0, simplePattern.length - 1));}
+                    if (pattern.endsWith("/*")) { return p.startsWith(simplePattern.substring(0, simplePattern.length - 1));}
                 }
                 return p.includes(simplePattern);
             });
@@ -459,6 +486,8 @@
 
             setXITEIFrame(document.getElementById('xite_iframe_id'));
             setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
+
+            document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
 
             window.reloadX3DOM();
         });
