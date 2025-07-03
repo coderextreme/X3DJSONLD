@@ -1,0 +1,23 @@
+git lfs track src/main/three2/data/New2TemplateNoBoxes.three2.js
+git lfs track src/main/three2/data/Tufani5Final.three2.js
+git lfs track src/main/three2/data/Leif5Final.three2.js
+git lfs track src/main/three2/data/Lily8Final.three2.js
+git lfs track src/main/three2/data/Leif8Final.three2.js
+git lfs track src/main/node/net/coderextreme/john2.js
+git lfs track src/main/three2/data/New2Template.three2.js
+git lfs track src/main/three2/data/Lily5Final.three2.js
+git lfs track src/main/node/net/coderextreme/Gramps8Final.js
+git lfs track src/main/node/net/coderextreme/john.js
+git lfs track src/main/three2/data/Tufani8Final.three2.js
+
+git lfs migrate import --include=src/main/three2/data/New2TemplateNoBoxes.three2.js
+git lfs migrate import --include=src/main/three2/data/Tufani5Final.three2.js
+git lfs migrate import --include=src/main/three2/data/Leif5Final.three2.js
+git lfs migrate import --include=src/main/three2/data/Lily8Final.three2.js
+git lfs migrate import --include=src/main/three2/data/Leif8Final.three2.js
+git lfs migrate import --include=src/main/node/net/coderextreme/john2.js
+git lfs migrate import --include=src/main/three2/data/New2Template.three2.js
+git lfs migrate import --include=src/main/three2/data/Lily5Final.three2.js
+git lfs migrate import --include=src/main/node/net/coderextreme/Gramps8Final.js
+git lfs migrate import --include=src/main/node/net/coderextreme/john.js
+git lfs migrate import --include=src/main/three2/data/Tufani8Final.three2.js
