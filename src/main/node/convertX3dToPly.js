@@ -5,7 +5,7 @@
  * into the PLY 3D model format. It handles scene graph transformations, prototype expansion,
  * and tessellates primitive geometry into triangle meshes with vertex colors.
  *
- * @version 3.3.0
+ * @version 3.4.0
  * @author AI Assistant, with a corrected DEF/USE substitution logic.
  *
  * Features:
@@ -15,14 +15,14 @@
  * - Handles diffuseColor from Material nodes and Color nodes to produce colored PLY files.
  * - Traverses the expanded scene graph, applying nested Transform nodes.
  * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone, and Extrusion.
- * - Processes IndexedFaceSet geometry.
+ * - Processes IndexedFaceSet and IndexedLineSet geometry.
  * - Outputs ASCII PLY format with vertex colors.
  */
 export default function createX3dToPlyConverter() {
 
     const mat4 = {
         create: () => [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
-        multiply: (out,a,b) => {let a00=a[0],a01=a[4],a02=a[8],a03=a[12],a10=a[1],a11=a[5],a12=a[9],a13=a[13],a20=a[2],a21=a[6],a22=a[10],a23=a[14],a30=a[3],a31=a[7],a32=a[11],a33=a[15];let b00=b[0],b01=b[4],b02=b[8],b03=b[12],b10=b[1],b11=b[5],b12=b[9],b13=b[13],b20=b[2],b21=b[6],b22=b[10],b23=b[14],b30=b[3],b31=b[7],b32=b[11],b33=b[15];out[0]=b00*a00+b10*a01+b20*a02+b30*a03;out[4]=b01*a00+b11*a01+b21*a02+b31*a03;out[8]=b02*a00+b12*a01+b22*a02+b32*a03;out[12]=b03*a00+b13*a01+b23*a02+b33*a03;out[1]=b00*a10+b10*a11+b20*a12+b30*a13;out[5]=b01*a10+b11*a11+b21*a12+b31*a13;out[9]=b02*a10+b12*a11+b22*a12+b32*a13;out[13]=b03*a10+b13*a11+b23*a12+b33*a13;out[2]=b00*a20+b10*a21+b20*a22+b30*a23;out[6]=b01*a20+b11*a21+b21*a22+b31*a23;out[10]=b02*a20+b12*a21+b22*a22+b32*a23;out[14]=b03*a20+b13*a21+b23*a22+b33*a23;out[3]=b00*a30+b10*a31+b20*a32+b30*a33;out[7]=b01*a30+b11*a31+b21*a32+b31*a33;out[11]=b02*a30+b12*a31+b22*a32+b32*a33;out[15]=b03*a30+b13*a31+b23*a32+b33*a33;return out},
+        multiply: (out,a,b) => {let a00=a[0],a01=a[4],a02=a[8],a03=a[12],a10=a[1],a11=a[5],a12=a[9],a13=a[13],a20=a[2],a21=a[6],a22=a[10],a23=a[14],a30=a[3],a31=a[7],a32=a[11],a33=a[15];let b00=b[0],b01=b[4],b02=b[8],b03=b[12],b10=b[1],b11=b[5],b12=b[9],b13=b[13],b20=b[2],b21=b[6],b22=b[10],b23=b[14],b30=b[3],b31=b[7],b32=b[11],b33=b[15];out[0]=b00*a00+b10*a01+b20*a02+b30*a03;out[4]=b01*a00+b11*a01+b21*a02+b31*a03;out[8]=b02*a00+b12*a01+b22*a02+b32*a03;out[12]=b03*a00+b13*a01+b23*a02+b33*a03;out[1]=b00*a10+b10*a11+b20*a12+b30*a13;out[5]=b01*a10+b11*a11+b21*a12+b31*a13;out[9]=b02*a10+b12*a11+b22*a12+b32*a13;out[13]=b03*a10+b13*a11+b23*a12+b31*a13;out[2]=b00*a20+b10*a21+b20*a22+b30*a23;out[6]=b01*a20+b11*a21+b21*a22+b31*a23;out[10]=b02*a20+b12*a21+b22*a22+b32*a23;out[14]=b03*a20+b13*a21+b23*a22+b33*a23;out[3]=b00*a30+b10*a31+b20*a32+b30*a33;out[7]=b01*a30+b11*a31+b21*a32+b31*a33;out[11]=b02*a30+b12*a31+b22*a32+b32*a33;out[15]=b03*a30+b13*a31+b23*a32+b33*a33;return out},
         fromRotationTranslationScale: (out,q,v,s) => {let x=q[0],y=q[1],z=q[2],w=q[3],x2=x+x,y2=y+y,z2=z+z,xx=x*x2,xy=x*y2,xz=x*z2,yy=y*y2,yz=y*z2,zz=z*z2,wx=w*x2,wy=w*y2,wz=w*z2;out[0]=(1-(yy+zz))*s[0];out[1]=(xy+wz)*s[0];out[2]=(xz-wy)*s[0];out[3]=0;out[4]=(xy-wz)*s[1];out[5]=(1-(xx+zz))*s[1];out[6]=(yz+wx)*s[1];out[7]=0;out[8]=(xz+wy)*s[2];out[9]=(yz-wx)*s[2];out[10]=(1-(xx+yy))*s[2];out[11]=0;out[12]=v[0];out[13]=v[1];out[14]=v[2];out[15]=1;return out},
         transformPoint: (out,p,m) => {let x=p[0],y=p[1],z=p[2],w=(m[3]*x+m[7]*y+m[11]*z+m[15]||1);out[0]=(m[0]*x+m[4]*y+m[8]*z+m[12])/w;out[1]=(m[1]*x+m[5]*y+m[9]*z+m[13])/w;out[2]=(m[2]*x+m[6]*y+m[10]*z+m[14])/w;return out},
         axisAngleToQuat: (out,axis,angle) => {let s=Math.sin(angle*.5);out[0]=axis[0]*s;out[1]=axis[1]*s;out[2]=axis[2]*s;out[3]=Math.cos(angle*.5);return out}
@@ -44,7 +44,7 @@ export default function createX3dToPlyConverter() {
 	    const faces = [[0,1,2],[0,2,3],[1,5,6],[1,6,2],[5,4,7],[5,7,6],[4,0,3],[4,3,7],[3,2,6],[3,6,7],[4,5,1],[4,1,0]];
 	    return { vertices, faces };
     }
-    function tessellateSphere(node, options) { 
+    function tessellateSphere(node, options) {
 	    const r = node['@radius'] ? parseFloat(node['@radius']) : 1;
 	    const sub = options.subdivisions || 24;
 	    const verts=[], faces=[];
@@ -242,6 +242,40 @@ export default function createX3dToPlyConverter() {
 	    return { vertices: points, faces: faces, color: singleColor };
     }
 
+    // NEW FUNCTION for IndexedLineSet
+    function processIndexedLineSet(node) {
+        const coordNode = node['-coord']?.Coordinate;
+        if (!coordNode || !coordNode['@point']) return null;
+        const points = parseMFVec3f(coordNode['@point']);
+        const coordIndex = parseNumArray(node['@coordIndex']);
+        let singleColor = null;
+        const colorNode = node['-color']?.Color;
+        if (colorNode && colorNode['@color']) {
+            const colors = parseMFVec3f(colorNode['@color']);
+            if (colors && colors.length > 0) singleColor = colors[0];
+        }
+        const lines = [];
+        let currentPolyline = [];
+        const processPolyline = (p_line) => {
+             if (p_line.length >= 2) {
+                for (let i = 0; i < p_line.length - 1; i++) {
+                    lines.push([p_line[i], p_line[i+1]]);
+                }
+            }
+        };
+        for (const index of coordIndex) {
+            if (index === -1) {
+                processPolyline(currentPolyline);
+                currentPolyline = [];
+            } else {
+                currentPolyline.push(index);
+            }
+        }
+        processPolyline(currentPolyline); // Process the last or only polyline
+        // Return as 'faces' to fit into the existing processing pipeline
+        return { vertices: points, faces: lines, color: singleColor };
+    }
+
     let globalVertices, globalFaces, globalVertexColors;
 
     function expand(node, declarations, scope) {
@@ -406,6 +440,7 @@ export default function createX3dToPlyConverter() {
                     case 'Cylinder': geoData = tessellateCylinder(geoNode, options); break;
                     case 'Cone': geoData = tessellateCone(geoNode, options); break;
                     case 'IndexedFaceSet': geoData = processIndexedFaceSet(geoNode); break;
+                    case 'IndexedLineSet': geoData = processIndexedLineSet(geoNode); break; // MODIFIED
                     case 'Extrusion': geoData = tessellateExtrusion(geoNode, options); break;
                     default: console.warn(`Unrecognized geometry type: ${geoType}`); break;
                 }
@@ -417,7 +452,7 @@ export default function createX3dToPlyConverter() {
             }
         }
 
-        // 3. Recurse on the children of this node, passing down the new transform.
+        // 3. Recurse on the children of this node, apassing down the new transform.
         for (const child of (nodeContent['-children'] || [])) {
             processNode(child, currentTransform, options, defMap, currentColor);
         }
@@ -458,8 +493,9 @@ export default function createX3dToPlyConverter() {
             const r = Math.round(color[0] * 255); const g = Math.round(color[1] * 255); const b = Math.round(color[2] * 255);
             plyString += `${v[0]} ${v[1]} ${v[2]} ${r} ${g} ${b}\n`;
         });
+        // MODIFIED: This loop now correctly handles both faces and lines.
         globalFaces.forEach(f => {
-            plyString += `3 ${f[0]} ${f[1]} ${f[2]}\n`;
+            plyString += `${f.length} ${f.join(' ')}\n`;
         });
         return plyString;
     }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='localrotation.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/personal/localrotation.x3d' name='identifier'/>
+    <meta content='chained boxes' name='description'/>
+  </head>
+  <Scene>
+    <WorldInfo title='localrotation.x3d'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Tour Views' position='0 0 20'/>
+    <Transform translation='-4 0 0'>
+      <Shape>
+        <Box/>
+      </Shape>
+      <Transform DEF='TransformTargetParent' translation='4 0 0'>
+        <Shape>
+          <Box/>
+        </Shape>
+        <Transform DEF='TransformTargetChild' translation='4 0 0'>
+          <Shape>
+            <Box/>
+          </Shape>
+        </Transform>
+      </Transform>
+    </Transform>
+    <ProximitySensor DEF='ActivateSensor' size='1000000 1000000 1000000'/>
+    <TimeSensor DEF='Clock'/>
+    <ROUTE fromField='enterTime' fromNode='ActivateSensor' toField='set_startTime' toNode='Clock'/>
+    <OrientationInterpolator DEF='Rotater' key='0 1' keyValue='0 0 1 0 0 0 1 1.57'/>
+    <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='Rotater'/>
+    <ROUTE fromField='value_changed' fromNode='Rotater' toField='set_rotation' toNode='TransformTargetParent'/>
+    <ROUTE fromField='value_changed' fromNode='Rotater' toField='set_rotation' toNode='TransformTargetChild'/>
+  </Scene>
+</X3D>
