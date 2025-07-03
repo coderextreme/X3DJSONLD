@@ -1,0 +1,64 @@
+X3D:
+    profile: "Immersive"
+    version: "3.3"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "asteroids.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/personal/asteroids.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "asteroids"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            ProtoDeclare: [
+                name: "anyShape"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            name: "myShape"
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            Shape: [
+                                setGeometry: [
+                                    Sphere: [ empty
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            IS: [
+                                connect: [
+                                    nodeField: "children"
+                                    protoField: "myShape"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoInstance: [
+                name: "anyShape"
+            ]
+        ]
+    ]

@@ -1,0 +1,489 @@
+{
+  "string": "Scene",
+  "children": [
+    {
+      "string": " viewpoint",
+      "nodeType": "viewpoint",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 5
+      },
+      "description": "Only Viewpoint",
+      "children": []
+    },
+    {
+      "string": " background",
+      "nodeType": "background",
+      "skyColor": [
+        {
+          "r": 0.4,
+          "g": 0.4,
+          "b": 0.4
+        }
+      ],
+      "children": []
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "G1",
+      "children": [
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "DEF": "DECLpoint_INSTANCE_node",
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " shape",
+              "nodeType": "shape",
+              "children": [
+                {
+                  "string": "geometry sphere",
+                  "nodeType": "sphere",
+                  "radius": "0.1",
+                  "children": []
+                },
+                {
+                  "string": "appearance appearance",
+                  "nodeType": "appearance",
+                  "children": [
+                    {
+                      "string": "material material",
+                      "nodeType": "material",
+                      "diffuseColor": {
+                        "r": 1,
+                        "g": 0,
+                        "b": 0
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " positioninterpolator",
+              "nodeType": "positioninterpolator",
+              "DEF": "DECLpoint_INSTANCE_PI1",
+              "key": [
+                "0",
+                "1"
+              ],
+              "keyValue": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 5,
+                  "z": 0
+                }
+              ],
+              "children": []
+            },
+            {
+              "string": " script",
+              "nodeType": "script",
+              "DEF": "DECLpoint_INSTANCE_MB1",
+              "children": [
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "translation",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "old",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "set_location",
+                  "accessType": "inputOnly",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "keyValue",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0 0 5 0",
+                  "children": []
+                },
+                "<script>\n\necmascript:\n               function set_location(value) {\n                    old = translation;\n                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n                    keyValue = new MFVec3f(old, translation);\n               }\n\n\n</Script>"
+              ]
+            },
+            {
+              "string": " timesensor",
+              "nodeType": "timesensor",
+              "DEF": "DECLpoint_INSTANCE_CL1",
+              "cycleInterval": "3",
+              "loop": "true",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE_CL1",
+              "fromField": "cycleTime",
+              "toNode": "DECLpoint_INSTANCE_MB1",
+              "toField": "set_location",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE_CL1",
+              "fromField": "fraction_changed",
+              "toNode": "DECLpoint_INSTANCE_PI1",
+              "toField": "set_fraction",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE_MB1",
+              "fromField": "keyValue",
+              "toNode": "DECLpoint_INSTANCE_PI1",
+              "toField": "keyValue",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE_PI1",
+              "fromField": "value_changed",
+              "toNode": "DECLpoint_INSTANCE_node",
+              "toField": "set_translation",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE_MB1",
+              "fromField": "translation_changed",
+              "toNode": "DECLpoint_INSTANCE_node",
+              "toField": "set_translation",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "G2",
+      "children": [
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "DEF": "DECLpoint_INSTANCE1000_node",
+          "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " shape",
+              "nodeType": "shape",
+              "children": [
+                {
+                  "string": "geometry sphere",
+                  "nodeType": "sphere",
+                  "radius": "0.1",
+                  "children": []
+                },
+                {
+                  "string": "appearance appearance",
+                  "nodeType": "appearance",
+                  "children": [
+                    {
+                      "string": "material material",
+                      "nodeType": "material",
+                      "diffuseColor": {
+                        "r": 1,
+                        "g": 0,
+                        "b": 0
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " positioninterpolator",
+              "nodeType": "positioninterpolator",
+              "DEF": "DECLpoint_INSTANCE1000_PI1",
+              "key": [
+                "0",
+                "1"
+              ],
+              "keyValue": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 5,
+                  "z": 0
+                }
+              ],
+              "children": []
+            },
+            {
+              "string": " script",
+              "nodeType": "script",
+              "DEF": "DECLpoint_INSTANCE1000_MB1",
+              "children": [
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "translation",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "old",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "set_location",
+                  "accessType": "inputOnly",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "name": "keyValue",
+                  "accessType": "inputOutput",
+                  "value": "0 0 0 0 5 0",
+                  "children": []
+                },
+                "<script>\n\necmascript:\n               function set_location(value) {\n                    old = translation;\n                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n                    keyValue = new MFVec3f(old, translation);\n               }\n\n\n</Script>"
+              ]
+            },
+            {
+              "string": " timesensor",
+              "nodeType": "timesensor",
+              "DEF": "DECLpoint_INSTANCE1000_CL1",
+              "cycleInterval": "3",
+              "loop": "true",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE1000_CL1",
+              "fromField": "cycleTime",
+              "toNode": "DECLpoint_INSTANCE1000_MB1",
+              "toField": "set_location",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE1000_CL1",
+              "fromField": "fraction_changed",
+              "toNode": "DECLpoint_INSTANCE1000_PI1",
+              "toField": "set_fraction",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE1000_MB1",
+              "fromField": "keyValue",
+              "toNode": "DECLpoint_INSTANCE1000_PI1",
+              "toField": "keyValue",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE1000_PI1",
+              "fromField": "value_changed",
+              "toNode": "DECLpoint_INSTANCE1000_node",
+              "toField": "set_translation",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromNode": "DECLpoint_INSTANCE1000_MB1",
+              "fromField": "translation_changed",
+              "toNode": "DECLpoint_INSTANCE1000_node",
+              "toField": "set_translation",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "transC1",
+      "children": [
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "DEF": "rotscaleC1",
+          "children": [
+            {
+              "string": " shape",
+              "nodeType": "shape",
+              "children": [
+                {
+                  "string": "appearance appearance",
+                  "nodeType": "appearance",
+                  "children": [
+                    {
+                      "string": "material material",
+                      "nodeType": "material",
+                      "diffuseColor": {
+                        "r": 0.2,
+                        "g": 0.7,
+                        "b": 0.7
+                      },
+                      "transparency": "0.5",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "string": "geometry cylinder",
+                  "nodeType": "cylinder",
+                  "radius": "0.05",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " script",
+      "nodeType": "script",
+      "DEF": "DECLx3dconnector_connector1_S1",
+      "children": [
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "startnode",
+          "accessType": "initializeOnly",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "G1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "endnode",
+          "accessType": "initializeOnly",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "G2",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "transC1",
+          "accessType": "initializeOnly",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "transC1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "rotscaleC1",
+          "accessType": "initializeOnly",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "rotscaleC1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "set_startpoint",
+          "accessType": "inputOnly",
+          "children": []
+        },
+        {
+          "string": " field",
+          "nodeType": "field",
+          "name": "set_endpoint",
+          "accessType": "inputOnly",
+          "children": []
+        },
+        "<script>\n            ecmascript:\n        function recompute(startpoint,endpoint){\n\t    if (typeof endpoint === 'undefined') {\n\t\treturn;\n\t    }\n            var dif = endpoint.subtract(startpoint);\n            var dist = dif.length()*0.5;\n            var dif2 = dif.multiply(0.5);\n            var norm = dif.normalize();\n            var transl = startpoint.add(dif2);\n\t    if (typeof Quaternion !== 'undefined') {\n\t\t    return {\n\t\t\t    scale : new SFVec3f(1.0,dist,1.0),\n\t\t\t    translation : transl,\n\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n\t\t    };\n\t    } else {\n\t\t    return {\n\t\t\t    scale : new SFVec3f(1.0,dist,1.0),\n\t\t\t    translation : transl,\n\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n\t\t    };\n\t    }\n\t}\n\tfunction recompute_and_route(startpoint, endpoint) {\n\t      var trafo = recompute(startpoint, endpoint);\n\t      transC1.translation = trafo.translation;\n\t      rotscaleC1.rotation = trafo.rotation;\n\t      rotscaleC1.scale = trafo.scale;\n\t}\n        function initialize(){\n            recompute_and_route(startnode.translation,endnode.translation);\n        }\n        function set_startpoint(val,t){\n            recompute_and_route(val,endnode.translation);\n        }\n        function set_endpoint(val,t){\n            recompute_and_route(startnode.translation,val);\n        }\n\n\n</Script>"
+      ]
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromNode": "G1",
+      "fromField": "translation_changed",
+      "toNode": "DECLx3dconnector_connector1_S1",
+      "toField": "set_startpoint",
+      "children": []
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromNode": "G2",
+      "fromField": "translation_changed",
+      "toNode": "DECLx3dconnector_connector1_S1",
+      "toField": "set_endpoint",
+      "children": []
+    }
+  ]
+}

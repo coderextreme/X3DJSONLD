@@ -1,0 +1,549 @@
+{
+  "string": "Scene",
+  "children": [
+    {
+      "string": " protodeclare",
+      "nodeType": "protodeclare",
+      "appinfo": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.",
+      "name": "ArchPrototype",
+      "children": [
+        {
+          "string": " protointerface",
+          "nodeType": "protointerface",
+          "children": [
+            "/* COLOR OF ARCH */",
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOutput",
+              "appinfo": "color of arch",
+              "name": "diffuseColor",
+              "value": "0.2 0.8 0.8",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOutput",
+              "appinfo": "color of arch",
+              "name": "emissiveColor",
+              "value": "0.2 0.8 0.8",
+              "children": []
+            },
+            "/* INPUT PARAMETERS */",
+            "/* General parameters: measures in meters */",
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference",
+              "name": "clearSpanWidth",
+              "value": "4",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference",
+              "name": "riseHeight",
+              "value": "2",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "depth",
+              "name": "depth",
+              "value": "3",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment",
+              "name": "topAbutmentHeight",
+              "value": "0.5",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "pierWidth:pierWidtht=0 means no pierWidth",
+              "name": "pierWidth",
+              "value": "0.5",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "pierHeight: pierHeight=0 means no pierHeight",
+              "name": "pierHeight",
+              "value": "1",
+              "children": []
+            },
+            "/* Parameters to create to create shapes related to arch: put true to apply */",
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width",
+              "name": "archHalf",
+              "value": "false",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.",
+              "name": "archHalfExtensionWidth",
+              "value": "0",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.",
+              "name": "onlyIntrados",
+              "value": "false",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.",
+              "name": "archFilled",
+              "value": "false",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.",
+              "name": "archHalfFilled",
+              "value": "false",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "appinfo": "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.",
+              "name": "lintel",
+              "value": "false",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " protobody",
+          "nodeType": "protobody",
+          "children": [
+            "/* First node determines node type of this prototype */",
+            "/* IndexedFaceset creates arch */",
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "DEF": "ArchTransform",
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "DEF": "Arch",
+                  "children": [
+                    "/* note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly */",
+                    {
+                      "string": " indexedfaceset",
+                      "nodeType": "indexedfaceset",
+                      "DEF": "ArchIndex",
+                      "convex": "false",
+                      "creaseAngle": "0",
+                      "solid": "false",
+                      "children": [
+                        {
+                          "string": " coordinate",
+                          "nodeType": "coordinate",
+                          "DEF": "ArchChord",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": " material",
+                          "nodeType": "material",
+                          "DEF": "MaterialNode",
+                          "children": [
+                            {
+                              "string": " is",
+                              "nodeType": "is",
+                              "children": [
+                                {
+                                  "string": " connect",
+                                  "nodeType": "connect",
+                                  "nodeField": "emissiveColor",
+                                  "protoField": "emissiveColor",
+                                  "children": []
+                                },
+                                {
+                                  "string": " connect",
+                                  "nodeType": "connect",
+                                  "nodeField": "diffuseColor",
+                                  "protoField": "diffuseColor",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "/* Subsequent nodes do not render, but still must be a valid X3D subgraph */",
+            "/* This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs */",
+            {
+              "string": " script",
+              "nodeType": "script",
+              "DEF": "ArchPrototypeScript",
+              "url": [
+                "\"../node/ArchPrototypeScript.js",
+                "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js\""
+              ],
+              "children": [
+                "/* INPUT PARAMETERS */",
+                "/* General parameters */",
+                "/* Parameters to create to create shapes related to arch: put true to apply */",
+                "/* OUTPUT PARAMETERS */",
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for clearSpanWidth parameter",
+                  "name": "clearSpanWidth",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for riseHeight parameter",
+                  "name": "riseHeight",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for depth parameter",
+                  "name": "depth",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for topAbutmentHeight parameter",
+                  "name": "topAbutmentHeight",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for pierWidth parameter",
+                  "name": "pierWidth",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for pierHeight parameter",
+                  "name": "pierHeight",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for archHalf parameter",
+                  "name": "archHalf",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for archHalfExtensionWidth parameter",
+                  "name": "archHalfExtensionWidth",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for onlyIntrados parameter",
+                  "name": "onlyIntrados",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for archFilled parameter",
+                  "name": "archFilled",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for archHalfFilled parameter",
+                  "name": "archHalfFilled",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "appinfo": "user or default input for lintel parameter",
+                  "name": "lintel",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "outputOnly",
+                  "appinfo": "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth",
+                  "name": "computedScale",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "outputOnly",
+                  "appinfo": "send computed points to the Coordinate node",
+                  "name": "pointOut",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "outputOnly",
+                  "appinfo": "send computed indices to the IndexedFaceSet node",
+                  "name": "indexOut",
+                  "children": []
+                },
+                {
+                  "string": " is",
+                  "nodeType": "is",
+                  "children": [
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "clearSpanWidth",
+                      "protoField": "clearSpanWidth",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "riseHeight",
+                      "protoField": "riseHeight",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "depth",
+                      "protoField": "depth",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "pierWidth",
+                      "protoField": "pierWidth",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "topAbutmentHeight",
+                      "protoField": "topAbutmentHeight",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "pierHeight",
+                      "protoField": "pierHeight",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "archHalf",
+                      "protoField": "archHalf",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "archHalfExtensionWidth",
+                      "protoField": "archHalfExtensionWidth",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "onlyIntrados",
+                      "protoField": "onlyIntrados",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "archFilled",
+                      "protoField": "archFilled",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "archHalfFilled",
+                      "protoField": "archHalfFilled",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "lintel",
+                      "protoField": "lintel",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromField": "computedScale",
+              "fromNode": "ArchPrototypeScript",
+              "toField": "scale",
+              "toNode": "ArchTransform",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromField": "pointOut",
+              "fromNode": "ArchPrototypeScript",
+              "toField": "point",
+              "toNode": "ArchChord",
+              "children": []
+            },
+            {
+              "string": " route",
+              "nodeType": "route",
+              "fromField": "indexOut",
+              "fromNode": "ArchPrototypeScript",
+              "toField": "set_coordIndex",
+              "toNode": "ArchIndex",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " protoinstance",
+      "nodeType": "protoinstance",
+      "DEF": "ArchInstance",
+      "name": "ArchPrototype",
+      "children": [
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "diffuseColor",
+          "value": "0.5 0.3 0.6",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "emissiveColor",
+          "value": "0.5 0.3 0.6",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "clearSpanWidth",
+          "value": "5",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "riseHeight",
+          "value": "2.5",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "depth",
+          "value": "2",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "topAbutmentHeight",
+          "value": "0.6",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "pierWidth",
+          "value": "1",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "pierHeight",
+          "value": "2",
+          "children": []
+        }
+      ]
+    },
+    "/* Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) */",
+    {
+      "string": " inline",
+      "nodeType": "inline",
+      "DEF": "CoordinateAxes",
+      "url": [
+        "\"../data/CoordinateAxes.x3d\""
+      ],
+      "children": []
+    }
+  ]
+}

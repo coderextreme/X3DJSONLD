@@ -1,0 +1,106 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "localrotation.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/personal/localrotation.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "chained boxes"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "localrotation.x3d"
+            ],
+            NavigationInfo: [
+                type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
+            ],
+            Viewpoint: [
+                description: "Tour Views"
+                position: [0, 0, 20]
+            ],
+            Transform: [
+                translation: [-4, 0, 0]
+                Shape: [
+                    setGeometry: [
+                        Box: [ empty
+                        ]
+                    ]
+                ],
+                Transform: [
+                    DEF: "TransformTargetParent"
+                    translation: [4, 0, 0]
+                    Shape: [
+                        setGeometry: [
+                            Box: [ empty
+                            ]
+                        ]
+                    ],
+                    Transform: [
+                        DEF: "TransformTargetChild"
+                        translation: [4, 0, 0]
+                        Shape: [
+                            setGeometry: [
+                                Box: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProximitySensor: [
+                DEF: "ActivateSensor"
+                size: [1000000, 1000000, 1000000]
+            ],
+            TimeSensor: [
+                DEF: "Clock"
+            ],
+            ROUTE: [
+                fromNode: "ActivateSensor"
+                fromField: "enterTime"
+                toNode: "Clock"
+                toField: "set_startTime"
+            ],
+            OrientationInterpolator: [
+                DEF: "Rotater"
+                key: [0, 1]
+                keyValue: [0, 0, 1, 0, 0, 0, 1, 1.57]
+            ],
+            ROUTE: [
+                fromNode: "Clock"
+                fromField: "fraction_changed"
+                toNode: "Rotater"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Rotater"
+                fromField: "value_changed"
+                toNode: "TransformTargetParent"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "Rotater"
+                fromField: "value_changed"
+                toNode: "TransformTargetChild"
+                toField: "set_rotation"
+            ]
+        ]
+    ]
