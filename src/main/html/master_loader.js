@@ -5,6 +5,8 @@ import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
+import createX3dToPlyConverter from '../node/convertX3dToPly.js';
+
 import { encodeJSON } from './exi.js';
 
 export { decodeJSON } from './exi.js';
@@ -20,6 +22,12 @@ let globalXmlForJsonConversion = null;
 window.pendingXmlToJsonConversion = false;
 let lastBlobUrl = null;
 let currentX3domUrl = '';
+
+function convertJsonToPly(jsonObj) {
+	const convertX3dToPly = createX3dToPlyConverter();
+	let ply = convertX3dToPly(jsonObj);
+	return ply;
+}
 
 export function prepareForX3DOMReload() {
     console.log("Master_loader: Preparing for X3DOM reload. Caching current URL for re-render.");
