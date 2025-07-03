@@ -231,7 +231,18 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     $('#java').val('');
     $('#ply').val('');
 
-    await displayInIframes(urlForX3dom, xmlString);
+    // --- FIX START ---
+    // If no URL is provided (e.g., when loading from textarea), create one from a Blob.
+    // This ensures `displayInIframes` always receives a valid string.
+    let effectiveUrlForX3dom = urlForX3dom;
+    if (!effectiveUrlForX3dom) {
+        const xmlBlob = new Blob([xmlString], { type: 'model/x3d+xml' });
+        effectiveUrlForX3dom = URL.createObjectURL(xmlBlob);
+    }
+    // --- FIX END ---
+
+    // Pass the guaranteed-to-be-valid URL to the display function
+    await displayInIframes(effectiveUrlForX3dom, xmlString);
 
     globalXmlForJsonConversion = xmlString;
     window.pendingXmlToJsonConversion = true;
