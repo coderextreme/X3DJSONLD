@@ -5,6 +5,7 @@ import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
+// Import the PLY converter module
 import createX3dToPlyConverter from '../node/convertX3dToPly.js';
 
 import { encodeJSON } from './exi.js';
@@ -23,6 +24,7 @@ window.pendingXmlToJsonConversion = false;
 let lastBlobUrl = null;
 let currentX3domUrl = '';
 
+// New function to handle JSON to PLY conversion
 function convertJsonToPly(jsonObj) {
 	const convertX3dToPly = createX3dToPlyConverter();
 	let ply = convertX3dToPly(jsonObj);
@@ -37,7 +39,6 @@ export function prepareForX3DOMReload() {
     }
 }
 
-// THIS FUNCTION IS THE ONE WITH THE CHANGE
 async function processPendingXmlToJson() {
     if (!window.pendingXmlToJsonConversion || !globalXmlForJsonConversion || !xiteRuntimeFullyReady) {
         return;
@@ -58,12 +59,19 @@ async function processPendingXmlToJson() {
             // Now, perform all other conversions that depend on the JSON object.
             encodeJSON(); // JSON -> EXI
 
-            // THE NEWLY ADDED LOGIC: JSON -> STL
+            // Convert JSON to STL
             try {
                 $('#stl').val(convertJsonToStl(jsonObj));
             } catch (e) {
                 // If STL conversion fails (e.g., no geometry), show an error in its textarea.
                 $('#stl').val("Error converting to STL: " + e.message);
+            }
+            
+            // Convert JSON to PLY
+            try {
+                $('#ply').val(convertJsonToPly(jsonObj));
+            } catch (e) {
+                $('#ply').val("Error converting to PLY: " + e.message);
             }
 
         } else {
@@ -74,6 +82,7 @@ async function processPendingXmlToJson() {
         // If JSON conversion fails, clear the dependent fields.
         $('#stl').val('');
         $('#exi').val('');
+        $('#ply').val('');
     }
 }
 
@@ -194,6 +203,16 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
     await displayInIframes(effectiveUrlForX3dom, xmlString);
 
     try { $('#stl').val(convertJsonToStl(jsonObj)); } catch (e) { $('#stl').val("Error converting to STL: " + e.message); }
+    
+    // Convert to PLY, but only if the original source was not a PLY file.
+    if (!sourceFileName || !sourceFileName.toLowerCase().endsWith('.ply')) {
+        try {
+            $('#ply').val(convertJsonToPly(jsonObj));
+        } catch (e) {
+            $('#ply').val("Error converting to PLY: " + e.message);
+        }
+    }
+
     try {
         let jsSerializer = new JavaScriptSerializer();
         $('#java').val(jsSerializer.serializeToString(jsonObj, baseFileName, "", []));
