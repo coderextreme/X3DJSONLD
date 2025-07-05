@@ -41,7 +41,7 @@
 <script type="module">
 	import { setIS_X3DOM, setIS_X_ITE } from '../node/loaderJQuery.js';
 	setIS_X3DOM(false);
-	setIS_XITEM(false);
+	setIS_X_ITE(false);
 	if (location.href.indexOf("?") >= 0) {
 		document.getElementById("json").value = location.href.replace(/[^?]*\?/, "");
 		fetch(document.getElementById("json").value)
