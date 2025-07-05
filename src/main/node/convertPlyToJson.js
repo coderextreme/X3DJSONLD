@@ -96,7 +96,22 @@ export default function convertPlyToJson(file) {
 			dispatchTable.values(line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		}
 	}
-	// console.error(JSON.stringify(elements, null, 2));
+
+	// --- START OF FIX ---
+	// Build a list of shapes, only adding geometry if it's valid.
+	const shapes = [];
+
+	const ifsGeometry = transformToIFS(elements);
+	if (ifsGeometry && Object.keys(ifsGeometry).length > 0) {
+		shapes.push({ "Shape": { "-geometry": ifsGeometry } });
+	}
+
+	const ilsGeometry = transformToILS(elements);
+	if (ilsGeometry && Object.keys(ilsGeometry).length > 0) {
+		shapes.push({ "Shape": { "-geometry": ilsGeometry } });
+	}
+	// --- END OF FIX ---
+
 	var x3d = { "X3D": {
 	    "encoding":"UTF-8",
 	    "@profile":"Interchange",
@@ -105,67 +120,18 @@ export default function convertPlyToJson(file) {
 	    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
 	    "head": {
 		"meta": [
-		  {
-		    "@name":"title",
-		    "@content":"template.x3dj"
-		  },
-		  {
-		    "@name":"description",
-		    "@content":"Template for an Indexed Face Set"
-		  },
-		  {
-		    "@name":"creator",
-		    "@content":"John Carlson"
-		  },
-		  {
-		    "@name":"created",
-		    "@content":"9 April 2017"
-		  },
-		  {
-		    "@name":"generator",
-		    "@content":"ConvertPlyToJson.js"
-		  },
-		  {
-		    "@name":"license",
-		    "@content":"../license.html"
-		  },
-		  {
-		    "@name":"identifier",
-		    "@content":"https://coderextreme.net/X3DJSONLD/template.x3dj"
-		  },
-		  {
-		    "@name":"modified",
-		    "@content":"10 April 2017"
-		  },
-		  {
-		    "@name":"dummy",
-		    "@content":"b"
-		  },
-		  {
-		    "@name":"dummy",
-		    "@content":"a"
-		  }
+		  { "@name":"title", "@content":"template.x3dj" },
+		  { "@name":"description", "@content":"Template for an Indexed Face Set" },
+		  { "@name":"creator", "@content":"John Carlson" },
+		  { "@name":"created", "@content":"9 April 2017" },
+		  { "@name":"generator", "@content":"ConvertPlyToJson.js" },
+		  { "@name":"license", "@content":"../license.html" },
+		  { "@name":"identifier", "@content":"https://coderextreme.net/X3DJSONLD/template.x3dj" },
+		  { "@name":"modified", "@content":"10 April 2017" }
 		]
 	    },
 	    "Scene": {
-		"-children":[
-		  { "Group":
-		    {
-		      "-children":[
-			{ "Shape":
-			  {
-				  "-geometry": transformToIFS(elements)
-			  }
-			},
-			{ "Shape":
-			  {
-				  "-geometry": transformToILS(elements)
-			  }
-			}
-		      ]
-		    }
-		  }
-		]
+		"-children":[ { "Group": { "-children": shapes } } ]
 	    }
 	  }
 	};
@@ -174,12 +140,12 @@ export default function convertPlyToJson(file) {
 
 function transformToILS(elements) {
 	var ILS = {};
-	var coordIndex = [];
-	var colorIndex = [];
-	var point = [];
 	var color = [];
+	var hasEdges = false; // Flag to check if we processed any edge data.
+
 	var dispatchTable = {
 		edge : function(element, ILS) {
+			hasEdges = true; // Set the flag
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
 				ILS["IndexedLineSet" ] = {};
 			}
@@ -192,7 +158,7 @@ function transformToILS(elements) {
 							array.push(parseInt(element[index][iv]));
 						}
 						array.push(-1);
-						for (var c = 2; c < 5; c++) { 
+						for (var c = 2; c < 5; c++) {
 							if (element.property[c].type[0] === 'uchar') {
 								color.push(colorComponentParseFloat(element[index][c])/255.0);
 							} else {
@@ -204,13 +170,11 @@ function transformToILS(elements) {
 					console.error(e);
 				}
 			}
-			if (typeof ILS["IndexedLineSet"] === "undefined") {
-				ILS["IndexedLineSet" ] = {};
-			}
-			if (typeof color != 'undefined') {
+
+			if (color.length > 0) {
 				ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
-				ILS["IndexedLineSet" ]["@colorIndex"] = array;
 			}
+
 			ILS["IndexedLineSet" ]["@coordIndex"] = array;
 			return ILS;
 		},
@@ -220,7 +184,7 @@ function transformToILS(elements) {
 				try {
 					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (var p = 0; p < 3; p++) { 
+						for (var p = 0; p < 3; p++) {
 							point.push(parseFloat(element[index][p]));
 						}
 					}
@@ -236,23 +200,27 @@ function transformToILS(elements) {
 		}
 	}
 	for (var e in elements) {
-		// console.error(elements[e]);
 		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			ILS = table(elements[e], ILS);
 		}
 	}
+	// --- START OF FIX ---
+	// If we never processed any edges, return an empty object.
+	if (!hasEdges) {
+		return {};
+	}
+	// --- END OF FIX ---
 	return ILS;
 }
 
 function transformToIFS(elements) {
 	var IFS = {};
-	var coordIndex = [];
-	var colorIndex = [];
-	var point = [];
-	var color = [];
+	var hasFaces = false; // Flag to check for face data
+
 	var dispatchTable = {
 		face : function(element, IFS) {
+			hasFaces = true; // Set flag
 			var array = [];
 			for (var o in element) {
 				try {
@@ -284,10 +252,10 @@ function transformToIFS(elements) {
 				try {
 					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (var p = 0; p < 3; p++) { 
+						for (var p = 0; p < 3; p++) {
 							point.push(parseFloat(element[index][p]));
 						}
-						for (var c = 3; c < 6; c++) { 
+						for (var c = 3; c < 7; c++) { // Updated to handle alpha
 							if (element.property[c] && element.property[c].type[0] === 'uchar') {
 								color.push(colorComponentParseFloat(element[index][c])/255.0);
 							} else {
@@ -303,11 +271,16 @@ function transformToIFS(elements) {
 				IFS["IndexedFaceSet" ] = {};
 			}
 			IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-			// set colors if there aren't any
-			while (color.length < point.length) {
-				color.push(1);
+
+			// Only create color node if there's actual color data
+			if (color.length > 0) {
+				// We only care about RGB for X3D color node
+				const rgbColor = color.filter((_, i) => (i + 1) % 4 !== 0);
+				while (rgbColor.length < point.length) {
+					rgbColor.push(1);
+				}
+				IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : rgbColor }};
 			}
-			IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
 			return IFS;
 		}
 	};
@@ -317,139 +290,10 @@ function transformToIFS(elements) {
 			IFS = table(elements[e], IFS);
 		}
 	}
+
+	// If no faces were found, return empty object
+	if (!hasFaces) {
+		return {};
+	}
 	return IFS;
 }
-/*
-ply
-format ascii 1.0
-comment author: Greg Turk
-comment object: another cube
-element vertex 8
-property float x
-property float y
-property float z
-property uchar red                   { start of vertex color }
-property uchar green
-property uchar blue
-element face 7
-property list uchar int vertex_index  { number of vertices for each face }
-element edge 5                        { five edges in object }
-property int vertex1                  { index to first vertex of edge }
-property int vertex2                  { index to second vertex }
-property uchar red                    { start of edge color }
-property uchar green
-property uchar blue
-end_header
-0 0 0 255 0 0                         { start of vertex list }
-0 0 1 255 0 0
-0 1 1 255 0 0
-0 1 0 255 0 0
-1 0 0 0 0 255
-1 0 1 0 0 255
-1 1 1 0 0 255
-1 1 0 0 0 255
-3 0 1 2                           { start of face list, begin with a triangle }
-3 0 2 3                           { another triangle }
-4 7 6 5 4                         { now some quadrilaterals }
-4 0 4 5 1
-4 1 5 6 2
-4 2 6 7 3
-4 3 7 4 0
-0 1 255 255 255                   { start of edge list, begin with white edge }
-1 2 255 255 255
-2 3 255 255 255
-3 0 255 255 255
-2 0 0 0 0                         { end with a single black line }
-------------------------------------------------------
-                            { "IndexedFaceSet":
-                              {
-                                "@colorIndex":[0,1,2,3,0,-1],
-                                "@coordIndex":[0,1,2,3,0,-1],
-                                "-coord":
-                                  { "Coordinate":
-                                    {
-                                      "@DEF":"FourPoints",
-                                      "@point":[0,0,0,1,0,0,1,1,0,0,1,0]
-                                    }
-                                  },
-                                "-color":
-                                  { "Color":
-                                    {
-                                      "@DEF":"FourColors",
-                                      "@color":[1,0,0,0,1,0,0,0,1,0.8,0.8,0.8]
-                                    }
-                                  }
-                              }
-                            }
-------------------------------------------------------
-{ "X3D": {
-    "encoding":"UTF-8",
-    "@profile":"Interchange",
-    "@version":"4.4",
-    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-    "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"template.x3dj"
-          },
-          {
-            "@name":"description",
-            "@content":"Template for an Indexed Face Set"
-          },
-          {
-            "@name":"creator",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"created",
-            "@content":"4 April 2017"
-          },
-          {
-            "@name":"generator",
-            "@content":"manual"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
-          }
-        ]
-    },
-    "Scene": {
-        "-children":[
-          { "Group":
-            {
-              "-children":[
-                { "Shape":
-                  {
-                          "-geometry":
-                            { "IndexedFaceSet":
-                              {
-                                "@colorIndex":[0,1,2,3,0,-1],
-                                "@coordIndex":[0,1,2,3,0,-1],
-                                "-coord":
-                                  { "Coordinate":
-                                    {
-                                      "@DEF":"FourPoints",
-                                      "@point":[0,0,0,1,0,0,1,1,0,0,1,0]
-                                    }
-                                  },
-                                "-color":
-                                  { "Color":
-                                    {
-                                      "@DEF":"FourColors",
-                                      "@color":[1,0,0,0,1,0,0,0,1,0.8,0.8,0.8]
-                                    }
-                                  }
-                              }
-                            }
-                  }
-                }
-            }
-	  }
-	]
-    }
-  }
-}
-*/
