@@ -98,12 +98,6 @@ export function doValidate(json, validated_version, file, success, failure, e) {
 				error += doSuppressCheck(errs[e], file, version, json);
 			}
 		}
-		if (typeof confirm === 'undefined') {
-			var confirm = function(error) {
-				return true;
-			};
-		}
-
 		retval = (valid || confirm(error));
 	}
 	if (retval && typeof success === 'function') {
