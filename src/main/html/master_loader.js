@@ -2,11 +2,15 @@
 
 import X3DJSONLD from '../node/X3DJSONLD.js';
 import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
+import JavaSerializer from '../node/JavaSerializer.js';
+import PythonSerializerX3DJSAIL from '../node/PythonSerializerX3DJSAIL.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
-// Import the PLY converter module
 import createX3dToPlyConverter from '../node/convertX3dToPly.js';
+import fieldTypes from '../node/fieldTypes.js';
+import mapToMethod from '../node/mapToMethod.js';
+import { DOMParser } from'@xmldom/xmldom';
 
 import { encodeJSON } from './exi.js';
 
@@ -186,8 +190,9 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
     $('#json').val(jsonString);
 
     let xmlString = "";
+    let element = null;
     try {
-        [, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
+        [ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
         $('#xml').val(xmlString);
     } catch (e) {
         $('#xml').val("Error converting JSON to XML: " + e.message);
@@ -215,8 +220,19 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
 
     try {
         let jsSerializer = new JavaScriptSerializer();
-        $('#java').val(jsSerializer.serializeToString(jsonObj, baseFileName, "", []));
+        $('#javascript').val(jsSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#javascript').val("Error generating JavaScript: " + e.message); }
+
+    try {
+        let pySerializer = new PythonSerializerX3DJSAIL();
+        $('#python').val(pySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#python').val("Error generating Python: " + e.message); }
+
+    try {
+        let javaSerializer = new JavaSerializer();
+        $('#java').val(javaSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
     } catch (e) { $('#java').val("Error generating Java: " + e.message); }
+
     encodeJSON();
 }
 
@@ -228,6 +244,8 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     $('#json').val('Converting from XML via X_ITE...');
     $('#stl').val('');
     $('#exi').val('');
+    $('#javascript').val('');
+    $('#python').val('');
     $('#java').val('');
     $('#ply').val('');
 
