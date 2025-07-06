@@ -3,6 +3,7 @@
 import X3DJSONLD from '../node/X3DJSONLD.js';
 import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import CppFunctionBodySerializer from '../node/CppFunctionBodySerializer.js';
+import ClojureSerializer from '../node/ClojureSerializer.js';
 import JavaSerializer from '../node/JavaSerializer.js';
 import PythonSerializerX3DJSAIL from '../node/PythonSerializerX3DJSAIL.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
@@ -239,6 +240,11 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
         $('#cpp').val(cppSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
     } catch (e) { $('#cpp').val("Error generating C++: " + e.message); }
 
+    try {
+        let clojureSerializer = new ClojureSerializer();
+        $('#clojure').val(clojureSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#clojure').val("Error generating Clojure: " + e.message); }
+
     encodeJSON();
 }
 
@@ -254,6 +260,7 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     $('#python').val('');
     $('#java').val('');
     $('#cpp').val('');
+    $('#clojure').val('');
     $('#ply').val('');
 
     // --- FIX START ---
