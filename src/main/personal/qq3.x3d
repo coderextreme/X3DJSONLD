@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Immersive" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
     <head>
         <meta content="qq3.x3d" name="title"/>
         <meta content="John Carlson" name="creator"/>
         <meta content="John Carlson" name="translator"/>
         <meta content="11 Jan 2015" name="created"/>
 	<meta content="05 May 2017" name="modified"/>
-        <meta content="12 extrusions to test prototype expander" name="description"/>
+        <meta content="12 extrusions" name="description"/>
         <meta content="https://coderextreme.net/x3d/qq3.x3d" name="identifier"/>
         <meta content="manual" name="generator"/>
     </head>
@@ -21,7 +21,7 @@
                             <Appearance>
                                 <Material diffuseColor="0.7 1 0"/>
                             </Appearance>
-                            <Extrusion spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
+                            <Extrusion spine="-2.5 0 0 -2.0 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
                         </Shape>
                     </Transform>
                     <!-- right -->
@@ -30,7 +30,7 @@
                             <Appearance>
                                 <Material diffuseColor="0 0.7 1"/>
                             </Appearance>
-                            <Extrusion spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
+                            <Extrusion spine="1.5 0 0 2.0 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
                         </Shape>
                     </Transform>
                     <!-- up -->
