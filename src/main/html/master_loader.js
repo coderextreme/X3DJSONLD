@@ -45,6 +45,51 @@ export function prepareForX3DOMReload() {
     }
 }
 
+function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
+    const sourceFileName = document.getElementById('currentFileName').textContent;
+    const baseFileName = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
+    // Convert JSON to STL
+    try {
+        $('#stl').val(convertJsonToStl(jsonObj));
+    } catch (e) {
+        // If STL conversion fails (e.g., no geometry), show an error in its textarea.
+        $('#stl').val("Error converting to STL: " + e.message);
+    }
+            
+    // Convert JSON to PLY
+    try {
+        $('#ply').val(convertJsonToPly(jsonObj));
+    } catch (e) {
+        $('#ply').val("Error converting to PLY: " + e.message);
+    }
+
+    try {
+        let jsSerializer = new JavaScriptSerializer();
+        $('#javascript').val(jsSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#javascript').val("Error generating JavaScript: " + e.message); }
+
+    try {
+        let pySerializer = new PythonSerializerX3DJSAIL();
+        $('#python').val(pySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#python').val("Error generating Python: " + e.message); }
+
+    try {
+        let javaSerializer = new JavaSerializer();
+        $('#java').val(javaSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#java').val("Error generating Java: " + e.message); }
+
+    try {
+        let cppSerializer = new CppFunctionBodySerializer();
+        $('#cpp').val(cppSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#cpp').val("Error generating C++: " + e.message); }
+
+    try {
+        let clojureSerializer = new ClojureSerializer();
+        $('#clojure').val(clojureSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#clojure').val("Error generating Clojure: " + e.message); }
+
+}
+
 async function processPendingXmlToJson() {
     if (!window.pendingXmlToJsonConversion || !globalXmlForJsonConversion || !xiteRuntimeFullyReady) {
         return;
@@ -61,25 +106,20 @@ async function processPendingXmlToJson() {
 
             // Populate the JSON textarea with a prettified version.
             $('#json').val(JSON.stringify(jsonObj, null, 2));
+    	    const sourceFileName = document.getElementById('currentFileName').textContent;
+	    let xmlString = "";
+	    let element = null;
+	    try {
+		[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
+		$('#xml').val(xmlString);
+	    } catch (e) {
+		$('#xml').val("Error converting JSON to XML: " + e.message);
+		return;
+	    }
 
             // Now, perform all other conversions that depend on the JSON object.
             encodeJSON(); // JSON -> EXI
-
-            // Convert JSON to STL
-            try {
-                $('#stl').val(convertJsonToStl(jsonObj));
-            } catch (e) {
-                // If STL conversion fails (e.g., no geometry), show an error in its textarea.
-                $('#stl').val("Error converting to STL: " + e.message);
-            }
-            
-            // Convert JSON to PLY
-            try {
-                $('#ply').val(convertJsonToPly(jsonObj));
-            } catch (e) {
-                $('#ply').val("Error converting to PLY: " + e.message);
-            }
-
+    	    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
         } else {
              throw new Error("X_ITE returned null/empty JSON string.");
         }
@@ -209,43 +249,8 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
 
     await displayInIframes(effectiveUrlForX3dom, xmlString);
 
-    try { $('#stl').val(convertJsonToStl(jsonObj)); } catch (e) { $('#stl').val("Error converting to STL: " + e.message); }
-    
-    // Convert to PLY, but only if the original source was not a PLY file.
-    if (!sourceFileName || !sourceFileName.toLowerCase().endsWith('.ply')) {
-        try {
-            $('#ply').val(convertJsonToPly(jsonObj));
-        } catch (e) {
-            $('#ply').val("Error converting to PLY: " + e.message);
-        }
-    }
-
-    try {
-        let jsSerializer = new JavaScriptSerializer();
-        $('#javascript').val(jsSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#javascript').val("Error generating JavaScript: " + e.message); }
-
-    try {
-        let pySerializer = new PythonSerializerX3DJSAIL();
-        $('#python').val(pySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#python').val("Error generating Python: " + e.message); }
-
-    try {
-        let javaSerializer = new JavaSerializer();
-        $('#java').val(javaSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#java').val("Error generating Java: " + e.message); }
-
-    try {
-        let cppSerializer = new CppFunctionBodySerializer();
-        $('#cpp').val(cppSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#cpp').val("Error generating C++: " + e.message); }
-
-    try {
-        let clojureSerializer = new ClojureSerializer();
-        $('#clojure').val(clojureSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#clojure').val("Error generating Clojure: " + e.message); }
-
     encodeJSON();
+    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
 }
 
 export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
