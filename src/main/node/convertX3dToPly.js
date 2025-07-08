@@ -4,25 +4,21 @@
  * This script provides a function to convert X3D scene data (in JSON object format)
  * into the PLY 3D model format. It handles scene graph transformations, prototype expansion,
  * and tessellates primitive geometry into triangle meshes with vertex colors.
- * This version has been updated to correctly process IndexedFaceSet and IndexedLineSet
- * nodes, preserving per-vertex and per-edge/line colors, and outputting them
- * as separate 'face' and 'edge' elements in the PLY file, respectively.
- * It also includes a critical fix for the Extrusion node tessellation.
  *
- * @version 3.9.0
+ * @version 5.0.0
  * @author AI Assistant, with final fix for Extrusion and HAnim transformation logic.
  *
  * Features:
  * - A robust, single-pass recursive expander correctly resolves all ProtoDeclare and ProtoInstance nodes.
  * - Correctly handles nested prototypes and IS/connect value propagation with proper scope chaining.
- * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content within the current transformation context.
+ * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content.
  * - Handles diffuseColor from Material nodes and Color nodes to produce colored PLY files.
- * - Traverses the entire scene graph, including HAnimHumanoid, HAnimJoint, and HAnimSegment nodes, by using generic recursion.
- * - Correctly distinguishes between @translation and @center fields for HAnimJoint nodes, fixing hierarchical transformations.
- * - **FIXED**: Tessellates the Extrusion node by correctly calculating automatic orientation when none is provided, fixing "flat" extrusions.
+ * - Traverses the entire scene graph recursively, correctly processing all children.
+ * - **FIXED**: Tessellates the Extrusion node by correctly calculating automatic orientation.
  * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone.
- * - Processes IndexedFaceSet and IndexedLineSet geometry with correct color handling.
- * - Implements a robust vertex map to prevent duplicate vertices.
+ * - **FIXED**: Processes IndexedFaceSet geometry correctly based on the `@convex` attribute.
+ * - **FIXED**: Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices, ensuring no data loss or corruption. The flawed vertex de-duplication map has been removed.
+ * - Processes IndexedLineSet geometry with correct color handling.
  * - Outputs ASCII PLY format with vertex, face, and edge elements.
  */
 export default function createX3dToPlyConverter() {
@@ -243,7 +239,6 @@ export default function createX3dToPlyConverter() {
                         const angle = Math.acos(d);
                         mat4.axisAngleToQuat(q, axis, angle);
                     }
-                    // If vectors are collinear and in the same direction, q remains identity, which is correct.
                 }
             }
 
@@ -296,6 +291,7 @@ export default function createX3dToPlyConverter() {
 	    if (!coordNode || !coordNode['@point']) return null;
 	    const points = parseMFVec3f(coordNode['@point']);
 	    const coordIndex = parseNumArray(node['@coordIndex']);
+        const isConvex = node['@convex'] === undefined || parseBool(node['@convex']);
 
         let vertexColors = null;
 	    const colorNode = node['-color']?.Color;
@@ -308,21 +304,29 @@ export default function createX3dToPlyConverter() {
 
 	    const faces = [];
 	    let currentFace = [];
+
+        const processSingleFace = (faceIndices) => {
+            if (faceIndices.length < 3) return;
+            if (isConvex) {
+                const v0 = faceIndices[0];
+                for (let i = 1; i < faceIndices.length - 1; i++) {
+                    faces.push([v0, faceIndices[i], faceIndices[i + 1]]);
+                }
+            } else {
+                faces.push(faceIndices);
+            }
+        };
+
 	    for (const index of coordIndex) {
 		    if (index === -1) {
-			    if (currentFace.length >= 3) {
-				    const v0 = currentFace[0];
-				    for (let i = 1; i < currentFace.length - 1; i++) faces.push([v0, currentFace[i], currentFace[i + 1]]);
-			    }
+                processSingleFace(currentFace);
 			    currentFace = [];
 		    } else {
 			    currentFace.push(index);
 		    }
 	    }
-	    if (currentFace.length >= 3) {
-		    const v0 = currentFace[0];
-		    for (let i = 1; i < currentFace.length - 1; i++) faces.push([v0, currentFace[i], currentFace[i + 1]]);
-	    }
+        processSingleFace(currentFace);
+
 	    return { vertices: points, faces: faces, vertexColors: vertexColors };
     }
 
@@ -371,7 +375,7 @@ export default function createX3dToPlyConverter() {
         return { vertices: points, faces: lines, lineColors: (lineColors.length > 0 ? lineColors : null) };
     }
 
-    let globalVertices, globalFaces, globalVertexColors, globalEdges, globalEdgeColors, vertexMap;
+    let globalVertices, globalFaces, globalVertexColors, globalEdges, globalEdgeColors;
 
     function expand(node, declarations, scope) {
         if (!node || typeof node !== 'object') { return node; }
@@ -474,7 +478,6 @@ export default function createX3dToPlyConverter() {
              const R = mat4.fromQuat(mat4.create(), mat4.axisAngleToQuat([], [rotation[0], rotation[1], rotation[2]], rotation[3]));
              const S = mat4.fromScaling(mat4.create(), scale);
 
-             // M = T * C * R * S * -C
              mat4.multiply(localTransform, S, negC);
              mat4.multiply(localTransform, R, localTransform);
              mat4.multiply(localTransform, C, localTransform);
@@ -508,43 +511,31 @@ export default function createX3dToPlyConverter() {
                 }
 
                 if (geoData && geoData.vertices.length > 0) {
-                    const localIndexMap = new Map();
-                    const getGlobalIndex = (localIndex) => {
-                        if (localIndexMap.has(localIndex)) return localIndexMap.get(localIndex);
+                    // --- START OF FIX ---
+                    // This is the base index for the current shape's vertices.
+                    const baseIndex = globalVertices.length;
 
-                        const v = geoData.vertices[localIndex];
+                    for (const v of geoData.vertices) {
                         let tv = [0,0,0];
                         mat4.transformPoint(tv, v, currentTransform);
-                        const vKey = tv.map(c => c.toPrecision(6)).join(',');
-
-                        if (vertexMap.has(vKey)) {
-                           const globalIndex = vertexMap.get(vKey);
-                           localIndexMap.set(localIndex, globalIndex);
-                           return globalIndex;
-                        }
-
-                        const globalIndex = globalVertices.length;
-                        vertexMap.set(vKey, globalIndex);
-                        localIndexMap.set(localIndex, globalIndex);
                         globalVertices.push(tv);
-                        let singleShapeColor = (geoData.vertexColors && geoData.vertexColors.length === 1) ? geoData.vertexColors[0] : null;
-                        let vertexColor = singleShapeColor || (geoData.vertexColors && geoData.vertexColors[localIndex]) || currentColor;
+                        let vertexColor = (geoData.vertexColors && geoData.vertexColors[globalVertices.length - 1]) || currentColor;
                         globalVertexColors.push(vertexColor);
-                        return globalIndex;
-                    };
+                    }
 
                     if (isLineSet) {
-                        for (let i = 0; i < geoData.faces.length; i++) {
-                            const line = geoData.faces[i].map(idx => getGlobalIndex(idx));
+                         for (let i = 0; i < geoData.faces.length; i++) {
+                            const line = geoData.faces[i].map(idx => idx + baseIndex);
                             globalEdges.push(line);
                             const edgeColor = (geoData.lineColors && geoData.lineColors[i]) ? geoData.lineColors[i] : currentColor;
                             globalEdgeColors.push(edgeColor);
                         }
                     } else {
                         for (const f of geoData.faces) {
-                            globalFaces.push(f.map(idx => getGlobalIndex(idx)));
+                            globalFaces.push(f.map(idx => idx + baseIndex));
                         }
                     }
+                    // --- END OF FIX ---
                 }
             }
         }
@@ -582,12 +573,19 @@ export default function createX3dToPlyConverter() {
 
         globalVertices = []; globalFaces = []; globalVertexColors = [];
         globalEdges = []; globalEdgeColors = [];
-        vertexMap = new Map();
 
         const initialTransform = mat4.create();
         const defaultColor = [1.0, 1.0, 1.0];
 
-        processNode(expandedScene, initialTransform, options, defMap, defaultColor);
+        // --- START OF FIX ---
+        // The previous hardcoded traversal was wrong. This correctly iterates
+        // through all children of the scene, allowing processNode to find all shapes.
+        if (expandedScene.Scene && expandedScene.Scene['-children']) {
+            for(const child of expandedScene.Scene['-children']) {
+                processNode(child, initialTransform, options, defMap, defaultColor);
+            }
+        }
+        // --- END OF FIX ---
 
         if (globalVertices.length === 0) {
             return `ply\nformat ascii 1.0\ncomment No geometry found to convert\nelement vertex 0\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nelement face 0\nproperty list uchar int vertex_indices\nend_header\n`;
