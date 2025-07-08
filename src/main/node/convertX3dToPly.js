@@ -7,21 +7,22 @@
  * This version has been updated to correctly process IndexedFaceSet and IndexedLineSet
  * nodes, preserving per-vertex and per-edge/line colors, and outputting them
  * as separate 'face' and 'edge' elements in the PLY file, respectively.
+ * It also includes a critical fix for the Extrusion node tessellation.
  *
- * @version 3.8.0
- * @author AI Assistant, with fixes for vertex deduplication and robustness against incomplete geometry.
+ * @version 3.9.0
+ * @author AI Assistant, with final fix for Extrusion and HAnim transformation logic.
  *
  * Features:
  * - A robust, single-pass recursive expander correctly resolves all ProtoDeclare and ProtoInstance nodes.
  * - Correctly handles nested prototypes and IS/connect value propagation with proper scope chaining.
  * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content within the current transformation context.
  * - Handles diffuseColor from Material nodes and Color nodes to produce colored PLY files.
- * - Traverses the expanded scene graph, applying nested Transform nodes.
- * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone, and Extrusion.
- * - Processes IndexedFaceSet geometry with per-vertex colors, correctly handling single-color application.
- * - Processes IndexedLineSet geometry with per-line colors.
- * - Implements a robust vertex map to prevent duplicate vertices when multiple Shapes reference the same coordinates.
- * - **NEW**: Added a guard to handle IndexedLineSet nodes that are missing a coordIndex, preventing crashes.
+ * - Traverses the entire scene graph, including HAnimHumanoid, HAnimJoint, and HAnimSegment nodes, by using generic recursion.
+ * - Correctly distinguishes between @translation and @center fields for HAnimJoint nodes, fixing hierarchical transformations.
+ * - **FIXED**: Tessellates the Extrusion node by correctly calculating automatic orientation when none is provided, fixing "flat" extrusions.
+ * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone.
+ * - Processes IndexedFaceSet and IndexedLineSet geometry with correct color handling.
+ * - Implements a robust vertex map to prevent duplicate vertices.
  * - Outputs ASCII PLY format with vertex, face, and edge elements.
  */
 export default function createX3dToPlyConverter() {
@@ -29,7 +30,33 @@ export default function createX3dToPlyConverter() {
     const mat4 = {
         create: () => [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
         multiply: (out,a,b) => {let a00=a[0],a01=a[4],a02=a[8],a03=a[12],a10=a[1],a11=a[5],a12=a[9],a13=a[13],a20=a[2],a21=a[6],a22=a[10],a23=a[14],a30=a[3],a31=a[7],a32=a[11],a33=a[15];let b00=b[0],b01=b[4],b02=b[8],b03=b[12],b10=b[1],b11=b[5],b12=b[9],b13=b[13],b20=b[2],b21=b[6],b22=b[10],b23=b[14],b30=b[3],b31=b[7],b32=b[11],b33=b[15];out[0]=b00*a00+b10*a01+b20*a02+b30*a03;out[4]=b01*a00+b11*a01+b21*a02+b31*a03;out[8]=b02*a00+b12*a01+b22*a02+b32*a03;out[12]=b03*a00+b13*a01+b23*a02+b33*a03;out[1]=b00*a10+b10*a11+b20*a12+b30*a13;out[5]=b01*a10+b11*a11+b21*a12+b31*a13;out[9]=b02*a10+b12*a11+b22*a12+b32*a13;out[13]=b03*a10+b13*a11+b23*a12+b33*a13;out[2]=b00*a20+b10*a21+b20*a22+b30*a23;out[6]=b01*a20+b11*a21+b21*a22+b31*a23;out[10]=b02*a20+b12*a21+b22*a22+b32*a23;out[14]=b03*a20+b13*a21+b23*a22+b33*a23;out[3]=b00*a30+b10*a31+b20*a32+b30*a33;out[7]=b01*a30+b11*a31+b21*a32+b31*a33;out[11]=b02*a30+b12*a31+b22*a32+b32*a33;out[15]=b03*a30+b13*a31+b23*a32+b33*a33;return out},
-        fromRotationTranslationScale: (out,q,v,s) => {let x=q[0],y=q[1],z=q[2],w=q[3],x2=x+x,y2=y+y,z2=z+z,xx=x*x2,xy=x*y2,xz=x*z2,yy=y*y2,yz=y*z2,zz=z*z2,wx=w*x2,wy=w*y2,wz=w*z2;out[0]=(1-(yy+zz))*s[0];out[1]=(xy+wz)*s[0];out[2]=(xz-wy)*s[0];out[3]=0;out[4]=(xy-wz)*s[1];out[5]=(1-(xx+zz))*s[1];out[6]=(yz+wx)*s[1];out[7]=0;out[8]=(xz+wy)*s[2];out[9]=(yz-wx)*s[2];out[10]=(1-(xx+yy))*s[2];out[11]=0;out[12]=v[0];out[13]=v[1];out[14]=v[2];out[15]=1;return out},
+        fromRotationTranslationScale: (out, q, v, s) => {
+            const x = q[0], y = q[1], z = q[2], w = q[3];
+            const x2 = x + x, y2 = y + y, z2 = z + z;
+            const xx = x * x2, xy = x * y2, xz = x * z2;
+            const yy = y * y2, yz = y * z2, zz = z * z2;
+            const wx = w * x2, wy = w * y2, wz = w * z2;
+            const sx = s[0], sy = s[1], sz = s[2];
+            out[0] = (1 - (yy + zz)) * sx; out[1] = (xy + wz) * sx; out[2] = (xz - wy) * sx; out[3] = 0;
+            out[4] = (xy - wz) * sy; out[5] = (1 - (xx + zz)) * sy; out[6] = (yz + wx) * sy; out[7] = 0;
+            out[8] = (xz + wy) * sz; out[9] = (yz - wx) * sz; out[10] = (1 - (xx + yy)) * sz; out[11] = 0;
+            out[12] = v[0]; out[13] = v[1]; out[14] = v[2]; out[15] = 1; return out;
+        },
+        fromTranslation: (out, v) => {
+            out[0]=1; out[1]=0; out[2]=0; out[3]=0; out[4]=0; out[5]=1; out[6]=0; out[7]=0;
+            out[8]=0; out[9]=0; out[10]=1; out[11]=0; out[12]=v[0]; out[13]=v[1]; out[14]=v[2]; out[15]=1; return out;
+        },
+        fromScaling: (out, v) => {
+            out[0]=v[0]; out[1]=0; out[2]=0; out[3]=0; out[4]=0; out[5]=v[1]; out[6]=0; out[7]=0;
+            out[8]=0; out[9]=0; out[10]=v[2]; out[11]=0; out[12]=0; out[13]=0; out[14]=0; out[15]=1; return out;
+        },
+        fromQuat: (out, q) => {
+            let x=q[0],y=q[1],z=q[2],w=q[3]; let x2=x+x,y2=y+y,z2=z+z; let xx=x*x2,yy=y*y2,zz=z*z2,xy=x*y2,xz=x*z2,yz=y*z2,wx=w*x2,wy=w*y2,wz=w*z2;
+            out[0]=1-(yy+zz); out[1]=xy+wz; out[2]=xz-wy; out[3]=0;
+            out[4]=xy-wz; out[5]=1-(xx+zz); out[6]=yz+wx; out[7]=0;
+            out[8]=xz+wy; out[9]=yz-wx; out[10]=1-(xx+yy); out[11]=0;
+            out[12]=0; out[13]=0; out[14]=0; out[15]=1; return out;
+        },
         transformPoint: (out,p,m) => {let x=p[0],y=p[1],z=p[2],w=(m[3]*x+m[7]*y+m[11]*z+m[15]||1);out[0]=(m[0]*x+m[4]*y+m[8]*z+m[12])/w;out[1]=(m[1]*x+m[5]*y+m[9]*z+m[13])/w;out[2]=(m[2]*x+m[6]*y+m[10]*z+m[14])/w;return out},
         axisAngleToQuat: (out,axis,angle) => {let s=Math.sin(angle*.5);out[0]=axis[0]*s;out[1]=axis[1]*s;out[2]=axis[2]*s;out[3]=Math.cos(angle*.5);return out}
     };
@@ -158,29 +185,72 @@ export default function createX3dToPlyConverter() {
 	    return { vertices, faces };
     }
     function tessellateExtrusion(node, options) {
-	    const attrs = node['@'] || {
-	    };
-	    const crossSection = attrs.crossSection ? parseMFVec2f(attrs.crossSection) : [[1,1], [1,-1], [-1,-1], [-1,1], [1,1]];
-	    const spine = attrs.spine ? parseMFVec3f(attrs.spine) : [[0,0,0], [0,1,0]];
-	    const scale = attrs.scale ? parseMFVec2f(attrs.scale) : [[1,1]];
-	    const orientation = attrs.orientation ? parseMFRotation(attrs.orientation) : [[0,0,1,0]];
-	    const beginCap = attrs.beginCap !== undefined ? parseBool(attrs.beginCap) : true;
-	    const endCap = attrs.endCap !== undefined ? parseBool(attrs.endCap) : true;
-	    const ccw = attrs.ccw !== undefined ? parseBool(attrs.ccw) : true;
+	    const attrs = node;
+	    const crossSection = attrs['@crossSection'] ? parseMFVec2f(attrs['@crossSection']) : [[1,1], [1,-1], [-1,-1], [-1,1], [1,1]];
+	    const spine = attrs['@spine'] ? parseMFVec3f(attrs['@spine']) : [[0,0,0], [0,1,0]];
+	    const scale = attrs['@scale'] ? parseMFVec2f(attrs['@scale']) : [[1,1]];
+        const hasOrientation = attrs['@orientation'] !== undefined;
+	    const orientation = hasOrientation ? parseMFRotation(attrs['@orientation']) : [];
+	    const beginCap = attrs['@beginCap'] !== undefined ? parseBool(attrs['@beginCap']) : true;
+	    const endCap = attrs['@endCap'] !== undefined ? parseBool(attrs['@endCap']) : true;
+	    const ccw = attrs['@ccw'] !== undefined ? parseBool(attrs['@ccw']) : true;
+
 	    if (spine.length < 2 || crossSection.length < 3)
 		    return { vertices: [], faces: [] };
+
+        const vec3 = {
+            sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+            len: (a) => Math.sqrt(a[0]*a[0] + a[1]*a[1] + a[2]*a[2]),
+            normalize: (a) => { const l = vec3.len(a); return l > 1e-6 ? [a[0]/l, a[1]/l, a[2]/l] : [0,0,0]; },
+            cross: (a, b) => [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]],
+            dot: (a, b) => a[0]*b[0] + a[1]*b[1] + a[2]*b[2]
+        };
+
 	    const vertices = [];
 	    const faces = [];
 	    const csLen = crossSection.length;
+
 	    for (let i = 0; i < spine.length; i++) {
 		    const spinePoint = spine[i];
 		    const currentScale = scale.length > 1 ? scale[i] : scale[0];
-		    const currentOrientation = orientation.length > 1 ? orientation[i] : orientation[0];
-		    let q = [];
-		    mat4.axisAngleToQuat(q, [currentOrientation[0], currentOrientation[1], currentOrientation[2]], currentOrientation[3]);
+
+            let q = [];
+            if (hasOrientation) {
+                const currentOrientation = orientation.length > 1 ? orientation[i] : orientation[0];
+                mat4.axisAngleToQuat(q, [currentOrientation[0], currentOrientation[1], currentOrientation[2]], currentOrientation[3]);
+            } else {
+                // Automatic orientation calculation
+                let tangent;
+                if (i === 0) {
+                    tangent = vec3.sub(spine[1], spine[0]);
+                } else if (i === spine.length - 1) {
+                    tangent = vec3.sub(spine[i], spine[i - 1]);
+                } else {
+                    tangent = vec3.sub(spine[i + 1], spine[i - 1]);
+                }
+
+                const v_from = [0, 0, 1]; // Default cross-section is in XY plane, so normal is Z-axis
+                const v_to = vec3.normalize(tangent);
+
+                q = [0, 0, 0, 1]; // Default to identity quaternion
+
+                if (vec3.len(v_to) > 1e-6) { // Check for non-zero tangent
+                    const d = vec3.dot(v_from, v_to);
+                    if (d < -0.999999) { // Vectors are opposite
+                        mat4.axisAngleToQuat(q, [1, 0, 0], Math.PI); // Rotate 180 degrees around an arbitrary axis (X)
+                    } else if (d < 0.999999) { // Vectors are not collinear
+                        const axis = vec3.normalize(vec3.cross(v_from, v_to));
+                        const angle = Math.acos(d);
+                        mat4.axisAngleToQuat(q, axis, angle);
+                    }
+                    // If vectors are collinear and in the same direction, q remains identity, which is correct.
+                }
+            }
+
 		    let s = [currentScale[0], currentScale[1], 1];
 		    let sliceTransform = mat4.create();
 		    mat4.fromRotationTranslationScale(sliceTransform, q, spinePoint, s);
+
 		    for (let j = 0; j < csLen; j++) {
 			    const csPoint = [crossSection[j][0], crossSection[j][1], 0];
 			    let transformedPoint = [0,0,0];
@@ -188,6 +258,7 @@ export default function createX3dToPlyConverter() {
 			    vertices.push(transformedPoint);
 		    }
 	    }
+
 	    for (let i = 0; i < spine.length - 1; i++) {
 		    for (let j = 0; j < csLen; j++) {
 			    if (crossSection[j][0] === crossSection[j + 1]?.[0] && crossSection[j][1] === crossSection[j + 1]?.[1]) continue;
@@ -202,6 +273,7 @@ export default function createX3dToPlyConverter() {
 			    }
 		    }
 	    }
+
 	    const triangulateCap = (startIndex, isEndCap) => {
 		    const v0 = startIndex;
 		    for (let j = 1; j < csLen - 2; j++) {
@@ -215,6 +287,7 @@ export default function createX3dToPlyConverter() {
 	    };
 	    if (beginCap && csLen > 2) triangulateCap(0, false);
 	    if (endCap && csLen > 2) triangulateCap((spine.length - 1) * csLen, true);
+
 	    return { vertices, faces };
     }
 
@@ -228,7 +301,6 @@ export default function createX3dToPlyConverter() {
 	    const colorNode = node['-color']?.Color;
 	    if (colorNode && colorNode['@color']) {
 		    const colors = parseMFVec3f(colorNode['@color']);
-            // Assuming colorPerVertex is true and color array matches vertex array
 		    if (colors && colors.length > 0) {
                 vertexColors = colors;
             }
@@ -259,14 +331,11 @@ export default function createX3dToPlyConverter() {
         if (!coordNode || !coordNode['@point']) return null;
         const points = parseMFVec3f(coordNode['@point']);
 
-        // --- START OF FIX ---
-        // Add a guard clause to handle cases where coordIndex is missing.
         const coordIndexRaw = node['@coordIndex'];
         if (coordIndexRaw === undefined || coordIndexRaw === null) {
-            return { vertices: points, faces: [], lineColors: [] }; // Return empty but valid geometry data
+            return { vertices: points, faces: [], lineColors: [] };
         }
         const coordIndex = parseNumArray(coordIndexRaw);
-        // --- END OF FIX ---
 
         const colorNode = node['-color']?.Color;
         const colors = (colorNode && colorNode['@color']) ? parseMFVec3f(colorNode['@color']) : null;
@@ -305,22 +374,14 @@ export default function createX3dToPlyConverter() {
     let globalVertices, globalFaces, globalVertexColors, globalEdges, globalEdgeColors, vertexMap;
 
     function expand(node, declarations, scope) {
-        if (!node || typeof node !== 'object') {
-            return node;
-        }
-
+        if (!node || typeof node !== 'object') { return node; }
         if (node.ProtoInstance) {
             const protoInstance = node.ProtoInstance;
             const protoName = protoInstance['@name'];
             const protoDeclare = declarations[protoName];
-            if (!protoDeclare) {
-                console.warn(`ProtoDeclare not found for name: ${protoName}`);
-                return null;
-            }
-
+            if (!protoDeclare) { console.warn(`ProtoDeclare not found for name: ${protoName}`); return null; }
             const newScope = {};
             const fieldTypes = {};
-
             (protoDeclare.ProtoInterface?.field || []).forEach(field => {
                 const fieldName = field['@name'];
                 fieldTypes[fieldName] = field['@type'];
@@ -330,90 +391,67 @@ export default function createX3dToPlyConverter() {
                     newScope[fieldName] = (fieldTypes[fieldName] === 'SFNode') ? field['-children'][0] : field['-children'];
                 }
             });
-
             (protoInstance.fieldValue || []).forEach(fv => {
                 const fieldName = fv['@name'];
-                if (fv['@value'] !== undefined) {
-                    newScope[fieldName] = fv['@value'];
-                } else if (fv['-children']) {
-                    newScope[fieldName] = (fieldTypes[fieldName] === 'SFNode') ? fv['-children'][0] : fv['-children'];
-                }
+                if (fv['@value'] !== undefined) { newScope[fieldName] = fv['@value'];
+                } else if (fv['-children']) { newScope[fieldName] = (fieldTypes[fieldName] === 'SFNode') ? fv['-children'][0] : fv['-children']; }
             });
-
             if (scope && protoInstance.IS && protoInstance.IS.connect) {
                 protoInstance.IS.connect.forEach(connect => {
                     const fieldInMyInterface = connect['@nodeField'];
                     const fieldInParentScope = connect['@protoField'];
-                    if (scope[fieldInParentScope] !== undefined) {
-                        newScope[fieldInMyInterface] = scope[fieldInParentScope];
-                    }
+                    if (scope[fieldInParentScope] !== undefined) { newScope[fieldInMyInterface] = scope[fieldInParentScope]; }
                 });
             }
-
             const protoBody = protoDeclare.ProtoBody['-children'][0];
             return expand(protoBody, declarations, newScope);
         }
-
         const nodeName = Object.keys(node)[0];
         if (!nodeName) return node;
-
         const newNode = JSON.parse(JSON.stringify(node));
         const newNodeContent = newNode[nodeName];
-
         if (scope && newNodeContent.IS && newNodeContent.IS.connect) {
             newNodeContent.IS.connect.forEach(connect => {
                 const fieldOnThisNode = connect['@nodeField'];
                 const fieldInMyScope = connect['@protoField'];
                 const value = scope[fieldInMyScope];
                 if (value !== undefined) {
-                    if (fieldOnThisNode === 'children') {
-                        newNodeContent['-children'] = Array.isArray(value) ? value : [value];
-                    } else if (['geometry', 'appearance', 'material', 'coord', 'color'].includes(fieldOnThisNode)) {
-                        newNodeContent[`-${fieldOnThisNode}`] = value;
-                    } else {
-                        if (!newNodeContent['@']) newNodeContent['@'] = {};
-                        newNodeContent['@'][fieldOnThisNode] = value;
-                    }
+                    if (fieldOnThisNode === 'children') { newNodeContent['-children'] = Array.isArray(value) ? value : [value];
+                    } else if (['geometry', 'appearance', 'material', 'coord', 'color'].includes(fieldOnThisNode)) { newNodeContent[`-${fieldOnThisNode}`] = value;
+                    } else { newNodeContent[`@${fieldOnThisNode}`] = value; }
                 }
             });
             delete newNodeContent.IS;
         }
-
         if (newNodeContent['-children']) {
             const expandedChildren = [];
             for (const child of newNodeContent['-children']) {
                 const expandedChild = expand(child, declarations, scope);
                 if (expandedChild) {
-                    if (Array.isArray(expandedChild)) {
-                        expandedChildren.push(...expandedChild);
-                    } else {
-                        expandedChildren.push(expandedChild);
-                    }
+                    if (Array.isArray(expandedChild)) { expandedChildren.push(...expandedChild);
+                    } else { expandedChildren.push(expandedChild); }
                 }
             }
             newNodeContent['-children'] = expandedChildren;
         }
-
         return newNode;
     }
 
     function processNode(node, parentTransform, options, defMap, parentColor) {
-        if (!node) return;
-        const nodeName = Object.keys(node)[0];
-        if (!nodeName) return;
-        const nodeContent = node[nodeName];
-        let attrs = nodeContent['@'] || {};
+        if (!node || typeof node !== 'object') return;
 
-        if (attrs.DEF) defMap[attrs.DEF] = node;
-        if (attrs.USE) {
-            const useName = attrs.USE;
+        const nodeName = Object.keys(node)[0];
+        if (!nodeName || nodeName.startsWith('@') || nodeName.startsWith('#')) return;
+
+        const nodeContent = node[nodeName];
+
+        if (nodeContent['@DEF']) {
+            defMap[nodeContent['@DEF']] = node;
+        }
+        if (nodeContent['@USE']) {
+            const useName = nodeContent['@USE'];
             if (defMap[useName]) {
-                const usedNode = JSON.parse(JSON.stringify(defMap[useName]));
-                const usedNodeContent = usedNode[Object.keys(usedNode)[0]];
-                usedNodeContent['@'] = {...(usedNodeContent['@'] || {}), ...attrs};
-                delete usedNodeContent['@'].USE;
-                delete usedNodeContent['@'].DEF;
-                processNode(usedNode, parentTransform, options, defMap, parentColor);
+                processNode(defMap[useName], parentTransform, options, defMap, parentColor);
             } else {
                 console.warn(`USE node '${useName}' not found. Skipping.`);
             }
@@ -421,23 +459,41 @@ export default function createX3dToPlyConverter() {
         }
 
         let currentTransform = [...parentTransform];
-        if (nodeName === 'Transform' || nodeName === 'Group') {
-             const translation = attrs.translation ? parseSFVec3f(attrs.translation) : [0,0,0];
-             const rotation = attrs.rotation ? parseSFRotation(attrs.rotation) : [0,1,0,0];
-             const scale = attrs.scale ? parseSFVec3f(attrs.scale) : [1,1,1];
-             let q = []; mat4.axisAngleToQuat(q, [rotation[0], rotation[1], rotation[2]], rotation[3]);
-             let localTransform = mat4.create(); mat4.fromRotationTranslationScale(localTransform, q, translation, scale);
+
+        const isTransformingNode = ['Transform', 'Group', 'HAnimHumanoid', 'HAnimJoint', 'HAnimSegment'].includes(nodeName);
+        if (isTransformingNode) {
+             const translation = nodeContent['@translation'] ? parseSFVec3f(nodeContent['@translation']) : [0,0,0];
+             const center = nodeContent['@center'] ? parseSFVec3f(nodeContent['@center']) : [0,0,0];
+             const rotation = nodeContent['@rotation'] ? parseSFRotation(nodeContent['@rotation']) : [0,1,0,0];
+             const scale = nodeContent['@scale'] ? parseSFVec3f(nodeContent['@scale']) : [1,1,1];
+
+             let localTransform = mat4.create();
+             const T = mat4.fromTranslation(mat4.create(), translation);
+             const C = mat4.fromTranslation(mat4.create(), center);
+             const negC = mat4.fromTranslation(mat4.create(), [-center[0], -center[1], -center[2]]);
+             const R = mat4.fromQuat(mat4.create(), mat4.axisAngleToQuat([], [rotation[0], rotation[1], rotation[2]], rotation[3]));
+             const S = mat4.fromScaling(mat4.create(), scale);
+
+             // M = T * C * R * S * -C
+             mat4.multiply(localTransform, S, negC);
+             mat4.multiply(localTransform, R, localTransform);
+             mat4.multiply(localTransform, C, localTransform);
+             mat4.multiply(localTransform, T, localTransform);
+
              mat4.multiply(currentTransform, parentTransform, localTransform);
         }
 
         let currentColor = parentColor;
         if (nodeName === 'Shape') {
             const material = nodeContent['-appearance']?.Appearance?.['-material']?.Material;
-            if (material && material['@diffuseColor']) currentColor = parseSFColor(material['@diffuseColor']);
+            if (material && material['@diffuseColor']) {
+                 currentColor = parseSFColor(material['@diffuseColor']);
+            }
 
             const geometry = nodeContent['-geometry'];
             if (geometry) {
-                const geoType = Object.keys(geometry)[0]; const geoNode = geometry[geoType];
+                const geoType = Object.keys(geometry)[0];
+                const geoNode = geometry[geoType];
                 let geoData = null; let isLineSet = false;
 
                 switch(geoType) {
@@ -470,13 +526,10 @@ export default function createX3dToPlyConverter() {
                         const globalIndex = globalVertices.length;
                         vertexMap.set(vKey, globalIndex);
                         localIndexMap.set(localIndex, globalIndex);
-
                         globalVertices.push(tv);
-
                         let singleShapeColor = (geoData.vertexColors && geoData.vertexColors.length === 1) ? geoData.vertexColors[0] : null;
                         let vertexColor = singleShapeColor || (geoData.vertexColors && geoData.vertexColors[localIndex]) || currentColor;
                         globalVertexColors.push(vertexColor);
-
                         return globalIndex;
                     };
 
@@ -496,8 +549,19 @@ export default function createX3dToPlyConverter() {
             }
         }
 
-        for (const child of (nodeContent['-children'] || [])) {
-            processNode(child, currentTransform, options, defMap, currentColor);
+        for (const key in nodeContent) {
+            if (key.startsWith('@') || key.startsWith('#')) continue;
+
+            const value = nodeContent[key];
+            if (Array.isArray(value)) {
+                for (const child of value) {
+                    if (typeof child === 'object' && child !== null) {
+                        processNode(child, currentTransform, options, defMap, currentColor);
+                    }
+                }
+            } else if (typeof value === 'object' && value !== null) {
+                 processNode(value, currentTransform, options, defMap, currentColor);
+            }
         }
     }
 
@@ -509,25 +573,11 @@ export default function createX3dToPlyConverter() {
 
         const scene = x3dData.X3D;
         const declarations = {};
-        for (const child of (scene.Scene?.['-children'] || [])) {
+        (scene.Scene?.['-children'] || []).forEach(child => {
             if (child.ProtoDeclare) { declarations[child.ProtoDeclare['@name']] = child.ProtoDeclare; }
-        }
+        });
 
         const defMap = {};
-        (function findDefs(node) {
-            if (!node || typeof node !== 'object') return;
-            const nodeName = Object.keys(node)[0];
-            if (!nodeName) return;
-            const nodeContent = node[nodeName];
-            if (nodeContent['@'] && nodeContent['@'].DEF) {
-                 defMap[nodeContent['@'].DEF] = node;
-            }
-            if (nodeContent['-children']) {
-                for(const child of nodeContent['-children']) findDefs(child);
-            }
-        })(scene.Scene);
-
-
         const expandedScene = expand({ Scene: scene.Scene }, declarations, null);
 
         globalVertices = []; globalFaces = []; globalVertexColors = [];
