@@ -58,7 +58,9 @@ var ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
+"			    			keyValue = new MFVec3f();\n"+
+"			    			keyValue[0] = old;\n"+
+"			    			keyValue[1] = translation;\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
               .addChild(new autoclass.TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
@@ -87,17 +89,23 @@ var ProtoInstance6 = null;
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f(...[value, value]);\n"+
+"		        spine = new MFVec3f();\n"+
+"			spine[0] = value;\n"+
+"			spine[1] = value;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
+"		        spine = new MFVec3f();\n"+
+"			spine[0] = value;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f(...[value, value]);\n"+
+"		        spine = new MFVec3f();\n"+
+"			spine[0] = value;\n"+
+"			spine[1] = value;\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f(...[spine[0], value]);\n"+
+"		        spine = new MFVec3f();\n"+
+"			spine[1] = value;\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
