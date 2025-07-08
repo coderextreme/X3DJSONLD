@@ -160,7 +160,9 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(...[old, translation]);
+			    			keyValue = new MFVec3f();
+			    			keyValue[0] = old;
+			    			keyValue[1] = translation;
 						// Browser.println(translation);
 					})}),
 
@@ -258,17 +260,23 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(...[value, value]);
+		        spine = new MFVec3f();
+			spine[0] = value;
+			spine[1] = value;
 		    } else {
-		        spine = new MFVec3f(...[value, spine[1]]);
+		        spine = new MFVec3f();
+			spine[0] = value;
 		    }
                 }
 
                 , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(...[value, value]);
+		        spine = new MFVec3f();
+			spine[0] = value;
+			spine[1] = value;
 		    } else {
-		        spine = new MFVec3f(...[spine[0], value]);
+		        spine = new MFVec3f();
+			spine[1] = value;
 		    }
                 }
 

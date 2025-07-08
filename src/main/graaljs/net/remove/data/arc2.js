@@ -35,7 +35,7 @@ function doubleToFloat(d) {
                function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f(old, translation);
+                    keyValue = new MFVec3f([old, translation]);
                }`))
             .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE_CL1").setCycleInterval(3).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
@@ -59,7 +59,7 @@ function doubleToFloat(d) {
                function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f(old, translation);
+                    keyValue = new MFVec3f([old, translation]);
                }`))
             .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))

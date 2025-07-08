@@ -100,7 +100,7 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([-2.5,0,0,-1.5,0,0])}))})),
+                                  spine : new MFVec3f([-2.5,0,0,-2,0,0,-1.5,0,0])}))})),
                           /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/}),
                       /*right*/
 
@@ -118,7 +118,7 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([1.5,0,0,2.5,0,0])}))})),
+                                  spine : new MFVec3f([1.5,0,0,2,0,0,2.5,0,0])}))})),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([2,0,0]),
@@ -158,7 +158,7 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([0,1.5,0,0,2.5,0])}))})),
+                                  spine : new MFVec3f([0,1.5,0,0,2,0,0,2.5,0])}))})),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-0.5,2,0]),
@@ -197,7 +197,7 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([0,-2.5,0,0,-1.5,0])}))})),
+                                  spine : new MFVec3f([0,-2.5,0,0,-2,0,0,-1.5,0])}))})),
                           /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/}),
                       /*center*/
 

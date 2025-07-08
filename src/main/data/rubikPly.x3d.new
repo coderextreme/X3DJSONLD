@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="rubikFurnace.x3d"></meta>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="generator" content="manual"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"></meta>
+<meta name="description" content="a green rubik cube"></meta>
+</head>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
+<Viewpoint description="Rubiks Cube on Fire" position="0 0 12"></Viewpoint>
+<ProtoDeclare name="anyShape"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<connect nodeField="children" protoField="myShape"></connect>
+</IS>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+</IS>
+<ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="-2 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoDeclare name="nine"><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
+</IS>
+<ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="three"><fieldValue name="ytranslation" value="0 2 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="three"><fieldValue name="ytranslation" value="0 -2 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoDeclare name="twentyseven"><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
+</IS>
+<ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 2"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+<ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 -2"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoInstance name="twentyseven"><fieldValue name="ttranslation" value="0 0 0"></fieldValue>
+<fieldValue name="myShape"><Group><Shape><IndexedFaceSet convex="false" coordIndex="0 1 2 -1 0 2 3 -1 7 6 5 4 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0" colorIndex="0 1 2 -1 0 2 3 -1 7 6 5 4 -1 0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 3 7 4 0"><Coordinate point="0 0 0 0 0 1 0 1 1 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0"></Coordinate>
+<Color containerField="color" color="1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1"></Color>
+</IndexedFaceSet>
+</Shape>
+<Shape><IndexedLineSet coordIndex="0 1 -1 1 2 -1 2 3 -1 3 0 -1 2 0 -1"><Coordinate point="0 0 0 0 0 1 0 1 1 0 1 0 1 0 0 1 0 1 1 1 1 1 1 0"></Coordinate>
+<Color containerField="color" color="1 1 1 1 1 1 1 1 1 1 1 1 0 0 0"></Color>
+</IndexedLineSet>
+</Shape>
+</Group>
+</fieldValue>
+</ProtoInstance>
+</Scene>
+</X3D>

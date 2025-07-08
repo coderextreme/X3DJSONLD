@@ -30,7 +30,7 @@ var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("12 extrusions to test prototype expander")}),
+              content : new SFString("12 extrusions")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -88,7 +88,7 @@ var X3D0 =  new X3D({
                                       diffuseColor : new SFColor([0.7,1,0])}))})),
                               geometry : new SFNode(
                                 new Extrusion({
-                                  spine : new MFVec3f([-2.5,0,0,-1.5,0,0]),
+                                  spine : new MFVec3f([-2.5,0,0,-2,0,0,-1.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*right*/
@@ -105,7 +105,7 @@ var X3D0 =  new X3D({
                                       diffuseColor : new SFColor([0,0.7,1])}))})),
                               geometry : new SFNode(
                                 new Extrusion({
-                                  spine : new MFVec3f([1.5,0,0,2.5,0,0]),
+                                  spine : new MFVec3f([1.5,0,0,2,0,0,2.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*up*/
