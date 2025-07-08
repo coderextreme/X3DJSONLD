@@ -40,7 +40,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }"))
             .addChild(new autoclass.TimeSensor().setDEF("DECLpoint_INSTANCE_CL1").setCycleInterval(3).setLoop(true))
             .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
@@ -64,7 +64,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }"))
             .addChild(new autoclass.TimeSensor().setDEF("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3).setLoop(true))
             .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
