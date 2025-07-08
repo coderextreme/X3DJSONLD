@@ -18,26 +18,32 @@ export default function convertPlyToJson(file) {
 	var o;
 	var dispatchTable = {
 		values: function (line, comments) {
-			if (typeof line === 'undefined') {
+			if (typeof line === 'undefined' || !line.length) {
 				return;
 			}
 			while (typeof elements[e].type === 'undefined' || o >= elements[e].number) {
 				e++;
 				o = 0;
+				if (e >= elements.length) return;
 			}
-			// read through properties
-			elements[e][o] = {};
-			var properties = elements[e].property;
-			for (var p in  properties) {
-				if (properties[p].type[0] === 'list') {
-					for (var pr = 1; pr < line.length; pr++) {
-						elements[e][o][pr-1] = line[pr];
+
+			const currentObject = {};
+			const properties = elements[e].property;
+			const hasList = properties.some(p => p.type[0] === 'list');
+
+			if (hasList) {
+				for (let i = 1; i < line.length; i++) {
+					currentObject[i - 1] = line[i];
+				}
+			} else {
+				for (let i = 0; i < properties.length; i++) {
+					if (i < line.length) {
+						currentObject[i] = line[i];
 					}
-				} else {
-					var pr = p;
-					elements[e][o][pr] = line[pr];
 				}
 			}
+
+			elements[e][o] = currentObject;
 			elements[e][o]["comments"] = comments;
 			o++;
 		},
@@ -86,10 +92,14 @@ export default function convertPlyToJson(file) {
 	}
 	var unprocessed = file.trim().split(/[\r\n]+/g);
 	for (var u = 0; u < unprocessed.length; u++) {
-		var processed = unprocessed[u].split(/[ \t]*{/);
-		var command = processed[0].trim();
+		var command = unprocessed[u].trim();
+		if (!command) continue;
+
+		var processed = command.split(/[ \t]*{/);
+		var main_command = processed[0].trim();
 		var comments = processed[1];
-		var line = command.split(/ +/);
+		var line = main_command.split(/\s+/);
+
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
 			dispatchTable[line[0]](line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		} else {
@@ -97,8 +107,6 @@ export default function convertPlyToJson(file) {
 		}
 	}
 
-	// --- START OF FIX ---
-	// Build a list of shapes, only adding geometry if it's valid.
 	const shapes = [];
 
 	const ifsGeometry = transformToIFS(elements);
@@ -110,7 +118,6 @@ export default function convertPlyToJson(file) {
 	if (ilsGeometry && Object.keys(ilsGeometry).length > 0) {
 		shapes.push({ "Shape": { "-geometry": ilsGeometry } });
 	}
-	// --- END OF FIX ---
 
 	var x3d = { "X3D": {
 	    "encoding":"UTF-8",
@@ -141,11 +148,11 @@ export default function convertPlyToJson(file) {
 function transformToILS(elements) {
 	var ILS = {};
 	var color = [];
-	var hasEdges = false; // Flag to check if we processed any edge data.
+	var hasEdges = false;
 
 	var dispatchTable = {
 		edge : function(element, ILS) {
-			hasEdges = true; // Set the flag
+			hasEdges = true;
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
 				ILS["IndexedLineSet" ] = {};
 			}
@@ -154,21 +161,14 @@ function transformToILS(elements) {
 				try {
 					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (var iv = 0; iv < 2; iv++) {
-							array.push(parseInt(element[index][iv]));
-						}
+						array.push(parseInt(element[index][0]));
+						array.push(parseInt(element[index][1]));
 						array.push(-1);
 						for (var c = 2; c < 5; c++) {
-							if (element.property[c].type[0] === 'uchar') {
-								color.push(colorComponentParseFloat(element[index][c])/255.0);
-							} else {
-								color.push(colorComponentParseInt(element[index][c]));
-							}
+                            color.push(colorComponentParseFloat(element[index][c])/255.0);
 						}
 					}
-				} catch (e) {
-					console.error(e);
-				}
+				} catch (e) { console.error(e); }
 			}
 
 			if (color.length > 0) {
@@ -188,9 +188,7 @@ function transformToILS(elements) {
 							point.push(parseFloat(element[index][p]));
 						}
 					}
-				} catch (e) {
-					console.error(e);
-				}
+				} catch (e) { console.error(e); }
 			}
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
 				ILS["IndexedLineSet" ] = {};
@@ -205,44 +203,60 @@ function transformToILS(elements) {
 			ILS = table(elements[e], ILS);
 		}
 	}
-	// --- START OF FIX ---
-	// If we never processed any edges, return an empty object.
 	if (!hasEdges) {
 		return {};
 	}
-	// --- END OF FIX ---
 	return ILS;
 }
 
 function transformToIFS(elements) {
 	var IFS = {};
-	var hasFaces = false; // Flag to check for face data
+	var hasFaces = false;
 
 	var dispatchTable = {
 		face : function(element, IFS) {
-			hasFaces = true; // Set flag
-			var array = [];
+			hasFaces = true;
+			var coordIndexArray = [];
+			var isDefinitelyConvex = true;
+
 			for (var o in element) {
 				try {
-					var index = parseInt(o);
-					if (!isNaN(index)) {
-						for (var vertex in element[index]) {
-							var iv = parseInt(vertex);
-							if (!isNaN(iv)) {
-								array.push(parseInt(element[index][iv]));
-							}
+					if (isNaN(parseInt(o))) continue;
+
+					const singleFaceIndices = [];
+					for (const key in element[o]) {
+						if (!isNaN(parseInt(key))) {
+							singleFaceIndices.push(parseInt(element[o][key]));
 						}
-						array.push(-1);
 					}
+
+					if (singleFaceIndices.length === 0) continue;
+					if (singleFaceIndices.length > 3) {
+						isDefinitelyConvex = false;
+					}
+
+					coordIndexArray.push(...singleFaceIndices, -1);
 				} catch (e) {
-					console.error(e);
+					console.error("Error processing face: ", o, element[o], e);
 				}
 			}
+
+			if (coordIndexArray.length === 0) return IFS;
+
 			if (typeof IFS["IndexedFaceSet"] === "undefined") {
-				IFS["IndexedFaceSet" ] = {};
+				IFS["IndexedFaceSet"] = {};
 			}
-			IFS["IndexedFaceSet" ]["@colorIndex"] = array;
-			IFS["IndexedFaceSet" ]["@coordIndex"] = array;
+
+			if (!isDefinitelyConvex) {
+				IFS["IndexedFaceSet"]["@convex"] = false;
+			}
+
+			if (coordIndexArray[coordIndexArray.length - 1] === -1) {
+				coordIndexArray.pop();
+			}
+
+			IFS["IndexedFaceSet"]["@coordIndex"] = coordIndexArray;
+			IFS["IndexedFaceSet"]["@colorIndex"] = coordIndexArray;
 			return IFS;
 		},
 		vertex : function(element, IFS) {
@@ -255,31 +269,22 @@ function transformToIFS(elements) {
 						for (var p = 0; p < 3; p++) {
 							point.push(parseFloat(element[index][p]));
 						}
-						for (var c = 3; c < 7; c++) { // Updated to handle alpha
-							if (element.property[c] && element.property[c].type[0] === 'uchar') {
-								color.push(colorComponentParseFloat(element[index][c])/255.0);
-							} else {
-								color.push(colorComponentParseInt(element[index][c]));
-							}
+						if (element[index][3] !== undefined) {
+							let r = colorComponentParseFloat(element[index][3])/255.0;
+							let g = colorComponentParseFloat(element[index][4])/255.0;
+							let b = colorComponentParseFloat(element[index][5])/255.0;
+							color.push(r, g, b);
 						}
 					}
-				} catch (e) {
-					console.error(e);
-				}
+				} catch (e) { console.error(e); }
 			}
 			if (typeof IFS["IndexedFaceSet"] === "undefined") {
 				IFS["IndexedFaceSet" ] = {};
 			}
 			IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
 
-			// Only create color node if there's actual color data
 			if (color.length > 0) {
-				// We only care about RGB for X3D color node
-				const rgbColor = color.filter((_, i) => (i + 1) % 4 !== 0);
-				while (rgbColor.length < point.length) {
-					rgbColor.push(1);
-				}
-				IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : rgbColor }};
+				IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
 			}
 			return IFS;
 		}
@@ -291,7 +296,6 @@ function transformToIFS(elements) {
 		}
 	}
 
-	// If no faces were found, return empty object
 	if (!hasFaces) {
 		return {};
 	}
