@@ -119,7 +119,7 @@ ecmascript:eval (0
                , function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f(old, translation);
+                    keyValue = new MFVec3f([old, translation]);
                })}),
 
                     new TimeSensor({
@@ -208,7 +208,7 @@ ecmascript:eval (0
                , function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f(old, translation);
+                    keyValue = new MFVec3f([old, translation]);
                })}),
 
                     new TimeSensor({

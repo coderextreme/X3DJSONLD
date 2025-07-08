@@ -9,7 +9,7 @@ function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("LOA1_RunAnimation.x3d"))
         .addMeta(new meta().setName("description").setContent("Humanoid animation prototype reusable by any Humanoid."))
