@@ -9,6 +9,12 @@ import convertJSON from "./convertJSON.js";
 
 convertJSON([
 	{ 
+	serializer : "JRubySerializer",
+	folder : "../jruby/net/coderextreme/",
+	extension : ".rb",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : "GuraSerializer",
 	folder : "../gura/net/coderextreme/",
 	extension : ".ura",

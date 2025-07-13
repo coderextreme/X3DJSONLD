@@ -21,6 +21,7 @@ import CSerializer from './CSerializer.js';
 import DartSerializer from './DartSerializer.js';
 import DOMSerializer from './DOMSerializer.js';
 import ECMAScriptSerializer from './ECMAScriptSerializer.js';
+import JRubySerializer from './JRubySerializer.js';
 import GuraSerializer from './GuraSerializer.js';
 import JavaScriptSerializer from './JavaScriptSerializer.js';
 import JavaScriptSerializerNew from './JavaScriptSerializerNew.js';
