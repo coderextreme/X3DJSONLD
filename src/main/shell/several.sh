@@ -18,24 +18,28 @@ DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//'
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
 DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
 DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
+DATATOJRUBY='s/\/data\//\/jruby\/net\/coderextreme\/data\//' 
 
 PERSONALTOCLOJURE='s/\/personal\//\/clojure\/net\/coderextreme\/personal\//' 
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
 PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
 PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
+PERSONALTOJRUBY='s/\/personal\//\/jruby\/net\/coderextreme\/personal\//' 
 
 EXTOCLOJURE='s/\/Library\//\/clojure\/net\/coderextreme\/Library\//' 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
 EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
 EXTOPYTHON='s/\/Library\//\/python\/net\/coderextreme\/Library\//' 
+EXTOJRUBY='s/\/Library\//\/jruby\/net\/coderextreme\/Library\//' 
 
 ROOTTOCLOJURE='s/\/x3d_code\/www.web3d.org\//\/clojure\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOJRUBY='s/\/x3d_code\/www.web3d.org\//\/jruby\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 
 # OVERWRITE=
 OVERWRITE=---overwrite
@@ -84,6 +88,16 @@ do
 	lein run
 	popd
 done
+export CLASSPATH=${OLDCLASSPATH}
+
+echo Running JRuby
+pushd ../jruby
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
+do
+	echo "$JRUBY -J-Xss1g -J-Xmx4g $i"
+	$JRUBY -J-Xss1g -J-Xmx4g $i
+done
+popd
 export CLASSPATH=${OLDCLASSPATH}
 
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/\(.*\)/"\1"/'
@@ -189,7 +203,7 @@ do
 	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
 	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 	echo "${PYTHON}" "$PY"
-	( "${PYTHON}" --jvm --vm.cp="${CLASSPATH}" "$PY") &
+	( "${PYTHON}" --jvm --vm.cp="${CLASSPATH}" "$PY")
 	JOB_PID=$!
 	wait $JOB_PID
 done
