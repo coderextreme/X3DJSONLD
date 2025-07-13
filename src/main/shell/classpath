@@ -12,8 +12,9 @@ export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.4.jar;${GRAALX3DJSONLD}/
 export PYTHONPATH="${PYTHONPATH-"."}:net/coderextreme/data:net/coderextreme/personal"
 export PATH="${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;${PATH}"
 
-export PYTHON=graalpy
+export PYTHON=${HOMESFOLDER}/$USERNAME/Downloads/graalpy-community-jvm-24.2.1-windows-amd64/graalpy-community-24.2.1-windows-amd64/bin/graalpy
 alias python='${PYTHON} --jvm'
+# export PYTHON=python
 source ${X3DJSONLD}/src/main/python/venv/Scripts/activate
 export PIP=pip3
 export NODE=node.exe
@@ -21,6 +22,8 @@ export NODEDIR=${HOMESFOLDER}/$USERNAME/X3DJSONLD/src/main/node
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn clean install
 # sh replaceclass.sh
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn install
+#
+export JRUBY=/c/jruby-10.0.0.1/bin/jruby
 
 function jjs() {
 	# C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
