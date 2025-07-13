@@ -169,7 +169,7 @@ var X3D0 =  new X3D({
                                                 new connect({
                                                   nodeField : new SFString("transparency"),
                                                   protoField : new SFString("transparency")})])}))}))})),
-                                  /*<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>*/
+                                  /*<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>*/
                                   geometry : new SFNode(
                                     new IndexedFaceSet({
                                       ccw : new SFBool(false),

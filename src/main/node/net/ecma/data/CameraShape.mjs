@@ -33,7 +33,7 @@ var Group = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interactive"),
-      version : new SFString("3.1"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
