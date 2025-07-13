@@ -636,9 +636,6 @@ JavaSerializer.prototype = {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"')
-						/*
-						replace(/\\n/g, "\\\\n")
-						*/
 					;
 					}).join('\\n\"+\n\"')+'")';
 			}
