@@ -6,6 +6,7 @@ import CppFunctionBodySerializer from '../node/CppFunctionBodySerializer.js';
 import ClojureSerializer from '../node/ClojureSerializer.js';
 import JavaSerializer from '../node/JavaSerializer.js';
 import PythonSerializerX3DJSAIL from '../node/PythonSerializerX3DJSAIL.js';
+import JRubySerializer from '../node/JRubySerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
@@ -87,6 +88,11 @@ function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
         let clojureSerializer = new ClojureSerializer();
         $('#clojure').val(clojureSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
     } catch (e) { $('#clojure').val("Error generating Clojure: " + e.message); }
+
+    try {
+        let jRubySerializer = new JRubySerializer();
+        $('#jruby').val(jRubySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#jruby').val("Error generating JRuby: " + e.message); }
 
 }
 
@@ -266,6 +272,7 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     $('#java').val('');
     $('#cpp').val('');
     $('#clojure').val('');
+    $('#jruby').val('');
     $('#ply').val('');
 
     // --- FIX START ---
