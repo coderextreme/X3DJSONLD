@@ -4,7 +4,6 @@ import { convertPlyToJson } from "./convertPlyToJson.mjs";
 import { convertStlToJson } from "./convertStlToJson.mjs";
 import { writeUint18ArrayBufferToEXIEditor, encodeJSON, decodeEXI4JSON } from "./exi.mjs";
 import fieldTypes from "./fieldTypes.mjs";
-import { JavaScriptSerializer } from "./JavaScriptSerializer.mjs";
 import mapToMethod from "./mapToMethod.mjs";
 import mapToMethod2 from "./mapToMethod2.mjs";
 import { Matrix } from "./matrix.mjs";

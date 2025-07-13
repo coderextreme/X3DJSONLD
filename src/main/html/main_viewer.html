@@ -117,6 +117,51 @@
         a:visited { color: green; }
         a:hover { color: hotpink; }
         a:active { color: blue; }
+
+        /* Tabbed Code View Styles */
+        .code-tabs-container {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .tab-bar {
+            overflow: hidden;
+            background-color: #e0e0e0;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab-bar .tab-button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            transition: 0.3s;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            border-right: 1px solid #ccc;
+        }
+        .tab-bar .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-bar .tab-button.active {
+            background-color: #fff;
+            border-bottom: 1px solid #fff; /* to blend with content area */
+            font-weight: bold;
+        }
+        .tab-content-area .tab-pane {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+        .tab-content-area .tab-pane.active {
+            display: block;
+        }
+        .tab-content-area textarea {
+            width: 100%;
+            box-sizing: border-box; /* To include padding and border in the element's total width and height */
+            height: 150px; /* Use fixed height for consistency */
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
@@ -176,27 +221,39 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            JavaScript:<br>
-                            <a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a>
-                            <br><textarea id="javascript" rows="10" cols="70"></textarea>
-                        </td>
-                        <td>
-                            Python:<br>
-                            <a href="../python/net/coderextreme/data/x3dpsail.py">x3dpsail.py</a>
-                            <br><textarea id="python" rows="10" cols="70"></textarea>
-                        </td>
-                        <td>
-                            Java:<br>
-                            <br><textarea id="java" rows="10" cols="70"></textarea>
-                        </td>
-                        <td>
-                            C++:<br>
-                            <br><textarea id="cpp" rows="10" cols="70"></textarea>
-                        </td>
-                        <td>
-                            Clojure:<br>
-                            <br><textarea id="clojure" rows="10" cols="70"></textarea>
+                        <td colspan="3">
+                            <div class="code-tabs-container">
+                                <div class="tab-bar">
+                                    <button class="tab-button active" data-tab="javascript">JavaScript</button>
+                                    <button class="tab-button" data-tab="python">Python</button>
+                                    <button class="tab-button" data-tab="java">Java</button>
+                                    <button class="tab-button" data-tab="cpp">C++</button>
+                                    <button class="tab-button" data-tab="clojure">Clojure</button>
+                                    <button class="tab-button" data-tab="jruby">JRuby</button>
+                                </div>
+                                <div class="tab-content-area">
+                                    <div id="tab-content-javascript" class="tab-pane active">
+                                        <a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a><br>
+                                        <textarea id="javascript"></textarea>
+                                    </div>
+                                    <div id="tab-content-python" class="tab-pane">
+                                        <a href="../python/net/coderextreme/data/x3dpsail.py">x3dpsail.py</a><br>
+                                        <textarea id="python"></textarea>
+                                    </div>
+                                    <div id="tab-content-java" class="tab-pane">
+                                        <textarea id="java"></textarea>
+                                    </div>
+                                    <div id="tab-content-cpp" class="tab-pane">
+                                        <textarea id="cpp"></textarea>
+                                    </div>
+                                    <div id="tab-content-clojure" class="tab-pane">
+                                        <textarea id="clojure"></textarea>
+                                    </div>
+                                    <div id="tab-content-jruby" class="tab-pane">
+                                        <textarea id="jruby"></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -508,6 +565,20 @@
             setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
 
             document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
+
+            // Code Tabs Logic
+            $('.tab-bar .tab-button').on('click', function() {
+                var tabId = $(this).data('tab');
+
+                // Hide all tab panes and remove active class from buttons
+                $('.tab-pane').removeClass('active');
+                $('.tab-button').removeClass('active');
+
+                // Show the selected tab pane and add active class to the button
+                $('#tab-content-' + tabId).addClass('active');
+                $(this).addClass('active');
+            });
+
 
             window.reloadX3DOM();
         });

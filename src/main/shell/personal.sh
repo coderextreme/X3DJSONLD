@@ -80,8 +80,8 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e
 do
 	# echo JAVAC "$i"
 	pushd `mydirname "$i"`
-	echo javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i"`
-	javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i"`
+	echo javac -proc:full -J-Xss1g -J-Xmx19g `mybasename "$i"`
+	javac -proc:full -J-Xss1g -J-Xmx19g `mybasename "$i"`
 	popd
 done
 
@@ -89,8 +89,8 @@ echo run java programs
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	echo java -Xss1g -Xmx4g "$i"
-	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+	echo java -Xss1g -Xmx19g "$i"
+	java -Xss1g -Xmx19g "$i" # sh runToError.sh || echo "Failed"
 	popd
 done
 
