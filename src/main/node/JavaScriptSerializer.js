@@ -277,7 +277,6 @@ JavaScriptSerializer.prototype = {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
-						// console.log("################## FOUND", attr, attrs[a].nodeValue);
 						attr = "containerFieldOverride";
 
 					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
@@ -487,15 +486,11 @@ JavaScriptSerializer.prototype = {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(`"+node.nodeValue.split("[\r\n]?[\r\n]").map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split(/[\r\n][\r\n]?/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
-						/*
-						replace(/\\n/g, "\\\\n")
-						*/
-					;
-					}).join('\\n\"+\n\"')+'`)';
+					}).join('\\n\"+\n\"')+'")';
 			}
 		}
 		return str;
