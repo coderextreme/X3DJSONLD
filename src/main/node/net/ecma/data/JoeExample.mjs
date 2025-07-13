@@ -27,7 +27,7 @@ var TouchSensor = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
-      version : new SFString("3.0"),
+      version : new SFString("4.0"),
       profile : new SFString("Immersive"),
       head : new SFNode(
         new head({
