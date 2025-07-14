@@ -172,13 +172,13 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-		    				/*
                                                 var tmpkeyValue = new MFVec3f();
 			    			tmpkeyValue[0] = old;
 			    			tmpkeyValue[1] = translation;
                                                 keyValue = tmpkeyValue;
+		    				/*
+                                                keyValue = new MFVec3f(...[old, translation]);
 		    				*/
-                                                keyValue = new MFVec3f([old, translation]);
 			    		
 						// Browser.println(translation);
 					})}),
@@ -277,21 +277,21 @@ ecmascript:eval (0
 
                 , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
-		    	/*
 		        var tmpspine = new MFVec3f();
 			tmpspine[0] = value;
 			tmpspine[1] = value;
 			spine = tmpspine;
-		    	*/
-		        spine = new MFVec3f([value, value]);
-		    } else {
 		    	/*
+		        spine = new MFVec3f(...[value, value]);
+		    	*/
+		    } else {
 		        var tmpspine = new MFVec3f();
 			tmpspine[0] = value;
 			tmpspine[1] = spine[1];
 			spine = tmpspine;
+		    	/*
+		        spine = new MFVec3f(...[value, spine[1]]);
 		        */
-		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
 
@@ -303,7 +303,7 @@ ecmascript:eval (0
 			tmpspine[1] = value;
 			spine = tmpspine;
 		        */
-		        spine = new MFVec3f([value, value]);
+		        spine = new MFVec3f(...[value, value]);
 		    } else {
 		    	/*
 		        var tmpspine = new MFVec3f();
@@ -311,7 +311,7 @@ ecmascript:eval (0
 			tmpspine[1] = value;
 			spine = tmpspine;
 		    	*/
-		        spine = new MFVec3f([spine[0], value]);
+		        spine = new MFVec3f(...[spine[0], value]);
 		    }
                 }
 
