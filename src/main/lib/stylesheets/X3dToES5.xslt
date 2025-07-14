@@ -606,7 +606,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							</xsl:call-template>
 						</xsl:when>
 						<!-- relative link -->
-						<xsl:when test="((@name='license') or (@name='title')   or (@name='accessRights') or (@name='specificationUrl') or
+						<xsl:when test="((@name='license') or (@name='title')   or (lower-case(@name) = 'accessrights') or (@name='specificationUrl') or
 										 (@name='Image')   or (@name='drawing') or (@name='MovingImage')  or (@name='Sound') or
 										   contains(@name, 'url') or contains(@name, 'Url') )
 										 or ((@name='reference') and 

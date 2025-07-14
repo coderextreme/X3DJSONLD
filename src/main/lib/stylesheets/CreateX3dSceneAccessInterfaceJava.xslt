@@ -37570,7 +37570,7 @@ import org.web3d.x3d.sai.X3DException;
                                 if (!(elementObject instanceof X3DGroupingNode))
                                 {
                                     errorNotice = "[error] X3DLoaderDOM: Parent-child node relationship not found! (parent " + nodeName + ", child " + childElementName +
-                                                   ", containerField='" + containerField + "') Please report this problem to brutzman@nps.edu";
+                                                   ", containerField='" + containerField + "') Please report this problem to don.brutzman@gmail.com";
                                     validationResult.append(errorNotice);
                                     System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                                 }

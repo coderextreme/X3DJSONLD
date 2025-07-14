@@ -106,17 +106,15 @@ Recommended tools:
     <xsl:variable name="apos">'</xsl:variable>
     <xsl:variable name="quot">"</xsl:variable>
 
-    <!-- this variable is repeatedly defined in different contexts -->
     <xsl:variable name="showEventGraphRouteTable"
-                select="((count(//*[@DEF])  gt 0) and 
-                         (count(//ROUTE)    gt 0)) or
-                        ((count(//Inline)        gt 0) and (count(//IMPORT) gt 0)) or
-                        ((count(//EXPORT)        gt 0) or
-                         (count(//ProtoInstance) gt 0) or
-                         (count(//Script)        gt 0) or
-                         (count(//TouchSensor)   gt 0) or
-                         (count(//Viewpoint)     gt 0) or
-                         (count(//Anchor[string-length(@description) > 0]) gt 0))"/>
+        select="((count(//*[string-length(@DEF) gt 0]) gt 0) and 
+                 (count(//ROUTE)    gt 0)) or
+                ((count(//Inline)        gt 0) and (count(//IMPORT) gt 0)) or
+                 (count(//EXPORT)        gt 0) or
+                 (count(//ProtoInstance) gt 0) or
+                 (count(//Script)        gt 0) or
+                 (count(//TouchSensor)   gt 0) or
+                 (count(//Anchor[string-length(@description) gt 0]) gt 0)"/>
 
     <xsl:variable name="MAX_ROUTE_DEPTH_CONSTANT" select="8"/>
     <xsl:variable name="maxROUTEdepth">
@@ -661,9 +659,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="(preceding-sibling::*[@toNode = $toNode][@toField = $toField]) and not(following-sibling::*[@toNode = $toNode][@toField = $toField])">
                             <!-- only report multiple fan-in when it is going to same field -->
                             <xsl:message>
-                                <xsl:text>*** Multiple event fan-in to same node/@field (via different ROUTEs) may occur during same timestamp,</xsl:text>
+                                <xsl:text>*** Multiple event fan-in to same node/@field (via different ROUTEs) may occur during same timestamp. When that happens,</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
-                                <xsl:text>    and if that happens, then events are considered to arrive simultaneously/nondeterministically.</xsl:text>
+                                <xsl:text>    then those events are considered to arrive simultaneously (but in unsorted, nondeterministic order).</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    Avoid event-arrival logic thAt is order-dependent for those kinds of multiple-path event chains.</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
                                 <xsl:text>    Therefore be careful of event-routing loops from event triggers and logical sequencing</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
@@ -5963,16 +5963,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             select="( count(//ProtoInstance) > 0) and
                                     ((count(//ProtoDeclare      /ProtoInterface/field[ends-with(@type,'FNode')]) > 0) or
                                      (count(//ExternProtoDeclare               /field[ends-with(@type,'FNode')]) > 0))"/>
-                <xsl:variable name="showEventGraphRouteTable"
-                select="((count(//*[@DEF])  gt 0) and 
-                         (count(//ROUTE)    gt 0)) or
-                        ((count(//Inline)        gt 0) and (count(//IMPORT) gt 0)) or
-                        ((count(//EXPORT)        gt 0) or
-                         (count(//Script)        gt 0) or
-                         (count(//ProtoInstance) gt 0) or
-                         (count(//TouchSensor)   gt 0) or
-                         (count(//Viewpoint)     gt 0) or
-                         (count(//Anchor[string-length(@description) > 0]) gt 0))"/>
 
                 <!-- debug
                 <xsl:message>
@@ -9729,7 +9719,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:when test="$eventLoopDetected and (number($nodeDepth) le 2)">
                             <!-- tail recursion already completed (*LOOP* *DONE* *MAX_DEPTH*) so display message -->
                             <xsl:message>
-                                <xsl:text>*** [check-event-chain-loop] *detected event loop* repeating ROUTE '</xsl:text>
+                                <xsl:text>*** [check-event-chain-loop] warning *detected event loop* repeating ROUTE '</xsl:text>
                                 <xsl:value-of select="$currentROUTE"/>
                                 <xsl:text>' at $nodeDepth=</xsl:text>
                                 <xsl:value-of select="$nodeDepth"/>
