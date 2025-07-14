@@ -10,7 +10,7 @@
     </head>
     <Scene>
         <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
-                <Transform DEF="transform" translation="0 0 0">
+                <Transform DEF="transform">
                     <Shape>
                         <Appearance>
                             <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />

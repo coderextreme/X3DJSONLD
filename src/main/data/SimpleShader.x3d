@@ -54,7 +54,7 @@
       </ProtoBody>
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
-      <MetadataSet DEF='Titania' name='Titania' reference='http://titania.create3000.de'>
+      <MetadataSet containerField='metadata' DEF='Titania' name='Titania' reference='http://titania.create3000.de'>
         <MetadataSet DEF='Selection' containerField='value' name='Selection' reference='http://titania.create3000.de'>
           <MetadataSet DEF='nodes' containerField='value' name='nodes' reference='http://titania.create3000.de'>
             <!-- NULL -->

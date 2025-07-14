@@ -15,6 +15,7 @@ def doubleToDouble(d):
     for i, value in enumerate(d):
         arr[i] = JavaDouble(value)  # Use Java Double wrapper
     return arr
+
 CommentsBlock = java.type('org.web3d.x3d.jsail.Core.CommentsBlock')
 ConfigurationProperties = java.type('org.web3d.x3d.jsail.ConfigurationProperties')
 AcousticProperties = java.type('org.web3d.x3d.jsail.Shape.AcousticProperties')

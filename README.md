@@ -156,4 +156,4 @@ Look in */net/coderextreme/data/. for your output.
 
 Edit ./node/json2all.js to add or configure serializers converting from DOM.
 
-Recent Serializers include ./node/PythonSerializerX3DJSAIL.js and ./node/GuraSerializer.js
+Recent Serializers include ./node/JRubySerializer.js and ./node/GuraSerializer.js

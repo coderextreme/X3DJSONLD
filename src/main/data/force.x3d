@@ -2,9 +2,10 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <head>
-    	<component level='1' name='Scripting'/>
+	<component level='1' name='Scripting'/>
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
+        <meta name='modified' content='July 14 2025'/>
         <meta name='title' content='force.x3d'/>
 	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'/>
         <meta name='description' content='beginnings of a force directed graph in 3D'/>
@@ -13,7 +14,7 @@
     <Scene>
         <ProtoDeclare name='node'>
             <ProtoInterface>
-                <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+              <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
             </ProtoInterface>
             <ProtoBody>
 	      <Group>
@@ -47,12 +48,11 @@
                     <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
 ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(old, translation);
-						// Browser.println(translation);
-					}
+			function set_cycle(value) {
+				old = translation;
+				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+				keyValue = new MFVec3f(old, translation);
+			}
 ]]>
                 </Script>
                 <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'></TimeSensor>
@@ -71,13 +71,13 @@ ecmascript:
             <ProtoBody>
 	      <Group>
                 <Shape>
-                    <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00' spine='0 -50 0 0 50 0'/>
+                    <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00' spine='0 -50 0 0 0 0 0 50 0'/>
                     <Appearance>
                         <Material diffuseColor='0 1 0'/>
                     </Appearance>
                 </Shape>
                 <Script DEF='MoveCylinder'>
-                    <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 50 0'/>
+                    <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
                     <field name='endA' accessType='inputOutput' type='SFVec3f' value="0 0 0"/>
                     <field name='endB' accessType='inputOutput' type='SFVec3f' value="50 50 50"/>
                     <IS>
@@ -86,23 +86,13 @@ ecmascript:
                     </IS>
 <![CDATA[
 ecmascript:
+			function set_endA(value) {
+				spine = new MFVec3f(value, spine[1]);
+			}
 
-                function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(value, spine[1]);
-		    }
-                }
-                
-                function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(spine[0], value);
-		    }
-                }
-                
+			function set_endB(value) {
+				spine = new MFVec3f(spine[0], value);
+			}
 ]]>
                 </Script>
                 

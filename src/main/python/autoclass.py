@@ -82,7 +82,7 @@ for k,v in classes.items():
     if cls != None:
         code +=  cls
 
-f = open("x3dpsail.py", "w")
+f = open("../graalpy/net/coderextreme/data/x3dpsail.py", "w")
 f.write("import java\n")
 f.write('FloatArray = java.type("float[]")\n')
 f.write('DoubleArray = java.type("double[]")\n')

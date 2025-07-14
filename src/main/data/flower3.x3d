@@ -19,7 +19,7 @@
           <Appearance>
             <Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"/>
           </Appearance>
-          <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
+          <IndexedFaceSet convex="false" DEF="Orbit">
             <Coordinate DEF="OrbitCoordinates"/>
           </IndexedFaceSet>
         </Shape>

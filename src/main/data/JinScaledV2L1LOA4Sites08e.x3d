@@ -45,7 +45,7 @@ and added Sites' name='description'/>
     </Group>
 
     <Group DEF='Markers'>
-      <Transform DEF='SiteMarker' translation='0 0 0'>
+      <Transform DEF='SiteMarker'>
         <Shape DEF='HAnimSiteShape'>
           <Sphere radius='0.01'/>
             <Appearance>
