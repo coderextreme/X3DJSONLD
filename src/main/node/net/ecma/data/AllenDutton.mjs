@@ -89,10 +89,6 @@ var X3D0 =  new X3D({
               content : new SFString("4 July 2020")}),
 
             new meta({
-              name : new SFString("warning"),
-              content : new SFString("X3D Validator reports numerous warnings are present")}),
-
-            new meta({
               name : new SFString("reference"),
               content : new SFString("http://www.cyberware.com")}),
 

@@ -448,7 +448,7 @@ var X3D0 =  new X3D({
                                         new ShaderPart({
                                           type : "FRAGMENT",
                                           url : new MFString(["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"])})),
-                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>*/}))}))}))})])}),
+                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>*/}))}))}))})])}),
 
                     new Script({
                       DEF : new SFString("OrbitScript"),

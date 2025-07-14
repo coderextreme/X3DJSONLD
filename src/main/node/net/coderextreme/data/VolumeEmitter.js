@@ -1,5 +1,5 @@
-var java = require('java');
-var util = require('util');
+import java from 'java';
+import util from 'util';
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
