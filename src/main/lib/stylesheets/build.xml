@@ -125,7 +125,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="stylesheets.dir" location="."/>
 
     <!-- ant jar manifest properties -->
-    <property name="user.name.build" value="Don Brutzman, brutzman@nps.edu"/>
+    <property name="user.name.build" value="Don Brutzman, don.brutzman@gmail.com"/>
 
     <target name="get.saxon" description="get saxon.jar if not checked out" depends="get.saxon.check" unless="${saxon.found}"> 
         <echo message="get tested saxon.jar from project version control if not already checked out locally"/>
@@ -339,10 +339,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name=   "jsail.full.archive.jar.name" value="X3DJSAIL.4.0.full.jar"/>
 	
     <property name="javadoc.additionalparam" value=""/>
-    <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
+    <property name="javadoc.author"          value="Don Brutzman don.brutzman@gmail.com"/>
     <property name="javadoc.dir"             value="${X3DJSAIL.relative.dir}/javadoc"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;2005-2024 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org;brutzman@nps.edu?subject=X3DJSAIL%20Javadoc%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;2005-2024 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org;don.brutzman@gmail.com?subject=X3DJSAIL%20Javadoc%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -466,6 +466,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- https://stackoverflow.com/questions/51916221/javax-xml-bind-jaxbexception-implementation-of-jaxb-api-has-not-been-found-on-mo -->
         <!-- https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis/48279048#48279048 -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:TempSaiJava.txt" description="output-doc"/>
@@ -1012,6 +1018,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildSpecificationLanguageBindingJava.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1051,6 +1063,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildSpecificationLanguageBindingC.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1093,6 +1111,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildSpecificationLanguageBindingCPP.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1143,6 +1167,12 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="BuildSpecificationLanguageBindingCSharp.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1251,7 +1281,14 @@ POSSIBILITY OF SUCH DAMAGE.
         <antcall target="BuildX3dUnifiedObjectModel.saxon.v3.3"/><!-- version 3.3 -->
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.2"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
@@ -1262,7 +1299,14 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="${X3dUnifiedObjectModel3.2}" todir="java/lib/specifications/" verbose="true" failonerror="false"/>
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.1"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
@@ -1280,7 +1324,14 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v3.0" depends="" description="Build  X3D v3.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.0"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
@@ -1293,7 +1344,14 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v3.3" depends="" description="Build  X3D v3.3 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.3"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
@@ -1308,6 +1366,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- ========================================= -->
         <echo message="stylesheet X3duomToHAnimLOA4HierarchyTable.xslt conversion"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:HAnimLOA4HierarchyTable.txt" description="output-doc"/>
@@ -1330,6 +1394,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="${glossary.xml.contents}"/>
         <echo />
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:${specifications.dir}/glossary.html"  description="output-doc"/>
@@ -1343,7 +1413,14 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v4.0" depends="" description="Build  X3D v4.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 4.0"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
@@ -1359,6 +1436,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="Following output is for X3D ontology version 4.0 in Terse Triple Language (Turtle)"/>
         <!-- TODO other versions of X3D -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
@@ -1384,6 +1467,13 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildX3dPythonPackageFromX3duom.saxon" depends="" description="Build Python X3D Package from X3D Unified Object Model (X3DUOM)" >
         <echo message="Following output is for X3D version 4.0 in X3dPackageDirectory=${X3dPackageDirectory}"/><!-- TODO other versions of X3D -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+                        
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
@@ -1399,6 +1489,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3duomToX3dDiagnostics.saxon" depends="" description="Build X3D ontology constructs">
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+                        
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1415,6 +1512,12 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildSpecificationXmlEncodingFromSchema.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes and clause 7, Encoding of statements" >
         <echo message="Following output includes AllX3dElementsAttributes4.0.xml"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1424,6 +1527,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <antcall target="BuildAllX3dElementsAttributes.txt"/>
         <echo message="Following output includes AllX3dElementsAttributes4.0.xml"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
@@ -1450,6 +1559,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- ========================================= -->
         <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt conversion"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:AllX3dElementsAttributes4.0.txt" description="output-doc"/>
@@ -1460,6 +1575,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="AllX3dElementsAttributes4.0.xml"         todir="../../specifications/"  verbose="true" failonerror="false"/>
         <!-- ========================================= -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:AllX3dElementsAttributes3.3.txt" description="output-doc"/>
@@ -1474,6 +1595,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildSpecificationVrmlEncodingFromSchema.saxon" depends="" description="Build X3D specification Classic VRML encoding clause 6 Encoding of Nodes" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:EncodingOfNodes.html" description="output-doc"/>
@@ -1536,6 +1663,12 @@ POSSIBILITY OF SUCH DAMAGE.
         </xslt>
         -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:X3dElementsAttributesLowerCaseTable.txt" description="output-doc"/>
@@ -1618,6 +1751,12 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="test.X3dToXhtml.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.html" description="output-doc"/>
@@ -1631,6 +1770,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.meta.md with default parameter includeSubdirectoryPaths=true"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.meta.md" description="output-doc"/>
@@ -1640,6 +1785,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.metaFlattened.md with parameter includeSubdirectoryPaths=false"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.metaFlattened.md" description="output-doc"/>
@@ -1652,6 +1803,12 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="test.X3dToVrml97.saxon" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.wrl" description="output-doc"/>
@@ -1663,6 +1820,12 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="test.X3dToX3dvClassicVrmlEncoding.saxon" depends="test.mkdir" description="Test X3dToX3dvClassicVrmlEncoding.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.x3dv" description="output-doc"/>
@@ -2026,6 +2189,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3d"/>
         <echo message="..expected output: ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2262,6 +2431,12 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="test.X3dHAnimHumanoidReport" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HAnimSpecificationLOA3Invisible.xslt.html" description="output-doc"/>
@@ -2271,6 +2446,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="expected output: test/HAnimSpecificationLOA3Invisible.xslt.html"/>
         
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/BoxMan.xslt.html" description="output-doc"/>
@@ -2329,6 +2510,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <echo message="translation input: @{pathScene}.x3d"/>
             <echo message="..expected output: @{pathScene}.fixed.json"/>
             <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+                <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+                <!-- https://ant.apache.org/manual/Tasks/java.html -->
+                <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+                <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+                <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+                <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
                 <!-- <arg value="-t" description="timing information"/> -->
                 <arg value="-warnings:recover" description="recover after writing a warning message"/>
                 <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2354,6 +2541,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/text.x3d"/>
         <echo message="..expected output: test/text.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2412,6 +2605,12 @@ POSSIBILITY OF SUCH DAMAGE.
         -->
         <!-- prefer testing stylesheet directlly to support debugging -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2463,6 +2662,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <xmlcatalog refid="X3dCatalog"/> -->
             
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2503,6 +2708,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <xmlcatalog refid="X3dCatalog"/> -->
             
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2525,6 +2736,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="..expected output: test/CameraExamples.java"/>
         <delete file="test/CameraExamples.java" failonerror="false"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2606,6 +2823,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="..expected output: test/TestSurface.java"/>
         <delete file="test/TestSurface.java" failonerror="false"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2649,6 +2872,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
         <echo message="..expected output: test/HelloWorldProgramOutput.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2681,6 +2910,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: AllX3dElementsAttributes3.3.xml"/>
         <echo message="..expected output: test/AllX3dElementsAttributes3.3.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2697,6 +2932,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/HelloWorld.x3d"/>
         <echo message="..expected output: test/HelloWorld.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2717,6 +2958,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${examples.dir}/Basic/development/TestJsonEncoding.x3d"/>
         <echo message="..expected output: test/TestJsonEncoding.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2737,6 +2984,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"/>
         <echo message="..expected output: test/OrigamiCranes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2757,6 +3010,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d"/>
         <echo message="..expected output: test/CubeWithLabeledSidesViewpointSequencer.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2777,6 +3036,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryExternPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryExternPrototypes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2797,6 +3062,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryPrototypes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2817,6 +3088,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: ${X3DJSAIL.examples.dir}/flowers7.x3d"/>
         <echo message="..expected output: ${X3DJSAIL.examples.dir}/flowers7.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2837,6 +3114,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/arc.x3d"/>
         <echo message="..expected output: test/arc.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -3438,6 +3721,12 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:AllX3dElementsAttributes4.0.xml"          description="source-doc"/><!-- produced from X3DUOM  -->

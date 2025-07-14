@@ -17,6 +17,7 @@ DATATOCLOJURE='s/\/data\//\/clojure\/net\/coderextreme\/data\//'
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
 DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
+DATATOGRAALPY='s/\/data\//\/graalpy\/net\/coderextreme\/data\//' 
 DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
 DATATOJRUBY='s/\/data\//\/jruby\/net\/coderextreme\/data\//' 
 
@@ -24,6 +25,7 @@ PERSONALTOCLOJURE='s/\/personal\//\/clojure\/net\/coderextreme\/personal\//'
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
 PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//' 
 PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
+PERSONALTOGRAALPY='s/\/personal\//\/graalpy\/net\/coderextreme\/personal\//' 
 PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
 PERSONALTOJRUBY='s/\/personal\//\/jruby\/net\/coderextreme\/personal\//' 
 
@@ -31,6 +33,7 @@ EXTOCLOJURE='s/\/Library\//\/clojure\/net\/coderextreme\/Library\//'
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
 EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
+EXTOGRAALPY='s/\/Library\//\/graalpy\/net\/coderextreme\/Library\//' 
 EXTOPYTHON='s/\/Library\//\/python\/net\/coderextreme\/Library\//' 
 EXTOJRUBY='s/\/Library\//\/jruby\/net\/coderextreme\/Library\//' 
 
@@ -38,6 +41,7 @@ ROOTTOCLOJURE='s/\/x3d_code\/www.web3d.org\//\/clojure\/net\/coderextreme\/x3d_c
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOGRAALPY='s/\/x3d_code\/www.web3d.org\//\/graalpy\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOJRUBY='s/\/x3d_code\/www.web3d.org\//\/jruby\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 
@@ -84,7 +88,7 @@ do
 	sed "s/{{MODEL}}/${MODEL}/g" < ../resources/project.clj.template > "../clojure/net/coderextreme/data/$MODEL/project.clj"
 	pushd "../clojure/net/coderextreme/data/$MODEL"
 	ln -s "${DIR}" "x3dclsail"
-	echo "clj $i"
+	echo "lein run $i"
 	lein run
 	popd
 done
@@ -143,6 +147,7 @@ do
 	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.json`.${JSONEXT}
 	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
+	# jsonlint "$i"
 done
 
 echo Comparing old xml and pretty printed intermediate xml
@@ -195,6 +200,25 @@ done
 #	     "${NODE}" "${NODEDIR}/jsondiff.js" "$SAXGEND" "$XSLTGEND"
 #done
 
+echo Running graalpy code
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
+do
+	GPY=`echo "$i" | sed -e "$DATATOGRAALPY" -e "$PERSONALTOGRAALPY" -e "$ROOTTOGRAALPY" -e "s/.${JSONEXT}/.py/"`
+	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.graalpy.x3d/"`
+	echo "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY"
+	( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY") &
+	JOB_PID=$!
+	wait $JOB_PID
+done
+
+echo Diffing .new.graalpy.x3d .py with original x3d
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.graalpy.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
+do
+	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.graalpy.x3d`.x3d
+	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "'$X3D'" "'$i'"
+	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
+done
+
 echo Running python code
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
@@ -203,9 +227,7 @@ do
 	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
 	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 	echo "${PYTHON}" "$PY"
-	( "${PYTHON}" --jvm --vm.cp="${CLASSPATH}" "$PY")
-	JOB_PID=$!
-	wait $JOB_PID
+	"${PYTHON}" "$PY"
 done
 
 echo Diffing .new.python.x3d .py with original x3d
