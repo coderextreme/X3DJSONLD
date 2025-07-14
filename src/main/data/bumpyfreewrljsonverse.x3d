@@ -120,7 +120,7 @@
 		<!--
 	  <Sphere radius='40'></Sphere>
 		-->
-                <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
+                <IndexedFaceSet convex="false" DEF="Orbit">
                     <Coordinate DEF="OrbitCoordinates"/>
                 </IndexedFaceSet>
 	  <Appearance>
@@ -145,11 +145,11 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"'></ShaderPart>
+		  <ShaderPart url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
                   <!-- TO CONVERT TO A SPHERE
-                  <ShaderPart url='"../shaders/freewrl.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-                  <ShaderPart url='"../shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>
+                  <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
                   -->
                 </ComposedShader>
 	  </Appearance>

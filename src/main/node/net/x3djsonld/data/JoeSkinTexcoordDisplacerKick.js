@@ -230,7 +230,7 @@ JoeSkinTexcoordDisplacerKick.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.5,0.0,0.866,-0.407,0.0,0.914,-0.309,0.0,0.951,-0.208,0.0,0.978,-0.105,0.0,0.995,0.0,0.0,1.0,0.105,0.0,0.995,0.208,0.0,0.978,0.309,0.0,0.951,0.407,0.0,0.914])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.5,0.0,0.866,0.588,0.0,0.809,0.669,0.0,0.743,0.743,0.0,0.669,0.809,0.0,0.588,0.866,0.0,0.5,0.914,0.0,0.407,0.951,0.0,0.309,0.978,0.0,0.208,0.995,0.0,0.104])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("JoeSkinTexcoordDisplacerKick.x3d"))

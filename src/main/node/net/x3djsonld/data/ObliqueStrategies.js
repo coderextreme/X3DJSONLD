@@ -171,7 +171,7 @@ ObliqueStrategies.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ObliqueStrategies.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Text scripting and animation example using Oblique Strategies card set by Brian Eno."))

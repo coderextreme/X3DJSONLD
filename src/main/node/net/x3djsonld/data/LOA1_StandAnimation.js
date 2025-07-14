@@ -114,7 +114,7 @@ LOA1_StandAnimation.prototype = {
 
 	/** Large attribute array: Text string field, scene-graph level=5, element #134, 16 total values */
 	this.Text_5_134_string = new autoclass.MFString(new autoclass.MFString("\"LOA1_StandAnimation.x3d\" \"defines a prototype\" \"for animating a humanoid.\" \"\" \"Click this text to see\" \"InterchangableActorsViaDynamicRouting example.\""));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("LOA1_StandAnimation.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Humanoid animation prototype reusable by any Humanoid."))

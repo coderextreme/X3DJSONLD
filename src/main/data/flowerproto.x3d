@@ -24,7 +24,7 @@
 		    <field accessType='inputOutput' name='fragment' type='MFString' value='"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"'/>
 	    </ProtoInterface>
             <ProtoBody>
-                <Transform DEF="transform" translation="0 0 0">
+                <Transform DEF="transform">
                     <Shape>
                         <Appearance>
                             <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5"/>
@@ -55,7 +55,7 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                                <ShaderPart type="VERTEX">
+                                <ShaderPart>
 					<IS>
 					<connect nodeField="url" protoField="vertex"/>
 					</IS>

@@ -104,7 +104,7 @@ gridBack.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [-5.25,-2.25,0.0,-3.75,-2.25,0.0,-2.25,-2.25,0.0,-0.75,-2.25,0.0,0.75,-2.25,0.0,2.25,-2.25,0.0,3.75,-2.25,0.0,5.25,-2.25,0.0,-5.25,-3.75,0.0,-3.75,-3.75,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-2.25,-3.75,0.0,-0.75,-3.75,0.0,0.75,-3.75,0.0,2.25,-3.75,0.0,3.75,-3.75,0.0,5.25,-3.75,0.0,-5.25,-5.25,0.0,-3.75,-5.25,0.0,-2.25,-5.25,0.0,-0.75,-5.25,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))

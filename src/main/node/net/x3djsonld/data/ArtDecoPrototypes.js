@@ -94,7 +94,7 @@ ArtDecoPrototypes.prototype = {
 
 	/** Large attribute array: Text string field, scene-graph level=5, element #121, 21 total values */
 	this.Text_5_121_string = new autoclass.MFString(new autoclass.MFString("\"ArtDecoExamples.x3d\" \"is a Materials Prototype declaration file.\" \"\" \"For an example scene using these node,\" \"click this text and view\" \"ArtDecoExamples.x3d\""));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ArtDecoPrototypes.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."))

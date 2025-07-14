@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("CADInterchange").setVersion("3.1")
+      var X3D0 =  (new autoclass.X3D()).setProfile("CADInterchange").setVersion("4.0")
       .setHead(new autoclass.head()
         .addComponent(new autoclass.component().setName("CADGeometry").setLevel(2))
         .addComponent(new autoclass.component().setName("EnvironmentalEffects").setLevel(1))

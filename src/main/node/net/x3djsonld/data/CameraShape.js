@@ -164,7 +164,7 @@ CameraShape.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.04,0.41,-0.13,0.0,0.41,-0.13,-0.04,0.41,-0.13,-0.08,0.41,-0.11,-0.11,0.41,-0.08,-0.13,0.41,-0.04,-0.13,0.41,0.0,0.13,0.41,0.0,0.06,0.43,-0.02,0.05,0.43,-0.04])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.04,0.43,-0.05,0.02,0.43,-0.06,0.0,0.43,-0.07,-0.02,0.43,-0.06,-0.04,0.43,-0.05,-0.05,0.43,-0.04,-0.06,0.43,-0.02,-0.07,0.43,0.0,0.07,0.43,0.0,0.0,-0.43,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.43,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interactive").setVersion("3.1")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interactive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("CameraShape.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Simple video camera shape"))

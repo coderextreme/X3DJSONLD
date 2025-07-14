@@ -125,7 +125,7 @@ HAnimBehaviorPrototypes.prototype = {
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #1760, 27 total numbers */
 	this.field_hAnimBehaviorNodes_5_1760_appinfo = new autoclass.MFNode([HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.);
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("HAnimBehaviorPrototypes.x3d"))

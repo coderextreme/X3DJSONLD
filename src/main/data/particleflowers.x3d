@@ -57,8 +57,8 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"'></ShaderPart>
+		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		</Appearance>
             	<Sphere containerField="geometry"></Sphere>

@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 var ProtoInstance0 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.2")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addComponent(new autoclass.component().setName("Shaders").setLevel(1))
         .addMeta(new autoclass.meta().setName("title").setContent("SimpleShader.x3d"))
@@ -59,7 +59,7 @@ var ProtoInstance0 = null;
                     .addParts(new autoclass.ShaderPart().setType("FRAGMENT").setDEF("_1"))))
                 .setGeometry(new autoclass.Sphere().setRadius(java.newFloat(1.75)))))))
         .addChild(new autoclass.WorldInfo().setTitle("SimpleShader")
-          .setMetadata(new autoclass.MetadataSet().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
+          .setValue(new autoclass.MetadataSet().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
             .addValue(new autoclass.MetadataSet().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
               .addValue(new autoclass.MetadataSet().setName("nodes").setDEF("nodes").setReference("http://titania.create3000.de")
                 .addComments((new autoclass.CommentsBlock("NULL")))))

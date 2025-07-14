@@ -67,7 +67,7 @@ arc2.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("arc2.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
@@ -91,7 +91,7 @@ arc2.prototype = {
 "               function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
+"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "               }" + "\n")
           .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
           .addField((new autoclass.field()).setName(old.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
@@ -117,7 +117,7 @@ arc2.prototype = {
 "               function set_location(value) {" + "\n" + 
 "                    old = translation;" + "\n" + 
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
+"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "               }" + "\n")
           .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))
           .addField((new autoclass.field()).setName(old.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(0.0,0.0,0.0))

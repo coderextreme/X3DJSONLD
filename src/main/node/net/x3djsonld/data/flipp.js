@@ -199,7 +199,7 @@ flipp.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [223.047,-18.8189,5.59,233.698,-7.2368,11.94,-109.174,-70.6239,71.37,-107.939,-68.9429,73.66,-83.1762,-64.8699,64.52,-60.2597,-77.5359,77.22,-96.8564,-73.4239,80.01,-75.7239,-77.7709,80.77,-255.032,-76.7379,7.87,-271.253,-78.5029,4.57])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [270.88,41.0393,63.25,258.132,14.5177,73.15,277.433,48.8188,86.61,237.134,15.1495,16.51,249.887,26.3978,9.65,256.63,35.8549,5.84,225.737,6.7142,24.13,-275.222,-69.4079,3.81,-275.351,-74.7999,4.83,-96.7464,-75.3099,78.23])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-75.6284,-78.6279,79.25,241.616,4.1116,52.32,244.946,1.2884,52.32,260.278,13.1461,73.15,263.392,37.7359,21.59])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("generator").setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
     .addMeta((new autoclass.meta()).setName("title").setContent("flipp.x3d"))

@@ -123,7 +123,7 @@ SimpleShader.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.2")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("SimpleShader.x3d"))
@@ -167,7 +167,7 @@ SimpleShader.prototype = {
                 .addParts((new autoclass.ShaderPart("_1")).setType("FRAGMENT"))))
             .setGeometry((new autoclass.Sphere()).setRadius(1.75))))))
     .addChild((new autoclass.WorldInfo()).setTitle("SimpleShader")
-      .setMetadata((new autoclass.MetadataSet("Titania")).setName("Titania").setReference("http://titania.create3000.de")
+      .setValue((new autoclass.MetadataSet("Titania")).setName("Titania").setReference("http://titania.create3000.de")
         .addValue((new autoclass.MetadataSet("Selection")).setName("Selection").setReference("http://titania.create3000.de")
           .addValue((new autoclass.MetadataSet("nodes")).setName("nodes").setReference("http://titania.create3000.de")
             .addComments(" NULL ")))

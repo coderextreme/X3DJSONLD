@@ -56,8 +56,8 @@
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
                   <field name='x3d_ParticleValues' type='MFFloat' accessType='inputOutput' value='2 1 4 4 0 0'></field>
-		  <ShaderPart url='"../shaders/x_ite_variations.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/commonnew.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_ite_variations.vs"'></ShaderPart>
+		  <ShaderPart url='"../shaders/commonnew.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		    </Appearance>
 	        </ParticleSystem>

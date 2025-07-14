@@ -49,7 +49,7 @@ var ProtoInstance31 = null;
 var ProtoInstance32 = null;
 var ProtoInstance33 = null;
 var ProtoInstance34 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("ArtDecoExamples.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."))
