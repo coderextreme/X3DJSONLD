@@ -109,7 +109,7 @@ ArchHalf.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [2.5,-1.0,3.0,2.0,-1.0,3.0,-2.0,-1.0,0.0,-2.5,-1.0,0.0,-2.5,2.5,0.0,2.5,2.5,0.0,2.5,-1.0,0.0,2.0,-1.0,0.0,2.5,0.0,3.0,2.5,0.0,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-2.5,0.0,3.0,-2.5,0.0,0.0,-2.5,2.0,3.0,-2.0,2.0,3.0,-2.0,2.0,0.0,-2.5,2.0,0.0,-2.0,2.5,3.0,-2.0,2.5,0.0,0.0,2.5,3.0,0.0,2.5,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [2.0,2.0,3.0,2.5,2.0,3.0,2.5,2.0,0.0,2.0,2.0,0.0,2.0,2.5,3.0,2.0,2.5,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ArchHalf.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))

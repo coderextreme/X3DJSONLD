@@ -67,7 +67,7 @@ BoxEm2.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("BoxEm2.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))

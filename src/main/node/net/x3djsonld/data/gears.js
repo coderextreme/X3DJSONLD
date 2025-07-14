@@ -373,7 +373,7 @@ gears.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.517043,-0.855959,0.0,0.856432,0.51626,0.0,0.856432,0.51626,0.0,0.848803,0.528709,0.0,0.848803,0.528709,0.0,0.842595,0.538547,0.0,0.842595,0.538547,0.0,-0.527933,0.849286,0.0,0.767305,-0.641282,0.0,0.847815,-0.530293,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.898662,-0.438642,0.0,0.934775,-0.355241,0.0,0.960701,-0.277585,0.0,0.760406,0.649448,0.0,0.760406,0.649448,0.0,-0.123881,0.992297,0.0,-0.204637,0.978838,0.0,-0.29266,0.956217,0.0,-0.391136,0.920333,0.0,-0.513354,0.858177,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.663728,0.747974,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.882225,0.470828,0.0,0.882225,0.470828,0.0,-0.882225,0.470828,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("gears.x3d"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))

@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("TextExamples.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))

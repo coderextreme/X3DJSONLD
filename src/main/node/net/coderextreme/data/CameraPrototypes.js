@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.2")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("CameraPrototypes.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."))

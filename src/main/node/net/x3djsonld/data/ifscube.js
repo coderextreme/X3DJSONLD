@@ -67,7 +67,7 @@ ifscube.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ifscube.x3d"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))

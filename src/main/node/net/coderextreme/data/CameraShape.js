@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Interactive").setVersion("3.1")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Interactive").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("CameraShape.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Simple video camera shape"))

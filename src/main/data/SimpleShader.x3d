@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
-<X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component level='1' name='Shaders'/>
     <meta content='SimpleShader.x3d' name='title'/>
@@ -39,13 +39,13 @@
                 <IS>
                   <connect nodeField='decis' protoField='myInputRange'/>
                 </IS>
-                <ShaderPart containerField='parts'/>
-                <ShaderPart containerField='parts' type='FRAGMENT'/>
+                <ShaderPart/>
+                <ShaderPart type='FRAGMENT'/>
               </ComposedShader>
               <ComposedShader DEF='Cobweb' containerField='shaders' language='GLSL'>
                 <field accessType='initializeOnly' name='decis' type='SFVec3f' value='0.95 0.77 0.44'/>
-                <ShaderPart containerField='parts'/>
-                <ShaderPart DEF='_1' containerField='parts' type='FRAGMENT'/>
+                <ShaderPart/>
+                <ShaderPart DEF='_1' type='FRAGMENT'/>
               </ComposedShader>
             </Appearance>
             <Sphere radius='1.75'/>

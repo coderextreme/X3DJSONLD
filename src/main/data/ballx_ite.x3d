@@ -50,8 +50,8 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
             </Appearance>
           </Shape>

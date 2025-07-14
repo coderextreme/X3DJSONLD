@@ -102,7 +102,7 @@ ViewFrustumPrototype.prototype = {
 
 	/** Large attribute array: Text string field, scene-graph level=5, element #78, 19 total values */
 	this.Text_5_78_string = new autoclass.MFString(new autoclass.MFString("\"ViewFrustumPrototype.x3d\" \"is a Prototype declaration file.\" \"For an example scene using the prototype,\" \"click this text and view\" \"ViewFrustumExample.x3d\""));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ViewFrustumPrototype.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."))

@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"05 July 2025"
+            "@content":"13 July 2025"
           },
           {
             "@name":"generator",
@@ -144,7 +144,7 @@
                                         {
                                           "-children":[
                                             {
-                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
                                             }
                                           ],
                                           "-appearance":

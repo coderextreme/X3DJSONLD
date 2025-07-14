@@ -140,7 +140,7 @@ Trebuchet.prototype = {
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=12, element #195, 18 total numbers made up of 9 2-tuple values */
 	this.Extrusion_12_195_crossSection = new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00]));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("Trebuchet.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Working model of a 14th century Trebuchet Catapult."))
@@ -574,10 +574,10 @@ Trebuchet.prototype = {
 "{" + "\n" + 
 "	var TrebuchetHeight=45;" + "\n" + 
 "	var Height =25;" + "\n" + 
-"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;" + "\n" + 
+"      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;" + "\n" + 
 "	// start at TrebuchetHeight and keep along z axis (z=zero)" + "\n" + 
-"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);" + "\n" + 
-"        z = 0;" + "\n" + 
+"	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);" + "\n" + 
+"        var z = 0;" + "\n" + 
 "        transparent = new SFVec3f (1,1,1);" + "\n" + 
 "     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)" + "\n" + 
 "		{" + "\n" + 

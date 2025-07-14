@@ -155,7 +155,7 @@ LOA1_SwimmingFlutterKickAnimation.prototype = {
 
 	/** Large attribute array: Text string field, scene-graph level=5, element #120, 14 total values */
 	this.Text_5_120_string = new autoclass.MFString(new autoclass.MFString("\"LOA1_SwimmingFlutterKickAnimation.x3d\" \"defines a prototype\" \"for animating a humanoid.\" \"\" \"Click text to see example.\""));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("LOA1_SwimmingFlutterKickAnimation.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Humanoid animation prototype reusable by any Humanoid."))

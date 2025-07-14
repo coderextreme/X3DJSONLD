@@ -117,7 +117,7 @@ CADPartChildNoTransformation.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [-1.4142,-1.5000,1.4142,-0.7071,-1.5000,0.7071,-1.1111,-1.5000,1.6629,-0.5556,-1.5000,0.8315,-0.7654,-1.5000,1.8478,-0.3827,-1.5000,0.9239,-0.3902,-1.5000,1.9616,-0.1951,-1.5000,0.9808,-0.0000,-1.5000,2.0000,-0.0000,-1.5000,1.0000])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.3902,-1.5000,1.9616,0.1951,-1.5000,0.9808,0.7654,-1.5000,1.8478,0.3827,-1.5000,0.9239,1.1111,-1.5000,1.6629,0.5556,-1.5000,0.8315,1.4142,-1.5000,1.4142,0.7071,-1.5000,0.7071,1.6629,-1.5000,1.1111,0.8315,-1.5000,0.5556])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [1.8478,-1.5000,0.7654,0.9239,-1.5000,0.3827,1.9616,-1.5000,0.3902,0.9808,-1.5000,0.1951,2.0000,-1.5000,0.0000,1.0000,-1.5000,0.0000])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("CADInterchange").setVersion("3.1")
+  this.x3dModel = (new autoclass.X3D()).setProfile("CADInterchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("CADGeometry").setLevel(2))
     .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(1))

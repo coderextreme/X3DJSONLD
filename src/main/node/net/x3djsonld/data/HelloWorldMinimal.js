@@ -107,7 +107,7 @@ HelloWorldMinimal.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .addComments(" All head/meta tags are optional, WorldInfo is also optional ")
   .addComments(" Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1 ")
   .setHead((new autoclass.head())

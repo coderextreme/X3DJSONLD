@@ -116,7 +116,7 @@ flowers2.prototype = {
                       .addConnect((new autoclass.connect()).setNodeField("specularColor").setProtoField("specularColor"))
                       .addConnect((new autoclass.connect()).setNodeField("transparency").setProtoField("transparency")))))
                 .addComments(java.newArray("java.lang.String",["",
-"				  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">",
+"				  <IndexedFaceSet DEF=\"Orbit\">",
 "				    <Coordinate DEF=\"OrbitCoordinates\"/>",
 "				  </IndexedFaceSet>"]))
                 .setGeometry((new autoclass.IndexedFaceSet("Orbit")).setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1]))

@@ -67,7 +67,7 @@ geobubbles.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Geospatial").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("geobubbles.x3d"))

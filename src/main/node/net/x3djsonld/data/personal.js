@@ -245,7 +245,7 @@ personal.prototype = {
 "      }",
 "      ]]>",
 "    </Script>",
-"<Transform translation=\"0 0 0\">",
+"<Transform>",
 "<TouchSensor description=\"Flowers\" DEF=\"Flowers_Sensor\"/>",
 "",
 "          <Shape>",

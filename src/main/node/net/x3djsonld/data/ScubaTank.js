@@ -79,7 +79,7 @@ ScubaTank.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ScubaTank.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Scuba gear used by Nancy Diving example."))
