@@ -30,16 +30,9 @@ NodeSerializer.prototype = {
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
-		str += "var java = require('java');\n";
-		str += "var util = require('util');\n";
-		str += "java.asyncOptions = {\n";
-		str += "  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks\n";
-		str += '  syncSuffix: "",              // Sync methods use the base name(!!)\n';
-		str += '  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.\n';
-		str += "  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below\n";
-		str += '  ifReadOnlySuffix: "_alt"\n';
-		str += '};\n';
-		str += "var autoclass = require('../../../X3Dautoclass');\n";
+		str += "import java from 'node-java';\n";
+		str += "import util from 'util';\n";
+		str += "import autoclass from '../../../X3Dautoclass.js';\n";
 		str += "var ConfigurationProperties = autoclass.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
