@@ -60,7 +60,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> X3D-Edit 4.0, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -443,7 +443,7 @@ SquawLOD023.prototype = {
 	.append(new autoclass.MFVec2f(java.newArray("float", [0.48,0.99609,0.5,0.99609,0.52,0.99609,0.54,0.99609,0.56,0.99609,0.58,0.99609,0.6,0.99609,0.62,0.99609,0.64,0.99609,0.66,0.99609])))
 	.append(new autoclass.MFVec2f(java.newArray("float", [0.68,0.99609,0.7,0.99609,0.72,0.99609,0.74,0.99609,0.76,0.99609,0.78,0.99609,0.8,0.99609,0.82,0.99609,0.84,0.99609,0.86,0.99609])))
 	.append(new autoclass.MFVec2f(java.newArray("float", [0.88,0.99609,0.9,0.99609,0.92,0.99609,0.94,0.99609,0.96,0.99609,0.98,0.99609,0.99609,0.99609])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Geospatial").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("SquawLOD023.x3d"))
@@ -456,7 +456,7 @@ SquawLOD023.prototype = {
     .addMeta((new autoclass.meta()).setName("subject").setContent("X3D geospatial example"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("SquawLOD023.x3d"))

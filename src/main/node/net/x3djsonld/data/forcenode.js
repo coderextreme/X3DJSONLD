@@ -76,7 +76,7 @@ forcenode.prototype = {
 	this.extrusion_7_40_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38])))
 	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
@@ -110,7 +110,9 @@ forcenode.prototype = {
 "					function set_cycle(value) {" + "\n" + 
 "                                                old = translation;" + "\n" + 
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
-"                                                keyValue = new MFVec3f(...[old, translation]);" + "\n" + 
+"			    			keyValue = new MFVec3f();" + "\n" + 
+"			    			keyValue[0] = old;" + "\n" + 
+"			    			keyValue[1] = translation;" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
             .addField((new autoclass.field()).setName(translation.0).setType(SFVec3f).setAccessType(inputOutput.0).setValue(50.0,50.0,0.0))
@@ -138,17 +140,23 @@ forcenode.prototype = {
 "\n" + 
 "                function set_endA(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f(...[value, value]);" + "\n" + 
+"		        spine = new MFVec3f();" + "\n" + 
+"			spine[0] = value;" + "\n" + 
+"			spine[1] = value;" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f(...[value, spine[1]]);" + "\n" + 
+"		        spine = new MFVec3f();" + "\n" + 
+"			spine[0] = value;" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 
 "                function set_endB(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f(...[value, value]);" + "\n" + 
+"		        spine = new MFVec3f();" + "\n" + 
+"			spine[0] = value;" + "\n" + 
+"			spine[1] = value;" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f(...[spine[0], value]);" + "\n" + 
+"		        spine = new MFVec3f();" + "\n" + 
+"			spine[1] = value;" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 

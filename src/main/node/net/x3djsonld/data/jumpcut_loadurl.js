@@ -106,7 +106,7 @@ jumpcut_loadurl.prototype = {
 
 	/** Large attribute array: field value field, scene-graph level=4, element #28, 4 total values */
 	this.field_myUrl_4_28_value = new autoclass.MFString(new autoclass.MFString("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("jumpcut_loadurl.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.nist.gov/vrml.html"))

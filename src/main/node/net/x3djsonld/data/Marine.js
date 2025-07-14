@@ -306,7 +306,7 @@ Marine.prototype = {
 	.append(new autoclass.MFVec2f(java.newArray("float", [.4,.634,.363,.661,.289,.634,.322,.634,.353,.634,.368,.634,.263,.557,.469,.845,.306,.761,.259,.772])))
 	.append(new autoclass.MFVec2f(java.newArray("float", [.417,.768,.273,.496,.462,.957,.417,.837,.361,.892,.357,.872,.366,.843,.322,.847,.311,.842,.321,.839])))
 	.append(new autoclass.MFVec2f(java.newArray("float", [.305,.768,.334,.781])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("Marine.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Marine model"))

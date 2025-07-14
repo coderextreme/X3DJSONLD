@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setVersion("3.0").setProfile("Immersive")
+      var X3D0 =  (new autoclass.X3D()).setVersion("4.0").setProfile("Immersive")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new autoclass.Scene()

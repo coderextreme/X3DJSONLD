@@ -115,7 +115,7 @@ ArchPrototype.prototype = {
 
 	/** Large attribute array: field appinfo field, scene-graph level=6, element #49, 29 total numbers made up of 9.666666666666666 3-tuple values */
 	this.field_computedScale_6_49_appinfo = new autoclass.SFVec3f(computedScale:,modify,scale,field,-,NOTE,it,is,not,used,to,modify,the,whole,arch,,but,to,modify,clearSpanWidth,,riseHeight,,depth.,It,does,not,affect,topAbutmentHeight,,pierWidth,,pierHeight,,archHalfExtensionWidth);
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("ArchPrototype.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."))

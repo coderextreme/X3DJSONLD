@@ -241,7 +241,7 @@ Teapot.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.619427,0.283145,-0.137236,0.617684,0.23593,-0.085941,0.619427,0.283145,0.137236,0.617684,0.23593,0.085941,-0.437073,0.750009,-0.121642,0.391939,0.750009,0.230197,0.321638,0.750009,0.321639,0.121642,0.750009,0.437072,0.230197,0.750009,0.39194,0.0,0.750009,0.453012])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.321638,0.750009,-0.321639,-0.121642,0.750009,-0.437072,0.437073,0.750009,0.121642,-0.39194,0.750009,0.230197,-0.321639,0.750009,-0.321639,-0.230198,0.750009,-0.391939,0.230197,0.750009,-0.39194,-0.121642,0.750009,0.437072,-0.39194,0.750009,-0.230197,-0.30536,0.750806,-0.30536])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.30536,0.750806,-0.30536,0.30536,0.750806,0.30536])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("Teapot.x3d").setLang(""))
     .addMeta((new autoclass.meta()).setName("description").setContent("A watertight (solid) Utah Teapot Model converted from obj format."))

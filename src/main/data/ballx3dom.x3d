@@ -50,8 +50,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart DEF="common" url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'></ShaderPart>
+		  <ShaderPart DEF="common" url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
             </Appearance>
           </Shape>

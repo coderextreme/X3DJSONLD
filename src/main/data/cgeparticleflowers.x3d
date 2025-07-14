@@ -61,7 +61,7 @@
 				  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
 				  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
 				  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  		  <ShaderPart type="VERTEX" url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
+		  		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
 				  <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/>
 	  		    </ComposedShader>
 		    </Appearance>

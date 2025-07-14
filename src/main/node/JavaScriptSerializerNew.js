@@ -4,7 +4,7 @@ if (typeof require !== 'undefined') {
 	var fs = require("fs")
 }
 
-export default function JavaScriptSerializerNew() {
+export default function JavaScriptSerializer () {
 this.DOUBLE_SUFFIX = '';
 this.FLOAT_SUFFIX = '';
 
@@ -16,7 +16,7 @@ this.postcode = [];
 }
 
 
-JavaScriptSerializerNew.prototype = {
+JavaScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.foundHumanoid = false;
 		this.code = [];
@@ -277,6 +277,7 @@ JavaScriptSerializerNew.prototype = {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
+						// console.log("################## FOUND", attr, attrs[a].nodeValue);
 						attr = "containerFieldOverride";
 
 					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
@@ -413,6 +414,7 @@ JavaScriptSerializerNew.prototype = {
 					
 					str += '.'+method+"("+strval+")";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+					// console.log("################## FOUND", method, attrs[a].nodeValue);
 						// str += ")"; // for cast
 					}
 				}
@@ -488,11 +490,15 @@ JavaScriptSerializerNew.prototype = {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split(/[\r\n][\r\n]?/).map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(`"+node.nodeValue.split("[\r\n]?[\r\n]").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
-					}).join('\\n\"+\n\"')+'")';
+						/*
+						replace(/\\n/g, "\\\\n")
+						*/
+					;
+					}).join('\\n\"+\n\"')+'`)';
 			}
 		}
 		return str;

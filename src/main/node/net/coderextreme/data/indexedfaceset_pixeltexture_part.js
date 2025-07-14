@@ -14,7 +14,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("indexedfaceset_pixeltexture_part.x3d"))
         .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_part-front.jpg"))

@@ -124,7 +124,7 @@ CaliforniaCampuses.prototype = {
 
 	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #139, 13 total values */
 	this.ExternProtoDeclare_ViewPositionOrientation_3_139_appinfo = new autoclass.SFString("ViewPositionOrientation provides provides console output of local position and orientation as user navigates");
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Geospatial").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("CaliforniaCampuses.x3d"))

@@ -52,7 +52,7 @@ var ProtoInstance1 = null;
                           .addConnect(new autoclass.connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
                           .addConnect(new autoclass.connect().setNodeField("specularColor").setProtoField("specularColor"))
                           .addConnect(new autoclass.connect().setNodeField("transparency").setProtoField("transparency")))))
-                    .addComments((new autoclass.CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>")))
+                    .addComments((new autoclass.CommentsBlock("<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>")))
                     .setGeometry(new autoclass.IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1])).setDEF("Orbit")
                       .setCoord(new autoclass.Coordinate().setDEF("OrbitCoordinates").setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
                 .addChild(new autoclass.Script().setDEF("OrbitScript")

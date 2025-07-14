@@ -214,7 +214,7 @@ RotationTests.prototype = {
 	.append(new autoclass.MFRotation(java.newArray("float", [0.4806,-0.6244,-0.6158,2.3166,-0.5631,-0.6256,0.5400,1.4882,0.6270,0.6518,0.4265,2.4209,-0.7593,-0.4870,0.4316,1.8090,0.9904,0.1147,0.0771,2.4970,-0.2068,0.8411,0.4999,2.0727,-0.5686,0.6795,-0.4636,2.3418,0.1439,0.5059,-0.8505,2.2257,0.7353,0.2196,-0.6412,1.8690,0.8566,-0.4532,-0.2468,1.7572])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.5390,-0.8292,0.1482,2.6405,-0.3001,0.7787,-0.5510,2.8055,0.0278,0.5366,-0.8434,2.9208,-0.5211,-0.2195,0.8248,2.9157,-0.9301,0.1280,0.3443,2.7981,0.8370,-0.4201,0.3506,2.9198,0.5040,-0.3614,0.7844,1.7205,0.4984,0.0459,0.8657,0.9992,0.8875,0.3268,0.3248,1.2855,0.9933,-0.0835,0.0804,2.1256])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.8877,-0.3946,0.2373,2.8828,0.4947,-0.6826,0.5379,3.1277,-0.1094,-0.6973,0.7083,2.9901,-0.6527,-0.4615,0.6008,2.7229,-0.9366,-0.1455,0.3186,2.7823,-0.9963,0.0509,0.0689,3.0582])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("RotationTests.x3d"))

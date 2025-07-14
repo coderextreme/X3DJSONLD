@@ -127,7 +127,7 @@ indexedfaceset_pixeltexture_part.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("indexedfaceset_pixeltexture_part.x3d"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_part-front.jpg"))

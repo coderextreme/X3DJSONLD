@@ -1138,7 +1138,7 @@ IcosahedronSubdivisionLevel5.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,1.0,-0.309017,-0.5,0.809017,0.309017,-0.5,0.809017,0.309017,0.5,0.809017,-0.309017,0.5,0.809017,0.0,0.0,-1.0,-0.309017,0.5,-0.809017,0.309017,0.5,-0.809017,0.309017,-0.5,-0.809017,-0.309017,-0.5,-0.809017])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.850651,-0.525731,0.0,0.850651,0.525731,0.850651,0.525731,0.0,-0.850651,0.525731,0.0,0.0,-0.850651,0.525731,0.0,-0.850651,-0.525731,0.850651,-0.525731,0.0,-0.850651,-0.525731,0.0,0.525731,0.0,-0.850651,0.525731,0.0,0.850651])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.525731,0.0,0.850651,-0.525731,0.0,-0.850651])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.1")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("IcosahedronSubdivisionLevel5.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("IcosahedronSubdivisionLevel5.ply"))
