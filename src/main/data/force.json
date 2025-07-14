@@ -21,6 +21,10 @@
             "@content":"December 13 2015"
           },
           {
+            "@name":"modified",
+            "@content":"July 14 2025"
+          },
+          {
             "@name":"title",
             "@content":"force.x3d"
           },
@@ -38,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 June 2025"
+            "@content":"14 July 2025"
           },
           {
             "@name":"generator",
@@ -178,16 +182,11 @@
 "",
 "",
 "ecmascript:",
-"\t\t\t\t\tfunction set_cycle(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                var tmpkeyValue = new MFVec3f();",
-"\t\t\t    \t\t\ttmpkeyValue[0] = old;",
-"\t\t\t    \t\t\ttmpkeyValue[1] = translation;",
-"                                                keyValue = tmpkeyValue;",
-"\t\t\t    \t\t",
-"\t\t\t\t\t\t// Browser.println(translation);",
-"\t\t\t\t\t}",
+"\t\t\tfunction set_cycle(value) {",
+"\t\t\t\told = translation;",
+"\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+"\t\t\t\tkeyValue = new MFVec3f(old, translation);",
+"\t\t\t}",
 "",
 ""
 ]
@@ -246,13 +245,15 @@
                   "field": [
                     {
                       "@name":"set_positionA",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
                     },
                     {
                       "@name":"set_positionB",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[50,50,50]
                     }
                   ]
               },
@@ -269,7 +270,7 @@
                                     "@DEF":"extrusion",
                                     "@creaseAngle":0.785,
                                     "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
-                                    "@spine":[0,-50,0,0,50,0]
+                                    "@spine":[0,-50,0,0,0,0,0,50,0]
                                   }
                                 },
                               "-appearance":
@@ -293,27 +294,29 @@
                                   "@name":"spine",
                                   "@accessType":"inputOutput",
                                   "@type":"MFVec3f",
-                                  "@value":[0,-50,0,0,50,0]
+                                  "@value":[0,-50,0,0,0,0,0,50,0]
                                 },
                                 {
-                                  "@name":"set_endA",
-                                  "@accessType":"inputOnly",
-                                  "@type":"SFVec3f"
+                                  "@name":"endA",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"set_endB",
-                                  "@accessType":"inputOnly",
-                                  "@type":"SFVec3f"
+                                  "@name":"endB",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[50,50,50]
                                 }
                               ],
                               "IS": {
                                   "connect": [
                                     {
-                                      "@nodeField":"set_endA",
+                                      "@nodeField":"endA",
                                       "@protoField":"set_positionA"
                                     },
                                     {
-                                      "@nodeField":"set_endB",
+                                      "@nodeField":"endB",
                                       "@protoField":"set_positionB"
                                     }
                                   ]
@@ -322,38 +325,13 @@
 "",
 "",
 "ecmascript:",
+"\t\t\tfunction set_endA(value) {",
+"\t\t\t\tspine = new MFVec3f(value, spine[1]);",
+"\t\t\t}",
 "",
-"                function set_endA(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        var tmpspine = new MFVec3f();",
-"\t\t\ttmpspine[0] = value;",
-"\t\t\ttmpspine[1] = value;",
-"\t\t\tspine = tmpspine;",
-"\t\t    } else {",
-"\t\t        var tmpspine = new MFVec3f();",
-"\t\t\ttmpspine[0] = value;",
-"\t\t\ttmpspine[1] = spine[1];",
-"\t\t\tspine = tmpspine;",
-"\t\t    }",
-"                }",
-"",
-"                function set_endB(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        var tmpspine = new MFVec3f();",
-"\t\t\ttmpspine[0] = value;",
-"\t\t\ttmpspine[1] = value;",
-"\t\t\tspine = tmpspine;",
-"\t\t    } else {",
-"\t\t        var tmpspine = new MFVec3f();",
-"\t\t\ttmpspine[0] = spine[0];",
-"\t\t\ttmpspine[1] = value;",
-"\t\t\tspine = tmpspine;",
-"\t\t    }",
-"                }",
-"",
-"                function set_spine(value) {",
-"                    spine = value;",
-"                }",
+"\t\t\tfunction set_endB(value) {",
+"\t\t\t\tspine = new MFVec3f(spine[0], value);",
+"\t\t\t}",
 "",
 ""
 ]
@@ -438,49 +416,19 @@
                 { "ProtoInstance":
                   {
                     "@name":"cyl",
-                    "@DEF":"linkA",
-                    "fieldValue": [
-                      {
-                        "@name":"set_positionA",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"set_positionB",
-                        "@value":[50,50,50]
-                      }
-                    ]
+                    "@DEF":"linkA"
                   }
                 },
                 { "ProtoInstance":
                   {
                     "@name":"cyl",
-                    "@DEF":"linkB",
-                    "fieldValue": [
-                      {
-                        "@name":"set_positionA",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"set_positionB",
-                        "@value":[-50,-50,-50]
-                      }
-                    ]
+                    "@DEF":"linkB"
                   }
                 },
                 { "ProtoInstance":
                   {
                     "@name":"cyl",
-                    "@DEF":"linkC",
-                    "fieldValue": [
-                      {
-                        "@name":"set_positionA",
-                        "@value":[50,50,50]
-                      },
-                      {
-                        "@name":"set_positionB",
-                        "@value":[50,50,-50]
-                      }
-                    ]
+                    "@DEF":"linkC"
                   }
                 }
               ]
@@ -497,11 +445,6 @@
                   "@type":"SFInt32"
                 },
                 {
-                  "@name":"node_changed",
-                  "@accessType":"outputOnly",
-                  "@type":"SFNode"
-                },
-                {
                   "@name":"add_node",
                   "@accessType":"inputOnly",
                   "@value":false,
@@ -510,10 +453,11 @@
               ],
               "-children":[
                 {
-                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":"<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
                 }
               ],
               "#sourceCode":[
+"",
 "",
 "\t",
 "ecmascript:",

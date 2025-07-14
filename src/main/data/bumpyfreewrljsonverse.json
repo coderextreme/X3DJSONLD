@@ -134,7 +134,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 June 2025"
+            "@content":"14 July 2025"
           },
           {
             "@name":"generator",
@@ -589,7 +589,7 @@
                                                   ],
                                                   "-children":[
                                                     {
-                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                                     }
                                                   ]
                                                 }

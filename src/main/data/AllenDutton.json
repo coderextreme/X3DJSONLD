@@ -41,10 +41,6 @@
             "@content":"4 July 2020"
           },
           {
-            "@name":"warning",
-            "@content":"X3D Validator reports numerous warnings are present"
-          },
-          {
             "@name":"reference",
             "@content":"http://www.cyberware.com"
           },
@@ -78,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 June 2025"
+            "@content":"14 July 2025"
           },
           {
             "@name":"generator",

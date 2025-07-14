@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 June 2025"
+            "@content":"14 July 2025"
           },
           {
             "@name":"generator",
@@ -90,12 +90,12 @@
           },
           { "Background":
             {
-              "@backUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],
-              "@bottomUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-              "@frontUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],
-              "@leftUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],
-              "@rightUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+              "@backUrl":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
             }
           },
           { "Transform":
@@ -146,37 +146,37 @@
                                 "-backTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                     }
                                   },
                                 "-bottomTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                     }
                                   },
                                 "-frontTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_from.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                     }
                                   },
                                 "-leftTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                     }
                                   },
                                 "-rightTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                     }
                                   },
                                 "-topTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                      "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
                                     }
                                   }
                               }
@@ -262,8 +262,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"]
+                                      "@url":["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -432,7 +432,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"a",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"a"
                   }
                 },
@@ -440,7 +440,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"b",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"b"
                   }
                 },
@@ -448,7 +448,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"c",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"c"
                   }
                 },
@@ -456,7 +456,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"d",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"d"
                   }
                 },
@@ -464,7 +464,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"pdelta",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"pdelta"
                   }
                 },
@@ -472,7 +472,7 @@
                   {
                     "@fromNode":"Animate",
                     "@fromField":"tdelta",
-                    "@toNode":"x_ite",
+                    "@toNode":"shader",
                     "@toField":"tdelta"
                   }
                 }
