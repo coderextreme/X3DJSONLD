@@ -15,35 +15,42 @@ PythonSerializer.prototype = {
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
-		var stack = [];
+		let stack = [];
 
-		var str = "";
+		let str = "";
 		// str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
 
-		str += "from x3dpsail import *\n";
+		// str += "print('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')\n";
+		str += "print('<!--')\n";
+		str += "import x3d\n";
+		str += "print('-->')\n";
 
 		stack.unshift(this.preno);
 		this.preno++;
-		var bodystr = "";
+		let bodystr = "";
         
         // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += element.nodeName+stack[0]+" = "+element.nodeName;
+		bodystr += ""+element.nodeName+stack[0]+" = x3d."+element.nodeName;
 		bodystr += "()\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
 
 		str += bodystr;
-		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+"_RoundTrip.x3d\")\n";
-		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+"_RoundTrip.json\")\n";
+		str += "f = open(\""+clazz+".new.python.x3d\", mode=\"w\", encoding=\"utf-8\")\n";
+		str += "f.write("+element.nodeName+stack[0]+".XML())\n";
+		str += "f.close()\n";
+		str += "f = open(\""+clazz+".new.python.json\", mode=\"w\", encoding=\"utf-8\")\n";
+		str += "f.write("+element.nodeName+stack[0]+".JSON())\n";
+		str += "f.close()\n";
 		stack.shift();
 		return str;
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
                 if (type === "int") {
-                        for (var v in values) {
+                        for (let v in values) {
 				if (values[v] > 0x7fffffff) {
 				    values[v] = values[v] - 4294967296
 				}
@@ -56,7 +63,7 @@ PythonSerializer.prototype = {
                         }
                 }
                 if (type === "boolean") {
-                        for (var v in values) {
+                        for (let v in values) {
 				if (values[v] === 'true') {
 					values[v] = "True";
 				} else if (values[v] === 'false') {
@@ -64,100 +71,166 @@ PythonSerializer.prototype = {
 				}
 			}
 		}
-		if (values[0] === "" || values[v] === null) {
+		if (values[0] === "" || values[0] === null) {
 			values.shift();
 		}
 		if (values.length >= 0 && (values[values.length-1] === "" || values[values.length-1] === null)) {
 			values.pop();
 		}
-
-		return '['+lead+values.join(j)+trail+']';
+		if (attrType === "MFRotation") {
+			let Dwhole = [];
+			let TupleCount = 4;
+                        for (let i=0; i < len(values); i+=TupleCount) {
+				let Dpart = "(";
+				Dpart += values[i];
+				Dpart += ", ";
+				Dpart += values[i+1];
+				Dpart += ", ";
+				Dpart += values[i+2];
+				Dpart += ", ";
+				Dpart += values[i+3];
+				Dpart += ")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+			// return '('+lead+values.map(a => parseFloat(a).toFixed(4)).join(j)+trail+')';
+		// } else if (attrType === "SFString") {
+			// let s =  '('+lead+values.join(',')+trail+')';
+			// return s;
+		} else if (attrType === "MFVec2f") {
+			let Dwhole = [];
+			let TupleCount = 2;
+                        for (let i=0; i < len(values); i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else if (attrType === "MFVec3d") {
+			let Dwhole = [];
+			let TupleCount = 3;
+                        for (let i=0; i < len(values); i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else if (attrType === "MFVec3f") {
+			let Dwhole = [];
+			let TupleCount = 3;
+                        for (let i=0; i < len(values); i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+			// return '('+lead+values.map(a => parseFloat(a).toFixed(4)).join(j)+trail+')';
+		} else if (attrType.startsWith("MFColor")) {
+			let Dwhole = [];
+			let TupleCount = attrType.endsWith("RGBA") ? 4 : 3;
+                        for (let i=0; i < len(values); i+=TupleCount) {
+				let Dpart = "(";
+				Dpart += values[i];
+				Dpart += ", ";
+				Dpart += values[i+1];
+				Dpart += ", ";
+				Dpart += values[i+2];
+				if (TupleCount > 3) {
+					Dpart += ", ";
+					Dpart += values[i+3];
+				}
+				Dpart += ")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else {
+			return '['+lead+values.join(j)+trail+']';
+		}
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		var prepre = ".";
-		var addpre = "set";
+		let prepre = ".";
+		let addpre = "";
 		if (cn > 0 && node.nodeName !== 'IS') {
-			addpre = "add";
+			addpre = "";
 		}
 		if (node.nodeName === 'field') {
-			addpre = "add";
+			addpre = "";
 		}
 
-		var method = node.nodeName;
+		let method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 				addpre = "";
 				method = mapToMethod[element.nodeName][node.nodeName];
-			} else {
-				method = method.charAt(0).toUpperCase() + method.slice(1);
 			}
 		} else if (typeof mapToMethod[element.nodeName] === 'string') {
 			addpre = "";
 			method = mapToMethod[element.nodeName];
-		} else {
-			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
-		for (var a in node.attributes) {
-			var attrs = node.attributes;
+		for (let a in node.attributes) {
+			let attrs = node.attributes;
 			try {
 				parseInt(a);
-				var attrsa = attrs[a];
-				var attr = attrsa.nodeName;
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
+				let attrsa = attrs[a];
+				let attr = attrsa.nodeName;
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
 					if (attr === "containerField") {
-						if (method === "setShaders") {
-							method = "addShaders"
+						method = attrsa;
+						if (method === "Shaders") {
 							addpre = "";
+							method = "children";
 						} else {
-							if (attrs[a].nodeValue === "joints" 
-								|| attrs[a].nodeValue === "sites" 
-								|| attrs[a].nodeValue === "skin" 
-								|| attrs[a].nodeValue === "viewpoints" 
-								|| attrs[a].nodeValue === "skeleton" 
-								|| attrs[a].nodeValue === "segments" 
+							if (attrs[a].nodeValue == "joints" 
+								|| attrs[a].nodeValue == "sites" 
+								|| attrs[a].nodeValue == "segments" 
 							) {
-								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
-							} else if (method === "addValue") {
+								method = ""+attrs[a];
 							} else {
-								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+								method = ""+attrs[a];
 							}
 							addpre = "";
 						}
 					}
 				}
 			} catch (e) {
-				// console.error(e);
 			}
 		}
-		if (node.nodeName === "IS") {
-			method = "IS";
-			addpre = "set";
-		}
-		if (addpre+method === "setJoints") {
-			method = "Joints"
-			addpre = "add";
-		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
-			method = "Metadata"
-			addpre = "add";
+			method = "metadata"
+			addpre = "";
 		}
-		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
-			method = "LayerSet"
-			addpre = "add";
+		if (addpre+method === "addChild") {
+			method = "addChildren"
+			addpre = "";
 		}
 		if (method === "setShaders") {
-			method = "Shaders"
-			addpre = "add";
+			method = "shaders"
+			addpre = "";
 		}
 		return prepre+addpre+method;
 	},
-	stringValue : function(attrsa, attr, attrType, element) {
-		var strval;
-		var nodeValue = attrsa.nodeValue;
+	stringValue : function(attrsa, attr, attrType, element, attrs) {
+		let strval;
+		let nodeValue = attrsa.nodeValue;
+	retype:
 		if (nodeValue === 'NULL') {
 			strval = "";
-		} else if (attrType === "SFString") {
+			return strval;
+		}
+		if (attrType === "SFString") {
+			if (attr === "value") {
+				for (let a in attrs) {
+					if (attrs[a].nodeName === "type") {
+						attrType = attrs[a].nodeValue;
+						break;
+					}
+				}
+			}
+		}
+		if (attrType === "SFString") {
 			if (attr === "accessType") {
 				strval = '"'+nodeValue+'"';
 			} else {
@@ -189,7 +262,7 @@ PythonSerializer.prototype = {
 			strval = this.printSubArray(attrType, "java.lang.String",
 				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
 				map(function(x) {
-					var y = x.
+					let y = x.
 					       replace(/(\\\\+)/g, '$1$1').
 					       replace(/\\\\"/g, '\\\"').
 					       replace(/""/g, '\\"\\"').
@@ -197,7 +270,6 @@ PythonSerializer.prototype = {
 					       // replace(/&/g, "&amp;").
 					       replace(/\\n/g, '\\n');
 					if (y !== x) {
-						// console.error("Python Replacing "+x+" with "+y);
 					}
 					return y;
 				}), this.codeno, '","', '"', '"');
@@ -246,25 +318,16 @@ PythonSerializer.prototype = {
 		return strval;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
-		var str = "";
-		var attrType = "";
-		for (var a in element.attributes) {
-			var attrs = element.attributes;
+		let str = "";
+		let attrType = "";
+		for (let a in element.attributes) {
+			let attrs = element.attributes;
 			try {
 				parseInt(a);
-				var attrsa = attrs[a];
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
-					var attr = attrsa.nodeName;
-					if (attr === 'containerField' && (
-						attrs[a].nodeValue === "joints" ||
-						attrs[a].nodeValue === "skeleton" ||
-						attrs[a].nodeValue === "segments" ||
-						attrs[a].nodeValue === "viewpoints" ||
-						attrs[a].nodeValue === "skin" ||
-						attrs[a].nodeValue === "skinCoord" ||
-						attrs[a].nodeValue === "sites")) {
-						attr = "containerFieldOverride";
-					} else if (attr === "xmlns:xsd") {
+				let attrsa = attrs[a];
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+					let attr = attrsa.nodeName;
+					if (attr === "xmlns:xsd") {
 						continue;
 					} else if (attr === "xsd:noNamespaceSchemaLocation" ) {
 						continue;
@@ -293,65 +356,152 @@ PythonSerializer.prototype = {
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
-					var strval = this.stringValue(attrsa, attr, attrType, element);
-					var method = attr;
-					method = method.charAt(0).toUpperCase() + method.slice(1);
+					let strval = this.stringValue(attrsa, attr, attrType, element, attrs);
+					let method = attr;
 					if (attr === "class") {
-						method = "CssClass";
+						method = "cssClass";
+					}
+					if (attr === "global") {
+						method = "global_";
 					}
 					str += element.nodeName+stack[0];
-					str += '.set'+method+"("+strval+")\n";
-					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
-						// str += ")"; // for cast
-					}
+					str += '.'+method+" = "+strval+"\n";
 				}
 			} catch (e) {
-				// console.error(e);
 			}
 			attrType = "";
 		}
-		for (var cn in element.childNodes) {
-			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
+		for (let cn in element.childNodes) {
+			let node = element.childNodes[cn];
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				stack.unshift(this.preno);
 				this.preno++;
-				var ch = "";
-				ch += node.nodeName+stack[0]+" = "+node.nodeName;
+				let ch = "";
+				if (node.nodeName === "#sourceCode") {
+					ch += node.nodeName.substring(1)+stack[0]+" = ";
+					ch += node.nodeValue;
+				} else {
+					ch += node.nodeName+stack[0]+" = x3d."+node.nodeName;
+					ch += "()\n";
+				}
 
-				ch += "()\n";
-				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += bodystr;
 				ch += "\n"
-				method = this.printParentChild(element, node, cn, mapToMethod, n);
-				ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+")\n";
+				let method = this.printParentChild(element, node, cn, mapToMethod, n);
+				if (method === ".global") {
+					method = ".global_";
+					console.log("Substituting", method);
+				} else if (method === ".addMeta" || method === ".addComponent"|| method === ".addUnit") {
+					method = ".children";
+				} else if (method === ".setIS") {
+					method = ".IS";
+				} else if (method.indexOf(". containerField") === 0) {
+					method = "."+method.substring(method.indexOf('"')+1, method.lastIndexOf('"'));
+				} else if (method === ".setScene" ||
+					method === ".setProtoInterface" ||
+					method === ".setProtoBody") {
+					method = method.substring(0,1) + method.substring(4);
+				} else if (method === ".#sourceCode") {
+					method = method.substring(0,1) + method.substring(2);
+				} else if (method === ".shape") {
+				} else if (method.toLowerCase() === ".hanimsite") {
+				} else {
+					method = method.substring(0,1) + method.substring(4,5).toLowerCase() + method.substr(5);
+
+				}
+				if (method === ".Scene" ||
+					method === ".IS" ||
+					method === ".appearance" ||
+					method === ".metadata" ||
+					method === ".back" ||
+					method === ".shape" ||
+					method === ".color" ||
+					method === ".skinCoord" ||
+					method === ".coord" ||
+					method === ".texCoord" ||
+					method === ".normal" ||
+					method === ".source" ||
+					method === ".layerSet" ||
+					method === ".textureTransform" ||
+					method === ".acousticProperties" ||
+					method === ".topTexture" ||
+					method === ".bottomTexture" ||
+					method === ".rightTexture" ||
+					method === ".leftTexture" ||
+					method === ".frontTexture" ||
+					method === ".backTexture" ||
+					method === ".texture" ||
+					method === ".fontStyle" ||
+					method === ".fillProperties" ||
+					method === ".lineProperties" ||
+					method === ".material" ||
+					method === ".geometry" ||
+					method === ".head" ||
+					method === ".geoOrigin" ||
+					method === ".emitter" ||
+					method === '.viewport'||
+					method === '.layout' ||
+					method === ".proxy" ||
+					method === ".ProtoInterface" ||
+					method === ".ProtoBody") {
+					ch += element.nodeName+stack[1]+method+" = "+node.nodeName+stack[0]+"\n";
+				} else if (method === ".sourceCode") {
+					ch += element.nodeName+stack[1]+method+" = "+node.nodeName.substring(1)+stack[0]+"\n";
+				} else if ((element.nodeName === "Group" || element.nodeName === "Shape" || element.nodeName === "HAnimHumanoid") && method === ".value") {
+					ch += element.nodeName+stack[1]+".metadata = "+node.nodeName+stack[0]+"\n";
+				} else if (method === ".value") {
+					ch += "if "+element.nodeName+stack[1]+method+" is None:\n";
+					ch += "    "+element.nodeName+stack[1]+method+" = []\n";
+					ch += element.nodeName+stack[1]+method+".append("+node.nodeName+stack[0]+")\n";
+				} else if (method === ".skin" || method === ".skeleton") {
+					let n = node;
+					while (n && n.nodeName !== "HAnimHumanoid") {
+						n = n.parent;
+					}
+					if (n) {
+						if (n.nodeName !== node.nodeName) {
+							ch += n.nodeName+stack[0]+method+".append("+node.nodeName+stack[0]+")\n";
+						}
+					} else {
+						ch += element.nodeName+stack[1]+method+".append("+node.nodeName+stack[0]+")\n";
+					}
+				} else {
+
+					ch += element.nodeName+stack[1]+method+".append("+node.nodeName+stack[0]+")\n";
+				}
 				str += ch;
 				stack.shift();
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
-				var y = node.nodeValue.
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				// str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";
 				str += y.split("\r\n").map(function(x) {
-					return x.replace(/^/g, '#');
+					return x.replace(/^/g, '"""');
 					}).join("\r\n");
-				str += "\r\n";
-				if (y !== node.nodeValue) {
-					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
-				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
+				str += '"""\r\n';
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+element.nodeName+stack[0];
-				str += ".setSourceCode('''"+node.nodeValue.split(/\r?\n/).map(function(x) {
+				str += ".sourceCode = '''"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"').
-						replace(/$/g, '\\');
+						replace(/"/g, '\\"')
+						replace(/$/g, '\\')
 						/*
 						.replace(/\\n/g, "\\\\n")
 						*/
-					}).join('\\n\"+\n\"')+"''')\n";
+					;
+					}).join('\\n\"+\n\"')+"'''\n";
 			}
 	        		
 		}
 		return str;
 	}
 };
+
+
+if (typeof module === 'object')  {
+	module.exports = PythonSerializer;
+}
+

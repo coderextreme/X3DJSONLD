@@ -1,4 +1,4 @@
-import java from 'java';
+import java from 'node-java';
 java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
