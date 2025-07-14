@@ -34,9 +34,9 @@
 
 
 
-        <HAnimJoint DEF='Joe_HumanoidRoot' center='0 0.875 0' containerField='skeleton' name='HumanoidRoot' rotation='0 0 1 0' translation='0 0 0'>
+        <HAnimJoint DEF='Joe_HumanoidRoot' center='0 0.875 0' containerField='skeleton' name='HumanoidRoot' rotation='0 0 1 0'>
           <HAnimSegment DEF='Joe_sacrum' name='sacrum'>
-            <HAnimSite DEF='Joe_RootFront' name='RootFront' translation='0 0 0'>
+            <HAnimSite DEF='Joe_RootFront' name='RootFront'>
               <Transform DEF='hanimcordsys' scale='0.175 0.175 0.175'>
                 <Viewpoint DEF='ViewBodyRootAxes' description='Joe_HAnim Root Coordinate Axes View'/>
                 <Shape DEF='AxisLinesShape'>

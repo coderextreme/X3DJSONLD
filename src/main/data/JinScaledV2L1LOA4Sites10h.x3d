@@ -162,7 +162,7 @@ Contents as follows:
     </Group>
 
     <Group DEF='HAnimLandmarks'>
-      <Transform DEF='SiteLandmark' translation='0 0 0'>
+      <Transform DEF='SiteLandmark'>
         <Shape DEF='HAnimSiteLandmark'>
           <Sphere radius='0.008'/>
             <Appearance>
@@ -170,7 +170,7 @@ Contents as follows:
           </Appearance>
         </Shape>
       </Transform>
-      <Transform DEF='SiteLandmarkB' translation='0 0 0'>
+      <Transform DEF='SiteLandmarkB'>
         <Shape DEF='HAnimSiteLandmarkB'>
           <Sphere radius='0.007'/>
             <Appearance>
@@ -178,7 +178,7 @@ Contents as follows:
           </Appearance>
         </Shape>
       </Transform>
-      <Transform DEF='JointLandmark' translation='0 0 0'>
+      <Transform DEF='JointLandmark'>
         <Shape DEF='HAnimJointLandmark'>
           <Box size='0.016 0.016 0.016'/>
             <Appearance>
@@ -186,7 +186,7 @@ Contents as follows:
           </Appearance>
         </Shape>
       </Transform>
-      <Transform DEF='JointShapeB' translation='0 0 0'>
+      <Transform DEF='JointShapeB'>
         <Shape DEF='HAnimJointShapeB'>
           <Box size='0.016 0.016 0.016'/>
             <Appearance>

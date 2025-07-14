@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile="Immersive" version="4.0">
 <head>
 	<meta content="app.x3d" name="title"></meta>
@@ -11,12 +11,12 @@
 	<Group bboxCenter="0 0 0" bboxSize="-1 -1 -1" visible="true">
 		<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1" visible="true">
 			<Appearance>
-				<Material ambientIntensity="0.2" diffuseColor="1,0,0" emissiveColor="0 0 0" shininess="0.2" specularColor="0 0 0" transparency="0"></Material>
+				<Material ambientIntensity="0.2" diffuseColor="1 0 0" emissiveColor="0 0 0" shininess="0.2" specularColor="0 0 0" transparency="0"></Material>
 			</Appearance>
 			<Box size="2 2 2" solid="true"></Box>
 		</Shape>
 	</Group>
-	<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" center="0 0 0" rotation="7,8,9,3.14" scale="4,5,6" scaleOrientation="0 0 1 0" translation="1,2,3" visible="true">
+	<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" center="0 0 0" rotation="7 8 9 3.14" scale="4 5 6" scaleOrientation="0 0 1 0" translation="1 2 3" visible="true">
 	</Transform>
 </Scene>
 </X3D>

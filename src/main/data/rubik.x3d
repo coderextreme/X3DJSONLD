@@ -16,7 +16,7 @@
                 <field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
-                <Transform translation="0 0 0">
+                <Transform>
                     <IS>
                         <connect nodeField="translation" protoField="xtranslation"/>
                     </IS>
@@ -34,7 +34,7 @@
                 <field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
-                <Transform translation="0 0 0">
+                <Transform>
                     <IS>
                         <connect nodeField="translation" protoField="ytranslation"/>
                     </IS>
@@ -55,7 +55,7 @@
                 <field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
-                <Transform translation="0 0 0">
+                <Transform>
                     <IS>
                         <connect nodeField="translation" protoField="ztranslation"/>
                     </IS>
@@ -76,7 +76,7 @@
                 <field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
-                <Transform translation="0 0 0">
+                <Transform>
                      <IS>
                         <connect nodeField="translation" protoField="ttranslation"/>
                     </IS>
