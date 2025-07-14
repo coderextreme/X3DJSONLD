@@ -8,7 +8,7 @@
 </head>
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<Transform DEF="DECLpoint_G1_node" translation="0 0 0"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="DECLpoint_G1_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -33,7 +33,7 @@
 <ROUTE fromNode="DECLpoint_G1_MB1" fromField="keyValue" toNode="DECLpoint_G1_PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="DECLpoint_G1_PI1" fromField="value_changed" toNode="DECLpoint_G1_node" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="DECLpoint_G2_node" translation="0 0 0"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="DECLpoint_G2_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>

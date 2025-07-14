@@ -61,7 +61,7 @@ ecmascript:
     </ProtoInterface>
     <ProtoBody>
       <Group>
-	<Transform DEF='trans' translation="0 0 0">
+	<Transform DEF='trans'>
 	<Transform DEF='rotscale' >
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>

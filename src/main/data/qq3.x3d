@@ -50,7 +50,7 @@
         <Transform translation="0 -2.5 0">
             <ProtoInstance name="Process"/>
         </Transform>
-        <Transform translation="0 0 0">
+        <Transform>
             <ProtoInstance name="Process"/>
         </Transform>
         <Transform translation="0 2.5 0">

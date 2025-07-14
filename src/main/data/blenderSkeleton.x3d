@@ -33,17 +33,17 @@
     <Transform DEF='Camera_TRANSFORM' rotation='0.77344 0.33383 0.53884 1.35072' scale='1.0 1.0 1.0' translation='7.35889 -6.92579 4.95831'>
       <Viewpoint DEF='CA_Camera' fieldOfView='0.6911112070083618' orientation='-3.627339850709177e-08 -0.4730778932571411 -0.8810206651687622 0.0' position='-3.927080456378462e-07 -2.123415470123291e-07 2.384185791015625e-07'/>
     </Transform>
-    <Transform DEF='Armature_TRANSFORM' rotation='0.0 1.0 0.0 0.0' scale='1.0 1.0 1.0' translation='0.0 0.0 0.0'>
+    <Transform DEF='Armature_TRANSFORM' rotation='0.0 1.0 0.0 0.0' scale='1.0 1.0 1.0'>
       <HAnimHumanoid DEF='hanim_humanoid' name='humanoid'>
         <HAnimJoint containerField='skeleton' DEF='hanim_Armature' center='0.0 0.0 0.0' name='Armature'>
           <HAnimSegment DEF='hanim_SEGMENT_FOR_Armature' name='SEGMENT_FOR_Armature'>
             <TouchSensor description='joint Armature segment SEGMENT_FOR_Armature'/>
-            <Transform translation='0.0 0.0 0.0'>
+            <Transform>
               <Shape USE='JointShape'>
               </Shape>
             </Transform>
             <HAnimSite DEF='hanim_SEGMENT_FOR_Armature_tip' name='SEGMENT_FOR_Armature_tip'>
-              <Transform translation='0.0 0.0 0.0'>
+              <Transform>
                 <Shape USE='SiteShape'>
                 </Shape>
               </Transform>
@@ -178,12 +178,12 @@
                             <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_1' center='0.0 0.0 0.0' name='l_tarsal_distal_phalanx_1'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1'>
                                 <TouchSensor description='joint l_tarsal_distal_phalanx_1 segment SEGMENT_FOR_l_tarsal_distal_phalanx_1'/>
-                                <Transform translation='0.0 0.0 0.0'>
+                                <Transform>
                                   <Shape USE='JointShape'>
                                   </Shape>
                                 </Transform>
                                 <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip'>
-                                  <Transform translation='0.0 0.0 0.0'>
+                                  <Transform>
                                     <Shape USE='SiteShape'>
                                     </Shape>
                                   </Transform>
@@ -598,12 +598,12 @@
                             <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_1' center='0.0 0.0 0.0' name='r_tarsal_distal_phalanx_1'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1'>
                                 <TouchSensor description='joint r_tarsal_distal_phalanx_1 segment SEGMENT_FOR_r_tarsal_distal_phalanx_1'/>
-                                <Transform translation='0.0 0.0 0.0'>
+                                <Transform>
                                   <Shape USE='JointShape'>
                                   </Shape>
                                 </Transform>
                                 <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip'>
-                                  <Transform translation='0.0 0.0 0.0'>
+                                  <Transform>
                                     <Shape USE='SiteShape'>
                                     </Shape>
                                   </Transform>

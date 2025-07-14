@@ -5,6 +5,7 @@
     <component name='Scripting' level='1'/>
     <meta name='creator' content='John W Carlson'/>
     <meta name='created' content='December 13 2015'/>
+    <meta name='modified' content='July 14 2025'/>
     <meta name='title' content='force.x3d'/>
     <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'/>
     <meta name='description' content='beginnings of a force directed graph in 3D'/>
@@ -15,7 +16,7 @@
   <Scene>
     <ProtoDeclare name='node'>
       <ProtoInterface>
-        <field accessType='inputOutput' type='SFVec3f' name='position'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -24,138 +25,80 @@
               <connect nodeField='translation' protoField='position'/>
             </IS>
             <Shape>
-              <Appearance>
-                <Material
-                    diffuseColor='1 0 0'/>
-              </Appearance>
               <Sphere/>
+              <Appearance>
+                <Material diffuseColor='1 0 0'/>
+              </Appearance>
             </Shape>
-            <Transform
-                translation='1 0 0'>
+            <Transform translation='1 0 0'>
               <Shape>
                 <Appearance>
-                  <Material
-                      diffuseColor='0 0 1'/>
+                  <Material diffuseColor='0 0 1'/>
                 </Appearance>
-                <Text
-                    string='"Node"'>
-                  <FontStyle
-                      size='5'
-                      justify='"MIDDLE" "MIDDLE"'/>
+                <Text string='"Node"'>
+                  <FontStyle size='5' justify='"MIDDLE" "MIDDLE"'/>
                 </Text>
               </Shape>
             </Transform>
           </Transform>
-          <PositionInterpolator DEF='NodePosition'
-              key='0, 1'
-              keyValue='0 0 0, 0 5 0'/>
+          <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
           <Script DEF='MoveBall'>
-            <field accessType='inputOutput' type='SFVec3f' name='translation' value='50 50 0'/>
-            <field accessType='inputOutput' type='SFVec3f' name='old'/>
-            <field accessType='inputOnly' type='SFTime' name='set_cycle'/>
-            <field accessType='outputOnly' type='MFVec3f' name='keyValue'/>
+            <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
+            <field name='old' accessType='inputOutput' type='SFVec3f'/>
+            <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
+            <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
 ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-		    				/*
-                                                var tmpkeyValue = new MFVec3f();
-			    			tmpkeyValue[0] = old;
-			    			tmpkeyValue[1] = translation;
-                                                keyValue = tmpkeyValue;
-		    				*/
-                                                keyValue = new MFVec3f([old, translation]);
-			    		
-						// Browser.println(translation);
-					}
+		function set_cycle(value) {
+			old = translation;
+			translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+			keyValue = new MFVec3f(old, translation);
+		}
 ]]>
           </Script>
-          <TimeSensor DEF='nodeClock'
-              cycleInterval='3'
-              loop='true'/>
-        </Group>
+          <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'/>
         <ROUTE fromNode='nodeClock' fromField='cycleTime' toNode='MoveBall' toField='set_cycle'/>
         <ROUTE fromNode='nodeClock' fromField='fraction_changed' toNode='NodePosition' toField='set_fraction'/>
         <ROUTE fromNode='MoveBall' fromField='keyValue' toNode='NodePosition' toField='set_keyValue'/>
         <ROUTE fromNode='NodePosition' fromField='value_changed' toNode='transform' toField='set_translation'/>
+        </Group>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare name='cyl'>
       <ProtoInterface>
-        <field accessType='inputOnly' type='SFVec3f' name='set_positionA'/>
-        <field accessType='inputOnly' type='SFVec3f' name='set_positionB'/>
+        <field name='set_positionA' accessType='inputOutput' type='SFVec3f'/>
+        <field name='set_positionB' accessType='inputOutput' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
           <Shape>
             <Appearance>
-              <Material
-                  diffuseColor='0 1 0'/>
+              <Material diffuseColor='0 1 0'/>
             </Appearance>
-            <Extrusion DEF='extrusion'
-                creaseAngle='0.785'
-                crossSection='1 0, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0 -1, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1 -0, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0 1, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1 0'
-                spine='0 -50 0, 0 50 0'/>
+            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 -0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 0 0 0 50 0'/>
           </Shape>
           <Script DEF='MoveCylinder'>
-            <field accessType='inputOutput' type='MFVec3f' name='spine' value='0 -50 0, 0 50 0'/>
-            <field accessType='inputOnly' type='SFVec3f' name='set_endA'/>
-            <field accessType='inputOnly' type='SFVec3f' name='set_endB'/>
+            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
+            <field name='endA' accessType='inputOutput' type='SFVec3f'/>
+            <field name='endB' accessType='inputOutput' type='SFVec3f'/>
             <IS>
-              <connect nodeField='set_endA' protoField='set_positionA'/>
-              <connect nodeField='set_endB' protoField='set_positionB'/>
+              <connect nodeField='endA' protoField='set_positionA'/>
+              <connect nodeField='endB' protoField='set_positionB'/>
             </IS>
 <![CDATA[
 ecmascript:
 
                 function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    	*/
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = spine[1];
-			spine = tmpspine;
-		        */
-		        spine = new MFVec3f([value, spine[1]]);
-		    }
+		    spine = new MFVec3f(value, spine[1]);
                 }
                 
                 function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		        */
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = spine[0];
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    	*/
-		        spine = new MFVec3f([spine[0], value]);
-		    }
-                }
-                
-                function set_spine(value) {
-                    spine = value;
+		    spine = new MFVec3f(spine[0], value);
                 }
 ]]>
           </Script>
-        </Group>
         <ROUTE fromNode='MoveCylinder' fromField='spine_changed' toNode='extrusion' toField='set_spine'/>
+        </Group>
       </ProtoBody>
     </ProtoDeclare>
     <Transform DEF='HoldsContent'

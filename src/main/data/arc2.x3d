@@ -12,7 +12,7 @@
         <Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
         <Background skyColor="0.4 0.4 0.4"></Background>
         <Transform DEF="G1">
-            <Transform DEF="DECLpoint_INSTANCE_node" translation="0 0 0">
+            <Transform DEF="DECLpoint_INSTANCE_node">
                 <Shape>
                     <Sphere containerField="geometry" radius="0.1"></Sphere>
                     <Appearance containerField="appearance">
@@ -45,7 +45,7 @@ ecmascript:
             </Transform>
         </Transform>
         <Transform DEF="G2">
-            <Transform DEF="DECLpoint_INSTANCE1000_node" translation="0 0 0">
+            <Transform DEF="DECLpoint_INSTANCE1000_node">
                 <Shape>
                     <Sphere containerField="geometry" radius="0.1"></Sphere>
                     <Appearance containerField="appearance">

@@ -45,7 +45,7 @@ class ClassPrinter:
         self.printed = True
         return str
 
-code = "import java from 'java';\n"
+code = "import java from 'node-java';\n"
 
 code += 'java.options.push("-Djava.awt.headless=true");\n'
 code += 'java.options.push("-Xmx1000m");\n'
@@ -108,6 +108,6 @@ code += '   throw e;\n'
 code += '};\n'
 code += 'export default autoclass;\n';
 
-f = open("../node/X3Dautoclass.mjs", "w")
+f = open("../node/X3Dautoclass.js", "w")
 f.write(code)
 f.close()

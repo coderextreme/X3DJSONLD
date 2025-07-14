@@ -1,6 +1,6 @@
 {
   "name": "X3DJSONLD",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "private": true,
   "main": "app.mjs",
   "type": "module",
