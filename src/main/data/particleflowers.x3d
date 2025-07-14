@@ -33,37 +33,37 @@
 			<Sphere containerField="geometry" radius="100"/>
 		</BoundedPhysicsModel>
 		<ExplosionEmitter speed="2"  variation="0.75"/>
-            <Appearance>
-                <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="backTexture"/>
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottomTexture"/>
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="frontTexture"/>
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="leftTexture"/>
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
-			<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
-                </ComposedCubeMapTexture>  
-                <ComposedShader DEF="x_ite" language='GLSL'>
-		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
-		  <field name='cube' type='SFNode' accessType="initializeOnly">
-			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
-		  </field>
-		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
-		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
-		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
+                <Appearance>
+                        <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+		        <ComposedCubeMapTexture DEF="texture">
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="backTexture"/>
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottomTexture"/>
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="frontTexture"/>
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="leftTexture"/>
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
+					<ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
+			</ComposedCubeMapTexture>  
+			<ComposedShader DEF="x_ite" language='GLSL'>
+				  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+				  <field name='cube' type='SFNode' accessType="initializeOnly">
+					<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+				  </field>
+				  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+				  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+				  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
+				  <field name='a' type='SFFloat' accessType='inputOutput' value='2'></field>
+				  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+				  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
+				  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
+				  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+				  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+				  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"'></ShaderPart>
+				  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"' type='FRAGMENT'></ShaderPart>
+			</ComposedShader>
 		</Appearance>
-            	<Sphere containerField="geometry"></Sphere>
-	        </ParticleSystem>
-                <Script DEF='Animate'>
+                <Sphere containerField="geometry"></Sphere>
+	    </ParticleSystem>
+            <Script DEF='Animate'>
                   <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
@@ -142,7 +142,7 @@ ecmascript:
 				}
 			}
 ]]>
-</Script>
+	    </Script>
 	    <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'></TimeSensor>
             <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
             <ROUTE fromNode='Animate' fromField='a' toNode='x_ite' toField='a'/>
