@@ -98,8 +98,14 @@ convertJSON([
 	codeOutput : "../"
 	},
 	{ 
-	serializer : 'PythonSerializerX3DJSAIL',
+	serializer : 'PythonSerializer',
 	folder : "../python/net/coderextreme/",
+	extension : ".py",
+	codeOutput : "../"
+	},
+	{ 
+	serializer : 'GraalPySerializer',
+	folder : "../graalpy/net/coderextreme/",
 	extension : ".py",
 	codeOutput : "../"
 	},

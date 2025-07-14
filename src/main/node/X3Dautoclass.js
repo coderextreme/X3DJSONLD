@@ -1,8 +1,8 @@
-let java = require('java');
+import java from 'java';
 java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
-java.classpath.push("C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar");
+java.classpath.push("C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("X3DJSAIL.4.0.full.jar");
 java.classpath.push("pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../pythonSAI/X3DJSAIL.4.0.full.jar");
@@ -346,4 +346,4 @@ MFVec4f : java.import('org.web3d.x3d.jsail.fields.MFVec4f'),
    console.log(e);
    throw e;
 };
-module.exports = autoclass;
+export default autoclass;

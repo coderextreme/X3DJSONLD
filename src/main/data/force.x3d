@@ -87,7 +87,7 @@ ecmascript:
 <![CDATA[
 ecmascript:
 
-                function endA(value) {
+                function set_endA(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f(value, value);
 		    } else {
@@ -95,7 +95,7 @@ ecmascript:
 		    }
                 }
                 
-                function endB(value) {
+                function set_endB(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f(value, value);
 		    } else {
@@ -103,9 +103,6 @@ ecmascript:
 		    }
                 }
                 
-                function set_spine(value) {
-                    spine = value;
-                }
 ]]>
                 </Script>
                 
