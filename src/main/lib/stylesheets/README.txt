@@ -8,4 +8,4 @@ with version control maintained at
 X3D stylesheet descriptions are included in the X3D Resources, online at
    https://www.web3d.org/x3d/content/examples/X3dResources.html#Stylesheets
 
-Point of contact:   Don Brutzman  brutzman@nps.edu
+Point of contact:   Don Brutzman  don.brutzman@gmail.com

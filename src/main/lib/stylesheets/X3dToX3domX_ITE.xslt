@@ -1117,19 +1117,18 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <td style="text-align:left;vertical-align:text-top;padding:4px;">
                                 <xsl:if test="//X3D//Scene//Text">
                                     <xsl:element name="a">
-										<xsl:attribute name="href">
-											<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
-											<xsl:text>Text</xsl:text>
-										</xsl:attribute>
-										<xsl:attribute name="target">
-											<xsl:text>_blank</xsl:text>
-										</xsl:attribute>
-										<span style="color:orange; text-decoration-color:orange; moz-text-decoration-color:orange;">
-											<b><xsl:text>Text</xsl:text></b>
-										</span>
-									</xsl:element>
-									<br />
-                                    <xsl:text>: for example use, see </xsl:text>
+                                        <xsl:attribute name="href">
+                                                <xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+                                                <xsl:text>Text</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="target">
+                                                <xsl:text>_blank</xsl:text>
+                                        </xsl:attribute>
+                                        <span style="color:orange; text-decoration-color:orange; moz-text-decoration-color:orange;">
+                                                <b><xsl:text>Text</xsl:text></b>
+                                        </span></xsl:element>
+                                    <xsl:text> node:</xsl:text>
+                                    <xsl:text> for example use, see </xsl:text>
                                     <a href="https://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text and FontStyle Example</a>
                                 </xsl:if>
                                 <xsl:text> </xsl:text>
