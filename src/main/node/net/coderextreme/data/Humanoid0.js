@@ -1,13 +1,6 @@
-var java = require('java');
-var util = require('util');
-java.asyncOptions = {
-  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
-  syncSuffix: "",              // Sync methods use the base name(!!)
-  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
-  ifReadOnlySuffix: "_alt"
-};
-var autoclass = require('../../../X3Dautoclass');
+import java from 'node-java';
+import util from 'util';
+import autoclass from '../../../X3Dautoclass.js';
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -66,7 +59,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
               .setTexture(new autoclass.ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(java.newArray("java.lang.String", ["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])))
               .setMaterial(new autoclass.Material().setDEF("SkinMaterial").setAmbientIntensity(java.newFloat(0.6)).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setShininess(java.newFloat(0.6)).setTransparency(java.newFloat(1)))))
           .setSkinCoord(new autoclass.Coordinate().setContainerFieldOverride("skinCoord").setUSE("TheSkinCoord"))
-          .addSkeleton(new autoclass.HAnimJoint("hanim_HAnim").setName("").setDEF("hanim_").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setContainerFieldOverride("skeleton"))
+          .addSkeleton(new autoclass.HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setContainerFieldOverride("skeleton"))
           .addJoints(new autoclass.HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints").setUSE("hanim_"))))      ;
     X3D0.toFileX3D("../data/Humanoid0.new.node.x3d");
     X3D0.toFileJSON("../data/Humanoid0.new.node.json");

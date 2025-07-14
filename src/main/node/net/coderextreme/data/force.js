@@ -1,13 +1,6 @@
-var java = require('java');
-var util = require('util');
-java.asyncOptions = {
-  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
-  syncSuffix: "",              // Sync methods use the base name(!!)
-  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
-  ifReadOnlySuffix: "_alt"
-};
-var autoclass = require('../../../X3Dautoclass');
+import java from 'node-java';
+import util from 'util';
+import autoclass from '../../../X3Dautoclass.js';
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -59,11 +52,7 @@ var ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                var tmpkeyValue = new MFVec3f();\n"+
-"			    			tmpkeyValue[0] = old;\n"+
-"			    			tmpkeyValue[1] = translation;\n"+
-"                                                keyValue = tmpkeyValue;\n"+
-"			    		\n"+
+"                                                keyValue = new MFVec3f(old, translation);\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
               .addChild(new autoclass.TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
@@ -73,8 +62,8 @@ var ProtoInstance6 = null;
               .addChild(new autoclass.ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
         .addChild(new autoclass.ProtoDeclare().setName("cyl")
           .setProtoInterface(new autoclass.ProtoInterface()
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 50")))
           .setProtoBody(new autoclass.ProtoBody()
             .addChild(new autoclass.Group()
               .addChild(new autoclass.Shape()
@@ -83,43 +72,27 @@ var ProtoInstance6 = null;
                   .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])))))
               .addChild(new autoclass.Script().setDEF("MoveCylinder")
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("spine").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
-                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_endA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_endB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("endA").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("endB").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 50"))
                 .setIS(new autoclass.IS()
-                  .addConnect(new autoclass.connect().setNodeField("set_endA").setProtoField("set_positionA"))
-                  .addConnect(new autoclass.connect().setNodeField("set_endB").setProtoField("set_positionB")))
+                  .addConnect(new autoclass.connect().setNodeField("endA").setProtoField("set_positionA"))
+                  .addConnect(new autoclass.connect().setNodeField("endB").setProtoField("set_positionB")))
                 .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
+"		        spine = new MFVec3f(value, value);\n"+
 "		    } else {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = spine[1];\n"+
-"			spine = tmpspine;\n"+
+"		        spine = new MFVec3f(value, spine[1]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
+"		        spine = new MFVec3f(value, value);\n"+
 "		    } else {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = spine[0];\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
+"		        spine = new MFVec3f(spine[0], value);\n"+
 "		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
 "                }"))
               .addChild(new autoclass.ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
         .addChild(new autoclass.Transform().setDEF("HoldsContent").setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)]))
@@ -133,9 +106,8 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance6 = new autoclass.ProtoInstance().setName("cyl").setDEF("linkC")))
         .addChild(new autoclass.Script().setDEF("clickHandler")
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("counter").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("node_changed").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("add_node").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addComments((new autoclass.CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")))
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
@@ -169,18 +141,6 @@ ProtoInstance2
             .addFieldValue(new autoclass.fieldValue().setName("position").setValue("-50 -50 -50"));
 ProtoInstance3
             .addFieldValue(new autoclass.fieldValue().setName("position").setValue("50 50 -50"));
-ProtoInstance4
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionA").setValue("0 0 0"));
-ProtoInstance4
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionB").setValue("50 50 50"));
-ProtoInstance5
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionA").setValue("0 0 0"));
-ProtoInstance5
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionB").setValue("-50 -50 -50"));
-ProtoInstance6
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionA").setValue("50 50 50"));
-ProtoInstance6
-            .addFieldValue(new autoclass.fieldValue().setName("set_positionB").setValue("50 50 -50"));
     X3D0.toFileX3D("../data/force.new.node.x3d");
     X3D0.toFileJSON("../data/force.new.node.json");
     process.exit(0);

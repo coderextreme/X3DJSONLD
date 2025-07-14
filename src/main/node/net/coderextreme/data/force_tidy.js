@@ -1,13 +1,6 @@
-var java = require('java');
-var util = require('util');
-java.asyncOptions = {
-  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
-  syncSuffix: "",              // Sync methods use the base name(!!)
-  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
-  ifReadOnlySuffix: "_alt"
-};
-var autoclass = require('../../../X3Dautoclass');
+import java from 'node-java';
+import util from 'util';
+import autoclass from '../../../X3Dautoclass.js';
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -61,13 +54,13 @@ var ProtoInstance6 = null;
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"		    				/*\n"+
 "                                                var tmpkeyValue = new MFVec3f();\n"+
 "			    			tmpkeyValue[0] = old;\n"+
 "			    			tmpkeyValue[1] = translation;\n"+
 "                                                keyValue = tmpkeyValue;\n"+
+"		    				/*\n"+
+"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
 "		    				*/\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
 "			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
@@ -97,21 +90,21 @@ var ProtoInstance6 = null;
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
-"		    	/*\n"+
 "		        var tmpspine = new MFVec3f();\n"+
 "			tmpspine[0] = value;\n"+
 "			tmpspine[1] = value;\n"+
 "			spine = tmpspine;\n"+
-"		    	*/\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
 "		    	/*\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
+"		    	*/\n"+
+"		    } else {\n"+
 "		        var tmpspine = new MFVec3f();\n"+
 "			tmpspine[0] = value;\n"+
 "			tmpspine[1] = spine[1];\n"+
 "			spine = tmpspine;\n"+
+"		    	/*\n"+
+"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
 "		        */\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+
@@ -123,7 +116,7 @@ var ProtoInstance6 = null;
 "			tmpspine[1] = value;\n"+
 "			spine = tmpspine;\n"+
 "		        */\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
+"		        spine = new MFVec3f(...[value, value]);\n"+
 "		    } else {\n"+
 "		    	/*\n"+
 "		        var tmpspine = new MFVec3f();\n"+
@@ -131,7 +124,7 @@ var ProtoInstance6 = null;
 "			tmpspine[1] = value;\n"+
 "			spine = tmpspine;\n"+
 "		    	*/\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		        spine = new MFVec3f(...[spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
 "\n"+

@@ -1,13 +1,6 @@
-var java = require('java');
-var util = require('util');
-java.asyncOptions = {
-  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
-  syncSuffix: "",              // Sync methods use the base name(!!)
-  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
-  ifReadOnlySuffix: "_alt"
-};
-var autoclass = require('../../../X3Dautoclass');
+import java from 'node-java';
+import util from 'util';
+import autoclass from '../../../X3Dautoclass.js';
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -24,7 +17,6 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addMeta(new autoclass.meta().setName("created").setContent("8 June 2001"))
         .addMeta(new autoclass.meta().setName("translated").setContent("9 January 2002"))
         .addMeta(new autoclass.meta().setName("modified").setContent("4 July 2020"))
-        .addMeta(new autoclass.meta().setName("warning").setContent("X3D Validator reports numerous warnings are present"))
         .addMeta(new autoclass.meta().setName("reference").setContent("http://www.cyberware.com"))
         .addMeta(new autoclass.meta().setName("reference").setContent("AllenDuttonBlurryMotion.x3d"))
         .addMeta(new autoclass.meta().setName("reference").setContent("http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"))

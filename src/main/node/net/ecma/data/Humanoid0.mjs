@@ -213,8 +213,8 @@ var X3D0 =  new X3D({
                   USE : new SFString("TheSkinCoord")})),
               joints : new MFNode([
                 new HAnimJoint({
-                  name : new SFString(""),
-                  DEF : new SFString("hanim_"),
+                  name : new SFString("humanoid_root"),
+                  DEF : new SFString("hanim_humanoid_root"),
                   ulimit : new MFFloat([0,0,0]),
                   llimit : new MFFloat([0,0,0])}),
 
