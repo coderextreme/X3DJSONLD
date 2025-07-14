@@ -32,6 +32,10 @@ JRubySerializer.prototype = {
 		stack.unshift(this.preno);
 		this.preno++;
 		var bodystr = "";
+		bodystr += "ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+		bodystr += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
+		bodystr += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
+		bodystr += "ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);\n";
         
 		const enn = element.nodeName.charAt(0).toLowerCase() + element.nodeName.slice(1);
 		bodystr += enn+stack[0]+" = "+element.nodeName+".new\n";
@@ -418,16 +422,24 @@ JRubySerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+".addComments(\""+y.split("\n").join('\\n\"+\n\"')+"\")";
+				str += ("  ".repeat(n+2))+".addComments(CommentsBlock.new(\""+y.split("\n").join('\\n\"+\n\"')+"\"))\n";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += '.setSourceCode "'+node.nodeValue.split(/\r?\n/).map(function(x) {
+				str += ("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split(/[\r\n][\r\n]?/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"').
+						replace(/"/g, '\\"')
+					;
+					}).join('\\n\"+\n\"')+'")';
+					/*
+				str += ("  ".repeat(n+2))+'.setSourceCode "'+node.nodeValue.split(/\r?\n/).map(function(x) {
+					return x.
+					        replace(/\\/g, '\\\\').
+						replace(/"/g, '\\"')
 					}).join('\n')+'\n"';
+					*/
 			}
 	        		
 		}

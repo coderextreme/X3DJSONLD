@@ -41,9 +41,8 @@ JavaScriptSerializer.prototype = {
 			str += "load('X3Dautoclass.js');\n";
 		}
 		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
-		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
-		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
-		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
+		str += "ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
+		str += "ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		str += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
 		str += "function doubleToFloat(d) {\n";
@@ -277,7 +276,6 @@ JavaScriptSerializer.prototype = {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
-						// console.log("################## FOUND", attr, attrs[a].nodeValue);
 						attr = "containerFieldOverride";
 
 					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
@@ -414,7 +412,6 @@ JavaScriptSerializer.prototype = {
 					
 					str += '.'+method+"("+strval+")";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
-					// console.log("################## FOUND", method, attrs[a].nodeValue);
 						// str += ")"; // for cast
 					}
 				}
@@ -494,9 +491,6 @@ JavaScriptSerializer.prototype = {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
-						/*
-						replace(/\\n/g, "\\\\n")
-						*/
 					;
 					}).join('\\n\"+\n\"')+'`)';
 			}

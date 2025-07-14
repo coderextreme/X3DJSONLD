@@ -307,7 +307,6 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "add";
 		}
-		/*
 		if (node.nodeName === 'MetadataSet' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";
@@ -316,7 +315,6 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "set";
 		}
-		*/
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";
