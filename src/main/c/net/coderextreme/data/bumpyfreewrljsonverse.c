@@ -489,7 +489,7 @@ ShaderPart97.url = new MFString(new java.lang.String["../shaders/freewrl.fs","ht
 ShaderPart97.type = "FRAGMENT";
 ComposedShader84.parts[12] = ShaderPart97;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75.shaders = new MFNode();
 
 Appearance75.shaders[0] = ComposedShader84;

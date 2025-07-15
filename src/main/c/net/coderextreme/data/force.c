@@ -23,28 +23,33 @@ meta4.content = "December 13 2015";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "title";
-meta5.content = "force.x3d";
+meta5.name = "modified";
+meta5.content = "July 14 2025";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
+meta6.name = "title";
+meta6.content = "force.x3d";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "description";
-meta7.content = "beginnings of a force directed graph in 3D";
+meta7.name = "identifier";
+meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "generator";
-meta8.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit";
+meta8.name = "description";
+meta8.content = "beginnings of a force directed graph in 3D";
 head1.meta[6] = meta8;
+
+meta meta9 = createNode("meta");
+meta9.name = "generator";
+meta9.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[7] = meta9;
 
 head = head1;
 
-ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="node" ><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
@@ -67,16 +72,11 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
 <![CDATA[ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                var tmpkeyValue = new MFVec3f();
-			    			tmpkeyValue[0] = old;
-			    			tmpkeyValue[1] = translation;
-                                                keyValue = tmpkeyValue;
-			    		
-						// Browser.println(translation);
-					}]]></Script>
+			function set_cycle(value) {
+				old = translation;
+				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+				keyValue = new MFVec3f(old, translation);
+			}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
@@ -85,491 +85,398 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare10.name = "node";
-ProtoInterface ProtoInterface11 = createNode("ProtoInterface");
-field field12 = createNode("field");
-field12.name = "position";
-field12.accessType = "inputOutput";
-field12.type = "SFVec3f";
-field12.value = "0 0 0";
-ProtoInterface11.field = new MFNode();
+ProtoDeclare11.name = "node";
+ProtoInterface ProtoInterface12 = createNode("ProtoInterface");
+field field13 = createNode("field");
+field13.name = "position";
+field13.accessType = "inputOutput";
+field13.type = "SFVec3f";
+field13.value = "0 0 0";
+ProtoInterface12.field = new MFNode();
 
-ProtoInterface11.field[0] = field12;
+ProtoInterface12.field[0] = field13;
 
-ProtoDeclare10.protoInterface = ProtoInterface11;
+ProtoDeclare11.protoInterface = ProtoInterface12;
 
-ProtoBody ProtoBody13 = createNode("ProtoBody");
-Group Group14 = createNode("Group");
-Transform Transform15 = createNode("Transform");
-Transform15.DEF = "transform";
-IS IS16 = createNode("IS");
-connect connect17 = createNode("connect");
-connect17.nodeField = "translation";
-connect17.protoField = "position";
-IS16.connect = new MFNode();
+ProtoBody ProtoBody14 = createNode("ProtoBody");
+Group Group15 = createNode("Group");
+Transform Transform16 = createNode("Transform");
+Transform16.DEF = "transform";
+IS IS17 = createNode("IS");
+connect connect18 = createNode("connect");
+connect18.nodeField = "translation";
+connect18.protoField = "position";
+IS17.connect = new MFNode();
 
-IS16.connect[0] = connect17;
+IS17.connect[0] = connect18;
 
-Transform15.iS = IS16;
+Transform16.iS = IS17;
 
-Shape Shape18 = createNode("Shape");
-Sphere Sphere19 = createNode("Sphere");
-Shape18.geometry = Sphere19;
+Shape Shape19 = createNode("Shape");
+Sphere Sphere20 = createNode("Sphere");
+Shape19.geometry = Sphere20;
 
-Appearance Appearance20 = createNode("Appearance");
-Material Material21 = createNode("Material");
-Material21.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance20.material = Material21;
+Appearance Appearance21 = createNode("Appearance");
+Material Material22 = createNode("Material");
+Material22.diffuseColor = new SFColor(new float[1,0,0]);
+Appearance21.material = Material22;
 
-Shape18.appearance = Appearance20;
+Shape19.appearance = Appearance21;
 
-Transform15.child = new undefined();
+Transform16.child = new undefined();
 
-Transform15.child[0] = Shape18;
+Transform16.child[0] = Shape19;
 
-Transform Transform22 = createNode("Transform");
-Transform22.translation = new SFVec3f(new float[1,0,0]);
-Shape Shape23 = createNode("Shape");
-Text Text24 = createNode("Text");
-Text24.string = new MFString(new java.lang.String["Node"]);
-FontStyle FontStyle25 = createNode("FontStyle");
-FontStyle25.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle25.size = 5;
-Text24.fontStyle = FontStyle25;
+Transform Transform23 = createNode("Transform");
+Transform23.translation = new SFVec3f(new float[1,0,0]);
+Shape Shape24 = createNode("Shape");
+Text Text25 = createNode("Text");
+Text25.string = new MFString(new java.lang.String["Node"]);
+FontStyle FontStyle26 = createNode("FontStyle");
+FontStyle26.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle26.size = 5;
+Text25.fontStyle = FontStyle26;
 
-Shape23.geometry = Text24;
+Shape24.geometry = Text25;
 
-Appearance Appearance26 = createNode("Appearance");
-Material Material27 = createNode("Material");
-Material27.diffuseColor = new SFColor(new float[0,0,1]);
-Appearance26.material = Material27;
+Appearance Appearance27 = createNode("Appearance");
+Material Material28 = createNode("Material");
+Material28.diffuseColor = new SFColor(new float[0,0,1]);
+Appearance27.material = Material28;
 
-Shape23.appearance = Appearance26;
+Shape24.appearance = Appearance27;
 
-Transform22.child = new undefined();
+Transform23.child = new undefined();
 
-Transform22.child[0] = Shape23;
+Transform23.child[0] = Shape24;
 
-Transform15.children[1] = Transform22;
+Transform16.children[1] = Transform23;
 
-Group14.children = new MFNode();
+Group15.children = new MFNode();
 
-Group14.children[0] = Transform15;
+Group15.children[0] = Transform16;
 
-PositionInterpolator PositionInterpolator28 = createNode("PositionInterpolator");
-PositionInterpolator28.DEF = "NodePosition";
-PositionInterpolator28.key = new MFFloat(new float[0,1]);
-PositionInterpolator28.keyValue = new MFVec3f(new float[0,0,0,0,5,0]);
-Group14.children[1] = PositionInterpolator28;
+PositionInterpolator PositionInterpolator29 = createNode("PositionInterpolator");
+PositionInterpolator29.DEF = "NodePosition";
+PositionInterpolator29.key = new MFFloat(new float[0,1]);
+PositionInterpolator29.keyValue = new MFVec3f(new float[0,0,0,0,5,0]);
+Group15.children[1] = PositionInterpolator29;
 
-Script Script29 = createNode("Script");
-Script29.DEF = "MoveBall";
-field field30 = createNode("field");
-field30.name = "translation";
-field30.accessType = "inputOutput";
-field30.type = "SFVec3f";
-field30.value = "50 50 0";
-Script29.field = new MFNode();
-
-Script29.field[0] = field30;
-
+Script Script30 = createNode("Script");
+Script30.DEF = "MoveBall";
 field field31 = createNode("field");
-field31.name = "old";
+field31.name = "translation";
 field31.accessType = "inputOutput";
 field31.type = "SFVec3f";
-field31.value = "0 0 0";
-Script29.field[1] = field31;
+field31.value = "50 50 0";
+Script30.field = new MFNode();
+
+Script30.field[0] = field31;
 
 field field32 = createNode("field");
-field32.name = "set_cycle";
-field32.accessType = "inputOnly";
-field32.type = "SFTime";
-Script29.field[2] = field32;
+field32.name = "old";
+field32.accessType = "inputOutput";
+field32.type = "SFVec3f";
+field32.value = "0 0 0";
+Script30.field[1] = field32;
 
 field field33 = createNode("field");
-field33.name = "keyValue";
-field33.accessType = "outputOnly";
-field33.type = "MFVec3f";
-Script29.field[3] = field33;
+field33.name = "set_cycle";
+field33.accessType = "inputOnly";
+field33.type = "SFTime";
+Script30.field[2] = field33;
+
+field field34 = createNode("field");
+field34.name = "keyValue";
+field34.accessType = "outputOnly";
+field34.type = "MFVec3f";
+Script30.field[3] = field34;
 
 
-Script29.setSourceCode(`ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                var tmpkeyValue = new MFVec3f();\n"+
-"			    			tmpkeyValue[0] = old;\n"+
-"			    			tmpkeyValue[1] = translation;\n"+
-"                                                keyValue = tmpkeyValue;\n"+
-"			    		\n"+
-"						// Browser.println(translation);\n"+
-"					}`)
-Group14.children[2] = Script29;
+Script30.setSourceCode(`ecmascript:\n"+
+"			function set_cycle(value) {\n"+
+"				old = translation;\n"+
+"				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
+"				keyValue = new MFVec3f(old, translation);\n"+
+"			}`)
+Group15.children[2] = Script30;
 
-TimeSensor TimeSensor34 = createNode("TimeSensor");
-TimeSensor34.DEF = "nodeClock";
-TimeSensor34.cycleInterval = 3;
-TimeSensor34.loop = True;
-Group14.children[3] = TimeSensor34;
-
-ROUTE ROUTE35 = createNode("ROUTE");
-ROUTE35.fromNode = "nodeClock";
-ROUTE35.fromField = "cycleTime";
-ROUTE35.toNode = "MoveBall";
-ROUTE35.toField = "set_cycle";
-Group14.children[4] = ROUTE35;
+TimeSensor TimeSensor35 = createNode("TimeSensor");
+TimeSensor35.DEF = "nodeClock";
+TimeSensor35.cycleInterval = 3;
+TimeSensor35.loop = True;
+Group15.children[3] = TimeSensor35;
 
 ROUTE ROUTE36 = createNode("ROUTE");
 ROUTE36.fromNode = "nodeClock";
-ROUTE36.fromField = "fraction_changed";
-ROUTE36.toNode = "NodePosition";
-ROUTE36.toField = "set_fraction";
-Group14.children[5] = ROUTE36;
+ROUTE36.fromField = "cycleTime";
+ROUTE36.toNode = "MoveBall";
+ROUTE36.toField = "set_cycle";
+Group15.children[4] = ROUTE36;
 
 ROUTE ROUTE37 = createNode("ROUTE");
-ROUTE37.fromNode = "MoveBall";
-ROUTE37.fromField = "keyValue";
+ROUTE37.fromNode = "nodeClock";
+ROUTE37.fromField = "fraction_changed";
 ROUTE37.toNode = "NodePosition";
-ROUTE37.toField = "keyValue";
-Group14.children[6] = ROUTE37;
+ROUTE37.toField = "set_fraction";
+Group15.children[5] = ROUTE37;
 
 ROUTE ROUTE38 = createNode("ROUTE");
-ROUTE38.fromNode = "NodePosition";
-ROUTE38.fromField = "value_changed";
-ROUTE38.toNode = "transform";
-ROUTE38.toField = "set_translation";
-Group14.children[7] = ROUTE38;
+ROUTE38.fromNode = "MoveBall";
+ROUTE38.fromField = "keyValue";
+ROUTE38.toNode = "NodePosition";
+ROUTE38.toField = "keyValue";
+Group15.children[6] = ROUTE38;
 
-ProtoBody13.children = new MFNode();
+ROUTE ROUTE39 = createNode("ROUTE");
+ROUTE39.fromNode = "NodePosition";
+ROUTE39.fromField = "value_changed";
+ROUTE39.toNode = "transform";
+ROUTE39.toField = "set_translation";
+Group15.children[7] = ROUTE39;
 
-ProtoBody13.children[0] = Group14;
+ProtoBody14.children = new MFNode();
 
-ProtoDeclare10.protoBody = ProtoBody13;
+ProtoBody14.children[0] = Group15;
+
+ProtoDeclare11.protoBody = ProtoBody14;
 
 children = new MFNode();
 
-children[0] = ProtoDeclare10;
+children[0] = ProtoDeclare11;
 
-ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare40 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_positionB" accessType="inputOutput" type="SFVec3f" value="50 50 50"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
-<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
-<field name="set_endA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endB" accessType="inputOnly" type="SFVec3f"></field>
-<IS><connect nodeField="set_endA" protoField="set_positionA"></connect>
-<connect nodeField="set_endB" protoField="set_positionB"></connect>
+<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
+<field name="endA" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="endB" accessType="inputOutput" type="SFVec3f" value="50 50 50"></field>
+<IS><connect nodeField="endA" protoField="set_positionA"></connect>
+<connect nodeField="endB" protoField="set_positionB"></connect>
 </IS>
 <![CDATA[ecmascript:
+			function set_endA(value) {
+				spine = new MFVec3f(value, spine[1]);
+			}
 
-                function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    } else {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = spine[1];
-			spine = tmpspine;
-		    }
-                }
-
-                function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    } else {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = spine[0];
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    }
-                }
-
-                function set_spine(value) {
-                    spine = value;
-                }]]></Script>
+			function set_endB(value) {
+				spine = new MFVec3f(spine[0], value);
+			}]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare39.name = "cyl";
-ProtoInterface ProtoInterface40 = createNode("ProtoInterface");
-field field41 = createNode("field");
-field41.name = "set_positionA";
-field41.accessType = "inputOnly";
-field41.type = "SFVec3f";
-ProtoInterface40.field = new MFNode();
-
-ProtoInterface40.field[0] = field41;
-
+ProtoDeclare40.name = "cyl";
+ProtoInterface ProtoInterface41 = createNode("ProtoInterface");
 field field42 = createNode("field");
-field42.name = "set_positionB";
-field42.accessType = "inputOnly";
+field42.name = "set_positionA";
+field42.accessType = "inputOutput";
 field42.type = "SFVec3f";
-ProtoInterface40.field[1] = field42;
+field42.value = "0 0 0";
+ProtoInterface41.field = new MFNode();
 
-ProtoDeclare39.protoInterface = ProtoInterface40;
+ProtoInterface41.field[0] = field42;
 
-ProtoBody ProtoBody43 = createNode("ProtoBody");
-Group Group44 = createNode("Group");
-Shape Shape45 = createNode("Shape");
-Extrusion Extrusion46 = createNode("Extrusion");
-Extrusion46.DEF = "extrusion";
-Extrusion46.creaseAngle = 0.785;
-Extrusion46.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion46.spine = new MFVec3f(new float[0,-50,0,0,50,0]);
-Shape45.geometry = Extrusion46;
+field field43 = createNode("field");
+field43.name = "set_positionB";
+field43.accessType = "inputOutput";
+field43.type = "SFVec3f";
+field43.value = "50 50 50";
+ProtoInterface41.field[1] = field43;
 
-Appearance Appearance47 = createNode("Appearance");
-Material Material48 = createNode("Material");
-Material48.diffuseColor = new SFColor(new float[0,1,0]);
-Appearance47.material = Material48;
+ProtoDeclare40.protoInterface = ProtoInterface41;
 
-Shape45.appearance = Appearance47;
+ProtoBody ProtoBody44 = createNode("ProtoBody");
+Group Group45 = createNode("Group");
+Shape Shape46 = createNode("Shape");
+Extrusion Extrusion47 = createNode("Extrusion");
+Extrusion47.DEF = "extrusion";
+Extrusion47.creaseAngle = 0.785;
+Extrusion47.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion47.spine = new MFVec3f(new float[0,-50,0,0,0,0,0,50,0]);
+Shape46.geometry = Extrusion47;
 
-Group44.children = new MFNode();
+Appearance Appearance48 = createNode("Appearance");
+Material Material49 = createNode("Material");
+Material49.diffuseColor = new SFColor(new float[0,1,0]);
+Appearance48.material = Material49;
 
-Group44.children[0] = Shape45;
+Shape46.appearance = Appearance48;
 
-Script Script49 = createNode("Script");
-Script49.DEF = "MoveCylinder";
-field field50 = createNode("field");
-field50.name = "spine";
-field50.accessType = "inputOutput";
-field50.type = "MFVec3f";
-field50.value = "0 -50 0 0 50 0";
-Script49.field = new MFNode();
+Group45.children = new MFNode();
 
-Script49.field[0] = field50;
+Group45.children[0] = Shape46;
 
+Script Script50 = createNode("Script");
+Script50.DEF = "MoveCylinder";
 field field51 = createNode("field");
-field51.name = "set_endA";
-field51.accessType = "inputOnly";
-field51.type = "SFVec3f";
-Script49.field[1] = field51;
+field51.name = "spine";
+field51.accessType = "inputOutput";
+field51.type = "MFVec3f";
+field51.value = "0 -50 0 0 0 0 0 50 0";
+Script50.field = new MFNode();
+
+Script50.field[0] = field51;
 
 field field52 = createNode("field");
-field52.name = "set_endB";
-field52.accessType = "inputOnly";
+field52.name = "endA";
+field52.accessType = "inputOutput";
 field52.type = "SFVec3f";
-Script49.field[2] = field52;
+field52.value = "0 0 0";
+Script50.field[1] = field52;
 
-IS IS53 = createNode("IS");
-connect connect54 = createNode("connect");
-connect54.nodeField = "set_endA";
-connect54.protoField = "set_positionA";
-IS53.connect = new MFNode();
+field field53 = createNode("field");
+field53.name = "endB";
+field53.accessType = "inputOutput";
+field53.type = "SFVec3f";
+field53.value = "50 50 50";
+Script50.field[2] = field53;
 
-IS53.connect[0] = connect54;
-
+IS IS54 = createNode("IS");
 connect connect55 = createNode("connect");
-connect55.nodeField = "set_endB";
-connect55.protoField = "set_positionB";
-IS53.connect[1] = connect55;
+connect55.nodeField = "endA";
+connect55.protoField = "set_positionA";
+IS54.connect = new MFNode();
 
-Script49.iS = IS53;
+IS54.connect[0] = connect55;
+
+connect connect56 = createNode("connect");
+connect56.nodeField = "endB";
+connect56.protoField = "set_positionB";
+IS54.connect[1] = connect56;
+
+Script50.iS = IS54;
 
 
-Script49.setSourceCode(`ecmascript:\n"+
+Script50.setSourceCode(`ecmascript:\n"+
+"			function set_endA(value) {\n"+
+"				spine = new MFVec3f(value, spine[1]);\n"+
+"			}\n"+
 "\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
-"		    } else {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = spine[1];\n"+
-"			spine = tmpspine;\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = value;\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
-"		    } else {\n"+
-"		        var tmpspine = new MFVec3f();\n"+
-"			tmpspine[0] = spine[0];\n"+
-"			tmpspine[1] = value;\n"+
-"			spine = tmpspine;\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
-"                }`)
-Group44.children[1] = Script49;
+"			function set_endB(value) {\n"+
+"				spine = new MFVec3f(spine[0], value);\n"+
+"			}`)
+Group45.children[1] = Script50;
 
-ROUTE ROUTE56 = createNode("ROUTE");
-ROUTE56.fromNode = "MoveCylinder";
-ROUTE56.fromField = "spine";
-ROUTE56.toNode = "extrusion";
-ROUTE56.toField = "set_spine";
-Group44.children[2] = ROUTE56;
+ROUTE ROUTE57 = createNode("ROUTE");
+ROUTE57.fromNode = "MoveCylinder";
+ROUTE57.fromField = "spine";
+ROUTE57.toNode = "extrusion";
+ROUTE57.toField = "set_spine";
+Group45.children[2] = ROUTE57;
 
-ProtoBody43.children = new MFNode();
+ProtoBody44.children = new MFNode();
 
-ProtoBody43.children[0] = Group44;
+ProtoBody44.children[0] = Group45;
 
-ProtoDeclare39.protoBody = ProtoBody43;
+ProtoDeclare40.protoBody = ProtoBody44;
 
-children[1] = ProtoDeclare39;
+children[1] = ProtoDeclare40;
 
-Transform Transform57 = createNode("Transform");
-Transform57.DEF = "HoldsContent";
-Transform57.scale = new SFVec3f(new float[0.1,0.1,0.1]);
-PlaneSensor PlaneSensor58 = createNode("PlaneSensor");
-PlaneSensor58.DEF = "clickGenerator";
-PlaneSensor58.minPosition = new SFVec2f(new float[-50,-50]);
-PlaneSensor58.maxPosition = new SFVec2f(new float[50,50]);
-PlaneSensor58.description = "click on background to add nodes, click on nodes to add links";
-Transform57.children = new MFNode();
+Transform Transform58 = createNode("Transform");
+Transform58.DEF = "HoldsContent";
+Transform58.scale = new SFVec3f(new float[0.1,0.1,0.1]);
+PlaneSensor PlaneSensor59 = createNode("PlaneSensor");
+PlaneSensor59.DEF = "clickGenerator";
+PlaneSensor59.minPosition = new SFVec2f(new float[-50,-50]);
+PlaneSensor59.maxPosition = new SFVec2f(new float[50,50]);
+PlaneSensor59.description = "click on background to add nodes, click on nodes to add links";
+Transform58.children = new MFNode();
 
-Transform57.children[0] = PlaneSensor58;
+Transform58.children[0] = PlaneSensor59;
 
-ProtoInstance ProtoInstance59 = createNode("ProtoInstance");
-ProtoInstance59.name = "node";
-ProtoInstance59.DEF = "nodeA";
-fieldValue fieldValue60 = createNode("fieldValue");
-fieldValue60.name = "position";
-fieldValue60.value = "0 0 0";
-ProtoInstance59.fieldValue = new MFNode();
+ProtoInstance ProtoInstance60 = createNode("ProtoInstance");
+ProtoInstance60.name = "node";
+ProtoInstance60.DEF = "nodeA";
+fieldValue fieldValue61 = createNode("fieldValue");
+fieldValue61.name = "position";
+fieldValue61.value = "0 0 0";
+ProtoInstance60.fieldValue = new MFNode();
 
-ProtoInstance59.fieldValue[0] = fieldValue60;
+ProtoInstance60.fieldValue[0] = fieldValue61;
 
-Transform57.children[1] = ProtoInstance59;
+Transform58.children[1] = ProtoInstance60;
 
-ProtoInstance ProtoInstance61 = createNode("ProtoInstance");
-ProtoInstance61.name = "node";
-ProtoInstance61.DEF = "nodeB";
-fieldValue fieldValue62 = createNode("fieldValue");
-fieldValue62.name = "position";
-fieldValue62.value = "50 50 50";
-ProtoInstance61.fieldValue = new MFNode();
+ProtoInstance ProtoInstance62 = createNode("ProtoInstance");
+ProtoInstance62.name = "node";
+ProtoInstance62.DEF = "nodeB";
+fieldValue fieldValue63 = createNode("fieldValue");
+fieldValue63.name = "position";
+fieldValue63.value = "50 50 50";
+ProtoInstance62.fieldValue = new MFNode();
 
-ProtoInstance61.fieldValue[0] = fieldValue62;
+ProtoInstance62.fieldValue[0] = fieldValue63;
 
-Transform57.children[2] = ProtoInstance61;
+Transform58.children[2] = ProtoInstance62;
 
-ProtoInstance ProtoInstance63 = createNode("ProtoInstance");
-ProtoInstance63.name = "node";
-ProtoInstance63.DEF = "nodeC";
-fieldValue fieldValue64 = createNode("fieldValue");
-fieldValue64.name = "position";
-fieldValue64.value = "-50 -50 -50";
-ProtoInstance63.fieldValue = new MFNode();
+ProtoInstance ProtoInstance64 = createNode("ProtoInstance");
+ProtoInstance64.name = "node";
+ProtoInstance64.DEF = "nodeC";
+fieldValue fieldValue65 = createNode("fieldValue");
+fieldValue65.name = "position";
+fieldValue65.value = "-50 -50 -50";
+ProtoInstance64.fieldValue = new MFNode();
 
-ProtoInstance63.fieldValue[0] = fieldValue64;
+ProtoInstance64.fieldValue[0] = fieldValue65;
 
-Transform57.children[3] = ProtoInstance63;
+Transform58.children[3] = ProtoInstance64;
 
-ProtoInstance ProtoInstance65 = createNode("ProtoInstance");
-ProtoInstance65.name = "node";
-ProtoInstance65.DEF = "nodeD";
-fieldValue fieldValue66 = createNode("fieldValue");
-fieldValue66.name = "position";
-fieldValue66.value = "50 50 -50";
-ProtoInstance65.fieldValue = new MFNode();
+ProtoInstance ProtoInstance66 = createNode("ProtoInstance");
+ProtoInstance66.name = "node";
+ProtoInstance66.DEF = "nodeD";
+fieldValue fieldValue67 = createNode("fieldValue");
+fieldValue67.name = "position";
+fieldValue67.value = "50 50 -50";
+ProtoInstance66.fieldValue = new MFNode();
 
-ProtoInstance65.fieldValue[0] = fieldValue66;
+ProtoInstance66.fieldValue[0] = fieldValue67;
 
-Transform57.children[4] = ProtoInstance65;
+Transform58.children[4] = ProtoInstance66;
 
-ProtoInstance ProtoInstance67 = createNode("ProtoInstance");
-ProtoInstance67.name = "cyl";
-ProtoInstance67.DEF = "linkA";
-fieldValue fieldValue68 = createNode("fieldValue");
-fieldValue68.name = "set_positionA";
-fieldValue68.value = "0 0 0";
-ProtoInstance67.fieldValue = new MFNode();
+ProtoInstance ProtoInstance68 = createNode("ProtoInstance");
+ProtoInstance68.name = "cyl";
+ProtoInstance68.DEF = "linkA";
+Transform58.children[5] = ProtoInstance68;
 
-ProtoInstance67.fieldValue[0] = fieldValue68;
-
-fieldValue fieldValue69 = createNode("fieldValue");
-fieldValue69.name = "set_positionB";
-fieldValue69.value = "50 50 50";
-ProtoInstance67.fieldValue[1] = fieldValue69;
-
-Transform57.children[5] = ProtoInstance67;
+ProtoInstance ProtoInstance69 = createNode("ProtoInstance");
+ProtoInstance69.name = "cyl";
+ProtoInstance69.DEF = "linkB";
+Transform58.children[6] = ProtoInstance69;
 
 ProtoInstance ProtoInstance70 = createNode("ProtoInstance");
 ProtoInstance70.name = "cyl";
-ProtoInstance70.DEF = "linkB";
-fieldValue fieldValue71 = createNode("fieldValue");
-fieldValue71.name = "set_positionA";
-fieldValue71.value = "0 0 0";
-ProtoInstance70.fieldValue = new MFNode();
+ProtoInstance70.DEF = "linkC";
+Transform58.children[7] = ProtoInstance70;
 
-ProtoInstance70.fieldValue[0] = fieldValue71;
+children[2] = Transform58;
 
-fieldValue fieldValue72 = createNode("fieldValue");
-fieldValue72.name = "set_positionB";
-fieldValue72.value = "-50 -50 -50";
-ProtoInstance70.fieldValue[1] = fieldValue72;
+Script Script71 = createNode("Script");
+Script71.DEF = "clickHandler";
+field field72 = createNode("field");
+field72.name = "counter";
+field72.accessType = "inputOutput";
+field72.value = "0";
+field72.type = "SFInt32";
+Script71.field = new MFNode();
 
-Transform57.children[6] = ProtoInstance70;
+Script71.field[0] = field72;
 
-ProtoInstance ProtoInstance73 = createNode("ProtoInstance");
-ProtoInstance73.name = "cyl";
-ProtoInstance73.DEF = "linkC";
-fieldValue fieldValue74 = createNode("fieldValue");
-fieldValue74.name = "set_positionA";
-fieldValue74.value = "50 50 50";
-ProtoInstance73.fieldValue = new MFNode();
+field field73 = createNode("field");
+field73.name = "add_node";
+field73.accessType = "inputOnly";
+field73.value = "false";
+field73.type = "SFBool";
+Script71.field[1] = field73;
 
-ProtoInstance73.fieldValue[0] = fieldValue74;
+//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
 
-fieldValue fieldValue75 = createNode("fieldValue");
-fieldValue75.name = "set_positionB";
-fieldValue75.value = "50 50 -50";
-ProtoInstance73.fieldValue[1] = fieldValue75;
-
-Transform57.children[7] = ProtoInstance73;
-
-children[2] = Transform57;
-
-Script Script76 = createNode("Script");
-Script76.DEF = "clickHandler";
-field field77 = createNode("field");
-field77.name = "counter";
-field77.accessType = "inputOutput";
-field77.value = "0";
-field77.type = "SFInt32";
-Script76.field = new MFNode();
-
-Script76.field[0] = field77;
-
-field field78 = createNode("field");
-field78.name = "node_changed";
-field78.accessType = "outputOnly";
-field78.type = "SFNode";
-Script76.field[1] = field78;
-
-field field79 = createNode("field");
-field79.name = "add_node";
-field79.accessType = "inputOnly";
-field79.value = "false";
-field79.type = "SFBool";
-Script76.field[2] = field79;
-
-//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
-
-Script76.setSourceCode(`ecmascript:\n"+
+Script71.setSourceCode(`ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+
@@ -587,55 +494,55 @@ Script76.setSourceCode(`ecmascript:\n"+
 "			});\n"+
 "\n"+
 "        }`)
-children[3] = Script76;
+children[3] = Script71;
+
+ROUTE ROUTE74 = createNode("ROUTE");
+ROUTE74.fromNode = "clickGenerator";
+ROUTE74.fromField = "isActive";
+ROUTE74.toNode = "clickHandler";
+ROUTE74.toField = "add_node";
+children[4] = ROUTE74;
+
+ROUTE ROUTE75 = createNode("ROUTE");
+ROUTE75.fromNode = "nodeA";
+ROUTE75.fromField = "position";
+ROUTE75.toNode = "linkA";
+ROUTE75.toField = "set_positionA";
+children[5] = ROUTE75;
+
+ROUTE ROUTE76 = createNode("ROUTE");
+ROUTE76.fromNode = "nodeB";
+ROUTE76.fromField = "position";
+ROUTE76.toNode = "linkA";
+ROUTE76.toField = "set_positionB";
+children[6] = ROUTE76;
+
+ROUTE ROUTE77 = createNode("ROUTE");
+ROUTE77.fromNode = "nodeA";
+ROUTE77.fromField = "position";
+ROUTE77.toNode = "linkB";
+ROUTE77.toField = "set_positionA";
+children[7] = ROUTE77;
+
+ROUTE ROUTE78 = createNode("ROUTE");
+ROUTE78.fromNode = "nodeC";
+ROUTE78.fromField = "position";
+ROUTE78.toNode = "linkB";
+ROUTE78.toField = "set_positionB";
+children[8] = ROUTE78;
+
+ROUTE ROUTE79 = createNode("ROUTE");
+ROUTE79.fromNode = "nodeA";
+ROUTE79.fromField = "position";
+ROUTE79.toNode = "linkC";
+ROUTE79.toField = "set_positionA";
+children[9] = ROUTE79;
 
 ROUTE ROUTE80 = createNode("ROUTE");
-ROUTE80.fromNode = "clickGenerator";
-ROUTE80.fromField = "isActive";
-ROUTE80.toNode = "clickHandler";
-ROUTE80.toField = "add_node";
-children[4] = ROUTE80;
-
-ROUTE ROUTE81 = createNode("ROUTE");
-ROUTE81.fromNode = "nodeA";
-ROUTE81.fromField = "position";
-ROUTE81.toNode = "linkA";
-ROUTE81.toField = "set_positionA";
-children[5] = ROUTE81;
-
-ROUTE ROUTE82 = createNode("ROUTE");
-ROUTE82.fromNode = "nodeB";
-ROUTE82.fromField = "position";
-ROUTE82.toNode = "linkA";
-ROUTE82.toField = "set_positionB";
-children[6] = ROUTE82;
-
-ROUTE ROUTE83 = createNode("ROUTE");
-ROUTE83.fromNode = "nodeA";
-ROUTE83.fromField = "position";
-ROUTE83.toNode = "linkB";
-ROUTE83.toField = "set_positionA";
-children[7] = ROUTE83;
-
-ROUTE ROUTE84 = createNode("ROUTE");
-ROUTE84.fromNode = "nodeC";
-ROUTE84.fromField = "position";
-ROUTE84.toNode = "linkB";
-ROUTE84.toField = "set_positionB";
-children[8] = ROUTE84;
-
-ROUTE ROUTE85 = createNode("ROUTE");
-ROUTE85.fromNode = "nodeA";
-ROUTE85.fromField = "position";
-ROUTE85.toNode = "linkC";
-ROUTE85.toField = "set_positionA";
-children[9] = ROUTE85;
-
-ROUTE ROUTE86 = createNode("ROUTE");
-ROUTE86.fromNode = "nodeD";
-ROUTE86.fromField = "position";
-ROUTE86.toNode = "linkC";
-ROUTE86.toField = "set_positionB";
-children[10] = ROUTE86;
+ROUTE80.fromNode = "nodeD";
+ROUTE80.fromField = "position";
+ROUTE80.toNode = "linkC";
+ROUTE80.toField = "set_positionB";
+children[10] = ROUTE80;
 
 }

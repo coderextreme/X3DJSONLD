@@ -386,7 +386,7 @@ var X3D0 =  X3D(
                                         ShaderPart(
                                           type_ : SFString("FRAGMENT",
                                           url_ : MFString([SFString("../shaders/freewrl.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs")])),
-                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>*/))))]),
+                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>*/))))]),
 
                     Script(
                       DEF_ : SFString('OrbitScript'),

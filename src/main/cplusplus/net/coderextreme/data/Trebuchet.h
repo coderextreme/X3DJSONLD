@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.0"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 meta& meta2 =  meta();
 meta2.setName(CString("title"));
@@ -1591,10 +1591,10 @@ Script344.addChild(&field351);
 //_T("{")+
 //_T("	var TrebuchetHeight=45;")+
 //_T("	var Height =25;")+
-//_T("      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
+//_T("      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;")+
 //_T("	// start at TrebuchetHeight and keep along z axis (z=zero)")+
-//_T("	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
-//_T("        z = 0;")+
+//_T("	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);")+
+//_T("        var z = 0;")+
 //_T("        transparent = new SFVec3f (1,1,1);")+
 //_T("     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)")+
 //_T("		{")+

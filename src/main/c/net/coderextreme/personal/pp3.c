@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -53,12 +53,12 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -2 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
 <!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2 0 0 2.5 0 0"></Extrusion>
 </Shape>
 <Transform translation="2 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
 </Appearance>
@@ -70,7 +70,7 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2 0 0 2.5 0"></Extrusion>
 </Shape>
 <Transform translation="-0.5 2 0"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
 </Appearance>
@@ -82,7 +82,7 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 </Transform>
 <!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -2 0 0 -1.5 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
 <!--center--><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0.7"></Material>
@@ -160,7 +160,7 @@ Shape15.appearance = Appearance16;
 Extrusion Extrusion18 = createNode("Extrusion");
 Extrusion18.creaseAngle = 0.785;
 Extrusion18.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion18.spine = new MFVec3f(new float[-2.5,0,0,-1.5,0,0]);
+Extrusion18.spine = new MFVec3f(new float[-2.5,0,0,-2,0,0,-1.5,0,0]);
 Shape15.geometry = Extrusion18;
 
 Transform14.child = new undefined();
@@ -187,7 +187,7 @@ Shape20.appearance = Appearance21;
 Extrusion Extrusion23 = createNode("Extrusion");
 Extrusion23.creaseAngle = 0.785;
 Extrusion23.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion23.spine = new MFVec3f(new float[1.5,0,0,2.5,0,0]);
+Extrusion23.spine = new MFVec3f(new float[1.5,0,0,2,0,0,2.5,0,0]);
 Shape20.geometry = Extrusion23;
 
 Transform19.child = new undefined();
@@ -243,7 +243,7 @@ Shape32.appearance = Appearance33;
 Extrusion Extrusion35 = createNode("Extrusion");
 Extrusion35.creaseAngle = 0.785;
 Extrusion35.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion35.spine = new MFVec3f(new float[0,1.5,0,0,2.5,0]);
+Extrusion35.spine = new MFVec3f(new float[0,1.5,0,0,2,0,0,2.5,0]);
 Shape32.geometry = Extrusion35;
 
 Transform31.child = new undefined();
@@ -298,7 +298,7 @@ Shape44.appearance = Appearance45;
 Extrusion Extrusion47 = createNode("Extrusion");
 Extrusion47.creaseAngle = 0.785;
 Extrusion47.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion47.spine = new MFVec3f(new float[0,-2.5,0,0,-1.5,0]);
+Extrusion47.spine = new MFVec3f(new float[0,-2.5,0,0,-2,0,0,-1.5,0]);
 Shape44.geometry = Extrusion47;
 
 Transform43.child = new undefined();

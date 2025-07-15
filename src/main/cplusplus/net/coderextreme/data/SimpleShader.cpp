@@ -17,7 +17,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.2"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("Shaders"));

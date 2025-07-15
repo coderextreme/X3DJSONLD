@@ -121,36 +121,38 @@ _T("var t = 0;")+
 _T("var p = 0;")+
 _T("function initialize() {")+
 _T("     generateCoordinates(resolution);")+
-_T("     var localci = [];")+
-_T("     for ( i = 0; i < resolution-1; i++) {")+
-_T("     	for ( j = 0; j < resolution-1; j++) {")+
-_T("	     localci.push(i*resolution+j);")+
-_T("	     localci.push(i*resolution+j+1);")+
-_T("	     localci.push((i+1)*resolution+j+1);")+
-_T("	     localci.push((i+1)*resolution+j);")+
-_T("	     localci.push(-1);")+
+_T("     var localci = new MFInt32();")+
+_T("     var arrIndex = 0;")+
+_T("     for (var i = 0; i < resolution-1; i++) {")+
+_T("     	for (var j = 0; j < resolution-1; j++) {")+
+_T("	     localci[arrIndex++] = i*resolution+j;")+
+_T("	     localci[arrIndex++] = i*resolution+j+1;")+
+_T("	     localci[arrIndex++] = (i+1)*resolution+j+1;")+
+_T("	     localci[arrIndex++] = (i+1)*resolution+j;")+
+_T("	     localci[arrIndex++] = -1;")+
 _T("	}")+
 _T("    }")+
-_T("    coordIndexes = new MFInt32(...localci);")+
+_T("    coordIndexes = localci;")+
 _T("}")+
 _T("function generateCoordinates(resolution) {")+
 _T("     var theta = 0.0;")+
 _T("     var phi = 0.0;")+
 _T("     var delta = (2 * 3.141592653) / (resolution-1);")+
-_T("     var localc = [];")+
+_T("     var localc = new MFVec3f();")+
+_T("     var arrIndex = 0;")+
 _T("     for (var  i = 0; i < resolution; i++) {")+
 _T("     	for (var  j = 0; j < resolution; j++) {")+
 _T("		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);")+
-_T("		localc.push(new SFVec3f(")+
+_T("		localc[arrIndex++] = new SFVec3f(")+
 _T("			rho * Math.cos(phi) * Math.cos(theta),")+
 _T("			rho * Math.cos(phi) * Math.sin(theta),")+
 _T("			rho * Math.sin(phi)")+
-_T("		));")+
+_T("		);")+
 _T("		theta += delta;")+
 _T("	}")+
 _T("	phi += delta;")+
 _T("     }")+
-_T("     coordinates = new MFVec3f(...localc);")+
+_T("     coordinates = localc;")+
 _T("}")+
 _T("function set_fraction(fraction, eventTime) {")+
 _T("	t += 0.5;")+

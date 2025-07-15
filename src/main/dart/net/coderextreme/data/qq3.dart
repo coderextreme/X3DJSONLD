@@ -62,7 +62,7 @@ var X3D0 =  X3D(
                                       diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(1), SFDouble(0)]))),
                               geometry_ : 
                                 Extrusion(
-                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])]),
+                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-2,0,0]),SFVec3f([-1.5,0,0])]),
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
                       /*right*/
@@ -79,7 +79,7 @@ var X3D0 =  X3D(
                                       diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.7), SFDouble(1)]))),
                               geometry_ : 
                                 Extrusion(
-                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])]),
+                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2,0,0]),SFVec3f([2.5,0,0])]),
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])])))),
                       /*up*/
