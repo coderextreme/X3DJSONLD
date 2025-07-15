@@ -34,12 +34,12 @@ Viewpoint17.position = new X3D.SFVec3f([0,0,12]);
 browser.currentScene.children[2] = Viewpoint17;
 
 let Background18 = browser.currentScene.createNode("Background");
-Background18.backUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
-Background18.bottomUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
-Background18.frontUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
-Background18.leftUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
-Background18.rightUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
-Background18.topUrl = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
+Background18.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
+Background18.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
+Background18.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
+Background18.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
+Background18.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
+Background18.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
 browser.currentScene.children[3] = Background18;
 
 let Transform19 = browser.currentScene.createNode("Transform");
@@ -72,27 +72,27 @@ material = Material26;
 let ComposedCubeMapTexture27 = browser.currentScene.createNode("ComposedCubeMapTexture");
 ComposedCubeMapTexture27.DEF = "texture";
 let ImageTexture28 = browser.currentScene.createNode("ImageTexture");
-ImageTexture28.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
+ImageTexture28.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
 topTexture = ImageTexture28;
 
 let ImageTexture29 = browser.currentScene.createNode("ImageTexture");
-ImageTexture29.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
+ImageTexture29.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
 topTexture = ImageTexture29;
 
 let ImageTexture30 = browser.currentScene.createNode("ImageTexture");
-ImageTexture30.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
+ImageTexture30.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_from.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
 topTexture = ImageTexture30;
 
 let ImageTexture31 = browser.currentScene.createNode("ImageTexture");
-ImageTexture31.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
+ImageTexture31.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
 topTexture = ImageTexture31;
 
 let ImageTexture32 = browser.currentScene.createNode("ImageTexture");
-ImageTexture32.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
+ImageTexture32.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
 topTexture = ImageTexture32;
 
 let ImageTexture33 = browser.currentScene.createNode("ImageTexture");
-ImageTexture33.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
+ImageTexture33.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
 topTexture = ImageTexture33;
 
 texture = ComposedCubeMapTexture27;
@@ -135,8 +135,8 @@ ComposedShader34YYY.field = new X3D.MFNode();
 
 //<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
 let ShaderPart46 = browser.currentScene.createNode("ShaderPart");
-ShaderPart46.type = "VERTEX";
 ShaderPart46.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")]);
+ShaderPart46.type = "VERTEX";
 ComposedShader34YYY.parts = new X3D.MFNode();
 
 ComposedShader34ZZZ.parts[0] = ShaderPart46;
@@ -270,42 +270,42 @@ Transform19ZZZ.children[3] = ROUTE59;
 let ROUTE60 = browser.currentScene.createNode("ROUTE");
 ROUTE60.fromNode = "Animate";
 ROUTE60.fromField = "a";
-ROUTE60.toNode = "x_ite";
+ROUTE60.toNode = "shader";
 ROUTE60.toField = "a";
 Transform19ZZZ.children[4] = ROUTE60;
 
 let ROUTE61 = browser.currentScene.createNode("ROUTE");
 ROUTE61.fromNode = "Animate";
 ROUTE61.fromField = "b";
-ROUTE61.toNode = "x_ite";
+ROUTE61.toNode = "shader";
 ROUTE61.toField = "b";
 Transform19ZZZ.children[5] = ROUTE61;
 
 let ROUTE62 = browser.currentScene.createNode("ROUTE");
 ROUTE62.fromNode = "Animate";
 ROUTE62.fromField = "c";
-ROUTE62.toNode = "x_ite";
+ROUTE62.toNode = "shader";
 ROUTE62.toField = "c";
 Transform19ZZZ.children[6] = ROUTE62;
 
 let ROUTE63 = browser.currentScene.createNode("ROUTE");
 ROUTE63.fromNode = "Animate";
 ROUTE63.fromField = "d";
-ROUTE63.toNode = "x_ite";
+ROUTE63.toNode = "shader";
 ROUTE63.toField = "d";
 Transform19ZZZ.children[7] = ROUTE63;
 
 let ROUTE64 = browser.currentScene.createNode("ROUTE");
 ROUTE64.fromNode = "Animate";
 ROUTE64.fromField = "pdelta";
-ROUTE64.toNode = "x_ite";
+ROUTE64.toNode = "shader";
 ROUTE64.toField = "pdelta";
 Transform19ZZZ.children[8] = ROUTE64;
 
 let ROUTE65 = browser.currentScene.createNode("ROUTE");
 ROUTE65.fromNode = "Animate";
 ROUTE65.fromField = "tdelta";
-ROUTE65.toNode = "x_ite";
+ROUTE65.toNode = "shader";
 ROUTE65.toField = "tdelta";
 Transform19ZZZ.children[9] = ROUTE65;
 
