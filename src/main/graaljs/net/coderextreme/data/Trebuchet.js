@@ -1,15 +1,14 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("Trebuchet.x3d"))
         .addMeta(new meta().setName("description").setContent("Working model of a 14th century Trebuchet Catapult."))
@@ -444,10 +443,10 @@ function set_fraction ( fraction, eventTime )
 {
 	var TrebuchetHeight=45;
 	var Height =25;
-      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
 	// start at TrebuchetHeight and keep along z axis (z=zero)
-	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-        z = 0;
+	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+        var z = 0;
         transparent = new SFVec3f (1,1,1);
      if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
 		{

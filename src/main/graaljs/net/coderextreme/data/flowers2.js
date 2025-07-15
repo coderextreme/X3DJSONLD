@@ -1,8 +1,7 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
@@ -47,7 +46,7 @@ var ProtoInstance1 = null;
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
                           .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
-                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
+                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
                     .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]"))).setDEF("Orbit")
                       .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(Java.to(doubleToFloat([0,0,1,0,1,0,1,0,0]), Java.type("float[]")))))))
                 .addChild(new Script().setDEF("OrbitScript")
