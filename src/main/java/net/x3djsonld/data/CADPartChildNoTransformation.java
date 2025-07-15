@@ -94,7 +94,7 @@ public class CADPartChildNoTransformation
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_CADINTERCHANGE).setVersion(X3D.VERSION_3_1)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_CADINTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("CADGeometry").setLevel(2))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))

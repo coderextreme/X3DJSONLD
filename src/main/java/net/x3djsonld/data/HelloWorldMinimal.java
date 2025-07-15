@@ -106,7 +106,7 @@ public class HelloWorldMinimal
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .addComments(" All head/meta tags are optional, WorldInfo is also optional ")
   .addComments(" Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1 ")
   .setHead(new head()

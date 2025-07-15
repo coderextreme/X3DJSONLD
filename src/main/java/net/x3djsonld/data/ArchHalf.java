@@ -87,7 +87,7 @@ public class ArchHalf
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ArchHalf.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))

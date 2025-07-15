@@ -68,7 +68,7 @@ public class ifscube
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ifscube.x3d"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))

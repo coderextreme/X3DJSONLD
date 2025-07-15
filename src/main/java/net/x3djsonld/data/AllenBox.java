@@ -4,47 +4,35 @@ import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
-import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Template for an Indexed Face Set. </p>
- <p> Related links:  source ifscubeworks.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene AllenBox. </p>
+ <p> Related links:  source AllenBox.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.ifscubeworks&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.AllenBox&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d">ifscubeworks.x3d</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Template for an Indexed Face Set </td>
+			<td> <a href="AllenBox.x3d">AllenBox.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
-			<td> John Carlson </td>
+			<td> Allen Box </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
-			<td> 4 April 2017 </td>
+			<td> 8 July 2025 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -61,13 +49,13 @@ import org.web3d.x3d.jsail.Shape.*;
                 which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
-	* @author John Carlson
+	* @author Allen Box
  */
 
-public class ifscubeworks
+public class AllenBox
 {
 	/** Default constructor to create this object. */
-	public ifscubeworks ()
+	public AllenBox ()
 	{
 	  initialize();
 	}
@@ -76,23 +64,20 @@ public class ifscubeworks
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ifscubeworks.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
-    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017"))
-    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("AllenBox.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Allen Box"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("8 July 2025"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("ifscubeworks.x3d"))
-    .addChild(new Group()
+    .addChild(new WorldInfo().setTitle("AllenBox.x3d"))
+    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.15,1.53,0.75}).setSpeed(0.5).setType("\"EXAMINE\""))
+    .addChild(new Transform("Floor").setScale(1.0,0.0125,1.0).setTranslation(0.0,-0.0125,0.0)
       .addChild(new Shape()
-        .setGeometry(new IndexedFaceSet("IndexedFaceSet").setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}).setNormalIndex(new int[] {0,0,1,2,3,4,5})
-          .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0})))
-          .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0})))
-          .setColor(new Color().setColor(new MFColor(new double[] {0.0,1.0,0.0})))))));
+        .setGeometry(new Box())
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))));
             }
             catch (Exception ex)
             {       
@@ -111,7 +96,7 @@ public class ifscubeworks
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return ifscubeworks model
+	 * @return AllenBox model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -130,7 +115,7 @@ public class ifscubeworks
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new ifscubeworks().getX3dModel();
+        X3D thisExampleX3dModel = new AllenBox().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -163,7 +148,7 @@ public class ifscubeworks
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.ifscubeworks\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.AllenBox\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -172,16 +157,16 @@ public class ifscubeworks
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.ifscubeworks self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.AllenBox self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./ifscubeworks_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./ifscubeworks_JavaExport.x3d"; 
-                String filenameX3DV = "./ifscubeworks_JavaExport.x3dv"; 
-                String filenameJSON = "./ifscubeworks_JavaExport.json";
+                // ./AllenBox_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./AllenBox_JavaExport.x3d"; 
+                String filenameX3DV = "./AllenBox_JavaExport.x3dv"; 
+                String filenameJSON = "./AllenBox_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

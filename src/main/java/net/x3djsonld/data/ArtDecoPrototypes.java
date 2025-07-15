@@ -91,7 +91,7 @@ public class ArtDecoPrototypes
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ArtDecoPrototypes.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."))

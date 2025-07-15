@@ -105,7 +105,7 @@ public class indexedfaceset_pixeltexture_entire
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("indexedfaceset_pixeltexture_entire.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.nist.gov/vrml.html"))
