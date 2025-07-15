@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "CADInterchange";
-X3D0.version = "3.1";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "CADGeometry";

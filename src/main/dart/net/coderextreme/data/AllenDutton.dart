@@ -41,10 +41,6 @@ var X3D0 =  X3D(
               content_ : SFString('4 July 2020')),
 
             meta(
-              name_ : SFString('warning'),
-              content_ : SFString('X3D Validator reports numerous warnings are present')),
-
-            meta(
               name_ : SFString('reference'),
               content_ : SFString('http://www.cyberware.com')),
 

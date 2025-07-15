@@ -174,8 +174,8 @@ var X3D0 =  X3D(
                   USE_ : SFString('TheSkinCoord')),
               joints_ : [
                 HAnimJoint(
-                  name_ : SFString(''),
-                  DEF_ : SFString('hanim_'),
+                  name_ : SFString('humanoid_root'),
+                  DEF_ : SFString('hanim_humanoid_root'),
                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 

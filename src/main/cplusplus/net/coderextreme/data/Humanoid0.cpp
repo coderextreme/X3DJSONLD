@@ -228,8 +228,8 @@ Coordinate46.setUSE(CString("TheSkinCoord"));
 HAnimHumanoid38.setSkinCoord(&Coordinate46);
 
 HAnimJoint& HAnimJoint47 =  HAnimJoint();
-HAnimJoint47.X3DNode::setName(CString(""));
-HAnimJoint47.setDEF(CString("hanim_"));
+HAnimJoint47.X3DNode::setName(CString("humanoid_root"));
+HAnimJoint47.setDEF(CString("hanim_humanoid_root"));
 HAnimJoint47.setUlimit(new float[]{0,0,0}, 3);
 HAnimJoint47.setLlimit(new float[]{0,0,0}, 3);
 HAnimHumanoid38.setSkeleton(&HAnimJoint47);

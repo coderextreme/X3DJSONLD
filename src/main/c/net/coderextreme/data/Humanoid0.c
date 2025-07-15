@@ -231,8 +231,8 @@ Coordinate46.USE = "TheSkinCoord";
 HAnimHumanoid38.skinCoord = Coordinate46;
 
 HAnimJoint HAnimJoint47 = createNode("HAnimJoint");
-HAnimJoint47.name = "";
-HAnimJoint47.DEF = "hanim_";
+HAnimJoint47.name = "humanoid_root";
+HAnimJoint47.DEF = "hanim_humanoid_root";
 HAnimJoint47.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint47.llimit = new MFFloat(new float[0,0,0]);
 HAnimHumanoid38.joints[1] = HAnimJoint47;

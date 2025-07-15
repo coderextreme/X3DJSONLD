@@ -64,7 +64,7 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-1.5,0,0])]))),
+                                  spine_ : MFVec3f([SFVec3f([-2.5,0,0]),SFVec3f([-2,0,0]),SFVec3f([-1.5,0,0])]))),
                           /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/),
                       /*right*/
 
@@ -82,7 +82,7 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2.5,0,0])]))),
+                                  spine_ : MFVec3f([SFVec3f([1.5,0,0]),SFVec3f([2,0,0]),SFVec3f([2.5,0,0])]))),
                           children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(2), SFDouble(0), SFDouble(0)]),
@@ -122,7 +122,7 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([0,1.5,0]),SFVec3f([0,2.5,0])]))),
+                                  spine_ : MFVec3f([SFVec3f([0,1.5,0]),SFVec3f([0,2,0]),SFVec3f([0,2.5,0])]))),
                           children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-0.5), SFDouble(2), SFDouble(0)]),
@@ -161,7 +161,7 @@ var X3D0 =  X3D(
                                 Extrusion(
                                   creaseAngle_ : 0.785,
                                   crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                                  spine_ : MFVec3f([SFVec3f([0,-2.5,0]),SFVec3f([0,-1.5,0])]))),
+                                  spine_ : MFVec3f([SFVec3f([0,-2.5,0]),SFVec3f([0,-2,0]),SFVec3f([0,-1.5,0])]))),
                           /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/),
                       /*center*/
 

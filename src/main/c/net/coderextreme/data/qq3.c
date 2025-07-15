@@ -53,12 +53,12 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0"></Material>
 </Appearance>
-<Extrusion spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion spine="-2.5 0 0 -2 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
 <!--right--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1"></Material>
 </Appearance>
-<Extrusion spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion spine="1.5 0 0 2 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
@@ -84,7 +84,7 @@ Appearance16.material = Material17;
 Shape15.appearance = Appearance16;
 
 Extrusion Extrusion18 = createNode("Extrusion");
-Extrusion18.spine = new MFVec3f(new float[-2.5,0,0,-1.5,0,0]);
+Extrusion18.spine = new MFVec3f(new float[-2.5,0,0,-2,0,0,-1.5,0,0]);
 Extrusion18.creaseAngle = 0.785;
 Extrusion18.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
 Shape15.geometry = Extrusion18;
@@ -110,7 +110,7 @@ Appearance21.material = Material22;
 Shape20.appearance = Appearance21;
 
 Extrusion Extrusion23 = createNode("Extrusion");
-Extrusion23.spine = new MFVec3f(new float[1.5,0,0,2.5,0,0]);
+Extrusion23.spine = new MFVec3f(new float[1.5,0,0,2,0,0,2.5,0,0]);
 Extrusion23.creaseAngle = 0.785;
 Extrusion23.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
 Shape20.geometry = Extrusion23;

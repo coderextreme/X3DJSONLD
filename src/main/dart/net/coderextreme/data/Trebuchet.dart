@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -1263,10 +1263,10 @@ ecmascript:eval (0
 {
 	var TrebuchetHeight=45;
 	var Height =25;
-      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
 	// start at TrebuchetHeight and keep along z axis (z=zero)
-	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-        z = 0;
+	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+        var z = 0;
         transparent = new SFVec3f (1,1,1);
      if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
 		{
