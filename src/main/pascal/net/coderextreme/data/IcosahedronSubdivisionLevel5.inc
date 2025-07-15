@@ -12,8 +12,8 @@ Material24: TMaterialNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interchange';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 1;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'IcosahedronSubdivisionLevel5.x3d';
 X3D0.Meta['reference'] := 'IcosahedronSubdivisionLevel5.ply';
 X3D0.Meta['description'] := 'Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.';
