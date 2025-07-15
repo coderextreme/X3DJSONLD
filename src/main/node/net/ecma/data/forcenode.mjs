@@ -59,6 +59,10 @@ var X3D0 =  new X3D({
               content : new SFString("December 13 2015")}),
 
             new meta({
+              name : new SFString("modified"),
+              content : new SFString("July 14 2025")}),
+
+            new meta({
               name : new SFString("title"),
               content : new SFString("forcenode.x3d")}),
 
@@ -160,9 +164,7 @@ ecmascript:eval (0
 					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-			    			keyValue = new MFVec3f();
-			    			keyValue[0] = old;
-			    			keyValue[1] = translation;
+			    			keyValue = new MFVec3f(old, translation);
 						// Browser.println(translation);
 					})}),
 
@@ -196,19 +198,19 @@ ecmascript:eval (0
                           toField : new SFString("set_translation")})])})])}))}),
 
             new ProtoDeclare({
-              name : new SFString("cylinder"),
+              name : new SFString("cyl"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFVEC3F,
                       name : new SFString("set_positionA"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
                       name : new SFString("set_positionB"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])})),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -220,7 +222,7 @@ ecmascript:eval (0
                               DEF : new SFString("extrusion"),
                               creaseAngle : new SFFloat(0.785),
                               crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                              spine : new MFVec3f([0,-50,0,0,50,0])})),
+                              spine : new MFVec3f([0,-50,0,0,0,0,0,50,0])})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -234,54 +236,36 @@ ecmascript:eval (0
                               type : field.TYPE_MFVEC3F,
                               name : new SFString("spine"),
                               accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0 -50 0 0 50 0")}),
+                              value : new SFString("0 -50 0 0 0 0 0 50 0")}),
 
                             new field({
                               type : field.TYPE_SFVEC3F,
-                              name : new SFString("set_endA"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                              name : new SFString("endA"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
 
                             new field({
                               type : field.TYPE_SFVEC3F,
-                              name : new SFString("set_endB"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                              name : new SFString("endB"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
-                                  nodeField : new SFString("set_endA"),
+                                  nodeField : new SFString("endA"),
                                   protoField : new SFString("set_positionA")}),
 
                                 new connect({
-                                  nodeField : new SFString("set_endB"),
+                                  nodeField : new SFString("endB"),
                                   protoField : new SFString("set_positionB")})])})]),
                           
 ecmascript:eval (0
 
                 , function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f();
-			spine[0] = value;
-			spine[1] = value;
-		    } else {
-		        spine = new MFVec3f();
-			spine[0] = value;
-		    }
+		    spine = new MFVec3f(value, spine[1]);
                 }
 
                 , function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f();
-			spine[0] = value;
-			spine[1] = value;
-		    } else {
-		        spine = new MFVec3f();
-			spine[1] = value;
-		    }
-                }
-
-                , function set_spine(value) {
-                    spine = value;
+		    spine = new MFVec3f(spine[0], value);
                 })}),
 
                         new ROUTE({
@@ -333,40 +317,16 @@ ecmascript:eval (0
                       value : new SFString("50 50 -50")})])}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
-                  DEF : new SFString("linkA"),
-                  fieldValue : new MFNode([
-                    new fieldValue({
-                      name : new SFString("set_positionA"),
-                      value : new SFString("0 0 0")}),
-
-                    new fieldValue({
-                      name : new SFString("set_positionB"),
-                      value : new SFString("50 50 50")})])}),
+                  name : new SFString("cyl"),
+                  DEF : new SFString("linkA")}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
-                  DEF : new SFString("linkB"),
-                  fieldValue : new MFNode([
-                    new fieldValue({
-                      name : new SFString("set_positionA"),
-                      value : new SFString("0 0 0")}),
-
-                    new fieldValue({
-                      name : new SFString("set_positionB"),
-                      value : new SFString("-50 -50 -50")})])}),
+                  name : new SFString("cyl"),
+                  DEF : new SFString("linkB")}),
 
                 new ProtoInstance({
-                  name : new SFString("cylinder"),
-                  DEF : new SFString("linkC"),
-                  fieldValue : new MFNode([
-                    new fieldValue({
-                      name : new SFString("set_positionA"),
-                      value : new SFString("50 50 50")}),
-
-                    new fieldValue({
-                      name : new SFString("set_positionB"),
-                      value : new SFString("50 50 -50")})])})])}),
+                  name : new SFString("cyl"),
+                  DEF : new SFString("linkC")})])}),
 
             new Script({
               DEF : new SFString("clickHandler"),

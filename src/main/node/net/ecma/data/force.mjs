@@ -65,6 +65,10 @@ var X3D0 =  new X3D({
               content : new SFString("December 13 2015")}),
 
             new meta({
+              name : new SFString("modified"),
+              content : new SFString("July 14 2025")}),
+
+            new meta({
               name : new SFString("title"),
               content : new SFString("force.x3d")}),
 
@@ -163,12 +167,11 @@ var X3D0 =  new X3D({
                               accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
                           ]),
 ecmascript:eval (0
-					, function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(old, translation);
-						// Browser.println(translation);
-					})}),
+			, function set_cycle(value) {
+				old = translation;
+				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+				keyValue = new MFVec3f(old, translation);
+			})}),
 
                         new TimeSensor({
                           DEF : new SFString("nodeClock"),
@@ -226,7 +229,7 @@ ecmascript:eval (0
                               DEF : new SFString("extrusion"),
                               creaseAngle : new SFFloat(0.785),
                               crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                              spine : new MFVec3f([0,-50,0,0,50,0])})),
+                              spine : new MFVec3f([0,-50,0,0,0,0,0,50,0])})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -240,7 +243,7 @@ ecmascript:eval (0
                               type : field.TYPE_MFVEC3F,
                               name : new SFString("spine"),
                               accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0 -50 0 0 50 0")}),
+                              value : new SFString("0 -50 0 0 0 0 0 50 0")}),
 
                             new field({
                               type : field.TYPE_SFVEC3F,
@@ -265,22 +268,13 @@ ecmascript:eval (0
                                   protoField : new SFString("set_positionB")})])})]),
                           
 ecmascript:eval (0
+			, function set_endA(value) {
+				spine = new MFVec3f(value, spine[1]);
+			}
 
-                , function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(value, spine[1]);
-		    }
-                }
-
-                , function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(spine[0], value);
-		    }
-                })}),
+			, function set_endB(value) {
+				spine = new MFVec3f(spine[0], value);
+			})}),
 
                         new ROUTE({
                           fromNode : new SFString("MoveCylinder"),
