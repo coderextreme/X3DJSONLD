@@ -1,6 +1,6 @@
 X3D:
     profile: "Immersive"
-    version: "3.0"
+    version: "4.0"
     setHead: [
         head: [
             meta: [
@@ -1478,10 +1478,10 @@ X3D:
 #{
 #	var TrebuchetHeight=45;
 #	var Height =25;
-#      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+#      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
 #	// start at TrebuchetHeight and keep along z axis (z=zero)
-#	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-#        z = 0;
+#	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+#        var z = 0;
 #        transparent = new SFVec3f (1,1,1);
 #     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
 #		{
