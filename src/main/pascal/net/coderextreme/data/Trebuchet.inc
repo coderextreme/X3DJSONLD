@@ -345,7 +345,7 @@ PositionInterpolator357: TPositionInterpolatorNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
+X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'Trebuchet.x3d';
 X3D0.Meta['description'] := 'Working model of a 14th century Trebuchet Catapult.';
@@ -1838,10 +1838,10 @@ Script344.SetSourceCode('''ecmascript:\n"+
 "{\n"+
 "	var TrebuchetHeight=45;\n"+
 "	var Height =25;\n"+
-"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n"+
+"      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n"+
 "	// start at TrebuchetHeight and keep along z axis (z=zero)\n"+
-"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n"+
-"        z = 0;\n"+
+"	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n"+
+"        var z = 0;\n"+
 "        transparent = new SFVec3f (1,1,1);\n"+
 "     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)\n"+
 "		{\n"+

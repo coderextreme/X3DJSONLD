@@ -121,7 +121,7 @@ Script17.SetSourceCode('''ecmascript:\n"+
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }''');
 { .AddChildren }
 Transform11.AddChildren([Script17]);
@@ -198,7 +198,7 @@ Script35.SetSourceCode('''ecmascript:\n"+
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }''');
 { .AddChildren }
 Transform29.AddChildren([Script35]);

@@ -78,12 +78,12 @@ Viewpoint17.Position := Vector3(0,0,12);
 { .AddChildren }
 Group14.AddChildren([Viewpoint17]);
 Background18 := TBackgroundNode.Create;
-Background18.SetBackUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-Background18.SetBottomUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-Background18.SetFrontUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-Background18.SetLeftUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-Background18.SetRightUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-Background18.SetTopUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
+Background18.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+Background18.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
+Background18.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+Background18.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
+Background18.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
+Background18.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { .AddChildren }
 Group14.AddChildren([Background18]);
 Transform19 := TTransformNode.Create;
@@ -113,27 +113,27 @@ Material26.SpecularColor := Vector3(0.5,0.5,0.5);
 Appearance25.Material := Material26;
 ComposedCubeMapTexture27 := TComposedCubeMapTextureNode.Create;
 ImageTexture28 := TImageTextureNode.Create;
-ImageTexture28.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 { .SetBackTexture }
 ComposedCubeMapTexture27.BackTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
-ImageTexture29.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
+ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 { .SetBottomTexture }
 ComposedCubeMapTexture27.BottomTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
-ImageTexture30.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_from.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
 { .SetFrontTexture }
 ComposedCubeMapTexture27.FrontTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
-ImageTexture31.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
+ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
 { .SetLeftTexture }
 ComposedCubeMapTexture27.LeftTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
-ImageTexture32.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
+ImageTexture32.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
 { .SetRightTexture }
 ComposedCubeMapTexture27.RightTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
-ImageTexture33.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
+ImageTexture33.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { .SetTopTexture }
 ComposedCubeMapTexture27.TopTexture := ImageTexture33;
 { .SetTexture }
@@ -219,8 +219,8 @@ field45.Value := '0';
 ComposedShader34.Field := field45;
 { <field name='cube' type='SFNode' accessType="initializeOnly"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field> }
 ShaderPart46 := TShaderPartNode.Create;
-ShaderPart46.Type := 'VERTEX';
 ShaderPart46.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs']);
+ShaderPart46.Type := 'VERTEX';
 { .AddParts }
 ComposedShader34.Parts := ShaderPart46;
 ShaderPart47 := TShaderPartNode.Create;
@@ -374,17 +374,17 @@ TimeSensor58.Loop := True;
 Transform19.AddChildren([TimeSensor58]);
 Transform19.AddRoute(TimeSensor58.EventFraction_changed, Script48.EventSet_fraction);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdA, 'x_ite'.FdA);
+Transform19.AddRoute(Script48.FdA, ComposedShader34.FdA);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdB, 'x_ite'.FdB);
+Transform19.AddRoute(Script48.FdB, ComposedShader34.FdB);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdC, 'x_ite'.FdC);
+Transform19.AddRoute(Script48.FdC, ComposedShader34.FdC);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdD, 'x_ite'.FdD);
+Transform19.AddRoute(Script48.FdD, ComposedShader34.FdD);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdPdelta, 'x_ite'.FdPdelta);
+Transform19.AddRoute(Script48.FdPdelta, ComposedShader34.FdPdelta);
 { .AddX3DRoute }
-Transform19.AddRoute(Script48.FdTdelta, 'x_ite'.FdTdelta);
+Transform19.AddRoute(Script48.FdTdelta, ComposedShader34.FdTdelta);
 { .AddX3DRoute }
 { .AddChildren }
 Group14.AddChildren([Transform19]);

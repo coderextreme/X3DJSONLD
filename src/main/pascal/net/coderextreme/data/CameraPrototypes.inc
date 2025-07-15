@@ -243,8 +243,8 @@ Material261: TMaterialNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
-X3D0.ForceVersion.Minor := 2;
+X3D0.ForceVersion.Major := 4;
+X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'CameraPrototypes.x3d';
 X3D0.Meta['description'] := 'Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.';
 X3D0.Meta['creator'] := 'Don Brutzman and Jeff Weekley';
