@@ -214,8 +214,8 @@ X3D:
                     ]
                 ],
                 HAnimJoint: [
-                    name: ""
-                    DEF: "hanim_"
+                    name: "humanoid_root"
+                    DEF: "hanim_humanoid_root"
                     ulimit: [0, 0, 0]
                     llimit: [0, 0, 0]
                     containerField: "skeleton"

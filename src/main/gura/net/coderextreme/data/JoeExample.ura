@@ -1,5 +1,5 @@
 X3D:
-    version: "3.0"
+    version: "4.0"
     profile: "Immersive"
     setHead: [
         head: [

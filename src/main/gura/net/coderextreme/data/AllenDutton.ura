@@ -36,10 +36,6 @@ X3D:
                 content: "4 July 2020"
             ],
             meta: [
-                name: "warning"
-                content: "X3D Validator reports numerous warnings are present"
-            ],
-            meta: [
                 name: "reference"
                 content: "http://www.cyberware.com"
             ],
