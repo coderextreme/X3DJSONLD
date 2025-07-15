@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
-SoSceneManager0->setVersion(QString("3.3"));
+SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
 Someta* Someta2 = new Someta();
 Someta2->setName(QString("title"));
@@ -73,7 +73,7 @@ Sohead1->addMeta(*Someta6);
 
 Someta* Someta7 = new Someta();
 Someta7->setName(QString("description"));
-Someta7->setContent(QString("12 extrusions to test prototype expander"));
+Someta7->setContent(QString("12 extrusions"));
 Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
@@ -106,7 +106,7 @@ SoVRMLAppearance16->addChild(*SoMaterial17);
 SoShape15->addChild(*SoVRMLAppearance16);
 
 SoExtrusion* SoExtrusion18 = new SoExtrusion();
-SoExtrusion18->setSpine(new float[]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
+SoExtrusion18->setSpine(new float[]{-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0,0.0}, 9);
 SoExtrusion18->setCreaseAngle(0.785);
 SoExtrusion18->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 SoShape15->setGeometry(*SoExtrusion18);
@@ -128,7 +128,7 @@ SoVRMLAppearance21->addChild(*SoMaterial22);
 SoShape20->addChild(*SoVRMLAppearance21);
 
 SoExtrusion* SoExtrusion23 = new SoExtrusion();
-SoExtrusion23->setSpine(new float[]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
+SoExtrusion23->setSpine(new float[]{1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0,0.0}, 9);
 SoExtrusion23->setCreaseAngle(0.785);
 SoExtrusion23->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 SoShape20->setGeometry(*SoExtrusion23);

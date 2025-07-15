@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
-SoSceneManager0->setVersion(QString("3.0"));
+SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
 Someta* Someta2 = new Someta();
 Someta2->setName(QString("title"));
@@ -112,245 +112,245 @@ SoExternProtoDeclare* SoExternProtoDeclare15 = new SoExternProtoDeclare();
 SoExternProtoDeclare15->setName(QString("ArtDeco00"));
 SoExternProtoDeclare15->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare15->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare15->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco00"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), QString("ArtDecoPrototypes.wrl#ArtDeco00"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")}, 4);
+SoExternProtoDeclare15->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco00"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), QString("ArtDecoPrototypes.wrl#ArtDeco00"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare15);
 
 SoExternProtoDeclare* SoExternProtoDeclare16 = new SoExternProtoDeclare();
 SoExternProtoDeclare16->setName(QString("ArtDeco01"));
 SoExternProtoDeclare16->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare16->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare16->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco01"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), QString("ArtDecoPrototypes.wrl#ArtDeco01"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")}, 4);
+SoExternProtoDeclare16->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco01"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), QString("ArtDecoPrototypes.wrl#ArtDeco01"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare16);
 
 SoExternProtoDeclare* SoExternProtoDeclare17 = new SoExternProtoDeclare();
 SoExternProtoDeclare17->setName(QString("ArtDeco02"));
 SoExternProtoDeclare17->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare17->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare17->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco02"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), QString("ArtDecoPrototypes.wrl#ArtDeco02"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")}, 4);
+SoExternProtoDeclare17->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco02"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), QString("ArtDecoPrototypes.wrl#ArtDeco02"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare17);
 
 SoExternProtoDeclare* SoExternProtoDeclare18 = new SoExternProtoDeclare();
 SoExternProtoDeclare18->setName(QString("ArtDeco03"));
 SoExternProtoDeclare18->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare18->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare18->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco03"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), QString("ArtDecoPrototypes.wrl#ArtDeco03"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")}, 4);
+SoExternProtoDeclare18->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco03"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), QString("ArtDecoPrototypes.wrl#ArtDeco03"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare18);
 
 SoExternProtoDeclare* SoExternProtoDeclare19 = new SoExternProtoDeclare();
 SoExternProtoDeclare19->setName(QString("ArtDeco04"));
 SoExternProtoDeclare19->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare19->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare19->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco04"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), QString("ArtDecoPrototypes.wrl#ArtDeco04"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")}, 4);
+SoExternProtoDeclare19->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco04"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), QString("ArtDecoPrototypes.wrl#ArtDeco04"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare19);
 
 SoExternProtoDeclare* SoExternProtoDeclare20 = new SoExternProtoDeclare();
 SoExternProtoDeclare20->setName(QString("ArtDeco05"));
 SoExternProtoDeclare20->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare20->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare20->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco05"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), QString("ArtDecoPrototypes.wrl#ArtDeco05"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")}, 4);
+SoExternProtoDeclare20->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco05"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), QString("ArtDecoPrototypes.wrl#ArtDeco05"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare20);
 
 SoExternProtoDeclare* SoExternProtoDeclare21 = new SoExternProtoDeclare();
 SoExternProtoDeclare21->setName(QString("ArtDeco06"));
 SoExternProtoDeclare21->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare21->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare21->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco06"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), QString("ArtDecoPrototypes.wrl#ArtDeco06"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")}, 4);
+SoExternProtoDeclare21->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco06"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), QString("ArtDecoPrototypes.wrl#ArtDeco06"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare21);
 
 SoExternProtoDeclare* SoExternProtoDeclare22 = new SoExternProtoDeclare();
 SoExternProtoDeclare22->setName(QString("ArtDeco07"));
 SoExternProtoDeclare22->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare22->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare22->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco07"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), QString("ArtDecoPrototypes.wrl#ArtDeco07"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")}, 4);
+SoExternProtoDeclare22->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco07"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), QString("ArtDecoPrototypes.wrl#ArtDeco07"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare22);
 
 SoExternProtoDeclare* SoExternProtoDeclare23 = new SoExternProtoDeclare();
 SoExternProtoDeclare23->setName(QString("ArtDeco08"));
 SoExternProtoDeclare23->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare23->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare23->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco08"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), QString("ArtDecoPrototypes.wrl#ArtDeco08"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")}, 4);
+SoExternProtoDeclare23->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco08"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), QString("ArtDecoPrototypes.wrl#ArtDeco08"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare23);
 
 SoExternProtoDeclare* SoExternProtoDeclare24 = new SoExternProtoDeclare();
 SoExternProtoDeclare24->setName(QString("ArtDeco09"));
 SoExternProtoDeclare24->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare24->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare24->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco09"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), QString("ArtDecoPrototypes.wrl#ArtDeco09"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")}, 4);
+SoExternProtoDeclare24->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco09"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), QString("ArtDecoPrototypes.wrl#ArtDeco09"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare24);
 
 SoExternProtoDeclare* SoExternProtoDeclare25 = new SoExternProtoDeclare();
 SoExternProtoDeclare25->setName(QString("ArtDeco10"));
 SoExternProtoDeclare25->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare25->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare25->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco10"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), QString("ArtDecoPrototypes.wrl#ArtDeco10"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")}, 4);
+SoExternProtoDeclare25->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco10"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), QString("ArtDecoPrototypes.wrl#ArtDeco10"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare25);
 
 SoExternProtoDeclare* SoExternProtoDeclare26 = new SoExternProtoDeclare();
 SoExternProtoDeclare26->setName(QString("ArtDeco11"));
 SoExternProtoDeclare26->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare26->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare26->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco11"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), QString("ArtDecoPrototypes.wrl#ArtDeco11"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")}, 4);
+SoExternProtoDeclare26->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco11"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), QString("ArtDecoPrototypes.wrl#ArtDeco11"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare26);
 
 SoExternProtoDeclare* SoExternProtoDeclare27 = new SoExternProtoDeclare();
 SoExternProtoDeclare27->setName(QString("ArtDeco12"));
 SoExternProtoDeclare27->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare27->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare27->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco12"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), QString("ArtDecoPrototypes.wrl#ArtDeco12"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")}, 4);
+SoExternProtoDeclare27->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco12"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), QString("ArtDecoPrototypes.wrl#ArtDeco12"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare27);
 
 SoExternProtoDeclare* SoExternProtoDeclare28 = new SoExternProtoDeclare();
 SoExternProtoDeclare28->setName(QString("ArtDeco13"));
 SoExternProtoDeclare28->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare28->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare28->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco13"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), QString("ArtDecoPrototypes.wrl#ArtDeco13"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")}, 4);
+SoExternProtoDeclare28->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco13"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), QString("ArtDecoPrototypes.wrl#ArtDeco13"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare28);
 
 SoExternProtoDeclare* SoExternProtoDeclare29 = new SoExternProtoDeclare();
 SoExternProtoDeclare29->setName(QString("ArtDeco14"));
 SoExternProtoDeclare29->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare29->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare29->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco14"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), QString("ArtDecoPrototypes.wrl#ArtDeco14"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")}, 4);
+SoExternProtoDeclare29->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco14"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), QString("ArtDecoPrototypes.wrl#ArtDeco14"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare29);
 
 SoExternProtoDeclare* SoExternProtoDeclare30 = new SoExternProtoDeclare();
 SoExternProtoDeclare30->setName(QString("ArtDeco15"));
 SoExternProtoDeclare30->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare30->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare30->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco15"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), QString("ArtDecoPrototypes.wrl#ArtDeco15"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")}, 4);
+SoExternProtoDeclare30->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco15"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), QString("ArtDecoPrototypes.wrl#ArtDeco15"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare30);
 
 SoExternProtoDeclare* SoExternProtoDeclare31 = new SoExternProtoDeclare();
 SoExternProtoDeclare31->setName(QString("ArtDeco16"));
 SoExternProtoDeclare31->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare31->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare31->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco16"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), QString("ArtDecoPrototypes.wrl#ArtDeco16"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")}, 4);
+SoExternProtoDeclare31->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco16"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), QString("ArtDecoPrototypes.wrl#ArtDeco16"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare31);
 
 SoExternProtoDeclare* SoExternProtoDeclare32 = new SoExternProtoDeclare();
 SoExternProtoDeclare32->setName(QString("ArtDeco17"));
 SoExternProtoDeclare32->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare32->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare32->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco17"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), QString("ArtDecoPrototypes.wrl#ArtDeco17"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")}, 4);
+SoExternProtoDeclare32->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco17"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), QString("ArtDecoPrototypes.wrl#ArtDeco17"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare32);
 
 SoExternProtoDeclare* SoExternProtoDeclare33 = new SoExternProtoDeclare();
 SoExternProtoDeclare33->setName(QString("ArtDeco18"));
 SoExternProtoDeclare33->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare33->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare33->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco18"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), QString("ArtDecoPrototypes.wrl#ArtDeco18"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")}, 4);
+SoExternProtoDeclare33->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco18"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), QString("ArtDecoPrototypes.wrl#ArtDeco18"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare33);
 
 SoExternProtoDeclare* SoExternProtoDeclare34 = new SoExternProtoDeclare();
 SoExternProtoDeclare34->setName(QString("ArtDeco19"));
 SoExternProtoDeclare34->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare34->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare34->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco19"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), QString("ArtDecoPrototypes.wrl#ArtDeco19"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")}, 4);
+SoExternProtoDeclare34->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco19"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), QString("ArtDecoPrototypes.wrl#ArtDeco19"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare34);
 
 SoExternProtoDeclare* SoExternProtoDeclare35 = new SoExternProtoDeclare();
 SoExternProtoDeclare35->setName(QString("ArtDeco20"));
 SoExternProtoDeclare35->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare35->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare35->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco20"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), QString("ArtDecoPrototypes.wrl#ArtDeco20"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")}, 4);
+SoExternProtoDeclare35->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco20"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), QString("ArtDecoPrototypes.wrl#ArtDeco20"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare35);
 
 SoExternProtoDeclare* SoExternProtoDeclare36 = new SoExternProtoDeclare();
 SoExternProtoDeclare36->setName(QString("ArtDeco21"));
 SoExternProtoDeclare36->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare36->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare36->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco21"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), QString("ArtDecoPrototypes.wrl#ArtDeco21"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")}, 4);
+SoExternProtoDeclare36->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco21"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), QString("ArtDecoPrototypes.wrl#ArtDeco21"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare36);
 
 SoExternProtoDeclare* SoExternProtoDeclare37 = new SoExternProtoDeclare();
 SoExternProtoDeclare37->setName(QString("ArtDeco22"));
 SoExternProtoDeclare37->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare37->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare37->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco22"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), QString("ArtDecoPrototypes.wrl#ArtDeco22"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")}, 4);
+SoExternProtoDeclare37->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco22"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), QString("ArtDecoPrototypes.wrl#ArtDeco22"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare37);
 
 SoExternProtoDeclare* SoExternProtoDeclare38 = new SoExternProtoDeclare();
 SoExternProtoDeclare38->setName(QString("ArtDeco23"));
 SoExternProtoDeclare38->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare38->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare38->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco23"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), QString("ArtDecoPrototypes.wrl#ArtDeco23"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")}, 4);
+SoExternProtoDeclare38->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco23"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), QString("ArtDecoPrototypes.wrl#ArtDeco23"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare38);
 
 SoExternProtoDeclare* SoExternProtoDeclare39 = new SoExternProtoDeclare();
 SoExternProtoDeclare39->setName(QString("ArtDeco24"));
 SoExternProtoDeclare39->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare39->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare39->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco24"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), QString("ArtDecoPrototypes.wrl#ArtDeco24"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")}, 4);
+SoExternProtoDeclare39->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco24"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), QString("ArtDecoPrototypes.wrl#ArtDeco24"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare39);
 
 SoExternProtoDeclare* SoExternProtoDeclare40 = new SoExternProtoDeclare();
 SoExternProtoDeclare40->setName(QString("ArtDeco25"));
 SoExternProtoDeclare40->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare40->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare40->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco25"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), QString("ArtDecoPrototypes.wrl#ArtDeco25"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")}, 4);
+SoExternProtoDeclare40->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco25"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), QString("ArtDecoPrototypes.wrl#ArtDeco25"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare40);
 
 SoExternProtoDeclare* SoExternProtoDeclare41 = new SoExternProtoDeclare();
 SoExternProtoDeclare41->setName(QString("ArtDeco26"));
 SoExternProtoDeclare41->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare41->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare41->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco26"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), QString("ArtDecoPrototypes.wrl#ArtDeco26"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")}, 4);
+SoExternProtoDeclare41->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco26"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), QString("ArtDecoPrototypes.wrl#ArtDeco26"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare41);
 
 SoExternProtoDeclare* SoExternProtoDeclare42 = new SoExternProtoDeclare();
 SoExternProtoDeclare42->setName(QString("ArtDeco27"));
 SoExternProtoDeclare42->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare42->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare42->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco27"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), QString("ArtDecoPrototypes.wrl#ArtDeco27"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")}, 4);
+SoExternProtoDeclare42->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco27"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), QString("ArtDecoPrototypes.wrl#ArtDeco27"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare42);
 
 SoExternProtoDeclare* SoExternProtoDeclare43 = new SoExternProtoDeclare();
 SoExternProtoDeclare43->setName(QString("ArtDeco28"));
 SoExternProtoDeclare43->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare43->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare43->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco28"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), QString("ArtDecoPrototypes.wrl#ArtDeco28"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")}, 4);
+SoExternProtoDeclare43->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco28"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), QString("ArtDecoPrototypes.wrl#ArtDeco28"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare43);
 
 SoExternProtoDeclare* SoExternProtoDeclare44 = new SoExternProtoDeclare();
 SoExternProtoDeclare44->setName(QString("ArtDeco29"));
 SoExternProtoDeclare44->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare44->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare44->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco29"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), QString("ArtDecoPrototypes.wrl#ArtDeco29"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")}, 4);
+SoExternProtoDeclare44->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco29"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), QString("ArtDecoPrototypes.wrl#ArtDeco29"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare44);
 
 SoExternProtoDeclare* SoExternProtoDeclare45 = new SoExternProtoDeclare();
 SoExternProtoDeclare45->setName(QString("ArtDeco30"));
 SoExternProtoDeclare45->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare45->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare45->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco30"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), QString("ArtDecoPrototypes.wrl#ArtDeco30"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")}, 4);
+SoExternProtoDeclare45->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco30"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), QString("ArtDecoPrototypes.wrl#ArtDeco30"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare45);
 
 SoExternProtoDeclare* SoExternProtoDeclare46 = new SoExternProtoDeclare();
 SoExternProtoDeclare46->setName(QString("ArtDeco31"));
 SoExternProtoDeclare46->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare46->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare46->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco31"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), QString("ArtDecoPrototypes.wrl#ArtDeco31"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")}, 4);
+SoExternProtoDeclare46->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco31"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), QString("ArtDecoPrototypes.wrl#ArtDeco31"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare46);
 
 SoExternProtoDeclare* SoExternProtoDeclare47 = new SoExternProtoDeclare();
 SoExternProtoDeclare47->setName(QString("ArtDeco32"));
 SoExternProtoDeclare47->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare47->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare47->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco32"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), QString("ArtDecoPrototypes.wrl#ArtDeco32"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")}, 4);
+SoExternProtoDeclare47->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco32"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), QString("ArtDecoPrototypes.wrl#ArtDeco32"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare47);
 
 SoExternProtoDeclare* SoExternProtoDeclare48 = new SoExternProtoDeclare();
 SoExternProtoDeclare48->setName(QString("ArtDeco33"));
 SoExternProtoDeclare48->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare48->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare48->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco33"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), QString("ArtDecoPrototypes.wrl#ArtDeco33"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")}, 4);
+SoExternProtoDeclare48->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco33"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), QString("ArtDecoPrototypes.wrl#ArtDeco33"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare48);
 
 SoExternProtoDeclare* SoExternProtoDeclare49 = new SoExternProtoDeclare();
 SoExternProtoDeclare49->setName(QString("ArtDeco34"));
 SoExternProtoDeclare49->setAppinfo(QString("UniversalMediaMaterials prototype"));
 SoExternProtoDeclare49->setDocumentation(QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-SoExternProtoDeclare49->setUrl(new QString[]{QString("ArtDecoPrototypes.x3d#ArtDeco34"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), QString("ArtDecoPrototypes.wrl#ArtDeco34"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")}, 4);
+SoExternProtoDeclare49->setUrl(new QString[]{QString("../data/ArtDecoPrototypes.x3d#ArtDeco34"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), QString("ArtDecoPrototypes.wrl#ArtDeco34"), QString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")}, 4);
 SoNode13->addChild(*SoExternProtoDeclare49);
 
 SoGroup* SoGroup50 = new SoGroup();

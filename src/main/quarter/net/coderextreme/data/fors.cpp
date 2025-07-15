@@ -46,345 +46,387 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
-Someta* Someta2 = new Someta();
-Someta2->setName(QString("creator"));
-Someta2->setContent(QString("John W Carlson"));
-Sohead1->addMeta(*Someta2);
+Socomponent* Socomponent2 = new Socomponent();
+Socomponent2->setName(QString("Scripting"));
+Socomponent2->setLevel(1);
+Sohead1->addChild(*Socomponent2);
 
 Someta* Someta3 = new Someta();
-Someta3->setName(QString("created"));
-Someta3->setContent(QString("December 13 2015"));
+Someta3->setName(QString("creator"));
+Someta3->setContent(QString("John W Carlson"));
 Sohead1->addMeta(*Someta3);
 
 Someta* Someta4 = new Someta();
-Someta4->setName(QString("title"));
-Someta4->setContent(QString("fors.x3d"));
+Someta4->setName(QString("created"));
+Someta4->setContent(QString("December 13 2015"));
 Sohead1->addMeta(*Someta4);
 
 Someta* Someta5 = new Someta();
-Someta5->setName(QString("identifier"));
-Someta5->setContent(QString("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"));
+Someta5->setName(QString("modified"));
+Someta5->setContent(QString("July 14 2025"));
 Sohead1->addMeta(*Someta5);
 
 Someta* Someta6 = new Someta();
-Someta6->setName(QString("description"));
-Someta6->setContent(QString("beginnings of a force directed graph in 3D"));
+Someta6->setName(QString("title"));
+Someta6->setContent(QString("fors.x3d"));
 Sohead1->addMeta(*Someta6);
 
 Someta* Someta7 = new Someta();
-Someta7->setName(QString("generator"));
-Someta7->setContent(QString("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+Someta7->setName(QString("identifier"));
+Someta7->setContent(QString("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"));
 Sohead1->addMeta(*Someta7);
+
+Someta* Someta8 = new Someta();
+Someta8->setName(QString("description"));
+Someta8->setContent(QString("beginnings of a force directed graph in 3D"));
+Sohead1->addMeta(*Someta8);
+
+Someta* Someta9 = new Someta();
+Someta9->setName(QString("generator"));
+Someta9->setContent(QString("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+Sohead1->addMeta(*Someta9);
 
 SoSceneManager0->setHead(*Sohead1);
 
-SoNode* SoNode8 = new SoNode();
-SoProtoDeclare* SoProtoDeclare9 = new SoProtoDeclare();
-SoProtoDeclare9->setName(QString("node"));
-SoProtoInterface* SoProtoInterface10 = new SoProtoInterface();
-Sofield* Sofield11 = new Sofield();
-Sofield11->setName(QString("position"));
-Sofield11->setAccessType(QString("inputOutput"));
-Sofield11->setType(QString("SFVec3f"));
-Sofield11->setValue(QString("0 0 0"));
-SoProtoInterface10->addChild(*Sofield11);
+SoNode* SoNode10 = new SoNode();
+SoProtoDeclare* SoProtoDeclare11 = new SoProtoDeclare();
+SoProtoDeclare11->setName(QString("node"));
+SoProtoInterface* SoProtoInterface12 = new SoProtoInterface();
+Sofield* Sofield13 = new Sofield();
+Sofield13->setName(QString("position"));
+Sofield13->setAccessType(QString("inputOutput"));
+Sofield13->setType(QString("SFVec3f"));
+Sofield13->setValue(QString("0 0 0"));
+SoProtoInterface12->addChild(*Sofield13);
 
-SoProtoDeclare9->addChild(*SoProtoInterface10);
+SoProtoDeclare11->addChild(*SoProtoInterface12);
 
-SoProtoBody* SoProtoBody12 = new SoProtoBody();
-SoTransform* SoTransform13 = new SoTransform();
-SoTransform13->setDEF(QString("transform"));
-SoIS* SoIS14 = new SoIS();
-Soconnect* Soconnect15 = new Soconnect();
-Soconnect15->setNodeField(QString("translation"));
-Soconnect15->setProtoField(QString("position"));
-SoIS14->addChild(*Soconnect15);
+SoProtoBody* SoProtoBody14 = new SoProtoBody();
+SoGroup* SoGroup15 = new SoGroup();
+SoTransform* SoTransform16 = new SoTransform();
+SoTransform16->setDEF(QString("transform"));
+SoIS* SoIS17 = new SoIS();
+Soconnect* Soconnect18 = new Soconnect();
+Soconnect18->setNodeField(QString("translation"));
+Soconnect18->setProtoField(QString("position"));
+SoIS17->addChild(*Soconnect18);
 
-SoTransform13->addChild(*SoIS14);
+SoTransform16->addChild(*SoIS17);
 
-SoShape* SoShape16 = new SoShape();
-SoSphere* SoSphere17 = new SoSphere();
-SoShape16->setGeometry(*SoSphere17);
+SoShape* SoShape19 = new SoShape();
+SoSphere* SoSphere20 = new SoSphere();
+SoShape19->setGeometry(*SoSphere20);
 
-SoVRMLAppearance* SoVRMLAppearance18 = new SoVRMLAppearance();
-SoMaterial* SoMaterial19 = new SoMaterial();
-SoMaterial19->setDiffuseColor(new float[]{1.0,0.0,0.0});
-SoVRMLAppearance18->addChild(*SoMaterial19);
+SoVRMLAppearance* SoVRMLAppearance21 = new SoVRMLAppearance();
+SoMaterial* SoMaterial22 = new SoMaterial();
+SoMaterial22->setDiffuseColor(new float[]{1.0,0.0,0.0});
+SoVRMLAppearance21->addChild(*SoMaterial22);
 
-SoShape16->addChild(*SoVRMLAppearance18);
+SoShape19->addChild(*SoVRMLAppearance21);
 
-SoTransform13->addChild(*SoShape16);
+SoTransform16->addChild(*SoShape19);
 
-SoTransform* SoTransform20 = new SoTransform();
-SoTransform20->setTranslation(new float[]{1.0,0.0,0.0});
-SoShape* SoShape21 = new SoShape();
-SoText* SoText22 = new SoText();
-SoText22->setString(new QString[]{QString("Node")}, 1);
-SoFontStyle* SoFontStyle23 = new SoFontStyle();
-SoFontStyle23->setJustify(new QString[]{QString("MIDDLE"), QString("MIDDLE")}, 2);
-SoFontStyle23->setSize(5);
-SoText22->setFontStyle(*SoFontStyle23);
+SoTransform* SoTransform23 = new SoTransform();
+SoTransform23->setTranslation(new float[]{1.0,0.0,0.0});
+SoShape* SoShape24 = new SoShape();
+SoText* SoText25 = new SoText();
+SoText25->setString(new QString[]{QString("Node")}, 1);
+SoFontStyle* SoFontStyle26 = new SoFontStyle();
+SoFontStyle26->setJustify(new QString[]{QString("MIDDLE"), QString("MIDDLE")}, 2);
+SoFontStyle26->setSize(5);
+SoText25->setFontStyle(*SoFontStyle26);
 
-SoShape21->setGeometry(*SoText22);
+SoShape24->setGeometry(*SoText25);
 
-SoVRMLAppearance* SoVRMLAppearance24 = new SoVRMLAppearance();
-SoMaterial* SoMaterial25 = new SoMaterial();
-SoMaterial25->setDiffuseColor(new float[]{0.0,0.0,1.0});
-SoVRMLAppearance24->addChild(*SoMaterial25);
+SoVRMLAppearance* SoVRMLAppearance27 = new SoVRMLAppearance();
+SoMaterial* SoMaterial28 = new SoMaterial();
+SoMaterial28->setDiffuseColor(new float[]{0.0,0.0,1.0});
+SoVRMLAppearance27->addChild(*SoMaterial28);
 
-SoShape21->addChild(*SoVRMLAppearance24);
+SoShape24->addChild(*SoVRMLAppearance27);
 
-SoTransform20->addChild(*SoShape21);
+SoTransform23->addChild(*SoShape24);
 
-SoTransform13->addChild(*SoTransform20);
+SoTransform16->addChild(*SoTransform23);
 
-SoProtoBody12->addChild(*SoTransform13);
+SoGroup15->addChild(*SoTransform16);
 
-SoPositionInterpolator* SoPositionInterpolator26 = new SoPositionInterpolator();
-SoPositionInterpolator26->setDEF(QString("NodePosition"));
-SoPositionInterpolator26->setKey(new float[]{0.0,1.0}, 2);
-SoPositionInterpolator26->setKeyValue(new float[]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
-SoProtoBody12->addChild(*SoPositionInterpolator26);
+SoPositionInterpolator* SoPositionInterpolator29 = new SoPositionInterpolator();
+SoPositionInterpolator29->setDEF(QString("NodePosition"));
+SoPositionInterpolator29->setKey(new float[]{0.0,1.0}, 2);
+SoPositionInterpolator29->setKeyValue(new float[]{0.0,0.0,0.0,0.0,5.0,0.0}, 6);
+SoGroup15->addChild(*SoPositionInterpolator29);
 
-SoScript* SoScript27 = new SoScript();
-SoScript27->setDEF(QString("MoveBall"));
-Sofield* Sofield28 = new Sofield();
-Sofield28->setName(QString("translation"));
-Sofield28->setAccessType(QString("inputOutput"));
-Sofield28->setType(QString("SFVec3f"));
-Sofield28->setValue(QString("50 50 0"));
-SoScript27->addChild(*Sofield28);
-
-Sofield* Sofield29 = new Sofield();
-Sofield29->setName(QString("old"));
-Sofield29->setAccessType(QString("inputOutput"));
-Sofield29->setType(QString("SFVec3f"));
-Sofield29->setValue(QString("0 0 0"));
-SoScript27->addChild(*Sofield29);
-
-Sofield* Sofield30 = new Sofield();
-Sofield30->setName(QString("set_cycle"));
-Sofield30->setAccessType(QString("inputOnly"));
-Sofield30->setType(QString("SFTime"));
-SoScript27->addChild(*Sofield30);
-
+SoScript* SoScript30 = new SoScript();
+SoScript30->setDEF(QString("MoveBall"));
 Sofield* Sofield31 = new Sofield();
-Sofield31->setName(QString("keyValue"));
-Sofield31->setAccessType(QString("outputOnly"));
-Sofield31->setType(QString("MFVec3f"));
-SoScript27->addChild(*Sofield31);
+Sofield31->setName(QString("translation"));
+Sofield31->setAccessType(QString("inputOutput"));
+Sofield31->setType(QString("SFVec3f"));
+Sofield31->setValue(QString("50 50 0"));
+SoScript30->addChild(*Sofield31);
+
+Sofield* Sofield32 = new Sofield();
+Sofield32->setName(QString("old"));
+Sofield32->setAccessType(QString("inputOutput"));
+Sofield32->setType(QString("SFVec3f"));
+Sofield32->setValue(QString("0 0 0"));
+SoScript30->addChild(*Sofield32);
+
+Sofield* Sofield33 = new Sofield();
+Sofield33->setName(QString("set_cycle"));
+Sofield33->setAccessType(QString("inputOnly"));
+Sofield33->setType(QString("SFTime"));
+SoScript30->addChild(*Sofield33);
+
+Sofield* Sofield34 = new Sofield();
+Sofield34->setName(QString("keyValue"));
+Sofield34->setAccessType(QString("outputOnly"));
+Sofield34->setType(QString("MFVec3f"));
+SoScript30->addChild(*Sofield34);
 
 
-//SoScript27->setSourceCode(QString("ecmascript:")+
-//_T("					function set_cycle(value) {")+
-//_T("                                                old = translation;")+
-//_T("						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
-//_T("                                                keyValue = new MFVec3f([old, translation]);")+
-//_T("						// Browser.println(translation);")+
-//_T("					}"));
-SoProtoBody12->addChild(*SoScript27);
+//SoScript30->setSourceCode(QString("ecmascript:")+
+//_T("			function set_cycle(value) {")+
+//_T("				old = translation;")+
+//_T("				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);")+
+//_T("				keyValue = new MFVec3f(old, translation);")+
+//_T("			}"));
+SoGroup15->addChild(*SoScript30);
 
-SoTimeSensor* SoTimeSensor32 = new SoTimeSensor();
-SoTimeSensor32->setDEF(QString("nodeClock"));
-SoTimeSensor32->setCycleInterval(3);
-SoTimeSensor32->setLoop(true);
-SoProtoBody12->addChild(*SoTimeSensor32);
-
-SoROUTE* SoROUTE33 = new SoROUTE();
-SoROUTE33->setFromNode(QString("nodeClock"));
-SoROUTE33->setFromField(QString("cycleTime"));
-SoROUTE33->setToNode(QString("MoveBall"));
-SoROUTE33->setToField(QString("set_cycle"));
-SoProtoBody12->addChild(*SoROUTE33);
-
-SoROUTE* SoROUTE34 = new SoROUTE();
-SoROUTE34->setFromNode(QString("nodeClock"));
-SoROUTE34->setFromField(QString("fraction_changed"));
-SoROUTE34->setToNode(QString("NodePosition"));
-SoROUTE34->setToField(QString("set_fraction"));
-SoProtoBody12->addChild(*SoROUTE34);
-
-SoROUTE* SoROUTE35 = new SoROUTE();
-SoROUTE35->setFromNode(QString("MoveBall"));
-SoROUTE35->setFromField(QString("keyValue"));
-SoROUTE35->setToNode(QString("NodePosition"));
-SoROUTE35->setToField(QString("keyValue"));
-SoProtoBody12->addChild(*SoROUTE35);
+SoTimeSensor* SoTimeSensor35 = new SoTimeSensor();
+SoTimeSensor35->setDEF(QString("nodeClock"));
+SoTimeSensor35->setCycleInterval(3);
+SoTimeSensor35->setLoop(true);
+SoGroup15->addChild(*SoTimeSensor35);
 
 SoROUTE* SoROUTE36 = new SoROUTE();
-SoROUTE36->setFromNode(QString("NodePosition"));
-SoROUTE36->setFromField(QString("value_changed"));
-SoROUTE36->setToNode(QString("transform"));
-SoROUTE36->setToField(QString("set_translation"));
-SoProtoBody12->addChild(*SoROUTE36);
+SoROUTE36->setFromNode(QString("nodeClock"));
+SoROUTE36->setFromField(QString("cycleTime"));
+SoROUTE36->setToNode(QString("MoveBall"));
+SoROUTE36->setToField(QString("set_cycle"));
+SoGroup15->addChild(*SoROUTE36);
 
-SoProtoDeclare9->addChild(*SoProtoBody12);
+SoROUTE* SoROUTE37 = new SoROUTE();
+SoROUTE37->setFromNode(QString("nodeClock"));
+SoROUTE37->setFromField(QString("fraction_changed"));
+SoROUTE37->setToNode(QString("NodePosition"));
+SoROUTE37->setToField(QString("set_fraction"));
+SoGroup15->addChild(*SoROUTE37);
 
-SoNode8->addChild(*SoProtoDeclare9);
+SoROUTE* SoROUTE38 = new SoROUTE();
+SoROUTE38->setFromNode(QString("MoveBall"));
+SoROUTE38->setFromField(QString("keyValue"));
+SoROUTE38->setToNode(QString("NodePosition"));
+SoROUTE38->setToField(QString("keyValue"));
+SoGroup15->addChild(*SoROUTE38);
 
-SoProtoDeclare* SoProtoDeclare37 = new SoProtoDeclare();
-SoProtoDeclare37->setName(QString("cyl"));
-SoProtoInterface* SoProtoInterface38 = new SoProtoInterface();
-Sofield* Sofield39 = new Sofield();
-Sofield39->setName(QString("set_positionA"));
-Sofield39->setAccessType(QString("inputOnly"));
-Sofield39->setType(QString("SFVec3f"));
-SoProtoInterface38->addChild(*Sofield39);
+SoROUTE* SoROUTE39 = new SoROUTE();
+SoROUTE39->setFromNode(QString("NodePosition"));
+SoROUTE39->setFromField(QString("value_changed"));
+SoROUTE39->setToNode(QString("transform"));
+SoROUTE39->setToField(QString("set_translation"));
+SoGroup15->addChild(*SoROUTE39);
 
-Sofield* Sofield40 = new Sofield();
-Sofield40->setName(QString("set_positionB"));
-Sofield40->setAccessType(QString("inputOnly"));
-Sofield40->setType(QString("SFVec3f"));
-SoProtoInterface38->addChild(*Sofield40);
+SoProtoBody14->addChild(*SoGroup15);
 
-SoProtoDeclare37->addChild(*SoProtoInterface38);
+SoProtoDeclare11->addChild(*SoProtoBody14);
 
-SoProtoBody* SoProtoBody41 = new SoProtoBody();
-SoShape* SoShape42 = new SoShape();
-SoExtrusion* SoExtrusion43 = new SoExtrusion();
-SoExtrusion43->setDEF(QString("extrusion"));
-SoExtrusion43->setCreaseAngle(0.785);
-SoExtrusion43->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-SoExtrusion43->setSpine(new float[]{0.0,-50.0,0.0,0.0,50.0,0.0}, 6);
-SoShape42->setGeometry(*SoExtrusion43);
+SoNode10->addChild(*SoProtoDeclare11);
 
-SoVRMLAppearance* SoVRMLAppearance44 = new SoVRMLAppearance();
-SoMaterial* SoMaterial45 = new SoMaterial();
-SoMaterial45->setDiffuseColor(new float[]{0.0,1.0,0.0});
-SoVRMLAppearance44->addChild(*SoMaterial45);
+SoProtoDeclare* SoProtoDeclare40 = new SoProtoDeclare();
+SoProtoDeclare40->setName(QString("cyl"));
+SoProtoInterface* SoProtoInterface41 = new SoProtoInterface();
+Sofield* Sofield42 = new Sofield();
+Sofield42->setName(QString("set_positionA"));
+Sofield42->setAccessType(QString("inputOutput"));
+Sofield42->setType(QString("SFVec3f"));
+Sofield42->setValue(QString("0 0 0"));
+SoProtoInterface41->addChild(*Sofield42);
 
-SoShape42->addChild(*SoVRMLAppearance44);
+Sofield* Sofield43 = new Sofield();
+Sofield43->setName(QString("set_positionB"));
+Sofield43->setAccessType(QString("inputOutput"));
+Sofield43->setType(QString("SFVec3f"));
+Sofield43->setValue(QString("50 50 50"));
+SoProtoInterface41->addChild(*Sofield43);
 
-SoProtoBody41->addChild(*SoShape42);
+SoProtoDeclare40->addChild(*SoProtoInterface41);
 
-SoScript* SoScript46 = new SoScript();
-SoScript46->setDEF(QString("MoveCylinder"));
-Sofield* Sofield47 = new Sofield();
-Sofield47->setName(QString("spine"));
-Sofield47->setAccessType(QString("inputOutput"));
-Sofield47->setType(QString("MFVec3f"));
-Sofield47->setValue(QString("0 -50 0 0 50 0"));
-SoScript46->addChild(*Sofield47);
+SoProtoBody* SoProtoBody44 = new SoProtoBody();
+SoGroup* SoGroup45 = new SoGroup();
+SoShape* SoShape46 = new SoShape();
+SoExtrusion* SoExtrusion47 = new SoExtrusion();
+SoExtrusion47->setDEF(QString("extrusion"));
+SoExtrusion47->setCreaseAngle(0.785);
+SoExtrusion47->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
+SoExtrusion47->setSpine(new float[]{0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0}, 9);
+SoShape46->setGeometry(*SoExtrusion47);
 
-Sofield* Sofield48 = new Sofield();
-Sofield48->setName(QString("set_endA"));
-Sofield48->setAccessType(QString("inputOnly"));
-Sofield48->setType(QString("SFVec3f"));
-SoScript46->addChild(*Sofield48);
+SoVRMLAppearance* SoVRMLAppearance48 = new SoVRMLAppearance();
+SoMaterial* SoMaterial49 = new SoMaterial();
+SoMaterial49->setDiffuseColor(new float[]{0.0,1.0,0.0});
+SoVRMLAppearance48->addChild(*SoMaterial49);
 
-Sofield* Sofield49 = new Sofield();
-Sofield49->setName(QString("set_endB"));
-Sofield49->setAccessType(QString("inputOnly"));
-Sofield49->setType(QString("SFVec3f"));
-SoScript46->addChild(*Sofield49);
+SoShape46->addChild(*SoVRMLAppearance48);
 
-SoIS* SoIS50 = new SoIS();
-Soconnect* Soconnect51 = new Soconnect();
-Soconnect51->setNodeField(QString("set_endA"));
-Soconnect51->setProtoField(QString("set_positionA"));
-SoIS50->addChild(*Soconnect51);
+SoGroup45->addChild(*SoShape46);
 
-Soconnect* Soconnect52 = new Soconnect();
-Soconnect52->setNodeField(QString("set_endB"));
-Soconnect52->setProtoField(QString("set_positionB"));
-SoIS50->addChild(*Soconnect52);
+SoScript* SoScript50 = new SoScript();
+SoScript50->setDEF(QString("MoveCylinder"));
+Sofield* Sofield51 = new Sofield();
+Sofield51->setName(QString("spine"));
+Sofield51->setAccessType(QString("inputOutput"));
+Sofield51->setType(QString("MFVec3f"));
+Sofield51->setValue(QString("0 -50 0 0 0 0 0 50 0"));
+SoScript50->addChild(*Sofield51);
 
-SoScript46->addChild(*SoIS50);
+Sofield* Sofield52 = new Sofield();
+Sofield52->setName(QString("endA"));
+Sofield52->setAccessType(QString("inputOutput"));
+Sofield52->setType(QString("SFVec3f"));
+Sofield52->setValue(QString("0 0 0"));
+SoScript50->addChild(*Sofield52);
+
+Sofield* Sofield53 = new Sofield();
+Sofield53->setName(QString("endB"));
+Sofield53->setAccessType(QString("inputOutput"));
+Sofield53->setType(QString("SFVec3f"));
+Sofield53->setValue(QString("50 50 50"));
+SoScript50->addChild(*Sofield53);
+
+SoIS* SoIS54 = new SoIS();
+Soconnect* Soconnect55 = new Soconnect();
+Soconnect55->setNodeField(QString("endA"));
+Soconnect55->setProtoField(QString("set_positionA"));
+SoIS54->addChild(*Soconnect55);
+
+Soconnect* Soconnect56 = new Soconnect();
+Soconnect56->setNodeField(QString("endB"));
+Soconnect56->setProtoField(QString("set_positionB"));
+SoIS54->addChild(*Soconnect56);
+
+SoScript50->addChild(*SoIS54);
 
 
-//SoScript46->setSourceCode(QString("ecmascript:")+
-//_T("                function set_endA(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([value, spine[1]]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_endB(value) {")+
-//_T("		    if (typeof spine === 'undefined') {")+
-//_T("		        spine = new MFVec3f([value, value]);")+
-//_T("		    } else {")+
-//_T("		        spine = new MFVec3f([spine[0], value]);")+
-//_T("		    }")+
-//_T("                }")+
-//_T("                function set_spine(value) {")+
-//_T("                    spine = value;")+
-//_T("                }"));
-SoProtoBody41->addChild(*SoScript46);
+//SoScript50->setSourceCode(QString("ecmascript:")+
+//_T("			function set_endA(value) {")+
+//_T("				spine = new MFVec3f(value, spine[1]);")+
+//_T("			}")+
+//_T("			function set_endB(value) {")+
+//_T("				spine = new MFVec3f(spine[0], value);")+
+//_T("			}"));
+SoGroup45->addChild(*SoScript50);
 
-SoROUTE* SoROUTE53 = new SoROUTE();
-SoROUTE53->setFromNode(QString("MoveCylinder"));
-SoROUTE53->setFromField(QString("spine"));
-SoROUTE53->setToNode(QString("extrusion"));
-SoROUTE53->setToField(QString("set_spine"));
-SoProtoBody41->addChild(*SoROUTE53);
+SoROUTE* SoROUTE57 = new SoROUTE();
+SoROUTE57->setFromNode(QString("MoveCylinder"));
+SoROUTE57->setFromField(QString("spine"));
+SoROUTE57->setToNode(QString("extrusion"));
+SoROUTE57->setToField(QString("set_spine"));
+SoGroup45->addChild(*SoROUTE57);
 
-SoProtoDeclare37->addChild(*SoProtoBody41);
+SoProtoBody44->addChild(*SoGroup45);
 
-SoNode8->addChild(*SoProtoDeclare37);
+SoProtoDeclare40->addChild(*SoProtoBody44);
 
-SoTransform* SoTransform54 = new SoTransform();
-SoTransform54->setDEF(QString("HoldsContent"));
-SoTransform54->setScale(new float[]{0.1,0.1,0.1});
-SoPlaneSensor* SoPlaneSensor55 = new SoPlaneSensor();
-SoPlaneSensor55->setDEF(QString("clickGenerator"));
-SoPlaneSensor55->setMinPosition(new float[]{-50.0,-50.0});
-SoPlaneSensor55->setMaxPosition(new float[]{50.0,50.0});
-SoPlaneSensor55->setDescription(QString("click on background to add nodes, click on nodes to add links"));
-SoTransform54->addChild(*SoPlaneSensor55);
+SoNode10->addChild(*SoProtoDeclare40);
 
-SoProtoInstance* SoProtoInstance56 = new SoProtoInstance();
-SoProtoInstance56->setName(QString("node"));
-SoProtoInstance56->setDEF(QString("nodeA"));
-SoField* SoField57 = new SoField();
-SoField57->setName(QString("position"));
-SoField57->setValue(QString("0 0 0"));
-SoProtoInstance56->addChild(*SoField57);
-
-SoTransform54->addChild(*SoProtoInstance56);
-
-SoProtoInstance* SoProtoInstance58 = new SoProtoInstance();
-SoProtoInstance58->setName(QString("node"));
-SoProtoInstance58->setDEF(QString("nodeB"));
-SoField* SoField59 = new SoField();
-SoField59->setName(QString("position"));
-SoField59->setValue(QString("50 50 50"));
-SoProtoInstance58->addChild(*SoField59);
-
-SoTransform54->addChild(*SoProtoInstance58);
+SoTransform* SoTransform58 = new SoTransform();
+SoTransform58->setDEF(QString("HoldsContent"));
+SoTransform58->setScale(new float[]{0.1,0.1,0.1});
+SoPlaneSensor* SoPlaneSensor59 = new SoPlaneSensor();
+SoPlaneSensor59->setDEF(QString("clickGenerator"));
+SoPlaneSensor59->setMinPosition(new float[]{-50.0,-50.0});
+SoPlaneSensor59->setMaxPosition(new float[]{50.0,50.0});
+SoPlaneSensor59->setDescription(QString("click on background to add nodes, click on nodes to add links"));
+SoTransform58->addChild(*SoPlaneSensor59);
 
 SoProtoInstance* SoProtoInstance60 = new SoProtoInstance();
-SoProtoInstance60->setName(QString("cyl"));
-SoProtoInstance60->setDEF(QString("linkA"));
+SoProtoInstance60->setName(QString("node"));
+SoProtoInstance60->setDEF(QString("nodeA"));
 SoField* SoField61 = new SoField();
-SoField61->setName(QString("set_positionA"));
+SoField61->setName(QString("position"));
 SoField61->setValue(QString("0 0 0"));
 SoProtoInstance60->addChild(*SoField61);
 
-SoField* SoField62 = new SoField();
-SoField62->setName(QString("set_positionB"));
-SoField62->setValue(QString("50 50 50"));
-SoProtoInstance60->addChild(*SoField62);
+SoTransform58->addChild(*SoProtoInstance60);
 
-SoTransform54->addChild(*SoProtoInstance60);
+SoProtoInstance* SoProtoInstance62 = new SoProtoInstance();
+SoProtoInstance62->setName(QString("node"));
+SoProtoInstance62->setDEF(QString("nodeB"));
+SoField* SoField63 = new SoField();
+SoField63->setName(QString("position"));
+SoField63->setValue(QString("50 50 50"));
+SoProtoInstance62->addChild(*SoField63);
 
-SoNode8->addChild(*SoTransform54);
+SoTransform58->addChild(*SoProtoInstance62);
 
-SoROUTE* SoROUTE63 = new SoROUTE();
-SoROUTE63->setFromNode(QString("nodeA"));
-SoROUTE63->setFromField(QString("position"));
-SoROUTE63->setToNode(QString("linkA"));
-SoROUTE63->setToField(QString("set_positionA"));
-SoNode8->addChild(*SoROUTE63);
+SoProtoInstance* SoProtoInstance64 = new SoProtoInstance();
+SoProtoInstance64->setName(QString("cyl"));
+SoProtoInstance64->setDEF(QString("linkA"));
+SoTransform58->addChild(*SoProtoInstance64);
 
-SoROUTE* SoROUTE64 = new SoROUTE();
-SoROUTE64->setFromNode(QString("nodeB"));
-SoROUTE64->setFromField(QString("position"));
-SoROUTE64->setToNode(QString("linkA"));
-SoROUTE64->setToField(QString("set_positionB"));
-SoNode8->addChild(*SoROUTE64);
+SoNode10->addChild(*SoTransform58);
 
-SoSceneManager0->setSceneGraph(*SoNode8);
+SoScript* SoScript65 = new SoScript();
+SoScript65->setDEF(QString("clickHandler"));
+Sofield* Sofield66 = new Sofield();
+Sofield66->setName(QString("counter"));
+Sofield66->setAccessType(QString("inputOutput"));
+Sofield66->setValue(QString("0"));
+Sofield66->setType(QString("SFInt32"));
+SoScript65->addChild(*Sofield66);
+
+Sofield* Sofield67 = new Sofield();
+Sofield67->setName(QString("add_node"));
+Sofield67->setAccessType(QString("inputOnly"));
+Sofield67->setValue(QString("false"));
+Sofield67->setType(QString("SFBool"));
+SoScript65->addChild(*Sofield67);
+
+//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+
+//SoScript65->setSourceCode(QString("ecmascript:")+
+//_T("	function add_node(value) {")+
+//_T("                // Browser.print('hey ', counter);")+
+//_T("                counter = counter++;")+
+//_T("		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),")+
+//_T("			{ \"ProtoInstance\":")+
+//_T("				{ \"@name\":\"node\",")+
+//_T("				  \"@DEF\":\"node'+counter+'\",")+
+//_T("				  \"fieldValue\": [")+
+//_T("					{")+
+//_T("						 \"@name\":\"position\",")+
+//_T("						 \"@value\":[0.0,0.0,0.0]")+
+//_T("					}")+
+//_T("				  ]")+
+//_T("				}")+
+//_T("			});")+
+//_T("        }"));
+SoNode10->addChild(*SoScript65);
+
+SoROUTE* SoROUTE68 = new SoROUTE();
+SoROUTE68->setFromNode(QString("clickGenerator"));
+SoROUTE68->setFromField(QString("isActive"));
+SoROUTE68->setToNode(QString("clickHandler"));
+SoROUTE68->setToField(QString("add_node"));
+SoNode10->addChild(*SoROUTE68);
+
+SoROUTE* SoROUTE69 = new SoROUTE();
+SoROUTE69->setFromNode(QString("nodeA"));
+SoROUTE69->setFromField(QString("position"));
+SoROUTE69->setToNode(QString("linkA"));
+SoROUTE69->setToField(QString("set_positionA"));
+SoNode10->addChild(*SoROUTE69);
+
+SoROUTE* SoROUTE70 = new SoROUTE();
+SoROUTE70->setFromNode(QString("nodeB"));
+SoROUTE70->setFromField(QString("position"));
+SoROUTE70->setToNode(QString("linkA"));
+SoROUTE70->setToField(QString("set_positionB"));
+SoNode10->addChild(*SoROUTE70);
+
+SoSceneManager0->setSceneGraph(*SoNode10);
 
 return 0;
 }

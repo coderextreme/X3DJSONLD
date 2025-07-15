@@ -123,12 +123,12 @@ SoViewpoint17->setPosition(new float[]{0.0,0.0,12.0});
 SoNode14->addChild(*SoViewpoint17);
 
 SoBackground* SoBackground18 = new SoBackground();
-SoBackground18->setBackUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
-SoBackground18->setBottomUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
-SoBackground18->setFrontUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
-SoBackground18->setLeftUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
-SoBackground18->setRightUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
-SoBackground18->setTopUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+SoBackground18->setBackUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+SoBackground18->setBottomUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+SoBackground18->setFrontUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+SoBackground18->setLeftUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+SoBackground18->setRightUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+SoBackground18->setTopUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 SoNode14->addChild(*SoBackground18);
 
 SoTransform* SoTransform19 = new SoTransform();
@@ -159,27 +159,27 @@ SoVRMLAppearance25->addChild(*SoMaterial26);
 SoComposedCubeMapTexture* SoComposedCubeMapTexture27 = new SoComposedCubeMapTexture();
 SoComposedCubeMapTexture27->setDEF(QString("texture"));
 SoImageTexture* SoImageTexture28 = new SoImageTexture();
-SoImageTexture28->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+SoImageTexture28->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
 SoComposedCubeMapTexture27->setBack(*SoImageTexture28);
 
 SoImageTexture* SoImageTexture29 = new SoImageTexture();
-SoImageTexture29->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+SoImageTexture29->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
 SoComposedCubeMapTexture27->setBottom(*SoImageTexture29);
 
 SoImageTexture* SoImageTexture30 = new SoImageTexture();
-SoImageTexture30->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+SoImageTexture30->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_from.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
 SoComposedCubeMapTexture27->setFront(*SoImageTexture30);
 
 SoImageTexture* SoImageTexture31 = new SoImageTexture();
-SoImageTexture31->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+SoImageTexture31->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
 SoComposedCubeMapTexture27->setLeft(*SoImageTexture31);
 
 SoImageTexture* SoImageTexture32 = new SoImageTexture();
-SoImageTexture32->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+SoImageTexture32->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
 SoComposedCubeMapTexture27->setRight(*SoImageTexture32);
 
 SoImageTexture* SoImageTexture33 = new SoImageTexture();
-SoImageTexture33->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+SoImageTexture33->setUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 SoComposedCubeMapTexture27->setTop(*SoImageTexture33);
 
 SoVRMLAppearance25->addChild(*SoComposedCubeMapTexture27);
@@ -266,8 +266,8 @@ SoComposedShader34->addChild(*Sofield45);
 
 //<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
 SoShaderPart* SoShaderPart46 = new SoShaderPart();
-SoShaderPart46->setType(QString("VERTEX"));
 SoShaderPart46->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")}, 1);
+SoShaderPart46->setType(QString("VERTEX"));
 SoComposedShader34->setParts(*SoShaderPart46);
 
 SoShaderPart* SoShaderPart47 = new SoShaderPart();
@@ -429,42 +429,42 @@ SoTransform19->addChild(*SoROUTE59);
 SoROUTE* SoROUTE60 = new SoROUTE();
 SoROUTE60->setFromNode(QString("Animate"));
 SoROUTE60->setFromField(QString("a"));
-SoROUTE60->setToNode(QString("x_ite"));
+SoROUTE60->setToNode(QString("shader"));
 SoROUTE60->setToField(QString("a"));
 SoTransform19->addChild(*SoROUTE60);
 
 SoROUTE* SoROUTE61 = new SoROUTE();
 SoROUTE61->setFromNode(QString("Animate"));
 SoROUTE61->setFromField(QString("b"));
-SoROUTE61->setToNode(QString("x_ite"));
+SoROUTE61->setToNode(QString("shader"));
 SoROUTE61->setToField(QString("b"));
 SoTransform19->addChild(*SoROUTE61);
 
 SoROUTE* SoROUTE62 = new SoROUTE();
 SoROUTE62->setFromNode(QString("Animate"));
 SoROUTE62->setFromField(QString("c"));
-SoROUTE62->setToNode(QString("x_ite"));
+SoROUTE62->setToNode(QString("shader"));
 SoROUTE62->setToField(QString("c"));
 SoTransform19->addChild(*SoROUTE62);
 
 SoROUTE* SoROUTE63 = new SoROUTE();
 SoROUTE63->setFromNode(QString("Animate"));
 SoROUTE63->setFromField(QString("d"));
-SoROUTE63->setToNode(QString("x_ite"));
+SoROUTE63->setToNode(QString("shader"));
 SoROUTE63->setToField(QString("d"));
 SoTransform19->addChild(*SoROUTE63);
 
 SoROUTE* SoROUTE64 = new SoROUTE();
 SoROUTE64->setFromNode(QString("Animate"));
 SoROUTE64->setFromField(QString("pdelta"));
-SoROUTE64->setToNode(QString("x_ite"));
+SoROUTE64->setToNode(QString("shader"));
 SoROUTE64->setToField(QString("pdelta"));
 SoTransform19->addChild(*SoROUTE64);
 
 SoROUTE* SoROUTE65 = new SoROUTE();
 SoROUTE65->setFromNode(QString("Animate"));
 SoROUTE65->setFromField(QString("tdelta"));
-SoROUTE65->setToNode(QString("x_ite"));
+SoROUTE65->setToNode(QString("shader"));
 SoROUTE65->setToField(QString("tdelta"));
 SoTransform19->addChild(*SoROUTE65);
 

@@ -108,7 +108,7 @@ SoShape15->addChild(*SoVRMLAppearance16);
 SoExtrusion* SoExtrusion18 = new SoExtrusion();
 SoExtrusion18->setCreaseAngle(0.785);
 SoExtrusion18->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-SoExtrusion18->setSpine(new float[]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
+SoExtrusion18->setSpine(new float[]{-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0,0.0}, 9);
 SoShape15->setGeometry(*SoExtrusion18);
 
 SoTransform14->addChild(*SoShape15);
@@ -131,7 +131,7 @@ SoShape20->addChild(*SoVRMLAppearance21);
 SoExtrusion* SoExtrusion23 = new SoExtrusion();
 SoExtrusion23->setCreaseAngle(0.785);
 SoExtrusion23->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-SoExtrusion23->setSpine(new float[]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
+SoExtrusion23->setSpine(new float[]{1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0,0.0}, 9);
 SoShape20->setGeometry(*SoExtrusion23);
 
 SoTransform19->addChild(*SoShape20);
@@ -183,7 +183,7 @@ SoShape32->addChild(*SoVRMLAppearance33);
 SoExtrusion* SoExtrusion35 = new SoExtrusion();
 SoExtrusion35->setCreaseAngle(0.785);
 SoExtrusion35->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-SoExtrusion35->setSpine(new float[]{0.0,1.5,0.0,0.0,2.5,0.0}, 6);
+SoExtrusion35->setSpine(new float[]{0.0,1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0}, 9);
 SoShape32->setGeometry(*SoExtrusion35);
 
 SoTransform31->addChild(*SoShape32);
@@ -234,7 +234,7 @@ SoShape44->addChild(*SoVRMLAppearance45);
 SoExtrusion* SoExtrusion47 = new SoExtrusion();
 SoExtrusion47->setCreaseAngle(0.785);
 SoExtrusion47->setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-SoExtrusion47->setSpine(new float[]{0.0,-2.5,0.0,0.0,-1.5,0.0}, 6);
+SoExtrusion47->setSpine(new float[]{0.0,-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0}, 9);
 SoShape44->setGeometry(*SoExtrusion47);
 
 SoTransform43->addChild(*SoShape44);
