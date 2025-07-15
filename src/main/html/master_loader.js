@@ -5,7 +5,7 @@ import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import CppFunctionBodySerializer from '../node/CppFunctionBodySerializer.js';
 import ClojureSerializer from '../node/ClojureSerializer.js';
 import JavaSerializer from '../node/JavaSerializer.js';
-import PythonSerializerX3DJSAIL from '../node/PythonSerializerX3DJSAIL.js';
+import GraalPySerializer from '../node/GraalPySerializer.js';
 import JRubySerializer from '../node/JRubySerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
@@ -70,9 +70,9 @@ function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
     } catch (e) { $('#javascript').val("Error generating JavaScript: " + e.message); }
 
     try {
-        let pySerializer = new PythonSerializerX3DJSAIL();
-        $('#python').val(pySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
-    } catch (e) { $('#python').val("Error generating Python: " + e.message); }
+        let graalpySerializer = new GraalPySerializer();
+        $('#python').val(graalpySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#python').val("Error generating GraalPy: " + e.message); }
 
     try {
         let javaSerializer = new JavaSerializer();
