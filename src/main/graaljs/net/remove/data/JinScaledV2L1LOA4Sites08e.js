@@ -1,8 +1,7 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {

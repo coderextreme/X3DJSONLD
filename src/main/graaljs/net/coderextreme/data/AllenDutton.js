@@ -1,8 +1,7 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
@@ -19,7 +18,6 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("created").setContent("8 June 2001"))
         .addMeta(new meta().setName("translated").setContent("9 January 2002"))
         .addMeta(new meta().setName("modified").setContent("4 July 2020"))
-        .addMeta(new meta().setName("warning").setContent("X3D Validator reports numerous warnings are present"))
         .addMeta(new meta().setName("reference").setContent("http://www.cyberware.com"))
         .addMeta(new meta().setName("reference").setContent("AllenDuttonBlurryMotion.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"))

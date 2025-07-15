@@ -1,8 +1,7 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
@@ -44,7 +43,7 @@ var ProtoInstance31 = null;
 var ProtoInstance32 = null;
 var ProtoInstance33 = null;
 var ProtoInstance34 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ArtDecoExamples.x3d"))
         .addMeta(new meta().setName("description").setContent("Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."))
