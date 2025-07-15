@@ -255,8 +255,8 @@ SoCoordinate46->setUSE(QString("TheSkinCoord"));
 SoHAnimHumanoid38->setSkinCoord(*SoCoordinate46);
 
 SoHAnimJoint* SoHAnimJoint47 = new SoHAnimJoint();
-SoHAnimJoint47->X3DNode::setName(QString(""));
-SoHAnimJoint47->setDEF(QString("hanim_"));
+SoHAnimJoint47->X3DNode::setName(QString("humanoid_root"));
+SoHAnimJoint47->setDEF(QString("hanim_humanoid_root"));
 SoHAnimJoint47->setUlimit(new float[]{0.0,0.0,0.0}, 3);
 SoHAnimJoint47->setLlimit(new float[]{0.0,0.0,0.0}, 3);
 SoHAnimHumanoid38->setSkeleton(*SoHAnimJoint47);

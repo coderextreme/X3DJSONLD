@@ -141,7 +141,7 @@ SoScript17->addChild(*Sofield21);
 //_T("               function set_location(value) {")+
 //_T("                    old = translation;")+
 //_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-//_T("                    keyValue = new MFVec3f(old, translation);")+
+//_T("                    keyValue = new MFVec3f([old, translation]);")+
 //_T("               }"));
 SoTransform11->addChild(*SoScript17);
 
@@ -248,7 +248,7 @@ SoScript35->addChild(*Sofield39);
 //_T("               function set_location(value) {")+
 //_T("                    old = translation;")+
 //_T("                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);")+
-//_T("                    keyValue = new MFVec3f(old, translation);")+
+//_T("                    keyValue = new MFVec3f([old, translation]);")+
 //_T("               }"));
 SoTransform29->addChild(*SoScript35);
 

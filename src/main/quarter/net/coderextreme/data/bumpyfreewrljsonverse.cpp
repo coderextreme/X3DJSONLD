@@ -507,7 +507,7 @@ SoShaderPart97->setUrl(new QString[]{QString("../shaders/freewrl.fs"), QString("
 SoShaderPart97->setType(QString("FRAGMENT"));
 SoComposedShader84->setParts(*SoShaderPart97);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 SoVRMLAppearance75->addChild(*SoComposedShader84);
 
 SoShape72->addChild(*SoVRMLAppearance75);
