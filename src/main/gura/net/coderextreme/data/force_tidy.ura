@@ -16,6 +16,10 @@ X3D:
                 content: "December 13 2015"
             ],
             meta: [
+                name: "modified"
+                content: "July 14 2025"
+            ],
+            meta: [
                 name: "title"
                 content: "force.x3d"
             ],
@@ -66,6 +70,10 @@ X3D:
                                     ]
                                 ],
                                 Shape: [
+                                    setGeometry: [
+                                        Sphere: [ empty
+                                        ]
+                                    ]
                                     setAppearance: [
                                         Appearance: [
                                             setMaterial: [
@@ -73,10 +81,6 @@ X3D:
                                                     diffuseColor: [1, 0, 0]
                                                 ]
                                             ]
-                                        ]
-                                    ]
-                                    setGeometry: [
-                                        Sphere: [ empty
                                         ]
                                     ]
                                 ],
@@ -135,49 +139,41 @@ X3D:
                                     type: "MFVec3f"
                                 ],
 #ecmascript:
-#					function set_cycle(value) {
-#                                                old = translation;
-#						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-#		    				/*
-#                                                var tmpkeyValue = new MFVec3f();
-#			    			tmpkeyValue[0] = old;
-#			    			tmpkeyValue[1] = translation;
-#                                                keyValue = tmpkeyValue;
-#		    				*/
-#                                                keyValue = new MFVec3f([old, translation]);
-#			    		
-#						// Browser.println(translation);
-#					}
+#		function set_cycle(value) {
+#			old = translation;
+#			translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+#			keyValue = new MFVec3f(old, translation);
+#		}
                             ],
                             TimeSensor: [
                                 DEF: "nodeClock"
                                 cycleInterval: 3.0
                                 loop: true
+                            ],
+                            ROUTE: [
+                                fromNode: "nodeClock"
+                                fromField: "cycleTime"
+                                toNode: "MoveBall"
+                                toField: "set_cycle"
+                            ],
+                            ROUTE: [
+                                fromNode: "nodeClock"
+                                fromField: "fraction_changed"
+                                toNode: "NodePosition"
+                                toField: "set_fraction"
+                            ],
+                            ROUTE: [
+                                fromNode: "MoveBall"
+                                fromField: "keyValue"
+                                toNode: "NodePosition"
+                                toField: "set_keyValue"
+                            ],
+                            ROUTE: [
+                                fromNode: "NodePosition"
+                                fromField: "value_changed"
+                                toNode: "transform"
+                                toField: "set_translation"
                             ]
-                        ],
-                        ROUTE: [
-                            fromNode: "nodeClock"
-                            fromField: "cycleTime"
-                            toNode: "MoveBall"
-                            toField: "set_cycle"
-                        ],
-                        ROUTE: [
-                            fromNode: "nodeClock"
-                            fromField: "fraction_changed"
-                            toNode: "NodePosition"
-                            toField: "set_fraction"
-                        ],
-                        ROUTE: [
-                            fromNode: "MoveBall"
-                            fromField: "keyValue"
-                            toNode: "NodePosition"
-                            toField: "set_keyValue"
-                        ],
-                        ROUTE: [
-                            fromNode: "NodePosition"
-                            fromField: "value_changed"
-                            toNode: "transform"
-                            toField: "set_translation"
                         ]
                     ]
                 ]
@@ -188,12 +184,12 @@ X3D:
                     ProtoInterface: [
                         field: [
                             name: "set_positionA"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
                         ],
                         field: [
                             name: "set_positionB"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
                         ]
                     ]
@@ -216,7 +212,7 @@ X3D:
                                         DEF: "extrusion"
                                         creaseAngle: 0.785
                                         crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
-                                        spine: [0, -50, 0, 0, 50, 0]
+                                        spine: [0, -50, 0, 0, 0, 0, 0, 50, 0]
                                     ]
                                 ]
                             ],
@@ -226,80 +222,44 @@ X3D:
                                     name: "spine"
                                     accessType: "inputOutput"
                                     type: "MFVec3f"
-                                    value: "0 -50 0 0 50 0"
+                                    value: "0 -50 0 0 0 0 0 50 0"
                                 ],
                                 field: [
-                                    name: "set_endA"
-                                    accessType: "inputOnly"
+                                    name: "endA"
+                                    accessType: "inputOutput"
                                     type: "SFVec3f"
                                 ],
                                 field: [
-                                    name: "set_endB"
-                                    accessType: "inputOnly"
+                                    name: "endB"
+                                    accessType: "inputOutput"
                                     type: "SFVec3f"
                                 ],
                                 IS: [
                                     connect: [
-                                        nodeField: "set_endA"
+                                        nodeField: "endA"
                                         protoField: "set_positionA"
                                     ],
                                     connect: [
-                                        nodeField: "set_endB"
+                                        nodeField: "endB"
                                         protoField: "set_positionB"
                                     ]
                                 ],
 #ecmascript:
 #
 #                function set_endA(value) {
-#		    if (typeof spine === 'undefined') {
-#		    	/*
-#		        var tmpspine = new MFVec3f();
-#			tmpspine[0] = value;
-#			tmpspine[1] = value;
-#			spine = tmpspine;
-#		    	*/
-#		        spine = new MFVec3f([value, value]);
-#		    } else {
-#		    	/*
-#		        var tmpspine = new MFVec3f();
-#			tmpspine[0] = value;
-#			tmpspine[1] = spine[1];
-#			spine = tmpspine;
-#		        */
-#		        spine = new MFVec3f([value, spine[1]]);
-#		    }
+#		    spine = new MFVec3f(value, spine[1]);
 #                }
 #
 #                function set_endB(value) {
-#		    if (typeof spine === 'undefined') {
-#		    	/*
-#		        var tmpspine = new MFVec3f();
-#			tmpspine[0] = value;
-#			tmpspine[1] = value;
-#			spine = tmpspine;
-#		        */
-#		        spine = new MFVec3f([value, value]);
-#		    } else {
-#		    	/*
-#		        var tmpspine = new MFVec3f();
-#			tmpspine[0] = spine[0];
-#			tmpspine[1] = value;
-#			spine = tmpspine;
-#		    	*/
-#		        spine = new MFVec3f([spine[0], value]);
-#		    }
+#		    spine = new MFVec3f(spine[0], value);
 #                }
-#
-#                function set_spine(value) {
-#                    spine = value;
-#                }
+                            ],
+                            ROUTE: [
+                                fromNode: "MoveCylinder"
+                                fromField: "spine_changed"
+                                toNode: "extrusion"
+                                toField: "set_spine"
                             ]
-                        ],
-                        ROUTE: [
-                            fromNode: "MoveCylinder"
-                            fromField: "spine_changed"
-                            toNode: "extrusion"
-                            toField: "set_spine"
                         ]
                     ]
                 ]

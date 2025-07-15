@@ -103,37 +103,39 @@ X3D:
 #
 #function initialize() {
 #     generateCoordinates(resolution);
-#     var localci = [];
-#     for ( i = 0; i < resolution-1; i++) {
-#     	for ( j = 0; j < resolution-1; j++) {
-#	     localci.push(i*resolution+j);
-#	     localci.push(i*resolution+j+1);
-#	     localci.push((i+1)*resolution+j+1);
-#	     localci.push((i+1)*resolution+j);
-#	     localci.push(-1);
+#     var localci = new MFInt32();
+#     var arrIndex = 0;
+#     for (var i = 0; i < resolution-1; i++) {
+#     	for (var j = 0; j < resolution-1; j++) {
+#	     localci[arrIndex++] = i*resolution+j;
+#	     localci[arrIndex++] = i*resolution+j+1;
+#	     localci[arrIndex++] = (i+1)*resolution+j+1;
+#	     localci[arrIndex++] = (i+1)*resolution+j;
+#	     localci[arrIndex++] = -1;
 #	}
 #    }
-#    coordIndexes = new MFInt32(...localci);
+#    coordIndexes = localci;
 #}
 #
 #function generateCoordinates(resolution) {
 #     var theta = 0.0;
 #     var phi = 0.0;
 #     var delta = (2 * 3.141592653) / (resolution-1);
-#     var localc = [];
-#     for ( i = 0; i < resolution; i++) {
-#     	for ( j = 0; j < resolution; j++) {
+#     var localc = new MFVec3f();
+#     var arrIndex = 0;
+#     for (var i = 0; i < resolution; i++) {
+#     	for (var j = 0; j < resolution; j++) {
 #		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-#		localc.push(new SFVec3f(
+#		localc[arrIndex++] = new SFVec3f(
 #			rho * Math.cos(phi) * Math.cos(theta),
 #			rho * Math.cos(phi) * Math.sin(theta),
 #			rho * Math.sin(phi)
-#		));
+#		);
 #		theta += delta;
 #	}
 #	phi += delta;
 #     }
-#     coordinates = new MFVec3f(...localc);
+#     coordinates = localc;
 #}
 #
 #function set_fraction(fraction, eventTime) {

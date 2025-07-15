@@ -3,6 +3,10 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+            component: [
+                name: "Scripting"
+                level: 1
+            ],
             meta: [
                 name: "creator"
                 content: "John W Carlson"
@@ -10,6 +14,10 @@ X3D:
             meta: [
                 name: "created"
                 content: "December 13 2015"
+            ],
+            meta: [
+                name: "modified"
+                content: "July 14 2025"
             ],
             meta: [
                 name: "title"
@@ -45,120 +53,121 @@ X3D:
                 ]
                 setProtoBody: [
                     ProtoBody: [
-                        Transform: [
-                            DEF: "transform"
-                            IS: [
-                                connect: [
-                                    nodeField: "translation"
-                                    protoField: "position"
-                                ]
-                            ],
-                            Shape: [
-                                setGeometry: [
-                                    Sphere: [ empty
-                                    ]
-                                ]
-                                setAppearance: [
-                                    Appearance: [
-                                        setMaterial: [
-                                            Material: [
-                                                diffuseColor: [1, 0, 0]
-                                            ]
-                                        ]
-                                    ]
-                                ]
-                            ],
+                        Group: [
                             Transform: [
-                                translation: [1, 0, 0]
+                                DEF: "transform"
+                                IS: [
+                                    connect: [
+                                        nodeField: "translation"
+                                        protoField: "position"
+                                    ]
+                                ],
                                 Shape: [
                                     setGeometry: [
-                                        Text: [
-                                            string: ["Node"]
-                                            setFontStyle: [
-                                                FontStyle: [
-                                                    justify: ["MIDDLE", "MIDDLE"]
-                                                    size: 5.0
-                                                ]
-                                            ]
+                                        Sphere: [ empty
                                         ]
                                     ]
                                     setAppearance: [
                                         Appearance: [
                                             setMaterial: [
                                                 Material: [
-                                                    diffuseColor: [0, 0, 1]
+                                                    diffuseColor: [1, 0, 0]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                Transform: [
+                                    translation: [1, 0, 0]
+                                    Shape: [
+                                        setGeometry: [
+                                            Text: [
+                                                string: ["Node"]
+                                                setFontStyle: [
+                                                    FontStyle: [
+                                                        justify: ["MIDDLE", "MIDDLE"]
+                                                        size: 5.0
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                        setAppearance: [
+                                            Appearance: [
+                                                setMaterial: [
+                                                    Material: [
+                                                        diffuseColor: [0, 0, 1]
+                                                    ]
                                                 ]
                                             ]
                                         ]
                                     ]
                                 ]
-                            ]
-                        ],
-                        PositionInterpolator: [
-                            DEF: "NodePosition"
-                            key: [0, 1]
-                            keyValue: [0, 0, 0, 0, 5, 0]
-                        ],
-                        Script: [
-                            DEF: "MoveBall"
-                            field: [
-                                name: "translation"
-                                accessType: "inputOutput"
-                                type: "SFVec3f"
-                                value: "50 50 0"
                             ],
-                            field: [
-                                name: "old"
-                                accessType: "inputOutput"
-                                type: "SFVec3f"
-                                value: "0 0 0"
+                            PositionInterpolator: [
+                                DEF: "NodePosition"
+                                key: [0, 1]
+                                keyValue: [0, 0, 0, 0, 5, 0]
                             ],
-                            field: [
-                                name: "set_cycle"
-                                accessType: "inputOnly"
-                                type: "SFTime"
-                            ],
-                            field: [
-                                name: "keyValue"
-                                accessType: "outputOnly"
-                                type: "MFVec3f"
-                            ],
+                            Script: [
+                                DEF: "MoveBall"
+                                field: [
+                                    name: "translation"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "50 50 0"
+                                ],
+                                field: [
+                                    name: "old"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "0 0 0"
+                                ],
+                                field: [
+                                    name: "set_cycle"
+                                    accessType: "inputOnly"
+                                    type: "SFTime"
+                                ],
+                                field: [
+                                    name: "keyValue"
+                                    accessType: "outputOnly"
+                                    type: "MFVec3f"
+                                ],
 #ecmascript:
-#					function set_cycle(value) {
-#                                                old = translation;
-#						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-#                                                keyValue = new MFVec3f([old, translation]);
-#						// Browser.println(translation);
-#					}
-                        ],
-                        TimeSensor: [
-                            DEF: "nodeClock"
-                            cycleInterval: 3.0
-                            loop: true
-                        ],
-                        ROUTE: [
-                            fromNode: "nodeClock"
-                            fromField: "cycleTime"
-                            toNode: "MoveBall"
-                            toField: "set_cycle"
-                        ],
-                        ROUTE: [
-                            fromNode: "nodeClock"
-                            fromField: "fraction_changed"
-                            toNode: "NodePosition"
-                            toField: "set_fraction"
-                        ],
-                        ROUTE: [
-                            fromNode: "MoveBall"
-                            fromField: "keyValue"
-                            toNode: "NodePosition"
-                            toField: "keyValue"
-                        ],
-                        ROUTE: [
-                            fromNode: "NodePosition"
-                            fromField: "value_changed"
-                            toNode: "transform"
-                            toField: "set_translation"
+#			function set_cycle(value) {
+#				old = translation;
+#				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+#				keyValue = new MFVec3f(old, translation);
+#			}
+                            ],
+                            TimeSensor: [
+                                DEF: "nodeClock"
+                                cycleInterval: 3.0
+                                loop: true
+                            ],
+                            ROUTE: [
+                                fromNode: "nodeClock"
+                                fromField: "cycleTime"
+                                toNode: "MoveBall"
+                                toField: "set_cycle"
+                            ],
+                            ROUTE: [
+                                fromNode: "nodeClock"
+                                fromField: "fraction_changed"
+                                toNode: "NodePosition"
+                                toField: "set_fraction"
+                            ],
+                            ROUTE: [
+                                fromNode: "MoveBall"
+                                fromField: "keyValue"
+                                toNode: "NodePosition"
+                                toField: "keyValue"
+                            ],
+                            ROUTE: [
+                                fromNode: "NodePosition"
+                                fromField: "value_changed"
+                                toNode: "transform"
+                                toField: "set_translation"
+                            ]
                         ]
                     ]
                 ]
@@ -169,92 +178,85 @@ X3D:
                     ProtoInterface: [
                         field: [
                             name: "set_positionA"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
+                            value: "0 0 0"
                         ],
                         field: [
                             name: "set_positionB"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
+                            value: "50 50 50"
                         ]
                     ]
                 ]
                 setProtoBody: [
                     ProtoBody: [
-                        Shape: [
-                            setGeometry: [
-                                Extrusion: [
-                                    DEF: "extrusion"
-                                    creaseAngle: 0.785
-                                    crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
-                                    spine: [0, -50, 0, 0, 50, 0]
+                        Group: [
+                            Shape: [
+                                setGeometry: [
+                                    Extrusion: [
+                                        DEF: "extrusion"
+                                        creaseAngle: 0.785
+                                        crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
+                                        spine: [0, -50, 0, 0, 0, 0, 0, 50, 0]
+                                    ]
                                 ]
-                            ]
-                            setAppearance: [
-                                Appearance: [
-                                    setMaterial: [
-                                        Material: [
-                                            diffuseColor: [0, 1, 0]
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                diffuseColor: [0, 1, 0]
+                                            ]
                                         ]
                                     ]
                                 ]
-                            ]
-                        ],
-                        Script: [
-                            DEF: "MoveCylinder"
-                            field: [
-                                name: "spine"
-                                accessType: "inputOutput"
-                                type: "MFVec3f"
-                                value: "0 -50 0 0 50 0"
                             ],
-                            field: [
-                                name: "set_endA"
-                                accessType: "inputOnly"
-                                type: "SFVec3f"
-                            ],
-                            field: [
-                                name: "set_endB"
-                                accessType: "inputOnly"
-                                type: "SFVec3f"
-                            ],
-                            IS: [
-                                connect: [
-                                    nodeField: "set_endA"
-                                    protoField: "set_positionA"
+                            Script: [
+                                DEF: "MoveCylinder"
+                                field: [
+                                    name: "spine"
+                                    accessType: "inputOutput"
+                                    type: "MFVec3f"
+                                    value: "0 -50 0 0 0 0 0 50 0"
                                 ],
-                                connect: [
-                                    nodeField: "set_endB"
-                                    protoField: "set_positionB"
-                                ]
-                            ],
+                                field: [
+                                    name: "endA"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "0 0 0"
+                                ],
+                                field: [
+                                    name: "endB"
+                                    accessType: "inputOutput"
+                                    type: "SFVec3f"
+                                    value: "50 50 50"
+                                ],
+                                IS: [
+                                    connect: [
+                                        nodeField: "endA"
+                                        protoField: "set_positionA"
+                                    ],
+                                    connect: [
+                                        nodeField: "endB"
+                                        protoField: "set_positionB"
+                                    ]
+                                ],
 #ecmascript:
+#			function set_endA(value) {
+#				spine = new MFVec3f(value, spine[1]);
+#			}
 #
-#                function set_endA(value) {
-#		    if (typeof spine === 'undefined') {
-#		        spine = new MFVec3f([value, value]);
-#		    } else {
-#		        spine = new MFVec3f([value, spine[1]]);
-#		    }
-#                }
-#
-#                function set_endB(value) {
-#		    if (typeof spine === 'undefined') {
-#		        spine = new MFVec3f([value, value]);
-#		    } else {
-#		        spine = new MFVec3f([spine[0], value]);
-#		    }
-#                }
-#
-#                function set_spine(value) {
-#                    spine = value;
-#                }
-                        ],
-                        ROUTE: [
-                            fromNode: "MoveCylinder"
-                            fromField: "spine"
-                            toNode: "extrusion"
-                            toField: "set_spine"
+#			function set_endB(value) {
+#				spine = new MFVec3f(spine[0], value);
+#			}
+                            ],
+                            ROUTE: [
+                                fromNode: "MoveCylinder"
+                                fromField: "spine"
+                                toNode: "extrusion"
+                                toField: "set_spine"
+                            ]
                         ]
                     ]
                 ]
@@ -287,15 +289,47 @@ X3D:
                 ProtoInstance: [
                     name: "cyl"
                     DEF: "linkA"
-                    fieldValue: [
-                        name: "set_positionA"
-                        value: "0 0 0"
-                    ],
-                    fieldValue: [
-                        name: "set_positionB"
-                        value: "50 50 50"
-                    ]
                 ]
+            ],
+            Script: [
+                DEF: "clickHandler"
+                field: [
+                    name: "counter"
+                    accessType: "inputOutput"
+                    value: "0"
+                    type: "SFInt32"
+                ],
+                field: [
+                    name: "add_node"
+                    accessType: "inputOnly"
+                    value: "false"
+                    type: "SFBool"
+                ],
+#<field accessType="outputOnly" name="node_changed" type="SFNode"/> <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field>
+#ecmascript:
+#	function add_node(value) {
+#                // Browser.print('hey ', counter);
+#                counter = counter++;
+#		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
+#			{ "ProtoInstance":
+#				{ "@name":"node",
+#				  "@DEF":"node'+counter+'",
+#				  "fieldValue": [
+#					{
+#						 "@name":"position",
+#						 "@value":[0.0,0.0,0.0]
+#					}
+#				  ]
+#				}
+#			});
+#
+#        }
+            ],
+            ROUTE: [
+                fromNode: "clickGenerator"
+                fromField: "isActive"
+                toNode: "clickHandler"
+                toField: "add_node"
             ],
             ROUTE: [
                 fromNode: "nodeA"

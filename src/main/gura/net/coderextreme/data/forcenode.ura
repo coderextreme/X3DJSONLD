@@ -12,6 +12,10 @@ X3D:
                 content: "December 13 2015"
             ],
             meta: [
+                name: "modified"
+                content: "July 14 2025"
+            ],
+            meta: [
                 name: "title"
                 content: "forcenode.x3d"
             ],
@@ -128,7 +132,7 @@ X3D:
 #					function set_cycle(value) {
 #                                                old = translation;
 #						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-#                                                keyValue = new MFVec3f(...[old, translation]);
+#			    			keyValue = new MFVec3f(old, translation);
 #						// Browser.println(translation);
 #					}
                             ],
@@ -166,17 +170,17 @@ X3D:
                 ]
             ],
             ProtoDeclare: [
-                name: "cylinder"
+                name: "cyl"
                 setProtoInterface: [
                     ProtoInterface: [
                         field: [
                             name: "set_positionA"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
                         ],
                         field: [
                             name: "set_positionB"
-                            accessType: "inputOnly"
+                            accessType: "inputOutput"
                             type: "SFVec3f"
                         ]
                     ]
@@ -190,7 +194,7 @@ X3D:
                                         DEF: "extrusion"
                                         creaseAngle: 0.785
                                         crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
-                                        spine: [0, -50, 0, 0, 50, 0]
+                                        spine: [0, -50, 0, 0, 0, 0, 0, 50, 0]
                                     ]
                                 ]
                                 setAppearance: [
@@ -209,48 +213,36 @@ X3D:
                                     name: "spine"
                                     accessType: "inputOutput"
                                     type: "MFVec3f"
-                                    value: "0 -50 0 0 50 0"
+                                    value: "0 -50 0 0 0 0 0 50 0"
                                 ],
                                 field: [
-                                    name: "set_endA"
-                                    accessType: "inputOnly"
+                                    name: "endA"
+                                    accessType: "inputOutput"
                                     type: "SFVec3f"
                                 ],
                                 field: [
-                                    name: "set_endB"
-                                    accessType: "inputOnly"
+                                    name: "endB"
+                                    accessType: "inputOutput"
                                     type: "SFVec3f"
                                 ],
                                 IS: [
                                     connect: [
-                                        nodeField: "set_endA"
+                                        nodeField: "endA"
                                         protoField: "set_positionA"
                                     ],
                                     connect: [
-                                        nodeField: "set_endB"
+                                        nodeField: "endB"
                                         protoField: "set_positionB"
                                     ]
                                 ],
 #ecmascript:
 #
 #                function set_endA(value) {
-#		    if (typeof spine === 'undefined') {
-#		        spine = new MFVec3f(...[value, value]);
-#		    } else {
-#		        spine = new MFVec3f(...[value, spine[1]]);
-#		    }
+#		    spine = new MFVec3f(value, spine[1]);
 #                }
 #
 #                function set_endB(value) {
-#		    if (typeof spine === 'undefined') {
-#		        spine = new MFVec3f(...[value, value]);
-#		    } else {
-#		        spine = new MFVec3f(...[spine[0], value]);
-#		    }
-#                }
-#
-#                function set_spine(value) {
-#                    spine = value;
+#		    spine = new MFVec3f(spine[0], value);
 #                }
                             ],
                             ROUTE: [
@@ -305,40 +297,16 @@ X3D:
                     ]
                 ],
                 ProtoInstance: [
-                    name: "cylinder"
+                    name: "cyl"
                     DEF: "linkA"
-                    fieldValue: [
-                        name: "set_positionA"
-                        value: "0 0 0"
-                    ],
-                    fieldValue: [
-                        name: "set_positionB"
-                        value: "50 50 50"
-                    ]
                 ],
                 ProtoInstance: [
-                    name: "cylinder"
+                    name: "cyl"
                     DEF: "linkB"
-                    fieldValue: [
-                        name: "set_positionA"
-                        value: "0 0 0"
-                    ],
-                    fieldValue: [
-                        name: "set_positionB"
-                        value: "-50 -50 -50"
-                    ]
                 ],
                 ProtoInstance: [
-                    name: "cylinder"
+                    name: "cyl"
                     DEF: "linkC"
-                    fieldValue: [
-                        name: "set_positionA"
-                        value: "50 50 50"
-                    ],
-                    fieldValue: [
-                        name: "set_positionB"
-                        value: "50 50 -50"
-                    ]
                 ]
             ],
             Script: [

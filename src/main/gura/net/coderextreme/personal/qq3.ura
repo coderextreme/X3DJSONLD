@@ -1,6 +1,6 @@
 X3D:
     profile: "Immersive"
-    version: "3.3"
+    version: "4.0"
     setHead: [
         head: [
             meta: [
@@ -25,7 +25,7 @@ X3D:
             ],
             meta: [
                 name: "description"
-                content: "12 extrusions to test prototype expander"
+                content: "12 extrusions"
             ],
             meta: [
                 name: "identifier"
@@ -60,7 +60,7 @@ X3D:
                                     ]
                                     setGeometry: [
                                         Extrusion: [
-                                            spine: [-2.5, 0, 0, -1.5, 0, 0]
+                                            spine: [-2.5, 0, 0, -2, 0, 0, -1.5, 0, 0]
                                             creaseAngle: 0.785
                                             crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                                         ]
@@ -83,7 +83,7 @@ X3D:
                                     ]
                                     setGeometry: [
                                         Extrusion: [
-                                            spine: [1.5, 0, 0, 2.5, 0, 0]
+                                            spine: [1.5, 0, 0, 2, 0, 0, 2.5, 0, 0]
                                             creaseAngle: 0.785
                                             crossSection: [1, 0, 0.92, -0.38, 0.71, -0.71, 0.38, -0.92, 0, -1, -0.38, -0.92, -0.71, -0.71, -0.92, -0.38, -1, 0, -0.92, 0.38, -0.71, 0.71, -0.38, 0.92, 0, 1, 0.38, 0.92, 0.71, 0.71, 0.92, 0.38, 1, 0]
                                         ]
