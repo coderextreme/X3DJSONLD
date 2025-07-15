@@ -192,8 +192,8 @@ Coordinate46.USE = "TheSkinCoord";
 skinCoord = Coordinate46;
 
 let HAnimJoint47 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint47.name = "";
-HAnimJoint47.DEF = "hanim_";
+HAnimJoint47.name = "humanoid_root";
+HAnimJoint47.DEF = "hanim_humanoid_root";
 HAnimJoint47.ulimit = new X3D.MFFloat([0,0,0]);
 HAnimJoint47.llimit = new X3D.MFFloat([0,0,0]);
 joints[1] = HAnimJoint47;

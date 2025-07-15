@@ -18,12 +18,12 @@ let ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -2 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
 <!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2 0 0 2.5 0 0"></Extrusion>
 </Shape>
 <Transform translation="2 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
 </Appearance>
@@ -35,7 +35,7 @@ let ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2 0 0 2.5 0"></Extrusion>
 </Shape>
 <Transform translation="-0.5 2 0"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
 </Appearance>
@@ -47,7 +47,7 @@ let ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 <!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -2 0 0 -1.5 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
 <!--center--><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0.7"></Material>
@@ -125,7 +125,7 @@ appearance = Appearance16;
 let Extrusion18 = browser.currentScene.createNode("Extrusion");
 Extrusion18.creaseAngle = 0.785;
 Extrusion18.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion18.spine = new X3D.MFVec3f([-2.5,0,0,-1.5,0,0]);
+Extrusion18.spine = new X3D.MFVec3f([-2.5,0,0,-2,0,0,-1.5,0,0]);
 geometry = Extrusion18;
 
 Transform14YYY.child = new X3D.undefined();
@@ -152,7 +152,7 @@ appearance = Appearance21;
 let Extrusion23 = browser.currentScene.createNode("Extrusion");
 Extrusion23.creaseAngle = 0.785;
 Extrusion23.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion23.spine = new X3D.MFVec3f([1.5,0,0,2.5,0,0]);
+Extrusion23.spine = new X3D.MFVec3f([1.5,0,0,2,0,0,2.5,0,0]);
 geometry = Extrusion23;
 
 Transform19YYY.child = new X3D.undefined();
@@ -208,7 +208,7 @@ appearance = Appearance33;
 let Extrusion35 = browser.currentScene.createNode("Extrusion");
 Extrusion35.creaseAngle = 0.785;
 Extrusion35.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion35.spine = new X3D.MFVec3f([0,1.5,0,0,2.5,0]);
+Extrusion35.spine = new X3D.MFVec3f([0,1.5,0,0,2,0,0,2.5,0]);
 geometry = Extrusion35;
 
 Transform31YYY.child = new X3D.undefined();
@@ -263,7 +263,7 @@ appearance = Appearance45;
 let Extrusion47 = browser.currentScene.createNode("Extrusion");
 Extrusion47.creaseAngle = 0.785;
 Extrusion47.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion47.spine = new X3D.MFVec3f([0,-2.5,0,0,-1.5,0]);
+Extrusion47.spine = new X3D.MFVec3f([0,-2.5,0,0,-2,0,0,-1.5,0]);
 geometry = Extrusion47;
 
 Transform43YYY.child = new X3D.undefined();

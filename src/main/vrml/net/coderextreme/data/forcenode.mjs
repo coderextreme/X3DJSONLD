@@ -7,12 +7,13 @@ async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
 scene.addMetaData("creator", "John W Carlson");
 scene.addMetaData("created", "December 13 2015");
+scene.addMetaData("modified", "July 14 2025");
 scene.addMetaData("title", "forcenode.x3d");
 scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d");
 scene.addMetaData("description", "beginnings of a force directed graph in 3D");
 scene.addMetaData("generator", "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit");
 await browser .loadComponents (scene);
-let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="node" ><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
@@ -38,7 +39,7 @@ let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(...[old, translation]);
+			    			keyValue = new MFVec3f(old, translation);
 						// Browser.println(translation);
 					}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
@@ -49,399 +50,339 @@ let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare9.name = "node";
-ProtoInterface11.getField("position").setValue("0 0 0");
-ProtoInterface10YYY.field = new X3D.MFNode();
+ProtoDeclare10.name = "node";
+ProtoInterface12.getField("position").setValue("0 0 0");
+ProtoInterface11YYY.field = new X3D.MFNode();
 
-protoInterface = ProtoInterface10;
+protoInterface = ProtoInterface11;
 
-let ProtoBody12 = browser.currentScene.createNode("ProtoBody");
-let Group13 = browser.currentScene.createNode("Group");
-let Transform14 = browser.currentScene.createNode("Transform");
-Transform14.DEF = "transform";
-let IS15 = browser.currentScene.createNode("IS");
-let connect16 = browser.currentScene.createNode("connect");
-connect16.nodeField = "translation";
-connect16.protoField = "position";
-IS15YYY.connect = new X3D.MFNode();
+let ProtoBody13 = browser.currentScene.createNode("ProtoBody");
+let Group14 = browser.currentScene.createNode("Group");
+let Transform15 = browser.currentScene.createNode("Transform");
+Transform15.DEF = "transform";
+let IS16 = browser.currentScene.createNode("IS");
+let connect17 = browser.currentScene.createNode("connect");
+connect17.nodeField = "translation";
+connect17.protoField = "position";
+IS16YYY.connect = new X3D.MFNode();
 
-IS15ZZZ.connect[0] = connect16;
+IS16ZZZ.connect[0] = connect17;
 
-iS = IS15;
+iS = IS16;
 
-let Shape17 = browser.currentScene.createNode("Shape");
-let Sphere18 = browser.currentScene.createNode("Sphere");
-geometry = Sphere18;
+let Shape18 = browser.currentScene.createNode("Shape");
+let Sphere19 = browser.currentScene.createNode("Sphere");
+geometry = Sphere19;
 
-let Appearance19 = browser.currentScene.createNode("Appearance");
-let Material20 = browser.currentScene.createNode("Material");
-Material20.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material20;
+let Appearance20 = browser.currentScene.createNode("Appearance");
+let Material21 = browser.currentScene.createNode("Material");
+Material21.diffuseColor = new X3D.SFColor([1,0,0]);
+material = Material21;
 
-appearance = Appearance19;
+appearance = Appearance20;
 
-Transform14YYY.child = new X3D.undefined();
+Transform15YYY.child = new X3D.undefined();
 
-Transform14ZZZ.child[0] = Shape17;
+Transform15ZZZ.child[0] = Shape18;
 
-let Transform21 = browser.currentScene.createNode("Transform");
-Transform21.translation = new X3D.SFVec3f([1,0,1]);
-let Shape22 = browser.currentScene.createNode("Shape");
-let Text23 = browser.currentScene.createNode("Text");
-Text23.string = new X3D.MFString([new X3D.SFString("Node")]);
-let FontStyle24 = browser.currentScene.createNode("FontStyle");
-FontStyle24.justify = new X3D.MFString([new X3D.SFString("MIDDLE"), new X3D.SFString("MIDDLE")]);
-FontStyle24.size = 5;
-fontStyle = FontStyle24;
+let Transform22 = browser.currentScene.createNode("Transform");
+Transform22.translation = new X3D.SFVec3f([1,0,1]);
+let Shape23 = browser.currentScene.createNode("Shape");
+let Text24 = browser.currentScene.createNode("Text");
+Text24.string = new X3D.MFString([new X3D.SFString("Node")]);
+let FontStyle25 = browser.currentScene.createNode("FontStyle");
+FontStyle25.justify = new X3D.MFString([new X3D.SFString("MIDDLE"), new X3D.SFString("MIDDLE")]);
+FontStyle25.size = 5;
+fontStyle = FontStyle25;
 
-geometry = Text23;
+geometry = Text24;
 
-let Appearance25 = browser.currentScene.createNode("Appearance");
-let Material26 = browser.currentScene.createNode("Material");
-Material26.diffuseColor = new X3D.SFColor([0,0,1]);
-material = Material26;
+let Appearance26 = browser.currentScene.createNode("Appearance");
+let Material27 = browser.currentScene.createNode("Material");
+Material27.diffuseColor = new X3D.SFColor([0,0,1]);
+material = Material27;
 
-appearance = Appearance25;
+appearance = Appearance26;
 
-Transform21YYY.child = new X3D.undefined();
+Transform22YYY.child = new X3D.undefined();
 
-Transform21ZZZ.child[0] = Shape22;
+Transform22ZZZ.child[0] = Shape23;
 
-Transform14ZZZ.children[1] = Transform21;
+Transform15ZZZ.children[1] = Transform22;
 
-Group13YYY.children = new X3D.MFNode();
+Group14YYY.children = new X3D.MFNode();
 
-Group13ZZZ.children[0] = Transform14;
+Group14ZZZ.children[0] = Transform15;
 
-let PositionInterpolator27 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator27.DEF = "NodePosition";
-PositionInterpolator27.key = new X3D.MFFloat([0,1]);
-PositionInterpolator27.keyValue = new X3D.MFVec3f([0,0,0,0,5,0]);
-Group13ZZZ.children[1] = PositionInterpolator27;
+let PositionInterpolator28 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator28.DEF = "NodePosition";
+PositionInterpolator28.key = new X3D.MFFloat([0,1]);
+PositionInterpolator28.keyValue = new X3D.MFVec3f([0,0,0,0,5,0]);
+Group14ZZZ.children[1] = PositionInterpolator28;
 
-let Script28 = browser.currentScene.createNode("Script");
-Script28.DEF = "MoveBall";
-Script29.getField("translation").setValue("50 50 0");
-Script28YYY.field = new X3D.MFNode();
+let Script29 = browser.currentScene.createNode("Script");
+Script29.DEF = "MoveBall";
+Script30.getField("translation").setValue("50 50 0");
+Script29YYY.field = new X3D.MFNode();
 
-Script30.getField("old").setValue("0 0 0");
-Script28YYY.field = new X3D.MFNode();
+Script31.getField("old").setValue("0 0 0");
+Script29YYY.field = new X3D.MFNode();
 
-Script31.getField("set_cycle")Script28YYY.field = new X3D.MFNode();
+Script32.getField("set_cycle")Script29YYY.field = new X3D.MFNode();
 
-Script32.getField("keyValue")Script28YYY.field = new X3D.MFNode();
+Script33.getField("keyValue")Script29YYY.field = new X3D.MFNode();
 
 
-Script28.setSourceCode(`ecmascript:\n"+
+Script29.setSourceCode(`ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f(...[old, translation]);\n"+
+"			    			keyValue = new MFVec3f(old, translation);\n"+
 "						// Browser.println(translation);\n"+
 "					}`)
-Group13ZZZ.children[2] = Script28;
+Group14ZZZ.children[2] = Script29;
 
-let TimeSensor33 = browser.currentScene.createNode("TimeSensor");
-TimeSensor33.DEF = "nodeClock";
-TimeSensor33.cycleInterval = 3;
-TimeSensor33.loop = True;
-Group13ZZZ.children[3] = TimeSensor33;
-
-let ROUTE34 = browser.currentScene.createNode("ROUTE");
-ROUTE34.fromNode = "nodeClock";
-ROUTE34.fromField = "cycleTime";
-ROUTE34.toNode = "MoveBall";
-ROUTE34.toField = "set_cycle";
-Group13ZZZ.children[4] = ROUTE34;
+let TimeSensor34 = browser.currentScene.createNode("TimeSensor");
+TimeSensor34.DEF = "nodeClock";
+TimeSensor34.cycleInterval = 3;
+TimeSensor34.loop = True;
+Group14ZZZ.children[3] = TimeSensor34;
 
 let ROUTE35 = browser.currentScene.createNode("ROUTE");
 ROUTE35.fromNode = "nodeClock";
-ROUTE35.fromField = "fraction_changed";
-ROUTE35.toNode = "NodePosition";
-ROUTE35.toField = "set_fraction";
-Group13ZZZ.children[5] = ROUTE35;
+ROUTE35.fromField = "cycleTime";
+ROUTE35.toNode = "MoveBall";
+ROUTE35.toField = "set_cycle";
+Group14ZZZ.children[4] = ROUTE35;
 
 let ROUTE36 = browser.currentScene.createNode("ROUTE");
-ROUTE36.fromNode = "MoveBall";
-ROUTE36.fromField = "keyValue";
+ROUTE36.fromNode = "nodeClock";
+ROUTE36.fromField = "fraction_changed";
 ROUTE36.toNode = "NodePosition";
-ROUTE36.toField = "keyValue";
-Group13ZZZ.children[6] = ROUTE36;
+ROUTE36.toField = "set_fraction";
+Group14ZZZ.children[5] = ROUTE36;
 
 let ROUTE37 = browser.currentScene.createNode("ROUTE");
-ROUTE37.fromNode = "NodePosition";
-ROUTE37.fromField = "value_changed";
-ROUTE37.toNode = "transform";
-ROUTE37.toField = "set_translation";
-Group13ZZZ.children[7] = ROUTE37;
+ROUTE37.fromNode = "MoveBall";
+ROUTE37.fromField = "keyValue";
+ROUTE37.toNode = "NodePosition";
+ROUTE37.toField = "keyValue";
+Group14ZZZ.children[6] = ROUTE37;
 
-ProtoBody12YYY.children = new X3D.MFNode();
+let ROUTE38 = browser.currentScene.createNode("ROUTE");
+ROUTE38.fromNode = "NodePosition";
+ROUTE38.fromField = "value_changed";
+ROUTE38.toNode = "transform";
+ROUTE38.toField = "set_translation";
+Group14ZZZ.children[7] = ROUTE38;
 
-ProtoBody12ZZZ.children[0] = Group13;
+ProtoBody13YYY.children = new X3D.MFNode();
 
-protoBody = ProtoBody12;
+ProtoBody13ZZZ.children[0] = Group14;
+
+protoBody = ProtoBody13;
 
 browser.currentScene.children = new X3D.MFNode();
 
-browser.currentScene.children[0] = ProtoDeclare9;
+browser.currentScene.children[0] = ProtoDeclare10;
 
-let ProtoDeclare38 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOutput" type="SFVec3f"></field>
+<field name="set_positionB" accessType="inputOutput" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
-<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 50 0"></field>
-<field name="set_endA" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endB" accessType="inputOnly" type="SFVec3f"></field>
-<IS><connect nodeField="set_endA" protoField="set_positionA"></connect>
-<connect nodeField="set_endB" protoField="set_positionB"></connect>
+<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
+<field name="endA" accessType="inputOutput" type="SFVec3f"></field>
+<field name="endB" accessType="inputOutput" type="SFVec3f"></field>
+<IS><connect nodeField="endA" protoField="set_positionA"></connect>
+<connect nodeField="endB" protoField="set_positionB"></connect>
 </IS>
 <![CDATA[ecmascript:
 
                 function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(...[value, value]);
-		    } else {
-		        spine = new MFVec3f(...[value, spine[1]]);
-		    }
+		    spine = new MFVec3f(value, spine[1]);
                 }
 
                 function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f(...[value, value]);
-		    } else {
-		        spine = new MFVec3f(...[spine[0], value]);
-		    }
-                }
-
-                function set_spine(value) {
-                    spine = value;
+		    spine = new MFVec3f(spine[0], value);
                 }]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare38.name = "cylinder";
-ProtoInterface40.getField("set_positionA")ProtoInterface39YYY.field = new X3D.MFNode();
+ProtoDeclare39.name = "cyl";
+ProtoInterface41.getField("set_positionA")ProtoInterface40YYY.field = new X3D.MFNode();
 
-ProtoInterface41.getField("set_positionB")ProtoInterface39YYY.field = new X3D.MFNode();
+ProtoInterface42.getField("set_positionB")ProtoInterface40YYY.field = new X3D.MFNode();
 
-protoInterface = ProtoInterface39;
+protoInterface = ProtoInterface40;
 
-let ProtoBody42 = browser.currentScene.createNode("ProtoBody");
-let Group43 = browser.currentScene.createNode("Group");
-let Shape44 = browser.currentScene.createNode("Shape");
-let Extrusion45 = browser.currentScene.createNode("Extrusion");
-Extrusion45.DEF = "extrusion";
-Extrusion45.creaseAngle = 0.785;
-Extrusion45.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Extrusion45.spine = new X3D.MFVec3f([0,-50,0,0,50,0]);
-geometry = Extrusion45;
+let ProtoBody43 = browser.currentScene.createNode("ProtoBody");
+let Group44 = browser.currentScene.createNode("Group");
+let Shape45 = browser.currentScene.createNode("Shape");
+let Extrusion46 = browser.currentScene.createNode("Extrusion");
+Extrusion46.DEF = "extrusion";
+Extrusion46.creaseAngle = 0.785;
+Extrusion46.crossSection = new X3D.MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion46.spine = new X3D.MFVec3f([0,-50,0,0,0,0,0,50,0]);
+geometry = Extrusion46;
 
-let Appearance46 = browser.currentScene.createNode("Appearance");
-let Material47 = browser.currentScene.createNode("Material");
-Material47.diffuseColor = new X3D.SFColor([0,1,0]);
-material = Material47;
+let Appearance47 = browser.currentScene.createNode("Appearance");
+let Material48 = browser.currentScene.createNode("Material");
+Material48.diffuseColor = new X3D.SFColor([0,1,0]);
+material = Material48;
 
-appearance = Appearance46;
+appearance = Appearance47;
 
-Group43YYY.children = new X3D.MFNode();
+Group44YYY.children = new X3D.MFNode();
 
-Group43ZZZ.children[0] = Shape44;
+Group44ZZZ.children[0] = Shape45;
 
-let Script48 = browser.currentScene.createNode("Script");
-Script48.DEF = "MoveCylinder";
-Script49.getField("spine").setValue("0 -50 0 0 50 0");
-Script48YYY.field = new X3D.MFNode();
+let Script49 = browser.currentScene.createNode("Script");
+Script49.DEF = "MoveCylinder";
+Script50.getField("spine").setValue("0 -50 0 0 0 0 0 50 0");
+Script49YYY.field = new X3D.MFNode();
 
-Script50.getField("set_endA")Script48YYY.field = new X3D.MFNode();
+Script51.getField("endA")Script49YYY.field = new X3D.MFNode();
 
-Script51.getField("set_endB")Script48YYY.field = new X3D.MFNode();
+Script52.getField("endB")Script49YYY.field = new X3D.MFNode();
 
-let IS52 = browser.currentScene.createNode("IS");
-let connect53 = browser.currentScene.createNode("connect");
-connect53.nodeField = "set_endA";
-connect53.protoField = "set_positionA";
-IS52YYY.connect = new X3D.MFNode();
-
-IS52ZZZ.connect[0] = connect53;
-
+let IS53 = browser.currentScene.createNode("IS");
 let connect54 = browser.currentScene.createNode("connect");
-connect54.nodeField = "set_endB";
-connect54.protoField = "set_positionB";
-IS52ZZZ.connect[1] = connect54;
+connect54.nodeField = "endA";
+connect54.protoField = "set_positionA";
+IS53YYY.connect = new X3D.MFNode();
 
-iS = IS52;
+IS53ZZZ.connect[0] = connect54;
+
+let connect55 = browser.currentScene.createNode("connect");
+connect55.nodeField = "endB";
+connect55.protoField = "set_positionB";
+IS53ZZZ.connect[1] = connect55;
+
+iS = IS53;
 
 
-Script48.setSourceCode(`ecmascript:\n"+
+Script49.setSourceCode(`ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f(...[value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f(...[value, spine[1]]);\n"+
-"		    }\n"+
+"		    spine = new MFVec3f(value, spine[1]);\n"+
 "                }\n"+
 "\n"+
 "                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f(...[value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f(...[spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
+"		    spine = new MFVec3f(spine[0], value);\n"+
 "                }`)
-Group43ZZZ.children[1] = Script48;
+Group44ZZZ.children[1] = Script49;
 
-let ROUTE55 = browser.currentScene.createNode("ROUTE");
-ROUTE55.fromNode = "MoveCylinder";
-ROUTE55.fromField = "spine";
-ROUTE55.toNode = "extrusion";
-ROUTE55.toField = "set_spine";
-Group43ZZZ.children[2] = ROUTE55;
+let ROUTE56 = browser.currentScene.createNode("ROUTE");
+ROUTE56.fromNode = "MoveCylinder";
+ROUTE56.fromField = "spine";
+ROUTE56.toNode = "extrusion";
+ROUTE56.toField = "set_spine";
+Group44ZZZ.children[2] = ROUTE56;
 
-ProtoBody42YYY.children = new X3D.MFNode();
+ProtoBody43YYY.children = new X3D.MFNode();
 
-ProtoBody42ZZZ.children[0] = Group43;
+ProtoBody43ZZZ.children[0] = Group44;
 
-protoBody = ProtoBody42;
+protoBody = ProtoBody43;
 
-browser.currentScene.children[1] = ProtoDeclare38;
+browser.currentScene.children[1] = ProtoDeclare39;
 
-let Transform56 = browser.currentScene.createNode("Transform");
-Transform56.DEF = "HoldsContent";
-Transform56.scale = new X3D.SFVec3f([0.1,0.1,0.1]);
-let PlaneSensor57 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor57.DEF = "clickGenerator";
-PlaneSensor57.minPosition = new X3D.SFVec2f([-50,-50]);
-PlaneSensor57.maxPosition = new X3D.SFVec2f([50,50]);
-PlaneSensor57.description = "click on background to add nodes, click on nodes to add links";
-Transform56YYY.children = new X3D.MFNode();
+let Transform57 = browser.currentScene.createNode("Transform");
+Transform57.DEF = "HoldsContent";
+Transform57.scale = new X3D.SFVec3f([0.1,0.1,0.1]);
+let PlaneSensor58 = browser.currentScene.createNode("PlaneSensor");
+PlaneSensor58.DEF = "clickGenerator";
+PlaneSensor58.minPosition = new X3D.SFVec2f([-50,-50]);
+PlaneSensor58.maxPosition = new X3D.SFVec2f([50,50]);
+PlaneSensor58.description = "click on background to add nodes, click on nodes to add links";
+Transform57YYY.children = new X3D.MFNode();
 
-Transform56ZZZ.children[0] = PlaneSensor57;
+Transform57ZZZ.children[0] = PlaneSensor58;
 
-let ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance58.name = "node";
-ProtoInstance58.DEF = "nodeA";
-let fieldValue59 = browser.currentScene.createNode("fieldValue");
-fieldValue59.name = "position";
-fieldValue59.value = "0 0 0";
-ProtoInstance58YYY.fieldValue = new X3D.MFNode();
+let ProtoInstance59 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance59.name = "node";
+ProtoInstance59.DEF = "nodeA";
+let fieldValue60 = browser.currentScene.createNode("fieldValue");
+fieldValue60.name = "position";
+fieldValue60.value = "0 0 0";
+ProtoInstance59YYY.fieldValue = new X3D.MFNode();
 
-ProtoInstance58ZZZ.fieldValue[0] = fieldValue59;
+ProtoInstance59ZZZ.fieldValue[0] = fieldValue60;
 
-Transform56ZZZ.children[1] = ProtoInstance58;
+Transform57ZZZ.children[1] = ProtoInstance59;
 
-let ProtoInstance60 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance60.name = "node";
-ProtoInstance60.DEF = "nodeB";
-let fieldValue61 = browser.currentScene.createNode("fieldValue");
-fieldValue61.name = "position";
-fieldValue61.value = "50 50 50";
-ProtoInstance60YYY.fieldValue = new X3D.MFNode();
+let ProtoInstance61 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance61.name = "node";
+ProtoInstance61.DEF = "nodeB";
+let fieldValue62 = browser.currentScene.createNode("fieldValue");
+fieldValue62.name = "position";
+fieldValue62.value = "50 50 50";
+ProtoInstance61YYY.fieldValue = new X3D.MFNode();
 
-ProtoInstance60ZZZ.fieldValue[0] = fieldValue61;
+ProtoInstance61ZZZ.fieldValue[0] = fieldValue62;
 
-Transform56ZZZ.children[2] = ProtoInstance60;
+Transform57ZZZ.children[2] = ProtoInstance61;
 
-let ProtoInstance62 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance62.name = "node";
-ProtoInstance62.DEF = "nodeC";
-let fieldValue63 = browser.currentScene.createNode("fieldValue");
-fieldValue63.name = "position";
-fieldValue63.value = "-50 -50 -50";
-ProtoInstance62YYY.fieldValue = new X3D.MFNode();
+let ProtoInstance63 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance63.name = "node";
+ProtoInstance63.DEF = "nodeC";
+let fieldValue64 = browser.currentScene.createNode("fieldValue");
+fieldValue64.name = "position";
+fieldValue64.value = "-50 -50 -50";
+ProtoInstance63YYY.fieldValue = new X3D.MFNode();
 
-ProtoInstance62ZZZ.fieldValue[0] = fieldValue63;
+ProtoInstance63ZZZ.fieldValue[0] = fieldValue64;
 
-Transform56ZZZ.children[3] = ProtoInstance62;
+Transform57ZZZ.children[3] = ProtoInstance63;
 
-let ProtoInstance64 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance64.name = "node";
-ProtoInstance64.DEF = "nodeD";
-let fieldValue65 = browser.currentScene.createNode("fieldValue");
-fieldValue65.name = "position";
-fieldValue65.value = "50 50 -50";
-ProtoInstance64YYY.fieldValue = new X3D.MFNode();
+let ProtoInstance65 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance65.name = "node";
+ProtoInstance65.DEF = "nodeD";
+let fieldValue66 = browser.currentScene.createNode("fieldValue");
+fieldValue66.name = "position";
+fieldValue66.value = "50 50 -50";
+ProtoInstance65YYY.fieldValue = new X3D.MFNode();
 
-ProtoInstance64ZZZ.fieldValue[0] = fieldValue65;
+ProtoInstance65ZZZ.fieldValue[0] = fieldValue66;
 
-Transform56ZZZ.children[4] = ProtoInstance64;
+Transform57ZZZ.children[4] = ProtoInstance65;
 
-let ProtoInstance66 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance66.name = "cylinder";
-ProtoInstance66.DEF = "linkA";
-let fieldValue67 = browser.currentScene.createNode("fieldValue");
-fieldValue67.name = "set_positionA";
-fieldValue67.value = "0 0 0";
-ProtoInstance66YYY.fieldValue = new X3D.MFNode();
+let ProtoInstance67 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance67.name = "cyl";
+ProtoInstance67.DEF = "linkA";
+Transform57ZZZ.children[5] = ProtoInstance67;
 
-ProtoInstance66ZZZ.fieldValue[0] = fieldValue67;
-
-let fieldValue68 = browser.currentScene.createNode("fieldValue");
-fieldValue68.name = "set_positionB";
-fieldValue68.value = "50 50 50";
-ProtoInstance66ZZZ.fieldValue[1] = fieldValue68;
-
-Transform56ZZZ.children[5] = ProtoInstance66;
+let ProtoInstance68 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance68.name = "cyl";
+ProtoInstance68.DEF = "linkB";
+Transform57ZZZ.children[6] = ProtoInstance68;
 
 let ProtoInstance69 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance69.name = "cylinder";
-ProtoInstance69.DEF = "linkB";
-let fieldValue70 = browser.currentScene.createNode("fieldValue");
-fieldValue70.name = "set_positionA";
-fieldValue70.value = "0 0 0";
-ProtoInstance69YYY.fieldValue = new X3D.MFNode();
+ProtoInstance69.name = "cyl";
+ProtoInstance69.DEF = "linkC";
+Transform57ZZZ.children[7] = ProtoInstance69;
 
-ProtoInstance69ZZZ.fieldValue[0] = fieldValue70;
+browser.currentScene.children[2] = Transform57;
 
-let fieldValue71 = browser.currentScene.createNode("fieldValue");
-fieldValue71.name = "set_positionB";
-fieldValue71.value = "-50 -50 -50";
-ProtoInstance69ZZZ.fieldValue[1] = fieldValue71;
+let Script70 = browser.currentScene.createNode("Script");
+Script70.DEF = "clickHandler";
+Script71.getField("counter").setValue("0");
+Script70YYY.field = new X3D.MFNode();
 
-Transform56ZZZ.children[6] = ProtoInstance69;
+Script72.getField("node_changed")Script70YYY.field = new X3D.MFNode();
 
-let ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance72.name = "cylinder";
-ProtoInstance72.DEF = "linkC";
-let fieldValue73 = browser.currentScene.createNode("fieldValue");
-fieldValue73.name = "set_positionA";
-fieldValue73.value = "50 50 50";
-ProtoInstance72YYY.fieldValue = new X3D.MFNode();
-
-ProtoInstance72ZZZ.fieldValue[0] = fieldValue73;
-
-let fieldValue74 = browser.currentScene.createNode("fieldValue");
-fieldValue74.name = "set_positionB";
-fieldValue74.value = "50 50 -50";
-ProtoInstance72ZZZ.fieldValue[1] = fieldValue74;
-
-Transform56ZZZ.children[7] = ProtoInstance72;
-
-browser.currentScene.children[2] = Transform56;
-
-let Script75 = browser.currentScene.createNode("Script");
-Script75.DEF = "clickHandler";
-Script76.getField("counter").setValue("0");
-Script75YYY.field = new X3D.MFNode();
-
-Script77.getField("node_changed")Script75YYY.field = new X3D.MFNode();
-
-Script78.getField("add_node").setValue("false");
-Script75YYY.field = new X3D.MFNode();
+Script73.getField("add_node").setValue("false");
+Script70YYY.field = new X3D.MFNode();
 
 //<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
 
-Script75.setSourceCode(`ecmascript:\n"+
+Script70.setSourceCode(`ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+
@@ -459,56 +400,56 @@ Script75.setSourceCode(`ecmascript:\n"+
 "			});\n"+
 "\n"+
 "        }`)
-browser.currentScene.children[3] = Script75;
+browser.currentScene.children[3] = Script70;
+
+let ROUTE74 = browser.currentScene.createNode("ROUTE");
+ROUTE74.fromNode = "clickGenerator";
+ROUTE74.fromField = "isActive";
+ROUTE74.toNode = "clickHandler";
+ROUTE74.toField = "add_node";
+browser.currentScene.children[4] = ROUTE74;
+
+let ROUTE75 = browser.currentScene.createNode("ROUTE");
+ROUTE75.fromNode = "nodeA";
+ROUTE75.fromField = "position";
+ROUTE75.toNode = "linkA";
+ROUTE75.toField = "set_positionA";
+browser.currentScene.children[5] = ROUTE75;
+
+let ROUTE76 = browser.currentScene.createNode("ROUTE");
+ROUTE76.fromNode = "nodeB";
+ROUTE76.fromField = "position";
+ROUTE76.toNode = "linkA";
+ROUTE76.toField = "set_positionB";
+browser.currentScene.children[6] = ROUTE76;
+
+let ROUTE77 = browser.currentScene.createNode("ROUTE");
+ROUTE77.fromNode = "nodeA";
+ROUTE77.fromField = "position";
+ROUTE77.toNode = "linkB";
+ROUTE77.toField = "set_positionA";
+browser.currentScene.children[7] = ROUTE77;
+
+let ROUTE78 = browser.currentScene.createNode("ROUTE");
+ROUTE78.fromNode = "nodeC";
+ROUTE78.fromField = "position";
+ROUTE78.toNode = "linkB";
+ROUTE78.toField = "set_positionB";
+browser.currentScene.children[8] = ROUTE78;
 
 let ROUTE79 = browser.currentScene.createNode("ROUTE");
-ROUTE79.fromNode = "clickGenerator";
-ROUTE79.fromField = "isActive";
-ROUTE79.toNode = "clickHandler";
-ROUTE79.toField = "add_node";
-browser.currentScene.children[4] = ROUTE79;
+ROUTE79.fromNode = "nodeA";
+ROUTE79.fromField = "position";
+ROUTE79.toNode = "linkC";
+ROUTE79.toField = "set_positionA";
+browser.currentScene.children[9] = ROUTE79;
 
 let ROUTE80 = browser.currentScene.createNode("ROUTE");
-ROUTE80.fromNode = "nodeA";
+ROUTE80.fromNode = "nodeD";
 ROUTE80.fromField = "position";
-ROUTE80.toNode = "linkA";
-ROUTE80.toField = "set_positionA";
-browser.currentScene.children[5] = ROUTE80;
-
-let ROUTE81 = browser.currentScene.createNode("ROUTE");
-ROUTE81.fromNode = "nodeB";
-ROUTE81.fromField = "position";
-ROUTE81.toNode = "linkA";
-ROUTE81.toField = "set_positionB";
-browser.currentScene.children[6] = ROUTE81;
-
-let ROUTE82 = browser.currentScene.createNode("ROUTE");
-ROUTE82.fromNode = "nodeA";
-ROUTE82.fromField = "position";
-ROUTE82.toNode = "linkB";
-ROUTE82.toField = "set_positionA";
-browser.currentScene.children[7] = ROUTE82;
-
-let ROUTE83 = browser.currentScene.createNode("ROUTE");
-ROUTE83.fromNode = "nodeC";
-ROUTE83.fromField = "position";
-ROUTE83.toNode = "linkB";
-ROUTE83.toField = "set_positionB";
-browser.currentScene.children[8] = ROUTE83;
-
-let ROUTE84 = browser.currentScene.createNode("ROUTE");
-ROUTE84.fromNode = "nodeA";
-ROUTE84.fromField = "position";
-ROUTE84.toNode = "linkC";
-ROUTE84.toField = "set_positionA";
-browser.currentScene.children[9] = ROUTE84;
-
-let ROUTE85 = browser.currentScene.createNode("ROUTE");
-ROUTE85.fromNode = "nodeD";
-ROUTE85.fromField = "position";
-ROUTE85.toNode = "linkC";
-ROUTE85.toField = "set_positionB";
-browser.currentScene.children[10] = ROUTE85;
+ROUTE80.toNode = "linkC";
+ROUTE80.toField = "set_positionB";
+browser.currentScene.children[10] = ROUTE80;
 
 }
 main ();

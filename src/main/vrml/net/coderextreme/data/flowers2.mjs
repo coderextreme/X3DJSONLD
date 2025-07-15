@@ -49,7 +49,7 @@ let ProtoDeclare16 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -204,7 +204,7 @@ material = Material31;
 
 appearance = Appearance30;
 
-//<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 let IndexedFaceSet36 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet36.ccw = False;
 IndexedFaceSet36.convex = False;

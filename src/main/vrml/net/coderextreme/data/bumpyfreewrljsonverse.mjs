@@ -326,7 +326,7 @@ ShaderPart97.url = new X3D.MFString([new X3D.SFString("../shaders/freewrl.fs"), 
 ShaderPart97.type = "FRAGMENT";
 ComposedShader84ZZZ.parts[1] = ShaderPart97;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75YYY.shaders = new X3D.MFNode();
 
 Appearance75ZZZ.shaders[0] = ComposedShader84;

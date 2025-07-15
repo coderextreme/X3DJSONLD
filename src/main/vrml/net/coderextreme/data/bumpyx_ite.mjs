@@ -138,7 +138,7 @@ ShaderPart46.url = new X3D.MFString([new X3D.SFString("../shaders/x_ite.fs"), ne
 ShaderPart46.type = "FRAGMENT";
 ComposedShader32ZZZ.parts[1] = ShaderPart46;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance23YYY.shaders = new X3D.MFNode();
 
 Appearance23ZZZ.shaders[0] = ComposedShader32;
