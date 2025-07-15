@@ -29,7 +29,7 @@ import JavaSerializer from './JavaSerializer.js';
 import NodeSerializer from './NodeSerializer.js';
 import PascalSerializer from './PascalSerializer.js';
 import PythonSerializer from './PythonSerializer.js';
-import PythonSerializerX3DJSAIL from './PythonSerializerX3DJSAIL.js';
+import GraalPySerializer from './GraalPySerializer.js';
 import QuarterSerializer from './QuarterSerializer.js';
 import Three2Serializer from './Three2Serializer.js';
 import VRMLScriptSerializer from './VRMLScriptSerializer.js';
