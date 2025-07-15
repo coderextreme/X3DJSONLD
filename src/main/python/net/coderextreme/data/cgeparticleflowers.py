@@ -82,12 +82,12 @@ Viewpoint17.position = [0,0,12]
 
 Scene14.children.append(Viewpoint17)
 Background18 = x3d.Background()
-Background18.backUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-Background18.bottomUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-Background18.frontUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-Background18.leftUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-Background18.rightUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-Background18.topUrl = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+Background18.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background18.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background18.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background18.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background18.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background18.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
 Scene14.children.append(Background18)
 Transform19 = x3d.Transform()
@@ -118,27 +118,27 @@ Appearance25.material = Material26
 ComposedCubeMapTexture27 = x3d.ComposedCubeMapTexture()
 ComposedCubeMapTexture27.DEF = "texture"
 ImageTexture28 = x3d.ImageTexture()
-ImageTexture28.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+ImageTexture28.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 
 ComposedCubeMapTexture27.backTexture = ImageTexture28
 ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+ImageTexture29.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 
 ComposedCubeMapTexture27.bottomTexture = ImageTexture29
 ImageTexture30 = x3d.ImageTexture()
-ImageTexture30.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+ImageTexture30.url = ["../resources/images/all_probes/stpeters_cross/stpeters_from.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 
 ComposedCubeMapTexture27.frontTexture = ImageTexture30
 ImageTexture31 = x3d.ImageTexture()
-ImageTexture31.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+ImageTexture31.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 
 ComposedCubeMapTexture27.leftTexture = ImageTexture31
 ImageTexture32 = x3d.ImageTexture()
-ImageTexture32.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+ImageTexture32.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 
 ComposedCubeMapTexture27.rightTexture = ImageTexture32
 ImageTexture33 = x3d.ImageTexture()
-ImageTexture33.url = ["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+ImageTexture33.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
 ComposedCubeMapTexture27.topTexture = ImageTexture33
 
@@ -390,42 +390,42 @@ Transform19.children.append(ROUTE59)
 ROUTE60 = x3d.ROUTE()
 ROUTE60.fromNode = "Animate"
 ROUTE60.fromField = "a"
-ROUTE60.toNode = "x_ite"
+ROUTE60.toNode = "shader"
 ROUTE60.toField = "a"
 
 Transform19.children.append(ROUTE60)
 ROUTE61 = x3d.ROUTE()
 ROUTE61.fromNode = "Animate"
 ROUTE61.fromField = "b"
-ROUTE61.toNode = "x_ite"
+ROUTE61.toNode = "shader"
 ROUTE61.toField = "b"
 
 Transform19.children.append(ROUTE61)
 ROUTE62 = x3d.ROUTE()
 ROUTE62.fromNode = "Animate"
 ROUTE62.fromField = "c"
-ROUTE62.toNode = "x_ite"
+ROUTE62.toNode = "shader"
 ROUTE62.toField = "c"
 
 Transform19.children.append(ROUTE62)
 ROUTE63 = x3d.ROUTE()
 ROUTE63.fromNode = "Animate"
 ROUTE63.fromField = "d"
-ROUTE63.toNode = "x_ite"
+ROUTE63.toNode = "shader"
 ROUTE63.toField = "d"
 
 Transform19.children.append(ROUTE63)
 ROUTE64 = x3d.ROUTE()
 ROUTE64.fromNode = "Animate"
 ROUTE64.fromField = "pdelta"
-ROUTE64.toNode = "x_ite"
+ROUTE64.toNode = "shader"
 ROUTE64.toField = "pdelta"
 
 Transform19.children.append(ROUTE64)
 ROUTE65 = x3d.ROUTE()
 ROUTE65.fromNode = "Animate"
 ROUTE65.fromField = "tdelta"
-ROUTE65.toNode = "x_ite"
+ROUTE65.toNode = "shader"
 ROUTE65.toField = "tdelta"
 
 Transform19.children.append(ROUTE65)
