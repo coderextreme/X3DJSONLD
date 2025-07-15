@@ -115,7 +115,7 @@ public class bub
 "					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
 "					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
 "",
-"					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"' type='VERTEX'></ShaderPart>",
+"					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"'></ShaderPart>",
 "					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
 "					</ComposedShader>",
 "					<ComposedShader DEF='freewrl' language=\"GLSL\">",
@@ -125,7 +125,7 @@ public class bub
 "					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
 "					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
 "",
-"					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>",
+"					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>",
 "					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
 "					</ComposedShader>"})
               .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
@@ -144,7 +144,7 @@ public class bub
 "					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
 "					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
 "",
-"			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>",
+"			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart>",
 "			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
 "                            </ComposedShader>"})
               .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")

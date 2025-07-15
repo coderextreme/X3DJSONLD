@@ -257,8 +257,8 @@ public class bumpyfreewrljsonverse
                   .addParts(new ShaderPart().setUrl(new String[] {"../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"}))
                   .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"}))
                   .addComments(new String[] {" TO CONVERT TO A SPHERE",
-"                  <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"                  <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"}))))))
+"                  <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>",
+"                  <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"}))))))
         .addChild(new Script("OrbitScript").setSourceCode("""
 ecmascript:
 function initialize() {

@@ -5,22 +5,23 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> a kind of rubik cube with spheres. </p>
- <p> Related links:  source rubik.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> a green rubik cube. </p>
+ <p> Related links:  source rubikPly.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.rubik&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.rubikPly&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d">rubik.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d">rubikFurnace.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,11 +33,11 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> a kind of rubik cube with spheres </td>
+			<td> a green rubik cube </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -56,10 +57,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author John Carlson
  */
 
-public class rubik
+public class rubikPly
 {
 	/** Default constructor to create this object. */
-	public rubik ()
+	public rubikPly ()
 	{
 	  initialize();
 	}
@@ -70,66 +71,111 @@ public class rubik
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("rubik.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("rubikFurnace.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a kind of rubik cube with spheres")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a green rubik cube")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-    .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(0.0,0.0,12.0))
-    .addChild(new ProtoDeclare("sphereproto").setName("sphereproto")
+    .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(0.0,0.0,12.0))
+    .addChild(new ProtoDeclare("anyShape").setName("anyShape")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("xtranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0))))
-      .setProtoBody(new ProtoBody()
-        .addChild(new Transform()
-          .setIS(new IS()
-            .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
+        .addField(new field().setName("xtranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+        .addField(new field().setName("myShape").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0)))))))
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0))))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation"))
+            .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
     .addChild(new ProtoDeclare("three").setName("three")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("ytranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0))))
+        .addField(new field().setName("ytranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+        .addField(new field().setName("myShape").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+          .addChild(new Shape()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0))))))
       .setProtoBody(new ProtoBody()
         .addChild(new Transform()
           .setIS(new IS()
             .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
-          .addChild(new ProtoInstance("sphereproto").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(0.0,0.0,0.0))))
-          .addChild(new ProtoInstance("sphereproto").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(2.0,0.0,0.0))))
-          .addChild(new ProtoInstance("sphereproto").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(-2.0,0.0,0.0)))))))
+          .addChild(new ProtoInstance("anyShape").setContainerField("children")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(0.0,0.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
+          .addChild(new ProtoInstance("anyShape").setContainerField("children")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(2.0,0.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
+          .addChild(new ProtoInstance("anyShape").setContainerField("children")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(-2.0,0.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
     .addChild(new ProtoDeclare("nine").setName("nine")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("ztranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0))))
+        .addField(new field().setName("ztranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+        .addField(new field().setName("myShape").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+          .addChild(new Shape()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0))))))
       .setProtoBody(new ProtoBody()
         .addChild(new Transform()
           .setIS(new IS()
             .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
           .addChild(new ProtoInstance("three").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,0.0,0.0))))
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,0.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
           .addChild(new ProtoInstance("three").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,2.0,0.0))))
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,2.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
           .addChild(new ProtoInstance("three").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,-2.0,0.0)))))))
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0,-2.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
     .addChild(new ProtoDeclare("twentyseven").setName("twentyseven")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("ttranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0))))
+        .addField(new field().setName("ttranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+        .addField(new field().setName("myShape").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+          .addChild(new Shape()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0))))))
       .setProtoBody(new ProtoBody()
         .addChild(new Transform()
           .setIS(new IS()
             .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
           .addChild(new ProtoInstance("nine").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,0.0))))
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,0.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
           .addChild(new ProtoInstance("nine").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,2.0))))
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,2.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
           .addChild(new ProtoInstance("nine").setContainerField("children")
-            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,-2.0)))))))
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0,0.0,-2.0)))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
     .addChild(new ProtoInstance("twentyseven").setContainerField("children")
-      .addFieldValue(new fieldValue().setName("ttranslation").setValue(new SFVec3f(0.0,0.0,0.0)))));
+      .addFieldValue(new fieldValue().setName("ttranslation").setValue(new SFVec3f(0.0,0.0,0.0)))
+      .addFieldValue(new fieldValue().setName("myShape")
+        .addChild(new Group()
+          .addChild(new Shape()
+            .setGeometry(new IndexedFaceSet().setConvex(false).setColorIndex(new int[] {0,1,2,-1,0,2,3,-1,7,6,5,4,-1,0,4,5,1,-1,1,5,6,2,-1,2,6,7,3,-1,3,7,4,0}).setCoordIndex(new int[] {0,1,2,-1,0,2,3,-1,7,6,5,4,-1,0,4,5,1,-1,1,5,6,2,-1,2,6,7,3,-1,3,7,4,0})
+              .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0})))
+              .setColor(new Color().setColor(new MFColor(new double[] {1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0})))))
+          .addChild(new Shape()
+            .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1,1,2,-1,2,3,-1,3,0,-1,2,0,-1})
+              .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0})))
+              .setColor(new Color().setColor(new MFColor(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0})))))))));
             }
             catch (Exception ex)
             {       
@@ -148,7 +194,7 @@ public class rubik
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return rubik model
+	 * @return rubikPly model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -167,7 +213,7 @@ public class rubik
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new rubik().getX3dModel();
+        X3D thisExampleX3dModel = new rubikPly().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -200,7 +246,7 @@ public class rubik
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.rubik\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.rubikPly\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -209,16 +255,16 @@ public class rubik
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.rubik self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.rubikPly self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./rubik_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./rubik_JavaExport.x3d"; 
-                String filenameX3DV = "./rubik_JavaExport.x3dv"; 
-                String filenameJSON = "./rubik_JavaExport.json";
+                // ./rubikPly_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./rubikPly_JavaExport.x3d"; 
+                String filenameX3DV = "./rubikPly_JavaExport.x3dv"; 
+                String filenameJSON = "./rubikPly_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

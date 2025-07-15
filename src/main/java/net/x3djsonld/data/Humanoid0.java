@@ -136,7 +136,7 @@ public class Humanoid0
           .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(1))))
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-      .addSkeleton(new HAnimJoint("hanim_").setName("").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
       .addJoints(new HAnimJoint().setUSE("hanim_"))));
             }
             catch (Exception ex)

@@ -117,7 +117,7 @@ public class Trebuchet
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Trebuchet.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Working model of a 14th century Trebuchet Catapult."))
@@ -548,10 +548,10 @@ function set_fraction ( fraction, eventTime )
 {
 	var TrebuchetHeight=45;
 	var Height =25;
-      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
 	// start at TrebuchetHeight and keep along z axis (z=zero)
-	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-        z = 0;
+	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+        var z = 0;
         transparent = new SFVec3f (1,1,1);
      if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
 		{
