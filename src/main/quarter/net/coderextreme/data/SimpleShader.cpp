@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
-SoSceneManager0->setVersion(QString("3.2"));
+SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("Shaders"));
