@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 meta& meta2 =  meta();
 meta2.setName(CString("title"));
@@ -70,7 +70,7 @@ Shape15.addChild(&Appearance16);
 Extrusion& Extrusion18 =  Extrusion();
 Extrusion18.setCreaseAngle(0.785);
 Extrusion18.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion18.setSpine(new float[]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
+Extrusion18.setSpine(new float[]{-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0,0.0}, 9);
 Shape15.setGeometry(&Extrusion18);
 
 Transform14.addChild(&Shape15);
@@ -93,7 +93,7 @@ Shape20.addChild(&Appearance21);
 Extrusion& Extrusion23 =  Extrusion();
 Extrusion23.setCreaseAngle(0.785);
 Extrusion23.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion23.setSpine(new float[]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
+Extrusion23.setSpine(new float[]{1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0,0.0}, 9);
 Shape20.setGeometry(&Extrusion23);
 
 Transform19.addChild(&Shape20);
@@ -145,7 +145,7 @@ Shape32.addChild(&Appearance33);
 Extrusion& Extrusion35 =  Extrusion();
 Extrusion35.setCreaseAngle(0.785);
 Extrusion35.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion35.setSpine(new float[]{0.0,1.5,0.0,0.0,2.5,0.0}, 6);
+Extrusion35.setSpine(new float[]{0.0,1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0}, 9);
 Shape32.setGeometry(&Extrusion35);
 
 Transform31.addChild(&Shape32);
@@ -196,7 +196,7 @@ Shape44.addChild(&Appearance45);
 Extrusion& Extrusion47 =  Extrusion();
 Extrusion47.setCreaseAngle(0.785);
 Extrusion47.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
-Extrusion47.setSpine(new float[]{0.0,-2.5,0.0,0.0,-1.5,0.0}, 6);
+Extrusion47.setSpine(new float[]{0.0,-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0}, 9);
 Shape44.setGeometry(&Extrusion47);
 
 Transform43.addChild(&Shape44);

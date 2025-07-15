@@ -88,7 +88,7 @@ ProtoDeclare ProtoDeclare16 = browser.createX3DFromString(`<?xml version="1.0" e
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -262,7 +262,7 @@ Appearance30.material = Material31;
 
 Shape29.appearance = Appearance30;
 
-//<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 IndexedFaceSet IndexedFaceSet36 = createNode("IndexedFaceSet");
 IndexedFaceSet36.ccw = False;
 IndexedFaceSet36.convex = False;

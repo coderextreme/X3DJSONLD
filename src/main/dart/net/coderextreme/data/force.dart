@@ -21,6 +21,10 @@ var X3D0 =  X3D(
               content_ : SFString('December 13 2015')),
 
             meta(
+              name_ : SFString('modified'),
+              content_ : SFString('July 14 2025')),
+
+            meta(
               name_ : SFString('title'),
               content_ : SFString('force.x3d')),
 
@@ -119,16 +123,11 @@ var X3D0 =  X3D(
                               accessType_ : SFString("outputOnly")),
                           ],
 ecmascript:eval (0
-					, function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                var tmpkeyValue = new MFVec3f();
-			    			tmpkeyValue[0] = old;
-			    			tmpkeyValue[1] = translation;
-                                                keyValue = tmpkeyValue;
-			    		
-						// Browser.println(translation);
-					})),
+			, function set_cycle(value) {
+				old = translation;
+				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+				keyValue = new MFVec3f(old, translation);
+			})),
 
                         TimeSensor(
                           DEF_ : SFString('nodeClock'),
@@ -167,12 +166,14 @@ ecmascript:eval (0
                     field(
                       type_ : SFString("SFVec3f"),
                       name_ : SFString('set_positionA'),
-                      accessType_ : SFString("inputOnly")),
+                      accessType_ : SFString("inputOutput"),
+                      value_ : SFString('0 0 0')),
 
                     field(
                       type_ : SFString("SFVec3f"),
                       name_ : SFString('set_positionB'),
-                      accessType_ : SFString("inputOnly"))]),
+                      accessType_ : SFString("inputOutput"),
+                      value_ : SFString('50 50 50'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -184,7 +185,7 @@ ecmascript:eval (0
                               DEF_ : SFString('extrusion'),
                               creaseAngle_ : 0.785,
                               crossSection_ : MFVec2f([SFVec2f([1,0]),SFVec2f([0.92,-0.38]),SFVec2f([0.71,-0.71]),SFVec2f([0.38,-0.92]),SFVec2f([0,-1]),SFVec2f([-0.38,-0.92]),SFVec2f([-0.71,-0.71]),SFVec2f([-0.92,-0.38]),SFVec2f([-1,0]),SFVec2f([-0.92,0.38]),SFVec2f([-0.71,0.71]),SFVec2f([-0.38,0.92]),SFVec2f([0,1]),SFVec2f([0.38,0.92]),SFVec2f([0.71,0.71]),SFVec2f([0.92,0.38]),SFVec2f([1,0])]),
-                              spine_ : MFVec3f([SFVec3f([0,-50,0]),SFVec3f([0,50,0])])),
+                              spine_ : MFVec3f([SFVec3f([0,-50,0]),SFVec3f([0,0,0]),SFVec3f([0,50,0])])),
                           appearance_ : 
                             Appearance(
                               material_ : 
@@ -198,62 +199,39 @@ ecmascript:eval (0
                               type_ : SFString("MFVec3f"),
                               name_ : SFString('spine'),
                               accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0 -50 0 0 50 0')),
+                              value_ : SFString('0 -50 0 0 0 0 0 50 0')),
 
                             field(
                               type_ : SFString("SFVec3f"),
-                              name_ : SFString('set_endA'),
-                              accessType_ : SFString("inputOnly")),
+                              name_ : SFString('endA'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('0 0 0')),
 
                             field(
                               type_ : SFString("SFVec3f"),
-                              name_ : SFString('set_endB'),
-                              accessType_ : SFString("inputOnly"))],
+                              name_ : SFString('endB'),
+                              accessType_ : SFString("inputOutput"),
+                              value_ : SFString('50 50 50'))],
 
                           IS_ : 
                             IS(
                               connect_ : [
                                 connect(
-                                  nodeField_ : SFString('set_endA'),
+                                  nodeField_ : SFString('endA'),
                                   protoField_ : SFString('set_positionA')),
 
                                 connect(
-                                  nodeField_ : SFString('set_endB'),
+                                  nodeField_ : SFString('endB'),
                                   protoField_ : SFString('set_positionB'))]),
                           ,
 ecmascript:eval (0
+			, function set_endA(value) {
+				spine = new MFVec3f(value, spine[1]);
+			}
 
-                , function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    } else {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = spine[1];
-			spine = tmpspine;
-		    }
-                }
-
-                , function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    } else {
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = spine[0];
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    }
-                }
-
-                , function set_spine(value) {
-                    spine = value;
-                })),
+			, function set_endB(value) {
+				spine = new MFVec3f(spine[0], value);
+			})),
 
                         ROUTE(
                           fromNode_ : SFString('MoveCylinder'),
@@ -305,39 +283,15 @@ ecmascript:eval (0
 
                 ProtoInstance(
                   name_ : SFString('cyl'),
-                  DEF_ : SFString('linkA'),
-                  fieldValue_ : [
-                    fieldValue(
-                      name_ : SFString('set_positionA'),
-                      value_ : SFString('0 0 0')),
-
-                    fieldValue(
-                      name_ : SFString('set_positionB'),
-                      value_ : SFString('50 50 50'))]),
+                  DEF_ : SFString('linkA')),
 
                 ProtoInstance(
                   name_ : SFString('cyl'),
-                  DEF_ : SFString('linkB'),
-                  fieldValue_ : [
-                    fieldValue(
-                      name_ : SFString('set_positionA'),
-                      value_ : SFString('0 0 0')),
-
-                    fieldValue(
-                      name_ : SFString('set_positionB'),
-                      value_ : SFString('-50 -50 -50'))]),
+                  DEF_ : SFString('linkB')),
 
                 ProtoInstance(
                   name_ : SFString('cyl'),
-                  DEF_ : SFString('linkC'),
-                  fieldValue_ : [
-                    fieldValue(
-                      name_ : SFString('set_positionA'),
-                      value_ : SFString('50 50 50')),
-
-                    fieldValue(
-                      name_ : SFString('set_positionB'),
-                      value_ : SFString('50 50 -50'))])]),
+                  DEF_ : SFString('linkC'))]),
 
             Script(
               DEF_ : SFString('clickHandler'),
@@ -349,16 +303,11 @@ ecmascript:eval (0
                   value_ : SFString('0')),
 
                 field(
-                  type_ : SFString("SFNode"),
-                  name_ : SFString('node_changed'),
-                  accessType_ : SFString("outputOnly")),
-
-                field(
                   type_ : SFString("SFBool"),
                   name_ : SFString('add_node'),
                   accessType_ : SFString("inputOnly"),
                   value_ : SFString('false')),
-              /*<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>*/
+              /*<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>*/
               ],
 ecmascript:eval (0
 	, function add_node(value) {

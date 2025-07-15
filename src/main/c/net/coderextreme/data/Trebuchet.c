@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -1828,10 +1828,10 @@ Script344.setSourceCode(`ecmascript:\n"+
 "{\n"+
 "	var TrebuchetHeight=45;\n"+
 "	var Height =25;\n"+
-"      	x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n"+
+"      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n"+
 "	// start at TrebuchetHeight and keep along z axis (z=zero)\n"+
-"	y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n"+
-"        z = 0;\n"+
+"	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n"+
+"        var z = 0;\n"+
 "        transparent = new SFVec3f (1,1,1);\n"+
 "     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)\n"+
 "		{\n"+

@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.3"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 meta& meta2 =  meta();
 meta2.setName(CString("title"));
@@ -35,7 +35,7 @@ head1.addMeta(&meta6);
 
 meta& meta7 =  meta();
 meta7.setName(CString("description"));
-meta7.setContent(CString("12 extrusions to test prototype expander"));
+meta7.setContent(CString("12 extrusions"));
 head1.addMeta(&meta7);
 
 meta& meta8 =  meta();
@@ -68,7 +68,7 @@ Appearance16.addChild(&Material17);
 Shape15.addChild(&Appearance16);
 
 Extrusion& Extrusion18 =  Extrusion();
-Extrusion18.setSpine(new float[]{-2.5,0.0,0.0,-1.5,0.0,0.0}, 6);
+Extrusion18.setSpine(new float[]{-2.5,0.0,0.0,-2.0,0.0,0.0,-1.5,0.0,0.0}, 9);
 Extrusion18.setCreaseAngle(0.785);
 Extrusion18.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 Shape15.setGeometry(&Extrusion18);
@@ -90,7 +90,7 @@ Appearance21.addChild(&Material22);
 Shape20.addChild(&Appearance21);
 
 Extrusion& Extrusion23 =  Extrusion();
-Extrusion23.setSpine(new float[]{1.5,0.0,0.0,2.5,0.0,0.0}, 6);
+Extrusion23.setSpine(new float[]{1.5,0.0,0.0,2.0,0.0,0.0,2.5,0.0,0.0}, 9);
 Extrusion23.setCreaseAngle(0.785);
 Extrusion23.setCrossSection(new float[]{1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0}, 34);
 Shape20.setGeometry(&Extrusion23);

@@ -162,7 +162,7 @@ Appearance30.addChild(&Material31);
 
 Shape29.addChild(&Appearance30);
 
-//<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 IndexedFaceSet& IndexedFaceSet36 =  IndexedFaceSet();
 IndexedFaceSet36.setCcw(False);
 IndexedFaceSet36.setConvex(False);

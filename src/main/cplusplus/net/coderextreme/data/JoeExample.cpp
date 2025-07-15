@@ -16,7 +16,7 @@
 #include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/include/X3DLib.h"
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
-X3D0.setVersion(CString("3.0"));
+X3D0.setVersion(CString("4.0"));
 X3D0.setProfile(CString("Immersive"));
 head& head1 =  head();
 meta& meta2 =  meta();

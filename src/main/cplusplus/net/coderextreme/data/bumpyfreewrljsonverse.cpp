@@ -480,7 +480,7 @@ ShaderPart97.setUrl(new CString[]{CString("../shaders/freewrl.fs"), CString("htt
 ShaderPart97.setType(CString("FRAGMENT"));
 ComposedShader84.setParts(&ShaderPart97);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75.addChild(&ComposedShader84);
 
 Shape72.addChild(&Appearance75);

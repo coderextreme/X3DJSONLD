@@ -85,12 +85,12 @@ Viewpoint17.position = new SFVec3f(new float[0,0,12]);
 children[2] = Viewpoint17;
 
 Background Background18 = createNode("Background");
-Background18.backUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background18.bottomUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background18.frontUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background18.leftUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background18.rightUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background18.topUrl = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background18.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background18.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background18.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background18.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background18.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background18.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
 children[3] = Background18;
 
 Transform Transform19 = createNode("Transform");
@@ -123,27 +123,27 @@ Appearance25.material = Material26;
 ComposedCubeMapTexture ComposedCubeMapTexture27 = createNode("ComposedCubeMapTexture");
 ComposedCubeMapTexture27.DEF = "texture";
 ImageTexture ImageTexture28 = createNode("ImageTexture");
-ImageTexture28.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture28;
 
 ImageTexture ImageTexture29 = createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture29;
 
 ImageTexture ImageTexture30 = createNode("ImageTexture");
-ImageTexture30.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_from.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture30;
 
 ImageTexture ImageTexture31 = createNode("ImageTexture");
-ImageTexture31.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture31;
 
 ImageTexture ImageTexture32 = createNode("ImageTexture");
-ImageTexture32.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+ImageTexture32.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture32;
 
 ImageTexture ImageTexture33 = createNode("ImageTexture");
-ImageTexture33.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+ImageTexture33.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
 ComposedCubeMapTexture27.topTexture = ImageTexture33;
 
 Appearance25.texture = ComposedCubeMapTexture27;
@@ -232,8 +232,8 @@ ComposedShader34.field[10] = field45;
 
 //<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
 ShaderPart ShaderPart46 = createNode("ShaderPart");
-ShaderPart46.type = "VERTEX";
 ShaderPart46.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"]);
+ShaderPart46.type = "VERTEX";
 ComposedShader34.parts[11] = ShaderPart46;
 
 ShaderPart ShaderPart47 = createNode("ShaderPart");
@@ -403,42 +403,42 @@ Transform19.children[3] = ROUTE59;
 ROUTE ROUTE60 = createNode("ROUTE");
 ROUTE60.fromNode = "Animate";
 ROUTE60.fromField = "a";
-ROUTE60.toNode = "x_ite";
+ROUTE60.toNode = "shader";
 ROUTE60.toField = "a";
 Transform19.children[4] = ROUTE60;
 
 ROUTE ROUTE61 = createNode("ROUTE");
 ROUTE61.fromNode = "Animate";
 ROUTE61.fromField = "b";
-ROUTE61.toNode = "x_ite";
+ROUTE61.toNode = "shader";
 ROUTE61.toField = "b";
 Transform19.children[5] = ROUTE61;
 
 ROUTE ROUTE62 = createNode("ROUTE");
 ROUTE62.fromNode = "Animate";
 ROUTE62.fromField = "c";
-ROUTE62.toNode = "x_ite";
+ROUTE62.toNode = "shader";
 ROUTE62.toField = "c";
 Transform19.children[6] = ROUTE62;
 
 ROUTE ROUTE63 = createNode("ROUTE");
 ROUTE63.fromNode = "Animate";
 ROUTE63.fromField = "d";
-ROUTE63.toNode = "x_ite";
+ROUTE63.toNode = "shader";
 ROUTE63.toField = "d";
 Transform19.children[7] = ROUTE63;
 
 ROUTE ROUTE64 = createNode("ROUTE");
 ROUTE64.fromNode = "Animate";
 ROUTE64.fromField = "pdelta";
-ROUTE64.toNode = "x_ite";
+ROUTE64.toNode = "shader";
 ROUTE64.toField = "pdelta";
 Transform19.children[8] = ROUTE64;
 
 ROUTE ROUTE65 = createNode("ROUTE");
 ROUTE65.fromNode = "Animate";
 ROUTE65.fromField = "tdelta";
-ROUTE65.toNode = "x_ite";
+ROUTE65.toNode = "shader";
 ROUTE65.toField = "tdelta";
 Transform19.children[9] = ROUTE65;
 

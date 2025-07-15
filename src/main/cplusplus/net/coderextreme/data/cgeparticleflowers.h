@@ -85,12 +85,12 @@ Viewpoint17.setPosition(new float[]{0.0,0.0,12.0});
 Scene14.addChild(&Viewpoint17);
 
 Background& Background18 =  Background();
-Background18.setBackUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
-Background18.setBottomUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
-Background18.setFrontUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
-Background18.setLeftUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
-Background18.setRightUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
-Background18.setTopUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+Background18.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+Background18.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+Background18.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+Background18.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+Background18.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+Background18.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 Scene14.addChild(&Background18);
 
 Transform& Transform19 =  Transform();
@@ -121,27 +121,27 @@ Appearance25.addChild(&Material26);
 ComposedCubeMapTexture& ComposedCubeMapTexture27 =  ComposedCubeMapTexture();
 ComposedCubeMapTexture27.setDEF(CString("texture"));
 ImageTexture& ImageTexture28 =  ImageTexture();
-ImageTexture28.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 1);
+ImageTexture28.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
 ComposedCubeMapTexture27.setBack(ImageTexture28);
 
 ImageTexture& ImageTexture29 =  ImageTexture();
-ImageTexture29.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 1);
+ImageTexture29.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
 ComposedCubeMapTexture27.setBottom(ImageTexture29);
 
 ImageTexture& ImageTexture30 =  ImageTexture();
-ImageTexture30.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 1);
+ImageTexture30.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_from.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
 ComposedCubeMapTexture27.setFront(ImageTexture30);
 
 ImageTexture& ImageTexture31 =  ImageTexture();
-ImageTexture31.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 1);
+ImageTexture31.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
 ComposedCubeMapTexture27.setLeft(ImageTexture31);
 
 ImageTexture& ImageTexture32 =  ImageTexture();
-ImageTexture32.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 1);
+ImageTexture32.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
 ComposedCubeMapTexture27.setRight(ImageTexture32);
 
 ImageTexture& ImageTexture33 =  ImageTexture();
-ImageTexture33.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 1);
+ImageTexture33.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
 ComposedCubeMapTexture27.setTop(ImageTexture33);
 
 Appearance25.addChild(&ComposedCubeMapTexture27);
@@ -228,8 +228,8 @@ ComposedShader34.addChild(&field45);
 
 //<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
 ShaderPart& ShaderPart46 =  ShaderPart();
-ShaderPart46.setType(CString("VERTEX"));
 ShaderPart46.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")}, 1);
+ShaderPart46.setType(CString("VERTEX"));
 ComposedShader34.setParts(&ShaderPart46);
 
 ShaderPart& ShaderPart47 =  ShaderPart();
@@ -391,42 +391,42 @@ Transform19.addChild(&ROUTE59);
 ROUTE& ROUTE60 =  ROUTE();
 ROUTE60.setFromNode(CString("Animate"));
 ROUTE60.setFromField(CString("a"));
-ROUTE60.setToNode(CString("x_ite"));
+ROUTE60.setToNode(CString("shader"));
 ROUTE60.setToField(CString("a"));
 Transform19.addChild(&ROUTE60);
 
 ROUTE& ROUTE61 =  ROUTE();
 ROUTE61.setFromNode(CString("Animate"));
 ROUTE61.setFromField(CString("b"));
-ROUTE61.setToNode(CString("x_ite"));
+ROUTE61.setToNode(CString("shader"));
 ROUTE61.setToField(CString("b"));
 Transform19.addChild(&ROUTE61);
 
 ROUTE& ROUTE62 =  ROUTE();
 ROUTE62.setFromNode(CString("Animate"));
 ROUTE62.setFromField(CString("c"));
-ROUTE62.setToNode(CString("x_ite"));
+ROUTE62.setToNode(CString("shader"));
 ROUTE62.setToField(CString("c"));
 Transform19.addChild(&ROUTE62);
 
 ROUTE& ROUTE63 =  ROUTE();
 ROUTE63.setFromNode(CString("Animate"));
 ROUTE63.setFromField(CString("d"));
-ROUTE63.setToNode(CString("x_ite"));
+ROUTE63.setToNode(CString("shader"));
 ROUTE63.setToField(CString("d"));
 Transform19.addChild(&ROUTE63);
 
 ROUTE& ROUTE64 =  ROUTE();
 ROUTE64.setFromNode(CString("Animate"));
 ROUTE64.setFromField(CString("pdelta"));
-ROUTE64.setToNode(CString("x_ite"));
+ROUTE64.setToNode(CString("shader"));
 ROUTE64.setToField(CString("pdelta"));
 Transform19.addChild(&ROUTE64);
 
 ROUTE& ROUTE65 =  ROUTE();
 ROUTE65.setFromNode(CString("Animate"));
 ROUTE65.setFromField(CString("tdelta"));
-ROUTE65.setToNode(CString("x_ite"));
+ROUTE65.setToNode(CString("shader"));
 ROUTE65.setToField(CString("tdelta"));
 Transform19.addChild(&ROUTE65);
 
