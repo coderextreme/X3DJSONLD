@@ -27,245 +27,245 @@ let ExternProtoDeclare15 = browser.currentScene.createNode("ExternProtoDeclare")
 ExternProtoDeclare15.name = "ArtDeco00";
 ExternProtoDeclare15.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare15.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare15.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco00"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco00"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")]);
+ExternProtoDeclare15.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco00"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco00"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")]);
 browser.currentScene.children[1] = ExternProtoDeclare15;
 
 let ExternProtoDeclare16 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare16.name = "ArtDeco01";
 ExternProtoDeclare16.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare16.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare16.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco01"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco01"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")]);
+ExternProtoDeclare16.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco01"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco01"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")]);
 browser.currentScene.children[2] = ExternProtoDeclare16;
 
 let ExternProtoDeclare17 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare17.name = "ArtDeco02";
 ExternProtoDeclare17.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare17.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare17.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco02"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco02"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")]);
+ExternProtoDeclare17.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco02"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco02"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")]);
 browser.currentScene.children[3] = ExternProtoDeclare17;
 
 let ExternProtoDeclare18 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare18.name = "ArtDeco03";
 ExternProtoDeclare18.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare18.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare18.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco03"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco03"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")]);
+ExternProtoDeclare18.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco03"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco03"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")]);
 browser.currentScene.children[4] = ExternProtoDeclare18;
 
 let ExternProtoDeclare19 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare19.name = "ArtDeco04";
 ExternProtoDeclare19.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare19.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare19.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco04"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco04"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")]);
+ExternProtoDeclare19.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco04"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco04"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")]);
 browser.currentScene.children[5] = ExternProtoDeclare19;
 
 let ExternProtoDeclare20 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare20.name = "ArtDeco05";
 ExternProtoDeclare20.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare20.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare20.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco05"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco05"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")]);
+ExternProtoDeclare20.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco05"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco05"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")]);
 browser.currentScene.children[6] = ExternProtoDeclare20;
 
 let ExternProtoDeclare21 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare21.name = "ArtDeco06";
 ExternProtoDeclare21.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare21.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare21.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco06"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco06"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")]);
+ExternProtoDeclare21.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco06"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco06"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")]);
 browser.currentScene.children[7] = ExternProtoDeclare21;
 
 let ExternProtoDeclare22 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare22.name = "ArtDeco07";
 ExternProtoDeclare22.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare22.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare22.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco07"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco07"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")]);
+ExternProtoDeclare22.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco07"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco07"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")]);
 browser.currentScene.children[8] = ExternProtoDeclare22;
 
 let ExternProtoDeclare23 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare23.name = "ArtDeco08";
 ExternProtoDeclare23.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare23.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare23.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco08"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco08"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")]);
+ExternProtoDeclare23.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco08"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco08"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")]);
 browser.currentScene.children[9] = ExternProtoDeclare23;
 
 let ExternProtoDeclare24 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare24.name = "ArtDeco09";
 ExternProtoDeclare24.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare24.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare24.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco09"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco09"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")]);
+ExternProtoDeclare24.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco09"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco09"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")]);
 browser.currentScene.children[10] = ExternProtoDeclare24;
 
 let ExternProtoDeclare25 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare25.name = "ArtDeco10";
 ExternProtoDeclare25.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare25.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare25.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco10"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco10"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")]);
+ExternProtoDeclare25.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco10"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco10"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")]);
 browser.currentScene.children[11] = ExternProtoDeclare25;
 
 let ExternProtoDeclare26 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare26.name = "ArtDeco11";
 ExternProtoDeclare26.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare26.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare26.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco11"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco11"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")]);
+ExternProtoDeclare26.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco11"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco11"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")]);
 browser.currentScene.children[12] = ExternProtoDeclare26;
 
 let ExternProtoDeclare27 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare27.name = "ArtDeco12";
 ExternProtoDeclare27.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare27.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare27.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco12"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco12"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")]);
+ExternProtoDeclare27.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco12"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco12"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")]);
 browser.currentScene.children[13] = ExternProtoDeclare27;
 
 let ExternProtoDeclare28 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare28.name = "ArtDeco13";
 ExternProtoDeclare28.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare28.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare28.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco13"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco13"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")]);
+ExternProtoDeclare28.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco13"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco13"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")]);
 browser.currentScene.children[14] = ExternProtoDeclare28;
 
 let ExternProtoDeclare29 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare29.name = "ArtDeco14";
 ExternProtoDeclare29.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare29.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare29.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco14"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco14"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")]);
+ExternProtoDeclare29.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco14"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco14"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")]);
 browser.currentScene.children[15] = ExternProtoDeclare29;
 
 let ExternProtoDeclare30 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare30.name = "ArtDeco15";
 ExternProtoDeclare30.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare30.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare30.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco15"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco15"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")]);
+ExternProtoDeclare30.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco15"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco15"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")]);
 browser.currentScene.children[16] = ExternProtoDeclare30;
 
 let ExternProtoDeclare31 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare31.name = "ArtDeco16";
 ExternProtoDeclare31.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare31.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare31.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco16"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco16"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")]);
+ExternProtoDeclare31.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco16"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco16"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")]);
 browser.currentScene.children[17] = ExternProtoDeclare31;
 
 let ExternProtoDeclare32 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare32.name = "ArtDeco17";
 ExternProtoDeclare32.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare32.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare32.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco17"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco17"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")]);
+ExternProtoDeclare32.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco17"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco17"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")]);
 browser.currentScene.children[18] = ExternProtoDeclare32;
 
 let ExternProtoDeclare33 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare33.name = "ArtDeco18";
 ExternProtoDeclare33.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare33.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare33.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco18"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco18"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")]);
+ExternProtoDeclare33.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco18"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco18"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")]);
 browser.currentScene.children[19] = ExternProtoDeclare33;
 
 let ExternProtoDeclare34 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare34.name = "ArtDeco19";
 ExternProtoDeclare34.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare34.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare34.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco19"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco19"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")]);
+ExternProtoDeclare34.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco19"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco19"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")]);
 browser.currentScene.children[20] = ExternProtoDeclare34;
 
 let ExternProtoDeclare35 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare35.name = "ArtDeco20";
 ExternProtoDeclare35.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare35.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare35.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco20"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco20"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")]);
+ExternProtoDeclare35.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco20"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco20"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")]);
 browser.currentScene.children[21] = ExternProtoDeclare35;
 
 let ExternProtoDeclare36 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare36.name = "ArtDeco21";
 ExternProtoDeclare36.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare36.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare36.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco21"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco21"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")]);
+ExternProtoDeclare36.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco21"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco21"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")]);
 browser.currentScene.children[22] = ExternProtoDeclare36;
 
 let ExternProtoDeclare37 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare37.name = "ArtDeco22";
 ExternProtoDeclare37.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare37.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare37.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco22"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco22"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")]);
+ExternProtoDeclare37.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco22"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco22"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")]);
 browser.currentScene.children[23] = ExternProtoDeclare37;
 
 let ExternProtoDeclare38 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare38.name = "ArtDeco23";
 ExternProtoDeclare38.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare38.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare38.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco23"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco23"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")]);
+ExternProtoDeclare38.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco23"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco23"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")]);
 browser.currentScene.children[24] = ExternProtoDeclare38;
 
 let ExternProtoDeclare39 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare39.name = "ArtDeco24";
 ExternProtoDeclare39.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare39.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare39.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco24"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco24"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")]);
+ExternProtoDeclare39.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco24"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco24"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")]);
 browser.currentScene.children[25] = ExternProtoDeclare39;
 
 let ExternProtoDeclare40 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare40.name = "ArtDeco25";
 ExternProtoDeclare40.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare40.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare40.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco25"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco25"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")]);
+ExternProtoDeclare40.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco25"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco25"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")]);
 browser.currentScene.children[26] = ExternProtoDeclare40;
 
 let ExternProtoDeclare41 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare41.name = "ArtDeco26";
 ExternProtoDeclare41.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare41.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare41.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco26"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco26"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")]);
+ExternProtoDeclare41.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco26"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco26"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")]);
 browser.currentScene.children[27] = ExternProtoDeclare41;
 
 let ExternProtoDeclare42 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare42.name = "ArtDeco27";
 ExternProtoDeclare42.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare42.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare42.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco27"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco27"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")]);
+ExternProtoDeclare42.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco27"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco27"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")]);
 browser.currentScene.children[28] = ExternProtoDeclare42;
 
 let ExternProtoDeclare43 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare43.name = "ArtDeco28";
 ExternProtoDeclare43.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare43.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare43.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco28"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco28"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")]);
+ExternProtoDeclare43.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco28"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco28"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")]);
 browser.currentScene.children[29] = ExternProtoDeclare43;
 
 let ExternProtoDeclare44 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare44.name = "ArtDeco29";
 ExternProtoDeclare44.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare44.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare44.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco29"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco29"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")]);
+ExternProtoDeclare44.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco29"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco29"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")]);
 browser.currentScene.children[30] = ExternProtoDeclare44;
 
 let ExternProtoDeclare45 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare45.name = "ArtDeco30";
 ExternProtoDeclare45.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare45.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare45.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco30"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco30"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")]);
+ExternProtoDeclare45.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco30"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco30"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")]);
 browser.currentScene.children[31] = ExternProtoDeclare45;
 
 let ExternProtoDeclare46 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare46.name = "ArtDeco31";
 ExternProtoDeclare46.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare46.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare46.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco31"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco31"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")]);
+ExternProtoDeclare46.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco31"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco31"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")]);
 browser.currentScene.children[32] = ExternProtoDeclare46;
 
 let ExternProtoDeclare47 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare47.name = "ArtDeco32";
 ExternProtoDeclare47.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare47.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare47.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco32"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco32"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")]);
+ExternProtoDeclare47.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco32"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco32"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")]);
 browser.currentScene.children[33] = ExternProtoDeclare47;
 
 let ExternProtoDeclare48 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare48.name = "ArtDeco33";
 ExternProtoDeclare48.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare48.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare48.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco33"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco33"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")]);
+ExternProtoDeclare48.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco33"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco33"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")]);
 browser.currentScene.children[34] = ExternProtoDeclare48;
 
 let ExternProtoDeclare49 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare49.name = "ArtDeco34";
 ExternProtoDeclare49.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare49.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare49.url = new X3D.MFString([new X3D.SFString("ArtDecoPrototypes.x3d#ArtDeco34"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco34"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")]);
+ExternProtoDeclare49.url = new X3D.MFString([new X3D.SFString("../data/ArtDecoPrototypes.x3d#ArtDeco34"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), new X3D.SFString("ArtDecoPrototypes.wrl#ArtDeco34"), new X3D.SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")]);
 browser.currentScene.children[35] = ExternProtoDeclare49;
 
 let Group50 = browser.currentScene.createNode("Group");
