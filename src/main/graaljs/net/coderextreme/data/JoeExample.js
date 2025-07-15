@@ -1,15 +1,14 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")
+      var X3D0 =  new X3D().setVersion("4.0").setProfile("Immersive")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new Scene()

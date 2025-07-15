@@ -1,8 +1,7 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
-ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
-ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 function doubleToFloat(d) {
@@ -31,14 +30,14 @@ var ProtoInstance2 = null;
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.7,1,0]), Java.type("float[]"))).setTransparency(0.5)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([-2.5,0,0,-1.5,0,0]), Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([-2.5,0,0,-2,0,0,-1.5,0,0]), Java.type("float[]")))))
                 .addComments(new CommentsBlock("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("right"))
               .addChild(new Transform().setScale(Java.to(doubleToFloat([0.5,0.5,0.5]), Java.type("float[]")))
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,0.7,1]), Java.type("float[]"))).setTransparency(0.5)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([1.5,0,0,2.5,0,0]), Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([1.5,0,0,2,0,0,2.5,0,0]), Java.type("float[]")))))
                 .addChild(new Transform().setTranslation(Java.to(doubleToFloat([2,0,0]), Java.type("float[]")))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
@@ -51,7 +50,7 @@ var ProtoInstance2 = null;
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,0.7,1]), Java.type("float[]"))).setTransparency(0.5)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([0,1.5,0,0,2.5,0]), Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([0,1.5,0,0,2,0,0,2.5,0]), Java.type("float[]")))))
                 .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-0.5,2,0]), Java.type("float[]")))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
@@ -64,7 +63,7 @@ var ProtoInstance2 = null;
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.7,1,0]), Java.type("float[]"))).setTransparency(0.5)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([0,-2.5,0,0,-1.5,0]), Java.type("float[]")))))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to(doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]), Java.type("float[]"))).setSpine(Java.to(doubleToFloat([0,-2.5,0,0,-2,0,0,-1.5,0]), Java.type("float[]")))))
                 .addComments(new CommentsBlock("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("center"))
               .addChild(new Transform()
