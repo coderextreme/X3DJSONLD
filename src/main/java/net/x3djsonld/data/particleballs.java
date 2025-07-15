@@ -114,8 +114,8 @@ public class particleballs
 "		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>",
+"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"})
           .addComments(new String[] {"",
 "                            <ComposedShader DEF=\"shader\" language=\"GLSL\">",
@@ -124,7 +124,7 @@ public class particleballs
 "				  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
 "				  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
 "				  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"		  		  <ShaderPart type=\"VERTEX\" url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>",
+"		  		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>",
 "				  <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>",
 "	  		    </ComposedShader>"})
           .addShaders(new ComposedShader().setLanguage("GLSL")

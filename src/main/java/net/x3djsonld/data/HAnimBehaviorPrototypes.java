@@ -109,7 +109,7 @@ public class HAnimBehaviorPrototypes
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HAnimBehaviorPrototypes.x3d"))

@@ -106,7 +106,7 @@ public class JohnJoint2
       .addComments(" DEFS for markers of skeleton joints, segments, and sites ")
       .addChild(new Transform()
         .addComments(new String[] {"",
-"  <Transform translation='0 2 0' scale='1 1 1'>",
+"  <Transform translation='0 2 0'>",
 "   <Shape DEF='HAnimRootShape'>",
 "    <Sphere radius='0.02'  />",
 "     <Appearance>",
@@ -125,7 +125,7 @@ public class JohnJoint2
               .setColor(new ColorRGBA("HAnimSegmentLineColorRGBA").setColor(new MFColorRGBA(new double[] {1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1})))
               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.05,0.0,0.0,0.05,0.0,0.0}))))))
         .addComments(new String[] {"",
-"  <Transform translation='0 2.1 0' scale='1 1 1'>",
+"  <Transform translation='0 2.1 0'>",
 "   <Shape DEF='HAnimSiteShape'>",
 "    <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>",
 "     <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>",

@@ -93,7 +93,7 @@ public class CameraShape
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERACTIVE).setVersion(X3D.VERSION_3_1)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERACTIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("CameraShape.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple video camera shape"))

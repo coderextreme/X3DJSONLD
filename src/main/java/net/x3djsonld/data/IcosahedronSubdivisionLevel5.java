@@ -109,7 +109,7 @@ public class IcosahedronSubdivisionLevel5
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_1)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("IcosahedronSubdivisionLevel5.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("IcosahedronSubdivisionLevel5.ply"))

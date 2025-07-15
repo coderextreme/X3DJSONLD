@@ -113,7 +113,7 @@ public class Teapot
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Teapot.x3d")/* xml:lang='' */)
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A watertight (solid) Utah Teapot Model converted from obj format."))

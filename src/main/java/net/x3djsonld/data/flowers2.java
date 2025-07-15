@@ -122,7 +122,7 @@ public class flowers2
                       .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
                       .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
                 .addComments(new String[] {"",
-"				  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">",
+"				  <IndexedFaceSet DEF=\"Orbit\">",
 "				    <Coordinate DEF=\"OrbitCoordinates\"/>",
 "				  </IndexedFaceSet>"})
                 .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})

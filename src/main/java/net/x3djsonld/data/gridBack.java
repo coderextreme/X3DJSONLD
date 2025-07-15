@@ -91,7 +91,7 @@ public class gridBack
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("gridBack.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Checkerboard grid background for X3D/VRML materials selection."))

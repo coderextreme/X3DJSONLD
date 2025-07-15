@@ -81,7 +81,7 @@ public class personal
 "	    <Inline url='\"../data/flowers4.x3d\"   \"https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d\"'/>",
 "	    <Inline url='\"../data/flowers7.x3d\"   \"https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d\"'/>"})
       .addChild(new Inline().setUrl(new String[] {"../data/force-tidy.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d"})))
-    .addComments("** Warning: extra-large comment found (11702 characters)"));
+    .addComments("** Warning: extra-large comment found (11682 characters)"));
             }
             catch (Exception ex)
             {       
