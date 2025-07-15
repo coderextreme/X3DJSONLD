@@ -101,7 +101,7 @@ Shape15.Appearance := Appearance16;
 Extrusion18 := TExtrusionNode.Create;
 Extrusion18.CreaseAngle := 0.785;
 Extrusion18.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-Extrusion18.SetSpine([Vector3(-2.5,0,0),Vector3(-1.5,0,0)]);
+Extrusion18.SetSpine([Vector3(-2.5,0,0),Vector3(-2,0,0),Vector3(-1.5,0,0)]);
 { .SetGeometry }
 Shape15.Geometry := Extrusion18;
 { .AddChild }
@@ -124,7 +124,7 @@ Shape20.Appearance := Appearance21;
 Extrusion23 := TExtrusionNode.Create;
 Extrusion23.CreaseAngle := 0.785;
 Extrusion23.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-Extrusion23.SetSpine([Vector3(1.5,0,0),Vector3(2.5,0,0)]);
+Extrusion23.SetSpine([Vector3(1.5,0,0),Vector3(2,0,0),Vector3(2.5,0,0)]);
 { .SetGeometry }
 Shape20.Geometry := Extrusion23;
 { .AddChild }
@@ -172,7 +172,7 @@ Shape32.Appearance := Appearance33;
 Extrusion35 := TExtrusionNode.Create;
 Extrusion35.CreaseAngle := 0.785;
 Extrusion35.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-Extrusion35.SetSpine([Vector3(0,1.5,0),Vector3(0,2.5,0)]);
+Extrusion35.SetSpine([Vector3(0,1.5,0),Vector3(0,2,0),Vector3(0,2.5,0)]);
 { .SetGeometry }
 Shape32.Geometry := Extrusion35;
 { .AddChild }
@@ -220,7 +220,7 @@ Shape44.Appearance := Appearance45;
 Extrusion47 := TExtrusionNode.Create;
 Extrusion47.CreaseAngle := 0.785;
 Extrusion47.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-Extrusion47.SetSpine([Vector3(0,-2.5,0),Vector3(0,-1.5,0)]);
+Extrusion47.SetSpine([Vector3(0,-2.5,0),Vector3(0,-2,0),Vector3(0,-1.5,0)]);
 { .SetGeometry }
 Shape44.Geometry := Extrusion47;
 { .AddChild }

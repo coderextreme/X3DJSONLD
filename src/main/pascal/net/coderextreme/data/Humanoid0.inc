@@ -201,13 +201,13 @@ Coordinate46 := Coordinate41;
 { .SetSkinCoord }
 HAnimHumanoid38.SetSkinCoord(Coordinate46);
 HAnimJoint47 := THAnimJointNode.Create;
-HAnimJoint47.NameField := '';
+HAnimJoint47.NameField := 'humanoid_root';
 HAnimJoint47.SetUlimit([0,0,0]);
 HAnimJoint47.SetLlimit([0,0,0]);
 { .AddSkeleton }
 HAnimHumanoid38.SetSkeleton([HAnimJoint47]);
 HAnimJoint48 := THAnimJointNode.Create;
-HAnimJoint48 := HAnimJoint47;
+HAnimJoint48 := HAnimJoint48;
 { .AddJoints }
 HAnimHumanoid38.Joints := HAnimJoint48;
 { .AddChildren }

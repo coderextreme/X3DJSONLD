@@ -117,7 +117,7 @@ FontStyle125: TFontStyleNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
+X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ArtDecoPrototypes.x3d';
 X3D0.Meta['description'] := 'Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples.';

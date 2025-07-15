@@ -20,7 +20,7 @@ field31: TfieldNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
+X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'jumpcut_loadurl.x3d';
 X3D0.Meta['reference'] := 'http://www.nist.gov/vrml.html';

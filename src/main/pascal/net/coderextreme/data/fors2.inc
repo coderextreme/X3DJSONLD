@@ -1,302 +1,286 @@
 function fors2: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
-Group9: TGroupNode;
-ProtoDeclare10: TProtoDeclareNode;
-ProtoInterface11: TProtoInterfaceNode;
-field12: TfieldNode;
-ProtoBody13: TProtoBodyNode;
-Transform14: TTransformNode;
-IS15: TISNode;
-connect16: TconnectNode;
-Shape17: TShapeNode;
-Sphere18: TSphereNode;
-Appearance19: TAppearanceNode;
-Material20: TMaterialNode;
-PositionInterpolator21: TPositionInterpolatorNode;
-Script22: TScriptNode;
-field23: TfieldNode;
-field24: TfieldNode;
+Group10: TGroupNode;
+ProtoDeclare11: TProtoDeclareNode;
+ProtoInterface12: TProtoInterfaceNode;
+field13: TfieldNode;
+ProtoBody14: TProtoBodyNode;
+Group15: TGroupNode;
+Transform16: TTransformNode;
+IS17: TISNode;
+connect18: TconnectNode;
+Shape19: TShapeNode;
+Sphere20: TSphereNode;
+Appearance21: TAppearanceNode;
+Material22: TMaterialNode;
+PositionInterpolator23: TPositionInterpolatorNode;
+Script24: TScriptNode;
 field25: TfieldNode;
 field26: TfieldNode;
-TimeSensor27: TTimeSensorNode;
-ProtoDeclare32: TProtoDeclareNode;
-ProtoInterface33: TProtoInterfaceNode;
-field34: TfieldNode;
-field35: TfieldNode;
-ProtoBody36: TProtoBodyNode;
-Shape37: TShapeNode;
-Extrusion38: TExtrusionNode;
-Appearance39: TAppearanceNode;
-Material40: TMaterialNode;
-Script41: TScriptNode;
-field42: TfieldNode;
-field43: TfieldNode;
-field44: TfieldNode;
-IS45: TISNode;
-connect46: TconnectNode;
-connect47: TconnectNode;
-Transform49: TTransformNode;
-ProtoInstance50: TProtoInstanceNode;
-fieldValue51: TfieldValueNode;
-ProtoInstance52: TProtoInstanceNode;
-fieldValue53: TfieldValueNode;
-ProtoInstance54: TProtoInstanceNode;
-fieldValue55: TfieldValueNode;
+field27: TfieldNode;
+field28: TfieldNode;
+TimeSensor29: TTimeSensorNode;
+ProtoDeclare34: TProtoDeclareNode;
+ProtoInterface35: TProtoInterfaceNode;
+field36: TfieldNode;
+field37: TfieldNode;
+ProtoBody38: TProtoBodyNode;
+Group39: TGroupNode;
+Shape40: TShapeNode;
+Extrusion41: TExtrusionNode;
+Appearance42: TAppearanceNode;
+Material43: TMaterialNode;
+Script44: TScriptNode;
+field45: TfieldNode;
+field46: TfieldNode;
+field47: TfieldNode;
+IS48: TISNode;
+connect49: TconnectNode;
+connect50: TconnectNode;
+Transform52: TTransformNode;
+ProtoInstance53: TProtoInstanceNode;
+fieldValue54: TfieldValueNode;
+ProtoInstance55: TProtoInstanceNode;
 fieldValue56: TfieldValueNode;
+ProtoInstance57: TProtoInstanceNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+X3D0.Components['Scripting'] := 1;
 X3D0.Meta['creator'] := 'John W Carlson';
 X3D0.Meta['created'] := 'December 13 2015';
-X3D0.Meta['modified'] := 'April 18 2017';
+X3D0.Meta['modified'] := 'July 14 2025';
 X3D0.Meta['title'] := 'fors2.x3d';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d';
 X3D0.Meta['description'] := 'beginnings of a force directed graph in 3D';
 X3D0.Meta['generator'] := 'Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit';
-Group9 := TGroupNode.Create;
-ProtoDeclare10 := TProtoDeclareNode.Create;
-ProtoDeclare10.NameField := 'node';
-ProtoInterface11 := TProtoInterfaceNode.Create;
-field12 := TfieldNode.Create;
-field12.NameField := 'position';
-field12.AccessType := 'inputOutput';
-field12.Type := 'SFVec3f';
-field12.Value := '0 0 0';
+Group10 := TGroupNode.Create;
+ProtoDeclare11 := TProtoDeclareNode.Create;
+ProtoDeclare11.NameField := 'node';
+ProtoInterface12 := TProtoInterfaceNode.Create;
+field13 := TfieldNode.Create;
+field13.NameField := 'position';
+field13.AccessType := 'inputOutput';
+field13.Type := 'SFVec3f';
+field13.Value := '0 0 0';
 { .AddField }
-ProtoInterface11.Field := field12;
+ProtoInterface12.Field := field13;
 { .SetProtoInterface }
-ProtoDeclare10.ProtoInterface := ProtoInterface11;
-ProtoBody13 := TProtoBodyNode.Create;
-Transform14 := TTransformNode.Create;
-IS15 := TISNode.Create;
-connect16 := TconnectNode.Create;
-connect16.NodeField := 'translation';
-connect16.ProtoField := 'position';
+ProtoDeclare11.ProtoInterface := ProtoInterface12;
+ProtoBody14 := TProtoBodyNode.Create;
+Group15 := TGroupNode.Create;
+Transform16 := TTransformNode.Create;
+IS17 := TISNode.Create;
+connect18 := TconnectNode.Create;
+connect18.NodeField := 'translation';
+connect18.ProtoField := 'position';
 { .AddConnect }
-IS15.Connect := connect16;
+IS17.Connect := connect18;
 { .SetIS }
-Transform14.IS := IS15;
-Shape17 := TShapeNode.Create;
+Transform16.IS := IS17;
+Shape19 := TShapeNode.Create;
 { comment before Sphere }
 { comment after Sphere }
 { comment after Appearance }
-Sphere18 := TSphereNode.Create;
+Sphere20 := TSphereNode.Create;
 { .SetGeometry }
-Shape17.Geometry := Sphere18;
-Appearance19 := TAppearanceNode.Create;
+Shape19.Geometry := Sphere20;
+Appearance21 := TAppearanceNode.Create;
 { comment before Material }
 { comment after Material }
-Material20 := TMaterialNode.Create;
-Material20.DiffuseColor := Vector3(1,0,0);
+Material22 := TMaterialNode.Create;
+Material22.DiffuseColor := Vector3(1,0,0);
 { .SetMaterial }
-Appearance19.Material := Material20;
+Appearance21.Material := Material22;
 { .SetAppearance }
-Shape17.Appearance := Appearance19;
+Shape19.Appearance := Appearance21;
 { .AddChild }
-Transform14.AddChildren([Shape17]);
+Transform16.AddChildren([Shape19]);
 { .AddChildren }
-ProtoBody13.AddChildren([Transform14]);
-PositionInterpolator21 := TPositionInterpolatorNode.Create;
-PositionInterpolator21.SetKey([0,1]);
-PositionInterpolator21.SetKeyValue([Vector3(0,0,0),Vector3(0,5,0)]);
+Group15.AddChildren([Transform16]);
+PositionInterpolator23 := TPositionInterpolatorNode.Create;
+PositionInterpolator23.SetKey([0,1]);
+PositionInterpolator23.SetKeyValue([Vector3(0,0,0),Vector3(0,5,0)]);
 { .AddChildren }
-ProtoBody13.AddChildren([PositionInterpolator21]);
-Script22 := TScriptNode.Create;
-field23 := TfieldNode.Create;
-field23.NameField := 'translation';
-field23.AccessType := 'inputOutput';
-field23.Type := 'SFVec3f';
-field23.Value := '50 50 0';
-{ .AddField }
-Script22.Field := field23;
-field24 := TfieldNode.Create;
-field24.NameField := 'old';
-field24.AccessType := 'inputOutput';
-field24.Type := 'SFVec3f';
-field24.Value := '0 0 0';
-{ .AddField }
-Script22.Field := field24;
+Group15.AddChildren([PositionInterpolator23]);
+Script24 := TScriptNode.Create;
 field25 := TfieldNode.Create;
-field25.NameField := 'set_cycle';
-field25.AccessType := 'inputOnly';
-field25.Type := 'SFTime';
+field25.NameField := 'translation';
+field25.AccessType := 'inputOutput';
+field25.Type := 'SFVec3f';
+field25.Value := '50 50 0';
 { .AddField }
-Script22.Field := field25;
+Script24.Field := field25;
 field26 := TfieldNode.Create;
-field26.NameField := 'keyValue';
-field26.AccessType := 'outputOnly';
-field26.Type := 'MFVec3f';
+field26.NameField := 'old';
+field26.AccessType := 'inputOutput';
+field26.Type := 'SFVec3f';
+field26.Value := '0 0 0';
 { .AddField }
-Script22.Field := field26;
+Script24.Field := field26;
+field27 := TfieldNode.Create;
+field27.NameField := 'set_cycle';
+field27.AccessType := 'inputOnly';
+field27.Type := 'SFTime';
+{ .AddField }
+Script24.Field := field27;
+field28 := TfieldNode.Create;
+field28.NameField := 'keyValue';
+field28.AccessType := 'outputOnly';
+field28.Type := 'MFVec3f';
+{ .AddField }
+Script24.Field := field28;
 
-Script22.SetSourceCode('''ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}''');
+Script24.SetSourceCode('''ecmascript:\n"+
+"			function set_cycle(value) {\n"+
+"				old = translation;\n"+
+"				translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
+"				keyValue = new MFVec3f(old, translation);\n"+
+"			}''');
 { .AddChildren }
-ProtoBody13.AddChildren([Script22]);
-TimeSensor27 := TTimeSensorNode.Create;
-TimeSensor27.CycleInterval := 3;
-TimeSensor27.Loop := True;
+Group15.AddChildren([Script24]);
+TimeSensor29 := TTimeSensorNode.Create;
+TimeSensor29.CycleInterval := 3;
+TimeSensor29.Loop := True;
 { .AddChildren }
-ProtoBody13.AddChildren([TimeSensor27]);
-ProtoBody13.AddRoute(TimeSensor27.FdCycletime, Script22.EventSet_cycle);
+Group15.AddChildren([TimeSensor29]);
+Group15.AddRoute(TimeSensor29.FdCycletime, Script24.EventSet_cycle);
 { .AddX3DRoute }
-ProtoBody13.AddRoute(TimeSensor27.EventFraction_changed, PositionInterpolator21.EventSet_fraction);
+Group15.AddRoute(TimeSensor29.EventFraction_changed, PositionInterpolator23.EventSet_fraction);
 { .AddX3DRoute }
-ProtoBody13.AddRoute(Script22.FdKeyvalue, PositionInterpolator21.FdKeyvalue);
+Group15.AddRoute(Script24.FdKeyvalue, PositionInterpolator23.FdKeyvalue);
 { .AddX3DRoute }
-ProtoBody13.AddRoute(PositionInterpolator21.EventValue_changed, Transform14.FdTranslation);
+Group15.AddRoute(PositionInterpolator23.EventValue_changed, Transform16.FdTranslation);
 { .AddX3DRoute }
+{ .AddChildren }
+ProtoBody14.AddChildren([Group15]);
 { .SetProtoBody }
-ProtoDeclare10.ProtoBody := ProtoBody13;
+ProtoDeclare11.ProtoBody := ProtoBody14;
 { .AddChildren }
-Group9.AddChildren([ProtoDeclare10]);
-ProtoDeclare32 := TProtoDeclareNode.Create;
-ProtoDeclare32.NameField := 'cyl';
-ProtoInterface33 := TProtoInterfaceNode.Create;
-field34 := TfieldNode.Create;
-field34.NameField := 'positionA';
-field34.AccessType := 'inputOnly';
-field34.Type := 'SFVec3f';
+Group10.AddChildren([ProtoDeclare11]);
+ProtoDeclare34 := TProtoDeclareNode.Create;
+ProtoDeclare34.NameField := 'cyl';
+ProtoInterface35 := TProtoInterfaceNode.Create;
+field36 := TfieldNode.Create;
+field36.NameField := 'positionA';
+field36.AccessType := 'inputOutput';
+field36.Type := 'SFVec3f';
 { .AddField }
-ProtoInterface33.Field := field34;
-field35 := TfieldNode.Create;
-field35.NameField := 'positionB';
-field35.AccessType := 'inputOnly';
-field35.Type := 'SFVec3f';
+ProtoInterface35.Field := field36;
+field37 := TfieldNode.Create;
+field37.NameField := 'positionB';
+field37.AccessType := 'inputOutput';
+field37.Type := 'SFVec3f';
 { .AddField }
-ProtoInterface33.Field := field35;
+ProtoInterface35.Field := field37;
 { .SetProtoInterface }
-ProtoDeclare32.ProtoInterface := ProtoInterface33;
-ProtoBody36 := TProtoBodyNode.Create;
-Shape37 := TShapeNode.Create;
-Extrusion38 := TExtrusionNode.Create;
-Extrusion38.CreaseAngle := 0.785;
-Extrusion38.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-Extrusion38.SetSpine([Vector3(0,-50,0),Vector3(0,0,0),Vector3(0,50,0)]);
+ProtoDeclare34.ProtoInterface := ProtoInterface35;
+ProtoBody38 := TProtoBodyNode.Create;
+Group39 := TGroupNode.Create;
+Shape40 := TShapeNode.Create;
+Extrusion41 := TExtrusionNode.Create;
+Extrusion41.CreaseAngle := 0.785;
+Extrusion41.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
+Extrusion41.SetSpine([Vector3(0,-50,0),Vector3(0,0,0),Vector3(0,50,0)]);
 { .SetGeometry }
-Shape37.Geometry := Extrusion38;
-Appearance39 := TAppearanceNode.Create;
-Material40 := TMaterialNode.Create;
-Material40.DiffuseColor := Vector3(0,1,0);
+Shape40.Geometry := Extrusion41;
+Appearance42 := TAppearanceNode.Create;
+Material43 := TMaterialNode.Create;
+Material43.DiffuseColor := Vector3(0,1,0);
 { .SetMaterial }
-Appearance39.Material := Material40;
+Appearance42.Material := Material43;
 { .SetAppearance }
-Shape37.Appearance := Appearance39;
+Shape40.Appearance := Appearance42;
 { .AddChildren }
-ProtoBody36.AddChildren([Shape37]);
-Script41 := TScriptNode.Create;
-field42 := TfieldNode.Create;
-field42.NameField := 'spine';
-field42.AccessType := 'inputOutput';
-field42.Type := 'MFVec3f';
-field42.Value := '0 -50 0 0 0 0 0 50 0';
+Group39.AddChildren([Shape40]);
+Script44 := TScriptNode.Create;
+field45 := TfieldNode.Create;
+field45.NameField := 'spine';
+field45.AccessType := 'inputOutput';
+field45.Type := 'MFVec3f';
+field45.Value := '0 -50 0 0 0 0 0 50 0';
 { .AddField }
-Script41.Field := field42;
-field43 := TfieldNode.Create;
-field43.NameField := 'set_endA';
-field43.AccessType := 'inputOnly';
-field43.Type := 'SFVec3f';
+Script44.Field := field45;
+field46 := TfieldNode.Create;
+field46.NameField := 'endA';
+field46.AccessType := 'inputOutput';
+field46.Type := 'SFVec3f';
+field46.Value := '0 0 0';
 { .AddField }
-Script41.Field := field43;
-field44 := TfieldNode.Create;
-field44.NameField := 'set_endB';
-field44.AccessType := 'inputOnly';
-field44.Type := 'SFVec3f';
+Script44.Field := field46;
+field47 := TfieldNode.Create;
+field47.NameField := 'endB';
+field47.AccessType := 'inputOutput';
+field47.Type := 'SFVec3f';
+field47.Value := '50 50 50';
 { .AddField }
-Script41.Field := field44;
-IS45 := TISNode.Create;
-connect46 := TconnectNode.Create;
-connect46.NodeField := 'set_endA';
-connect46.ProtoField := 'positionA';
+Script44.Field := field47;
+IS48 := TISNode.Create;
+connect49 := TconnectNode.Create;
+connect49.NodeField := 'endA';
+connect49.ProtoField := 'positionA';
 { .AddConnect }
-IS45.Connect := connect46;
-connect47 := TconnectNode.Create;
-connect47.NodeField := 'set_endB';
-connect47.ProtoField := 'positionB';
+IS48.Connect := connect49;
+connect50 := TconnectNode.Create;
+connect50.NodeField := 'endB';
+connect50.ProtoField := 'positionB';
 { .AddConnect }
-IS45.Connect := connect47;
+IS48.Connect := connect50;
 { .SetIS }
-Script41.IS := IS45;
+Script44.IS := IS48;
 
-Script41.SetSourceCode('''ecmascript:\n"+
+Script44.SetSourceCode('''ecmascript:\n"+
+"			function set_endA(value) {\n"+
+"				spine = new MFVec3f(value, spine[1]);\n"+
+"			}\n"+
 "\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"		    Browser.print('\\n'+'\"');\n"+
-"                    spine = value;\n"+
-"                }''');
+"			function set_endB(value) {\n"+
+"				spine = new MFVec3f(spine[0], value);\n"+
+"			}''');
 { .AddChildren }
-ProtoBody36.AddChildren([Script41]);
-ProtoBody36.AddRoute(Script41.FdSpine, Extrusion38.EventSet_spine);
+Group39.AddChildren([Script44]);
+Group39.AddRoute(Script44.FdSpine, Extrusion41.EventSet_spine);
 { .AddX3DRoute }
+{ .AddChildren }
+ProtoBody38.AddChildren([Group39]);
 { .SetProtoBody }
-ProtoDeclare32.ProtoBody := ProtoBody36;
+ProtoDeclare34.ProtoBody := ProtoBody38;
 { .AddChildren }
-Group9.AddChildren([ProtoDeclare32]);
-Transform49 := TTransformNode.Create;
-Transform49.Scale := Vector3(0.1,0.1,0.1);
-ProtoInstance50 := TProtoInstanceNode.Create;
-ProtoInstance50.NameField := 'node';
-fieldValue51 := TfieldValueNode.Create;
-fieldValue51.NameField := 'position';
-fieldValue51.Value := '-50 -50 -50';
+Group10.AddChildren([ProtoDeclare34]);
+Transform52 := TTransformNode.Create;
+Transform52.Scale := Vector3(0.1,0.1,0.1);
+ProtoInstance53 := TProtoInstanceNode.Create;
+ProtoInstance53.NameField := 'node';
+fieldValue54 := TfieldValueNode.Create;
+fieldValue54.NameField := 'position';
+fieldValue54.Value := '-50 -50 -50';
 { .AddFieldValue }
-ProtoInstance50.FieldValue := fieldValue51;
+ProtoInstance53.FieldValue := fieldValue54;
 { .AddChildren }
-Transform49.AddChildren([ProtoInstance50]);
-ProtoInstance52 := TProtoInstanceNode.Create;
-ProtoInstance52.NameField := 'node';
-fieldValue53 := TfieldValueNode.Create;
-fieldValue53.NameField := 'position';
-fieldValue53.Value := '50 50 50';
-{ .AddFieldValue }
-ProtoInstance52.FieldValue := fieldValue53;
-{ .AddChildren }
-Transform49.AddChildren([ProtoInstance52]);
-ProtoInstance54 := TProtoInstanceNode.Create;
-ProtoInstance54.NameField := 'cyl';
-fieldValue55 := TfieldValueNode.Create;
-fieldValue55.NameField := 'positionA';
-fieldValue55.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance54.FieldValue := fieldValue55;
+Transform52.AddChildren([ProtoInstance53]);
+ProtoInstance55 := TProtoInstanceNode.Create;
+ProtoInstance55.NameField := 'node';
 fieldValue56 := TfieldValueNode.Create;
-fieldValue56.NameField := 'positionB';
+fieldValue56.NameField := 'position';
 fieldValue56.Value := '50 50 50';
 { .AddFieldValue }
-ProtoInstance54.FieldValue := fieldValue56;
+ProtoInstance55.FieldValue := fieldValue56;
 { .AddChildren }
-Transform49.AddChildren([ProtoInstance54]);
+Transform52.AddChildren([ProtoInstance55]);
+ProtoInstance57 := TProtoInstanceNode.Create;
+ProtoInstance57.NameField := 'cyl';
 { .AddChildren }
-Group9.AddChildren([Transform49]);
-Group9.AddRoute(ProtoInstance50.FdPosition, ProtoInstance54.FdPositiona);
+Transform52.AddChildren([ProtoInstance57]);
+{ .AddChildren }
+Group10.AddChildren([Transform52]);
+Group10.AddRoute(ProtoInstance53.FdPosition, ProtoInstance57.FdPositiona);
 { .AddX3DRoute }
-Group9.AddRoute(ProtoInstance52.FdPosition, ProtoInstance54.FdPositionb);
+Group10.AddRoute(ProtoInstance55.FdPosition, ProtoInstance57.FdPositionb);
 { .AddX3DRoute }
 { .AddGroup }
-X3D0.AddChildren([Group9]);
+X3D0.AddChildren([Group10]);
 Result := X3D0;
 end;

@@ -530,7 +530,7 @@ ShaderPart97.SetUrl(['../shaders/freewrl.fs','https://coderextreme.net/X3DJSONLD
 ShaderPart97.Type := 'FRAGMENT';
 { .AddParts }
 ComposedShader84.Parts := ShaderPart97;
-{ TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/freewrl.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/freewrl_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> }
+{ TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart> <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart> }
 { .AddShaders }
 Appearance75.Shaders := ComposedShader84;
 { .SetAppearance }
