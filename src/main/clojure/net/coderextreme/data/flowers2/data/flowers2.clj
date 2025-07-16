@@ -158,7 +158,7 @@
                                         ))
                                     ))
                                 ))
-;<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+;<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
                                 (.setGeometry (doto (IndexedFaceSet. )
                                     (.setCcw false)
                                     (.setConvex false)
