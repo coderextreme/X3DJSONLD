@@ -70,7 +70,7 @@
 
 <Viewpoint centerOfRotation='0 0 0' description='default'/> 
 
-<HAnimHumanoid DEF='hanim_HAnim' containerField='skeleton' info='"humanoidVersion=2.0"' name='HAnim' version='2.0'>
+<HAnimHumanoid DEF='hanim_HAnim' info='"humanoidVersion=2.0"' name='HAnim' version='2.0'>
 <HAnimJoint containerField='skeleton' DEF='hanim_humanoid_root' name='humanoid_root' center='0.0000 0.8240 0.0277'>
   <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0.0000 0.9149 0.0016'>
     <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='0.0961 0.9124 -0.0001'>
