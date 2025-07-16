@@ -1,11 +1,8 @@
 ﻿# X3D JSON loader and node.js express web server for serving files from localhost
 
-Version 5.0.2
+# Convert X3D JSON to DOM and a host of X3D binding files
 
-
-* for using the API, read doc/GettingStarted.pdf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
-
-
+Version 12
 
 
 * Download and install git
@@ -16,20 +13,18 @@ cd X3DJSONLD
 
 * set environmental variables (Windows 10 here)
 ```
-# LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
-export JAVA_HOME="C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1"
+edit src/main/shell/classpath
 ```
 
-* If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+* If you want to use node.js as your web server, download and install node.js (npm comes with it).
 
+* You can download X3D JSON examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
 
 * Edit src/main/node/config.js for node.js, put maven in your path, install X3DJSAIL in your maven repository per the pom.xml (it's different than the X3DJSAIL distribution) and start a web server
 
-* Install pythom 3.10.1 (with nodejs), and other dependent tools
+* Install pythom other dependent tools
 
 * Install jsonlint
-
-* install webpack
 
 * install maven
 
@@ -37,63 +32,67 @@ export JAVA_HOME="C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1"
 
 * install ant
 
+* install Clojure (lein)
+
+* install JRuby
+
+* install GraalPy
+
+* install GraalJS
+
 ```
 npm install
-node run start
+npm run start
 
-# interactive
+# interactive, 10 years expiration in git for windows (git bash), non-localhost
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes
-# non-interactive and 10 years expiration
-# openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj '/CN=localhost'
-# non-interactive, 10 years expiration in git for windows (git bash)
+
+# non-interactive, 10 years expiration in git for windows (git bash), localhost
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj '//CN=localhost'
 ```
 Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
 the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
+Or for X3DJSONLD 12, there's a new viewer: https://localhost:3000/src/main/html/main_viewer.html
 
 
 * WARNING
 
-
 You should not put up index.html from the X3D JSON Loader found here https://github.com/coderextreme/X3DJSONLD/ and here http://coderextreme.net/X3DJSONLD/  without careful consideration of this:
-
 
 https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 
 
-In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML with limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know itâ€™s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, itâ€™s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure itâ€™s valid.  We donâ€™t currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
+In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML with limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know it's problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, it's likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure it's valid.  We don't currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
 
 
-Itâ€™s in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
+It's in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
 
 
 If someone wants me to write a sanitizer for the X3D JSON Loader, I am willing to for $$$.  I will need to run it by some security researchers.
 
 
-* Converting JSON files to X3D XML, Python, Java and Nashorn JavaScript
+* Converting JSON files to X3D XML, Python, Clojure, C++, GraalPy, Java and GraalJS
 
 
 The script, serialize.sh provides the driving software for producing XML, Python and Java, JavaScript artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
 
 
-* Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a couple of output zips for collecting output results.
+* [ Not tested recently ] Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a couple of output zips for collecting output results.
 
 
-* also you can run "sh local.sh" or converting, running and diffing local files found in src/main/data.
-
-
-
+* Also you can run "sh local.sh" for converting, running and diffing local files found in src/main/data.
 
 * Summary of shell scripts
 
-
-These have been tested recently:
+These have been tested recently (in src/main/shell):
 ```
 several.sh -- run several .x3d files through my conversion and compiling and running code.  Recommend that you put the files in src/main/data and use sh several.sh ../data/file1.x3d ../data/file2.x3d ...
 all.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through my conversion and compiling and running code found in several.  Dangerous.  Puts files in strange places right now.
 local.sh  -- run src/main/data/*.x3d through several.sh
 don.sh -- run several .x3d files through don's conversion and compiling and running code.
 donlocal.sh -- run src/main/data/*.x3d through don.sh
+runruby.sh -- convert files to JSON and JRuby
+rubylocal.sh -- run src/main/data/*.x3d through runruby.sh
 ```
 
 
@@ -132,7 +131,6 @@ sum.sh -- sum lines on standard input
 unknown.sh -- report on UNKNOWN routes from *.runerr.txt and *.runout.txt
 x3d2py.sh -- convert files from x3d to python
 ```
-
 
 #To convert X3D JSON to DOM to Bindings in X3DJSONLD:
 
