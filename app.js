@@ -294,6 +294,7 @@ magic("*.mp3", "audio/mpeg3");
 magic("*.ply", "application/octet-stream");
 magic("*.stl", "application/octet-stream");
 magic("*.rb", "application/octet-stream");
+magic("*.clj", "application/octet-stream");
 magic("*.vs", "x-shader/x-vertex");
 magic("*.fs", "x-shader/x-fragment");
 // magic("*.vs", "text/plain");//"x-shader/x-vertex");
