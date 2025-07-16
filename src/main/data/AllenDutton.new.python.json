@@ -370,15 +370,6 @@
         "@diffuseColor":"0.054 0.233 0.39"
       }
     },
-                                    "ImageTexture":
-                                    {
-      {
-        "@DEF":"camo",
-        "@repeatS":"false",
-        "@repeatT":"false",
-        "@url":""greenCamo.jpg" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/greenCamo.jpg""
-      }
-    },
                                 }                                "IndexedFaceSet":
                                 {
       {
@@ -419,12 +410,6 @@
         "@USE":"Pants_Color"
       }
     },
-                                        "ImageTexture":
-                                        {
-      {
-        "@USE":"camo"
-      }
-    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -463,12 +448,6 @@
                                             {
       {
         "@USE":"Pants_Color"
-      }
-    },
-                                            "ImageTexture":
-                                            {
-      {
-        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -552,12 +531,6 @@
         "@USE":"Pants_Color"
       }
     },
-                                        "ImageTexture":
-                                        {
-      {
-        "@USE":"camo"
-      }
-    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -596,12 +569,6 @@
                                             {
       {
         "@USE":"Pants_Color"
-      }
-    },
-                                            "ImageTexture":
-                                            {
-      {
-        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -686,12 +653,6 @@
         "@diffuseColor":"0.6 0.0745 0.1137"
       }
     },
-                                    "ImageTexture":
-                                    {
-      {
-        "@USE":"camo"
-      }
-    },
                                 }                                "IndexedFaceSet":
                                 {
       {
@@ -734,12 +695,6 @@
         "@diffuseColor":"0.749 0.601 0.462"
       }
     },
-                                        "ImageTexture":
-                                        {
-      {
-        "@USE":"camo"
-      }
-    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -778,12 +733,6 @@
                                             {
       {
         "@USE":"Skin_Color"
-      }
-    },
-                                            "ImageTexture":
-                                            {
-      {
-        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -866,12 +815,6 @@
         "@USE":"Skin_Color"
       }
     },
-                                        "ImageTexture":
-                                        {
-      {
-        "@USE":"camo"
-      }
-    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -910,12 +853,6 @@
                                             {
       {
         "@USE":"Skin_Color"
-      }
-    },
-                                            "ImageTexture":
-                                            {
-      {
-        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -998,12 +935,6 @@
         "@USE":"Skin_Color"
       }
     },
-                                        "ImageTexture":
-                                        {
-      {
-        "@USE":"camo"
-      }
-    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -1042,12 +973,6 @@
                                             {
       {
         "@USE":"Skin_Color"
-      }
-    },
-                                            "ImageTexture":
-                                            {
-      {
-        "@url":""clone.gif" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/clone.gif""
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -1168,7 +1093,7 @@
       {
         "@DEF":"text_color",
         "@ambientIntensity":"0",
-        "@diffuseColor":"0 0 0",
+        "@diffuseColor":"0 1 0",
         "@emissiveColor":"0.819 0.521 0.169"
       }
     },
