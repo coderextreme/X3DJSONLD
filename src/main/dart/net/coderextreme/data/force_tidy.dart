@@ -42,11 +42,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy')),
-
-            meta(
-              name_ : SFString('modified'),
-              content_ : SFString('Sat, 9 Nov 2024 19:29:39 GMT'))]),
+              content_ : SFString('x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy'))]),
       Scene_ : 
         Scene(
           children_ : [
