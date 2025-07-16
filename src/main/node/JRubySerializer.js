@@ -15,6 +15,27 @@ this.preno = 0;
 
 
 JRubySerializer.prototype = {
+	loadTextArea : function(text, stack, json, element, clazz, mapToMethod, fieldTypes) {
+		var str = text;
+		stack.unshift(this.preno);
+		this.preno++;
+		var bodystr = "";
+		bodystr += "ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+		bodystr += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
+		bodystr += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
+		bodystr += "ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);\n";
+	
+		const enn = element.nodeName.charAt(0).toLowerCase() + element.nodeName.slice(1);
+		bodystr += enn+stack[0]+" = "+element.nodeName+".new\n";
+		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 1, stack);
+
+		str += bodystr;
+		str += enn+stack[0]+".toFileX3D \""+clazz+".new.jruby.x3d\"\n";
+		str += enn+stack[0]+".toFileJSON \""+clazz+".new.jruby.json\"\n";
+		stack.shift();
+		document.getElementById('jruby').value = str;
+		return str;
+	},
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
@@ -26,26 +47,23 @@ JRubySerializer.prototype = {
 		// java_import javax.swing.JFrame
 
 		if (typeof fs === 'object') {
-			str += fs.readFileSync("../jruby/x3drsail.rb").toString();
+			str += this.loadTextArea(fs.readFileSync("../jruby/x3drsail.rb").toString(), stack, json, element, clazz, mapToMethod, fieldTypes);
+			return str;
+		} else {
+		    (async function (serializer) {
+		      try {
+			const response = await fetch("../jruby/x3drsail.rb");
+			if (!response.ok) {
+			  throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			str += serializer.loadTextArea(await response.text(), stack, json, element, clazz, mapToMethod, fieldTypes);
+			return str;
+		      } catch (error) {
+			console.error('Error loading Ruby file:', error);
+			document.getElementById('jruby').value = 'Error loading file: ' + error.message;
+		      }
+		    })(this);
 		}
-
-		stack.unshift(this.preno);
-		this.preno++;
-		var bodystr = "";
-		bodystr += "ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		bodystr += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
-		bodystr += "ConfigurationProperties.setStripDefaultAttributes(true);\n";
-		bodystr += "ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);\n";
-        
-		const enn = element.nodeName.charAt(0).toLowerCase() + element.nodeName.slice(1);
-		bodystr += enn+stack[0]+" = "+element.nodeName+".new\n";
-		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 1, stack);
-
-		str += bodystr;
-		str += enn+stack[0]+".toFileX3D \""+clazz+".new.jruby.x3d\"\n";
-		str += enn+stack[0]+".toFileJSON \""+clazz+".new.jruby.json\"\n";
-		stack.shift();
-		return str;
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
