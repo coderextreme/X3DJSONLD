@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "3.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -32,7 +32,7 @@ meta6.content = "7 April 2002"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "20 October 2019"
+meta7.content = "19 January 2025"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -71,245 +71,245 @@ ExternProtoDeclare15 = x3d.ExternProtoDeclare()
 ExternProtoDeclare15.name = "ArtDeco00"
 ExternProtoDeclare15.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare15.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare15.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
+ExternProtoDeclare15.url = ["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
 
 Scene13.children.append(ExternProtoDeclare15)
 ExternProtoDeclare16 = x3d.ExternProtoDeclare()
 ExternProtoDeclare16.name = "ArtDeco01"
 ExternProtoDeclare16.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare16.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare16.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
+ExternProtoDeclare16.url = ["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
 
 Scene13.children.append(ExternProtoDeclare16)
 ExternProtoDeclare17 = x3d.ExternProtoDeclare()
 ExternProtoDeclare17.name = "ArtDeco02"
 ExternProtoDeclare17.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare17.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare17.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
+ExternProtoDeclare17.url = ["ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
 
 Scene13.children.append(ExternProtoDeclare17)
 ExternProtoDeclare18 = x3d.ExternProtoDeclare()
 ExternProtoDeclare18.name = "ArtDeco03"
 ExternProtoDeclare18.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare18.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare18.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
+ExternProtoDeclare18.url = ["ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
 
 Scene13.children.append(ExternProtoDeclare18)
 ExternProtoDeclare19 = x3d.ExternProtoDeclare()
 ExternProtoDeclare19.name = "ArtDeco04"
 ExternProtoDeclare19.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare19.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare19.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
+ExternProtoDeclare19.url = ["ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
 
 Scene13.children.append(ExternProtoDeclare19)
 ExternProtoDeclare20 = x3d.ExternProtoDeclare()
 ExternProtoDeclare20.name = "ArtDeco05"
 ExternProtoDeclare20.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare20.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare20.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
+ExternProtoDeclare20.url = ["ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
 
 Scene13.children.append(ExternProtoDeclare20)
 ExternProtoDeclare21 = x3d.ExternProtoDeclare()
 ExternProtoDeclare21.name = "ArtDeco06"
 ExternProtoDeclare21.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare21.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare21.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
+ExternProtoDeclare21.url = ["ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
 
 Scene13.children.append(ExternProtoDeclare21)
 ExternProtoDeclare22 = x3d.ExternProtoDeclare()
 ExternProtoDeclare22.name = "ArtDeco07"
 ExternProtoDeclare22.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare22.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare22.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
+ExternProtoDeclare22.url = ["ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
 
 Scene13.children.append(ExternProtoDeclare22)
 ExternProtoDeclare23 = x3d.ExternProtoDeclare()
 ExternProtoDeclare23.name = "ArtDeco08"
 ExternProtoDeclare23.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare23.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare23.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
+ExternProtoDeclare23.url = ["ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
 
 Scene13.children.append(ExternProtoDeclare23)
 ExternProtoDeclare24 = x3d.ExternProtoDeclare()
 ExternProtoDeclare24.name = "ArtDeco09"
 ExternProtoDeclare24.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare24.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare24.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
+ExternProtoDeclare24.url = ["ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
 
 Scene13.children.append(ExternProtoDeclare24)
 ExternProtoDeclare25 = x3d.ExternProtoDeclare()
 ExternProtoDeclare25.name = "ArtDeco10"
 ExternProtoDeclare25.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare25.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare25.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
+ExternProtoDeclare25.url = ["ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
 
 Scene13.children.append(ExternProtoDeclare25)
 ExternProtoDeclare26 = x3d.ExternProtoDeclare()
 ExternProtoDeclare26.name = "ArtDeco11"
 ExternProtoDeclare26.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare26.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare26.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
+ExternProtoDeclare26.url = ["ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
 
 Scene13.children.append(ExternProtoDeclare26)
 ExternProtoDeclare27 = x3d.ExternProtoDeclare()
 ExternProtoDeclare27.name = "ArtDeco12"
 ExternProtoDeclare27.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare27.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare27.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
+ExternProtoDeclare27.url = ["ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
 
 Scene13.children.append(ExternProtoDeclare27)
 ExternProtoDeclare28 = x3d.ExternProtoDeclare()
 ExternProtoDeclare28.name = "ArtDeco13"
 ExternProtoDeclare28.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare28.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare28.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
+ExternProtoDeclare28.url = ["ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
 
 Scene13.children.append(ExternProtoDeclare28)
 ExternProtoDeclare29 = x3d.ExternProtoDeclare()
 ExternProtoDeclare29.name = "ArtDeco14"
 ExternProtoDeclare29.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare29.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare29.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
+ExternProtoDeclare29.url = ["ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
 
 Scene13.children.append(ExternProtoDeclare29)
 ExternProtoDeclare30 = x3d.ExternProtoDeclare()
 ExternProtoDeclare30.name = "ArtDeco15"
 ExternProtoDeclare30.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare30.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare30.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
+ExternProtoDeclare30.url = ["ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
 
 Scene13.children.append(ExternProtoDeclare30)
 ExternProtoDeclare31 = x3d.ExternProtoDeclare()
 ExternProtoDeclare31.name = "ArtDeco16"
 ExternProtoDeclare31.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare31.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare31.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
+ExternProtoDeclare31.url = ["ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
 
 Scene13.children.append(ExternProtoDeclare31)
 ExternProtoDeclare32 = x3d.ExternProtoDeclare()
 ExternProtoDeclare32.name = "ArtDeco17"
 ExternProtoDeclare32.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare32.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare32.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
+ExternProtoDeclare32.url = ["ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
 
 Scene13.children.append(ExternProtoDeclare32)
 ExternProtoDeclare33 = x3d.ExternProtoDeclare()
 ExternProtoDeclare33.name = "ArtDeco18"
 ExternProtoDeclare33.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare33.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare33.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
+ExternProtoDeclare33.url = ["ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
 
 Scene13.children.append(ExternProtoDeclare33)
 ExternProtoDeclare34 = x3d.ExternProtoDeclare()
 ExternProtoDeclare34.name = "ArtDeco19"
 ExternProtoDeclare34.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare34.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare34.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
+ExternProtoDeclare34.url = ["ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
 
 Scene13.children.append(ExternProtoDeclare34)
 ExternProtoDeclare35 = x3d.ExternProtoDeclare()
 ExternProtoDeclare35.name = "ArtDeco20"
 ExternProtoDeclare35.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare35.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare35.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
+ExternProtoDeclare35.url = ["ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
 
 Scene13.children.append(ExternProtoDeclare35)
 ExternProtoDeclare36 = x3d.ExternProtoDeclare()
 ExternProtoDeclare36.name = "ArtDeco21"
 ExternProtoDeclare36.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare36.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare36.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
+ExternProtoDeclare36.url = ["ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
 
 Scene13.children.append(ExternProtoDeclare36)
 ExternProtoDeclare37 = x3d.ExternProtoDeclare()
 ExternProtoDeclare37.name = "ArtDeco22"
 ExternProtoDeclare37.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare37.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare37.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
+ExternProtoDeclare37.url = ["ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
 
 Scene13.children.append(ExternProtoDeclare37)
 ExternProtoDeclare38 = x3d.ExternProtoDeclare()
 ExternProtoDeclare38.name = "ArtDeco23"
 ExternProtoDeclare38.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare38.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare38.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
+ExternProtoDeclare38.url = ["ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
 
 Scene13.children.append(ExternProtoDeclare38)
 ExternProtoDeclare39 = x3d.ExternProtoDeclare()
 ExternProtoDeclare39.name = "ArtDeco24"
 ExternProtoDeclare39.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare39.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare39.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
+ExternProtoDeclare39.url = ["ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
 
 Scene13.children.append(ExternProtoDeclare39)
 ExternProtoDeclare40 = x3d.ExternProtoDeclare()
 ExternProtoDeclare40.name = "ArtDeco25"
 ExternProtoDeclare40.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare40.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare40.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
+ExternProtoDeclare40.url = ["ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
 
 Scene13.children.append(ExternProtoDeclare40)
 ExternProtoDeclare41 = x3d.ExternProtoDeclare()
 ExternProtoDeclare41.name = "ArtDeco26"
 ExternProtoDeclare41.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare41.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare41.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
+ExternProtoDeclare41.url = ["ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
 
 Scene13.children.append(ExternProtoDeclare41)
 ExternProtoDeclare42 = x3d.ExternProtoDeclare()
 ExternProtoDeclare42.name = "ArtDeco27"
 ExternProtoDeclare42.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare42.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare42.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
+ExternProtoDeclare42.url = ["ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
 
 Scene13.children.append(ExternProtoDeclare42)
 ExternProtoDeclare43 = x3d.ExternProtoDeclare()
 ExternProtoDeclare43.name = "ArtDeco28"
 ExternProtoDeclare43.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare43.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare43.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
+ExternProtoDeclare43.url = ["ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
 
 Scene13.children.append(ExternProtoDeclare43)
 ExternProtoDeclare44 = x3d.ExternProtoDeclare()
 ExternProtoDeclare44.name = "ArtDeco29"
 ExternProtoDeclare44.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare44.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare44.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
+ExternProtoDeclare44.url = ["ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
 
 Scene13.children.append(ExternProtoDeclare44)
 ExternProtoDeclare45 = x3d.ExternProtoDeclare()
 ExternProtoDeclare45.name = "ArtDeco30"
 ExternProtoDeclare45.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare45.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare45.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
+ExternProtoDeclare45.url = ["ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
 
 Scene13.children.append(ExternProtoDeclare45)
 ExternProtoDeclare46 = x3d.ExternProtoDeclare()
 ExternProtoDeclare46.name = "ArtDeco31"
 ExternProtoDeclare46.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare46.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare46.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
+ExternProtoDeclare46.url = ["ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
 
 Scene13.children.append(ExternProtoDeclare46)
 ExternProtoDeclare47 = x3d.ExternProtoDeclare()
 ExternProtoDeclare47.name = "ArtDeco32"
 ExternProtoDeclare47.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare47.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare47.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
+ExternProtoDeclare47.url = ["ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
 
 Scene13.children.append(ExternProtoDeclare47)
 ExternProtoDeclare48 = x3d.ExternProtoDeclare()
 ExternProtoDeclare48.name = "ArtDeco33"
 ExternProtoDeclare48.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare48.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare48.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
+ExternProtoDeclare48.url = ["ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
 
 Scene13.children.append(ExternProtoDeclare48)
 ExternProtoDeclare49 = x3d.ExternProtoDeclare()
 ExternProtoDeclare49.name = "ArtDeco34"
 ExternProtoDeclare49.appinfo = "UniversalMediaMaterials prototype"
 ExternProtoDeclare49.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-ExternProtoDeclare49.url = ["../data/ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
+ExternProtoDeclare49.url = ["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
 
 Scene13.children.append(ExternProtoDeclare49)
 Group50 = x3d.Group()
@@ -375,12 +375,12 @@ DirectionalLight61.intensity = 0.5
 
 Group50.children.append(DirectionalLight61)
 Anchor62 = x3d.Anchor()
-Anchor62.description = "Back to front view"
+Anchor62.description = "Return to front view"
 Anchor62.url = ["#Front"]
 Transform63 = x3d.Transform()
 Transform63.translation = [0,0,-0.5]
 Inline64 = x3d.Inline()
-Inline64.url = ["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]
+Inline64.url = ["gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]
 
 Transform63.children.append(Inline64)
 
@@ -418,7 +418,7 @@ Transform66.children.append(Anchor67)
 Transform72 = x3d.Transform()
 Transform72.translation = [0,0.3,0.5]
 Anchor73 = x3d.Anchor()
-Anchor73.description = "ArtDeco00"
+Anchor73.description = "ArtDeco00 view source documentation"
 Anchor73.parameter = ["target=_source"]
 Anchor73.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]
 Shape74 = x3d.Shape()
@@ -480,7 +480,7 @@ Transform80.children.append(Anchor81)
 Transform86 = x3d.Transform()
 Transform86.translation = [0,0.3,0.5]
 Anchor87 = x3d.Anchor()
-Anchor87.description = "ArtDeco01"
+Anchor87.description = "ArtDeco01 view source documentation"
 Anchor87.parameter = ["target=_source"]
 Anchor87.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]
 Shape88 = x3d.Shape()
@@ -537,7 +537,7 @@ Transform94.children.append(Anchor95)
 Transform100 = x3d.Transform()
 Transform100.translation = [0,0.3,0.5]
 Anchor101 = x3d.Anchor()
-Anchor101.description = "ArtDeco02"
+Anchor101.description = "ArtDeco02 view source documentation"
 Anchor101.parameter = ["target=_source"]
 Anchor101.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]
 Shape102 = x3d.Shape()
@@ -594,7 +594,7 @@ Transform108.children.append(Anchor109)
 Transform114 = x3d.Transform()
 Transform114.translation = [0,0.3,0.5]
 Anchor115 = x3d.Anchor()
-Anchor115.description = "ArtDeco03"
+Anchor115.description = "ArtDeco03 view source documentation"
 Anchor115.parameter = ["target=_source"]
 Anchor115.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]
 Shape116 = x3d.Shape()
@@ -651,7 +651,7 @@ Transform122.children.append(Anchor123)
 Transform128 = x3d.Transform()
 Transform128.translation = [0,0.3,0.5]
 Anchor129 = x3d.Anchor()
-Anchor129.description = "ArtDeco04"
+Anchor129.description = "ArtDeco04 view source documentation"
 Anchor129.parameter = ["target=_source"]
 Anchor129.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]
 Shape130 = x3d.Shape()
@@ -708,7 +708,7 @@ Transform136.children.append(Anchor137)
 Transform142 = x3d.Transform()
 Transform142.translation = [0,0.3,0.5]
 Anchor143 = x3d.Anchor()
-Anchor143.description = "ArtDeco05"
+Anchor143.description = "ArtDeco05 view source documentation"
 Anchor143.parameter = ["target=_source"]
 Anchor143.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]
 Shape144 = x3d.Shape()
@@ -765,7 +765,7 @@ Transform150.children.append(Anchor151)
 Transform156 = x3d.Transform()
 Transform156.translation = [0,0.3,0.5]
 Anchor157 = x3d.Anchor()
-Anchor157.description = "ArtDeco06"
+Anchor157.description = "ArtDeco06 view source documentation"
 Anchor157.parameter = ["target=_source"]
 Anchor157.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]
 Shape158 = x3d.Shape()
@@ -822,7 +822,7 @@ Transform164.children.append(Anchor165)
 Transform170 = x3d.Transform()
 Transform170.translation = [0,0.3,0.5]
 Anchor171 = x3d.Anchor()
-Anchor171.description = "ArtDeco07"
+Anchor171.description = "ArtDeco07 view source documentation"
 Anchor171.parameter = ["target=_source"]
 Anchor171.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]
 Shape172 = x3d.Shape()
@@ -879,7 +879,7 @@ Transform178.children.append(Anchor179)
 Transform184 = x3d.Transform()
 Transform184.translation = [0,0.3,0.5]
 Anchor185 = x3d.Anchor()
-Anchor185.description = "ArtDeco08"
+Anchor185.description = "ArtDeco08 view source documentation"
 Anchor185.parameter = ["target=_source"]
 Anchor185.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]
 Shape186 = x3d.Shape()
@@ -936,7 +936,7 @@ Transform192.children.append(Anchor193)
 Transform198 = x3d.Transform()
 Transform198.translation = [0,0.3,0.5]
 Anchor199 = x3d.Anchor()
-Anchor199.description = "ArtDeco09"
+Anchor199.description = "ArtDeco09 view source documentation"
 Anchor199.parameter = ["target=_source"]
 Anchor199.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]
 Shape200 = x3d.Shape()
@@ -993,7 +993,7 @@ Transform206.children.append(Anchor207)
 Transform212 = x3d.Transform()
 Transform212.translation = [0,0.3,0.5]
 Anchor213 = x3d.Anchor()
-Anchor213.description = "ArtDeco10"
+Anchor213.description = "ArtDeco10 view source documentation"
 Anchor213.parameter = ["target=_source"]
 Anchor213.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]
 Shape214 = x3d.Shape()
@@ -1050,7 +1050,7 @@ Transform220.children.append(Anchor221)
 Transform226 = x3d.Transform()
 Transform226.translation = [0,0.3,0.5]
 Anchor227 = x3d.Anchor()
-Anchor227.description = "ArtDeco11"
+Anchor227.description = "ArtDeco11 view source documentation"
 Anchor227.parameter = ["target=_source"]
 Anchor227.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]
 Shape228 = x3d.Shape()
@@ -1107,7 +1107,7 @@ Transform234.children.append(Anchor235)
 Transform240 = x3d.Transform()
 Transform240.translation = [0,0.3,0.5]
 Anchor241 = x3d.Anchor()
-Anchor241.description = "ArtDeco12"
+Anchor241.description = "ArtDeco12 view source documentation"
 Anchor241.parameter = ["target=_source"]
 Anchor241.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]
 Shape242 = x3d.Shape()
@@ -1164,7 +1164,7 @@ Transform248.children.append(Anchor249)
 Transform254 = x3d.Transform()
 Transform254.translation = [0,0.3,0.5]
 Anchor255 = x3d.Anchor()
-Anchor255.description = "ArtDeco13"
+Anchor255.description = "ArtDeco13 view source documentation"
 Anchor255.parameter = ["target=_source"]
 Anchor255.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]
 Shape256 = x3d.Shape()
@@ -1221,7 +1221,7 @@ Transform262.children.append(Anchor263)
 Transform268 = x3d.Transform()
 Transform268.translation = [0,0.3,0.5]
 Anchor269 = x3d.Anchor()
-Anchor269.description = "ArtDeco14"
+Anchor269.description = "ArtDeco14 view source documentation"
 Anchor269.parameter = ["target=_source"]
 Anchor269.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]
 Shape270 = x3d.Shape()
@@ -1278,7 +1278,7 @@ Transform276.children.append(Anchor277)
 Transform282 = x3d.Transform()
 Transform282.translation = [0,0.3,0.5]
 Anchor283 = x3d.Anchor()
-Anchor283.description = "ArtDeco15"
+Anchor283.description = "ArtDeco15 view source documentation"
 Anchor283.parameter = ["target=_source"]
 Anchor283.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]
 Shape284 = x3d.Shape()
@@ -1335,7 +1335,7 @@ Transform290.children.append(Anchor291)
 Transform296 = x3d.Transform()
 Transform296.translation = [0,0.3,0.5]
 Anchor297 = x3d.Anchor()
-Anchor297.description = "ArtDeco16"
+Anchor297.description = "ArtDeco16 view source documentation"
 Anchor297.parameter = ["target=_source"]
 Anchor297.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]
 Shape298 = x3d.Shape()
@@ -1392,7 +1392,7 @@ Transform304.children.append(Anchor305)
 Transform310 = x3d.Transform()
 Transform310.translation = [0,0.3,0.5]
 Anchor311 = x3d.Anchor()
-Anchor311.description = "ArtDeco17"
+Anchor311.description = "ArtDeco17 view source documentation"
 Anchor311.parameter = ["target=_source"]
 Anchor311.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]
 Shape312 = x3d.Shape()
@@ -1449,7 +1449,7 @@ Transform318.children.append(Anchor319)
 Transform324 = x3d.Transform()
 Transform324.translation = [0,0.3,0.5]
 Anchor325 = x3d.Anchor()
-Anchor325.description = "ArtDeco18"
+Anchor325.description = "ArtDeco18 view source documentation"
 Anchor325.parameter = ["target=_source"]
 Anchor325.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]
 Shape326 = x3d.Shape()
@@ -1506,7 +1506,7 @@ Transform332.children.append(Anchor333)
 Transform338 = x3d.Transform()
 Transform338.translation = [0,0.3,0.5]
 Anchor339 = x3d.Anchor()
-Anchor339.description = "ArtDeco19"
+Anchor339.description = "ArtDeco19 view source documentation"
 Anchor339.parameter = ["target=_source"]
 Anchor339.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]
 Shape340 = x3d.Shape()
@@ -1563,7 +1563,7 @@ Transform346.children.append(Anchor347)
 Transform352 = x3d.Transform()
 Transform352.translation = [0,0.3,0.5]
 Anchor353 = x3d.Anchor()
-Anchor353.description = "ArtDeco20"
+Anchor353.description = "ArtDeco20 view source documentation"
 Anchor353.parameter = ["target=_source"]
 Anchor353.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]
 Shape354 = x3d.Shape()
@@ -1620,7 +1620,7 @@ Transform360.children.append(Anchor361)
 Transform366 = x3d.Transform()
 Transform366.translation = [0,0.3,0.5]
 Anchor367 = x3d.Anchor()
-Anchor367.description = "ArtDeco21"
+Anchor367.description = "ArtDeco21 view source documentation"
 Anchor367.parameter = ["target=_source"]
 Anchor367.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]
 Shape368 = x3d.Shape()
@@ -1677,7 +1677,7 @@ Transform374.children.append(Anchor375)
 Transform380 = x3d.Transform()
 Transform380.translation = [0,0.3,0.5]
 Anchor381 = x3d.Anchor()
-Anchor381.description = "ArtDeco22"
+Anchor381.description = "ArtDeco22 view source documentation"
 Anchor381.parameter = ["target=_source"]
 Anchor381.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]
 Shape382 = x3d.Shape()
@@ -1734,7 +1734,7 @@ Transform388.children.append(Anchor389)
 Transform394 = x3d.Transform()
 Transform394.translation = [0,0.3,0.5]
 Anchor395 = x3d.Anchor()
-Anchor395.description = "ArtDeco23"
+Anchor395.description = "ArtDeco23 view source documentation"
 Anchor395.parameter = ["target=_source"]
 Anchor395.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]
 Shape396 = x3d.Shape()
@@ -1791,7 +1791,7 @@ Transform402.children.append(Anchor403)
 Transform408 = x3d.Transform()
 Transform408.translation = [0,0.3,0.5]
 Anchor409 = x3d.Anchor()
-Anchor409.description = "ArtDeco24"
+Anchor409.description = "ArtDeco24 view source documentation"
 Anchor409.parameter = ["target=_source"]
 Anchor409.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]
 Shape410 = x3d.Shape()
@@ -1848,7 +1848,7 @@ Transform416.children.append(Anchor417)
 Transform422 = x3d.Transform()
 Transform422.translation = [0,0.3,0.5]
 Anchor423 = x3d.Anchor()
-Anchor423.description = "ArtDeco25"
+Anchor423.description = "ArtDeco25 view source documentation"
 Anchor423.parameter = ["target=_source"]
 Anchor423.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]
 Shape424 = x3d.Shape()
@@ -1905,7 +1905,7 @@ Transform430.children.append(Anchor431)
 Transform436 = x3d.Transform()
 Transform436.translation = [0,0.3,0.5]
 Anchor437 = x3d.Anchor()
-Anchor437.description = "ArtDeco26"
+Anchor437.description = "ArtDeco26 view source documentation"
 Anchor437.parameter = ["target=_source"]
 Anchor437.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]
 Shape438 = x3d.Shape()
@@ -1962,7 +1962,7 @@ Transform444.children.append(Anchor445)
 Transform450 = x3d.Transform()
 Transform450.translation = [0,0.3,0.5]
 Anchor451 = x3d.Anchor()
-Anchor451.description = "ArtDeco27"
+Anchor451.description = "ArtDeco27 view source documentation"
 Anchor451.parameter = ["target=_source"]
 Anchor451.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]
 Shape452 = x3d.Shape()
@@ -2019,7 +2019,7 @@ Transform458.children.append(Anchor459)
 Transform464 = x3d.Transform()
 Transform464.translation = [0,0.3,0.5]
 Anchor465 = x3d.Anchor()
-Anchor465.description = "ArtDeco28"
+Anchor465.description = "ArtDeco28 view source documentation"
 Anchor465.parameter = ["target=_source"]
 Anchor465.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]
 Shape466 = x3d.Shape()
@@ -2076,7 +2076,7 @@ Transform472.children.append(Anchor473)
 Transform478 = x3d.Transform()
 Transform478.translation = [0,0.3,0.5]
 Anchor479 = x3d.Anchor()
-Anchor479.description = "ArtDeco29"
+Anchor479.description = "ArtDeco29 view source documentation"
 Anchor479.parameter = ["target=_source"]
 Anchor479.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]
 Shape480 = x3d.Shape()
@@ -2133,7 +2133,7 @@ Transform486.children.append(Anchor487)
 Transform492 = x3d.Transform()
 Transform492.translation = [0,0.3,0.5]
 Anchor493 = x3d.Anchor()
-Anchor493.description = "ArtDeco30"
+Anchor493.description = "ArtDeco30 view source documentation"
 Anchor493.parameter = ["target=_source"]
 Anchor493.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]
 Shape494 = x3d.Shape()
@@ -2190,7 +2190,7 @@ Transform500.children.append(Anchor501)
 Transform506 = x3d.Transform()
 Transform506.translation = [0,0.3,0.5]
 Anchor507 = x3d.Anchor()
-Anchor507.description = "ArtDeco31"
+Anchor507.description = "ArtDeco31 view source documentation"
 Anchor507.parameter = ["target=_source"]
 Anchor507.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]
 Shape508 = x3d.Shape()
@@ -2247,7 +2247,7 @@ Transform514.children.append(Anchor515)
 Transform520 = x3d.Transform()
 Transform520.translation = [0,0.3,0.5]
 Anchor521 = x3d.Anchor()
-Anchor521.description = "ArtDeco32"
+Anchor521.description = "ArtDeco32 view source documentation"
 Anchor521.parameter = ["target=_source"]
 Anchor521.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]
 Shape522 = x3d.Shape()
@@ -2304,7 +2304,7 @@ Transform528.children.append(Anchor529)
 Transform534 = x3d.Transform()
 Transform534.translation = [0,0.3,0.5]
 Anchor535 = x3d.Anchor()
-Anchor535.description = "ArtDeco33"
+Anchor535.description = "ArtDeco33 view source documentation"
 Anchor535.parameter = ["target=_source"]
 Anchor535.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]
 Shape536 = x3d.Shape()
@@ -2361,7 +2361,7 @@ Transform542.children.append(Anchor543)
 Transform548 = x3d.Transform()
 Transform548.translation = [0,0.3,0.5]
 Anchor549 = x3d.Anchor()
-Anchor549.description = "ArtDeco34"
+Anchor549.description = "ArtDeco34 view source documentation"
 Anchor549.parameter = ["target=_source"]
 Anchor549.url = ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]
 Shape550 = x3d.Shape()
