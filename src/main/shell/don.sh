@@ -16,8 +16,8 @@ pushd ../java
 javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
 popd
 
-	#if false
-	#then
+#if false
+#then
 echo translating to java
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/data/
 echo translating to json
@@ -27,8 +27,10 @@ echo translating to graaljs
 echo translating to node.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToNodeJS.xslt -js ---../node/net/x3djsonld/data/
 echo translating to python
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
-	#fi
+(ls "$@" | grep -v intermediate | grep -v "\.new" | grep -v Gramps8Final | grep -v 'john[23]?.x3d') | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
+#fi
+
+echo compiling
 for FILE in $@
 do
 	X3D=`basename $FILE .x3d`
@@ -36,21 +38,26 @@ echo swapping class names
 perl -p -i -e "s/NeedClassName/$X3D/g" "$FILE"
 perl -p -i -e "s/JohnBoy/$X3D/g" "$FILE"
 
-echo compiling
 pushd ../java
-find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac.exe -proc:full -J-Xss1g -J-Xmx19g -cp ".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar"
+find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac.exe -proc:full -J-Xss1g -J-Xmx19g -cp "${CLASSPATH}"
+popd
+done
 
 echo running java
+for FILE in $@
+do
+	X3D=`basename $FILE .x3d`
+
+pushd ../java
 echo export CLASSPATH=".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar"
 export CLASSPATH=".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar"
 #for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
 #do
 	mkdir -p net/x3djsonld/data
-	echo '$' java -Xss1g -Xmx19g -cp ".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
-	java.exe -Xss1g -Xmx19g -cp ".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
+	echo java -Xss1g -Xmx19g -cp "${CLASSPATH}" net/x3djsonld/data/${X3D}
+	java -Xss1g -Xmx19g -cp "${CLASSPATH}" net/x3djsonld/data/${X3D}
 #done
 popd
-
 
 echo running ../shell/jjs.sh
 pushd ../graaljs
@@ -65,8 +72,8 @@ popd
 
 echo running node
 pushd ../node
-echo "find ./net/x3djsonld/data -name ${X3D}.js | xargs -L 1 -P $PROCESSORS node.exe"
-find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS node.exe
+echo "find ./net/x3djsonld/data -name ${X3D}.js | xargs -L 1 -P $PROCESSORS node"
+find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS ${NODE}
 popd
 
 done
