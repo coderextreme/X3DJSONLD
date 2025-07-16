@@ -72,7 +72,7 @@
 },
 {
 "@name":"translated",
-"@content":"13 October 2024"
+"@content":"16 July 2025"
 },
 {
 "@name":"generator",
@@ -99,7 +99,8 @@
 {
 "@name":"cycleInterval",
 "@accessType":"inputOutput",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.009999999776482582
 },
 {
 "@name":"enabled",
@@ -116,12 +117,14 @@
 {
 "@name":"startTime",
 "@accessType":"inputOutput",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":0.0
 },
 {
 "@name":"stopTime",
 "@accessType":"inputOutput",
-"@type":"SFTime"
+"@type":"SFTime",
+"@value":-1.0
 },
 {
 "@name":"fraction_changed",
