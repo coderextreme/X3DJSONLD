@@ -390,7 +390,6 @@ JavaSerializer.prototype = {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType === 2) {
 					var attr = attrs[a].nodeName;
-					/*
 					if (attr === 'containerField' && (
 						attrs[a].nodeValue === "joints" ||
 						attrs[a].nodeValue === "skeleton" ||
@@ -402,9 +401,7 @@ JavaSerializer.prototype = {
 						// console.error("################## FOUND", attr, attrs[a].nodeValue);
 						attr = "containerFieldOverride";
 
-					} else
-						*/
-					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
+					} else if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
 					}
 					if (attr === "DEF") {
@@ -549,7 +546,7 @@ JavaSerializer.prototype = {
 					}
 					
 					str += '.'+method+"("+strval+")";
-					if (/*attr === 'containerFieldOverride' && */(attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "skeleton" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
+					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "skeleton" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
 					// console.error("################## FOUND", method, attrs[a].nodeValue);
 						str += ')'; // for cast
 					}
