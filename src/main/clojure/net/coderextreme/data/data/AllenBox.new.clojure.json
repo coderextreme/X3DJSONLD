@@ -8,19 +8,19 @@
 "meta": [
 {
 "@name":"title",
-"@content":"app.x3d"
+"@content":"AllenBox.x3d"
 },
 {
 "@name":"creator",
-"@content":"Carlson, I"
+"@content":"Allen Box"
 },
 {
-"@name":"creator",
-"@content":"Carlson, II"
+"@name":"created",
+"@content":"8 July 2025"
 },
 {
-"@name":"creator",
-"@content":"Carlson, III"
+"@name":"license",
+"@content":"../license.html"
 },
 {
 "@name":"translated",
@@ -38,8 +38,22 @@
 },
 "Scene": {
 "-children":[
-{ "Group":
+{ "WorldInfo":
 {
+"@title":"AllenBox.x3d"
+}
+},
+{ "NavigationInfo":
+{
+"@speed":0.5,
+"@type":"\"EXAMINE\""
+}
+},
+{ "Transform":
+{
+"@DEF":"Floor",
+"@scale":[1,0.0125,1],
+"@translation":[0,-0.0125,0],
 "-children":[
 { "Shape":
 {
@@ -49,7 +63,6 @@
 "-material":
 { "Material":
 {
-"@diffuseColor":[1,0,0]
 }
 }
 }
@@ -62,13 +75,6 @@
 }
 }
 ]
-}
-},
-{ "Transform":
-{
-"@rotation":[7,8,9,3.14],
-"@scale":[4,5,6],
-"@translation":[1,2,3]
 }
 }
 ]
