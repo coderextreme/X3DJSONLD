@@ -15,13 +15,12 @@ this.preno = 0;
 
 
 ClojureSerializer.prototype = {
-	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+	loadTextArea : function(text, stack, json, element, clazz, mapToMethod, fieldTypes) {
+		var str = text;
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
-		var stack = [];
 
-		var str = "";
 		// str += "# -*- coding: "+json.X3D.encoding+" -*-\r\n";
 
 		str += "(ns x3dclsail."+clazz.substring(clazz.lastIndexOf("/")+1)+"\n";
@@ -29,7 +28,7 @@ ClojureSerializer.prototype = {
 		if (typeof fs === 'object') {
 			str += fs.readFileSync("../clojure/net/coderextreme/data/X3Dautoclass.clj").toString();
 		}
-		str += "))";
+		str += "))\n";
 
 		stack.unshift(this.preno);
 		this.preno++;
@@ -38,11 +37,6 @@ ClojureSerializer.prototype = {
 
 		var bodystr = "";
         
-        // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
-        // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
-        // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
-        // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		// bodystr += "ConfigurationProperties.setStripDefaultAttributes(true)\r\n";
 		bodystr += "(def "+element.nodeName+stack[0]+" (doto ("+element.nodeName+".)\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 1, stack);
 		bodystr += "))\n";
@@ -54,6 +48,30 @@ ClojureSerializer.prototype = {
   		str += '(println "Hello from your main function!"))';
 		stack.shift();
 		return str;
+	},
+	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+		var str = "";
+		var stack = [];
+
+		if (typeof fs === 'object') {
+			str += this.loadTextArea(fs.readFileSync("../clojure/net/coderextreme/data/X3Dautoclass.clj").toString(), stack, json, element, clazz, mapToMethod, fieldTypes);
+			return str;
+		} else {
+		    return (async function (serializer) {
+		      try {
+			const response = await fetch("../clojure/net/coderextreme/data/X3Dautoclass.clj");
+			if (!response.ok) {
+			  throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			str += serializer.loadTextArea(await response.text(), stack, json, element, clazz, mapToMethod, fieldTypes);
+			document.getElementById('clojure').value = str;
+			return str;
+		      } catch (error) {
+			console.error('Error loading Clojure file:', error);
+			document.getElementById('clojure').value = 'Error loading Clojure file: ' + error.message;
+		      }
+		    })(this);
+		}
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {

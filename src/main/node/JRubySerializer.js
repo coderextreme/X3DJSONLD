@@ -49,7 +49,7 @@ JRubySerializer.prototype = {
 			str += this.loadTextArea(fs.readFileSync("../jruby/x3drsail.rb").toString(), stack, json, element, clazz, mapToMethod, fieldTypes);
 			return str;
 		} else {
-		    (async function (serializer) {
+		    return (async function (serializer) {
 		      try {
 			const response = await fetch("../jruby/x3drsail.rb");
 			if (!response.ok) {
