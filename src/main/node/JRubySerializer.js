@@ -33,7 +33,6 @@ JRubySerializer.prototype = {
 		str += enn+stack[0]+".toFileX3D \""+clazz+".new.jruby.x3d\"\n";
 		str += enn+stack[0]+".toFileJSON \""+clazz+".new.jruby.json\"\n";
 		stack.shift();
-		document.getElementById('jruby').value = str;
 		return str;
 	},
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
@@ -57,6 +56,7 @@ JRubySerializer.prototype = {
 			  throw new Error(`HTTP error! status: ${response.status}`);
 			}
 			str += serializer.loadTextArea(await response.text(), stack, json, element, clazz, mapToMethod, fieldTypes);
+			document.getElementById('jruby').value = str;
 			return str;
 		      } catch (error) {
 			console.error('Error loading Ruby file:', error);
