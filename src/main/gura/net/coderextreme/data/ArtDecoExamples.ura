@@ -1,6 +1,6 @@
 X3D:
     profile: "Immersive"
-    version: "4.0"
+    version: "3.0"
     setHead: [
         head: [
             meta: [
@@ -25,7 +25,7 @@ X3D:
             ],
             meta: [
                 name: "modified"
-                content: "20 October 2019"
+                content: "19 January 2025"
             ],
             meta: [
                 name: "reference"
@@ -58,211 +58,211 @@ X3D:
                 name: "ArtDeco00"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00", "ArtDecoPrototypes.wrl#ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00", "ArtDecoPrototypes.wrl#ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco01"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01", "ArtDecoPrototypes.wrl#ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01", "ArtDecoPrototypes.wrl#ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco02"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02", "ArtDecoPrototypes.wrl#ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02", "ArtDecoPrototypes.wrl#ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco03"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03", "ArtDecoPrototypes.wrl#ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03", "ArtDecoPrototypes.wrl#ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco04"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04", "ArtDecoPrototypes.wrl#ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04", "ArtDecoPrototypes.wrl#ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco05"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05", "ArtDecoPrototypes.wrl#ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05", "ArtDecoPrototypes.wrl#ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco06"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06", "ArtDecoPrototypes.wrl#ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06", "ArtDecoPrototypes.wrl#ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco07"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07", "ArtDecoPrototypes.wrl#ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07", "ArtDecoPrototypes.wrl#ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco08"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08", "ArtDecoPrototypes.wrl#ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08", "ArtDecoPrototypes.wrl#ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco09"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09", "ArtDecoPrototypes.wrl#ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09", "ArtDecoPrototypes.wrl#ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco10"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10", "ArtDecoPrototypes.wrl#ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10", "ArtDecoPrototypes.wrl#ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco11"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11", "ArtDecoPrototypes.wrl#ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11", "ArtDecoPrototypes.wrl#ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco12"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12", "ArtDecoPrototypes.wrl#ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12", "ArtDecoPrototypes.wrl#ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco13"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco13", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13", "ArtDecoPrototypes.wrl#ArtDeco13", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco13", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13", "ArtDecoPrototypes.wrl#ArtDeco13", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco14"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco14", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14", "ArtDecoPrototypes.wrl#ArtDeco14", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco14", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14", "ArtDecoPrototypes.wrl#ArtDeco14", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco15"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco15", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15", "ArtDecoPrototypes.wrl#ArtDeco15", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco15", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15", "ArtDecoPrototypes.wrl#ArtDeco15", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco16"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16", "ArtDecoPrototypes.wrl#ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16", "ArtDecoPrototypes.wrl#ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco17"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco17", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17", "ArtDecoPrototypes.wrl#ArtDeco17", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco17", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17", "ArtDecoPrototypes.wrl#ArtDeco17", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco18"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18", "ArtDecoPrototypes.wrl#ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18", "ArtDecoPrototypes.wrl#ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco19"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco19", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19", "ArtDecoPrototypes.wrl#ArtDeco19", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco19", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19", "ArtDecoPrototypes.wrl#ArtDeco19", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco20"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20", "ArtDecoPrototypes.wrl#ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20", "ArtDecoPrototypes.wrl#ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco21"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21", "ArtDecoPrototypes.wrl#ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21", "ArtDecoPrototypes.wrl#ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco22"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22", "ArtDecoPrototypes.wrl#ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22", "ArtDecoPrototypes.wrl#ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco23"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23", "ArtDecoPrototypes.wrl#ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23", "ArtDecoPrototypes.wrl#ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco24"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24", "ArtDecoPrototypes.wrl#ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24", "ArtDecoPrototypes.wrl#ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco25"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25", "ArtDecoPrototypes.wrl#ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25", "ArtDecoPrototypes.wrl#ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco26"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26", "ArtDecoPrototypes.wrl#ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26", "ArtDecoPrototypes.wrl#ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco27"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27", "ArtDecoPrototypes.wrl#ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27", "ArtDecoPrototypes.wrl#ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco28"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28", "ArtDecoPrototypes.wrl#ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28", "ArtDecoPrototypes.wrl#ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco29"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29", "ArtDecoPrototypes.wrl#ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29", "ArtDecoPrototypes.wrl#ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco30"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30", "ArtDecoPrototypes.wrl#ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30", "ArtDecoPrototypes.wrl#ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco31"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31", "ArtDecoPrototypes.wrl#ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31", "ArtDecoPrototypes.wrl#ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco32"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32", "ArtDecoPrototypes.wrl#ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32", "ArtDecoPrototypes.wrl#ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco33"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33", "ArtDecoPrototypes.wrl#ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33", "ArtDecoPrototypes.wrl#ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]
             ],
             ExternProtoDeclare: [
                 name: "ArtDeco34"
                 appinfo: "UniversalMediaMaterials prototype"
                 documentation: "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
-                url: ["../data/ArtDecoPrototypes.x3d#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34", "ArtDecoPrototypes.wrl#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
+                url: ["ArtDecoPrototypes.x3d#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34", "ArtDecoPrototypes.wrl#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]
             ],
             Group: [
                 NavigationInfo: [
@@ -317,12 +317,12 @@ X3D:
                     intensity: 0.5
                 ],
                 Anchor: [
-                    description: "Back to front view"
+                    description: "Return to front view"
                     url: ["#Front"]
                     Transform: [
                         translation: [0, 0, -0.5]
                         Inline: [
-                            url: ["../data/gridBack.json", "../data/gridBack.x3d", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d", "gridBack.wrl", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]
+                            url: ["gridBack.x3d", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d", "gridBack.wrl", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]
                         ]
                     ]
                 ],
@@ -357,7 +357,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco00"
+                            description: "ArtDeco00 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]
                             Shape: [
@@ -419,7 +419,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco01"
+                            description: "ArtDeco01 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]
                             Shape: [
@@ -476,7 +476,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco02"
+                            description: "ArtDeco02 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]
                             Shape: [
@@ -533,7 +533,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco03"
+                            description: "ArtDeco03 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]
                             Shape: [
@@ -590,7 +590,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco04"
+                            description: "ArtDeco04 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]
                             Shape: [
@@ -647,7 +647,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco05"
+                            description: "ArtDeco05 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]
                             Shape: [
@@ -704,7 +704,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco06"
+                            description: "ArtDeco06 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]
                             Shape: [
@@ -761,7 +761,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco07"
+                            description: "ArtDeco07 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]
                             Shape: [
@@ -818,7 +818,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco08"
+                            description: "ArtDeco08 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]
                             Shape: [
@@ -875,7 +875,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco09"
+                            description: "ArtDeco09 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]
                             Shape: [
@@ -932,7 +932,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco10"
+                            description: "ArtDeco10 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]
                             Shape: [
@@ -989,7 +989,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco11"
+                            description: "ArtDeco11 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]
                             Shape: [
@@ -1046,7 +1046,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco12"
+                            description: "ArtDeco12 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]
                             Shape: [
@@ -1103,7 +1103,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco13"
+                            description: "ArtDeco13 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]
                             Shape: [
@@ -1160,7 +1160,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco14"
+                            description: "ArtDeco14 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]
                             Shape: [
@@ -1217,7 +1217,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco15"
+                            description: "ArtDeco15 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]
                             Shape: [
@@ -1274,7 +1274,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco16"
+                            description: "ArtDeco16 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]
                             Shape: [
@@ -1331,7 +1331,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco17"
+                            description: "ArtDeco17 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]
                             Shape: [
@@ -1388,7 +1388,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco18"
+                            description: "ArtDeco18 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]
                             Shape: [
@@ -1445,7 +1445,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco19"
+                            description: "ArtDeco19 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]
                             Shape: [
@@ -1502,7 +1502,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco20"
+                            description: "ArtDeco20 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]
                             Shape: [
@@ -1559,7 +1559,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco21"
+                            description: "ArtDeco21 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]
                             Shape: [
@@ -1616,7 +1616,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco22"
+                            description: "ArtDeco22 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]
                             Shape: [
@@ -1673,7 +1673,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco23"
+                            description: "ArtDeco23 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]
                             Shape: [
@@ -1730,7 +1730,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco24"
+                            description: "ArtDeco24 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]
                             Shape: [
@@ -1787,7 +1787,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco25"
+                            description: "ArtDeco25 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]
                             Shape: [
@@ -1844,7 +1844,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco26"
+                            description: "ArtDeco26 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]
                             Shape: [
@@ -1901,7 +1901,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco27"
+                            description: "ArtDeco27 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]
                             Shape: [
@@ -1958,7 +1958,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco28"
+                            description: "ArtDeco28 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]
                             Shape: [
@@ -2015,7 +2015,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco29"
+                            description: "ArtDeco29 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]
                             Shape: [
@@ -2072,7 +2072,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco30"
+                            description: "ArtDeco30 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]
                             Shape: [
@@ -2129,7 +2129,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco31"
+                            description: "ArtDeco31 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]
                             Shape: [
@@ -2186,7 +2186,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco32"
+                            description: "ArtDeco32 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]
                             Shape: [
@@ -2243,7 +2243,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco33"
+                            description: "ArtDeco33 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]
                             Shape: [
@@ -2300,7 +2300,7 @@ X3D:
                     Transform: [
                         translation: [0, 0.3, 0.5]
                         Anchor: [
-                            description: "ArtDeco34"
+                            description: "ArtDeco34 view source documentation"
                             parameter: ["target=_source"]
                             url: ["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]
                             Shape: [

@@ -50,6 +50,10 @@ X3D:
             meta: [
                 name: "identifier"
                 content: "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
+            ],
+            meta: [
+                name: "generator"
+                content: "Vim"
             ]
         ]
     ]

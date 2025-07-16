@@ -38,10 +38,6 @@ X3D:
             meta: [
                 name: "generator"
                 content: "x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy"
-            ],
-            meta: [
-                name: "modified"
-                content: "Sat, 9 Nov 2024 19:29:39 GMT"
             ]
         ]
     ]
