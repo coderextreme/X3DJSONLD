@@ -16,7 +16,7 @@ this.preno = 0;
 
 ClojureSerializer.prototype = {
 	loadTextArea : function(text, stack, json, element, clazz, mapToMethod, fieldTypes) {
-		var str = text;
+		var str = "";
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
@@ -25,9 +25,7 @@ ClojureSerializer.prototype = {
 
 		str += "(ns x3dclsail."+clazz.substring(clazz.lastIndexOf("/")+1)+"\n";
 		str += "  (:import ";
-		if (typeof fs === 'object') {
-			str += fs.readFileSync("../clojure/net/coderextreme/data/X3Dautoclass.clj").toString();
-		}
+		str += text;
 		str += "))\n";
 
 		stack.unshift(this.preno);

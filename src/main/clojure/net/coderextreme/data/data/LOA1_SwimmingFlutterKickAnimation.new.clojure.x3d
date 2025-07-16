@@ -21,11 +21,11 @@
     <WorldInfo title='LOA1_SwimmingFlutterKickAnimation.x3d'/>
     <ProtoDeclare name='LOA1_DivingAnimation'>
       <ProtoInterface>
-        <field name='cycleInterval' accessType='inputOutput' type='SFTime' value='7.0'/>
+        <field name='cycleInterval' accessType='inputOutput' type='SFTime'/>
         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
         <field name='loop' accessType='inputOutput' type='SFBool' value='true'/>
-        <field name='startTime' accessType='inputOutput' type='SFTime' value='0.0'/>
-        <field name='stopTime' accessType='inputOutput' type='SFTime' value='-1.0'/>
+        <field name='startTime' accessType='inputOutput' type='SFTime'/>
+        <field name='stopTime' accessType='inputOutput' type='SFTime'/>
         <field name='fraction_changed' accessType='outputOnly' type='SFFloat'/>
         <field name='isActive' accessType='outputOnly' type='SFBool'/>
         <field name='HumanoidRoot_translation_changed' accessType='outputOnly' type='SFVec3f'/>
