@@ -37,8 +37,16 @@
 "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
 },
 {
+"@name":"generator",
+"@content":"x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy"
+},
+{
+"@name":"modified",
+"@content":"Sat, 9 Nov 2024 19:29:39 GMT"
+},
+{
 "@name":"translated",
-"@content":"15 July 2025"
+"@content":"25 June 2025"
 },
 {
 "@name":"generator",
@@ -60,8 +68,7 @@
 {
 "@name":"position",
 "@accessType":"inputOutput",
-"@type":"SFVec3f",
-"@value":[0,0,0]
+"@type":"SFVec3f"
 }
 ]
 },
@@ -160,8 +167,7 @@
 {
 "@name":"old",
 "@accessType":"inputOutput",
-"@type":"SFVec3f",
-"@value":[0,0,0]
+"@type":"SFVec3f"
 },
 {
 "@name":"set_cycle",
@@ -179,10 +185,12 @@
 "",
 "\newline\t\t\t\t\tfunction set_cycle(value) {\newline                           
 old = translation;\newline\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50,
-Math.random()*100-50, Math.random()*100-50);\newline                             
+Math.random()*100-50, Math.random()*100-50);\newline\t\t    \t\t\t\t/*\newline   
 var tmpkeyValue = new MFVec3f();\newline\t\t\t    \t\t\ttmpkeyValue[0] = old;\newline\t\t\t
 \t\t\ttmpkeyValue[1] = translation;\newline                                      
-keyValue = tmpkeyValue;\newline\t\t\t    \t\t\newline\t\t\t\t\t\t// Browser.println(translation);\newline\t\t\t\t\t}\newline",
+keyValue = tmpkeyValue;\newline\t\t    \t\t\t\t*/\newline                        
+keyValue = new MFVec3f([old, translation]);\newline\t\t\t    \t\t\newline\t\t\t\t\t\t//
+Browser.println(translation);\newline\t\t\t\t\t}\newline",
 "",
 ""
 ]
@@ -193,6 +201,9 @@ keyValue = tmpkeyValue;\newline\t\t\t    \t\t\newline\t\t\t\t\t\t// Browser.prin
 "@DEF":"nodeClock",
 "@cycleInterval":3.0,
 "@loop":true
+}
+}
+]
 }
 },
 { "ROUTE":
@@ -215,7 +226,7 @@ keyValue = tmpkeyValue;\newline\t\t\t    \t\t\newline\t\t\t\t\t\t// Browser.prin
 {
 "@fromField":"keyValue",
 "@fromNode":"MoveBall",
-"@toField":"keyValue",
+"@toField":"set_keyValue",
 "@toNode":"NodePosition"
 }
 },
@@ -225,9 +236,6 @@ keyValue = tmpkeyValue;\newline\t\t\t    \t\t\newline\t\t\t\t\t\t// Browser.prin
 "@fromNode":"NodePosition",
 "@toField":"set_translation",
 "@toNode":"transform"
-}
-}
-]
 }
 }
 ]
@@ -317,31 +325,35 @@ keyValue = tmpkeyValue;\newline\t\t\t    \t\t\newline\t\t\t\t\t\t// Browser.prin
 "",
 "",
 "\newline\newline                function set_endA(value) {\newline\t\t    if (typeof
-spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newline\t\t\ttmpspine[0]
-= value;\newline\t\t\ttmpspine[1] = value;\newline\t\t\tspine = tmpspine;\newline\t\t
-} else {\newline\t\t        var tmpspine = new MFVec3f();\newline\t\t\ttmpspine[0]
+spine === 'undefined') {\newline\t\t    \t/*\newline\t\t        var tmpspine = new
+MFVec3f();\newline\t\t\ttmpspine[0] = value;\newline\t\t\ttmpspine[1] = value;\newline\t\t\tspine
+= tmpspine;\newline\t\t    \t*/\newline\t\t        spine = new MFVec3f([value, value]);\newline\t\t
+} else {\newline\t\t    \t/*\newline\t\t        var tmpspine = new MFVec3f();\newline\t\t\ttmpspine[0]
 = value;\newline\t\t\ttmpspine[1] = spine[1];\newline\t\t\tspine = tmpspine;\newline\t\t
-}\newline                }\newline\newline                function set_endB(value)
-{\newline\t\t    if (typeof spine === 'undefined') {\newline\t\t        var tmpspine
-= new MFVec3f();\newline\t\t\ttmpspine[0] = value;\newline\t\t\ttmpspine[1] = value;\newline\t\t\tspine
-= tmpspine;\newline\t\t    } else {\newline\t\t        var tmpspine = new MFVec3f();\newline\t\t\ttmpspine[0]
+*/\newline\t\t        spine = new MFVec3f([value, spine[1]]);\newline\t\t    }\newline
+}\newline\newline                function set_endB(value) {\newline\t\t    if (typeof
+spine === 'undefined') {\newline\t\t    \t/*\newline\t\t        var tmpspine = new
+MFVec3f();\newline\t\t\ttmpspine[0] = value;\newline\t\t\ttmpspine[1] = value;\newline\t\t\tspine
+= tmpspine;\newline\t\t        */\newline\t\t        spine = new MFVec3f([value, value]);\newline\t\t
+} else {\newline\t\t    \t/*\newline\t\t        var tmpspine = new MFVec3f();\newline\t\t\ttmpspine[0]
 = spine[0];\newline\t\t\ttmpspine[1] = value;\newline\t\t\tspine = tmpspine;\newline\t\t
-}\newline                }\newline\newline                function set_spine(value)
-{\newline                    spine = value;\newline                }\newline",
+\t*/\newline\t\t        spine = new MFVec3f([spine[0], value]);\newline\t\t    }\newline
+}\newline\newline                function set_spine(value) {\newline             
+spine = value;\newline                }\newline",
 "",
 ""
+]
+}
+}
 ]
 }
 },
 { "ROUTE":
 {
-"@fromField":"spine",
+"@fromField":"spine_changed",
 "@fromNode":"MoveCylinder",
 "@toField":"set_spine",
 "@toNode":"extrusion"
-}
-}
-]
 }
 }
 ]
@@ -368,7 +380,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 "fieldValue": [
 {
 "@name":"position",
-"@value":[0,0,0]
+"@value":[0,1.388333,0]
 }
 ]
 }
@@ -380,7 +392,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 "fieldValue": [
 {
 "@name":"position",
-"@value":[50,50,50]
+"@value":[0,1.388333,0]
 }
 ]
 }
@@ -392,7 +404,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 "fieldValue": [
 {
 "@name":"position",
-"@value":[-50,-50,-50]
+"@value":[0,1.388333,0]
 }
 ]
 }
@@ -404,7 +416,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 "fieldValue": [
 {
 "@name":"position",
-"@value":[50,50,-50]
+"@value":[0,1.388333,0]
 }
 ]
 }
@@ -412,49 +424,19 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 { "ProtoInstance":
 {
 "@name":"cyl",
-"@DEF":"linkA",
-"fieldValue": [
-{
-"@name":"set_positionA",
-"@value":[0,0,0]
-},
-{
-"@name":"set_positionB",
-"@value":[50,50,50]
-}
-]
+"@DEF":"linkA"
 }
 },
 { "ProtoInstance":
 {
 "@name":"cyl",
-"@DEF":"linkB",
-"fieldValue": [
-{
-"@name":"set_positionA",
-"@value":[0,0,0]
-},
-{
-"@name":"set_positionB",
-"@value":[-50,-50,-50]
-}
-]
+"@DEF":"linkB"
 }
 },
 { "ProtoInstance":
 {
 "@name":"cyl",
-"@DEF":"linkC",
-"fieldValue": [
-{
-"@name":"set_positionA",
-"@value":[50,50,50]
-},
-{
-"@name":"set_positionB",
-"@value":[50,50,-50]
-}
-]
+"@DEF":"linkC"
 }
 }
 ]
@@ -467,8 +449,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 {
 "@name":"counter",
 "@accessType":"inputOutput",
-"@type":"SFInt32",
-"@value":0
+"@type":"SFInt32"
 },
 {
 "@name":"node_changed",
@@ -478,8 +459,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 {
 "@name":"add_node",
 "@accessType":"inputOnly",
-"@type":"SFBool",
-"@value":false
+"@type":"SFBool"
 }
 ],
 "#sourceCode":[
@@ -506,7 +486,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeA",
 "@toField":"set_positionA",
 "@toNode":"linkA"
@@ -514,7 +494,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeB",
 "@toField":"set_positionB",
 "@toNode":"linkA"
@@ -522,7 +502,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeA",
 "@toField":"set_positionA",
 "@toNode":"linkB"
@@ -530,7 +510,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeC",
 "@toField":"set_positionB",
 "@toNode":"linkB"
@@ -538,7 +518,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeA",
 "@toField":"set_positionA",
 "@toNode":"linkC"
@@ -546,7 +526,7 @@ spine === 'undefined') {\newline\t\t        var tmpspine = new MFVec3f();\newlin
 },
 { "ROUTE":
 {
-"@fromField":"position",
+"@fromField":"position_changed",
 "@fromNode":"nodeD",
 "@toField":"set_positionB",
 "@toNode":"linkC"
