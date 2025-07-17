@@ -59,8 +59,36 @@
         "meta":
         {
       {
-        "@content":"4 July 2020",
+        "@content":"17 July 2025",
         "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"remove colors bleeding into camo",
+        "@name":"TODO"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported",
+        "@name":"error"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D Validator reports numerous warnings are present",
+        "@name":"warning"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl",
+        "@name":"reference"
       }
     },
         "meta":
@@ -80,14 +108,7 @@
         "meta":
         {
       {
-        "@content":"http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"http://www.MovesInstitute.org/Theses/AllenDutton.pdf",
+        "@content":"Thesis https://hdl.handle.net/10945/1716",
         "@name":"reference"
       }
     },
@@ -101,6 +122,20 @@
         "meta":
         {
       {
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDutton.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDuttonVillage.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d",
         "@name":"identifier"
       }
@@ -108,7 +143,7 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
         "@name":"generator"
       }
     },
@@ -370,6 +405,15 @@
         "@diffuseColor":"0.054 0.233 0.39"
       }
     },
+                                    "ImageTexture":
+                                    {
+      {
+        "@DEF":"camo",
+        "@repeatS":"false",
+        "@repeatT":"false",
+        "@url":""images/greenCamo.jpg" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg""
+      }
+    },
                                 }                                "IndexedFaceSet":
                                 {
       {
@@ -410,6 +454,12 @@
         "@USE":"Pants_Color"
       }
     },
+                                        "ImageTexture":
+                                        {
+      {
+        "@USE":"camo"
+      }
+    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -448,6 +498,12 @@
                                             {
       {
         "@USE":"Pants_Color"
+      }
+    },
+                                            "ImageTexture":
+                                            {
+      {
+        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -531,6 +587,12 @@
         "@USE":"Pants_Color"
       }
     },
+                                        "ImageTexture":
+                                        {
+      {
+        "@USE":"camo"
+      }
+    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -569,6 +631,12 @@
                                             {
       {
         "@USE":"Pants_Color"
+      }
+    },
+                                            "ImageTexture":
+                                            {
+      {
+        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -653,6 +721,12 @@
         "@diffuseColor":"0.6 0.0745 0.1137"
       }
     },
+                                    "ImageTexture":
+                                    {
+      {
+        "@USE":"camo"
+      }
+    },
                                 }                                "IndexedFaceSet":
                                 {
       {
@@ -695,6 +769,12 @@
         "@diffuseColor":"0.749 0.601 0.462"
       }
     },
+                                        "ImageTexture":
+                                        {
+      {
+        "@USE":"camo"
+      }
+    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -733,6 +813,12 @@
                                             {
       {
         "@USE":"Skin_Color"
+      }
+    },
+                                            "ImageTexture":
+                                            {
+      {
+        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -815,6 +901,12 @@
         "@USE":"Skin_Color"
       }
     },
+                                        "ImageTexture":
+                                        {
+      {
+        "@USE":"camo"
+      }
+    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -853,6 +945,12 @@
                                             {
       {
         "@USE":"Skin_Color"
+      }
+    },
+                                            "ImageTexture":
+                                            {
+      {
+        "@USE":"camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -935,6 +1033,12 @@
         "@USE":"Skin_Color"
       }
     },
+                                        "ImageTexture":
+                                        {
+      {
+        "@USE":"camo"
+      }
+    },
                                     }                                    "IndexedFaceSet":
                                     {
       {
@@ -973,6 +1077,12 @@
                                             {
       {
         "@USE":"Skin_Color"
+      }
+    },
+                                            "ImageTexture":
+                                            {
+      {
+        "@url":""images/clone.gif" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/clone.gif""
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -1042,17 +1152,7 @@
       {
         "@DEF":"Interface"
       }
-            "Transform":
-            {
-                "ProximitySensor":
-                {
-      {
-        "@DEF":"HudProx",
-        "@center":"0 20 0",
-        "@size":"500 100 500"
-      }
-    },
-            }            "Collision":
+            "Collision":
             {
       {
         "@DEF":"HUD",
@@ -1066,8 +1166,9 @@
                     "Transform":
                     {
       {
-        "@scale":"0.012 0.012 0.012",
-        "@translation":"0.01107 -0.025 -0.08"
+        "@rotation":"0 1 0 0.65",
+        "@scale":"0.5 0.5 0.5",
+        "@translation":"0.5 0.1 0"
       }
                         "Transform":
                         {
@@ -1093,7 +1194,7 @@
       {
         "@DEF":"text_color",
         "@ambientIntensity":"0",
-        "@diffuseColor":"0 1 0",
+        "@diffuseColor":"0 0 0",
         "@emissiveColor":"0.819 0.521 0.169"
       }
     },
@@ -1894,24 +1995,6 @@
       }
     },
             }        }        "ROUTE":
-        {
-      {
-        "@fromField":"position_changed",
-        "@fromNode":"HudProx",
-        "@toField":"set_translation",
-        "@toNode":"HudXform"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"orientation_changed",
-        "@fromNode":"HudProx",
-        "@toField":"set_rotation",
-        "@toNode":"HudXform"
-      }
-    },
-        "ROUTE":
         {
       {
         "@fromField":"touchTime",

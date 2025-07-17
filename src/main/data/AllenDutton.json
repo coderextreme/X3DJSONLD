@@ -38,7 +38,23 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
+            "@content":"17 July 2025"
+          },
+          {
+            "@name":"TODO",
+            "@content":"remove colors bleeding into camo"
+          },
+          {
+            "@name":"error",
+            "@content":"Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"
+          },
+          {
+            "@name":"warning",
+            "@content":"X3D Validator reports numerous warnings are present"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
           },
           {
             "@name":"reference",
@@ -50,15 +66,19 @@
           },
           {
             "@name":"reference",
-            "@content":"http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"
-          },
-          {
-            "@name":"reference",
-            "@content":"http://www.MovesInstitute.org/Theses/AllenDutton.pdf"
+            "@content":"Thesis https://hdl.handle.net/10945/1716"
           },
           {
             "@name":"reference",
             "@content":"http://www.HAnim.org"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDutton.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDuttonVillage.x3d"
           },
           {
             "@name":"identifier",
@@ -66,7 +86,7 @@
           },
           {
             "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
           },
           {
             "@name":"license",
@@ -74,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"17 July 2025"
           },
           {
             "@name":"generator",
@@ -142,11 +162,15 @@
                                                         "@diffuseColor":[0.054,0.233,0.39]
                                                       }
                                                     },
-                                                  "-children":[
-                                                    {
-                                                      "#comment":"<ImageTexture DEF='camo' repeatS='false' repeatT='false' url='\"greenCamo.jpg\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/greenCamo.jpg\"'/>"
+                                                  "-texture":
+                                                    { "ImageTexture":
+                                                      {
+                                                        "@DEF":"camo",
+                                                        "@repeatS":false,
+                                                        "@repeatT":false,
+                                                        "@url":["images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
+                                                      }
                                                     }
-                                                  ]
                                                 }
                                               },
                                             "-geometry":
@@ -201,11 +225,12 @@
                                                               "@USE":"Pants_Color"
                                                             }
                                                           },
-                                                        "-children":[
-                                                          {
-                                                            "#comment":"<ImageTexture USE='camo'/>"
+                                                        "-texture":
+                                                          { "ImageTexture":
+                                                            {
+                                                              "@USE":"camo"
+                                                            }
                                                           }
-                                                        ]
                                                       }
                                                     },
                                                   "-geometry":
@@ -260,11 +285,12 @@
                                                                     "@USE":"Pants_Color"
                                                                   }
                                                                 },
-                                                              "-children":[
-                                                                {
-                                                                  "#comment":"<ImageTexture USE='camo'/>"
+                                                              "-texture":
+                                                                { "ImageTexture":
+                                                                  {
+                                                                    "@USE":"camo"
+                                                                  }
                                                                 }
-                                                              ]
                                                             }
                                                           },
                                                         "-geometry":
@@ -383,11 +409,12 @@
                                                               "@USE":"Pants_Color"
                                                             }
                                                           },
-                                                        "-children":[
-                                                          {
-                                                            "#comment":"<ImageTexture USE='camo'/>"
+                                                        "-texture":
+                                                          { "ImageTexture":
+                                                            {
+                                                              "@USE":"camo"
+                                                            }
                                                           }
-                                                        ]
                                                       }
                                                     },
                                                   "-geometry":
@@ -442,11 +469,12 @@
                                                                     "@USE":"Pants_Color"
                                                                   }
                                                                 },
-                                                              "-children":[
-                                                                {
-                                                                  "#comment":"<ImageTexture USE='camo'/>"
+                                                              "-texture":
+                                                                { "ImageTexture":
+                                                                  {
+                                                                    "@USE":"camo"
+                                                                  }
                                                                 }
-                                                              ]
                                                             }
                                                           },
                                                         "-geometry":
@@ -569,11 +597,12 @@
                                                         "@diffuseColor":[0.6,0.0745,0.1137]
                                                       }
                                                     },
-                                                  "-children":[
-                                                    {
-                                                      "#comment":"<ImageTexture USE='camo'/>"
+                                                  "-texture":
+                                                    { "ImageTexture":
+                                                      {
+                                                        "@USE":"camo"
+                                                      }
                                                     }
-                                                  ]
                                                 }
                                               },
                                             "-geometry":
@@ -630,11 +659,12 @@
                                                               "@diffuseColor":[0.749,0.601,0.462]
                                                             }
                                                           },
-                                                        "-children":[
-                                                          {
-                                                            "#comment":"<ImageTexture USE='camo'/>"
+                                                        "-texture":
+                                                          { "ImageTexture":
+                                                            {
+                                                              "@USE":"camo"
+                                                            }
                                                           }
-                                                        ]
                                                       }
                                                     },
                                                   "-geometry":
@@ -689,11 +719,12 @@
                                                                     "@USE":"Skin_Color"
                                                                   }
                                                                 },
-                                                              "-children":[
-                                                                {
-                                                                  "#comment":"<ImageTexture USE='camo'/>"
+                                                              "-texture":
+                                                                { "ImageTexture":
+                                                                  {
+                                                                    "@USE":"camo"
+                                                                  }
                                                                 }
-                                                              ]
                                                             }
                                                           },
                                                         "-geometry":
@@ -811,11 +842,12 @@
                                                               "@USE":"Skin_Color"
                                                             }
                                                           },
-                                                        "-children":[
-                                                          {
-                                                            "#comment":"<ImageTexture USE='camo'/>"
+                                                        "-texture":
+                                                          { "ImageTexture":
+                                                            {
+                                                              "@USE":"camo"
+                                                            }
                                                           }
-                                                        ]
                                                       }
                                                     },
                                                   "-geometry":
@@ -870,11 +902,12 @@
                                                                     "@USE":"Skin_Color"
                                                                   }
                                                                 },
-                                                              "-children":[
-                                                                {
-                                                                  "#comment":"<ImageTexture USE='camo'/>"
+                                                              "-texture":
+                                                                { "ImageTexture":
+                                                                  {
+                                                                    "@USE":"camo"
+                                                                  }
                                                                 }
-                                                              ]
                                                             }
                                                           },
                                                         "-geometry":
@@ -992,11 +1025,12 @@
                                                               "@USE":"Skin_Color"
                                                             }
                                                           },
-                                                        "-children":[
-                                                          {
-                                                            "#comment":"<ImageTexture USE='camo'/>"
+                                                        "-texture":
+                                                          { "ImageTexture":
+                                                            {
+                                                              "@USE":"camo"
+                                                            }
                                                           }
-                                                        ]
                                                       }
                                                     },
                                                   "-geometry":
@@ -1051,11 +1085,12 @@
                                                                     "@USE":"Skin_Color"
                                                                   }
                                                                 },
-                                                              "-children":[
-                                                                {
-                                                                  "#comment":"<ImageTexture url='\"clone.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/clone.gif\"'/>"
+                                                              "-texture":
+                                                                { "ImageTexture":
+                                                                  {
+                                                                    "@url":["images/clone.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/clone.gif"]
+                                                                  }
                                                                 }
-                                                              ]
                                                             }
                                                           },
                                                         "-geometry":
@@ -1322,18 +1357,8 @@
             {
               "@DEF":"Interface",
               "-children":[
-                { "Transform":
-                  {
-                    "-children":[
-                      { "ProximitySensor":
-                        {
-                          "@DEF":"HudProx",
-                          "@center":[0.0,20.0,0.0],
-                          "@size":[500.0,100.0,500.0]
-                        }
-                      }
-                    ]
-                  }
+                {
+                  "#comment":"<Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform>"
                 },
                 { "Collision":
                   {
@@ -1344,10 +1369,17 @@
                         {
                           "@DEF":"HudXform",
                           "-children":[
+                            {
+                              "#comment":"Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>"
+                            },
+                            {
+                              "#comment":"Enable this line if you disabled ProximitySensor"
+                            },
                             { "Transform":
                               {
-                                "@scale":[0.012,0.012,0.012],
-                                "@translation":[0.01107,-0.025,-0.08],
+                                "@scale":[0.5,0.5,0.5],
+                                "@rotation":[0,1,0,0.65],
+                                "@translation":[0.5,0.1,0],
                                 "-children":[
                                   { "Transform":
                                     {
@@ -1382,7 +1414,7 @@
                                                       {
                                                         "@DEF":"text_color",
                                                         "@ambientIntensity":0.0,
-                                                        "@diffuseColor":[0.0,1.0,0.0],
+                                                        "@diffuseColor":[0.0,0.0,0.0],
                                                         "@emissiveColor":[0.819,0.521,0.169]
                                                       }
                                                     }
@@ -2270,21 +2302,8 @@
               ]
             }
           },
-          { "ROUTE":
-            {
-              "@fromField":"position_changed",
-              "@fromNode":"HudProx",
-              "@toField":"set_translation",
-              "@toNode":"HudXform"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"orientation_changed",
-              "@fromNode":"HudProx",
-              "@toField":"set_rotation",
-              "@toNode":"HudXform"
-            }
+          {
+            "#comment":"Enable this if you enable the ProximitySensor <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/> <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>"
           },
           { "ROUTE":
             {
