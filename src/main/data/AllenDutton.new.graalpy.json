@@ -1079,16 +1079,15 @@
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
+                                                              "-children":[
+                                                                {
+                                                                  "#comment":"clone.gif removed for security reasons <ImageTexture url='\"\" \"\"'/>"
+                                                                }
+                                                              ],
                                                               "-material":
                                                                 { "Material":
                                                                   {
                                                                     "@USE":"Skin_Color"
-                                                                  }
-                                                                },
-                                                              "-texture":
-                                                                { "ImageTexture":
-                                                                  {
-                                                                    "@url":["images/MISSING_clone.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/clone.gif"]
                                                                   }
                                                                 }
                                                             }
