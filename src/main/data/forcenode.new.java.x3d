@@ -5,6 +5,7 @@
   <head>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
+    <meta content='July 14 2025' name='modified'/>
     <meta content='forcenode.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d' name='identifier'/>
     <meta content='beginnings of a force directed graph in 3D' name='description'/>
@@ -49,9 +50,7 @@ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-			    			keyValue = new MFVec3f();
-			    			keyValue[0] = old;
-			    			keyValue[1] = translation;
+			    			keyValue = new MFVec3f(old, translation);
 						// Browser.println(translation);
 					}
 ]]>
@@ -64,10 +63,10 @@ ecmascript:
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='cylinder'>
+    <ProtoDeclare name='cyl'>
       <ProtoInterface>
-        <field name='set_positionA' accessType='inputOnly' type='SFVec3f'/>
-        <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
+        <field name='set_positionA' accessType='inputOutput' type='SFVec3f'/>
+        <field name='set_positionB' accessType='inputOutput' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -75,43 +74,25 @@ ecmascript:
             <Appearance>
               <Material diffuseColor='0 1 0'/>
             </Appearance>
-            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 50 0'/>
+            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 0 0 0 50 0'/>
           </Shape>
           <Script DEF='MoveCylinder'>
-            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 50 0'/>
-            <field name='set_endA' accessType='inputOnly' type='SFVec3f'/>
-            <field name='set_endB' accessType='inputOnly' type='SFVec3f'/>
+            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
+            <field name='endA' accessType='inputOutput' type='SFVec3f'/>
+            <field name='endB' accessType='inputOutput' type='SFVec3f'/>
             <IS>
-              <connect nodeField='set_endA' protoField='set_positionA'/>
-              <connect nodeField='set_endB' protoField='set_positionB'/>
+              <connect nodeField='endA' protoField='set_positionA'/>
+              <connect nodeField='endB' protoField='set_positionB'/>
             </IS>
 <![CDATA[
 ecmascript:
 
                 function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f();
-			spine[0] = value;
-			spine[1] = value;
-		    } else {
-		        spine = new MFVec3f();
-			spine[0] = value;
-		    }
+		    spine = new MFVec3f(value, spine[1]);
                 }
 
                 function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f();
-			spine[0] = value;
-			spine[1] = value;
-		    } else {
-		        spine = new MFVec3f();
-			spine[1] = value;
-		    }
-                }
-
-                function set_spine(value) {
-                    spine = value;
+		    spine = new MFVec3f(spine[0], value);
                 }
 ]]>
           </Script>
@@ -133,18 +114,9 @@ ecmascript:
       <ProtoInstance DEF='nodeD' name='node'>
         <fieldValue name='position' value='50 50 -50'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cylinder'>
-        <fieldValue name='set_positionA' value='0 0 0'/>
-        <fieldValue name='set_positionB' value='50 50 50'/>
-      </ProtoInstance>
-      <ProtoInstance DEF='linkB' name='cylinder'>
-        <fieldValue name='set_positionA' value='0 0 0'/>
-        <fieldValue name='set_positionB' value='-50 -50 -50'/>
-      </ProtoInstance>
-      <ProtoInstance DEF='linkC' name='cylinder'>
-        <fieldValue name='set_positionA' value='50 50 50'/>
-        <fieldValue name='set_positionB' value='50 50 -50'/>
-      </ProtoInstance>
+      <ProtoInstance DEF='linkA' name='cyl'/>
+      <ProtoInstance DEF='linkB' name='cyl'/>
+      <ProtoInstance DEF='linkC' name='cyl'/>
     </Transform>
     <Script DEF='clickHandler'>
       <!-- <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> -->

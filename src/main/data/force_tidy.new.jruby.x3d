@@ -6,12 +6,12 @@
     <component name='Scripting' level='1'/>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
+    <meta content='July 14 2025' name='modified'/>
     <meta content='force.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d' name='identifier'/>
     <meta content='beginnings of a force directed graph in 3D' name='description'/>
     <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
-    <meta content='Sat, 9 Nov 2024 19:29:39 GMT' name='modified'/>
   </head>
   <Scene>
     <ProtoDeclare name='node'>
@@ -49,33 +49,25 @@
             <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
 ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-		    				/*
-                                                var tmpkeyValue = new MFVec3f();
-			    			tmpkeyValue[0] = old;
-			    			tmpkeyValue[1] = translation;
-                                                keyValue = tmpkeyValue;
-		    				*/
-                                                keyValue = new MFVec3f([old, translation]);
-			    		
-						// Browser.println(translation);
-					}
+		function set_cycle(value) {
+			old = translation;
+			translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+			keyValue = new MFVec3f(old, translation);
+		}
 ]]>
           </Script>
           <TimeSensor DEF='nodeClock' cycleInterval='3.0' loop='true'/>
+          <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
+          <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
+          <ROUTE fromField='keyValue' fromNode='MoveBall' toField='set_keyValue' toNode='NodePosition'/>
+          <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
         </Group>
-        <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
-        <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
-        <ROUTE fromField='keyValue' fromNode='MoveBall' toField='set_keyValue' toNode='NodePosition'/>
-        <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare name='cyl'>
       <ProtoInterface>
-        <field name='set_positionA' accessType='inputOnly' type='SFVec3f'/>
-        <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
+        <field name='set_positionA' accessType='inputOutput' type='SFVec3f'/>
+        <field name='set_positionB' accessType='inputOutput' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -83,66 +75,30 @@ ecmascript:
             <Appearance>
               <Material diffuseColor='0 1 0'/>
             </Appearance>
-            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 50 0'/>
+            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 0 0 0 50 0'/>
           </Shape>
           <Script DEF='MoveCylinder'>
-            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 50 0'/>
-            <field name='set_endA' accessType='inputOnly' type='SFVec3f'/>
-            <field name='set_endB' accessType='inputOnly' type='SFVec3f'/>
+            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
+            <field name='endA' accessType='inputOutput' type='SFVec3f'/>
+            <field name='endB' accessType='inputOutput' type='SFVec3f'/>
             <IS>
-              <connect nodeField='set_endA' protoField='set_positionA'/>
-              <connect nodeField='set_endB' protoField='set_positionB'/>
+              <connect nodeField='endA' protoField='set_positionA'/>
+              <connect nodeField='endB' protoField='set_positionB'/>
             </IS>
 <![CDATA[
 ecmascript:
 
                 function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    	*/
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = spine[1];
-			spine = tmpspine;
-		        */
-		        spine = new MFVec3f([value, spine[1]]);
-		    }
+		    spine = new MFVec3f(value, spine[1]);
                 }
 
                 function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = value;
-			tmpspine[1] = value;
-			spine = tmpspine;
-		        */
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		    	/*
-		        var tmpspine = new MFVec3f();
-			tmpspine[0] = spine[0];
-			tmpspine[1] = value;
-			spine = tmpspine;
-		    	*/
-		        spine = new MFVec3f([spine[0], value]);
-		    }
-                }
-
-                function set_spine(value) {
-                    spine = value;
+		    spine = new MFVec3f(spine[0], value);
                 }
 ]]>
           </Script>
+          <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
         </Group>
-        <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
       </ProtoBody>
     </ProtoDeclare>
     <Transform DEF='HoldsContent' scale='0.1 0.1 0.1'>

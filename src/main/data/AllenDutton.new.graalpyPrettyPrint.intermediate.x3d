@@ -311,7 +311,7 @@
     <NavigationInfo speed='0.5' type='"EXAMINE"'/>
     <Group DEF='Interface'>
       <!-- <Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform> -->
-      <Collision DEF='HUD' enabled='false'>
+      <Collision DEF='HUD'>
         <Transform DEF='HudXform' containerField='proxy'>
           <!-- Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'> -->
           <!-- Enable this line if you disabled ProximitySensor -->

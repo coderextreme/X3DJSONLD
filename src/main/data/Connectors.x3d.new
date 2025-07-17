@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="comment" content="World of Titania"></meta>
 <meta name="created" content="Fri, 04 Sep 2015 10:19:01 GMT"></meta>
 <meta name="creator" content="Holger Seelig"></meta>
 <meta name="generator" content="Titania V3.0.4, http://titania.create3000.de"></meta>
