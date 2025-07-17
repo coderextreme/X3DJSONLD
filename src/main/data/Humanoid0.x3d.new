@@ -44,7 +44,7 @@
 </Appearance>
 </Shape>
 <Coordinate containerField="skinCoord" USE="TheSkinCoord"></Coordinate>
-<HAnimJoint name="" DEF="hanim_" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"></HAnimJoint>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"></HAnimJoint>
 <HAnimJoint containerField="joints" USE="hanim_"></HAnimJoint>
 </HAnimHumanoid>
 </Scene>

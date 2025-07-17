@@ -61,7 +61,7 @@
     <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
       <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
       <!-- </LOD> -->
-      <HAnimJoint DEF='hanim_' containerField='skeleton'/>
+      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton'/>
       <HAnimJoint USE='hanim_' containerField='joints'/>
       <Shape DEF='SkinShape' containerField='skin'>
         <Appearance DEF='SkinAppearance'>

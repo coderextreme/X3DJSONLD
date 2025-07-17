@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='glflowers.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='5 or more prismatic flowers' name='description'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d' name='identifier'/>
+  </head>
+  <Scene>
+    <NavigationInfo/>
+    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Group>
+      <ExternProtoDeclare name='FlowerProto' url='"../data/flowerproto.x3d#FlowerProto"'>
+        <field name='vertex' accessType='inputOutput' type='MFString'/>
+        <field name='fragment' accessType='inputOutput' type='MFString'/>
+      </ExternProtoDeclare>
+      <ProtoDeclare name='flower'>
+        <ProtoBody>
+          <Group>
+            <ProtoInstance name='FlowerProto'>
+              <fieldValue name='vertex' value='"../shaders/gl_flowers_chromatic.vs"'/>
+              <fieldValue name='fragment' value='"../shaders/common.fs"'/>
+            </ProtoInstance>
+          </Group>
+        </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+    </Group>
+  </Scene>
+</X3D>

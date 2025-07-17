@@ -34,7 +34,7 @@
                 <connect nodeField='translation' protoField='translation'/>
               </IS>
               <Shape>
-                <!-- <IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> -->
+                <!-- <IndexedFaceSet DEF="Orbit"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> -->
                 <Appearance>
                   <Material>
                     <IS>

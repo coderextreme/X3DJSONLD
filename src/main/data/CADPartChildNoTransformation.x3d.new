@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="CADInterchange" version="3.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.1.xsd" ><head><component name="CADGeometry" level="2"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="CADInterchange" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="CADGeometry" level="2"></component>
 <component name="EnvironmentalEffects" level="1"></component>
 <meta name="title" content="CADPartChildNoTransformation.x3d"></meta>
 <meta name="description" content="Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children."></meta>

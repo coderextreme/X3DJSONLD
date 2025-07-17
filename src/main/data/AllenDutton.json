@@ -1362,7 +1362,6 @@
                 { "Collision":
                   {
                     "@DEF":"HUD",
-                    "@enabled":false,
                     "-children":[
                       { "Transform":
                         {
