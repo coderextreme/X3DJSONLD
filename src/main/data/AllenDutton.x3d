@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component level='1' name='HAnim'/>
+    <component level='3' name='HAnim'/>
     <meta content='AllenDutton.x3d' name='title'/>
     <meta content='Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes.' name='description'/>
     <meta content='Allen Dutton' name='creator'/>

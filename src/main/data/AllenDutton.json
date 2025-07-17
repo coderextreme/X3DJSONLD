@@ -8,7 +8,7 @@
         "component": [
           {
             "@name":"HAnim",
-            "@level":1
+            "@level":3
           }
         ],
         "meta": [
