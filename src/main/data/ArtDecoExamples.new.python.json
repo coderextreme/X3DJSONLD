@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"19 January 2025",
         "@name":"modified"
       }
     },
@@ -495,7 +495,7 @@
             "Anchor":
             {
       {
-        "@description":"Back to front view",
+        "@description":"Return to front view",
         "@url":""#Front""
       }
                 "Transform":
@@ -506,7 +506,7 @@
                     "Inline":
                     {
       {
-        "@url":""../data/gridBack.json" "../data/gridBack.x3d" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" "gridBack.wrl" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl""
+        "@url":""../data/gridBack.x3d" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" "gridBack.wrl" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl""
       }
     },
                 }            }            "Viewpoint":
@@ -553,7 +553,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco00",
+        "@description":"ArtDeco00 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00""
       }
@@ -625,7 +625,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco01",
+        "@description":"ArtDeco01 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01""
       }
@@ -693,7 +693,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco02",
+        "@description":"ArtDeco02 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02""
       }
@@ -761,7 +761,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco03",
+        "@description":"ArtDeco03 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03""
       }
@@ -829,7 +829,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco04",
+        "@description":"ArtDeco04 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04""
       }
@@ -897,7 +897,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco05",
+        "@description":"ArtDeco05 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05""
       }
@@ -965,7 +965,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco06",
+        "@description":"ArtDeco06 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06""
       }
@@ -1033,7 +1033,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco07",
+        "@description":"ArtDeco07 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07""
       }
@@ -1101,7 +1101,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco08",
+        "@description":"ArtDeco08 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08""
       }
@@ -1169,7 +1169,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco09",
+        "@description":"ArtDeco09 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09""
       }
@@ -1237,7 +1237,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco10",
+        "@description":"ArtDeco10 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10""
       }
@@ -1305,7 +1305,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco11",
+        "@description":"ArtDeco11 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11""
       }
@@ -1373,7 +1373,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco12",
+        "@description":"ArtDeco12 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12""
       }
@@ -1441,7 +1441,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco13",
+        "@description":"ArtDeco13 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13""
       }
@@ -1509,7 +1509,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco14",
+        "@description":"ArtDeco14 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14""
       }
@@ -1577,7 +1577,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco15",
+        "@description":"ArtDeco15 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15""
       }
@@ -1645,7 +1645,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco16",
+        "@description":"ArtDeco16 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16""
       }
@@ -1713,7 +1713,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco17",
+        "@description":"ArtDeco17 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17""
       }
@@ -1781,7 +1781,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco18",
+        "@description":"ArtDeco18 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18""
       }
@@ -1849,7 +1849,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco19",
+        "@description":"ArtDeco19 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19""
       }
@@ -1917,7 +1917,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco20",
+        "@description":"ArtDeco20 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20""
       }
@@ -1985,7 +1985,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco21",
+        "@description":"ArtDeco21 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21""
       }
@@ -2053,7 +2053,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco22",
+        "@description":"ArtDeco22 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22""
       }
@@ -2121,7 +2121,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco23",
+        "@description":"ArtDeco23 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23""
       }
@@ -2189,7 +2189,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco24",
+        "@description":"ArtDeco24 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24""
       }
@@ -2257,7 +2257,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco25",
+        "@description":"ArtDeco25 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25""
       }
@@ -2325,7 +2325,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco26",
+        "@description":"ArtDeco26 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26""
       }
@@ -2393,7 +2393,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco27",
+        "@description":"ArtDeco27 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27""
       }
@@ -2461,7 +2461,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco28",
+        "@description":"ArtDeco28 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28""
       }
@@ -2529,7 +2529,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco29",
+        "@description":"ArtDeco29 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29""
       }
@@ -2597,7 +2597,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco30",
+        "@description":"ArtDeco30 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30""
       }
@@ -2665,7 +2665,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco31",
+        "@description":"ArtDeco31 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31""
       }
@@ -2733,7 +2733,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco32",
+        "@description":"ArtDeco32 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32""
       }
@@ -2801,7 +2801,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco33",
+        "@description":"ArtDeco33 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33""
       }
@@ -2869,7 +2869,7 @@
                     "Anchor":
                     {
       {
-        "@description":"ArtDeco34",
+        "@description":"ArtDeco34 view source documentation",
         "@parameter":""target=_source"",
         "@url":""ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34""
       }

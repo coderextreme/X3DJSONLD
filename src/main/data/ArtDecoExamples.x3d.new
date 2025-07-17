@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="ArtDecoExamples.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="ArtDecoExamples.x3d"></meta>
 <meta name="description" content="Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."></meta>
 <meta name="creator" content="David Roussel"></meta>
 <meta name="translator" content="James Harney, Don Brutzman NPS"></meta>
 <meta name="created" content="7 April 2002"></meta>
-<meta name="modified" content="20 October 2019"></meta>
+<meta name="modified" content="19 January 2025"></meta>
 <meta name="reference" content="http://vrmlstuff.free.fr/materials"></meta>
 <meta name="subject" content="Universal Media Material Library"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"></meta>
@@ -59,7 +59,7 @@
 </Transform>
 <DirectionalLight direction="1 -1 -1"></DirectionalLight>
 <DirectionalLight direction="0 1 -0.5" intensity="0.5"></DirectionalLight>
-<Anchor description="Back to front view" url="&quot;#Front&quot;"><Transform translation="0 0 -0.5"><Inline url="&quot;../data/gridBack.json&quot; &quot;../data/gridBack.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d&quot; &quot;gridBack.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl&quot;"></Inline>
+<Anchor description="Return to front view" url="&quot;#Front&quot;"><Transform translation="0 0 -0.5"><Inline url="&quot;../data/gridBack.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d&quot; &quot;gridBack.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl&quot;"></Inline>
 </Transform>
 </Anchor>
 <Viewpoint DEF="View00" description="ArtDeco00" position="-3.75 3.75 3"></Viewpoint>
@@ -68,7 +68,7 @@
 <Sphere DEF="Ball" radius="0.5"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco00" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="TextMat" diffuseColor="1 1 1"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco00 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="TextMat" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco00&quot;"><FontStyle containerField="fontStyle" DEF="Style" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.3" style="BOLD"></FontStyle>
 </Text>
@@ -82,7 +82,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco01" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco01 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco01&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -96,7 +96,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco02" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco02 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco02&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -110,7 +110,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco03" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco03 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco03&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -124,7 +124,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco04" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco04 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco04&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -138,7 +138,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco05" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco05 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco05&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -152,7 +152,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco06" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco06 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco06&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -166,7 +166,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco07" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco07 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco07&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -180,7 +180,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco08" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco08 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco08&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -194,7 +194,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco09" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco09 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco09&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -208,7 +208,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco10" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco10 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco10&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -222,7 +222,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco11" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco11 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco11&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -236,7 +236,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco12" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco12 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco12&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -250,7 +250,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco13" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco13 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco13&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -264,7 +264,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco14" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco14 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco14&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -278,7 +278,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco15" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco15 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco15&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -292,7 +292,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco16" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco16 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco16&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -306,7 +306,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco17" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco17 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco17&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -320,7 +320,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco18" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco18 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco18&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -334,7 +334,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco19" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco19 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco19&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -348,7 +348,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco20" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco20 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco20&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -362,7 +362,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco21" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco21 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco21&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -376,7 +376,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco22" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco22 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco22&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -390,7 +390,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco23" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco23 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco23&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -404,7 +404,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco24" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco24 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco24&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -418,7 +418,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco25" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco25 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco25&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -432,7 +432,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco26" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco26 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco26&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -446,7 +446,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco27" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco27 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco27&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -460,7 +460,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco28" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco28 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco28&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -474,7 +474,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco29" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco29 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco29&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -488,7 +488,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco30" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco30 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco30&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -502,7 +502,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco31" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco31 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco31&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -516,7 +516,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco32" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco32 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco32&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -530,7 +530,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco33" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco33 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco33&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>
@@ -544,7 +544,7 @@
 <Sphere USE="Ball"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco34" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco34 view source documentation" parameter="&quot;target=_source&quot;" url="&quot;ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
 </Appearance>
 <Text string="&quot;ArtDeco34&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
 </Text>

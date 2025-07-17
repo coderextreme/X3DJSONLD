@@ -28,12 +28,8 @@
     <HAnimHumanoid DEF='hanim_Da' name='Da' scale='0.0225 0.0225 0.0225' version='2.0'>
       <!-- original HAnimHumanoid info='"authorName=Chul Hee Jung and Myeong Won Lee" "authorEmail=myeongwonlee@gmail.com" "creationDate=31 March 2011" "humanoidVersion=2.0" "gender=female" "height=1.5"' -->
       <MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString name='authorName' value='"Chul Hee Jung and Myeong Won Lee"'/>
-        <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
-        <MetadataString name='creationDate' value='"31 March 2011"'/>
-        <MetadataString name='gender' value='"female"'/>
-        <MetadataFloat name='height' value='1.5'/>
         <MetadataString name='humanoidVersion' value='"2.0"'/>
+        <MetadataFloat name='height' value='1.5'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 32.73 -1.981'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>

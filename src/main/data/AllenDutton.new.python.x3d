@@ -307,7 +307,7 @@
     </HAnimHumanoid>
     <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
     <Group DEF='Interface'>
-      <Collision DEF='HUD' enabled='false'>
+      <Collision DEF='HUD'>
         <Transform DEF='HudXform'>
           <Transform rotation='0 1 0 0.65' scale='0.5 0.5 0.5' translation='0.5 0.1 0'>
             <Transform DEF='Stand_Text'>
