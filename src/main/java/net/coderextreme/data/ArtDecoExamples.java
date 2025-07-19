@@ -91,14 +91,14 @@ ProtoInstance ProtoInstance31 = null;
 ProtoInstance ProtoInstance32 = null;
 ProtoInstance ProtoInstance33 = null;
 ProtoInstance ProtoInstance34 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ArtDecoExamples.x3d"))
         .addMeta(new meta().setName("description").setContent("Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."))
         .addMeta(new meta().setName("creator").setContent("David Roussel"))
         .addMeta(new meta().setName("translator").setContent("James Harney, Don Brutzman NPS"))
         .addMeta(new meta().setName("created").setContent("7 April 2002"))
-        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("modified").setContent("19 January 2025"))
         .addMeta(new meta().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta(new meta().setName("subject").setContent("Universal Media Material Library"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"))
@@ -143,696 +143,696 @@ ProtoInstance ProtoInstance34 = null;
         .addChild(new ExternProtoDeclare().setName("ArtDeco34").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials").setUrl(new MFString34().getArray()))
         .addChild(new Group()
           .addChild(new NavigationInfo().setHeadlight(false))
-          .addChild(new Viewpoint().setDEF("Front").setDescription("Front view").setPosition(new double[] {0,0,12}))
-          .addChild(new Viewpoint().setDEF("PersRight").setDescription("Low Right").setOrientation(new double[] {0.74291,0.30772,0.59447,1.2171}).setPosition(new double[] {6.9282,-6.9282,6.9282}))
-          .addChild(new Viewpoint().setDEF("PersLeft").setDescription("Low Left").setOrientation(new double[] {0.74291,-0.30772,-0.59447,1.2171}).setPosition(new double[] {-6.9282,-6.9282,6.9282}))
-          .addChild(new Viewpoint().setDEF("Back").setDescription("Back view").setOrientation(new double[] {0,1,0,3.1416}).setPosition(new double[] {0,0,-12}))
+          .addChild(new Viewpoint().setDEF("Front").setDescription("Front view").setPosition(new double[] {0f,0f,12f}))
+          .addChild(new Viewpoint().setDEF("PersRight").setDescription("Low Right").setOrientation(new double[] {0.74291f,0.30772f,0.59447f,1.2171f}).setPosition(new double[] {6.9282f,-6.9282f,6.9282f}))
+          .addChild(new Viewpoint().setDEF("PersLeft").setDescription("Low Left").setOrientation(new double[] {0.74291f,-0.30772f,-0.59447f,1.2171f}).setPosition(new double[] {-6.9282f,-6.9282f,6.9282f}))
+          .addChild(new Viewpoint().setDEF("Back").setDescription("Back view").setOrientation(new double[] {0f,1f,0f,3.1416f}).setPosition(new double[] {0f,0f,-12f}))
           .addChild(new Transform().setDEF("Close_travel")
             .addChild(new PositionInterpolator().setDEF("Close_Mover").setKey(new MFFloat35().getArray()).setKeyValue(new MFVec3f36().getArray()))
-            .addChild(new TimeSensor().setDEF("Close_Time").setCycleInterval(12).setLoop(true))
-            .addChild(new Viewpoint().setDEF("Close").setDescription("Close Front").setPosition(new double[] {0,0,6})))
-          .addChild(new DirectionalLight().setDirection(new double[] {1,-1,-1}))
-          .addChild(new DirectionalLight().setDirection(new double[] {0,1,-0.5}).setIntensity(0.5))
-          .addChild(new Anchor().setDescription("Back to front view").setUrl(new MFString37().getArray())
-            .addChild(new Transform().setTranslation(new double[] {0,0,-0.5})
+            .addChild(new TimeSensor().setDEF("Close_Time").setCycleInterval(12d).setLoop(true))
+            .addChild(new Viewpoint().setDEF("Close").setDescription("Close Front").setPosition(new double[] {0f,0f,6f})))
+          .addChild(new DirectionalLight().setDirection(new double[] {1f,-1f,-1f}))
+          .addChild(new DirectionalLight().setDirection(new double[] {0f,1f,-0.5f}).setIntensity(0.5f))
+          .addChild(new Anchor().setDescription("Return to front view").setUrl(new MFString37().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0f,-0.5f})
               .addChild(new Inline().setUrl(new MFString38().getArray()))))
-          .addChild(new Viewpoint().setDEF("View00").setDescription("ArtDeco00").setPosition(new double[] {-3.75,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,3.75,0})
+          .addChild(new Viewpoint().setDEF("View00").setDescription("ArtDeco00").setPosition(new double[] {-3.75f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco00 view").setUrl(new MFString39().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance0 = new ProtoInstance().setName("ArtDeco00")))
-                .setGeometry(new Sphere().setDEF("Ball").setRadius(0.5))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco00").setParameter(new MFString40().getArray()).setUrl(new MFString41().getArray())
+                .setGeometry(new Sphere().setDEF("Ball").setRadius(0.5f))))
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco00 view source documentation").setParameter(new MFString40().getArray()).setUrl(new MFString41().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("TextMat").setDiffuseColor(new double[] {1,1,1})))
+                    .setMaterial(new Material().setDEF("TextMat").setDiffuseColor(new double[] {1f,1f,1f})))
                   .setGeometry(new Text().setString(new MFString42().getArray())
-                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new MFString43().getArray()).setJustify(new MFString44().getArray()).setSize(0.3).setStyle("BOLD")))))))
-          .addChild(new Viewpoint().setDEF("View01").setDescription("ArtDeco01").setPosition(new double[] {-2.25,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,3.75,0})
+                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new MFString43().getArray()).setJustify(new MFString44().getArray()).setSize(0.3f).setStyle("BOLD")))))))
+          .addChild(new Viewpoint().setDEF("View01").setDescription("ArtDeco01").setPosition(new double[] {-2.25f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco01 view").setUrl(new MFString45().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance1 = new ProtoInstance().setName("ArtDeco01")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco01").setParameter(new MFString46().getArray()).setUrl(new MFString47().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco01 view source documentation").setParameter(new MFString46().getArray()).setUrl(new MFString47().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString48().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View02").setDescription("ArtDeco02").setPosition(new double[] {-0.75,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,3.75,0})
+          .addChild(new Viewpoint().setDEF("View02").setDescription("ArtDeco02").setPosition(new double[] {-0.75f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco02 view").setUrl(new MFString49().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance2 = new ProtoInstance().setName("ArtDeco02")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco02").setParameter(new MFString50().getArray()).setUrl(new MFString51().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco02 view source documentation").setParameter(new MFString50().getArray()).setUrl(new MFString51().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString52().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View03").setDescription("ArtDeco03").setPosition(new double[] {0.75,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,3.75,0})
+          .addChild(new Viewpoint().setDEF("View03").setDescription("ArtDeco03").setPosition(new double[] {0.75f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco03 view").setUrl(new MFString53().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance3 = new ProtoInstance().setName("ArtDeco03")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco03").setParameter(new MFString54().getArray()).setUrl(new MFString55().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco03 view source documentation").setParameter(new MFString54().getArray()).setUrl(new MFString55().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString56().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View04").setDescription("ArtDeco04").setPosition(new double[] {2.25,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,3.75,0})
+          .addChild(new Viewpoint().setDEF("View04").setDescription("ArtDeco04").setPosition(new double[] {2.25f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco04 view").setUrl(new MFString57().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance4 = new ProtoInstance().setName("ArtDeco04")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco04").setParameter(new MFString58().getArray()).setUrl(new MFString59().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco04 view source documentation").setParameter(new MFString58().getArray()).setUrl(new MFString59().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString60().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View05").setDescription("ArtDeco05").setPosition(new double[] {3.75,3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {3.75,3.75,0})
+          .addChild(new Viewpoint().setDEF("View05").setDescription("ArtDeco05").setPosition(new double[] {3.75f,3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {3.75f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco05 view").setUrl(new MFString61().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance5 = new ProtoInstance().setName("ArtDeco05")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco05").setParameter(new MFString62().getArray()).setUrl(new MFString63().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco05 view source documentation").setParameter(new MFString62().getArray()).setUrl(new MFString63().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString64().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View06").setDescription("ArtDeco06").setPosition(new double[] {-3.75,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,2.25,0})
+          .addChild(new Viewpoint().setDEF("View06").setDescription("ArtDeco06").setPosition(new double[] {-3.75f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco06 view").setUrl(new MFString65().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance6 = new ProtoInstance().setName("ArtDeco06")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco06").setParameter(new MFString66().getArray()).setUrl(new MFString67().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco06 view source documentation").setParameter(new MFString66().getArray()).setUrl(new MFString67().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString68().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View07").setDescription("ArtDeco07").setPosition(new double[] {-2.25,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,2.25,0})
+          .addChild(new Viewpoint().setDEF("View07").setDescription("ArtDeco07").setPosition(new double[] {-2.25f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco07 view").setUrl(new MFString69().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance7 = new ProtoInstance().setName("ArtDeco07")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco07").setParameter(new MFString70().getArray()).setUrl(new MFString71().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco07 view source documentation").setParameter(new MFString70().getArray()).setUrl(new MFString71().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString72().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View08").setDescription("ArtDeco08").setPosition(new double[] {-0.75,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,2.25,0})
+          .addChild(new Viewpoint().setDEF("View08").setDescription("ArtDeco08").setPosition(new double[] {-0.75f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco08 view").setUrl(new MFString73().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance8 = new ProtoInstance().setName("ArtDeco08")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco08").setParameter(new MFString74().getArray()).setUrl(new MFString75().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco08 view source documentation").setParameter(new MFString74().getArray()).setUrl(new MFString75().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString76().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View09").setDescription("ArtDeco09").setPosition(new double[] {0.75,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,2.25,0})
+          .addChild(new Viewpoint().setDEF("View09").setDescription("ArtDeco09").setPosition(new double[] {0.75f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco09 view").setUrl(new MFString77().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance9 = new ProtoInstance().setName("ArtDeco09")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco09").setParameter(new MFString78().getArray()).setUrl(new MFString79().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco09 view source documentation").setParameter(new MFString78().getArray()).setUrl(new MFString79().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString80().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View10").setDescription("ArtDeco10").setPosition(new double[] {2.25,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,2.25,0})
+          .addChild(new Viewpoint().setDEF("View10").setDescription("ArtDeco10").setPosition(new double[] {2.25f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco10 view").setUrl(new MFString81().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance10 = new ProtoInstance().setName("ArtDeco10")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco10").setParameter(new MFString82().getArray()).setUrl(new MFString83().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco10 view source documentation").setParameter(new MFString82().getArray()).setUrl(new MFString83().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString84().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View11").setDescription("ArtDeco11").setPosition(new double[] {3.75,2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {3.75,2.25,0})
+          .addChild(new Viewpoint().setDEF("View11").setDescription("ArtDeco11").setPosition(new double[] {3.75f,2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {3.75f,2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco11 view").setUrl(new MFString85().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance11 = new ProtoInstance().setName("ArtDeco11")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco11").setParameter(new MFString86().getArray()).setUrl(new MFString87().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco11 view source documentation").setParameter(new MFString86().getArray()).setUrl(new MFString87().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString88().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View12").setDescription("ArtDeco12").setPosition(new double[] {-3.75,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,0.75,0})
+          .addChild(new Viewpoint().setDEF("View12").setDescription("ArtDeco12").setPosition(new double[] {-3.75f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco12 view").setUrl(new MFString89().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance12 = new ProtoInstance().setName("ArtDeco12")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco12").setParameter(new MFString90().getArray()).setUrl(new MFString91().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco12 view source documentation").setParameter(new MFString90().getArray()).setUrl(new MFString91().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString92().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View13").setDescription("ArtDeco13").setPosition(new double[] {-2.25,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,0.75,0})
+          .addChild(new Viewpoint().setDEF("View13").setDescription("ArtDeco13").setPosition(new double[] {-2.25f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco13 view").setUrl(new MFString93().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance13 = new ProtoInstance().setName("ArtDeco13")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco13").setParameter(new MFString94().getArray()).setUrl(new MFString95().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco13 view source documentation").setParameter(new MFString94().getArray()).setUrl(new MFString95().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString96().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View14").setDescription("ArtDeco14").setPosition(new double[] {-0.75,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,0.75,0})
+          .addChild(new Viewpoint().setDEF("View14").setDescription("ArtDeco14").setPosition(new double[] {-0.75f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco14 view").setUrl(new MFString97().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance14 = new ProtoInstance().setName("ArtDeco14")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco14").setParameter(new MFString98().getArray()).setUrl(new MFString99().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco14 view source documentation").setParameter(new MFString98().getArray()).setUrl(new MFString99().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString100().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View15").setDescription("ArtDeco15").setPosition(new double[] {0.75,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,0.75,0})
+          .addChild(new Viewpoint().setDEF("View15").setDescription("ArtDeco15").setPosition(new double[] {0.75f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco15 view").setUrl(new MFString101().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance15 = new ProtoInstance().setName("ArtDeco15")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco15").setParameter(new MFString102().getArray()).setUrl(new MFString103().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco15 view source documentation").setParameter(new MFString102().getArray()).setUrl(new MFString103().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString104().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View16").setDescription("ArtDeco16").setPosition(new double[] {2.25,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,0.75,0})
+          .addChild(new Viewpoint().setDEF("View16").setDescription("ArtDeco16").setPosition(new double[] {2.25f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco16 view").setUrl(new MFString105().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance16 = new ProtoInstance().setName("ArtDeco16")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco16").setParameter(new MFString106().getArray()).setUrl(new MFString107().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco16 view source documentation").setParameter(new MFString106().getArray()).setUrl(new MFString107().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString108().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View17").setDescription("ArtDeco17").setPosition(new double[] {3.75,0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {3.75,0.75,0})
+          .addChild(new Viewpoint().setDEF("View17").setDescription("ArtDeco17").setPosition(new double[] {3.75f,0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {3.75f,0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco17 view").setUrl(new MFString109().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance17 = new ProtoInstance().setName("ArtDeco17")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco17").setParameter(new MFString110().getArray()).setUrl(new MFString111().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco17 view source documentation").setParameter(new MFString110().getArray()).setUrl(new MFString111().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString112().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View18").setDescription("ArtDeco18").setPosition(new double[] {-3.75,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View18").setDescription("ArtDeco18").setPosition(new double[] {-3.75f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco18 view").setUrl(new MFString113().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance18 = new ProtoInstance().setName("ArtDeco18")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco18").setParameter(new MFString114().getArray()).setUrl(new MFString115().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco18 view source documentation").setParameter(new MFString114().getArray()).setUrl(new MFString115().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString116().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View19").setDescription("ArtDeco19").setPosition(new double[] {-2.25,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View19").setDescription("ArtDeco19").setPosition(new double[] {-2.25f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco19 view").setUrl(new MFString117().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance19 = new ProtoInstance().setName("ArtDeco19")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco19").setParameter(new MFString118().getArray()).setUrl(new MFString119().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco19 view source documentation").setParameter(new MFString118().getArray()).setUrl(new MFString119().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString120().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View20").setDescription("ArtDeco20").setPosition(new double[] {-0.75,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View20").setDescription("ArtDeco20").setPosition(new double[] {-0.75f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco20 view").setUrl(new MFString121().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance20 = new ProtoInstance().setName("ArtDeco20")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco20").setParameter(new MFString122().getArray()).setUrl(new MFString123().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco20 view source documentation").setParameter(new MFString122().getArray()).setUrl(new MFString123().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString124().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View21").setDescription("ArtDeco21").setPosition(new double[] {0.75,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View21").setDescription("ArtDeco21").setPosition(new double[] {0.75f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco21 view").setUrl(new MFString125().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance21 = new ProtoInstance().setName("ArtDeco21")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco21").setParameter(new MFString126().getArray()).setUrl(new MFString127().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco21 view source documentation").setParameter(new MFString126().getArray()).setUrl(new MFString127().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString128().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View22").setDescription("ArtDeco22").setPosition(new double[] {2.25,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View22").setDescription("ArtDeco22").setPosition(new double[] {2.25f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco22 view").setUrl(new MFString129().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance22 = new ProtoInstance().setName("ArtDeco22")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco22").setParameter(new MFString130().getArray()).setUrl(new MFString131().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco22 view source documentation").setParameter(new MFString130().getArray()).setUrl(new MFString131().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString132().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View23").setDescription("ArtDeco23").setPosition(new double[] {3.75,-0.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {3.75,-0.75,0})
+          .addChild(new Viewpoint().setDEF("View23").setDescription("ArtDeco23").setPosition(new double[] {3.75f,-0.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {3.75f,-0.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco23 view").setUrl(new MFString133().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance23 = new ProtoInstance().setName("ArtDeco23")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco23").setParameter(new MFString134().getArray()).setUrl(new MFString135().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco23 view source documentation").setParameter(new MFString134().getArray()).setUrl(new MFString135().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString136().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View24").setDescription("ArtDeco24").setPosition(new double[] {-3.75,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View24").setDescription("ArtDeco24").setPosition(new double[] {-3.75f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco24 view").setUrl(new MFString137().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance24 = new ProtoInstance().setName("ArtDeco24")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco24").setParameter(new MFString138().getArray()).setUrl(new MFString139().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco24 view source documentation").setParameter(new MFString138().getArray()).setUrl(new MFString139().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString140().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View25").setDescription("ArtDeco25").setPosition(new double[] {-2.25,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View25").setDescription("ArtDeco25").setPosition(new double[] {-2.25f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco25 view").setUrl(new MFString141().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance25 = new ProtoInstance().setName("ArtDeco25")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco25").setParameter(new MFString142().getArray()).setUrl(new MFString143().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco25 view source documentation").setParameter(new MFString142().getArray()).setUrl(new MFString143().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString144().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View26").setDescription("ArtDeco26").setPosition(new double[] {-0.75,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View26").setDescription("ArtDeco26").setPosition(new double[] {-0.75f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco26 view").setUrl(new MFString145().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance26 = new ProtoInstance().setName("ArtDeco26")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco26").setParameter(new MFString146().getArray()).setUrl(new MFString147().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco26 view source documentation").setParameter(new MFString146().getArray()).setUrl(new MFString147().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString148().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View27").setDescription("ArtDeco27").setPosition(new double[] {0.75,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View27").setDescription("ArtDeco27").setPosition(new double[] {0.75f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco27 view").setUrl(new MFString149().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance27 = new ProtoInstance().setName("ArtDeco27")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco27").setParameter(new MFString150().getArray()).setUrl(new MFString151().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco27 view source documentation").setParameter(new MFString150().getArray()).setUrl(new MFString151().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString152().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View28").setDescription("ArtDeco28").setPosition(new double[] {2.25,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View28").setDescription("ArtDeco28").setPosition(new double[] {2.25f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco28 view").setUrl(new MFString153().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance28 = new ProtoInstance().setName("ArtDeco28")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco28").setParameter(new MFString154().getArray()).setUrl(new MFString155().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco28 view source documentation").setParameter(new MFString154().getArray()).setUrl(new MFString155().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString156().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View29").setDescription("ArtDeco29").setPosition(new double[] {3.75,-2.25,3}))
-          .addChild(new Transform().setTranslation(new double[] {3.75,-2.25,0})
+          .addChild(new Viewpoint().setDEF("View29").setDescription("ArtDeco29").setPosition(new double[] {3.75f,-2.25f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {3.75f,-2.25f,0f})
             .addChild(new Anchor().setDescription("ArtDeco29 view").setUrl(new MFString157().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance29 = new ProtoInstance().setName("ArtDeco29")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco29").setParameter(new MFString158().getArray()).setUrl(new MFString159().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco29 view source documentation").setParameter(new MFString158().getArray()).setUrl(new MFString159().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString160().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View30").setDescription("ArtDeco30").setPosition(new double[] {-3.75,-3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-3.75,-3.75,0})
+          .addChild(new Viewpoint().setDEF("View30").setDescription("ArtDeco30").setPosition(new double[] {-3.75f,-3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-3.75f,-3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco30 view").setUrl(new MFString161().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance30 = new ProtoInstance().setName("ArtDeco30")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco30").setParameter(new MFString162().getArray()).setUrl(new MFString163().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco30 view source documentation").setParameter(new MFString162().getArray()).setUrl(new MFString163().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString164().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View31").setDescription("ArtDeco31").setPosition(new double[] {-2.25,-3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-2.25,-3.75,0})
+          .addChild(new Viewpoint().setDEF("View31").setDescription("ArtDeco31").setPosition(new double[] {-2.25f,-3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-2.25f,-3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco31 view").setUrl(new MFString165().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance31 = new ProtoInstance().setName("ArtDeco31")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco31").setParameter(new MFString166().getArray()).setUrl(new MFString167().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco31 view source documentation").setParameter(new MFString166().getArray()).setUrl(new MFString167().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString168().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View32").setDescription("ArtDeco32").setPosition(new double[] {-0.75,-3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {-0.75,-3.75,0})
+          .addChild(new Viewpoint().setDEF("View32").setDescription("ArtDeco32").setPosition(new double[] {-0.75f,-3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {-0.75f,-3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco32 view").setUrl(new MFString169().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance32 = new ProtoInstance().setName("ArtDeco32")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco32").setParameter(new MFString170().getArray()).setUrl(new MFString171().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco32 view source documentation").setParameter(new MFString170().getArray()).setUrl(new MFString171().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString172().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View33").setDescription("ArtDeco33").setPosition(new double[] {0.75,-3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {0.75,-3.75,0})
+          .addChild(new Viewpoint().setDEF("View33").setDescription("ArtDeco33").setPosition(new double[] {0.75f,-3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {0.75f,-3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco33 view").setUrl(new MFString173().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance33 = new ProtoInstance().setName("ArtDeco33")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco33").setParameter(new MFString174().getArray()).setUrl(new MFString175().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco33 view source documentation").setParameter(new MFString174().getArray()).setUrl(new MFString175().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString176().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style")))))))
-          .addChild(new Viewpoint().setDEF("View34").setDescription("ArtDeco34").setPosition(new double[] {2.25,-3.75,3}))
-          .addChild(new Transform().setTranslation(new double[] {2.25,-3.75,0})
+          .addChild(new Viewpoint().setDEF("View34").setDescription("ArtDeco34").setPosition(new double[] {2.25f,-3.75f,3f}))
+          .addChild(new Transform().setTranslation(new double[] {2.25f,-3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco34 view").setUrl(new MFString177().getArray())
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance34 = new ProtoInstance().setName("ArtDeco34")))
                 .setGeometry(new Sphere().setUSE("Ball"))))
-            .addChild(new Transform().setTranslation(new double[] {0,0.3,0.5})
-              .addChild(new Anchor().setDescription("ArtDeco34").setParameter(new MFString178().getArray()).setUrl(new MFString179().getArray())
+            .addChild(new Transform().setTranslation(new double[] {0f,0.3f,0.5f})
+              .addChild(new Anchor().setDescription("ArtDeco34 view source documentation").setParameter(new MFString178().getArray()).setUrl(new MFString179().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("TextMat")))
                   .setGeometry(new Text().setString(new MFString180().getArray())
                     .setFontStyle(new FontStyle().setUSE("Style"))))))))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Close_Time").setToField("set_fraction").setToNode("Close_Mover"))
-        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Close_Mover").setToField("set_translation").setToNode("Close_travel")))      ;
+        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Close_Mover").setToField("set_translation").setToNode("Close_travel")));
     return X3D0;
     }
 private class MFString0 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"});
   }
 }
 private class MFString1 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"});
   }
 }
 private class MFString2 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"});
   }
 }
 private class MFString3 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"});
   }
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"});
   }
 }
 private class MFString5 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"});
   }
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"});
   }
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"});
   }
 }
 private class MFString8 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"});
   }
 }
 private class MFString9 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"});
   }
 }
 private class MFString10 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"});
   }
 }
 private class MFString11 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"});
   }
 }
 private class MFString12 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"});
   }
 }
 private class MFString13 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"});
   }
 }
 private class MFString14 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"});
   }
 }
 private class MFString15 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"});
   }
 }
 private class MFString16 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"});
   }
 }
 private class MFString17 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"});
   }
 }
 private class MFString18 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"});
   }
 }
 private class MFString19 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"});
   }
 }
 private class MFString20 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"});
   }
 }
 private class MFString21 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"});
   }
 }
 private class MFString22 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"});
   }
 }
 private class MFString23 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"});
   }
 }
 private class MFString24 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"});
   }
 }
 private class MFString25 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"});
   }
 }
 private class MFString26 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"});
   }
 }
 private class MFString27 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"});
   }
 }
 private class MFString28 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"});
   }
 }
 private class MFString29 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"});
   }
 }
 private class MFString30 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"});
   }
 }
 private class MFString31 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"});
   }
 }
 private class MFString32 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"});
   }
 }
 private class MFString33 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"});
   }
 }
 private class MFString34 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"});
   }
 }
 private class MFFloat35 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.25,0.5,0.75,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
 private class MFVec3f36 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,2.5f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,2.5f,0f});
   }
 }
 private class MFString37 {
@@ -842,7 +842,7 @@ private class MFString37 {
 }
 private class MFString38 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"});
   }
 }
 private class MFString39 {
