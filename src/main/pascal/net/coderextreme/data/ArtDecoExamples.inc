@@ -546,7 +546,7 @@ FontStyle554: TFontStyleNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
-X3D0.ForceVersion.Major := 3;
+X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ArtDecoExamples.x3d';
 X3D0.Meta['description'] := 'Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples.';
@@ -568,245 +568,245 @@ ExternProtoDeclare15 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare15.NameField := 'ArtDeco00';
 ExternProtoDeclare15.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare15.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare15.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco00','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00','ArtDecoPrototypes.wrl#ArtDeco00','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00']);
+ExternProtoDeclare15.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco00','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00','ArtDecoPrototypes.wrl#ArtDeco00','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare15]);
 ExternProtoDeclare16 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare16.NameField := 'ArtDeco01';
 ExternProtoDeclare16.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare16.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare16.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco01','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01','ArtDecoPrototypes.wrl#ArtDeco01','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01']);
+ExternProtoDeclare16.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco01','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01','ArtDecoPrototypes.wrl#ArtDeco01','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare16]);
 ExternProtoDeclare17 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare17.NameField := 'ArtDeco02';
 ExternProtoDeclare17.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare17.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare17.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco02','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02','ArtDecoPrototypes.wrl#ArtDeco02','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02']);
+ExternProtoDeclare17.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco02','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02','ArtDecoPrototypes.wrl#ArtDeco02','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare17]);
 ExternProtoDeclare18 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare18.NameField := 'ArtDeco03';
 ExternProtoDeclare18.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare18.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare18.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco03','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03','ArtDecoPrototypes.wrl#ArtDeco03','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03']);
+ExternProtoDeclare18.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco03','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03','ArtDecoPrototypes.wrl#ArtDeco03','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare18]);
 ExternProtoDeclare19 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare19.NameField := 'ArtDeco04';
 ExternProtoDeclare19.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare19.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare19.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco04','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04','ArtDecoPrototypes.wrl#ArtDeco04','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04']);
+ExternProtoDeclare19.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco04','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04','ArtDecoPrototypes.wrl#ArtDeco04','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare19]);
 ExternProtoDeclare20 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare20.NameField := 'ArtDeco05';
 ExternProtoDeclare20.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare20.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare20.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco05','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05','ArtDecoPrototypes.wrl#ArtDeco05','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05']);
+ExternProtoDeclare20.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco05','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05','ArtDecoPrototypes.wrl#ArtDeco05','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare20]);
 ExternProtoDeclare21 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare21.NameField := 'ArtDeco06';
 ExternProtoDeclare21.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare21.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare21.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco06','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06','ArtDecoPrototypes.wrl#ArtDeco06','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06']);
+ExternProtoDeclare21.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco06','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06','ArtDecoPrototypes.wrl#ArtDeco06','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare21]);
 ExternProtoDeclare22 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare22.NameField := 'ArtDeco07';
 ExternProtoDeclare22.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare22.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare22.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco07','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07','ArtDecoPrototypes.wrl#ArtDeco07','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07']);
+ExternProtoDeclare22.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco07','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07','ArtDecoPrototypes.wrl#ArtDeco07','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare22]);
 ExternProtoDeclare23 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare23.NameField := 'ArtDeco08';
 ExternProtoDeclare23.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare23.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare23.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco08','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08','ArtDecoPrototypes.wrl#ArtDeco08','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08']);
+ExternProtoDeclare23.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco08','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08','ArtDecoPrototypes.wrl#ArtDeco08','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare23]);
 ExternProtoDeclare24 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare24.NameField := 'ArtDeco09';
 ExternProtoDeclare24.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare24.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare24.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco09','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09','ArtDecoPrototypes.wrl#ArtDeco09','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09']);
+ExternProtoDeclare24.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco09','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09','ArtDecoPrototypes.wrl#ArtDeco09','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare24]);
 ExternProtoDeclare25 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare25.NameField := 'ArtDeco10';
 ExternProtoDeclare25.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare25.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare25.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco10','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10','ArtDecoPrototypes.wrl#ArtDeco10','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10']);
+ExternProtoDeclare25.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco10','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10','ArtDecoPrototypes.wrl#ArtDeco10','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare25]);
 ExternProtoDeclare26 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare26.NameField := 'ArtDeco11';
 ExternProtoDeclare26.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare26.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare26.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco11','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11','ArtDecoPrototypes.wrl#ArtDeco11','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11']);
+ExternProtoDeclare26.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco11','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11','ArtDecoPrototypes.wrl#ArtDeco11','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare26]);
 ExternProtoDeclare27 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare27.NameField := 'ArtDeco12';
 ExternProtoDeclare27.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare27.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare27.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco12','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12','ArtDecoPrototypes.wrl#ArtDeco12','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12']);
+ExternProtoDeclare27.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco12','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12','ArtDecoPrototypes.wrl#ArtDeco12','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare27]);
 ExternProtoDeclare28 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare28.NameField := 'ArtDeco13';
 ExternProtoDeclare28.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare28.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare28.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco13','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13','ArtDecoPrototypes.wrl#ArtDeco13','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13']);
+ExternProtoDeclare28.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco13','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13','ArtDecoPrototypes.wrl#ArtDeco13','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare28]);
 ExternProtoDeclare29 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare29.NameField := 'ArtDeco14';
 ExternProtoDeclare29.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare29.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare29.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco14','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14','ArtDecoPrototypes.wrl#ArtDeco14','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14']);
+ExternProtoDeclare29.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco14','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14','ArtDecoPrototypes.wrl#ArtDeco14','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare29]);
 ExternProtoDeclare30 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare30.NameField := 'ArtDeco15';
 ExternProtoDeclare30.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare30.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare30.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco15','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15','ArtDecoPrototypes.wrl#ArtDeco15','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15']);
+ExternProtoDeclare30.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco15','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15','ArtDecoPrototypes.wrl#ArtDeco15','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare30]);
 ExternProtoDeclare31 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare31.NameField := 'ArtDeco16';
 ExternProtoDeclare31.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare31.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare31.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco16','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16','ArtDecoPrototypes.wrl#ArtDeco16','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16']);
+ExternProtoDeclare31.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco16','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16','ArtDecoPrototypes.wrl#ArtDeco16','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare31]);
 ExternProtoDeclare32 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare32.NameField := 'ArtDeco17';
 ExternProtoDeclare32.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare32.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare32.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco17','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17','ArtDecoPrototypes.wrl#ArtDeco17','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17']);
+ExternProtoDeclare32.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco17','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17','ArtDecoPrototypes.wrl#ArtDeco17','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare32]);
 ExternProtoDeclare33 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare33.NameField := 'ArtDeco18';
 ExternProtoDeclare33.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare33.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare33.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco18','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18','ArtDecoPrototypes.wrl#ArtDeco18','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18']);
+ExternProtoDeclare33.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco18','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18','ArtDecoPrototypes.wrl#ArtDeco18','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare33]);
 ExternProtoDeclare34 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare34.NameField := 'ArtDeco19';
 ExternProtoDeclare34.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare34.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare34.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco19','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19','ArtDecoPrototypes.wrl#ArtDeco19','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19']);
+ExternProtoDeclare34.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco19','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19','ArtDecoPrototypes.wrl#ArtDeco19','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare34]);
 ExternProtoDeclare35 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare35.NameField := 'ArtDeco20';
 ExternProtoDeclare35.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare35.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare35.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco20','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20','ArtDecoPrototypes.wrl#ArtDeco20','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20']);
+ExternProtoDeclare35.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco20','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20','ArtDecoPrototypes.wrl#ArtDeco20','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare35]);
 ExternProtoDeclare36 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare36.NameField := 'ArtDeco21';
 ExternProtoDeclare36.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare36.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare36.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco21','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21','ArtDecoPrototypes.wrl#ArtDeco21','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21']);
+ExternProtoDeclare36.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco21','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21','ArtDecoPrototypes.wrl#ArtDeco21','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare36]);
 ExternProtoDeclare37 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare37.NameField := 'ArtDeco22';
 ExternProtoDeclare37.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare37.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare37.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco22','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22','ArtDecoPrototypes.wrl#ArtDeco22','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22']);
+ExternProtoDeclare37.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco22','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22','ArtDecoPrototypes.wrl#ArtDeco22','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare37]);
 ExternProtoDeclare38 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare38.NameField := 'ArtDeco23';
 ExternProtoDeclare38.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare38.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare38.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco23','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23','ArtDecoPrototypes.wrl#ArtDeco23','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23']);
+ExternProtoDeclare38.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco23','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23','ArtDecoPrototypes.wrl#ArtDeco23','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare38]);
 ExternProtoDeclare39 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare39.NameField := 'ArtDeco24';
 ExternProtoDeclare39.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare39.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare39.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco24','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24','ArtDecoPrototypes.wrl#ArtDeco24','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24']);
+ExternProtoDeclare39.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco24','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24','ArtDecoPrototypes.wrl#ArtDeco24','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare39]);
 ExternProtoDeclare40 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare40.NameField := 'ArtDeco25';
 ExternProtoDeclare40.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare40.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare40.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco25','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25','ArtDecoPrototypes.wrl#ArtDeco25','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25']);
+ExternProtoDeclare40.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco25','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25','ArtDecoPrototypes.wrl#ArtDeco25','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare40]);
 ExternProtoDeclare41 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare41.NameField := 'ArtDeco26';
 ExternProtoDeclare41.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare41.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare41.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco26','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26','ArtDecoPrototypes.wrl#ArtDeco26','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26']);
+ExternProtoDeclare41.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco26','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26','ArtDecoPrototypes.wrl#ArtDeco26','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare41]);
 ExternProtoDeclare42 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare42.NameField := 'ArtDeco27';
 ExternProtoDeclare42.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare42.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare42.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco27','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27','ArtDecoPrototypes.wrl#ArtDeco27','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27']);
+ExternProtoDeclare42.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco27','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27','ArtDecoPrototypes.wrl#ArtDeco27','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare42]);
 ExternProtoDeclare43 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare43.NameField := 'ArtDeco28';
 ExternProtoDeclare43.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare43.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare43.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco28','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28','ArtDecoPrototypes.wrl#ArtDeco28','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28']);
+ExternProtoDeclare43.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco28','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28','ArtDecoPrototypes.wrl#ArtDeco28','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare43]);
 ExternProtoDeclare44 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare44.NameField := 'ArtDeco29';
 ExternProtoDeclare44.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare44.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare44.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco29','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29','ArtDecoPrototypes.wrl#ArtDeco29','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29']);
+ExternProtoDeclare44.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco29','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29','ArtDecoPrototypes.wrl#ArtDeco29','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare44]);
 ExternProtoDeclare45 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare45.NameField := 'ArtDeco30';
 ExternProtoDeclare45.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare45.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare45.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco30','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30','ArtDecoPrototypes.wrl#ArtDeco30','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30']);
+ExternProtoDeclare45.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco30','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30','ArtDecoPrototypes.wrl#ArtDeco30','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare45]);
 ExternProtoDeclare46 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare46.NameField := 'ArtDeco31';
 ExternProtoDeclare46.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare46.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare46.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco31','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31','ArtDecoPrototypes.wrl#ArtDeco31','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31']);
+ExternProtoDeclare46.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco31','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31','ArtDecoPrototypes.wrl#ArtDeco31','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare46]);
 ExternProtoDeclare47 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare47.NameField := 'ArtDeco32';
 ExternProtoDeclare47.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare47.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare47.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco32','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32','ArtDecoPrototypes.wrl#ArtDeco32','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32']);
+ExternProtoDeclare47.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco32','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32','ArtDecoPrototypes.wrl#ArtDeco32','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare47]);
 ExternProtoDeclare48 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare48.NameField := 'ArtDeco33';
 ExternProtoDeclare48.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare48.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare48.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco33','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33','ArtDecoPrototypes.wrl#ArtDeco33','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33']);
+ExternProtoDeclare48.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco33','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33','ArtDecoPrototypes.wrl#ArtDeco33','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare48]);
 ExternProtoDeclare49 := TExternProtoDeclareNode.Create;
 ExternProtoDeclare49.NameField := 'ArtDeco34';
 ExternProtoDeclare49.Appinfo := 'UniversalMediaMaterials prototype';
 ExternProtoDeclare49.Documentation := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials';
-ExternProtoDeclare49.SetUrl(['ArtDecoPrototypes.x3d#ArtDeco34','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34','ArtDecoPrototypes.wrl#ArtDeco34','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34']);
+ExternProtoDeclare49.SetUrl(['../data/ArtDecoPrototypes.x3d#ArtDeco34','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34','ArtDecoPrototypes.wrl#ArtDeco34','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34']);
 { .AddChildren }
 Group13.AddChildren([ExternProtoDeclare49]);
 Group50 := TGroupNode.Create;
@@ -870,7 +870,7 @@ Anchor62.SetUrl(['#Front']);
 Transform63 := TTransformNode.Create;
 Transform63.Translation := Vector3(0,0,-0.5);
 Inline64 := TInlineNode.Create;
-Inline64.SetUrl(['gridBack.x3d','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d','gridBack.wrl','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl']);
+Inline64.SetUrl(['../data/gridBack.x3d','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d','gridBack.wrl','https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl']);
 { .AddChildren }
 Transform63.AddChildren([Inline64]);
 { .AddChildren }

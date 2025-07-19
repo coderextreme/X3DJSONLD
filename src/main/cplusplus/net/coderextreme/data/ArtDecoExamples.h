@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("3.0"));
+X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 meta& meta2 =  meta();
 meta2.setName(CString("title"));
@@ -74,245 +74,245 @@ ExternProtoDeclare& ExternProtoDeclare15 =  ExternProtoDeclare();
 ExternProtoDeclare15.setName(CString("ArtDeco00"));
 ExternProtoDeclare15.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare15.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare15.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco00"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), CString("ArtDecoPrototypes.wrl#ArtDeco00"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")}, 4);
+ExternProtoDeclare15.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco00"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), CString("ArtDecoPrototypes.wrl#ArtDeco00"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")}, 4);
 Scene13.addChild(&ExternProtoDeclare15);
 
 ExternProtoDeclare& ExternProtoDeclare16 =  ExternProtoDeclare();
 ExternProtoDeclare16.setName(CString("ArtDeco01"));
 ExternProtoDeclare16.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare16.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare16.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco01"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), CString("ArtDecoPrototypes.wrl#ArtDeco01"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")}, 4);
+ExternProtoDeclare16.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco01"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), CString("ArtDecoPrototypes.wrl#ArtDeco01"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")}, 4);
 Scene13.addChild(&ExternProtoDeclare16);
 
 ExternProtoDeclare& ExternProtoDeclare17 =  ExternProtoDeclare();
 ExternProtoDeclare17.setName(CString("ArtDeco02"));
 ExternProtoDeclare17.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare17.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare17.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco02"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), CString("ArtDecoPrototypes.wrl#ArtDeco02"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")}, 4);
+ExternProtoDeclare17.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco02"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), CString("ArtDecoPrototypes.wrl#ArtDeco02"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")}, 4);
 Scene13.addChild(&ExternProtoDeclare17);
 
 ExternProtoDeclare& ExternProtoDeclare18 =  ExternProtoDeclare();
 ExternProtoDeclare18.setName(CString("ArtDeco03"));
 ExternProtoDeclare18.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare18.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare18.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco03"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), CString("ArtDecoPrototypes.wrl#ArtDeco03"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")}, 4);
+ExternProtoDeclare18.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco03"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), CString("ArtDecoPrototypes.wrl#ArtDeco03"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")}, 4);
 Scene13.addChild(&ExternProtoDeclare18);
 
 ExternProtoDeclare& ExternProtoDeclare19 =  ExternProtoDeclare();
 ExternProtoDeclare19.setName(CString("ArtDeco04"));
 ExternProtoDeclare19.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare19.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare19.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco04"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), CString("ArtDecoPrototypes.wrl#ArtDeco04"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")}, 4);
+ExternProtoDeclare19.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco04"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), CString("ArtDecoPrototypes.wrl#ArtDeco04"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")}, 4);
 Scene13.addChild(&ExternProtoDeclare19);
 
 ExternProtoDeclare& ExternProtoDeclare20 =  ExternProtoDeclare();
 ExternProtoDeclare20.setName(CString("ArtDeco05"));
 ExternProtoDeclare20.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare20.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare20.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco05"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), CString("ArtDecoPrototypes.wrl#ArtDeco05"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")}, 4);
+ExternProtoDeclare20.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco05"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), CString("ArtDecoPrototypes.wrl#ArtDeco05"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")}, 4);
 Scene13.addChild(&ExternProtoDeclare20);
 
 ExternProtoDeclare& ExternProtoDeclare21 =  ExternProtoDeclare();
 ExternProtoDeclare21.setName(CString("ArtDeco06"));
 ExternProtoDeclare21.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare21.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare21.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco06"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), CString("ArtDecoPrototypes.wrl#ArtDeco06"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")}, 4);
+ExternProtoDeclare21.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco06"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), CString("ArtDecoPrototypes.wrl#ArtDeco06"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")}, 4);
 Scene13.addChild(&ExternProtoDeclare21);
 
 ExternProtoDeclare& ExternProtoDeclare22 =  ExternProtoDeclare();
 ExternProtoDeclare22.setName(CString("ArtDeco07"));
 ExternProtoDeclare22.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare22.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare22.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco07"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), CString("ArtDecoPrototypes.wrl#ArtDeco07"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")}, 4);
+ExternProtoDeclare22.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco07"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), CString("ArtDecoPrototypes.wrl#ArtDeco07"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")}, 4);
 Scene13.addChild(&ExternProtoDeclare22);
 
 ExternProtoDeclare& ExternProtoDeclare23 =  ExternProtoDeclare();
 ExternProtoDeclare23.setName(CString("ArtDeco08"));
 ExternProtoDeclare23.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare23.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare23.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco08"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), CString("ArtDecoPrototypes.wrl#ArtDeco08"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")}, 4);
+ExternProtoDeclare23.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco08"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), CString("ArtDecoPrototypes.wrl#ArtDeco08"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")}, 4);
 Scene13.addChild(&ExternProtoDeclare23);
 
 ExternProtoDeclare& ExternProtoDeclare24 =  ExternProtoDeclare();
 ExternProtoDeclare24.setName(CString("ArtDeco09"));
 ExternProtoDeclare24.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare24.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare24.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco09"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), CString("ArtDecoPrototypes.wrl#ArtDeco09"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")}, 4);
+ExternProtoDeclare24.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco09"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), CString("ArtDecoPrototypes.wrl#ArtDeco09"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")}, 4);
 Scene13.addChild(&ExternProtoDeclare24);
 
 ExternProtoDeclare& ExternProtoDeclare25 =  ExternProtoDeclare();
 ExternProtoDeclare25.setName(CString("ArtDeco10"));
 ExternProtoDeclare25.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare25.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare25.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco10"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), CString("ArtDecoPrototypes.wrl#ArtDeco10"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")}, 4);
+ExternProtoDeclare25.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco10"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), CString("ArtDecoPrototypes.wrl#ArtDeco10"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")}, 4);
 Scene13.addChild(&ExternProtoDeclare25);
 
 ExternProtoDeclare& ExternProtoDeclare26 =  ExternProtoDeclare();
 ExternProtoDeclare26.setName(CString("ArtDeco11"));
 ExternProtoDeclare26.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare26.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare26.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco11"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), CString("ArtDecoPrototypes.wrl#ArtDeco11"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")}, 4);
+ExternProtoDeclare26.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco11"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), CString("ArtDecoPrototypes.wrl#ArtDeco11"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")}, 4);
 Scene13.addChild(&ExternProtoDeclare26);
 
 ExternProtoDeclare& ExternProtoDeclare27 =  ExternProtoDeclare();
 ExternProtoDeclare27.setName(CString("ArtDeco12"));
 ExternProtoDeclare27.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare27.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare27.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco12"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), CString("ArtDecoPrototypes.wrl#ArtDeco12"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")}, 4);
+ExternProtoDeclare27.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco12"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), CString("ArtDecoPrototypes.wrl#ArtDeco12"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")}, 4);
 Scene13.addChild(&ExternProtoDeclare27);
 
 ExternProtoDeclare& ExternProtoDeclare28 =  ExternProtoDeclare();
 ExternProtoDeclare28.setName(CString("ArtDeco13"));
 ExternProtoDeclare28.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare28.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare28.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco13"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), CString("ArtDecoPrototypes.wrl#ArtDeco13"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")}, 4);
+ExternProtoDeclare28.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco13"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), CString("ArtDecoPrototypes.wrl#ArtDeco13"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")}, 4);
 Scene13.addChild(&ExternProtoDeclare28);
 
 ExternProtoDeclare& ExternProtoDeclare29 =  ExternProtoDeclare();
 ExternProtoDeclare29.setName(CString("ArtDeco14"));
 ExternProtoDeclare29.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare29.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare29.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco14"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), CString("ArtDecoPrototypes.wrl#ArtDeco14"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")}, 4);
+ExternProtoDeclare29.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco14"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), CString("ArtDecoPrototypes.wrl#ArtDeco14"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")}, 4);
 Scene13.addChild(&ExternProtoDeclare29);
 
 ExternProtoDeclare& ExternProtoDeclare30 =  ExternProtoDeclare();
 ExternProtoDeclare30.setName(CString("ArtDeco15"));
 ExternProtoDeclare30.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare30.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare30.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco15"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), CString("ArtDecoPrototypes.wrl#ArtDeco15"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")}, 4);
+ExternProtoDeclare30.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco15"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), CString("ArtDecoPrototypes.wrl#ArtDeco15"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")}, 4);
 Scene13.addChild(&ExternProtoDeclare30);
 
 ExternProtoDeclare& ExternProtoDeclare31 =  ExternProtoDeclare();
 ExternProtoDeclare31.setName(CString("ArtDeco16"));
 ExternProtoDeclare31.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare31.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare31.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco16"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), CString("ArtDecoPrototypes.wrl#ArtDeco16"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")}, 4);
+ExternProtoDeclare31.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco16"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), CString("ArtDecoPrototypes.wrl#ArtDeco16"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")}, 4);
 Scene13.addChild(&ExternProtoDeclare31);
 
 ExternProtoDeclare& ExternProtoDeclare32 =  ExternProtoDeclare();
 ExternProtoDeclare32.setName(CString("ArtDeco17"));
 ExternProtoDeclare32.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare32.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare32.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco17"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), CString("ArtDecoPrototypes.wrl#ArtDeco17"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")}, 4);
+ExternProtoDeclare32.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco17"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), CString("ArtDecoPrototypes.wrl#ArtDeco17"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")}, 4);
 Scene13.addChild(&ExternProtoDeclare32);
 
 ExternProtoDeclare& ExternProtoDeclare33 =  ExternProtoDeclare();
 ExternProtoDeclare33.setName(CString("ArtDeco18"));
 ExternProtoDeclare33.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare33.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare33.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco18"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), CString("ArtDecoPrototypes.wrl#ArtDeco18"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")}, 4);
+ExternProtoDeclare33.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco18"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), CString("ArtDecoPrototypes.wrl#ArtDeco18"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")}, 4);
 Scene13.addChild(&ExternProtoDeclare33);
 
 ExternProtoDeclare& ExternProtoDeclare34 =  ExternProtoDeclare();
 ExternProtoDeclare34.setName(CString("ArtDeco19"));
 ExternProtoDeclare34.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare34.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare34.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco19"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), CString("ArtDecoPrototypes.wrl#ArtDeco19"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")}, 4);
+ExternProtoDeclare34.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco19"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), CString("ArtDecoPrototypes.wrl#ArtDeco19"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")}, 4);
 Scene13.addChild(&ExternProtoDeclare34);
 
 ExternProtoDeclare& ExternProtoDeclare35 =  ExternProtoDeclare();
 ExternProtoDeclare35.setName(CString("ArtDeco20"));
 ExternProtoDeclare35.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare35.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare35.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco20"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), CString("ArtDecoPrototypes.wrl#ArtDeco20"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")}, 4);
+ExternProtoDeclare35.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco20"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), CString("ArtDecoPrototypes.wrl#ArtDeco20"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")}, 4);
 Scene13.addChild(&ExternProtoDeclare35);
 
 ExternProtoDeclare& ExternProtoDeclare36 =  ExternProtoDeclare();
 ExternProtoDeclare36.setName(CString("ArtDeco21"));
 ExternProtoDeclare36.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare36.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare36.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco21"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), CString("ArtDecoPrototypes.wrl#ArtDeco21"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")}, 4);
+ExternProtoDeclare36.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco21"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), CString("ArtDecoPrototypes.wrl#ArtDeco21"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")}, 4);
 Scene13.addChild(&ExternProtoDeclare36);
 
 ExternProtoDeclare& ExternProtoDeclare37 =  ExternProtoDeclare();
 ExternProtoDeclare37.setName(CString("ArtDeco22"));
 ExternProtoDeclare37.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare37.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare37.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco22"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), CString("ArtDecoPrototypes.wrl#ArtDeco22"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")}, 4);
+ExternProtoDeclare37.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco22"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), CString("ArtDecoPrototypes.wrl#ArtDeco22"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")}, 4);
 Scene13.addChild(&ExternProtoDeclare37);
 
 ExternProtoDeclare& ExternProtoDeclare38 =  ExternProtoDeclare();
 ExternProtoDeclare38.setName(CString("ArtDeco23"));
 ExternProtoDeclare38.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare38.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare38.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco23"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), CString("ArtDecoPrototypes.wrl#ArtDeco23"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")}, 4);
+ExternProtoDeclare38.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco23"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), CString("ArtDecoPrototypes.wrl#ArtDeco23"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")}, 4);
 Scene13.addChild(&ExternProtoDeclare38);
 
 ExternProtoDeclare& ExternProtoDeclare39 =  ExternProtoDeclare();
 ExternProtoDeclare39.setName(CString("ArtDeco24"));
 ExternProtoDeclare39.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare39.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare39.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco24"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), CString("ArtDecoPrototypes.wrl#ArtDeco24"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")}, 4);
+ExternProtoDeclare39.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco24"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), CString("ArtDecoPrototypes.wrl#ArtDeco24"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")}, 4);
 Scene13.addChild(&ExternProtoDeclare39);
 
 ExternProtoDeclare& ExternProtoDeclare40 =  ExternProtoDeclare();
 ExternProtoDeclare40.setName(CString("ArtDeco25"));
 ExternProtoDeclare40.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare40.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare40.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco25"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), CString("ArtDecoPrototypes.wrl#ArtDeco25"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")}, 4);
+ExternProtoDeclare40.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco25"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), CString("ArtDecoPrototypes.wrl#ArtDeco25"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")}, 4);
 Scene13.addChild(&ExternProtoDeclare40);
 
 ExternProtoDeclare& ExternProtoDeclare41 =  ExternProtoDeclare();
 ExternProtoDeclare41.setName(CString("ArtDeco26"));
 ExternProtoDeclare41.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare41.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare41.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco26"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), CString("ArtDecoPrototypes.wrl#ArtDeco26"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")}, 4);
+ExternProtoDeclare41.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco26"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), CString("ArtDecoPrototypes.wrl#ArtDeco26"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")}, 4);
 Scene13.addChild(&ExternProtoDeclare41);
 
 ExternProtoDeclare& ExternProtoDeclare42 =  ExternProtoDeclare();
 ExternProtoDeclare42.setName(CString("ArtDeco27"));
 ExternProtoDeclare42.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare42.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare42.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco27"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), CString("ArtDecoPrototypes.wrl#ArtDeco27"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")}, 4);
+ExternProtoDeclare42.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco27"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), CString("ArtDecoPrototypes.wrl#ArtDeco27"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")}, 4);
 Scene13.addChild(&ExternProtoDeclare42);
 
 ExternProtoDeclare& ExternProtoDeclare43 =  ExternProtoDeclare();
 ExternProtoDeclare43.setName(CString("ArtDeco28"));
 ExternProtoDeclare43.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare43.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare43.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco28"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), CString("ArtDecoPrototypes.wrl#ArtDeco28"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")}, 4);
+ExternProtoDeclare43.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco28"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), CString("ArtDecoPrototypes.wrl#ArtDeco28"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")}, 4);
 Scene13.addChild(&ExternProtoDeclare43);
 
 ExternProtoDeclare& ExternProtoDeclare44 =  ExternProtoDeclare();
 ExternProtoDeclare44.setName(CString("ArtDeco29"));
 ExternProtoDeclare44.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare44.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare44.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco29"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), CString("ArtDecoPrototypes.wrl#ArtDeco29"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")}, 4);
+ExternProtoDeclare44.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco29"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), CString("ArtDecoPrototypes.wrl#ArtDeco29"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")}, 4);
 Scene13.addChild(&ExternProtoDeclare44);
 
 ExternProtoDeclare& ExternProtoDeclare45 =  ExternProtoDeclare();
 ExternProtoDeclare45.setName(CString("ArtDeco30"));
 ExternProtoDeclare45.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare45.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare45.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco30"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), CString("ArtDecoPrototypes.wrl#ArtDeco30"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")}, 4);
+ExternProtoDeclare45.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco30"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), CString("ArtDecoPrototypes.wrl#ArtDeco30"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")}, 4);
 Scene13.addChild(&ExternProtoDeclare45);
 
 ExternProtoDeclare& ExternProtoDeclare46 =  ExternProtoDeclare();
 ExternProtoDeclare46.setName(CString("ArtDeco31"));
 ExternProtoDeclare46.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare46.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare46.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco31"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), CString("ArtDecoPrototypes.wrl#ArtDeco31"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")}, 4);
+ExternProtoDeclare46.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco31"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), CString("ArtDecoPrototypes.wrl#ArtDeco31"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")}, 4);
 Scene13.addChild(&ExternProtoDeclare46);
 
 ExternProtoDeclare& ExternProtoDeclare47 =  ExternProtoDeclare();
 ExternProtoDeclare47.setName(CString("ArtDeco32"));
 ExternProtoDeclare47.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare47.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare47.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco32"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), CString("ArtDecoPrototypes.wrl#ArtDeco32"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")}, 4);
+ExternProtoDeclare47.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco32"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), CString("ArtDecoPrototypes.wrl#ArtDeco32"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")}, 4);
 Scene13.addChild(&ExternProtoDeclare47);
 
 ExternProtoDeclare& ExternProtoDeclare48 =  ExternProtoDeclare();
 ExternProtoDeclare48.setName(CString("ArtDeco33"));
 ExternProtoDeclare48.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare48.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare48.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco33"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), CString("ArtDecoPrototypes.wrl#ArtDeco33"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")}, 4);
+ExternProtoDeclare48.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco33"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), CString("ArtDecoPrototypes.wrl#ArtDeco33"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")}, 4);
 Scene13.addChild(&ExternProtoDeclare48);
 
 ExternProtoDeclare& ExternProtoDeclare49 =  ExternProtoDeclare();
 ExternProtoDeclare49.setName(CString("ArtDeco34"));
 ExternProtoDeclare49.setAppinfo(CString("UniversalMediaMaterials prototype"));
 ExternProtoDeclare49.setDocumentation(CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"));
-ExternProtoDeclare49.setUrl(new CString[]{CString("ArtDecoPrototypes.x3d#ArtDeco34"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), CString("ArtDecoPrototypes.wrl#ArtDeco34"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")}, 4);
+ExternProtoDeclare49.setUrl(new CString[]{CString("../data/ArtDecoPrototypes.x3d#ArtDeco34"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), CString("ArtDecoPrototypes.wrl#ArtDeco34"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")}, 4);
 Scene13.addChild(&ExternProtoDeclare49);
 
 Group& Group50 =  Group();
@@ -384,7 +384,7 @@ Anchor62.setUrl(new CString[]{CString("#Front")}, 1);
 Transform& Transform63 =  Transform();
 Transform63.setTranslation(new float[]{0.0,0.0,-0.5});
 Inline& Inline64 =  Inline();
-Inline64.setUrl(new CString[]{CString("gridBack.x3d"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"), CString("gridBack.wrl"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl")}, 4);
+Inline64.setUrl(new CString[]{CString("../data/gridBack.x3d"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"), CString("gridBack.wrl"), CString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl")}, 4);
 Transform63.addChild(&Inline64);
 
 Anchor62.addChild(&Transform63);
