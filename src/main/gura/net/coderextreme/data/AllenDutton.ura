@@ -5,7 +5,7 @@ X3D:
         head: [
             component: [
                 name: "HAnim"
-                level: 1
+                level: 3
             ],
             meta: [
                 name: "title"
@@ -33,7 +33,23 @@ X3D:
             ],
             meta: [
                 name: "modified"
-                content: "4 July 2020"
+                content: "17 July 2025"
+            ],
+            meta: [
+                name: "TODO"
+                content: "remove colors bleeding into camo"
+            ],
+            meta: [
+                name: "error"
+                content: "Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"
+            ],
+            meta: [
+                name: "warning"
+                content: "X3D Validator reports numerous warnings are present"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
             ],
             meta: [
                 name: "reference"
@@ -45,15 +61,19 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"
-            ],
-            meta: [
-                name: "reference"
-                content: "http://www.MovesInstitute.org/Theses/AllenDutton.pdf"
+                content: "Thesis https://hdl.handle.net/10945/1716"
             ],
             meta: [
                 name: "reference"
                 content: "http://www.HAnim.org"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDutton.x3d"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDuttonVillage.x3d"
             ],
             meta: [
                 name: "identifier"
@@ -61,7 +81,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
             ],
             meta: [
                 name: "license"
@@ -114,7 +134,7 @@ X3D:
                                                     DEF: "camo"
                                                     repeatS: false
                                                     repeatT: false
-                                                    url: ["greenCamo.jpg", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/greenCamo.jpg"]
+                                                    url: ["images/greenCamo.jpg", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
                                                 ]
                                             ]
                                         ]
@@ -754,12 +774,8 @@ X3D:
                                                         Material: [
                                                             USE: "Skin_Color"
                                                         ]
-                                                    ]
-                                                    setTexture: [
-                                                        ImageTexture: [
-                                                            url: ["clone.gif", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/clone.gif"]
-                                                        ]
-                                                    ]
+                                                    ],
+#clone.gif removed for security reasons <ImageTexture url='"" ""'/>
                                                 ]
                                             ]
                                             setGeometry: [
@@ -954,21 +970,17 @@ X3D:
             ],
             Group: [
                 DEF: "Interface"
-                Transform: [
-                    ProximitySensor: [
-                        DEF: "HudProx"
-                        center: [0, 20, 0]
-                        size: [500, 100, 500]
-                    ]
-                ],
+#<Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform>
                 Collision: [
                     DEF: "HUD"
-                    enabled: false
                     Transform: [
                         DEF: "HudXform"
+#Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
+#Enable this line if you disabled ProximitySensor
                         Transform: [
-                            scale: [0.012, 0.012, 0.012]
-                            translation: [0.01107, -0.025, -0.08]
+                            scale: [0.5, 0.5, 0.5]
+                            rotation: [0, 1, 0, 0.65]
+                            translation: [0.5, 0.1, 0]
                             Transform: [
                                 DEF: "Stand_Text"
                                 TouchSensor: [
@@ -1613,18 +1625,7 @@ X3D:
                     ]
                 ]
             ],
-            ROUTE: [
-                fromField: "position_changed"
-                fromNode: "HudProx"
-                toField: "set_translation"
-                toNode: "HudXform"
-            ],
-            ROUTE: [
-                fromField: "orientation_changed"
-                fromNode: "HudProx"
-                toField: "set_rotation"
-                toNode: "HudXform"
-            ],
+#Enable this if you enable the ProximitySensor <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/> <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
             ROUTE: [
                 fromField: "touchTime"
                 fromNode: "Stand_Touch"

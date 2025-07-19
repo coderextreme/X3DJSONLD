@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -74,245 +74,245 @@ ExternProtoDeclare ExternProtoDeclare15 = createNode("ExternProtoDeclare");
 ExternProtoDeclare15.name = "ArtDeco00";
 ExternProtoDeclare15.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare15.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare15.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]);
+ExternProtoDeclare15.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]);
 children[1] = ExternProtoDeclare15;
 
 ExternProtoDeclare ExternProtoDeclare16 = createNode("ExternProtoDeclare");
 ExternProtoDeclare16.name = "ArtDeco01";
 ExternProtoDeclare16.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare16.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare16.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]);
+ExternProtoDeclare16.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]);
 children[2] = ExternProtoDeclare16;
 
 ExternProtoDeclare ExternProtoDeclare17 = createNode("ExternProtoDeclare");
 ExternProtoDeclare17.name = "ArtDeco02";
 ExternProtoDeclare17.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare17.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare17.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]);
+ExternProtoDeclare17.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]);
 children[3] = ExternProtoDeclare17;
 
 ExternProtoDeclare ExternProtoDeclare18 = createNode("ExternProtoDeclare");
 ExternProtoDeclare18.name = "ArtDeco03";
 ExternProtoDeclare18.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare18.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare18.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]);
+ExternProtoDeclare18.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]);
 children[4] = ExternProtoDeclare18;
 
 ExternProtoDeclare ExternProtoDeclare19 = createNode("ExternProtoDeclare");
 ExternProtoDeclare19.name = "ArtDeco04";
 ExternProtoDeclare19.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare19.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare19.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]);
+ExternProtoDeclare19.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]);
 children[5] = ExternProtoDeclare19;
 
 ExternProtoDeclare ExternProtoDeclare20 = createNode("ExternProtoDeclare");
 ExternProtoDeclare20.name = "ArtDeco05";
 ExternProtoDeclare20.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare20.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare20.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]);
+ExternProtoDeclare20.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]);
 children[6] = ExternProtoDeclare20;
 
 ExternProtoDeclare ExternProtoDeclare21 = createNode("ExternProtoDeclare");
 ExternProtoDeclare21.name = "ArtDeco06";
 ExternProtoDeclare21.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare21.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare21.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]);
+ExternProtoDeclare21.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]);
 children[7] = ExternProtoDeclare21;
 
 ExternProtoDeclare ExternProtoDeclare22 = createNode("ExternProtoDeclare");
 ExternProtoDeclare22.name = "ArtDeco07";
 ExternProtoDeclare22.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare22.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare22.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]);
+ExternProtoDeclare22.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]);
 children[8] = ExternProtoDeclare22;
 
 ExternProtoDeclare ExternProtoDeclare23 = createNode("ExternProtoDeclare");
 ExternProtoDeclare23.name = "ArtDeco08";
 ExternProtoDeclare23.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare23.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare23.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]);
+ExternProtoDeclare23.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]);
 children[9] = ExternProtoDeclare23;
 
 ExternProtoDeclare ExternProtoDeclare24 = createNode("ExternProtoDeclare");
 ExternProtoDeclare24.name = "ArtDeco09";
 ExternProtoDeclare24.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare24.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare24.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]);
+ExternProtoDeclare24.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]);
 children[10] = ExternProtoDeclare24;
 
 ExternProtoDeclare ExternProtoDeclare25 = createNode("ExternProtoDeclare");
 ExternProtoDeclare25.name = "ArtDeco10";
 ExternProtoDeclare25.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare25.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare25.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]);
+ExternProtoDeclare25.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]);
 children[11] = ExternProtoDeclare25;
 
 ExternProtoDeclare ExternProtoDeclare26 = createNode("ExternProtoDeclare");
 ExternProtoDeclare26.name = "ArtDeco11";
 ExternProtoDeclare26.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare26.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare26.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]);
+ExternProtoDeclare26.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]);
 children[12] = ExternProtoDeclare26;
 
 ExternProtoDeclare ExternProtoDeclare27 = createNode("ExternProtoDeclare");
 ExternProtoDeclare27.name = "ArtDeco12";
 ExternProtoDeclare27.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare27.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare27.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]);
+ExternProtoDeclare27.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]);
 children[13] = ExternProtoDeclare27;
 
 ExternProtoDeclare ExternProtoDeclare28 = createNode("ExternProtoDeclare");
 ExternProtoDeclare28.name = "ArtDeco13";
 ExternProtoDeclare28.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare28.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare28.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]);
+ExternProtoDeclare28.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]);
 children[14] = ExternProtoDeclare28;
 
 ExternProtoDeclare ExternProtoDeclare29 = createNode("ExternProtoDeclare");
 ExternProtoDeclare29.name = "ArtDeco14";
 ExternProtoDeclare29.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare29.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare29.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]);
+ExternProtoDeclare29.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]);
 children[15] = ExternProtoDeclare29;
 
 ExternProtoDeclare ExternProtoDeclare30 = createNode("ExternProtoDeclare");
 ExternProtoDeclare30.name = "ArtDeco15";
 ExternProtoDeclare30.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare30.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare30.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]);
+ExternProtoDeclare30.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]);
 children[16] = ExternProtoDeclare30;
 
 ExternProtoDeclare ExternProtoDeclare31 = createNode("ExternProtoDeclare");
 ExternProtoDeclare31.name = "ArtDeco16";
 ExternProtoDeclare31.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare31.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare31.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]);
+ExternProtoDeclare31.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]);
 children[17] = ExternProtoDeclare31;
 
 ExternProtoDeclare ExternProtoDeclare32 = createNode("ExternProtoDeclare");
 ExternProtoDeclare32.name = "ArtDeco17";
 ExternProtoDeclare32.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare32.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare32.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]);
+ExternProtoDeclare32.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]);
 children[18] = ExternProtoDeclare32;
 
 ExternProtoDeclare ExternProtoDeclare33 = createNode("ExternProtoDeclare");
 ExternProtoDeclare33.name = "ArtDeco18";
 ExternProtoDeclare33.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare33.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare33.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]);
+ExternProtoDeclare33.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]);
 children[19] = ExternProtoDeclare33;
 
 ExternProtoDeclare ExternProtoDeclare34 = createNode("ExternProtoDeclare");
 ExternProtoDeclare34.name = "ArtDeco19";
 ExternProtoDeclare34.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare34.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare34.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]);
+ExternProtoDeclare34.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]);
 children[20] = ExternProtoDeclare34;
 
 ExternProtoDeclare ExternProtoDeclare35 = createNode("ExternProtoDeclare");
 ExternProtoDeclare35.name = "ArtDeco20";
 ExternProtoDeclare35.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare35.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare35.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]);
+ExternProtoDeclare35.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]);
 children[21] = ExternProtoDeclare35;
 
 ExternProtoDeclare ExternProtoDeclare36 = createNode("ExternProtoDeclare");
 ExternProtoDeclare36.name = "ArtDeco21";
 ExternProtoDeclare36.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare36.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare36.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]);
+ExternProtoDeclare36.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]);
 children[22] = ExternProtoDeclare36;
 
 ExternProtoDeclare ExternProtoDeclare37 = createNode("ExternProtoDeclare");
 ExternProtoDeclare37.name = "ArtDeco22";
 ExternProtoDeclare37.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare37.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare37.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]);
+ExternProtoDeclare37.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]);
 children[23] = ExternProtoDeclare37;
 
 ExternProtoDeclare ExternProtoDeclare38 = createNode("ExternProtoDeclare");
 ExternProtoDeclare38.name = "ArtDeco23";
 ExternProtoDeclare38.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare38.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare38.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]);
+ExternProtoDeclare38.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]);
 children[24] = ExternProtoDeclare38;
 
 ExternProtoDeclare ExternProtoDeclare39 = createNode("ExternProtoDeclare");
 ExternProtoDeclare39.name = "ArtDeco24";
 ExternProtoDeclare39.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare39.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare39.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]);
+ExternProtoDeclare39.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]);
 children[25] = ExternProtoDeclare39;
 
 ExternProtoDeclare ExternProtoDeclare40 = createNode("ExternProtoDeclare");
 ExternProtoDeclare40.name = "ArtDeco25";
 ExternProtoDeclare40.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare40.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare40.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]);
+ExternProtoDeclare40.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]);
 children[26] = ExternProtoDeclare40;
 
 ExternProtoDeclare ExternProtoDeclare41 = createNode("ExternProtoDeclare");
 ExternProtoDeclare41.name = "ArtDeco26";
 ExternProtoDeclare41.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare41.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare41.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]);
+ExternProtoDeclare41.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]);
 children[27] = ExternProtoDeclare41;
 
 ExternProtoDeclare ExternProtoDeclare42 = createNode("ExternProtoDeclare");
 ExternProtoDeclare42.name = "ArtDeco27";
 ExternProtoDeclare42.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare42.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare42.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]);
+ExternProtoDeclare42.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]);
 children[28] = ExternProtoDeclare42;
 
 ExternProtoDeclare ExternProtoDeclare43 = createNode("ExternProtoDeclare");
 ExternProtoDeclare43.name = "ArtDeco28";
 ExternProtoDeclare43.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare43.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare43.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]);
+ExternProtoDeclare43.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]);
 children[29] = ExternProtoDeclare43;
 
 ExternProtoDeclare ExternProtoDeclare44 = createNode("ExternProtoDeclare");
 ExternProtoDeclare44.name = "ArtDeco29";
 ExternProtoDeclare44.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare44.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare44.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]);
+ExternProtoDeclare44.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]);
 children[30] = ExternProtoDeclare44;
 
 ExternProtoDeclare ExternProtoDeclare45 = createNode("ExternProtoDeclare");
 ExternProtoDeclare45.name = "ArtDeco30";
 ExternProtoDeclare45.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare45.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare45.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]);
+ExternProtoDeclare45.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]);
 children[31] = ExternProtoDeclare45;
 
 ExternProtoDeclare ExternProtoDeclare46 = createNode("ExternProtoDeclare");
 ExternProtoDeclare46.name = "ArtDeco31";
 ExternProtoDeclare46.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare46.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare46.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]);
+ExternProtoDeclare46.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]);
 children[32] = ExternProtoDeclare46;
 
 ExternProtoDeclare ExternProtoDeclare47 = createNode("ExternProtoDeclare");
 ExternProtoDeclare47.name = "ArtDeco32";
 ExternProtoDeclare47.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare47.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare47.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]);
+ExternProtoDeclare47.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]);
 children[33] = ExternProtoDeclare47;
 
 ExternProtoDeclare ExternProtoDeclare48 = createNode("ExternProtoDeclare");
 ExternProtoDeclare48.name = "ArtDeco33";
 ExternProtoDeclare48.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare48.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare48.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]);
+ExternProtoDeclare48.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]);
 children[34] = ExternProtoDeclare48;
 
 ExternProtoDeclare ExternProtoDeclare49 = createNode("ExternProtoDeclare");
 ExternProtoDeclare49.name = "ArtDeco34";
 ExternProtoDeclare49.appinfo = "UniversalMediaMaterials prototype";
 ExternProtoDeclare49.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare49.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]);
+ExternProtoDeclare49.url = new MFString(new java.lang.String["../data/ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]);
 children[35] = ExternProtoDeclare49;
 
 Group Group50 = createNode("Group");
@@ -388,7 +388,7 @@ Anchor62.url = new MFString(new java.lang.String["#Front"]);
 Transform Transform63 = createNode("Transform");
 Transform63.translation = new SFVec3f(new float[0,0,-0.5]);
 Inline Inline64 = createNode("Inline");
-Inline64.url = new MFString(new java.lang.String["gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]);
+Inline64.url = new MFString(new java.lang.String["../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]);
 Transform63.children = new MFNode();
 
 Transform63.children[0] = Inline64;
