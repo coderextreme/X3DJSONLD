@@ -68,7 +68,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("19 January 2025")}),
 
             new meta({
               name : new SFString("reference"),
@@ -359,14 +359,14 @@ var X3D0 =  new X3D({
                   intensity : new SFFloat(0.5)}),
 
                 new Anchor({
-                  description : new SFString("Back to front view"),
+                  description : new SFString("Return to front view"),
                   url : new MFString(["#Front"]),
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,0,-0.5]),
                       children : new MFNode([
                         new Inline({
-                          url : new MFString(["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])})])})])}),
+                          url : new MFString(["../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])})])})])}),
 
                 new Viewpoint({
                   DEF : new SFString("View00"),
@@ -395,7 +395,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco00"),
+                          description : new SFString("ArtDeco00 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]),
                           children : new MFNode([
@@ -443,7 +443,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco01"),
+                          description : new SFString("ArtDeco01 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]),
                           children : new MFNode([
@@ -486,7 +486,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco02"),
+                          description : new SFString("ArtDeco02 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]),
                           children : new MFNode([
@@ -529,7 +529,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco03"),
+                          description : new SFString("ArtDeco03 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]),
                           children : new MFNode([
@@ -572,7 +572,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco04"),
+                          description : new SFString("ArtDeco04 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]),
                           children : new MFNode([
@@ -615,7 +615,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco05"),
+                          description : new SFString("ArtDeco05 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]),
                           children : new MFNode([
@@ -658,7 +658,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco06"),
+                          description : new SFString("ArtDeco06 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]),
                           children : new MFNode([
@@ -701,7 +701,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco07"),
+                          description : new SFString("ArtDeco07 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]),
                           children : new MFNode([
@@ -744,7 +744,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco08"),
+                          description : new SFString("ArtDeco08 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]),
                           children : new MFNode([
@@ -787,7 +787,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco09"),
+                          description : new SFString("ArtDeco09 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]),
                           children : new MFNode([
@@ -830,7 +830,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco10"),
+                          description : new SFString("ArtDeco10 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]),
                           children : new MFNode([
@@ -873,7 +873,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco11"),
+                          description : new SFString("ArtDeco11 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]),
                           children : new MFNode([
@@ -916,7 +916,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco12"),
+                          description : new SFString("ArtDeco12 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]),
                           children : new MFNode([
@@ -959,7 +959,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco13"),
+                          description : new SFString("ArtDeco13 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]),
                           children : new MFNode([
@@ -1002,7 +1002,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco14"),
+                          description : new SFString("ArtDeco14 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]),
                           children : new MFNode([
@@ -1045,7 +1045,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco15"),
+                          description : new SFString("ArtDeco15 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]),
                           children : new MFNode([
@@ -1088,7 +1088,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco16"),
+                          description : new SFString("ArtDeco16 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]),
                           children : new MFNode([
@@ -1131,7 +1131,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco17"),
+                          description : new SFString("ArtDeco17 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]),
                           children : new MFNode([
@@ -1174,7 +1174,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco18"),
+                          description : new SFString("ArtDeco18 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]),
                           children : new MFNode([
@@ -1217,7 +1217,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco19"),
+                          description : new SFString("ArtDeco19 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]),
                           children : new MFNode([
@@ -1260,7 +1260,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco20"),
+                          description : new SFString("ArtDeco20 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]),
                           children : new MFNode([
@@ -1303,7 +1303,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco21"),
+                          description : new SFString("ArtDeco21 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]),
                           children : new MFNode([
@@ -1346,7 +1346,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco22"),
+                          description : new SFString("ArtDeco22 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]),
                           children : new MFNode([
@@ -1389,7 +1389,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco23"),
+                          description : new SFString("ArtDeco23 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]),
                           children : new MFNode([
@@ -1432,7 +1432,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco24"),
+                          description : new SFString("ArtDeco24 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]),
                           children : new MFNode([
@@ -1475,7 +1475,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco25"),
+                          description : new SFString("ArtDeco25 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]),
                           children : new MFNode([
@@ -1518,7 +1518,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco26"),
+                          description : new SFString("ArtDeco26 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]),
                           children : new MFNode([
@@ -1561,7 +1561,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco27"),
+                          description : new SFString("ArtDeco27 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]),
                           children : new MFNode([
@@ -1604,7 +1604,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco28"),
+                          description : new SFString("ArtDeco28 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]),
                           children : new MFNode([
@@ -1647,7 +1647,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco29"),
+                          description : new SFString("ArtDeco29 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]),
                           children : new MFNode([
@@ -1690,7 +1690,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco30"),
+                          description : new SFString("ArtDeco30 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]),
                           children : new MFNode([
@@ -1733,7 +1733,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco31"),
+                          description : new SFString("ArtDeco31 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]),
                           children : new MFNode([
@@ -1776,7 +1776,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco32"),
+                          description : new SFString("ArtDeco32 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]),
                           children : new MFNode([
@@ -1819,7 +1819,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco33"),
+                          description : new SFString("ArtDeco33 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]),
                           children : new MFNode([
@@ -1862,7 +1862,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0.3,0.5]),
                       children : new MFNode([
                         new Anchor({
-                          description : new SFString("ArtDeco34"),
+                          description : new SFString("ArtDeco34 view source documentation"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]),
                           children : new MFNode([
