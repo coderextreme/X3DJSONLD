@@ -86,11 +86,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy")}),
-
-            new meta({
-              name : new SFString("modified"),
-              content : new SFString("Sat, 9 Nov 2024 19:29:39 GMT")})])})),
+              content : new SFString("x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

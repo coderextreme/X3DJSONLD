@@ -2813,15 +2813,15 @@ POSSIBILITY OF SUCH DAMAGE.
 </xsl:template>
 
 <xsl:template name="list-component-imports">
-	<xsl:text>var java = require('java');</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>import java from 'java';</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>java.asyncOptions = {</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  syncSuffix: "",              // Sync methods use the base name(!!)</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.</xsl:text><xsl:text>&#10;</xsl:text>
-	<xsl:text>  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  promisify: import('util').promisify, // Needs Node.js version 8 or greater, see comment below</xsl:text><xsl:text>&#10;</xsl:text>
 <xsl:text>  ifReadOnlySuffix: "_alt"</xsl:text><xsl:text>&#10;</xsl:text>
 <xsl:text>};</xsl:text><xsl:text>&#10;</xsl:text>
-	<xsl:text>var autoclass = require('./X3Dautoclass');</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>import autoclass from './X3Dautoclass';</xsl:text><xsl:text>&#10;</xsl:text>
 </xsl:template>
 
 <xsl:template name="tuple-size">
