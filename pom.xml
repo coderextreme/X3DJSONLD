@@ -53,6 +53,21 @@
 	</repositories>
 
 	<dependencies>
+<dependency>
+    <groupId>org.clojure</groupId>
+    <artifactId>clojure</artifactId>
+    <version>1.12.1</version>
+</dependency>
+<dependency>
+    <groupId>org.clojure</groupId>
+    <artifactId>core.specs.alpha</artifactId>
+    <version>0.4.74</version>
+</dependency>
+<dependency>
+    <groupId>org.clojure</groupId>
+    <artifactId>spec.alpha</artifactId>
+    <version>0.5.238</version>
+</dependency>
 		<!-- https://mvnrepository.com/artifact/org.graalvm.polyglot/js-community -->
 <dependency>
     <groupId>org.graalvm.polyglot</groupId>
