@@ -10,6 +10,10 @@ export PROCESSORS="${PROCESSORS-8}"
 . ./classpath
 
 # ${PYTHON} ../python/classes.py
+pushd ../java
+javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
+popd
+# sudo pacman -Syu leiningen
 
 STYLESHEETDIR=../lib/stylesheets
 
@@ -85,10 +89,19 @@ for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.
 do
 	MODEL=`basename "$i" .clj`
 	DIR="data/"
-	sed "s/{{MODEL}}/${MODEL}/g" < ../resources/project.clj.template > "../clojure/net/coderextreme/data/$MODEL/project.clj"
-	pushd "../clojure/net/coderextreme/data/$MODEL"
-	ln -s "${DIR}" "x3dclsail"
-	echo "lein run $i"
+	echo "Creating app $i"
+	APPSFOLDER="../clojure/net/coderextreme/data"
+	pushd "$APPSFOLDER"
+	echo "lein new app $MODEL --force"
+	lein new app "$MODEL" --force
+	popd
+
+	echo "cat ../resources/project.clj.template | sed s/{{MODEL}}/${MODEL}/g > $APPSFOLDER/$MODEL/project.clj"
+	cat ../resources/project.clj.template | sed s/{{MODEL}}/"${MODEL}"/g > "$APPSFOLDER/$MODEL/project.clj"
+	echo "mv $i  $APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
+	mv "$i"  "$APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
+	pushd "$APPSFOLDER/$MODEL"
+	echo "lein run"
 	lein run
 	popd
 done
@@ -98,8 +111,8 @@ echo Running JRuby
 pushd ../jruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$JRUBY -J-Xss1g -J-Xmx19g $i"
-	$JRUBY -J-Xss1g -J-Xmx19g $i
+	echo "$JRUBY -J-Xss1g -J-Xmx4g $i"
+	$JRUBY -J-Xss1g -J-Xmx4g $i
 done
 popd
 export CLASSPATH=${OLDCLASSPATH}
@@ -123,8 +136,8 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e
 do
 	# echo JAVAC "$i"
 	pushd `mydirname "$i"`
-	echo javac -proc:full -J-Xss1g -J-Xmx19g `mybasename "$i"`
-	javac -proc:full -J-Xss1g -J-Xmx19g `mybasename "$i"`
+	echo javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i"`
+	javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i"`
 	popd
 done
 
@@ -132,8 +145,8 @@ echo run java programs
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	echo java -Xss1g -Xmx19g "$i"
-	java -Xss1g -Xmx19g "$i" # sh runToError.sh || echo "Failed"
+	echo java -Xss1g -Xmx4g "$i"
+	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
 	popd
 done
 
