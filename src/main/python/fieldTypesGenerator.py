@@ -57,7 +57,7 @@ for k,v in classes.items():
 
 code += "};\n"
 
-code += "module.exports = fieldTypes;\n";
+code += "export default fieldTypes;\n";
 
 f = open("../node/fieldTypes.js", "w")
 f.write(code)

@@ -114,16 +114,14 @@ do
 	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 done
 
-exit
-
 export CLASSPATH=${OLDCLASSPATH}
 
 echo Running JRuby
 pushd ../jruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$JRUBY -J-Xss1g -J-Xmx4g $i"
-	$JRUBY -J-Xss1g -J-Xmx4g $i
+	echo "$JRUBY -J-Xss1g -J-Xmx19g $i"
+	$JRUBY -J-Xss1g -J-Xmx19g $i
 done
 popd
 export CLASSPATH=${OLDCLASSPATH}
