@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='rubikOnFire.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d' name='identifier'/>
+    <meta content='a white rubik cube' name='description'/>
+  </head>
+  <Scene>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
+    <ProtoDeclare name='anyShape'>
+      <ProtoInterface>
+        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='myShape' accessType='inputOutput' type='SFNode'>
+          <Sphere/>
+        </field>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform>
+          <IS>
+            <connect nodeField='translation' protoField='xtranslation'/>
+          </IS>
+          <Shape>
+            <IS>
+              <connect nodeField='geometry' protoField='myShape'/>
+            </IS>
+            <Appearance>
+              <Material diffuseColor='1 1 1'/>
+            </Appearance>
+          </Shape>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoDeclare name='three'>
+      <ProtoInterface>
+        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='myShape' accessType='inputOutput' type='SFNode'>
+          <Sphere/>
+        </field>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform>
+          <IS>
+            <connect nodeField='translation' protoField='ytranslation'/>
+          </IS>
+          <ProtoInstance name='anyShape'>
+            <fieldValue name='xtranslation' value='0 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
+            <fieldValue name='xtranslation' value='2 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
+            <fieldValue name='xtranslation' value='-2 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoDeclare name='nine'>
+      <ProtoInterface>
+        <field name='ztranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='myShape' accessType='inputOutput' type='SFNode'>
+          <Sphere/>
+        </field>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform>
+          <IS>
+            <connect nodeField='translation' protoField='ztranslation'/>
+          </IS>
+          <ProtoInstance name='three'>
+            <fieldValue name='ytranslation' value='0 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='three'>
+            <fieldValue name='ytranslation' value='0 2 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='three'>
+            <fieldValue name='ytranslation' value='0 -2 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoDeclare name='twentyseven'>
+      <ProtoInterface>
+        <field name='ttranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='myShape' accessType='inputOutput' type='SFNode'>
+          <Sphere/>
+        </field>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform>
+          <IS>
+            <connect nodeField='translation' protoField='ttranslation'/>
+          </IS>
+          <ProtoInstance name='nine'>
+            <fieldValue name='ztranslation' value='0 0 0'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='nine'>
+            <fieldValue name='ztranslation' value='0 0 2'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+          <ProtoInstance name='nine'>
+            <fieldValue name='ztranslation' value='0 0 -2'/>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
+          </ProtoInstance>
+        </Transform>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoInstance name='twentyseven'>
+      <fieldValue name='ttranslation' value='0 0 0'/>
+      <fieldValue name='myShape'>
+        <Box size='1 1 1'/>
+      </fieldValue>
+    </ProtoInstance>
+  </Scene>
+</X3D>
