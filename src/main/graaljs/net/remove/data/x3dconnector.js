@@ -103,7 +103,8 @@ var ProtoInstance0 = null;
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }`))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("x3dconnector").setDEF("connector1"))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("x3dconnector").setDEF("connector1")
+          .addComments(new CommentsBlock("<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>")))
         .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
         .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")))      ;
 ProtoInstance0
@@ -118,9 +119,5 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC1")));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
     X3D0.toFileX3D("../data/x3dconnector.new.graal.x3d");
     X3D0.toFileJSON("../data/x3dconnector.new.graal.json");
