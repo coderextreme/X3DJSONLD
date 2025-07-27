@@ -13,7 +13,11 @@ pip3 install x3d
 pip3 install xmlschema
 # ${PYTHON} ../python/classes.py
 pushd ../java
-javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
+echo "export CLASSPATH=$CLASSPATH"
+# export CLASSPATH="C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar;C:/Users/jcarl/X3DJSONLD/saxon-he-12.4.jar;.;../java"
+echo "export CLASSPATH=$CLASSPATH"
+javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
+javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd
 
 #if false
@@ -49,8 +53,6 @@ do
 	X3D=`basename $FILE .x3d`
 
 pushd ../java
-echo export CLASSPATH=".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar"
-export CLASSPATH=".;C:/Users/jcarl/pythonSAI/saxon-he-12.4.jar;C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar"
 #for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
 #do
 	mkdir -p net/x3djsonld/data
@@ -67,6 +69,7 @@ popd
 
 echo running python
 pushd ../python
+ecoh "find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS ${PYTHON}"
 find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS ${PYTHON}
 popd
 

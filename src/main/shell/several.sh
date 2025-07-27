@@ -11,7 +11,10 @@ export PROCESSORS="${PROCESSORS-8}"
 
 # ${PYTHON} ../python/classes.py
 pushd ../java
-javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
+echo "export CLASSPATH=$CLASSPATH"
+# export CLASSPATH="C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar;C:/Users/jcarl/X3DJSONLD/saxon-he-12.4.jar;.;../../..;../java"
+echo "export CLASSPATH=$CLASSPATH"
+javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd
 # sudo pacman -Syu leiningen
 
@@ -88,7 +91,6 @@ unset CLASSPATH
 for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.clj/' -e 's/^\/c/../' -e "$EXTOCLOJURE" -e "$DATATOCLOJURE" -e "$ROOTTOCLOJURE" -e "$PERSONALTOCLOJURE" | sed -e 's/\(data\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | xargs ls -d`
 do
 	MODEL=`basename "$i" .clj`
-	DIR="data/"
 	echo "Creating app $i"
 	APPSFOLDER="../clojure/net/coderextreme/data"
 	pushd "$APPSFOLDER"
@@ -98,8 +100,8 @@ do
 
 	echo "cat ../resources/project.clj.template | sed s/{{MODEL}}/${MODEL}/g > $APPSFOLDER/$MODEL/project.clj"
 	cat ../resources/project.clj.template | sed s/{{MODEL}}/"${MODEL}"/g > "$APPSFOLDER/$MODEL/project.clj"
-	echo "mv $i  $APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
-	mv "$i"  "$APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
+	echo "cp $i  $APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
+	cp "$i"  "$APPSFOLDER/$MODEL/src/$MODEL/$MODEL.clj"
 	pushd "$APPSFOLDER/$MODEL"
 	echo "lein run"
 	lein run
