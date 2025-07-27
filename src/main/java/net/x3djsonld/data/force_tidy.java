@@ -14,12 +14,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> beginnings of a force directed graph in 3D. </p>
- <p> Related links:  source force_tidy.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source force.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.force_tidy&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.force&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -54,10 +54,6 @@ import org.web3d.x3d.jsail.Time.*;
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
 			<td> x3d-tidy V1.0.175, <a href="https://www.npmjs.com/package/x3d-tidy" target="_blank">https://www.npmjs.com/package/x3d-tidy</a> </td>
 		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> Sat, 9 Nov 2024 19:29:39 GMT </td>
-		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -76,10 +72,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author John W Carlson
  */
 
-public class force_tidy
+public class force
 {
 	/** Default constructor to create this object. */
-	public force_tidy ()
+	public force ()
 	{
 	  initialize();
 	}
@@ -98,8 +94,7 @@ public class force_tidy
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("beginnings of a force directed graph in 3D"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("Sat, 9 Nov 2024 19:29:39 GMT")))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy")))
   .setScene(new Scene()
     .addChild(new ProtoDeclare("node").setName("node")
       .setProtoInterface(new ProtoInterface()
@@ -226,7 +221,7 @@ ecmascript:
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return force_tidy model
+	 * @return force model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -245,7 +240,7 @@ ecmascript:
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new force_tidy().getX3dModel();
+        X3D thisExampleX3dModel = new force().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -278,7 +273,7 @@ ecmascript:
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.force_tidy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.force\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -287,16 +282,16 @@ ecmascript:
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.force_tidy self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.force self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./force_tidy_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./force_tidy_JavaExport.x3d"; 
-                String filenameX3DV = "./force_tidy_JavaExport.x3dv"; 
-                String filenameJSON = "./force_tidy_JavaExport.json";
+                // ./force_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./force_JavaExport.x3d"; 
+                String filenameX3DV = "./force_JavaExport.x3dv"; 
+                String filenameJSON = "./force_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

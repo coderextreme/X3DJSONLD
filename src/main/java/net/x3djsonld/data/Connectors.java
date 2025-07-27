@@ -103,7 +103,6 @@ public class Connectors
           .setCoord(new Coordinate()))
         .addChild(new Script("RoundedRectangle2D").setDirectOutput(true).setSourceCode("""
 ecmascript:
-vrmlscript:
 
 function initialize ()
 {
@@ -208,7 +207,6 @@ function initialize ()
                   .addChild(new Disk2D().setUSE("Connector")))))))
         .addChild(new Script().setDirectOutput(true).setSourceCode("""
 ecmascript:
-vrmlscript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -241,7 +239,6 @@ function initialize ()
             .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.0,0.0,0.0,1.0,0.0,0.0})))))
         .addChild(new Script("Route").setDirectOutput(true).setSourceCode("""
 ecmascript:
-vrmlscript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -280,7 +277,7 @@ function set_translation ()
           .setIS(new IS()
             .addConnect(new connect().setNodeField("output").setProtoField("output"))
             .addConnect(new connect().setNodeField("input").setProtoField("input"))))))
-    .addChild(new NavigationInfo().setType("\"PLANE_create3000.de\", \"ANY\""))
+    .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.2,0.2,0.2})))
     .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setCenterOfRotation(-3.13496,-4.19776,0.0).setFieldOfView(0.0,0.0,10.0,10.0).setPosition(-3.13496,-4.19776,10.0))
     .addChild(new Viewpoint().setDescription("Viewpoint"))
