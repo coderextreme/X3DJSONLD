@@ -268,12 +268,7 @@ ecmascript:eval (0
                   children_ : [
                     Transform(
                       USE_ : SFString('rotscaleC1'))]),
-
-                fieldValue(
-                  name_ : SFString('set_startpoint')),
-
-                fieldValue(
-                  name_ : SFString('set_endpoint'))]),
+              /*<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>*/]),
 
             ROUTE(
               fromNode_ : SFString('G1'),

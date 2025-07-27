@@ -408,14 +408,6 @@ X3D:
                     Transform: [
                         USE: "rotscaleC1"
                     ]
-                ],
-                fieldValue: [
-                    name: "set_startpoint"
-                    value: "0 0 0"
-                ],
-                fieldValue: [
-                    name: "set_endpoint"
-                    value: "0 0 0"
                 ]
             ],
             ProtoInstance: [
@@ -444,14 +436,6 @@ X3D:
                     Transform: [
                         USE: "rotscaleC2"
                     ]
-                ],
-                fieldValue: [
-                    name: "set_startpoint"
-                    value: "0 0 0"
-                ],
-                fieldValue: [
-                    name: "set_endpoint"
-                    value: "0 0 0"
                 ]
             ],
             ProtoInstance: [
@@ -480,14 +464,6 @@ X3D:
                     Transform: [
                         USE: "rotscaleC3"
                     ]
-                ],
-                fieldValue: [
-                    name: "set_startpoint"
-                    value: "0 0 0"
-                ],
-                fieldValue: [
-                    name: "set_endpoint"
-                    value: "0 0 0"
                 ]
             ],
             ROUTE: [

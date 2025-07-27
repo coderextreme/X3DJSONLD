@@ -367,15 +367,7 @@ ecmascript:eval (0
                   name_ : SFString('rotscalenode'),
                   children_ : [
                     Transform(
-                      USE_ : SFString('rotscaleC1'))]),
-
-                fieldValue(
-                  name_ : SFString('set_startpoint'),
-                  value_ : SFString('0 0 0')),
-
-                fieldValue(
-                  name_ : SFString('set_endpoint'),
-                  value_ : SFString('0 0 0'))]),
+                      USE_ : SFString('rotscaleC1'))])]),
 
             ProtoInstance(
               name_ : SFString('x3dconnector'),
@@ -403,15 +395,7 @@ ecmascript:eval (0
                   name_ : SFString('rotscalenode'),
                   children_ : [
                     Transform(
-                      USE_ : SFString('rotscaleC2'))]),
-
-                fieldValue(
-                  name_ : SFString('set_startpoint'),
-                  value_ : SFString('0 0 0')),
-
-                fieldValue(
-                  name_ : SFString('set_endpoint'),
-                  value_ : SFString('0 0 0'))]),
+                      USE_ : SFString('rotscaleC2'))])]),
 
             ProtoInstance(
               name_ : SFString('x3dconnector'),
@@ -439,15 +423,7 @@ ecmascript:eval (0
                   name_ : SFString('rotscalenode'),
                   children_ : [
                     Transform(
-                      USE_ : SFString('rotscaleC3'))]),
-
-                fieldValue(
-                  name_ : SFString('set_startpoint'),
-                  value_ : SFString('0 0 0')),
-
-                fieldValue(
-                  name_ : SFString('set_endpoint'),
-                  value_ : SFString('0 0 0'))]),
+                      USE_ : SFString('rotscaleC3'))])]),
 
             ROUTE(
               fromNode_ : SFString('G1'),

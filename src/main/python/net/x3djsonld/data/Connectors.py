@@ -66,7 +66,6 @@ newModel=X3D(profile='Full',version='4.0',
 
         sourceCode="""
 ecmascript:
-vrmlscript:
 
 function initialize ()
 {
@@ -198,7 +197,6 @@ function initialize ()
 
         sourceCode="""
 ecmascript:
-vrmlscript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -245,7 +243,6 @@ function initialize ()
 
         sourceCode="""
 ecmascript:
-vrmlscript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -273,7 +270,7 @@ function set_translation ()
 	}
 }
 """)])),
-    NavigationInfo(type='"PLANE_create3000.de", "ANY"'),
+    NavigationInfo(type='"FLY" "ANY"'),
     Background(skyColor=[(0.2,0.2,0.2)]),
     OrthoViewpoint(description='OthoViewpoint',position=(-3.13496,-4.19776,10),centerOfRotation=(-3.13496,-4.19776,0),fieldOfView=(0,0,10,10)),
     Viewpoint(description='Viewpoint'),
