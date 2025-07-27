@@ -5,17 +5,18 @@
  * into the PLY 3D model format. It handles scene graph transformations, prototype expansion,
  * and tessellates primitive and NURBS geometry into triangle meshes with vertex colors.
  *
- * @version 5.1.0
+ * @version 5.2.0
  * @author AI Assistant, with final fix for Extrusion and HAnim transformation logic.
  *
  * Features:
  * - A robust, single-pass recursive expander correctly resolves all ProtoDeclare and ProtoInstance nodes.
  * - Correctly handles nested prototypes and IS/connect value propagation with proper scope chaining.
  * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content.
- * - Handles diffuseColor from Material nodes and Color nodes to produce colored PLY files.
+ * - Handles diffuseColor and emissiveColor from Material nodes and Color nodes to produce colored PLY files.
  * - Traverses the entire scene graph recursively, correctly processing all children.
  * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone.
- * - Tessellates complex geometry: Extrusion, IndexedFaceSet, IndexedLineSet.
+ * - Tessellates complex geometry: Extrusion, IndexedFaceSet.
+ * - **NEW**: Tessellates LineSet and IndexedLineSet geometry.
  * - **NEW**: Tessellates NurbsPatchSurface geometry into a triangle mesh.
  * - Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices, ensuring no data loss or corruption.
  * - Outputs ASCII PLY format with vertex, face, and edge elements.
@@ -24,7 +25,7 @@ export default function createX3dToPlyConverter() {
 
     const mat4 = {
         create: () => [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
-        multiply: (out,a,b) => {let a00=a[0],a01=a[4],a02=a[8],a03=a[12],a10=a[1],a11=a[5],a12=a[9],a13=a[13],a20=a[2],a21=a[6],a22=a[10],a23=a[14],a30=a[3],a31=a[7],a32=a[11],a33=a[15];let b00=b[0],b01=b[4],b02=b[8],b03=b[12],b10=b[1],b11=b[5],b12=b[9],b13=b[13],b20=b[2],b21=b[6],b22=b[10],b23=b[14],b30=b[3],b31=b[7],b32=b[11],b33=b[15];out[0]=b00*a00+b10*a01+b20*a02+b30*a03;out[4]=b01*a00+b11*a01+b21*a02+b31*a03;out[8]=b02*a00+b12*a01+b22*a02+b32*a03;out[12]=b03*a00+b13*a01+b23*a02+b33*a03;out[1]=b00*a10+b10*a11+b20*a12+b30*a13;out[5]=b01*a10+b11*a11+b21*a12+b31*a13;out[9]=b02*a10+b12*a11+b22*a12+b32*a13;out[13]=b03*a10+b13*a11+b23*a12+b33*a13;out[2]=b00*a20+b10*a21+b20*a22+b30*a23;out[6]=b01*a20+b11*a21+b21*a22+b31*a23;out[10]=b02*a20+b12*a21+b22*a22+b32*a23;out[14]=b03*a20+b13*a21+b23*a22+b33*a23;out[3]=b00*a30+b10*a31+b20*a32+b30*a33;out[7]=b01*a30+b11*a31+b21*a32+b31*a33;out[11]=b02*a30+b12*a31+b22*a32+b32*a33;out[15]=b03*a30+b13*a31+b23*a32+b33*a33;return out},
+        multiply: (out,a,b) => {let a00=a[0],a01=a[4],a02=a[8],a03=a[12],a10=a[1],a11=a[5],a12=a[9],a13=a[13],a20=a[2],a21=a[6],a22=a[10],a23=a[14],a30=a[3],a31=a[7],a32=a[11],a33=a[15];let b00=b[0],b01=b[4],b02=b[8],b03=b[12],b10=b[1],b11=b[5],b12=b[9],b13=b[13],b20=b[2],b21=b[6],b22=b[10],b23=b[14],b30=b[3],b31=b[7],b32=b[11],b33=b[15];out[0]=b00*a00+b10*a01+b20*a02+b30*a03;out[4]=b01*a00+b11*a01+b21*a02+b31*a03;out[8]=b02*a00+b12*a01+b22*a02+b32*a03;out[12]=b03*a00+b13*a01+b23*a02+b33*a03;out[1]=b00*a10+b10*a11+b20*a12+b30*a13;out[5]=b01*a10+b11*a11+b21*a12+b31*a13;out[9]=b02*a10+b12*a11+b22*a12+b32*a13;out[13]=b03*a10+b13*a11+b23*a12+b33*a13;out[2]=b00*a20+b10*a21+b20*a22+b30*a23;out[6]=b01*a20+b11*a21+b21*a22+b31*a23;out[10]=b02*a20+b12*a21+b22*a22+b32*a23;out[14]=b03*a20+b13*a21+b23*a22+b33*a23;out[3]=b00*a30+b10*a31+b20*a32+b30*a33;out[7]=b01*a30+b11*a31+b21*a32+b31*a33;out[11]=b02*a30+b12*a31+b22*a32+b33*a33;out[15]=b03*a30+b13*a31+b23*a32+b33*a33;return out},
         fromRotationTranslationScale: (out, q, v, s) => {
             const x = q[0], y = q[1], z = q[2], w = q[3];
             const x2 = x + x, y2 = y + y, z2 = z + z;
@@ -508,6 +509,42 @@ export default function createX3dToPlyConverter() {
         return { vertices: points, faces: lines, lineColors: (lineColors.length > 0 ? lineColors : null) };
     }
 
+    function processLineSet(node) {
+        const coordNode = node['-coord']?.Coordinate;
+        if (!coordNode || !coordNode['@point']) return null;
+        const points = parseMFVec3f(coordNode['@point']);
+
+        const vertexCountRaw = node['@vertexCount'];
+        if (vertexCountRaw === undefined || vertexCountRaw === null) {
+            return { vertices: points, faces: [], lineColors: null };
+        }
+        const vertexCount = parseNumArray(vertexCountRaw);
+
+        const colorNode = node['-color']?.Color;
+        const colors = (colorNode && colorNode['@color']) ? parseMFVec3f(colorNode['@color']) : null;
+
+        const lines = [];
+        const lineColors = [];
+        let vertexCursor = 0;
+        let polylineIndex = 0;
+
+        for (const count of vertexCount) {
+            if (count >= 2) {
+                const polylineColor = (colors && colors[polylineIndex] !== undefined) ? colors[polylineIndex] : null;
+                for (let i = 0; i < count - 1; i++) {
+                    lines.push([vertexCursor + i, vertexCursor + i + 1]);
+                    if (polylineColor) {
+                        lineColors.push(polylineColor);
+                    }
+                }
+                polylineIndex++;
+            }
+            vertexCursor += count;
+        }
+
+        return { vertices: points, faces: lines, lineColors: (lineColors.length > 0 ? lineColors : null) };
+    }
+
     let globalVertices, globalFaces, globalVertexColors, globalEdges, globalEdgeColors;
 
     function expand(node, declarations, scope) {
@@ -622,8 +659,12 @@ export default function createX3dToPlyConverter() {
         let currentColor = parentColor;
         if (nodeName === 'Shape') {
             const material = nodeContent['-appearance']?.Appearance?.['-material']?.Material;
-            if (material && material['@diffuseColor']) {
-                 currentColor = parseSFColor(material['@diffuseColor']);
+            if (material) {
+                if (material['@diffuseColor']) {
+                     currentColor = parseSFColor(material['@diffuseColor']);
+                } else if (material['@emissiveColor']) { // Fallback for lines/axes
+                     currentColor = parseSFColor(material['@emissiveColor']);
+                }
             }
 
             const geometry = nodeContent['-geometry'];
@@ -639,6 +680,7 @@ export default function createX3dToPlyConverter() {
                     case 'Cone': geoData = tessellateCone(geoNode, options); break;
                     case 'IndexedFaceSet': geoData = processIndexedFaceSet(geoNode); break;
                     case 'IndexedLineSet': geoData = processIndexedLineSet(geoNode); isLineSet = true; break;
+                    case 'LineSet': geoData = processLineSet(geoNode); isLineSet = true; break;
                     case 'Extrusion': geoData = tessellateExtrusion(geoNode, options); break;
                     case 'NurbsPatchSurface': geoData = tessellateNurbsPatchSurface(geoNode, options); break;
                     default: break;
