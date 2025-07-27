@@ -5,5 +5,5 @@ export USERNAME=jcarl
 
 export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
 export CLASSPATH=".;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/saxon-he-12.4.jar;${X3DJSONLD}/xmlresolver-6.0.4.jar;${X3DJSONLD}/xmlresolver-6.0.4-data.jar;${X3DJSONLD}/httpclient5-5.3.1.jar;${X3DJSONLD}/httpcore5-h2-5.2.4.jar;${X3DJSONLD}/httpcore5-5.2.4.jar;${X3DJSONLD}/slf4j-api-1.7.36.jar;${X3DJSONLD}/slf4j-api-1.7.36.jar"
-# ${HOMESFOLDER}/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar;
-# ;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.2.2-data.jar"
+# ${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar;
+# ;${HOMESFOLDER}/$USERNAME/X3DJSONLD/xmlresolver-5.2.2-data.jar"
