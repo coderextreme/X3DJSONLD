@@ -37,7 +37,7 @@
             <connect nodeField='size' protoField='size'/>
           </IS>
 <![CDATA[
-vrmlscript:
+ecmascript:
 
 function initialize ()
 {
@@ -176,7 +176,7 @@ function initialize ()
             <connect nodeField='translation' protoField='translation'/>
           </IS>
 <![CDATA[
-vrmlscript:
+ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -227,7 +227,7 @@ function initialize ()
             <connect nodeField='input' protoField='input'/>
           </IS>
 <![CDATA[
-vrmlscript:
+ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -258,7 +258,7 @@ function set_translation ()
         </Script>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo type='"," "PLANE_create3000.deANY"'/>
+    <NavigationInfo type='"FLY" "ANY"'/>
     <Background skyColor='0.2 0.2 0.2'/>
     <OrthoViewpoint centerOfRotation='-3.13496 -4.19776 0' description='OthoViewpoint' position='-3.13496 -4.19776 10'/>
     <Viewpoint description='Viewpoint'/>

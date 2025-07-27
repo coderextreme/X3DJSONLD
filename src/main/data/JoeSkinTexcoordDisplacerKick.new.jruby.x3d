@@ -41,7 +41,7 @@
             <MetadataString name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
           </MetadataSet>
           <HAnimSegment DEF='Joe_sacrum' name='sacrum'>
-            <HAnimSite DEF='Joe_RootFront_view' name='RootFront_view'>
+            <HAnimSite DEF='Joe_RootFront_view' name='RootFront'>
               <Transform DEF='hanimcordsys' scale='0.175 0.175 0.175'>
                 <Viewpoint DEF='ViewBodyRootAxes' description='Joe_HAnim Root HAnimSite Coordinate Axes View'/>
                 <Shape DEF='AxisLinesShape'>
