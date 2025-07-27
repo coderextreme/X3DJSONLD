@@ -1,77 +1,80 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Interchange")
-X3D0.setVersion("3.3")
+X3D0.profile = "Interchange"
+X3D0.version = "3.3"
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("ifscubeworks.x3d")
+meta2.name = "title"
+meta2.content = "ifscubeworks.x3d"
 
-head1.addMeta(meta2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.setName("identifier")
-meta3.setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d")
+meta3.name = "identifier"
+meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("description")
-meta4.setContent("Template for an Indexed Face Set")
+meta4.name = "description"
+meta4.content = "Template for an Indexed Face Set"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("creator")
-meta5.setContent("John Carlson")
+meta5.name = "creator"
+meta5.content = "John Carlson"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.setName("created")
-meta6.setContent("4 April 2017")
+meta6.name = "created"
+meta6.content = "4 April 2017"
 
-head1.addMeta(meta6)
+head1.children.append(meta6)
 meta7 = x3d.meta()
-meta7.setName("license")
-meta7.setContent("https://coderextreme.net/X3DJSONLD/LICENSE")
+meta7.name = "license"
+meta7.content = "https://coderextreme.net/X3DJSONLD/LICENSE"
 
-head1.addMeta(meta7)
+head1.children.append(meta7)
 meta8 = x3d.meta()
-meta8.setName("generator")
-meta8.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
+meta8.name = "generator"
+meta8.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 
-head1.addMeta(meta8)
+head1.children.append(meta8)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene9 = x3d.Scene()
 WorldInfo10 = x3d.WorldInfo()
-WorldInfo10.setTitle("ifscubeworks.x3d")
+WorldInfo10.title = "ifscubeworks.x3d"
 
-Scene9.addChildren(WorldInfo10)
+Scene9.children.append(WorldInfo10)
 Group11 = x3d.Group()
 Shape12 = x3d.Shape()
 IndexedFaceSet13 = x3d.IndexedFaceSet()
-IndexedFaceSet13.setDEF("IndexedFaceSet")
-IndexedFaceSet13.setCoordIndex([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1])
-IndexedFaceSet13.setNormalIndex([0,0,1,2,3,4,5])
-IndexedFaceSet13.setNormalPerVertex(False)
-IndexedFaceSet13.setColorIndex([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1])
+IndexedFaceSet13.DEF = "IndexedFaceSet"
+IndexedFaceSet13.coordIndex = [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]
+IndexedFaceSet13.normalIndex = [0,0,1,2,3,4,5]
+IndexedFaceSet13.normalPerVertex = False
+IndexedFaceSet13.colorIndex = [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]
 Coordinate14 = x3d.Coordinate()
-Coordinate14.setPoint([0,0,1,0,1,1,1,1,1,1,0,1])
 
-IndexedFaceSet13.setCoord(Coordinate14)
+IndexedFaceSet13.coord = Coordinate14
 Normal15 = x3d.Normal()
-Normal15.setVector([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1])
 
-IndexedFaceSet13.setNormal(Normal15)
+IndexedFaceSet13.normal = Normal15
 Color16 = x3d.Color()
-Color16.setColor([0,1,0])
 
-IndexedFaceSet13.setColor(Color16)
+IndexedFaceSet13.color = Color16
 
-Shape12.setGeometry(IndexedFaceSet13)
+Shape12.geometry = IndexedFaceSet13
 
-Group11.addChildren(Shape12)
+Group11.children.append(Shape12)
 
-Scene9.addChildren(Group11)
+Scene9.children.append(Group11)
 
-X3D0.setScene(Scene9)
-X3D0.toFileX3D("../personal/ifscubeworks.new.python.x3d")
-X3D0.toFileJSON("../personal/ifscubeworks.new.python.json")
+X3D0.Scene = Scene9
+f = open("../personal/ifscubeworks.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/ifscubeworks.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

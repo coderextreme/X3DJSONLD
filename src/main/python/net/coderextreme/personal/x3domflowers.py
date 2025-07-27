@@ -1,158 +1,164 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.profile = "Immersive"
+X3D0.version = "3.3"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
-component2.setLevel(1)
+component2.name = "Scripting"
+component2.level = 1
 
-head1.addComponent(component2)
+head1.children.append(component2)
 component3 = x3d.component()
-component3.setName("EnvironmentalEffects")
-component3.setLevel(3)
+component3.name = "EnvironmentalEffects"
+component3.level = 3
 
-head1.addComponent(component3)
+head1.children.append(component3)
 component4 = x3d.component()
-component4.setName("Shaders")
-component4.setLevel(1)
+component4.name = "Shaders"
+component4.level = 1
 
-head1.addComponent(component4)
+head1.children.append(component4)
 component5 = x3d.component()
-component5.setName("CubeMapTexturing")
-component5.setLevel(1)
+component5.name = "CubeMapTexturing"
+component5.level = 1
 
-head1.addComponent(component5)
+head1.children.append(component5)
 component6 = x3d.component()
-component6.setName("Texturing")
-component6.setLevel(1)
+component6.name = "Texturing"
+component6.level = 1
 
-head1.addComponent(component6)
+head1.children.append(component6)
 component7 = x3d.component()
-component7.setName("Rendering")
-component7.setLevel(1)
+component7.name = "Rendering"
+component7.level = 1
 
-head1.addComponent(component7)
+head1.children.append(component7)
 component8 = x3d.component()
-component8.setName("Grouping")
-component8.setLevel(3)
+component8.name = "Grouping"
+component8.level = 3
 
-head1.addComponent(component8)
+head1.children.append(component8)
 component9 = x3d.component()
-component9.setName("Core")
-component9.setLevel(1)
+component9.name = "Core"
+component9.level = 1
 
-head1.addComponent(component9)
+head1.children.append(component9)
 meta10 = x3d.meta()
-meta10.setName("title")
-meta10.setContent("x3domflowers.x3d")
+meta10.name = "title"
+meta10.content = "x3domflowers.x3d"
 
-head1.addMeta(meta10)
+head1.children.append(meta10)
 meta11 = x3d.meta()
-meta11.setName("creator")
-meta11.setContent("John Carlson")
+meta11.name = "creator"
+meta11.content = "John Carlson"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.setName("description")
-meta12.setContent("5 or more prismatic flowers")
+meta12.name = "description"
+meta12.content = "5 or more prismatic flowers"
 
-head1.addMeta(meta12)
+head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.setName("generator")
-meta13.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
+meta13.name = "generator"
+meta13.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 
-head1.addMeta(meta13)
+head1.children.append(meta13)
 meta14 = x3d.meta()
-meta14.setName("identifier")
-meta14.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/x3domflowers.x3d")
+meta14.name = "identifier"
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/x3domflowers.x3d"
 
-head1.addMeta(meta14)
+head1.children.append(meta14)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene15 = x3d.Scene()
 NavigationInfo16 = x3d.NavigationInfo()
 
-Scene15.addChildren(NavigationInfo16)
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+Scene15.children.append(NavigationInfo16)
+"""Images courtesy of Paul Debevec's Light Probe Image Gallery"""
 Background17 = x3d.Background()
-Background17.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background17.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background17.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background17.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background17.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background17.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background17.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background17.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background17.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background17.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background17.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background17.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Scene15.addChildren(Background17)
+Scene15.children.append(Background17)
 Group18 = x3d.Group()
 ExternProtoDeclare19 = x3d.ExternProtoDeclare()
-ExternProtoDeclare19.setName("FlowerProto")
-ExternProtoDeclare19.setUrl(["../personal/flowerproto.json#FlowerProto"])
+ExternProtoDeclare19.name = "FlowerProto"
+ExternProtoDeclare19.url = ["../personal/flowerproto.json#FlowerProto"]
 field20 = x3d.field()
-field20.setName("vertex")
-field20.setAccessType("inputOutput")
-field20.setType("MFString")
+field20.name = "vertex"
+field20.accessType = "inputOutput"
+field20.type = "MFString"
 
-ExternProtoDeclare19.addField(field20)
+ExternProtoDeclare19.field.append(field20)
 field21 = x3d.field()
-field21.setName("fragment")
-field21.setAccessType("inputOutput")
-field21.setType("MFString")
+field21.name = "fragment"
+field21.accessType = "inputOutput"
+field21.type = "MFString"
 
-ExternProtoDeclare19.addField(field21)
+ExternProtoDeclare19.field.append(field21)
 
-Group18.addChildren(ExternProtoDeclare19)
+Group18.children.append(ExternProtoDeclare19)
 ProtoDeclare22 = x3d.ProtoDeclare()
-ProtoDeclare22.setName("flower")
+ProtoDeclare22.name = "flower"
 ProtoBody23 = x3d.ProtoBody()
 Group24 = x3d.Group()
 ProtoInstance25 = x3d.ProtoInstance()
-ProtoInstance25.setName("FlowerProto")
+ProtoInstance25.name = "FlowerProto"
 fieldValue26 = x3d.fieldValue()
-fieldValue26.setName("vertex")
-fieldValue26.setValue("\"../shaders/x3dom_flowers_chromatic.vs\"")
+fieldValue26.name = "vertex"
+fieldValue26.value = "\"../shaders/x3dom_flowers_chromatic.vs\""
 
-ProtoInstance25.addFieldValue(fieldValue26)
+ProtoInstance25.fieldValue.append(fieldValue26)
 fieldValue27 = x3d.fieldValue()
-fieldValue27.setName("fragment")
-fieldValue27.setValue("\"../shaders/common.fs\"")
+fieldValue27.name = "fragment"
+fieldValue27.value = "\"../shaders/common.fs\""
 
-ProtoInstance25.addFieldValue(fieldValue27)
+ProtoInstance25.fieldValue.append(fieldValue27)
 
-Group24.addChildren(ProtoInstance25)
+Group24.children.append(ProtoInstance25)
 
-ProtoBody23.addChildren(Group24)
+ProtoBody23.children.append(Group24)
 
-ProtoDeclare22.setProtoBody(ProtoBody23)
+ProtoDeclare22.ProtoBody = ProtoBody23
 
-Group18.addChildren(ProtoDeclare22)
+Group18.children.append(ProtoDeclare22)
 ProtoInstance28 = x3d.ProtoInstance()
-ProtoInstance28.setName("flower")
+ProtoInstance28.name = "flower"
 
-Group18.addChildren(ProtoInstance28)
+Group18.children.append(ProtoInstance28)
 ProtoInstance29 = x3d.ProtoInstance()
-ProtoInstance29.setName("flower")
+ProtoInstance29.name = "flower"
 
-Group18.addChildren(ProtoInstance29)
+Group18.children.append(ProtoInstance29)
 ProtoInstance30 = x3d.ProtoInstance()
-ProtoInstance30.setName("flower")
+ProtoInstance30.name = "flower"
 
-Group18.addChildren(ProtoInstance30)
+Group18.children.append(ProtoInstance30)
 ProtoInstance31 = x3d.ProtoInstance()
-ProtoInstance31.setName("flower")
+ProtoInstance31.name = "flower"
 
-Group18.addChildren(ProtoInstance31)
+Group18.children.append(ProtoInstance31)
 ProtoInstance32 = x3d.ProtoInstance()
-ProtoInstance32.setName("flower")
+ProtoInstance32.name = "flower"
 
-Group18.addChildren(ProtoInstance32)
+Group18.children.append(ProtoInstance32)
 ProtoInstance33 = x3d.ProtoInstance()
-ProtoInstance33.setName("flower")
+ProtoInstance33.name = "flower"
 
-Group18.addChildren(ProtoInstance33)
+Group18.children.append(ProtoInstance33)
 
-Scene15.addChildren(Group18)
+Scene15.children.append(Group18)
 
-X3D0.setScene(Scene15)
-X3D0.toFileX3D("../personal/x3domflowers.new.python.x3d")
-X3D0.toFileJSON("../personal/x3domflowers.new.python.json")
+X3D0.Scene = Scene15
+f = open("../personal/x3domflowers.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/x3domflowers.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

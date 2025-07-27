@@ -1,49 +1,51 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.profile = "Immersive"
+X3D0.version = "3.3"
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("browser.x3d")
+meta2.name = "title"
+meta2.content = "browser.x3d"
 
-head1.addMeta(meta2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.setName("creator")
-meta3.setContent("John Carlson")
+meta3.name = "creator"
+meta3.content = "John Carlson"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("generator")
-meta4.setContent("manual")
+meta4.name = "generator"
+meta4.content = "manual"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("identifier")
-meta5.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/browser.x3d")
+meta5.name = "identifier"
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/browser.x3d"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.setName("description")
-meta6.setContent("a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \"")
+meta6.name = "description"
+meta6.content = "a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \""
 
-head1.addMeta(meta6)
+head1.children.append(meta6)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene7 = x3d.Scene()
 Script8 = x3d.Script()
-Script8.setDEF("Browser")
+Script8.DEF = "Browser"
 
-Script8.setSourceCode('''ecmascript:\n"+
+Script8.sourceCode = '''ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }''')
+"                }'''
 
-Scene7.addChildren(Script8)
+Scene7.children.append(Script8)
 Script9 = x3d.Script()
-Script9.setDEF("Clouds")
+Script9.DEF = "Clouds"
 
-Script9.setSourceCode('''ecmascript:\n"+
+Script9.sourceCode = '''ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -52,10 +54,14 @@ Script9.setSourceCode('''ecmascript:\n"+
 "'	Transform		\\n'+\n"+
 "'    ' + '               	\\n';\n"+
 "\n"+
-"}''')
+"}'''
 
-Scene7.addChildren(Script9)
+Scene7.children.append(Script9)
 
-X3D0.setScene(Scene7)
-X3D0.toFileX3D("../personal/browser.new.python.x3d")
-X3D0.toFileJSON("../personal/browser.new.python.json")
+X3D0.Scene = Scene7
+f = open("../personal/browser.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/browser.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

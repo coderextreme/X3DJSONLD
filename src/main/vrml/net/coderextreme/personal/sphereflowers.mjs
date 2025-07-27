@@ -1,122 +1,51 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "4.0";
-let head1 = browser.currentScene.createNode("head");
-let component2 = browser.currentScene.createNode("component");
-component2.name = "Scripting";
-component2.level = 1;
-head1.component = new MFNode();
-
-head1.component[0] = component2;
-
-let component3 = browser.currentScene.createNode("component");
-component3.name = "EnvironmentalEffects";
-component3.level = 3;
-head1.component[1] = component3;
-
-let component4 = browser.currentScene.createNode("component");
-component4.name = "Shaders";
-component4.level = 1;
-head1.component[2] = component4;
-
-let component5 = browser.currentScene.createNode("component");
-component5.name = "CubeMapTexturing";
-component5.level = 1;
-head1.component[3] = component5;
-
-let component6 = browser.currentScene.createNode("component");
-component6.name = "Texturing";
-component6.level = 1;
-head1.component[4] = component6;
-
-let component7 = browser.currentScene.createNode("component");
-component7.name = "Rendering";
-component7.level = 1;
-head1.component[5] = component7;
-
-let component8 = browser.currentScene.createNode("component");
-component8.name = "Grouping";
-component8.level = 3;
-head1.component[6] = component8;
-
-let component9 = browser.currentScene.createNode("component");
-component9.name = "Core";
-component9.level = 1;
-head1.component[7] = component9;
-
-let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "title";
-meta10.content = "sphereflowers.x3d";
-head1.meta[8] = meta10;
-
-let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "creator";
-meta11.content = "John Carlson";
-head1.meta[9] = meta11;
-
-let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "created";
-meta12.content = "Jan 17 2022";
-head1.meta[10] = meta12;
-
-let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "modified";
-meta13.content = "Sep 3 2023";
-head1.meta[11] = meta13;
-
-let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "description";
-meta14.content = "5 or more prismatic flowers";
-head1.meta[12] = meta14;
-
-let meta15 = browser.currentScene.createNode("meta");
-meta15.name = "generator";
-meta15.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
-head1.meta[13] = meta15;
-
-let meta16 = browser.currentScene.createNode("meta");
-meta16.name = "identifier";
-meta16.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/sphereflowers.x3d";
-head1.meta[14] = meta16;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene .addComponent (browser .getComponent ("Scripting", 1));
+scene .addComponent (browser .getComponent ("EnvironmentalEffects", 3));
+scene .addComponent (browser .getComponent ("Shaders", 1));
+scene .addComponent (browser .getComponent ("CubeMapTexturing", 1));
+scene .addComponent (browser .getComponent ("Texturing", 1));
+scene .addComponent (browser .getComponent ("Rendering", 1));
+scene .addComponent (browser .getComponent ("Grouping", 3));
+scene .addComponent (browser .getComponent ("Core", 1));
+scene.addMetaData("title", "sphereflowers.x3d");
+scene.addMetaData("creator", "John Carlson");
+scene.addMetaData("created", "Jan 17 2022");
+scene.addMetaData("modified", "Sep 3 2023");
+scene.addMetaData("description", "5 or more prismatic flowers");
+scene.addMetaData("generator", "X3D-Edit, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/personal/sphereflowers.x3d");
+await browser .loadComponents (scene);
 let NavigationInfo18 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo18;
 
 let Background19 = browser.currentScene.createNode("Background");
-Background19.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background19.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background19.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background19.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background19.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background19.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background19.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
+Background19.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
+Background19.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
+Background19.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
+Background19.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
+Background19.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
 browser.currentScene.children[1] = Background19;
 
 let Group20 = browser.currentScene.createNode("Group");
 let ExternProtoDeclare21 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare21.name = "FlowerProto";
-ExternProtoDeclare21.url = new MFString(new java.lang.String["../personal/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d#FlowerProto"]);
-let field22 = browser.currentScene.createNode("field");
-field22.name = "vertex";
-field22.accessType = "inputOutput";
-field22.type = "MFString";
-ExternProtoDeclare21.field = new MFNode();
+ExternProtoDeclare21.url = new X3D.MFString([new X3D.SFString("../personal/flowerproto.x3d#FlowerProto"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.x3d#FlowerProto")]);
+ExternProtoDeclare22.getField("vertex")ExternProtoDeclare21YYY.field = new X3D.MFNode();
 
-ExternProtoDeclare21.field[0] = field22;
+ExternProtoDeclare23.getField("fragment")ExternProtoDeclare21YYY.field = new X3D.MFNode();
 
-let field23 = browser.currentScene.createNode("field");
-field23.name = "fragment";
-field23.accessType = "inputOutput";
-field23.type = "MFString";
-ExternProtoDeclare21.field[1] = field23;
+Group20YYY.children = new X3D.MFNode();
 
-Group20.children = new MFNode();
-
-Group20.children[0] = ExternProtoDeclare21;
+Group20ZZZ.children[0] = ExternProtoDeclare21;
 
 let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
@@ -134,76 +63,78 @@ ProtoInstance27.name = "FlowerProto";
 let fieldValue28 = browser.currentScene.createNode("fieldValue");
 fieldValue28.name = "vertex";
 fieldValue28.value = "\"../shaders/x_ite_flowers_chromatic.vs\"";
-ProtoInstance27.fieldValue = new MFNode();
+ProtoInstance27YYY.fieldValue = new X3D.MFNode();
 
-ProtoInstance27.fieldValue[0] = fieldValue28;
+ProtoInstance27ZZZ.fieldValue[0] = fieldValue28;
 
 let fieldValue29 = browser.currentScene.createNode("fieldValue");
 fieldValue29.name = "fragment";
 fieldValue29.value = "\"../shaders/x_ite.fs\"";
-ProtoInstance27.fieldValue[1] = fieldValue29;
+ProtoInstance27ZZZ.fieldValue[1] = fieldValue29;
 
-Group26.children = new MFNode();
+Group26YYY.children = new X3D.MFNode();
 
-Group26.children[0] = ProtoInstance27;
+Group26ZZZ.children[0] = ProtoInstance27;
 
-ProtoBody25.children = new MFNode();
+ProtoBody25YYY.children = new X3D.MFNode();
 
-ProtoBody25.children[0] = Group26;
+ProtoBody25ZZZ.children[0] = Group26;
 
-ProtoDeclare24.protoBody = ProtoBody25;
+protoBody = ProtoBody25;
 
-Group20.children[1] = ProtoDeclare24;
+Group20ZZZ.children[1] = ProtoDeclare24;
 
 let ProtoInstance30 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance30.name = "flower";
-Group20.children[2] = ProtoInstance30;
+Group20ZZZ.children[2] = ProtoInstance30;
 
 let ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance31.name = "flower";
-Group20.children[3] = ProtoInstance31;
+Group20ZZZ.children[3] = ProtoInstance31;
 
 let ProtoInstance32 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance32.name = "flower";
-Group20.children[4] = ProtoInstance32;
+Group20ZZZ.children[4] = ProtoInstance32;
 
 let ProtoInstance33 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance33.name = "flower";
-Group20.children[5] = ProtoInstance33;
+Group20ZZZ.children[5] = ProtoInstance33;
 
 let ProtoInstance34 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance34.name = "flower";
-Group20.children[6] = ProtoInstance34;
+Group20ZZZ.children[6] = ProtoInstance34;
 
 let ProtoInstance35 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance35.name = "flower";
-Group20.children[7] = ProtoInstance35;
+Group20ZZZ.children[7] = ProtoInstance35;
 
 let TimeSensor36 = browser.currentScene.createNode("TimeSensor");
 TimeSensor36.DEF = "SongTime";
 TimeSensor36.loop = True;
-Group20.children[8] = TimeSensor36;
+Group20ZZZ.children[8] = TimeSensor36;
 
 let Sound37 = browser.currentScene.createNode("Sound");
 Sound37.maxBack = 100;
 Sound37.maxFront = 100;
 Sound37.minBack = 20;
 Sound37.minFront = 20;
-Sound37.location = new SFVec3f(new float[0,1,0]);
+Sound37.location = new X3D.SFVec3f([0,1,0]);
 let AudioClip38 = browser.currentScene.createNode("AudioClip");
 AudioClip38.DEF = "AudioClip";
 AudioClip38.description = "Chandubabamusic #1";
-AudioClip38.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]);
-Sound37.source = AudioClip38;
+AudioClip38.url = new X3D.MFString([new X3D.SFString("../resources/chandubabamusic1.wav"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav")]);
+source = AudioClip38;
 
-Group20.children[9] = Sound37;
+Group20ZZZ.children[9] = Sound37;
 
 let ROUTE39 = browser.currentScene.createNode("ROUTE");
 ROUTE39.fromField = "cycleTime";
 ROUTE39.fromNode = "SongTime";
 ROUTE39.toField = "startTime";
 ROUTE39.toNode = "AudioClip";
-Group20.children[10] = ROUTE39;
+Group20ZZZ.children[10] = ROUTE39;
 
 browser.currentScene.children[2] = Group20;
 
+}
+main ();

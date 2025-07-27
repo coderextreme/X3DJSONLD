@@ -1,247 +1,249 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.profile = "Full"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("EnvironmentalEffects")
-component2.setLevel(3)
+component2.name = "EnvironmentalEffects"
+component2.level = 3
 
-head1.addComponent(component2)
+head1.children.append(component2)
 component3 = x3d.component()
-component3.setName("Shaders")
-component3.setLevel(1)
+component3.name = "Shaders"
+component3.level = 1
 
-head1.addComponent(component3)
+head1.children.append(component3)
 component4 = x3d.component()
-component4.setName("CubeMapTexturing")
-component4.setLevel(1)
+component4.name = "CubeMapTexturing"
+component4.level = 1
 
-head1.addComponent(component4)
+head1.children.append(component4)
 component5 = x3d.component()
-component5.setName("Texturing")
-component5.setLevel(1)
+component5.name = "Texturing"
+component5.level = 1
 
-head1.addComponent(component5)
+head1.children.append(component5)
 component6 = x3d.component()
-component6.setName("Rendering")
-component6.setLevel(1)
+component6.name = "Rendering"
+component6.level = 1
 
-head1.addComponent(component6)
+head1.children.append(component6)
 component7 = x3d.component()
-component7.setName("Grouping")
-component7.setLevel(3)
+component7.name = "Grouping"
+component7.level = 3
 
-head1.addComponent(component7)
+head1.children.append(component7)
 component8 = x3d.component()
-component8.setName("Core")
-component8.setLevel(1)
+component8.name = "Core"
+component8.level = 1
 
-head1.addComponent(component8)
+head1.children.append(component8)
 component9 = x3d.component()
-component9.setName("ParticleSystems")
-component9.setLevel(3)
+component9.name = "ParticleSystems"
+component9.level = 3
 
-head1.addComponent(component9)
+head1.children.append(component9)
 meta10 = x3d.meta()
-meta10.setName("title")
-meta10.setContent("variationalflowers2.x3d")
+meta10.name = "title"
+meta10.content = "variationalflowers2.x3d"
 
-head1.addMeta(meta10)
+head1.children.append(meta10)
 meta11 = x3d.meta()
-meta11.setName("creator")
-meta11.setContent("John Carlson")
+meta11.name = "creator"
+meta11.content = "John Carlson"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.setName("description")
-meta12.setContent("A flower variational system")
+meta12.name = "description"
+meta12.content = "A flower variational system"
 
-head1.addMeta(meta12)
+head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.setName("identifier")
-meta13.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/variationalflowers2.x3d")
+meta13.name = "identifier"
+meta13.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/variationalflowers2.x3d"
 
-head1.addMeta(meta13)
+head1.children.append(meta13)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene14 = x3d.Scene()
 WorldInfo15 = x3d.WorldInfo()
-WorldInfo15.setTitle("variationalflowers2.x3d")
+WorldInfo15.title = "variationalflowers2.x3d"
 
-Scene14.addChildren(WorldInfo15)
+Scene14.children.append(WorldInfo15)
 NavigationInfo16 = x3d.NavigationInfo()
-NavigationInfo16.setType(["ANY","EXAMINE","FLY","LOOKAT"])
+NavigationInfo16.type = ["ANY","EXAMINE","FLY","LOOKAT"]
 
-Scene14.addChildren(NavigationInfo16)
+Scene14.children.append(NavigationInfo16)
 Viewpoint17 = x3d.Viewpoint()
-Viewpoint17.setDescription("Tour Views")
-Viewpoint17.setPosition([0,0,12])
+Viewpoint17.description = "Tour Views"
+Viewpoint17.position = [0,0,12]
 
-Scene14.addChildren(Viewpoint17)
+Scene14.children.append(Viewpoint17)
 Background18 = x3d.Background()
-Background18.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background18.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background18.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background18.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background18.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background18.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background18.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background18.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background18.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background18.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background18.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background18.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Scene14.addChildren(Background18)
+Scene14.children.append(Background18)
 Transform19 = x3d.Transform()
 ParticleSystem20 = x3d.ParticleSystem()
-ParticleSystem20.setMaxParticles(20)
-ParticleSystem20.setGeometryType("GEOMETRY")
-#values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values
+ParticleSystem20.maxParticles = 20
+ParticleSystem20.geometryType = "GEOMETRY"
+"""values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values"""
 VariationPhysicsModel21 = x3d.VariationPhysicsModel()
-VariationPhysicsModel21.setValues("2 2 5 5 0 0")
-VariationPhysicsModel21.setVariations("0.2 0.1 0.3 0.3 0.01 0.01")
+VariationPhysicsModel21.values = "2 2 5 5 0 0"
+VariationPhysicsModel21.variations = "0.2 0.1 0.3 0.3 0.01 0.01"
 
-ParticleSystem20.addVariationPhysicsModel(VariationPhysicsModel21)
+ParticleSystem20.iationPhysicsModel.append(VariationPhysicsModel21)
 ExplosionEmitter22 = x3d.ExplosionEmitter()
-ExplosionEmitter22.setSpeed(1)
-ExplosionEmitter22.setVariation(0.75)
+ExplosionEmitter22.speed = 1
+ExplosionEmitter22.variation = 0.75
 
-ParticleSystem20.setEmitter(ExplosionEmitter22)
+ParticleSystem20.emitter = ExplosionEmitter22
 Sphere23 = x3d.Sphere()
 
-ParticleSystem20.setGeometry(Sphere23)
+ParticleSystem20.geometry = Sphere23
 Appearance24 = x3d.Appearance()
 Material25 = x3d.Material()
-Material25.setDiffuseColor([0.7,0.7,0.7])
-Material25.setSpecularColor([0.5,0.5,0.5])
+Material25.diffuseColor = [0.7,0.7,0.7]
+Material25.specularColor = [0.5,0.5,0.5]
 
-Appearance24.setMaterial(Material25)
+Appearance24.material = Material25
 ComposedCubeMapTexture26 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture26.setDEF("texture")
+ComposedCubeMapTexture26.DEF = "texture"
 ImageTexture27 = x3d.ImageTexture()
-ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"])
+ImageTexture27.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 
-ComposedCubeMapTexture26.setBackTexture(ImageTexture27)
+ComposedCubeMapTexture26.backTexture = ImageTexture27
 ImageTexture28 = x3d.ImageTexture()
-ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
+ImageTexture28.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 
-ComposedCubeMapTexture26.setBottomTexture(ImageTexture28)
+ComposedCubeMapTexture26.bottomTexture = ImageTexture28
 ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"])
+ImageTexture29.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 
-ComposedCubeMapTexture26.setFrontTexture(ImageTexture29)
+ComposedCubeMapTexture26.frontTexture = ImageTexture29
 ImageTexture30 = x3d.ImageTexture()
-ImageTexture30.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"])
+ImageTexture30.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 
-ComposedCubeMapTexture26.setLeftTexture(ImageTexture30)
+ComposedCubeMapTexture26.leftTexture = ImageTexture30
 ImageTexture31 = x3d.ImageTexture()
-ImageTexture31.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"])
+ImageTexture31.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 
-ComposedCubeMapTexture26.setRightTexture(ImageTexture31)
+ComposedCubeMapTexture26.rightTexture = ImageTexture31
 ImageTexture32 = x3d.ImageTexture()
-ImageTexture32.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+ImageTexture32.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-ComposedCubeMapTexture26.setTopTexture(ImageTexture32)
+ComposedCubeMapTexture26.topTexture = ImageTexture32
 
-Appearance24.setTexture(ComposedCubeMapTexture26)
+Appearance24.texture = ComposedCubeMapTexture26
 ComposedShader33 = x3d.ComposedShader()
-ComposedShader33.setDEF("x_ite")
-ComposedShader33.setLanguage("GLSL")
+ComposedShader33.DEF = "x_ite"
+ComposedShader33.language = "GLSL"
 field34 = x3d.field()
-field34.setName("chromaticDispertion")
-field34.setAccessType("initializeOnly")
-field34.setType("SFVec3f")
-field34.setValue("0.98 1 1.033")
+field34.name = "chromaticDispertion"
+field34.accessType = "initializeOnly"
+field34.type = "SFVec3f"
+field34.value = [0.98,1,1.033]
 
-ComposedShader33.addField(field34)
+ComposedShader33.field.append(field34)
 field35 = x3d.field()
-field35.setName("cube")
-field35.setType("SFNode")
-field35.setAccessType("initializeOnly")
+field35.name = "cube"
+field35.type = "SFNode"
+field35.accessType = "initializeOnly"
 ComposedCubeMapTexture36 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture36.setUSE("texture")
+ComposedCubeMapTexture36.USE = "texture"
 
-field35.addChildren(ComposedCubeMapTexture36)
+field35.children.append(ComposedCubeMapTexture36)
 
-ComposedShader33.addField(field35)
+ComposedShader33.field.append(field35)
 field37 = x3d.field()
-field37.setName("bias")
-field37.setAccessType("initializeOnly")
-field37.setType("SFFloat")
-field37.setValue("0.5")
+field37.name = "bias"
+field37.accessType = "initializeOnly"
+field37.type = "SFFloat"
+field37.value = 0.5
 
-ComposedShader33.addField(field37)
+ComposedShader33.field.append(field37)
 field38 = x3d.field()
-field38.setName("scale")
-field38.setAccessType("initializeOnly")
-field38.setType("SFFloat")
-field38.setValue("0.5")
+field38.name = "scale"
+field38.accessType = "initializeOnly"
+field38.type = "SFFloat"
+field38.value = 0.5
 
-ComposedShader33.addField(field38)
+ComposedShader33.field.append(field38)
 field39 = x3d.field()
-field39.setName("power")
-field39.setAccessType("initializeOnly")
-field39.setType("SFFloat")
-field39.setValue("2")
+field39.name = "power"
+field39.accessType = "initializeOnly"
+field39.type = "SFFloat"
+field39.value = 2
 
-ComposedShader33.addField(field39)
+ComposedShader33.field.append(field39)
 field40 = x3d.field()
-field40.setName("x3d_ParticleValues")
-field40.setType("MFFloat")
-field40.setAccessType("inputOutput")
-field40.setValue("2 1 4 4 0 0")
+field40.name = "x3d_ParticleValues"
+field40.type = "MFFloat"
+field40.accessType = "inputOutput"
+field40.value = [2,1,4,4,0,0]
 
-ComposedShader33.addField(field40)
+ComposedShader33.field.append(field40)
 ShaderPart41 = x3d.ShaderPart()
-ShaderPart41.setUrl(["../shaders/x_ite_variations.vs"])
-ShaderPart41.setType("VERTEX")
+ShaderPart41.url = ["../shaders/x_ite_variations.vs"]
+ShaderPart41.type = "VERTEX"
 
-ComposedShader33.addParts(ShaderPart41)
+ComposedShader33.parts.append(ShaderPart41)
 ShaderPart42 = x3d.ShaderPart()
-ShaderPart42.setUrl(["../shaders/commonnew.fs"])
-ShaderPart42.setType("FRAGMENT")
+ShaderPart42.url = ["../shaders/commonnew.fs"]
+ShaderPart42.type = "FRAGMENT"
 
-ComposedShader33.addParts(ShaderPart42)
+ComposedShader33.parts.append(ShaderPart42)
 
-Appearance24.addShaders(ComposedShader33)
+Appearance24.shaders.append(ComposedShader33)
 
-ParticleSystem20.setAppearance(Appearance24)
+ParticleSystem20.appearance = Appearance24
 
-Transform19.addChildren(ParticleSystem20)
+Transform19.children.append(ParticleSystem20)
 Script43 = x3d.Script()
-Script43.setDEF("Animate")
+Script43.DEF = "Animate"
 field44 = x3d.field()
-field44.setName("set_fraction")
-field44.setAccessType("inputOnly")
-field44.setType("SFFloat")
+field44.name = "set_fraction"
+field44.accessType = "inputOnly"
+field44.type = "SFFloat"
 
-Script43.addField(field44)
+Script43.field.append(field44)
 field45 = x3d.field()
-field45.setName("values")
-field45.setType("MFFloat")
-field45.setAccessType("inputOutput")
-field45.setValue("2 2 5 5 0 0")
+field45.name = "values"
+field45.type = "MFFloat"
+field45.accessType = "inputOutput"
+field45.value = [2,2,5,5,0,0]
 
-Script43.addField(field45)
+Script43.field.append(field45)
 field46 = x3d.field()
-field46.setName("variations")
-field46.setType("MFFloat")
-field46.setAccessType("inputOutput")
-field46.setValue("0.2 0.1 0.3 0.3 0.01 0.01")
+field46.name = "variations"
+field46.type = "MFFloat"
+field46.accessType = "inputOutput"
+field46.value = [0.2,0.1,0.3,0.3,0.01,0.01]
 
-Script43.addField(field46)
+Script43.field.append(field46)
 field47 = x3d.field()
-field47.setName("lastframe")
-field47.setType("SFFloat")
-field47.setAccessType("inputOutput")
-field47.setValue("0")
+field47.name = "lastframe"
+field47.type = "SFFloat"
+field47.accessType = "inputOutput"
+field47.value = 0
 
-Script43.addField(field47)
+Script43.field.append(field47)
 field48 = x3d.field()
-field48.setName("updaterate")
-field48.setType("SFFloat")
-field48.setAccessType("inputOutput")
-field48.setValue("0.1")
+field48.name = "updaterate"
+field48.type = "SFFloat"
+field48.accessType = "inputOutput"
+field48.value = 0.1
 
-Script43.addField(field48)
+Script43.field.append(field48)
 
-Script43.setSourceCode('''ecmascript:\n"+
+Script43.sourceCode = '''ecmascript:\n"+
 "			function set_fraction(f, tm) {\n"+
 "			    if (lastframe + updaterate < tm) {\n"+
 "			  	lastframe = tm;\n"+
@@ -249,32 +251,36 @@ Script43.setSourceCode('''ecmascript:\n"+
 "					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];\n"+
 "				}\n"+
 "			    }\n"+
-"			}''')
+"			}'''
 
-Transform19.addChildren(Script43)
+Transform19.children.append(Script43)
 TimeSensor49 = x3d.TimeSensor()
-TimeSensor49.setDEF("TourTime")
-TimeSensor49.setCycleInterval(45)
-TimeSensor49.setLoop(True)
+TimeSensor49.DEF = "TourTime"
+TimeSensor49.cycleInterval = 45
+TimeSensor49.loop = True
 
-Transform19.addChildren(TimeSensor49)
+Transform19.children.append(TimeSensor49)
 ROUTE50 = x3d.ROUTE()
-ROUTE50.setFromNode("TourTime")
-ROUTE50.setFromField("fraction_changed")
-ROUTE50.setToNode("Animate")
-ROUTE50.setToField("set_fraction")
+ROUTE50.fromNode = "TourTime"
+ROUTE50.fromField = "fraction_changed"
+ROUTE50.toNode = "Animate"
+ROUTE50.toField = "set_fraction"
 
-Transform19.addChildren(ROUTE50)
+Transform19.children.append(ROUTE50)
 ROUTE51 = x3d.ROUTE()
-ROUTE51.setFromNode("Animate")
-ROUTE51.setFromField("values")
-ROUTE51.setToNode("x_ite")
-ROUTE51.setToField("x3d_ParticleValues")
+ROUTE51.fromNode = "Animate"
+ROUTE51.fromField = "values"
+ROUTE51.toNode = "x_ite"
+ROUTE51.toField = "x3d_ParticleValues"
 
-Transform19.addChildren(ROUTE51)
+Transform19.children.append(ROUTE51)
 
-Scene14.addChildren(Transform19)
+Scene14.children.append(Transform19)
 
-X3D0.setScene(Scene14)
-X3D0.toFileX3D("../personal/variationalflowers2.new.python.x3d")
-X3D0.toFileJSON("../personal/variationalflowers2.new.python.json")
+X3D0.Scene = Scene14
+f = open("../personal/variationalflowers2.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/variationalflowers2.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

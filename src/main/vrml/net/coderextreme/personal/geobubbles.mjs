@@ -1,78 +1,53 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "3.3";
-let head1 = browser.currentScene.createNode("head");
-let component2 = browser.currentScene.createNode("component");
-component2.name = "Geospatial";
-component2.level = 1;
-head1.component = new MFNode();
-
-head1.component[0] = component2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "title";
-meta3.content = "geobubbles.x3d";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "creator";
-meta4.content = "John Carlson";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "generator";
-meta5.content = "manual";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/geobubbles.x3d";
-head1.meta[4] = meta6;
-
-let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "description";
-meta7.content = "geo bubbles";
-head1.meta[5] = meta7;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene .addComponent (browser .getComponent ("Geospatial", 1));
+scene.addMetaData("title", "geobubbles.x3d");
+scene.addMetaData("creator", "John Carlson");
+scene.addMetaData("generator", "manual");
+scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/personal/geobubbles.x3d");
+scene.addMetaData("description", "geo bubbles");
+await browser .loadComponents (scene);
 //Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/
 //PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
 let GeoViewpoint9 = browser.currentScene.createNode("GeoViewpoint");
 GeoViewpoint9.DEF = "Tour";
-GeoViewpoint9.position = new SFVec3d(new double[0,0,4]);
-GeoViewpoint9.orientation = new SFRotation(new float[1,0,0,0]);
+GeoViewpoint9.position = new X3D.SFVec3d([0,0,4]);
+GeoViewpoint9.orientation = new X3D.SFRotation([1,0,0,0]);
 GeoViewpoint9.description = "Tour Views";
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = GeoViewpoint9;
 
 let Background10 = browser.currentScene.createNode("Background");
-Background10.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]);
-Background10.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]);
-Background10.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]);
-Background10.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]);
-Background10.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]);
-Background10.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]);
+Background10.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/BK.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")]);
+Background10.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/BT.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")]);
+Background10.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/FR.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")]);
+Background10.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/LF.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")]);
+Background10.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/RT.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")]);
+Background10.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/TP.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")]);
 browser.currentScene.children[1] = Background10;
 
 let Transform11 = browser.currentScene.createNode("Transform");
 let Shape12 = browser.currentScene.createNode("Shape");
 let Sphere13 = browser.currentScene.createNode("Sphere");
-Shape12.geometry = Sphere13;
+geometry = Sphere13;
 
 let Appearance14 = browser.currentScene.createNode("Appearance");
 let Material15 = browser.currentScene.createNode("Material");
-Material15.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material15.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance14.material = Material15;
+Material15.diffuseColor = new X3D.SFColor([0.7,0.7,0.7]);
+Material15.specularColor = new X3D.SFColor([0.5,0.5,0.5]);
+material = Material15;
 
-Shape12.appearance = Appearance14;
+appearance = Appearance14;
 
-Transform11.child = new undefined();
+Transform11YYY.child = new X3D.undefined();
 
-Transform11.child[0] = Shape12;
+Transform11ZZZ.child[0] = Shape12;
 
 browser.currentScene.children[2] = Transform11;
 
@@ -84,40 +59,22 @@ browser.currentScene.children[3] = TimeSensor16;
 
 let GeoPositionInterpolator17 = browser.currentScene.createNode("GeoPositionInterpolator");
 GeoPositionInterpolator17.DEF = "TourPosition";
-GeoPositionInterpolator17.key = new MFFloat(new float[0,1]);
-GeoPositionInterpolator17.keyValue = new MFVec3d(new double[0.0015708,0,4,0,0.0015708,4]);
+GeoPositionInterpolator17.key = new X3D.MFFloat([0,1]);
+GeoPositionInterpolator17.keyValue = new X3D.MFVec3d([0.0015708,0,4,0,0.0015708,4]);
 browser.currentScene.children[4] = GeoPositionInterpolator17;
 
 let Script18 = browser.currentScene.createNode("Script");
 Script18.DEF = "RandomTourTime";
-let field19 = browser.currentScene.createNode("field");
-field19.name = "set_cycle";
-field19.accessType = "inputOnly";
-field19.type = "SFTime";
-Script18.field = new MFNode();
+Script19.getField("set_cycle")Script18YYY.field = new X3D.MFNode();
 
-Script18.field[0] = field19;
+Script20.getField("val").setValue("0");
+Script18YYY.field = new X3D.MFNode();
 
-let field20 = browser.currentScene.createNode("field");
-field20.name = "val";
-field20.accessType = "inputOutput";
-field20.type = "SFFloat";
-field20.value = "0";
-Script18.field[1] = field20;
+Script21.getField("positions").setValue("0.0015708 0 4 0 0.0015708 4");
+Script18YYY.field = new X3D.MFNode();
 
-let field21 = browser.currentScene.createNode("field");
-field21.name = "positions";
-field21.accessType = "inputOutput";
-field21.type = "MFVec3d";
-field21.value = "0.0015708 0 4 0 0.0015708 4";
-Script18.field[2] = field21;
-
-let field22 = browser.currentScene.createNode("field");
-field22.name = "position";
-field22.accessType = "inputOutput";
-field22.type = "MFVec3d";
-field22.value = "0.0015708 0 4 0 0.0015708 4";
-Script18.field[3] = field22;
+Script22.getField("position").setValue("0.0015708 0 4 0 0.0015708 4");
+Script18YYY.field = new X3D.MFNode();
 
 
 Script18.setSourceCode(`ecmascript:\n"+
@@ -167,3 +124,5 @@ ROUTE26.toNode = "Tour";
 ROUTE26.toField = "set_position";
 browser.currentScene.children[9] = ROUTE26;
 
+}
+main ();

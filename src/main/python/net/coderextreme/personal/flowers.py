@@ -1,305 +1,307 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
-component2.setLevel(1)
+component2.name = "Scripting"
+component2.level = 1
 
-head1.addComponent(component2)
+head1.children.append(component2)
 component3 = x3d.component()
-component3.setName("EnvironmentalEffects")
-component3.setLevel(3)
+component3.name = "EnvironmentalEffects"
+component3.level = 3
 
-head1.addComponent(component3)
+head1.children.append(component3)
 component4 = x3d.component()
-component4.setName("Shaders")
-component4.setLevel(1)
+component4.name = "Shaders"
+component4.level = 1
 
-head1.addComponent(component4)
+head1.children.append(component4)
 component5 = x3d.component()
-component5.setName("CubeMapTexturing")
-component5.setLevel(1)
+component5.name = "CubeMapTexturing"
+component5.level = 1
 
-head1.addComponent(component5)
+head1.children.append(component5)
 component6 = x3d.component()
-component6.setName("Texturing")
-component6.setLevel(1)
+component6.name = "Texturing"
+component6.level = 1
 
-head1.addComponent(component6)
+head1.children.append(component6)
 component7 = x3d.component()
-component7.setName("Rendering")
-component7.setLevel(1)
+component7.name = "Rendering"
+component7.level = 1
 
-head1.addComponent(component7)
+head1.children.append(component7)
 component8 = x3d.component()
-component8.setName("Shape")
-component8.setLevel(4)
+component8.name = "Shape"
+component8.level = 4
 
-head1.addComponent(component8)
+head1.children.append(component8)
 component9 = x3d.component()
-component9.setName("Grouping")
-component9.setLevel(3)
+component9.name = "Grouping"
+component9.level = 3
 
-head1.addComponent(component9)
+head1.children.append(component9)
 component10 = x3d.component()
-component10.setName("Core")
-component10.setLevel(1)
+component10.name = "Core"
+component10.level = 1
 
-head1.addComponent(component10)
+head1.children.append(component10)
 meta11 = x3d.meta()
-meta11.setName("title")
-meta11.setContent("flowers.x3d")
+meta11.name = "title"
+meta11.content = "flowers.x3d"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.setName("creator")
-meta12.setContent("John Carlson")
+meta12.name = "creator"
+meta12.content = "John Carlson"
 
-head1.addMeta(meta12)
+head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.setName("description")
-meta13.setContent("5 or more prismatic flowers")
+meta13.name = "description"
+meta13.content = "5 or more prismatic flowers"
 
-head1.addMeta(meta13)
+head1.children.append(meta13)
 meta14 = x3d.meta()
-meta14.setName("generator")
-meta14.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
+meta14.name = "generator"
+meta14.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 
-head1.addMeta(meta14)
+head1.children.append(meta14)
 meta15 = x3d.meta()
-meta15.setName("identifier")
-meta15.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers.x3d")
+meta15.name = "identifier"
+meta15.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers.x3d"
 
-head1.addMeta(meta15)
+head1.children.append(meta15)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene16 = x3d.Scene()
 NavigationInfo17 = x3d.NavigationInfo()
 
-Scene16.addChildren(NavigationInfo17)
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+Scene16.children.append(NavigationInfo17)
+"""Images courtesy of Paul Debevec's Light Probe Image Gallery"""
 Background18 = x3d.Background()
-Background18.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background18.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background18.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background18.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background18.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background18.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background18.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background18.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background18.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background18.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background18.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background18.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Scene16.addChildren(Background18)
+Scene16.children.append(Background18)
 ProtoDeclare19 = x3d.ProtoDeclare()
-ProtoDeclare19.setName("flower")
+ProtoDeclare19.name = "flower"
 ProtoBody20 = x3d.ProtoBody()
 Transform21 = x3d.Transform()
-Transform21.setDEF("animate_transform")
+Transform21.DEF = "animate_transform"
 Shape22 = x3d.Shape()
 Appearance23 = x3d.Appearance()
 Material24 = x3d.Material()
-Material24.setDiffuseColor([0.7,0.7,0.7])
-Material24.setSpecularColor([0.5,0.5,0.5])
+Material24.diffuseColor = [0.7,0.7,0.7]
+Material24.specularColor = [0.5,0.5,0.5]
 
-Appearance23.setMaterial(Material24)
+Appearance23.material = Material24
 ComposedCubeMapTexture25 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture25.setDEF("texture")
+ComposedCubeMapTexture25.DEF = "texture"
 ImageTexture26 = x3d.ImageTexture()
-ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
+ImageTexture26.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 
-ComposedCubeMapTexture25.setBackTexture(ImageTexture26)
+ComposedCubeMapTexture25.backTexture = ImageTexture26
 ImageTexture27 = x3d.ImageTexture()
-ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
+ImageTexture27.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 
-ComposedCubeMapTexture25.setBottomTexture(ImageTexture27)
+ComposedCubeMapTexture25.bottomTexture = ImageTexture27
 ImageTexture28 = x3d.ImageTexture()
-ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
+ImageTexture28.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 
-ComposedCubeMapTexture25.setFrontTexture(ImageTexture28)
+ComposedCubeMapTexture25.frontTexture = ImageTexture28
 ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
+ImageTexture29.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 
-ComposedCubeMapTexture25.setLeftTexture(ImageTexture29)
+ComposedCubeMapTexture25.leftTexture = ImageTexture29
 ImageTexture30 = x3d.ImageTexture()
-ImageTexture30.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
+ImageTexture30.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 
-ComposedCubeMapTexture25.setRightTexture(ImageTexture30)
+ComposedCubeMapTexture25.rightTexture = ImageTexture30
 ImageTexture31 = x3d.ImageTexture()
-ImageTexture31.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+ImageTexture31.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-ComposedCubeMapTexture25.setTopTexture(ImageTexture31)
+ComposedCubeMapTexture25.topTexture = ImageTexture31
 
-Appearance23.setTexture(ComposedCubeMapTexture25)
-#<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
+Appearance23.texture = ComposedCubeMapTexture25
+"""<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"""
 ComposedShader32 = x3d.ComposedShader()
-ComposedShader32.setDEF("x_ite")
-ComposedShader32.setLanguage("GLSL")
+ComposedShader32.DEF = "x_ite"
+ComposedShader32.language = "GLSL"
 field33 = x3d.field()
-field33.setName("cube")
-field33.setType("SFNode")
-field33.setAccessType("inputOutput")
+field33.name = "cube"
+field33.type = "SFNode"
+field33.accessType = "inputOutput"
 ComposedCubeMapTexture34 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture34.setUSE("texture")
+ComposedCubeMapTexture34.USE = "texture"
 
-field33.addChildren(ComposedCubeMapTexture34)
+field33.children.append(ComposedCubeMapTexture34)
 
-ComposedShader32.addField(field33)
+ComposedShader32.field.append(field33)
 field35 = x3d.field()
-field35.setName("chromaticDispertion")
-field35.setAccessType("initializeOnly")
-field35.setType("SFVec3f")
-field35.setValue("0.98 1 1.033")
+field35.name = "chromaticDispertion"
+field35.accessType = "initializeOnly"
+field35.type = "SFVec3f"
+field35.value = [0.98,1,1.033]
 
-ComposedShader32.addField(field35)
+ComposedShader32.field.append(field35)
 field36 = x3d.field()
-field36.setName("bias")
-field36.setType("SFFloat")
-field36.setAccessType("inputOnly")
-field36.setValue("0.5")
+field36.name = "bias"
+field36.type = "SFFloat"
+field36.accessType = "inputOnly"
+field36.value = 0.5
 
-ComposedShader32.addField(field36)
+ComposedShader32.field.append(field36)
 field37 = x3d.field()
-field37.setName("scale")
-field37.setType("SFFloat")
-field37.setAccessType("inputOnly")
-field37.setValue("0.5")
+field37.name = "scale"
+field37.type = "SFFloat"
+field37.accessType = "inputOnly"
+field37.value = 0.5
 
-ComposedShader32.addField(field37)
+ComposedShader32.field.append(field37)
 field38 = x3d.field()
-field38.setName("power")
-field38.setType("SFFloat")
-field38.setAccessType("inputOnly")
-field38.setValue("2")
+field38.name = "power"
+field38.type = "SFFloat"
+field38.accessType = "inputOnly"
+field38.value = 2
 
-ComposedShader32.addField(field38)
+ComposedShader32.field.append(field38)
 field39 = x3d.field()
-field39.setName("a")
-field39.setType("SFFloat")
-field39.setAccessType("inputOnly")
-field39.setValue("10")
+field39.name = "a"
+field39.type = "SFFloat"
+field39.accessType = "inputOnly"
+field39.value = 10
 
-ComposedShader32.addField(field39)
+ComposedShader32.field.append(field39)
 field40 = x3d.field()
-field40.setName("b")
-field40.setType("SFFloat")
-field40.setAccessType("inputOnly")
-field40.setValue("1")
+field40.name = "b"
+field40.type = "SFFloat"
+field40.accessType = "inputOnly"
+field40.value = 1
 
-ComposedShader32.addField(field40)
+ComposedShader32.field.append(field40)
 field41 = x3d.field()
-field41.setName("c")
-field41.setType("SFFloat")
-field41.setAccessType("inputOnly")
-field41.setValue("20")
+field41.name = "c"
+field41.type = "SFFloat"
+field41.accessType = "inputOnly"
+field41.value = 20
 
-ComposedShader32.addField(field41)
+ComposedShader32.field.append(field41)
 field42 = x3d.field()
-field42.setName("d")
-field42.setType("SFFloat")
-field42.setAccessType("inputOnly")
-field42.setValue("20")
+field42.name = "d"
+field42.type = "SFFloat"
+field42.accessType = "inputOnly"
+field42.value = 20
 
-ComposedShader32.addField(field42)
+ComposedShader32.field.append(field42)
 field43 = x3d.field()
-field43.setName("tdelta")
-field43.setType("SFFloat")
-field43.setAccessType("inputOnly")
-field43.setValue("0")
+field43.name = "tdelta"
+field43.type = "SFFloat"
+field43.accessType = "inputOnly"
+field43.value = 0
 
-ComposedShader32.addField(field43)
+ComposedShader32.field.append(field43)
 field44 = x3d.field()
-field44.setName("pdelta")
-field44.setType("SFFloat")
-field44.setAccessType("inputOnly")
-field44.setValue("0")
+field44.name = "pdelta"
+field44.type = "SFFloat"
+field44.accessType = "inputOnly"
+field44.value = 0
 
-ComposedShader32.addField(field44)
+ComposedShader32.field.append(field44)
 ShaderPart45 = x3d.ShaderPart()
-ShaderPart45.setUrl(["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])
-ShaderPart45.setType("VERTEX")
+ShaderPart45.url = ["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+ShaderPart45.type = "VERTEX"
 
-ComposedShader32.addParts(ShaderPart45)
+ComposedShader32.parts.append(ShaderPart45)
 ShaderPart46 = x3d.ShaderPart()
-ShaderPart46.setUrl(["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
-ShaderPart46.setType("FRAGMENT")
+ShaderPart46.url = ["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+ShaderPart46.type = "FRAGMENT"
 
-ComposedShader32.addParts(ShaderPart46)
+ComposedShader32.parts.append(ShaderPart46)
 
-Appearance23.addShaders(ComposedShader32)
+Appearance23.shaders.append(ComposedShader32)
 
-Shape22.setAppearance(Appearance23)
+Shape22.appearance = Appearance23
 Sphere47 = x3d.Sphere()
 
-Shape22.setGeometry(Sphere47)
+Shape22.geometry = Sphere47
 
-Transform21.addChild(Shape22)
+Transform21.children.append(Shape22)
 
-ProtoBody20.addChildren(Transform21)
+ProtoBody20.children.append(Transform21)
 Script48 = x3d.Script()
-Script48.setDEF("Animate")
+Script48.DEF = "Animate"
 field49 = x3d.field()
-field49.setName("translation")
-field49.setAccessType("inputOutput")
-field49.setType("SFVec3f")
-field49.setValue("0 0 0")
+field49.name = "translation"
+field49.accessType = "inputOutput"
+field49.type = "SFVec3f"
+field49.value = [0,0,0]
 
-Script48.addField(field49)
+Script48.field.append(field49)
 field50 = x3d.field()
-field50.setName("velocity")
-field50.setAccessType("inputOutput")
-field50.setType("SFVec3f")
-field50.setValue("0 0 0")
+field50.name = "velocity"
+field50.accessType = "inputOutput"
+field50.type = "SFVec3f"
+field50.value = [0,0,0]
 
-Script48.addField(field50)
+Script48.field.append(field50)
 field51 = x3d.field()
-field51.setName("set_fraction")
-field51.setAccessType("inputOnly")
-field51.setType("SFFloat")
+field51.name = "set_fraction"
+field51.accessType = "inputOnly"
+field51.type = "SFFloat"
 
-Script48.addField(field51)
+Script48.field.append(field51)
 field52 = x3d.field()
-field52.setName("a")
-field52.setType("SFFloat")
-field52.setAccessType("inputOutput")
-field52.setValue("0.5")
+field52.name = "a"
+field52.type = "SFFloat"
+field52.accessType = "inputOutput"
+field52.value = 0.5
 
-Script48.addField(field52)
+Script48.field.append(field52)
 field53 = x3d.field()
-field53.setName("b")
-field53.setType("SFFloat")
-field53.setAccessType("inputOutput")
-field53.setValue("0.5")
+field53.name = "b"
+field53.type = "SFFloat"
+field53.accessType = "inputOutput"
+field53.value = 0.5
 
-Script48.addField(field53)
+Script48.field.append(field53)
 field54 = x3d.field()
-field54.setName("c")
-field54.setType("SFFloat")
-field54.setAccessType("inputOutput")
-field54.setValue("3")
+field54.name = "c"
+field54.type = "SFFloat"
+field54.accessType = "inputOutput"
+field54.value = 3
 
-Script48.addField(field54)
+Script48.field.append(field54)
 field55 = x3d.field()
-field55.setName("d")
-field55.setType("SFFloat")
-field55.setAccessType("inputOutput")
-field55.setValue("3")
+field55.name = "d"
+field55.type = "SFFloat"
+field55.accessType = "inputOutput"
+field55.value = 3
 
-Script48.addField(field55)
+Script48.field.append(field55)
 field56 = x3d.field()
-field56.setName("tdelta")
-field56.setType("SFFloat")
-field56.setAccessType("inputOutput")
-field56.setValue("0.5")
+field56.name = "tdelta"
+field56.type = "SFFloat"
+field56.accessType = "inputOutput"
+field56.value = 0.5
 
-Script48.addField(field56)
+Script48.field.append(field56)
 field57 = x3d.field()
-field57.setName("pdelta")
-field57.setType("SFFloat")
-field57.setAccessType("inputOutput")
-field57.setValue("0.5")
+field57.name = "pdelta"
+field57.type = "SFFloat"
+field57.accessType = "inputOutput"
+field57.value = 0.5
 
-Script48.addField(field57)
+Script48.field.append(field57)
 
-Script48.setSourceCode('''ecmascript:\n"+
+Script48.sourceCode = '''ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
@@ -365,89 +367,93 @@ Script48.setSourceCode('''ecmascript:\n"+
 "				if (d > 10) {\n"+
 "					d = 4;\n"+
 "				}\n"+
-"			}''')
+"			}'''
 
-ProtoBody20.addChildren(Script48)
+ProtoBody20.children.append(Script48)
 TimeSensor58 = x3d.TimeSensor()
-TimeSensor58.setDEF("TourTime")
-TimeSensor58.setCycleInterval(5)
-TimeSensor58.setLoop(True)
+TimeSensor58.DEF = "TourTime"
+TimeSensor58.cycleInterval = 5
+TimeSensor58.loop = True
 
-ProtoBody20.addChildren(TimeSensor58)
+ProtoBody20.children.append(TimeSensor58)
 ROUTE59 = x3d.ROUTE()
-ROUTE59.setFromNode("TourTime")
-ROUTE59.setFromField("fraction_changed")
-ROUTE59.setToNode("Animate")
-ROUTE59.setToField("set_fraction")
+ROUTE59.fromNode = "TourTime"
+ROUTE59.fromField = "fraction_changed"
+ROUTE59.toNode = "Animate"
+ROUTE59.toField = "set_fraction"
 
-ProtoBody20.addChildren(ROUTE59)
+ProtoBody20.children.append(ROUTE59)
 ROUTE60 = x3d.ROUTE()
-ROUTE60.setFromNode("Animate")
-ROUTE60.setFromField("translation_changed")
-ROUTE60.setToNode("animate_transform")
-ROUTE60.setToField("set_translation")
+ROUTE60.fromNode = "Animate"
+ROUTE60.fromField = "translation_changed"
+ROUTE60.toNode = "animate_transform"
+ROUTE60.toField = "set_translation"
 
-ProtoBody20.addChildren(ROUTE60)
+ProtoBody20.children.append(ROUTE60)
 ROUTE61 = x3d.ROUTE()
-ROUTE61.setFromNode("Animate")
-ROUTE61.setFromField("a")
-ROUTE61.setToNode("x_ite")
-ROUTE61.setToField("a")
+ROUTE61.fromNode = "Animate"
+ROUTE61.fromField = "a"
+ROUTE61.toNode = "x_ite"
+ROUTE61.toField = "a"
 
-ProtoBody20.addChildren(ROUTE61)
+ProtoBody20.children.append(ROUTE61)
 ROUTE62 = x3d.ROUTE()
-ROUTE62.setFromNode("Animate")
-ROUTE62.setFromField("b")
-ROUTE62.setToNode("x_ite")
-ROUTE62.setToField("b")
+ROUTE62.fromNode = "Animate"
+ROUTE62.fromField = "b"
+ROUTE62.toNode = "x_ite"
+ROUTE62.toField = "b"
 
-ProtoBody20.addChildren(ROUTE62)
+ProtoBody20.children.append(ROUTE62)
 ROUTE63 = x3d.ROUTE()
-ROUTE63.setFromNode("Animate")
-ROUTE63.setFromField("c")
-ROUTE63.setToNode("x_ite")
-ROUTE63.setToField("c")
+ROUTE63.fromNode = "Animate"
+ROUTE63.fromField = "c"
+ROUTE63.toNode = "x_ite"
+ROUTE63.toField = "c"
 
-ProtoBody20.addChildren(ROUTE63)
+ProtoBody20.children.append(ROUTE63)
 ROUTE64 = x3d.ROUTE()
-ROUTE64.setFromNode("Animate")
-ROUTE64.setFromField("d")
-ROUTE64.setToNode("x_ite")
-ROUTE64.setToField("d")
+ROUTE64.fromNode = "Animate"
+ROUTE64.fromField = "d"
+ROUTE64.toNode = "x_ite"
+ROUTE64.toField = "d"
 
-ProtoBody20.addChildren(ROUTE64)
+ProtoBody20.children.append(ROUTE64)
 ROUTE65 = x3d.ROUTE()
-ROUTE65.setFromNode("Animate")
-ROUTE65.setFromField("pdelta")
-ROUTE65.setToNode("x_ite")
-ROUTE65.setToField("pdelta")
+ROUTE65.fromNode = "Animate"
+ROUTE65.fromField = "pdelta"
+ROUTE65.toNode = "x_ite"
+ROUTE65.toField = "pdelta"
 
-ProtoBody20.addChildren(ROUTE65)
+ProtoBody20.children.append(ROUTE65)
 ROUTE66 = x3d.ROUTE()
-ROUTE66.setFromNode("Animate")
-ROUTE66.setFromField("tdelta")
-ROUTE66.setToNode("x_ite")
-ROUTE66.setToField("tdelta")
+ROUTE66.fromNode = "Animate"
+ROUTE66.fromField = "tdelta"
+ROUTE66.toNode = "x_ite"
+ROUTE66.toField = "tdelta"
 
-ProtoBody20.addChildren(ROUTE66)
-#<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/> <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/> <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/> <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/> <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/> <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
+ProtoBody20.children.append(ROUTE66)
+"""<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/> <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/> <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/> <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/> <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/> <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>"""
 
-ProtoDeclare19.setProtoBody(ProtoBody20)
+ProtoDeclare19.ProtoBody = ProtoBody20
 
-Scene16.addChildren(ProtoDeclare19)
+Scene16.children.append(ProtoDeclare19)
 ProtoInstance67 = x3d.ProtoInstance()
-ProtoInstance67.setName("flower")
+ProtoInstance67.name = "flower"
 
-Scene16.addChildren(ProtoInstance67)
+Scene16.children.append(ProtoInstance67)
 ProtoInstance68 = x3d.ProtoInstance()
-ProtoInstance68.setName("flower")
+ProtoInstance68.name = "flower"
 
-Scene16.addChildren(ProtoInstance68)
+Scene16.children.append(ProtoInstance68)
 ProtoInstance69 = x3d.ProtoInstance()
-ProtoInstance69.setName("flower")
+ProtoInstance69.name = "flower"
 
-Scene16.addChildren(ProtoInstance69)
+Scene16.children.append(ProtoInstance69)
 
-X3D0.setScene(Scene16)
-X3D0.toFileX3D("../personal/flowers.new.python.x3d")
-X3D0.toFileJSON("../personal/flowers.new.python.json")
+X3D0.Scene = Scene16
+f = open("../personal/flowers.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/flowers.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()
