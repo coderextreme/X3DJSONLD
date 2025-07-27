@@ -17,3 +17,6 @@ src/main/three2/data/john2.three2.js filter=lfs diff=lfs merge=lfs -text
 src/main/pascal/net/coderextreme/data/Gramps8Final.inc filter=lfs diff=lfs merge=lfs -text
 src/main/dart/net/coderextreme/data/Gramps8Final.dart filter=lfs diff=lfs merge=lfs -text
 X3DJSAIL.4.0.full.jar filter=lfs diff=lfs merge=lfs -text
+src/main/node/net/coderextreme/personal/john.js filter=lfs diff=lfs merge=lfs -text
+src/main/node/net/coderextreme/personal/john3.js filter=lfs diff=lfs merge=lfs -text
+src/main/node/net/coderextreme/personal/john2.js filter=lfs diff=lfs merge=lfs -text
