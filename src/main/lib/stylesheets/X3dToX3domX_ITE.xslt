@@ -65,7 +65,13 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- X3DOM parameters -->
     <xsl:param name="showStatistics"           >false</xsl:param>
     <xsl:param name="showDebugLog"             >false</xsl:param>
-    <xsl:param name="urlX3DOM"                 >https://x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
+    
+<!--<xsl:param name="urlX3DOM"                 >https://x3dom.org/download/dev</xsl:param>                   legacy
+    <xsl:param name="urlX3DOM"                 >https://x3dom.github.io/x3dom-dev/dist</xsl:param>           alternate
+    <xsl:param name="urlX3DOM"                 >https://cdn.jsdelivr.net/gh/x3dom/x3dom-dev/dist</xsl:param> preferred -->
+
+    <xsl:param name="urlX3DOM"                 >https://cdn.jsdelivr.net/gh/x3dom/x3dom-dev/dist</xsl:param> <!-- no trailing / -->
+    
     <!-- X_ITE parameters -->
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
@@ -894,7 +900,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                         <xsl:when test="starts-with($attributeContent,'http') or starts-with($attributeContent,'ftp') or
                                                         contains($attributeContent,'.txt')    or contains($attributeContent,'.html')  or
                                                         contains($attributeContent,'.xhtml')  or contains($attributeContent,'.htm')   or
-                                                        contains($attributeContent,'.x3d')    or contains($attributeContent,'.png')   or
+                                                        contains($attributeContent,'.x3d')    or contains($attributeContent,'.png')   or contains($attributeContent,'.apng')   or
                                                         contains($attributeContent,'.jpg')    or contains($attributeContent,'.mpg')   or
                                                         contains($attributeContent,'.pdf')    or contains($attributeContent,'.js')    or
 
@@ -936,6 +942,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                                         contains($attributeContent, '.ply')  or
                                                         contains($attributeContent, '.stl')  or
                                                         contains($attributeContent, '.txt')  or
+                                                        contains($attributeContent, '.vsd')  or
+                                                        contains($attributeContent, '.vsdx')  or
 
                                                         contains($attributeContent,'.css')    or starts-with($attributeName,'title')  or
                                                         starts-with($attributeName,'Image')   or starts-with($attributeName,'MovingImage')">
@@ -1142,8 +1150,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <a href="https://doc.x3dom.org/tutorials/basics/sound/example.html"        onclick="target='_blank';">X3DOM browser check</a>,
                                 <a href="https://www.x3dom.org"                                            onclick="target='_blank';">X3DOM home</a>,
                                 <a href="https://doc.x3dom.org"                                            onclick="target='_blank';">X3DOM documentation</a>,
-                            <!--<a href="https://doc.x3dom.org/author/nodes.html"                          onclick="target='_blank';">X3DOM list of supported nodes</a>,-->
-                                <a href="https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                            <!--<a href="https://doc.x3dom.org/author/nodes.html"                          onclick="target='_blank';">X3DOM list of supported nodes</a>
+                                <a href="https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,-->
+                                <a href="https://x3dom.github.io/x3dom-dev/dist/doc/author/nodes.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
                                 <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
                                 <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
@@ -2225,10 +2234,12 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
     </xsl:template>
 
     <xsl:template name="webFontCss">
-        <xsl:comment> X3DOM needs Web Fonts when an X3D Text node is included </xsl:comment>
+        <xsl:comment> X3DOM first needs Web Fonts displayed in HTML page when an X3D Text node is included </xsl:comment>
         <xsl:text>&#10;</xsl:text>
         <xsl:comment> adapted from https://x3dom.org/x3dom/example/x3dom_text.html and https://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
         <xsl:text>&#10;</xsl:text>
+        
+<!-- Andreas reports that default fonts no long require configuration, 
 <style type="text/css"><xsl:text>
 /* ============================================================================= */
 @font-face {
@@ -2270,7 +2281,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
   src: local('Courier New'), url('Courier New.ttf') format('truetype');
 }
 /* ============================================================================= */
-</xsl:text></style>
+</xsl:text></style> -->
     </xsl:template>
 
     <xsl:template name="cssZoomButton">
@@ -2348,7 +2359,7 @@ function toggleZoom(button) {
                 htmlBody.style.padding = "10px";
                 x3d_element.showStat   = showStatistics;
                 x3d_element.showLog    = showDebugLog;
-                x3d_element.runtime.debug(showDebugLog);
+//              x3d_element.runtime.debug(showDebugLog); // blocked by CORB (Cross-Origin Read Blocking)
                 document.getElementById("details").hidden = (!showDebugLog);
         } else {
                 // zoom
@@ -2360,7 +2371,7 @@ function toggleZoom(button) {
                 htmlBody.style.padding = "0px";
                 x3d_element.showStat   = false;
                 x3d_element.showLog    = false;
-                x3d_element.runtime.debug(false);
+//              x3d_element.runtime.debug(false); // blocked by CORB (Cross-Origin Read Blocking)
                 document.getElementById("details").hidden = true;
                 // TODO how to hide browser interface?
         }
