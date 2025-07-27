@@ -36,7 +36,7 @@
             <connect nodeField='cornerRadius' protoField='cornerRadius'/>
             <connect nodeField='size' protoField='size'/>
           </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 
 function initialize ()
 {
@@ -181,7 +181,7 @@ function initialize ()
           <IS>
             <connect nodeField='translation' protoField='translation'/>
           </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -235,7 +235,7 @@ function initialize ()
             <connect nodeField='output' protoField='output'/>
             <connect nodeField='input' protoField='input'/>
           </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -267,7 +267,7 @@ function set_translation ()
       </ProtoBody>
     </ProtoDeclare>
     <NavigationInfo
-        type='"PLANE_create3000.de", "ANY"'/>
+        type='"FLY" "ANY"'/>
     <Background
         skyColor='0.2 0.2 0.2'/>
     <OrthoViewpoint

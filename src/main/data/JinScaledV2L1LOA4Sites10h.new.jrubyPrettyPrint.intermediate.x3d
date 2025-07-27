@@ -2030,7 +2030,7 @@
                   <Coordinate point='0.095 0.8266 -0.0183 0.09 0.41 -0.056'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles_pt' translation='0.039 0.41 -0.01'>
+              <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles' translation='0.039 0.41 -0.01'>
                 <TouchSensor description='HAnimSite l_femoral_medial_epicondyles_pt 39'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -2040,7 +2040,7 @@
                   <Coordinate point='0.095 0.8266 -0.0183 0.039 0.41 -0.01'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles_pt' translation='0.127 0.41 -0.01'>
+              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles' translation='0.127 0.41 -0.01'>
                 <TouchSensor description='l_femoral_lateral_epicondyles_pt 40'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -2539,7 +2539,7 @@
                   <Coordinate point='-0.09466 0.82665 -0.01835 -0.09 0.41 -0.056'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles_pt' translation='-0.039 0.41 -0.01'>
+              <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles' translation='-0.039 0.41 -0.01'>
                 <TouchSensor description='HAnimSite r_femoral_medial_epicondyles_pt 43'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -2549,7 +2549,7 @@
                   <Coordinate point='-0.09466 0.82665 -0.01835 -0.039 0.41 -0.01'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles_pt' translation='-0.127 0.41 -0.01'>
+              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles' translation='-0.127 0.41 -0.01'>
                 <TouchSensor description='HAnimSite r_femoral_lateral_epicondyles_pt 44'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3131,7 +3131,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l2_Sites'>
-              <HAnimSite DEF='hanim_l_rib_10_pt' name='l_rib_10_pt' translation='0.09 1 0.04'>
+              <HAnimSite DEF='hanim_l_rib_10_pt' name='l_rib_10' translation='0.09 1 0.04'>
                 <TouchSensor description='HAnimSite l_rib_10_pt 28'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3141,7 +3141,7 @@
                   <Coordinate point='0 0.98235 -0.01376 0.09 1 0.04'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_r_rib_10_pt' name='r_rib_10_pt' translation='-0.09 1 0.04'>
+              <HAnimSite DEF='hanim_r_rib_10_pt' name='r_rib_10' translation='-0.09 1 0.04'>
                 <TouchSensor description='HAnimSite r_rib_10_pt 30'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3660,7 +3660,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l_eyelid_Sites'>
-              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid_tip' translation='0 2.64 0'>
+              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid' translation='0 2.64 0'>
                 <TouchSensor description='HAnimSite l_eyelid_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3682,7 +3682,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='r_eyelid_Sites'>
-              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid_tip' translation='0 2.68 0'>
+              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid' translation='0 2.68 0'>
                 <TouchSensor description='HAnimSite r_eyelid_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3704,7 +3704,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l_eyeball_Sites'>
-              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball_tip' translation='0 2.72 0'>
+              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball' translation='0 2.72 0'>
                 <TouchSensor description='HAnimSite l_eyeball_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3726,7 +3726,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='r_eyeball_Sites'>
-              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball_tip' translation='0 2.76 0'>
+              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball' translation='0 2.76 0'>
                 <TouchSensor description='HAnimSite r_eyeball_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3748,7 +3748,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l_eyebrow_Sites'>
-              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow_tip' translation='0 2.8 0'>
+              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow' translation='0 2.8 0'>
                 <TouchSensor description='HAnimSite l_eyebrow_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3770,7 +3770,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='r_eyebrow_Sites'>
-              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow_tip' translation='0 2.84 0'>
+              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow' translation='0 2.84 0'>
                 <TouchSensor description='HAnimSite r_eyebrow_tip'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3844,7 +3844,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l_clavicle_Sites'>
-              <HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale_pt' translation='0.03 1.2 0.04'>
+              <HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale' translation='0.03 1.2 0.04'>
                 <TouchSensor description='HAnimSite l_clavicale_pt 14'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3918,7 +3918,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='l_upperarm_Sites'>
-              <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles_pt' translation='0.2 0.95 -0.03'>
+              <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles' translation='0.2 0.95 -0.03'>
                 <TouchSensor description='HAnimSite l_humeral_lateral_epicondyles_pt 63'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -3928,7 +3928,7 @@
                   <Coordinate point='0.16506 1.17855 -0.00327 0.2 0.95 -0.03'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles_pt' translation='0.18 0.93 -0.03'>
+              <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles' translation='0.18 0.93 -0.03'>
                 <TouchSensor description='HAnimSite l_humeral_medial_epicondyles_pt 64'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -4405,7 +4405,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='r_clavicle_Sites'>
-              <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale_pt' translation='-0.03 1.2 0.04'>
+              <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale' translation='-0.03 1.2 0.04'>
                 <TouchSensor description='HAnimSite r_clavicale_pt 19'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -4479,7 +4479,7 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='r_upperarm_Sites'>
-              <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles_pt' translation='-0.2 0.95 -0.03'>
+              <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles' translation='-0.2 0.95 -0.03'>
                 <TouchSensor description='HAnimSite r_humeral_lateral_epicondyles_pt 66'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
@@ -4489,7 +4489,7 @@
                   <Coordinate point='-0.1647 1.17855 -0.00327 -0.2 0.95 -0.03'/>
                 </LineSet>
               </Shape>
-              <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles_pt' translation='-0.18 0.93 -0.03'>
+              <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles' translation='-0.18 0.93 -0.03'>
                 <TouchSensor description='HAnimSite r_humeral_medial_epicondyles_pt 67'/>
                 <Shape USE='HAnimSiteLandmark'/>
               </HAnimSite>
