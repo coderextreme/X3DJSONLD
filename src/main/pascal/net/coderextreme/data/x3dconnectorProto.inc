@@ -79,30 +79,24 @@ fieldValue88: TfieldValueNode;
 Transform89: TTransformNode;
 fieldValue90: TfieldValueNode;
 Transform91: TTransformNode;
-fieldValue92: TfieldValueNode;
+ProtoInstance92: TProtoInstanceNode;
 fieldValue93: TfieldValueNode;
-ProtoInstance94: TProtoInstanceNode;
+Transform94: TTransformNode;
 fieldValue95: TfieldValueNode;
 Transform96: TTransformNode;
 fieldValue97: TfieldValueNode;
 Transform98: TTransformNode;
 fieldValue99: TfieldValueNode;
 Transform100: TTransformNode;
-fieldValue101: TfieldValueNode;
-Transform102: TTransformNode;
-fieldValue103: TfieldValueNode;
+ProtoInstance101: TProtoInstanceNode;
+fieldValue102: TfieldValueNode;
+Transform103: TTransformNode;
 fieldValue104: TfieldValueNode;
-ProtoInstance105: TProtoInstanceNode;
+Transform105: TTransformNode;
 fieldValue106: TfieldValueNode;
 Transform107: TTransformNode;
 fieldValue108: TfieldValueNode;
 Transform109: TTransformNode;
-fieldValue110: TfieldValueNode;
-Transform111: TTransformNode;
-fieldValue112: TfieldValueNode;
-Transform113: TTransformNode;
-fieldValue114: TfieldValueNode;
-fieldValue115: TfieldValueNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
@@ -486,121 +480,91 @@ Transform91 := Transform43;
 fieldValue90.AddChildren([Transform91]);
 { .AddFieldValue }
 ProtoInstance83.FieldValue := fieldValue90;
-fieldValue92 := TfieldValueNode.Create;
-fieldValue92.NameField := 'set_startpoint';
-fieldValue92.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance83.FieldValue := fieldValue92;
-fieldValue93 := TfieldValueNode.Create;
-fieldValue93.NameField := 'set_endpoint';
-fieldValue93.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance83.FieldValue := fieldValue93;
 { .AddChildren }
 Group10.AddChildren([ProtoInstance83]);
-ProtoInstance94 := TProtoInstanceNode.Create;
-ProtoInstance94.NameField := 'x3dconnector';
+ProtoInstance92 := TProtoInstanceNode.Create;
+ProtoInstance92.NameField := 'x3dconnector';
+fieldValue93 := TfieldValueNode.Create;
+fieldValue93.NameField := 'startnode';
+Transform94 := TTransformNode.Create;
+Transform94 := Transform14;
+{ .AddChildren }
+fieldValue93.AddChildren([Transform94]);
+{ .AddFieldValue }
+ProtoInstance92.FieldValue := fieldValue93;
 fieldValue95 := TfieldValueNode.Create;
-fieldValue95.NameField := 'startnode';
+fieldValue95.NameField := 'endnode';
 Transform96 := TTransformNode.Create;
-Transform96 := Transform14;
+Transform96 := Transform28;
 { .AddChildren }
 fieldValue95.AddChildren([Transform96]);
 { .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue95;
+ProtoInstance92.FieldValue := fieldValue95;
 fieldValue97 := TfieldValueNode.Create;
-fieldValue97.NameField := 'endnode';
+fieldValue97.NameField := 'transnode';
 Transform98 := TTransformNode.Create;
-Transform98 := Transform28;
+Transform98 := Transform48;
 { .AddChildren }
 fieldValue97.AddChildren([Transform98]);
 { .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue97;
+ProtoInstance92.FieldValue := fieldValue97;
 fieldValue99 := TfieldValueNode.Create;
-fieldValue99.NameField := 'transnode';
+fieldValue99.NameField := 'rotscalenode';
 Transform100 := TTransformNode.Create;
-Transform100 := Transform48;
+Transform100 := Transform49;
 { .AddChildren }
 fieldValue99.AddChildren([Transform100]);
 { .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue99;
-fieldValue101 := TfieldValueNode.Create;
-fieldValue101.NameField := 'rotscalenode';
-Transform102 := TTransformNode.Create;
-Transform102 := Transform49;
+ProtoInstance92.FieldValue := fieldValue99;
 { .AddChildren }
-fieldValue101.AddChildren([Transform102]);
+Group10.AddChildren([ProtoInstance92]);
+ProtoInstance101 := TProtoInstanceNode.Create;
+ProtoInstance101.NameField := 'x3dconnector';
+fieldValue102 := TfieldValueNode.Create;
+fieldValue102.NameField := 'startnode';
+Transform103 := TTransformNode.Create;
+Transform103 := Transform14;
+{ .AddChildren }
+fieldValue102.AddChildren([Transform103]);
 { .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue101;
-fieldValue103 := TfieldValueNode.Create;
-fieldValue103.NameField := 'set_startpoint';
-fieldValue103.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue103;
+ProtoInstance101.FieldValue := fieldValue102;
 fieldValue104 := TfieldValueNode.Create;
-fieldValue104.NameField := 'set_endpoint';
-fieldValue104.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance94.FieldValue := fieldValue104;
+fieldValue104.NameField := 'endnode';
+Transform105 := TTransformNode.Create;
+Transform105 := Transform35;
 { .AddChildren }
-Group10.AddChildren([ProtoInstance94]);
-ProtoInstance105 := TProtoInstanceNode.Create;
-ProtoInstance105.NameField := 'x3dconnector';
+fieldValue104.AddChildren([Transform105]);
+{ .AddFieldValue }
+ProtoInstance101.FieldValue := fieldValue104;
 fieldValue106 := TfieldValueNode.Create;
-fieldValue106.NameField := 'startnode';
+fieldValue106.NameField := 'transnode';
 Transform107 := TTransformNode.Create;
-Transform107 := Transform14;
+Transform107 := Transform54;
 { .AddChildren }
 fieldValue106.AddChildren([Transform107]);
 { .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue106;
+ProtoInstance101.FieldValue := fieldValue106;
 fieldValue108 := TfieldValueNode.Create;
-fieldValue108.NameField := 'endnode';
+fieldValue108.NameField := 'rotscalenode';
 Transform109 := TTransformNode.Create;
-Transform109 := Transform35;
+Transform109 := Transform55;
 { .AddChildren }
 fieldValue108.AddChildren([Transform109]);
 { .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue108;
-fieldValue110 := TfieldValueNode.Create;
-fieldValue110.NameField := 'transnode';
-Transform111 := TTransformNode.Create;
-Transform111 := Transform54;
+ProtoInstance101.FieldValue := fieldValue108;
 { .AddChildren }
-fieldValue110.AddChildren([Transform111]);
-{ .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue110;
-fieldValue112 := TfieldValueNode.Create;
-fieldValue112.NameField := 'rotscalenode';
-Transform113 := TTransformNode.Create;
-Transform113 := Transform55;
-{ .AddChildren }
-fieldValue112.AddChildren([Transform113]);
-{ .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue112;
-fieldValue114 := TfieldValueNode.Create;
-fieldValue114.NameField := 'set_startpoint';
-fieldValue114.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue114;
-fieldValue115 := TfieldValueNode.Create;
-fieldValue115.NameField := 'set_endpoint';
-fieldValue115.Value := '0 0 0';
-{ .AddFieldValue }
-ProtoInstance105.FieldValue := fieldValue115;
-{ .AddChildren }
-Group10.AddChildren([ProtoInstance105]);
+Group10.AddChildren([ProtoInstance101]);
 Group10.AddRoute(Transform14.EventTranslation_changed, ProtoInstance83.EventSet_startpoint);
 { .AddX3DRoute }
 Group10.AddRoute(Transform21.EventTranslation_changed, ProtoInstance83.EventSet_endpoint);
 { .AddX3DRoute }
-Group10.AddRoute(Transform14.EventTranslation_changed, ProtoInstance94.EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, ProtoInstance92.EventSet_startpoint);
 { .AddX3DRoute }
-Group10.AddRoute(Transform28.EventTranslation_changed, ProtoInstance94.EventSet_endpoint);
+Group10.AddRoute(Transform28.EventTranslation_changed, ProtoInstance92.EventSet_endpoint);
 { .AddX3DRoute }
-Group10.AddRoute(Transform14.EventTranslation_changed, ProtoInstance105.EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, ProtoInstance101.EventSet_startpoint);
 { .AddX3DRoute }
-Group10.AddRoute(Transform35.EventTranslation_changed, ProtoInstance105.EventSet_endpoint);
+Group10.AddRoute(Transform35.EventTranslation_changed, ProtoInstance101.EventSet_endpoint);
 { .AddX3DRoute }
 { .AddGroup }
 X3D0.AddChildren([Group10]);

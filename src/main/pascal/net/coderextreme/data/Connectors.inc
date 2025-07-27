@@ -278,7 +278,7 @@ IS26.Connect := connect28;
 { .SetIS }
 Script20.IS := IS26;
 
-Script20.SetSourceCode('''vrmlscript:\n"+
+Script20.SetSourceCode('''ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -565,7 +565,7 @@ IS85.Connect := connect86;
 { .SetIS }
 Script79.IS := IS85;
 
-Script79.SetSourceCode('''vrmlscript:\n"+
+Script79.SetSourceCode('''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -708,7 +708,7 @@ IS114.Connect := connect116;
 { .SetIS }
 Script105.IS := IS114;
 
-Script105.SetSourceCode('''vrmlscript:\n"+
+Script105.SetSourceCode('''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -742,7 +742,7 @@ ProtoDeclare88.ProtoBody := ProtoBody94;
 { .AddChildren }
 Group9.AddChildren([ProtoDeclare88]);
 NavigationInfo117 := TNavigationInfoNode.Create;
-NavigationInfo117.SetType([', ','PLANE_create3000.deANY']);
+NavigationInfo117.SetType(['FLY','ANY']);
 { .AddChildren }
 Group9.AddChildren([NavigationInfo117]);
 Background118 := TBackgroundNode.Create;

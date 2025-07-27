@@ -54,8 +54,6 @@ fieldValue58: TfieldValueNode;
 Transform59: TTransformNode;
 fieldValue60: TfieldValueNode;
 Transform61: TTransformNode;
-fieldValue62: TfieldValueNode;
-fieldValue63: TfieldValueNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
@@ -339,14 +337,7 @@ Transform61 := Transform25;
 fieldValue60.AddChildren([Transform61]);
 { .AddFieldValue }
 ProtoInstance53.FieldValue := fieldValue60;
-fieldValue62 := TfieldValueNode.Create;
-fieldValue62.NameField := 'set_startpoint';
-{ .AddFieldValue }
-ProtoInstance53.FieldValue := fieldValue62;
-fieldValue63 := TfieldValueNode.Create;
-fieldValue63.NameField := 'set_endpoint';
-{ .AddFieldValue }
-ProtoInstance53.FieldValue := fieldValue63;
+{ <fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue> }
 { .AddChildren }
 Group7.AddChildren([ProtoInstance53]);
 Group7.AddRoute(Transform10.EventTranslation_changed, ProtoInstance53.EventSet_startpoint);
