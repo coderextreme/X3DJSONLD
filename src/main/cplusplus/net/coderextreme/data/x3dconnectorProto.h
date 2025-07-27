@@ -456,153 +456,123 @@ fieldValue90.addChild(&Transform91);
 
 ProtoInstance83.addChild(&fieldValue90);
 
-fieldValue& fieldValue92 =  fieldValue();
-fieldValue92.setName(CString("set_startpoint"));
-fieldValue92.setValue(CString("0 0 0"));
-ProtoInstance83.addChild(&fieldValue92);
-
-fieldValue& fieldValue93 =  fieldValue();
-fieldValue93.setName(CString("set_endpoint"));
-fieldValue93.setValue(CString("0 0 0"));
-ProtoInstance83.addChild(&fieldValue93);
-
 Scene10.addChild(&ProtoInstance83);
 
-ProtoInstance& ProtoInstance94 =  ProtoInstance();
-ProtoInstance94.setName(CString("x3dconnector"));
-ProtoInstance94.setDEF(CString("connector2"));
+ProtoInstance& ProtoInstance92 =  ProtoInstance();
+ProtoInstance92.setName(CString("x3dconnector"));
+ProtoInstance92.setDEF(CString("connector2"));
+fieldValue& fieldValue93 =  fieldValue();
+fieldValue93.setName(CString("startnode"));
+Transform& Transform94 =  Transform();
+Transform94.setUSE(CString("G1"));
+fieldValue93.addChild(&Transform94);
+
+ProtoInstance92.addChild(&fieldValue93);
+
 fieldValue& fieldValue95 =  fieldValue();
-fieldValue95.setName(CString("startnode"));
+fieldValue95.setName(CString("endnode"));
 Transform& Transform96 =  Transform();
-Transform96.setUSE(CString("G1"));
+Transform96.setUSE(CString("G3"));
 fieldValue95.addChild(&Transform96);
 
-ProtoInstance94.addChild(&fieldValue95);
+ProtoInstance92.addChild(&fieldValue95);
 
 fieldValue& fieldValue97 =  fieldValue();
-fieldValue97.setName(CString("endnode"));
+fieldValue97.setName(CString("transnode"));
 Transform& Transform98 =  Transform();
-Transform98.setUSE(CString("G3"));
+Transform98.setUSE(CString("transC2"));
 fieldValue97.addChild(&Transform98);
 
-ProtoInstance94.addChild(&fieldValue97);
+ProtoInstance92.addChild(&fieldValue97);
 
 fieldValue& fieldValue99 =  fieldValue();
-fieldValue99.setName(CString("transnode"));
+fieldValue99.setName(CString("rotscalenode"));
 Transform& Transform100 =  Transform();
-Transform100.setUSE(CString("transC2"));
+Transform100.setUSE(CString("rotscaleC2"));
 fieldValue99.addChild(&Transform100);
 
-ProtoInstance94.addChild(&fieldValue99);
+ProtoInstance92.addChild(&fieldValue99);
 
-fieldValue& fieldValue101 =  fieldValue();
-fieldValue101.setName(CString("rotscalenode"));
-Transform& Transform102 =  Transform();
-Transform102.setUSE(CString("rotscaleC2"));
-fieldValue101.addChild(&Transform102);
+Scene10.addChild(&ProtoInstance92);
 
-ProtoInstance94.addChild(&fieldValue101);
+ProtoInstance& ProtoInstance101 =  ProtoInstance();
+ProtoInstance101.setName(CString("x3dconnector"));
+ProtoInstance101.setDEF(CString("connector3"));
+fieldValue& fieldValue102 =  fieldValue();
+fieldValue102.setName(CString("startnode"));
+Transform& Transform103 =  Transform();
+Transform103.setUSE(CString("G1"));
+fieldValue102.addChild(&Transform103);
 
-fieldValue& fieldValue103 =  fieldValue();
-fieldValue103.setName(CString("set_startpoint"));
-fieldValue103.setValue(CString("0 0 0"));
-ProtoInstance94.addChild(&fieldValue103);
+ProtoInstance101.addChild(&fieldValue102);
 
 fieldValue& fieldValue104 =  fieldValue();
-fieldValue104.setName(CString("set_endpoint"));
-fieldValue104.setValue(CString("0 0 0"));
-ProtoInstance94.addChild(&fieldValue104);
+fieldValue104.setName(CString("endnode"));
+Transform& Transform105 =  Transform();
+Transform105.setUSE(CString("G4"));
+fieldValue104.addChild(&Transform105);
 
-Scene10.addChild(&ProtoInstance94);
+ProtoInstance101.addChild(&fieldValue104);
 
-ProtoInstance& ProtoInstance105 =  ProtoInstance();
-ProtoInstance105.setName(CString("x3dconnector"));
-ProtoInstance105.setDEF(CString("connector3"));
 fieldValue& fieldValue106 =  fieldValue();
-fieldValue106.setName(CString("startnode"));
+fieldValue106.setName(CString("transnode"));
 Transform& Transform107 =  Transform();
-Transform107.setUSE(CString("G1"));
+Transform107.setUSE(CString("transC3"));
 fieldValue106.addChild(&Transform107);
 
-ProtoInstance105.addChild(&fieldValue106);
+ProtoInstance101.addChild(&fieldValue106);
 
 fieldValue& fieldValue108 =  fieldValue();
-fieldValue108.setName(CString("endnode"));
+fieldValue108.setName(CString("rotscalenode"));
 Transform& Transform109 =  Transform();
-Transform109.setUSE(CString("G4"));
+Transform109.setUSE(CString("rotscaleC3"));
 fieldValue108.addChild(&Transform109);
 
-ProtoInstance105.addChild(&fieldValue108);
+ProtoInstance101.addChild(&fieldValue108);
 
-fieldValue& fieldValue110 =  fieldValue();
-fieldValue110.setName(CString("transnode"));
-Transform& Transform111 =  Transform();
-Transform111.setUSE(CString("transC3"));
-fieldValue110.addChild(&Transform111);
+Scene10.addChild(&ProtoInstance101);
 
-ProtoInstance105.addChild(&fieldValue110);
+ROUTE& ROUTE110 =  ROUTE();
+ROUTE110.setFromNode(CString("G1"));
+ROUTE110.setFromField(CString("translation_changed"));
+ROUTE110.setToNode(CString("connector1"));
+ROUTE110.setToField(CString("set_startpoint"));
+Scene10.addChild(&ROUTE110);
 
-fieldValue& fieldValue112 =  fieldValue();
-fieldValue112.setName(CString("rotscalenode"));
-Transform& Transform113 =  Transform();
-Transform113.setUSE(CString("rotscaleC3"));
-fieldValue112.addChild(&Transform113);
+ROUTE& ROUTE111 =  ROUTE();
+ROUTE111.setFromNode(CString("G2"));
+ROUTE111.setFromField(CString("translation_changed"));
+ROUTE111.setToNode(CString("connector1"));
+ROUTE111.setToField(CString("set_endpoint"));
+Scene10.addChild(&ROUTE111);
 
-ProtoInstance105.addChild(&fieldValue112);
+ROUTE& ROUTE112 =  ROUTE();
+ROUTE112.setFromNode(CString("G1"));
+ROUTE112.setFromField(CString("translation_changed"));
+ROUTE112.setToNode(CString("connector2"));
+ROUTE112.setToField(CString("set_startpoint"));
+Scene10.addChild(&ROUTE112);
 
-fieldValue& fieldValue114 =  fieldValue();
-fieldValue114.setName(CString("set_startpoint"));
-fieldValue114.setValue(CString("0 0 0"));
-ProtoInstance105.addChild(&fieldValue114);
+ROUTE& ROUTE113 =  ROUTE();
+ROUTE113.setFromNode(CString("G3"));
+ROUTE113.setFromField(CString("translation_changed"));
+ROUTE113.setToNode(CString("connector2"));
+ROUTE113.setToField(CString("set_endpoint"));
+Scene10.addChild(&ROUTE113);
 
-fieldValue& fieldValue115 =  fieldValue();
-fieldValue115.setName(CString("set_endpoint"));
-fieldValue115.setValue(CString("0 0 0"));
-ProtoInstance105.addChild(&fieldValue115);
+ROUTE& ROUTE114 =  ROUTE();
+ROUTE114.setFromNode(CString("G1"));
+ROUTE114.setFromField(CString("translation_changed"));
+ROUTE114.setToNode(CString("connector3"));
+ROUTE114.setToField(CString("set_startpoint"));
+Scene10.addChild(&ROUTE114);
 
-Scene10.addChild(&ProtoInstance105);
-
-ROUTE& ROUTE116 =  ROUTE();
-ROUTE116.setFromNode(CString("G1"));
-ROUTE116.setFromField(CString("translation_changed"));
-ROUTE116.setToNode(CString("connector1"));
-ROUTE116.setToField(CString("set_startpoint"));
-Scene10.addChild(&ROUTE116);
-
-ROUTE& ROUTE117 =  ROUTE();
-ROUTE117.setFromNode(CString("G2"));
-ROUTE117.setFromField(CString("translation_changed"));
-ROUTE117.setToNode(CString("connector1"));
-ROUTE117.setToField(CString("set_endpoint"));
-Scene10.addChild(&ROUTE117);
-
-ROUTE& ROUTE118 =  ROUTE();
-ROUTE118.setFromNode(CString("G1"));
-ROUTE118.setFromField(CString("translation_changed"));
-ROUTE118.setToNode(CString("connector2"));
-ROUTE118.setToField(CString("set_startpoint"));
-Scene10.addChild(&ROUTE118);
-
-ROUTE& ROUTE119 =  ROUTE();
-ROUTE119.setFromNode(CString("G3"));
-ROUTE119.setFromField(CString("translation_changed"));
-ROUTE119.setToNode(CString("connector2"));
-ROUTE119.setToField(CString("set_endpoint"));
-Scene10.addChild(&ROUTE119);
-
-ROUTE& ROUTE120 =  ROUTE();
-ROUTE120.setFromNode(CString("G1"));
-ROUTE120.setFromField(CString("translation_changed"));
-ROUTE120.setToNode(CString("connector3"));
-ROUTE120.setToField(CString("set_startpoint"));
-Scene10.addChild(&ROUTE120);
-
-ROUTE& ROUTE121 =  ROUTE();
-ROUTE121.setFromNode(CString("G4"));
-ROUTE121.setFromField(CString("translation_changed"));
-ROUTE121.setToNode(CString("connector3"));
-ROUTE121.setToField(CString("set_endpoint"));
-Scene10.addChild(&ROUTE121);
+ROUTE& ROUTE115 =  ROUTE();
+ROUTE115.setFromNode(CString("G4"));
+ROUTE115.setFromField(CString("translation_changed"));
+ROUTE115.setToNode(CString("connector3"));
+ROUTE115.setToField(CString("set_endpoint"));
+Scene10.addChild(&ROUTE115);
 
 X3D0.setScene(&Scene10);
 
