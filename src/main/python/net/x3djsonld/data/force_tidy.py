@@ -37,8 +37,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'),
     meta(name='description',content='beginnings of a force directed graph in 3D'),
     meta(name='generator',content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'),
-    meta(name='generator',content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy'),
-    meta(name='modified',content='Sat, 9 Nov 2024 19:29:39 GMT')]),
+    meta(name='generator',content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy')]),
   Scene=Scene(
     children=[
     ProtoDeclare(name='node',

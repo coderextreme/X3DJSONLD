@@ -111,7 +111,7 @@ X3D:
                                     protoField: "size"
                                 ]
                             ],
-#vrmlscript:
+#ecmascript:
 #
 #function initialize ()
 #{
@@ -365,7 +365,7 @@ X3D:
                                     protoField: "translation"
                                 ]
                             ],
-#vrmlscript:
+#ecmascript:
 #function initialize ()
 #{
 #	sensor .offset = translation;
@@ -498,7 +498,7 @@ X3D:
                                     protoField: "input"
                                 ]
                             ],
-#vrmlscript:
+#ecmascript:
 #function initialize ()
 #{
 #	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -530,7 +530,7 @@ X3D:
                 ]
             ],
             NavigationInfo: [
-                type: [", ", "PLANE_create3000.deANY"]
+                type: ["FLY", "ANY"]
             ],
             Background: [
                 skyColor: [0.2, 0.2, 0.2]

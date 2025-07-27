@@ -134,7 +134,7 @@ IS26.addConnect(connect28)
 
 Script20.setIS(IS26)
 
-Script20.setSourceCode('''vrmlscript:
+Script20.setSourceCode('''ecmascript:
 
 function initialize ()
 {
@@ -427,7 +427,7 @@ IS85.addConnect(connect86)
 
 Script79.setIS(IS85)
 
-Script79.setSourceCode('''vrmlscript:
+Script79.setSourceCode('''ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -577,7 +577,7 @@ IS114.addConnect(connect116)
 
 Script105.setIS(IS114)
 
-Script105.setSourceCode('''vrmlscript:
+Script105.setSourceCode('''ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -611,7 +611,7 @@ ProtoDeclare88.setProtoBody(ProtoBody94)
 
 Scene9.addChild(ProtoDeclare88)
 NavigationInfo117 = x3d.NavigationInfo()
-NavigationInfo117.setType([", ","PLANE_create3000.deANY"])
+NavigationInfo117.setType(["FLY","ANY"])
 
 Scene9.addChild(NavigationInfo117)
 Background118 = x3d.Background()

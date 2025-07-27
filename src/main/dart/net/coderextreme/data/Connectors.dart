@@ -112,7 +112,8 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('size'),
                               protoField_ : SFString('size'))]),
-                      vrmlscript:
+                      ,
+ecmascript:eval (0
 
 , function initialize ()
 {
@@ -347,7 +348,8 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('translation'))]),
-                      vrmlscript:
+                      ,
+ecmascript:eval (0
 , function initialize ()
 {
 	sensor .offset = translation;
@@ -467,7 +469,8 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('input'),
                               protoField_ : SFString('input'))]),
-                      vrmlscript:
+                      ,
+ecmascript:eval (0
 , function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -496,7 +499,7 @@ var X3D0 =  X3D(
 }))])),
 
             NavigationInfo(
-              type_ : MFString([SFString(", "), SFString("PLANE_create3000.deANY")])),
+              type_ : MFString([SFString("FLY"), SFString("ANY")])),
 
             Background(
               skyColor_ : MFColor([SFColor(0.2), SFColor(0.2), SFColor(0.2)])),
