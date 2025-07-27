@@ -326,29 +326,22 @@ fieldValue60.addChild(&Transform61);
 
 ProtoInstance53.addChild(&fieldValue60);
 
-fieldValue& fieldValue62 =  fieldValue();
-fieldValue62.setName(CString("set_startpoint"));
-ProtoInstance53.addChild(&fieldValue62);
-
-fieldValue& fieldValue63 =  fieldValue();
-fieldValue63.setName(CString("set_endpoint"));
-ProtoInstance53.addChild(&fieldValue63);
-
+//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
 Scene7.addChild(&ProtoInstance53);
 
-ROUTE& ROUTE64 =  ROUTE();
-ROUTE64.setFromNode(CString("G1"));
-ROUTE64.setFromField(CString("translation_changed"));
-ROUTE64.setToNode(CString("connector1"));
-ROUTE64.setToField(CString("set_startpoint"));
-Scene7.addChild(&ROUTE64);
+ROUTE& ROUTE62 =  ROUTE();
+ROUTE62.setFromNode(CString("G1"));
+ROUTE62.setFromField(CString("translation_changed"));
+ROUTE62.setToNode(CString("connector1"));
+ROUTE62.setToField(CString("set_startpoint"));
+Scene7.addChild(&ROUTE62);
 
-ROUTE& ROUTE65 =  ROUTE();
-ROUTE65.setFromNode(CString("G2"));
-ROUTE65.setFromField(CString("translation_changed"));
-ROUTE65.setToNode(CString("connector1"));
-ROUTE65.setToField(CString("set_endpoint"));
-Scene7.addChild(&ROUTE65);
+ROUTE& ROUTE63 =  ROUTE();
+ROUTE63.setFromNode(CString("G2"));
+ROUTE63.setFromField(CString("translation_changed"));
+ROUTE63.setToNode(CString("connector1"));
+ROUTE63.setToField(CString("set_endpoint"));
+Scene7.addChild(&ROUTE63);
 
 X3D0.setScene(&Scene7);
 

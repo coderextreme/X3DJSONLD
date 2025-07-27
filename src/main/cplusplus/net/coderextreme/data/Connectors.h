@@ -134,7 +134,7 @@ IS26.addChild(&connect28);
 Script20.addChild(&IS26);
 
 
-//Script20.setSourceCode(CString("vrmlscript:")+
+//Script20.setSourceCode(CString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	var point         = new SFVec3f (cornerRadius, 0, 0);")+
@@ -414,7 +414,7 @@ IS85.addChild(&connect86);
 Script79.addChild(&IS85);
 
 
-//Script79.setSourceCode(CString("vrmlscript:")+
+//Script79.setSourceCode(CString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	sensor .offset = translation;")+
@@ -564,7 +564,7 @@ IS114.addChild(&connect116);
 Script105.addChild(&IS114);
 
 
-//Script105.setSourceCode(CString("vrmlscript:")+
+//Script105.setSourceCode(CString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	Browser .addRoute (output, 'translation_changed', self, 'set_translation');")+
@@ -592,7 +592,7 @@ ProtoDeclare88.addChild(&ProtoBody94);
 Scene9.addChild(&ProtoDeclare88);
 
 NavigationInfo& NavigationInfo117 =  NavigationInfo();
-NavigationInfo117.setType(new CString[]{CString(", "), CString("PLANE_create3000.deANY")}, 2);
+NavigationInfo117.setType(new CString[]{CString("FLY"), CString("ANY")}, 2);
 Scene9.addChild(&NavigationInfo117);
 
 Background& Background118 =  Background();
