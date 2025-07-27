@@ -21,15 +21,18 @@ ClojureSerializer.prototype = {
 		this.codeno = 0;
 		this.preno = 0;
 
-		// str += "# -*- coding: "+json.X3D.encoding+" -*-\r\n";
-
-		str += "(ns x3dclsail."+clazz.substring(clazz.lastIndexOf("/")+1)+"\n";
+		str += "(ns "+clazz.substring(clazz.lastIndexOf("/")+1)+"\n";
 		str += "  (:import ";
 		str += text;
 		str += "))\n";
 
 		stack.unshift(this.preno);
 		this.preno++;
+
+		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setXsltEngine org.web3d.x3d.jsail.ConfigurationProperties/XSLT_ENGINE_NATIVE_JAVA)\n";
+		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setDeleteIntermediateFiles false)\n";
+		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setStripTrailingZeroes true)\n";
+		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setStripDefaultAttributes true)\n";
 		str += "(def EXPORT org.web3d.x3d.jsail.Networking.EXPORT)\n"
 		str += "(def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)\n"
 
@@ -40,8 +43,8 @@ ClojureSerializer.prototype = {
 		bodystr += "))\n";
 
 		str += bodystr;
-		str += "(.toFileX3D "+element.nodeName+stack[0]+" \""+clazz+".new.clojure.x3d\")\n";
-		str += "(.toFileJSON "+element.nodeName+stack[0]+" \""+clazz+".new.clojure.json\")\n";
+		str += "(.toFileX3D "+element.nodeName+stack[0]+" \"../../../../"+clazz+".new.clojure.x3d\")\n";
+		str += "(.toFileJSON "+element.nodeName+stack[0]+" \"../../../../"+clazz+".new.clojure.json\")\n";
 		str += "(defn -main []\n";
   		str += '(println "Hello from your main function!"))';
 		stack.shift();
@@ -387,25 +390,14 @@ ClojureSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				// str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";
-				str += y.split("\r\n").map(function(x) {
-					return x.replace(/^/g, ';');
-					}).join("\r\n");
-				str += "\r\n";
-				if (y !== node.nodeValue) {
-					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
-				}
+				str += "(.addComments \""+y+"\")\n";
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += '(.setSourceCode "'+node.nodeValue.split(/\r?\n/).map(function(x) {
+				str += '(.setSourceCode "ecmascript:'+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"').
-						replace(/$/g, '\\').
 						replace("ecmascript:", "");
-						/*
-						.replace(/\\n/g, "\\\\n")
-						*/
-					}).join('\\newline')+'\\newline")';
+					}).join('\n')+'")';
 			}
 	        		
 		}
