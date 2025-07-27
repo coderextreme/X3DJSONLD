@@ -43,7 +43,7 @@ public class particleballs implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new particleballs().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -73,17 +73,17 @@ public class particleballs implements X3DRoots {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("particleballs.x3d"))
         .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
-        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0,0,12}))
+        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0f,0f,12f}))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
             .addPhysics(new BoundedPhysicsModel()
-              .setGeometry(new Sphere().setRadius(100)))
-            .setEmitter(new ExplosionEmitter().setSpeed(2).setVariation(0.75))
-            .addComments("<Shape>")
+              .setGeometry(new Sphere().setRadius(100f)))
+            .setEmitter(new ExplosionEmitter().setSpeed(2f).setVariation(0.75f))
+            .addComments(new CommentsBlock("<Shape>"))
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
@@ -91,8 +91,8 @@ public class particleballs implements X3DRoots {
                 .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
                 .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
                 .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
-              .addComments("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>")
-              .addComments("<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart type=\"VERTEX\" url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>")
+              .addComments(new CommentsBlock("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+              .addComments(new CommentsBlock("<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart type=\"VERTEX\" url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>"))
               .addShaders(new ComposedShader().setLanguage("GLSL")
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
                 .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
@@ -102,7 +102,7 @@ public class particleballs implements X3DRoots {
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
                 .addParts(new ShaderPart().setType("FRAGMENT").setDEF("commonfs").setUrl(new MFString13().getArray())))))
-          .addComments("</Shape>")))      ;
+          .addComments(new CommentsBlock("</Shape>"))));
     return X3D0;
     }
 private class MFString0 {

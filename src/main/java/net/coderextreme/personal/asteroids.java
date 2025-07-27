@@ -43,7 +43,7 @@ public class asteroids implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new asteroids().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -74,7 +74,7 @@ ProtoInstance ProtoInstance0 = null;
             .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")))      ;
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")));
     return X3D0;
     }
 }

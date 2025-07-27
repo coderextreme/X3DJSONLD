@@ -43,7 +43,7 @@ public class ViewFrustumExample implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ViewFrustumExample().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -76,10 +76,10 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ViewFrustumExample.x3d"))
-        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setOrientation(new double[] {1,0,0,-1.57}).setPosition(new double[] {0,40,0}))
+        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,40f,0f}))
         .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
-        .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(new double[] {0,0,15}))
-        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(new double[] {0.8005,0.5926,0.0898,-0.3743}).setPosition(new double[] {-5,5,20}))
+        .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(new double[] {0f,0f,15f}))
+        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(new double[] {0.8005f,0.5926f,0.0898f,-0.3743f}).setPosition(new double[] {-5f,5f,20f}))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
         .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
@@ -90,19 +90,19 @@ ProtoInstance ProtoInstance0 = null;
           .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
           .addField(new field().setType("SFFloat").setName("aspectRatio").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("assumed ratio height/width, default value 0.75"))
           .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false")))
-        .addComments("Example use")
+        .addComments(new CommentsBlock("Example use"))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
-        .addComments("Visualization assists")
+        .addComments(new CommentsBlock("Visualization assists"))
         .addChild(new Inline().setDEF("GridXZ").setUrl(new MFString1().getArray()))
-        .addChild(new Transform().setScale(new double[] {5,5,5})
-          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString2().getArray()))))      ;
+        .addChild(new Transform().setScale(new double[] {5f,5f,5f})
+          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString2().getArray()))));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")
-            .addComments("prefer empty description to prevent entry in player's ViewpointList")
+            .addComments(new CommentsBlock("prefer empty description to prevent entry in player's ViewpointList"))
             .addChild(new Viewpoint().setDescription("ViewFrustum ViewpointNode")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("NavigationInfoNode")
-            .addChild(new NavigationInfo().setVisibilityLimit(15)));
+            .addChild(new NavigationInfo().setVisibilityLimit(15f)));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("visible").setValue("true"));
 ProtoInstance0

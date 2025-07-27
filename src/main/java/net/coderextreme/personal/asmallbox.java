@@ -43,7 +43,7 @@ public class asmallbox implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new asmallbox().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -85,7 +85,7 @@ ProtoInstance ProtoInstance1 = null;
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance1 = new ProtoInstance().setName("one")))      ;
+        .addChild(ProtoInstance1 = new ProtoInstance().setName("one")));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape()

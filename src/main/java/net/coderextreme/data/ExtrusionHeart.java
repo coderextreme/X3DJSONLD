@@ -43,7 +43,7 @@ public class ExtrusionHeart implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ExtrusionHeart().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class ExtrusionHeart implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ExtrusionHeart.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple extrusion of a Valentine heart."))
@@ -67,27 +67,27 @@ public class ExtrusionHeart implements X3DRoots {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setDescription("Extrusion Heart").setOrientation(new double[] {1,0,0,1.57}).setPosition(new double[] {0,-4,0}))
-        .addChild(new Transform().setTranslation(new double[] {0,-0.5,0})
+        .addChild(new Viewpoint().setDescription("Extrusion Heart").setOrientation(new double[] {1f,0f,0f,1.57f}).setPosition(new double[] {0f,-4f,0f}))
+        .addChild(new Transform().setTranslation(new double[] {0f,-0.5f,0f})
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setCreaseAngle(3.14159).setCrossSection(new MFVec2f0().getArray()).setScale(new MFVec2f1().getArray()).setSolid(false).setSpine(new MFVec3f2().getArray()))
+            .setGeometry(new Extrusion().setCreaseAngle(3.14159f).setCrossSection(new MFVec2f0().getArray()).setScale(new MFVec2f1().getArray()).setSolid(false).setSpine(new MFVec3f2().getArray()))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.8,0.3,0.3}))))))      ;
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.8f,0.3f,0.3f}))))));
     return X3D0;
     }
 private class MFVec2f0 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0f,0.8f,0.2f,1f,0.7f,0.95f,1f,0.5f,0.8f,0f,0.5f,-0.3f,0f,-0.7f,-0.5f,-0.3f,-0.8f,0f,-1f,0.5f,-0.7f,0.95f,-0.2f,1f,0f,0.8f});
   }
 }
 private class MFVec2f1 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.01f,0.01f,0.8f,0.8f,1f,1f,0.8f,0.8f,0.01f,0.01f});
   }
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0.1f,0f,0f,0.5f,0f,0f,0.9f,0f,0f,1f,0f});
   }
 }
 }

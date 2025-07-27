@@ -43,7 +43,7 @@ public class x3domflowers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new x3domflowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -80,7 +80,7 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/x3domflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addComments("Images courtesy of Paul Debevec's Light Probe Image Gallery")
+        .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
           .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString6().getArray())
@@ -95,7 +95,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance3 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance4 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))))      ;
+          .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))));
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x3dom_flowers_chromatic.vs\""));
 ProtoInstance0

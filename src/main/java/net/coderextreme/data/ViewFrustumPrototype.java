@@ -43,7 +43,7 @@ public class ViewFrustumPrototype implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ViewFrustumPrototype().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -76,9 +76,9 @@ public class ViewFrustumPrototype implements X3DRoots {
         .addChild(new ProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest")
-              .addComments("NULL node, ProtoInstance must provide"))
+              .addComments(new CommentsBlock("NULL node, ProtoInstance must provide")))
             .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest")
-              .addComments("NULL node, ProtoInstance must provide"))
+              .addComments(new CommentsBlock("NULL node, ProtoInstance must provide")))
             .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered").setValue("true"))
             .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9").setValue("0.9 0.9 0.9"))
             .addField(new field().setType("SFColor").setName("frustumColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8").setValue("0.8 0.8 0.8"))
@@ -87,7 +87,7 @@ public class ViewFrustumPrototype implements X3DRoots {
             .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Switch().setDEF("VisibilitySwitch").setWhichChoice(-1)
-              .addChild(new Transform().setDEF("PositionTransform").setRotation(new double[] {0,1,0,3.14159})
+              .addChild(new Transform().setDEF("PositionTransform").setRotation(new double[] {0f,1f,0f,3.14159f})
                 .addChild(new Transform().setDEF("OrientationTransform")
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setDEF("FrustumLines").setCoordIndex(new MFInt320().getArray())
@@ -104,15 +104,15 @@ public class ViewFrustumPrototype implements X3DRoots {
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("frustumColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency"))))))
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(0.08))
+                    .setGeometry(new Sphere().setRadius(0.08f))
                     .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
             .addChild(new Script().setDEF("GeometryComputationScript").setDirectOutput(true).setUrl(new MFString2().getArray())
               .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
               .addField(new field().setType("SFInt32").setName("visibilitySwitchSelection").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Adjust Switch selection to make geometry visible or not"))
               .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addComments("initialization node (if any) goes here"))
+                .addComments(new CommentsBlock("initialization node (if any) goes here")))
               .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addComments("initialization node (if any) goes here"))
+                .addComments(new CommentsBlock("initialization node (if any) goes here")))
               .addField(new field().setType("SFNode").setName("FrustumCoordinate").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
                 .addChild(new Coordinate().setUSE("FrustumCoordinate")))
               .addField(new field().setType("SFNode").setName("FrustumExtrusion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
@@ -137,13 +137,13 @@ public class ViewFrustumPrototype implements X3DRoots {
             .addChild(new ROUTE().setFromField("spine_changed").setFromNode("GeometryComputationScript").setToField("set_spine").setToNode("FrustumExtrusion"))
             .addChild(new ROUTE().setFromField("scale_changed").setFromNode("GeometryComputationScript").setToField("set_scale").setToNode("FrustumExtrusion"))
             .addChild(new ROUTE().setFromField("point_changed").setFromNode("GeometryComputationScript").setToField("point").setToNode("FrustumCoordinate"))))
-        .addComments("Example use is in separate scene")
+        .addComments(new CommentsBlock("Example use is in separate scene"))
         .addChild(new Anchor().setDescription("ViewFrustum Example").setUrl(new MFString3().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.8,0.4,0})))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.8f,0.4f,0f})))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8))))))      ;
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))));
     return X3D0;
     }
 private class MFInt320 {
@@ -153,7 +153,7 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f});
   }
 }
 private class MFString2 {

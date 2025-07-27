@@ -43,7 +43,7 @@ public class KoreanCharacter03Hyun implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new KoreanCharacter03Hyun().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -77,195 +77,195 @@ public class KoreanCharacter03Hyun implements X3DRoots {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("KoreanCharacter03Hyun.x3d"))
-        .addChild(new NavigationInfo().setSpeed(1.5))
-        .addChild(new Viewpoint().setCenterOfRotation(new double[] {0,1,0}).setDescription("Hyun").setPosition(new double[] {0,1,3}))
-        .addChild(new HAnimHumanoid().setName("Hyun").setDEF("hanim_Hyun").setScale(new double[] {0.0225,0.0225,0.0225}).setVersion("2.0")
-          .addComments("original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=male\" \"height=1.5\"'")
+        .addChild(new NavigationInfo().setSpeed(1.5f))
+        .addChild(new Viewpoint().setCenterOfRotation(new double[] {0f,1f,0f}).setDescription("Hyun").setPosition(new double[] {0f,1f,3f}))
+        .addChild(new HAnimHumanoid().setName("Hyun").setDEF("hanim_Hyun").setScale(new double[] {0.0225f,0.0225f,0.0225f}).setVersion("2.0")
+          .addComments(new CommentsBlock("original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=male\" \"height=1.5\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
-            .addValue(new MetadataString().setName("authorName").setValue(new MFString0().getArray()))
-            .addValue(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
-            .addValue(new MetadataString().setName("creationDate").setValue(new MFString2().getArray()))
-            .addValue(new MetadataString().setName("gender").setValue(new MFString3().getArray()))
+            .setMetadata(new MetadataString().setName("authorName").setValue(new MFString0().getArray()))
+            .setMetadata(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
+            .setMetadata(new MetadataString().setName("creationDate").setValue(new MFString2().getArray()))
+            .setMetadata(new MetadataString().setName("gender").setValue(new MFString3().getArray()))
             .addValue(new MetadataFloat().setName("height").setValue(new MFFloat4().getArray()))
-            .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString5().getArray())))
-          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_Hyun").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0,31.43,-0.5601}).setUlimit(new MFFloat6().getArray()).setLlimit(new MFFloat7().getArray()).setContainerFieldOverride("skeleton"))
+            .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new MFString5().getArray())))
+          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_Hyun").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0f,31.43f,-0.5601f}).setUlimit(new MFFloat6().getArray()).setLlimit(new MFFloat7().getArray()).setContainerFieldOverride("skeleton"))
             .addChild(new HAnimSegment("hanim_humanoid_root").setName("sacrum").setDEF("hanim_sacrum")
-              .addChild(new Transform().setTranslation(new double[] {0,31.43,-0.5601})
+              .addChild(new Transform().setTranslation(new double[] {0f,31.43f,-0.5601f})
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                    .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                     .setTexture(new ImageTexture().setDEF("HyunTextureAtlas").setUrl(new MFString8().getArray())))
-                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3210().getArray())
+                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3210().getArray())
                     .setCoord(new Coordinate().setPoint(new MFVec3f11().getArray()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f12().getArray()))))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("l_hip").setDEF("hanim_l_hip").setCenter(new double[] {3.551,29.33,-0.1267}).setUlimit(new MFFloat13().getArray()).setLlimit(new MFFloat14().getArray())
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("l_hip").setDEF("hanim_l_hip").setCenter(new double[] {3.551f,29.33f,-0.1267f}).setUlimit(new MFFloat13().getArray()).setLlimit(new MFFloat14().getArray())
               .addChild(new HAnimSegment("hanim_l_hip").setName("l_thigh").setDEF("hanim_l_thigh")
-                .addChild(new Transform().setTranslation(new double[] {3.551,29.33,-0.1267})
+                .addChild(new Transform().setTranslation(new double[] {3.551f,29.33f,-0.1267f})
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                       .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3215().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3216().getArray())
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3215().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3216().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f17().getArray()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f18().getArray()))))))
-              .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new double[] {3.71,15.48,-0.1446}).setUlimit(new MFFloat19().getArray()).setLlimit(new MFFloat20().getArray())
+              .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new double[] {3.71f,15.48f,-0.1446f}).setUlimit(new MFFloat19().getArray()).setLlimit(new MFFloat20().getArray())
                 .addChild(new HAnimSegment("hanim_l_knee").setName("l_calf").setDEF("hanim_l_calf")
-                  .addChild(new Transform().setTranslation(new double[] {3.71,15.48,-0.1446})
+                  .addChild(new Transform().setTranslation(new double[] {3.71f,15.48f,-0.1446f})
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                         .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3221().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3222().getArray())
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3221().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3222().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f23().getArray()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f24().getArray()))))))
-                .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new double[] {3.388,3.168,-0.537}).setUlimit(new MFFloat25().getArray()).setLlimit(new MFFloat26().getArray())
+                .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new double[] {3.388f,3.168f,-0.537f}).setUlimit(new MFFloat25().getArray()).setLlimit(new MFFloat26().getArray())
                   .addChild(new HAnimSegment("hanim_l_talocrural").setName("l_talus").setDEF("hanim_l_talus")
-                    .addChild(new Transform().setTranslation(new double[] {3.388,3.168,-0.537})
+                    .addChild(new Transform().setTranslation(new double[] {3.388f,3.168f,-0.537f})
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
-                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                           .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3227().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3228().getArray())
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3227().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3228().getArray())
                           .setCoord(new Coordinate().setPoint(new MFVec3f29().getArray()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f30().getArray()))))))
-                  .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new double[] {3.388,2.908,0.7441}).setUlimit(new MFFloat31().getArray()).setLlimit(new MFFloat32().getArray())
+                  .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new double[] {3.388f,2.908f,0.7441f}).setUlimit(new MFFloat31().getArray()).setLlimit(new MFFloat32().getArray())
                     .addChild(new HAnimSegment("hanim_l_metatarsophalangeal_2").setName("l_tarsal_proximal_phalanx_2").setDEF("hanim_l_tarsal_proximal_phalanx_2")
-                      .addChild(new Transform().setTranslation(new double[] {3.388,2.908,0.7441})
+                      .addChild(new Transform().setTranslation(new double[] {3.388f,2.908f,0.7441f})
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                             .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3233().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3234().getArray())
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3233().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3234().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f35().getArray()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f36().getArray()))))))))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("r_hip").setDEF("hanim_r_hip").setCenter(new double[] {-3.551,29.33,-0.1267}).setUlimit(new MFFloat37().getArray()).setLlimit(new MFFloat38().getArray())
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("r_hip").setDEF("hanim_r_hip").setCenter(new double[] {-3.551f,29.33f,-0.1267f}).setUlimit(new MFFloat37().getArray()).setLlimit(new MFFloat38().getArray())
               .addChild(new HAnimSegment("hanim_r_hip").setName("r_thigh").setDEF("hanim_r_thigh")
-                .addChild(new Transform().setTranslation(new double[] {-3.551,29.33,-0.1267})
+                .addChild(new Transform().setTranslation(new double[] {-3.551f,29.33f,-0.1267f})
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                       .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3239().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3240().getArray())
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3239().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3240().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f41().getArray()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f42().getArray()))))))
-              .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new double[] {-3.71,15.48,-0.1446}).setUlimit(new MFFloat43().getArray()).setLlimit(new MFFloat44().getArray())
+              .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new double[] {-3.71f,15.48f,-0.1446f}).setUlimit(new MFFloat43().getArray()).setLlimit(new MFFloat44().getArray())
                 .addChild(new HAnimSegment("hanim_r_knee").setName("r_calf").setDEF("hanim_r_calf")
-                  .addChild(new Transform().setTranslation(new double[] {-3.71,15.48,-0.1446})
+                  .addChild(new Transform().setTranslation(new double[] {-3.71f,15.48f,-0.1446f})
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                         .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3245().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3246().getArray())
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3245().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3246().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f47().getArray()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f48().getArray()))))))
-                .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new double[] {-3.388,3.168,-0.537}).setUlimit(new MFFloat49().getArray()).setLlimit(new MFFloat50().getArray())
+                .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new double[] {-3.388f,3.168f,-0.537f}).setUlimit(new MFFloat49().getArray()).setLlimit(new MFFloat50().getArray())
                   .addChild(new HAnimSegment("hanim_r_talocrural").setName("r_talus").setDEF("hanim_r_talus")
-                    .addChild(new Transform().setTranslation(new double[] {-3.388,3.168,-0.537})
+                    .addChild(new Transform().setTranslation(new double[] {-3.388f,3.168f,-0.537f})
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
-                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                           .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3251().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3252().getArray())
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3251().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3252().getArray())
                           .setCoord(new Coordinate().setPoint(new MFVec3f53().getArray()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f54().getArray()))))))
-                  .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new double[] {-3.388,2.908,0.7441}).setUlimit(new MFFloat55().getArray()).setLlimit(new MFFloat56().getArray())
+                  .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new double[] {-3.388f,2.908f,0.7441f}).setUlimit(new MFFloat55().getArray()).setLlimit(new MFFloat56().getArray())
                     .addChild(new HAnimSegment("hanim_r_metatarsophalangeal_2").setName("r_tarsal_proximal_phalanx_2").setDEF("hanim_r_tarsal_proximal_phalanx_2")
-                      .addChild(new Transform().setTranslation(new double[] {-3.388,2.908,0.7441})
+                      .addChild(new Transform().setTranslation(new double[] {-3.388f,2.908f,0.7441f})
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                             .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3257().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3258().getArray())
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3257().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3258().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f59().getArray()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f60().getArray()))))))))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0,26.58,-0.5601}).setUlimit(new MFFloat61().getArray()).setLlimit(new MFFloat62().getArray())
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0f,26.58f,-0.5601f}).setUlimit(new MFFloat61().getArray()).setLlimit(new MFFloat62().getArray())
               .addChild(new HAnimSegment("hanim_sacroiliac").setName("pelvis").setDEF("hanim_pelvis")
-                .addChild(new Transform().setTranslation(new double[] {0,26.58,-0.5601})
+                .addChild(new Transform().setTranslation(new double[] {0f,26.58f,-0.5601f})
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                       .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3263().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3264().getArray())
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3263().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3264().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f65().getArray()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f66().getArray()))))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new double[] {5.502,45.779999,-0.3559}).setUlimit(new MFFloat67().getArray()).setLlimit(new MFFloat68().getArray())
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new double[] {5.502f,45.779999f,-0.3559f}).setUlimit(new MFFloat67().getArray()).setLlimit(new MFFloat68().getArray())
                 .addChild(new HAnimSegment("hanim_l_shoulder").setName("l_upperarm").setDEF("hanim_l_upperarm")
-                  .addChild(new Transform().setTranslation(new double[] {5.502,45.779999,-0.3559})
+                  .addChild(new Transform().setTranslation(new double[] {5.502f,45.779999f,-0.3559f})
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                         .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3269().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3270().getArray())
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3269().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3270().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f71().getArray()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f72().getArray()))))))
-                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new double[] {6.735,35.669998,-0.4487}).setUlimit(new MFFloat73().getArray()).setLlimit(new MFFloat74().getArray())
+                .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new double[] {6.735f,35.669998f,-0.4487f}).setUlimit(new MFFloat73().getArray()).setLlimit(new MFFloat74().getArray())
                   .addChild(new HAnimSegment("hanim_l_elbow").setName("l_forearm").setDEF("hanim_l_forearm")
-                    .addChild(new Transform().setTranslation(new double[] {6.735,35.669998,-0.4487})
+                    .addChild(new Transform().setTranslation(new double[] {6.735f,35.669998f,-0.4487f})
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
-                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                           .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3275().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3276().getArray())
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3275().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3276().getArray())
                           .setCoord(new Coordinate().setPoint(new MFVec3f77().getArray()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f78().getArray()))))))
-                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new double[] {6.432,27.83,-0.1589}).setUlimit(new MFFloat79().getArray()).setLlimit(new MFFloat80().getArray())
+                  .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new double[] {6.432f,27.83f,-0.1589f}).setUlimit(new MFFloat79().getArray()).setLlimit(new MFFloat80().getArray())
                     .addChild(new HAnimSegment("hanim_l_radiocarpal").setName("l_carpal").setDEF("hanim_l_carpal")
-                      .addChild(new Transform().setTranslation(new double[] {6.432,27.83,-0.1589})
+                      .addChild(new Transform().setTranslation(new double[] {6.432f,27.83f,-0.1589f})
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                             .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3281().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3282().getArray())
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3281().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3282().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f83().getArray()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f84().getArray())))))))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new double[] {-5.502,45.779999,-0.3559}).setUlimit(new MFFloat85().getArray()).setLlimit(new MFFloat86().getArray())
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new double[] {-5.502f,45.779999f,-0.3559f}).setUlimit(new MFFloat85().getArray()).setLlimit(new MFFloat86().getArray())
                 .addChild(new HAnimSegment("hanim_r_shoulder").setName("r_upperarm").setDEF("hanim_r_upperarm")
-                  .addChild(new Transform().setTranslation(new double[] {-5.502,45.779999,-0.3559})
+                  .addChild(new Transform().setTranslation(new double[] {-5.502f,45.779999f,-0.3559f})
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                         .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3287().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3288().getArray())
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3287().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3288().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f89().getArray()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f90().getArray()))))))
-                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new double[] {-6.735,35.669998,-0.4487}).setUlimit(new MFFloat91().getArray()).setLlimit(new MFFloat92().getArray())
+                .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new double[] {-6.735f,35.669998f,-0.4487f}).setUlimit(new MFFloat91().getArray()).setLlimit(new MFFloat92().getArray())
                   .addChild(new HAnimSegment("hanim_r_elbow").setName("r_forearm").setDEF("hanim_r_forearm")
-                    .addChild(new Transform().setTranslation(new double[] {-6.735,35.669998,-0.4487})
+                    .addChild(new Transform().setTranslation(new double[] {-6.735f,35.669998f,-0.4487f})
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
-                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                           .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3293().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt3294().getArray())
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3293().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt3294().getArray())
                           .setCoord(new Coordinate().setPoint(new MFVec3f95().getArray()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f96().getArray()))))))
-                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new double[] {-6.432,27.83,-0.1589}).setUlimit(new MFFloat97().getArray()).setLlimit(new MFFloat98().getArray())
+                  .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new double[] {-6.432f,27.83f,-0.1589f}).setUlimit(new MFFloat97().getArray()).setLlimit(new MFFloat98().getArray())
                     .addChild(new HAnimSegment("hanim_r_radiocarpal").setName("r_carpal").setDEF("hanim_r_carpal")
-                      .addChild(new Transform().setTranslation(new double[] {-6.432,27.83,-0.1589})
+                      .addChild(new Transform().setTranslation(new double[] {-6.432f,27.83f,-0.1589f})
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                            .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                             .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3299().getArray()).setCreaseAngle(1.57).setTexCoordIndex(new MFInt32100().getArray())
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3299().getArray()).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt32100().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f101().getArray()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f102().getArray())))))))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("vl5").setDEF("hanim_vl5").setCenter(new double[] {0,35.77,-0.5028}).setUlimit(new MFFloat103().getArray()).setLlimit(new MFFloat104().getArray())
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("vl5").setDEF("hanim_vl5").setCenter(new double[] {0f,35.77f,-0.5028f}).setUlimit(new MFFloat103().getArray()).setLlimit(new MFFloat104().getArray())
                 .addChild(new HAnimSegment("hanim_vl5").setName("l5").setDEF("hanim_l5")
-                  .addChild(new Transform().setTranslation(new double[] {0,35.77,-0.5028})
+                  .addChild(new Transform().setTranslation(new double[] {0f,35.77f,-0.5028f})
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                        .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                         .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32105().getArray().append(new MFInt32106().getArray())).setCreaseAngle(1.57).setTexCoordIndex(new MFInt32107().getArray().append(new MFInt32108().getArray()))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32105().getArray().append(new MFInt32106().getArray())).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt32107().getArray().append(new MFInt32108().getArray()))
                         .setCoord(new Coordinate().setPoint(new MFVec3f109().getArray()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f110().getArray()))))))
-                .addChild(new HAnimJoint("hanim_vl5").setName("skullbase").setDEF("hanim_skullbase").setCenter(new double[] {0,49.98,-0.5228}).setUlimit(new MFFloat111().getArray()).setLlimit(new MFFloat112().getArray())
+                .addChild(new HAnimJoint("hanim_vl5").setName("skullbase").setDEF("hanim_skullbase").setCenter(new double[] {0f,49.98f,-0.5228f}).setUlimit(new MFFloat111().getArray()).setLlimit(new MFFloat112().getArray())
                   .addChild(new HAnimSegment("hanim_skullbase").setName("skull").setDEF("hanim_skull")
-                    .addChild(new Transform().setTranslation(new double[] {0,49.98,-0.5228})
+                    .addChild(new Transform().setTranslation(new double[] {0f,49.98f,-0.5228f})
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
-                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588,0.588,0.588}))
+                          .setMaterial(new Material().setDiffuseColor(new double[] {0.588f,0.588f,0.588f}))
                           .setTexture(new ImageTexture().setUSE("HyunTextureAtlas")))
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32113().getArray().append(new MFInt32114().getArray()).append(new MFInt32115().getArray())).setCreaseAngle(1.57).setTexCoordIndex(new MFInt32116().getArray().append(new MFInt32117().getArray()).append(new MFInt32118().getArray()))
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32113().getArray().append(new MFInt32114().getArray()).append(new MFInt32115().getArray())).setCreaseAngle(1.57f).setTexCoordIndex(new MFInt32116().getArray().append(new MFInt32117().getArray()).append(new MFInt32118().getArray()))
                           .setCoord(new Coordinate().setPoint(new MFVec3f119().getArray().append(new MFVec3f120().getArray())))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f121().getArray()))))))))))
           .addJoints(((HAnimJoint)new HAnimJoint("hanim_Hyun").setContainerFieldOverride("joints")).setUSE("hanim_humanoid_root"))
@@ -303,7 +303,7 @@ public class KoreanCharacter03Hyun implements X3DRoots {
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_Hyun").setContainerFieldOverride("segments")).setUSE("hanim_l_thigh"))
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_Hyun").setContainerFieldOverride("segments")).setUSE("hanim_r_thigh"))
           .addSegments(((HAnimSegment)new HAnimSegment("hanim_Hyun").setContainerFieldOverride("segments")).setUSE("hanim_l_upperarm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_Hyun").setContainerFieldOverride("segments")).setUSE("hanim_r_upperarm"))))      ;
+          .addSegments(((HAnimSegment)new HAnimSegment("hanim_Hyun").setContainerFieldOverride("segments")).setUSE("hanim_r_upperarm"))));
     return X3D0;
     }
 private class MFString0 {
@@ -328,7 +328,7 @@ private class MFString3 {
 }
 private class MFFloat4 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.5});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.5f});
   }
 }
 private class MFString5 {
@@ -338,12 +338,12 @@ private class MFString5 {
 }
 private class MFFloat6 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat7 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFString8 {
@@ -363,22 +363,22 @@ private class MFInt3210 {
 }
 private class MFVec3f11 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0.7566,0.0196,0,0.6552,-0.3888,-0.3142,0.6552,-0.3341,-0.5442,0.6552,-0.2681,-0.6284,0.6552,0.0196,-0.5442,0.6552,0.3073,-0.3142,0.6552,0.3733,0,0.6552,0.4281,0.3142,0.6552,0.3733,0.5442,0.6552,0.3073,0.6284,0.6552,0.0196,0.5442,0.6552,-0.2681,0.3142,0.6552,-0.3341,0,0.3783,-0.6351,-0.4064,0.3783,-0.5474,-0.7039,0.3783,-0.3077,-0.8128,0.3783,0.0196,-0.7039,0.3783,0.3469,-0.4064,0.3783,0.5017,0,0.3783,0.5894,0.4064,0.3783,0.5017,0.7039,0.3783,0.3469,0.8128,0.3783,0.0196,0.7039,0.3783,-0.3077,0.4064,0.3783,-0.5474,0,0,-0.6906,-0.4693,0,-0.5894,-0.8128,0,-0.3127,-0.9385,0,0.0196,-0.8128,0,0.3976,-0.4693,0,0.5894,0,0,0.6906,0.4693,0,0.5894,0.8128,0,0.3976,0.9385,0,0.0196,0.8128,0,-0.3127,0.4693,0,-0.5894,0,-0.3783,-0.5894,-0.4064,-0.3783,-0.5017,-0.7039,-0.3783,-0.262,-0.8128,-0.3783,0.0196,-0.7039,-0.3783,0.3469,-0.4064,-0.3783,0.5017,0,-0.3783,0.5894,0.4064,-0.3783,0.5017,0.7039,-0.3783,0.3469,0.8128,-0.3783,0.0196,0.7039,-0.3783,-0.262,0.4064,-0.3783,-0.5017,0,-0.6552,-0.3127,-0.2346,-0.6552,-0.262,-0.4064,-0.6552,-0.1694,-0.4693,-0.6552,0.0196,-0.4064,-0.6552,0.2086,-0.2346,-0.6552,0.3469,0,-0.6552,0.3976,0.2346,-0.6552,0.3469,0.4064,-0.6552,0.2086,0.4693,-0.6552,0.0196,0.4064,-0.6552,-0.1694,0.2346,-0.6552,-0.262,0,-0.7566,0.0196});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.7566f,0.0196f,0f,0.6552f,-0.3888f,-0.3142f,0.6552f,-0.3341f,-0.5442f,0.6552f,-0.2681f,-0.6284f,0.6552f,0.0196f,-0.5442f,0.6552f,0.3073f,-0.3142f,0.6552f,0.3733f,0f,0.6552f,0.4281f,0.3142f,0.6552f,0.3733f,0.5442f,0.6552f,0.3073f,0.6284f,0.6552f,0.0196f,0.5442f,0.6552f,-0.2681f,0.3142f,0.6552f,-0.3341f,0f,0.3783f,-0.6351f,-0.4064f,0.3783f,-0.5474f,-0.7039f,0.3783f,-0.3077f,-0.8128f,0.3783f,0.0196f,-0.7039f,0.3783f,0.3469f,-0.4064f,0.3783f,0.5017f,0f,0.3783f,0.5894f,0.4064f,0.3783f,0.5017f,0.7039f,0.3783f,0.3469f,0.8128f,0.3783f,0.0196f,0.7039f,0.3783f,-0.3077f,0.4064f,0.3783f,-0.5474f,0f,0f,-0.6906f,-0.4693f,0f,-0.5894f,-0.8128f,0f,-0.3127f,-0.9385f,0f,0.0196f,-0.8128f,0f,0.3976f,-0.4693f,0f,0.5894f,0f,0f,0.6906f,0.4693f,0f,0.5894f,0.8128f,0f,0.3976f,0.9385f,0f,0.0196f,0.8128f,0f,-0.3127f,0.4693f,0f,-0.5894f,0f,-0.3783f,-0.5894f,-0.4064f,-0.3783f,-0.5017f,-0.7039f,-0.3783f,-0.262f,-0.8128f,-0.3783f,0.0196f,-0.7039f,-0.3783f,0.3469f,-0.4064f,-0.3783f,0.5017f,0f,-0.3783f,0.5894f,0.4064f,-0.3783f,0.5017f,0.7039f,-0.3783f,0.3469f,0.8128f,-0.3783f,0.0196f,0.7039f,-0.3783f,-0.262f,0.4064f,-0.3783f,-0.5017f,0f,-0.6552f,-0.3127f,-0.2346f,-0.6552f,-0.262f,-0.4064f,-0.6552f,-0.1694f,-0.4693f,-0.6552f,0.0196f,-0.4064f,-0.6552f,0.2086f,-0.2346f,-0.6552f,0.3469f,0f,-0.6552f,0.3976f,0.2346f,-0.6552f,0.3469f,0.4064f,-0.6552f,0.2086f,0.4693f,-0.6552f,0.0196f,0.4064f,-0.6552f,-0.1694f,0.2346f,-0.6552f,-0.262f,0f,-0.7566f,0.0196f});
   }
 }
 private class MFVec2f12 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8893,0.532,0.8772,0.532,0.8772,0.4766,0.8772,0.4361,0.8772,0.4213,0.8772,0.4361,0.8772,0.4766,0.8772,0.532,0.8772,0.4766,0.8772,0.4361,0.8772,0.4212,0.8772,0.4361,0.8772,0.4766,0.8439,0.532,0.8439,0.4604,0.8439,0.408,0.8439,0.3888,0.8439,0.408,0.8439,0.4604,0.8439,0.532,0.8439,0.4604,0.8439,0.4079,0.8439,0.3887,0.8439,0.4079,0.8439,0.4604,0.7985,0.532,0.7985,0.4493,0.7985,0.3888,0.7985,0.3666,0.7985,0.3888,0.7985,0.4493,0.7985,0.532,0.7985,0.4493,0.7985,0.3887,0.7985,0.3666,0.7985,0.3887,0.7985,0.4493,0.753,0.532,0.753,0.4604,0.753,0.408,0.753,0.3888,0.753,0.408,0.753,0.4604,0.753,0.532,0.753,0.4604,0.753,0.4079,0.753,0.3887,0.753,0.4079,0.753,0.4604,0.7197,0.532,0.7197,0.4907,0.7197,0.4604,0.7197,0.4493,0.7197,0.4604,0.7197,0.4907,0.7197,0.532,0.7197,0.4906,0.7197,0.4604,0.7197,0.4493,0.7197,0.4604,0.7197,0.4906,0.7076,0.532});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8893f,0.532f,0.8772f,0.532f,0.8772f,0.4766f,0.8772f,0.4361f,0.8772f,0.4213f,0.8772f,0.4361f,0.8772f,0.4766f,0.8772f,0.532f,0.8772f,0.4766f,0.8772f,0.4361f,0.8772f,0.4212f,0.8772f,0.4361f,0.8772f,0.4766f,0.8439f,0.532f,0.8439f,0.4604f,0.8439f,0.408f,0.8439f,0.3888f,0.8439f,0.408f,0.8439f,0.4604f,0.8439f,0.532f,0.8439f,0.4604f,0.8439f,0.4079f,0.8439f,0.3887f,0.8439f,0.4079f,0.8439f,0.4604f,0.7985f,0.532f,0.7985f,0.4493f,0.7985f,0.3888f,0.7985f,0.3666f,0.7985f,0.3888f,0.7985f,0.4493f,0.7985f,0.532f,0.7985f,0.4493f,0.7985f,0.3887f,0.7985f,0.3666f,0.7985f,0.3887f,0.7985f,0.4493f,0.753f,0.532f,0.753f,0.4604f,0.753f,0.408f,0.753f,0.3888f,0.753f,0.408f,0.753f,0.4604f,0.753f,0.532f,0.753f,0.4604f,0.753f,0.4079f,0.753f,0.3887f,0.753f,0.4079f,0.753f,0.4604f,0.7197f,0.532f,0.7197f,0.4907f,0.7197f,0.4604f,0.7197f,0.4493f,0.7197f,0.4604f,0.7197f,0.4907f,0.7197f,0.532f,0.7197f,0.4906f,0.7197f,0.4604f,0.7197f,0.4493f,0.7197f,0.4604f,0.7197f,0.4906f,0.7076f,0.532f});
   }
 }
 private class MFFloat13 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat14 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3215 {
@@ -393,22 +393,22 @@ private class MFInt3216 {
 }
 private class MFVec3f17 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.616,1.989,0,1.452,1.989,2.836,-1.163,1.989,3.536,-2.975,1.989,1.574,-2.975,1.989,-1.574,-1.163,1.989,-3.536,1.452,1.989,-2.836,2.616,-1.325,0,1.452,-1.325,2.836,-1.163,-1.325,3.536,-2.975,-1.325,1.574,-2.975,-1.325,-1.574,-1.163,-1.325,-3.536,1.452,-1.325,-2.836,2.616,-7.064,0,1.452,-7.064,2.836,-1.163,-7.064,3.536,-2.975,-7.064,1.574,-2.975,-7.064,-1.574,-1.163,-7.064,-3.536,1.452,-7.064,-2.836,2.975,-11.91,0,1.676,-11.91,3.165,-1.243,-11.91,3.947,-2.964,-11.91,1.756,-2.964,-11.91,-1.756,-1.243,-11.91,-3.947,1.676,-11.91,-3.165,1.812,3.747,0,0.9506,3.747,2.098,-0.9843,3.747,2.616,-2.536,3.747,1.164,-2.536,3.747,-1.164,-0.9843,3.747,-2.616,0.9506,3.747,-2.098,0.9661,-14.81,2.027,1.798,-14.81,0,-0.9034,-14.81,2.528,-2.006,-14.81,1.125,-2.006,-14.81,-1.125,-0.9034,-14.81,-2.528,0.9661,-14.81,-2.027,-0.2983,-16.16,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.616f,1.989f,0f,1.452f,1.989f,2.836f,-1.163f,1.989f,3.536f,-2.975f,1.989f,1.574f,-2.975f,1.989f,-1.574f,-1.163f,1.989f,-3.536f,1.452f,1.989f,-2.836f,2.616f,-1.325f,0f,1.452f,-1.325f,2.836f,-1.163f,-1.325f,3.536f,-2.975f,-1.325f,1.574f,-2.975f,-1.325f,-1.574f,-1.163f,-1.325f,-3.536f,1.452f,-1.325f,-2.836f,2.616f,-7.064f,0f,1.452f,-7.064f,2.836f,-1.163f,-7.064f,3.536f,-2.975f,-7.064f,1.574f,-2.975f,-7.064f,-1.574f,-1.163f,-7.064f,-3.536f,1.452f,-7.064f,-2.836f,2.975f,-11.91f,0f,1.676f,-11.91f,3.165f,-1.243f,-11.91f,3.947f,-2.964f,-11.91f,1.756f,-2.964f,-11.91f,-1.756f,-1.243f,-11.91f,-3.947f,1.676f,-11.91f,-3.165f,1.812f,3.747f,0f,0.9506f,3.747f,2.098f,-0.9843f,3.747f,2.616f,-2.536f,3.747f,1.164f,-2.536f,3.747f,-1.164f,-0.9843f,3.747f,-2.616f,0.9506f,3.747f,-2.098f,0.9661f,-14.81f,2.027f,1.798f,-14.81f,0f,-0.9034f,-14.81f,2.528f,-2.006f,-14.81f,1.125f,-2.006f,-14.81f,-1.125f,-0.9034f,-14.81f,-2.528f,0.9661f,-14.81f,-2.027f,-0.2983f,-16.16f,0f});
   }
 }
 private class MFVec2f18 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.7912,0.3382,0.7912,0.364,0.7912,0.2804,0.7912,0.234,0.7912,0.234,0.7912,0.2804,0.7912,0.3382,0.7762,0.388,0.748,0.3532,0.748,0.388,0.7762,0.3532,0.748,0.275,0.7762,0.275,0.748,0.2209,0.7762,0.2209,0.748,0.2209,0.7762,0.2209,0.748,0.275,0.7762,0.275,0.748,0.3532,0.7762,0.3532,0.6856,0.3532,0.6856,0.388,0.6856,0.275,0.6856,0.2209,0.6856,0.2209,0.6856,0.275,0.6856,0.3532,0.6315,0.3608,0.6315,0.3996,0.6315,0.2735,0.6315,0.222,0.6315,0.222,0.6315,0.2735,0.6315,0.3608,0.6248,0.3387,0.6248,0.3636,0.6248,0.2828,0.6248,0.2498,0.6248,0.2498,0.6248,0.2828,0.6248,0.3387,0.6133,0.3009});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.7912f,0.3382f,0.7912f,0.364f,0.7912f,0.2804f,0.7912f,0.234f,0.7912f,0.234f,0.7912f,0.2804f,0.7912f,0.3382f,0.7762f,0.388f,0.748f,0.3532f,0.748f,0.388f,0.7762f,0.3532f,0.748f,0.275f,0.7762f,0.275f,0.748f,0.2209f,0.7762f,0.2209f,0.748f,0.2209f,0.7762f,0.2209f,0.748f,0.275f,0.7762f,0.275f,0.748f,0.3532f,0.7762f,0.3532f,0.6856f,0.3532f,0.6856f,0.388f,0.6856f,0.275f,0.6856f,0.2209f,0.6856f,0.2209f,0.6856f,0.275f,0.6856f,0.3532f,0.6315f,0.3608f,0.6315f,0.3996f,0.6315f,0.2735f,0.6315f,0.222f,0.6315f,0.222f,0.6315f,0.2735f,0.6315f,0.3608f,0.6248f,0.3387f,0.6248f,0.3636f,0.6248f,0.2828f,0.6248f,0.2498f,0.6248f,0.2498f,0.6248f,0.2828f,0.6248f,0.3387f,0.6133f,0.3009f});
   }
 }
 private class MFFloat19 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat20 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3221 {
@@ -423,22 +423,22 @@ private class MFInt3222 {
 }
 private class MFVec3f23 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.616,-0.0823,0.0541,1.452,-0.0823,2.89,-1.163,-0.0823,3.59,-2.975,-0.0823,1.628,-2.975,-0.0823,-1.52,-1.163,-0.0823,-3.482,1.452,-0.0823,-2.782,2.616,-3.395,0.0541,1.452,-3.395,2.89,-1.163,-3.395,3.59,-2.975,-3.395,1.628,-2.975,-3.395,-1.52,-1.163,-3.395,-3.482,1.452,-3.395,-2.782,2.708,-6.91,0.0541,1.545,-6.91,2.89,-1.071,-6.91,3.59,-2.882,-6.91,1.628,-2.882,-6.91,-1.52,-1.071,-6.91,-3.482,1.545,-6.91,-2.782,2.975,-11.77,0.0541,1.676,-11.77,3.219,-1.243,-11.77,4.001,-2.964,-11.77,1.81,-2.964,-11.77,-1.702,-1.243,-11.77,-3.892,1.676,-11.77,-3.111,1.896,-7.789,0.0541,1.003,-7.789,2.23,-1.003,-7.789,2.767,-2.326,-7.789,1.261,-2.326,-7.789,-1.153,-1.003,-7.789,-2.659,1.003,-7.789,-2.122,1.905,-9.68,0.0541,1.082,-9.68,1.782,-0.7654,-9.68,2.209,-2.247,-9.68,1.013,-2.247,-9.68,-0.9049,-0.7654,-9.68,-2.101,1.082,-9.68,-1.674,1.812,1.676,0.0541,0.9506,1.676,2.152,-0.9843,1.676,2.67,-2.536,1.676,1.218,-2.536,1.676,-1.11,-0.9843,1.676,-2.562,0.9506,1.676,-2.044,1.628,-12.93,0.0541,0.9097,-12.93,1.709,-0.7038,-12.93,2.082,-1.998,-12.93,1.037,-1.998,-12.93,-0.7834,-0.7038,-12.93,-1.828,0.9097,-12.93,-1.455,0.5546,-13.79,0.0541,0.2406,-13.79,0.8599,-0.465,-13.79,1.023,-1.031,-13.79,0.5662,-1.031,-13.79,-0.3121,-0.465,-13.79,-0.7688,0.2406,-13.79,-0.6058});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.616f,-0.0823f,0.0541f,1.452f,-0.0823f,2.89f,-1.163f,-0.0823f,3.59f,-2.975f,-0.0823f,1.628f,-2.975f,-0.0823f,-1.52f,-1.163f,-0.0823f,-3.482f,1.452f,-0.0823f,-2.782f,2.616f,-3.395f,0.0541f,1.452f,-3.395f,2.89f,-1.163f,-3.395f,3.59f,-2.975f,-3.395f,1.628f,-2.975f,-3.395f,-1.52f,-1.163f,-3.395f,-3.482f,1.452f,-3.395f,-2.782f,2.708f,-6.91f,0.0541f,1.545f,-6.91f,2.89f,-1.071f,-6.91f,3.59f,-2.882f,-6.91f,1.628f,-2.882f,-6.91f,-1.52f,-1.071f,-6.91f,-3.482f,1.545f,-6.91f,-2.782f,2.975f,-11.77f,0.0541f,1.676f,-11.77f,3.219f,-1.243f,-11.77f,4.001f,-2.964f,-11.77f,1.81f,-2.964f,-11.77f,-1.702f,-1.243f,-11.77f,-3.892f,1.676f,-11.77f,-3.111f,1.896f,-7.789f,0.0541f,1.003f,-7.789f,2.23f,-1.003f,-7.789f,2.767f,-2.326f,-7.789f,1.261f,-2.326f,-7.789f,-1.153f,-1.003f,-7.789f,-2.659f,1.003f,-7.789f,-2.122f,1.905f,-9.68f,0.0541f,1.082f,-9.68f,1.782f,-0.7654f,-9.68f,2.209f,-2.247f,-9.68f,1.013f,-2.247f,-9.68f,-0.9049f,-0.7654f,-9.68f,-2.101f,1.082f,-9.68f,-1.674f,1.812f,1.676f,0.0541f,0.9506f,1.676f,2.152f,-0.9843f,1.676f,2.67f,-2.536f,1.676f,1.218f,-2.536f,1.676f,-1.11f,-0.9843f,1.676f,-2.562f,0.9506f,1.676f,-2.044f,1.628f,-12.93f,0.0541f,0.9097f,-12.93f,1.709f,-0.7038f,-12.93f,2.082f,-1.998f,-12.93f,1.037f,-1.998f,-12.93f,-0.7834f,-0.7038f,-12.93f,-1.828f,0.9097f,-12.93f,-1.455f,0.5546f,-13.79f,0.0541f,0.2406f,-13.79f,0.8599f,-0.465f,-13.79f,1.023f,-1.031f,-13.79f,0.5662f,-1.031f,-13.79f,-0.3121f,-0.465f,-13.79f,-0.7688f,0.2406f,-13.79f,-0.6058f});
   }
 }
 private class MFVec2f24 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.6566,0.2462,0.6181,0.2462,0.5796,0.2462,0.5411,0.2462,0.5026,0.2462,0.4641,0.2462,0.6951,0.2462,0.6566,0.2951,0.6181,0.2951,0.5796,0.2951,0.5411,0.2951,0.5026,0.2951,0.4641,0.2951,0.6951,0.2951,0.6566,0.3439,0.6181,0.3439,0.5796,0.3439,0.5411,0.3439,0.5026,0.3439,0.4641,0.3439,0.6951,0.3439,0.6566,0.3927,0.6181,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.6951,0.3927,0.4256,0.2462,0.4256,0.2951,0.4256,0.2462,0.4256,0.3439,0.4256,0.2951,0.4256,0.3927,0.4256,0.3439,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.2462,0.6181,0.2462,0.6951,0.2462,0.5796,0.2462,0.5411,0.2462,0.5026,0.2462,0.4641,0.2462,0.4256,0.2462,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.6566f,0.2462f,0.6181f,0.2462f,0.5796f,0.2462f,0.5411f,0.2462f,0.5026f,0.2462f,0.4641f,0.2462f,0.6951f,0.2462f,0.6566f,0.2951f,0.6181f,0.2951f,0.5796f,0.2951f,0.5411f,0.2951f,0.5026f,0.2951f,0.4641f,0.2951f,0.6951f,0.2951f,0.6566f,0.3439f,0.6181f,0.3439f,0.5796f,0.3439f,0.5411f,0.3439f,0.5026f,0.3439f,0.4641f,0.3439f,0.6951f,0.3439f,0.6566f,0.3927f,0.6181f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.6951f,0.3927f,0.4256f,0.2462f,0.4256f,0.2951f,0.4256f,0.2462f,0.4256f,0.3439f,0.4256f,0.2951f,0.4256f,0.3927f,0.4256f,0.3439f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.2462f,0.6181f,0.2462f,0.6951f,0.2462f,0.5796f,0.2462f,0.5411f,0.2462f,0.5026f,0.2462f,0.4641f,0.2462f,0.4256f,0.2462f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f});
   }
 }
 private class MFFloat25 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat26 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3227 {
@@ -453,22 +453,22 @@ private class MFInt3228 {
 }
 private class MFVec3f29 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.8503,-0.0167,-1.492,1.443,-0.0167,0.3823,0,-0.0167,-1.492,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,-1.443,-0.0167,0.3823,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,-0.8503,-0.0167,-1.492,0,-0.0167,1.553,1.476,-0.2577,1.268,-1.476,-0.2577,1.268,1.226,-1.676,-2.553,1.226,-3.436,-1.492,0,-3.436,-1.492,0.965,-0.5229,-1.815,0,-0.5229,-1.815,-1.226,-1.676,-2.553,0,-1.676,-2.553,-0.965,-0.5229,-1.815,-1.226,-3.436,-1.492,2.548,-1.676,0.3823,1.819,-3.436,0.3823,1.78,-0.5229,0.3823,-2.548,-1.676,0.3823,-1.78,-0.5229,0.3823,-1.819,-3.436,0.3823,0,-3.436,0.3823,1.619,-3.302,1.21,2.212,-1.709,1.21,-2.212,-1.709,1.21,-1.619,-3.302,1.21,0,-3.302,1.21,1.393,-0.8117,1.248,-1.393,-0.8117,1.248,0,-0.573,1.515});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.8503f,-0.0167f,-1.492f,1.443f,-0.0167f,0.3823f,0f,-0.0167f,-1.492f,1.221f,0.6369f,0.3141f,0.7115f,0.6369f,-1.298f,0f,0.6369f,-1.298f,0f,0.6368f,1.305f,-1.443f,-0.0167f,0.3823f,-1.221f,0.6369f,0.3141f,-0.7115f,0.6369f,-1.298f,-0.8503f,-0.0167f,-1.492f,0f,-0.0167f,1.553f,1.476f,-0.2577f,1.268f,-1.476f,-0.2577f,1.268f,1.226f,-1.676f,-2.553f,1.226f,-3.436f,-1.492f,0f,-3.436f,-1.492f,0.965f,-0.5229f,-1.815f,0f,-0.5229f,-1.815f,-1.226f,-1.676f,-2.553f,0f,-1.676f,-2.553f,-0.965f,-0.5229f,-1.815f,-1.226f,-3.436f,-1.492f,2.548f,-1.676f,0.3823f,1.819f,-3.436f,0.3823f,1.78f,-0.5229f,0.3823f,-2.548f,-1.676f,0.3823f,-1.78f,-0.5229f,0.3823f,-1.819f,-3.436f,0.3823f,0f,-3.436f,0.3823f,1.619f,-3.302f,1.21f,2.212f,-1.709f,1.21f,-2.212f,-1.709f,1.21f,-1.619f,-3.302f,1.21f,0f,-3.302f,1.21f,1.393f,-0.8117f,1.248f,-1.393f,-0.8117f,1.248f,0f,-0.573f,1.515f});
   }
 }
 private class MFVec2f30 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4216f,0.1651f,0.4637f,0.1714f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4637f,0.1714f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.4394f,0.1472f,0.4637f,0.1714f,0.4394f,0.1472f,0.3873f,0.0706f,0.3871f,0.0221f,0.3873f,0.0706f,0.3871f,0.0221f,0.3871f,0.0221f,0.3861f,0.1398f,0.3836f,0.1404f,0.3873f,0.0706f,0.3873f,0.0706f,0.3836f,0.1404f,0.3861f,0.1398f,0.3871f,0.0221f,0.3871f,0.0221f,0.3871f,0.0221f,0.433f,0.0595f,0.4411f,0.0186f,0.4244f,0.1312f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4244f,0.1312f});
   }
 }
 private class MFFloat31 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat32 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3233 {
@@ -483,22 +483,22 @@ private class MFInt3234 {
 }
 private class MFVec3f35 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.548,-1.416,-0.8988,1.819,-3.176,-0.8988,0,0.2435,0.2718,1.78,-0.2627,-0.8989,1.476,0.0025,-0.0134,-2.548,-1.416,-0.8988,-1.78,-0.2627,-0.8989,-1.819,-3.176,-0.8988,-1.476,0.0025,-0.0134,0,-3.176,-0.8988,1.863,-3.176,0.8155,-1.863,-3.176,0.8155,0,-3.176,0.8155,2.094,-1.441,-1.699,1.524,-2.561,-1.699,0,-2.561,-1.699,-1.524,-2.561,-1.699,-2.094,-1.441,-1.699,-1.516,-0.4945,-1.699,1.516,-0.4945,-1.699,1.553,-0.5642,2.069,1.929,-1.973,3.676,1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,1.514,-0.2808,1.028,2.316,-1.625,0.8155,-1.929,-1.973,3.676,-1.553,-0.5642,2.069,0,-3.176,4.521,-1.929,-3.176,3.35,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2.548f,-1.416f,-0.8988f,1.819f,-3.176f,-0.8988f,0f,0.2435f,0.2718f,1.78f,-0.2627f,-0.8989f,1.476f,0.0025f,-0.0134f,-2.548f,-1.416f,-0.8988f,-1.78f,-0.2627f,-0.8989f,-1.819f,-3.176f,-0.8988f,-1.476f,0.0025f,-0.0134f,0f,-3.176f,-0.8988f,1.863f,-3.176f,0.8155f,-1.863f,-3.176f,0.8155f,0f,-3.176f,0.8155f,2.094f,-1.441f,-1.699f,1.524f,-2.561f,-1.699f,0f,-2.561f,-1.699f,-1.524f,-2.561f,-1.699f,-2.094f,-1.441f,-1.699f,-1.516f,-0.4945f,-1.699f,1.516f,-0.4945f,-1.699f,1.553f,-0.5642f,2.069f,1.929f,-1.973f,3.676f,1.929f,-3.176f,3.35f,0f,-1.973f,4.847f,0f,-0.4757f,3.505f,1.514f,-0.2808f,1.028f,2.316f,-1.625f,0.8155f,-1.929f,-1.973f,3.676f,-1.553f,-0.5642f,2.069f,0f,-3.176f,4.521f,-1.929f,-3.176f,3.35f,-1.514f,-0.2808f,1.028f,-2.316f,-1.625f,0.8155f,0f,-3.176f,3.35f,0f,-0.0239f,1.474f});
   }
 }
 private class MFVec2f36 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.433f,0.0595f,0.4411f,0.0186f,0.4637f,0.1714f,0.4411f,0.0186f,0.4244f,0.1312f,0.4394f,0.1472f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4637f,0.1714f,0.4394f,0.1472f,0.4411f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f,0.4868f,0.1432f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.532f,0.098f,0.5645f,0.0707f,0.4885f,0.102f,0.5026f,0.044f,0.5945f,0.0186f,0.5487f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4868f,0.1432f,0.5645f,0.0707f,0.5026f,0.044f,0.4885f,0.102f,0.532f,0.098f,0.5945f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.5487f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f});
   }
 }
 private class MFFloat37 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat38 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3239 {
@@ -513,22 +513,22 @@ private class MFInt3240 {
 }
 private class MFVec3f41 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.616,1.989,0,-1.452,1.989,2.836,1.163,1.989,3.536,2.975,1.989,1.574,2.975,1.989,-1.574,1.163,1.989,-3.536,-1.452,1.989,-2.836,-2.616,-1.325,0,-1.452,-1.325,2.836,1.163,-1.325,3.536,2.975,-1.325,1.574,2.975,-1.325,-1.574,1.163,-1.325,-3.536,-1.452,-1.325,-2.836,-2.616,-7.064,0,-1.452,-7.064,2.836,1.163,-7.064,3.536,2.975,-7.064,1.574,2.975,-7.064,-1.574,1.163,-7.064,-3.536,-1.452,-7.064,-2.836,-2.975,-11.91,0,-1.676,-11.91,3.165,1.243,-11.91,3.947,2.964,-11.91,1.756,2.964,-11.91,-1.756,1.243,-11.91,-3.947,-1.676,-11.91,-3.165,-1.812,3.747,0,-0.9506,3.747,2.098,0.9843,3.747,2.616,2.536,3.747,1.164,2.536,3.747,-1.164,0.9843,3.747,-2.616,-0.9506,3.747,-2.098,-0.9661,-14.81,2.027,-1.798,-14.81,0,0.9034,-14.81,2.528,2.006,-14.81,1.125,2.006,-14.81,-1.125,0.9034,-14.81,-2.528,-0.9661,-14.81,-2.027,0.2983,-16.16,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.616f,1.989f,0f,-1.452f,1.989f,2.836f,1.163f,1.989f,3.536f,2.975f,1.989f,1.574f,2.975f,1.989f,-1.574f,1.163f,1.989f,-3.536f,-1.452f,1.989f,-2.836f,-2.616f,-1.325f,0f,-1.452f,-1.325f,2.836f,1.163f,-1.325f,3.536f,2.975f,-1.325f,1.574f,2.975f,-1.325f,-1.574f,1.163f,-1.325f,-3.536f,-1.452f,-1.325f,-2.836f,-2.616f,-7.064f,0f,-1.452f,-7.064f,2.836f,1.163f,-7.064f,3.536f,2.975f,-7.064f,1.574f,2.975f,-7.064f,-1.574f,1.163f,-7.064f,-3.536f,-1.452f,-7.064f,-2.836f,-2.975f,-11.91f,0f,-1.676f,-11.91f,3.165f,1.243f,-11.91f,3.947f,2.964f,-11.91f,1.756f,2.964f,-11.91f,-1.756f,1.243f,-11.91f,-3.947f,-1.676f,-11.91f,-3.165f,-1.812f,3.747f,0f,-0.9506f,3.747f,2.098f,0.9843f,3.747f,2.616f,2.536f,3.747f,1.164f,2.536f,3.747f,-1.164f,0.9843f,3.747f,-2.616f,-0.9506f,3.747f,-2.098f,-0.9661f,-14.81f,2.027f,-1.798f,-14.81f,0f,0.9034f,-14.81f,2.528f,2.006f,-14.81f,1.125f,2.006f,-14.81f,-1.125f,0.9034f,-14.81f,-2.528f,-0.9661f,-14.81f,-2.027f,0.2983f,-16.16f,0f});
   }
 }
 private class MFVec2f42 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.7912,0.3382,0.7912,0.364,0.7912,0.2804,0.7912,0.234,0.7912,0.234,0.7912,0.2804,0.7912,0.3382,0.7762,0.388,0.748,0.3532,0.748,0.388,0.7762,0.3532,0.748,0.275,0.7762,0.275,0.748,0.2209,0.7762,0.2209,0.748,0.2209,0.7762,0.2209,0.748,0.275,0.7762,0.275,0.748,0.3532,0.7762,0.3532,0.6856,0.3532,0.6856,0.388,0.6856,0.275,0.6856,0.2209,0.6856,0.2209,0.6856,0.275,0.6856,0.3532,0.6315,0.3608,0.6315,0.3996,0.6315,0.2735,0.6315,0.222,0.6315,0.222,0.6315,0.2735,0.6315,0.3608,0.6248,0.3387,0.6248,0.3636,0.6248,0.2828,0.6248,0.2498,0.6248,0.2498,0.6248,0.2828,0.6248,0.3387,0.6133,0.3009});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.7912f,0.3382f,0.7912f,0.364f,0.7912f,0.2804f,0.7912f,0.234f,0.7912f,0.234f,0.7912f,0.2804f,0.7912f,0.3382f,0.7762f,0.388f,0.748f,0.3532f,0.748f,0.388f,0.7762f,0.3532f,0.748f,0.275f,0.7762f,0.275f,0.748f,0.2209f,0.7762f,0.2209f,0.748f,0.2209f,0.7762f,0.2209f,0.748f,0.275f,0.7762f,0.275f,0.748f,0.3532f,0.7762f,0.3532f,0.6856f,0.3532f,0.6856f,0.388f,0.6856f,0.275f,0.6856f,0.2209f,0.6856f,0.2209f,0.6856f,0.275f,0.6856f,0.3532f,0.6315f,0.3608f,0.6315f,0.3996f,0.6315f,0.2735f,0.6315f,0.222f,0.6315f,0.222f,0.6315f,0.2735f,0.6315f,0.3608f,0.6248f,0.3387f,0.6248f,0.3636f,0.6248f,0.2828f,0.6248f,0.2498f,0.6248f,0.2498f,0.6248f,0.2828f,0.6248f,0.3387f,0.6133f,0.3009f});
   }
 }
 private class MFFloat43 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat44 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3245 {
@@ -543,22 +543,22 @@ private class MFInt3246 {
 }
 private class MFVec3f47 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.616,-0.0823,0.0541,-1.452,-0.0823,2.89,1.163,-0.0823,3.59,2.975,-0.0823,1.628,2.975,-0.0823,-1.52,1.163,-0.0823,-3.482,-1.452,-0.0823,-2.782,-2.616,-3.395,0.0541,-1.452,-3.395,2.89,1.163,-3.395,3.59,2.975,-3.395,1.628,2.975,-3.395,-1.52,1.163,-3.395,-3.482,-1.452,-3.395,-2.782,-2.708,-6.91,0.0541,-1.545,-6.91,2.89,1.071,-6.91,3.59,2.882,-6.91,1.628,2.882,-6.91,-1.52,1.071,-6.91,-3.482,-1.545,-6.91,-2.782,-2.975,-11.77,0.0541,-1.676,-11.77,3.219,1.243,-11.77,4.001,2.964,-11.77,1.81,2.964,-11.77,-1.702,1.243,-11.77,-3.892,-1.676,-11.77,-3.111,-1.896,-7.789,0.0541,-1.003,-7.789,2.23,1.003,-7.789,2.767,2.326,-7.789,1.261,2.326,-7.789,-1.153,1.003,-7.789,-2.659,-1.003,-7.789,-2.122,-1.905,-9.68,0.0541,-1.082,-9.68,1.782,0.7654,-9.68,2.209,2.247,-9.68,1.013,2.247,-9.68,-0.9049,0.7654,-9.68,-2.101,-1.082,-9.68,-1.674,-1.812,1.676,0.0541,-0.9506,1.676,2.152,0.9843,1.676,2.67,2.536,1.676,1.218,2.536,1.676,-1.11,0.9843,1.676,-2.562,-0.9506,1.676,-2.044,-1.628,-12.93,0.0541,-0.9097,-12.93,1.709,0.7038,-12.93,2.082,1.998,-12.93,1.037,1.998,-12.93,-0.7834,0.7038,-12.93,-1.828,-0.9097,-12.93,-1.455,-0.5546,-13.79,0.0541,-0.2406,-13.79,0.8599,0.465,-13.79,1.023,1.031,-13.79,0.5662,1.031,-13.79,-0.3121,0.465,-13.79,-0.7688,-0.2406,-13.79,-0.6058});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.616f,-0.0823f,0.0541f,-1.452f,-0.0823f,2.89f,1.163f,-0.0823f,3.59f,2.975f,-0.0823f,1.628f,2.975f,-0.0823f,-1.52f,1.163f,-0.0823f,-3.482f,-1.452f,-0.0823f,-2.782f,-2.616f,-3.395f,0.0541f,-1.452f,-3.395f,2.89f,1.163f,-3.395f,3.59f,2.975f,-3.395f,1.628f,2.975f,-3.395f,-1.52f,1.163f,-3.395f,-3.482f,-1.452f,-3.395f,-2.782f,-2.708f,-6.91f,0.0541f,-1.545f,-6.91f,2.89f,1.071f,-6.91f,3.59f,2.882f,-6.91f,1.628f,2.882f,-6.91f,-1.52f,1.071f,-6.91f,-3.482f,-1.545f,-6.91f,-2.782f,-2.975f,-11.77f,0.0541f,-1.676f,-11.77f,3.219f,1.243f,-11.77f,4.001f,2.964f,-11.77f,1.81f,2.964f,-11.77f,-1.702f,1.243f,-11.77f,-3.892f,-1.676f,-11.77f,-3.111f,-1.896f,-7.789f,0.0541f,-1.003f,-7.789f,2.23f,1.003f,-7.789f,2.767f,2.326f,-7.789f,1.261f,2.326f,-7.789f,-1.153f,1.003f,-7.789f,-2.659f,-1.003f,-7.789f,-2.122f,-1.905f,-9.68f,0.0541f,-1.082f,-9.68f,1.782f,0.7654f,-9.68f,2.209f,2.247f,-9.68f,1.013f,2.247f,-9.68f,-0.9049f,0.7654f,-9.68f,-2.101f,-1.082f,-9.68f,-1.674f,-1.812f,1.676f,0.0541f,-0.9506f,1.676f,2.152f,0.9843f,1.676f,2.67f,2.536f,1.676f,1.218f,2.536f,1.676f,-1.11f,0.9843f,1.676f,-2.562f,-0.9506f,1.676f,-2.044f,-1.628f,-12.93f,0.0541f,-0.9097f,-12.93f,1.709f,0.7038f,-12.93f,2.082f,1.998f,-12.93f,1.037f,1.998f,-12.93f,-0.7834f,0.7038f,-12.93f,-1.828f,-0.9097f,-12.93f,-1.455f,-0.5546f,-13.79f,0.0541f,-0.2406f,-13.79f,0.8599f,0.465f,-13.79f,1.023f,1.031f,-13.79f,0.5662f,1.031f,-13.79f,-0.3121f,0.465f,-13.79f,-0.7688f,-0.2406f,-13.79f,-0.6058f});
   }
 }
 private class MFVec2f48 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.6566,0.2462,0.6181,0.2462,0.5796,0.2462,0.5411,0.2462,0.5026,0.2462,0.4641,0.2462,0.6951,0.2462,0.6566,0.2951,0.6181,0.2951,0.5796,0.2951,0.5411,0.2951,0.5026,0.2951,0.4641,0.2951,0.6951,0.2951,0.6566,0.3439,0.6181,0.3439,0.5796,0.3439,0.5411,0.3439,0.5026,0.3439,0.4641,0.3439,0.6951,0.3439,0.6566,0.3927,0.6181,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.6951,0.3927,0.4256,0.2462,0.4256,0.2951,0.4256,0.2462,0.4256,0.3439,0.4256,0.2951,0.4256,0.3927,0.4256,0.3439,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.2462,0.6181,0.2462,0.6951,0.2462,0.5796,0.2462,0.5411,0.2462,0.5026,0.2462,0.4641,0.2462,0.4256,0.2462,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927,0.6566,0.3927,0.6181,0.3927,0.6951,0.3927,0.5796,0.3927,0.5411,0.3927,0.5026,0.3927,0.4641,0.3927,0.4256,0.3927});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.6566f,0.2462f,0.6181f,0.2462f,0.5796f,0.2462f,0.5411f,0.2462f,0.5026f,0.2462f,0.4641f,0.2462f,0.6951f,0.2462f,0.6566f,0.2951f,0.6181f,0.2951f,0.5796f,0.2951f,0.5411f,0.2951f,0.5026f,0.2951f,0.4641f,0.2951f,0.6951f,0.2951f,0.6566f,0.3439f,0.6181f,0.3439f,0.5796f,0.3439f,0.5411f,0.3439f,0.5026f,0.3439f,0.4641f,0.3439f,0.6951f,0.3439f,0.6566f,0.3927f,0.6181f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.6951f,0.3927f,0.4256f,0.2462f,0.4256f,0.2951f,0.4256f,0.2462f,0.4256f,0.3439f,0.4256f,0.2951f,0.4256f,0.3927f,0.4256f,0.3439f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.2462f,0.6181f,0.2462f,0.6951f,0.2462f,0.5796f,0.2462f,0.5411f,0.2462f,0.5026f,0.2462f,0.4641f,0.2462f,0.4256f,0.2462f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f,0.6566f,0.3927f,0.6181f,0.3927f,0.6951f,0.3927f,0.5796f,0.3927f,0.5411f,0.3927f,0.5026f,0.3927f,0.4641f,0.3927f,0.4256f,0.3927f});
   }
 }
 private class MFFloat49 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat50 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3251 {
@@ -573,22 +573,22 @@ private class MFInt3252 {
 }
 private class MFVec3f53 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.8503,-0.0167,-1.492,-1.443,-0.0167,0.3823,0,-0.0167,-1.492,-1.221,0.6369,0.3141,-0.7115,0.6369,-1.298,0,0.6369,-1.298,0,0.6368,1.305,1.443,-0.0167,0.3823,1.221,0.6369,0.3141,0.7115,0.6369,-1.298,0.8503,-0.0167,-1.492,0,-0.0167,1.553,-1.476,-0.2577,1.268,1.476,-0.2577,1.268,-1.226,-1.676,-2.553,-1.226,-3.436,-1.492,0,-3.436,-1.492,-0.965,-0.5229,-1.815,0,-0.5229,-1.815,1.226,-1.676,-2.553,0,-1.676,-2.553,0.965,-0.5229,-1.815,1.226,-3.436,-1.492,-2.548,-1.676,0.3823,-1.819,-3.436,0.3823,-1.78,-0.5229,0.3823,2.548,-1.676,0.3823,1.78,-0.5229,0.3823,1.819,-3.436,0.3823,0,-3.436,0.3823,-1.619,-3.302,1.21,-2.212,-1.709,1.21,2.212,-1.709,1.21,1.619,-3.302,1.21,0,-3.302,1.21,-1.393,-0.8117,1.248,1.393,-0.8117,1.248,0,-0.573,1.515});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.8503f,-0.0167f,-1.492f,-1.443f,-0.0167f,0.3823f,0f,-0.0167f,-1.492f,-1.221f,0.6369f,0.3141f,-0.7115f,0.6369f,-1.298f,0f,0.6369f,-1.298f,0f,0.6368f,1.305f,1.443f,-0.0167f,0.3823f,1.221f,0.6369f,0.3141f,0.7115f,0.6369f,-1.298f,0.8503f,-0.0167f,-1.492f,0f,-0.0167f,1.553f,-1.476f,-0.2577f,1.268f,1.476f,-0.2577f,1.268f,-1.226f,-1.676f,-2.553f,-1.226f,-3.436f,-1.492f,0f,-3.436f,-1.492f,-0.965f,-0.5229f,-1.815f,0f,-0.5229f,-1.815f,1.226f,-1.676f,-2.553f,0f,-1.676f,-2.553f,0.965f,-0.5229f,-1.815f,1.226f,-3.436f,-1.492f,-2.548f,-1.676f,0.3823f,-1.819f,-3.436f,0.3823f,-1.78f,-0.5229f,0.3823f,2.548f,-1.676f,0.3823f,1.78f,-0.5229f,0.3823f,1.819f,-3.436f,0.3823f,0f,-3.436f,0.3823f,-1.619f,-3.302f,1.21f,-2.212f,-1.709f,1.21f,2.212f,-1.709f,1.21f,1.619f,-3.302f,1.21f,0f,-3.302f,1.21f,-1.393f,-0.8117f,1.248f,1.393f,-0.8117f,1.248f,0f,-0.573f,1.515f});
   }
 }
 private class MFVec2f54 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4244,0.1312});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4216f,0.1651f,0.4637f,0.1714f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4637f,0.1714f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.4394f,0.1472f,0.4637f,0.1714f,0.4394f,0.1472f,0.3873f,0.0706f,0.3871f,0.0221f,0.3873f,0.0706f,0.3871f,0.0221f,0.3871f,0.0221f,0.3861f,0.1398f,0.3836f,0.1404f,0.3873f,0.0706f,0.3873f,0.0706f,0.3836f,0.1404f,0.3861f,0.1398f,0.3871f,0.0221f,0.3871f,0.0221f,0.3871f,0.0221f,0.433f,0.0595f,0.4411f,0.0186f,0.4244f,0.1312f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4244f,0.1312f});
   }
 }
 private class MFFloat55 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat56 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3257 {
@@ -603,22 +603,22 @@ private class MFInt3258 {
 }
 private class MFVec3f59 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.548,-1.416,-0.8988,-1.819,-3.176,-0.8988,0,0.2435,0.2718,-1.78,-0.2627,-0.8989,-1.476,0.0025,-0.0134,2.548,-1.416,-0.8988,1.78,-0.2627,-0.8989,1.819,-3.176,-0.8988,1.476,0.0025,-0.0134,0,-3.176,-0.8988,-1.863,-3.176,0.8155,1.863,-3.176,0.8155,0,-3.176,0.8155,-2.094,-1.441,-1.699,-1.524,-2.561,-1.699,0,-2.561,-1.699,1.524,-2.561,-1.699,2.094,-1.441,-1.699,1.516,-0.4945,-1.699,-1.516,-0.4945,-1.699,-1.553,-0.5642,2.069,-1.929,-1.973,3.676,-1.929,-3.176,3.35,0,-1.973,4.847,0,-0.4757,3.505,-1.514,-0.2808,1.028,-2.316,-1.625,0.8155,1.929,-1.973,3.676,1.553,-0.5642,2.069,0,-3.176,4.521,1.929,-3.176,3.35,1.514,-0.2808,1.028,2.316,-1.625,0.8155,0,-3.176,3.35,0,-0.0239,1.474});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2.548f,-1.416f,-0.8988f,-1.819f,-3.176f,-0.8988f,0f,0.2435f,0.2718f,-1.78f,-0.2627f,-0.8989f,-1.476f,0.0025f,-0.0134f,2.548f,-1.416f,-0.8988f,1.78f,-0.2627f,-0.8989f,1.819f,-3.176f,-0.8988f,1.476f,0.0025f,-0.0134f,0f,-3.176f,-0.8988f,-1.863f,-3.176f,0.8155f,1.863f,-3.176f,0.8155f,0f,-3.176f,0.8155f,-2.094f,-1.441f,-1.699f,-1.524f,-2.561f,-1.699f,0f,-2.561f,-1.699f,1.524f,-2.561f,-1.699f,2.094f,-1.441f,-1.699f,1.516f,-0.4945f,-1.699f,-1.516f,-0.4945f,-1.699f,-1.553f,-0.5642f,2.069f,-1.929f,-1.973f,3.676f,-1.929f,-3.176f,3.35f,0f,-1.973f,4.847f,0f,-0.4757f,3.505f,-1.514f,-0.2808f,1.028f,-2.316f,-1.625f,0.8155f,1.929f,-1.973f,3.676f,1.553f,-0.5642f,2.069f,0f,-3.176f,4.521f,1.929f,-3.176f,3.35f,1.514f,-0.2808f,1.028f,2.316f,-1.625f,0.8155f,0f,-3.176f,3.35f,0f,-0.0239f,1.474f});
   }
 }
 private class MFVec2f60 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.433f,0.0595f,0.4411f,0.0186f,0.4637f,0.1714f,0.4411f,0.0186f,0.4244f,0.1312f,0.4394f,0.1472f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4637f,0.1714f,0.4394f,0.1472f,0.4411f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f,0.4868f,0.1432f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.532f,0.098f,0.5645f,0.0707f,0.4885f,0.102f,0.5026f,0.044f,0.5945f,0.0186f,0.5487f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4868f,0.1432f,0.5645f,0.0707f,0.5026f,0.044f,0.4885f,0.102f,0.532f,0.098f,0.5945f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.5487f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f});
   }
 }
 private class MFFloat61 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat62 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3263 {
@@ -633,22 +633,22 @@ private class MFInt3264 {
 }
 private class MFVec3f65 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,9.7,0.1258,0,9.049,-2.496,-2.017,9.049,-2.145,-3.494,9.049,-1.721,-4.034,9.049,0.1258,-3.494,9.049,1.973,-2.017,9.049,2.397,0,9.049,2.748,2.017,9.049,2.397,3.494,9.049,1.973,4.034,9.049,0.1258,3.494,9.049,-1.721,2.017,9.049,-2.145,0,7.271,-4.077,-2.609,7.271,-3.514,-4.519,7.271,-1.975,-5.218,7.271,0.1258,-4.519,7.271,2.227,-2.609,7.271,3.22,0,7.271,3.783,2.609,7.271,3.22,4.519,7.271,2.227,5.218,7.271,0.1258,4.519,7.271,-1.975,2.609,7.271,-3.514,0,4.843,-4.434,-3.012,4.843,-3.783,-5.218,4.843,-2.007,-6.025,4.843,0.1258,-5.218,4.843,2.552,-3.012,4.843,3.783,0,4.843,4.434,3.012,4.843,3.783,5.218,4.843,2.552,6.025,4.843,0.1258,5.218,4.843,-2.007,3.012,4.843,-3.783,0,2.414,-3.783,-2.609,2.414,-3.22,-4.519,2.414,-1.682,-5.218,2.414,0.1258,-4.519,2.414,2.227,-2.609,2.414,3.22,0,2.414,3.783,2.609,2.414,3.22,4.519,2.414,2.227,5.218,2.414,0.1258,4.519,2.414,-1.682,2.609,2.414,-3.22,0,0.6366,-2.007,-1.506,0.6366,-1.682,-2.609,0.6366,-1.087,-3.012,0.6366,0.1258,-2.609,0.6366,1.339,-1.506,0.6366,2.227,0,0.6366,2.552,1.506,0.6366,2.227,2.609,0.6366,1.339,3.012,0.6366,0.1258,2.609,0.6366,-1.087,1.506,0.6366,-1.682,0,-0.0142,0.1258});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,9.7f,0.1258f,0f,9.049f,-2.496f,-2.017f,9.049f,-2.145f,-3.494f,9.049f,-1.721f,-4.034f,9.049f,0.1258f,-3.494f,9.049f,1.973f,-2.017f,9.049f,2.397f,0f,9.049f,2.748f,2.017f,9.049f,2.397f,3.494f,9.049f,1.973f,4.034f,9.049f,0.1258f,3.494f,9.049f,-1.721f,2.017f,9.049f,-2.145f,0f,7.271f,-4.077f,-2.609f,7.271f,-3.514f,-4.519f,7.271f,-1.975f,-5.218f,7.271f,0.1258f,-4.519f,7.271f,2.227f,-2.609f,7.271f,3.22f,0f,7.271f,3.783f,2.609f,7.271f,3.22f,4.519f,7.271f,2.227f,5.218f,7.271f,0.1258f,4.519f,7.271f,-1.975f,2.609f,7.271f,-3.514f,0f,4.843f,-4.434f,-3.012f,4.843f,-3.783f,-5.218f,4.843f,-2.007f,-6.025f,4.843f,0.1258f,-5.218f,4.843f,2.552f,-3.012f,4.843f,3.783f,0f,4.843f,4.434f,3.012f,4.843f,3.783f,5.218f,4.843f,2.552f,6.025f,4.843f,0.1258f,5.218f,4.843f,-2.007f,3.012f,4.843f,-3.783f,0f,2.414f,-3.783f,-2.609f,2.414f,-3.22f,-4.519f,2.414f,-1.682f,-5.218f,2.414f,0.1258f,-4.519f,2.414f,2.227f,-2.609f,2.414f,3.22f,0f,2.414f,3.783f,2.609f,2.414f,3.22f,4.519f,2.414f,2.227f,5.218f,2.414f,0.1258f,4.519f,2.414f,-1.682f,2.609f,2.414f,-3.22f,0f,0.6366f,-2.007f,-1.506f,0.6366f,-1.682f,-2.609f,0.6366f,-1.087f,-3.012f,0.6366f,0.1258f,-2.609f,0.6366f,1.339f,-1.506f,0.6366f,2.227f,0f,0.6366f,2.552f,1.506f,0.6366f,2.227f,2.609f,0.6366f,1.339f,3.012f,0.6366f,0.1258f,2.609f,0.6366f,-1.087f,1.506f,0.6366f,-1.682f,0f,-0.0142f,0.1258f});
   }
 }
 private class MFVec2f66 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8893,0.532,0.8772,0.532,0.8772,0.4766,0.8772,0.4361,0.8772,0.4213,0.8772,0.4361,0.8772,0.4766,0.8772,0.532,0.8772,0.4766,0.8772,0.4361,0.8772,0.4212,0.8772,0.4361,0.8772,0.4766,0.8439,0.532,0.8439,0.4604,0.8439,0.408,0.8439,0.3888,0.8439,0.408,0.8439,0.4604,0.8439,0.532,0.8439,0.4604,0.8439,0.4079,0.8439,0.3887,0.8439,0.4079,0.8439,0.4604,0.7985,0.532,0.7985,0.4493,0.7985,0.3888,0.7985,0.3666,0.7985,0.3888,0.7985,0.4493,0.7985,0.532,0.7985,0.4493,0.7985,0.3887,0.7985,0.3666,0.7985,0.3887,0.7985,0.4493,0.753,0.532,0.753,0.4604,0.753,0.408,0.753,0.3888,0.753,0.408,0.753,0.4604,0.753,0.532,0.753,0.4604,0.753,0.4079,0.753,0.3887,0.753,0.4079,0.753,0.4604,0.7197,0.532,0.7197,0.4907,0.7197,0.4604,0.7197,0.4493,0.7197,0.4604,0.7197,0.4907,0.7197,0.532,0.7197,0.4906,0.7197,0.4604,0.7197,0.4493,0.7197,0.4604,0.7197,0.4906,0.7076,0.532});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8893f,0.532f,0.8772f,0.532f,0.8772f,0.4766f,0.8772f,0.4361f,0.8772f,0.4213f,0.8772f,0.4361f,0.8772f,0.4766f,0.8772f,0.532f,0.8772f,0.4766f,0.8772f,0.4361f,0.8772f,0.4212f,0.8772f,0.4361f,0.8772f,0.4766f,0.8439f,0.532f,0.8439f,0.4604f,0.8439f,0.408f,0.8439f,0.3888f,0.8439f,0.408f,0.8439f,0.4604f,0.8439f,0.532f,0.8439f,0.4604f,0.8439f,0.4079f,0.8439f,0.3887f,0.8439f,0.4079f,0.8439f,0.4604f,0.7985f,0.532f,0.7985f,0.4493f,0.7985f,0.3888f,0.7985f,0.3666f,0.7985f,0.3888f,0.7985f,0.4493f,0.7985f,0.532f,0.7985f,0.4493f,0.7985f,0.3887f,0.7985f,0.3666f,0.7985f,0.3887f,0.7985f,0.4493f,0.753f,0.532f,0.753f,0.4604f,0.753f,0.408f,0.753f,0.3888f,0.753f,0.408f,0.753f,0.4604f,0.753f,0.532f,0.753f,0.4604f,0.753f,0.4079f,0.753f,0.3887f,0.753f,0.4079f,0.753f,0.4604f,0.7197f,0.532f,0.7197f,0.4907f,0.7197f,0.4604f,0.7197f,0.4493f,0.7197f,0.4604f,0.7197f,0.4907f,0.7197f,0.532f,0.7197f,0.4906f,0.7197f,0.4604f,0.7197f,0.4493f,0.7197f,0.4604f,0.7197f,0.4906f,0.7076f,0.532f});
   }
 }
 private class MFFloat67 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat68 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3269 {
@@ -663,22 +663,22 @@ private class MFInt3270 {
 }
 private class MFVec3f71 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1.441,1.487,-1.484,2.463,1.495,0.0297,1.338,1.486,1.469,-0.378,1.472,0.8443,-0.3143,1.473,-0.981,1.653,0.3707,-2.041,3.063,0.3821,0.0504,1.51,0.3696,2.038,-0.8597,0.3505,1.175,-0.7717,0.3512,-1.345,1.671,-1.85,-2.041,3.081,-1.839,0.0504,1.528,-1.851,2.038,-0.8419,-1.87,1.175,-0.7538,-1.869,-1.345,1.721,-2.799,-2.158,3.213,-2.787,0.0547,1.57,-2.8,2.158,-0.9375,-2.821,1.245,-0.8444,-2.82,-1.422,1.239,-1.171,-1.713,2.317,-1.163,-0.4014,1.759,-1.167,1.439,0.3363,-1.179,1.265,0.015,-1.181,-0.6834,1.342,-6.302,-1.386,2.462,-6.293,-0.334,1.882,-6.297,1.142,0.4045,-6.309,1.002,0.0707,-6.312,-0.5601,1.406,-9.88,-1.335,2.484,-9.871,-0.3225,1.926,-9.875,1.099,0.5035,-9.887,0.9641,0.1822,-9.889,-0.5403,1.367,-10.37,-0.7939,1.998,-10.36,-0.2002,1.671,-10.37,0.6327,0.8373,-10.37,0.5538,0.649,-10.37,-0.3278});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1.441f,1.487f,-1.484f,2.463f,1.495f,0.0297f,1.338f,1.486f,1.469f,-0.378f,1.472f,0.8443f,-0.3143f,1.473f,-0.981f,1.653f,0.3707f,-2.041f,3.063f,0.3821f,0.0504f,1.51f,0.3696f,2.038f,-0.8597f,0.3505f,1.175f,-0.7717f,0.3512f,-1.345f,1.671f,-1.85f,-2.041f,3.081f,-1.839f,0.0504f,1.528f,-1.851f,2.038f,-0.8419f,-1.87f,1.175f,-0.7538f,-1.869f,-1.345f,1.721f,-2.799f,-2.158f,3.213f,-2.787f,0.0547f,1.57f,-2.8f,2.158f,-0.9375f,-2.821f,1.245f,-0.8444f,-2.82f,-1.422f,1.239f,-1.171f,-1.713f,2.317f,-1.163f,-0.4014f,1.759f,-1.167f,1.439f,0.3363f,-1.179f,1.265f,0.015f,-1.181f,-0.6834f,1.342f,-6.302f,-1.386f,2.462f,-6.293f,-0.334f,1.882f,-6.297f,1.142f,0.4045f,-6.309f,1.002f,0.0707f,-6.312f,-0.5601f,1.406f,-9.88f,-1.335f,2.484f,-9.871f,-0.3225f,1.926f,-9.875f,1.099f,0.5035f,-9.887f,0.9641f,0.1822f,-9.889f,-0.5403f,1.367f,-10.37f,-0.7939f,1.998f,-10.36f,-0.2002f,1.671f,-10.37f,0.6327f,0.8373f,-10.37f,0.5538f,0.649f,-10.37f,-0.3278f});
   }
 }
 private class MFVec2f72 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3097,0.4881,0.3096,0.5056,0.3098,0.4729,0.31,0.4583,0.3094,0.524,0.3306,0.4888,0.3305,0.5058,0.3308,0.4733,0.3309,0.4582,0.3303,0.5237,0.3722,0.4892,0.3721,0.5062,0.3724,0.4737,0.3725,0.4586,0.3719,0.524,0.39,0.4894,0.3898,0.5063,0.3901,0.4739,0.3903,0.4587,0.3897,0.5241,0.3594,0.4923,0.3593,0.5086,0.3596,0.4762,0.3597,0.4649,0.3591,0.5256,0.3093,0.5386,0.3302,0.5386,0.3302,0.5386,0.3718,0.5389,0.3718,0.5389,0.3896,0.5391,0.3896,0.5391,0.359,0.5453,0.2607,0.7074,0.2761,0.7074,0.2071,0.7074,0.2209,0.7074,0.2411,0.7074,0.258,0.6245,0.2744,0.6245,0.2753,0.6708,0.2589,0.6708,0.2097,0.6245,0.2079,0.6708,0.2216,0.6245,0.2226,0.6708,0.2423,0.6245,0.2411,0.6708,0.2754,0.703,0.2594,0.703,0.2076,0.703,0.2222,0.703,0.2413,0.703,0.1777,0.7074,0.1931,0.7074,0.1914,0.6245,0.1923,0.6708,0.1923,0.6708,0.1924,0.703,0.1924,0.703,0.1931,0.7074,0.31,0.4536});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3097f,0.4881f,0.3096f,0.5056f,0.3098f,0.4729f,0.31f,0.4583f,0.3094f,0.524f,0.3306f,0.4888f,0.3305f,0.5058f,0.3308f,0.4733f,0.3309f,0.4582f,0.3303f,0.5237f,0.3722f,0.4892f,0.3721f,0.5062f,0.3724f,0.4737f,0.3725f,0.4586f,0.3719f,0.524f,0.39f,0.4894f,0.3898f,0.5063f,0.3901f,0.4739f,0.3903f,0.4587f,0.3897f,0.5241f,0.3594f,0.4923f,0.3593f,0.5086f,0.3596f,0.4762f,0.3597f,0.4649f,0.3591f,0.5256f,0.3093f,0.5386f,0.3302f,0.5386f,0.3302f,0.5386f,0.3718f,0.5389f,0.3718f,0.5389f,0.3896f,0.5391f,0.3896f,0.5391f,0.359f,0.5453f,0.2607f,0.7074f,0.2761f,0.7074f,0.2071f,0.7074f,0.2209f,0.7074f,0.2411f,0.7074f,0.258f,0.6245f,0.2744f,0.6245f,0.2753f,0.6708f,0.2589f,0.6708f,0.2097f,0.6245f,0.2079f,0.6708f,0.2216f,0.6245f,0.2226f,0.6708f,0.2423f,0.6245f,0.2411f,0.6708f,0.2754f,0.703f,0.2594f,0.703f,0.2076f,0.703f,0.2222f,0.703f,0.2413f,0.703f,0.1777f,0.7074f,0.1931f,0.7074f,0.1914f,0.6245f,0.1923f,0.6708f,0.1923f,0.6708f,0.1924f,0.703f,0.1924f,0.703f,0.1931f,0.7074f,0.31f,0.4536f});
   }
 }
 private class MFFloat73 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat74 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3275 {
@@ -693,22 +693,22 @@ private class MFInt3276 {
 }
 private class MFVec3f77 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.133,0.4969,-1.018,0.9633,0.5042,-0.2287,0.4907,0.5001,0.9186,-0.6318,0.4904,0.8386,-0.8529,0.4884,-0.3582,0.0877,-0.5196,-1.436,1.261,-0.5094,-0.3773,0.5932,-0.515,1.436,-0.9931,-0.5288,1.309,-1.306,-0.5317,-0.5821,0.1173,-2.866,-1.42,1.37,-2.855,-0.3733,0.6813,-2.348,1.422,-1.012,-2.362,1.297,-1.37,-2.879,-0.576,0.1304,-7.472,-1.27,1.044,-7.464,-0.1131,0.524,-7.468,1.334,-0.7111,-7.479,1.217,-0.9544,-7.481,-0.3029,0.0956,-8.023,-0.7824,0.7196,-8.018,0.0074,0.3644,-8.021,0.9211,-0.4791,-8.028,0.841,-0.6452,-8.03,-0.1223});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.133f,0.4969f,-1.018f,0.9633f,0.5042f,-0.2287f,0.4907f,0.5001f,0.9186f,-0.6318f,0.4904f,0.8386f,-0.8529f,0.4884f,-0.3582f,0.0877f,-0.5196f,-1.436f,1.261f,-0.5094f,-0.3773f,0.5932f,-0.515f,1.436f,-0.9931f,-0.5288f,1.309f,-1.306f,-0.5317f,-0.5821f,0.1173f,-2.866f,-1.42f,1.37f,-2.855f,-0.3733f,0.6813f,-2.348f,1.422f,-1.012f,-2.362f,1.297f,-1.37f,-2.879f,-0.576f,0.1304f,-7.472f,-1.27f,1.044f,-7.464f,-0.1131f,0.524f,-7.468f,1.334f,-0.7111f,-7.479f,1.217f,-0.9544f,-7.481f,-0.3029f,0.0956f,-8.023f,-0.7824f,0.7196f,-8.018f,0.0074f,0.3644f,-8.021f,0.9211f,-0.4791f,-8.028f,0.841f,-0.6452f,-8.03f,-0.1223f});
   }
 }
 private class MFVec2f78 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2667,0.6308,0.2522,0.6308,0.2052,0.6308,0.22,0.6308,0.2355,0.6308,0.266,0.6397,0.2508,0.6397,0.2066,0.6397,0.2205,0.6397,0.2357,0.6397,0.2662,0.6601,0.251,0.6601,0.206,0.6557,0.2208,0.6557,0.2354,0.6601,0.2679,0.7003,0.2509,0.7003,0.2072,0.7003,0.2192,0.7003,0.2343,0.7003,0.2512,0.7051,0.2692,0.7051,0.2072,0.7051,0.219,0.7051,0.2329,0.7051,0.1923,0.6308,0.1778,0.6308,0.1923,0.6308,0.1916,0.6397,0.1916,0.6397,0.1918,0.6601,0.1918,0.6601,0.1935,0.7003,0.1768,0.7051,0.1948,0.7051,0.1935,0.7003,0.1948,0.7051});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2667f,0.6308f,0.2522f,0.6308f,0.2052f,0.6308f,0.22f,0.6308f,0.2355f,0.6308f,0.266f,0.6397f,0.2508f,0.6397f,0.2066f,0.6397f,0.2205f,0.6397f,0.2357f,0.6397f,0.2662f,0.6601f,0.251f,0.6601f,0.206f,0.6557f,0.2208f,0.6557f,0.2354f,0.6601f,0.2679f,0.7003f,0.2509f,0.7003f,0.2072f,0.7003f,0.2192f,0.7003f,0.2343f,0.7003f,0.2512f,0.7051f,0.2692f,0.7051f,0.2072f,0.7051f,0.219f,0.7051f,0.2329f,0.7051f,0.1923f,0.6308f,0.1778f,0.6308f,0.1923f,0.6308f,0.1916f,0.6397f,0.1916f,0.6397f,0.1918f,0.6601f,0.1918f,0.6601f,0.1935f,0.7003f,0.1768f,0.7051f,0.1948f,0.7051f,0.1935f,0.7003f,0.1948f,0.7051f});
   }
 }
 private class MFFloat79 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat80 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3281 {
@@ -723,22 +723,22 @@ private class MFInt3282 {
 }
 private class MFVec3f83 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1.076,0.3804,0.7047,1.042,0.395,-1.192,-0.6516,0.2878,0.7874,-0.6592,0.2892,-1.133,-0.8366,-0.2556,1.306,1.437,-0.0511,1.226,1.385,-0.0228,-1.757,-0.9384,-0.2412,-1.753,-0.7136,-1.939,2.128,1.733,-1.733,1.838,1.681,-1.704,-2.128,-1.039,-2.028,-1.986,-0.4691,-3.205,1.497,0.8189,-3.398,1.547,0.7668,-3.369,-1.83,-0.6579,-3.218,-1.709,-0.9322,-0.2429,-0.1654,-1.437,-1.988,1.715,-1.733,-0.5679,0.0513,-1.7,-0.6266,1.665,-1.443,-1.986,0.1217,-0.9271,-2.022,-0.178,1.042,0.395,-1.192,-0.6592,0.2892,-1.133,-0.6516,0.2878,0.7874,1.076,0.3804,0.7047,1.042,0.395,-1.192,-0.6516,0.2878,0.7874});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1.076f,0.3804f,0.7047f,1.042f,0.395f,-1.192f,-0.6516f,0.2878f,0.7874f,-0.6592f,0.2892f,-1.133f,-0.8366f,-0.2556f,1.306f,1.437f,-0.0511f,1.226f,1.385f,-0.0228f,-1.757f,-0.9384f,-0.2412f,-1.753f,-0.7136f,-1.939f,2.128f,1.733f,-1.733f,1.838f,1.681f,-1.704f,-2.128f,-1.039f,-2.028f,-1.986f,-0.4691f,-3.205f,1.497f,0.8189f,-3.398f,1.547f,0.7668f,-3.369f,-1.83f,-0.6579f,-3.218f,-1.709f,-0.9322f,-0.2429f,-0.1654f,-1.437f,-1.988f,1.715f,-1.733f,-0.5679f,0.0513f,-1.7f,-0.6266f,1.665f,-1.443f,-1.986f,0.1217f,-0.9271f,-2.022f,-0.178f,1.042f,0.395f,-1.192f,-0.6592f,0.2892f,-1.133f,-0.6516f,0.2878f,0.7874f,1.076f,0.3804f,0.7047f,1.042f,0.395f,-1.192f,-0.6516f,0.2878f,0.7874f});
   }
 }
 private class MFVec2f84 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8107f,0.9924f,0.8122f,0.9033f,0.7694f,0.9912f,0.7683f,0.9026f,0.1329f,0.0347f,0.0307f,0.0051f,0.0134f,0.0353f,0.1366f,0.0058f,0.1249f,0.1081f,0.0147f,0.117f,0.1349f,0.1856f,0.0462f,0.1842f,0.1559f,0.0454f,0.148f,0.1033f,0.3244f,0.0096f,0.1758f,0.0039f,0.1759f,0.011f,0.3241f,0.0033f,0.173f,0.1764f,0.3074f,0.1757f,0.1732f,0.1519f,0.3074f,0.1513f,0.1756f,0.032f,0.2159f,0.0368f,0.1791f,0.0165f,0.3169f,0.0458f,0.3158f,0.0193f,0.172f,0.0594f,0.2087f,0.0476f,0.1736f,0.0504f,0.2073f,0.064f,0.2362f,0.0821f,0.3267f,0.0796f,0.1717f,0.0822f,0.1726f,0.1297f,0.3077f,0.1289f,0.3074f,0.1865f,0.1742f,0.184f,0.0061f,0.1086f,0.1366f,0.0368f,0.1241f,0.1189f,0.0168f,0.0309f,0.0211f,0.1882f,0.14f,0.1857f});
   }
 }
 private class MFFloat85 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat86 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3287 {
@@ -753,22 +753,22 @@ private class MFInt3288 {
 }
 private class MFVec3f89 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1.441,1.487,-1.484,-2.463,1.495,0.0297,-1.338,1.486,1.469,0.378,1.472,0.8443,0.3143,1.473,-0.981,-1.653,0.3707,-2.041,-3.063,0.3821,0.0504,-1.51,0.3696,2.038,0.8597,0.3505,1.175,0.7717,0.3512,-1.345,-1.671,-1.85,-2.041,-3.081,-1.839,0.0504,-1.528,-1.851,2.038,0.8419,-1.87,1.175,0.7538,-1.869,-1.345,-1.721,-2.799,-2.158,-3.213,-2.787,0.0547,-1.57,-2.8,2.158,0.9375,-2.821,1.245,0.8444,-2.82,-1.422,-1.239,-1.171,-1.713,-2.317,-1.163,-0.4014,-1.759,-1.167,1.439,-0.3363,-1.179,1.265,-0.015,-1.181,-0.6834,-1.342,-6.302,-1.386,-2.462,-6.293,-0.334,-1.882,-6.297,1.142,-0.4045,-6.309,1.002,-0.0707,-6.312,-0.5601,-1.406,-9.88,-1.335,-2.484,-9.871,-0.3225,-1.926,-9.875,1.099,-0.5035,-9.887,0.9641,-0.1822,-9.889,-0.5403,-1.367,-10.37,-0.7939,-1.998,-10.36,-0.2002,-1.671,-10.37,0.6327,-0.8374,-10.37,0.5538,-0.649,-10.37,-0.3278});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1.441f,1.487f,-1.484f,-2.463f,1.495f,0.0297f,-1.338f,1.486f,1.469f,0.378f,1.472f,0.8443f,0.3143f,1.473f,-0.981f,-1.653f,0.3707f,-2.041f,-3.063f,0.3821f,0.0504f,-1.51f,0.3696f,2.038f,0.8597f,0.3505f,1.175f,0.7717f,0.3512f,-1.345f,-1.671f,-1.85f,-2.041f,-3.081f,-1.839f,0.0504f,-1.528f,-1.851f,2.038f,0.8419f,-1.87f,1.175f,0.7538f,-1.869f,-1.345f,-1.721f,-2.799f,-2.158f,-3.213f,-2.787f,0.0547f,-1.57f,-2.8f,2.158f,0.9375f,-2.821f,1.245f,0.8444f,-2.82f,-1.422f,-1.239f,-1.171f,-1.713f,-2.317f,-1.163f,-0.4014f,-1.759f,-1.167f,1.439f,-0.3363f,-1.179f,1.265f,-0.015f,-1.181f,-0.6834f,-1.342f,-6.302f,-1.386f,-2.462f,-6.293f,-0.334f,-1.882f,-6.297f,1.142f,-0.4045f,-6.309f,1.002f,-0.0707f,-6.312f,-0.5601f,-1.406f,-9.88f,-1.335f,-2.484f,-9.871f,-0.3225f,-1.926f,-9.875f,1.099f,-0.5035f,-9.887f,0.9641f,-0.1822f,-9.889f,-0.5403f,-1.367f,-10.37f,-0.7939f,-1.998f,-10.36f,-0.2002f,-1.671f,-10.37f,0.6327f,-0.8374f,-10.37f,0.5538f,-0.649f,-10.37f,-0.3278f});
   }
 }
 private class MFVec2f90 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3097,0.4881,0.3096,0.5056,0.3098,0.4729,0.31,0.4583,0.3094,0.524,0.3306,0.4888,0.3305,0.5058,0.3308,0.4733,0.3309,0.4582,0.3303,0.5237,0.3722,0.4892,0.3721,0.5062,0.3724,0.4737,0.3725,0.4586,0.3719,0.524,0.39,0.4894,0.3898,0.5063,0.3901,0.4739,0.3903,0.4587,0.3897,0.5241,0.3594,0.4923,0.3593,0.5086,0.3596,0.4762,0.3597,0.4649,0.3591,0.5256,0.3093,0.5386,0.3302,0.5386,0.3302,0.5386,0.3718,0.5389,0.3718,0.5389,0.3896,0.5391,0.3896,0.5391,0.359,0.5453,0.2607,0.7074,0.2761,0.7074,0.2071,0.7074,0.2209,0.7074,0.2411,0.7074,0.258,0.6245,0.2744,0.6245,0.2753,0.6708,0.2589,0.6708,0.2097,0.6245,0.2079,0.6708,0.2216,0.6245,0.2226,0.6708,0.2423,0.6245,0.2411,0.6708,0.2754,0.703,0.2594,0.703,0.2076,0.703,0.2222,0.703,0.2413,0.703,0.1777,0.7074,0.1931,0.7074,0.1914,0.6245,0.1923,0.6708,0.1923,0.6708,0.1924,0.703,0.1924,0.703,0.1931,0.7074,0.31,0.4536});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.3097f,0.4881f,0.3096f,0.5056f,0.3098f,0.4729f,0.31f,0.4583f,0.3094f,0.524f,0.3306f,0.4888f,0.3305f,0.5058f,0.3308f,0.4733f,0.3309f,0.4582f,0.3303f,0.5237f,0.3722f,0.4892f,0.3721f,0.5062f,0.3724f,0.4737f,0.3725f,0.4586f,0.3719f,0.524f,0.39f,0.4894f,0.3898f,0.5063f,0.3901f,0.4739f,0.3903f,0.4587f,0.3897f,0.5241f,0.3594f,0.4923f,0.3593f,0.5086f,0.3596f,0.4762f,0.3597f,0.4649f,0.3591f,0.5256f,0.3093f,0.5386f,0.3302f,0.5386f,0.3302f,0.5386f,0.3718f,0.5389f,0.3718f,0.5389f,0.3896f,0.5391f,0.3896f,0.5391f,0.359f,0.5453f,0.2607f,0.7074f,0.2761f,0.7074f,0.2071f,0.7074f,0.2209f,0.7074f,0.2411f,0.7074f,0.258f,0.6245f,0.2744f,0.6245f,0.2753f,0.6708f,0.2589f,0.6708f,0.2097f,0.6245f,0.2079f,0.6708f,0.2216f,0.6245f,0.2226f,0.6708f,0.2423f,0.6245f,0.2411f,0.6708f,0.2754f,0.703f,0.2594f,0.703f,0.2076f,0.703f,0.2222f,0.703f,0.2413f,0.703f,0.1777f,0.7074f,0.1931f,0.7074f,0.1914f,0.6245f,0.1923f,0.6708f,0.1923f,0.6708f,0.1924f,0.703f,0.1924f,0.703f,0.1931f,0.7074f,0.31f,0.4536f});
   }
 }
 private class MFFloat91 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat92 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3293 {
@@ -783,22 +783,22 @@ private class MFInt3294 {
 }
 private class MFVec3f95 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.133,0.4969,-1.018,-0.9633,0.5042,-0.2287,-0.4907,0.5001,0.9186,0.6318,0.4904,0.8386,0.8529,0.4884,-0.3582,-0.0877,-0.5196,-1.436,-1.261,-0.5094,-0.3773,-0.5932,-0.515,1.436,0.9931,-0.5288,1.309,1.306,-0.5317,-0.5821,-0.1173,-2.866,-1.42,-1.37,-2.855,-0.3733,-0.6813,-2.348,1.422,1.012,-2.362,1.297,1.37,-2.879,-0.576,-0.1304,-7.472,-1.27,-1.044,-7.464,-0.1131,-0.5241,-7.468,1.334,0.7111,-7.479,1.217,0.9544,-7.481,-0.3029,-0.0956,-8.023,-0.7824,-0.7196,-8.018,0.0074,-0.3644,-8.021,0.9211,0.4791,-8.028,0.841,0.6452,-8.03,-0.1223});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.133f,0.4969f,-1.018f,-0.9633f,0.5042f,-0.2287f,-0.4907f,0.5001f,0.9186f,0.6318f,0.4904f,0.8386f,0.8529f,0.4884f,-0.3582f,-0.0877f,-0.5196f,-1.436f,-1.261f,-0.5094f,-0.3773f,-0.5932f,-0.515f,1.436f,0.9931f,-0.5288f,1.309f,1.306f,-0.5317f,-0.5821f,-0.1173f,-2.866f,-1.42f,-1.37f,-2.855f,-0.3733f,-0.6813f,-2.348f,1.422f,1.012f,-2.362f,1.297f,1.37f,-2.879f,-0.576f,-0.1304f,-7.472f,-1.27f,-1.044f,-7.464f,-0.1131f,-0.5241f,-7.468f,1.334f,0.7111f,-7.479f,1.217f,0.9544f,-7.481f,-0.3029f,-0.0956f,-8.023f,-0.7824f,-0.7196f,-8.018f,0.0074f,-0.3644f,-8.021f,0.9211f,0.4791f,-8.028f,0.841f,0.6452f,-8.03f,-0.1223f});
   }
 }
 private class MFVec2f96 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2667,0.6308,0.2522,0.6308,0.2052,0.6308,0.22,0.6308,0.2355,0.6308,0.266,0.6397,0.2508,0.6397,0.2066,0.6397,0.2205,0.6397,0.2357,0.6397,0.2662,0.6601,0.251,0.6601,0.206,0.6557,0.2208,0.6557,0.2354,0.6601,0.2679,0.7003,0.2509,0.7003,0.2072,0.7003,0.2192,0.7003,0.2343,0.7003,0.2512,0.7051,0.2692,0.7051,0.2072,0.7051,0.219,0.7051,0.2329,0.7051,0.1923,0.6308,0.1778,0.6308,0.1923,0.6308,0.1916,0.6397,0.1916,0.6397,0.1918,0.6601,0.1918,0.6601,0.1935,0.7003,0.1768,0.7051,0.1948,0.7051,0.1935,0.7003,0.1948,0.7051});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2667f,0.6308f,0.2522f,0.6308f,0.2052f,0.6308f,0.22f,0.6308f,0.2355f,0.6308f,0.266f,0.6397f,0.2508f,0.6397f,0.2066f,0.6397f,0.2205f,0.6397f,0.2357f,0.6397f,0.2662f,0.6601f,0.251f,0.6601f,0.206f,0.6557f,0.2208f,0.6557f,0.2354f,0.6601f,0.2679f,0.7003f,0.2509f,0.7003f,0.2072f,0.7003f,0.2192f,0.7003f,0.2343f,0.7003f,0.2512f,0.7051f,0.2692f,0.7051f,0.2072f,0.7051f,0.219f,0.7051f,0.2329f,0.7051f,0.1923f,0.6308f,0.1778f,0.6308f,0.1923f,0.6308f,0.1916f,0.6397f,0.1916f,0.6397f,0.1918f,0.6601f,0.1918f,0.6601f,0.1935f,0.7003f,0.1768f,0.7051f,0.1948f,0.7051f,0.1935f,0.7003f,0.1948f,0.7051f});
   }
 }
 private class MFFloat97 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat98 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt3299 {
@@ -813,22 +813,22 @@ private class MFInt32100 {
 }
 private class MFVec3f101 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1.076,0.3804,0.7047,-1.042,0.395,-1.192,0.6516,0.2878,0.7874,0.6592,0.2892,-1.133,0.8366,-0.2556,1.306,-1.437,-0.0511,1.226,-1.385,-0.0228,-1.757,0.9384,-0.2412,-1.753,0.7136,-1.939,2.128,-1.733,-1.733,1.838,-1.681,-1.704,-2.128,1.039,-2.028,-1.986,0.4691,-3.205,1.497,-0.8189,-3.398,1.547,-0.7668,-3.369,-1.83,0.6579,-3.218,-1.709,0.9322,-0.2429,-0.1654,1.437,-1.988,1.715,1.733,-0.5679,0.0513,1.7,-0.6266,1.665,1.443,-1.986,0.1217,0.9271,-2.022,-0.178,-1.042,0.395,-1.192,0.6592,0.2892,-1.133,0.6516,0.2878,0.7874,-1.076,0.3804,0.7047,-1.042,0.395,-1.192,0.6516,0.2878,0.7874});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1.076f,0.3804f,0.7047f,-1.042f,0.395f,-1.192f,0.6516f,0.2878f,0.7874f,0.6592f,0.2892f,-1.133f,0.8366f,-0.2556f,1.306f,-1.437f,-0.0511f,1.226f,-1.385f,-0.0228f,-1.757f,0.9384f,-0.2412f,-1.753f,0.7136f,-1.939f,2.128f,-1.733f,-1.733f,1.838f,-1.681f,-1.704f,-2.128f,1.039f,-2.028f,-1.986f,0.4691f,-3.205f,1.497f,-0.8189f,-3.398f,1.547f,-0.7668f,-3.369f,-1.83f,0.6579f,-3.218f,-1.709f,0.9322f,-0.2429f,-0.1654f,1.437f,-1.988f,1.715f,1.733f,-0.5679f,0.0513f,1.7f,-0.6266f,1.665f,1.443f,-1.986f,0.1217f,0.9271f,-2.022f,-0.178f,-1.042f,0.395f,-1.192f,0.6592f,0.2892f,-1.133f,0.6516f,0.2878f,0.7874f,-1.076f,0.3804f,0.7047f,-1.042f,0.395f,-1.192f,0.6516f,0.2878f,0.7874f});
   }
 }
 private class MFVec2f102 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.8107f,0.9924f,0.8122f,0.9033f,0.7694f,0.9912f,0.7683f,0.9026f,0.1329f,0.0347f,0.0307f,0.0051f,0.0134f,0.0353f,0.1366f,0.0058f,0.1249f,0.1081f,0.0147f,0.117f,0.1349f,0.1856f,0.0462f,0.1842f,0.1559f,0.0454f,0.148f,0.1033f,0.3244f,0.0096f,0.1758f,0.0039f,0.1759f,0.011f,0.3241f,0.0033f,0.173f,0.1764f,0.3074f,0.1757f,0.1732f,0.1519f,0.3074f,0.1513f,0.1756f,0.032f,0.2159f,0.0368f,0.1791f,0.0165f,0.3169f,0.0458f,0.3158f,0.0193f,0.172f,0.0594f,0.2087f,0.0476f,0.1736f,0.0504f,0.2073f,0.064f,0.2362f,0.0821f,0.3267f,0.0796f,0.1717f,0.0822f,0.1726f,0.1297f,0.3077f,0.1289f,0.3074f,0.1865f,0.1742f,0.184f,0.0061f,0.1086f,0.1366f,0.0368f,0.1241f,0.1189f,0.0168f,0.0309f,0.0211f,0.1882f,0.14f,0.1857f});
   }
 }
 private class MFFloat103 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat104 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt32105 {
@@ -853,22 +853,22 @@ private class MFInt32108 {
 }
 private class MFVec3f109 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.6121,12.42,-1.302,-0.306,12.44,-1.342,1.298,12.61,-0.9894,1.781,12.59,0.0631,1.39,12.32,0.7954,2.575,12.19,0.1088,2.296,12.99,-1.428,2.816,11.43,1.178,1.978,11.24,2.044,0.8508,13.01,-2.971,0,12.99,-3.116,1.798,13.03,-2.673,2.93,10.3,2.438,4.494,11.02,1.591,2.634,12,1.741,1.984,11.24,3.19,2.767,10.58,3.261,3.906,11.73,1.675,4.949,11.55,-0.0209,4.834,10.96,-1.468,3.038,12.93,0.1389,3.493,12.17,-2.153,4.482,12.47,0.1389,4.113,11.34,-1.759,1.6,8.107,-2.333,0,7.839,-2.451,3.747,8.955,-1.991,0.9116,10.49,-4.097,0,10.5,-4.216,2.111,10.83,-3.644,1.482,7.538,-2.966,0,7.253,-3.071,3.64,8.877,-2.864,3.632,6.875,3.311,4.987,7.16,1.178,1.891,6.998,-2.272,3.799,7.09,-1.818,3.618,4.307,3.148,5.136,4.383,1.144,5.386,8.485,1.29,5.217,8.476,-0.4773,4.888,7.119,-0.8743,1.254,4.252,-2.726,3.163,4.3,-2.034,4.235,4.344,-0.4054,3.732,2.466,3.172,5.065,2.624,1.163,1.133,2.334,-2.855,3.748,2.51,-1.793,4.813,2.575,-0.4505,3.662,0.4951,3.308,5.323,0.5624,1.576,1.343,0.3925,-3.436,3.49,0.4011,-2.426,4.924,0.494,-0.8391,4.174,-0.4185,3.529,5.233,-0.3904,1.303,1.408,-0.524,-2.55,3.181,-0.5041,-1.817,4.511,-0.4626,-0.5779,6.538,11.31,-0.0209,6.166,10.58,-1.468,6.183,10.64,1.492,5.565,8.621,1.29,5.559,8.614,-0.4773,0,12.09,1.343,0,10.57,2.32,1.473,9.039,3.697,1.943,6.694,3.992,2.51,4.323,3.928,2.845,2.408,3.91,2.612,0.5037,4.216,2.623,-0.4527,4.138,1.082,10.57,2.32,0.6915,12.09,1.239,0,8.851,2.842,1.127,8.846,2.842,1.334,6.961,3.311,0,7.091,3.311,1.334,4.35,3.311,0,4.48,3.311,1.334,2.428,3.311,0,2.558,3.527,1.334,0.5456,3.311,0,0.6752,3.502,1.334,-0.5831,3.131,3.226,-0.6336,2.899,0,-0.4535,3.365,1.334,-1.253,1.537,3.662,-1.303,1.534,0,-1.123,1.537,4.773,-0.5,1.576,4.147,-1.179,1.158,4.125,-1.096,-0.4311,-1.298,12.61,-0.9894,-1.781,12.59,0.0631,-1.39,12.32,0.7954,-2.575,12.19,0.1088,-2.296,12.99,-1.428,-2.816,11.43,1.178,-1.978,11.24,2.044,-0.8508,13.01,-2.971,-1.798,13.03,-2.673,-2.93,10.3,2.438,-4.494,11.02,1.591,-2.634,12,1.741,-1.984,11.24,3.19,-2.767,10.58,3.261,-3.906,11.73,1.675,-4.949,11.55,-0.0209,-4.834,10.96,-1.468,-3.038,12.93,0.1389,-3.493,12.17,-2.153,-4.482,12.47,0.1389,-4.113,11.34,-1.759,-1.6,8.107,-2.333,-3.747,8.955,-1.991,-0.9116,10.49,-4.097,-2.111,10.83,-3.644,-1.482,7.538,-2.966,-3.64,8.877,-2.864,-3.632,6.875,3.311,-4.987,7.16,1.178,-1.891,6.998,-2.272,-3.799,7.09,-1.818,-3.618,4.307,3.148,-5.136,4.383,1.144,-5.386,8.485,1.29,-5.217,8.476,-0.4773,-4.888,7.119,-0.8743,-1.254,4.252,-2.726,-3.163,4.3,-2.034,-4.235,4.344,-0.4054,-3.732,2.466,3.172,-5.065,2.624,1.163,-1.133,2.334,-2.855,-3.748,2.51,-1.793,-4.813,2.575,-0.4505,-3.662,0.4951,3.308,-5.323,0.5624,1.576,-1.343,0.3925,-3.436,-3.49,0.4011,-2.426,-4.924,0.494,-0.8391,-4.174,-0.4185,3.529,-5.233,-0.3904,1.303,-1.408,-0.524,-2.55,-3.181,-0.5041,-1.817,-4.511,-0.4626,-0.5779,-6.538,11.31,-0.0209,-6.166,10.58,-1.468,-6.183,10.64,1.492,-5.565,8.621,1.29,-5.559,8.614,-0.4773,-1.473,9.039,3.697,-1.943,6.694,3.992,-2.51,4.323,3.928,-2.845,2.408,3.91,-2.612,0.5037,4.216,-2.623,-0.4527,4.138,-1.082,10.57,2.32,-0.6915,12.09,1.239,-1.127,8.846,2.842,-1.334,6.961,3.311,-1.334,4.35,3.311,-1.334,2.428,3.311,-1.334,0.5456,3.311,-1.334,-0.5831,3.131,-3.226,-0.6336,2.899,-1.334,-1.253,1.537,-3.662,-1.303,1.534,-4.773,-0.5,1.576,-4.147,-1.179,1.158,-4.125,-1.096,-0.4311,-0.0011,4.252,-2.726,-0.0007,6.998,-2.272,-0.0012,2.334,-2.855,-0.001,0.3925,-3.436,-0.001,-0.524,-2.55,3.632,6.875,3.311,2.93,10.3,2.438,3.618,4.307,3.148,3.632,6.875,3.311,3.732,2.466,3.172,3.618,4.307,3.148,3.662,0.4951,3.308,3.732,2.466,3.172,4.511,-0.4626,-0.5779,4.924,0.494,-0.8391,4.924,0.494,-0.8391,5.323,0.5624,1.576,5.323,0.5624,1.576,3.662,0.4951,3.308,-2.93,10.3,2.438,-3.632,6.875,3.311,-3.632,6.875,3.311,-3.618,4.307,3.148,-3.618,4.307,3.148,-3.732,2.466,3.172,-3.732,2.466,3.172,-3.662,0.4951,3.308,-4.924,0.494,-0.8391,-4.511,-0.4626,-0.5779,-5.323,0.5624,1.576,-4.924,0.494,-0.8391,-3.662,0.4951,3.308,-5.323,0.5624,1.576,2.93,10.3,2.438,3.632,6.875,3.311,3.618,4.307,3.148,3.732,2.466,3.172,3.662,0.4951,3.308,4.511,-0.4626,-0.5779,1.127,8.846,2.842,1.334,4.35,3.311,1.334,2.428,3.311,1.334,0.5456,3.311,4.773,-0.5,1.576,-2.93,10.3,2.438,-3.632,6.875,3.311,-3.618,4.307,3.148,-3.732,2.466,3.172,-3.662,0.4951,3.308,-4.511,-0.4626,-0.5779,-1.127,8.846,2.842,-1.334,4.35,3.311,-1.334,2.428,3.311,-1.334,0.5456,3.311,-4.773,-0.5,1.576,4.773,-0.5,1.576,-4.773,-0.5,1.576,4.773,-0.5,1.576,-4.773,-0.5,1.576,0.6121,15.55,-1.302,0,15.55,-1.383,1.298,15.55,-0.9895,1.781,15.55,0.0632,1.39,15.55,0.7954,0.6121,11.8,-1.302,0,11.87,-1.383,1.298,12.1,-0.9894,1.781,12.07,0.0631,1.39,11.65,0.7954,0.6897,15.7,1.236,0,15.06,1.343,0,11.27,1.343,0.6897,11.28,1.236,-0.6121,15.55,-1.302,-1.298,15.55,-0.9895,-1.781,15.55,0.0631,-1.39,15.55,0.7954,-0.6121,11.8,-1.302,-1.298,12.1,-0.9895,-1.781,12.07,0.0631,-1.39,11.65,0.7954,-0.6897,15.7,1.236,-0.6897,11.28,1.236});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.6121f,12.42f,-1.302f,-0.306f,12.44f,-1.342f,1.298f,12.61f,-0.9894f,1.781f,12.59f,0.0631f,1.39f,12.32f,0.7954f,2.575f,12.19f,0.1088f,2.296f,12.99f,-1.428f,2.816f,11.43f,1.178f,1.978f,11.24f,2.044f,0.8508f,13.01f,-2.971f,0f,12.99f,-3.116f,1.798f,13.03f,-2.673f,2.93f,10.3f,2.438f,4.494f,11.02f,1.591f,2.634f,12f,1.741f,1.984f,11.24f,3.19f,2.767f,10.58f,3.261f,3.906f,11.73f,1.675f,4.949f,11.55f,-0.0209f,4.834f,10.96f,-1.468f,3.038f,12.93f,0.1389f,3.493f,12.17f,-2.153f,4.482f,12.47f,0.1389f,4.113f,11.34f,-1.759f,1.6f,8.107f,-2.333f,0f,7.839f,-2.451f,3.747f,8.955f,-1.991f,0.9116f,10.49f,-4.097f,0f,10.5f,-4.216f,2.111f,10.83f,-3.644f,1.482f,7.538f,-2.966f,0f,7.253f,-3.071f,3.64f,8.877f,-2.864f,3.632f,6.875f,3.311f,4.987f,7.16f,1.178f,1.891f,6.998f,-2.272f,3.799f,7.09f,-1.818f,3.618f,4.307f,3.148f,5.136f,4.383f,1.144f,5.386f,8.485f,1.29f,5.217f,8.476f,-0.4773f,4.888f,7.119f,-0.8743f,1.254f,4.252f,-2.726f,3.163f,4.3f,-2.034f,4.235f,4.344f,-0.4054f,3.732f,2.466f,3.172f,5.065f,2.624f,1.163f,1.133f,2.334f,-2.855f,3.748f,2.51f,-1.793f,4.813f,2.575f,-0.4505f,3.662f,0.4951f,3.308f,5.323f,0.5624f,1.576f,1.343f,0.3925f,-3.436f,3.49f,0.4011f,-2.426f,4.924f,0.494f,-0.8391f,4.174f,-0.4185f,3.529f,5.233f,-0.3904f,1.303f,1.408f,-0.524f,-2.55f,3.181f,-0.5041f,-1.817f,4.511f,-0.4626f,-0.5779f,6.538f,11.31f,-0.0209f,6.166f,10.58f,-1.468f,6.183f,10.64f,1.492f,5.565f,8.621f,1.29f,5.559f,8.614f,-0.4773f,0f,12.09f,1.343f,0f,10.57f,2.32f,1.473f,9.039f,3.697f,1.943f,6.694f,3.992f,2.51f,4.323f,3.928f,2.845f,2.408f,3.91f,2.612f,0.5037f,4.216f,2.623f,-0.4527f,4.138f,1.082f,10.57f,2.32f,0.6915f,12.09f,1.239f,0f,8.851f,2.842f,1.127f,8.846f,2.842f,1.334f,6.961f,3.311f,0f,7.091f,3.311f,1.334f,4.35f,3.311f,0f,4.48f,3.311f,1.334f,2.428f,3.311f,0f,2.558f,3.527f,1.334f,0.5456f,3.311f,0f,0.6752f,3.502f,1.334f,-0.5831f,3.131f,3.226f,-0.6336f,2.899f,0f,-0.4535f,3.365f,1.334f,-1.253f,1.537f,3.662f,-1.303f,1.534f,0f,-1.123f,1.537f,4.773f,-0.5f,1.576f,4.147f,-1.179f,1.158f,4.125f,-1.096f,-0.4311f,-1.298f,12.61f,-0.9894f,-1.781f,12.59f,0.0631f,-1.39f,12.32f,0.7954f,-2.575f,12.19f,0.1088f,-2.296f,12.99f,-1.428f,-2.816f,11.43f,1.178f,-1.978f,11.24f,2.044f,-0.8508f,13.01f,-2.971f,-1.798f,13.03f,-2.673f,-2.93f,10.3f,2.438f,-4.494f,11.02f,1.591f,-2.634f,12f,1.741f,-1.984f,11.24f,3.19f,-2.767f,10.58f,3.261f,-3.906f,11.73f,1.675f,-4.949f,11.55f,-0.0209f,-4.834f,10.96f,-1.468f,-3.038f,12.93f,0.1389f,-3.493f,12.17f,-2.153f,-4.482f,12.47f,0.1389f,-4.113f,11.34f,-1.759f,-1.6f,8.107f,-2.333f,-3.747f,8.955f,-1.991f,-0.9116f,10.49f,-4.097f,-2.111f,10.83f,-3.644f,-1.482f,7.538f,-2.966f,-3.64f,8.877f,-2.864f,-3.632f,6.875f,3.311f,-4.987f,7.16f,1.178f,-1.891f,6.998f,-2.272f,-3.799f,7.09f,-1.818f,-3.618f,4.307f,3.148f,-5.136f,4.383f,1.144f,-5.386f,8.485f,1.29f,-5.217f,8.476f,-0.4773f,-4.888f,7.119f,-0.8743f,-1.254f,4.252f,-2.726f,-3.163f,4.3f,-2.034f,-4.235f,4.344f,-0.4054f,-3.732f,2.466f,3.172f,-5.065f,2.624f,1.163f,-1.133f,2.334f,-2.855f,-3.748f,2.51f,-1.793f,-4.813f,2.575f,-0.4505f,-3.662f,0.4951f,3.308f,-5.323f,0.5624f,1.576f,-1.343f,0.3925f,-3.436f,-3.49f,0.4011f,-2.426f,-4.924f,0.494f,-0.8391f,-4.174f,-0.4185f,3.529f,-5.233f,-0.3904f,1.303f,-1.408f,-0.524f,-2.55f,-3.181f,-0.5041f,-1.817f,-4.511f,-0.4626f,-0.5779f,-6.538f,11.31f,-0.0209f,-6.166f,10.58f,-1.468f,-6.183f,10.64f,1.492f,-5.565f,8.621f,1.29f,-5.559f,8.614f,-0.4773f,-1.473f,9.039f,3.697f,-1.943f,6.694f,3.992f,-2.51f,4.323f,3.928f,-2.845f,2.408f,3.91f,-2.612f,0.5037f,4.216f,-2.623f,-0.4527f,4.138f,-1.082f,10.57f,2.32f,-0.6915f,12.09f,1.239f,-1.127f,8.846f,2.842f,-1.334f,6.961f,3.311f,-1.334f,4.35f,3.311f,-1.334f,2.428f,3.311f,-1.334f,0.5456f,3.311f,-1.334f,-0.5831f,3.131f,-3.226f,-0.6336f,2.899f,-1.334f,-1.253f,1.537f,-3.662f,-1.303f,1.534f,-4.773f,-0.5f,1.576f,-4.147f,-1.179f,1.158f,-4.125f,-1.096f,-0.4311f,-0.0011f,4.252f,-2.726f,-0.0007f,6.998f,-2.272f,-0.0012f,2.334f,-2.855f,-0.001f,0.3925f,-3.436f,-0.001f,-0.524f,-2.55f,3.632f,6.875f,3.311f,2.93f,10.3f,2.438f,3.618f,4.307f,3.148f,3.632f,6.875f,3.311f,3.732f,2.466f,3.172f,3.618f,4.307f,3.148f,3.662f,0.4951f,3.308f,3.732f,2.466f,3.172f,4.511f,-0.4626f,-0.5779f,4.924f,0.494f,-0.8391f,4.924f,0.494f,-0.8391f,5.323f,0.5624f,1.576f,5.323f,0.5624f,1.576f,3.662f,0.4951f,3.308f,-2.93f,10.3f,2.438f,-3.632f,6.875f,3.311f,-3.632f,6.875f,3.311f,-3.618f,4.307f,3.148f,-3.618f,4.307f,3.148f,-3.732f,2.466f,3.172f,-3.732f,2.466f,3.172f,-3.662f,0.4951f,3.308f,-4.924f,0.494f,-0.8391f,-4.511f,-0.4626f,-0.5779f,-5.323f,0.5624f,1.576f,-4.924f,0.494f,-0.8391f,-3.662f,0.4951f,3.308f,-5.323f,0.5624f,1.576f,2.93f,10.3f,2.438f,3.632f,6.875f,3.311f,3.618f,4.307f,3.148f,3.732f,2.466f,3.172f,3.662f,0.4951f,3.308f,4.511f,-0.4626f,-0.5779f,1.127f,8.846f,2.842f,1.334f,4.35f,3.311f,1.334f,2.428f,3.311f,1.334f,0.5456f,3.311f,4.773f,-0.5f,1.576f,-2.93f,10.3f,2.438f,-3.632f,6.875f,3.311f,-3.618f,4.307f,3.148f,-3.732f,2.466f,3.172f,-3.662f,0.4951f,3.308f,-4.511f,-0.4626f,-0.5779f,-1.127f,8.846f,2.842f,-1.334f,4.35f,3.311f,-1.334f,2.428f,3.311f,-1.334f,0.5456f,3.311f,-4.773f,-0.5f,1.576f,4.773f,-0.5f,1.576f,-4.773f,-0.5f,1.576f,4.773f,-0.5f,1.576f,-4.773f,-0.5f,1.576f,0.6121f,15.55f,-1.302f,0f,15.55f,-1.383f,1.298f,15.55f,-0.9895f,1.781f,15.55f,0.0632f,1.39f,15.55f,0.7954f,0.6121f,11.8f,-1.302f,0f,11.87f,-1.383f,1.298f,12.1f,-0.9894f,1.781f,12.07f,0.0631f,1.39f,11.65f,0.7954f,0.6897f,15.7f,1.236f,0f,15.06f,1.343f,0f,11.27f,1.343f,0.6897f,11.28f,1.236f,-0.6121f,15.55f,-1.302f,-1.298f,15.55f,-0.9895f,-1.781f,15.55f,0.0631f,-1.39f,15.55f,0.7954f,-0.6121f,11.8f,-1.302f,-1.298f,12.1f,-0.9895f,-1.781f,12.07f,0.0631f,-1.39f,11.65f,0.7954f,-0.6897f,15.7f,1.236f,-0.6897f,11.28f,1.236f});
   }
 }
 private class MFVec2f110 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.0566,0.3896,0.0976,0.3718,0.2183,0.385,0.3504,0.3844,0.0529,0.3458,0.1128,0.344,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0518,0.2941,0.1116,0.2965,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.0501,0.2428,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0553,0.217,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.0976,0.3718,0.0976,0.3718,0.1445,0.2419,0.1927,0.24,0.0976,0.3718,0.0976,0.3718,0.1445,0.2419,0.1927,0.24,0.0976,0.3718,0.0976,0.3718,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.0566,0.3896,0.0976,0.3718,0.2183,0.385,0.3504,0.3844,0.0529,0.3458,0.1128,0.344,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0518,0.2941,0.1116,0.2965,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.0501,0.2428,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0553,0.217,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.0976,0.3718,0.0976,0.3718,0.1445,0.2419,0.1927,0.24,0.0976,0.3718,0.0976,0.3718,0.1445,0.2419,0.1927,0.24,0.0976,0.3718,0.0976,0.3718,0.3608,0.3469,0.3504,0.3844,0.3621,0.2922,0.3561,0.2404,0.3536,0.2151,0.9678,0.9614,0.9599,0.9831,0.9337,0.9943,0.9208,0.9868,0.9402,0.956,0.9178,0.9949,0.9107,0.9369,0.8978,0.9801,0.8751,0.9801,0.8751,0.9369,0.8751,0.8881,0.9122,0.888,0.9715,0.9294,0.919,0.8344,0.9947,0.8319,0.8751,0.8381,0.919,0.7602,0.9942,0.7589,0.8751,0.7639,0.919,0.7055,0.998,0.7066,0.8751,0.7092,0.919,0.652,0.9957,0.6506,0.8751,0.6557,0.919,0.6199,0.9813,0.6185,0.8751,0.6236,0.919,0.6009,0.9957,0.5995,0.8751,0.6046,0.7823,0.9614,0.8164,0.9943,0.7903,0.9831,0.8293,0.9868,0.8099,0.956,0.8323,0.9949,0.8394,0.9369,0.8523,0.9801,0.8379,0.888,0.7786,0.9294,0.7555,0.8319,0.8311,0.8344,0.8311,0.7602,0.7559,0.7589,0.8311,0.7055,0.7522,0.7066,0.8311,0.652,0.7545,0.6506,0.8311,0.6199,0.7688,0.6185,0.8311,0.6009,0.7545,0.5995,0.3511,0.5932,0.3511,0.5932,0.2453,0.6431,0.2344,0.6441,0.2344,0.6969,0.2453,0.6969,0.2575,0.6474,0.2575,0.6969,0.2661,0.6469,0.2661,0.6969,0.2592,0.6409,0.2592,0.6969,0.2344,0.6355,0.2467,0.6357,0.2467,0.699,0.2344,0.6898,0.2235,0.6431,0.2235,0.6969,0.2112,0.6474,0.2112,0.6969,0.2026,0.6469,0.2026,0.6969,0.2096,0.6409,0.2096,0.6969,0.2221,0.699,0.2221,0.6357});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.2661f,0.5914f,0.3505f,0.5919f,0.3554f,0.5911f,0.2505f,0.5754f,0.241f,0.592f,0.2112f,0.5805f,0.0763f,0.4945f,0.1025f,0.5076f,0.0865f,0.5614f,0.0652f,0.5465f,0.1412f,0.5207f,0.1108f,0.5655f,0.0786f,0.5849f,0.1073f,0.5839f,0.0877f,0.4617f,0.1185f,0.4741f,0.1474f,0.4856f,0.1724f,0.5255f,0.2089f,0.5196f,0.2133f,0.556f,0.1645f,0.5709f,0.2067f,0.5908f,0.1632f,0.5887f,0.1708f,0.4854f,0.1963f,0.4863f,0.2708f,0.4736f,0.347f,0.4316f,0.3616f,0.5328f,0.2733f,0.5359f,0.238f,0.493f,0.249f,0.5451f,0.2638f,0.4568f,0.3214f,0.4203f,0.2252f,0.4828f,0.0566f,0.3896f,0.0976f,0.3718f,0.2183f,0.385f,0.3504f,0.3844f,0.0529f,0.3458f,0.1128f,0.344f,0.1491f,0.3449f,0.1525f,0.3869f,0.1538f,0.4251f,0.1784f,0.4249f,0.1911f,0.3858f,0.2175f,0.3427f,0.3608f,0.3469f,0.1838f,0.3438f,0.0518f,0.2941f,0.1116f,0.2965f,0.1487f,0.2975f,0.2175f,0.2944f,0.3621f,0.2922f,0.1849f,0.2961f,0.0501f,0.2428f,0.1011f,0.241f,0.1445f,0.2419f,0.2369f,0.2375f,0.3561f,0.2404f,0.1927f,0.24f,0.0553f,0.217f,0.1067f,0.2154f,0.1463f,0.2162f,0.227f,0.2131f,0.3536f,0.2151f,0.1879f,0.2143f,0.1715f,0.4655f,0.1797f,0.4646f,0.1569f,0.4642f,0.1544f,0.4288f,0.1782f,0.4286f,0.3477f,0.431f,0.3623f,0.5333f,0.3623f,0.5333f,0.3505f,0.5919f,0.3223f,0.4192f,0.3477f,0.431f,0.0976f,0.3718f,0.0976f,0.3718f,0.1445f,0.2419f,0.1927f,0.24f,0.0976f,0.3718f,0.0976f,0.3718f,0.1445f,0.2419f,0.1927f,0.24f,0.0976f,0.3718f,0.0976f,0.3718f,0.2661f,0.5914f,0.3505f,0.5919f,0.3554f,0.5911f,0.2505f,0.5754f,0.241f,0.592f,0.2112f,0.5805f,0.0763f,0.4945f,0.1025f,0.5076f,0.0865f,0.5614f,0.0652f,0.5465f,0.1412f,0.5207f,0.1108f,0.5655f,0.0786f,0.5849f,0.1073f,0.5839f,0.0877f,0.4617f,0.1185f,0.4741f,0.1474f,0.4856f,0.1724f,0.5255f,0.2089f,0.5196f,0.2133f,0.556f,0.1645f,0.5709f,0.2067f,0.5908f,0.1632f,0.5887f,0.1708f,0.4854f,0.1963f,0.4863f,0.2708f,0.4736f,0.347f,0.4316f,0.3616f,0.5328f,0.2733f,0.5359f,0.238f,0.493f,0.249f,0.5451f,0.2638f,0.4568f,0.3214f,0.4203f,0.2252f,0.4828f,0.0566f,0.3896f,0.0976f,0.3718f,0.2183f,0.385f,0.3504f,0.3844f,0.0529f,0.3458f,0.1128f,0.344f,0.1491f,0.3449f,0.1525f,0.3869f,0.1538f,0.4251f,0.1784f,0.4249f,0.1911f,0.3858f,0.2175f,0.3427f,0.3608f,0.3469f,0.1838f,0.3438f,0.0518f,0.2941f,0.1116f,0.2965f,0.1487f,0.2975f,0.2175f,0.2944f,0.3621f,0.2922f,0.1849f,0.2961f,0.0501f,0.2428f,0.1011f,0.241f,0.1445f,0.2419f,0.2369f,0.2375f,0.3561f,0.2404f,0.1927f,0.24f,0.0553f,0.217f,0.1067f,0.2154f,0.1463f,0.2162f,0.227f,0.2131f,0.3536f,0.2151f,0.1879f,0.2143f,0.1715f,0.4655f,0.1797f,0.4646f,0.1569f,0.4642f,0.1544f,0.4288f,0.1782f,0.4286f,0.3477f,0.431f,0.3623f,0.5333f,0.3623f,0.5333f,0.3505f,0.5919f,0.3223f,0.4192f,0.3477f,0.431f,0.0976f,0.3718f,0.0976f,0.3718f,0.1445f,0.2419f,0.1927f,0.24f,0.0976f,0.3718f,0.0976f,0.3718f,0.1445f,0.2419f,0.1927f,0.24f,0.0976f,0.3718f,0.0976f,0.3718f,0.3608f,0.3469f,0.3504f,0.3844f,0.3621f,0.2922f,0.3561f,0.2404f,0.3536f,0.2151f,0.9678f,0.9614f,0.9599f,0.9831f,0.9337f,0.9943f,0.9208f,0.9868f,0.9402f,0.956f,0.9178f,0.9949f,0.9107f,0.9369f,0.8978f,0.9801f,0.8751f,0.9801f,0.8751f,0.9369f,0.8751f,0.8881f,0.9122f,0.888f,0.9715f,0.9294f,0.919f,0.8344f,0.9947f,0.8319f,0.8751f,0.8381f,0.919f,0.7602f,0.9942f,0.7589f,0.8751f,0.7639f,0.919f,0.7055f,0.998f,0.7066f,0.8751f,0.7092f,0.919f,0.652f,0.9957f,0.6506f,0.8751f,0.6557f,0.919f,0.6199f,0.9813f,0.6185f,0.8751f,0.6236f,0.919f,0.6009f,0.9957f,0.5995f,0.8751f,0.6046f,0.7823f,0.9614f,0.8164f,0.9943f,0.7903f,0.9831f,0.8293f,0.9868f,0.8099f,0.956f,0.8323f,0.9949f,0.8394f,0.9369f,0.8523f,0.9801f,0.8379f,0.888f,0.7786f,0.9294f,0.7555f,0.8319f,0.8311f,0.8344f,0.8311f,0.7602f,0.7559f,0.7589f,0.8311f,0.7055f,0.7522f,0.7066f,0.8311f,0.652f,0.7545f,0.6506f,0.8311f,0.6199f,0.7688f,0.6185f,0.8311f,0.6009f,0.7545f,0.5995f,0.3511f,0.5932f,0.3511f,0.5932f,0.2453f,0.6431f,0.2344f,0.6441f,0.2344f,0.6969f,0.2453f,0.6969f,0.2575f,0.6474f,0.2575f,0.6969f,0.2661f,0.6469f,0.2661f,0.6969f,0.2592f,0.6409f,0.2592f,0.6969f,0.2344f,0.6355f,0.2467f,0.6357f,0.2467f,0.699f,0.2344f,0.6898f,0.2235f,0.6431f,0.2235f,0.6969f,0.2112f,0.6474f,0.2112f,0.6969f,0.2026f,0.6469f,0.2026f,0.6969f,0.2096f,0.6409f,0.2096f,0.6969f,0.2221f,0.699f,0.2221f,0.6357f});
   }
 }
 private class MFFloat111 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat112 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFInt32113 {
@@ -903,17 +903,17 @@ private class MFInt32118 {
 }
 private class MFVec3f119 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0.8783,4.87,0,1.861,5.63,0,1.441,5.349,0,3.406,4.524,0,5.199,4.739,0,0.9739,5.064,0,2.58,4.856,0,2.211,5.292,0,0.4934,4.678,0,0.3902,4.306,0,0.8352,4.754,0,0.9007,4.555,0,-0.3768,3.705,0,-0.9384,3.319,0,-1.033,2.94,0,7.444,4.698,0,-0.8666,2.171,0,10.26,3.895,0,11.43,1.016,0,11.57,-3.24,0,1.168,-4.095,0,9.763,-5.461,0,-0.6657,1.243,0,0.1225,-1.991,0,-0.2918,-0.2247,4.339,9.081,-3.773,3.945,3.241,-3.318,1.995,1.287,-3.866,3.386,10.76,-2.843,4.399,1.696,-1.385,5.135,4.015,-1.676,3.93,1.384,-0.5102,5.012,5.02,-0.863,4.179,1.62,-1.577,4.917,4.074,-1.855,3.689,1.291,-0.4955,4.7,5.188,-0.911,3.751,1.809,0.7529,1.233,0.0355,-0.2831,1.256,0.3297,-1.757,3.766,1.592,-0.562,1.927,11.33,-3.108,4.541,9.332,-2.466,0.7067,11.67,0.9268,4.05,3.993,-1.319,1.616,-0.2444,3.292,0.7396,0.7015,4.358,0.7307,0.9735,4.618,2.134,11.37,0.7594,3.772,10.66,0.4192,4.581,9.369,-0.6614,4.316,8.634,1.467,4.707,7.768,-0.1583,3.633,9.55,2.656,1.848,10.1,3.552,4.587,4.881,-0.149,4.05,3.362,0.5064,2.763,0.5994,0.9473,1.415,-0.2675,1.138,2.49,3.399,3.625,3.601,2.623,3.149,1.532,4.49,4.051,1.502,2.716,3.857,1.091,3.336,3.968,4.014,3.683,2.653,4.028,4.155,1.569,3.921,2.599,2.598,3.779,3.553,3.132,4.223,5.917,1.542,3.974,2.959,1.578,3.724,1.692,1.643,3.359,0.8142,1.767,1.601,-0.3245,2.04,4.114,6.664,2.76,3.62,7.036,3.46,2.723,7.312,4.198,1.683,7.392,4.557,3.969,4.587,3.036,4.034,5.408,2.903,3.693,1.569,2.779,3.402,0.8195,2.722,1.687,-0.3262,2.823,3.485,4.565,3.466,3.572,5.843,3.535,3.572,5.223,3.556,1.042,1.903,4.858,0.9314,1.432,4.927,0.9418,0.9451,4.384,0.6963,0.8861,4.43,0.6638,0.9257,4.365,0.5502,-0.2755,3.699,0.7131,0.905,4.486,1.383,0.1309,3.646,0.3663,-0.8626,3.332,0.2731,0.9315,4.501,0.3499,0.8809,4.7,0.4401,0.4508,4.283,0.4464,0.5647,4.621,0.311,2.525,4.725,0.2368,2.079,5.244,3.219,0.9094,3.374,2.397,1.119,3.892,1.62,1.297,4.523,0.3865,1.035,4.944,2.411,2.381,3.523,3.662,2.337,3.281,3.476,1.596,3.477,2.523,2.207,3.795,2.513,1.691,4.071,2.7,6.076,4.217,2.665,5.493,4.127,2.554,4.827,3.836,0.456,3.389,4.414,1.234,2.402,4.284,1.46,5.789,4.643,0.8218,5.198,4.653,0.3528,1.577,5.273,0.3591,0.9104,4.775,3.073,9.605,-4.613,5.266,6.378,-1.609,1.812,9.558,-5.35,1.994,0.5092,3.665,2.644,0.2584,1.892,2.556,0.2974,3.27,2.695,0.2342,2.718,0,5.606,6.313,0,8.234,5.987,0,11.61,3.79,0,10.53,4.971,0,11.85,2.176,0,4.926,6.099,5.044,4.38,-0.2258,4.871,4.698,2.585,3.976,4.846,4.498,2.355,4.991,5.59,0.7709,11.88,1.826,3.984,10.78,0.7706,2.623,11.59,0.9046,2.099,11.66,3.042,3.181,10.64,4.067,5.224,5.37,2.621,4.17,5.521,4.626,2.469,5.669,5.78,2.456,8.276,5.491,4.027,8.2,4.441,5.098,8.218,2.779,5.257,8.219,0.1574,5.447,5.013,-0.1112,4.139,6.465,-4.729,3.113,6.989,-5.609,1.419,5.872,-6.307,0,6.077,-6.313,3.05,2.794,-4.769,1.818,2.754,-5.621,0,2.959,-5.732,-4.339,9.081,-3.773,-3.945,3.241,-3.318,-1.995,1.287,-3.866,-3.386,10.76,-2.843,-4.399,1.696,-1.385,-5.135,4.015,-1.676,-3.93,1.384,-0.5102,-5.012,5.02,-0.863,-4.179,1.62,-1.577,-4.917,4.074,-1.855,-3.689,1.291,-0.4955,-4.7,5.188,-0.911,-3.751,1.809,0.7529,-1.233,0.0355,-0.2831,-1.256,0.3297,-1.757,-3.766,1.592,-0.562,-1.927,11.33,-3.108,-4.541,9.332,-2.466,-0.7067,11.67,0.9268,-4.05,3.993,-1.319,-1.616,-0.2444,3.292,-0.7395,0.7015,4.358,-0.7307,0.9735,4.618,-2.134,11.37,0.7594,-3.772,10.66,0.4192,-4.581,9.369,-0.6614,-4.316,8.634,1.467,-4.707,7.768,-0.1583,-3.633,9.55,2.656,-1.848,10.1,3.552,-4.587,4.881,-0.149,-4.05,3.362,0.5064,-2.763,0.5994,0.9473,-1.415,-0.2675,1.138,-2.49,3.399,3.625,-3.601,2.623,3.149,-1.532,4.49,4.051,-1.502,2.716,3.857,-1.091,3.336,3.968,-4.014,3.683,2.653,-4.028,4.155,1.569,-3.921,2.599,2.598,-3.779,3.553,3.132,-4.223,5.917,1.542,-3.974,2.959,1.578,-3.724,1.692,1.643,-3.359,0.8142,1.767,-1.601,-0.3245,2.04,-4.114,6.664,2.76,-3.62,7.036,3.46,-2.723,7.312,4.198,-1.683,7.392,4.557,-3.969,4.587,3.036,-4.034,5.408,2.903,-3.693,1.569,2.779,-3.402,0.8195,2.722,-1.687,-0.3262,2.823,-3.485,4.565,3.466,-3.572,5.843,3.535,-3.572,5.223,3.556,-1.042,1.903,4.858,-0.9314,1.432,4.927,-0.9417,0.9451,4.384,-0.6963,0.8861,4.43,-0.6638,0.9257,4.365,-0.5502,-0.2755,3.699,-0.7131,0.905,4.486,-1.383,0.1309,3.646,-0.3663,-0.8626,3.332,-0.2731,0.9315,4.501,-0.3499,0.8809,4.7,-0.4401,0.4508,4.283,-0.4464,0.5647,4.621,-0.311,2.525,4.725,-0.2368,2.079,5.244,-3.219,0.9094,3.374,-2.397,1.119,3.892,-1.62,1.297,4.523,-0.3865,1.035,4.944,-2.411,2.381,3.523,-3.662,2.337,3.281,-3.476,1.596,3.477,-2.523,2.207,3.795,-2.513,1.691,4.071,-2.7,6.076,4.217,-2.665,5.493,4.127,-2.554,4.827,3.836,-0.456,3.389,4.414,-1.234,2.402,4.284,-1.46,5.789,4.643,-0.8218,5.198,4.653,-0.3528,1.577,5.273,-0.3591,0.9104,4.775,-3.073,9.605,-4.613,-5.266,6.378,-1.609,-1.812,9.558,-5.35,-1.994,0.5092,3.665,-2.644,0.2584,1.892,-2.556,0.2974,3.27,-2.695,0.2342,2.718,-5.044,4.38,-0.2258,-4.871,4.698,2.585,-3.976,4.846,4.498,-2.355,4.991,5.59,-0.7709,11.88,1.826,-3.984,10.78,0.7706,-2.623,11.59,0.9046,-2.099,11.66,3.042,-3.181,10.64,4.067,-5.224,5.37,2.621,-4.17,5.521,4.626,-2.469,5.669,5.78,-2.456,8.276,5.491,-4.027,8.2,4.441,-5.098,8.218,2.779,-5.257,8.219,0.1574,-5.447,5.013,-0.1112,-4.139,6.465,-4.729,-3.113,6.989,-5.609,-1.419,5.872,-6.307,-3.05,2.794,-4.769,-1.818,2.754,-5.621,0.7067,11.67,0.9268,0,11.43,1.016,2.134,11.37,0.7594});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.8783f,4.87f,0f,1.861f,5.63f,0f,1.441f,5.349f,0f,3.406f,4.524f,0f,5.199f,4.739f,0f,0.9739f,5.064f,0f,2.58f,4.856f,0f,2.211f,5.292f,0f,0.4934f,4.678f,0f,0.3902f,4.306f,0f,0.8352f,4.754f,0f,0.9007f,4.555f,0f,-0.3768f,3.705f,0f,-0.9384f,3.319f,0f,-1.033f,2.94f,0f,7.444f,4.698f,0f,-0.8666f,2.171f,0f,10.26f,3.895f,0f,11.43f,1.016f,0f,11.57f,-3.24f,0f,1.168f,-4.095f,0f,9.763f,-5.461f,0f,-0.6657f,1.243f,0f,0.1225f,-1.991f,0f,-0.2918f,-0.2247f,4.339f,9.081f,-3.773f,3.945f,3.241f,-3.318f,1.995f,1.287f,-3.866f,3.386f,10.76f,-2.843f,4.399f,1.696f,-1.385f,5.135f,4.015f,-1.676f,3.93f,1.384f,-0.5102f,5.012f,5.02f,-0.863f,4.179f,1.62f,-1.577f,4.917f,4.074f,-1.855f,3.689f,1.291f,-0.4955f,4.7f,5.188f,-0.911f,3.751f,1.809f,0.7529f,1.233f,0.0355f,-0.2831f,1.256f,0.3297f,-1.757f,3.766f,1.592f,-0.562f,1.927f,11.33f,-3.108f,4.541f,9.332f,-2.466f,0.7067f,11.67f,0.9268f,4.05f,3.993f,-1.319f,1.616f,-0.2444f,3.292f,0.7396f,0.7015f,4.358f,0.7307f,0.9735f,4.618f,2.134f,11.37f,0.7594f,3.772f,10.66f,0.4192f,4.581f,9.369f,-0.6614f,4.316f,8.634f,1.467f,4.707f,7.768f,-0.1583f,3.633f,9.55f,2.656f,1.848f,10.1f,3.552f,4.587f,4.881f,-0.149f,4.05f,3.362f,0.5064f,2.763f,0.5994f,0.9473f,1.415f,-0.2675f,1.138f,2.49f,3.399f,3.625f,3.601f,2.623f,3.149f,1.532f,4.49f,4.051f,1.502f,2.716f,3.857f,1.091f,3.336f,3.968f,4.014f,3.683f,2.653f,4.028f,4.155f,1.569f,3.921f,2.599f,2.598f,3.779f,3.553f,3.132f,4.223f,5.917f,1.542f,3.974f,2.959f,1.578f,3.724f,1.692f,1.643f,3.359f,0.8142f,1.767f,1.601f,-0.3245f,2.04f,4.114f,6.664f,2.76f,3.62f,7.036f,3.46f,2.723f,7.312f,4.198f,1.683f,7.392f,4.557f,3.969f,4.587f,3.036f,4.034f,5.408f,2.903f,3.693f,1.569f,2.779f,3.402f,0.8195f,2.722f,1.687f,-0.3262f,2.823f,3.485f,4.565f,3.466f,3.572f,5.843f,3.535f,3.572f,5.223f,3.556f,1.042f,1.903f,4.858f,0.9314f,1.432f,4.927f,0.9418f,0.9451f,4.384f,0.6963f,0.8861f,4.43f,0.6638f,0.9257f,4.365f,0.5502f,-0.2755f,3.699f,0.7131f,0.905f,4.486f,1.383f,0.1309f,3.646f,0.3663f,-0.8626f,3.332f,0.2731f,0.9315f,4.501f,0.3499f,0.8809f,4.7f,0.4401f,0.4508f,4.283f,0.4464f,0.5647f,4.621f,0.311f,2.525f,4.725f,0.2368f,2.079f,5.244f,3.219f,0.9094f,3.374f,2.397f,1.119f,3.892f,1.62f,1.297f,4.523f,0.3865f,1.035f,4.944f,2.411f,2.381f,3.523f,3.662f,2.337f,3.281f,3.476f,1.596f,3.477f,2.523f,2.207f,3.795f,2.513f,1.691f,4.071f,2.7f,6.076f,4.217f,2.665f,5.493f,4.127f,2.554f,4.827f,3.836f,0.456f,3.389f,4.414f,1.234f,2.402f,4.284f,1.46f,5.789f,4.643f,0.8218f,5.198f,4.653f,0.3528f,1.577f,5.273f,0.3591f,0.9104f,4.775f,3.073f,9.605f,-4.613f,5.266f,6.378f,-1.609f,1.812f,9.558f,-5.35f,1.994f,0.5092f,3.665f,2.644f,0.2584f,1.892f,2.556f,0.2974f,3.27f,2.695f,0.2342f,2.718f,0f,5.606f,6.313f,0f,8.234f,5.987f,0f,11.61f,3.79f,0f,10.53f,4.971f,0f,11.85f,2.176f,0f,4.926f,6.099f,5.044f,4.38f,-0.2258f,4.871f,4.698f,2.585f,3.976f,4.846f,4.498f,2.355f,4.991f,5.59f,0.7709f,11.88f,1.826f,3.984f,10.78f,0.7706f,2.623f,11.59f,0.9046f,2.099f,11.66f,3.042f,3.181f,10.64f,4.067f,5.224f,5.37f,2.621f,4.17f,5.521f,4.626f,2.469f,5.669f,5.78f,2.456f,8.276f,5.491f,4.027f,8.2f,4.441f,5.098f,8.218f,2.779f,5.257f,8.219f,0.1574f,5.447f,5.013f,-0.1112f,4.139f,6.465f,-4.729f,3.113f,6.989f,-5.609f,1.419f,5.872f,-6.307f,0f,6.077f,-6.313f,3.05f,2.794f,-4.769f,1.818f,2.754f,-5.621f,0f,2.959f,-5.732f,-4.339f,9.081f,-3.773f,-3.945f,3.241f,-3.318f,-1.995f,1.287f,-3.866f,-3.386f,10.76f,-2.843f,-4.399f,1.696f,-1.385f,-5.135f,4.015f,-1.676f,-3.93f,1.384f,-0.5102f,-5.012f,5.02f,-0.863f,-4.179f,1.62f,-1.577f,-4.917f,4.074f,-1.855f,-3.689f,1.291f,-0.4955f,-4.7f,5.188f,-0.911f,-3.751f,1.809f,0.7529f,-1.233f,0.0355f,-0.2831f,-1.256f,0.3297f,-1.757f,-3.766f,1.592f,-0.562f,-1.927f,11.33f,-3.108f,-4.541f,9.332f,-2.466f,-0.7067f,11.67f,0.9268f,-4.05f,3.993f,-1.319f,-1.616f,-0.2444f,3.292f,-0.7395f,0.7015f,4.358f,-0.7307f,0.9735f,4.618f,-2.134f,11.37f,0.7594f,-3.772f,10.66f,0.4192f,-4.581f,9.369f,-0.6614f,-4.316f,8.634f,1.467f,-4.707f,7.768f,-0.1583f,-3.633f,9.55f,2.656f,-1.848f,10.1f,3.552f,-4.587f,4.881f,-0.149f,-4.05f,3.362f,0.5064f,-2.763f,0.5994f,0.9473f,-1.415f,-0.2675f,1.138f,-2.49f,3.399f,3.625f,-3.601f,2.623f,3.149f,-1.532f,4.49f,4.051f,-1.502f,2.716f,3.857f,-1.091f,3.336f,3.968f,-4.014f,3.683f,2.653f,-4.028f,4.155f,1.569f,-3.921f,2.599f,2.598f,-3.779f,3.553f,3.132f,-4.223f,5.917f,1.542f,-3.974f,2.959f,1.578f,-3.724f,1.692f,1.643f,-3.359f,0.8142f,1.767f,-1.601f,-0.3245f,2.04f,-4.114f,6.664f,2.76f,-3.62f,7.036f,3.46f,-2.723f,7.312f,4.198f,-1.683f,7.392f,4.557f,-3.969f,4.587f,3.036f,-4.034f,5.408f,2.903f,-3.693f,1.569f,2.779f,-3.402f,0.8195f,2.722f,-1.687f,-0.3262f,2.823f,-3.485f,4.565f,3.466f,-3.572f,5.843f,3.535f,-3.572f,5.223f,3.556f,-1.042f,1.903f,4.858f,-0.9314f,1.432f,4.927f,-0.9417f,0.9451f,4.384f,-0.6963f,0.8861f,4.43f,-0.6638f,0.9257f,4.365f,-0.5502f,-0.2755f,3.699f,-0.7131f,0.905f,4.486f,-1.383f,0.1309f,3.646f,-0.3663f,-0.8626f,3.332f,-0.2731f,0.9315f,4.501f,-0.3499f,0.8809f,4.7f,-0.4401f,0.4508f,4.283f,-0.4464f,0.5647f,4.621f,-0.311f,2.525f,4.725f,-0.2368f,2.079f,5.244f,-3.219f,0.9094f,3.374f,-2.397f,1.119f,3.892f,-1.62f,1.297f,4.523f,-0.3865f,1.035f,4.944f,-2.411f,2.381f,3.523f,-3.662f,2.337f,3.281f,-3.476f,1.596f,3.477f,-2.523f,2.207f,3.795f,-2.513f,1.691f,4.071f,-2.7f,6.076f,4.217f,-2.665f,5.493f,4.127f,-2.554f,4.827f,3.836f,-0.456f,3.389f,4.414f,-1.234f,2.402f,4.284f,-1.46f,5.789f,4.643f,-0.8218f,5.198f,4.653f,-0.3528f,1.577f,5.273f,-0.3591f,0.9104f,4.775f,-3.073f,9.605f,-4.613f,-5.266f,6.378f,-1.609f,-1.812f,9.558f,-5.35f,-1.994f,0.5092f,3.665f,-2.644f,0.2584f,1.892f,-2.556f,0.2974f,3.27f,-2.695f,0.2342f,2.718f,-5.044f,4.38f,-0.2258f,-4.871f,4.698f,2.585f,-3.976f,4.846f,4.498f,-2.355f,4.991f,5.59f,-0.7709f,11.88f,1.826f,-3.984f,10.78f,0.7706f,-2.623f,11.59f,0.9046f,-2.099f,11.66f,3.042f,-3.181f,10.64f,4.067f,-5.224f,5.37f,2.621f,-4.17f,5.521f,4.626f,-2.469f,5.669f,5.78f,-2.456f,8.276f,5.491f,-4.027f,8.2f,4.441f,-5.098f,8.218f,2.779f,-5.257f,8.219f,0.1574f,-5.447f,5.013f,-0.1112f,-4.139f,6.465f,-4.729f,-3.113f,6.989f,-5.609f,-1.419f,5.872f,-6.307f,-3.05f,2.794f,-4.769f,-1.818f,2.754f,-5.621f,0.7067f,11.67f,0.9268f,0f,11.43f,1.016f,2.134f,11.37f,0.7594f});
   }
 }
 private class MFVec3f120 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.7067,11.67,0.9268,3.772,10.66,0.4192,2.134,11.37,0.7594,4.587,4.881,-0.149,4.707,7.768,-0.1583,0,11.43,1.016,-0.7067,11.67,0.9268,-0.7067,11.67,0.9268,-2.134,11.37,0.7594,-2.134,11.37,0.7594,-3.772,10.66,0.4192,-4.707,7.768,-0.1583,-4.587,4.881,-0.149,0,11.43,1.016,0.7067,11.67,0.9268,4.587,4.881,-0.149,0.7709,11.88,1.826,2.623,11.59,0.9046,5.447,5.013,-0.1112,-0.7067,11.67,0.9268,-4.587,4.881,-0.149,-0.7709,11.88,1.826,-2.623,11.59,0.9046,-5.447,5.013,-0.1112,2.623,11.59,0.9046,-2.623,11.59,0.9046});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.7067f,11.67f,0.9268f,3.772f,10.66f,0.4192f,2.134f,11.37f,0.7594f,4.587f,4.881f,-0.149f,4.707f,7.768f,-0.1583f,0f,11.43f,1.016f,-0.7067f,11.67f,0.9268f,-0.7067f,11.67f,0.9268f,-2.134f,11.37f,0.7594f,-2.134f,11.37f,0.7594f,-3.772f,10.66f,0.4192f,-4.707f,7.768f,-0.1583f,-4.587f,4.881f,-0.149f,0f,11.43f,1.016f,0.7067f,11.67f,0.9268f,4.587f,4.881f,-0.149f,0.7709f,11.88f,1.826f,2.623f,11.59f,0.9046f,5.447f,5.013f,-0.1112f,-0.7067f,11.67f,0.9268f,-4.587f,4.881f,-0.149f,-0.7709f,11.88f,1.826f,-2.623f,11.59f,0.9046f,-5.447f,5.013f,-0.1112f,2.623f,11.59f,0.9046f,-2.623f,11.59f,0.9046f});
   }
 }
 private class MFVec2f121 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.0573,0.6967,0.0565,0.6829,0.0109,0.668,0.0107,0.6873,0.0634,0.6688,0.011,0.6506,0.1803,0.9015,0.1606,0.8328,0.2007,0.8632,0.196,0.9081,0.1497,0.7628,0.1564,0.7441,0.1737,0.7586,0.1475,0.7399,0.1655,0.7552,0.1926,0.8659,0.1844,0.9156,0.1503,0.7535,0.1604,0.8619,0.1133,0.7081,0.0314,0.6673,0.0247,0.641,0.0709,0.669,0.0622,0.6857,0.0111,0.6334,0.0735,0.6655,0.011,0.6412,0.0703,0.6659,0.0275,0.7047,0.0273,0.6997,0.0383,0.711,0.0239,0.7189,0.0367,0.7193,0.0458,0.722,0.0242,0.7202,0.0373,0.7201,0.038,0.7232,0.0252,0.7258,0.0454,0.7437,0.0709,0.7379,0.0239,0.75,0.1597,0.8681,0.1579,0.8143,0.1488,0.7571,0.1354,0.7175,0.156,0.7976,0.1593,0.8464,0.1506,0.8404,0.1575,0.887,0.1028,0.833,0.1441,0.7985,0.1396,0.8857,0.105,0.8972,0.1001,0.7872,0.0663,0.802,0.0672,0.8818,0.051,0.8298,0.1598,0.924,0.1667,0.9474,0.1637,0.9518,0.1477,0.7512,0.137,0.7174,0.1454,0.9682,0.1427,0.9433,0.1121,0.9802,0.1103,0.9533,0.0735,0.9835,0.0644,0.94,0.0103,0.9132,0.0408,0.9133,0.0111,0.9855,0.1464,0.7855,0.1428,0.9153,0.1397,0.7521,0.1302,0.7212,0.1091,0.9271,0.0564,0.7877,0.0494,0.765,0.104,0.756,0.1043,0.7793,0.0195,0.7726,0.0355,0.7211,0.021,0.7213,0.0111,0.6375,0.011,0.6969,0.011,0.6626,0.0109,0.7198,0.0109,0.7168,0.0109,0.7187,0.011,0.7014,0.0108,0.7626,0.0107,0.7785,0.0105,0.8326,0.0107,0.7953,0.0222,0.7929,0.0275,0.8319,0.0997,0.7303,0.0108,0.7438,0.0109,0.7229,0.1089,0.6924,0.1057,0.6936,0.0848,0.7029,0.1109,0.691,0.0573,0.697,0.0564,0.6832,0.063,0.669,0.1814,0.9007,0.2017,0.8622,0.1613,0.8322,0.1972,0.9071,0.1566,0.7436,0.15,0.7622,0.1741,0.7579,0.1476,0.7394,0.1659,0.7545,0.1936,0.8649,0.1857,0.9148,0.1505,0.753,0.1614,0.8613,0.1131,0.7079,0.0308,0.6678,0.0704,0.6692,0.0239,0.6416,0.0618,0.686,0.073,0.6657,0.0699,0.6661,0.0271,0.7053,0.038,0.7115,0.0268,0.7003,0.0235,0.7195,0.0364,0.7198,0.0455,0.7224,0.0239,0.7208,0.0377,0.7237,0.037,0.7206,0.0249,0.7263,0.0452,0.7441,0.0707,0.7381,0.0237,0.7506,0.1605,0.8675,0.1583,0.8136,0.1489,0.7566,0.1353,0.7171,0.1563,0.797,0.1511,0.8398,0.1599,0.8458,0.1583,0.8864,0.1444,0.798,0.1033,0.8329,0.1404,0.8853,0.1058,0.8971,0.1002,0.7872,0.0665,0.8022,0.0679,0.882,0.0514,0.8302,0.1609,0.9234,0.168,0.9467,0.1651,0.9511,0.1477,0.7507,0.1368,0.717,0.1438,0.9428,0.1468,0.9677,0.1114,0.9531,0.1136,0.98,0.0654,0.9402,0.075,0.9836,0.0416,0.9138,0.1466,0.785,0.1437,0.9149,0.1396,0.7517,0.13,0.7208,0.1101,0.9269,0.0566,0.788,0.1039,0.7559,0.0493,0.7654,0.1043,0.7792,0.0195,0.7733,0.0352,0.7216,0.0207,0.7219,0.0223,0.7935,0.0278,0.8325,0.0995,0.7302,0.1086,0.6922,0.1053,0.6934,0.0845,0.7029,0.1105,0.6908,0.5672,0.9106,0.5766,0.9675,0.5296,0.9775,0.5063,0.9145,0.5063,0.9684,0.6305,0.9446,0.6259,0.8955,0.6485,0.869,0.6418,0.7943,0.6455,0.7739,0.6614,0.8463,0.6575,0.7455,0.596,0.8103,0.6256,0.8041,0.5618,0.8114,0.5064,0.8126,0.6858,0.7499,0.6725,0.7284,0.6668,0.7266,0.6784,0.7499,0.6437,0.7459,0.6373,0.7229,0.5876,0.7457,0.5839,0.7229,0.5064,0.7411,0.5064,0.7183,0.5063,0.978,0.5317,0.9805,0.5927,0.9748,0.6375,0.9469,0.6795,0.8606,0.6742,0.8485,0.5063,0.9189,0.5063,0.8342,0.5872,0.838,0.6389,0.8402,0.611,0.9271,0.5754,0.9674,0.5063,0.962,0.4455,0.9105,0.4831,0.9774,0.4361,0.9675,0.3822,0.9445,0.3643,0.8689,0.3867,0.8954,0.371,0.7942,0.3674,0.7737,0.3514,0.8461,0.3555,0.7453,0.4167,0.8102,0.3872,0.804,0.4509,0.8114,0.3404,0.7282,0.3272,0.7498,0.3461,0.7264,0.3344,0.7497,0.3691,0.7458,0.3755,0.7228,0.4251,0.7456,0.4288,0.7229,0.4809,0.9805,0.42,0.9748,0.3752,0.9468,0.3334,0.8604,0.3385,0.8483,0.4255,0.8379,0.4016,0.927,0.3738,0.8401,0.4372,0.9673,0.5685,0.6871,0.5861,0.6783,0.5473,0.6455,0.5496,0.6512,0.3982,0.6623,0.3199,0.6645,0.3521,0.7176,0.5721,0.7229,0.6023,0.7197,0.3139,0.7387,0.3101,0.7743,0.3506,0.7743,0.5844,0.7546,0.5777,0.714,0.6092,0.7745,0.5621,0.6675,0.5363,0.6444,0.5775,0.7746,0.4666,0.6249,0.4923,0.6408,0.4189,0.6442,0.5781,0.7743,0.3814,0.6498,0.4894,0.6568,0.5086,0.6859,0.4848,0.7339,0.49,0.7742,0.3964,0.6876,0.401,0.7226,0.407,0.7742,0.5684,0.687,0.5473,0.6452,0.5861,0.678,0.5496,0.651,0.3981,0.6622,0.3521,0.7177,0.3199,0.6642,0.5721,0.7228,0.6023,0.7194,0.3139,0.7386,0.5844,0.7539,0.5777,0.7134,0.5621,0.6669,0.5363,0.644,0.4666,0.6246,0.4189,0.6438,0.4923,0.6404,0.3814,0.6496,0.4894,0.6567,0.5085,0.6859,0.4848,0.7341,0.3964,0.6877,0.401,0.7227});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.0573f,0.6967f,0.0565f,0.6829f,0.0109f,0.668f,0.0107f,0.6873f,0.0634f,0.6688f,0.011f,0.6506f,0.1803f,0.9015f,0.1606f,0.8328f,0.2007f,0.8632f,0.196f,0.9081f,0.1497f,0.7628f,0.1564f,0.7441f,0.1737f,0.7586f,0.1475f,0.7399f,0.1655f,0.7552f,0.1926f,0.8659f,0.1844f,0.9156f,0.1503f,0.7535f,0.1604f,0.8619f,0.1133f,0.7081f,0.0314f,0.6673f,0.0247f,0.641f,0.0709f,0.669f,0.0622f,0.6857f,0.0111f,0.6334f,0.0735f,0.6655f,0.011f,0.6412f,0.0703f,0.6659f,0.0275f,0.7047f,0.0273f,0.6997f,0.0383f,0.711f,0.0239f,0.7189f,0.0367f,0.7193f,0.0458f,0.722f,0.0242f,0.7202f,0.0373f,0.7201f,0.038f,0.7232f,0.0252f,0.7258f,0.0454f,0.7437f,0.0709f,0.7379f,0.0239f,0.75f,0.1597f,0.8681f,0.1579f,0.8143f,0.1488f,0.7571f,0.1354f,0.7175f,0.156f,0.7976f,0.1593f,0.8464f,0.1506f,0.8404f,0.1575f,0.887f,0.1028f,0.833f,0.1441f,0.7985f,0.1396f,0.8857f,0.105f,0.8972f,0.1001f,0.7872f,0.0663f,0.802f,0.0672f,0.8818f,0.051f,0.8298f,0.1598f,0.924f,0.1667f,0.9474f,0.1637f,0.9518f,0.1477f,0.7512f,0.137f,0.7174f,0.1454f,0.9682f,0.1427f,0.9433f,0.1121f,0.9802f,0.1103f,0.9533f,0.0735f,0.9835f,0.0644f,0.94f,0.0103f,0.9132f,0.0408f,0.9133f,0.0111f,0.9855f,0.1464f,0.7855f,0.1428f,0.9153f,0.1397f,0.7521f,0.1302f,0.7212f,0.1091f,0.9271f,0.0564f,0.7877f,0.0494f,0.765f,0.104f,0.756f,0.1043f,0.7793f,0.0195f,0.7726f,0.0355f,0.7211f,0.021f,0.7213f,0.0111f,0.6375f,0.011f,0.6969f,0.011f,0.6626f,0.0109f,0.7198f,0.0109f,0.7168f,0.0109f,0.7187f,0.011f,0.7014f,0.0108f,0.7626f,0.0107f,0.7785f,0.0105f,0.8326f,0.0107f,0.7953f,0.0222f,0.7929f,0.0275f,0.8319f,0.0997f,0.7303f,0.0108f,0.7438f,0.0109f,0.7229f,0.1089f,0.6924f,0.1057f,0.6936f,0.0848f,0.7029f,0.1109f,0.691f,0.0573f,0.697f,0.0564f,0.6832f,0.063f,0.669f,0.1814f,0.9007f,0.2017f,0.8622f,0.1613f,0.8322f,0.1972f,0.9071f,0.1566f,0.7436f,0.15f,0.7622f,0.1741f,0.7579f,0.1476f,0.7394f,0.1659f,0.7545f,0.1936f,0.8649f,0.1857f,0.9148f,0.1505f,0.753f,0.1614f,0.8613f,0.1131f,0.7079f,0.0308f,0.6678f,0.0704f,0.6692f,0.0239f,0.6416f,0.0618f,0.686f,0.073f,0.6657f,0.0699f,0.6661f,0.0271f,0.7053f,0.038f,0.7115f,0.0268f,0.7003f,0.0235f,0.7195f,0.0364f,0.7198f,0.0455f,0.7224f,0.0239f,0.7208f,0.0377f,0.7237f,0.037f,0.7206f,0.0249f,0.7263f,0.0452f,0.7441f,0.0707f,0.7381f,0.0237f,0.7506f,0.1605f,0.8675f,0.1583f,0.8136f,0.1489f,0.7566f,0.1353f,0.7171f,0.1563f,0.797f,0.1511f,0.8398f,0.1599f,0.8458f,0.1583f,0.8864f,0.1444f,0.798f,0.1033f,0.8329f,0.1404f,0.8853f,0.1058f,0.8971f,0.1002f,0.7872f,0.0665f,0.8022f,0.0679f,0.882f,0.0514f,0.8302f,0.1609f,0.9234f,0.168f,0.9467f,0.1651f,0.9511f,0.1477f,0.7507f,0.1368f,0.717f,0.1438f,0.9428f,0.1468f,0.9677f,0.1114f,0.9531f,0.1136f,0.98f,0.0654f,0.9402f,0.075f,0.9836f,0.0416f,0.9138f,0.1466f,0.785f,0.1437f,0.9149f,0.1396f,0.7517f,0.13f,0.7208f,0.1101f,0.9269f,0.0566f,0.788f,0.1039f,0.7559f,0.0493f,0.7654f,0.1043f,0.7792f,0.0195f,0.7733f,0.0352f,0.7216f,0.0207f,0.7219f,0.0223f,0.7935f,0.0278f,0.8325f,0.0995f,0.7302f,0.1086f,0.6922f,0.1053f,0.6934f,0.0845f,0.7029f,0.1105f,0.6908f,0.5672f,0.9106f,0.5766f,0.9675f,0.5296f,0.9775f,0.5063f,0.9145f,0.5063f,0.9684f,0.6305f,0.9446f,0.6259f,0.8955f,0.6485f,0.869f,0.6418f,0.7943f,0.6455f,0.7739f,0.6614f,0.8463f,0.6575f,0.7455f,0.596f,0.8103f,0.6256f,0.8041f,0.5618f,0.8114f,0.5064f,0.8126f,0.6858f,0.7499f,0.6725f,0.7284f,0.6668f,0.7266f,0.6784f,0.7499f,0.6437f,0.7459f,0.6373f,0.7229f,0.5876f,0.7457f,0.5839f,0.7229f,0.5064f,0.7411f,0.5064f,0.7183f,0.5063f,0.978f,0.5317f,0.9805f,0.5927f,0.9748f,0.6375f,0.9469f,0.6795f,0.8606f,0.6742f,0.8485f,0.5063f,0.9189f,0.5063f,0.8342f,0.5872f,0.838f,0.6389f,0.8402f,0.611f,0.9271f,0.5754f,0.9674f,0.5063f,0.962f,0.4455f,0.9105f,0.4831f,0.9774f,0.4361f,0.9675f,0.3822f,0.9445f,0.3643f,0.8689f,0.3867f,0.8954f,0.371f,0.7942f,0.3674f,0.7737f,0.3514f,0.8461f,0.3555f,0.7453f,0.4167f,0.8102f,0.3872f,0.804f,0.4509f,0.8114f,0.3404f,0.7282f,0.3272f,0.7498f,0.3461f,0.7264f,0.3344f,0.7497f,0.3691f,0.7458f,0.3755f,0.7228f,0.4251f,0.7456f,0.4288f,0.7229f,0.4809f,0.9805f,0.42f,0.9748f,0.3752f,0.9468f,0.3334f,0.8604f,0.3385f,0.8483f,0.4255f,0.8379f,0.4016f,0.927f,0.3738f,0.8401f,0.4372f,0.9673f,0.5685f,0.6871f,0.5861f,0.6783f,0.5473f,0.6455f,0.5496f,0.6512f,0.3982f,0.6623f,0.3199f,0.6645f,0.3521f,0.7176f,0.5721f,0.7229f,0.6023f,0.7197f,0.3139f,0.7387f,0.3101f,0.7743f,0.3506f,0.7743f,0.5844f,0.7546f,0.5777f,0.714f,0.6092f,0.7745f,0.5621f,0.6675f,0.5363f,0.6444f,0.5775f,0.7746f,0.4666f,0.6249f,0.4923f,0.6408f,0.4189f,0.6442f,0.5781f,0.7743f,0.3814f,0.6498f,0.4894f,0.6568f,0.5086f,0.6859f,0.4848f,0.7339f,0.49f,0.7742f,0.3964f,0.6876f,0.401f,0.7226f,0.407f,0.7742f,0.5684f,0.687f,0.5473f,0.6452f,0.5861f,0.678f,0.5496f,0.651f,0.3981f,0.6622f,0.3521f,0.7177f,0.3199f,0.6642f,0.5721f,0.7228f,0.6023f,0.7194f,0.3139f,0.7386f,0.5844f,0.7539f,0.5777f,0.7134f,0.5621f,0.6669f,0.5363f,0.644f,0.4666f,0.6246f,0.4189f,0.6438f,0.4923f,0.6404f,0.3814f,0.6496f,0.4894f,0.6567f,0.5085f,0.6859f,0.4848f,0.7341f,0.3964f,0.6877f,0.401f,0.7227f});
   }
 }
 }

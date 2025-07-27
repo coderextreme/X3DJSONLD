@@ -43,7 +43,7 @@ public class DesignPatternsApparelMedicalSkinLayers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new DesignPatternsApparelMedicalSkinLayers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -78,7 +78,7 @@ public class DesignPatternsApparelMedicalSkinLayers implements X3DRoots {
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Group().setDEF("MultipleHumanoids")
           .setMetadata(new MetadataString().setName("HAnimArchitecture").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile").setValue(new MFString1().getArray()))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SimpleSkeleton").setDEF("a_SimpleSkeleton").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("a_SimpleSkeleton").setName("humanoid_root").setUlimit(new MFFloat2().getArray()).setLlimit(new MFFloat3().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")
@@ -86,72 +86,72 @@ public class DesignPatternsApparelMedicalSkinLayers implements X3DRoots {
                 .addChild(new Shape().setDEF("SegmentVisualization"))
                 .addChild(new HAnimSite().setName("feature01_tip").setDEF("a_feature01_tip")
                   .addChild(new Shape().setDEF("SiteVisualization"))))))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SimpleSkeletonMesh").setDEF("b_SimpleSkeletonMesh").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("b_SimpleSkeletonMesh").setName("humanoid_root").setUlimit(new MFFloat4().getArray()).setLlimit(new MFFloat5().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")
                 .addChild(new Shape()
                   .setGeometry(new IndexedFaceSet().setDEF("SegmentBoneMesh"))))))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SkinIndexedGeometry").setDEF("c_SkinIndexedGeometry").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("c_SkinIndexedGeometry").setName("humanoid_root").setUlimit(new MFFloat6().getArray()).setLlimit(new MFFloat7().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
             .addSkin(((IndexedFaceSet)new IndexedFaceSet().setDEF("SkinMeshIFS").setContainerFieldOverride("skin"))))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SkinShapeIndexedGeometry").setDEF("d_SkinShapeIndexedGeometry").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("d_SkinShapeIndexedGeometry").setName("humanoid_root").setUlimit(new MFFloat8().getArray()).setLlimit(new MFFloat9().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
             .addSkin(((Shape)new Shape().setContainerFieldOverride("skin"))
               .setGeometry(new IndexedFaceSet().setUSE("SkinMeshIFS"))))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SkinSwitchShapeIndexedGeometry").setDEF("e_SkinSwitchShapeIndexedGeometry").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("e_SkinSwitchShapeIndexedGeometry").setName("humanoid_root").setUlimit(new MFFloat10().getArray()).setLlimit(new MFFloat11().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
-            .addComments("TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>")
+            .addComments(new CommentsBlock("TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>"))
             .addSkin(((Shape)new Shape().setContainerFieldOverride("skin"))
               .setGeometry(new IndexedFaceSet().setDEF("IndexedSkinMeshIFS")
                 .setCoord(new Coordinate().setDEF("SkinMeshCoordinate")))))
-          .addComments("similarly for LOD")
-          .addComments("==============================")
+          .addComments(new CommentsBlock("similarly for LOD"))
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("SynthesizedSkinShapeIndexedTwoPartGeometry").setDEF("f_SynthesizedSkinShapeIndexedTwoPartGeometry").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("f_SynthesizedSkinShapeIndexedTwoPartGeometry").setName("humanoid_root").setUlimit(new MFFloat12().getArray()).setLlimit(new MFFloat13().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
             .addSkin(((Shape)new Shape().setContainerFieldOverride("skin"))
               .setGeometry(new IndexedFaceSet().setDEF("TwoPartIndexedSkinMesh")
                 .setCoord(new Coordinate().setDEF("TwoPartSkinMesh")))))
-          .addComments("==============================")
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("ApparelSkinIndexedGeometryMultipleShapes").setDEF("g_ApparelSkinIndexedGeometryMultipleShapes").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("g_ApparelSkinIndexedGeometryMultipleShapes").setName("humanoid_root").setUlimit(new MFFloat14().getArray()).setLlimit(new MFFloat15().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
             .addSkin(((Shape)new Shape().setContainerFieldOverride("skin")))
-            .addComments("allow multiple Shape nodes with containerField='apparel', one for each layer of clothing")
-            .addComments("TODO proposed for X3D4.1 <Shape containerField='apparel'/>"))
-          .addComments("==============================")
+            .addComments(new CommentsBlock("allow multiple Shape nodes with containerField='apparel', one for each layer of clothing"))
+            .addComments(new CommentsBlock("TODO proposed for X3D4.1 <Shape containerField='apparel'/>")))
+          .addComments(new CommentsBlock("=============================="))
           .addChild(new HAnimHumanoid("MultipleHumanoids").setName("AnatomySkinIndexedGeometryMultipleShapes").setDEF("h_AnatomySkinIndexedGeometryMultipleShapes").setVersion("2.0")
             .addSkeleton(((HAnimJoint)new HAnimJoint("h_AnatomySkinIndexedGeometryMultipleShapes").setName("humanoid_root").setUlimit(new MFFloat16().getArray()).setLlimit(new MFFloat17().getArray()).setContainerFieldOverride("skeleton"))
               .addChild(new HAnimSegment().setName("sacrum")))
-            .addComments("allow multiple Shape nodes with containerField='skin', one for each layer of skin")
+            .addComments(new CommentsBlock("allow multiple Shape nodes with containerField='skin', one for each layer of skin"))
             .addSkin(((Shape)new Shape().setContainerFieldOverride("skin"))))
-          .addComments("=============================="))
-        .addChild(new Viewpoint().setDEF("ViewHelpText").setDescription("Select text to see website").setPosition(new double[] {0,0,12}))
-        .addComments("Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip")
+          .addComments(new CommentsBlock("==============================")))
+        .addChild(new Viewpoint().setDEF("ViewHelpText").setDescription("Select text to see website").setPosition(new double[] {0f,0f,12f}))
+        .addComments(new CommentsBlock("Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"))
         .addChild(new Anchor().setDescription("DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches").setParameter(new MFString18().getArray()).setUrl(new MFString19().getArray())
           .addChild(new Shape()
-            .addComments("TODO adjust Text string and Box size, then set Material transparency='1'")
+            .addComments(new CommentsBlock("TODO adjust Text string and Box size, then set Material transparency='1'"))
             .setGeometry(new Text().setString(new MFString20().getArray())
-              .setFontStyle(new FontStyle().setFamily(new MFString21().getArray()).setJustify(new MFString22().getArray()).setSize(0.6).setStyle("BOLD")))
+              .setFontStyle(new FontStyle().setFamily(new MFString21().getArray()).setJustify(new MFString22().getArray()).setSize(0.6f).setStyle("BOLD")))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.9,0.9,0.9}))))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.9f,0.9f,0.9f}))))
           .addChild(new Shape()
-            .addComments("Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.")
-            .setGeometry(new Box().setSize(new double[] {11,2,0.001}))
+            .addComments(new CommentsBlock("Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible."))
+            .setGeometry(new Box().setSize(new double[] {11f,2f,0.001f}))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(1))))))      ;
+              .setMaterial(new Material().setTransparency(1f))))));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0.6,0.6});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0.6f,0.6f});
   }
 }
 private class MFString1 {
@@ -161,82 +161,82 @@ private class MFString1 {
 }
 private class MFFloat2 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat3 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat4 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat5 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat6 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat7 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat8 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat9 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat10 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat11 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat12 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat13 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat14 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat15 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat16 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFFloat17 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
   }
 }
 private class MFString18 {

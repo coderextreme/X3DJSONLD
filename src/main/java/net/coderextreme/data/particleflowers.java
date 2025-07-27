@@ -43,7 +43,7 @@ public class particleflowers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new particleflowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -69,19 +69,20 @@ public class particleflowers implements X3DRoots {
         .addMeta(new meta().setName("title").setContent("particleflowers.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("A flower particle system"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"))
+        .addMeta(new meta().setName("generator").setContent("Vim")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("particleflowers.x3d"))
         .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
-        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0,0,12}))
+        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0f,0f,12f}))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
             .addPhysics(new BoundedPhysicsModel()
-              .setGeometry(new Sphere().setRadius(100)))
-            .setEmitter(new ExplosionEmitter().setSpeed(2).setVariation(0.75))
+              .setGeometry(new Sphere().setRadius(100f)))
+            .setEmitter(new ExplosionEmitter().setSpeed(2f).setVariation(0.75f))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
@@ -182,14 +183,14 @@ public class particleflowers implements X3DRoots {
 "					d = 4;\n"+
 "				}\n"+
 "			}"))
-          .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
+          .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("a").setToNode("x_ite").setToField("a"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("b").setToNode("x_ite").setToField("b"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("c").setToNode("x_ite").setToField("c"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("d").setToNode("x_ite").setToField("d"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))))      ;
+          .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))));
     return X3D0;
     }
 private class MFString0 {

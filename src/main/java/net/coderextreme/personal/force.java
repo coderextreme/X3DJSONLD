@@ -43,7 +43,7 @@ public class force implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new force().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -84,13 +84,13 @@ ProtoInstance ProtoInstance6 = null;
                 .addChild(new Shape()
                   .setGeometry(new Sphere())
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}))))
-                .addChild(new Transform().setTranslation(new double[] {1,0,0})
+                    .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}))))
+                .addChild(new Transform().setTranslation(new double[] {1f,0f,0f})
                   .addChild(new Shape()
                     .setGeometry(new Text().setString(new MFString0().getArray())
-                      .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5)))
+                      .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f)))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(new double[] {0,0,1}))))))
+                      .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,1f}))))))
               .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
               .addChild(new Script().setDEF("MoveBall")
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -108,7 +108,7 @@ ProtoInstance ProtoInstance6 = null;
 "			    		\n"+
 "						// Browser.println(translation);\n"+
 "					}"))
-              .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
+              .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
               .addChild(new ROUTE().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
               .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
               .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
@@ -120,9 +120,9 @@ ProtoInstance ProtoInstance6 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addChild(new Shape()
-                .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
+                .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0,1,0}))))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {0f,1f,0f}))))
               .addChild(new Script().setDEF("MoveCylinder")
                 .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
                 .addField(new field().setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -164,8 +164,8 @@ ProtoInstance ProtoInstance6 = null;
 "                    spine = value;\n"+
 "                }"))
               .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
-        .addChild(new Transform().setDEF("HoldsContent").setScale(new double[] {0.1,0.1,0.1})
-          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(new double[] {-50,-50}).setMaxPosition(new double[] {50,50}).setDescription("click on background to add nodes, click on nodes to add links"))
+        .addChild(new Transform().setDEF("HoldsContent").setScale(new double[] {0.1f,0.1f,0.1f})
+          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(new double[] {-50f,-50f}).setMaxPosition(new double[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("node").setDEF("nodeC"))
@@ -177,7 +177,7 @@ ProtoInstance ProtoInstance6 = null;
           .addField(new field().setType("SFInt32").setName("counter").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new field().setType("SFNode").setName("node_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("add_node").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addComments("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")
+          .addComments(new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
@@ -202,7 +202,7 @@ ProtoInstance ProtoInstance6 = null;
         .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkB").setToField("set_positionA"))
         .addChild(new ROUTE().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("set_positionB"))
         .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
-        .addChild(new ROUTE().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")))      ;
+        .addChild(new ROUTE().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")));
 ProtoInstance0
             .addFieldValue(new fieldValue().setName("position").setValue("0 0 0"));
 ProtoInstance1
@@ -237,22 +237,22 @@ private class MFString1 {
 }
 private class MFFloat2 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
   }
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,5,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,5f,0f});
   }
 }
 private class MFVec2f4 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 private class MFVec3f5 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,-50,0,0,50,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,-50f,0f,0f,50f,0f});
   }
 }
 }

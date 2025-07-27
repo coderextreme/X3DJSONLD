@@ -43,7 +43,7 @@ public class jumpcut_loadurl implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new jumpcut_loadurl().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class jumpcut_loadurl implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("jumpcut_loadurl.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
@@ -77,7 +77,7 @@ public class jumpcut_loadurl implements X3DRoots {
         .addChild(new Background().setGroundAngle(new MFFloat0().getArray()).setGroundColor(new MFColor1().getArray()).setSkyColor(new MFColor2().getArray()))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
-        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new double[] {1,0,0,-1.57}).setPosition(new double[] {0,10,0}))
+        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,10f,0f}))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
           .addChild(new Shape()
@@ -88,22 +88,22 @@ public class jumpcut_loadurl implements X3DRoots {
           .addField(new field().setType("MFString").setName("myParameter").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
           .addField(new field().setType("MFString").setName("myUrl").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
           .addField(new field().setType("SFBool").setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
-        .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
+        .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")));
     return X3D0;
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.57});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.57f});
   }
 }
 private class MFColor1 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0.5,0,0,0.5,0});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0.5f,0f,0f,0.5f,0f});
   }
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,0,1});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0f,1f});
   }
 }
 private class MFString3 {
