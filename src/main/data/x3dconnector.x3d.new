@@ -99,9 +99,7 @@
 </fieldValue>
 <fieldValue name="rotscalenode"><Transform USE="rotscaleC1"></Transform>
 </fieldValue>
-<fieldValue name="set_startpoint"></fieldValue>
-<fieldValue name="set_endpoint"></fieldValue>
-</ProtoInstance>
+<!--<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>--></ProtoInstance>
 <ROUTE fromNode="G1" fromField="translation_changed" toNode="connector1" toField="set_startpoint"></ROUTE>
 <ROUTE fromNode="G2" fromField="translation_changed" toNode="connector1" toField="set_endpoint"></ROUTE>
 </Scene>

@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"23 July 2025"
           },
           {
             "@name":"generator",
@@ -223,7 +223,7 @@
                                 "-children":[
                                   { "HAnimSite":
                                     {
-                                      "@name":"RootFront_view",
+                                      "@name":"RootFront",
                                       "@DEF":"Joe_RootFront_view",
                                       "-children":[
                                         { "Transform":

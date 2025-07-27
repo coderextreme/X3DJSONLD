@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"25 July 2025"
           },
           {
             "@name":"generator",
@@ -301,7 +301,7 @@
                     { "NavigationInfo":
                       {
                         "@DEF":"CameraNavInfo",
-                        "@type":"\"EXAMINE\" \"FLY\" \"ANY\"",
+                        "@type":["EXAMINE","FLY","ANY"],
                         "IS": {
                             "-children":[
                               {

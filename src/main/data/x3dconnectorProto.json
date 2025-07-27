@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"25 July 2025"
           },
           {
             "@name":"generator",
@@ -551,14 +551,6 @@
                       }
                     }
                   ]
-                },
-                {
-                  "@name":"set_startpoint",
-                  "@value":[0,0,0]
-                },
-                {
-                  "@name":"set_endpoint",
-                  "@value":[0,0,0]
                 }
               ]
             }
@@ -607,14 +599,6 @@
                       }
                     }
                   ]
-                },
-                {
-                  "@name":"set_startpoint",
-                  "@value":[0,0,0]
-                },
-                {
-                  "@name":"set_endpoint",
-                  "@value":[0,0,0]
                 }
               ]
             }
@@ -663,14 +647,6 @@
                       }
                     }
                   ]
-                },
-                {
-                  "@name":"set_startpoint",
-                  "@value":[0,0,0]
-                },
-                {
-                  "@name":"set_endpoint",
-                  "@value":[0,0,0]
                 }
               ]
             }
