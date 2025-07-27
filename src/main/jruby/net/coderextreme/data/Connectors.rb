@@ -431,7 +431,7 @@ x3D0 = X3D.new
                             .setProtoField("size")
                         )
                     )
-          .setSourceCode("vrmlscript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -664,7 +664,7 @@ x3D0 = X3D.new
                             .setProtoField("translation")
                         )
                     )
-          .setSourceCode("vrmlscript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -782,7 +782,7 @@ x3D0 = X3D.new
                             .setProtoField("input")
                         )
                     )
-          .setSourceCode("vrmlscript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -812,7 +812,7 @@ x3D0 = X3D.new
             )
         )
         .addChild(NavigationInfo.new()
-            .setType([", ", "PLANE_create3000.deANY"].to_java Java::java.lang.String)
+            .setType(["FLY", "ANY"].to_java Java::java.lang.String)
         )
         .addChild(Background.new()
             .setSkyColor([0.2, 0.2, 0.2].to_java Java::float)
