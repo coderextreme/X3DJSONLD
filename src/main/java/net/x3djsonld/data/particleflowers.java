@@ -41,6 +41,10 @@ import org.web3d.x3d.jsail.Time.*;
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
 			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d</a> </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> Vim </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -84,7 +88,8 @@ public class particleflowers
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("particleflowers.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A flower particle system"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vim")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("particleflowers.x3d"))
     .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))

@@ -10,8 +10,8 @@ import org.web3d.x3d.jsail.Text.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene JointCoordinateAxes. </p>
- <p> Related links:  source JointCoordinateAxes.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene . </p>
+ <p> Related links:  source NeedClassName.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -44,10 +44,10 @@ import org.web3d.x3d.jsail.Text.*;
 
  */
 
-public class JointCoordinateAxes
+public class NeedClassName
 {
 	/** Default constructor to create this object. */
-	public JointCoordinateAxes ()
+	public NeedClassName ()
 	{
 	  initialize();
 	}
@@ -117,7 +117,7 @@ public class JointCoordinateAxes
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JointCoordinateAxes model
+	 * @return NeedClassName model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -136,7 +136,7 @@ public class JointCoordinateAxes
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new JointCoordinateAxes().getX3dModel();
+        X3D thisExampleX3dModel = new NeedClassName().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -169,7 +169,7 @@ public class JointCoordinateAxes
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JointCoordinateAxes\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.NeedClassName\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -178,16 +178,16 @@ public class JointCoordinateAxes
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.JointCoordinateAxes self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.NeedClassName self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./JointCoordinateAxes_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./JointCoordinateAxes_JavaExport.x3d"; 
-                String filenameX3DV = "./JointCoordinateAxes_JavaExport.x3dv"; 
-                String filenameJSON = "./JointCoordinateAxes_JavaExport.json";
+                // ./NeedClassName_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./NeedClassName_JavaExport.x3d"; 
+                String filenameX3DV = "./NeedClassName_JavaExport.x3dv"; 
+                String filenameJSON = "./NeedClassName_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
