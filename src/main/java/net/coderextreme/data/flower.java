@@ -43,7 +43,7 @@ public class flower implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flower().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -65,20 +65,20 @@ public class flower implements X3DRoots {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new double[] {0,-0.8,-0.2}).setIntensity(0.5))
+        .addChild(new DirectionalLight().setDirection(new double[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new double[] {0,0,50}))
-        .addChild(new Transform().setTranslation(new double[] {0,-1,1}).setRotation(new double[] {0,1,0,3.1415926}).setScale(new double[] {1.5,1.5,1.5})
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new double[] {0f,0f,50f}))
+        .addChild(new Transform().setTranslation(new double[] {0f,-1f,1f}).setRotation(new double[] {0f,1f,0f,3.1415926f}).setScale(new double[] {1.5f,1.5f,1.5f})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1).setDiffuseColor(new double[] {0.9,0.3,0.3}).setSpecularColor(new double[] {0.8,0.8,0.8}).setShininess(0.145)))
+              .setMaterial(new Material().setTransparency(0.1f).setDiffuseColor(new double[] {0.9f,0.3f,0.3f}).setSpecularColor(new double[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
           .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addComments("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>")
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
@@ -91,37 +91,39 @@ public class flower implements X3DRoots {
 "\n"+
 "function initialize() {\n"+
 "     generateCoordinates(resolution);\n"+
-"     var localci = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci.push(i*resolution+j);\n"+
-"	     localci.push(i*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j);\n"+
-"	     localci.push(-1);\n"+
+"     var localci = new MFInt32();\n"+
+"     var arrIndex = 0;\n"+
+"     for (var i = 0; i < resolution-1; i++) {\n"+
+"     	for (var j = 0; j < resolution-1; j++) {\n"+
+"	     localci[arrIndex++] = i*resolution+j;\n"+
+"	     localci[arrIndex++] = i*resolution+j+1;\n"+
+"	     localci[arrIndex++] = (i+1)*resolution+j+1;\n"+
+"	     localci[arrIndex++] = (i+1)*resolution+j;\n"+
+"	     localci[arrIndex++] = -1;\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = new MFInt32(...localci);\n"+
+"    coordIndexes = localci;\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
 "     var theta = 0.0;\n"+
 "     var phi = 0.0;\n"+
 "     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
+"     var localc = new MFVec3f();\n"+
+"     var arrIndex = 0;\n"+
+"     for (var i = 0; i < resolution; i++) {\n"+
+"     	for (var j = 0; j < resolution; j++) {\n"+
 "		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc.push(new SFVec3f(\n"+
+"		localc[arrIndex++] = new SFVec3f(\n"+
 "			rho * Math.cos(phi) * Math.cos(theta),\n"+
 "			rho * Math.cos(phi) * Math.sin(theta),\n"+
 "			rho * Math.sin(phi)\n"+
-"		));\n"+
+"		);\n"+
 "		theta += delta;\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = new MFVec3f(...localc);\n"+
+"     coordinates = localc;\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -153,15 +155,15 @@ public class flower implements X3DRoots {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-        .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
+        .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1,1,1});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,1f,1f});
   }
 }
 private class MFInt321 {
@@ -171,7 +173,7 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,1,0,1,0,1,0,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
   }
 }
 }

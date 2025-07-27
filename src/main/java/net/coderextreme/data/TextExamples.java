@@ -43,7 +43,7 @@ public class TextExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new TextExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class TextExamples implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("TextExamples.x3d"))
         .addMeta(new meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
@@ -69,22 +69,22 @@ public class TextExamples implements X3DRoots {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Transform().setTranslation(new double[] {0,2,0})
+        .addChild(new Transform().setTranslation(new double[] {0f,2f,0f})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8)))
+              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f)))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1,0.7,0.7})))))
-        .addChild(new Transform().setTranslation(new double[] {-3,0,0})
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.7f,0.7f})))))
+        .addChild(new Transform().setTranslation(new double[] {-3f,0f,0f})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString2().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
             .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-        .addChild(new Transform().setTranslation(new double[] {3,0,0})
+        .addChild(new Transform().setTranslation(new double[] {3f,0f,0f})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString3().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-            .setAppearance(new Appearance().setUSE("LightBlueAppearance")))))      ;
+            .setAppearance(new Appearance().setUSE("LightBlueAppearance")))));
     return X3D0;
     }
 private class MFString0 {

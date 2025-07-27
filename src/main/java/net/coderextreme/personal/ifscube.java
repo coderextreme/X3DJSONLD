@@ -43,7 +43,7 @@ public class ifscube implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ifscube().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -66,10 +66,10 @@ public class ifscube implements X3DRoots {
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
               .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
-              .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
+              .setColor(new Color().setColor(new MFColor5().getArray()))))));
     return X3D0;
     }
 private class MFInt320 {
@@ -89,17 +89,17 @@ private class MFInt322 {
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,1,0,1,1,1,1,1,1,0,1});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f,1f});
   }
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {1f,0f,0f,-1f,0f,0f,0f,1f,0f,0f,0f,-1f,0f,-1f,0f,0f,0f,1f});
   }
 }
 private class MFColor5 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0,1,0});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,1f,0f});
   }
 }
 }

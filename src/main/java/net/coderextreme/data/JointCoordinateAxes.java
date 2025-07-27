@@ -43,7 +43,7 @@ public class JointCoordinateAxes implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new JointCoordinateAxes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -66,39 +66,39 @@ public class JointCoordinateAxes implements X3DRoots {
           .addChild(new Group().setDEF("ARROW")
             .addChild(new Shape()
               .setAppearance(new Appearance().setDEF("ARROW_APPEARANCE")
-                .setMaterial(new Material().setDiffuseColor(new double[] {0.3,0.3,1}).setEmissiveColor(new double[] {0.3,0.3,0.33})))
-              .setGeometry(new Cylinder().setTop(false).setBottom(false).setRadius(0.025)))
-            .addChild(new Transform().setTranslation(new double[] {0,1,0})
+                .setMaterial(new Material().setDiffuseColor(new double[] {0.3f,0.3f,1f}).setEmissiveColor(new double[] {0.3f,0.3f,0.33f})))
+              .setGeometry(new Cylinder().setTop(false).setBottom(false).setRadius(0.025f)))
+            .addChild(new Transform().setTranslation(new double[] {0f,1f,0f})
               .addChild(new Shape().setDEF("ARROW_POINTER")
                 .setAppearance(new Appearance().setUSE("ARROW_APPEARANCE"))
-                .setGeometry(new Cone().setHeight(0.1).setBottomRadius(0.05))))
-            .addChild(new Transform().setTranslation(new double[] {0,-1,0}).setRotation(new double[] {1,0,0,3.1416})
+                .setGeometry(new Cone().setHeight(0.1f).setBottomRadius(0.05f))))
+            .addChild(new Transform().setTranslation(new double[] {0f,-1f,0f}).setRotation(new double[] {1f,0f,0f,3.1416f})
               .addChild(new Shape().setUSE("ARROW_POINTER"))))
-          .addChild(new Transform().setTranslation(new double[] {0,1.08,0})
+          .addChild(new Transform().setTranslation(new double[] {0f,1.08f,0f})
             .addChild(new Billboard()
               .addChild(new Shape()
                 .setAppearance(new Appearance().setDEF("LABEL_APPEARANCE")
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1,1,0.3}).setEmissiveColor(new double[] {0.33,0.33,0.1})))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,0.3f}).setEmissiveColor(new double[] {0.33f,0.33f,0.1f})))
                 .setGeometry(new Text().setString(new MFString0().getArray())
-                  .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setSize(0.2).setJustify(new MFString2().getArray())))))))
-        .addChild(new Transform().setRotation(new double[] {0,0,1,-1.5708})
+                  .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setSize(0.2f).setJustify(new MFString2().getArray())))))))
+        .addChild(new Transform().setRotation(new double[] {0f,0f,1f,-1.5708f})
           .addChild(new Group()
             .addChild(new Group().setUSE("ARROW"))
-            .addChild(new Transform().setTranslation(new double[] {0.072,1.1,0}).setRotation(new double[] {0,0,1,1.5708})
+            .addChild(new Transform().setTranslation(new double[] {0.072f,1.1f,0f}).setRotation(new double[] {0f,0f,1f,1.5708f})
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                   .setGeometry(new Text().setString(new MFString3().getArray())
                     .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))
-        .addChild(new Transform().setRotation(new double[] {1,0,0,1.5708})
+        .addChild(new Transform().setRotation(new double[] {1f,0f,0f,1.5708f})
           .addChild(new Group()
             .addChild(new Group().setUSE("ARROW"))
-            .addChild(new Transform().setTranslation(new double[] {0,1.1,0.072}).setRotation(new double[] {1,0,0,-1.5708})
+            .addChild(new Transform().setTranslation(new double[] {0f,1.1f,0.072f}).setRotation(new double[] {1f,0f,0f,-1.5708f})
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                   .setGeometry(new Text().setString(new MFString4().getArray())
-                    .setFontStyle(new FontStyle().setUSE("LABEL_FONT")))))))))      ;
+                    .setFontStyle(new FontStyle().setUSE("LABEL_FONT")))))))));
     return X3D0;
     }
 private class MFString0 {

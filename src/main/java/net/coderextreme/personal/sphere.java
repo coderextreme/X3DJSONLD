@@ -43,7 +43,7 @@ public class sphere implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new sphere().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -68,8 +68,8 @@ public class sphere implements X3DRoots {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1})))
-            .setGeometry(new Sphere()))))      ;
+              .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f})))
+            .setGeometry(new Sphere()))));
     return X3D0;
     }
 }

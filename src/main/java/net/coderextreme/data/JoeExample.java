@@ -43,7 +43,7 @@ public class JoeExample implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new JoeExample().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class JoeExample implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")
+      X3D X3D0 =  new X3D().setVersion("4.0").setProfile("Immersive")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new Scene()
@@ -80,14 +80,14 @@ public class JoeExample implements X3DRoots {
 "      }"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0})))
+            .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f})))
           .setGeometry(new Sphere()))
-        .addChild(new Sound().setMaxBack(1000).setMaxFront(1000).setMinBack(1000).setMinFront(1000)
-          .setSource(new AudioClip().setDEF("Click").setStopTime(1).setDescription("clicking sound").setUrl(new MFString0().getArray())))
+        .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setMinBack(1000f).setMinFront(1000f)
+          .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
         .addChild(new TouchSensor().setDEF("TS"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))
-        .addChild(new ROUTE().setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")))      ;
+        .addChild(new ROUTE().setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")));
     return X3D0;
     }
 private class MFString0 {

@@ -43,7 +43,7 @@ public class flowers2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flowers2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -71,9 +71,9 @@ ProtoInstance ProtoInstance1 = null;
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new double[] {0,0,50}))
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new double[] {0f,0f,50f}))
         .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(new double[] {1,1,1}))
+          .addChild(new DirectionalLight().setDirection(new double[] {1f,1f,1f}))
           .addChild(new ProtoDeclare().setName("orbit")
             .setProtoInterface(new ProtoInterface()
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -82,7 +82,7 @@ ProtoInstance ProtoInstance1 = null;
               .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
             .setProtoBody(new ProtoBody()
               .addChild(new Group()
-                .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
+                .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
                 .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(new MFFloat0().getArray()).setKeyValue(new MFRotation1().getArray()))
                 .addChild(new Transform().setDEF("OrbitTransform")
                   .setIS(new IS()
@@ -94,7 +94,7 @@ ProtoInstance ProtoInstance1 = null;
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
                           .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
-                    .addComments("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>")
+                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
                     .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt322().getArray()).setDEF("Orbit")
                       .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f3().getArray())))))
                 .addChild(new Script().setDEF("OrbitScript")
@@ -177,7 +177,7 @@ ProtoInstance ProtoInstance1 = null;
                 .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
                 .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("orbit"))
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("orbit"))))      ;
+          .addChild(ProtoInstance1 = new ProtoInstance().setName("orbit"))));
 ProtoInstance0
             .addFieldValue(new fieldValue().setName("translation").setValue("-8 0 0"));
 ProtoInstance0
@@ -198,12 +198,12 @@ ProtoInstance1
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0.5,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0.5f,1f});
   }
 }
 private class MFRotation1 {
   private org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1,0,0,0,1,0,0,3.14,1,0,0,6.28});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
   }
 }
 private class MFInt322 {
@@ -213,7 +213,7 @@ private class MFInt322 {
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,1,0,1,0,1,0,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
   }
 }
 }

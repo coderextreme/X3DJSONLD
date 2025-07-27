@@ -43,7 +43,7 @@ public class variationalflowers2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new variationalflowers2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -73,16 +73,16 @@ public class variationalflowers2 implements X3DRoots {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("variationalflowers2.x3d"))
         .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
-        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0,0,12}))
+        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new double[] {0f,0f,12f}))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
-            .addComments("values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values")
+            .addComments(new CommentsBlock("values - array of MFFloats to pass to ComposedShader variations in values - array of MFFloats to pass to ComposedShader that varies values"))
             .addVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
-            .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
+            .setEmitter(new ExplosionEmitter().setSpeed(1f).setVariation(0.75f))
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
@@ -115,9 +115,9 @@ public class variationalflowers2 implements X3DRoots {
 "				}\n"+
 "			    }\n"+
 "			}"))
-          .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(45).setLoop(true))
+          .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(45d).setLoop(true))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("values").setToNode("x_ite").setToField("x3d_ParticleValues"))))      ;
+          .addChild(new ROUTE().setFromNode("Animate").setFromField("values").setToNode("x_ite").setToField("x3d_ParticleValues"))));
     return X3D0;
     }
 private class MFString0 {

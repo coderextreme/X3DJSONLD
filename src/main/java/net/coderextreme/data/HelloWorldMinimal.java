@@ -43,7 +43,7 @@ public class HelloWorldMinimal implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new HelloWorldMinimal().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -57,8 +57,8 @@ public class HelloWorldMinimal implements X3DRoots {
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
-      .addComments("All head/meta tags are optional, WorldInfo is also optional")
-      .addComments("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1")
+      .addComments(new CommentsBlock("All head/meta tags are optional, WorldInfo is also optional"))
+      .addComments(new CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1"))
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("HelloWorldMinimal.x3d"))
         .addMeta(new meta().setName("description").setContent("Hello World minimal example scene."))
@@ -78,7 +78,7 @@ public class HelloWorldMinimal implements X3DRoots {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HelloWorldMinimal.x3d"))
         .addChild(new Shape()
-          .setGeometry(new Text().setString(new MFString0().getArray()))))      ;
+          .setGeometry(new Text().setString(new MFString0().getArray()))));
     return X3D0;
     }
 private class MFString0 {

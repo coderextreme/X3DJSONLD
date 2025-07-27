@@ -43,7 +43,7 @@ public class Connectors implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new Connectors().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -127,7 +127,7 @@ ProtoInstance ProtoInstance41 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("cornerRadius").setProtoField("cornerRadius"))
                 .addConnect(new connect().setNodeField("size").setProtoField("size")))
-              .setSourceCode("vrmlscript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -194,7 +194,7 @@ ProtoInstance ProtoInstance41 = null;
                   .setLineProperties(new LineProperties()
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0,0,0})
+                  .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,0f})
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))))))
         .addChild(new ProtoDeclare().setName("Node")
@@ -207,9 +207,9 @@ ProtoInstance ProtoInstance41 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
                 .addChild(ProtoInstance0 = new ProtoInstance().setName("Widget"))
-                .addChild(new Transform().setDEF("Input").setTranslation(new double[] {-1,0,0})
+                .addChild(new Transform().setDEF("Input").setTranslation(new double[] {-1f,0f,0f})
                   .addChild(ProtoInstance2 = new ProtoInstance().setName("Widget")))
-                .addChild(new Transform().setDEF("Output").setTranslation(new double[] {1,0,0})
+                .addChild(new Transform().setDEF("Output").setTranslation(new double[] {1f,0f,0f})
                   .addChild(ProtoInstance3 = new ProtoInstance().setName("Widget")))))
             .addChild(new Script().setDirectOutput(true)
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -219,7 +219,7 @@ ProtoInstance ProtoInstance41 = null;
                 .addChild(new Transform().setUSE("Node")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .setSourceCode("vrmlscript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -237,7 +237,7 @@ ProtoInstance ProtoInstance41 = null;
                 .setLineProperties(new LineProperties()
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
-                .setMaterial(new Material().setDiffuseColor(new double[] {0,0,0})
+                .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,0f})
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))
               .setGeometry(new LineSet().setDEF("Geometry_1").setVertexCount(new MFInt320().getArray())
@@ -254,7 +254,7 @@ ProtoInstance ProtoInstance41 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("output").setProtoField("output"))
                 .addConnect(new connect().setNodeField("input").setProtoField("input")))
-              .setSourceCode("vrmlscript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -281,9 +281,9 @@ ProtoInstance ProtoInstance41 = null;
 "		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));\n"+
 "	}\n"+
 "}"))))
-        .addChild(new NavigationInfo().setType("\", \" \"PLANE_create3000.deANY\""))
+        .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
         .addChild(new Background().setSkyColor(new MFColor2().getArray()))
-        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new double[] {-3.13496,-4.19776,10}).setCenterOfRotation(new double[] {-3.13496,-4.19776,0}).setFieldOfView(new MFFloat3().getArray()))
+        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new double[] {-3.13496f,-4.19776f,10f}).setCenterOfRotation(new double[] {-3.13496f,-4.19776f,0f}).setFieldOfView(new MFFloat3().getArray()))
         .addChild(new Viewpoint().setDescription("Viewpoint"))
         .addChild(new Transform().setDEF("Connectors")
           .addChild(ProtoInstance4 = new ProtoInstance().setName("Route"))
@@ -303,7 +303,7 @@ ProtoInstance ProtoInstance41 = null;
           .addChild(ProtoInstance38 = new ProtoInstance().setName("Node").setUSE("N5"))
           .addChild(ProtoInstance39 = new ProtoInstance().setName("Node").setUSE("N6"))
           .addChild(ProtoInstance40 = new ProtoInstance().setName("Node").setUSE("N7"))
-          .addChild(ProtoInstance41 = new ProtoInstance().setName("Node").setUSE("N8"))))      ;
+          .addChild(ProtoInstance41 = new ProtoInstance().setName("Node").setUSE("N8"))));
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("geometry")
                     .addChild(ProtoInstance1 = new ProtoInstance().setName("RoundedRectangle2D")));
@@ -315,7 +315,7 @@ ProtoInstance2
                     .addFieldValue(new fieldValue().setName("lineColor").setValue("0.72 0.14 0.23"));
 ProtoInstance2
                     .addFieldValue(new fieldValue().setName("geometry")
-                      .addChild(new Disk2D().setDEF("Connector").setOuterRadius(0.2)));
+                      .addChild(new Disk2D().setDEF("Connector").setOuterRadius(0.2f)));
 ProtoInstance3
                     .addFieldValue(new fieldValue().setName("lineColor").setValue("0.44 0.5 0.72"));
 ProtoInstance3
@@ -406,17 +406,17 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1,0,0,1,0,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1f,0f,0f,1f,0f,0f});
   }
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.2,0.2,0.2});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.2f,0.2f,0.2f});
   }
 }
 private class MFFloat3 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,0,10,10});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,10f,10f});
   }
 }
 }

@@ -43,7 +43,7 @@ public class geo implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new geo().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -66,7 +66,7 @@ public class geo implements X3DRoots {
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
-        .addComments("<component name='Shape' level='4'></component>")
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addMeta(new meta().setName("title").setContent("geo.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
@@ -75,13 +75,13 @@ public class geo implements X3DRoots {
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
         .addChild(new Viewpoint().setDEF("Tour").setDescription("Tour Views"))
-        .addComments("Viewpoint position='0 0 4' description='sphere in road'/")
+        .addComments(new CommentsBlock("Viewpoint position='0 0 4' description='sphere in road'/"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
@@ -106,7 +106,7 @@ public class geo implements X3DRoots {
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray())))))))      ;
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray())))))));
     return X3D0;
     }
 private class MFString0 {

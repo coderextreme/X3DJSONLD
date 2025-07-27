@@ -43,7 +43,7 @@ public class StringArrayEncodingExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new StringArrayEncodingExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -78,16 +78,16 @@ public class StringArrayEncodingExamples implements X3DRoots {
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Shape()
           .setGeometry(new Text().setString(new MFString1().getArray())
-            .addComments("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'")
-            .addComments("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})")
+            .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
+            .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
             .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setStyle("BOLD")))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new double[] {0.6,0.4,0.2})))))      ;
+            .setMaterial(new Material().setDiffuseColor(new double[] {0.6f,0.4f,0.2f})))));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.6,1,0.8});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.6f,1f,0.8f});
   }
 }
 private class MFString1 {

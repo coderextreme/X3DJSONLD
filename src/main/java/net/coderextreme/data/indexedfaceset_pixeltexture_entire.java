@@ -43,7 +43,7 @@ public class indexedfaceset_pixeltexture_entire implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new indexedfaceset_pixeltexture_entire().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class indexedfaceset_pixeltexture_entire implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("indexedfaceset_pixeltexture_entire.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
@@ -74,18 +74,18 @@ public class indexedfaceset_pixeltexture_entire implements X3DRoots {
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
-        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new double[] {0,1,0,3.14}).setPosition(new double[] {0,0,-10}))
-        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new double[] {1,0,0,-1.57}).setPosition(new double[] {0,10,0}))
-        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new double[] {1,0,0,1.57}).setPosition(new double[] {0,-10,0}))
-        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new double[] {0,1,0,1.57}).setPosition(new double[] {10,0,0}))
-        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new double[] {0,1,0,-1.57}).setPosition(new double[] {-10,0,0}))
+        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new double[] {0f,1f,0f,3.14f}).setPosition(new double[] {0f,0f,-10f}))
+        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,10f,0f}))
+        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new double[] {1f,0f,0f,1.57f}).setPosition(new double[] {0f,-10f,0f}))
+        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new double[] {0f,1f,0f,1.57f}).setPosition(new double[] {10f,0f,0f}))
+        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new double[] {0f,1f,0f,-1.57f}).setPosition(new double[] {-10f,0f,0f}))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
           .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray())
-            .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray())))))      ;
+            .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray())))));
     return X3D0;
     }
 private class MFInt320 {
@@ -95,7 +95,7 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2f,1.5f,1f,-2f,-1.5f,1f,2f,1.5f,1f,2f,-1.5f,1f,2f,1.5f,-1f,2f,-1.5f,-1f,-2f,1.5f,-1f,-2f,-1.5f,-1f});
   }
 }
 }

@@ -43,7 +43,7 @@ public class arc2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new arc2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -64,14 +64,14 @@ public class arc2 implements X3DRoots {
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new double[] {0,0,5}).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,5f}).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Transform().setDEF("DECLpoint_INSTANCE_node")
             .addChild(new Shape()
-              .setGeometry(new Sphere().setRadius(0.1))
+              .setGeometry(new Sphere().setRadius(0.1f))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}))))
+                .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}))))
             .addChild(new PositionInterpolator().setDEF("DECLpoint_INSTANCE_PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
             .addChild(new Script().setDEF("DECLpoint_INSTANCE_MB1")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -82,9 +82,9 @@ public class arc2 implements X3DRoots {
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }"))
-            .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE_CL1").setCycleInterval(3).setLoop(true))
+            .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE_CL1").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE_PI1").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE_PI1").setToField("keyValue"))
@@ -93,9 +93,9 @@ public class arc2 implements X3DRoots {
         .addChild(new Transform().setDEF("G2")
           .addChild(new Transform().setDEF("DECLpoint_INSTANCE1000_node")
             .addChild(new Shape()
-              .setGeometry(new Sphere().setRadius(0.1))
+              .setGeometry(new Sphere().setRadius(0.1f))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}))))
+                .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}))))
             .addChild(new PositionInterpolator().setDEF("DECLpoint_INSTANCE1000_PI1").setKey(new MFFloat3().getArray()).setKeyValue(new MFVec3f4().getArray()))
             .addChild(new Script().setDEF("DECLpoint_INSTANCE1000_MB1")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -106,9 +106,9 @@ public class arc2 implements X3DRoots {
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f(old, translation);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
 "               }"))
-            .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3).setLoop(true))
+            .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("keyValue"))
@@ -118,8 +118,8 @@ public class arc2 implements X3DRoots {
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new double[] {0.2,0.7,0.7}).setTransparency(0.5)))
-              .setGeometry(new Cylinder().setRadius(0.05)))))
+                .setMaterial(new Material().setDiffuseColor(new double[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
+              .setGeometry(new Cylinder().setRadius(0.05f)))))
         .addChild(new Script().setDEF("DECLx3dconnector_connector1_S1")
           .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
             .addChild(new Transform().setUSE("G1")))
@@ -171,32 +171,32 @@ public class arc2 implements X3DRoots {
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }"))
         .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
-        .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
+        .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.4,0.4,0.4});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.4f,0.4f,0.4f});
   }
 }
 private class MFFloat1 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
   }
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,5,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,5f,0f});
   }
 }
 private class MFFloat3 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
   }
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,5,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,5f,0f});
   }
 }
 }

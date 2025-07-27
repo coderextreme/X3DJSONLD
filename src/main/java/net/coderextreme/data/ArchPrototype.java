@@ -43,7 +43,7 @@ public class ArchPrototype implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ArchPrototype().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -73,10 +73,10 @@ ProtoInstance ProtoInstance0 = null;
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("ArchPrototype").setAppinfo("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.")
           .setProtoInterface(new ProtoInterface()
-            .addComments("COLOR OF ARCH")
-            .addComments("INPUT PARAMETERS")
-            .addComments("General parameters: measures in meters")
-            .addComments("Parameters to create to create shapes related to arch: put true to apply")
+            .addComments(new CommentsBlock("COLOR OF ARCH"))
+            .addComments(new CommentsBlock("INPUT PARAMETERS"))
+            .addComments(new CommentsBlock("General parameters: measures in meters"))
+            .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
             .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("color of arch").setValue("0.2 0.8 0.8"))
             .addField(new field().setType("SFColor").setName("emissiveColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("color of arch").setValue("0.2 0.8 0.8"))
             .addField(new field().setType("SFFloat").setName("clearSpanWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference").setValue("4"))
@@ -92,11 +92,11 @@ ProtoInstance ProtoInstance0 = null;
             .addField(new field().setType("SFBool").setName("archHalfFilled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.").setValue("false"))
             .addField(new field().setType("SFBool").setName("lintel").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.").setValue("false")))
           .setProtoBody(new ProtoBody()
-            .addComments("First node determines node type of this prototype")
-            .addComments("IndexedFaceset creates arch")
+            .addComments(new CommentsBlock("First node determines node type of this prototype"))
+            .addComments(new CommentsBlock("IndexedFaceset creates arch"))
             .addChild(new Transform().setDEF("ArchTransform")
               .addChild(new Shape().setDEF("Arch")
-                .addComments("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly")
+                .addComments(new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"))
                 .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setSolid(false)
                   .setCoord(new Coordinate().setDEF("ArchChord")))
                 .setAppearance(new Appearance()
@@ -104,13 +104,13 @@ ProtoInstance ProtoInstance0 = null;
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
                       .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
-            .addComments("Subsequent nodes do not render, but still must be a valid X3D subgraph")
-            .addComments("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs")
+            .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
+            .addComments(new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
             .addChild(new Script().setDEF("ArchPrototypeScript").setUrl(new MFString0().getArray())
-              .addComments("INPUT PARAMETERS")
-              .addComments("General parameters")
-              .addComments("Parameters to create to create shapes related to arch: put true to apply")
-              .addComments("OUTPUT PARAMETERS")
+              .addComments(new CommentsBlock("INPUT PARAMETERS"))
+              .addComments(new CommentsBlock("General parameters"))
+              .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
+              .addComments(new CommentsBlock("OUTPUT PARAMETERS"))
               .addField(new field().setType("SFFloat").setName("clearSpanWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for clearSpanWidth parameter"))
               .addField(new field().setType("SFFloat").setName("riseHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for riseHeight parameter"))
               .addField(new field().setType("SFFloat").setName("depth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for depth parameter"))
@@ -143,8 +143,8 @@ ProtoInstance ProtoInstance0 = null;
             .addChild(new ROUTE().setFromField("pointOut").setFromNode("ArchPrototypeScript").setToField("point").setToNode("ArchChord"))
             .addChild(new ROUTE().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ArchPrototype").setDEF("ArchInstance"))
-        .addComments("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)")
-        .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString1().getArray())))      ;
+        .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
+        .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString1().getArray())));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0
