@@ -43,7 +43,7 @@ public class AllenBox implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new AllenBox().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -69,7 +69,7 @@ public class AllenBox implements X3DRoots {
           .addChild(new Shape()
             .setGeometry(new Box())
             .setAppearance(new Appearance()
-              .setMaterial(new Material())))))      ;
+              .setMaterial(new Material())))));
     return X3D0;
     }
 private class MFFloat0 {

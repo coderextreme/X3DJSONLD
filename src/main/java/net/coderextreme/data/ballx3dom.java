@@ -43,7 +43,7 @@ public class ballx3dom implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ballx3dom().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -80,7 +80,7 @@ public class ballx3dom implements X3DRoots {
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
@@ -96,7 +96,7 @@ public class ballx3dom implements X3DRoots {
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setDEF("common").setUrl(new MFString13().getArray())))))))      ;
+                .addParts(new ShaderPart().setType("FRAGMENT").setDEF("common").setUrl(new MFString13().getArray())))))));
     return X3D0;
     }
 private class MFString0 {

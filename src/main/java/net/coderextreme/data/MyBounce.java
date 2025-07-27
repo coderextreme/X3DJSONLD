@@ -43,7 +43,7 @@ public class MyBounce implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new MyBounce().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -68,7 +68,7 @@ public class MyBounce implements X3DRoots {
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5})))
+              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f})))
             .setGeometry(new Sphere())))
         .addChild(new Script().setDEF("Bounce2")
           .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
@@ -107,9 +107,9 @@ public class MyBounce implements X3DRoots {
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}"))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
+        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
+        .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
     return X3D0;
     }
 }

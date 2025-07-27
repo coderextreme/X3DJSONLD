@@ -43,7 +43,7 @@ public class bubs implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bubs().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -70,15 +70,15 @@ ProtoInstance ProtoInstance3 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new double[] {0,0,4}).setOrientation(new double[] {1,0,0,0}).setDescription("Bubbles in action"))
+        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,4f}).setOrientation(new double[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("body_trans")
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.25))
+                .setGeometry(new Sphere().setRadius(0.25f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1,0,0}).setTransparency(0.2))))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
               .addChild(new Script().setDEF("bounce1")
                 .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -124,14 +124,14 @@ ProtoInstance ProtoInstance3 = null;
 "	initialize();\n"+
 "    }\n"+
 "}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
+              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
               .addChild(new ROUTE().setFromNode("bounce1").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
               .addChild(new ROUTE().setFromNode("bounce1").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
               .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce1").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA"))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("Bubble").setDEF("bubbleB"))
         .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")))      ;
+        .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")));
     return X3D0;
     }
 private class MFString0 {

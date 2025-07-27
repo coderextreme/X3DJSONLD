@@ -43,7 +43,7 @@ public class rgb_alpha implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new rgb_alpha().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class rgb_alpha implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("rgb_alpha.x3d"))
         .addMeta(new meta().setName("Image").setContent("rgb_alpha-front.jpg"))
@@ -79,30 +79,30 @@ public class rgb_alpha implements X3DRoots {
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Group()
-          .addChild(new Transform().setTranslation(new double[] {6.14221,0.0694613,-0.000999451})
+          .addChild(new Transform().setTranslation(new double[] {6.14221f,0.0694613f,-0.000999451f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setDEF("RgbOpacityCheckerboard").setImage(new int[] {2,2,4,0xFF0000FF,0xFFFF0000,0xFFFF0000,0xFF0000FF})))
               .setGeometry(new Box())))
-          .addChild(new Transform().setTranslation(new double[] {-4.85443,0.0694381,-0.00149918})
+          .addChild(new Transform().setTranslation(new double[] {-4.85443f,0.0694381f,-0.00149918f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Sphere())))
-          .addChild(new Transform().setTranslation(new double[] {-1.47341,0.036672,-0.00175095})
+          .addChild(new Transform().setTranslation(new double[] {-1.47341f,0.036672f,-0.00175095f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Cone())))
-          .addChild(new Transform().setTranslation(new double[] {2.31094,0.0694206,-0.00187683})
+          .addChild(new Transform().setTranslation(new double[] {2.31094f,0.0694206f,-0.00187683f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
-              .setGeometry(new Cylinder())))))      ;
+              .setGeometry(new Cylinder())))));
     return X3D0;
     }
 }

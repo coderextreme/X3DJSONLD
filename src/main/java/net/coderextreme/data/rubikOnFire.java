@@ -43,7 +43,7 @@ public class rubikOnFire implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new rubikOnFire().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -75,7 +75,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("description").setContent("a white rubik cube")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new double[] {0,0,12}))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new double[] {0f,0f,12f}))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -89,7 +89,7 @@ ProtoInstance ProtoInstance9 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1,1,1})))))))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f})))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -144,7 +144,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(ProtoInstance8 = new ProtoInstance().setName("nine")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")))      ;
+        .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")));
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance1
@@ -167,7 +167,7 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setSize(new double[] {1,1,1})));
+            .addChild(new Box().setSize(new double[] {1f,1f,1f})));
     return X3D0;
     }
 }

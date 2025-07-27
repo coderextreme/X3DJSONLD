@@ -43,7 +43,7 @@ public class HelloWorld implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new HelloWorld().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -58,7 +58,7 @@ public class HelloWorld implements X3DRoots {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addComments("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON")
+        .addComments(new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"))
         .addMeta(new meta().setName("title").setContent("HelloWorld.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple X3D model example: Hello World!"))
         .addMeta(new meta().setName("created").setContent("30 October 2000"))
@@ -83,22 +83,22 @@ public class HelloWorld implements X3DRoots {
         .addMeta(new meta().setName("reference").setContent("HelloWorld.xhtml"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.json")))
       .setScene(new Scene()
-        .addComments("Example scene to illustrate X3D nodes and fields (XML elements and attributes)")
+        .addComments(new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)"))
         .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("Hello World!"))
         .addChild(new Group()
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new double[] {0,-1,0}).setDescription("Hello world!").setPosition(new double[] {0,-1,7}))
-          .addChild(new Transform().setRotation(new double[] {0,1,0,3})
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new double[] {0f,-1f,0f}).setDescription("Hello world!").setPosition(new double[] {0f,-1f,7f}))
+          .addChild(new Transform().setRotation(new double[] {0f,1f,0f,3f})
             .addChild(new Shape()
               .setGeometry(new Sphere())
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new double[] {0.1,0.5,1}))
+                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new double[] {0.1f,0.5f,1f}))
                 .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString1().getArray())))))
-          .addChild(new Transform().setTranslation(new double[] {0,-2,0})
+          .addChild(new Transform().setTranslation(new double[] {0f,-2f,0f})
             .addChild(new Shape()
               .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setUSE("MaterialLightBlue")))))))      ;
+                .setMaterial(new Material().setUSE("MaterialLightBlue")))))));
     return X3D0;
     }
 private class MFString0 {

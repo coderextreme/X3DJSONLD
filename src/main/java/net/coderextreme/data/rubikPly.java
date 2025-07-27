@@ -43,7 +43,7 @@ public class rubikPly implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new rubikPly().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -152,7 +152,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(ProtoInstance8 = new ProtoInstance().setName("nine")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")))      ;
+        .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")));
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance1

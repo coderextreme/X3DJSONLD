@@ -43,7 +43,7 @@ public class SimpleShader implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new SimpleShader().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -57,7 +57,7 @@ public class SimpleShader implements X3DRoots {
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addMeta(new meta().setName("title").setContent("SimpleShader.x3d"))
@@ -79,7 +79,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
         .addMeta(new meta().setName("license").setContent("../../license.html"))
-        .addComments("meta content='under development' name='warning'/"))
+        .addComments(new CommentsBlock("meta content='under development' name='warning'/")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("myPrototype")
           .setProtoInterface(new ProtoInterface()
@@ -88,7 +88,7 @@ ProtoInstance ProtoInstance0 = null;
             .addChild(new Transform().setDEF("TR")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0.5,0.5,0.9}))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {0.5f,0.5f,0.9f}))
                   .addShaders(new ComposedShader().setLanguage("GLSL")
                     .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                     .setIS(new IS()
@@ -99,19 +99,19 @@ ProtoInstance ProtoInstance0 = null;
                     .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
                     .addParts(new ShaderPart().setType("VERTEX"))
                     .addParts(new ShaderPart().setType("FRAGMENT").setDEF("_1"))))
-                .setGeometry(new Sphere().setRadius(1.75))))))
+                .setGeometry(new Sphere().setRadius(1.75f))))))
         .addChild(new WorldInfo().setTitle("SimpleShader")
           .setMetadata(new MetadataSet().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
-            .addValue(new MetadataSet().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
-              .addValue(new MetadataSet().setName("nodes").setDEF("nodes").setReference("http://titania.create3000.de")
-                .addComments("NULL")))
-            .addValue(new MetadataSet().setName("NavigationInfo").setDEF("NavigationInfo").setReference("http://titania.create3000.de")
-              .addValue(new MetadataString().setName("type").setDEF("type").setReference("http://titania.create3000.de").setValue(new MFString0().getArray())))
-            .addValue(new MetadataSet().setName("Viewpoint").setDEF("Viewpoint").setReference("http://titania.create3000.de")
+            .setMetadata(new MetadataSet().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
+              .setMetadata(new MetadataSet().setName("nodes").setDEF("nodes").setReference("http://titania.create3000.de")
+                .addComments(new CommentsBlock("NULL"))))
+            .setMetadata(new MetadataSet().setName("NavigationInfo").setDEF("NavigationInfo").setReference("http://titania.create3000.de")
+              .setMetadata(new MetadataString().setName("type").setDEF("type").setReference("http://titania.create3000.de").setValue(new MFString0().getArray())))
+            .setMetadata(new MetadataSet().setName("Viewpoint").setDEF("Viewpoint").setReference("http://titania.create3000.de")
               .addValue(new MetadataDouble().setName("position").setDEF("position").setReference("http://titania.create3000.de").setValue(new MFDouble1().getArray()))
               .addValue(new MetadataDouble().setName("orientation").setDEF("orientation").setReference("http://titania.create3000.de").setValue(new MFDouble2().getArray()))
               .addValue(new MetadataDouble().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(new MFDouble3().getArray())))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("myPrototype")))      ;
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("myPrototype")));
     return X3D0;
     }
 private class MFString0 {
@@ -121,17 +121,17 @@ private class MFString0 {
 }
 private class MFDouble1 {
   private org.web3d.x3d.jsail.fields.MFDouble getArray() {
-    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615});
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {6.24067728185014d,0.00250837343276661d,2.92117542307615d});
   }
 }
 private class MFDouble2 {
   private org.web3d.x3d.jsail.fields.MFDouble getArray() {
-    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191});
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.110173424710488d,0.990158061907379d,-0.0863065984000336d,1.21146676119191d});
   }
 }
 private class MFDouble3 {
   private org.web3d.x3d.jsail.fields.MFDouble getArray() {
-    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906});
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.808320198626341d,-0.358072370409949d,0.22817191560906d});
   }
 }
 }

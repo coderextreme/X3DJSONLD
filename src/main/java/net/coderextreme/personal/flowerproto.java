@@ -43,7 +43,7 @@ public class flowerproto implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flowerproto().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -81,7 +81,7 @@ public class flowerproto implements X3DRoots {
             .addChild(new Transform().setDEF("transform")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0.7,0.7,0.7}).setSpecularColor(new double[] {0.5,0.5,0.5}))
+                  .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
                   .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                     .setBackTexture(new ImageTexture().setUrl(new MFString0().getArray()))
                     .setBottomTexture(new ImageTexture().setUrl(new MFString1().getArray()))
@@ -101,7 +101,7 @@ public class flowerproto implements X3DRoots {
                     .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
                     .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addComments("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>")
+                    .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
                     .addParts(new ShaderPart().setType("VERTEX")
                       .setIS(new IS()
                         .addConnect(new connect().setNodeField("url").setProtoField("vertex"))))
@@ -185,7 +185,7 @@ public class flowerproto implements X3DRoots {
 "					d = 4;\n"+
 "				}\n"+
 "			}"))
-              .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
+              .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
               .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
               .addChild(new ROUTE().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
               .addChild(new ROUTE().setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
@@ -193,7 +193,7 @@ public class flowerproto implements X3DRoots {
               .addChild(new ROUTE().setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
               .addChild(new ROUTE().setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
               .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
-              .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))))      ;
+              .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))));
     return X3D0;
     }
 private class MFString0 {

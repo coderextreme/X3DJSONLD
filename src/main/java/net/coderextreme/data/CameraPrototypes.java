@@ -43,7 +43,7 @@ public class CameraPrototypes implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new CameraPrototypes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -56,7 +56,7 @@ public class CameraPrototypes implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("CameraPrototypes.x3d"))
         .addMeta(new meta().setName("description").setContent("Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."))
@@ -73,10 +73,10 @@ public class CameraPrototypes implements X3DRoots {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addComments("=============== Camera ==============")
+        .addComments(new CommentsBlock("=============== Camera =============="))
         .addChild(new ProtoDeclare().setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.")
           .setProtoInterface(new ProtoInterface()
-            .addComments("Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields")
+            .addComments(new CommentsBlock("Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"))
             .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this Camera"))
             .addField(new field().setType("SFVec3f").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated").setValue("0 0 10"))
             .addField(new field().setType("SFRotation").setName("orientation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated").setValue("0 0 1 0"))
@@ -88,7 +88,7 @@ public class CameraPrototypes implements X3DRoots {
             .addField(new field().setType("SFFloat").setName("nearClipPlane").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]").setValue("0.25"))
             .addField(new field().setType("SFFloat").setName("farClipPlane").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit").setValue("0"))
             .addField(new field().setType("MFNode").setName("shots").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
-              .addComments("initialization nodes (if any) go here"))
+              .addComments(new CommentsBlock("initialization nodes (if any) go here")))
             .addField(new field().setType("SFBool").setName("headlight").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether camera headlight is on or off").setValue("true"))
             .addField(new field().setType("SFColor").setName("headlightColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera headlight color").setValue("1 1 1"))
             .addField(new field().setType("SFFloat").setName("headlightIntensity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera headlight intensity").setValue("1"))
@@ -100,7 +100,7 @@ public class CameraPrototypes implements X3DRoots {
             .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
             .addField(new field().setType("SFTime").setName("totalDuration").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"))
             .addField(new field().setType("SFNode").setName("offlineRender").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("OfflineRender node")
-              .addComments("initialization node (if any) goes here"))
+              .addComments(new CommentsBlock("initialization node (if any) goes here")))
             .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Viewpoint().setDEF("CameraViewpoint")
@@ -112,16 +112,16 @@ public class CameraPrototypes implements X3DRoots {
                 .addConnect(new connect().setNodeField("set_bind").setProtoField("set_bind"))
                 .addConnect(new connect().setNodeField("bindTime").setProtoField("bindTime"))
                 .addConnect(new connect().setNodeField("isBound").setProtoField("isBound"))))
-            .addComments("NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation")
+            .addComments(new CommentsBlock("NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"))
             .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\"").setDEF("CameraNavInfo")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("set_bind").setProtoField("set_bind"))
                 .addConnect(new connect().setNodeField("headlight").setProtoField("headlight"))
                 .addConnect(new connect().setNodeField("visibilityLimit").setProtoField("farClipPlane"))
-                .addComments("No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.")))
-            .addComments("this DirectionalLight replaces NavigationInfo headlight in order to add color capability")
+                .addComments(new CommentsBlock("No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."))))
+            .addComments(new CommentsBlock("this DirectionalLight replaces NavigationInfo headlight in order to add color capability"))
             .addChild(new DirectionalLight().setDEF("CameraDirectionalLight").setGlobal(true)
-              .addComments("TODO confirm other default field values match NavigationInfo spec")
+              .addComments(new CommentsBlock("TODO confirm other default field values match NavigationInfo spec"))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("on").setProtoField("headlight"))
                 .addConnect(new connect().setNodeField("color").setProtoField("headlightColor"))
@@ -135,7 +135,7 @@ public class CameraPrototypes implements X3DRoots {
             .addChild(new ROUTE().setFromField("value_changed").setFromNode("CameraPositionInterpolator").setToField("position").setToNode("CameraViewpoint"))
             .addChild(new ROUTE().setFromField("value_changed").setFromNode("CameraOrientationInterpolator").setToField("orientation").setToNode("CameraViewpoint"))
             .addChild(new Script().setDEF("CameraScript").setDirectOutput(true).setMustEvaluate(true)
-              .addComments("binding is controlled externally, all camera operations proceed the same regardless of whether bound or not")
+              .addComments(new CommentsBlock("binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"))
               .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this Camera"))
               .addField(new field().setType("SFVec3f").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera position in local transformation frame"))
               .addField(new field().setType("SFRotation").setName("orientation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera rotation in local transformation frame"))
@@ -145,7 +145,7 @@ public class CameraPrototypes implements X3DRoots {
               .addField(new field().setType("SFFloat").setName("nearClipPlane").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Vector distance to near clipping plane"))
               .addField(new field().setType("SFFloat").setName("farClipPlane").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Vector distance to far clipping plane"))
               .addField(new field().setType("MFNode").setName("shots").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
-                .addComments("initialization nodes (if any) go here"))
+                .addComments(new CommentsBlock("initialization nodes (if any) go here")))
               .addField(new field().setType("SFColor").setName("filterColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera filter color that modifies virtual lens capture"))
               .addField(new field().setType("SFFloat").setName("filterTransparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera filter transparency that modifies virtual lens capture"))
               .addField(new field().setType("SFVec3f").setName("upVector").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("upVector changes modify camera orientation (and possibly vice versa)"))
@@ -154,7 +154,7 @@ public class CameraPrototypes implements X3DRoots {
               .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
               .addField(new field().setType("SFTime").setName("totalDuration").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"))
               .addField(new field().setType("SFNode").setName("offlineRender").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("OfflineRender node")
-                .addComments("initialization node (if any) goes here"))
+                .addComments(new CommentsBlock("initialization node (if any) goes here")))
               .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("node reference to permit getting setting fields from within Script")
                 .addChild(new Viewpoint().setUSE("CameraViewpoint")))
               .addField(new field().setType("SFNode").setName("NavInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("node reference to permit getting setting fields from within Script")
@@ -538,13 +538,13 @@ public class CameraPrototypes implements X3DRoots {
             .addChild(new ROUTE().setFromField("isActive").setFromNode("CameraScript").setToField("set_bind").setToNode("CameraViewpoint"))
             .addChild(new ROUTE().setFromField("isActive").setFromNode("CameraScript").setToField("set_bind").setToNode("CameraNavInfo"))
             .addChild(new ROUTE().setFromField("isActive").setFromNode("CameraScript").setToField("on").setToNode("CameraDirectionalLight"))))
-        .addComments("=============== CameraShot ==============")
+        .addComments(new CommentsBlock("=============== CameraShot =============="))
         .addChild(new ProtoDeclare().setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot.")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraShot"))
             .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraShot can be activated").setValue("true"))
             .addField(new field().setType("MFNode").setName("moves").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Set of CameraMovement nodes")
-              .addComments("initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"))
+              .addComments(new CommentsBlock("initializing CameraMovement nodes are inserted here by scene author using ProtoInstance")))
             .addField(new field().setType("SFVec3f").setName("initialPosition").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize camera position for this shot").setValue("0 0 10"))
             .addField(new field().setType("SFRotation").setName("initialOrientation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize camera rotation for this shot").setValue("0 0 1 0"))
             .addField(new field().setType("SFVec3f").setName("initialAimPoint").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize aimpoint (relative location for camera direction) for this shot").setValue("0 0 0"))
@@ -559,7 +559,7 @@ public class CameraPrototypes implements X3DRoots {
               .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraShot"))
               .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraShot can be activated"))
               .addField(new field().setType("MFNode").setName("moves").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Set of CameraMovement nodes")
-                .addComments("initialization nodes (if any) go here"))
+                .addComments(new CommentsBlock("initialization nodes (if any) go here")))
               .addField(new field().setType("SFVec3f").setName("initialPosition").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize camera position for this shot"))
               .addField(new field().setType("SFRotation").setName("initialOrientation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize camera rotation for this shot"))
               .addField(new field().setType("SFVec3f").setName("initialAimPoint").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Setup to reinitialize aimpoint (relative location for camera direction) for this shot"))
@@ -678,8 +678,8 @@ public class CameraPrototypes implements X3DRoots {
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
 "}"))
-            .addComments("Add any ROUTEs here, going from Script to other nodes within ProtoBody")))
-        .addComments("=============== CameraMovement ==============")
+            .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
+        .addComments(new CommentsBlock("=============== CameraMovement =============="))
         .addChild(new ProtoDeclare().setName("CameraMovement").setAppinfo("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraMovement"))
@@ -695,9 +695,9 @@ public class CameraPrototypes implements X3DRoots {
             .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
             .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress").setValue("false")))
           .setProtoBody(new ProtoBody()
-            .addComments("First node determines node type of this prototype")
-            .addComments("Subsequent nodes do not render, but still must be a valid X3D subgraph")
-            .addComments("Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events")
+            .addComments(new CommentsBlock("First node determines node type of this prototype"))
+            .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
+            .addComments(new CommentsBlock("Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"))
             .addChild(new Script().setDEF("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true)
               .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraMovement"))
               .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraMovement can be activated"))
@@ -814,11 +814,11 @@ public class CameraPrototypes implements X3DRoots {
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
 "}"))
-            .addComments("Add any ROUTEs here, going from Script to other nodes within ProtoBody")))
-        .addComments("=============== OfflineRender ==============")
+            .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
+        .addComments(new CommentsBlock("=============== OfflineRender =============="))
         .addChild(new ProtoDeclare().setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).")
           .setProtoInterface(new ProtoInterface()
-            .addComments("TODO non-photorealistic rendering (NPR) parameters")
+            .addComments(new CommentsBlock("TODO non-photorealistic rendering (NPR) parameters"))
             .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this OfflineRender"))
             .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this OfflineRender can be activated").setValue("true"))
             .addField(new field().setType("SFFloat").setName("frameRate").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Frames per second recorded for this rendering").setValue("30"))
@@ -831,8 +831,8 @@ public class CameraPrototypes implements X3DRoots {
             .addField(new field().setType("MFString").setName("imageFormat").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Format of rendered output images (png jpeg gif tiff etc.) use first supported format").setValue("\"png\""))
             .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress").setValue("false")))
           .setProtoBody(new ProtoBody()
-            .addComments("First node determines node type of this prototype")
-            .addComments("Subsequent nodes do not render, but still must be a valid X3D subgraph")
+            .addComments(new CommentsBlock("First node determines node type of this prototype"))
+            .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
             .addChild(new Script().setDEF("OfflineRenderScript").setMustEvaluate(true)
               .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this OfflineRender"))
               .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this OfflineRender can be activated"))
@@ -911,8 +911,8 @@ public class CameraPrototypes implements X3DRoots {
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
 "}"))
-            .addComments("Add any ROUTEs here, going from Script to other nodes within ProtoBody")))
-        .addComments("=============== Launch Prototype Example ==============")
+            .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
+        .addComments(new CommentsBlock("=============== Launch Prototype Example =============="))
         .addChild(new Background().setSkyColor(new MFColor4().getArray()))
         .addChild(new Anchor().setDescription("launch CameraExample scene").setUrl(new MFString5().getArray())
           .addChild(new Transform()
@@ -920,32 +920,32 @@ public class CameraPrototypes implements X3DRoots {
               .setGeometry(new Text().setString(new MFString6().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString7().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new double[] {1,1,0.2})))))))      ;
+                .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,0.2f})))))));
     return X3D0;
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
   }
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0,0,0,0,0,0});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0f,0f});
   }
 }
 private class MFFloat2 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0,1});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
   }
 }
 private class MFRotation3 {
   private org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0,1,0,0,0,1,0,0});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {0f,1f,0f,0f,0f,1f,0f,0f});
   }
 }
 private class MFColor4 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.282353,0.380392,0.470588});
+    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.282353f,0.380392f,0.470588f});
   }
 }
 private class MFString5 {

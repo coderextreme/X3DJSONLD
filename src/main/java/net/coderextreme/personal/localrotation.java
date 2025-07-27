@@ -43,7 +43,7 @@ public class localrotation implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripTrailingZeroes(false);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new localrotation().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -82,7 +82,7 @@ public class localrotation implements X3DRoots {
         .addChild(new OrientationInterpolator().setDEF("Rotater").setKey(new MFFloat0().getArray()).setKeyValue(new MFRotation1().getArray()))
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("Rotater").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("Rotater").setFromField("value_changed").setToNode("TransformTargetParent").setToField("set_rotation"))
-        .addChild(new ROUTE().setFromNode("Rotater").setFromField("value_changed").setToNode("TransformTargetChild").setToField("set_rotation")))      ;
+        .addChild(new ROUTE().setFromNode("Rotater").setFromField("value_changed").setToNode("TransformTargetChild").setToField("set_rotation")));
     return X3D0;
     }
 private class MFFloat0 {
