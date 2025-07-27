@@ -170,8 +170,6 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC1'/>
       </fieldValue>
-      <fieldValue name='set_startpoint' value='0 0 0'/>
-      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector2' name='x3dconnector'>
       <fieldValue name='startnode'>
@@ -186,8 +184,6 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC2'/>
       </fieldValue>
-      <fieldValue name='set_startpoint' value='0 0 0'/>
-      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector3' name='x3dconnector'>
       <fieldValue name='startnode'>
@@ -202,8 +198,6 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC3'/>
       </fieldValue>
-      <fieldValue name='set_startpoint' value='0 0 0'/>
-      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
     <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
