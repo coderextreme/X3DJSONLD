@@ -1,153 +1,155 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("qq3.x3d")
+meta2.name = "title"
+meta2.content = "qq3.x3d"
 
-head1.addMeta(meta2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.setName("creator")
-meta3.setContent("John Carlson")
+meta3.name = "creator"
+meta3.content = "John Carlson"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("translator")
-meta4.setContent("John Carlson")
+meta4.name = "translator"
+meta4.content = "John Carlson"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
-meta5.setContent("11 Jan 2015")
+meta5.name = "created"
+meta5.content = "11 Jan 2015"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.setName("modified")
-meta6.setContent("05 May 2017")
+meta6.name = "modified"
+meta6.content = "05 May 2017"
 
-head1.addMeta(meta6)
+head1.children.append(meta6)
 meta7 = x3d.meta()
-meta7.setName("description")
-meta7.setContent("12 extrusions")
+meta7.name = "description"
+meta7.content = "12 extrusions"
 
-head1.addMeta(meta7)
+head1.children.append(meta7)
 meta8 = x3d.meta()
-meta8.setName("identifier")
-meta8.setContent("https://coderextreme.net/x3d/qq3.x3d")
+meta8.name = "identifier"
+meta8.content = "https://coderextreme.net/x3d/qq3.x3d"
 
-head1.addMeta(meta8)
+head1.children.append(meta8)
 meta9 = x3d.meta()
-meta9.setName("generator")
-meta9.setContent("manual")
+meta9.name = "generator"
+meta9.content = "manual"
 
-head1.addMeta(meta9)
+head1.children.append(meta9)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene10 = x3d.Scene()
 ProtoDeclare11 = x3d.ProtoDeclare()
-ProtoDeclare11.setName("Process")
+ProtoDeclare11.name = "Process"
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
-#left
+"""left"""
 Transform14 = x3d.Transform()
-Transform14.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform14.scale = [0.5,0.5,0.5]
 Shape15 = x3d.Shape()
-Shape15.setDEF("ShapeLeftDown")
+Shape15.DEF = "ShapeLeftDown"
 Appearance16 = x3d.Appearance()
 Material17 = x3d.Material()
-Material17.setDiffuseColor(x3d.doubleToFloat([0.7,1,0]))
+Material17.diffuseColor = [0.7,1,0]
 
-Appearance16.setMaterial(Material17)
+Appearance16.material = Material17
 
-Shape15.setAppearance(Appearance16)
+Shape15.appearance = Appearance16
 Extrusion18 = x3d.Extrusion()
-Extrusion18.setSpine(x3d.doubleToFloat([-2.5,0,0,-2,0,0,-1.5,0,0]))
-Extrusion18.setCreaseAngle(0.785)
-Extrusion18.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
+Extrusion18.creaseAngle = 0.785
 
-Shape15.setGeometry(Extrusion18)
+Shape15.geometry = Extrusion18
 
-Transform14.addChild(Shape15)
+Transform14.children.append(Shape15)
 
-Group13.addChildren(Transform14)
-#right
+Group13.children.append(Transform14)
+"""right"""
 Transform19 = x3d.Transform()
-Transform19.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform19.scale = [0.5,0.5,0.5]
 Shape20 = x3d.Shape()
-Shape20.setDEF("ShapeUpRight")
+Shape20.DEF = "ShapeUpRight"
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
-Material22.setDiffuseColor(x3d.doubleToFloat([0,0.7,1]))
+Material22.diffuseColor = [0,0.7,1]
 
-Appearance21.setMaterial(Material22)
+Appearance21.material = Material22
 
-Shape20.setAppearance(Appearance21)
+Shape20.appearance = Appearance21
 Extrusion23 = x3d.Extrusion()
-Extrusion23.setSpine(x3d.doubleToFloat([1.5,0,0,2,0,0,2.5,0,0]))
-Extrusion23.setCreaseAngle(0.785)
-Extrusion23.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
+Extrusion23.creaseAngle = 0.785
 
-Shape20.setGeometry(Extrusion23)
+Shape20.geometry = Extrusion23
 
-Transform19.addChild(Shape20)
+Transform19.children.append(Shape20)
 
-Group13.addChildren(Transform19)
-#up
+Group13.children.append(Transform19)
+"""up"""
 Transform24 = x3d.Transform()
-Transform24.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform24.scale = [0.5,0.5,0.5]
 Shape25 = x3d.Shape()
-Shape25.setUSE("ShapeUpRight")
+Shape25.USE = "ShapeUpRight"
 
-Transform24.addChild(Shape25)
+Transform24.children.append(Shape25)
 
-Group13.addChildren(Transform24)
-#down
+Group13.children.append(Transform24)
+"""down"""
 Transform26 = x3d.Transform()
-Transform26.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform26.scale = [0.5,0.5,0.5]
 Shape27 = x3d.Shape()
-Shape27.setUSE("ShapeLeftDown")
+Shape27.USE = "ShapeLeftDown"
 
-Transform26.addChild(Shape27)
+Transform26.children.append(Shape27)
 
-Group13.addChildren(Transform26)
+Group13.children.append(Transform26)
 
-ProtoBody12.addChildren(Group13)
+ProtoBody12.children.append(Group13)
 
-ProtoDeclare11.setProtoBody(ProtoBody12)
+ProtoDeclare11.ProtoBody = ProtoBody12
 
-Scene10.addChildren(ProtoDeclare11)
+Scene10.children.append(ProtoDeclare11)
 Viewpoint28 = x3d.Viewpoint()
-Viewpoint28.setDescription("Process pipes")
-Viewpoint28.setOrientation(x3d.doubleToFloat([1,0,0,-0.4]))
-Viewpoint28.setPosition(x3d.doubleToFloat([0,5,12]))
+Viewpoint28.description = "Process pipes"
+Viewpoint28.orientation = [1,0,0,-0.4]
+Viewpoint28.position = [0,5,12]
 
-Scene10.addChildren(Viewpoint28)
+Scene10.children.append(Viewpoint28)
 Transform29 = x3d.Transform()
-Transform29.setTranslation(x3d.doubleToFloat([0,-2.5,0]))
+Transform29.translation = [0,-2.5,0]
 ProtoInstance30 = x3d.ProtoInstance()
-ProtoInstance30.setName("Process")
+ProtoInstance30.name = "Process"
 
-Transform29.addChildren(ProtoInstance30)
+Transform29.children.append(ProtoInstance30)
 
-Scene10.addChildren(Transform29)
+Scene10.children.append(Transform29)
 Transform31 = x3d.Transform()
 ProtoInstance32 = x3d.ProtoInstance()
-ProtoInstance32.setName("Process")
+ProtoInstance32.name = "Process"
 
-Transform31.addChildren(ProtoInstance32)
+Transform31.children.append(ProtoInstance32)
 
-Scene10.addChildren(Transform31)
+Scene10.children.append(Transform31)
 Transform33 = x3d.Transform()
-Transform33.setTranslation(x3d.doubleToFloat([0,2.5,0]))
+Transform33.translation = [0,2.5,0]
 ProtoInstance34 = x3d.ProtoInstance()
-ProtoInstance34.setName("Process")
+ProtoInstance34.name = "Process"
 
-Transform33.addChildren(ProtoInstance34)
+Transform33.children.append(ProtoInstance34)
 
-Scene10.addChildren(Transform33)
+Scene10.children.append(Transform33)
 
-X3D0.setScene(Scene10)
-X3D0.toFileX3D("../personal/qq3.new.python.x3d")
-X3D0.toFileJSON("../personal/qq3.new.python.json")
+X3D0.Scene = Scene10
+f = open("../personal/qq3.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/qq3.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

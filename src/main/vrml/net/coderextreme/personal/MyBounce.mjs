@@ -1,39 +1,18 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "3.3";
-let head1 = browser.currentScene.createNode("head");
-let component2 = browser.currentScene.createNode("component");
-component2.name = "Scripting";
-component2.level = 1;
-head1.component = new MFNode();
-
-head1.component[0] = component2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "title";
-meta3.content = "MyBounce.x3d";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "creator";
-meta4.content = "John Carlson";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "description";
-meta5.content = "3 prismatic spheres";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d";
-head1.meta[4] = meta6;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene .addComponent (browser .getComponent ("Scripting", 1));
+scene.addMetaData("title", "MyBounce.x3d");
+scene.addMetaData("creator", "John Carlson");
+scene.addMetaData("description", "3 prismatic spheres");
+scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/personal/SFVec3f.x3d");
+await browser .loadComponents (scene);
 let NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo8;
 
@@ -42,58 +21,36 @@ Transform9.DEF = "transform";
 let Shape10 = browser.currentScene.createNode("Shape");
 let Appearance11 = browser.currentScene.createNode("Appearance");
 let Material12 = browser.currentScene.createNode("Material");
-Material12.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material12.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance11.material = Material12;
+Material12.diffuseColor = new X3D.SFColor([0.7,0.7,0.7]);
+Material12.specularColor = new X3D.SFColor([0.5,0.5,0.5]);
+material = Material12;
 
-Shape10.appearance = Appearance11;
+appearance = Appearance11;
 
 let Sphere13 = browser.currentScene.createNode("Sphere");
-Shape10.geometry = Sphere13;
+geometry = Sphere13;
 
-Transform9.child = new undefined();
+Transform9YYY.child = new X3D.undefined();
 
-Transform9.child[0] = Shape10;
+Transform9ZZZ.child[0] = Shape10;
 
 browser.currentScene.children[1] = Transform9;
 
 let Script14 = browser.currentScene.createNode("Script");
 Script14.DEF = "Bounce2";
-let field15 = browser.currentScene.createNode("field");
-field15.name = "set_translation";
-field15.accessType = "inputOnly";
-field15.type = "SFVec3f";
-field15.value = "0 0 0";
-Script14.field = new MFNode();
+Script15.getField("set_translation").setValue("0 0 0");
+Script14YYY.field = new X3D.MFNode();
 
-Script14.field[0] = field15;
+Script16.getField("translation_changed").setValue("0 0 0");
+Script14YYY.field = new X3D.MFNode();
 
-let field16 = browser.currentScene.createNode("field");
-field16.name = "translation_changed";
-field16.accessType = "outputOnly";
-field16.type = "SFVec3f";
-field16.value = "0 0 0";
-Script14.field[1] = field16;
+Script17.getField("translation").setValue("0 0 0");
+Script14YYY.field = new X3D.MFNode();
 
-let field17 = browser.currentScene.createNode("field");
-field17.name = "translation";
-field17.accessType = "inputOutput";
-field17.type = "SFVec3f";
-field17.value = "0 0 0";
-Script14.field[2] = field17;
+Script18.getField("velocity").setValue("0 0 0");
+Script14YYY.field = new X3D.MFNode();
 
-let field18 = browser.currentScene.createNode("field");
-field18.name = "velocity";
-field18.accessType = "inputOutput";
-field18.type = "SFVec3f";
-field18.value = "0 0 0";
-Script14.field[3] = field18;
-
-let field19 = browser.currentScene.createNode("field");
-field19.name = "set_fraction";
-field19.accessType = "inputOnly";
-field19.type = "SFTime";
-Script14.field[4] = field19;
+Script19.getField("set_fraction")Script14YYY.field = new X3D.MFNode();
 
 
 Script14.setSourceCode(`ecmascript:\n"+
@@ -149,3 +106,5 @@ ROUTE22.toNode = "transform";
 ROUTE22.toField = "set_translation";
 browser.currentScene.children[5] = ROUTE22;
 
+}
+main ();

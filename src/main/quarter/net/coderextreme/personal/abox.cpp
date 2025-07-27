@@ -42,9 +42,9 @@ int main(int argc, char ** argv)
   delete viewer;
 
   Quarter::clean();
-SoSeparator* SoSeparator0 = new SoSeparator();
-SoSeparator0->setProfile(QString("Immersive"));
-SoSeparator0->setVersion(QString("3.3"));
+SoSceneManager* SoSceneManager0 = new SoSceneManager();
+SoSceneManager0->setProfile(QString("Immersive"));
+SoSceneManager0->setVersion(QString("3.3"));
 Sohead* Sohead1 = new Sohead();
 Someta* Someta2 = new Someta();
 Someta2->setName(QString("title"));
@@ -71,9 +71,9 @@ Someta6->setName(QString("description"));
 Someta6->setContent(QString("a box"));
 Sohead1->addMeta(*Someta6);
 
-SoSeparator0->setHead(*Sohead1);
+SoSceneManager0->setHead(*Sohead1);
 
-SoScene* SoScene7 = new SoScene();
+SoNode* SoNode7 = new SoNode();
 SoProtoDeclare* SoProtoDeclare8 = new SoProtoDeclare();
 SoProtoDeclare8->setName(QString("anyShape"));
 SoProtoInterface* SoProtoInterface9 = new SoProtoInterface();
@@ -105,7 +105,7 @@ SoProtoBody13->addChild(*SoTransform14);
 
 SoProtoDeclare8->addChild(*SoProtoBody13);
 
-SoScene7->addChild(*SoProtoDeclare8);
+SoNode7->addChild(*SoProtoDeclare8);
 
 SoProtoDeclare* SoProtoDeclare17 = new SoProtoDeclare();
 SoProtoDeclare17->setName(QString("one"));
@@ -142,24 +142,24 @@ SoProtoBody22->addChild(*SoTransform23);
 
 SoProtoDeclare17->addChild(*SoProtoBody22);
 
-SoScene7->addChild(*SoProtoDeclare17);
+SoNode7->addChild(*SoProtoDeclare17);
 
 SoProtoInstance* SoProtoInstance27 = new SoProtoInstance();
 SoProtoInstance27->setName(QString("one"));
-SofieldValue* SofieldValue28 = new SofieldValue();
-SofieldValue28->setName(QString("myShape"));
+SoField* SoField28 = new SoField();
+SoField28->setName(QString("myShape"));
 SoShape* SoShape29 = new SoShape();
 SoBox* SoBox30 = new SoBox();
 SoBox30->setSize(new float[]{140.0,140.0,140.0});
 SoShape29->setGeometry(*SoBox30);
 
-SofieldValue28->addChild(*SoShape29);
+SoField28->addChild(*SoShape29);
 
-SoProtoInstance27->addChild(*SofieldValue28);
+SoProtoInstance27->addChild(*SoField28);
 
-SoScene7->addChild(*SoProtoInstance27);
+SoNode7->addChild(*SoProtoInstance27);
 
-SoSeparator0->setScene(*SoScene7);
+SoSceneManager0->setSceneGraph(*SoNode7);
 
 return 0;
 }

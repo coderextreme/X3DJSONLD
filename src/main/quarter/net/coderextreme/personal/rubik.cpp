@@ -42,9 +42,9 @@ int main(int argc, char ** argv)
   delete viewer;
 
   Quarter::clean();
-SoSeparator* SoSeparator0 = new SoSeparator();
-SoSeparator0->setProfile(QString("Immersive"));
-SoSeparator0->setVersion(QString("3.3"));
+SoSceneManager* SoSceneManager0 = new SoSceneManager();
+SoSceneManager0->setProfile(QString("Immersive"));
+SoSceneManager0->setVersion(QString("3.3"));
 Sohead* Sohead1 = new Sohead();
 Someta* Someta2 = new Someta();
 Someta2->setName(QString("title"));
@@ -71,17 +71,17 @@ Someta6->setName(QString("description"));
 Someta6->setContent(QString("a kind of rubik cube with spheres"));
 Sohead1->addMeta(*Someta6);
 
-SoSeparator0->setHead(*Sohead1);
+SoSceneManager0->setHead(*Sohead1);
 
-SoScene* SoScene7 = new SoScene();
+SoNode* SoNode7 = new SoNode();
 SoNavigationInfo* SoNavigationInfo8 = new SoNavigationInfo();
 SoNavigationInfo8->setType(new QString[]{QString("EXAMINE")}, 1);
-SoScene7->addChild(*SoNavigationInfo8);
+SoNode7->addChild(*SoNavigationInfo8);
 
 SoViewpoint* SoViewpoint9 = new SoViewpoint();
 SoViewpoint9->setDescription(QString("Rubiks Cube"));
 SoViewpoint9->setPosition(new float[]{0.0,0.0,12.0});
-SoScene7->addChild(*SoViewpoint9);
+SoNode7->addChild(*SoViewpoint9);
 
 SoProtoDeclare* SoProtoDeclare10 = new SoProtoDeclare();
 SoProtoDeclare10->setName(QString("sphereproto"));
@@ -122,7 +122,7 @@ SoProtoBody13->addChild(*SoTransform14);
 
 SoProtoDeclare10->addChild(*SoProtoBody13);
 
-SoScene7->addChild(*SoProtoDeclare10);
+SoNode7->addChild(*SoProtoDeclare10);
 
 SoProtoDeclare* SoProtoDeclare21 = new SoProtoDeclare();
 SoProtoDeclare21->setName(QString("three"));
@@ -148,28 +148,28 @@ SoTransform25->addChild(*SoIS26);
 
 SoProtoInstance* SoProtoInstance28 = new SoProtoInstance();
 SoProtoInstance28->setName(QString("sphereproto"));
-SofieldValue* SofieldValue29 = new SofieldValue();
-SofieldValue29->setName(QString("xtranslation"));
-SofieldValue29->setValue(QString("0 0 0"));
-SoProtoInstance28->addChild(*SofieldValue29);
+SoField* SoField29 = new SoField();
+SoField29->setName(QString("xtranslation"));
+SoField29->setValue(QString("0 0 0"));
+SoProtoInstance28->addChild(*SoField29);
 
 SoTransform25->addChild(*SoProtoInstance28);
 
 SoProtoInstance* SoProtoInstance30 = new SoProtoInstance();
 SoProtoInstance30->setName(QString("sphereproto"));
-SofieldValue* SofieldValue31 = new SofieldValue();
-SofieldValue31->setName(QString("xtranslation"));
-SofieldValue31->setValue(QString("2 0 0"));
-SoProtoInstance30->addChild(*SofieldValue31);
+SoField* SoField31 = new SoField();
+SoField31->setName(QString("xtranslation"));
+SoField31->setValue(QString("2 0 0"));
+SoProtoInstance30->addChild(*SoField31);
 
 SoTransform25->addChild(*SoProtoInstance30);
 
 SoProtoInstance* SoProtoInstance32 = new SoProtoInstance();
 SoProtoInstance32->setName(QString("sphereproto"));
-SofieldValue* SofieldValue33 = new SofieldValue();
-SofieldValue33->setName(QString("xtranslation"));
-SofieldValue33->setValue(QString("-2 0 0"));
-SoProtoInstance32->addChild(*SofieldValue33);
+SoField* SoField33 = new SoField();
+SoField33->setName(QString("xtranslation"));
+SoField33->setValue(QString("-2 0 0"));
+SoProtoInstance32->addChild(*SoField33);
 
 SoTransform25->addChild(*SoProtoInstance32);
 
@@ -177,7 +177,7 @@ SoProtoBody24->addChild(*SoTransform25);
 
 SoProtoDeclare21->addChild(*SoProtoBody24);
 
-SoScene7->addChild(*SoProtoDeclare21);
+SoNode7->addChild(*SoProtoDeclare21);
 
 SoProtoDeclare* SoProtoDeclare34 = new SoProtoDeclare();
 SoProtoDeclare34->setName(QString("nine"));
@@ -203,28 +203,28 @@ SoTransform38->addChild(*SoIS39);
 
 SoProtoInstance* SoProtoInstance41 = new SoProtoInstance();
 SoProtoInstance41->setName(QString("three"));
-SofieldValue* SofieldValue42 = new SofieldValue();
-SofieldValue42->setName(QString("ytranslation"));
-SofieldValue42->setValue(QString("0 0 0"));
-SoProtoInstance41->addChild(*SofieldValue42);
+SoField* SoField42 = new SoField();
+SoField42->setName(QString("ytranslation"));
+SoField42->setValue(QString("0 0 0"));
+SoProtoInstance41->addChild(*SoField42);
 
 SoTransform38->addChild(*SoProtoInstance41);
 
 SoProtoInstance* SoProtoInstance43 = new SoProtoInstance();
 SoProtoInstance43->setName(QString("three"));
-SofieldValue* SofieldValue44 = new SofieldValue();
-SofieldValue44->setName(QString("ytranslation"));
-SofieldValue44->setValue(QString("0 2 0"));
-SoProtoInstance43->addChild(*SofieldValue44);
+SoField* SoField44 = new SoField();
+SoField44->setName(QString("ytranslation"));
+SoField44->setValue(QString("0 2 0"));
+SoProtoInstance43->addChild(*SoField44);
 
 SoTransform38->addChild(*SoProtoInstance43);
 
 SoProtoInstance* SoProtoInstance45 = new SoProtoInstance();
 SoProtoInstance45->setName(QString("three"));
-SofieldValue* SofieldValue46 = new SofieldValue();
-SofieldValue46->setName(QString("ytranslation"));
-SofieldValue46->setValue(QString("0 -2 0"));
-SoProtoInstance45->addChild(*SofieldValue46);
+SoField* SoField46 = new SoField();
+SoField46->setName(QString("ytranslation"));
+SoField46->setValue(QString("0 -2 0"));
+SoProtoInstance45->addChild(*SoField46);
 
 SoTransform38->addChild(*SoProtoInstance45);
 
@@ -232,7 +232,7 @@ SoProtoBody37->addChild(*SoTransform38);
 
 SoProtoDeclare34->addChild(*SoProtoBody37);
 
-SoScene7->addChild(*SoProtoDeclare34);
+SoNode7->addChild(*SoProtoDeclare34);
 
 SoProtoDeclare* SoProtoDeclare47 = new SoProtoDeclare();
 SoProtoDeclare47->setName(QString("twentyseven"));
@@ -258,28 +258,28 @@ SoTransform51->addChild(*SoIS52);
 
 SoProtoInstance* SoProtoInstance54 = new SoProtoInstance();
 SoProtoInstance54->setName(QString("nine"));
-SofieldValue* SofieldValue55 = new SofieldValue();
-SofieldValue55->setName(QString("ztranslation"));
-SofieldValue55->setValue(QString("0 0 0"));
-SoProtoInstance54->addChild(*SofieldValue55);
+SoField* SoField55 = new SoField();
+SoField55->setName(QString("ztranslation"));
+SoField55->setValue(QString("0 0 0"));
+SoProtoInstance54->addChild(*SoField55);
 
 SoTransform51->addChild(*SoProtoInstance54);
 
 SoProtoInstance* SoProtoInstance56 = new SoProtoInstance();
 SoProtoInstance56->setName(QString("nine"));
-SofieldValue* SofieldValue57 = new SofieldValue();
-SofieldValue57->setName(QString("ztranslation"));
-SofieldValue57->setValue(QString("0 0 2"));
-SoProtoInstance56->addChild(*SofieldValue57);
+SoField* SoField57 = new SoField();
+SoField57->setName(QString("ztranslation"));
+SoField57->setValue(QString("0 0 2"));
+SoProtoInstance56->addChild(*SoField57);
 
 SoTransform51->addChild(*SoProtoInstance56);
 
 SoProtoInstance* SoProtoInstance58 = new SoProtoInstance();
 SoProtoInstance58->setName(QString("nine"));
-SofieldValue* SofieldValue59 = new SofieldValue();
-SofieldValue59->setName(QString("ztranslation"));
-SofieldValue59->setValue(QString("0 0 -2"));
-SoProtoInstance58->addChild(*SofieldValue59);
+SoField* SoField59 = new SoField();
+SoField59->setName(QString("ztranslation"));
+SoField59->setValue(QString("0 0 -2"));
+SoProtoInstance58->addChild(*SoField59);
 
 SoTransform51->addChild(*SoProtoInstance58);
 
@@ -287,18 +287,18 @@ SoProtoBody50->addChild(*SoTransform51);
 
 SoProtoDeclare47->addChild(*SoProtoBody50);
 
-SoScene7->addChild(*SoProtoDeclare47);
+SoNode7->addChild(*SoProtoDeclare47);
 
 SoProtoInstance* SoProtoInstance60 = new SoProtoInstance();
 SoProtoInstance60->setName(QString("twentyseven"));
-SofieldValue* SofieldValue61 = new SofieldValue();
-SofieldValue61->setName(QString("ttranslation"));
-SofieldValue61->setValue(QString("0 0 0"));
-SoProtoInstance60->addChild(*SofieldValue61);
+SoField* SoField61 = new SoField();
+SoField61->setName(QString("ttranslation"));
+SoField61->setValue(QString("0 0 0"));
+SoProtoInstance60->addChild(*SoField61);
 
-SoScene7->addChild(*SoProtoInstance60);
+SoNode7->addChild(*SoProtoInstance60);
 
-SoSeparator0->setScene(*SoScene7);
+SoSceneManager0->setSceneGraph(*SoNode7);
 
 return 0;
 }
