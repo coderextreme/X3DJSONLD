@@ -1,268 +1,262 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("pp3.x3d")
+meta2.name = "title"
+meta2.content = "pp3.x3d"
 
-head1.addMeta(meta2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.setName("creator")
-meta3.setContent("John Carlson")
+meta3.name = "creator"
+meta3.content = "John Carlson"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("translator")
-meta4.setContent("John Carlson")
+meta4.name = "translator"
+meta4.content = "John Carlson"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
-meta5.setContent("5 May 2015")
+meta5.name = "created"
+meta5.content = "5 May 2015"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.setName("modified")
-meta6.setContent("23 Dec 2022")
+meta6.name = "modified"
+meta6.content = "23 Dec 2022"
 
-head1.addMeta(meta6)
+head1.children.append(meta6)
 meta7 = x3d.meta()
-meta7.setName("description")
-meta7.setContent("A process pipeline between three spheres (try typing on spheres and blue")
+meta7.name = "description"
+meta7.content = "A process pipeline between three spheres (try typing on spheres and blue"
 
-head1.addMeta(meta7)
+head1.children.append(meta7)
 meta8 = x3d.meta()
-meta8.setName("identifier")
-meta8.setContent("https://coderextreme.net/x3d/pp3.x3d")
+meta8.name = "identifier"
+meta8.content = "https://coderextreme.net/x3d/pp3.x3d"
 
-head1.addMeta(meta8)
+head1.children.append(meta8)
 meta9 = x3d.meta()
-meta9.setName("generator")
-meta9.setContent("manual")
+meta9.name = "generator"
+meta9.content = "manual"
 
-head1.addMeta(meta9)
+head1.children.append(meta9)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene10 = x3d.Scene()
 ProtoDeclare11 = x3d.ProtoDeclare()
-ProtoDeclare11.setName("Process")
+ProtoDeclare11.name = "Process"
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
-#left
+"""left"""
 Transform14 = x3d.Transform()
-Transform14.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform14.scale = [0.5,0.5,0.5]
 Shape15 = x3d.Shape()
 Appearance16 = x3d.Appearance()
 Material17 = x3d.Material()
-Material17.setDiffuseColor(x3d.doubleToFloat([0.7,1,0]))
-Material17.setTransparency(0.5)
+Material17.diffuseColor = [0.7,1,0]
+Material17.transparency = 0.5
 
-Appearance16.setMaterial(Material17)
+Appearance16.material = Material17
 
-Shape15.setAppearance(Appearance16)
+Shape15.appearance = Appearance16
 Extrusion18 = x3d.Extrusion()
-Extrusion18.setCreaseAngle(0.785)
-Extrusion18.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
-Extrusion18.setSpine(x3d.doubleToFloat([-2.5,0,0,-2,0,0,-1.5,0,0]))
+Extrusion18.creaseAngle = 0.785
 
-Shape15.setGeometry(Extrusion18)
+Shape15.geometry = Extrusion18
 
-Transform14.addChild(Shape15)
-#<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>
+Transform14.children.append(Shape15)
+"""<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"""
 
-Group13.addChildren(Transform14)
-#right
+Group13.children.append(Transform14)
+"""right"""
 Transform19 = x3d.Transform()
-Transform19.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform19.scale = [0.5,0.5,0.5]
 Shape20 = x3d.Shape()
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
-Material22.setDiffuseColor(x3d.doubleToFloat([0,0.7,1]))
-Material22.setTransparency(0.5)
+Material22.diffuseColor = [0,0.7,1]
+Material22.transparency = 0.5
 
-Appearance21.setMaterial(Material22)
+Appearance21.material = Material22
 
-Shape20.setAppearance(Appearance21)
+Shape20.appearance = Appearance21
 Extrusion23 = x3d.Extrusion()
-Extrusion23.setCreaseAngle(0.785)
-Extrusion23.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
-Extrusion23.setSpine(x3d.doubleToFloat([1.5,0,0,2,0,0,2.5,0,0]))
+Extrusion23.creaseAngle = 0.785
 
-Shape20.setGeometry(Extrusion23)
+Shape20.geometry = Extrusion23
 
-Transform19.addChild(Shape20)
+Transform19.children.append(Shape20)
 Transform24 = x3d.Transform()
-Transform24.setTranslation(x3d.doubleToFloat([2,0,0]))
+Transform24.translation = [2,0,0]
 Shape25 = x3d.Shape()
 Appearance26 = x3d.Appearance()
 Material27 = x3d.Material()
-Material27.setDEF("MaterialLightBlue")
-Material27.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
+Material27.DEF = "MaterialLightBlue"
+Material27.diffuseColor = [1,1,1]
 
-Appearance26.setMaterial(Material27)
+Appearance26.material = Material27
 
-Shape25.setAppearance(Appearance26)
+Shape25.appearance = Appearance26
 Text28 = x3d.Text()
-Text28.setDEF("RightString")
-Text28.setString(["r"])
+Text28.DEF = "RightString"
+Text28.string = ["r"]
 
-Shape25.setGeometry(Text28)
+Shape25.geometry = Text28
 
-Transform24.addChild(Shape25)
+Transform24.children.append(Shape25)
 
-Transform19.addChildren(Transform24)
+Transform19.children.append(Transform24)
 StringSensor29 = x3d.StringSensor()
-StringSensor29.setDEF("RightSensor")
-StringSensor29.setEnabled(False)
+StringSensor29.DEF = "RightSensor"
+StringSensor29.enabled = False
 
-Transform19.addChildren(StringSensor29)
+Transform19.children.append(StringSensor29)
 TouchSensor30 = x3d.TouchSensor()
-TouchSensor30.setDescription("touch to activate")
-TouchSensor30.setDEF("RightTouch")
+TouchSensor30.description = "touch to activate"
+TouchSensor30.DEF = "RightTouch"
 
-Transform19.addChildren(TouchSensor30)
+Transform19.children.append(TouchSensor30)
 
-Group13.addChildren(Transform19)
-#up
+Group13.children.append(Transform19)
+"""up"""
 Transform31 = x3d.Transform()
-Transform31.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform31.scale = [0.5,0.5,0.5]
 Shape32 = x3d.Shape()
 Appearance33 = x3d.Appearance()
 Material34 = x3d.Material()
-Material34.setDiffuseColor(x3d.doubleToFloat([0,0.7,1]))
-Material34.setTransparency(0.5)
+Material34.diffuseColor = [0,0.7,1]
+Material34.transparency = 0.5
 
-Appearance33.setMaterial(Material34)
+Appearance33.material = Material34
 
-Shape32.setAppearance(Appearance33)
+Shape32.appearance = Appearance33
 Extrusion35 = x3d.Extrusion()
-Extrusion35.setCreaseAngle(0.785)
-Extrusion35.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
-Extrusion35.setSpine(x3d.doubleToFloat([0,1.5,0,0,2,0,0,2.5,0]))
+Extrusion35.creaseAngle = 0.785
 
-Shape32.setGeometry(Extrusion35)
+Shape32.geometry = Extrusion35
 
-Transform31.addChild(Shape32)
+Transform31.children.append(Shape32)
 Transform36 = x3d.Transform()
-Transform36.setTranslation(x3d.doubleToFloat([-0.5,2,0]))
+Transform36.translation = [-0.5,2,0]
 Shape37 = x3d.Shape()
 Appearance38 = x3d.Appearance()
 Material39 = x3d.Material()
-Material39.setUSE("MaterialLightBlue")
+Material39.USE = "MaterialLightBlue"
 
-Appearance38.setMaterial(Material39)
+Appearance38.material = Material39
 
-Shape37.setAppearance(Appearance38)
+Shape37.appearance = Appearance38
 Text40 = x3d.Text()
-Text40.setDEF("UpString")
-Text40.setString(["u"])
+Text40.DEF = "UpString"
+Text40.string = ["u"]
 
-Shape37.setGeometry(Text40)
+Shape37.geometry = Text40
 
-Transform36.addChild(Shape37)
+Transform36.children.append(Shape37)
 
-Transform31.addChildren(Transform36)
+Transform31.children.append(Transform36)
 StringSensor41 = x3d.StringSensor()
-StringSensor41.setDEF("UpSensor")
-StringSensor41.setEnabled(False)
+StringSensor41.DEF = "UpSensor"
+StringSensor41.enabled = False
 
-Transform31.addChildren(StringSensor41)
+Transform31.children.append(StringSensor41)
 TouchSensor42 = x3d.TouchSensor()
-TouchSensor42.setDescription("touch to activate")
-TouchSensor42.setDEF("UpTouch")
+TouchSensor42.description = "touch to activate"
+TouchSensor42.DEF = "UpTouch"
 
-Transform31.addChildren(TouchSensor42)
+Transform31.children.append(TouchSensor42)
 
-Group13.addChildren(Transform31)
-#down
+Group13.children.append(Transform31)
+"""down"""
 Transform43 = x3d.Transform()
-Transform43.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
+Transform43.scale = [0.5,0.5,0.5]
 Shape44 = x3d.Shape()
 Appearance45 = x3d.Appearance()
 Material46 = x3d.Material()
-Material46.setDiffuseColor(x3d.doubleToFloat([0.7,1,0]))
-Material46.setTransparency(0.5)
+Material46.diffuseColor = [0.7,1,0]
+Material46.transparency = 0.5
 
-Appearance45.setMaterial(Material46)
+Appearance45.material = Material46
 
-Shape44.setAppearance(Appearance45)
+Shape44.appearance = Appearance45
 Extrusion47 = x3d.Extrusion()
-Extrusion47.setCreaseAngle(0.785)
-Extrusion47.setCrossSection(x3d.doubleToFloat([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))
-Extrusion47.setSpine(x3d.doubleToFloat([0,-2.5,0,0,-2,0,0,-1.5,0]))
+Extrusion47.creaseAngle = 0.785
 
-Shape44.setGeometry(Extrusion47)
+Shape44.geometry = Extrusion47
 
-Transform43.addChild(Shape44)
-#<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>
+Transform43.children.append(Shape44)
+"""<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"""
 
-Group13.addChildren(Transform43)
-#center
+Group13.children.append(Transform43)
+"""center"""
 Transform48 = x3d.Transform()
 Shape49 = x3d.Shape()
 Appearance50 = x3d.Appearance()
 Material51 = x3d.Material()
-Material51.setDiffuseColor(x3d.doubleToFloat([1,0,0.7]))
+Material51.diffuseColor = [1,0,0.7]
 
-Appearance50.setMaterial(Material51)
+Appearance50.material = Material51
 
-Shape49.setAppearance(Appearance50)
+Shape49.appearance = Appearance50
 Sphere52 = x3d.Sphere()
 
-Shape49.setGeometry(Sphere52)
+Shape49.geometry = Sphere52
 
-Transform48.addChild(Shape49)
+Transform48.children.append(Shape49)
 Transform53 = x3d.Transform()
-Transform53.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
-Transform53.setTranslation(x3d.doubleToFloat([-0.5,0,1]))
+Transform53.scale = [0.5,0.5,0.5]
+Transform53.translation = [-0.5,0,1]
 Shape54 = x3d.Shape()
 Appearance55 = x3d.Appearance()
 Material56 = x3d.Material()
-Material56.setUSE("MaterialLightBlue")
+Material56.USE = "MaterialLightBlue"
 
-Appearance55.setMaterial(Material56)
+Appearance55.material = Material56
 
-Shape54.setAppearance(Appearance55)
+Shape54.appearance = Appearance55
 Text57 = x3d.Text()
-Text57.setDEF("CenterString")
+Text57.DEF = "CenterString"
 
-Shape54.setGeometry(Text57)
+Shape54.geometry = Text57
 
-Transform53.addChild(Shape54)
+Transform53.children.append(Shape54)
 
-Transform48.addChildren(Transform53)
+Transform48.children.append(Transform53)
 StringSensor58 = x3d.StringSensor()
-StringSensor58.setDEF("CenterSensor")
-StringSensor58.setEnabled(False)
+StringSensor58.DEF = "CenterSensor"
+StringSensor58.enabled = False
 
-Transform48.addChildren(StringSensor58)
+Transform48.children.append(StringSensor58)
 TouchSensor59 = x3d.TouchSensor()
-TouchSensor59.setDescription("touch to activate")
-TouchSensor59.setDEF("CenterTouch")
+TouchSensor59.description = "touch to activate"
+TouchSensor59.DEF = "CenterTouch"
 
-Transform48.addChildren(TouchSensor59)
+Transform48.children.append(TouchSensor59)
 
-Group13.addChildren(Transform48)
+Group13.children.append(Transform48)
 
-ProtoBody12.addChildren(Group13)
+ProtoBody12.children.append(Group13)
 Script60 = x3d.Script()
-Script60.setDEF("RightSingleToMultiString")
+Script60.DEF = "RightSingleToMultiString"
 field61 = x3d.field()
-field61.setName("set_rightstring")
-field61.setAccessType("inputOnly")
-field61.setType("SFString")
+field61.name = "set_rightstring"
+field61.accessType = "inputOnly"
+field61.type = "SFString"
 
-Script60.addField(field61)
+Script60.field.append(field61)
 field62 = x3d.field()
-field62.setName("rightlines")
-field62.setAccessType("outputOnly")
-field62.setType("MFString")
+field62.name = "rightlines"
+field62.accessType = "outputOnly"
+field62.type = "MFString"
 
-Script60.addField(field62)
+Script60.field.append(field62)
 
-Script60.setSourceCode('''ecmascript:\n"+
+Script60.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -270,25 +264,25 @@ Script60.setSourceCode('''ecmascript:\n"+
 "\n"+
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
-"}''')
+"}'''
 
-ProtoBody12.addChildren(Script60)
+ProtoBody12.children.append(Script60)
 Script63 = x3d.Script()
-Script63.setDEF("UpSingleToMultiString")
+Script63.DEF = "UpSingleToMultiString"
 field64 = x3d.field()
-field64.setName("set_upstring")
-field64.setAccessType("inputOnly")
-field64.setType("SFString")
+field64.name = "set_upstring"
+field64.accessType = "inputOnly"
+field64.type = "SFString"
 
-Script63.addField(field64)
+Script63.field.append(field64)
 field65 = x3d.field()
-field65.setName("uplines")
-field65.setAccessType("outputOnly")
-field65.setType("MFString")
+field65.name = "uplines"
+field65.accessType = "outputOnly"
+field65.type = "MFString"
 
-Script63.addField(field65)
+Script63.field.append(field65)
 
-Script63.setSourceCode('''ecmascript:\n"+
+Script63.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -296,25 +290,25 @@ Script63.setSourceCode('''ecmascript:\n"+
 "\n"+
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
-"}''')
+"}'''
 
-ProtoBody12.addChildren(Script63)
+ProtoBody12.children.append(Script63)
 Script66 = x3d.Script()
-Script66.setDEF("CenterSingleToMultiString")
+Script66.DEF = "CenterSingleToMultiString"
 field67 = x3d.field()
-field67.setName("set_centerstring")
-field67.setAccessType("inputOnly")
-field67.setType("SFString")
+field67.name = "set_centerstring"
+field67.accessType = "inputOnly"
+field67.type = "SFString"
 
-Script66.addField(field67)
+Script66.field.append(field67)
 field68 = x3d.field()
-field68.setName("centerlines")
-field68.setAccessType("outputOnly")
-field68.setType("MFString")
+field68.name = "centerlines"
+field68.accessType = "outputOnly"
+field68.type = "MFString"
 
-Script66.addField(field68)
+Script66.field.append(field68)
 
-Script66.setSourceCode('''ecmascript:\n"+
+Script66.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
@@ -322,109 +316,113 @@ Script66.setSourceCode('''ecmascript:\n"+
 "\n"+
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
-"}''')
+"}'''
 
-ProtoBody12.addChildren(Script66)
+ProtoBody12.children.append(Script66)
 ROUTE69 = x3d.ROUTE()
-ROUTE69.setFromField("enteredText")
-ROUTE69.setFromNode("CenterSensor")
-ROUTE69.setToField("set_centerstring")
-ROUTE69.setToNode("CenterSingleToMultiString")
+ROUTE69.fromField = "enteredText"
+ROUTE69.fromNode = "CenterSensor"
+ROUTE69.toField = "set_centerstring"
+ROUTE69.toNode = "CenterSingleToMultiString"
 
-ProtoBody12.addChildren(ROUTE69)
+ProtoBody12.children.append(ROUTE69)
 ROUTE70 = x3d.ROUTE()
-ROUTE70.setFromField("centerlines")
-ROUTE70.setFromNode("CenterSingleToMultiString")
-ROUTE70.setToField("set_string")
-ROUTE70.setToNode("CenterString")
+ROUTE70.fromField = "centerlines"
+ROUTE70.fromNode = "CenterSingleToMultiString"
+ROUTE70.toField = "set_string"
+ROUTE70.toNode = "CenterString"
 
-ProtoBody12.addChildren(ROUTE70)
+ProtoBody12.children.append(ROUTE70)
 ROUTE71 = x3d.ROUTE()
-ROUTE71.setFromField("isOver")
-ROUTE71.setFromNode("CenterTouch")
-ROUTE71.setToField("set_enabled")
-ROUTE71.setToNode("CenterSensor")
+ROUTE71.fromField = "isOver"
+ROUTE71.fromNode = "CenterTouch"
+ROUTE71.toField = "set_enabled"
+ROUTE71.toNode = "CenterSensor"
 
-ProtoBody12.addChildren(ROUTE71)
+ProtoBody12.children.append(ROUTE71)
 ROUTE72 = x3d.ROUTE()
-ROUTE72.setFromField("enteredText")
-ROUTE72.setFromNode("RightSensor")
-ROUTE72.setToField("set_rightstring")
-ROUTE72.setToNode("RightSingleToMultiString")
+ROUTE72.fromField = "enteredText"
+ROUTE72.fromNode = "RightSensor"
+ROUTE72.toField = "set_rightstring"
+ROUTE72.toNode = "RightSingleToMultiString"
 
-ProtoBody12.addChildren(ROUTE72)
+ProtoBody12.children.append(ROUTE72)
 ROUTE73 = x3d.ROUTE()
-ROUTE73.setFromField("rightlines")
-ROUTE73.setFromNode("RightSingleToMultiString")
-ROUTE73.setToField("set_string")
-ROUTE73.setToNode("RightString")
+ROUTE73.fromField = "rightlines"
+ROUTE73.fromNode = "RightSingleToMultiString"
+ROUTE73.toField = "set_string"
+ROUTE73.toNode = "RightString"
 
-ProtoBody12.addChildren(ROUTE73)
+ProtoBody12.children.append(ROUTE73)
 ROUTE74 = x3d.ROUTE()
-ROUTE74.setFromField("isOver")
-ROUTE74.setFromNode("RightTouch")
-ROUTE74.setToField("set_enabled")
-ROUTE74.setToNode("RightSensor")
+ROUTE74.fromField = "isOver"
+ROUTE74.fromNode = "RightTouch"
+ROUTE74.toField = "set_enabled"
+ROUTE74.toNode = "RightSensor"
 
-ProtoBody12.addChildren(ROUTE74)
+ProtoBody12.children.append(ROUTE74)
 ROUTE75 = x3d.ROUTE()
-ROUTE75.setFromField("enteredText")
-ROUTE75.setFromNode("UpSensor")
-ROUTE75.setToField("set_upstring")
-ROUTE75.setToNode("UpSingleToMultiString")
+ROUTE75.fromField = "enteredText"
+ROUTE75.fromNode = "UpSensor"
+ROUTE75.toField = "set_upstring"
+ROUTE75.toNode = "UpSingleToMultiString"
 
-ProtoBody12.addChildren(ROUTE75)
+ProtoBody12.children.append(ROUTE75)
 ROUTE76 = x3d.ROUTE()
-ROUTE76.setFromField("uplines")
-ROUTE76.setFromNode("UpSingleToMultiString")
-ROUTE76.setToField("set_string")
-ROUTE76.setToNode("UpString")
+ROUTE76.fromField = "uplines"
+ROUTE76.fromNode = "UpSingleToMultiString"
+ROUTE76.toField = "set_string"
+ROUTE76.toNode = "UpString"
 
-ProtoBody12.addChildren(ROUTE76)
+ProtoBody12.children.append(ROUTE76)
 ROUTE77 = x3d.ROUTE()
-ROUTE77.setFromField("isOver")
-ROUTE77.setFromNode("UpTouch")
-ROUTE77.setToField("set_enabled")
-ROUTE77.setToNode("UpSensor")
+ROUTE77.fromField = "isOver"
+ROUTE77.fromNode = "UpTouch"
+ROUTE77.toField = "set_enabled"
+ROUTE77.toNode = "UpSensor"
 
-ProtoBody12.addChildren(ROUTE77)
+ProtoBody12.children.append(ROUTE77)
 
-ProtoDeclare11.setProtoBody(ProtoBody12)
+ProtoDeclare11.ProtoBody = ProtoBody12
 
-Scene10.addChildren(ProtoDeclare11)
+Scene10.children.append(ProtoDeclare11)
 NavigationInfo78 = x3d.NavigationInfo()
 
-Scene10.addChildren(NavigationInfo78)
+Scene10.children.append(NavigationInfo78)
 Viewpoint79 = x3d.Viewpoint()
-Viewpoint79.setDescription("Process pipes")
-Viewpoint79.setOrientation(x3d.doubleToFloat([1,0,0,-0.4]))
-Viewpoint79.setPosition(x3d.doubleToFloat([0,5,12]))
+Viewpoint79.description = "Process pipes"
+Viewpoint79.orientation = [1,0,0,-0.4]
+Viewpoint79.position = [0,5,12]
 
-Scene10.addChildren(Viewpoint79)
+Scene10.children.append(Viewpoint79)
 Transform80 = x3d.Transform()
-Transform80.setTranslation(x3d.doubleToFloat([0,-2.5,0]))
+Transform80.translation = [0,-2.5,0]
 ProtoInstance81 = x3d.ProtoInstance()
-ProtoInstance81.setName("Process")
+ProtoInstance81.name = "Process"
 
-Transform80.addChildren(ProtoInstance81)
+Transform80.children.append(ProtoInstance81)
 
-Scene10.addChildren(Transform80)
+Scene10.children.append(Transform80)
 Transform82 = x3d.Transform()
 ProtoInstance83 = x3d.ProtoInstance()
-ProtoInstance83.setName("Process")
+ProtoInstance83.name = "Process"
 
-Transform82.addChildren(ProtoInstance83)
+Transform82.children.append(ProtoInstance83)
 
-Scene10.addChildren(Transform82)
+Scene10.children.append(Transform82)
 Transform84 = x3d.Transform()
-Transform84.setTranslation(x3d.doubleToFloat([0,2.5,0]))
+Transform84.translation = [0,2.5,0]
 ProtoInstance85 = x3d.ProtoInstance()
-ProtoInstance85.setName("Process")
+ProtoInstance85.name = "Process"
 
-Transform84.addChildren(ProtoInstance85)
+Transform84.children.append(ProtoInstance85)
 
-Scene10.addChildren(Transform84)
+Scene10.children.append(Transform84)
 
-X3D0.setScene(Scene10)
-X3D0.toFileX3D("../personal/pp3.new.python.x3d")
-X3D0.toFileJSON("../personal/pp3.new.python.json")
+X3D0.Scene = Scene10
+f = open("../personal/pp3.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/pp3.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

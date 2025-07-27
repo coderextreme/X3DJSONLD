@@ -1,1256 +1,1262 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.profile = "Full"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
-component2.setLevel(1)
+component2.name = "Scripting"
+component2.level = 1
 
-head1.addComponent(component2)
+head1.children.append(component2)
 component3 = x3d.component()
-component3.setName("EnvironmentalEffects")
-component3.setLevel(3)
+component3.name = "EnvironmentalEffects"
+component3.level = 3
 
-head1.addComponent(component3)
+head1.children.append(component3)
 component4 = x3d.component()
-component4.setName("Shaders")
-component4.setLevel(1)
+component4.name = "Shaders"
+component4.level = 1
 
-head1.addComponent(component4)
+head1.children.append(component4)
 component5 = x3d.component()
-component5.setName("CubeMapTexturing")
-component5.setLevel(1)
+component5.name = "CubeMapTexturing"
+component5.level = 1
 
-head1.addComponent(component5)
+head1.children.append(component5)
 component6 = x3d.component()
-component6.setName("Texturing")
-component6.setLevel(1)
+component6.name = "Texturing"
+component6.level = 1
 
-head1.addComponent(component6)
+head1.children.append(component6)
 component7 = x3d.component()
-component7.setName("Rendering")
-component7.setLevel(1)
+component7.name = "Rendering"
+component7.level = 1
 
-head1.addComponent(component7)
+head1.children.append(component7)
 component8 = x3d.component()
-component8.setName("Grouping")
-component8.setLevel(3)
+component8.name = "Grouping"
+component8.level = 3
 
-head1.addComponent(component8)
+head1.children.append(component8)
 component9 = x3d.component()
-component9.setName("Core")
-component9.setLevel(1)
+component9.name = "Core"
+component9.level = 1
 
-head1.addComponent(component9)
+head1.children.append(component9)
 component10 = x3d.component()
-component10.setName("DIS")
-component10.setLevel(2)
+component10.name = "DIS"
+component10.level = 2
 
-head1.addComponent(component10)
-#<component name='Shape' level='4'></component>
-#Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
+head1.children.append(component10)
+"""<component name='Shape' level='4'></component>"""
+"""Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"""
 meta11 = x3d.meta()
-meta11.setName("title")
-meta11.setContent("bumpyx_itesliders.x3d")
+meta11.name = "title"
+meta11.content = "bumpyx_itesliders.x3d"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.setName("description")
-meta12.setContent("*enter description here, short-sentence summaries preferred*")
+meta12.name = "description"
+meta12.content = "*enter description here, short-sentence summaries preferred*"
 
-head1.addMeta(meta12)
+head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.setName("creator")
-meta13.setContent("Doug Sanden, Christoph Valentin, John Carlson")
+meta13.name = "creator"
+meta13.content = "Doug Sanden, Christoph Valentin, John Carlson"
 
-head1.addMeta(meta13)
+head1.children.append(meta13)
 meta14 = x3d.meta()
-meta14.setName("translator")
-meta14.setContent("*if manually translating VRML-to-X3D, enter name of person translating here*")
+meta14.name = "translator"
+meta14.content = "*if manually translating VRML-to-X3D, enter name of person translating here*"
 
-head1.addMeta(meta14)
+head1.children.append(meta14)
 meta15 = x3d.meta()
-meta15.setName("created")
-meta15.setContent("*enter date of initial version here*")
+meta15.name = "created"
+meta15.content = "*enter date of initial version here*"
 
-head1.addMeta(meta15)
+head1.children.append(meta15)
 meta16 = x3d.meta()
-meta16.setName("translated")
-meta16.setContent("*enter date of translation here*")
+meta16.name = "translated"
+meta16.content = "*enter date of translation here*"
 
-head1.addMeta(meta16)
+head1.children.append(meta16)
 meta17 = x3d.meta()
-meta17.setName("modified")
-meta17.setContent("*enter date of latest revision here*")
+meta17.name = "modified"
+meta17.content = "*enter date of latest revision here*"
 
-head1.addMeta(meta17)
+head1.children.append(meta17)
 meta18 = x3d.meta()
-meta18.setName("version")
-meta18.setContent("*enter version here, if any*")
+meta18.name = "version"
+meta18.content = "*enter version here, if any*"
 
-head1.addMeta(meta18)
+head1.children.append(meta18)
 meta19 = x3d.meta()
-meta19.setName("reference")
-meta19.setContent("*enter reference citation or relative/online url here*")
+meta19.name = "reference"
+meta19.content = "*enter reference citation or relative/online url here*"
 
-head1.addMeta(meta19)
+head1.children.append(meta19)
 meta20 = x3d.meta()
-meta20.setName("reference")
-meta20.setContent("*enter additional url/bibliographic reference information here*")
+meta20.name = "reference"
+meta20.content = "*enter additional url/bibliographic reference information here*"
 
-head1.addMeta(meta20)
+head1.children.append(meta20)
 meta21 = x3d.meta()
-meta21.setName("requires")
-meta21.setContent("*enter reference resource here if required to support function, delivery, or coherence of content*")
+meta21.name = "requires"
+meta21.content = "*enter reference resource here if required to support function, delivery, or coherence of content*"
 
-head1.addMeta(meta21)
+head1.children.append(meta21)
 meta22 = x3d.meta()
-meta22.setName("rights")
-meta22.setContent("*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024")
+meta22.name = "rights"
+meta22.content = "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"
 
-head1.addMeta(meta22)
+head1.children.append(meta22)
 meta23 = x3d.meta()
-meta23.setName("drawing")
-meta23.setContent("*enter drawing filename/url here*")
+meta23.name = "drawing"
+meta23.content = "*enter drawing filename/url here*"
 
-head1.addMeta(meta23)
+head1.children.append(meta23)
 meta24 = x3d.meta()
-meta24.setName("MovingImage")
-meta24.setContent("*enter movie filename/url here*")
+meta24.name = "MovingImage"
+meta24.content = "*enter movie filename/url here*"
 
-head1.addMeta(meta24)
+head1.children.append(meta24)
 meta25 = x3d.meta()
-meta25.setName("photo")
-meta25.setContent("*enter photo filename/url here*")
+meta25.name = "photo"
+meta25.content = "*enter photo filename/url here*"
 
-head1.addMeta(meta25)
+head1.children.append(meta25)
 meta26 = x3d.meta()
-meta26.setName("subject")
-meta26.setContent("*enter subject keywords here*")
+meta26.name = "subject"
+meta26.content = "*enter subject keywords here*"
 
-head1.addMeta(meta26)
+head1.children.append(meta26)
 meta27 = x3d.meta()
-meta27.setName("accessRights")
-meta27.setContent("*enter permission statements or url here*")
+meta27.name = "accessRights"
+meta27.content = "*enter permission statements or url here*"
 
-head1.addMeta(meta27)
+head1.children.append(meta27)
 meta28 = x3d.meta()
-meta28.setName("identifier")
-meta28.setContent("*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*")
+meta28.name = "identifier"
+meta28.content = "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"
 
-head1.addMeta(meta28)
+head1.children.append(meta28)
 meta29 = x3d.meta()
-meta29.setName("generator")
-meta29.setContent("PSPad, http://www.pspad.com/")
+meta29.name = "generator"
+meta29.content = "PSPad, http://www.pspad.com/"
 
-head1.addMeta(meta29)
+head1.children.append(meta29)
 meta30 = x3d.meta()
-meta30.setName("license")
-meta30.setContent("license.html")
+meta30.name = "license"
+meta30.content = "license.html"
 
-head1.addMeta(meta30)
+head1.children.append(meta30)
 
-X3D0.setHead(head1)
-#\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+X3D0.head = head1
+"""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""""
 Scene31 = x3d.Scene()
-#LayerSet with two layers, navigation happens in layer 1
+"""LayerSet with two layers, navigation happens in layer 1"""
 LayerSet32 = x3d.LayerSet()
-LayerSet32.setActiveLayer(1)
-LayerSet32.setOrder([1,2])
-#the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-#the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+LayerSet32.activeLayer = 1
+LayerSet32.order = [1,2]
+"""the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""
+"""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""
 Layer33 = x3d.Layer()
-#basic nodes, which might be present in any scene
+"""basic nodes, which might be present in any scene"""
 NavigationInfo34 = x3d.NavigationInfo()
-NavigationInfo34.setType(["EXAMINE"])
-NavigationInfo34.setAvatarSize([0.25,1.75,0.75])
+NavigationInfo34.type = ["EXAMINE"]
+NavigationInfo34.avatarSize = [0.25,1.75,0.75]
 
-Layer33.addChildren(NavigationInfo34)
+Layer33.children.append(NavigationInfo34)
 DirectionalLight35 = x3d.DirectionalLight()
-DirectionalLight35.setAmbientIntensity(0.2)
-DirectionalLight35.setDirection([0,-1,0])
+DirectionalLight35.ambientIntensity = 0.2
+DirectionalLight35.direction = [0,-1,0]
 
-Layer33.addChildren(DirectionalLight35)
+Layer33.children.append(DirectionalLight35)
 DirectionalLight36 = x3d.DirectionalLight()
-DirectionalLight36.setAmbientIntensity(0.2)
-DirectionalLight36.setDirection([-1,-0.1,-1])
+DirectionalLight36.ambientIntensity = 0.2
+DirectionalLight36.direction = [-1,-0.1,-1]
 
-Layer33.addChildren(DirectionalLight36)
+Layer33.children.append(DirectionalLight36)
 Viewpoint37 = x3d.Viewpoint()
-Viewpoint37.setDescription("My Overview")
-Viewpoint37.setFieldOfView(1.570796)
-Viewpoint37.setPosition([0,1.75,60])
+Viewpoint37.description = "My Overview"
+Viewpoint37.fieldOfView = 1.570796
+Viewpoint37.position = [0,1.75,60]
 
-Layer33.addChildren(Viewpoint37)
-#this group contains the red/green/blue 3D crosshair
+Layer33.children.append(Viewpoint37)
+"""this group contains the red/green/blue 3D crosshair"""
 Group38 = x3d.Group()
-#Arrow X
+"""Arrow X"""
 Transform39 = x3d.Transform()
-Transform39.setTranslation([25,0,0])
-Transform39.setRotation([0,0,-1,1.57])
+Transform39.translation = [25,0,0]
+Transform39.rotation = [0,0,-1,1.57]
 Shape40 = x3d.Shape()
 Cylinder41 = x3d.Cylinder()
-Cylinder41.setDEF("Shaft")
-Cylinder41.setRadius(0.35)
-Cylinder41.setHeight(50)
+Cylinder41.DEF = "Shaft"
+Cylinder41.radius = 0.35
+Cylinder41.height = 50
 
-Shape40.setGeometry(Cylinder41)
+Shape40.geometry = Cylinder41
 Appearance42 = x3d.Appearance()
 Material43 = x3d.Material()
-Material43.setDEF("RED")
-Material43.setDiffuseColor([1,0,0])
-Material43.setEmissiveColor([1,0,0])
+Material43.DEF = "RED"
+Material43.diffuseColor = [1,0,0]
+Material43.emissiveColor = [1,0,0]
 
-Appearance42.setMaterial(Material43)
+Appearance42.material = Material43
 
-Shape40.setAppearance(Appearance42)
+Shape40.appearance = Appearance42
 
-Transform39.addChild(Shape40)
+Transform39.children.append(Shape40)
 
-Group38.addChildren(Transform39)
+Group38.children.append(Transform39)
 Transform44 = x3d.Transform()
-Transform44.setTranslation([50,0,0])
-Transform44.setRotation([0,0,-1,1.57])
+Transform44.translation = [50,0,0]
+Transform44.rotation = [0,0,-1,1.57]
 Shape45 = x3d.Shape()
 Cone46 = x3d.Cone()
-Cone46.setDEF("Tip")
-Cone46.setBottomRadius(0.8)
-Cone46.setHeight(3)
+Cone46.DEF = "Tip"
+Cone46.bottomRadius = 0.8
+Cone46.height = 3
 
-Shape45.setGeometry(Cone46)
+Shape45.geometry = Cone46
 Appearance47 = x3d.Appearance()
 Material48 = x3d.Material()
-Material48.setUSE("RED")
+Material48.USE = "RED"
 
-Appearance47.setMaterial(Material48)
+Appearance47.material = Material48
 
-Shape45.setAppearance(Appearance47)
+Shape45.appearance = Appearance47
 
-Transform44.addChild(Shape45)
+Transform44.children.append(Shape45)
 
-Group38.addChildren(Transform44)
-#Arrow Y
+Group38.children.append(Transform44)
+"""Arrow Y"""
 Transform49 = x3d.Transform()
-Transform49.setTranslation([0,25,0])
+Transform49.translation = [0,25,0]
 Shape50 = x3d.Shape()
 Cylinder51 = x3d.Cylinder()
-Cylinder51.setUSE("Shaft")
+Cylinder51.USE = "Shaft"
 
-Shape50.setGeometry(Cylinder51)
+Shape50.geometry = Cylinder51
 Appearance52 = x3d.Appearance()
 Material53 = x3d.Material()
-Material53.setDEF("GREEN")
-Material53.setDiffuseColor([0,1,0])
-Material53.setEmissiveColor([0,1,0])
+Material53.DEF = "GREEN"
+Material53.diffuseColor = [0,1,0]
+Material53.emissiveColor = [0,1,0]
 
-Appearance52.setMaterial(Material53)
+Appearance52.material = Material53
 
-Shape50.setAppearance(Appearance52)
+Shape50.appearance = Appearance52
 
-Transform49.addChild(Shape50)
+Transform49.children.append(Shape50)
 
-Group38.addChildren(Transform49)
+Group38.children.append(Transform49)
 Transform54 = x3d.Transform()
-Transform54.setTranslation([0,50,0])
+Transform54.translation = [0,50,0]
 Shape55 = x3d.Shape()
 Cone56 = x3d.Cone()
-Cone56.setUSE("Tip")
+Cone56.USE = "Tip"
 
-Shape55.setGeometry(Cone56)
+Shape55.geometry = Cone56
 Appearance57 = x3d.Appearance()
 Material58 = x3d.Material()
-Material58.setUSE("GREEN")
+Material58.USE = "GREEN"
 
-Appearance57.setMaterial(Material58)
+Appearance57.material = Material58
 
-Shape55.setAppearance(Appearance57)
+Shape55.appearance = Appearance57
 
-Transform54.addChild(Shape55)
+Transform54.children.append(Shape55)
 
-Group38.addChildren(Transform54)
-#Arrow Z
+Group38.children.append(Transform54)
+"""Arrow Z"""
 Transform59 = x3d.Transform()
-Transform59.setTranslation([0,0,25])
-Transform59.setRotation([1,0,0,1.57])
+Transform59.translation = [0,0,25]
+Transform59.rotation = [1,0,0,1.57]
 Shape60 = x3d.Shape()
 Cylinder61 = x3d.Cylinder()
-Cylinder61.setUSE("Shaft")
+Cylinder61.USE = "Shaft"
 
-Shape60.setGeometry(Cylinder61)
+Shape60.geometry = Cylinder61
 Appearance62 = x3d.Appearance()
 Material63 = x3d.Material()
-Material63.setDEF("BLUE")
-Material63.setDiffuseColor([0,0,1])
-Material63.setEmissiveColor([0,0,1])
+Material63.DEF = "BLUE"
+Material63.diffuseColor = [0,0,1]
+Material63.emissiveColor = [0,0,1]
 
-Appearance62.setMaterial(Material63)
+Appearance62.material = Material63
 
-Shape60.setAppearance(Appearance62)
+Shape60.appearance = Appearance62
 
-Transform59.addChild(Shape60)
+Transform59.children.append(Shape60)
 
-Group38.addChildren(Transform59)
+Group38.children.append(Transform59)
 Transform64 = x3d.Transform()
-Transform64.setTranslation([0,0,50])
-Transform64.setRotation([1,0,0,1.57])
+Transform64.translation = [0,0,50]
+Transform64.rotation = [1,0,0,1.57]
 Shape65 = x3d.Shape()
 Cone66 = x3d.Cone()
-Cone66.setUSE("Tip")
+Cone66.USE = "Tip"
 
-Shape65.setGeometry(Cone66)
+Shape65.geometry = Cone66
 Appearance67 = x3d.Appearance()
 Material68 = x3d.Material()
-Material68.setUSE("BLUE")
+Material68.USE = "BLUE"
 
-Appearance67.setMaterial(Material68)
+Appearance67.material = Material68
 
-Shape65.setAppearance(Appearance67)
+Shape65.appearance = Appearance67
 
-Transform64.addChild(Shape65)
+Transform64.children.append(Shape65)
 
-Group38.addChildren(Transform64)
+Group38.children.append(Transform64)
 
-Layer33.addChildren(Group38)
-#the model that is being reviewed by the users of this scene
+Layer33.children.append(Group38)
+"""the model that is being reviewed by the users of this scene"""
 Transform69 = x3d.Transform()
-Transform69.setDEF("FlowerTransform")
-#<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+Transform69.DEF = "FlowerTransform"
+"""<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />"""
+"""Images courtesy of Paul Debevec's Light Probe Image Gallery"""
 Background70 = x3d.Background()
-Background70.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background70.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background70.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background70.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background70.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background70.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background70.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background70.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background70.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background70.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background70.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background70.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Transform69.addChildren(Background70)
+Transform69.children.append(Background70)
 Transform71 = x3d.Transform()
 Shape72 = x3d.Shape()
 Sphere73 = x3d.Sphere()
-Sphere73.setRadius(40)
+Sphere73.radius = 40
 
-Shape72.setGeometry(Sphere73)
+Shape72.geometry = Sphere73
 Appearance74 = x3d.Appearance()
 Material75 = x3d.Material()
-Material75.setDiffuseColor([0.7,0.7,0.7])
-Material75.setSpecularColor([0.5,0.5,0.5])
+Material75.diffuseColor = [0.7,0.7,0.7]
+Material75.specularColor = [0.5,0.5,0.5]
 
-Appearance74.setMaterial(Material75)
+Appearance74.material = Material75
 ComposedCubeMapTexture76 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture76.setDEF("texture")
+ComposedCubeMapTexture76.DEF = "texture"
 ImageTexture77 = x3d.ImageTexture()
-ImageTexture77.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
+ImageTexture77.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 
-ComposedCubeMapTexture76.setBackTexture(ImageTexture77)
+ComposedCubeMapTexture76.backTexture = ImageTexture77
 ImageTexture78 = x3d.ImageTexture()
-ImageTexture78.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
+ImageTexture78.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 
-ComposedCubeMapTexture76.setBottomTexture(ImageTexture78)
+ComposedCubeMapTexture76.bottomTexture = ImageTexture78
 ImageTexture79 = x3d.ImageTexture()
-ImageTexture79.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
+ImageTexture79.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 
-ComposedCubeMapTexture76.setFrontTexture(ImageTexture79)
+ComposedCubeMapTexture76.frontTexture = ImageTexture79
 ImageTexture80 = x3d.ImageTexture()
-ImageTexture80.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
+ImageTexture80.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 
-ComposedCubeMapTexture76.setLeftTexture(ImageTexture80)
+ComposedCubeMapTexture76.leftTexture = ImageTexture80
 ImageTexture81 = x3d.ImageTexture()
-ImageTexture81.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
+ImageTexture81.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 
-ComposedCubeMapTexture76.setRightTexture(ImageTexture81)
+ComposedCubeMapTexture76.rightTexture = ImageTexture81
 ImageTexture82 = x3d.ImageTexture()
-ImageTexture82.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+ImageTexture82.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-ComposedCubeMapTexture76.setTopTexture(ImageTexture82)
+ComposedCubeMapTexture76.topTexture = ImageTexture82
 
-Appearance74.setTexture(ComposedCubeMapTexture76)
+Appearance74.texture = ComposedCubeMapTexture76
 ComposedShader83 = x3d.ComposedShader()
-ComposedShader83.setDEF("x_iteShader")
-ComposedShader83.setLanguage("GLSL")
+ComposedShader83.DEF = "x_iteShader"
+ComposedShader83.language = "GLSL"
 field84 = x3d.field()
-field84.setName("chromaticDispertion")
-field84.setAccessType("inputOnly")
-field84.setType("SFVec3f")
-field84.setValue("0.98 1 1.033")
+field84.name = "chromaticDispertion"
+field84.accessType = "inputOnly"
+field84.type = "SFVec3f"
+field84.value = [0.98,1,1.033]
 
-ComposedShader83.addField(field84)
+ComposedShader83.field.append(field84)
 field85 = x3d.field()
-field85.setName("cube")
-field85.setType("SFNode")
-field85.setAccessType("inputOnly")
+field85.name = "cube"
+field85.type = "SFNode"
+field85.accessType = "inputOnly"
 ComposedCubeMapTexture86 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture86.setUSE("texture")
+ComposedCubeMapTexture86.USE = "texture"
 
-field85.addChildren(ComposedCubeMapTexture86)
+field85.children.append(ComposedCubeMapTexture86)
 
-ComposedShader83.addField(field85)
+ComposedShader83.field.append(field85)
 field87 = x3d.field()
-field87.setName("bias")
-field87.setType("SFFloat")
-field87.setAccessType("inputOnly")
-field87.setValue("0.5")
+field87.name = "bias"
+field87.type = "SFFloat"
+field87.accessType = "inputOnly"
+field87.value = 0.5
 
-ComposedShader83.addField(field87)
+ComposedShader83.field.append(field87)
 field88 = x3d.field()
-field88.setName("scale")
-field88.setType("SFFloat")
-field88.setAccessType("inputOnly")
-field88.setValue("0.5")
+field88.name = "scale"
+field88.type = "SFFloat"
+field88.accessType = "inputOnly"
+field88.value = 0.5
 
-ComposedShader83.addField(field88)
+ComposedShader83.field.append(field88)
 field89 = x3d.field()
-field89.setName("power")
-field89.setType("SFFloat")
-field89.setAccessType("inputOnly")
-field89.setValue("2")
+field89.name = "power"
+field89.type = "SFFloat"
+field89.accessType = "inputOnly"
+field89.value = 2
 
-ComposedShader83.addField(field89)
+ComposedShader83.field.append(field89)
 field90 = x3d.field()
-field90.setName("a")
-field90.setType("SFFloat")
-field90.setAccessType("inputOutput")
-field90.setValue("15")
+field90.name = "a"
+field90.type = "SFFloat"
+field90.accessType = "inputOutput"
+field90.value = 15
 
-ComposedShader83.addField(field90)
+ComposedShader83.field.append(field90)
 field91 = x3d.field()
-field91.setName("b")
-field91.setType("SFFloat")
-field91.setAccessType("inputOutput")
-field91.setValue("5")
+field91.name = "b"
+field91.type = "SFFloat"
+field91.accessType = "inputOutput"
+field91.value = 5
 
-ComposedShader83.addField(field91)
+ComposedShader83.field.append(field91)
 field92 = x3d.field()
-field92.setName("c")
-field92.setType("SFFloat")
-field92.setAccessType("inputOutput")
-field92.setValue("5")
+field92.name = "c"
+field92.type = "SFFloat"
+field92.accessType = "inputOutput"
+field92.value = 5
 
-ComposedShader83.addField(field92)
+ComposedShader83.field.append(field92)
 field93 = x3d.field()
-field93.setName("d")
-field93.setType("SFFloat")
-field93.setAccessType("inputOutput")
-field93.setValue("5")
+field93.name = "d"
+field93.type = "SFFloat"
+field93.accessType = "inputOutput"
+field93.value = 5
 
-ComposedShader83.addField(field93)
+ComposedShader83.field.append(field93)
 field94 = x3d.field()
-field94.setName("tdelta")
-field94.setType("SFFloat")
-field94.setAccessType("inputOutput")
-field94.setValue("0")
+field94.name = "tdelta"
+field94.type = "SFFloat"
+field94.accessType = "inputOutput"
+field94.value = 0
 
-ComposedShader83.addField(field94)
+ComposedShader83.field.append(field94)
 field95 = x3d.field()
-field95.setName("pdelta")
-field95.setType("SFFloat")
-field95.setAccessType("inputOutput")
-field95.setValue("0")
+field95.name = "pdelta"
+field95.type = "SFFloat"
+field95.accessType = "inputOutput"
+field95.value = 0
 
-ComposedShader83.addField(field95)
+ComposedShader83.field.append(field95)
 ShaderPart96 = x3d.ShaderPart()
-ShaderPart96.setUrl(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])
-ShaderPart96.setType("VERTEX")
+ShaderPart96.url = ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+ShaderPart96.type = "VERTEX"
 
-ComposedShader83.addParts(ShaderPart96)
+ComposedShader83.parts.append(ShaderPart96)
 ShaderPart97 = x3d.ShaderPart()
-ShaderPart97.setUrl(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
-ShaderPart97.setType("FRAGMENT")
+ShaderPart97.url = ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+ShaderPart97.type = "FRAGMENT"
 
-ComposedShader83.addParts(ShaderPart97)
-#TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+ComposedShader83.parts.append(ShaderPart97)
+"""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""
 
-Appearance74.addShaders(ComposedShader83)
+Appearance74.shaders.append(ComposedShader83)
 
-Shape72.setAppearance(Appearance74)
+Shape72.appearance = Appearance74
 
-Transform71.addChild(Shape72)
+Transform71.children.append(Shape72)
 
-Transform69.addChildren(Transform71)
+Transform69.children.append(Transform71)
 
-Layer33.addChildren(Transform69)
-#DIS multiuser facilities
+Layer33.children.append(Transform69)
+"""DIS multiuser facilities"""
 DISEntityManager98 = x3d.DISEntityManager()
-DISEntityManager98.setDEF("EntityManager")
-DISEntityManager98.setNetworkMode("networkReader")
+DISEntityManager98.DEF = "EntityManager"
+DISEntityManager98.networkMode = "networkReader"
 DISEntityTypeMapping99 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping99.setCategory(77)
-DISEntityTypeMapping99.setSpecific(1)
-DISEntityTypeMapping99.setUrl(["Leif8Final.x3d"])
+DISEntityTypeMapping99.category = 77
+DISEntityTypeMapping99.specific = 1
+DISEntityTypeMapping99.url = ["Leif8Final.x3d"]
 
-DISEntityManager98.addChildren(DISEntityTypeMapping99)
+DISEntityManager98.children.append(DISEntityTypeMapping99)
 DISEntityTypeMapping100 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping100.setCategory(77)
-DISEntityTypeMapping100.setSpecific(2)
-DISEntityTypeMapping100.setUrl(["Lily8Final.x3d"])
+DISEntityTypeMapping100.category = 77
+DISEntityTypeMapping100.specific = 2
+DISEntityTypeMapping100.url = ["Lily8Final.x3d"]
 
-DISEntityManager98.addChildren(DISEntityTypeMapping100)
+DISEntityManager98.children.append(DISEntityTypeMapping100)
 
-Layer33.addChildren(DISEntityManager98)
+Layer33.children.append(DISEntityManager98)
 Collision101 = x3d.Collision()
-Collision101.setEnabled(False)
+Collision101.enabled = False
 Group102 = x3d.Group()
-Group102.setDEF("AvatarHolder")
+Group102.DEF = "AvatarHolder"
 
-Collision101.setProxy(Group102)
+Collision101.proxy = Group102
 
-Layer33.addChildren(Collision101)
+Layer33.children.append(Collision101)
 ROUTE103 = x3d.ROUTE()
-ROUTE103.setFromField("addedEntities")
-ROUTE103.setFromNode("EntityManager")
-ROUTE103.setToField("addChildren")
-ROUTE103.setToNode("AvatarHolder")
+ROUTE103.fromField = "addedEntities"
+ROUTE103.fromNode = "EntityManager"
+ROUTE103.toField = "addChildren"
+ROUTE103.toNode = "AvatarHolder"
 
-Layer33.addChildren(ROUTE103)
+Layer33.children.append(ROUTE103)
 ROUTE104 = x3d.ROUTE()
-ROUTE104.setFromField("removedEntities")
-ROUTE104.setFromNode("EntityManager")
-ROUTE104.setToField("removeChildren")
-ROUTE104.setToNode("AvatarHolder")
+ROUTE104.fromField = "removedEntities"
+ROUTE104.fromNode = "EntityManager"
+ROUTE104.toField = "removeChildren"
+ROUTE104.toNode = "AvatarHolder"
 
-Layer33.addChildren(ROUTE104)
+Layer33.children.append(ROUTE104)
 
-LayerSet32.addLayers(Layer33)
+LayerSet32.layers.append(Layer33)
 LayoutLayer105 = x3d.LayoutLayer()
-#positioning the LayoutLayer
-#clipping the LayoutLayer
-#the content (children) of the LayoutLayer
-#first, the slider for scaling the model
+"""positioning the LayoutLayer"""
+"""clipping the LayoutLayer"""
+"""the content (children) of the LayoutLayer"""
+"""first, the slider for scaling the model"""
 Transform106 = x3d.Transform()
-Transform106.setTranslation([0,0,-3])
+Transform106.translation = [0,0,-3]
 Shape107 = x3d.Shape()
 Appearance108 = x3d.Appearance()
 Material109 = x3d.Material()
-Material109.setDiffuseColor([0,0,0])
-Material109.setTransparency(0.7)
+Material109.diffuseColor = [0,0,0]
+Material109.transparency = 0.7
 
-Appearance108.setMaterial(Material109)
+Appearance108.material = Material109
 
-Shape107.setAppearance(Appearance108)
+Shape107.appearance = Appearance108
 Box110 = x3d.Box()
-Box110.setSize([100,100,0.02])
+Box110.size = [100,100,0.02]
 
-Shape107.setGeometry(Box110)
+Shape107.geometry = Box110
 
-Transform106.addChild(Shape107)
+Transform106.children.append(Shape107)
 
-LayoutLayer105.addChildren(Transform106)
-#the plane sensors
+LayoutLayer105.children.append(Transform106)
+"""the plane sensors"""
 Transform111 = x3d.Transform()
-Transform111.setDEF("aSlider")
-Transform111.setTranslation([0,0.7,0])
+Transform111.DEF = "aSlider"
+Transform111.translation = [0,0.7,0]
 Transform112 = x3d.Transform()
-Transform112.setRotation([0,0,1,1.57])
+Transform112.rotation = [0,0,1,1.57]
 Shape113 = x3d.Shape()
 Appearance114 = x3d.Appearance()
 Material115 = x3d.Material()
 
-Appearance114.setMaterial(Material115)
+Appearance114.material = Material115
 
-Shape113.setAppearance(Appearance114)
+Shape113.appearance = Appearance114
 Cylinder116 = x3d.Cylinder()
-Cylinder116.setRadius(0.05)
-Cylinder116.setHeight(2.5)
+Cylinder116.radius = 0.05
+Cylinder116.height = 2.5
 
-Shape113.setGeometry(Cylinder116)
+Shape113.geometry = Cylinder116
 
-Transform112.addChild(Shape113)
+Transform112.children.append(Shape113)
 
-Transform111.addChildren(Transform112)
+Transform111.children.append(Transform112)
 Transform117 = x3d.Transform()
-Transform117.setDEF("aTransform")
-Transform117.setTranslation([0,0,0.1])
+Transform117.DEF = "aTransform"
+Transform117.translation = [0,0,0.1]
 PlaneSensor118 = x3d.PlaneSensor()
-PlaneSensor118.setDEF("aSensor")
-PlaneSensor118.setMinPosition([-20,0])
-PlaneSensor118.setMaxPosition([20,0])
+PlaneSensor118.DEF = "aSensor"
+PlaneSensor118.minPosition = [-20,0]
+PlaneSensor118.maxPosition = [20,0]
 
-Transform117.addChildren(PlaneSensor118)
+Transform117.children.append(PlaneSensor118)
 Transform119 = x3d.Transform()
-Transform119.setTranslation([0,0,0])
+Transform119.translation = [0,0,0]
 TouchSensor120 = x3d.TouchSensor()
-TouchSensor120.setDEF("aTS")
+TouchSensor120.DEF = "aTS"
 
-Transform119.addChildren(TouchSensor120)
+Transform119.children.append(TouchSensor120)
 Shape121 = x3d.Shape()
 Sphere122 = x3d.Sphere()
-Sphere122.setRadius(0.08)
+Sphere122.radius = 0.08
 
-Shape121.setGeometry(Sphere122)
+Shape121.geometry = Sphere122
 Appearance123 = x3d.Appearance()
 Material124 = x3d.Material()
-Material124.setDiffuseColor([1,0,0])
+Material124.diffuseColor = [1,0,0]
 
-Appearance123.setMaterial(Material124)
+Appearance123.material = Material124
 
-Shape121.setAppearance(Appearance123)
+Shape121.appearance = Appearance123
 
-Transform119.addChild(Shape121)
+Transform119.children.append(Shape121)
 
-Transform117.addChildren(Transform119)
+Transform117.children.append(Transform119)
 Shape125 = x3d.Shape()
 Cylinder126 = x3d.Cylinder()
-Cylinder126.setRadius(0.05)
-Cylinder126.setHeight(0.3)
+Cylinder126.radius = 0.05
+Cylinder126.height = 0.3
 
-Shape125.setGeometry(Cylinder126)
+Shape125.geometry = Cylinder126
 Appearance127 = x3d.Appearance()
 Material128 = x3d.Material()
 
-Appearance127.setMaterial(Material128)
+Appearance127.material = Material128
 
-Shape125.setAppearance(Appearance127)
+Shape125.appearance = Appearance127
 
-Transform117.addChild(Shape125)
+Transform117.children.append(Shape125)
 
-Transform111.addChildren(Transform117)
+Transform111.children.append(Transform117)
 Transform129 = x3d.Transform()
-Transform129.setRotation([0,0,1,1.57])
+Transform129.rotation = [0,0,1,1.57]
 Shape130 = x3d.Shape()
 Appearance131 = x3d.Appearance()
 Material132 = x3d.Material()
 
-Appearance131.setMaterial(Material132)
+Appearance131.material = Material132
 
-Shape130.setAppearance(Appearance131)
+Shape130.appearance = Appearance131
 Cylinder133 = x3d.Cylinder()
-Cylinder133.setRadius(0.05)
-Cylinder133.setHeight(2.5)
+Cylinder133.radius = 0.05
+Cylinder133.height = 2.5
 
-Shape130.setGeometry(Cylinder133)
+Shape130.geometry = Cylinder133
 
-Transform129.addChild(Shape130)
+Transform129.children.append(Shape130)
 
-Transform111.addChildren(Transform129)
+Transform111.children.append(Transform129)
 
-LayoutLayer105.addChildren(Transform111)
+LayoutLayer105.children.append(Transform111)
 Transform134 = x3d.Transform()
-Transform134.setDEF("bSlider")
-Transform134.setTranslation([0,0.4,0])
+Transform134.DEF = "bSlider"
+Transform134.translation = [0,0.4,0]
 Transform135 = x3d.Transform()
-Transform135.setRotation([0,0,1,1.57])
+Transform135.rotation = [0,0,1,1.57]
 Shape136 = x3d.Shape()
 Appearance137 = x3d.Appearance()
 Material138 = x3d.Material()
 
-Appearance137.setMaterial(Material138)
+Appearance137.material = Material138
 
-Shape136.setAppearance(Appearance137)
+Shape136.appearance = Appearance137
 Cylinder139 = x3d.Cylinder()
-Cylinder139.setRadius(0.05)
-Cylinder139.setHeight(2.5)
+Cylinder139.radius = 0.05
+Cylinder139.height = 2.5
 
-Shape136.setGeometry(Cylinder139)
+Shape136.geometry = Cylinder139
 
-Transform135.addChild(Shape136)
+Transform135.children.append(Shape136)
 
-Transform134.addChildren(Transform135)
+Transform134.children.append(Transform135)
 Transform140 = x3d.Transform()
-Transform140.setDEF("bTransform")
-Transform140.setTranslation([0,0,0.1])
+Transform140.DEF = "bTransform"
+Transform140.translation = [0,0,0.1]
 PlaneSensor141 = x3d.PlaneSensor()
-PlaneSensor141.setDEF("bSensor")
-PlaneSensor141.setMinPosition([-20,0])
-PlaneSensor141.setMaxPosition([20,0])
+PlaneSensor141.DEF = "bSensor"
+PlaneSensor141.minPosition = [-20,0]
+PlaneSensor141.maxPosition = [20,0]
 
-Transform140.addChildren(PlaneSensor141)
+Transform140.children.append(PlaneSensor141)
 Transform142 = x3d.Transform()
-Transform142.setTranslation([0,0,0])
+Transform142.translation = [0,0,0]
 TouchSensor143 = x3d.TouchSensor()
-TouchSensor143.setDEF("bTS")
+TouchSensor143.DEF = "bTS"
 
-Transform142.addChildren(TouchSensor143)
+Transform142.children.append(TouchSensor143)
 Shape144 = x3d.Shape()
 Sphere145 = x3d.Sphere()
-Sphere145.setRadius(0.08)
+Sphere145.radius = 0.08
 
-Shape144.setGeometry(Sphere145)
+Shape144.geometry = Sphere145
 Appearance146 = x3d.Appearance()
 Material147 = x3d.Material()
-Material147.setDiffuseColor([1,0,0])
+Material147.diffuseColor = [1,0,0]
 
-Appearance146.setMaterial(Material147)
+Appearance146.material = Material147
 
-Shape144.setAppearance(Appearance146)
+Shape144.appearance = Appearance146
 
-Transform142.addChild(Shape144)
+Transform142.children.append(Shape144)
 
-Transform140.addChildren(Transform142)
+Transform140.children.append(Transform142)
 Shape148 = x3d.Shape()
 Cylinder149 = x3d.Cylinder()
-Cylinder149.setRadius(0.05)
-Cylinder149.setHeight(0.3)
+Cylinder149.radius = 0.05
+Cylinder149.height = 0.3
 
-Shape148.setGeometry(Cylinder149)
+Shape148.geometry = Cylinder149
 Appearance150 = x3d.Appearance()
 Material151 = x3d.Material()
 
-Appearance150.setMaterial(Material151)
+Appearance150.material = Material151
 
-Shape148.setAppearance(Appearance150)
+Shape148.appearance = Appearance150
 
-Transform140.addChild(Shape148)
+Transform140.children.append(Shape148)
 
-Transform134.addChildren(Transform140)
+Transform134.children.append(Transform140)
 
-LayoutLayer105.addChildren(Transform134)
+LayoutLayer105.children.append(Transform134)
 Transform152 = x3d.Transform()
-Transform152.setDEF("cSlider")
-Transform152.setTranslation([0,0.1,0])
+Transform152.DEF = "cSlider"
+Transform152.translation = [0,0.1,0]
 Transform153 = x3d.Transform()
-Transform153.setRotation([0,0,1,1.57])
+Transform153.rotation = [0,0,1,1.57]
 Shape154 = x3d.Shape()
 Appearance155 = x3d.Appearance()
 Material156 = x3d.Material()
 
-Appearance155.setMaterial(Material156)
+Appearance155.material = Material156
 
-Shape154.setAppearance(Appearance155)
+Shape154.appearance = Appearance155
 Cylinder157 = x3d.Cylinder()
-Cylinder157.setRadius(0.05)
-Cylinder157.setHeight(2.5)
+Cylinder157.radius = 0.05
+Cylinder157.height = 2.5
 
-Shape154.setGeometry(Cylinder157)
+Shape154.geometry = Cylinder157
 
-Transform153.addChild(Shape154)
+Transform153.children.append(Shape154)
 
-Transform152.addChildren(Transform153)
+Transform152.children.append(Transform153)
 Transform158 = x3d.Transform()
-Transform158.setDEF("cTransform")
-Transform158.setTranslation([0,0,0.1])
+Transform158.DEF = "cTransform"
+Transform158.translation = [0,0,0.1]
 PlaneSensor159 = x3d.PlaneSensor()
-PlaneSensor159.setDEF("cSensor")
-PlaneSensor159.setMinPosition([-20,0])
-PlaneSensor159.setMaxPosition([20,0])
+PlaneSensor159.DEF = "cSensor"
+PlaneSensor159.minPosition = [-20,0]
+PlaneSensor159.maxPosition = [20,0]
 
-Transform158.addChildren(PlaneSensor159)
+Transform158.children.append(PlaneSensor159)
 Transform160 = x3d.Transform()
-Transform160.setTranslation([0,0,0])
+Transform160.translation = [0,0,0]
 TouchSensor161 = x3d.TouchSensor()
-TouchSensor161.setDEF("cTS")
+TouchSensor161.DEF = "cTS"
 
-Transform160.addChildren(TouchSensor161)
+Transform160.children.append(TouchSensor161)
 Shape162 = x3d.Shape()
 Sphere163 = x3d.Sphere()
-Sphere163.setRadius(0.08)
+Sphere163.radius = 0.08
 
-Shape162.setGeometry(Sphere163)
+Shape162.geometry = Sphere163
 Appearance164 = x3d.Appearance()
 Material165 = x3d.Material()
-Material165.setDiffuseColor([1,0,0])
+Material165.diffuseColor = [1,0,0]
 
-Appearance164.setMaterial(Material165)
+Appearance164.material = Material165
 
-Shape162.setAppearance(Appearance164)
+Shape162.appearance = Appearance164
 
-Transform160.addChild(Shape162)
+Transform160.children.append(Shape162)
 
-Transform158.addChildren(Transform160)
+Transform158.children.append(Transform160)
 Shape166 = x3d.Shape()
 Cylinder167 = x3d.Cylinder()
-Cylinder167.setRadius(0.05)
-Cylinder167.setHeight(0.3)
+Cylinder167.radius = 0.05
+Cylinder167.height = 0.3
 
-Shape166.setGeometry(Cylinder167)
+Shape166.geometry = Cylinder167
 Appearance168 = x3d.Appearance()
 Material169 = x3d.Material()
 
-Appearance168.setMaterial(Material169)
+Appearance168.material = Material169
 
-Shape166.setAppearance(Appearance168)
+Shape166.appearance = Appearance168
 
-Transform158.addChild(Shape166)
+Transform158.children.append(Shape166)
 
-Transform152.addChildren(Transform158)
+Transform152.children.append(Transform158)
 
-LayoutLayer105.addChildren(Transform152)
+LayoutLayer105.children.append(Transform152)
 Transform170 = x3d.Transform()
-Transform170.setDEF("dSlider")
-Transform170.setTranslation([0,-0.2,0])
+Transform170.DEF = "dSlider"
+Transform170.translation = [0,-0.2,0]
 Transform171 = x3d.Transform()
-Transform171.setRotation([0,0,1,1.57])
+Transform171.rotation = [0,0,1,1.57]
 Shape172 = x3d.Shape()
 Appearance173 = x3d.Appearance()
 Material174 = x3d.Material()
 
-Appearance173.setMaterial(Material174)
+Appearance173.material = Material174
 
-Shape172.setAppearance(Appearance173)
+Shape172.appearance = Appearance173
 Cylinder175 = x3d.Cylinder()
-Cylinder175.setRadius(0.05)
-Cylinder175.setHeight(2.5)
+Cylinder175.radius = 0.05
+Cylinder175.height = 2.5
 
-Shape172.setGeometry(Cylinder175)
+Shape172.geometry = Cylinder175
 
-Transform171.addChild(Shape172)
+Transform171.children.append(Shape172)
 
-Transform170.addChildren(Transform171)
+Transform170.children.append(Transform171)
 Transform176 = x3d.Transform()
-Transform176.setDEF("dTransform")
-Transform176.setTranslation([0,0,0.1])
+Transform176.DEF = "dTransform"
+Transform176.translation = [0,0,0.1]
 PlaneSensor177 = x3d.PlaneSensor()
-PlaneSensor177.setDEF("dSensor")
-PlaneSensor177.setMinPosition([-20,0])
-PlaneSensor177.setMaxPosition([20,0])
+PlaneSensor177.DEF = "dSensor"
+PlaneSensor177.minPosition = [-20,0]
+PlaneSensor177.maxPosition = [20,0]
 
-Transform176.addChildren(PlaneSensor177)
+Transform176.children.append(PlaneSensor177)
 Transform178 = x3d.Transform()
-Transform178.setTranslation([0,0,0])
+Transform178.translation = [0,0,0]
 TouchSensor179 = x3d.TouchSensor()
-TouchSensor179.setDEF("dTS")
+TouchSensor179.DEF = "dTS"
 
-Transform178.addChildren(TouchSensor179)
+Transform178.children.append(TouchSensor179)
 Shape180 = x3d.Shape()
 Sphere181 = x3d.Sphere()
-Sphere181.setRadius(0.08)
+Sphere181.radius = 0.08
 
-Shape180.setGeometry(Sphere181)
+Shape180.geometry = Sphere181
 Appearance182 = x3d.Appearance()
 Material183 = x3d.Material()
-Material183.setDiffuseColor([1,0,0])
+Material183.diffuseColor = [1,0,0]
 
-Appearance182.setMaterial(Material183)
+Appearance182.material = Material183
 
-Shape180.setAppearance(Appearance182)
+Shape180.appearance = Appearance182
 
-Transform178.addChild(Shape180)
+Transform178.children.append(Shape180)
 
-Transform176.addChildren(Transform178)
+Transform176.children.append(Transform178)
 Shape184 = x3d.Shape()
 Cylinder185 = x3d.Cylinder()
-Cylinder185.setRadius(0.05)
-Cylinder185.setHeight(0.3)
+Cylinder185.radius = 0.05
+Cylinder185.height = 0.3
 
-Shape184.setGeometry(Cylinder185)
+Shape184.geometry = Cylinder185
 Appearance186 = x3d.Appearance()
 Material187 = x3d.Material()
 
-Appearance186.setMaterial(Material187)
+Appearance186.material = Material187
 
-Shape184.setAppearance(Appearance186)
+Shape184.appearance = Appearance186
 
-Transform176.addChild(Shape184)
+Transform176.children.append(Shape184)
 
-Transform170.addChildren(Transform176)
+Transform170.children.append(Transform176)
 
-LayoutLayer105.addChildren(Transform170)
+LayoutLayer105.children.append(Transform170)
 Transform188 = x3d.Transform()
-Transform188.setDEF("pdeltaSlider")
-Transform188.setTranslation([0,-0.5,0])
+Transform188.DEF = "pdeltaSlider"
+Transform188.translation = [0,-0.5,0]
 Transform189 = x3d.Transform()
-Transform189.setRotation([0,0,1,1.57])
+Transform189.rotation = [0,0,1,1.57]
 Shape190 = x3d.Shape()
 Appearance191 = x3d.Appearance()
 Material192 = x3d.Material()
 
-Appearance191.setMaterial(Material192)
+Appearance191.material = Material192
 
-Shape190.setAppearance(Appearance191)
+Shape190.appearance = Appearance191
 Cylinder193 = x3d.Cylinder()
-Cylinder193.setRadius(0.05)
-Cylinder193.setHeight(2.5)
+Cylinder193.radius = 0.05
+Cylinder193.height = 2.5
 
-Shape190.setGeometry(Cylinder193)
+Shape190.geometry = Cylinder193
 
-Transform189.addChild(Shape190)
+Transform189.children.append(Shape190)
 
-Transform188.addChildren(Transform189)
+Transform188.children.append(Transform189)
 Transform194 = x3d.Transform()
-Transform194.setDEF("pdeltaTransform")
-Transform194.setTranslation([0,0,0.1])
+Transform194.DEF = "pdeltaTransform"
+Transform194.translation = [0,0,0.1]
 PlaneSensor195 = x3d.PlaneSensor()
-PlaneSensor195.setDEF("pdeltaSensor")
-PlaneSensor195.setMinPosition([-20,0])
-PlaneSensor195.setMaxPosition([20,0])
+PlaneSensor195.DEF = "pdeltaSensor"
+PlaneSensor195.minPosition = [-20,0]
+PlaneSensor195.maxPosition = [20,0]
 
-Transform194.addChildren(PlaneSensor195)
+Transform194.children.append(PlaneSensor195)
 Transform196 = x3d.Transform()
-Transform196.setTranslation([0,0,0])
+Transform196.translation = [0,0,0]
 TouchSensor197 = x3d.TouchSensor()
-TouchSensor197.setDEF("pdeltaTS")
+TouchSensor197.DEF = "pdeltaTS"
 
-Transform196.addChildren(TouchSensor197)
+Transform196.children.append(TouchSensor197)
 Shape198 = x3d.Shape()
 Sphere199 = x3d.Sphere()
-Sphere199.setRadius(0.08)
+Sphere199.radius = 0.08
 
-Shape198.setGeometry(Sphere199)
+Shape198.geometry = Sphere199
 Appearance200 = x3d.Appearance()
 Material201 = x3d.Material()
-Material201.setDiffuseColor([1,0,0])
+Material201.diffuseColor = [1,0,0]
 
-Appearance200.setMaterial(Material201)
+Appearance200.material = Material201
 
-Shape198.setAppearance(Appearance200)
+Shape198.appearance = Appearance200
 
-Transform196.addChild(Shape198)
+Transform196.children.append(Shape198)
 
-Transform194.addChildren(Transform196)
+Transform194.children.append(Transform196)
 Shape202 = x3d.Shape()
 Cylinder203 = x3d.Cylinder()
-Cylinder203.setRadius(0.05)
-Cylinder203.setHeight(0.3)
+Cylinder203.radius = 0.05
+Cylinder203.height = 0.3
 
-Shape202.setGeometry(Cylinder203)
+Shape202.geometry = Cylinder203
 Appearance204 = x3d.Appearance()
 Material205 = x3d.Material()
 
-Appearance204.setMaterial(Material205)
+Appearance204.material = Material205
 
-Shape202.setAppearance(Appearance204)
+Shape202.appearance = Appearance204
 
-Transform194.addChild(Shape202)
+Transform194.children.append(Shape202)
 
-Transform188.addChildren(Transform194)
+Transform188.children.append(Transform194)
 
-LayoutLayer105.addChildren(Transform188)
+LayoutLayer105.children.append(Transform188)
 Transform206 = x3d.Transform()
-Transform206.setDEF("tdeltaSlider")
-Transform206.setTranslation([0,-0.8,0])
+Transform206.DEF = "tdeltaSlider"
+Transform206.translation = [0,-0.8,0]
 Transform207 = x3d.Transform()
-Transform207.setRotation([0,0,1,1.57])
+Transform207.rotation = [0,0,1,1.57]
 Shape208 = x3d.Shape()
 Appearance209 = x3d.Appearance()
 Material210 = x3d.Material()
 
-Appearance209.setMaterial(Material210)
+Appearance209.material = Material210
 
-Shape208.setAppearance(Appearance209)
+Shape208.appearance = Appearance209
 Cylinder211 = x3d.Cylinder()
-Cylinder211.setRadius(0.05)
-Cylinder211.setHeight(2.5)
+Cylinder211.radius = 0.05
+Cylinder211.height = 2.5
 
-Shape208.setGeometry(Cylinder211)
+Shape208.geometry = Cylinder211
 
-Transform207.addChild(Shape208)
+Transform207.children.append(Shape208)
 
-Transform206.addChildren(Transform207)
+Transform206.children.append(Transform207)
 Transform212 = x3d.Transform()
-Transform212.setDEF("tdeltaTransform")
-Transform212.setTranslation([0,0,0.1])
+Transform212.DEF = "tdeltaTransform"
+Transform212.translation = [0,0,0.1]
 PlaneSensor213 = x3d.PlaneSensor()
-PlaneSensor213.setDEF("tdeltaSensor")
-PlaneSensor213.setMinPosition([-20,0])
-PlaneSensor213.setMaxPosition([20,0])
+PlaneSensor213.DEF = "tdeltaSensor"
+PlaneSensor213.minPosition = [-20,0]
+PlaneSensor213.maxPosition = [20,0]
 
-Transform212.addChildren(PlaneSensor213)
+Transform212.children.append(PlaneSensor213)
 Transform214 = x3d.Transform()
-Transform214.setTranslation([0,0,0])
+Transform214.translation = [0,0,0]
 TouchSensor215 = x3d.TouchSensor()
-TouchSensor215.setDEF("tdeltaTS")
+TouchSensor215.DEF = "tdeltaTS"
 
-Transform214.addChildren(TouchSensor215)
+Transform214.children.append(TouchSensor215)
 Shape216 = x3d.Shape()
 Sphere217 = x3d.Sphere()
-Sphere217.setRadius(0.08)
+Sphere217.radius = 0.08
 
-Shape216.setGeometry(Sphere217)
+Shape216.geometry = Sphere217
 Appearance218 = x3d.Appearance()
 Material219 = x3d.Material()
-Material219.setDiffuseColor([1,0,0])
+Material219.diffuseColor = [1,0,0]
 
-Appearance218.setMaterial(Material219)
+Appearance218.material = Material219
 
-Shape216.setAppearance(Appearance218)
+Shape216.appearance = Appearance218
 
-Transform214.addChild(Shape216)
+Transform214.children.append(Shape216)
 
-Transform212.addChildren(Transform214)
+Transform212.children.append(Transform214)
 Shape220 = x3d.Shape()
 Cylinder221 = x3d.Cylinder()
-Cylinder221.setRadius(0.05)
-Cylinder221.setHeight(0.3)
+Cylinder221.radius = 0.05
+Cylinder221.height = 0.3
 
-Shape220.setGeometry(Cylinder221)
+Shape220.geometry = Cylinder221
 Appearance222 = x3d.Appearance()
 Material223 = x3d.Material()
 
-Appearance222.setMaterial(Material223)
+Appearance222.material = Material223
 
-Shape220.setAppearance(Appearance222)
+Shape220.appearance = Appearance222
 
-Transform212.addChild(Shape220)
+Transform212.children.append(Shape220)
 
-Transform206.addChildren(Transform212)
+Transform206.children.append(Transform212)
 
-LayoutLayer105.addChildren(Transform206)
+LayoutLayer105.children.append(Transform206)
 Script224 = x3d.Script()
-Script224.setDEF("aValueTransformerScript")
-Script224.setDirectOutput(True)
-Script224.setMustEvaluate(True)
+Script224.DEF = "aValueTransformerScript"
+Script224.directOutput = True
+Script224.mustEvaluate = True
 field225 = x3d.field()
-field225.setName("newTranslation")
-field225.setAccessType("inputOnly")
-field225.setType("SFVec3f")
-field225.setValue("1 1 1")
+field225.name = "newTranslation"
+field225.accessType = "inputOnly"
+field225.type = "SFVec3f"
+field225.value = [1,1,1]
 
-Script224.addField(field225)
+Script224.field.append(field225)
 field226 = x3d.field()
-field226.setName("aValue_changed")
-field226.setAccessType("outputOnly")
-field226.setType("SFFloat")
-field226.setValue("1")
+field226.name = "aValue_changed"
+field226.accessType = "outputOnly"
+field226.type = "SFFloat"
+field226.value = 1
 
-Script224.addField(field226)
+Script224.field.append(field226)
 
-Script224.setSourceCode('''ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }''')
+Script224.sourceCode = '''ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }'''
 
-LayoutLayer105.addChildren(Script224)
+LayoutLayer105.children.append(Script224)
 Script227 = x3d.Script()
-Script227.setDEF("bValueTransformerScript")
-Script227.setDirectOutput(True)
-Script227.setMustEvaluate(True)
+Script227.DEF = "bValueTransformerScript"
+Script227.directOutput = True
+Script227.mustEvaluate = True
 field228 = x3d.field()
-field228.setName("newTranslation")
-field228.setAccessType("inputOnly")
-field228.setType("SFVec3f")
-field228.setValue("1 1 1")
+field228.name = "newTranslation"
+field228.accessType = "inputOnly"
+field228.type = "SFVec3f"
+field228.value = [1,1,1]
 
-Script227.addField(field228)
+Script227.field.append(field228)
 field229 = x3d.field()
-field229.setName("bValue_changed")
-field229.setAccessType("outputOnly")
-field229.setType("SFFloat")
-field229.setValue("1")
+field229.name = "bValue_changed"
+field229.accessType = "outputOnly"
+field229.type = "SFFloat"
+field229.value = 1
 
-Script227.addField(field229)
+Script227.field.append(field229)
 
-Script227.setSourceCode('''ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }''')
+Script227.sourceCode = '''ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }'''
 
-LayoutLayer105.addChildren(Script227)
+LayoutLayer105.children.append(Script227)
 Script230 = x3d.Script()
-Script230.setDEF("cValueTransformerScript")
-Script230.setDirectOutput(True)
-Script230.setMustEvaluate(True)
+Script230.DEF = "cValueTransformerScript"
+Script230.directOutput = True
+Script230.mustEvaluate = True
 field231 = x3d.field()
-field231.setName("newTranslation")
-field231.setAccessType("inputOnly")
-field231.setType("SFVec3f")
-field231.setValue("1 1 1")
+field231.name = "newTranslation"
+field231.accessType = "inputOnly"
+field231.type = "SFVec3f"
+field231.value = [1,1,1]
 
-Script230.addField(field231)
+Script230.field.append(field231)
 field232 = x3d.field()
-field232.setName("cValue_changed")
-field232.setAccessType("outputOnly")
-field232.setType("SFFloat")
-field232.setValue("1")
+field232.name = "cValue_changed"
+field232.accessType = "outputOnly"
+field232.type = "SFFloat"
+field232.value = 1
 
-Script230.addField(field232)
+Script230.field.append(field232)
 
-Script230.setSourceCode('''ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }''')
+Script230.sourceCode = '''ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }'''
 
-LayoutLayer105.addChildren(Script230)
+LayoutLayer105.children.append(Script230)
 Script233 = x3d.Script()
-Script233.setDEF("dValueTransformerScript")
-Script233.setDirectOutput(True)
-Script233.setMustEvaluate(True)
+Script233.DEF = "dValueTransformerScript"
+Script233.directOutput = True
+Script233.mustEvaluate = True
 field234 = x3d.field()
-field234.setName("newTranslation")
-field234.setAccessType("inputOnly")
-field234.setType("SFVec3f")
-field234.setValue("1 1 1")
+field234.name = "newTranslation"
+field234.accessType = "inputOnly"
+field234.type = "SFVec3f"
+field234.value = [1,1,1]
 
-Script233.addField(field234)
+Script233.field.append(field234)
 field235 = x3d.field()
-field235.setName("dValue_changed")
-field235.setAccessType("outputOnly")
-field235.setType("SFFloat")
-field235.setValue("1")
+field235.name = "dValue_changed"
+field235.accessType = "outputOnly"
+field235.type = "SFFloat"
+field235.value = 1
 
-Script233.addField(field235)
+Script233.field.append(field235)
 
-Script233.setSourceCode('''ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }''')
+Script233.sourceCode = '''ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }'''
 
-LayoutLayer105.addChildren(Script233)
+LayoutLayer105.children.append(Script233)
 Script236 = x3d.Script()
-Script236.setDEF("pdeltaValueTransformerScript")
-Script236.setDirectOutput(True)
-Script236.setMustEvaluate(True)
+Script236.DEF = "pdeltaValueTransformerScript"
+Script236.directOutput = True
+Script236.mustEvaluate = True
 field237 = x3d.field()
-field237.setName("newTranslation")
-field237.setAccessType("inputOnly")
-field237.setType("SFVec3f")
-field237.setValue("1 1 1")
+field237.name = "newTranslation"
+field237.accessType = "inputOnly"
+field237.type = "SFVec3f"
+field237.value = [1,1,1]
 
-Script236.addField(field237)
+Script236.field.append(field237)
 field238 = x3d.field()
-field238.setName("pdeltaValue_changed")
-field238.setAccessType("outputOnly")
-field238.setType("SFFloat")
-field238.setValue("1")
+field238.name = "pdeltaValue_changed"
+field238.accessType = "outputOnly"
+field238.type = "SFFloat"
+field238.value = 1
 
-Script236.addField(field238)
+Script236.field.append(field238)
 
-Script236.setSourceCode('''ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }''')
+Script236.sourceCode = '''ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }'''
 
-LayoutLayer105.addChildren(Script236)
+LayoutLayer105.children.append(Script236)
 Script239 = x3d.Script()
-Script239.setDEF("tdeltaValueTransformerScript")
-Script239.setDirectOutput(True)
-Script239.setMustEvaluate(True)
+Script239.DEF = "tdeltaValueTransformerScript"
+Script239.directOutput = True
+Script239.mustEvaluate = True
 field240 = x3d.field()
-field240.setName("newTranslation")
-field240.setAccessType("inputOnly")
-field240.setType("SFVec3f")
-field240.setValue("1 1 1")
+field240.name = "newTranslation"
+field240.accessType = "inputOnly"
+field240.type = "SFVec3f"
+field240.value = [1,1,1]
 
-Script239.addField(field240)
+Script239.field.append(field240)
 field241 = x3d.field()
-field241.setName("tdeltaValue_changed")
-field241.setAccessType("outputOnly")
-field241.setType("SFFloat")
-field241.setValue("1")
+field241.name = "tdeltaValue_changed"
+field241.accessType = "outputOnly"
+field241.type = "SFFloat"
+field241.value = 1
 
-Script239.addField(field241)
+Script239.field.append(field241)
 
-Script239.setSourceCode('''ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }''')
+Script239.sourceCode = '''ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }'''
 
-LayoutLayer105.addChildren(Script239)
+LayoutLayer105.children.append(Script239)
 ROUTE242 = x3d.ROUTE()
-ROUTE242.setFromField("translation_changed")
-ROUTE242.setFromNode("aSensor")
-ROUTE242.setToField("set_translation")
-ROUTE242.setToNode("aTransform")
+ROUTE242.fromField = "translation_changed"
+ROUTE242.fromNode = "aSensor"
+ROUTE242.toField = "set_translation"
+ROUTE242.toNode = "aTransform"
 
-LayoutLayer105.addChildren(ROUTE242)
+LayoutLayer105.children.append(ROUTE242)
 ROUTE243 = x3d.ROUTE()
-ROUTE243.setFromField("translation_changed")
-ROUTE243.setFromNode("bSensor")
-ROUTE243.setToField("set_translation")
-ROUTE243.setToNode("bTransform")
+ROUTE243.fromField = "translation_changed"
+ROUTE243.fromNode = "bSensor"
+ROUTE243.toField = "set_translation"
+ROUTE243.toNode = "bTransform"
 
-LayoutLayer105.addChildren(ROUTE243)
+LayoutLayer105.children.append(ROUTE243)
 ROUTE244 = x3d.ROUTE()
-ROUTE244.setFromField("translation_changed")
-ROUTE244.setFromNode("cSensor")
-ROUTE244.setToField("set_translation")
-ROUTE244.setToNode("cTransform")
+ROUTE244.fromField = "translation_changed"
+ROUTE244.fromNode = "cSensor"
+ROUTE244.toField = "set_translation"
+ROUTE244.toNode = "cTransform"
 
-LayoutLayer105.addChildren(ROUTE244)
+LayoutLayer105.children.append(ROUTE244)
 ROUTE245 = x3d.ROUTE()
-ROUTE245.setFromField("translation_changed")
-ROUTE245.setFromNode("dSensor")
-ROUTE245.setToField("set_translation")
-ROUTE245.setToNode("dTransform")
+ROUTE245.fromField = "translation_changed"
+ROUTE245.fromNode = "dSensor"
+ROUTE245.toField = "set_translation"
+ROUTE245.toNode = "dTransform"
 
-LayoutLayer105.addChildren(ROUTE245)
+LayoutLayer105.children.append(ROUTE245)
 ROUTE246 = x3d.ROUTE()
-ROUTE246.setFromField("translation_changed")
-ROUTE246.setFromNode("pdeltaSensor")
-ROUTE246.setToField("set_translation")
-ROUTE246.setToNode("pdeltaTransform")
+ROUTE246.fromField = "translation_changed"
+ROUTE246.fromNode = "pdeltaSensor"
+ROUTE246.toField = "set_translation"
+ROUTE246.toNode = "pdeltaTransform"
 
-LayoutLayer105.addChildren(ROUTE246)
+LayoutLayer105.children.append(ROUTE246)
 ROUTE247 = x3d.ROUTE()
-ROUTE247.setFromField("translation_changed")
-ROUTE247.setFromNode("tdeltaSensor")
-ROUTE247.setToField("set_translation")
-ROUTE247.setToNode("tdeltaTransform")
+ROUTE247.fromField = "translation_changed"
+ROUTE247.fromNode = "tdeltaSensor"
+ROUTE247.toField = "set_translation"
+ROUTE247.toNode = "tdeltaTransform"
 
-LayoutLayer105.addChildren(ROUTE247)
+LayoutLayer105.children.append(ROUTE247)
 ROUTE248 = x3d.ROUTE()
-ROUTE248.setFromField("translation_changed")
-ROUTE248.setFromNode("aSensor")
-ROUTE248.setToField("newTranslation")
-ROUTE248.setToNode("aValueTransformerScript")
+ROUTE248.fromField = "translation_changed"
+ROUTE248.fromNode = "aSensor"
+ROUTE248.toField = "newTranslation"
+ROUTE248.toNode = "aValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE248)
+LayoutLayer105.children.append(ROUTE248)
 ROUTE249 = x3d.ROUTE()
-ROUTE249.setFromField("translation_changed")
-ROUTE249.setFromNode("bSensor")
-ROUTE249.setToField("newTranslation")
-ROUTE249.setToNode("bValueTransformerScript")
+ROUTE249.fromField = "translation_changed"
+ROUTE249.fromNode = "bSensor"
+ROUTE249.toField = "newTranslation"
+ROUTE249.toNode = "bValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE249)
+LayoutLayer105.children.append(ROUTE249)
 ROUTE250 = x3d.ROUTE()
-ROUTE250.setFromField("translation_changed")
-ROUTE250.setFromNode("cSensor")
-ROUTE250.setToField("newTranslation")
-ROUTE250.setToNode("cValueTransformerScript")
+ROUTE250.fromField = "translation_changed"
+ROUTE250.fromNode = "cSensor"
+ROUTE250.toField = "newTranslation"
+ROUTE250.toNode = "cValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE250)
+LayoutLayer105.children.append(ROUTE250)
 ROUTE251 = x3d.ROUTE()
-ROUTE251.setFromField("translation_changed")
-ROUTE251.setFromNode("dSensor")
-ROUTE251.setToField("newTranslation")
-ROUTE251.setToNode("dValueTransformerScript")
+ROUTE251.fromField = "translation_changed"
+ROUTE251.fromNode = "dSensor"
+ROUTE251.toField = "newTranslation"
+ROUTE251.toNode = "dValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE251)
+LayoutLayer105.children.append(ROUTE251)
 ROUTE252 = x3d.ROUTE()
-ROUTE252.setFromField("translation_changed")
-ROUTE252.setFromNode("pdeltaSensor")
-ROUTE252.setToField("newTranslation")
-ROUTE252.setToNode("pdeltaValueTransformerScript")
+ROUTE252.fromField = "translation_changed"
+ROUTE252.fromNode = "pdeltaSensor"
+ROUTE252.toField = "newTranslation"
+ROUTE252.toNode = "pdeltaValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE252)
+LayoutLayer105.children.append(ROUTE252)
 ROUTE253 = x3d.ROUTE()
-ROUTE253.setFromField("translation_changed")
-ROUTE253.setFromNode("tdeltaSensor")
-ROUTE253.setToField("newTranslation")
-ROUTE253.setToNode("tdeltaValueTransformerScript")
+ROUTE253.fromField = "translation_changed"
+ROUTE253.fromNode = "tdeltaSensor"
+ROUTE253.toField = "newTranslation"
+ROUTE253.toNode = "tdeltaValueTransformerScript"
 
-LayoutLayer105.addChildren(ROUTE253)
+LayoutLayer105.children.append(ROUTE253)
 ROUTE254 = x3d.ROUTE()
-ROUTE254.setFromField("aValue_changed")
-ROUTE254.setFromNode("aValueTransformerScript")
-ROUTE254.setToField("a")
-ROUTE254.setToNode("x_iteShader")
+ROUTE254.fromField = "aValue_changed"
+ROUTE254.fromNode = "aValueTransformerScript"
+ROUTE254.toField = "a"
+ROUTE254.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE254)
+LayoutLayer105.children.append(ROUTE254)
 ROUTE255 = x3d.ROUTE()
-ROUTE255.setFromField("bValue_changed")
-ROUTE255.setFromNode("bValueTransformerScript")
-ROUTE255.setToField("b")
-ROUTE255.setToNode("x_iteShader")
+ROUTE255.fromField = "bValue_changed"
+ROUTE255.fromNode = "bValueTransformerScript"
+ROUTE255.toField = "b"
+ROUTE255.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE255)
+LayoutLayer105.children.append(ROUTE255)
 ROUTE256 = x3d.ROUTE()
-ROUTE256.setFromField("cValue_changed")
-ROUTE256.setFromNode("cValueTransformerScript")
-ROUTE256.setToField("c")
-ROUTE256.setToNode("x_iteShader")
+ROUTE256.fromField = "cValue_changed"
+ROUTE256.fromNode = "cValueTransformerScript"
+ROUTE256.toField = "c"
+ROUTE256.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE256)
+LayoutLayer105.children.append(ROUTE256)
 ROUTE257 = x3d.ROUTE()
-ROUTE257.setFromField("dValue_changed")
-ROUTE257.setFromNode("dValueTransformerScript")
-ROUTE257.setToField("d")
-ROUTE257.setToNode("x_iteShader")
+ROUTE257.fromField = "dValue_changed"
+ROUTE257.fromNode = "dValueTransformerScript"
+ROUTE257.toField = "d"
+ROUTE257.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE257)
+LayoutLayer105.children.append(ROUTE257)
 ROUTE258 = x3d.ROUTE()
-ROUTE258.setFromField("pdeltaValue_changed")
-ROUTE258.setFromNode("pdeltaValueTransformerScript")
-ROUTE258.setToField("pdelta")
-ROUTE258.setToNode("x_iteShader")
+ROUTE258.fromField = "pdeltaValue_changed"
+ROUTE258.fromNode = "pdeltaValueTransformerScript"
+ROUTE258.toField = "pdelta"
+ROUTE258.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE258)
+LayoutLayer105.children.append(ROUTE258)
 ROUTE259 = x3d.ROUTE()
-ROUTE259.setFromField("tdeltaValue_changed")
-ROUTE259.setFromNode("tdeltaValueTransformerScript")
-ROUTE259.setToField("tdelta")
-ROUTE259.setToNode("x_iteShader")
+ROUTE259.fromField = "tdeltaValue_changed"
+ROUTE259.fromNode = "tdeltaValueTransformerScript"
+ROUTE259.toField = "tdelta"
+ROUTE259.toNode = "x_iteShader"
 
-LayoutLayer105.addChildren(ROUTE259)
+LayoutLayer105.children.append(ROUTE259)
 Layout260 = x3d.Layout()
-Layout260.setAlign(["RIGHT","BOTTOM"])
-Layout260.setOffset([0,0.2])
-Layout260.setOffsetUnits(["WORLD","WORLD"])
-Layout260.setScaleMode(["NONE","NONE"])
-Layout260.setSize([0.4,0.6])
-Layout260.setSizeUnits(["WORLD","WORLD"])
+Layout260.align = ["RIGHT","BOTTOM"]
+Layout260.offset = [0,0.2]
+Layout260.offsetUnits = ["WORLD","WORLD"]
+Layout260.scaleMode = ["NONE","NONE"]
+Layout260.size = [0.4,0.6]
+Layout260.sizeUnits = ["WORLD","WORLD"]
 
-LayoutLayer105.setLayout(Layout260)
+LayoutLayer105.layout = Layout260
 Viewport261 = x3d.Viewport()
-Viewport261.setClipBoundary([0,1,0,1])
+Viewport261.clipBoundary = [0,1,0,1]
 
-LayoutLayer105.setViewport(Viewport261)
+LayoutLayer105.viewport = Viewport261
 
-LayerSet32.addLayers(LayoutLayer105)
+LayerSet32.layers.append(LayoutLayer105)
 
-Scene31.addLayerSet(LayerSet32)
+Scene31.layerSet = LayerSet32
 
-X3D0.setScene(Scene31)
-X3D0.toFileX3D("../personal/bumpyx_itesliders.new.python.x3d")
-X3D0.toFileJSON("../personal/bumpyx_itesliders.new.python.json")
+X3D0.Scene = Scene31
+f = open("../personal/bumpyx_itesliders.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/bumpyx_itesliders.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

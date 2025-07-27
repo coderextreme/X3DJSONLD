@@ -1,230 +1,230 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
-component2.setLevel(1)
+component2.name = "Scripting"
+component2.level = 1
 
-head1.addComponent(component2)
+head1.children.append(component2)
 meta3 = x3d.meta()
-meta3.setName("title")
-meta3.setContent("flowers2.x3d")
+meta3.name = "title"
+meta3.content = "flowers2.x3d"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("creator")
-meta4.setContent("John Carlson")
+meta4.name = "creator"
+meta4.content = "John Carlson"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("transcriber")
-meta5.setContent("John Carlson")
+meta5.name = "transcriber"
+meta5.content = "John Carlson"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.setName("created")
-meta6.setContent("23 January 2005")
+meta6.name = "created"
+meta6.content = "23 January 2005"
 
-head1.addMeta(meta6)
+head1.children.append(meta6)
 meta7 = x3d.meta()
-meta7.setName("modified")
-meta7.setContent("21 March 2018")
+meta7.name = "modified"
+meta7.content = "21 March 2018"
 
-head1.addMeta(meta7)
+head1.children.append(meta7)
 meta8 = x3d.meta()
-meta8.setName("description")
-meta8.setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")
+meta8.name = "description"
+meta8.content = "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
 
-head1.addMeta(meta8)
+head1.children.append(meta8)
 meta9 = x3d.meta()
-meta9.setName("identifier")
-meta9.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d")
+meta9.name = "identifier"
+meta9.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d"
 
-head1.addMeta(meta9)
+head1.children.append(meta9)
 meta10 = x3d.meta()
-meta10.setName("generator")
-meta10.setContent("manually written")
+meta10.name = "generator"
+meta10.content = "manually written"
 
-head1.addMeta(meta10)
+head1.children.append(meta10)
 meta11 = x3d.meta()
-meta11.setName("license")
-meta11.setContent("https://coderextreme.net/X3DJSONLD/LICENSE")
+meta11.name = "license"
+meta11.content = "https://coderextreme.net/X3DJSONLD/LICENSE"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene12 = x3d.Scene()
 NavigationInfo13 = x3d.NavigationInfo()
 
-Scene12.addChildren(NavigationInfo13)
+Scene12.children.append(NavigationInfo13)
 Viewpoint14 = x3d.Viewpoint()
-Viewpoint14.setDescription("Two mathematical orbitals")
-Viewpoint14.setPosition([0,0,50])
+Viewpoint14.description = "Two mathematical orbitals"
+Viewpoint14.position = [0,0,50]
 
-Scene12.addChildren(Viewpoint14)
+Scene12.children.append(Viewpoint14)
 Group15 = x3d.Group()
 DirectionalLight16 = x3d.DirectionalLight()
-DirectionalLight16.setDirection([1,1,1])
+DirectionalLight16.direction = [1,1,1]
 
-Group15.addChildren(DirectionalLight16)
+Group15.children.append(DirectionalLight16)
 ProtoDeclare17 = x3d.ProtoDeclare()
-ProtoDeclare17.setName("orbit")
+ProtoDeclare17.name = "orbit"
 ProtoInterface18 = x3d.ProtoInterface()
 field19 = x3d.field()
-field19.setName("translation")
-field19.setAccessType("inputOutput")
-field19.setType("SFVec3f")
-field19.setValue("-8 0 0")
+field19.name = "translation"
+field19.accessType = "inputOutput"
+field19.type = "SFVec3f"
+field19.value = [-8,0,0]
 
-ProtoInterface18.addField(field19)
+ProtoInterface18.field.append(field19)
 field20 = x3d.field()
-field20.setName("diffuseColor")
-field20.setAccessType("inputOutput")
-field20.setType("SFColor")
-field20.setValue("1 0.5 0")
+field20.name = "diffuseColor"
+field20.accessType = "inputOutput"
+field20.type = "SFColor"
+field20.value = [1,0.5,0]
 
-ProtoInterface18.addField(field20)
+ProtoInterface18.field.append(field20)
 field21 = x3d.field()
-field21.setName("specularColor")
-field21.setAccessType("inputOutput")
-field21.setType("SFColor")
-field21.setValue("1 0.5 0")
+field21.name = "specularColor"
+field21.accessType = "inputOutput"
+field21.type = "SFColor"
+field21.value = [1,0.5,0]
 
-ProtoInterface18.addField(field21)
+ProtoInterface18.field.append(field21)
 field22 = x3d.field()
-field22.setName("transparency")
-field22.setAccessType("inputOutput")
-field22.setType("SFFloat")
-field22.setValue("0.75")
+field22.name = "transparency"
+field22.accessType = "inputOutput"
+field22.type = "SFFloat"
+field22.value = 0.75
 
-ProtoInterface18.addField(field22)
+ProtoInterface18.field.append(field22)
 
-ProtoDeclare17.setProtoInterface(ProtoInterface18)
+ProtoDeclare17.ProtoInterface = ProtoInterface18
 ProtoBody23 = x3d.ProtoBody()
 Group24 = x3d.Group()
 TimeSensor25 = x3d.TimeSensor()
-TimeSensor25.setDEF("Clock")
-TimeSensor25.setCycleInterval(16)
-TimeSensor25.setLoop(True)
+TimeSensor25.DEF = "Clock"
+TimeSensor25.cycleInterval = 16
+TimeSensor25.loop = True
 
-Group24.addChildren(TimeSensor25)
+Group24.children.append(TimeSensor25)
 OrientationInterpolator26 = x3d.OrientationInterpolator()
-OrientationInterpolator26.setDEF("OrbitPath")
-OrientationInterpolator26.setKey([0,0.5,1])
-OrientationInterpolator26.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
+OrientationInterpolator26.DEF = "OrbitPath"
+OrientationInterpolator26.key = [0,0.5,1]
 
-Group24.addChildren(OrientationInterpolator26)
+Group24.children.append(OrientationInterpolator26)
 Transform27 = x3d.Transform()
-Transform27.setDEF("OrbitTransform")
+Transform27.DEF = "OrbitTransform"
 IS28 = x3d.IS()
 connect29 = x3d.connect()
-connect29.setNodeField("translation")
-connect29.setProtoField("translation")
+connect29.nodeField = "translation"
+connect29.protoField = "translation"
 
-IS28.addConnect(connect29)
+IS28.connect.append(connect29)
 
-Transform27.setIS(IS28)
+Transform27.IS = IS28
 Shape30 = x3d.Shape()
 Appearance31 = x3d.Appearance()
 Material32 = x3d.Material()
 IS33 = x3d.IS()
 connect34 = x3d.connect()
-connect34.setNodeField("diffuseColor")
-connect34.setProtoField("diffuseColor")
+connect34.nodeField = "diffuseColor"
+connect34.protoField = "diffuseColor"
 
-IS33.addConnect(connect34)
+IS33.connect.append(connect34)
 connect35 = x3d.connect()
-connect35.setNodeField("specularColor")
-connect35.setProtoField("specularColor")
+connect35.nodeField = "specularColor"
+connect35.protoField = "specularColor"
 
-IS33.addConnect(connect35)
+IS33.connect.append(connect35)
 connect36 = x3d.connect()
-connect36.setNodeField("transparency")
-connect36.setProtoField("transparency")
+connect36.nodeField = "transparency"
+connect36.protoField = "transparency"
 
-IS33.addConnect(connect36)
+IS33.connect.append(connect36)
 
-Material32.setIS(IS33)
+Material32.IS = IS33
 
-Appearance31.setMaterial(Material32)
+Appearance31.material = Material32
 
-Shape30.setAppearance(Appearance31)
-#<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+Shape30.appearance = Appearance31
+"""<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""
 IndexedFaceSet37 = x3d.IndexedFaceSet()
-IndexedFaceSet37.setCcw(False)
-IndexedFaceSet37.setConvex(False)
-IndexedFaceSet37.setCoordIndex([0,1,2,-1])
-IndexedFaceSet37.setDEF("Orbit")
+IndexedFaceSet37.ccw = False
+IndexedFaceSet37.convex = False
+IndexedFaceSet37.coordIndex = [0,1,2,-1]
+IndexedFaceSet37.DEF = "Orbit"
 Coordinate38 = x3d.Coordinate()
-Coordinate38.setDEF("OrbitCoordinates")
-Coordinate38.setPoint([0,0,1,0,1,0,1,0,0])
+Coordinate38.DEF = "OrbitCoordinates"
 
-IndexedFaceSet37.setCoord(Coordinate38)
+IndexedFaceSet37.coord = Coordinate38
 
-Shape30.setGeometry(IndexedFaceSet37)
+Shape30.geometry = IndexedFaceSet37
 
-Transform27.addChild(Shape30)
+Transform27.children.append(Shape30)
 
-Group24.addChildren(Transform27)
+Group24.children.append(Transform27)
 Script39 = x3d.Script()
-Script39.setDEF("OrbitScript")
+Script39.DEF = "OrbitScript"
 field40 = x3d.field()
-field40.setName("set_fraction")
-field40.setAccessType("inputOnly")
-field40.setType("SFFloat")
+field40.name = "set_fraction"
+field40.accessType = "inputOnly"
+field40.type = "SFFloat"
 
-Script39.addField(field40)
+Script39.field.append(field40)
 field41 = x3d.field()
-field41.setName("coordinates")
-field41.setAccessType("inputOutput")
-field41.setType("MFVec3f")
+field41.name = "coordinates"
+field41.accessType = "inputOutput"
+field41.type = "MFVec3f"
 
-Script39.addField(field41)
+Script39.field.append(field41)
 field42 = x3d.field()
-field42.setName("coordIndexes")
-field42.setAccessType("inputOutput")
-field42.setType("MFInt32")
+field42.name = "coordIndexes"
+field42.accessType = "inputOutput"
+field42.type = "MFInt32"
 
-Script39.addField(field42)
+Script39.field.append(field42)
 field43 = x3d.field()
-field43.setName("e")
-field43.setAccessType("inputOutput")
-field43.setType("SFFloat")
-field43.setValue("5")
+field43.name = "e"
+field43.accessType = "inputOutput"
+field43.type = "SFFloat"
+field43.value = 5
 
-Script39.addField(field43)
+Script39.field.append(field43)
 field44 = x3d.field()
-field44.setName("f")
-field44.setAccessType("inputOutput")
-field44.setType("SFFloat")
-field44.setValue("5")
+field44.name = "f"
+field44.accessType = "inputOutput"
+field44.type = "SFFloat"
+field44.value = 5
 
-Script39.addField(field44)
+Script39.field.append(field44)
 field45 = x3d.field()
-field45.setName("g")
-field45.setAccessType("inputOutput")
-field45.setType("SFFloat")
-field45.setValue("5")
+field45.name = "g"
+field45.accessType = "inputOutput"
+field45.type = "SFFloat"
+field45.value = 5
 
-Script39.addField(field45)
+Script39.field.append(field45)
 field46 = x3d.field()
-field46.setName("h")
-field46.setAccessType("inputOutput")
-field46.setType("SFFloat")
-field46.setValue("5")
+field46.name = "h"
+field46.accessType = "inputOutput"
+field46.type = "SFFloat"
+field46.value = 5
 
-Script39.addField(field46)
+Script39.field.append(field46)
 field47 = x3d.field()
-field47.setName("resolution")
-field47.setAccessType("inputOutput")
-field47.setType("SFInt32")
-field47.setValue("50")
+field47.name = "resolution"
+field47.accessType = "inputOutput"
+field47.type = "SFInt32"
+field47.value = 50
 
-Script39.addField(field47)
+Script39.field.append(field47)
 
-Script39.setSourceCode('''ecmascript:\n"+
+Script39.sourceCode = '''ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
@@ -288,101 +288,105 @@ Script39.setSourceCode('''ecmascript:\n"+
 "					h = 4;\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
-"			}''')
+"			}'''
 
-Group24.addChildren(Script39)
+Group24.children.append(Script39)
 ROUTE48 = x3d.ROUTE()
-ROUTE48.setFromNode("OrbitScript")
-ROUTE48.setFromField("coordIndexes")
-ROUTE48.setToNode("Orbit")
-ROUTE48.setToField("set_coordIndex")
+ROUTE48.fromNode = "OrbitScript"
+ROUTE48.fromField = "coordIndexes"
+ROUTE48.toNode = "Orbit"
+ROUTE48.toField = "set_coordIndex"
 
-Group24.addChildren(ROUTE48)
+Group24.children.append(ROUTE48)
 ROUTE49 = x3d.ROUTE()
-ROUTE49.setFromNode("OrbitScript")
-ROUTE49.setFromField("coordinates")
-ROUTE49.setToNode("OrbitCoordinates")
-ROUTE49.setToField("point")
+ROUTE49.fromNode = "OrbitScript"
+ROUTE49.fromField = "coordinates"
+ROUTE49.toNode = "OrbitCoordinates"
+ROUTE49.toField = "point"
 
-Group24.addChildren(ROUTE49)
+Group24.children.append(ROUTE49)
 ROUTE50 = x3d.ROUTE()
-ROUTE50.setFromNode("Clock")
-ROUTE50.setFromField("fraction_changed")
-ROUTE50.setToNode("OrbitScript")
-ROUTE50.setToField("set_fraction")
+ROUTE50.fromNode = "Clock"
+ROUTE50.fromField = "fraction_changed"
+ROUTE50.toNode = "OrbitScript"
+ROUTE50.toField = "set_fraction"
 
-Group24.addChildren(ROUTE50)
+Group24.children.append(ROUTE50)
 ROUTE51 = x3d.ROUTE()
-ROUTE51.setFromNode("OrbitPath")
-ROUTE51.setFromField("value_changed")
-ROUTE51.setToNode("OrbitTransform")
-ROUTE51.setToField("rotation")
+ROUTE51.fromNode = "OrbitPath"
+ROUTE51.fromField = "value_changed"
+ROUTE51.toNode = "OrbitTransform"
+ROUTE51.toField = "rotation"
 
-Group24.addChildren(ROUTE51)
+Group24.children.append(ROUTE51)
 ROUTE52 = x3d.ROUTE()
-ROUTE52.setFromNode("Clock")
-ROUTE52.setFromField("fraction_changed")
-ROUTE52.setToNode("OrbitPath")
-ROUTE52.setToField("set_fraction")
+ROUTE52.fromNode = "Clock"
+ROUTE52.fromField = "fraction_changed"
+ROUTE52.toNode = "OrbitPath"
+ROUTE52.toField = "set_fraction"
 
-Group24.addChildren(ROUTE52)
+Group24.children.append(ROUTE52)
 
-ProtoBody23.addChildren(Group24)
+ProtoBody23.children.append(Group24)
 
-ProtoDeclare17.setProtoBody(ProtoBody23)
+ProtoDeclare17.ProtoBody = ProtoBody23
 
-Group15.addChildren(ProtoDeclare17)
+Group15.children.append(ProtoDeclare17)
 ProtoInstance53 = x3d.ProtoInstance()
-ProtoInstance53.setName("orbit")
+ProtoInstance53.name = "orbit"
 fieldValue54 = x3d.fieldValue()
-fieldValue54.setName("translation")
-fieldValue54.setValue("-8 0 0")
+fieldValue54.name = "translation"
+fieldValue54.value = "-8 0 0"
 
-ProtoInstance53.addFieldValue(fieldValue54)
+ProtoInstance53.fieldValue.append(fieldValue54)
 fieldValue55 = x3d.fieldValue()
-fieldValue55.setName("diffuseColor")
-fieldValue55.setValue("1 0.5 0")
+fieldValue55.name = "diffuseColor"
+fieldValue55.value = "1 0.5 0"
 
-ProtoInstance53.addFieldValue(fieldValue55)
+ProtoInstance53.fieldValue.append(fieldValue55)
 fieldValue56 = x3d.fieldValue()
-fieldValue56.setName("specularColor")
-fieldValue56.setValue("1 0.5 0")
+fieldValue56.name = "specularColor"
+fieldValue56.value = "1 0.5 0"
 
-ProtoInstance53.addFieldValue(fieldValue56)
+ProtoInstance53.fieldValue.append(fieldValue56)
 fieldValue57 = x3d.fieldValue()
-fieldValue57.setName("transparency")
-fieldValue57.setValue("0.75")
+fieldValue57.name = "transparency"
+fieldValue57.value = "0.75"
 
-ProtoInstance53.addFieldValue(fieldValue57)
+ProtoInstance53.fieldValue.append(fieldValue57)
 
-Group15.addChildren(ProtoInstance53)
+Group15.children.append(ProtoInstance53)
 ProtoInstance58 = x3d.ProtoInstance()
-ProtoInstance58.setName("orbit")
+ProtoInstance58.name = "orbit"
 fieldValue59 = x3d.fieldValue()
-fieldValue59.setName("translation")
-fieldValue59.setValue("8 0 0")
+fieldValue59.name = "translation"
+fieldValue59.value = "8 0 0"
 
-ProtoInstance58.addFieldValue(fieldValue59)
+ProtoInstance58.fieldValue.append(fieldValue59)
 fieldValue60 = x3d.fieldValue()
-fieldValue60.setName("diffuseColor")
-fieldValue60.setValue("0 0.5 1")
+fieldValue60.name = "diffuseColor"
+fieldValue60.value = "0 0.5 1"
 
-ProtoInstance58.addFieldValue(fieldValue60)
+ProtoInstance58.fieldValue.append(fieldValue60)
 fieldValue61 = x3d.fieldValue()
-fieldValue61.setName("specularColor")
-fieldValue61.setValue("0 0.5 1")
+fieldValue61.name = "specularColor"
+fieldValue61.value = "0 0.5 1"
 
-ProtoInstance58.addFieldValue(fieldValue61)
+ProtoInstance58.fieldValue.append(fieldValue61)
 fieldValue62 = x3d.fieldValue()
-fieldValue62.setName("transparency")
-fieldValue62.setValue("0.5")
+fieldValue62.name = "transparency"
+fieldValue62.value = "0.5"
 
-ProtoInstance58.addFieldValue(fieldValue62)
+ProtoInstance58.fieldValue.append(fieldValue62)
 
-Group15.addChildren(ProtoInstance58)
+Group15.children.append(ProtoInstance58)
 
-Scene12.addChildren(Group15)
+Scene12.children.append(Group15)
 
-X3D0.setScene(Scene12)
-X3D0.toFileX3D("../personal/flowers2.new.python.x3d")
-X3D0.toFileJSON("../personal/flowers2.new.python.json")
+X3D0.Scene = Scene12
+f = open("../personal/flowers2.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/flowers2.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

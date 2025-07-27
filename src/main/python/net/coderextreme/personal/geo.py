@@ -1,247 +1,253 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
-component2.setLevel(1)
+component2.name = "Scripting"
+component2.level = 1
 
-head1.addComponent(component2)
+head1.children.append(component2)
 component3 = x3d.component()
-component3.setName("EnvironmentalEffects")
-component3.setLevel(3)
+component3.name = "EnvironmentalEffects"
+component3.level = 3
 
-head1.addComponent(component3)
+head1.children.append(component3)
 component4 = x3d.component()
-component4.setName("Shaders")
-component4.setLevel(1)
+component4.name = "Shaders"
+component4.level = 1
 
-head1.addComponent(component4)
+head1.children.append(component4)
 component5 = x3d.component()
-component5.setName("CubeMapTexturing")
-component5.setLevel(1)
+component5.name = "CubeMapTexturing"
+component5.level = 1
 
-head1.addComponent(component5)
+head1.children.append(component5)
 component6 = x3d.component()
-component6.setName("Texturing")
-component6.setLevel(1)
+component6.name = "Texturing"
+component6.level = 1
 
-head1.addComponent(component6)
+head1.children.append(component6)
 component7 = x3d.component()
-component7.setName("Rendering")
-component7.setLevel(1)
+component7.name = "Rendering"
+component7.level = 1
 
-head1.addComponent(component7)
+head1.children.append(component7)
 component8 = x3d.component()
-component8.setName("Grouping")
-component8.setLevel(3)
+component8.name = "Grouping"
+component8.level = 3
 
-head1.addComponent(component8)
+head1.children.append(component8)
 component9 = x3d.component()
-component9.setName("Core")
-component9.setLevel(1)
+component9.name = "Core"
+component9.level = 1
 
-head1.addComponent(component9)
-#<component name='Shape' level='4'></component>
+head1.children.append(component9)
+"""<component name='Shape' level='4'></component>"""
 meta10 = x3d.meta()
-meta10.setName("title")
-meta10.setContent("geo.x3d")
+meta10.name = "title"
+meta10.content = "geo.x3d"
 
-head1.addMeta(meta10)
+head1.children.append(meta10)
 meta11 = x3d.meta()
-meta11.setName("creator")
-meta11.setContent("John Carlson")
+meta11.name = "creator"
+meta11.content = "John Carlson"
 
-head1.addMeta(meta11)
+head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.setName("generator")
-meta12.setContent("manual")
+meta12.name = "generator"
+meta12.content = "manual"
 
-head1.addMeta(meta12)
+head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.setName("identifier")
-meta13.setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d")
+meta13.name = "identifier"
+meta13.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d"
 
-head1.addMeta(meta13)
+head1.children.append(meta13)
 meta14 = x3d.meta()
-meta14.setName("description")
-meta14.setContent("a sphere")
+meta14.name = "description"
+meta14.content = "a sphere"
 
-head1.addMeta(meta14)
+head1.children.append(meta14)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene15 = x3d.Scene()
 NavigationInfo16 = x3d.NavigationInfo()
-NavigationInfo16.setType(["ANY","EXAMINE","FLY","LOOKAT"])
+NavigationInfo16.type = ["ANY","EXAMINE","FLY","LOOKAT"]
 
-Scene15.addChildren(NavigationInfo16)
+Scene15.children.append(NavigationInfo16)
 Viewpoint17 = x3d.Viewpoint()
-Viewpoint17.setDEF("Tour")
-Viewpoint17.setDescription("Tour Views")
+Viewpoint17.DEF = "Tour"
+Viewpoint17.description = "Tour Views"
 
-Scene15.addChildren(Viewpoint17)
-#Viewpoint position='0 0 4' description='sphere in road'/
+Scene15.children.append(Viewpoint17)
+"""Viewpoint position='0 0 4' description='sphere in road'/"""
 Background18 = x3d.Background()
-Background18.setBackUrl(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])
-Background18.setBottomUrl(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])
-Background18.setFrontUrl(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])
-Background18.setLeftUrl(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])
-Background18.setRightUrl(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])
-Background18.setTopUrl(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])
+Background18.backUrl = ["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
+Background18.bottomUrl = ["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
+Background18.frontUrl = ["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
+Background18.leftUrl = ["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
+Background18.rightUrl = ["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
+Background18.topUrl = ["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
 
-Scene15.addChildren(Background18)
+Scene15.children.append(Background18)
 Transform19 = x3d.Transform()
 Shape20 = x3d.Shape()
 Sphere21 = x3d.Sphere()
 
-Shape20.setGeometry(Sphere21)
+Shape20.geometry = Sphere21
 Appearance22 = x3d.Appearance()
 Material23 = x3d.Material()
-Material23.setDiffuseColor([0.7,0.7,0.7])
-Material23.setSpecularColor([0.5,0.5,0.5])
+Material23.diffuseColor = [0.7,0.7,0.7]
+Material23.specularColor = [0.5,0.5,0.5]
 
-Appearance22.setMaterial(Material23)
+Appearance22.material = Material23
 ComposedCubeMapTexture24 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture24.setDEF("texture")
+ComposedCubeMapTexture24.DEF = "texture"
 ImageTexture25 = x3d.ImageTexture()
-ImageTexture25.setUrl(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])
+ImageTexture25.url = ["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
 
-ComposedCubeMapTexture24.setBackTexture(ImageTexture25)
+ComposedCubeMapTexture24.backTexture = ImageTexture25
 ImageTexture26 = x3d.ImageTexture()
-ImageTexture26.setUrl(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])
+ImageTexture26.url = ["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
 
-ComposedCubeMapTexture24.setBottomTexture(ImageTexture26)
+ComposedCubeMapTexture24.bottomTexture = ImageTexture26
 ImageTexture27 = x3d.ImageTexture()
-ImageTexture27.setUrl(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])
+ImageTexture27.url = ["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
 
-ComposedCubeMapTexture24.setFrontTexture(ImageTexture27)
+ComposedCubeMapTexture24.frontTexture = ImageTexture27
 ImageTexture28 = x3d.ImageTexture()
-ImageTexture28.setUrl(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])
+ImageTexture28.url = ["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
 
-ComposedCubeMapTexture24.setLeftTexture(ImageTexture28)
+ComposedCubeMapTexture24.leftTexture = ImageTexture28
 ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.setUrl(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])
+ImageTexture29.url = ["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
 
-ComposedCubeMapTexture24.setRightTexture(ImageTexture29)
+ComposedCubeMapTexture24.rightTexture = ImageTexture29
 ImageTexture30 = x3d.ImageTexture()
-ImageTexture30.setUrl(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])
+ImageTexture30.url = ["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
 
-ComposedCubeMapTexture24.setTopTexture(ImageTexture30)
+ComposedCubeMapTexture24.topTexture = ImageTexture30
 
-Appearance22.setTexture(ComposedCubeMapTexture24)
+Appearance22.texture = ComposedCubeMapTexture24
 ComposedShader31 = x3d.ComposedShader()
-ComposedShader31.setLanguage("GLSL")
+ComposedShader31.language = "GLSL"
 field32 = x3d.field()
-field32.setName("chromaticDispertion")
-field32.setAccessType("inputOutput")
-field32.setType("SFVec3f")
-field32.setValue("0.98 1 1.033")
+field32.name = "chromaticDispertion"
+field32.accessType = "inputOutput"
+field32.type = "SFVec3f"
+field32.value = [0.98,1,1.033]
 
-ComposedShader31.addField(field32)
+ComposedShader31.field.append(field32)
 field33 = x3d.field()
-field33.setName("cube")
-field33.setType("SFNode")
-field33.setAccessType("inputOutput")
+field33.name = "cube"
+field33.type = "SFNode"
+field33.accessType = "inputOutput"
 ComposedCubeMapTexture34 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture34.setUSE("texture")
+ComposedCubeMapTexture34.USE = "texture"
 
-field33.addChildren(ComposedCubeMapTexture34)
+field33.children.append(ComposedCubeMapTexture34)
 
-ComposedShader31.addField(field33)
+ComposedShader31.field.append(field33)
 field35 = x3d.field()
-field35.setName("bias")
-field35.setAccessType("inputOutput")
-field35.setType("SFFloat")
-field35.setValue("0.5")
+field35.name = "bias"
+field35.accessType = "inputOutput"
+field35.type = "SFFloat"
+field35.value = 0.5
 
-ComposedShader31.addField(field35)
+ComposedShader31.field.append(field35)
 field36 = x3d.field()
-field36.setName("scale")
-field36.setAccessType("inputOutput")
-field36.setType("SFFloat")
-field36.setValue("0.5")
+field36.name = "scale"
+field36.accessType = "inputOutput"
+field36.type = "SFFloat"
+field36.value = 0.5
 
-ComposedShader31.addField(field36)
+ComposedShader31.field.append(field36)
 field37 = x3d.field()
-field37.setName("power")
-field37.setAccessType("inputOutput")
-field37.setType("SFFloat")
-field37.setValue("2")
+field37.name = "power"
+field37.accessType = "inputOutput"
+field37.type = "SFFloat"
+field37.value = 2
 
-ComposedShader31.addField(field37)
+ComposedShader31.field.append(field37)
 ShaderPart38 = x3d.ShaderPart()
-ShaderPart38.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])
-ShaderPart38.setType("VERTEX")
+ShaderPart38.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
+ShaderPart38.type = "VERTEX"
 
-ComposedShader31.addParts(ShaderPart38)
+ComposedShader31.parts.append(ShaderPart38)
 ShaderPart39 = x3d.ShaderPart()
-ShaderPart39.setDEF("common")
-ShaderPart39.setUrl(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
-ShaderPart39.setType("FRAGMENT")
+ShaderPart39.DEF = "common"
+ShaderPart39.url = ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
+ShaderPart39.type = "FRAGMENT"
 
-ComposedShader31.addParts(ShaderPart39)
+ComposedShader31.parts.append(ShaderPart39)
 
-Appearance22.addShaders(ComposedShader31)
+Appearance22.shaders.append(ComposedShader31)
 ComposedShader40 = x3d.ComposedShader()
-ComposedShader40.setLanguage("GLSL")
+ComposedShader40.language = "GLSL"
 field41 = x3d.field()
-field41.setName("chromaticDispertion")
-field41.setAccessType("initializeOnly")
-field41.setType("SFVec3f")
-field41.setValue("0.98 1 1.033")
+field41.name = "chromaticDispertion"
+field41.accessType = "initializeOnly"
+field41.type = "SFVec3f"
+field41.value = [0.98,1,1.033]
 
-ComposedShader40.addField(field41)
+ComposedShader40.field.append(field41)
 field42 = x3d.field()
-field42.setName("cube")
-field42.setType("SFNode")
-field42.setAccessType("initializeOnly")
+field42.name = "cube"
+field42.type = "SFNode"
+field42.accessType = "initializeOnly"
 ComposedCubeMapTexture43 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture43.setUSE("texture")
+ComposedCubeMapTexture43.USE = "texture"
 
-field42.addChildren(ComposedCubeMapTexture43)
+field42.children.append(ComposedCubeMapTexture43)
 
-ComposedShader40.addField(field42)
+ComposedShader40.field.append(field42)
 field44 = x3d.field()
-field44.setName("bias")
-field44.setAccessType("initializeOnly")
-field44.setType("SFFloat")
-field44.setValue("0.5")
+field44.name = "bias"
+field44.accessType = "initializeOnly"
+field44.type = "SFFloat"
+field44.value = 0.5
 
-ComposedShader40.addField(field44)
+ComposedShader40.field.append(field44)
 field45 = x3d.field()
-field45.setName("scale")
-field45.setAccessType("initializeOnly")
-field45.setType("SFFloat")
-field45.setValue("0.5")
+field45.name = "scale"
+field45.accessType = "initializeOnly"
+field45.type = "SFFloat"
+field45.value = 0.5
 
-ComposedShader40.addField(field45)
+ComposedShader40.field.append(field45)
 field46 = x3d.field()
-field46.setName("power")
-field46.setAccessType("initializeOnly")
-field46.setType("SFFloat")
-field46.setValue("2")
+field46.name = "power"
+field46.accessType = "initializeOnly"
+field46.type = "SFFloat"
+field46.value = 2
 
-ComposedShader40.addField(field46)
+ComposedShader40.field.append(field46)
 ShaderPart47 = x3d.ShaderPart()
-ShaderPart47.setUrl(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])
-ShaderPart47.setType("VERTEX")
+ShaderPart47.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
+ShaderPart47.type = "VERTEX"
 
-ComposedShader40.addParts(ShaderPart47)
+ComposedShader40.parts.append(ShaderPart47)
 ShaderPart48 = x3d.ShaderPart()
-ShaderPart48.setUrl(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
-ShaderPart48.setType("FRAGMENT")
+ShaderPart48.url = ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+ShaderPart48.type = "FRAGMENT"
 
-ComposedShader40.addParts(ShaderPart48)
+ComposedShader40.parts.append(ShaderPart48)
 
-Appearance22.addShaders(ComposedShader40)
+Appearance22.shaders.append(ComposedShader40)
 
-Shape20.setAppearance(Appearance22)
+Shape20.appearance = Appearance22
 
-Transform19.addChild(Shape20)
+Transform19.children.append(Shape20)
 
-Scene15.addChildren(Transform19)
+Scene15.children.append(Transform19)
 
-X3D0.setScene(Scene15)
-X3D0.toFileX3D("../personal/geo.new.python.x3d")
-X3D0.toFileJSON("../personal/geo.new.python.json")
+X3D0.Scene = Scene15
+f = open("../personal/geo.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/geo.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

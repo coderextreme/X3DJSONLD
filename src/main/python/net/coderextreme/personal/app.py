@@ -1,54 +1,60 @@
-import x3dpsail as x3d
+print('<!--')
+import x3d
+print('-->')
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("app.x3d")
+meta2.name = "title"
+meta2.content = "app.x3d"
 
-head1.addMeta(meta2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.setName("creator")
-meta3.setContent("Carlson, I")
+meta3.name = "creator"
+meta3.content = "Carlson, I"
 
-head1.addMeta(meta3)
+head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.setName("creator")
-meta4.setContent("Carlson, II")
+meta4.name = "creator"
+meta4.content = "Carlson, II"
 
-head1.addMeta(meta4)
+head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.setName("creator")
-meta5.setContent("Carlson, III")
+meta5.name = "creator"
+meta5.content = "Carlson, III"
 
-head1.addMeta(meta5)
+head1.children.append(meta5)
 
-X3D0.setHead(head1)
+X3D0.head = head1
 Scene6 = x3d.Scene()
 Group7 = x3d.Group()
 Shape8 = x3d.Shape()
 Appearance9 = x3d.Appearance()
 Material10 = x3d.Material()
-Material10.setDiffuseColor([1,0,0])
+Material10.diffuseColor = [1,0,0]
 
-Appearance9.setMaterial(Material10)
+Appearance9.material = Material10
 
-Shape8.setAppearance(Appearance9)
+Shape8.appearance = Appearance9
 Box11 = x3d.Box()
 
-Shape8.setGeometry(Box11)
+Shape8.geometry = Box11
 
-Group7.addChildren(Shape8)
+Group7.children.append(Shape8)
 
-Scene6.addChildren(Group7)
+Scene6.children.append(Group7)
 Transform12 = x3d.Transform()
-Transform12.setRotation([7,8,9,3.14])
-Transform12.setScale([4,5,6])
-Transform12.setTranslation([1,2,3])
+Transform12.rotation = [7,8,9,3.14]
+Transform12.scale = [4,5,6]
+Transform12.translation = [1,2,3]
 
-Scene6.addChildren(Transform12)
+Scene6.children.append(Transform12)
 
-X3D0.setScene(Scene6)
-X3D0.toFileX3D("../personal/app.new.python.x3d")
-X3D0.toFileJSON("../personal/app.new.python.json")
+X3D0.Scene = Scene6
+f = open("../personal/app.new.python.x3d", mode="w", encoding="utf-8")
+f.write(X3D0.XML())
+f.close()
+f = open("../personal/app.new.python.json", mode="w", encoding="utf-8")
+f.write(X3D0.JSON())
+f.close()

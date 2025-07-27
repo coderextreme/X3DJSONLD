@@ -1,71 +1,38 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "3.3";
-let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "bubs2.x3d";
-head1.meta = new MFNode();
-
-head1.meta[0] = meta2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "creator";
-meta3.content = "John Carlson";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "description";
-meta4.content = "Tour around a prismatic sphere";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "generator";
-meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d";
-head1.meta[4] = meta6;
-
-let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "translated";
-meta7.content = "13 March 2016";
-head1.meta[5] = meta7;
-
-let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "generator";
-meta8.content = "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html";
-head1.meta[6] = meta8;
-
-let component9 = browser.currentScene.createNode("component");
-component9.name = "Scripting";
-component9.level = 1;
-head1.component[7] = component9;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene.addMetaData("title", "bubs2.x3d");
+scene.addMetaData("creator", "John Carlson");
+scene.addMetaData("description", "Tour around a prismatic sphere");
+scene.addMetaData("generator", "X3D-Edit, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/personal/geo.x3d");
+scene.addMetaData("translated", "13 March 2016");
+scene.addMetaData("generator", "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html");
+scene .addComponent (browser .getComponent ("Scripting", 1));
+await browser .loadComponents (scene);
 let NavigationInfo11 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo11.type = new MFString(new java.lang.String["EXAMINE"]);
-browser.currentScene.children = new MFNode();
+NavigationInfo11.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo11;
 
 let Viewpoint12 = browser.currentScene.createNode("Viewpoint");
-Viewpoint12.position = new SFVec3f(new float[0,0,4]);
-Viewpoint12.orientation = new SFRotation(new float[1,0,0,0]);
+Viewpoint12.position = new X3D.SFVec3f([0,0,4]);
+Viewpoint12.orientation = new X3D.SFRotation([1,0,0,0]);
 Viewpoint12.description = "Bubbles in action";
 browser.currentScene.children[1] = Viewpoint12;
 
 let Background13 = browser.currentScene.createNode("Background");
-Background13.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]);
-Background13.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]);
-Background13.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]);
-Background13.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]);
-Background13.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]);
-Background13.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]);
+Background13.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/BK.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")]);
+Background13.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/BT.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")]);
+Background13.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/FR.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")]);
+Background13.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/LF.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")]);
+Background13.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/RT.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")]);
+Background13.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/TP.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")]);
 browser.currentScene.children[2] = Background13;
 
 let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
@@ -144,57 +111,35 @@ Transform16.DEF = "body_trans";
 let Shape17 = browser.currentScene.createNode("Shape");
 let Sphere18 = browser.currentScene.createNode("Sphere");
 Sphere18.radius = 0.25;
-Shape17.geometry = Sphere18;
+geometry = Sphere18;
 
 let Appearance19 = browser.currentScene.createNode("Appearance");
 let Material20 = browser.currentScene.createNode("Material");
-Material20.diffuseColor = new SFColor(new float[1,0,0]);
+Material20.diffuseColor = new X3D.SFColor([1,0,0]);
 Material20.transparency = 0.2;
-Appearance19.material = Material20;
+material = Material20;
 
-Shape17.appearance = Appearance19;
+appearance = Appearance19;
 
-Transform16.child = new undefined();
+Transform16YYY.child = new X3D.undefined();
 
-Transform16.child[0] = Shape17;
+Transform16ZZZ.child[0] = Shape17;
 
 let Script21 = browser.currentScene.createNode("Script");
 Script21.DEF = "bounce";
-let field22 = browser.currentScene.createNode("field");
-field22.name = "scale";
-field22.accessType = "inputOutput";
-field22.type = "SFVec3f";
-field22.value = "1 1 1";
-Script21.field = new MFNode();
+Script22.getField("scale").setValue("1 1 1");
+Script21YYY.field = new X3D.MFNode();
 
-Script21.field[0] = field22;
+Script23.getField("translation").setValue("0 0 0");
+Script21YYY.field = new X3D.MFNode();
 
-let field23 = browser.currentScene.createNode("field");
-field23.name = "translation";
-field23.accessType = "inputOutput";
-field23.type = "SFVec3f";
-field23.value = "0 0 0";
-Script21.field[1] = field23;
+Script24.getField("velocity").setValue("0 0 0");
+Script21YYY.field = new X3D.MFNode();
 
-let field24 = browser.currentScene.createNode("field");
-field24.name = "velocity";
-field24.accessType = "inputOutput";
-field24.type = "SFVec3f";
-field24.value = "0 0 0";
-Script21.field[2] = field24;
+Script25.getField("scalvel").setValue("0 0 0");
+Script21YYY.field = new X3D.MFNode();
 
-let field25 = browser.currentScene.createNode("field");
-field25.name = "scalvel";
-field25.accessType = "inputOutput";
-field25.type = "SFVec3f";
-field25.value = "0 0 0";
-Script21.field[3] = field25;
-
-let field26 = browser.currentScene.createNode("field");
-field26.name = "set_fraction";
-field26.accessType = "inputOnly";
-field26.type = "SFFloat";
-Script21.field[4] = field26;
+Script26.getField("set_fraction")Script21YYY.field = new X3D.MFNode();
 
 
 Script21.setSourceCode(`ecmascript:\n"+
@@ -248,40 +193,40 @@ Script21.setSourceCode(`ecmascript:\n"+
 "	initialize();\n"+
 "    }\n"+
 "}`)
-Transform16.children[1] = Script21;
+Transform16ZZZ.children[1] = Script21;
 
 let TimeSensor27 = browser.currentScene.createNode("TimeSensor");
 TimeSensor27.DEF = "bubbleClock";
 TimeSensor27.cycleInterval = 10;
 TimeSensor27.loop = True;
-Transform16.children[2] = TimeSensor27;
+Transform16ZZZ.children[2] = TimeSensor27;
 
 let ROUTE28 = browser.currentScene.createNode("ROUTE");
 ROUTE28.fromNode = "bounce";
 ROUTE28.fromField = "translation_changed";
 ROUTE28.toNode = "body_trans";
 ROUTE28.toField = "set_translation";
-Transform16.children[3] = ROUTE28;
+Transform16ZZZ.children[3] = ROUTE28;
 
 let ROUTE29 = browser.currentScene.createNode("ROUTE");
 ROUTE29.fromNode = "bounce";
 ROUTE29.fromField = "scale_changed";
 ROUTE29.toNode = "body_trans";
 ROUTE29.toField = "set_scale";
-Transform16.children[4] = ROUTE29;
+Transform16ZZZ.children[4] = ROUTE29;
 
 let ROUTE30 = browser.currentScene.createNode("ROUTE");
 ROUTE30.fromNode = "bubbleClock";
 ROUTE30.fromField = "fraction_changed";
 ROUTE30.toNode = "bounce";
 ROUTE30.toField = "set_fraction";
-Transform16.children[5] = ROUTE30;
+Transform16ZZZ.children[5] = ROUTE30;
 
-ProtoBody15.children = new MFNode();
+ProtoBody15YYY.children = new X3D.MFNode();
 
-ProtoBody15.children[0] = Transform16;
+ProtoBody15ZZZ.children[0] = Transform16;
 
-ProtoDeclare14.protoBody = ProtoBody15;
+protoBody = ProtoBody15;
 
 browser.currentScene.children[3] = ProtoDeclare14;
 
@@ -305,3 +250,5 @@ ProtoInstance34.name = "Bubble";
 ProtoInstance34.DEF = "bubbleD";
 browser.currentScene.children[7] = ProtoInstance34;
 
+}
+main ();

@@ -1,110 +1,75 @@
-let browser = X3D.getBrowser();
-let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "4.0";
-let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "flower.x3d";
-head1.meta = new MFNode();
-
-head1.meta[0] = meta2;
-
-let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "creator";
-meta3.content = "John Carlson";
-head1.meta[1] = meta3;
-
-let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "generator";
-meta4.content = "manual";
-head1.meta[2] = meta4;
-
-let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d";
-head1.meta[3] = meta5;
-
-let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "description";
-meta6.content = "a flower";
-head1.meta[4] = meta6;
-
-head = head1;
-
+const
+   X3D     = require ("x_ite-node"),
+   canvas  = X3D .createBrowser (),
+   browser = canvas .browser,
+   scene   = browser .currentScene;
+async function main () {
+scene.setProfile(browser.getProfile("Immersive"));
+scene.addMetaData("title", "flower.x3d");
+scene.addMetaData("creator", "John Carlson");
+scene.addMetaData("generator", "manual");
+scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/personal/flower.x3d");
+scene.addMetaData("description", "a flower");
+await browser .loadComponents (scene);
 let NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = new MFNode();
+browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo8;
 
 let DirectionalLight9 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight9.direction = new SFVec3f(new float[0,-0.8,-0.2]);
+DirectionalLight9.direction = new X3D.SFVec3f([0,-0.8,-0.2]);
 DirectionalLight9.intensity = 0.5;
 browser.currentScene.children[1] = DirectionalLight9;
 
 let Background10 = browser.currentScene.createNode("Background");
-Background10.skyColor = new MFColor(new float[1,1,1]);
+Background10.skyColor = new X3D.MFColor([1,1,1]);
 browser.currentScene.children[2] = Background10;
 
 let Viewpoint11 = browser.currentScene.createNode("Viewpoint");
 Viewpoint11.description = "One mathematical orbital";
-Viewpoint11.position = new SFVec3f(new float[0,0,50]);
+Viewpoint11.position = new X3D.SFVec3f([0,0,50]);
 browser.currentScene.children[3] = Viewpoint11;
 
 let Transform12 = browser.currentScene.createNode("Transform");
-Transform12.translation = new SFVec3f(new float[0,-1,1]);
-Transform12.rotation = new SFRotation(new float[0,1,0,3.1415926]);
-Transform12.scale = new SFVec3f(new float[1.5,1.5,1.5]);
+Transform12.translation = new X3D.SFVec3f([0,-1,1]);
+Transform12.rotation = new X3D.SFRotation([0,1,0,3.1415926]);
+Transform12.scale = new X3D.SFVec3f([1.5,1.5,1.5]);
 let Shape13 = browser.currentScene.createNode("Shape");
 let Appearance14 = browser.currentScene.createNode("Appearance");
 let Material15 = browser.currentScene.createNode("Material");
 Material15.transparency = 0.1;
-Material15.diffuseColor = new SFColor(new float[0.9,0.3,0.3]);
-Material15.specularColor = new SFColor(new float[0.8,0.8,0.8]);
+Material15.diffuseColor = new X3D.SFColor([0.9,0.3,0.3]);
+Material15.specularColor = new X3D.SFColor([0.8,0.8,0.8]);
 Material15.shininess = 0.145;
-Appearance14.material = Material15;
+material = Material15;
 
-Shape13.appearance = Appearance14;
+appearance = Appearance14;
 
 let IndexedFaceSet16 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet16.ccw = False;
 IndexedFaceSet16.convex = False;
-IndexedFaceSet16.coordIndex = new MFInt32(new int[0,1,2,-1]);
+IndexedFaceSet16.coordIndex = new X3D.MFInt32([0,1,2,-1]);
 IndexedFaceSet16.DEF = "Orbit";
 let Coordinate17 = browser.currentScene.createNode("Coordinate");
 Coordinate17.DEF = "OrbitCoordinates";
-Coordinate17.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
-IndexedFaceSet16.coord = Coordinate17;
+Coordinate17.point = new X3D.MFVec3f([0,0,1,0,1,0,1,0,0]);
+coord = Coordinate17;
 
-Shape13.geometry = IndexedFaceSet16;
+geometry = IndexedFaceSet16;
 
-Transform12.child = new undefined();
+Transform12YYY.child = new X3D.undefined();
 
-Transform12.child[0] = Shape13;
+Transform12ZZZ.child[0] = Shape13;
 
 browser.currentScene.children[4] = Transform12;
 
 let Script18 = browser.currentScene.createNode("Script");
 Script18.DEF = "OrbitScript";
-let field19 = browser.currentScene.createNode("field");
-field19.name = "set_fraction";
-field19.accessType = "inputOnly";
-field19.type = "SFFloat";
-Script18.field = new MFNode();
+Script19.getField("set_fraction")Script18YYY.field = new X3D.MFNode();
 
-Script18.field[0] = field19;
+Script20.getField("coordinates")Script18YYY.field = new X3D.MFNode();
 
-let field20 = browser.currentScene.createNode("field");
-field20.name = "coordinates";
-field20.accessType = "outputOnly";
-field20.type = "MFVec3f";
-Script18.field[1] = field20;
-
-let field21 = browser.currentScene.createNode("field");
-field21.name = "coordIndexes";
-field21.accessType = "outputOnly";
-field21.type = "MFInt32";
-Script18.field[2] = field21;
+Script21.getField("coordIndexes")Script18YYY.field = new X3D.MFNode();
 
 //<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
 
@@ -211,3 +176,5 @@ ROUTE25.toNode = "OrbitScript";
 ROUTE25.toField = "set_fraction";
 browser.currentScene.children[9] = ROUTE25;
 
+}
+main ();
