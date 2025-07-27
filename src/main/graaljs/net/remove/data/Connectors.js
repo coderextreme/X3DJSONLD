@@ -79,7 +79,7 @@ var ProtoInstance41 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("cornerRadius").setProtoField("cornerRadius"))
                 .addConnect(new connect().setNodeField("size").setProtoField("size")))
-              .setSourceCode(`vrmlscript:
+              .setSourceCode(`ecmascript:
 
 function initialize ()
 {
@@ -171,7 +171,7 @@ function initialize ()
                 .addChild(new Transform().setUSE("Node")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .setSourceCode(`vrmlscript:
+              .setSourceCode(`ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -206,7 +206,7 @@ function initialize ()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("output").setProtoField("output"))
                 .addConnect(new connect().setNodeField("input").setProtoField("input")))
-              .setSourceCode(`vrmlscript:
+              .setSourceCode(`ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -233,7 +233,7 @@ function set_translation ()
 		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));
 	}
 }`))))
-        .addChild(new NavigationInfo().setType(Java.to([", ","PLANE_create3000.deANY"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfo().setType(Java.to(["FLY","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new Background().setSkyColor(Java.to(doubleToFloat([0.2,0.2,0.2]), Java.type("float[]"))))
         .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(Java.to(doubleToFloat([-3.13496,-4.19776,10]), Java.type("float[]"))).setCenterOfRotation(Java.to(doubleToFloat([-3.13496,-4.19776,0]), Java.type("float[]"))).setFieldOfView(Java.to(doubleToFloat([0,0,10,10]), Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("Viewpoint"))

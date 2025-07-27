@@ -156,10 +156,6 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC1")));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("startnode")
             .addChild(new Transform().setUSE("G1")));
@@ -172,10 +168,6 @@ ProtoInstance1
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC2")));
-ProtoInstance1
-          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
-ProtoInstance1
-          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("startnode")
             .addChild(new Transform().setUSE("G1")));
@@ -188,9 +180,5 @@ ProtoInstance2
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC3")));
-ProtoInstance2
-          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
-ProtoInstance2
-          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
     X3D0.toFileX3D("../data/x3dconnectorProto.new.graal.x3d");
     X3D0.toFileJSON("../data/x3dconnectorProto.new.graal.json");
