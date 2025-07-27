@@ -24,7 +24,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"25 July 2025"
           },
           {
             "@name":"generator",
@@ -46,7 +46,7 @@
           { "NavigationInfo":
             {
               "@speed":0.5,
-              "@type":"\"EXAMINE\""
+              "@type":["EXAMINE"]
             }
           },
           { "Transform":

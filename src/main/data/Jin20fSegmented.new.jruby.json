@@ -18,7 +18,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"25 July 2025"
           },
           {
             "@name":"generator",
@@ -8601,7 +8601,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"l_eyelid_tip",
+                                                                                                                                                                                            "@name":"l_eyelid",
                                                                                                                                                                                             "@DEF":"hanim_l_eyelid_tip",
                                                                                                                                                                                             "@translation":[0,2.64,0],
                                                                                                                                                                                             "-children":[
@@ -8714,7 +8714,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"r_eyelid_tip",
+                                                                                                                                                                                            "@name":"r_eyelid",
                                                                                                                                                                                             "@DEF":"hanim_r_eyelid_tip",
                                                                                                                                                                                             "@translation":[0,2.68,0],
                                                                                                                                                                                             "-children":[
@@ -8827,7 +8827,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"l_eyeball_tip",
+                                                                                                                                                                                            "@name":"l_eyeball",
                                                                                                                                                                                             "@DEF":"hanim_l_eyeball_tip",
                                                                                                                                                                                             "@translation":[0,2.72,0],
                                                                                                                                                                                             "-children":[
@@ -8940,7 +8940,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"r_eyeball_tip",
+                                                                                                                                                                                            "@name":"r_eyeball",
                                                                                                                                                                                             "@DEF":"hanim_r_eyeball_tip",
                                                                                                                                                                                             "@translation":[0,2.76,0],
                                                                                                                                                                                             "-children":[
@@ -9053,7 +9053,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"l_eyebrow_tip",
+                                                                                                                                                                                            "@name":"l_eyebrow",
                                                                                                                                                                                             "@DEF":"hanim_l_eyebrow_tip",
                                                                                                                                                                                             "@translation":[0,2.8,0],
                                                                                                                                                                                             "-children":[
@@ -9166,7 +9166,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"r_eyebrow_tip",
+                                                                                                                                                                                            "@name":"r_eyebrow",
                                                                                                                                                                                             "@DEF":"hanim_r_eyebrow_tip",
                                                                                                                                                                                             "@translation":[0,2.84,0],
                                                                                                                                                                                             "-children":[

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"21 July 2025"
           },
           {
             "@name":"generator",
@@ -334,6 +334,11 @@
             {
               "@name":"x3dconnector",
               "@DEF":"connector1",
+              "-children":[
+                {
+                  "#comment":"<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"
+                }
+              ],
               "fieldValue": [
                 {
                   "@name":"startnode",
@@ -374,12 +379,6 @@
                       }
                     }
                   ]
-                },
-                {
-                  "@name":"set_startpoint"
-                },
-                {
-                  "@name":"set_endpoint"
                 }
               ]
             }

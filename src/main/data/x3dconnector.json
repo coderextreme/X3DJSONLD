@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"25 July 2025"
           },
           {
             "@name":"generator",
@@ -373,12 +373,11 @@
                       }
                     }
                   ]
-                },
+                }
+              ],
+              "-children":[
                 {
-                  "@name":"set_startpoint"
-                },
-                {
-                  "@name":"set_endpoint"
+                  "#comment":"<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"
                 }
               ]
             }

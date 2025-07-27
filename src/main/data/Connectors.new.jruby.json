@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"27 July 2025"
           },
           {
             "@name":"generator",
@@ -144,7 +144,7 @@
                         "#sourceCode":[
 "",
 "",
-"vrmlscript:",
+"ecmascript:",
 "",
 "function initialize ()",
 "{",
@@ -492,7 +492,7 @@
                         "#sourceCode":[
 "",
 "",
-"vrmlscript:",
+"ecmascript:",
 "function initialize ()",
 "{",
 "\tsensor .offset = translation;",
@@ -660,7 +660,7 @@
                         "#sourceCode":[
 "",
 "",
-"vrmlscript:",
+"ecmascript:",
 "function initialize ()",
 "{",
 "\tBrowser .addRoute (output, 'translation_changed', self, 'set_translation');",
@@ -698,7 +698,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\",\" \"PLANE_create3000.deANY\""
+              "@type":"\"FLY\" \"ANY\""
             }
           },
           { "Background":
