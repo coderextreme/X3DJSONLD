@@ -38,11 +38,16 @@ JSONEXT=json
 echo Running Clojure
 OLDCLASSPATH=${CLASSPATH}
 unset CLASSPATH
-for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.clj/' -e 's/^\/c/../' -e "$EXTOCLOJURE" -e "$DATATOCLOJURE" -e "$ROOTTOCLOJURE" -e "$PERSONALTOCLOJURE" | sed -e 's/\(data\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | xargs ls -d`
+for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.clj/' -e 's/^\/c/../' -e "$EXTOCLOJURE" -e "$DATATOCLOJURE" -e "$ROOTTOCLOJURE" -e "$PERSONALTOCLOJURE" | sed -e 's/\(data\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | sed -e 's/\(personal\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | xargs ls -d`
 do
 	MODEL=`basename "$i" .clj`
 	echo "Creating app $i"
-	APPSFOLDER="../clojure/net/coderextreme/data"
+	if echo "$i" | grep -q "personal"; then
+	  echo "The string contains 'world'."
+	  APPSFOLDER="../clojure/net/coderextreme/personal"
+	else
+	  APPSFOLDER="../clojure/net/coderextreme/data"
+	fi
 	pushd "$APPSFOLDER"
 	echo "lein new app $MODEL --force"
 	lein new app "$MODEL" --force
