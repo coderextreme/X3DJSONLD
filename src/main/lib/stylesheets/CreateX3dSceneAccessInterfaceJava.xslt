@@ -182,11 +182,11 @@ Additional references of interest:
 		<xsl:variable name="baseType" select="//SimpleType[@name = $x3dType]/@baseType"/>
 
 		<xsl:choose>
-			<xsl:when test="contains($x3dType,  'SFString') or ( $x3dType = 'xs:string') or ( $x3dType = 'xs:token') or starts-with( $x3dType, 'xs:ID') or starts-with( $x3dType, 'xs:NMTOKEN') or
+			<xsl:when test="contains($x3dType,  'SFString') or ( $x3dType = 'xs:string') or ( $x3dType = 'xs:token') or starts-with( $x3dType, 'xs:ID') or starts-with( $x3dType, 'xs:NMTOKEN') or ($x3dType = 'UnquotedMFString') or
                                    ($baseType = 'SFString') or ($baseType = 'xs:string') or ($baseType = 'xs:token') or starts-with($baseType, 'xs:ID') or starts-with($baseType, 'xs:NMTOKEN')">
 				<xsl:text>String</xsl:text>
 			</xsl:when>
-			<xsl:when test="(($x3dType = 'MFString') or ($baseType = 'MFString')) and ($isInterface = 'true')">
+			<xsl:when test="(($x3dType = 'MFString') or ($baseType = 'MFString')) and ($isInterface = 'true') or ($x3dType = 'EscapeQuotedMFString')">
 				<xsl:text>String[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="($x3dType = 'MFString') or ($baseType = 'MFString')">
@@ -249,7 +249,7 @@ Additional references of interest:
 			<xsl:when test="(@name = 'head') or (@name = 'Scene') or (@name = 'IS') or (@name = 'ProtoInterface') or (@name = 'ProtoBody')">
                                 <!-- statement singleton -->
 				<xsl:value-of select="@name"/>
-                <xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
+                                <xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 			</xsl:when>
 			<xsl:when test="(@name = 'component') or (@name = 'unit') or (@name = 'meta') or (@name = 'connect') or (@name = 'field') or (@name = 'fieldValue')">
                                 <!-- statement list -->
@@ -293,7 +293,7 @@ Additional references of interest:
                             <xsl:if test="($isX3dStatement = 'true')">
 							<xsl:value-of select="$jsaiClassSuffix"/>append to type name
 						</xsl:if> -->
-                        <xsl:if test="not($isInterface = 'true') and not(contains(@acceptableNodeTypes,$jsaiClassSuffix)) and not(starts-with(@acceptableNodeTypes,'X3D'))">
+                                                <xsl:if test="not($isInterface = 'true') and not(contains(@acceptableNodeTypes,$jsaiClassSuffix)) and not(starts-with(@acceptableNodeTypes,'X3D'))">
 							<xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 						</xsl:if>
 					</xsl:when>
@@ -377,7 +377,7 @@ Additional references of interest:
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-        <!-- debug
+        <!-- debug 
         <xsl:message>
             <xsl:text>javaValue $x3dType=</xsl:text>
             <xsl:value-of select="$x3dType"/>
@@ -386,7 +386,7 @@ Additional references of interest:
             <xsl:text> xmlValue=</xsl:text>
             <xsl:value-of select="$xmlValue"/>
         </xsl:message>
-         -->
+        -->
 		<xsl:choose>
 			 <!-- ======================================== -->
 			<xsl:when test="($x3dType = 'SFString') or
@@ -399,16 +399,22 @@ Additional references of interest:
 				<xsl:text>"</xsl:text>
 			</xsl:when>
 			 <!-- ======================================== -->
-			<xsl:when test="($x3dType = 'EscapeQuotedSFString')">
-				<!-- enumeration value: escape each quote character as \" -->
-				<xsl:text>"</xsl:text>
-				<xsl:call-template name="escape-quotes-recurse">
-					<xsl:with-param name="inputValue" select="$xmlValue"/>
-				</xsl:call-template>
-				<xsl:text>"</xsl:text>
+			<xsl:when test="($x3dType = 'EscapeQuotedMFString')">
+				<!-- enumeration value: escape each value as a separate string -->
+                            <xsl:choose>
+                                <xsl:when test="starts-with(normalize-space($xmlValue),'&quot;') and ends-with(normalize-space($xmlValue),'&quot;') and 
+                                                   contains(normalize-space($xmlValue),'&quot; &quot;')">
+                                    <xsl:text>{ </xsl:text>
+                                    <xsl:value-of select="replace(normalize-space($xmlValue),'&quot; &quot;','&quot;, &quot;')"/>
+                                    <xsl:text> }</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$xmlValue"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
 			</xsl:when>
 			 <!-- ======================================== -->
-			<xsl:when test="($x3dType = 'UnquotedSFString')">
+			<xsl:when test="($x3dType = 'UnquotedMFString')">
 				<!-- enumeration value: escape each quote character as \" -->
 				<xsl:value-of select="$xmlValue"/>
 			</xsl:when>
@@ -2512,7 +2518,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>	/** List of specification-defined enumeration values, with additional author-defined enumeration values</xsl:text>
 												<!-- TODO clarify HAnim names for consistency between X3DUOM/tooltips -->
-												<xsl:if test="not(@additionalEnumerationValuesAllowed = 'true')">
+												<xsl:if test="not(boolean(@additionalEnumerationValuesAllowed = 'true'))">
 													<xsl:text> not</xsl:text>
 												</xsl:if>
 												<xsl:text> allowed.</xsl:text>
@@ -2623,7 +2629,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:when test="(../@type = 'SFString')">
 											<xsl:text> can equal this value </xsl:text>
 										</xsl:when>
-										<xsl:when test="(../@type = 'MFString') and (../@additionalEnumerationValuesAllowed='true')">
+										<xsl:when test="(../@type = 'MFString') and boolean(../@additionalEnumerationValuesAllowed='true')">
 											<xsl:text> is an array that can include this quoted enumeration value (and also may include alternate values) </xsl:text>
 										</xsl:when>
 										<xsl:when test="(../@type = 'MFString')">
@@ -2635,13 +2641,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:variable name="fieldName" select="translate(../@name,'-','_')"/>
 									<xsl:variable name="x3dType">
 										<xsl:choose>
-											<!-- TODO needed? EscapeQuotedSFString -->
+											<!-- TODO needed? EscapeQuotedMFString -->
 											<xsl:when test="(../@type='MFString') and (contains(@value,'&quot; &quot;'))">
-												<xsl:text>EscapeQuotedSFString</xsl:text><!-- intentional override for multi-value enumerations, e.g.  ALIGN_LEFT_BOTTOM -->
+												<xsl:text>EscapeQuotedMFString</xsl:text><!-- intentional override for multi-value enumerations, e.g.  ALIGN_LEFT_BOTTOM -->
 											</xsl:when>
 											<!-- individual enumeration values within MFString array are each SFString -->
 											<xsl:when test="(../@type='MFString')">
-												<xsl:text>UnquotedSFString</xsl:text><!-- intentional override for singleton enumeration-->
+												<xsl:text>UnquotedMFString</xsl:text><!-- intentional override for singleton enumeration-->
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:text>SFString</xsl:text>
@@ -2719,6 +2725,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:with-param name="x3dType" select="$x3dType"/>
 										</xsl:call-template>
 									</xsl:value-of>
+                                                                        <xsl:if test="($x3dType='MFString')">
+                                                                            <xsl:text>[]</xsl:text>new String[] { "
+                                                                        </xsl:if>
 									<xsl:text> </xsl:text>
 									<xsl:value-of select="upper-case($fieldName)"/>
 									<xsl:text>_</xsl:text>
@@ -3700,7 +3709,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                             <xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
                                                                     </xsl:when>
                                                                     <xsl:when test="starts-with($name,'HAnimSite')">
-                                                                            <xsl:text>, "sites" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+									    <xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
                                                                     </xsl:when>
                                                                     <xsl:when test="starts-with($name,'HAnimMotion')">
                                                                             <xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
@@ -4755,7 +4764,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                 errorNotice += "  invoked from toFileStylesheetConversion(" + stylesheetName + ", " + fileName
                                          + ", " + parameterName1 + ", " + parameterValue1 + ", " + parameterName2 + ", " + parameterValue2 + ")\n";
                                 validationResult.append(errorNotice);
-				throw new InvalidFieldValueException(errorNotice);
+//				throw new InvalidFieldValueException(errorNotice); // don't exit, let checkBlenderPath() work...
+                                System.err.println(errorNotice);
 			}
 
                         // must end in !/ https://stackoverflow.com/questions/38488492/documentbuilder-gives-java-net-malformedurlexception-no-in-spec
@@ -8122,7 +8132,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 								<xsl:if test="((@type='SFString') or (@type='MFString')) and (enumeration) and not($isInterface = 'true')">
 									<xsl:choose>
-										<xsl:when test="not(@additionalEnumerationValuesAllowed='true')">
+										<xsl:when test="not(boolean(@additionalEnumerationValuesAllowed='true'))">
 											<xsl:text>.</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>	 * </xsl:text>
@@ -8131,7 +8141,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text disable-output-escaping="yes"><![CDATA[	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ]]></xsl:text>
 										</xsl:when>
-										<xsl:when test="   (@additionalEnumerationValuesAllowed='true')">
+										<xsl:when test="boolean(@additionalEnumerationValuesAllowed='true')">
 											<xsl:text>.</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>	 * </xsl:text>
@@ -8378,6 +8388,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             <xsl:text>			// reset value field to empty array</xsl:text>
                                             <xsl:text>&#10;</xsl:text>
                                         </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text>&#10;</xsl:text>
+                                        </xsl:otherwise>
                                     </xsl:choose>
 									<xsl:choose>
 										<xsl:when test="($isSingleValueType = 'true')">
@@ -8505,7 +8518,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:if>
 								</xsl:variable>
 								<xsl:variable name="isEnumerationType" select="(count(enumeration) > 0)"/>
-                                <xsl:variable name="isEnumerationTypeRequired" select="boolean(@additionalEnumerationValuesAllowed='false')"/>
+                                                                <xsl:variable name="isEnumerationTypeRequired" select="boolean(@additionalEnumerationValuesAllowed='false')"/>
 
 								<!-- source code: set method -->
 								<xsl:if test="(not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true')) or
@@ -8539,10 +8552,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- unmodified -->
 												<xsl:value-of select="@name"/>
 											</xsl:when>
-                                            <xsl:when test="(@name = 'id')">
-                                                <!-- similarly named for clarity, consistency -->
-                                                <xsl:text>HtmlID</xsl:text>
-                                            </xsl:when>
+                                                                                        <xsl:when test="(@name = 'id')">
+                                                                                            <!-- similarly named for clarity, consistency -->
+                                                                                            <xsl:text>HtmlID</xsl:text>
+                                                                                        </xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>CssClass</xsl:text>
@@ -8610,7 +8623,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	{</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>		// set-newValue-validity-checks #0.a</xsl:text>
+										<xsl:text>            // set-newValue-validity-checks #0.a</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:call-template name="set-newValue-validity-checks">
 											<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -8622,13 +8635,99 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:with-param name="comparisonType"   ><xsl:text>simple</xsl:text></xsl:with-param>
 									        <xsl:with-param name="debug"            ><xsl:text>true</xsl:text></xsl:with-param>
 										</xsl:call-template>
+                                                                                <!-- debug 
+										<xsl:text>            // end set-newValue-validity-checks #0.a</xsl:text>
+										<xsl:text>&#10;</xsl:text> -->
+                <xsl:variable name="enumerationValuesOptional"
+                            select="(((@name = 'mode') or (@name = 'function') or (@name = 'source')) and ($thisClassName = 'MultiTexture'))"/>
+                <xsl:choose>
+                    <xsl:when test="(@type='MFString') and not($enumerationValuesOptional) and
+                               not(@name = 'url') and not(ends-with(@name, 'Url')) and not(@name = 'geoSystem') and
+                               not(contains($thisClassName,'Metadata')) and
+                               not((@name = 'parameter') and ($thisClassName = 'Anchor'))        and
+                               not((@name = 'string')    and ($thisClassName = 'Text'))          and
+                               not((@name = 'info')      and ($thisClassName = 'HAnimHumanoid')) and
+                               not((@name = 'info')      and ($thisClassName = 'WorldInfo')) and
+                               not((@name = 'family')    and contains($thisClassName, 'Font')) and
+                               not(@name = 'objectType')"> <!-- objectTypea is free-form label, see X3DPickableObject -->
+			<xsl:text disable-output-escaping="yes"><![CDATA[
+            // Check that newValue array parameter has one of the allowed enumeration values before assigning to scene graph
+            if (]]></xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:for-each select="enumeration">
+                            <xsl:if test="position() > 1">
+                                <xsl:text> ||</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                            </xsl:if>
+                            <xsl:text>                Arrays.equals(</xsl:text>
+                            <xsl:value-of select="$newValue"/>
+                            <xsl:text>, MFString.toStringArray(</xsl:text>
+                            <xsl:value-of select="upper-case(../@name)"/>
+                            <xsl:text>_</xsl:text>
+                            <!-- enumeration name: omit " character, others become _ underscore -->
+                            <xsl:value-of select="upper-case(translate(@value,' .-&quot;','___'))"/>
+                            <xsl:text>))</xsl:text>
+                        </xsl:for-each>
+                        <xsl:text>)
+            {
+                // https://stackoverflow.com/questions/3746639/assigning-an-array-to-an-arraylist-in-java
+                </xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text disable-output-escaping="yes"><![CDATA[ = new ArrayList<>(Arrays.asList(MFString.toStringArray(]]></xsl:text>
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>))); // found a valid String or String[] array
+                return this;
+            }</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$enumerationValuesOptional">
+                        <!-- otherwise optional values -->
+			<xsl:text>
+            // Report if newValue array parameter has other than pre-defined enumeration values before assigning to scene graph</xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            String warningMessage = new String();
+            for (int j = 0; j < newValue.length; j++)
+            {
+                if (]]></xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:for-each select="enumeration">
+                        <xsl:if test="position() > 1">
+                            <xsl:text disable-output-escaping="yes"><![CDATA[ &&]]></xsl:text>
+                            <xsl:text>&#10;</xsl:text>
+                        </xsl:if>
+                        
+                        <xsl:text>                    !</xsl:text>
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>[j].equals(</xsl:text>
+                        <xsl:value-of select="upper-case(../@name)"/>
+                        <xsl:text>_</xsl:text>
+                        <!-- enumeration name: omit " character, others become _ underscore -->
+                        <xsl:value-of select="upper-case(translate(@value,' .-&quot;','___'))"/>
+                        <xsl:text>)</xsl:text>
+                    </xsl:for-each>
+                    <xsl:text>)
+                {
+                    warningMessage += "WARNING: </xsl:text>
+                     <xsl:value-of select="$thisClassName"/>
+                     <xsl:text>.</xsl:text>
+                     <xsl:value-of select="@name"/>
+                    <xsl:text> value " + newValue[j] + " is not among list of defined enumerations";
+                }
+            }
+            if (!warningMessage.isBlank())
+            {
+                     System.out.println();
+                     System.out.print  (warningMessage);
+            }</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
 
-                                        <!-- debug
+                                        <!-- debug 
                                         <xsl:text disable-output-escaping="yes"><![CDATA[
-		// $isEnumerationTypeRequired=]]></xsl:text>
-						<xsl:value-of select="$isEnumerationTypeRequired"/>
-						<xsl:text disable-output-escaping="yes"><![CDATA[
-]]></xsl:text> -->
+            // $isEnumerationTypeRequired=]]></xsl:text>
+                                        <xsl:value-of select="$isEnumerationTypeRequired"/>
+                                        <xsl:text>&#10;</xsl:text> -->
                                         <xsl:if test="$isEnumerationTypeRequired">
                                             <!-- TODO -->
                                         </xsl:if>
@@ -9018,7 +9117,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>)</xsl:text>
 												</xsl:if>
 												<xsl:value-of select="$newValue"/>
-												<xsl:text>[i]);</xsl:text>
+												<xsl:text>[i]); // add next value to list</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:if test="($name = 'ProtoBody') and not($isInterface = 'true')">
 													<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -9062,20 +9161,20 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>		}</xsl:text>
 											</xsl:when>
 											<xsl:when test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
-												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+											<!-- <xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/> should occur early, not late -->
 												<!-- https://stackoverflow.com/questions/39873596/convert-array-of-strings-to-boolean-list-in-java -->
-												<xsl:text>		</xsl:text>
+												<xsl:text>            </xsl:text>
                                                 <xsl:text>clear</xsl:text>
                                                 <xsl:value-of select="upper-case(substring(@name,1,1))"/>
                                                 <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
-                                                <xsl:text>(); // reset</xsl:text>
+                                                <xsl:text>(); // reset prior to setting value(s)</xsl:text>
 												<xsl:text>&#10;</xsl:text>
-												<xsl:text>		for (int i = 0; i </xsl:text>
+												<xsl:text>            for (int i = 0; i </xsl:text>
 												<xsl:text disable-output-escaping="yes">&lt; </xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>.length; i++)</xsl:text>
 												<xsl:text>&#10;</xsl:text>
-												<xsl:text>		{</xsl:text>
+												<xsl:text>            {</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:choose>
 													<xsl:when test="(@type = 'MFNode') and not(starts-with($javaPrimitiveType, $javaReferenceType))">
@@ -9107,7 +9206,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:value-of select="$jsaiClassSuffix"/>
 														<xsl:text>)</xsl:text>
 														<xsl:value-of select="$newValue"/>
-														<xsl:text>[i]);</xsl:text>
+														<xsl:text>[i]); // add next value to list</xsl:text>
 														<xsl:text>&#10;</xsl:text>
 														<xsl:text>       ((X3DConcreteElement) </xsl:text>
 														<xsl:value-of select="$newValue"/>
@@ -9144,14 +9243,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:text>&#10;</xsl:text>
 													</xsl:when>
 													<xsl:otherwise>
-														<xsl:text>			</xsl:text>
+														<xsl:text>                </xsl:text>
 														<xsl:value-of select="@name"/>
 														<xsl:text>.add(</xsl:text>
 														<xsl:value-of select="$newValue"/>
-														<xsl:text>[i]);</xsl:text>
+														<xsl:text>[i]); // add next value to list</xsl:text>
 														<xsl:text>&#10;</xsl:text>
-														<xsl:text>		}</xsl:text>
-														<xsl:text>&#10;</xsl:text>
+														<xsl:text>            }</xsl:text>
 													</xsl:otherwise>
 												</xsl:choose>
 											</xsl:when>
@@ -9248,7 +9346,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										</xsl:choose>
 
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>		return this;</xsl:text>
+										<xsl:text>            return this;</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	}</xsl:text>
 										<xsl:text>&#10;</xsl:text>
@@ -9675,7 +9773,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
 										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 									</xsl:if>
-									<xsl:text>			// set-newValue-validity-checks #1 gets handled by set-primitive method</xsl:text>
+									<xsl:text>		// set-newValue-validity-checks #1 gets handled by set-primitive method</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<!-- stub
 									<xsl:text>			// set-newValue-validity-checks #1</xsl:text>
@@ -9691,17 +9789,20 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                         <xsl:with-param name="debug"            ><xsl:text>false</xsl:text></xsl:with-param>
 									</xsl:call-template>
 									-->
-									<xsl:text>			</xsl:text>
+									<xsl:text>		// end set-newValue-validity-checks #1</xsl:text>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:text>		</xsl:text>
 									<xsl:text>set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(</xsl:text>
 									<xsl:value-of select="$newValue"/>
 									<xsl:text>.getPrimitiveValue());</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>			return this;</xsl:text>
+									<xsl:text>		return this;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	}</xsl:text>
 									<xsl:text>&#10;</xsl:text>
+                                                                
 									<xsl:if test="(@type = 'SFVec2f') or (@type = 'SFVec3f') or (@type = 'SFVec4f') or
 												  (@type = 'SFColor') or (@type = 'SFColorRGBA') or (@type = 'SFRotation')">
 										<xsl:text>
@@ -9967,20 +10068,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
-										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true') and not(@type = 'MFString')">
+									<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 									</xsl:if>
 									<!-- assumption: SF/MF object assignment is OK due to object integrity.
                                                                              therefore check if MFString value was actually sent as SFString
 									-->
-                                                                        <xsl:text disable-output-escaping="yes">
-                // cast SFString value to MFString value if needed
-                if ((newValue.getValue().length() - newValue.getValue().replace("\"", "").length()) > 2) // more than two quotation marks
-                    return set</xsl:text>
-                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-                <xsl:text>(new MFString(newValue));</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-									<xsl:text>		// set-newValue-validity-checks #2</xsl:text>
+									<xsl:text>            // set-newValue-validity-checks #2</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
 										<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -9992,7 +10086,18 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:with-param name="comparisonType"   ><xsl:text>complex</xsl:text></xsl:with-param>
 									    <xsl:with-param name="debug"            ><xsl:text>false</xsl:text></xsl:with-param>
 									</xsl:call-template>
-									<xsl:text>		</xsl:text>
+                                                                       <!-- debug 
+									<xsl:text>            // end set-newValue-validity-checks #2</xsl:text>
+                                                                        <xsl:text>&#10;</xsl:text> -->
+                                                                        <xsl:text disable-output-escaping="yes">
+                // cast SFString value to MFString value if needed
+                if ((newValue.getValue().length() - newValue.getValue().replace("\"", "").length()) > 2) // more than two quotation marks
+                    return set</xsl:text>
+                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+                <xsl:text>(new MFString(newValue));</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+									<xsl:text>            </xsl:text>
 									<xsl:text>set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(</xsl:text>
@@ -10000,7 +10105,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:when test="$isEnumerationType">
 											<xsl:text>MFString.cleanupEnumerationValues(</xsl:text>
 											<xsl:value-of select="$newValue"/>
-											<xsl:text>.toString())); // handle potential enumeration values</xsl:text>
+											<xsl:text>.toString())); // tidy up potential cruft in enumeration values, then save</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
 											<xsl:value-of select="$newValue"/>
@@ -10009,7 +10114,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:choose>
 									<xsl:text></xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		return this;</xsl:text>
+									<xsl:text>            return this;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	}</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -10062,20 +10167,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
+                                                                        <!--
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
 										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 									</xsl:if>
+                                                                        -->
 									<!-- assumption: SF/MF object assignment is OK due to object integrity.
                                                                              therefore check if MFString value was actually sent as SFString
 									-->
-                                                                        <xsl:text disable-output-escaping="yes">
-                // cast String value to MFString if needed
-                if ((newValue.length() - newValue.replace("\"", "").length()) > 2) // more than two quotation marks
-                    return set</xsl:text>
-                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-                <xsl:text>(new MFString(newValue));</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-									<xsl:text>		// set-newValue-validity-checks #3</xsl:text>
+									<xsl:text>            // set-newValue-validity-checks #3</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
 										<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -10087,16 +10187,27 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:with-param name="comparisonType"   ><xsl:text>simple</xsl:text></xsl:with-param>
 									    <xsl:with-param name="debug"            ><xsl:text>false</xsl:text></xsl:with-param>
 									</xsl:call-template>
+                                                                        <!-- debug 
+									<xsl:text>            // end set-newValue-validity-checks #3</xsl:text>
+									<xsl:text>&#10;</xsl:text> -->
+                                                                        <xsl:text disable-output-escaping="yes">
+            // cast String value to MFString if needed
+            if ((newValue.length() - newValue.replace("\"", "").length()) > 2) // more than two quotation marks
+                return set</xsl:text>
+                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+                <xsl:text>(new MFString(newValue));</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
 									<xsl:choose>
 										<xsl:when test="$isEnumerationType">
-											<xsl:text>		</xsl:text>
+											<xsl:text>            </xsl:text>
 											<xsl:text>set</xsl:text>
 											<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 											<xsl:text>(</xsl:text>
 											<xsl:text>MFString.cleanupEnumerationValues(</xsl:text>
 											<xsl:value-of select="$newValue"/>
 											<xsl:text>)</xsl:text>
-											<xsl:text>); // handle potential enumeration values</xsl:text>
+											<xsl:text>); // tidy up potential cruft in enumeration values, then save</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
 											<xsl:text>		</xsl:text>
@@ -10113,7 +10224,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		return this;</xsl:text>
+									<xsl:text>            return this;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	}</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -10165,8 +10276,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
-									<xsl:text>		// set-newValue-validity-checks #4</xsl:text>
+									<xsl:text>            // set-newValue-validity-checks #4</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
 										<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -10178,38 +10288,41 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:with-param name="comparisonType"   ><xsl:text>complex</xsl:text></xsl:with-param>
 									    <xsl:with-param name="debug"            ><xsl:text>false</xsl:text></xsl:with-param>
 									</xsl:call-template>
+                                                                        <!-- debug 
+									<xsl:text>            // end set-newValue-validity-checks #4</xsl:text>
+                                                                        <xsl:text>&#10;</xsl:text> -->
 									<xsl:value-of select="$newValueArrayListAcceptableNodeTypesTest" disable-output-escaping="yes"/>
-									<xsl:text>        if (newValue.isEmpty())</xsl:text>
+									<xsl:text>            if (newValue.isEmpty())</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>            clear</xsl:text>
+									<xsl:text>                clear</xsl:text>
                                     <xsl:value-of select="upper-case(substring(@name,1,1))"/>
                                     <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
-                                    <xsl:text>(); // reset</xsl:text>
+                                    <xsl:text>(); // reset field</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>        else</xsl:text>
+                                    <xsl:text>            else</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>        {</xsl:text>
+                                    <xsl:text>            {</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>            </xsl:text>
+                                    <xsl:text>                </xsl:text>
                                     <xsl:value-of select="$javaBaseType"/>
 									<xsl:text>[] newArray = new </xsl:text>
                                     <xsl:value-of select="$javaBaseType"/>
 									<xsl:text>[newValue.size()];</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text disable-output-escaping="yes"><![CDATA[            for (int i = 0; i < newValue.size(); i++)]]></xsl:text>
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[                for (int i = 0; i < newValue.size(); i++)]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>                newArray[i] = </xsl:text>
+                                    <xsl:text>                     newArray[i] = </xsl:text>
                                     <xsl:if test="($name = 'MetadataSet') or ($name = 'LoadSensor')">
                                         <xsl:text>(org.web3d.x3d.sai.Core.X3DNode)</xsl:text><!-- cast -->
                                     </xsl:if>
                                     <xsl:text>newValue.get(i);</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>            set</xsl:text>
+                                    <xsl:text>                set</xsl:text>
                                     <xsl:value-of select="upper-case(substring(@name,1,1))"/>
                                     <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
                                     <xsl:text>(newArray);</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>        }</xsl:text>
+                                    <xsl:text>            }</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="(@type='MFNode')"><!-- setParentObject -->
 										<xsl:text>		</xsl:text>
@@ -10248,7 +10361,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>		}</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
-									<xsl:text>		return this;</xsl:text>
+									<xsl:text>            return this;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	}</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -10854,7 +10967,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:text>)</xsl:text>
 													</xsl:if> -->
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>[i]);</xsl:text>
+													<xsl:text>[i]); // add next value to list</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>				((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
@@ -11434,7 +11547,7 @@ setAttribute method invocations).]]></xsl:text>
 										<xsl:text>value of </xsl:text>
 									</xsl:if>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
-									<xsl:text disable-output-escaping="yes"><![CDATA[ field.  This method does not initialize with]]></xsl:text>
+									<xsl:text disable-output-escaping="yes"><![CDATA[ field.  This method does not initialize with ]]></xsl:text>
                                                                         <xsl:value-of select="upper-case($fieldName)"/>
                                                                         <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE.
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -11463,7 +11576,7 @@ setAttribute method invocations).]]></xsl:text>
 									</xsl:if>
 									<xsl:text>		</xsl:text>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
-									<xsl:text>.clear(); // reset MF field</xsl:text>
+									<xsl:text>.clear(); // reset MF field by clearing ArrayList</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 	<xsl:if test="($name = 'ProtoBody')">
 		<xsl:text>&#10;</xsl:text>
@@ -16113,9 +16226,9 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
         String warningMessage = new String();
         if (getName().contains("\""))
-			warningMessage += "WARNING:avoid quotes in name, <meta name='" + getName() + "' content='" + getContent() + "'/>";
+			warningMessage += "WARNING: avoid quotes in name, <meta name='" + getName() + "' content='" + getContent() + "'/>";
         if (getContent().startsWith("\"") && getContent().endsWith("\""))
-			warningMessage += "WARNING:avoid quoting content value, <meta name='" + getName() + "' content='" + getContent() + "'/>";
+			warningMessage += "WARNING: avoid quoting content value, <meta name='" + getName() + "' content='" + getContent() + "'/>";
 
         // additional meta validation
         if (!getName().isBlank() && !getContent().isBlank())
@@ -21259,6 +21372,26 @@ method invocations on the same node object).
 		}
 		return results;
 	}
+        /** 
+         * Type-conversion utility method that works compatibly for either a String of String[] array,
+         * simplifying method invocation when a String[] array is needed.
+         * @param value input string of interest
+         * @return String[] array of length 1 containing value */
+        public static String[] toStringArray(String value)
+        {
+            String[] stringArray = { value };
+            return stringArray;
+        }
+        /**  
+         * Type-conversion utility method that works compatibly for either a String of String[] array, 
+         * simplifying method invocation when a String[] array is needed.
+         * @param valueArray input string array of interest
+         * @return unchanged valueArray */
+        public static String[] toStringArray(String[] valueArray)
+        {
+            return valueArray;
+        }
+        // TODO vararg String version
 	/**
 	 * Modify current object values to trim enclosing quotes and outer whitespace.
 	 * @see MFString#cleanupEnumerationValues()
@@ -38120,15 +38253,16 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 */
 	private static String blenderPath = "";
 
-	/** Default Blender path default for Windows 7 or 10 operating system, possibly unneeded if <code>blender</code> is in path already.
-	 * Can also set <code>BLENDER_PATH</code> environment variable in operating system.
+	/** Default Blender path default for Windows operating system, possibly unneeded if <code>blender</code> is in path already.
+	 * Can also set <code>BLENDER_PATH</code> property in X3DJSAIL.properties, or <code>BLENDER_PATH</code> environment variable in operating system.
          * <i>Warning:</i> local settings vary, configure path if necessary.
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
+	 * @see <a href="https://www.blender.org/download">Blender Download</a>
 	 */
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 4.3"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 4.5"; // escape \
 
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -40696,43 +40830,40 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 		<xsl:if test="(($x3dType='SFString') or ($x3dType='MFString'))"><!-- TODO are there any other types with restricted values? -->
 			<xsl:choose>
 				<xsl:when test="($x3dType='SFString')">
-					<xsl:text>		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
+                                    <xsl:text>		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
 		{
                     </xsl:text>
-					<xsl:value-of select="$newValue"/>
-					<xsl:text> = new String(); // null string check
+                                    <xsl:value-of select="$newValue"/>
+                                    <xsl:text> = new String(); // null string check
 		}
 </xsl:text>
-					<xsl:variable name="isEnumerationType" select="(count(enumeration) > 0)"/>
-					<xsl:variable name="isEnumerationTypeRequired" select="boolean(@additionalEnumerationValuesAllowed='false')"/>
-					<xsl:if test="$isEnumerationType">
-						<xsl:text>		</xsl:text>
-						<xsl:value-of select="$newValue"/>
-						<xsl:text> = MFString.cleanupUnescapedEnclosingQuotes(</xsl:text>
-						<xsl:value-of select="$newValue"/>
-						<xsl:text>); // handle potential enumeration value</xsl:text>
-					</xsl:if>
+                                    <xsl:variable name="isEnumerationType" select="(count(enumeration) > 0)"/>
+                                    <xsl:variable name="isEnumerationTypeRequired" select="boolean(@additionalEnumerationValuesAllowed='false')"/>
+                                    <xsl:if test="$isEnumerationType">
+                                        <xsl:text>		</xsl:text>
+                                        <xsl:value-of select="$newValue"/>
+                                        <xsl:text> = MFString.cleanupUnescapedEnclosingQuotes(</xsl:text>
+                                        <xsl:value-of select="$newValue"/>
+                                        <xsl:text>); // handle potential enumeration value</xsl:text>
+                                        <xsl:text>&#10;</xsl:text>
+                                    </xsl:if>
 				</xsl:when>
 				<xsl:when test="($x3dType='MFString')">
-					<xsl:text>		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
-                {
-                    clear</xsl:text>
-                        <xsl:value-of select="upper-case(substring(@name,1,1))"/>
-                        <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
-                        <xsl:text>(); // null string check
-                    return this;
-                }
+					<xsl:text>            if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
+            {
+                clear</xsl:text>
+                    <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                    <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
+                    <xsl:text>(); // null string check
+                return this;
+            }
 </xsl:text>
 				</xsl:when>
 				<!-- TODO multiple methods? works for String but not ArrayList<String>
 				-->
 			</xsl:choose>
-
-			<xsl:text>
-                // TODO check if SFString parameter has a multistring value, then split it
-                // Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
-			<xsl:text>&#10;</xsl:text>
-			<xsl:if test="starts-with($elementName, 'HAnim') and (@name = 'name')">
+                
+                <xsl:if test="starts-with($elementName, 'HAnim') and (@name = 'name')">
                             <xsl:text>
 //		String  namingMessage = new String();
 //              boolean namingMessageAlreadyProvided = false;
@@ -40776,7 +40907,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 </xsl:text>
 				</xsl:if>
 			</xsl:if>
-            <xsl:if test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
+            <!--
+                    <xsl:if test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
                         <xsl:text disable-output-escaping="yes"><![CDATA[
         for (int i = 0; i < newValue.length; i++)
         {
@@ -40813,6 +40945,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 			<xsl:text>		</xsl:text>
 			<xsl:text>if (!(</xsl:text>
 			<xsl:text>&#10;</xsl:text>
+            -->
             <!-- debug
             <xsl:if test="($x3dType='MFString')">
                 <xsl:text>// $isArrayType=</xsl:text>
@@ -40828,37 +40961,40 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if> -->
             <!-- gyrations to figure out testing for MFString based on various method signatures -->
+            
+            <!--
             <xsl:variable name="isNewValueEmptyExpression">
                 <xsl:choose>
-                <xsl:when test="($x3dType='SFString')">
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:text>.isEmpty()</xsl:text>
-                </xsl:when>
-                <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'true') and ($comparisonType = 'simple')">
-                    <xsl:text>(</xsl:text>
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:text>.length == 0)</xsl:text>
-                </xsl:when>
-                <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'true')">
-                    <xsl:text>(</xsl:text>
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:value-of select="$dimensionSuffix"/>
-                    <xsl:text> == 0)</xsl:text>
-                </xsl:when>
-                <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'false') and ($comparisonType = 'simple')">
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:text>.isEmpty()</xsl:text>
-                </xsl:when>
-                <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'false')">
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:text>.getValue().isEmpty()</xsl:text>
-                </xsl:when>
-                <xsl:when test="($x3dType='MFString')">
-                    <xsl:value-of select="$newValue"/>
-                    <xsl:text>isEmpty()</xsl:text>
-                </xsl:when>
-            </xsl:choose>
+                    <xsl:when test="($x3dType='SFString')">
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>.isEmpty()</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'true') and ($comparisonType = 'simple')">
+                        <xsl:text>(</xsl:text>
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>.length == 0)</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'true')">
+                        <xsl:text>(</xsl:text>
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:value-of select="$dimensionSuffix"/>
+                        <xsl:text> == 0)</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'false') and ($comparisonType = 'simple')">
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>.isEmpty()</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($x3dType='MFString') and ($isArrayListType = 'false')">
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>.getValue().isEmpty()</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($x3dType='MFString')">
+                        <xsl:value-of select="$newValue"/>
+                        <xsl:text>isEmpty()</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:variable>
+            
             <xsl:if test="(string-length($isNewValueEmptyExpression) > 0)">
                     <xsl:text>			</xsl:text>
                     <xsl:value-of select="$isNewValueEmptyExpression"/>
@@ -40894,7 +41030,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:text>.equals(</xsl:text>
 				<xsl:value-of select="upper-case(../@name)"/>
 				<xsl:text>_</xsl:text>
-				<!-- enumeration name: omit " character, others become _ underscore -->
+				<! - - enumeration name: omit " character, others become _ underscore - - >
 				<xsl:value-of select="upper-case(translate(@value,' .-&quot;','___'))"/>
 				<xsl:text>)</xsl:text>
 			</xsl:for-each>
@@ -40909,14 +41045,14 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
 			<xsl:text>			String warningMessage = "</xsl:text>
-            <xsl:choose>
-                <xsl:when test="$isEnumerationTypeRequired">
-                    <xsl:text>[warning] </xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>[info] </xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="$isEnumerationTypeRequired">
+                                <xsl:text>[warning] </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>[info] </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="@name"/>
@@ -40971,9 +41107,9 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <xsl:text>.name"</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <!-- TODO list allowed values -->
+                    <! - - TODO list allowed values - - >
                     <xsl:for-each select="enumeration">
-                        <xsl:call-template name="backslash-quote-characters"> <!-- tail recursion -->
+                        <xsl:call-template name="backslash-quote-characters"> <! - - tail recursion - - >
                                 <xsl:with-param name="inputValue" select="@value"/>
                         </xsl:call-template>
                         <xsl:if test="not(position() = last())">
@@ -41007,7 +41143,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 			if (newValue[i].contains(" "))
                             warningMessage += " Note that enumeration value \"" + newValue[i] + "\" contains embedded whitespace, need to check necessary quoting of individual MFString values.";</xsl:text>
             </xsl:if>
-            <!-- multiple accessor methods include this trace -->
+            <! - - multiple accessor methods include this trace - - >
             <xsl:if test="(ancestor::*[string-length(@name) > 0]/@name = 'NavigationInfo') and (@name = 'type')">
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>                        warningMessage += "\n[warning] trace: </xsl:text>
@@ -41104,6 +41240,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                         <xsl:text disable-output-escaping="yes"><![CDATA[        }
 ]]></xsl:text>
             </xsl:if>
+            -->
 		</xsl:if>
 	</xsl:if>
 		</xsl:when>
@@ -41346,7 +41483,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 					<xsl:text> | </xsl:text>
 				</xsl:if>
 			</xsl:for-each>
-			<xsl:if test="(@additionalEnumerationValuesAllowed='true')">
+			<xsl:if test="boolean(@additionalEnumerationValuesAllowed='true')">
 				<xsl:choose>
 					<xsl:when test="(@type='SFString')">
 						<xsl:text> | 'etc.'</xsl:text>
