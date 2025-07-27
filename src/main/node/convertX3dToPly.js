@@ -3,9 +3,9 @@
  *
  * This script provides a function to convert X3D scene data (in JSON object format)
  * into the PLY 3D model format. It handles scene graph transformations, prototype expansion,
- * and tessellates primitive geometry into triangle meshes with vertex colors.
+ * and tessellates primitive and NURBS geometry into triangle meshes with vertex colors.
  *
- * @version 5.0.0
+ * @version 5.1.0
  * @author AI Assistant, with final fix for Extrusion and HAnim transformation logic.
  *
  * Features:
@@ -14,11 +14,10 @@
  * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content.
  * - Handles diffuseColor from Material nodes and Color nodes to produce colored PLY files.
  * - Traverses the entire scene graph recursively, correctly processing all children.
- * - **FIXED**: Tessellates the Extrusion node by correctly calculating automatic orientation.
  * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone.
- * - **FIXED**: Processes IndexedFaceSet geometry correctly based on the `@convex` attribute.
- * - **FIXED**: Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices, ensuring no data loss or corruption. The flawed vertex de-duplication map has been removed.
- * - Processes IndexedLineSet geometry with correct color handling.
+ * - Tessellates complex geometry: Extrusion, IndexedFaceSet, IndexedLineSet.
+ * - **NEW**: Tessellates NurbsPatchSurface geometry into a triangle mesh.
+ * - Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices, ensuring no data loss or corruption.
  * - Outputs ASCII PLY format with vertex, face, and edge elements.
  */
 export default function createX3dToPlyConverter() {
@@ -215,7 +214,6 @@ export default function createX3dToPlyConverter() {
                 const currentOrientation = orientation.length > 1 ? orientation[i] : orientation[0];
                 mat4.axisAngleToQuat(q, [currentOrientation[0], currentOrientation[1], currentOrientation[2]], currentOrientation[3]);
             } else {
-                // Automatic orientation calculation
                 let tangent;
                 if (i === 0) {
                     tangent = vec3.sub(spine[1], spine[0]);
@@ -225,16 +223,16 @@ export default function createX3dToPlyConverter() {
                     tangent = vec3.sub(spine[i + 1], spine[i - 1]);
                 }
 
-                const v_from = [0, 0, 1]; // Default cross-section is in XY plane, so normal is Z-axis
+                const v_from = [0, 0, 1];
                 const v_to = vec3.normalize(tangent);
 
-                q = [0, 0, 0, 1]; // Default to identity quaternion
+                q = [0, 0, 0, 1];
 
-                if (vec3.len(v_to) > 1e-6) { // Check for non-zero tangent
+                if (vec3.len(v_to) > 1e-6) {
                     const d = vec3.dot(v_from, v_to);
-                    if (d < -0.999999) { // Vectors are opposite
-                        mat4.axisAngleToQuat(q, [1, 0, 0], Math.PI); // Rotate 180 degrees around an arbitrary axis (X)
-                    } else if (d < 0.999999) { // Vectors are not collinear
+                    if (d < -0.999999) {
+                        mat4.axisAngleToQuat(q, [1, 0, 0], Math.PI);
+                    } else if (d < 0.999999) {
                         const axis = vec3.normalize(vec3.cross(v_from, v_to));
                         const angle = Math.acos(d);
                         mat4.axisAngleToQuat(q, axis, angle);
@@ -284,6 +282,141 @@ export default function createX3dToPlyConverter() {
 	    if (endCap && csLen > 2) triangulateCap((spine.length - 1) * csLen, true);
 
 	    return { vertices, faces };
+    }
+
+    function tessellateNurbsPatchSurface(node, options) {
+        // Parse attributes from the NURBS node
+        const uOrder = node['@uOrder'] ? parseInt(node['@uOrder'], 10) : 3;
+        const vOrder = node['@vOrder'] ? parseInt(node['@vOrder'], 10) : 3;
+        const uDimension = node['@uDimension'] ? parseInt(node['@uDimension'], 10) : 0;
+        const vDimension = node['@vDimension'] ? parseInt(node['@vDimension'], 10) : 0;
+        const uKnot = node['@uKnot'] ? parseNumArray(node['@uKnot']) : [];
+        const vKnot = node['@vKnot'] ? parseNumArray(node['@vKnot']) : [];
+        const weights = node['@weight'] ? parseNumArray(node['@weight']) : null;
+
+        const controlPointsRaw = node['-controlPoint']?.Coordinate?.['@point'];
+        if (!controlPointsRaw || uDimension === 0 || vDimension === 0) {
+            return { vertices: [], faces: [] };
+        }
+        const controlPoints = parseMFVec3f(controlPointsRaw);
+
+        // Validate necessary data
+        if (controlPoints.length !== uDimension * vDimension ||
+            uKnot.length !== uDimension + uOrder ||
+            vKnot.length !== vDimension + vOrder) {
+            console.warn('NurbsPatchSurface: Mismatch in dimensions, knots, or control points. Skipping.');
+            return { vertices: [], faces: [] };
+        }
+
+        // Set tessellation resolution
+        const uSteps = options.nurbsUSteps || 30;
+        const vSteps = options.nurbsVSteps || 30;
+
+        // Helper to find the knot span for a given parameter value
+        const findSpan = (n, p, u, U) => {
+            if (u >= U[n + 1]) return n;
+            if (u <= U[p]) return p;
+            let low = p, high = n + 1, mid = Math.floor((low + high) / 2);
+            while (u < U[mid] || u >= U[mid + 1]) {
+                if (u < U[mid]) high = mid;
+                else low = mid;
+                mid = Math.floor((low + high) / 2);
+            }
+            return mid;
+        };
+
+        // Compute the non-zero B-spline basis functions
+        const basisFunctions = (span, u, p, U) => {
+            const N = new Array(p + 1).fill(0);
+            const left = new Array(p + 1).fill(0);
+            const right = new Array(p + 1).fill(0);
+            N[0] = 1.0;
+
+            for (let j = 1; j <= p; j++) {
+                left[j] = u - U[span + 1 - j];
+                right[j] = U[span + j] - u;
+                let saved = 0.0;
+                for (let r = 0; r < j; r++) {
+                    const denominator = right[r + 1] + left[j - r];
+                    let temp = N[r] / (denominator === 0 ? 1 : denominator); // Avoid division by zero
+                    N[r] = saved + right[r + 1] * temp;
+                    saved = left[j - r] * temp;
+                }
+                N[j] = saved;
+            }
+            return N;
+        };
+
+        // Calculate a point on the NURBS surface for given (u,v) parameters
+        const calcSurfacePoint = (u, v) => {
+            const uDegree = uOrder - 1;
+            const vDegree = vOrder - 1;
+            const uSpan = findSpan(uDimension - 1, uDegree, u, uKnot);
+            const uBasis = basisFunctions(uSpan, u, uDegree, uKnot);
+            const vSpan = findSpan(vDimension - 1, vDegree, v, vKnot);
+            const vBasis = basisFunctions(vSpan, v, vDegree, vKnot);
+
+            const temp = Array.from({ length: vOrder }, () => [0, 0, 0, 0]);
+
+            for (let l = 0; l < vOrder; l++) {
+                for (let k = 0; k < uOrder; k++) {
+                    const i = uSpan - uDegree + k;
+                    const j = vSpan - vDegree + l;
+                    const cpIndex = j * uDimension + i;
+                    const point = controlPoints[cpIndex];
+                    const weight = (weights && weights[cpIndex] !== undefined) ? weights[cpIndex] : 1.0;
+
+                    const basisVal = uBasis[k];
+                    temp[l][0] += basisVal * point[0] * weight;
+                    temp[l][1] += basisVal * point[1] * weight;
+                    temp[l][2] += basisVal * point[2] * weight;
+                    temp[l][3] += basisVal * weight;
+                }
+            }
+
+            const S = [0, 0, 0, 0];
+            for (let l = 0; l < vOrder; l++) {
+                const basisVal = vBasis[l];
+                S[0] += basisVal * temp[l][0];
+                S[1] += basisVal * temp[l][1];
+                S[2] += basisVal * temp[l][2];
+                S[3] += basisVal * temp[l][3];
+            }
+
+            if (Math.abs(S[3]) < 1e-9) return [0, 0, 0];
+            return [S[0] / S[3], S[1] / S[3], S[2] / S[3]];
+        };
+
+        const vertices = [];
+        const uDegree = uOrder - 1;
+        const vDegree = vOrder - 1;
+        const uMin = uKnot[uDegree], uMax = uKnot[uDimension];
+        const vMin = vKnot[vDegree], vMax = vKnot[vDimension];
+
+        // Generate vertices by evaluating the surface at grid points
+        for (let i = 0; i <= vSteps; i++) {
+            const v = vMin + (i / vSteps) * (vMax - vMin);
+            for (let j = 0; j <= uSteps; j++) {
+                const u = uMin + (j / uSteps) * (uMax - uMin);
+                vertices.push(calcSurfacePoint(u, v));
+            }
+        }
+
+        // Generate faces from the vertex grid
+        const faces = [];
+        for (let i = 0; i < vSteps; i++) {
+            for (let j = 0; j < uSteps; j++) {
+                const p1 = i * (uSteps + 1) + j;
+                const p2 = p1 + 1;
+                const p3 = (i + 1) * (uSteps + 1) + j;
+                const p4 = p3 + 1;
+
+                faces.push([p1, p3, p4]);
+                faces.push([p1, p4, p2]);
+            }
+        }
+
+        return { vertices, faces };
     }
 
     function processIndexedFaceSet(node) {
@@ -507,12 +640,11 @@ export default function createX3dToPlyConverter() {
                     case 'IndexedFaceSet': geoData = processIndexedFaceSet(geoNode); break;
                     case 'IndexedLineSet': geoData = processIndexedLineSet(geoNode); isLineSet = true; break;
                     case 'Extrusion': geoData = tessellateExtrusion(geoNode, options); break;
+                    case 'NurbsPatchSurface': geoData = tessellateNurbsPatchSurface(geoNode, options); break;
                     default: break;
                 }
 
                 if (geoData && geoData.vertices.length > 0) {
-                    // --- START OF FIX ---
-                    // This is the base index for the current shape's vertices.
                     const baseIndex = globalVertices.length;
 
                     for (const v of geoData.vertices) {
@@ -535,7 +667,6 @@ export default function createX3dToPlyConverter() {
                             globalFaces.push(f.map(idx => idx + baseIndex));
                         }
                     }
-                    // --- END OF FIX ---
                 }
             }
         }
@@ -577,15 +708,11 @@ export default function createX3dToPlyConverter() {
         const initialTransform = mat4.create();
         const defaultColor = [1.0, 1.0, 1.0];
 
-        // --- START OF FIX ---
-        // The previous hardcoded traversal was wrong. This correctly iterates
-        // through all children of the scene, allowing processNode to find all shapes.
         if (expandedScene.Scene && expandedScene.Scene['-children']) {
             for(const child of expandedScene.Scene['-children']) {
                 processNode(child, initialTransform, options, defMap, defaultColor);
             }
         }
-        // --- END OF FIX ---
 
         if (globalVertices.length === 0) {
             return `ply\nformat ascii 1.0\ncomment No geometry found to convert\nelement vertex 0\nproperty float x\nproperty float y\nproperty float z\nproperty uchar red\nproperty uchar green\nproperty uchar blue\nelement face 0\nproperty list uchar int vertex_indices\nend_header\n`;
