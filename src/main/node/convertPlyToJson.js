@@ -165,7 +165,7 @@ function transformToILS(elements) {
 						array.push(parseInt(element[index][1]));
 						array.push(-1);
 						for (var c = 2; c < 5; c++) {
-                            color.push(colorComponentParseFloat(element[index][c])/255.0);
+							color.push(colorComponentParseFloat(element[index][c])/255.0);
 						}
 					}
 				} catch (e) { console.error(e); }
@@ -173,6 +173,8 @@ function transformToILS(elements) {
 
 			if (color.length > 0) {
 				ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
+				// THIS IS THE FIX: Apply color per line segment, not per vertex, to prevent gradients.
+				ILS["IndexedLineSet" ]["@colorPerVertex"] = false;
 			}
 
 			ILS["IndexedLineSet" ]["@coordIndex"] = array;
