@@ -94,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 July 2025"
+            "@content":"28 July 2025"
           },
           {
             "@name":"generator",
@@ -168,7 +168,7 @@
                                                         "@DEF":"camo",
                                                         "@repeatS":false,
                                                         "@repeatT":false,
-                                                        "@url":["images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
+                                                        "@url":["../resources/images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
                                                       }
                                                     }
                                                 }
@@ -1305,7 +1305,7 @@
               "-children":[
                 { "HAnimSite":
                   {
-                    "@name":"BoxMan_view",
+                    "@name":"BoxMan",
                     "@DEF":"hanim_BoxMan_view",
                     "-children":[
                       { "Viewpoint":
