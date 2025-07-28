@@ -45,14 +45,6 @@
             "@content":"remove colors bleeding into camo"
           },
           {
-            "@name":"error",
-            "@content":"Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"
-          },
-          {
-            "@name":"warning",
-            "@content":"X3D Validator reports numerous warnings are present"
-          },
-          {
             "@name":"reference",
             "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
           },
