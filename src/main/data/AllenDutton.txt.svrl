@@ -1,0 +1,744 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/AllenDutton.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta[(@name='error') or (@name='warning') or (@name='hint') or (@name='info') or starts-with(@name,'TODO')]"/>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/head/meta[8]">
+      <svrl:text>&lt;meta name='TODO' content='remove colors bleeding into camo'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="WorldInfo"/>
+   <svrl:fired-rule context="HAnimHumanoid"/>
+   <svrl:successful-report test="true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; version='2.0' with X3D version='4.0' </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>====================================================================================================================
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimJoint)           within skeleton hierarchy        = 17</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSegment)         within skeleton hierarchy        = 16</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSite)            within HAnimHumanoid             = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSite//Viewpoint) within skeleton hierarchy        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimDisplacer)       within skeleton hierarchy        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimJoint   USE='*' containerField = 'joints'/&gt;)     = 17</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSegment USE='*' containerField = 'segments'/&gt;)   = 16</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSite    USE='*' containerField = 'sites'/&gt;)      = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSite    DEF='*' name ends with '_view'/&gt;)        = 1</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/HAnimHumanoid">
+      <svrl:text>====================================================================================================================
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.01 -0.0204' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has parent &lt;HAnimJoint DEF='hanim_sacroiliac' center='0 1.01 -0.0204'/&gt; that does not match child &lt;Transform DEF='' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.122 0.888271 -0.0693267' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_hip' center='0.122 0.888271 -0.0693267'/&gt; that does not match child &lt;Transform DEF='l_thigh_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.0738 0.517 -0.0284' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_knee' center='0.0738 0.517 -0.0284'/&gt; that does not match child &lt;Transform DEF='l_calf_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='humanoid_root') or (@name='sacroiliac') or (@name='l_hip') or (@name='l_knee') or (@name='l_talocrural') or (@name='l_talocalcaneonavicular') or (@name='l_cuneonavicular_1') or (@name='l_tarsometatarsal_1') or (@name='l_metatarsophalangeal_1') or (@name='l_tarsal_interphalangeal_1') or (@name='l_cuneonavicular_2') or (@name='l_tarsometatarsal_2') or (@name='l_metatarsophalangeal_2') or (@name='l_tarsal_proximal_interphalangeal_2') or (@name='l_tarsal_distal_interphalangeal_2') or (@name='l_cuneonavicular_3') or (@name='l_tarsometatarsal_3') or (@name='l_metatarsophalangeal_3') or (@name='l_tarsal_proximal_interphalangeal_3') or (@name='l_tarsal_distal_interphalangeal_3') or (@name='l_calcaneocuboid') or (@name='l_transversetarsal') or (@name='l_tarsometatarsal_4') or (@name='l_metatarsophalangeal_4') or (@name='l_tarsal_proximal_interphalangeal_4') or (@name='l_tarsal_distal_interphalangeal_4') or (@name='l_tarsometatarsal_5') or (@name='l_metatarsophalangeal_5') or (@name='l_tarsal_proximal_interphalangeal_5') or (@name='l_tarsal_distal_interphalangeal_5') or (@name='r_hip') or (@name='r_knee') or (@name='r_talocrural') or (@name='r_talocalcaneonavicular') or (@name='r_cuneonavicular_1') or (@name='r_tarsometatarsal_1') or (@name='r_metatarsophalangeal_1') or (@name='r_tarsal_interphalangeal_1') or (@name='r_cuneonavicular_2') or (@name='r_tarsometatarsal_2') or (@name='r_metatarsophalangeal_2') or (@name='r_tarsal_proximal_interphalangeal_2') or (@name='r_tarsal_distal_interphalangeal_2') or (@name='r_cuneonavicular_3') or (@name='r_tarsometatarsal_3') or (@name='r_metatarsophalangeal_3') or (@name='r_tarsal_proximal_interphalangeal_3') or (@name='r_tarsal_distal_interphalangeal_3') or (@name='r_calcaneocuboid') or (@name='r_transversetarsal') or (@name='r_tarsometatarsal_4') or (@name='r_metatarsophalangeal_4') or (@name='r_tarsal_proximal_interphalangeal_4') or (@name='r_tarsal_distal_interphalangeal_4') or (@name='r_tarsometatarsal_5') or (@name='r_metatarsophalangeal_5') or (@name='r_tarsal_proximal_interphalangeal_5') or (@name='r_tarsal_distal_interphalangeal_5') or (@name='vl5') or (@name='vl4') or (@name='vl3') or (@name='vl2') or (@name='vl1') or (@name='vt12') or (@name='vt11') or (@name='vt10') or (@name='vt9') or (@name='vt8') or (@name='vt7') or (@name='vt6') or (@name='vt5') or (@name='vt4') or (@name='vt3') or (@name='vt2') or (@name='vt1') or (@name='vc7') or (@name='vc6') or (@name='vc5') or (@name='vc4') or (@name='vc3') or (@name='vc2') or (@name='vc1') or (@name='skullbase') or (@name='l_eyelid_joint') or (@name='r_eyelid_joint') or (@name='l_eyeball_joint') or (@name='r_eyeball_joint') or (@name='l_eyebrow_joint') or (@name='r_eyebrow_joint') or (@name='temporomandibular') or (@name='l_sternoclavicular') or (@name='l_acromioclavicular') or (@name='l_shoulder') or (@name='l_elbow') or (@name='l_radiocarpal') or (@name='l_midcarpal_1') or (@name='l_carpometacarpal_1') or (@name='l_metacarpophalangeal_1') or (@name='l_carpal_interphalangeal_1') or (@name='l_midcarpal_2') or (@name='l_carpometacarpal_2') or (@name='l_metacarpophalangeal_2') or (@name='l_carpal_proximal_interphalangeal_2') or (@name='l_carpal_distal_interphalangeal_2') or (@name='l_midcarpal_3') or (@name='l_carpometacarpal_3') or (@name='l_metacarpophalangeal_3') or (@name='l_carpal_proximal_interphalangeal_3') or (@name='l_carpal_distal_interphalangeal_3') or (@name='l_midcarpal_4_5') or (@name='l_carpometacarpal_4') or (@name='l_metacarpophalangeal_4') or (@name='l_carpal_proximal_interphalangeal_4') or (@name='l_carpal_distal_interphalangeal_4') or (@name='l_carpometacarpal_5') or (@name='l_metacarpophalangeal_5') or (@name='l_carpal_proximal_interphalangeal_5') or (@name='l_carpal_distal_interphalangeal_5') or (@name='r_sternoclavicular') or (@name='r_acromioclavicular') or (@name='r_shoulder') or (@name='r_elbow') or (@name='r_radiocarpal') or (@name='r_midcarpal_1') or (@name='r_carpometacarpal_1') or (@name='r_metacarpophalangeal_1') or (@name='r_carpal_interphalangeal_1') or (@name='r_midcarpal_2') or (@name='r_carpometacarpal_2') or (@name='r_metacarpophalangeal_2') or (@name='r_carpal_proximal_interphalangeal_2') or (@name='r_carpal_distal_interphalangeal_2') or (@name='r_midcarpal_3') or (@name='r_carpometacarpal_3') or (@name='r_metacarpophalangeal_3') or (@name='r_carpal_proximal_interphalangeal_3') or (@name='r_carpal_distal_interphalangeal_3') or (@name='r_midcarpal_4_5') or (@name='r_carpometacarpal_4') or (@name='r_metacarpophalangeal_4') or (@name='r_carpal_proximal_interphalangeal_4') or (@name='r_carpal_distal_interphalangeal_4') or (@name='r_carpometacarpal_5') or (@name='r_metacarpophalangeal_5') or (@name='r_carpal_proximal_interphalangeal_5') or (@name='r_carpal_distal_interphalangeal_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_l_ankle' name='l_ankle'/&gt; is not a recognized name for HAnim2 HAnimJoint </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_ankle')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_l_ankle' name='l_ankle'/&gt; is an HAnimJoint alias for 'l_talocrural', recommend updating X3D model source
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.0645 0.0719 -0.048' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_ankle' center='0.0645 0.0719 -0.048'/&gt; that does not match child &lt;Transform DEF='l_foot_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='sacrum') or (@name='pelvis') or (@name='l_thigh') or (@name='l_calf') or (@name='l_talus') or (@name='l_navicular') or (@name='l_cuneiform_1') or (@name='l_metatarsal_1') or (@name='l_tarsal_proximal_phalanx_1') or (@name='l_tarsal_distal_phalanx_1') or (@name='l_cuneiform_2') or (@name='l_metatarsal_2') or (@name='l_tarsal_proximal_phalanx_2') or (@name='l_tarsal_middle_phalanx_2') or (@name='l_tarsal_distal_phalanx_2') or (@name='l_cuneiform_3') or (@name='l_metatarsal_3') or (@name='l_tarsal_proximal_phalanx_3') or (@name='l_tarsal_middle_phalanx_3') or (@name='l_tarsal_distal_phalanx_3') or (@name='l_calcaneus') or (@name='l_cuboid') or (@name='l_metatarsal_4') or (@name='l_tarsal_proximal_phalanx_4') or (@name='l_tarsal_middle_phalanx_4') or (@name='l_tarsal_distal_phalanx_4') or (@name='l_metatarsal_5') or (@name='l_tarsal_proximal_phalanx_5') or (@name='l_tarsal_middle_phalanx_5') or (@name='l_tarsal_distal_phalanx_5') or (@name='r_thigh') or (@name='r_calf') or (@name='r_talus') or (@name='r_navicular') or (@name='r_cuneiform_1') or (@name='r_metatarsal_1') or (@name='r_tarsal_proximal_phalanx_1') or (@name='r_tarsal_distal_phalanx_1') or (@name='r_cuneiform_2') or (@name='r_metatarsal_2') or (@name='r_tarsal_proximal_phalanx_2') or (@name='r_tarsal_middle_phalanx_2') or (@name='r_tarsal_distal_phalanx_2') or (@name='r_cuneiform_3') or (@name='r_metatarsal_3') or (@name='r_tarsal_proximal_phalanx_3') or (@name='r_tarsal_middle_phalanx_3') or (@name='r_tarsal_distal_phalanx_3') or (@name='r_calcaneus') or (@name='r_cuboid') or (@name='r_metatarsal_4') or (@name='r_tarsal_proximal_phalanx_4') or (@name='r_tarsal_middle_phalanx_4') or (@name='r_tarsal_distal_phalanx_4') or (@name='r_metatarsal_5') or (@name='r_tarsal_proximal_phalanx_5') or (@name='r_tarsal_middle_phalanx_5') or (@name='r_tarsal_distal_phalanx_5') or (@name='l5') or (@name='l4') or (@name='l3') or (@name='l2') or (@name='l1') or (@name='t12') or (@name='t11') or (@name='t10') or (@name='t9') or (@name='t8') or (@name='t7') or (@name='t6') or (@name='t5') or (@name='t4') or (@name='t3') or (@name='t2') or (@name='t1') or (@name='c7') or (@name='c6') or (@name='c5') or (@name='c4') or (@name='c3') or (@name='c2') or (@name='c1') or (@name='skull') or (@name='l_eyelid') or (@name='r_eyelid') or (@name='l_eyeball') or (@name='r_eyeball') or (@name='l_eyebrow') or (@name='r_eyebrow') or (@name='jaw') or (@name='l_clavicle') or (@name='l_scapula') or (@name='l_upperarm') or (@name='l_forearm') or (@name='l_carpal') or (@name='l_trapezium') or (@name='l_metacarpal_1') or (@name='l_carpal_proximal_phalanx_1') or (@name='l_carpal_distal_phalanx_1') or (@name='l_trapezoid') or (@name='l_metacarpal_2') or (@name='l_carpal_proximal_phalanx_2') or (@name='l_carpal_middle_phalanx_2') or (@name='l_carpal_distal_phalanx_2') or (@name='l_capitate') or (@name='l_metacarpal_3') or (@name='l_carpal_proximal_phalanx_3') or (@name='l_carpal_middle_phalanx_3') or (@name='l_carpal_distal_phalanx_3') or (@name='l_hamate') or (@name='l_metacarpal_4') or (@name='l_carpal_proximal_phalanx_4') or (@name='l_carpal_middle_phalanx_4') or (@name='l_carpal_distal_phalanx_4') or (@name='l_metacarpal_5') or (@name='l_carpal_proximal_phalanx_5') or (@name='l_carpal_middle_phalanx_5') or (@name='l_carpal_distal_phalanx_5') or (@name='r_clavicle') or (@name='r_scapula') or (@name='r_upperarm') or (@name='r_forearm') or (@name='r_carpal') or (@name='r_trapezium') or (@name='r_metacarpal_1') or (@name='r_carpal_proximal_phalanx_1') or (@name='r_carpal_distal_phalanx_1') or (@name='r_trapezoid') or (@name='r_metacarpal_2') or (@name='r_carpal_proximal_phalanx_2') or (@name='r_carpal_middle_phalanx_2') or (@name='r_carpal_distal_phalanx_2') or (@name='r_capitate') or (@name='r_metacarpal_3') or (@name='r_carpal_proximal_phalanx_3') or (@name='r_carpal_middle_phalanx_3') or (@name='r_carpal_distal_phalanx_3') or (@name='r_hamate') or (@name='r_metacarpal_4') or (@name='r_carpal_proximal_phalanx_4') or (@name='r_carpal_middle_phalanx_4') or (@name='r_carpal_distal_phalanx_4') or (@name='r_metacarpal_5') or (@name='r_carpal_proximal_phalanx_5') or (@name='r_carpal_middle_phalanx_5') or (@name='r_carpal_distal_phalanx_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; is not a recognized name for HAnim2 HAnimSegment </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_hindfoot')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; is an HAnimSegment alias for 'l_talus', recommend updating X3D model source </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.11 0.892362 -0.0732533' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_hip' center='-0.11 0.892362 -0.0732533'/&gt; that does not match child &lt;Transform DEF='r_thigh_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.0699 0.51 -0.0166' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_knee' center='-0.0699 0.51 -0.0166'/&gt; that does not match child &lt;Transform DEF='r_calf_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='humanoid_root') or (@name='sacroiliac') or (@name='l_hip') or (@name='l_knee') or (@name='l_talocrural') or (@name='l_talocalcaneonavicular') or (@name='l_cuneonavicular_1') or (@name='l_tarsometatarsal_1') or (@name='l_metatarsophalangeal_1') or (@name='l_tarsal_interphalangeal_1') or (@name='l_cuneonavicular_2') or (@name='l_tarsometatarsal_2') or (@name='l_metatarsophalangeal_2') or (@name='l_tarsal_proximal_interphalangeal_2') or (@name='l_tarsal_distal_interphalangeal_2') or (@name='l_cuneonavicular_3') or (@name='l_tarsometatarsal_3') or (@name='l_metatarsophalangeal_3') or (@name='l_tarsal_proximal_interphalangeal_3') or (@name='l_tarsal_distal_interphalangeal_3') or (@name='l_calcaneocuboid') or (@name='l_transversetarsal') or (@name='l_tarsometatarsal_4') or (@name='l_metatarsophalangeal_4') or (@name='l_tarsal_proximal_interphalangeal_4') or (@name='l_tarsal_distal_interphalangeal_4') or (@name='l_tarsometatarsal_5') or (@name='l_metatarsophalangeal_5') or (@name='l_tarsal_proximal_interphalangeal_5') or (@name='l_tarsal_distal_interphalangeal_5') or (@name='r_hip') or (@name='r_knee') or (@name='r_talocrural') or (@name='r_talocalcaneonavicular') or (@name='r_cuneonavicular_1') or (@name='r_tarsometatarsal_1') or (@name='r_metatarsophalangeal_1') or (@name='r_tarsal_interphalangeal_1') or (@name='r_cuneonavicular_2') or (@name='r_tarsometatarsal_2') or (@name='r_metatarsophalangeal_2') or (@name='r_tarsal_proximal_interphalangeal_2') or (@name='r_tarsal_distal_interphalangeal_2') or (@name='r_cuneonavicular_3') or (@name='r_tarsometatarsal_3') or (@name='r_metatarsophalangeal_3') or (@name='r_tarsal_proximal_interphalangeal_3') or (@name='r_tarsal_distal_interphalangeal_3') or (@name='r_calcaneocuboid') or (@name='r_transversetarsal') or (@name='r_tarsometatarsal_4') or (@name='r_metatarsophalangeal_4') or (@name='r_tarsal_proximal_interphalangeal_4') or (@name='r_tarsal_distal_interphalangeal_4') or (@name='r_tarsometatarsal_5') or (@name='r_metatarsophalangeal_5') or (@name='r_tarsal_proximal_interphalangeal_5') or (@name='r_tarsal_distal_interphalangeal_5') or (@name='vl5') or (@name='vl4') or (@name='vl3') or (@name='vl2') or (@name='vl1') or (@name='vt12') or (@name='vt11') or (@name='vt10') or (@name='vt9') or (@name='vt8') or (@name='vt7') or (@name='vt6') or (@name='vt5') or (@name='vt4') or (@name='vt3') or (@name='vt2') or (@name='vt1') or (@name='vc7') or (@name='vc6') or (@name='vc5') or (@name='vc4') or (@name='vc3') or (@name='vc2') or (@name='vc1') or (@name='skullbase') or (@name='l_eyelid_joint') or (@name='r_eyelid_joint') or (@name='l_eyeball_joint') or (@name='r_eyeball_joint') or (@name='l_eyebrow_joint') or (@name='r_eyebrow_joint') or (@name='temporomandibular') or (@name='l_sternoclavicular') or (@name='l_acromioclavicular') or (@name='l_shoulder') or (@name='l_elbow') or (@name='l_radiocarpal') or (@name='l_midcarpal_1') or (@name='l_carpometacarpal_1') or (@name='l_metacarpophalangeal_1') or (@name='l_carpal_interphalangeal_1') or (@name='l_midcarpal_2') or (@name='l_carpometacarpal_2') or (@name='l_metacarpophalangeal_2') or (@name='l_carpal_proximal_interphalangeal_2') or (@name='l_carpal_distal_interphalangeal_2') or (@name='l_midcarpal_3') or (@name='l_carpometacarpal_3') or (@name='l_metacarpophalangeal_3') or (@name='l_carpal_proximal_interphalangeal_3') or (@name='l_carpal_distal_interphalangeal_3') or (@name='l_midcarpal_4_5') or (@name='l_carpometacarpal_4') or (@name='l_metacarpophalangeal_4') or (@name='l_carpal_proximal_interphalangeal_4') or (@name='l_carpal_distal_interphalangeal_4') or (@name='l_carpometacarpal_5') or (@name='l_metacarpophalangeal_5') or (@name='l_carpal_proximal_interphalangeal_5') or (@name='l_carpal_distal_interphalangeal_5') or (@name='r_sternoclavicular') or (@name='r_acromioclavicular') or (@name='r_shoulder') or (@name='r_elbow') or (@name='r_radiocarpal') or (@name='r_midcarpal_1') or (@name='r_carpometacarpal_1') or (@name='r_metacarpophalangeal_1') or (@name='r_carpal_interphalangeal_1') or (@name='r_midcarpal_2') or (@name='r_carpometacarpal_2') or (@name='r_metacarpophalangeal_2') or (@name='r_carpal_proximal_interphalangeal_2') or (@name='r_carpal_distal_interphalangeal_2') or (@name='r_midcarpal_3') or (@name='r_carpometacarpal_3') or (@name='r_metacarpophalangeal_3') or (@name='r_carpal_proximal_interphalangeal_3') or (@name='r_carpal_distal_interphalangeal_3') or (@name='r_midcarpal_4_5') or (@name='r_carpometacarpal_4') or (@name='r_metacarpophalangeal_4') or (@name='r_carpal_proximal_interphalangeal_4') or (@name='r_carpal_distal_interphalangeal_4') or (@name='r_carpometacarpal_5') or (@name='r_metacarpophalangeal_5') or (@name='r_carpal_proximal_interphalangeal_5') or (@name='r_carpal_distal_interphalangeal_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_r_ankle' name='r_ankle'/&gt; is not a recognized name for HAnim2 HAnimJoint </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_ankle')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_r_ankle' name='r_ankle'/&gt; is an HAnimJoint alias for 'r_talocrural', recommend updating X3D model source
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.064 0.0753 -0.0412' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_ankle' center='-0.064 0.0753 -0.0412'/&gt; that does not match child &lt;Transform DEF='r_foot_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='sacrum') or (@name='pelvis') or (@name='l_thigh') or (@name='l_calf') or (@name='l_talus') or (@name='l_navicular') or (@name='l_cuneiform_1') or (@name='l_metatarsal_1') or (@name='l_tarsal_proximal_phalanx_1') or (@name='l_tarsal_distal_phalanx_1') or (@name='l_cuneiform_2') or (@name='l_metatarsal_2') or (@name='l_tarsal_proximal_phalanx_2') or (@name='l_tarsal_middle_phalanx_2') or (@name='l_tarsal_distal_phalanx_2') or (@name='l_cuneiform_3') or (@name='l_metatarsal_3') or (@name='l_tarsal_proximal_phalanx_3') or (@name='l_tarsal_middle_phalanx_3') or (@name='l_tarsal_distal_phalanx_3') or (@name='l_calcaneus') or (@name='l_cuboid') or (@name='l_metatarsal_4') or (@name='l_tarsal_proximal_phalanx_4') or (@name='l_tarsal_middle_phalanx_4') or (@name='l_tarsal_distal_phalanx_4') or (@name='l_metatarsal_5') or (@name='l_tarsal_proximal_phalanx_5') or (@name='l_tarsal_middle_phalanx_5') or (@name='l_tarsal_distal_phalanx_5') or (@name='r_thigh') or (@name='r_calf') or (@name='r_talus') or (@name='r_navicular') or (@name='r_cuneiform_1') or (@name='r_metatarsal_1') or (@name='r_tarsal_proximal_phalanx_1') or (@name='r_tarsal_distal_phalanx_1') or (@name='r_cuneiform_2') or (@name='r_metatarsal_2') or (@name='r_tarsal_proximal_phalanx_2') or (@name='r_tarsal_middle_phalanx_2') or (@name='r_tarsal_distal_phalanx_2') or (@name='r_cuneiform_3') or (@name='r_metatarsal_3') or (@name='r_tarsal_proximal_phalanx_3') or (@name='r_tarsal_middle_phalanx_3') or (@name='r_tarsal_distal_phalanx_3') or (@name='r_calcaneus') or (@name='r_cuboid') or (@name='r_metatarsal_4') or (@name='r_tarsal_proximal_phalanx_4') or (@name='r_tarsal_middle_phalanx_4') or (@name='r_tarsal_distal_phalanx_4') or (@name='r_metatarsal_5') or (@name='r_tarsal_proximal_phalanx_5') or (@name='r_tarsal_middle_phalanx_5') or (@name='r_tarsal_distal_phalanx_5') or (@name='l5') or (@name='l4') or (@name='l3') or (@name='l2') or (@name='l1') or (@name='t12') or (@name='t11') or (@name='t10') or (@name='t9') or (@name='t8') or (@name='t7') or (@name='t6') or (@name='t5') or (@name='t4') or (@name='t3') or (@name='t2') or (@name='t1') or (@name='c7') or (@name='c6') or (@name='c5') or (@name='c4') or (@name='c3') or (@name='c2') or (@name='c1') or (@name='skull') or (@name='l_eyelid') or (@name='r_eyelid') or (@name='l_eyeball') or (@name='r_eyeball') or (@name='l_eyebrow') or (@name='r_eyebrow') or (@name='jaw') or (@name='l_clavicle') or (@name='l_scapula') or (@name='l_upperarm') or (@name='l_forearm') or (@name='l_carpal') or (@name='l_trapezium') or (@name='l_metacarpal_1') or (@name='l_carpal_proximal_phalanx_1') or (@name='l_carpal_distal_phalanx_1') or (@name='l_trapezoid') or (@name='l_metacarpal_2') or (@name='l_carpal_proximal_phalanx_2') or (@name='l_carpal_middle_phalanx_2') or (@name='l_carpal_distal_phalanx_2') or (@name='l_capitate') or (@name='l_metacarpal_3') or (@name='l_carpal_proximal_phalanx_3') or (@name='l_carpal_middle_phalanx_3') or (@name='l_carpal_distal_phalanx_3') or (@name='l_hamate') or (@name='l_metacarpal_4') or (@name='l_carpal_proximal_phalanx_4') or (@name='l_carpal_middle_phalanx_4') or (@name='l_carpal_distal_phalanx_4') or (@name='l_metacarpal_5') or (@name='l_carpal_proximal_phalanx_5') or (@name='l_carpal_middle_phalanx_5') or (@name='l_carpal_distal_phalanx_5') or (@name='r_clavicle') or (@name='r_scapula') or (@name='r_upperarm') or (@name='r_forearm') or (@name='r_carpal') or (@name='r_trapezium') or (@name='r_metacarpal_1') or (@name='r_carpal_proximal_phalanx_1') or (@name='r_carpal_distal_phalanx_1') or (@name='r_trapezoid') or (@name='r_metacarpal_2') or (@name='r_carpal_proximal_phalanx_2') or (@name='r_carpal_middle_phalanx_2') or (@name='r_carpal_distal_phalanx_2') or (@name='r_capitate') or (@name='r_metacarpal_3') or (@name='r_carpal_proximal_phalanx_3') or (@name='r_carpal_middle_phalanx_3') or (@name='r_carpal_distal_phalanx_3') or (@name='r_hamate') or (@name='r_metacarpal_4') or (@name='r_carpal_proximal_phalanx_4') or (@name='r_carpal_middle_phalanx_4') or (@name='r_carpal_distal_phalanx_4') or (@name='r_metacarpal_5') or (@name='r_carpal_proximal_phalanx_5') or (@name='r_carpal_middle_phalanx_5') or (@name='r_carpal_distal_phalanx_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; is not a recognized name for HAnim2 HAnimSegment </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_hindfoot')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; is an HAnimSegment alias for 'r_talus', recommend updating X3D model source </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vl1') and parent::HAnimJoint[not(@name='vl2')]" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_vl1' name='vl1'/&gt; has parent HAnimJoint name='humanoid_root' rather than expected parent name='vl2', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l1' name='l1'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.00405 1.07 -0.0275' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l1' name='l1'/&gt; has parent &lt;HAnimJoint DEF='hanim_vl1' center='-0.00405 1.07 -0.0275'/&gt; that does not match child &lt;Transform DEF='torso_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_shoulder') and parent::HAnimJoint[not(@name='l_acromioclavicular')]" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder'/&gt; has parent HAnimJoint name='vl1' rather than expected parent name='l_acromioclavicular', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.167 1.36 -0.0518' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_shoulder' center='0.167 1.36 -0.0518'/&gt; that does not match child &lt;Transform DEF='l_upperarm_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.196 1.07 -0.0518' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_elbow' center='0.196 1.07 -0.0518'/&gt; that does not match child &lt;Transform DEF='l_forearm_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='humanoid_root') or (@name='sacroiliac') or (@name='l_hip') or (@name='l_knee') or (@name='l_talocrural') or (@name='l_talocalcaneonavicular') or (@name='l_cuneonavicular_1') or (@name='l_tarsometatarsal_1') or (@name='l_metatarsophalangeal_1') or (@name='l_tarsal_interphalangeal_1') or (@name='l_cuneonavicular_2') or (@name='l_tarsometatarsal_2') or (@name='l_metatarsophalangeal_2') or (@name='l_tarsal_proximal_interphalangeal_2') or (@name='l_tarsal_distal_interphalangeal_2') or (@name='l_cuneonavicular_3') or (@name='l_tarsometatarsal_3') or (@name='l_metatarsophalangeal_3') or (@name='l_tarsal_proximal_interphalangeal_3') or (@name='l_tarsal_distal_interphalangeal_3') or (@name='l_calcaneocuboid') or (@name='l_transversetarsal') or (@name='l_tarsometatarsal_4') or (@name='l_metatarsophalangeal_4') or (@name='l_tarsal_proximal_interphalangeal_4') or (@name='l_tarsal_distal_interphalangeal_4') or (@name='l_tarsometatarsal_5') or (@name='l_metatarsophalangeal_5') or (@name='l_tarsal_proximal_interphalangeal_5') or (@name='l_tarsal_distal_interphalangeal_5') or (@name='r_hip') or (@name='r_knee') or (@name='r_talocrural') or (@name='r_talocalcaneonavicular') or (@name='r_cuneonavicular_1') or (@name='r_tarsometatarsal_1') or (@name='r_metatarsophalangeal_1') or (@name='r_tarsal_interphalangeal_1') or (@name='r_cuneonavicular_2') or (@name='r_tarsometatarsal_2') or (@name='r_metatarsophalangeal_2') or (@name='r_tarsal_proximal_interphalangeal_2') or (@name='r_tarsal_distal_interphalangeal_2') or (@name='r_cuneonavicular_3') or (@name='r_tarsometatarsal_3') or (@name='r_metatarsophalangeal_3') or (@name='r_tarsal_proximal_interphalangeal_3') or (@name='r_tarsal_distal_interphalangeal_3') or (@name='r_calcaneocuboid') or (@name='r_transversetarsal') or (@name='r_tarsometatarsal_4') or (@name='r_metatarsophalangeal_4') or (@name='r_tarsal_proximal_interphalangeal_4') or (@name='r_tarsal_distal_interphalangeal_4') or (@name='r_tarsometatarsal_5') or (@name='r_metatarsophalangeal_5') or (@name='r_tarsal_proximal_interphalangeal_5') or (@name='r_tarsal_distal_interphalangeal_5') or (@name='vl5') or (@name='vl4') or (@name='vl3') or (@name='vl2') or (@name='vl1') or (@name='vt12') or (@name='vt11') or (@name='vt10') or (@name='vt9') or (@name='vt8') or (@name='vt7') or (@name='vt6') or (@name='vt5') or (@name='vt4') or (@name='vt3') or (@name='vt2') or (@name='vt1') or (@name='vc7') or (@name='vc6') or (@name='vc5') or (@name='vc4') or (@name='vc3') or (@name='vc2') or (@name='vc1') or (@name='skullbase') or (@name='l_eyelid_joint') or (@name='r_eyelid_joint') or (@name='l_eyeball_joint') or (@name='r_eyeball_joint') or (@name='l_eyebrow_joint') or (@name='r_eyebrow_joint') or (@name='temporomandibular') or (@name='l_sternoclavicular') or (@name='l_acromioclavicular') or (@name='l_shoulder') or (@name='l_elbow') or (@name='l_radiocarpal') or (@name='l_midcarpal_1') or (@name='l_carpometacarpal_1') or (@name='l_metacarpophalangeal_1') or (@name='l_carpal_interphalangeal_1') or (@name='l_midcarpal_2') or (@name='l_carpometacarpal_2') or (@name='l_metacarpophalangeal_2') or (@name='l_carpal_proximal_interphalangeal_2') or (@name='l_carpal_distal_interphalangeal_2') or (@name='l_midcarpal_3') or (@name='l_carpometacarpal_3') or (@name='l_metacarpophalangeal_3') or (@name='l_carpal_proximal_interphalangeal_3') or (@name='l_carpal_distal_interphalangeal_3') or (@name='l_midcarpal_4_5') or (@name='l_carpometacarpal_4') or (@name='l_metacarpophalangeal_4') or (@name='l_carpal_proximal_interphalangeal_4') or (@name='l_carpal_distal_interphalangeal_4') or (@name='l_carpometacarpal_5') or (@name='l_metacarpophalangeal_5') or (@name='l_carpal_proximal_interphalangeal_5') or (@name='l_carpal_distal_interphalangeal_5') or (@name='r_sternoclavicular') or (@name='r_acromioclavicular') or (@name='r_shoulder') or (@name='r_elbow') or (@name='r_radiocarpal') or (@name='r_midcarpal_1') or (@name='r_carpometacarpal_1') or (@name='r_metacarpophalangeal_1') or (@name='r_carpal_interphalangeal_1') or (@name='r_midcarpal_2') or (@name='r_carpometacarpal_2') or (@name='r_metacarpophalangeal_2') or (@name='r_carpal_proximal_interphalangeal_2') or (@name='r_carpal_distal_interphalangeal_2') or (@name='r_midcarpal_3') or (@name='r_carpometacarpal_3') or (@name='r_metacarpophalangeal_3') or (@name='r_carpal_proximal_interphalangeal_3') or (@name='r_carpal_distal_interphalangeal_3') or (@name='r_midcarpal_4_5') or (@name='r_carpometacarpal_4') or (@name='r_metacarpophalangeal_4') or (@name='r_carpal_proximal_interphalangeal_4') or (@name='r_carpal_distal_interphalangeal_4') or (@name='r_carpometacarpal_5') or (@name='r_metacarpophalangeal_5') or (@name='r_carpal_proximal_interphalangeal_5') or (@name='r_carpal_distal_interphalangeal_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_l_wrist' name='l_wrist'/&gt; is not a recognized name for HAnim2 HAnimJoint </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_wrist')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_l_wrist' name='l_wrist'/&gt; is an HAnimJoint alias for 'l_radiocarpal', recommend updating X3D model source
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.213 0.811 -0.0338' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_wrist' center='0.213 0.811 -0.0338'/&gt; that does not match child &lt;Transform DEF='l_hand_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='sacrum') or (@name='pelvis') or (@name='l_thigh') or (@name='l_calf') or (@name='l_talus') or (@name='l_navicular') or (@name='l_cuneiform_1') or (@name='l_metatarsal_1') or (@name='l_tarsal_proximal_phalanx_1') or (@name='l_tarsal_distal_phalanx_1') or (@name='l_cuneiform_2') or (@name='l_metatarsal_2') or (@name='l_tarsal_proximal_phalanx_2') or (@name='l_tarsal_middle_phalanx_2') or (@name='l_tarsal_distal_phalanx_2') or (@name='l_cuneiform_3') or (@name='l_metatarsal_3') or (@name='l_tarsal_proximal_phalanx_3') or (@name='l_tarsal_middle_phalanx_3') or (@name='l_tarsal_distal_phalanx_3') or (@name='l_calcaneus') or (@name='l_cuboid') or (@name='l_metatarsal_4') or (@name='l_tarsal_proximal_phalanx_4') or (@name='l_tarsal_middle_phalanx_4') or (@name='l_tarsal_distal_phalanx_4') or (@name='l_metatarsal_5') or (@name='l_tarsal_proximal_phalanx_5') or (@name='l_tarsal_middle_phalanx_5') or (@name='l_tarsal_distal_phalanx_5') or (@name='r_thigh') or (@name='r_calf') or (@name='r_talus') or (@name='r_navicular') or (@name='r_cuneiform_1') or (@name='r_metatarsal_1') or (@name='r_tarsal_proximal_phalanx_1') or (@name='r_tarsal_distal_phalanx_1') or (@name='r_cuneiform_2') or (@name='r_metatarsal_2') or (@name='r_tarsal_proximal_phalanx_2') or (@name='r_tarsal_middle_phalanx_2') or (@name='r_tarsal_distal_phalanx_2') or (@name='r_cuneiform_3') or (@name='r_metatarsal_3') or (@name='r_tarsal_proximal_phalanx_3') or (@name='r_tarsal_middle_phalanx_3') or (@name='r_tarsal_distal_phalanx_3') or (@name='r_calcaneus') or (@name='r_cuboid') or (@name='r_metatarsal_4') or (@name='r_tarsal_proximal_phalanx_4') or (@name='r_tarsal_middle_phalanx_4') or (@name='r_tarsal_distal_phalanx_4') or (@name='r_metatarsal_5') or (@name='r_tarsal_proximal_phalanx_5') or (@name='r_tarsal_middle_phalanx_5') or (@name='r_tarsal_distal_phalanx_5') or (@name='l5') or (@name='l4') or (@name='l3') or (@name='l2') or (@name='l1') or (@name='t12') or (@name='t11') or (@name='t10') or (@name='t9') or (@name='t8') or (@name='t7') or (@name='t6') or (@name='t5') or (@name='t4') or (@name='t3') or (@name='t2') or (@name='t1') or (@name='c7') or (@name='c6') or (@name='c5') or (@name='c4') or (@name='c3') or (@name='c2') or (@name='c1') or (@name='skull') or (@name='l_eyelid') or (@name='r_eyelid') or (@name='l_eyeball') or (@name='r_eyeball') or (@name='l_eyebrow') or (@name='r_eyebrow') or (@name='jaw') or (@name='l_clavicle') or (@name='l_scapula') or (@name='l_upperarm') or (@name='l_forearm') or (@name='l_carpal') or (@name='l_trapezium') or (@name='l_metacarpal_1') or (@name='l_carpal_proximal_phalanx_1') or (@name='l_carpal_distal_phalanx_1') or (@name='l_trapezoid') or (@name='l_metacarpal_2') or (@name='l_carpal_proximal_phalanx_2') or (@name='l_carpal_middle_phalanx_2') or (@name='l_carpal_distal_phalanx_2') or (@name='l_capitate') or (@name='l_metacarpal_3') or (@name='l_carpal_proximal_phalanx_3') or (@name='l_carpal_middle_phalanx_3') or (@name='l_carpal_distal_phalanx_3') or (@name='l_hamate') or (@name='l_metacarpal_4') or (@name='l_carpal_proximal_phalanx_4') or (@name='l_carpal_middle_phalanx_4') or (@name='l_carpal_distal_phalanx_4') or (@name='l_metacarpal_5') or (@name='l_carpal_proximal_phalanx_5') or (@name='l_carpal_middle_phalanx_5') or (@name='l_carpal_distal_phalanx_5') or (@name='r_clavicle') or (@name='r_scapula') or (@name='r_upperarm') or (@name='r_forearm') or (@name='r_carpal') or (@name='r_trapezium') or (@name='r_metacarpal_1') or (@name='r_carpal_proximal_phalanx_1') or (@name='r_carpal_distal_phalanx_1') or (@name='r_trapezoid') or (@name='r_metacarpal_2') or (@name='r_carpal_proximal_phalanx_2') or (@name='r_carpal_middle_phalanx_2') or (@name='r_carpal_distal_phalanx_2') or (@name='r_capitate') or (@name='r_metacarpal_3') or (@name='r_carpal_proximal_phalanx_3') or (@name='r_carpal_middle_phalanx_3') or (@name='r_carpal_distal_phalanx_3') or (@name='r_hamate') or (@name='r_metacarpal_4') or (@name='r_carpal_proximal_phalanx_4') or (@name='r_carpal_middle_phalanx_4') or (@name='r_carpal_distal_phalanx_4') or (@name='r_metacarpal_5') or (@name='r_carpal_proximal_phalanx_5') or (@name='r_carpal_middle_phalanx_5') or (@name='r_carpal_distal_phalanx_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; is not a recognized name for HAnim2 HAnimSegment </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_shoulder') and parent::HAnimJoint[not(@name='r_acromioclavicular')]" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder'/&gt; has parent HAnimJoint name='vl1' rather than expected parent name='r_acromioclavicular', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.167 1.36 -0.0458' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_shoulder' center='-0.167 1.36 -0.0458'/&gt; that does not match child &lt;Transform DEF='r_upperarm_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.192 1.07 -0.0498' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_elbow' center='-0.192 1.07 -0.0498'/&gt; that does not match child &lt;Transform DEF='r_forearm_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='humanoid_root') or (@name='sacroiliac') or (@name='l_hip') or (@name='l_knee') or (@name='l_talocrural') or (@name='l_talocalcaneonavicular') or (@name='l_cuneonavicular_1') or (@name='l_tarsometatarsal_1') or (@name='l_metatarsophalangeal_1') or (@name='l_tarsal_interphalangeal_1') or (@name='l_cuneonavicular_2') or (@name='l_tarsometatarsal_2') or (@name='l_metatarsophalangeal_2') or (@name='l_tarsal_proximal_interphalangeal_2') or (@name='l_tarsal_distal_interphalangeal_2') or (@name='l_cuneonavicular_3') or (@name='l_tarsometatarsal_3') or (@name='l_metatarsophalangeal_3') or (@name='l_tarsal_proximal_interphalangeal_3') or (@name='l_tarsal_distal_interphalangeal_3') or (@name='l_calcaneocuboid') or (@name='l_transversetarsal') or (@name='l_tarsometatarsal_4') or (@name='l_metatarsophalangeal_4') or (@name='l_tarsal_proximal_interphalangeal_4') or (@name='l_tarsal_distal_interphalangeal_4') or (@name='l_tarsometatarsal_5') or (@name='l_metatarsophalangeal_5') or (@name='l_tarsal_proximal_interphalangeal_5') or (@name='l_tarsal_distal_interphalangeal_5') or (@name='r_hip') or (@name='r_knee') or (@name='r_talocrural') or (@name='r_talocalcaneonavicular') or (@name='r_cuneonavicular_1') or (@name='r_tarsometatarsal_1') or (@name='r_metatarsophalangeal_1') or (@name='r_tarsal_interphalangeal_1') or (@name='r_cuneonavicular_2') or (@name='r_tarsometatarsal_2') or (@name='r_metatarsophalangeal_2') or (@name='r_tarsal_proximal_interphalangeal_2') or (@name='r_tarsal_distal_interphalangeal_2') or (@name='r_cuneonavicular_3') or (@name='r_tarsometatarsal_3') or (@name='r_metatarsophalangeal_3') or (@name='r_tarsal_proximal_interphalangeal_3') or (@name='r_tarsal_distal_interphalangeal_3') or (@name='r_calcaneocuboid') or (@name='r_transversetarsal') or (@name='r_tarsometatarsal_4') or (@name='r_metatarsophalangeal_4') or (@name='r_tarsal_proximal_interphalangeal_4') or (@name='r_tarsal_distal_interphalangeal_4') or (@name='r_tarsometatarsal_5') or (@name='r_metatarsophalangeal_5') or (@name='r_tarsal_proximal_interphalangeal_5') or (@name='r_tarsal_distal_interphalangeal_5') or (@name='vl5') or (@name='vl4') or (@name='vl3') or (@name='vl2') or (@name='vl1') or (@name='vt12') or (@name='vt11') or (@name='vt10') or (@name='vt9') or (@name='vt8') or (@name='vt7') or (@name='vt6') or (@name='vt5') or (@name='vt4') or (@name='vt3') or (@name='vt2') or (@name='vt1') or (@name='vc7') or (@name='vc6') or (@name='vc5') or (@name='vc4') or (@name='vc3') or (@name='vc2') or (@name='vc1') or (@name='skullbase') or (@name='l_eyelid_joint') or (@name='r_eyelid_joint') or (@name='l_eyeball_joint') or (@name='r_eyeball_joint') or (@name='l_eyebrow_joint') or (@name='r_eyebrow_joint') or (@name='temporomandibular') or (@name='l_sternoclavicular') or (@name='l_acromioclavicular') or (@name='l_shoulder') or (@name='l_elbow') or (@name='l_radiocarpal') or (@name='l_midcarpal_1') or (@name='l_carpometacarpal_1') or (@name='l_metacarpophalangeal_1') or (@name='l_carpal_interphalangeal_1') or (@name='l_midcarpal_2') or (@name='l_carpometacarpal_2') or (@name='l_metacarpophalangeal_2') or (@name='l_carpal_proximal_interphalangeal_2') or (@name='l_carpal_distal_interphalangeal_2') or (@name='l_midcarpal_3') or (@name='l_carpometacarpal_3') or (@name='l_metacarpophalangeal_3') or (@name='l_carpal_proximal_interphalangeal_3') or (@name='l_carpal_distal_interphalangeal_3') or (@name='l_midcarpal_4_5') or (@name='l_carpometacarpal_4') or (@name='l_metacarpophalangeal_4') or (@name='l_carpal_proximal_interphalangeal_4') or (@name='l_carpal_distal_interphalangeal_4') or (@name='l_carpometacarpal_5') or (@name='l_metacarpophalangeal_5') or (@name='l_carpal_proximal_interphalangeal_5') or (@name='l_carpal_distal_interphalangeal_5') or (@name='r_sternoclavicular') or (@name='r_acromioclavicular') or (@name='r_shoulder') or (@name='r_elbow') or (@name='r_radiocarpal') or (@name='r_midcarpal_1') or (@name='r_carpometacarpal_1') or (@name='r_metacarpophalangeal_1') or (@name='r_carpal_interphalangeal_1') or (@name='r_midcarpal_2') or (@name='r_carpometacarpal_2') or (@name='r_metacarpophalangeal_2') or (@name='r_carpal_proximal_interphalangeal_2') or (@name='r_carpal_distal_interphalangeal_2') or (@name='r_midcarpal_3') or (@name='r_carpometacarpal_3') or (@name='r_metacarpophalangeal_3') or (@name='r_carpal_proximal_interphalangeal_3') or (@name='r_carpal_distal_interphalangeal_3') or (@name='r_midcarpal_4_5') or (@name='r_carpometacarpal_4') or (@name='r_metacarpophalangeal_4') or (@name='r_carpal_proximal_interphalangeal_4') or (@name='r_carpal_distal_interphalangeal_4') or (@name='r_carpometacarpal_5') or (@name='r_metacarpophalangeal_5') or (@name='r_carpal_proximal_interphalangeal_5') or (@name='r_carpal_distal_interphalangeal_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_r_wrist' name='r_wrist'/&gt; is not a recognized name for HAnim2 HAnimJoint </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_wrist')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_r_wrist' name='r_wrist'/&gt; is an HAnimJoint alias for 'r_radiocarpal', recommend updating X3D model source
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.217 0.811 -0.0338' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_wrist' center='-0.217 0.811 -0.0338'/&gt; that does not match child &lt;Transform DEF='r_hand_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or (@name='sacrum') or (@name='pelvis') or (@name='l_thigh') or (@name='l_calf') or (@name='l_talus') or (@name='l_navicular') or (@name='l_cuneiform_1') or (@name='l_metatarsal_1') or (@name='l_tarsal_proximal_phalanx_1') or (@name='l_tarsal_distal_phalanx_1') or (@name='l_cuneiform_2') or (@name='l_metatarsal_2') or (@name='l_tarsal_proximal_phalanx_2') or (@name='l_tarsal_middle_phalanx_2') or (@name='l_tarsal_distal_phalanx_2') or (@name='l_cuneiform_3') or (@name='l_metatarsal_3') or (@name='l_tarsal_proximal_phalanx_3') or (@name='l_tarsal_middle_phalanx_3') or (@name='l_tarsal_distal_phalanx_3') or (@name='l_calcaneus') or (@name='l_cuboid') or (@name='l_metatarsal_4') or (@name='l_tarsal_proximal_phalanx_4') or (@name='l_tarsal_middle_phalanx_4') or (@name='l_tarsal_distal_phalanx_4') or (@name='l_metatarsal_5') or (@name='l_tarsal_proximal_phalanx_5') or (@name='l_tarsal_middle_phalanx_5') or (@name='l_tarsal_distal_phalanx_5') or (@name='r_thigh') or (@name='r_calf') or (@name='r_talus') or (@name='r_navicular') or (@name='r_cuneiform_1') or (@name='r_metatarsal_1') or (@name='r_tarsal_proximal_phalanx_1') or (@name='r_tarsal_distal_phalanx_1') or (@name='r_cuneiform_2') or (@name='r_metatarsal_2') or (@name='r_tarsal_proximal_phalanx_2') or (@name='r_tarsal_middle_phalanx_2') or (@name='r_tarsal_distal_phalanx_2') or (@name='r_cuneiform_3') or (@name='r_metatarsal_3') or (@name='r_tarsal_proximal_phalanx_3') or (@name='r_tarsal_middle_phalanx_3') or (@name='r_tarsal_distal_phalanx_3') or (@name='r_calcaneus') or (@name='r_cuboid') or (@name='r_metatarsal_4') or (@name='r_tarsal_proximal_phalanx_4') or (@name='r_tarsal_middle_phalanx_4') or (@name='r_tarsal_distal_phalanx_4') or (@name='r_metatarsal_5') or (@name='r_tarsal_proximal_phalanx_5') or (@name='r_tarsal_middle_phalanx_5') or (@name='r_tarsal_distal_phalanx_5') or (@name='l5') or (@name='l4') or (@name='l3') or (@name='l2') or (@name='l1') or (@name='t12') or (@name='t11') or (@name='t10') or (@name='t9') or (@name='t8') or (@name='t7') or (@name='t6') or (@name='t5') or (@name='t4') or (@name='t3') or (@name='t2') or (@name='t1') or (@name='c7') or (@name='c6') or (@name='c5') or (@name='c4') or (@name='c3') or (@name='c2') or (@name='c1') or (@name='skull') or (@name='l_eyelid') or (@name='r_eyelid') or (@name='l_eyeball') or (@name='r_eyeball') or (@name='l_eyebrow') or (@name='r_eyebrow') or (@name='jaw') or (@name='l_clavicle') or (@name='l_scapula') or (@name='l_upperarm') or (@name='l_forearm') or (@name='l_carpal') or (@name='l_trapezium') or (@name='l_metacarpal_1') or (@name='l_carpal_proximal_phalanx_1') or (@name='l_carpal_distal_phalanx_1') or (@name='l_trapezoid') or (@name='l_metacarpal_2') or (@name='l_carpal_proximal_phalanx_2') or (@name='l_carpal_middle_phalanx_2') or (@name='l_carpal_distal_phalanx_2') or (@name='l_capitate') or (@name='l_metacarpal_3') or (@name='l_carpal_proximal_phalanx_3') or (@name='l_carpal_middle_phalanx_3') or (@name='l_carpal_distal_phalanx_3') or (@name='l_hamate') or (@name='l_metacarpal_4') or (@name='l_carpal_proximal_phalanx_4') or (@name='l_carpal_middle_phalanx_4') or (@name='l_carpal_distal_phalanx_4') or (@name='l_metacarpal_5') or (@name='l_carpal_proximal_phalanx_5') or (@name='l_carpal_middle_phalanx_5') or (@name='l_carpal_distal_phalanx_5') or (@name='r_clavicle') or (@name='r_scapula') or (@name='r_upperarm') or (@name='r_forearm') or (@name='r_carpal') or (@name='r_trapezium') or (@name='r_metacarpal_1') or (@name='r_carpal_proximal_phalanx_1') or (@name='r_carpal_distal_phalanx_1') or (@name='r_trapezoid') or (@name='r_metacarpal_2') or (@name='r_carpal_proximal_phalanx_2') or (@name='r_carpal_middle_phalanx_2') or (@name='r_carpal_distal_phalanx_2') or (@name='r_capitate') or (@name='r_metacarpal_3') or (@name='r_carpal_proximal_phalanx_3') or (@name='r_carpal_middle_phalanx_3') or (@name='r_carpal_distal_phalanx_3') or (@name='r_hamate') or (@name='r_metacarpal_4') or (@name='r_carpal_proximal_phalanx_4') or (@name='r_carpal_middle_phalanx_4') or (@name='r_carpal_distal_phalanx_4') or (@name='r_metacarpal_5') or (@name='r_carpal_proximal_phalanx_5') or (@name='r_carpal_middle_phalanx_5') or (@name='r_carpal_distal_phalanx_5')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; is not a recognized name for HAnim2 HAnimSegment </svrl:text>
+   </svrl:failed-assert>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_hand')" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; is an HAnimSegment alias for 'r_carpal', recommend updating X3D model source </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vc4') and parent::HAnimJoint[not(@name='vc5')]" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_vc4' name='vc4'/&gt; has parent HAnimJoint name='vl1' rather than expected parent name='vc5', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_c4' name='c4'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.43 -0.0458' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_c4' name='c4'/&gt; has parent &lt;HAnimJoint DEF='hanim_vc4' center='0 1.43 -0.0458'/&gt; that does not match child &lt;Transform DEF='neck_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='skullbase') and parent::HAnimJoint[not(@name='vc1')]" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='hanim_skullbase' name='skullbase'/&gt; has parent HAnimJoint name='vc4' rather than expected parent name='vc1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:successful-report test="(parent::HAnimJoint) and (Transform/Shape) and not(Transform/@translation = ../@center)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_skull' name='skull'/&gt; has contained Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.4 0' and may not be in the right location (possibly parent HAnimJoint/center value was
+         changed but contained visualization geometry did not) </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="parent::*[local-name(..)='HAnimJoint'] and Transform and (parent::*[local-name(..)='HAnimJoint']/@center != Transform/@translation)" role="warning" location="/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment">
+      <svrl:text>&lt;HAnimSegment DEF='hanim_skull' name='skull'/&gt; has parent &lt;HAnimJoint DEF='hanim_skullbase' center='0 1.4 0'/&gt; that does not match child &lt;Transform DEF='skull_adjust' translation='0 0 0'/&gt;, resulting in mismatched local coordinate system </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="TextureCoordinate"/>
+   <svrl:fired-rule context="HAnimSite"/>
+   <svrl:successful-report test="(count(Viewpoint) &gt; 1)" role="info" location="/X3D/Scene/HAnimHumanoid/HAnimSite">
+      <svrl:text>&lt;HAnimSite DEF='hanim_BoxMan_view' name='BoxMan_view'/&gt; contains 4 Viewpoints, more than one may be ambiguous </svrl:text>
+   </svrl:successful-report>
+   <svrl:failed-assert test="(string-length(normalize-space(@USE)) &gt; 0) or not($isHAnim2) or starts-with(@name,'skull_vertex') or starts-with(@name,'glabella') or starts-with(@name,'sellion') or starts-with(@name,'l_infraorbitale') or starts-with(@name,'l_tragion') or starts-with(@name,'l_gonion') or starts-with(@name,'r_infraorbitale') or starts-with(@name,'r_tragion') or starts-with(@name,'r_gonion') or starts-with(@name,'supramenton') or starts-with(@name,'cervicale') or starts-with(@name,'adams_apple') or starts-with(@name,'suprasternale') or starts-with(@name,'substernale') or starts-with(@name,'l_clavicle') or starts-with(@name,'l_acromion') or starts-with(@name,'l_axilla_proximal') or starts-with(@name,'l_axilla_distal') or starts-with(@name,'l_axilla_posterior_folds') or starts-with(@name,'r_clavicle') or starts-with(@name,'r_acromion') or starts-with(@name,'r_axilla_proximal') or starts-with(@name,'r_axilla_distal') or starts-with(@name,'r_axilla_posterior_folds') or starts-with(@name,'spine_1_middle_back') or starts-with(@name,'spine_2_lower_back') or starts-with(@name,'waist_preferred_anterior') or starts-with(@name,'waist_preferred_posterior') or starts-with(@name,'l_rib10') or starts-with(@name,'l_thelion') or starts-with(@name,'r_rib10') or starts-with(@name,'r_thelion') or starts-with(@name,'l_asis') or starts-with(@name,'l_iliocristale') or starts-with(@name,'l_psis') or starts-with(@name,'r_asis') or starts-with(@name,'r_iliocristale') or starts-with(@name,'r_psis') or starts-with(@name,'crotch') or starts-with(@name,'l_femoral_lateral_epicondyle') or starts-with(@name,'l_femoral_medial_epicondyle') or starts-with(@name,'l_suprapatella') or starts-with(@name,'l_trochanterion') or starts-with(@name,'r_femoral_lateral_epicondyle') or starts-with(@name,'r_femoral_medial_epicondyle') or starts-with(@name,'r_suprapatella') or starts-with(@name,'r_trochanterion') or starts-with(@name,'l_tibiale') or starts-with(@name,'l_medial_malleolus') or starts-with(@name,'l_lateral_malleolus') or starts-with(@name,'l_sphyrion') or starts-with(@name,'r_tibiale') or starts-with(@name,'r_medial_malleolus') or starts-with(@name,'r_lateral_malleolus') or starts-with(@name,'r_sphyrion') or starts-with(@name,'l_metatarsal_phalanx_1') or starts-with(@name,'l_metatarsal_phalanx_5') or starts-with(@name,'l_dactylion') or starts-with(@name,'l_calcaneus_posterior') or starts-with(@name,'r_metatarsal_phalanx_1') or starts-with(@name,'r_metatarsal_phalanx_5') or starts-with(@name,'r_dactylion') or starts-with(@name,'r_calcaneus_posterior') or starts-with(@name,'l_humeral_lateral_epicondyle') or starts-with(@name,'l_humeral_medial_epicondyle') or starts-with(@name,'l_olecranon') or starts-with(@name,'r_humeral_lateral_epicondyle') or starts-with(@name,'r_humeral_medial_epicondyle') or starts-with(@name,'r_olecranon') or starts-with(@name,'l_radiale') or starts-with(@name,'l_ulnar_styloid') or starts-with(@name,'l_radial_styloid') or starts-with(@name,'r_radiale') or starts-with(@name,'r_ulnar_styloid') or starts-with(@name,'r_radial_styloid') or starts-with(@name,'l_metacarpal_phalanx_2') or starts-with(@name,'l_metacarpal_phalanx_3') or starts-with(@name,'l_metacarpal_phalanx_5') or starts-with(@name,'r_metacarpal_phalanx_2') or starts-with(@name,'r_metacarpal_phalanx_3') or starts-with(@name,'r_metacarpal_phalanx_5') or starts-with(@name,'nuchale') or starts-with(@name,'l_neck_base') or starts-with(@name,'r_neck_base') or starts-with(@name,'navel') or starts-with(@name,'l_ectocanthus') or starts-with(@name,'r_ectocanthus') or starts-with(@name,'menton') or starts-with(@name,'mesosternale') or starts-with(@name,'opisthocranion') or starts-with(@name,'l_knee_crease') or starts-with(@name,'r_knee_crease') or starts-with(@name,'rear_center_midsagittal_plane') or starts-with(@name,'buttocks_standing_wall_contact_point') or starts-with(@name,'l_chest_midsagittal_plane') or starts-with(@name,'r_chest_midsagittal_plane') or starts-with(@name,'l_bideltoid') or starts-with(@name,'r_bideltoid') or starts-with(@name,'l_carpal_distal_phalanx_1') or starts-with(@name,'l_carpal_distal_phalanx_2') or starts-with(@name,'l_carpal_distal_phalanx_3') or starts-with(@name,'l_carpal_distal_phalanx_4') or starts-with(@name,'l_carpal_distal_phalanx_5') or starts-with(@name,'r_carpal_distal_phalanx_1') or starts-with(@name,'r_carpal_distal_phalanx_2') or starts-with(@name,'r_carpal_distal_phalanx_3') or starts-with(@name,'r_carpal_distal_phalanx_4') or starts-with(@name,'r_carpal_distal_phalanx_5') or starts-with(@name,'l_tarsal_distal_phalanx_1') or starts-with(@name,'l_tarsal_distal_phalanx_2') or starts-with(@name,'l_tarsal_distal_phalanx_3') or starts-with(@name,'l_tarsal_distal_phalanx_4') or starts-with(@name,'l_tarsal_distal_phalanx_5') or starts-with(@name,'r_tarsal_distal_phalanx_1') or starts-with(@name,'r_tarsal_distal_phalanx_2') or starts-with(@name,'r_tarsal_distal_phalanx_3') or starts-with(@name,'r_tarsal_distal_phalanx_4') or starts-with(@name,'r_tarsal_distal_phalanx_5') or contains(@name,'sacrum') or contains(@name,'pelvis') or contains(@name,'l_thigh') or contains(@name,'l_calf') or contains(@name,'l_talus') or contains(@name,'l_navicular') or contains(@name,'l_cuneiform_1') or contains(@name,'l_metatarsal_1') or contains(@name,'l_tarsal_proximal_phalanx_1') or contains(@name,'l_tarsal_distal_phalanx_1') or contains(@name,'l_cuneiform_2') or contains(@name,'l_metatarsal_2') or contains(@name,'l_tarsal_proximal_phalanx_2') or contains(@name,'l_tarsal_middle_phalanx_2') or contains(@name,'l_tarsal_distal_phalanx_2') or contains(@name,'l_cuneiform_3') or contains(@name,'l_metatarsal_3') or contains(@name,'l_tarsal_proximal_phalanx_3') or contains(@name,'l_tarsal_middle_phalanx_3') or contains(@name,'l_tarsal_distal_phalanx_3') or contains(@name,'l_calcaneus') or contains(@name,'l_cuboid') or contains(@name,'l_metatarsal_4') or contains(@name,'l_tarsal_proximal_phalanx_4') or contains(@name,'l_tarsal_middle_phalanx_4') or contains(@name,'l_tarsal_distal_phalanx_4') or contains(@name,'l_metatarsal_5') or contains(@name,'l_tarsal_proximal_phalanx_5') or contains(@name,'l_tarsal_middle_phalanx_5') or contains(@name,'l_tarsal_distal_phalanx_5') or contains(@name,'r_thigh') or contains(@name,'r_calf') or contains(@name,'r_talus') or contains(@name,'r_navicular') or contains(@name,'r_cuneiform_1') or contains(@name,'r_metatarsal_1') or contains(@name,'r_tarsal_proximal_phalanx_1') or contains(@name,'r_tarsal_distal_phalanx_1') or contains(@name,'r_cuneiform_2') or contains(@name,'r_metatarsal_2') or contains(@name,'r_tarsal_proximal_phalanx_2') or contains(@name,'r_tarsal_middle_phalanx_2') or contains(@name,'r_tarsal_distal_phalanx_2') or contains(@name,'r_cuneiform_3') or contains(@name,'r_metatarsal_3') or contains(@name,'r_tarsal_proximal_phalanx_3') or contains(@name,'r_tarsal_middle_phalanx_3') or contains(@name,'r_tarsal_distal_phalanx_3') or contains(@name,'r_calcaneus') or contains(@name,'r_cuboid') or contains(@name,'r_metatarsal_4') or contains(@name,'r_tarsal_proximal_phalanx_4') or contains(@name,'r_tarsal_middle_phalanx_4') or contains(@name,'r_tarsal_distal_phalanx_4') or contains(@name,'r_metatarsal_5') or contains(@name,'r_tarsal_proximal_phalanx_5') or contains(@name,'r_tarsal_middle_phalanx_5') or contains(@name,'r_tarsal_distal_phalanx_5') or contains(@name,'l5') or contains(@name,'l4') or contains(@name,'l3') or contains(@name,'l2') or contains(@name,'l1') or contains(@name,'t12') or contains(@name,'t11') or contains(@name,'t10') or contains(@name,'t9') or contains(@name,'t8') or contains(@name,'t7') or contains(@name,'t6') or contains(@name,'t5') or contains(@name,'t4') or contains(@name,'t3') or contains(@name,'t2') or contains(@name,'t1') or contains(@name,'c7') or contains(@name,'c6') or contains(@name,'c5') or contains(@name,'c4') or contains(@name,'c3') or contains(@name,'c2') or contains(@name,'c1') or contains(@name,'skull') or contains(@name,'l_eyelid') or contains(@name,'r_eyelid') or contains(@name,'l_eyeball') or contains(@name,'r_eyeball') or contains(@name,'l_eyebrow') or contains(@name,'r_eyebrow') or contains(@name,'jaw') or contains(@name,'l_clavicle') or contains(@name,'l_scapula') or contains(@name,'l_upperarm') or contains(@name,'l_forearm') or contains(@name,'l_carpal') or contains(@name,'l_trapezium') or contains(@name,'l_metacarpal_1') or contains(@name,'l_carpal_proximal_phalanx_1') or contains(@name,'l_carpal_distal_phalanx_1') or contains(@name,'l_trapezoid') or contains(@name,'l_metacarpal_2') or contains(@name,'l_carpal_proximal_phalanx_2') or contains(@name,'l_carpal_middle_phalanx_2') or contains(@name,'l_carpal_distal_phalanx_2') or contains(@name,'l_capitate') or contains(@name,'l_metacarpal_3') or contains(@name,'l_carpal_proximal_phalanx_3') or contains(@name,'l_carpal_middle_phalanx_3') or contains(@name,'l_carpal_distal_phalanx_3') or contains(@name,'l_hamate') or contains(@name,'l_metacarpal_4') or contains(@name,'l_carpal_proximal_phalanx_4') or contains(@name,'l_carpal_middle_phalanx_4') or contains(@name,'l_carpal_distal_phalanx_4') or contains(@name,'l_metacarpal_5') or contains(@name,'l_carpal_proximal_phalanx_5') or contains(@name,'l_carpal_middle_phalanx_5') or contains(@name,'l_carpal_distal_phalanx_5') or contains(@name,'r_clavicle') or contains(@name,'r_scapula') or contains(@name,'r_upperarm') or contains(@name,'r_forearm') or contains(@name,'r_carpal') or contains(@name,'r_trapezium') or contains(@name,'r_metacarpal_1') or contains(@name,'r_carpal_proximal_phalanx_1') or contains(@name,'r_carpal_distal_phalanx_1') or contains(@name,'r_trapezoid') or contains(@name,'r_metacarpal_2') or contains(@name,'r_carpal_proximal_phalanx_2') or contains(@name,'r_carpal_middle_phalanx_2') or contains(@name,'r_carpal_distal_phalanx_2') or contains(@name,'r_capitate') or contains(@name,'r_metacarpal_3') or contains(@name,'r_carpal_proximal_phalanx_3') or contains(@name,'r_carpal_middle_phalanx_3') or contains(@name,'r_carpal_distal_phalanx_3') or contains(@name,'r_hamate') or contains(@name,'r_metacarpal_4') or contains(@name,'r_carpal_proximal_phalanx_4') or contains(@name,'r_carpal_middle_phalanx_4') or contains(@name,'r_carpal_distal_phalanx_4') or contains(@name,'r_metacarpal_5') or contains(@name,'r_carpal_proximal_phalanx_5') or contains(@name,'r_carpal_middle_phalanx_5') or contains(@name,'r_carpal_distal_phalanx_5')" role="info" location="/X3D/Scene/HAnimHumanoid/HAnimSite">
+      <svrl:text>&lt;HAnimSite DEF='hanim_BoxMan_view' name='BoxMan_view'/&gt; is not a recognized name for HAnim2 HAnimSite </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="HAnimSegment"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="Collision"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+</svrl:schematron-output>
