@@ -4626,6 +4626,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='MetadataFloat' and $attributeName='value') or
                     ($parentElementName='NavigationInfo' and $attributeName='avatarSize') or
                     ($parentElementName='NurbsTextureCoordinate' and $attributeName='weight') or
+                    ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='ParticleSystem' and ($attributeName='colorKey' or $attributeName='texCoordKey')) or
                     ($parentElementName='ScalarInterpolator' and $attributeName='keyValue') or
                     ($parentElementName='SplineScalarInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
@@ -4811,7 +4812,6 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
                     ($localFieldType='SFVec4f')    or 
                     ($parentElementName='ClipPlane' and $attributeName='plane') or 
-                    ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>
