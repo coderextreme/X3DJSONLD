@@ -443,19 +443,7 @@
         "@USE":"rotscaleC1"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint"
-      }
-    },
-        }        "ROUTE":
+            }        }        "ROUTE":
         {
       {
         "@fromField":"translation_changed",

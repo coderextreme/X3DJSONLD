@@ -603,21 +603,7 @@
         "@USE":"rotscaleC1"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint",
-        "@value":"0 0 0"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint",
-        "@value":"0 0 0"
-      }
-    },
-        }        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@DEF":"connector2",
@@ -667,21 +653,7 @@
         "@USE":"rotscaleC2"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint",
-        "@value":"0 0 0"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint",
-        "@value":"0 0 0"
-      }
-    },
-        }        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@DEF":"connector3",
@@ -731,21 +703,7 @@
         "@USE":"rotscaleC3"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint",
-        "@value":"0 0 0"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint",
-        "@value":"0 0 0"
-      }
-    },
-        }        "ROUTE":
+            }        }        "ROUTE":
         {
       {
         "@fromField":"translation_changed",

@@ -224,7 +224,7 @@ ProtoInstance ProtoInstance41 = null;
 "{\n"+
 "	sensor .offset = translation;\n"+
 "}"))
-            .addChild(new ROUTE().setFromNode("PlaneSensor").setFromField("translation_changed").setToNode("Node").setToField("set_translation"))))
+            .addChild(new ROUTE().setFromField("translation_changed").setFromNode("PlaneSensor").setToField("set_translation").setToNode("Node"))))
         .addChild(new ProtoDeclare().setName("Route")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.43 0.43 0.98"))
@@ -283,7 +283,7 @@ ProtoInstance ProtoInstance41 = null;
 "}"))))
         .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
         .addChild(new Background().setSkyColor(new MFColor2().getArray()))
-        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new double[] {-3.13496f,-4.19776f,10f}).setCenterOfRotation(new double[] {-3.13496f,-4.19776f,0f}).setFieldOfView(new MFFloat3().getArray()))
+        .addChild(new OrthoViewpoint().setCenterOfRotation(new double[] {-3.13496f,-4.19776f,0f}).setDescription("OthoViewpoint").setFieldOfView(new MFFloat3().getArray()).setPosition(new double[] {-3.13496f,-4.19776f,10f}))
         .addChild(new Viewpoint().setDescription("Viewpoint"))
         .addChild(new Transform().setDEF("Connectors")
           .addChild(ProtoInstance4 = new ProtoInstance().setName("Route"))
