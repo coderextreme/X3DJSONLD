@@ -1,5 +1,6 @@
 #!/gbin/bash
-
+if false
+then
 # First, run all the commmands with CommandLine you want to optimize.  It's kind of like code coverage
 java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image \
      -cp "C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xercesImpl.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2-data.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/saxon-he-12.5.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-api-2.0.9.jar;C:/Users/jcarl/www.web3d/org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-jcl-1.7.36.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-simple-2.0.12.jar;X3DJSAIL.4.0.full.jar" \
@@ -13,6 +14,7 @@ java -agentlib:native-image-agent=config-merge-dir=src/main/resources/META-INF/n
      -cp "C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xercesImpl.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2-data.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/saxon-he-12.5.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-api-2.0.9.jar;C:/Users/jcarl/www.web3d/org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-jcl-1.7.36.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-simple-2.0.12.jar;X3DJSAIL.4.0.full.jar" \
      org.web3d.x3d.jsail.CommandLine -validate "$i"
 done
+fi
 
 
 # now compile CommandLine with that database in META-INF/native-image
@@ -23,6 +25,7 @@ done
   -H:+ReportExceptionStackTraces \
   --no-fallback \
   --enable-url-protocols=https \
+  -march=native \
   -cp "src/main/resources;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xercesImpl.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2-data.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/xmlresolver-5.2.2.jar;C:/Users/jcarl/www.web3d.org/x3d/stylesheets/java/lib/saxon-he-12.5.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-api-2.0.9.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-jcl-1.7.36.jar;C:/Users/jcarl/www.web3d.org/x3d/tools/X3dQualityAssurance/X3dValidator/lib/slf4j-simple-2.0.12.jar;X3DJSAIL.4.0.full.jar" \
   org.web3d.x3d.jsail.CommandLine \
   -o CommandLine
