@@ -1,0 +1,1503 @@
+{
+  "reflection": [
+    {
+      "type": "com.sun.crypto.provider.AESCipher$General",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.ARCFOURCipher",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.ChaCha20Cipher$ChaCha20Poly1305",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.DESCipher",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.DESedeCipher",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.DHParameters",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.GaloisCounterMode$AESGCM",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.HmacCore$HmacSHA384",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.crypto.provider.TlsMasterSecretGenerator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.lang.Thread",
+      "fields": [
+        {
+          "name": "threadLocalRandomProbe"
+        }
+      ]
+    },
+    {
+      "type": "java.security.AlgorithmParametersSpi"
+    },
+    {
+      "type": "java.security.KeyStoreSpi"
+    },
+    {
+      "type": "java.security.MessageDigestSpi"
+    },
+    {
+      "type": "java.security.interfaces.ECPrivateKey"
+    },
+    {
+      "type": "java.security.interfaces.ECPublicKey"
+    },
+    {
+      "type": "java.security.interfaces.RSAPrivateKey"
+    },
+    {
+      "type": "java.security.interfaces.RSAPublicKey"
+    },
+    {
+      "type": "java.util.concurrent.atomic.Striped64",
+      "fields": [
+        {
+          "name": "base"
+        },
+        {
+          "name": "cellsBusy"
+        }
+      ]
+    },
+    {
+      "type": "org.apache.xerces.impl.dv.ObjectFactory"
+    },
+    {
+      "type": "org.apache.xerces.impl.dv.dtd.DTDDVFactoryImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.xerces.jaxp.DocumentBuilderFactoryImpl"
+    },
+    {
+      "type": "org.apache.xerces.parsers.ObjectFactory"
+    },
+    {
+      "type": "org.apache.xerces.parsers.XIncludeAwareParserConfiguration",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.Scene",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.WorldInfo",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setTitle",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.X3D",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.component",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setLevel",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setName",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.head",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Core.meta",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setContent",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setName",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Geometry3D.IndexedFaceSet",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setCcw",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setColorPerVertex",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setConvex",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setCoordIndex",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFInt32"
+          ]
+        },
+        {
+          "name": "setCreaseAngle",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setNormalPerVertex",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setSolid",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Grouping.Transform",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setRotation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setScale",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setScaleOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setTranslation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.HAnim.HAnimHumanoid",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.HAnim.HAnimJoint",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setLimitOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setLlimit",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setName",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setRotation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setScale",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setScaleOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setStiffness",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setTranslation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setUlimit",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.HAnim.HAnimSegment",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCenterOfMass",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setMass",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setMomentsOfInertia",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setName",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.HAnim.HAnimSite",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setName",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setRotation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setScale",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setScaleOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setTranslation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Navigation.Viewpoint",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setCenterOfRotation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDescription",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setFarDistance",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setFieldOfView",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setJump",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setNearDistance",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setPosition",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setRetainUserOffsets",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setViewAll",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Rendering.Coordinate",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setPoint",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFVec3f"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Shape.Appearance",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAlphaCutoff",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setAlphaMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Shape.Material",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAmbientIntensity",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDiffuseColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setEmissiveColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setNormalScale",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setOcclusionStrength",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setShininess",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setSpecularColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setTransparency",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Shape.Shape",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCastShadow",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Texturing.ImageTexture",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAutoRefresh",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setAutoRefreshTimeLimit",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setLoad",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setRepeatS",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setRepeatT",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setUrl",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFString"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Texturing.TextureCoordinate",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setPoint",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFVec2f"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.MFFloat",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.MFInt32",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.MFString",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.MFVec2f",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.MFVec3f",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFBool",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFColor",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFFloat",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFInt32",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFRotation",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFTime",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFVec3f",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.pkcs12.PKCS12KeyStore",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.pkcs12.PKCS12KeyStore$DualFormatPKCS12",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.DRBG",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.security.SecureRandomParameters"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.DSA$SHA224withDSA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.DSA$SHA256withDSA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.JavaKeyStore$DualFormatJKS",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.JavaKeyStore$JKS",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA2$SHA224",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA2$SHA256",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA5$SHA384",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA5$SHA512",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.X509Factory",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.certpath.PKIXCertPathValidator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.PSSParameters",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.RSAKeyFactory$Legacy",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.RSAPSSSignature",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.RSASignature$SHA224withRSA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.RSASignature$SHA256withRSA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.rsa.RSASignature$SHA384withRSA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.ssl.KeyManagerFactoryImpl$SunX509",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.ssl.SSLContextImpl$DefaultSSLContext",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.ssl.TrustManagerFactoryImpl$PKIXFactory",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.AuthorityInfoAccessExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.AuthorityKeyIdentifierExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.BasicConstraintsExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.CRLDistributionPointsExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.CertificatePoliciesExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.ExtendedKeyUsageExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.IssuerAlternativeNameExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.KeyUsageExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.NetscapeCertTypeExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.PrivateKeyUsageExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.SubjectAlternativeNameExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.x509.SubjectKeyIdentifierExtension",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.Boolean",
+            "java.lang.Object"
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "glob": "META-INF/services/java.lang.System$LoggerFinder"
+    },
+    {
+      "glob": "META-INF/services/java.net.spi.InetAddressResolverProvider"
+    },
+    {
+      "glob": "META-INF/services/java.net.spi.URLStreamHandlerProvider"
+    },
+    {
+      "glob": "META-INF/services/javax.xml.parsers.DocumentBuilderFactory"
+    },
+    {
+      "glob": "META-INF/services/org.apache.xerces.xni.parser.XMLParserConfiguration"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt74b/nfkc.nrm"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt74b/uprops.icu"
+    },
+    {
+      "module": "java.base",
+      "glob": "sun/net/idn/uidna.spp"
+    }
+  ],
+  "bundles": [],
+  "jni": [
+    {
+      "type": "java.lang.Boolean",
+      "methods": [
+        {
+          "name": "getBoolean",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.CommandLine",
+      "methods": [
+        {
+          "name": "main",
+          "parameterTypes": [
+            "java.lang.String[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.launcher.LauncherHelper",
+      "fields": [
+        {
+          "name": "isStaticMain"
+        },
+        {
+          "name": "noArgMain"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getApplicationClass",
+          "parameterTypes": []
+        }
+      ]
+    }
+  ]
+}

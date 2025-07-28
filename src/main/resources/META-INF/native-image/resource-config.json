@@ -1,0 +1,42 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "META-INF/services/.*"
+      },
+      {
+        "pattern": "META-INF/services/javax.xml.parsers.DocumentBuilderFactory"
+      },
+      {
+        "pattern": "META-INF/services/javax.xml.parsers.SAXParserFactory"
+      },
+      {
+        "pattern": "META-INF/services/javax.xml.transform.TransformerFactory"
+      },
+      {
+        "pattern": "META-INF/services/javax.xml.validation.SchemaFactory"
+      },
+      {
+        "pattern": "org/apache/xerces/.*"
+      },
+      {
+        "pattern": "org/xmlresolver/.*"
+      },
+      {
+        "pattern": "net/sf/saxon/.*"
+      },
+      {
+        "pattern": ".*\\.properties"
+      },
+      {
+        "pattern": ".*\\.xml"
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "name": "org.apache.xerces.impl.msg.XMLMessages",
+      "locales": ["en"]
+    }
+  ]
+}

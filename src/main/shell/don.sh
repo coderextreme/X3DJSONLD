@@ -23,7 +23,7 @@ popd
 #if false
 #then
 echo translating to java
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/data/
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---commandline ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/data/
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
 echo translating to graaljs
@@ -31,7 +31,7 @@ echo translating to graaljs
 echo translating to node.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToNodeJS.xslt -js ---../node/net/x3djsonld/data/
 echo translating to python
-(ls "$@" | grep -v intermediate | grep -v "\.new" | grep -v Gramps8Final | grep -v 'john[23]?.x3d') | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
+(ls "$@" | grep -v intermediate | grep -v "\.new" | grep -v Gramps8Final | grep -v 'john[23]?.x3d') | xargs -P $PROCESSORS java -Xss1g -Xmx19g net.coderextreme.RunSaxon ---commandline ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
 #fi
 
 echo compiling
@@ -69,7 +69,7 @@ popd
 
 echo running python
 pushd ../python
-ecoh "find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS ${PYTHON}"
+echo "find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS ${PYTHON}"
 find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS ${PYTHON}
 popd
 

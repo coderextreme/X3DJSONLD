@@ -43,7 +43,7 @@ public class AllenDutton implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new AllenDutton().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
@@ -594,7 +594,7 @@ private class MFFloat3 {
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"});
   }
 }
 private class MFInt325 {
