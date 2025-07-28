@@ -322,30 +322,23 @@ Transform61.USE = "rotscaleC1"
 fieldValue60.children.append(Transform61)
 
 ProtoInstance53.fieldValue.append(fieldValue60)
-fieldValue62 = x3d.fieldValue()
-fieldValue62.name = "set_startpoint"
-
-ProtoInstance53.fieldValue.append(fieldValue62)
-fieldValue63 = x3d.fieldValue()
-fieldValue63.name = "set_endpoint"
-
-ProtoInstance53.fieldValue.append(fieldValue63)
+"""<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"""
 
 Scene7.children.append(ProtoInstance53)
-ROUTE64 = x3d.ROUTE()
-ROUTE64.fromNode = "G1"
-ROUTE64.fromField = "translation_changed"
-ROUTE64.toNode = "connector1"
-ROUTE64.toField = "set_startpoint"
+ROUTE62 = x3d.ROUTE()
+ROUTE62.fromNode = "G1"
+ROUTE62.fromField = "translation_changed"
+ROUTE62.toNode = "connector1"
+ROUTE62.toField = "set_startpoint"
 
-Scene7.children.append(ROUTE64)
-ROUTE65 = x3d.ROUTE()
-ROUTE65.fromNode = "G2"
-ROUTE65.fromField = "translation_changed"
-ROUTE65.toNode = "connector1"
-ROUTE65.toField = "set_endpoint"
+Scene7.children.append(ROUTE62)
+ROUTE63 = x3d.ROUTE()
+ROUTE63.fromNode = "G2"
+ROUTE63.fromField = "translation_changed"
+ROUTE63.toNode = "connector1"
+ROUTE63.toField = "set_endpoint"
 
-Scene7.children.append(ROUTE65)
+Scene7.children.append(ROUTE63)
 
 X3D0.Scene = Scene7
 f = open("../data/x3dconnector.new.python.x3d", mode="w", encoding="utf-8")

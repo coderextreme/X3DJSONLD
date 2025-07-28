@@ -131,7 +131,7 @@ IS26.connect.append(connect28)
 
 Script20.IS = IS26
 
-Script20.sourceCode = '''vrmlscript:\n"+
+Script20.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -424,7 +424,7 @@ IS85.connect.append(connect86)
 
 Script79.IS = IS85
 
-Script79.sourceCode = '''vrmlscript:\n"+
+Script79.sourceCode = '''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -432,10 +432,10 @@ Script79.sourceCode = '''vrmlscript:\n"+
 
 ProtoBody58.children.append(Script79)
 ROUTE87 = x3d.ROUTE()
-ROUTE87.fromNode = "PlaneSensor"
 ROUTE87.fromField = "translation_changed"
-ROUTE87.toNode = "Node"
+ROUTE87.fromNode = "PlaneSensor"
 ROUTE87.toField = "set_translation"
+ROUTE87.toNode = "Node"
 
 ProtoBody58.children.append(ROUTE87)
 
@@ -573,7 +573,7 @@ IS114.connect.append(connect116)
 
 Script105.IS = IS114
 
-Script105.sourceCode = '''vrmlscript:\n"+
+Script105.sourceCode = '''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -607,17 +607,17 @@ ProtoDeclare88.ProtoBody = ProtoBody94
 
 Scene9.children.append(ProtoDeclare88)
 NavigationInfo117 = x3d.NavigationInfo()
-NavigationInfo117.type = [", ","PLANE_create3000.deANY"]
+NavigationInfo117.type = ["FLY","ANY"]
 
 Scene9.children.append(NavigationInfo117)
 Background118 = x3d.Background()
 
 Scene9.children.append(Background118)
 OrthoViewpoint119 = x3d.OrthoViewpoint()
-OrthoViewpoint119.description = "OthoViewpoint"
-OrthoViewpoint119.position = [-3.13496,-4.19776,10]
 OrthoViewpoint119.centerOfRotation = [-3.13496,-4.19776,0]
+OrthoViewpoint119.description = "OthoViewpoint"
 OrthoViewpoint119.fieldOfView = [0,0,10,10]
+OrthoViewpoint119.position = [-3.13496,-4.19776,10]
 
 Scene9.children.append(OrthoViewpoint119)
 Viewpoint120 = x3d.Viewpoint()

@@ -3,6 +3,7 @@ package net.coderextreme;
 import java.io.*;
 import java.net.*;
 import javax.net.ssl.*;
+import org.web3d.x3d.jsail.CommandLine;
 
 /**
  * If an argument starts with a --, it is taken as a stylesheet for the
@@ -26,6 +27,9 @@ class MyTrustManager extends X509TrustManager {
 	    java.security.cert.X509Certificate[] certs, String authType) {
 	}
 }
+*/
+
+/*
 */
 
 class RunSaxon {
@@ -67,10 +71,15 @@ protected static class ExitException extends SecurityException
 			String extension = "json";
 			boolean overwrite = false;
 			boolean silent = false;
+			boolean commandline = false;
 			String outdir = "./";
 			// System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
+				if (source.startsWith("---commandline")) {
+					commandline = true;
+					continue;
+				}
 				if (source.startsWith("---overwrite")) {
 					overwrite = true;
 					continue;
@@ -84,7 +93,16 @@ protected static class ExitException extends SecurityException
 					continue;
 				}
 				if (source.startsWith("--")) {
-					stylesheet = source.substring(2);
+					if (commandline && source.endsWith("X3dToJava.xslt")) {
+						stylesheet = "-toJava";
+					// TODO fix NavigationInfo.type
+					//} else if (commandline && source.endsWith("X3dToJson.xslt")) {
+					//	stylesheet = "-toJSON";
+					} else if (commandline && source.endsWith("X3dToPython.xslt")) {
+						stylesheet = "-toPython";
+					} else if (!commandline) {
+						stylesheet = source.substring(2);
+					}
 					continue;
 				}
 				if (source.startsWith("-")) {
@@ -151,19 +169,28 @@ protected static class ExitException extends SecurityException
 							File dir = new File(out.substring(0, out.lastIndexOf("/")));
 							dir.mkdirs();
 						}
-						net.sf.saxon.Transform.main(new String[] {
-									"-warnings:recover",
-									"-dtd:off",
-									/*
-									"-xsd:C:/x3d-code/www.web3d.org/specifications/x3d-4.0.xsd",
-									*/
-									"-expand:on",
-									"-o:"+out,
-									"-s:"+source,
-									"-xsl:"+stylesheet,
-									"packageName=net.x3djsonld.data",
-									"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
-						});
+						if (commandline) {
+							org.web3d.x3d.jsail.CommandLine.main(new String[] {
+								source,
+								stylesheet,
+								"-tofile",
+								out
+							});
+						} else {
+							net.sf.saxon.Transform.main(new String[] {
+										"-warnings:recover",
+										"-dtd:off",
+										/*
+										"-xsd:C:/Users/jcarl/www.web3d.org/specifications/x3d-4.0.xsd",
+										*/
+										"-expand:on",
+										"-o:"+out,
+										"-s:"+source,
+										"-xsl:"+stylesheet,
+										"packageName=net.x3djsonld.data",
+										"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
+							});
+						}
 						// -t  #timing -c # compiled
 						System.err.println("END "+source);
 						if (!silent) {
@@ -175,19 +202,28 @@ protected static class ExitException extends SecurityException
 							File dir = new File(out.substring(0, out.lastIndexOf("/")));
 							dir.mkdirs();
 						}
-						net.sf.saxon.Transform.main(new String[] {
-									"-warnings:recover",
-									"-dtd:off",
-									/*
-									"-xsd:C:/x3d-code/www.web3d.org/specifications/x3d-4.0.xsd",
-									*/
-									"-expand:on",
-									"-o:"+out,
-									"-s:"+source,
-									"-xsl:"+stylesheet,
-									"packageName=net.x3djsonld.data",
-									"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
-						});
+						if (commandline) {
+							org.web3d.x3d.jsail.CommandLine.main(new String[] {
+								source,
+								stylesheet,
+								"-tofile",
+								out
+							});
+						} else {
+							net.sf.saxon.Transform.main(new String[] {
+										"-warnings:recover",
+										"-dtd:off",
+										/*
+										"-xsd:C:/Users/jcarl/www.web3d.org/specifications/x3d-4.0.xsd",
+										*/
+										"-expand:on",
+										"-o:"+out,
+										"-s:"+source,
+										"-xsl:"+stylesheet,
+										"packageName=net.x3djsonld.data",
+										"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
+							});
+						}
 						// -t  #timing -c # compiled
 						System.err.println("END "+source);
 						if (!silent) {
