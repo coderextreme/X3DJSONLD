@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" version="4.0">
   <head>
     <unit category="length" name="millimeters" conversionFactor="25.4"/>
     <component name="NURBS" level="4"/>
+    <component name="Shape" level="2"/>
+        <meta name='title' content='mobius.x3d'/>
+        <meta name='creator' content='Vince Marchetti'/>
+        <meta name='generator' content='manual'/>
+	<meta name='identifier' content='https://kshell.com/mobius.x3d'/>
+        <meta name='description' content='a mobius of 3 NURBS Patch Surfaces'/>      
   </head>
   <Scene>
     <Background skyColor="1.000000 1.000000 1.000000"/>
