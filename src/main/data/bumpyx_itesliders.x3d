@@ -11,25 +11,13 @@
 	      <!--<component name='Shape' level='4'></component>-->
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
+              <!--
 	      <component name='DIS' level='2'></component>
+              -->
     <meta content='bumpyx_itesliders.x3d' name='title'/>
     <meta content='*enter description here, short-sentence summaries preferred*' name='description'/>
     <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
-    <meta content='*if manually translating VRML-to-X3D, enter name of person translating here*' name='translator'/>
-    <meta content='*enter date of initial version here*' name='created'/>
-    <meta content='*enter date of translation here*' name='translated'/>
-    <meta content='*enter date of latest revision here*' name='modified'/>
-    <meta content='*enter version here, if any*' name='version'/>
-    <meta content='*enter reference citation or relative/online url here*' name='reference'/>
-    <meta content='*enter additional url/bibliographic reference information here*' name='reference'/>
-    <meta content='*enter reference resource here if required to support function, delivery, or coherence of content*' name='requires'/>
-    <meta content='*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024' name='rights'/>
-    <meta content='*enter drawing filename/url here*' name='drawing'/>
-    <meta content='*enter movie filename/url here*' name='MovingImage'/>
-    <meta content='*enter photo filename/url here*' name='photo'/>
-    <meta content='*enter subject keywords here*' name='subject'/>
-    <meta content='*enter permission statements or url here*' name='accessRights'/>
-    <meta content='*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*' name='identifier'/>
+    <meta content='https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d' name='identifier'/>
     <meta content='PSPad, http://www.pspad.com/' name='generator'/>
     <meta content='license.html' name='license'/>
     <!-- Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L -->
@@ -38,8 +26,17 @@
      It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
      open for their "discussion about the teapot" -->
 <Scene>
+    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'>
+    </Background> 
   <!-- LayerSet with two layers, navigation happens in layer 1 -->
-  <LayerSet activeLayer='1' order='1 2' >
+  <LayerSet activeLayer='1' order='1 2 3' >
     <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
     <Layer isPickable='true'>
       <!-- basic nodes, which might be present in any scene -->
@@ -52,7 +49,7 @@
         <!-- Arrow X -->
         <Transform translation="25 0 0" rotation="0 0 -1 1.57">
           <Shape>
-            <Cylinder DEF="Shaft" radius=".35" height="50.0" />
+            <Cylinder DEF="Shaft" radius=".35" height="50" />
             <Appearance>
               <Material DEF="RED" diffuseColor="1 0 0" emissiveColor="1 0 0" />
             </Appearance>
@@ -60,7 +57,7 @@
         </Transform>
         <Transform translation="50 0 0" rotation="0 0 -1 1.57">
           <Shape>
-            <Cone DEF="Tip" bottomRadius=".8" height="3.0" />
+            <Cone DEF="Tip" bottomRadius=".8" height="3" />
             <Appearance>
               <Material USE="RED" />
             </Appearance>
@@ -106,27 +103,23 @@
 	      <!--
         <Inline DEF="Flower" url='"bumpyx_ite.x3d"' />
 	-->
-<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
-    <Background
-		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
-		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
-		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
-		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
-		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
-	    ></Background> 
 	<Transform>
 	<Shape>
+		<!--
 	  <Sphere radius='40'></Sphere>
+		-->
+                <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
+                    <Coordinate DEF="OrbitCoordinates"/>
+                </IndexedFaceSet>
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture id="backShader" containerField="backTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-			<ImageTexture id="bottomShader" containerField="bottomTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-			<ImageTexture id="frontShader" containerField="frontTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-			<ImageTexture id="leftShader" containerField="leftTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-			<ImageTexture id="rightShader" containerField="rightTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-			<ImageTexture id="topShader" containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture containerField="backTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture containerField="bottomTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture containerField="frontTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture containerField="leftTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture containerField="rightTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
                 <ComposedShader DEF="x_iteShader" language="GLSL">
                   <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
@@ -142,35 +135,85 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'></ShaderPart>
-                  <ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_ite.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                   <!-- TO CONVERT TO A SPHERE
-                  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
-                  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+                  <ShaderPart url='"../shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                   -->
                </ComposedShader>
 	  </Appearance>
 	</Shape>
       </Transform>
       </Transform>
+        <Script DEF="OrbitScript">
+            <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
+            <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
+	    <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+	    <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
+	    <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
+	    <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
+	    <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+	    <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+<![CDATA[ecmascript:
+function initialize() {
+     var resolution = 300;
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var crds = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
+		crds.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = crds;
+
+
+     var cis = new MFInt32();
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     cis.push(i*resolution+j);
+	     cis.push(i*resolution+j+1);
+	     cis.push((i+1)*resolution+j+1);
+	     cis.push((i+1)*resolution+j);
+	     cis.push(-1);
+	}
+    }
+    coordIndexes = cis;
+}
+
+      ]]></Script>
+        <ROUTE fromField="coordIndexes" fromNode="OrbitScript"
+               toField="set_coordIndex" toNode="Orbit"/>
+        <ROUTE fromField="coordinates" fromNode="OrbitScript"
+               toField="set_point" toNode="OrbitCoordinates"/>
       <!-- DIS multiuser facilities -->
+      <!--
       <DISEntityManager DEF='EntityManager' networkMode='networkReader' >
 	      <DISEntityTypeMapping category='77' specific='1' url='"Leif8Final.x3d"'/>
 	      <DISEntityTypeMapping category='77' specific='2' url='"Lily8Final.x3d"'/>
       </DISEntityManager>
-      <Collision enabled='false'>
-        <Group DEF='AvatarHolder'/>
-      </Collision>
+      -->
+      <!--
       <ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/>
       <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/>
+      -->
     </Layer>
     <!-- the second layer contains the sliders that are moved with the user's display
          like a HUD (heads up display) -->
     <LayoutLayer isPickable='true'>
       <!-- positioning the LayoutLayer -->
-      <Layout containerField='layout' align='"RIGHT","BOTTOM"' offset='0.0, 0.2' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 0.6' sizeUnits='"WORLD","WORLD"'/>
+      <Layout containerField='layout' align='"LEFT","BOTTOM"' offset='-0.2, 0.19' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 0.6' sizeUnits='"WORLD","WORLD"'/>
       <!-- clipping the LayoutLayer -->
-      <Viewport containerField='viewport' clipBoundary='0, 1, 0, 1'/>
+      <Viewport clipBoundary='0, 1, 0, 1'/>
       <!-- the content (children) of the LayoutLayer -->
       <!-- first, the slider for scaling the model -->
       <Transform translation="0 0 -3">
@@ -181,241 +224,164 @@
             <Box size="100 100 0.02" />
           </Shape>
       </Transform>
-        <!--  the plane sensors  -->
-      <Transform DEF="aSlider" translation="0 0.7 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="aTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="aSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="aTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
-          </Transform>
+          <Transform DEF="equationTransform">
+          <Transform translation="0 0 -20" rotation="0 0 1 0">
           <Shape>
-            <Cylinder radius="0.05" height="0.3" />
+            <Text DEF="equation" string='"r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"'>
+	     	<FontStyle horizontal="true" size="0.09"/>
+	    </Text>
             <Appearance>
-              <Material/>
+              <Material diffuseColor="1 1 0"/>
             </Appearance>
           </Shape>
-        </Transform>
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-      </Transform>
-      <Transform DEF="bSlider" translation="0 0.4 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="bTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="bSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="bTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
           </Transform>
-          <Shape>
-            <Cylinder radius="0.05" height="0.3" />
-            <Appearance>
-              <Material/>
-            </Appearance>
-          </Shape>
-        </Transform>
-      </Transform>
-      <Transform DEF="cSlider" translation="0 0.1 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="cTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="cSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="cTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
           </Transform>
-          <Shape>
-            <Cylinder radius="0.05" height="0.3" />
-            <Appearance>
-              <Material/>
-            </Appearance>
-          </Shape>
-        </Transform>
-      </Transform>
-      <Transform DEF="dSlider" translation="0 -0.2 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="dTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="dSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="dTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
-          </Transform>
-          <Shape>
-            <Cylinder radius="0.05" height="0.3" />
-            <Appearance>
-              <Material/>
-            </Appearance>
-          </Shape>
-        </Transform>
-      </Transform>
-      <Transform DEF="pdeltaSlider" translation="0 -0.5 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="pdeltaTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="pdeltaSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="pdeltaTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
-          </Transform>
-          <Shape>
-            <Cylinder radius="0.05" height="0.3" />
-            <Appearance>
-              <Material/>
-            </Appearance>
-          </Shape>
-        </Transform>
-      </Transform>
-      <Transform DEF="tdeltaSlider" translation="0 -0.8 0">
-        <Transform rotation="0 0 1 1.57">
-          <Shape >
-            <Appearance >
-              <Material >
-              </Material>
-            </Appearance>
-            <Cylinder radius=".05" height="2.5" />
-          </Shape>
-        </Transform>
-        <Transform DEF="tdeltaTransform" translation="0 0 0.1">
-          <PlaneSensor DEF="tdeltaSensor" minPosition="-20 0" maxPosition="20 0"/>
-          <Transform translation="0 0.0 0">
-            <TouchSensor DEF="tdeltaTS"/>
-            <Shape>
-              <Sphere radius="0.08"/>
-              <Appearance>
-                <Material diffuseColor="1 0 0"/>
-              </Appearance>
-            </Shape>
-          </Transform>
-          <Shape>
-            <Cylinder radius="0.05" height="0.3" />
-            <Appearance>
-              <Material/>
-            </Appearance>
-          </Shape>
-        </Transform>
-      </Transform>
-        <Script DEF='aValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='aValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }]]>
-        </Script>
-        <Script DEF='bValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='bValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }]]>
-        </Script>
-        <Script DEF='cValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='cValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }]]>
-        </Script>
-        <Script DEF='dValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='dValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }]]>
-        </Script>
-        <Script DEF='pdeltaValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='pdeltaValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }]]>
-        </Script>
-        <Script DEF='tdeltaValueTransformerScript' directOutput="true" mustEvaluate="true">
-          <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
-          <field accessType='outputOnly' name='tdeltaValue_changed' type='SFFloat' value='1.0'/>
-	  <![CDATA[ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }]]>
-        </Script>
-        <ROUTE fromField='translation_changed' fromNode='aSensor' toField='set_translation' toNode='aTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='bSensor' toField='set_translation' toNode='bTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='cSensor' toField='set_translation' toNode='cTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='dSensor' toField='set_translation' toNode='dTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='pdeltaSensor' toField='set_translation' toNode='pdeltaTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='tdeltaSensor' toField='set_translation' toNode='tdeltaTransform'/>
+      <ProtoDeclare name="SliderProto">
+	  <ProtoInterface>
+	      <field accessType='inputOutput' name='sliderTranslation' type='SFVec3f' value='0 0.7 0'/>
+	      <field accessType='inputOutput' name='transformTranslation' type='SFVec3f' value='0 0 0.1'/>
+	      <field accessType='inputOutput' name='sensorTranslation' type='SFVec3f' value='0 0 0.0'/>
+	      <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
+	      <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30'/>
+	      <field accessType='inputOutput' name='parameterName' type='SFString' value='a'/>
+	      <field accessType='inputOutput' name='petNames' type='MFString'/>
+	      <field accessType='inputOutput' name='shaderNode' type='SFNode'/>
+	  </ProtoInterface>
+	  <ProtoBody>
+	    <Group>
+	      <Transform DEF="protoSlider" translation="0 0.7 0">
+		<IS>
+			<connect nodeField="translation" protoField="sliderTranslation"/>
+		</IS>
+		<Transform DEF="protoTransform" translation="0 0 0.1">
+			<IS>
+				<connect nodeField="translation" protoField="transformTranslation"/>
+			</IS>
+		  <PlaneSensor DEF="protoSensor" minPosition="0 0" maxPosition="1 0"/>
+			<IS>
+				<connect nodeField="translation" protoField="sensorTranslation"/>
+			</IS>
+		  <Transform translation="0 0.0 0">
+		    <TouchSensor DEF="protoTS"/>
+		  </Transform>
+		  <Transform rotation="0 0 1 0">
+			  <Shape>
+			    <Text DEF="protoText" string='"a="'>
+				<IS>
+					<connect nodeField="string" protoField="textString"/>
+				</IS>
+				<FontStyle horizontal="true" size="0.23"/>
+			    </Text>
+			    <Appearance>
+			      <Material/>
+			    </Appearance>
+			  </Shape>
+		  </Transform>
+		</Transform>
+	      </Transform>
+	      <Script url='"../javascripts/Sessions.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/Sessions.js"' DEF='HumanoidScript' directOutput="true" mustEvaluate="true"/>
+	      <Script url='"../javascripts/X3DUser.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/X3DUser.js"' DEF='protoValueTransformerScript' directOutput="true" mustEvaluate="true">
+		  <field accessType='inputOutput' name='protoScale' type='SFFloat' value='30'/>
+		  <field accessType='inputOutput' name='petNames' type='MFString'/>
+		  <field accessType='inputOutput' name='protoParameterName' type='SFString' value='a'/>
+		  <field accessType='inputOutput' name='shader' type='SFNode'/>
 
-        <ROUTE fromField='translation_changed' fromNode='aSensor' toField='newTranslation' toNode='aValueTransformerScript'/>
-        <ROUTE fromField='translation_changed' fromNode='bSensor' toField='newTranslation' toNode='bValueTransformerScript'/>
-        <ROUTE fromField='translation_changed' fromNode='cSensor' toField='newTranslation' toNode='cValueTransformerScript'/>
-        <ROUTE fromField='translation_changed' fromNode='dSensor' toField='newTranslation' toNode='dValueTransformerScript'/>
-        <ROUTE fromField='translation_changed' fromNode='pdeltaSensor' toField='newTranslation' toNode='pdeltaValueTransformerScript'/>
-        <ROUTE fromField='translation_changed' fromNode='tdeltaSensor' toField='newTranslation' toNode='tdeltaValueTransformerScript'/>
+		  <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
+		  <field accessType='outputOnly' name='protoValue_changed' type='SFFloat' value='1.0'/>
+		  <field accessType='outputOnly' name='protoText_changed' type='MFString' value='1.0'/>
+				<IS>
+					<connect nodeField="protoScale" protoField="parameterScale"/>
+					<connect nodeField="petNames" protoField="petNames"/>
+					<connect nodeField="protoParameterName" protoField="parameterName"/>
+					<connect nodeField="shader" protoField="shaderNode"/>
+				</IS>
+	      </Script>
+        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_translation' toNode='protoTransform'/>
 
-        <ROUTE fromField='aValue_changed' fromNode='aValueTransformerScript' toField='a' toNode='x_iteShader'/>
-        <ROUTE fromField='bValue_changed' fromNode='bValueTransformerScript' toField='b' toNode='x_iteShader'/>
-        <ROUTE fromField='cValue_changed' fromNode='cValueTransformerScript' toField='c' toNode='x_iteShader'/>
-        <ROUTE fromField='dValue_changed' fromNode='dValueTransformerScript' toField='d' toNode='x_iteShader'/>
-        <ROUTE fromField='pdeltaValue_changed' fromNode='pdeltaValueTransformerScript' toField='pdelta' toNode='x_iteShader'/>
-        <ROUTE fromField='tdeltaValue_changed' fromNode='tdeltaValueTransformerScript' toField='tdelta' toNode='x_iteShader'/>
+        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='newTranslation' toNode='protoValueTransformerScript'/>
+        <ROUTE fromField='protoText_changed' fromNode='protoValueTransformerScript' toField='string' toNode='protoText'/>
+	    </Group>
+          </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance DEF="aPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.7 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"a="'/>
+	      <fieldValue name='parameterScale' value='30'/>
+	      <fieldValue name='parameterName' value='a'/>
+	      <fieldValue name='petNames' value='"yottzumm" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
+
+      <ProtoInstance DEF="bPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.4 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"b="'/>
+	      <fieldValue name='parameterScale' value='30'/>
+	      <fieldValue name='parameterName' value='b'/>
+	      <fieldValue name='petNames' value='"yottzumm" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="cPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.1 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"c="'/>
+	      <fieldValue name='parameterScale' value='20'/>
+	      <fieldValue name='parameterName' value='c'/>
+	      <fieldValue name='petNames' value='"yottzumm" "yottzumm2" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="dPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.2 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"d="'/>
+	      <fieldValue name='parameterScale' value='20'/>
+	      <fieldValue name='parameterName' value='d'/>
+	      <fieldValue name='petNames' value='"yottzumm" "yottzumm2" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="tdeltaPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.5 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"tdelta="'/>
+	      <fieldValue name='parameterScale' value='6.28'/>
+	      <fieldValue name='parameterName' value='tdelta'/>
+	      <fieldValue name='petNames' value='"yottzumm2" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="pdeltaPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.8 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
+	      <fieldValue name='textString' value='"pdelta="'/>
+	      <fieldValue name='parameterScale' value='6.28'/>
+	      <fieldValue name='parameterName' value='pdelta'/>
+	      <fieldValue name='petNames' value='"yottzumm2" "group1-petname"'/>
+	      <fieldValue name='shaderNode'>
+		      <ComposedShader USE="x_iteShader"/>
+	      </fieldValue>
+      </ProtoInstance>
     </LayoutLayer>
+    <Layer>
+            <Viewpoint description='My Humanoids' fieldOfView='1.570796' position='0 1.75 80' />
+	    <Script url='"../javascripts/X3DAvatar.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/X3DAvatar.js"' DEF='HumanoidScript' directOutput="true" mustEvaluate="true"/>
+	    <Group DEF="humanoidGroup"/>
+    </Layer>
   </LayerSet>
 </Scene>
 </X3D>
