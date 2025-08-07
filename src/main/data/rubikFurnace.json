@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 July 2025"
+            "@content":"07 August 2025"
           },
           {
             "@name":"generator",
@@ -44,7 +44,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["EXAMINE"]
+              "@type":["ANY","EXAMINE","WALK","FLY","LOOKAT"]
             }
           },
           { "Viewpoint":
