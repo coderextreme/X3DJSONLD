@@ -21,6 +21,7 @@ ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/w
 OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
 ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/' 
+JSONEXT=json
 
 function mydirname {
 	#echo DIR OF "$1"
@@ -60,3 +61,23 @@ do
 	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
 	popd
 done
+
+echo comparing java created json
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+do
+	echo "OLDJSON=`mydirname $i | sed -e $LOCALTOROOT `/`mybasename $i .new.java.json`.${JSONEXT}"
+	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.json`.${JSONEXT}
+	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
+	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
+	# jsonlint "$i"
+done
+
+
+echo comparing java created x3d
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+do
+	OLDX3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.x3d`.x3d
+	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$OLDX3D" "$i"
+	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$OLDX3D" "$i"
+done
+
