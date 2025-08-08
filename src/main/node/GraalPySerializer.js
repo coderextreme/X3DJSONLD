@@ -25,10 +25,10 @@ GraalPySerializer.prototype = {
 		stack.unshift(this.preno);
 		this.preno++;
 		var bodystr = "";
-		bodystr += "x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
-		bodystr += "x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);\n";
-		bodystr += "x3d.ConfigurationProperties.setStripTrailingZeroes(True);\n";
-		bodystr += "x3d.ConfigurationProperties.setStripDefaultAttributes(True);\n";
+		bodystr += "x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)\n";
+		bodystr += "x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)\n";
+		bodystr += "x3d.ConfigurationProperties.setStripTrailingZeroes(True)\n";
+		bodystr += "x3d.ConfigurationProperties.setStripDefaultAttributes(True)\n";
 		bodystr += element.nodeName+stack[0]+" = x3d."+element.nodeName;
 		bodystr += "()\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
