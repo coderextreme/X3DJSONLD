@@ -12,7 +12,7 @@ export PROCESSORS="${PROCESSORS-8}"
 # ${PYTHON} ../python/classes.py
 pushd ../java
 echo "export CLASSPATH=$CLASSPATH"
-# export CLASSPATH="C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar;C:/Users/jcarl/X3DJSONLD/saxon-he-12.4.jar;.;../java"
+# export CLASSPATH="C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar;C:/Users/jcarl/X3DJSONLD/saxon-he-12.8.jar;.;../java"
 echo "export CLASSPATH=$CLASSPATH"
 javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd

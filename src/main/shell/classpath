@@ -5,11 +5,11 @@ export USERNAME=jcarl
 
 export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
 export GRAALX3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
-# export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.4.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;{HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
-export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.4.jar;.;../../..;../java"
+# export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;{HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
+export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../../..;../java"
 
 # GRAAL DOES NOT TAKE C:  You need colon separators on Linux, commas on Windows
-export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.4.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
+export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.8.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
 export PYTHONPATH="${PYTHONPATH-"."}:net/coderextreme/data:net/coderextreme/personal"
 export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
 
