@@ -164,7 +164,13 @@
                     "-texture":
                       { "PixelTexture":
                         {
-                          "@image":[2,2,4,4278190335,16711935,4294967295,4294902015]
+                          "@image":[2,2,4,4278190335,16711935,4294967295,4294902015],
+                          "-textureProperties":
+                            { "TextureProperties":
+                              {
+                                "@magnificationFilter":"NEAREST_PIXEL"
+                              }
+                            }
                         }
                       }
                   }

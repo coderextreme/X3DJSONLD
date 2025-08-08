@@ -138,7 +138,13 @@
                         {
                           "@image":[2,2,4,4278190335,16711935,4294967295,4294902015],
                           "@repeatS":false,
-                          "@repeatT":false
+                          "@repeatT":false,
+                          "-textureProperties":
+                            { "TextureProperties":
+                              {
+                                "@magnificationFilter":"NEAREST_PIXEL"
+                              }
+                            }
                         }
                       }
                   }

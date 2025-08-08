@@ -88,7 +88,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"07 August 2025"
           },
           {
             "@name":"generator",
@@ -160,6 +160,13 @@
                     "-texture":
                       { "PixelTexture":
                         {
+                          "@image":[2,2,4,-16776961,16711935,-1,-65281],
+                          "-textureProperties":
+                            { "TextureProperties":
+                              {
+                                "@magnificationFilter":"NEAREST_PIXEL"
+                              }
+                            }
                         }
                       }
                   }
