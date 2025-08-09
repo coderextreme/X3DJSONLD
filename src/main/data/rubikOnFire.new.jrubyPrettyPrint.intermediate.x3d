@@ -10,7 +10,7 @@
     <meta content='a white rubik cube' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"'/>
     <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
