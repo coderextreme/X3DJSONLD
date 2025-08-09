@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"></meta>
 <meta name="description" content="a white rubik cube"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
+<Scene><NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint description="Rubiks Cube on Fire" position="0 0 12"></Viewpoint>
 <ProtoDeclare name="anyShape"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="SFNode"><Sphere></Sphere>

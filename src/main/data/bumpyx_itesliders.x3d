@@ -26,19 +26,10 @@
      It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
      open for their "discussion about the teapot" -->
 <Scene>
-    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
-    <Background
-		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
-		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
-		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
-		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
-		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'>
-    </Background> 
   <!-- LayerSet with two layers, navigation happens in layer 1 -->
   <LayerSet activeLayer='1' order='1 2 3' >
     <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
-    <Layer isPickable='true'>
+    <Layer pickable='true'>
       <!-- basic nodes, which might be present in any scene -->
       <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
       <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
@@ -103,6 +94,15 @@
 	      <!--
         <Inline DEF="Flower" url='"bumpyx_ite.x3d"' />
 	-->
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'>
+    </Background> 
 	<Transform>
 	<Shape>
 		<!--
@@ -209,7 +209,7 @@ function initialize() {
     </Layer>
     <!-- the second layer contains the sliders that are moved with the user's display
          like a HUD (heads up display) -->
-    <LayoutLayer isPickable='true'>
+    <LayoutLayer pickable='true'>
       <!-- positioning the LayoutLayer -->
       <Layout containerField='layout' align='"LEFT","BOTTOM"' offset='-0.2, 0.19' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 0.6' sizeUnits='"WORLD","WORLD"'/>
       <!-- clipping the LayoutLayer -->
@@ -279,8 +279,7 @@ function initialize() {
 		  </Transform>
 		</Transform>
 	      </Transform>
-	      <Script url='"../javascripts/Sessions.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/Sessions.js"' DEF='HumanoidScript' directOutput="true" mustEvaluate="true"/>
-	      <Script url='"../javascripts/X3DUser.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/X3DUser.js"' DEF='protoValueTransformerScript' directOutput="true" mustEvaluate="true">
+	      <Script url='"../javascripts/X3DUser.js"' DEF='protoValueTransformerScript' directOutput="true" mustEvaluate="true">
 		  <field accessType='inputOutput' name='protoScale' type='SFFloat' value='30'/>
 		  <field accessType='inputOutput' name='petNames' type='MFString'/>
 		  <field accessType='inputOutput' name='protoParameterName' type='SFString' value='a'/>
@@ -379,7 +378,7 @@ function initialize() {
     </LayoutLayer>
     <Layer>
             <Viewpoint description='My Humanoids' fieldOfView='1.570796' position='0 1.75 80' />
-	    <Script url='"../javascripts/X3DAvatar.js" "https://coderextreme.net/X3DJSONLD/src/main/javascripts/X3DAvatar.js"' DEF='HumanoidScript' directOutput="true" mustEvaluate="true"/>
+	    <Script url='"../javascripts/X3DAvatar.js"' DEF='HumanoidScript' directOutput="true" mustEvaluate="true"/>
 	    <Group DEF="humanoidGroup"/>
     </Layer>
   </LayerSet>
