@@ -1,4 +1,4 @@
-#!/gbin/bash
+#!/bin/bash
 
 # watch out for too many CommandLines processes wiping out your database, check config-output-dir versus config-merge-dir
 ~/Downloads/graalvm-community-jdk-24.0.2_windows-x64_bin/graalvm-community-openjdk-24.0.2+11.1/bin/java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image \
