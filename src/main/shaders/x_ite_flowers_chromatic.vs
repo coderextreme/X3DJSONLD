@@ -65,31 +65,12 @@ vec4 rose_position(vec3 p) {
 void main()
 {
   vec3 position = x3d_Vertex.xyz;
-
   vec3 fragNormal = normalize(x3d_NormalMatrix*rose_normal(position));
   vec3 incident = normalize((x3d_ModelViewMatrix * rose_position(position)).xyz);
-
   t    = reflect (incident, fragNormal) * x3d_NormalMatrix;
-  tr   = refract (incident, fragNormal, chromaticDispertion .x) * x3d_NormalMatrix;
-  tg   = refract (incident, fragNormal, chromaticDispertion .y) * x3d_NormalMatrix;
-  tb   = refract (incident, fragNormal, chromaticDispertion .z) * x3d_NormalMatrix;
+  tr   = refract (incident, fragNormal, chromaticDispertion.x) * x3d_NormalMatrix;
+  tg   = refract (incident, fragNormal, chromaticDispertion.y) * x3d_NormalMatrix;
+  tb   = refract (incident, fragNormal, chromaticDispertion.z) * x3d_NormalMatrix;
   rfac = bias + scale * pow (clamp (0.5 + 0.5 * dot (incident, fragNormal), 0.0, 1.0), power);
-
   gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * rose_position(position);
 }
-
-/*
-void main()
-{
-  vec3 fragNormal = normalize (x3d_NormalMatrix * x3d_Normal);
-  vec3 incident   = normalize ((x3d_ModelViewMatrix * x3d_Vertex) .xyz);
-
-  t    = reflect (incident, fragNormal) * x3d_NormalMatrix;
-  tr   = refract (incident, fragNormal, chromaticDispertion .x) * x3d_NormalMatrix;
-  tg   = refract (incident, fragNormal, chromaticDispertion .y) * x3d_NormalMatrix;
-  tb   = refract (incident, fragNormal, chromaticDispertion .z) * x3d_NormalMatrix;
-  rfac = bias + scale * pow (clamp (0.5 + 0.5 * dot (incident, fragNormal), 0.0, 1.0), power);
-
-  gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-}
-*/

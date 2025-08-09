@@ -46,7 +46,7 @@
   <!-- LayerSet with two layers, navigation happens in layer 1 -->
   <LayerSet activeLayer='1' order='1 2' >
     <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
-    <Layer isPickable='true'>
+    <Layer pickable='true'>
       <!-- this group contains the red/green/blue 3D crosshair -->
       <Group>
         <!-- Arrow X -->
@@ -225,7 +225,7 @@ function initialize() {
     </Layer>
     <!-- the second layer contains the sliders that are moved with the user's display
          like a HUD (heads up display) -->
-    <LayoutLayer isPickable='true'>
+    <LayoutLayer pickable='true'>
       <!-- positioning the LayoutLayer -->
       <Layout containerField='layout' align='"LEFT","BOTTOM"' offset='-0.2, 0.19' offsetUnits='"WORLD","WORLD"' scaleMode='"NONE","NONE"' size='0.4, 0.6' sizeUnits='"WORLD","WORLD"'/>
       <!-- clipping the LayoutLayer -->
