@@ -1,5 +1,5 @@
 #ifdef GL_ES
-  precision highp float;
+precision mediump float;
 #endif
 
 /*
@@ -12,8 +12,19 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform samplerCube cube;
+uniform samplerCube fw_textureCoordGenType;
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
+uniform float a;
+uniform float b;
+uniform float c;
+uniform float d;
+uniform float tdelta;
+uniform float pdelta;
 
+/* varyings coming from vertex shader */
 varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
@@ -22,15 +33,17 @@ varying float rfac;
 
 void main()
 {
-    vec4 refracted = textureCube(cube, t);
-    vec4 reflected = vec4(1.0);
+    /* sample environment map for reflection and chromatic refraction */
+    vec4 reflected = textureCube(fw_textureCoordGenType, normalize(t));
+    vec4 refr_r = textureCube(fw_textureCoordGenType, normalize(tr));
+    vec4 refr_g = textureCube(fw_textureCoordGenType, normalize(tg));
+    vec4 refr_b = textureCube(fw_textureCoordGenType, normalize(tb));
 
-    reflected.r = textureCube(cube, tr).r;
-    reflected.g = textureCube(cube, tg).g;
-    reflected.b = textureCube(cube, tb).b;
+    /* compose chromatic refraction rgb from separate channels */
+    vec3 refracted_rgb = vec3(refr_r.r, refr_g.g, refr_b.b);
 
-    gl_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
-    /*  IF there aren't normals, rfac isn't computed
-    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
-    */
+    /* mix reflection and refraction using rfac */
+    vec3 color = mix(refracted_rgb, reflected.rgb, clamp(rfac, 0.0, 1.0));
+
+    gl_FragColor = vec4(color, 1.0);
 }

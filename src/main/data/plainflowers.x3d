@@ -27,7 +27,7 @@
 			<ProtoBody>
 				<Group>
 					<ProtoInstance name="FlowerProto">
-						<fieldValue name="vertex" value='"../shaders/x_ite_flowers_plain.vs"'></fieldValue>
+						<fieldValue name="vertex" value='"../shaders/gl_flowers_plain.vs"'></fieldValue>
 						<fieldValue name="fragment" value='"../shaders/plain.fs"'></fieldValue>
 					</ProtoInstance>
 				</Group>
