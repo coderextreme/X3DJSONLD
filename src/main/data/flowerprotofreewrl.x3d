@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
     <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -18,15 +18,25 @@
 	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"></meta>
     </head>
     <Scene>
+        <NavigationInfo type='"EXAMINE" "ANY"'/>
+	<Viewpoint description='Tour Views' position='0 0 50'/>
+        <Background
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
+        />
         <ProtoDeclare name="FlowerProto">
 	    <ProtoInterface>
 		    <field accessType='inputOnly' name='vertex' type='MFString' value='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"'/>
-		    <field accessType='inputOnly' name='fragment' type='MFString' value='"../shaders/pc_flowers.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"'/>
+		    <field accessType='inputOnly' name='fragment' type='MFString' value='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"'/>
 	    </ProtoInterface>
             <ProtoBody>
                 <Transform DEF="transform">
                     <Shape>
-                        <Appearance>
+                    <Appearance>
                             <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5"/>
                             <ComposedCubeMapTexture DEF="texture">
 				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
@@ -38,22 +48,22 @@
                             </ComposedCubeMapTexture>
 
                             <ComposedShader DEF="shader" language="GLSL">
-                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
+                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
 		  <!--
-                  <field name='cube' type='SFNode' accessType="inputOnly">
+                  <field name='cube' type='SFNode' accessType="inputOutput">
 		    <ComposedCubeMapTexture USE="texture"/>
 		  </field>
 		  -->
                   <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOnly' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOnly' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                                 <ShaderPart type='VERTEX'>
 					<IS>
 					<connect nodeField="url" protoField="vertex"/>
@@ -64,20 +74,20 @@
 					<connect nodeField="url" protoField="fragment"/>
 					</IS>
                                 </ShaderPart>
-                            </ComposedShader>
+                    </ComposedShader>
 		    </Appearance>
-		    <Sphere/>
+		    <Sphere radius="5"/>
                 </Shape>
                 <Script DEF="Animate" directOutput="true">
-                  <field name="translation" accessType="outputOnly" type="SFVec3f" value="0 0 0"></field>
-                  <field name="velocity" accessType="outputOnly" type="SFVec3f" value="0 0 0"></field>
-                  <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-		  <field name='a' type='SFFloat' accessType='outputOnly' value='0.5'></field>
-		  <field name='b' type='SFFloat' accessType='outputOnly' value='0.5'></field>
-		  <field name='c' type='SFFloat' accessType='outputOnly' value='3'></field>
-		  <field name='d' type='SFFloat' accessType='outputOnly' value='3'></field>
-		  <field name='tdelta' type='SFFloat' accessType='outputOnly' value='0.5'></field>
-		  <field name='pdelta' type='SFFloat' accessType='outputOnly' value='0.5'></field>
+                  <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                  <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                  <field name="set_fraction" accessType="inputOutput" type="SFFloat"></field>
+		  <field name='a' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='b' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='c' type='SFFloat' accessType='inputOutput' value='3'></field>
+		  <field name='d' type='SFFloat' accessType='inputOutput' value='3'></field>
+		  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 <![CDATA[
   
 ecmascript:
@@ -161,5 +171,9 @@ ecmascript:
                 </Transform>
             </ProtoBody>
         </ProtoDeclare>        
+	<ProtoInstance name="FlowerProto">
+		<fieldValue name="vertex" value='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"'></fieldValue>
+		<fieldValue name="fragment" value='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"'></fieldValue>
+	</ProtoInstance>
     </Scene>
 </X3D>

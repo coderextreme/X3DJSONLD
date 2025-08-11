@@ -15,6 +15,7 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower particle system' name='description'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
+    <meta content='Vim' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='particleflowers.x3d'/>

@@ -24,10 +24,10 @@
     <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
     <Layer pickable='true'>
       <!-- basic nodes, which might be present in any scene -->
-      <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25 1.75 0.75"   />
+      <NavigationInfo headlight="true" type='"EXAMINE" "FLY" "LOOKAT" "ANY"' avatarSize="0.25 1.75 0.75"/>
       <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
       <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
-      <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
+      <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60'/>
       <!-- this group contains the red/green/blue 3D crosshair -->
       <Group>
         <!-- Arrow X -->
@@ -98,9 +98,12 @@
     </Background> 
 	<Transform>
 	<Shape>
+		<Sphere radius="5"/>
+		<!--
                 <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
                     <Coordinate DEF="OrbitCoordinates"/>
                 </IndexedFaceSet>
+		-->
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
@@ -111,30 +114,64 @@
 			<ImageTexture containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
 			<ImageTexture containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
-                <ComposedShader DEF="freewrlShader" language="GLSL">
-		  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+               <ComposedShader DEF="freewrlShader" language="GLSL">
+                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
 		  <!--
-                  <field name='cube' type='SFNode' accessType="inputOnly">
-                        <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
-                  </field>
-	          -->
-                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
+                  <field name='cube' type='SFNode' accessType="inputOutput">
+		    <ComposedCubeMapTexture USE="texture"/>
+		  </field>
+		  -->
+                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
                   <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
                   <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"../shaders/freewrl.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                                <ShaderPart type='VERTEX'>
+					<IS>
+					<connect nodeField="url" protoField="vertex"/>
+					</IS>
+                                </ShaderPart>
+                                <ShaderPart type='FRAGMENT'>
+					<IS>
+					<connect nodeField="url" protoField="fragment"/>
+					</IS>
+                                </ShaderPart>
                </ComposedShader>
+		<!--
+               <ComposedShader DEF="freewrlShader" language="GLSL">
+                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
+                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                                <ShaderPart type='VERTEX'>
+					<IS>
+					<connect nodeField="url" protoField="vertex"/>
+					</IS>
+                                </ShaderPart>
+                                <ShaderPart type='FRAGMENT'>
+					<IS>
+					<connect nodeField="url" protoField="fragment"/>
+					</IS>
+                                </ShaderPart>
+                    </ComposedShader>
+	       -->
 	  </Appearance>
 	</Shape>
       </Transform>
       </Transform>
+      <!--
         <Script DEF="OrbitScript">
             <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
             <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
@@ -182,6 +219,7 @@ function initialize() {
       ]]></Script>
       <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/>
       <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/>
+      -->
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager'>
                <DISEntityTypeMapping category='77' containerField='children' specific='1' url='"../data/Leif8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"'/>
@@ -226,13 +264,14 @@ function initialize() {
           </Transform>
       <ProtoDeclare name="SliderProto">
 	  <ProtoInterface>
-	      <field accessType='inputOutput' name='sliderTranslation' type='SFVec3f' value='0 0.7 0'/>
-	      <field accessType='inputOutput' name='transformTranslation' type='SFVec3f' value='0 0 0.1'/>
-	      <field accessType='inputOutput' name='sensorTranslation' type='SFVec3f' value='0 0 0.0'/>
-	      <field accessType='inputOutput' name='numberTranslation' type='SFVec3f' value='0.2 0 0.0'/>
-	      <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
-	      <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30'/>
-	      <field accessType='inputOutput' name='shaderNode' type='SFNode'/>
+	      <field accessType='inputOutput' name='sliderTranslation'    type='SFVec3f'  value='0 0.7 0'/>
+	      <field accessType='inputOutput' name='transformTranslation' type='SFVec3f'  value='0 0 0.1'/>
+	      <field accessType='inputOutput' name='sensorTranslation'    type='SFVec3f'  value='0 0 0.0'/>
+	      <field accessType='inputOutput' name='numberTranslation'    type='SFVec3f'  value='0.2 0 0.0'/>
+	      <field accessType='inputOutput' name='textString'           type='MFString' value='"a="'/>
+	      <field accessType='inputOutput' name='parameterName'        type='SFString' value='a'/>
+	      <field accessType='inputOutput' name='parameterScale'       type='SFFloat'  value='30'/>
+	      <field accessType='inputOutput' name='shaderNode'           type='SFNode'/>
 	  </ProtoInterface>
 	  <ProtoBody>
 	    <Group>
@@ -285,21 +324,30 @@ function initialize() {
 		  <field accessType='inputOutput' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
 		  <field accessType='inputOutput' name='protoValue_changed' type='SFFloat' value='1.0'/>
 		  <field accessType='inputOutput' name='protoNumber_changed' type='MFString' value='"0.0"'/>
+		  <field accessType='inputOutput' name='protoParameterName' type='SFString' value='a'/>
 				<IS>
 					<connect nodeField="protoScale" protoField="parameterScale"/>
+					<connect nodeField="protoParameterName" protoField="parameterName"/>
 					<connect nodeField="shader" protoField="shaderNode"/>
 				</IS>
 <![CDATA[ecmascript:
 	const newTranslation = function(Value) {
-	    protoValue_changed = Value.x * protoScale;
+	    protoValue_changed = Value[0] * protoScale;
 	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+	    Browser.println("In newTranslation:");
+	    Browser.println(shader);
+	    Browser.println(Value[0]);
+	    Browser.println(Value.x);
+	    Browser.println(protoScale);
+	    Browser.println(Value[0] * protoScale);
+	    Browser.println(protoParameterName);
+					// shader[protoParameterName] = Value[0] * protoScale;
 	};
 ]]>
 	      </Script>
         <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_translation' toNode='protoTransform'/>
 
         <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='newTranslation' toNode='protoValueTransformerScript'/>
-        <ROUTE fromField='protoText_changed' fromNode='protoValueTransformerScript' toField='string' toNode='protoText'/>
         <ROUTE fromField='protoNumber_changed' fromNode='protoValueTransformerScript' toField='string' toNode='protoNumber'/>
 	    </Group>
           </ProtoBody>
@@ -310,6 +358,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.3 0 0.0'/>
 	      <fieldValue name='textString' value='"a="'/>
+	      <fieldValue name='parameterName' value='a'/>
 	      <fieldValue name='parameterScale' value='30'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
@@ -322,6 +371,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.3 0 0.0'/>
 	      <fieldValue name='textString' value='"b="'/>
+	      <fieldValue name='parameterName' value='b'/>
 	      <fieldValue name='parameterScale' value='30'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
@@ -333,6 +383,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.3 0 0.0'/>
 	      <fieldValue name='textString' value='"c="'/>
+	      <fieldValue name='parameterName' value='c'/>
 	      <fieldValue name='parameterScale' value='20'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
@@ -344,6 +395,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.3 0 0.0'/>
 	      <fieldValue name='textString' value='"d="'/>
+	      <fieldValue name='parameterName' value='d'/>
 	      <fieldValue name='parameterScale' value='20'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
@@ -355,6 +407,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.8 0 0.0'/>
 	      <fieldValue name='textString' value='"tdelta="'/>
+	      <fieldValue name='parameterName' value='tdelta'/>
 	      <fieldValue name='parameterScale' value='6.28'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>
@@ -366,6 +419,7 @@ function initialize() {
 	      <fieldValue name='sensorTranslation' value='0 0 0.0'/>
 	      <fieldValue name='numberTranslation' value='0.8 0 0.0'/>
 	      <fieldValue name='textString' value='"pdelta="'/>
+	      <fieldValue name='parameterName' value='pdelta'/>
 	      <fieldValue name='parameterScale' value='6.28'/>
 	      <fieldValue name='shaderNode'>
 		      <ComposedShader USE="freewrlShader"/>

@@ -87,6 +87,13 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"Vim",
+        "@name":"generator"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":

@@ -58,13 +58,6 @@
         "@name":"Core"
       }
     },
-        "component":
-        {
-      {
-        "@level":"2",
-        "@name":"DIS"
-      }
-    },
         "meta":
         {
       {
@@ -89,105 +82,7 @@
         "meta":
         {
       {
-        "@content":"*if manually translating VRML-to-X3D, enter name of person translating here*",
-        "@name":"translator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter date of initial version here*",
-        "@name":"created"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter date of translation here*",
-        "@name":"translated"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter date of latest revision here*",
-        "@name":"modified"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter version here, if any*",
-        "@name":"version"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter reference citation or relative/online url here*",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter additional url/bibliographic reference information here*",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter reference resource here if required to support function, delivery, or coherence of content*",
-        "@name":"requires"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024",
-        "@name":"rights"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter drawing filename/url here*",
-        "@name":"drawing"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter movie filename/url here*",
-        "@name":"MovingImage"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter photo filename/url here*",
-        "@name":"photo"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter subject keywords here*",
-        "@name":"subject"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter permission statements or url here*",
-        "@name":"accessRights"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*",
+        "@content":"https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d",
         "@name":"identifier"
       }
     },

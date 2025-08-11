@@ -130,7 +130,7 @@ function initialize ()
 {
 	sensor .offset = translation;
 }]]></Script>
-<ROUTE fromField="translation_changed" fromNode="PlaneSensor" toField="set_translation" toNode="Node"></ROUTE>
+<ROUTE fromNode="PlaneSensor" fromField="translation_changed" toNode="Node" toField="set_translation"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoDeclare name="Route"><ProtoInterface><field name="lineColor" accessType="inputOutput" type="SFColor" value="0.43 0.43 0.98"></field>
@@ -190,7 +190,7 @@ function set_translation ()
 </ProtoDeclare>
 <NavigationInfo type="&quot;FLY&quot; &quot;ANY&quot;"></NavigationInfo>
 <Background skyColor="0.2 0.2 0.2"></Background>
-<OrthoViewpoint centerOfRotation="-3.13496 -4.19776 0" description="OthoViewpoint" fieldOfView="0 0 10 10" position="-3.13496 -4.19776 10"></OrthoViewpoint>
+<OrthoViewpoint description="OthoViewpoint" position="-3.13496 -4.19776 10" centerOfRotation="-3.13496 -4.19776 0" fieldOfView="0 0 10 10"></OrthoViewpoint>
 <Viewpoint description="Viewpoint"></Viewpoint>
 <Transform DEF="Connectors"><ProtoInstance name="Route"><fieldValue name="output"><ProtoInstance name="Node" DEF="N1"><fieldValue name="translation" value="-3.98323 2.88948 0"></fieldValue>
 </ProtoInstance>

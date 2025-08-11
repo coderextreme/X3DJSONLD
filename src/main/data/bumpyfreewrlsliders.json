@@ -46,87 +46,28 @@
         "-children":[
           {
             "#comment":"<component name='Shape' level='4'></component>"
-          },
-          {
-            "#comment":"Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"
           }
         ],
         "meta": [
           {
             "@name":"title",
-            "@content":"bumpfreewrlsliders.x3d"
+            "@content":"bumpyfreewrlsliders.x3d"
           },
           {
             "@name":"description",
-            "@content":"*enter description here, short-sentence summaries preferred*"
+            "@content":"Bumpy Orbitals with Sliders for FreeWRL"
           },
           {
             "@name":"creator",
             "@content":"Doug Sanden, Christoph Valentin, John Carlson"
           },
           {
-            "@name":"translator",
-            "@content":"*if manually translating VRML-to-X3D, enter name of person translating here*"
-          },
-          {
-            "@name":"created",
-            "@content":"*enter date of initial version here*"
-          },
-          {
-            "@name":"translated",
-            "@content":"*enter date of translation here*"
-          },
-          {
-            "@name":"modified",
-            "@content":"*enter date of latest revision here*"
-          },
-          {
-            "@name":"version",
-            "@content":"*enter version here, if any*"
-          },
-          {
-            "@name":"reference",
-            "@content":"*enter reference citation or relative/online url here*"
-          },
-          {
-            "@name":"reference",
-            "@content":"*enter additional url/bibliographic reference information here*"
-          },
-          {
-            "@name":"requires",
-            "@content":"*enter reference resource here if required to support function, delivery, or coherence of content*"
-          },
-          {
-            "@name":"rights",
-            "@content":"*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"
-          },
-          {
-            "@name":"drawing",
-            "@content":"*enter drawing filename/url here*"
-          },
-          {
-            "@name":"MovingImage",
-            "@content":"*enter movie filename/url here*"
-          },
-          {
-            "@name":"photo",
-            "@content":"*enter photo filename/url here*"
-          },
-          {
-            "@name":"subject",
-            "@content":"*enter subject keywords here*"
-          },
-          {
-            "@name":"accessRights",
-            "@content":"*enter permission statements or url here*"
-          },
-          {
             "@name":"identifier",
-            "@content":"*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"
+            "@content":"https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d"
           },
           {
             "@name":"generator",
-            "@content":"PSPad, http://www.pspad.com/"
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
           },
           {
             "@name":"license",
@@ -146,11 +87,6 @@
           }
         ]
     },
-    "-children":[
-      {
-        "#comment":"\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""
-      }
-    ],
     "Scene": {
         "-children":[
           {
@@ -588,7 +524,6 @@
                       { "DISEntityManager":
                         {
                           "@DEF":"EntityManager",
-                          "@networkMode":"networkReader",
                           "-children":[
                             { "DISEntityTypeMapping":
                               {
@@ -623,7 +558,6 @@
                       },
                       { "Collision":
                         {
-                          "@enabled":false,
                           "-children":[
                             { "Group":
                               {
@@ -741,6 +675,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying a",
                                       "@DEF":"aSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -752,7 +687,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"aTS"
+                                            "@description":"Slider for modifying a"
                                           }
                                         },
                                         { "Shape":
@@ -874,6 +809,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying b",
                                       "@DEF":"bSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -885,7 +821,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"bTS"
+                                            "@description":"Slider for modifying b"
                                           }
                                         },
                                         { "Shape":
@@ -979,6 +915,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying c",
                                       "@DEF":"cSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -990,7 +927,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"cTS"
+                                            "@description":"Slider for modifying c"
                                           }
                                         },
                                         { "Shape":
@@ -1084,6 +1021,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying d",
                                       "@DEF":"dSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -1095,7 +1033,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"dTS"
+                                            "@description":"Slider for modifying d"
                                           }
                                         },
                                         { "Shape":
@@ -1189,6 +1127,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying phi delta",
                                       "@DEF":"pdeltaSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -1200,7 +1139,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"pdeltaTS"
+                                            "@description":"Slider for modifying phi delta"
                                           }
                                         },
                                         { "Shape":
@@ -1294,6 +1233,7 @@
                                 "-children":[
                                   { "PlaneSensor":
                                     {
+                                      "@description":"Slider for modifying theta delta",
                                       "@DEF":"tdeltaSensor",
                                       "@minPosition":[-20,0],
                                       "@maxPosition":[20,0]
@@ -1305,7 +1245,7 @@
                                       "-children":[
                                         { "TouchSensor":
                                           {
-                                            "@DEF":"tdeltaTS"
+                                            "@description":"Slider for modifying theta delta"
                                           }
                                         },
                                         { "Shape":
@@ -1515,148 +1455,154 @@
 ]
                         }
                       },
-                      { "ROUTE":
+                      { "Group":
                         {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"aSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"aTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"bSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"bTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"cSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"cTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"dSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"dTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"pdeltaSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"pdeltaTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"tdeltaSensor",
-                          "@toField":"set_translation",
-                          "@toNode":"tdeltaTransform"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"aSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"aValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"bSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"bValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"cSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"cValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"dSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"dValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"pdeltaSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"pdeltaValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"translation_changed",
-                          "@fromNode":"tdeltaSensor",
-                          "@toField":"newTranslation",
-                          "@toNode":"tdeltaValueTransformerScript"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"aValue",
-                          "@fromNode":"aValueTransformerScript",
-                          "@toField":"a",
-                          "@toNode":"freewrlShader"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"bValue",
-                          "@fromNode":"bValueTransformerScript",
-                          "@toField":"b",
-                          "@toNode":"freewrlShader"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"cValue",
-                          "@fromNode":"cValueTransformerScript",
-                          "@toField":"c",
-                          "@toNode":"freewrlShader"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"dValue",
-                          "@fromNode":"dValueTransformerScript",
-                          "@toField":"d",
-                          "@toNode":"freewrlShader"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"pdeltaValue",
-                          "@fromNode":"pdeltaValueTransformerScript",
-                          "@toField":"pdelta",
-                          "@toNode":"freewrlShader"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"tdeltaValue",
-                          "@fromNode":"tdeltaValueTransformerScript",
-                          "@toField":"tdelta",
-                          "@toNode":"freewrlShader"
+                          "-children":[
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"aSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"aTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"bSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"bTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"cSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"cTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"dSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"dTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"pdeltaSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"pdeltaTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"tdeltaSensor",
+                                "@toField":"set_translation",
+                                "@toNode":"tdeltaTransform"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"aSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"aValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"bSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"bValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"cSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"cValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"dSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"dValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"pdeltaSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"pdeltaValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"translation_changed",
+                                "@fromNode":"tdeltaSensor",
+                                "@toField":"newTranslation",
+                                "@toNode":"tdeltaValueTransformerScript"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"aValue",
+                                "@fromNode":"aValueTransformerScript",
+                                "@toField":"a",
+                                "@toNode":"freewrlShader"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"bValue",
+                                "@fromNode":"bValueTransformerScript",
+                                "@toField":"b",
+                                "@toNode":"freewrlShader"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"cValue",
+                                "@fromNode":"cValueTransformerScript",
+                                "@toField":"c",
+                                "@toNode":"freewrlShader"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"dValue",
+                                "@fromNode":"dValueTransformerScript",
+                                "@toField":"d",
+                                "@toNode":"freewrlShader"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"pdeltaValue",
+                                "@fromNode":"pdeltaValueTransformerScript",
+                                "@toField":"pdelta",
+                                "@toNode":"freewrlShader"
+                              }
+                            },
+                            { "ROUTE":
+                              {
+                                "@fromField":"tdeltaValue",
+                                "@fromNode":"tdeltaValueTransformerScript",
+                                "@toField":"tdelta",
+                                "@toNode":"freewrlShader"
+                              }
+                            }
+                          ]
                         }
                       }
                     ],
@@ -1665,10 +1611,7 @@
                         {
                           "@align":["RIGHT","BOTTOM"],
                           "@offset":[0.0,0.0],
-                          "@offsetUnits":["WORLD","WORLD"],
-                          "@scaleMode":["NONE","NONE"],
-                          "@size":[0.4,1.0],
-                          "@sizeUnits":["WORLD","WORLD"]
+                          "@size":[0.4,1.0]
                         }
                       },
                     "-viewport":[

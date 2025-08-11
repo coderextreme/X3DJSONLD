@@ -360,9 +360,67 @@ Additional references of interest:
 
     <!-- ===================================================== -->
 
+    <xsl:template name="javaPrimitiveType">
+		<xsl:param name="x3dType"/>
+        
+        <xsl:variable name="javaType">
+            <xsl:call-template name="javaType">
+                <xsl:with-param name="x3dType" select="$x3dType"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        <xsl:choose>
+            <xsl:when test="starts-with($x3dType, 'MF') and contains($javaType,'[')">
+                <xsl:variable name="thisType" select="substring-before($javaType,'[')"/>
+                <xsl:value-of select="$thisType"/>
+            <!--<xsl:text>/*here1*/</xsl:text> debug -->
+            </xsl:when>
+            <xsl:when test="(starts-with($x3dType, 'MF') and starts-with($javaType,'ArrayList')) or ($x3dType = 'SFImage')">
+                <!--
+                <xsl:text>/*</xsl:text>
+                <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
+                <xsl:text>*/</xsl:text>
+                -->
+                <xsl:choose>
+                    <xsl:when test="contains($javaType,'Integer') or ($x3dType='SFImage')">
+                        <xsl:text>int</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="contains($javaType,'String')">
+                        <xsl:text>String</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="contains($javaType,'Node')">
+                        <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="lower-case(substring-before(substring-after($javaType,'&lt;'),'&gt;'))"/>
+                        <!--
+                        <xsl:value-of select="$javaType"/>
+                        <xsl:text>[]</xsl:text>
+                        -->
+                    </xsl:otherwise>
+                </xsl:choose>
+            <!--<xsl:text>/*here2*/</xsl:text> debug -->
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test=" contains($javaType,'[')">
+                        <xsl:value-of select="substring-before($javaType,'[')"/><!-- simple type -->
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$javaType"/><!-- simple type -->
+                    </xsl:otherwise>
+                </xsl:choose>
+            <!--<xsl:text>/*here3a*/</xsl:text> debug -->
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- ===================================================== -->
+
     <xsl:template name="javaValue">
 		<xsl:param name="x3dType"/>
 		<xsl:param name="schemaValue"/>
+		<xsl:param name="final"/><!-- ensure array elements are immutable -->
 		<xsl:param name="javadoc"><xsl:text>false</xsl:text></xsl:param>
 
 		<xsl:variable name="xmlValue">
@@ -377,16 +435,44 @@ Additional references of interest:
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+        
+        <xsl:variable name="javaPrimitiveType">
+            <xsl:call-template name="javaPrimitiveType">
+                <xsl:with-param name="x3dType" select="@type"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="javaType">
+            <!-- can include collections, must be escaped -->
+            <xsl:call-template name="javaType">
+                <xsl:with-param name="x3dType" select="@type"/>
+                <xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
         <!-- debug 
-        <xsl:message>
-            <xsl:text>javaValue $x3dType=</xsl:text>
+            <xsl:text>local-name()=</xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text> @name()=</xsl:text>
+            
+        <xsl:if test="($final='true')">
+            <xsl:message>
+            <xsl:text>template javaValue: </xsl:text>
+            <xsl:value-of select="../../@name"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="@name"/>
+            <xsl:text> $x3dType=</xsl:text>
             <xsl:value-of select="$x3dType"/>
             <xsl:text> schemaValue=</xsl:text>
             <xsl:value-of select="$schemaValue"/>
             <xsl:text> xmlValue=</xsl:text>
             <xsl:value-of select="$xmlValue"/>
+            <xsl:text> javaPrimitiveType=</xsl:text>
+            <xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:text> javaType=</xsl:text>
+            <xsl:value-of select="$javaType"/>
         </xsl:message>
+        </xsl:if>
         -->
+        
 		<xsl:choose>
 			 <!-- ======================================== -->
 			<xsl:when test="($x3dType = 'SFString') or
@@ -421,8 +507,13 @@ Additional references of interest:
 			 <!-- ======================================== -->
 			<xsl:when test="($x3dType = 'MFString')">
 				<xsl:choose>
-					<xsl:when test="($javadoc='false')">
-						<xsl:text disable-output-escaping="yes">new ArrayList&lt;String&gt;(Arrays.&lt;String&gt;asList(</xsl:text><!-- ArrayList<> -->
+					<xsl:when test="($javadoc='false') and ($final='true') and (string-length($xmlValue) > 0)">
+                        <!-- this compiles yet still fails at runtime due to class cast errors in loader 'bootstrap', yikes
+						<xsl:text disable-output-escaping="yes">(ArrayList&lt;String&gt;)Collections.unmodifiableList(</xsl:text> -->
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(Arrays.asList(</xsl:text> <!-- ArrayList<> -->
+					</xsl:when>
+					<xsl:when test="($javadoc='false') and (string-length($xmlValue) = 0)">
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;String&gt;(</xsl:text><!-- ArrayList<> -->
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text>new String[] {</xsl:text>
@@ -434,11 +525,14 @@ Additional references of interest:
 					<xsl:value-of select="translate($xmlValue,' ',',')"/>
 				</xsl:if>
 				<xsl:choose>
-					<xsl:when test="($javadoc='false')">
+                	<xsl:when test="($javadoc='false') and ($final='true') and (string-length($xmlValue) = 0)">
+                        <xsl:text>)</xsl:text>
+                    </xsl:when>
+					<xsl:when test="($javadoc='false') and (string-length($xmlValue) > 0)">
 						<xsl:text>))</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:text>}</xsl:text>
+						<xsl:text>)</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
@@ -449,16 +543,29 @@ Additional references of interest:
 			 <!-- ======================================== -->
 			<xsl:when test="($x3dType = 'MFBool') or ($x3dType = 'MFInt32') or ($x3dType = 'SFImage') or ($x3dType = 'MFImage')">
 				<xsl:choose>
+                    <!-- this compiles yet still fails at runtime due to class cast errors in loader 'bootstrap', yikes
+					<xsl:when test="($javadoc='false') and ($final='true') and (string-length($xmlValue) > 0)">
+						<xsl:text>(</xsl:text>
+                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+						<xsl:text>)Collections.unmodifiableList(</xsl:text>
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(</xsl:text><! - - ArrayList<> - - >
+					</xsl:when> -->
 					<xsl:when test="($javadoc='false')">
-						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(Arrays.asList(</xsl:text><!-- ArrayList<> -->
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text>{</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
-				<xsl:value-of select="translate($xmlValue,' ',',')"/>
+                <xsl:if test="(string-length($xmlValue) > 0)">
+                    <xsl:text>Arrays.asList(</xsl:text>
+                    <xsl:value-of select="translate($xmlValue,' ',',')"/>
+                </xsl:if>
 				<xsl:choose>
-					<xsl:when test="($javadoc='false')">
+                    <xsl:when test="($javadoc='false') and ($final='true') and (string-length($xmlValue) = 0)">
+                        <xsl:text>)</xsl:text>
+                    </xsl:when>
+					<xsl:when test="($javadoc='false') and (string-length($xmlValue) > 0)">
 						<xsl:text>))</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
@@ -485,13 +592,23 @@ Additional references of interest:
 			<xsl:when test="($x3dType = 'MFFloat') or ($x3dType = 'MFDouble') or ($x3dType = 'MFTime')">
 				<!-- Java float constants have 'f' appended, e.g. 1.0f -->
 				<xsl:choose>
+                    <!-- this compiles yet still fails at runtime due to class cast errors in loader 'bootstrap', yikes
+					<xsl:when test="($javadoc='false') and ($final='true') and (string-length($xmlValue) > 0)">
+						<xsl:text>(</xsl:text>
+                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+						<xsl:text>)Collections.unmodifiableList(</xsl:text>
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(</xsl:text><! - - ArrayList<> - - >
+					</xsl:when> -->
 					<xsl:when test="($javadoc='false')">
-						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(Arrays.asList(</xsl:text><!-- ArrayList<> -->
+						<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(</xsl:text><!-- ArrayList<> -->
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text>{</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
+                <xsl:if test="(string-length($xmlValue) > 0)">
+                    <xsl:text>Arrays.asList(</xsl:text>
+                </xsl:if>
 				<xsl:choose>
 					<xsl:when test="($x3dType = 'MFFloat')">
 						<xsl:call-template name="append-f-to-float-values-recurse">
@@ -505,7 +622,10 @@ Additional references of interest:
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:choose>
-					<xsl:when test="($javadoc='false')">
+                	<xsl:when test="($final='true') and (string-length($xmlValue) = 0)">
+                   <xsl:text>)</xsl:text>
+                	</xsl:when>
+					<xsl:when test="($javadoc='false') and (string-length($xmlValue) > 0)">
 						<xsl:text>))</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
@@ -1337,7 +1457,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<!-- start class/interface description, javadoc -->
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>/**</xsl:text><xsl:text>&#10;</xsl:text>
-                        <xsl:choose>
+            <xsl:choose>
 				<xsl:when test="string-length(normalize-space($description)) > 0">
 					<xsl:text> * </xsl:text><xsl:value-of select="normalize-space($description)"/>
 					<xsl:text>&#10;</xsl:text>
@@ -1351,6 +1471,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					<xsl:text> * Abstract node interface, defined by X3D Java Scene Access Interface (SAI) Specification to support X3D Java interoperability.</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 					<xsl:text> * </xsl:text><xsl:text>&#10;</xsl:text>
+                    <xsl:if test="not(starts-with($name, 'X3DUnifiedObjectModel'))">
+                        <xsl:text disable-output-escaping="yes"><![CDATA[ *
+ * <i>Warning:</i> this is an abstract interface that cannot be instantiated as a concrete object.
+ * Java programmers typically only need to use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
+]]></xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
 					<xsl:text> * </xsl:text>
 					<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 					<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
@@ -1370,12 +1497,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:if test="not($inConcretePackage = 'true') and not(starts-with($name, 'X3DUnifiedObjectModel'))">
-                            <xsl:text disable-output-escaping="yes"><![CDATA[ *
- * <i>Warning:</i> this is an abstract interface that cannot be instantiated as a concrete object.
- * Java programmers typically only need to use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
-]]></xsl:text>
-                        </xsl:if>
 			<xsl:variable name="isX3dStatement">
 				<xsl:call-template name="isX3dStatement">
 					<xsl:with-param name="name" select="@name"/>
@@ -1419,7 +1540,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<!-- xsl:text> debug: escape-javadoc-characters </xsl:text -->
 										<xsl:call-template name="escape-javadoc-characters">
 											<xsl:with-param name="inputValue">
-												<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
+                                                <!-- escape character entities -->
+												<xsl:value-of select="replace($tooltipText,'&amp;amp;','&amp;')" disable-output-escaping="yes"/>
 											</xsl:with-param>
 										</xsl:call-template>
 									</xsl:with-param>
@@ -2038,7 +2160,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:value-of select="@name"/>
 										</xsl:when>
 										<xsl:when test="(@name = 'id')">
-											<xsl:text>HtmlID</xsl:text>
+											<xsl:text>HtmlId</xsl:text>
 										</xsl:when>
 										<xsl:when test="(@name = 'class')">
 											<!-- getClass() is reserved by Java Object() class -->
@@ -2105,6 +2227,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </xsl:variable>
+                                <!-- TODO atypical invocation -->
                                 <xsl:variable name="javaPrimitiveType">
                                     <xsl:call-template name="javaType">
                                         <xsl:with-param name="x3dType" select="@type"/>
@@ -3300,10 +3423,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								</xsl:if>
 
                             <xsl:text>
-            // DEFAULT_VALUE declarations
+    // DEFAULT_VALUE declarations
 </xsl:text>
 
-							<!-- Source code: _DEFAULT_VALUE declarations -->
+							<!-- Source code: getAttributeNameDefault() declarations -->
                             <xsl:for-each select="InterfaceDefinition/field[((@type='SFString') or (@type='MFString') or (string-length(normalize-space(@default)) > 0)) and
                                                   (@type = 'xs:string') or starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                   not(@type='MFNode') and
@@ -3312,6 +3435,69 @@ import org.web3d.x3d.jsail.*; // again making sure #4
     <!-- not(@type='SFNode') and -->
                                 <xsl:variable name="fieldName" select="translate(@name,'-','_')"/>
                                 <!-- avoid erroneously duplicated fields in X3DUOM -->
+                                <xsl:variable name="isX3dStatement">
+                                    <xsl:call-template name="isX3dStatement">
+                                        <xsl:with-param name="name" select="@name"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:variable name="defaultValue">
+                                    <xsl:value-of select="@default"/>
+                                </xsl:variable>
+                                <xsl:variable name="javaValue">
+                                    <xsl:call-template name="javaValue">
+                                        <xsl:with-param name="javadoc"><xsl:text>true</xsl:text></xsl:with-param>
+                                        <xsl:with-param name="x3dType">
+                                            <xsl:value-of select="@type"/>
+                                        </xsl:with-param>
+                                        <xsl:with-param name="schemaValue">
+                                            <xsl:value-of select="$defaultValue"/>
+                                        </xsl:with-param>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:variable name="javaType">
+                                    <!-- can include collections, must be escaped -->
+                                    <xsl:call-template name="javaType">
+                                        <xsl:with-param name="x3dType" select="@type"/>
+                                        <xsl:with-param name="isInterface" select="$isInterface"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:variable name="javaBaseType" select="//SimpleType[@name = @type]/@baseType"/>
+                                <xsl:variable name="javaPrimitiveType">
+                                    <xsl:call-template name="javaPrimitiveType">
+                                        <xsl:with-param name="x3dType" select="@type"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:variable name="isJavaArray" select="starts-with(@type,'MF') or (@type = 'SFImage') or contains($javaType,'[')"/>
+                                <!--
+                                <xsl:variable name="javaArrayType">
+                                    <xsl:choose>
+                                        <xsl:when test="(@type='SFImage')">
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="$javaPrimitiveType"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                -->
+                                <xsl:variable name="saiPackagePath">
+                                    <xsl:call-template name="saiPackage">
+                                        <xsl:with-param name="nodeType" select="$javaType"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:variable name="javaDefaultValue">
+                                    <xsl:call-template name="javaValue">
+                                        <xsl:with-param name="x3dType">
+                                            <xsl:value-of select="@type"/>
+                                        </xsl:with-param>
+                                        <xsl:with-param name="schemaValue">
+                                            <xsl:value-of select="$defaultValue"/>
+                                        </xsl:with-param>
+                                        <xsl:with-param name="final">
+                                            <xsl:text>true</xsl:text><!-- ensure array elements are immutable -->
+                                        </xsl:with-param>
+                                    </xsl:call-template>
+                                </xsl:variable>
+
                                 <xsl:choose>
                                     <!-- filter unwanted duplicates from X3DUOM -->
                                     <xsl:when test="(count(preceding-sibling::*[@type = 'SFNode'][translate(@name,'-','_') = $fieldName]) > 0)">
@@ -3325,16 +3511,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         </xsl:message>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:variable name="isX3dStatement">
-                                            <xsl:call-template name="isX3dStatement">
-                                                <xsl:with-param name="name" select="@name"/>
-                                            </xsl:call-template>
-                                        </xsl:variable>
-
-                                        <xsl:variable name="defaultValue">
-                                            <xsl:value-of select="@default"/>
-                                        </xsl:variable>
-
                                         <xsl:text>&#10;</xsl:text>
                                         <xsl:text>	/** </xsl:text>
                                         <xsl:if test="($name = 'field') and ((@name = 'type') or (@name = 'accessType'))">
@@ -3356,15 +3532,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                 </xsl:if>
                                                 <xsl:text>value </xsl:text>
                                                 <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                                                <xsl:call-template name="javaValue">
-                                                    <xsl:with-param name="javadoc"><xsl:text>true</xsl:text></xsl:with-param>
-                                                    <xsl:with-param name="x3dType">
-                                                        <xsl:value-of select="@type"/>
-                                                    </xsl:with-param>
-                                                    <xsl:with-param name="schemaValue">
-                                                        <xsl:value-of select="$defaultValue"/>
-                                                    </xsl:with-param>
-                                                </xsl:call-template>
+                                                <xsl:value-of select="$javaValue"/>
                                                 <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
                                                 <xsl:text> (Java syntax) or </xsl:text>
                                                 <xsl:if test="(@type = 'MFString')">
@@ -3385,19 +3553,22 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         <xsl:text>. </xsl:text>
                                         <xsl:text>*/</xsl:text><!-- end javadoc -->
                                         <xsl:text>&#10;</xsl:text>
-                                        <xsl:text>	public static final </xsl:text>
-                                        <xsl:variable name="javaType">
-                                            <!-- can include collections, must be escaped -->
-                                            <xsl:call-template name="javaType">
-                                                <xsl:with-param name="x3dType" select="@type"/>
-                                                <xsl:with-param name="isInterface" select="$isInterface"/>
-                                            </xsl:call-template>
-                                        </xsl:variable>
-                                        <xsl:variable name="saiPackagePath">
-                                            <xsl:call-template name="saiPackage">
-                                                <xsl:with-param name="nodeType" select="$javaType"/>
-                                            </xsl:call-template>
-                                        </xsl:variable>
+                                        <xsl:if test="starts-with(@type,'MF') or (@type='SFImage')">
+                                            <xsl:text>    // ensure elements of default ArrayList are non modifiable</xsl:text>
+                                            <xsl:text>&#10;</xsl:text>
+                                            <xsl:text>    // https://stackoverflow.com/questions/10750791/what-is-the-sense-of-final-arraylist</xsl:text>
+                                            <xsl:text>&#10;</xsl:text>
+                                        </xsl:if>
+                                        <xsl:text>    </xsl:text>
+                                        <xsl:choose>
+                                            <xsl:when test="starts-with(@type,'MF') or (@type='SFImage')">
+                                                <xsl:text>private</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>public</xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:text> static final </xsl:text>
                                         <xsl:choose>
                                             <xsl:when test="(string-length($saiPackagePath) > 0)">
                                                 <xsl:if test="$insertSourceMarkers"><xsl:text> /* marker 11a */</xsl:text></xsl:if>
@@ -3414,18 +3585,170 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         <xsl:value-of select="upper-case($fieldName)"/>
                                         <xsl:text>_DEFAULT_VALUE</xsl:text>
                                         <xsl:text> = </xsl:text>
-                                        <xsl:call-template name="javaValue">
-                                            <xsl:with-param name="x3dType">
-                                                <xsl:value-of select="@type"/>
-                                            </xsl:with-param>
-                                            <xsl:with-param name="schemaValue">
-                                                <xsl:value-of select="$defaultValue"/>
-                                            </xsl:with-param>
-                                        </xsl:call-template>
-                                        <xsl:text>;</xsl:text>
+                                        <xsl:value-of select="$javaDefaultValue"/>
+                                        <xsl:text>; // immutable</xsl:text>
                                         <xsl:text>&#10;</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
+                                <!-- now provide get methods so that default_value is conveniently read and fully encapsulated -->
+
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    /** Public accessor for encapsulated </xsl:text>
+                                <xsl:value-of select="@type"/>
+                                <xsl:text> default value</xsl:text>
+                                <xsl:if test="(string-length($defaultValue) > 0)">
+                                    <xsl:text> </xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                                    <xsl:value-of select="$javaValue"/>
+                                    <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                                </xsl:if>
+                                <xsl:if test="(starts-with(@type,'MF') and contains($javaType,'ArrayList')) or (@type = 'SFImage')">
+                                    <xsl:text> array</xsl:text>
+                                </xsl:if>
+                                <xsl:text>, returned as </xsl:text>
+                                <xsl:value-of select="$javaPrimitiveType"/>
+                                <xsl:if test="$isJavaArray">
+                                    <xsl:text> array</xsl:text>
+                                </xsl:if>
+                                <xsl:text>.</xsl:text>
+                                <xsl:text>
+      * @return default value */</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    public static final </xsl:text>
+                                <xsl:value-of select="$javaPrimitiveType" disable-output-escaping="yes"/>
+                                <xsl:if test="$isJavaArray">
+                                    <xsl:text>[]</xsl:text>
+                                </xsl:if>
+                                <xsl:text> get</xsl:text>
+                                <xsl:value-of select="upper-case(substring($fieldName,1,1))"/>
+								<xsl:value-of select="substring($fieldName,2)"/>
+                                <xsl:text>Default</xsl:text>
+                                <xsl:text>()</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    {
+        </xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test="(starts-with(@type,'MF') and contains($javaType,'ArrayList')) or (@type = 'SFImage')">
+<!-- debug                                        
+<xsl:if test="(@name='image')">
+ </xsl:if>
+    <xsl:message>
+        <xsl:text>*** default field accessors, </xsl:text>
+        <xsl:value-of select="$name"/>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="@name"/>
+        <xsl:text>, $javaType=</xsl:text>
+        <xsl:value-of select="$javaType"/>
+        <xsl:text>, $javaBaseType=</xsl:text>
+        <xsl:value-of select="$javaBaseType"/>
+        <xsl:text>, $javaPrimitiveType=</xsl:text>
+        <xsl:value-of select="$javaPrimitiveType"/>
+    </xsl:message>
+-->
+                                        <xsl:text></xsl:text>
+                                        <xsl:value-of select="$javaPrimitiveType" disable-output-escaping="yes"/>
+                                        <xsl:if test="$isJavaArray">
+                                            <xsl:text>[]</xsl:text>
+                                        </xsl:if>
+                                        <xsl:text> valuesArray = new </xsl:text>
+                                        <xsl:choose>
+                                            <xsl:when test="(@type = 'SFImage')">
+                                                <xsl:text>int[</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$javaPrimitiveType"/>
+                                                <xsl:text>[</xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:value-of select="upper-case(@name)" disable-output-escaping="yes"/>
+                                        <xsl:text>_DEFAULT_VALUE</xsl:text>
+                                        <xsl:text>.size()];
+		int i = 0;
+		for (</xsl:text>
+                                        <xsl:choose>
+                                            <xsl:when test="(@type = 'SFImage')">
+                                                <xsl:text>int </xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$javaPrimitiveType"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:text> arrayElement : </xsl:text>
+                                        <xsl:value-of select="upper-case(@name)" disable-output-escaping="yes"/>
+                                        <xsl:text>_DEFAULT_VALUE</xsl:text>
+                                        <xsl:text>) {
+			valuesArray[i++] = arrayElement;
+		}
+		return valuesArray;
+    }
+        </xsl:text>
+        <!--
+                                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                        <xsl:text disable-output-escaping="yes"><![CDATA[ newArrayList = new ArrayList<>();
+        for (]]></xsl:text>
+                                        <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')" disable-output-escaping="yes"/>
+                                        <xsl:text> value : </xsl:text>
+                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                        <xsl:text>_DEFAULT_VALUE</xsl:text>
+                                        <xsl:text>)
+             newArrayList.add(value);
+        return newArrayList.toArray();
+    }</xsl:text>
+        -->
+                                        <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    /** Public accessor for encapsulated </xsl:text>
+                                <xsl:value-of select="@type"/>
+                                <xsl:text> default value </xsl:text>
+                                <xsl:if test="(string-length($defaultValue) > 0)">
+                                    <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                                    <xsl:value-of select="$javaValue"/>
+                                    <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                                </xsl:if>
+                                <xsl:text>, returned as ArrayList
+      * @return default value */</xsl:text>
+                                        <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    public static final </xsl:text>
+                                <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                <xsl:text> get</xsl:text>
+                                <xsl:value-of select="upper-case(substring($fieldName,1,1))"/>
+								<xsl:value-of select="substring($fieldName,2)"/>
+                                <xsl:text>DefaultList</xsl:text>
+                                <xsl:text>()</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>    {
+        </xsl:text>
+                                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                        <xsl:text disable-output-escaping="yes"><![CDATA[ newArrayList = new ArrayList<>();
+        for (]]></xsl:text>
+                                        <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')" disable-output-escaping="yes"/>
+                                        <xsl:text> value : </xsl:text>
+                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                        <xsl:text>_DEFAULT_VALUE</xsl:text>
+                                        <xsl:text>)
+             newArrayList.add(value);
+        return newArrayList;
+    }</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>return </xsl:text>
+                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                        <xsl:text>_DEFAULT_VALUE;
+    }</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:text></xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+    
+                                <!--
+    public static final ArrayList<Float> getAvatarSizeDefault()
+    {
+        ArrayList<Float> newArrayList = new ArrayList<>();
+        for (Float value : AVATARSIZE_DEFAULT_VALUE)
+            newArrayList.add(value);
+        
+        return newArrayList;
+    }
+    -->
                             </xsl:for-each>
 
 							<xsl:variable name="isX3dStatement">
@@ -3652,7 +3975,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                     </xsl:when>
                                                                     <!-- manually customized code follows, might still have some omissions, see various containerFieldChoices* in X3DUOM -->
                                                                     <xsl:when test="starts-with($name,'Coordinate') or starts-with($name,'CoordinateDouble')">
-                                                                            <xsl:text>, "skinCoord", "skinBindingCoords" /*HAnimHumanoid parent*/</xsl:text>
+                                                                            <xsl:text>, "skinCoord", "skinBindingCoords" /*HAnimHumanoid parent*/, "controlPoint" /*NurbsPatchSurface parent*/</xsl:text>
                                                                     </xsl:when>
                                                                     <xsl:when test="($name = 'Normal')">
                                                                             <xsl:text>, "skinNormal", "skinBindingNormal" /*HAnimHumanoid parent*/</xsl:text>
@@ -3709,7 +4032,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                             <xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
                                                                     </xsl:when>
                                                                     <xsl:when test="starts-with($name,'HAnimSite')">
-									    <xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+                                                                            <xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
                                                                     </xsl:when>
                                                                     <xsl:when test="starts-with($name,'HAnimMotion')">
                                                                             <xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
@@ -3903,10 +4226,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
 										<xsl:text>
         setContainerFieldOverride(""); // ensuring default value used
-	containerField_ALLOWED_VALUES = new String[] { "</xsl:text>
+        containerField_ALLOWED_VALUES = new String[] { "</xsl:text>
 										<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
 										<xsl:text>"</xsl:text>
-                                                                                <xsl:value-of select="$containerFieldAllowedValues" disable-output-escaping="yes"/>
+                                        <xsl:value-of select="$containerFieldAllowedValues" disable-output-escaping="yes"/>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<!-- initialize each field with default values -->
@@ -3940,7 +4263,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text>		</xsl:text>
 										<xsl:choose>
                                             <xsl:when test="(@name = 'id')">
-                                                <xsl:text>HtmlID</xsl:text>
+                                                <xsl:text>HtmlId</xsl:text>
                                             </xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
@@ -3983,19 +4306,25 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												</xsl:if>
 											</xsl:when>
 											<xsl:when test="(@type='MFString')">
-												<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;(</xsl:text><!-- ArrayList<> -->
-												<xsl:value-of select="upper-case(translate(@name,'-','_'))"/> <!-- translate name here to avoid xpath problems -->
-												<xsl:text>_DEFAULT_VALUE</xsl:text>
-												<xsl:text>);</xsl:text>
+												<xsl:text>get</xsl:text>
+                                                <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                                                <xsl:value-of select="substring(@name,2)"/>
+												<xsl:text>DefaultList();</xsl:text>
+											<!--	<xsl:value-of select="upper-case(translate(@name,'-','_'))"/> ranslate name here to avoid xpath problems -->
 											</xsl:when>
-											<!-- TODO check if $defaultValue test is correct, order of these patterns is sensitive -->
+											<!-- check if $defaultValue test is correct, note that order of these patterns is sensitive -->
+											<xsl:when test="(@type='MFBool') or (@type = 'MFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type='MFFloat') or (@type='MFDouble') or (@type='MFTime') or (@type='SFImage')">
+												<xsl:text>get</xsl:text>
+                                                <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                                                <xsl:value-of select="substring(@name,2)"/>
+												<xsl:text>DefaultList();</xsl:text>
+											</xsl:when>
 											<xsl:when test="(@type='SFString') or (@type = 'xs:string') or starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                             (string-length(normalize-space($defaultValue)) > 0)">
-												<xsl:value-of select="upper-case(translate(@name,'-','_'))"/> <!-- translate name here to avoid xpath problems -->
-												<xsl:text>_DEFAULT_VALUE;</xsl:text>
-											</xsl:when>
-											<xsl:when test="(@type='MFBool') or (@type = 'MFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type='MFFloat') or (@type='MFDouble') or (@type='MFTime')">
-												<xsl:text disable-output-escaping="yes">new ArrayList&lt;&gt;();</xsl:text><!-- ArrayList<> -->
+												<xsl:text>get</xsl:text>
+                                                <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                                                <xsl:value-of select="substring(translate(@name,'-','_'),2)"/> <!-- find and fix http-equiv -->
+												<xsl:text>Default();</xsl:text>
 											</xsl:when>
 											<xsl:when test="starts-with(@type,'MF')">
 												<xsl:text> new </xsl:text>
@@ -4166,6 +4495,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * File extension for text files, with dot prepended: <i>.txt</i>
 	 */
 	public static final String FILE_EXTENSION_TEXT = ".txt";
+
+	/**
+	 * File extension for Schematron Validation Report Language (SVRL) text files, produced by X3dSchematron xslt spreadsheet, with dot prepended: <i>.txt</i>
+	 * @see toFileX3dSchematronReport(String)
+	 * @see toStringX3dSchematronReport()
+	 * @see <a href="https://www.web3d.org/x3d/tools/schematron/X3dSchematron.html#Conversion" target="_blank">X3D Schematron Validation and Quality Assurance (QA): Conversion</a>
+	 */
+	public static final String FILE_EXTENSION_SVRL = ".svrl";
 
 	/**
 	 * File extension for Graphics Interchange Format (GIF) image format, with dot prepended: <i>.gif</i>
@@ -4407,7 +4744,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (Exception e)
 		{
 			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
+			e.printStackTrace(System.err);
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
@@ -4437,7 +4774,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException exception)
 		{
-			exception.printStackTrace();
+			exception.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
@@ -4485,7 +4822,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (Exception e)
 		{
 			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
+			e.printStackTrace(System.err);
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
@@ -4515,7 +4852,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException exception)
 		{
-			exception.printStackTrace();
+			exception.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
@@ -4563,7 +4900,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (Exception e)
 		{
 			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
+			e.printStackTrace(System.err);
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
@@ -4593,7 +4930,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException exception)
 		{
-			exception.printStackTrace();
+			exception.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
@@ -4653,24 +4990,34 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	public File toFileStylesheetConversion(String stylesheetName, String fileName, String parameterName1, String parameterValue1, String parameterName2, String parameterValue2)
 	{
 		String errorNotice               = new String();
-                String expectedFileNameExtension = new String();
 		if ((stylesheetName == null || stylesheetName.isEmpty()))
 		{
-			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
+            if (ConfigurationProperties.isDebugModeActive())
+                errorNotice += "[diagnostic] toFileStylesheetConversion(stylesheetName='" + stylesheetName + "', fileName=" + fileName + ") stylesheetName not provided;\n";
+			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName='" + stylesheetName + "', fileName=" + fileName + ") stylesheetName not provided;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
-                expectedFileNameExtension = ConfigurationProperties.getExpectedOutputFileExtension(stylesheetName);
-
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName, fileName) fileName not provided;" +
+            if (ConfigurationProperties.isDebugModeActive())
+                errorNotice += "[diagnostic] toFileStylesheetConversion(stylesheetName='" + stylesheetName + "', fileName=" + fileName + ") fileName not provided;\n";
+			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName=" + stylesheetName + ", fileName) fileName not provided;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
+        String expectedFileNameExtension = ConfigurationProperties.getExpectedOutputFileExtension(stylesheetName);
+        
+        /* debug
+        System.out.println("[debug] toFileStylesheetConversion(stylesheetName='" + stylesheetName + "', fileName=" + fileName +  ") " +
+                           "expectedFileNameExtension=" + expectedFileNameExtension); // debug
+        */
+         
 		if (!((fileName.endsWith(expectedFileNameExtension)) || // some variations allowed
-                     (fileName.endsWith(FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(FILE_EXTENSION_HTML)) ||
-                     (fileName.endsWith(FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(FILE_EXTENSION_JSON))))
+                     (fileName.endsWith(FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(FILE_EXTENSION_HTML))  ||
+                     (fileName.endsWith(FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(FILE_EXTENSION_JSON))  ||
+                     (fileName.endsWith(FILE_EXTENSION_X3D)        && expectedFileNameExtension.equals(FILE_EXTENSION_SVRL)) ||
+                     (fileName.endsWith(FILE_EXTENSION_TEXT)))) // text output always allowed since author might be debugging
 		{
-			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
+			throw new org.web3d.x3d.sai.X3DException("fileName \"" + fileName + "\" does not end with expected extension \"" + expectedFileNameExtension + "\"");
 		}
                 // no need to check fileName for suggested X3D naming conventions
                 if (!isFileNameNMTOKEN(fileName)) // less strict
@@ -4698,7 +5045,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (Exception e)
 		{
 			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
+			e.printStackTrace(System.err);
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
@@ -5009,7 +5356,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
+            ex.printStackTrace(System.err);
             outputFile = null;
         }
         System.out.flush();
@@ -5074,7 +5421,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringJSON(): " + ioe);
 		}
 		return "";
@@ -5108,7 +5455,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringPython(): " + ioe);
 		}
 		return "";
@@ -5262,7 +5609,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toHtmlDocumentation(): " + ioe);
 		}
 		return "";
@@ -5294,7 +5641,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringModelMetaMarkdown(): " + ioe);
 		}
 		return "";
@@ -5327,8 +5674,42 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX3dTidy(): " + ioe);
+		}
+		return "";
+	}
+	/**
+	 * Produce diagnostics for X3D scene using STYLESHEET_X3DSCHEMATRON, providing output as a string.
+	 * @see X3D#toFileX3dSchematronReport(String)
+	 * @see X3D#FILE_EXTENSION_SVRL
+	 * @see X3D#FILE_EXTENSION_TEXT
+	 * @see ConfigurationProperties#STYLESHEET_X3DSCHEMATRON
+	 * @see ConfigurationProperties#STYLESHEET_X3DSCHEMATRON_SVRLREPORT
+	 * @see <a href="https://www.web3d.org/x3d/tools/schematron/X3dSchematron.html#Conversion" target="_blank">X3D Schematron Validation and Quality Assurance (QA): Conversion</a>
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringX3dSchematronReport()
+	{
+		String temporaryFileName    = "temporarySchematronOutputFile.txt";
+		try
+		{
+			File     fileText = toFileX3dSchematronReport(temporaryFileName);
+
+			if  ((fileText != null) && fileText.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileText.delete();
+				return fileContents;
+    
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName)); // debug
+//				return String.join("\n",lines);
+			}
+		}
+		catch (IOException ioe)
+		{
+			ioe.printStackTrace(System.err);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX3dSchematronReport(): " + ioe);
 		}
 		return "";
 	}
@@ -5361,7 +5742,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX3DOM(): " + ioe);
 		}
 		return "";
@@ -5397,7 +5778,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException ioe)
 		{
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX_ITE(): " + ioe);
 		}
 		return "";
@@ -5604,6 +5985,61 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         	return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN, fileName, "includeSubdirectoryPaths", Boolean.toString(includeSubdirectoryPaths)); // one stylesheet parameter
 	}
 
+	/**
+	 * Create alternate cleaned-up X3D scene using STYLESHEET_X3DSCHEMATRON within an output file having extension <i>.x3d</i>.
+	 * @see X3D#toStringX3dSchematronReport()
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see ConfigurationProperties#STYLESHEET_X3DSCHEMATRON
+	 * @see ConfigurationProperties#STYLESHEET_X3DSCHEMATRON_SVRLREPORT
+	 * @see <a href="https://www.web3d.org/x3d/tools/schematron/X3dSchematron.html">X3D Schematron Validation and Quality Assurance (QA)</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
+	 * @param fileName name of file to create and save, can include local directory path, must end with .txt
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileX3dSchematronReport(String fileName)
+	{
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new org.web3d.x3d.sai.X3DException("toFileX3dSchematronReport(fileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_TEXT + "\"");
+		}
+		if (!fileName.endsWith(FILE_EXTENSION_TEXT))
+		{
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_TEXT + "\"");
+		}
+		if      (!fileNameMeetsX3dNamingConventions(fileName))
+                    System.out.println ("[warning] " + fileName + " does not meet suggested X3D naming conventions, continuing...");
+                else if (!isFileNameNMTOKEN(fileName)) // less strict
+                    System.out.println ("[warning] " + fileName + " is not a valid NMTOKEN, continuing...");
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[diagnostic] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+    
+        String fileNameSVRL = fileName.replace(FILE_EXTENSION_TEXT, FILE_EXTENSION_SVRL); // intermediate file conversion required
+        File   fileSVRL = new File(fileNameSVRL);
+        fileSVRL = toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON, fileNameSVRL); // no stylesheet parameters
+        // now convert SVRL XML to plain-text report
+        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT, fileName); // no stylesheet parameters
+	}
+    
 	/**
 	 * Create alternate cleaned-up X3D scene using STYLESHEET_X3DTIDY within an output file having extension <i>.x3d</i>.
 	 * @see X3D#toStringX3dTidy()
@@ -6580,7 +7016,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			System.out.println (ioe.getMessage());
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 		}
 		return resultFile;
 	}
@@ -6616,7 +7052,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			System.out.println (ioe.getMessage());
-			ioe.printStackTrace();
+			ioe.printStackTrace(System.err);
 		}
 		return resultFile;
 	}
@@ -6663,7 +7099,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 e.printStackTrace(new PrintWriter(sw));
                 String exceptionAsString = sw.toString();
                 exceptionResult+= exceptionAsString;
-                e.printStackTrace();
+                e.printStackTrace(System.err);
 	    }
 	}
         // validation checking complete
@@ -7042,12 +7478,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                     </xsl:otherwise>
                                 </xsl:choose>
 							</xsl:variable>
-							<xsl:variable name="javaPrimitiveType">
+                            <!-- TODO atypical invocation -->
+                            <xsl:variable name="javaPrimitiveType">
 								<xsl:call-template name="javaType">
-									<xsl:with-param name="x3dType" select="@type"/>
+                                    <xsl:with-param name="x3dType" select="@type"/>
 									<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
-								</xsl:call-template>
-							</xsl:variable>
+                                </xsl:call-template>
+                            </xsl:variable>
 							<xsl:variable name="javaBaseType">
 								<xsl:choose>
 									<xsl:when test="contains($javaPrimitiveType,'[')">
@@ -7170,7 +7607,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="@name"/>
 									</xsl:when>
                                     <xsl:when test="(@name = 'id')">
-                                        <xsl:text>HtmlID</xsl:text>
+                                        <xsl:text>HtmlId</xsl:text>
                                     </xsl:when>
 									<xsl:when test="(@name = 'class')">
 										<!-- getClass() is reserved by Java Object() class -->
@@ -7218,7 +7655,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:when>
                                     <xsl:when test="(@name = 'id')">
                                         <!-- similarly named for clarity, consistency -->
-										<xsl:text>HtmlID</xsl:text>
+										<xsl:text>HtmlId</xsl:text>
                                     </xsl:when>
 									<xsl:when test="(@name = 'class')">
 										<!-- getClass() is reserved by Java Object() class -->
@@ -7508,7 +7945,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($thisClassName = 'ProtoInstance') and
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1? -->
+									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here0? -->
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
@@ -8374,7 +8811,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text> == null) return this; // newValueNullReturnThis</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 								</xsl:variable>
-								<xsl:variable name="newValueNullSetDEFAULT_VALUE">
+								<xsl:variable name="getNewValueNullSetDefault">
 									<!-- TODO avoid null-value checks by replacing with empty values instead, where possible -->
 									<xsl:text>		if (</xsl:text>
 									<xsl:value-of select="$newValue"/>
@@ -8397,8 +8834,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>			return set</xsl:text>
 											<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 											<xsl:text>(</xsl:text>
-											<xsl:value-of select="upper-case(translate(@name,'-','_'))"/> <!-- translate name here to avoid xpath problems -->
-											<xsl:text>_DEFAULT_VALUE); // newValueNullSetDEFAULT_VALUE</xsl:text>
+                                            <xsl:text>get</xsl:text>
+                                            <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                                            <xsl:value-of select="substring(@name,2)"/>
+                                            <xsl:text>Default());</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
@@ -8406,7 +8845,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>			clear</xsl:text>
 											<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-											<xsl:text>(); // newValueNullSetDEFAULT_VALUE</xsl:text>
+											<xsl:text>();</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>			return this;</xsl:text>
 											<xsl:text>&#10;</xsl:text>
@@ -8552,10 +8991,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- unmodified -->
 												<xsl:value-of select="@name"/>
 											</xsl:when>
-                                                                                        <xsl:when test="(@name = 'id')">
-                                                                                            <!-- similarly named for clarity, consistency -->
-                                                                                            <xsl:text>HtmlID</xsl:text>
-                                                                                        </xsl:when>
+                                            <xsl:when test="(@name = 'id')">
+                                                <!-- similarly named for clarity, consistency -->
+                                                <xsl:text>HtmlId</xsl:text>
+                                            </xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>CssClass</xsl:text>
@@ -8963,7 +9402,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
 											<xsl:when test="(@name = 'id')">
-												<xsl:text>		setConcreteHtmlID(</xsl:text>
+												<xsl:text>		setConcreteHtmlId(</xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
@@ -8979,7 +9418,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											</xsl:when>
 											<!-- https://stackoverflow.com/questions/10530353/convert-string-array-to-arraylist -->
 											<xsl:when test="(@type = 'SFNode') and not($javaPrimitiveType = $javaType) and not($isX3dStatement = 'true')">
-												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+												<xsl:value-of select="$getNewValueNullSetDefault"/>
 												<xsl:value-of select="$newValueInstanceAcceptableNodeTypesTest" disable-output-escaping="yes"/>
 												<!-- SFNode subtype checks necessary -->
 												<xsl:text>	if (</xsl:text>
@@ -9081,7 +9520,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>		}</xsl:text>
 											</xsl:when>
 											<xsl:when test="(@type = 'MFNode') and not(starts-with($javaType, $javaReferenceType)) and not($isX3dStatement = 'true')">
-												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+												<xsl:value-of select="$getNewValueNullSetDefault"/>
 												<xsl:value-of select="$newValueArrayAcceptableNodeTypesTest" disable-output-escaping="yes"/>
 												<xsl:text>		</xsl:text>
                                                 <xsl:text>clear</xsl:text>
@@ -9161,7 +9600,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>		}</xsl:text>
 											</xsl:when>
 											<xsl:when test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
-											<!-- <xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/> should occur early, not late -->
+											<!-- <xsl:value-of select="$getNewValueNullSetDefault"/> should occur early, not late -->
 												<!-- https://stackoverflow.com/questions/39873596/convert-array-of-strings-to-boolean-list-in-java -->
 												<xsl:text>            </xsl:text>
                                                 <xsl:text>clear</xsl:text>
@@ -9385,12 +9824,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                         </xsl:variable>
-							<xsl:variable name="javaPrimitiveType">
+                            <!-- TODO atypical invocation -->
+                            <xsl:variable name="javaPrimitiveType">
 								<xsl:call-template name="javaType">
-									<xsl:with-param name="x3dType" select="@type"/>
+                                    <xsl:with-param name="x3dType" select="@type"/>
 									<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
-								</xsl:call-template>
-							</xsl:variable>
+                                </xsl:call-template>
+                            </xsl:variable>
 							<xsl:variable name="javaBaseType">
 								<xsl:choose>
 									<xsl:when test="contains($javaPrimitiveType,'[')">
@@ -9771,7 +10211,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
-										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+										<xsl:value-of select="$getNewValueNullSetDefault"/>
 									</xsl:if>
 									<xsl:text>		// set-newValue-validity-checks #1 gets handled by set-primitive method</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -10069,7 +10509,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true') and not(@type = 'MFString')">
-									<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+									<xsl:value-of select="$getNewValueNullSetDefault"/>
 									</xsl:if>
 									<!-- assumption: SF/MF object assignment is OK due to object integrity.
                                                                              therefore check if MFString value was actually sent as SFString
@@ -10169,7 +10609,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
                                                                         <!--
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
-										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+										<xsl:value-of select="$getNewValueNullSetDefault"/>
 									</xsl:if>
                                                                         -->
 									<!-- assumption: SF/MF object assignment is OK due to object integrity.
@@ -10908,7 +11348,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>&#10;</xsl:text>
 											<xsl:choose>
 												<xsl:when test="($isX3dStatement = 'true')">
-													<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+													<xsl:value-of select="$getNewValueNullSetDefault"/>
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="$newValueNullReturnSelf"/>
@@ -11061,13 +11501,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////	 * @param newValue is new value for the id field.
 ////	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 ////	 */
-////	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(String newValue)
+////	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlId(String newValue)
 ////	{
 ////		// set-newValue-validity-checks #0.b
 ////		if (newValue == null)
 ////		    newValue = new String(); // Principle of Least Astonishment (POLA) #5
 ////		    // https://en.wikipedia.org/wiki/Principle_of_least_astonishment
-////		setConcreteHtmlID(newValue); // private superclass method
+////		setConcreteHtmlId(newValue); // private superclass method
 ////		return this;
 ////	}
 ////
@@ -11078,10 +11518,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////	 * @param newValue is new value for the style field.
 ////	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 ////	 */
-////	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(SFString newValue)
+////	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlId(SFString newValue)
 ////	{
 ////			// set-newValue-validity-checks #1 gets handled by set-primitive method
-////			setHtmlID(newValue.getPrimitiveValue());
+////			setHtmlId(newValue.getPrimitiveValue());
 ////			return this;
 ////	}
 
@@ -11642,7 +12082,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
+									<xsl:value-of select="$getNewValueNullSetDefault"/>
 									<xsl:text>		// set-newValue-validity-checks #5</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
@@ -11980,11 +12420,25 @@ setAttribute method invocations).
 								<xsl:if test="starts-with($type,'MF') and ($tupleSize = 1) and not($type = 'MFNode') and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text>
 	/**
-	 * Add singleton </xsl:text><xsl:value-of select="$javaBaseType"/><xsl:text> value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text> field.
+	 * Add singleton </xsl:text><xsl:value-of select="$javaBaseType"/><xsl:text> value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/>
+									<xsl:choose>
+										<xsl:when test="($name = 'ExternProtoDeclare') or (($type = 'MFString') and
+                                             ((@additionalEnumerationValuesAllowed = 'false') or (string-length(@additionalEnumerationValuesAllowed) = 0)))">
+											<xsl:text> field, allowing duplicate and empty string values if provided.</xsl:text>
+                                        </xsl:when>
+										<xsl:when test="($type = 'MFString') and (@additionalEnumerationValuesAllowed = 'true')">
+											<xsl:text> field, not allowing duplicate or empty string values in this controlled enumeration field.</xsl:text>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text>field.</xsl:text>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                        <xsl:text>
 	 * @param newValue is new value to add to the </xsl:text><xsl:value-of select="@name"/><xsl:text> field.</xsl:text>
 									<xsl:if test="($type = 'MFString')">
 										<xsl:text>
-	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
+	 * @see MFString#cleanupEnumerationValues(String)
+	 * @see MFString#hasDuplicateValues()</xsl:text>
 									</xsl:if>
 									<xsl:text>
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
@@ -11994,21 +12448,49 @@ setAttribute method invocations).
 									<xsl:text> add</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(</xsl:text><xsl:value-of select="$javaBaseType"/><xsl:text> newValue)
-	{
-		</xsl:text>
+	{</xsl:text>
 									<xsl:choose>
-										<xsl:when test="($type = 'MFString')">
-											<xsl:text disable-output-escaping="yes"><![CDATA[if (newValue == null)
+										<xsl:when test="($name = 'ExternProtoDeclare') or (($type = 'MFString') and
+                                             ((@additionalEnumerationValuesAllowed = 'false') or (string-length(@additionalEnumerationValuesAllowed) = 0)))">
+											<xsl:text>
+        if (newValue == null)
 		{
 			return this; // nothing else to do
 		}
-        newValue = MFString.cleanupEnumerationValue(newValue); // handle potential enumeration value
-		if (!newValue.isEmpty() && !]]></xsl:text>
-											<xsl:value-of select="@name"/>
-											<xsl:text>.contains(newValue))
+		if (!newValue.isEmpty())
             </xsl:text>
 											<xsl:value-of select="@name"/>
-											<xsl:text>.add(newValue); // only add if not already present
+											<xsl:text>.add(newValue); // can add as many values are desired, including duplicates</xsl:text>
+                                        </xsl:when>
+										<xsl:when test="($type = 'MFString') and (@additionalEnumerationValuesAllowed = 'true')">
+                                            <xsl:text>
+        if (newValue == null)
+		{
+			return this; // nothing else to do
+		}
+        String normalizedString = MFString.cleanupEnumerationValue(newValue); // handle potential enumeration value
+        /* debug
+        System.out.println("*** [debug] newValue=\"" + newValue + "\", normalizedString=" + normalizedString); */
+                                                
+		if     (normalizedString.isBlank())
+              System.out.println("*** warning, </xsl:text>
+                                            <xsl:value-of select="$thisClassName"/>
+                                            <xsl:text>.add</xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text>(\"" + newValue + "\") ignored since empty string cannot be a contained enumeration");
+        else if(!</xsl:text>
+											<xsl:value-of select="@name"/>
+											<xsl:text>.contains(normalizedString)) // check in ArrayList
+             </xsl:text>
+											<xsl:value-of select="@name"/>
+											<xsl:text>.add(normalizedString); // cannot add duplicates or empty strings</xsl:text>
+                                            
+                                            <xsl:text>
+        else System.out.println("*** warning, </xsl:text>
+                                            <xsl:value-of select="$thisClassName"/>
+                                            <xsl:text>.add</xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text>(\"" + newValue + "\") ignored since this duplicate value is already one of contained enumerations");
 </xsl:text>
 										</xsl:when>
                                         <xsl:otherwise>
@@ -12024,11 +12506,25 @@ setAttribute method invocations).
 								<xsl:if test="starts-with($type,'MF') and not($type = 'MFNode') and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text>
 	/**
-	 * Add singleton S</xsl:text><xsl:value-of select="substring($type,2)"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text> field.
+	 * Add singleton S</xsl:text><xsl:value-of select="substring($type,2)"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/>
+									<xsl:choose>
+										<xsl:when test="($type = 'MFString') and
+                                             ((@additionalEnumerationValuesAllowed = 'false') or (string-length(@additionalEnumerationValuesAllowed) = 0))">
+											<xsl:text> field, allowing duplicate or empty string values if provided.</xsl:text>
+                                        </xsl:when>
+										<xsl:when test="($type = 'MFString') and (@additionalEnumerationValuesAllowed = 'true')">
+											<xsl:text> field, not allowing duplicate or empty string values in this controlled enumeration field.</xsl:text>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text>field.</xsl:text>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <xsl:text>
 	 * @param newValue is new value to add to the </xsl:text><xsl:value-of select="@name"/><xsl:text> field.</xsl:text>
 									<xsl:if test="($type = 'MFString')">
 										<xsl:text>
-	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
+	 * @see MFString#cleanupEnumerationValues(String)
+	 * @see MFString#hasDuplicateValues()</xsl:text>
 									</xsl:if>
 									<xsl:text>
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
@@ -12042,21 +12538,48 @@ setAttribute method invocations).
 									<xsl:value-of select="substring($type,2)"/>
 									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text> newValue)
 	{
-		if (newValue == null)
+		</xsl:text>
+									<xsl:choose>
+										<xsl:when test="($name = 'ExternProtoDeclare') or (($type = 'MFString') and
+                                             ((@additionalEnumerationValuesAllowed = 'false') or (string-length(@additionalEnumerationValuesAllowed) = 0)))">
+											<xsl:text>if (newValue == null)
 		{
 			return this; // nothing else to do
 		}
-		</xsl:text>
-									<xsl:choose>
-										<xsl:when test="($type = 'MFString')">
-											<xsl:text disable-output-escaping="yes"><![CDATA[
-        newValue.setValue(MFString.cleanupEnumerationValue(newValue.getValue())); // handle potential enumeration value
-		if (!newValue.getValue().isEmpty() && !]]></xsl:text>
+		// can add an empty String value ""
+        </xsl:text>
 											<xsl:value-of select="@name"/>
-											<xsl:text>.contains(newValue.getValue()))
-            </xsl:text>
+											<xsl:text>.add(newValue.getValue()); // can add as many values are desired, including duplicates</xsl:text>
+                                        </xsl:when>
+										<xsl:when test="($type = 'MFString') and (@additionalEnumerationValuesAllowed = 'true')">
+                                            <xsl:text>
+        if (newValue == null)
+		{
+			return this; // nothing else to do
+		}
+        String normalizedString = MFString.cleanupEnumerationValue(newValue.getValue()); // handle potential enumeration value
+        /* debug
+        System.out.println("*** [debug] newValue.getValue()=\"" + newValue.getValue() + "\", normalizedString=\"" + normalizedString + "\""); */
+       
+		if     (normalizedString.isBlank())
+             System.out.println("*** warning, </xsl:text>
+                                            <xsl:value-of select="$thisClassName"/>
+                                            <xsl:text>.add</xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text>(\"" + newValue.getValue() + "\") ignored since empty string cannot be a contained enumeration");
+        else if(!</xsl:text>
 											<xsl:value-of select="@name"/>
-											<xsl:text>.add(newValue.getValue()); // only add if not already present
+											<xsl:text>.contains(normalizedString)) // check in ArrayList
+             </xsl:text>
+											<xsl:value-of select="@name"/>
+											<xsl:text>.add(normalizedString); // cannot add duplicates or empty strings</xsl:text>
+                                            
+                                            <xsl:text>
+        else System.out.println("*** warning, </xsl:text>
+                                            <xsl:value-of select="$thisClassName"/>
+                                            <xsl:text>.add</xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text>(\"" + newValue.getValue() + "\") ignored since this duplicate value is already one of contained enumerations");
 </xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
@@ -13385,7 +13908,7 @@ setAttribute method invocations).	 */
 -->
 						</xsl:choose> <!-- utility constructors -->
 
-						<!-- Additional utility methods -->
+						<!-- Additional utility methods for head, field, fieldValue-->
                         <xsl:choose>
                             <xsl:when test="($name = 'head')">
                                 <xsl:text disable-output-escaping="yes"><![CDATA[
@@ -13548,7 +14071,7 @@ setAttribute method invocations).
 						<!-- toStringX3D, toStringXML -->
 						<xsl:if test="not(starts-with($thisClassName, 'X3DConcrete'))">
 
-          <!-- handle field synonyms -->
+                            <!-- handle field synonyms -->
                             <xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility method to adjust field synonyms
@@ -13767,7 +14290,7 @@ setAttribute method invocations).
 			<!-- DEF, USE, name attributes first for readability and to match X3D Canonical Form -->
 			<xsl:if test="InterfaceDefinition/field[@name = 'DEF']">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-			if (!getDEF().equals(DEF_DEFAULT_VALUE) && !hasUSE())
+			if (!getDEF().equals(getDEFDefault()) && !hasUSE())
 			{
 				stringX3D.append(" DEF='").append(SFString.toString(getDEF())).append("'");
 			}
@@ -13775,7 +14298,7 @@ setAttribute method invocations).
 			</xsl:if>
 			<xsl:if test="InterfaceDefinition/field[@name = 'USE']">
 				<xsl:text>
-			if (!getUSE().equals(USE_DEFAULT_VALUE))
+			if (!getUSE().equals(getUSEDefault()))
 			{
 				stringX3D.append(" USE='").append(SFString.toString(getUSE())).append("'");
 			}
@@ -13789,7 +14312,7 @@ setAttribute method invocations).
 			// note special case for ProtoInstance, do not include name field if USE is present]]></xsl:text>
 				</xsl:if> -->
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-			if (!getName().equals(NAME_DEFAULT_VALUE)]]></xsl:text>
+			if (!getName().equals(getNameDefault())]]></xsl:text>
 			<!-- name is now required
 			<xsl:if test="not($isX3dStatement = 'true') or ($name = 'ProtoInstance')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
@@ -13862,10 +14385,10 @@ setAttribute method invocations).
 						</xsl:when>
                         <xsl:when test="(@name = 'id')">
                             <!-- similarly named for clarity, consistency -->
-							<xsl:text>HtmlID</xsl:text>
+							<xsl:text>HtmlId</xsl:text>
                         </xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java() class -->
+							<!-- avoiding name collision: getClass() is reserved by Java() class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
@@ -13917,47 +14440,60 @@ setAttribute method invocations).
 					<xsl:text><![CDATA[(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[() != ]]></xsl:text>
-					<xsl:value-of select="upper-case($fieldName)"/>
-					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple type */]]></xsl:text>
+                    <xsl:text>get</xsl:text>
+                    <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                    <xsl:value-of select="substring(@name,2)"/>
+                    <xsl:text>Default()</xsl:text>
+					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple type */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($javaType, 'ArrayList')">
                                             <xsl:text><![CDATA[((get]]></xsl:text>
                                             <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !Arrays.equals(get]]></xsl:text>
                                             <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[List().equals(]]></xsl:text>
-                                            <xsl:value-of select="upper-case($fieldName)"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* ArrayList .x3d compare */]]></xsl:text>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[(), ]]></xsl:text>
+                                            <xsl:text>get</xsl:text>
+                                            <xsl:value-of select="$CamelCaseName"/>
+                                            <xsl:text>Default()</xsl:text>
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple array .x3d compare */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'LayerSet') and ($fieldName = 'order')">
 					<xsl:text><![CDATA[!(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[().equals(]]></xsl:text>
-					<xsl:value-of select="upper-case($fieldName)"/>
-					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
+                    <xsl:text>get</xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text>Default()</xsl:text>
+					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($isSingleValueType = 'true')">
 					<xsl:text><![CDATA[!get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text><![CDATA[().equals(]]></xsl:text>
-					<xsl:value-of select="upper-case($fieldName)"/>
-					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes()) /* isSingleValueType */]]></xsl:text>
+                    <xsl:text>get</xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text>Default()</xsl:text>
+					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* isSingleValueType */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="(string-length(@default) > 0)">
 					<xsl:text><![CDATA[!Arrays.equals(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text><![CDATA[(), ]]></xsl:text>
-					<xsl:value-of select="upper-case($fieldName)"/>
-					<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes()) /* (string-length(@default) > 0) */]]></xsl:text>
+                    <xsl:text>get</xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text>Default()</xsl:text>
+					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* (string-length(@default) > 0) */]]></xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-                                    <xsl:text><![CDATA[((get]]></xsl:text>
-                                    <xsl:value-of select="$CamelCaseName"/>
-                                    <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
-                                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text><![CDATA[((get]]></xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[().equals(]]></xsl:text>
-                                    <xsl:value-of select="upper-case($fieldName)"/>
-                                    <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* otherwise */]]></xsl:text>
+                    <xsl:text>get</xsl:text>
+                    <xsl:value-of select="$CamelCaseName"/>
+                    <xsl:text>Default()</xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* otherwise */]]></xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="not($isX3dStatement = 'true')">
@@ -14552,14 +15088,14 @@ setAttribute method invocations).
 			<!-- DEF, USE, name attributes first for readability and to match X3D Canonical Form -->
 			<xsl:if test="InterfaceDefinition/field[@name = 'DEF']">
 				<xsl:text>
-		if (!getDEF().equals(DEF_DEFAULT_VALUE))
+		if (!getDEF().equals(super.getDEFDefault()))
 		{
 			stringClassicVRML.append("DEF ").append(SFString.toString(getDEF())).append(" ");
 		}</xsl:text>
 			</xsl:if>
 			<xsl:if test="InterfaceDefinition/field[@name = 'USE']">
 				<xsl:text>
-		if (!getUSE().equals(USE_DEFAULT_VALUE))
+		if (!getUSE().equals(super.getUSEDefault()))
 		{
 			 stringClassicVRML.append("USE ").append(SFString.toString(getUSE())).append("\n");
 		}
@@ -14774,10 +15310,10 @@ setAttribute method invocations).
 						</xsl:when>
                         <xsl:when test="(@name = 'id')">
                             <!-- similarly named for clarity, consistency -->
-							<xsl:text>HtmlID</xsl:text>
+							<xsl:text>HtmlId</xsl:text>
                         </xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java() class -->
+							<!-- avoiding name collision: getClass() is reserved by Java() class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
@@ -14847,39 +15383,47 @@ setAttribute method invocations).
 						<xsl:text><![CDATA[(get]]></xsl:text>
 						<xsl:value-of select="$CamelCaseName"/>
 						<xsl:text disable-output-escaping="yes"><![CDATA[() != ]]></xsl:text>
-						<xsl:value-of select="upper-case($fieldName)"/>
-						<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
+                        <xsl:text>get</xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text>Default()</xsl:text>
+						<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="contains($javaType, 'ArrayList')">
-                                            <xsl:text><![CDATA[((get]]></xsl:text>
-                                            <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
-                                            <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[List().equals(]]></xsl:text>
-                                            <xsl:value-of select="upper-case($fieldName)"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[_DEFAULT_VALUE)) || !ConfigurationProperties.getStripDefaultAttributes()) /* ArrayList .x3dv compare */]]></xsl:text>
+                        <xsl:text><![CDATA[((get]]></xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !Arrays.equals(get]]></xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text disable-output-escaping="yes"><![CDATA[(), ]]></xsl:text>
+                        <xsl:text>get</xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text>Default()</xsl:text>
+                        <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple array .x3dv compare */]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="($isSingleValueType = 'true')">
 						<xsl:text><![CDATA[!get]]></xsl:text>
 						<xsl:value-of select="$CamelCaseName"/>
 						<xsl:text><![CDATA[().equals(]]></xsl:text>
-						<xsl:value-of select="upper-case($fieldName)"/>
-						<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
+                        <xsl:text>get</xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text>Default()</xsl:text>
+						<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="(string-length(@default) > 0)">
 						<xsl:text><![CDATA[!Arrays.equals(get]]></xsl:text>
 						<xsl:value-of select="$CamelCaseName"/>
 						<xsl:text><![CDATA[(), ]]></xsl:text>
-						<xsl:value-of select="upper-case($fieldName)"/>
-						<xsl:text><![CDATA[_DEFAULT_VALUE) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
+                        <xsl:text>get</xsl:text>
+                        <xsl:value-of select="$CamelCaseName"/>
+                        <xsl:text>Default()</xsl:text>
+						<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text><![CDATA[(get]]></xsl:text>
 						<xsl:value-of select="$CamelCaseName"/>
 						<xsl:text>().length</xsl:text>
-                                                <xsl:if test="($javaType = 'String')">
-                                                    <xsl:text>()</xsl:text>
-                                                </xsl:if>
+                        <xsl:if test="($javaType = 'String')">
+                            <xsl:text>()</xsl:text>
+                        </xsl:if>
 						<xsl:text disable-output-escaping="yes"><![CDATA[ > 0) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -15834,7 +16378,7 @@ setAttribute method invocations).
 										</xsl:when>
 										<xsl:when test="(@name = 'id')">
 											<!-- similarly named for clarity, consistency -->
-											<xsl:text>HtmlID</xsl:text>
+											<xsl:text>HtmlId</xsl:text>
 										</xsl:when>
 										<xsl:when test="(@name = 'class')">
 											<!-- getClass() is reserved by Java Object() class -->
@@ -15973,7 +16517,7 @@ setAttribute method invocations).
                             String exceptionMessage = "[exception] during validation: " + e.getMessage();
                             validationResult.append(exceptionMessage);
                         //  System.err.println(exceptionMessage);
-                            e.printStackTrace();
+                            e.printStackTrace(System.err);
                         }
 		}
 		set</xsl:text><xsl:value-of select="$CamelCaseName"/>
@@ -17580,7 +18124,7 @@ public File toFileSvgCrossSection(String fileName)
 {
     if (!(fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_SVG)))
     {
-        throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with expected extension \"" + X3D.FILE_EXTENSION_SVG + "\"");
+        throw new org.web3d.x3d.sai.X3DException("fileName \"" + fileName + "\" does not end with expected extension \"" + X3D.FILE_EXTENSION_SVG + "\"");
     }
     return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_ExtrusionCrossSectionSVG, fileName);
 }
@@ -17775,6 +18319,56 @@ public File toFileSvgCrossSection(String fileName)
 		return result.toString().trim();
 	}
 ]]></xsl:text>
+							</xsl:when>
+                            <xsl:when test="contains($name, 'OrthoViewpoint')">
+                                <xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Utility method to assign four floats to fieldOfView field, similar to {@link #setFieldOfView(float[])}.
+     * Note that fieldOfView type rightfully ought to be an SFVec4f for best strictness, but remained MFFloat for backwards compatibility.
+     * @see  <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/navigation.html#OrthoViewpoint" target="_blank">X3D Architecture 4.0, clause 23 Navigation component, 23.4.5 OrthoViewpoint</a> 
+     * @see  <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#OrthoViewpoint.fieldOfView" target="_blank">X3D Tooltips, OrthoViewpoint.fieldOfView</a> 
+     * @param newFieldOfView SFVec4f containing minimum_x (left extent), minimum_y (bottom extent), maximum_x (right extent), maximum_y (top extent)
+	 * @return {@link OrthoViewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public OrthoViewpoint setFieldOfView(SFVec4f newFieldOfView)
+	{
+            float minimum_x = newFieldOfView.getPrimitiveValue()[0];
+            float maximum_x = newFieldOfView.getPrimitiveValue()[1];
+            float minimum_y = newFieldOfView.getPrimitiveValue()[2];
+            float maximum_y = newFieldOfView.getPrimitiveValue()[3];
+            
+            setFieldOfView(minimum_x, maximum_x, minimum_y, maximum_y); // applies validity checks
+            return this;
+    }
+                                    
+	/**
+	 * Utility method to assign four floats to fieldOfView field, similar to {@link #setFieldOfView(float[])}.
+     * Note that fieldOfView type rightfully ought to be an SFVec4f for best strictness, but remained MFFloat for backwards compatibility.
+     * @see  <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/navigation.html#OrthoViewpoint" target="_blank">X3D Architecture 4.0, clause 23 Navigation component, 23.4.5 OrthoViewpoint</a> 
+     * @see  <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#OrthoViewpoint.fieldOfView" target="_blank">X3D Tooltips, OrthoViewpoint.fieldOfView</a> 
+     * @param minimum_x   left extent
+     * @param minimum_y bottom extent
+     * @param maximum_x  right extent
+     * @param maximum_y    top extent
+	 * @return {@link OrthoViewpoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public OrthoViewpoint setFieldOfView(float minimum_x, float minimum_y, float maximum_x, float maximum_y)
+	{
+            // TODO add checks to setFieldOfView(float[])
+            if ((minimum_x >= maximum_x) || (minimum_y >= maximum_y))
+            {
+                System.out.println(ConfigurationProperties.ERROR_ILLEGAL_VALUE +
+                                   "[org.web3d.x3d.jsail.Navigation.OrthoViewpoint] fieldOfView values" + 
+                                   "(minimum_x=" + minimum_x + ", maximum_x=" + maximum_x + ", minimum_y=" + minimum_y + ", maximum_y=" + maximum_y + ")" +
+                                   " do not pass requirements (minimum_x < maximum_x) and (minimum_y < maximum_y)");
+                // continue with setting values
+            }
+            clearFieldOfView(); // reset prior to setting value(s)
+            float[] newFieldOfView = new float[]{minimum_x, maximum_x, minimum_y, maximum_y};
+            setFieldOfView(newFieldOfView);
+            return this;
+	}
+]]></xsl:text>
                             </xsl:when>
 						</xsl:choose><!-- node-unique and statement-unique methods -->
 
@@ -17913,12 +18507,11 @@ public File toFileSvgCrossSection(String fileName)
 													  (@type = 'MFString') or (@type = 'MFTime')  or (@type = 'MFNode') or
 													   starts-with(@type,'SF')"/>
 							</xsl:variable>
-							<xsl:variable name="javaPrimitiveType">
-								<xsl:call-template name="javaType">
-									<xsl:with-param name="x3dType" select="@type"/>
-									<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
-								</xsl:call-template>
-							</xsl:variable>
+                            <xsl:variable name="javaPrimitiveType">
+                                <xsl:call-template name="javaPrimitiveType">
+                                    <xsl:with-param name="x3dType" select="@type"/>
+                                </xsl:call-template>
+                            </xsl:variable>
 							<xsl:variable name="javaBaseType">
 								<xsl:choose>
 									<xsl:when test="contains($javaPrimitiveType,'[')">
@@ -19879,16 +20472,12 @@ shall not include the underlying field's values at that point in time.
 					<xsl:with-param name="x3dType" select="@type"/>
 				</xsl:call-template>
 			</xsl:variable>
-			<xsl:variable name="javaPrimitiveType">
-				<xsl:choose>
-					<xsl:when test="($isSingletonType = 'true')">
-						<xsl:value-of select="substring-before($javaType,'[')"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="$javaType"/><!-- array of array type -->
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
+
+            <xsl:variable name="javaPrimitiveType">
+                <xsl:call-template name="javaPrimitiveType">
+                    <xsl:with-param name="x3dType" select="@type"/>
+                </xsl:call-template>
+            </xsl:variable>
 			<xsl:variable name="dimensionSuffix">
 				<xsl:choose>
 					<xsl:when test="false() and ($javaType = $javaPrimitiveType)">
@@ -19922,8 +20511,15 @@ shall not include the underlying field's values at that point in time.
 					<xsl:text>import java.util.ArrayList;</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
-				<xsl:if test="starts-with($fieldName,'MF') or ($fieldName = 'SFImage')">
+				<xsl:if test="starts-with($fieldName, 'MF') or starts-with($fieldName, 'SFVec') or starts-with($fieldName, 'SFRotation') or 
+                              starts-with($fieldName, 'SFColor') or ($fieldName = 'SFImage') or starts-with($fieldName, 'SFMatrix')">
 					<xsl:text>import java.util.Arrays;</xsl:text>
+					<xsl:text>&#10;</xsl:text>
+				</xsl:if>
+				<xsl:if test="($fieldName = 'MFString')">
+					<xsl:text>import java.util.HashSet;</xsl:text>
+					<xsl:text>&#10;</xsl:text>
+					<xsl:text>import java.util.Set;</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
 				<xsl:choose>
@@ -21574,21 +22170,104 @@ method invocations on the same node object).
 ]]></xsl:text>
 			</xsl:when>
 		</xsl:choose>
+      
+<!-- debug
+<xsl:message>
+    <xsl:text>field type classes generation, fieldName=</xsl:text>
+    <xsl:value-of select="$fieldName"/>
+    <xsl:text> javaType=</xsl:text>
+    <xsl:value-of select="$javaType"/>
+    <xsl:text> tupleSize=</xsl:text>
+    <xsl:value-of select="$tupleSize"/>
+    <xsl:text> javaPrimitiveType=</xsl:text>
+    <xsl:value-of select="$javaPrimitiveType"/>
+</xsl:message>
 
+--> 
 		<!-- Source code: regular expression (regex) pattern match -->
 		<xsl:if test="not($fieldName = 'SFNode') and not($fieldName = 'MFNode')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Determine whether two objects contain equal values.
-	 * @param comparison]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> field type to compare
+	 * Determine whether current object and another ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> object contain equal values.
+	 * @param comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> field type to compare
 	 * @return true if equivalent, false otherwise
 	 */
 	public boolean equals(</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>)
 	{
             if (comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> == null)
-                 return false;
-            else return (getPrimitiveValue() == comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.getPrimitiveValue());
+                 return false; // null means not initialized and therefore not comparable</xsl:text>
+            <xsl:choose>
+                <xsl:when test="starts-with($fieldName, 'MF') or ($fieldName = 'SFImage')">
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** Array comparison for type </xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                    </xsl:message> -->
+                    <xsl:text>
+            // pairwise compare that each element has equal value
+            // https://stackoverflow.com/questions/8777257/equals-vs-arrays-equals-in-java
+            else return Arrays.equals(getPrimitiveValue(), comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>.getPrimitiveValue());</xsl:text>
+                </xsl:when>
+                <xsl:otherwise> <!-- simple SF types can use direct comparison -->
+                    <xsl:text>
+            else return (getPrimitiveValue() == comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>.getPrimitiveValue());</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text disable-output-escaping="yes"><![CDATA[
 	}
+]]></xsl:text>
+            <xsl:variable name="javaType">
+                <!-- can include collections, must be escaped -->
+                <xsl:call-template name="javaType">
+                    <xsl:with-param name="x3dType" select="$fieldName"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:variable name="isJavaArray" select="starts-with($fieldName,'MF') or ($fieldName = 'SFImage') or contains($javaType,'[')"/>
+			<xsl:text>
+	/**
+	 * Determine whether current </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> object and </xsl:text>
+            <xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:if test="$isJavaArray">
+                <xsl:text> array</xsl:text>
+            </xsl:if><xsl:text> contain equal values.
+	 * @param comparisonValue </xsl:text>
+            <xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:if test="$isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime') and not(@type = 'MFNode')">
+                <xsl:text>[]</xsl:text>
+            </xsl:if>
+            <xsl:text> array to compare
+	 * @return true if equivalent, false otherwise
+	 */
+	public boolean equals(</xsl:text><xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:if test="$isJavaArray">
+                <xsl:text>[]</xsl:text>
+            </xsl:if>
+            <xsl:text> comparisonValue)
+	{</xsl:text>
+            <xsl:choose>
+                <xsl:when test="starts-with($fieldName, 'MF') or starts-with($fieldName, 'SFVec') or starts-with($fieldName, 'SFRotation') or 
+                                starts-with($fieldName, 'SFColor') or ($fieldName = 'SFImage') or starts-with($fieldName, 'SFMatrix')">
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** Array comparison for type </xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                    </xsl:message> -->
+                    <xsl:text>
+            if (comparisonValue == null)
+                 return false; // null means not initialized and therefore not comparable
+            // pairwise compare that each element has equal value
+            // https://stackoverflow.com/questions/8777257/equals-vs-arrays-equals-in-java
+            else return Arrays.equals(getPrimitiveValue(), comparisonValue);</xsl:text>
+                </xsl:when>
+                <xsl:otherwise> <!-- simple SF types can use direct comparison -->
+                    <xsl:text>
+            return (getPrimitiveValue() == comparisonValue);</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:text disable-output-escaping="yes"><![CDATA[
+	}
+                
 	/**
 	 * Validate current value via ]]></xsl:text>
         <xsl:choose>
@@ -22119,11 +22798,22 @@ method invocations on the same node object).
 			SFMatrix4f[15] = Float.parseFloat(newValues[15]);</xsl:text>
 				</xsl:when>
 				<xsl:when test="($fieldName = 'MFBool')">
-                                    <!-- https://stackoverflow.com/questions/3958955/how-to-remove-duplicate-white-spaces-in-string-using-java -->
+                    <!-- https://stackoverflow.com/questions/3958955/how-to-remove-duplicate-white-spaces-in-string-using-java -->
 					<xsl:text><![CDATA[String[] newValues = newValue.replace(","," ").replaceAll("\\s+", " ").trim().split("\\s+");
 			]]></xsl:text><xsl:value-of select="$fieldName"/>
-					<xsl:text> = new </xsl:text><xsl:value-of select="$javaPrimitiveType"/>
-					<xsl:text disable-output-escaping="yes"><![CDATA[[newValues.length];
+					<xsl:text> = new </xsl:text>
+                    <!-- TODO necessary? -->
+                    <xsl:choose>
+                        <xsl:when test="contains($javaPrimitiveType,'[')">
+                             <xsl:value-of select="substring-before($javaPrimitiveType,'[')"/>
+                            <xsl:text>[newValues.length]; // here4a</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                             <xsl:value-of select="$javaPrimitiveType"/>
+                            <xsl:text>[newValues.length]; // here4b</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+					<xsl:text disable-output-escaping="yes"><![CDATA[
 			int i = 0;
 			for (String value : newValues)
 			{
@@ -22150,7 +22840,7 @@ method invocations on the same node object).
 			}
 			String[] newValues = cleanupUnescapedEnclosingQuotes(newValue.trim()).split("\"[\\s+]\"");
 			</xsl:text><xsl:value-of select="$fieldName"/>
-					<xsl:text><![CDATA[ = new String[newValues.length];
+					<xsl:text><![CDATA[ = new String[newValues.length]; // here5
 			for (int i=0; i < newValues.length; i++)
 			{
 				]]></xsl:text><xsl:value-of select="$fieldName"/>
@@ -23917,6 +24607,13 @@ TODO: also MFColor.
         return this;
 	}
 ]]></xsl:text>
+            <!-- vararg methods -->
+			</xsl:when>
+			<xsl:when test="(@type='MFInt32')">
+			</xsl:when>
+			<xsl:when test="(@type='MFFloat')">
+			</xsl:when>
+			<xsl:when test="(@type='MFdOUBLE')">
 			</xsl:when>
 		</xsl:choose>
 		<!-- Alternate primitive constructors-->
@@ -24233,6 +24930,32 @@ TODO: also MFColor.
             }
             return result;
 	}
+    /** Determine whether MFString list of strings include any duplicate values.
+     * @return whether duplicates exist
+     */
+    public boolean hasDuplicateValues()
+    {
+        if ((MFString == null) || (MFString.length == 0))
+            return false;
+        // https://stackoverflow.com/questions/3951547/java-array-finding-duplicates
+        Set<String> set = new HashSet<>(MFString.length);
+        for (String value : MFString)
+        {
+          if (set.contains(value)) return true;
+          set.add(value);
+        }
+        return false; // not found
+    }
+    /** Remove any duplicate string values from MFString list.
+     * @return {@link MFString} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object). */
+    public MFString removeDuplicateValues()
+    {
+        if ((MFString == null) || (MFString.length == 0))
+            return this;
+        // https://stackoverflow.com/questions/10366856/delete-duplicate-strings-in-string-array
+        MFString = Arrays.stream(MFString).distinct().toArray(String[]::new);
+        return this; 
+    }
 ]]></xsl:text>
 	</xsl:if>
 
@@ -24362,7 +25085,7 @@ TODO: also MFColor.
 		else return toStringDecimal();
 </xsl:text>
 		</xsl:when>
-		<xsl:when test="(@type = 'MFBool') or (@type = 'MFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type = 'MFString')">
+		<xsl:when test="(@type = 'MFBool') or (@type = 'SFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type = 'MFString')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[StringBuilder result = new StringBuilder();
 		for (int i = 0; i < ]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
@@ -24378,7 +25101,7 @@ TODO: also MFColor.
 		}
 		return result.toString();</xsl:text>
 		</xsl:when>
-		<xsl:when test="(@type = 'MFFloat') or contains(@type,'Color') or contains(@type,'Rotation') or
+		<xsl:when test="(@type = 'MFInt32') or (@type = 'MFFloat') or contains(@type,'Color') or contains(@type,'Rotation') or
                          ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[StringBuilder result = new StringBuilder();
 		for (int i = 0; i < ]]></xsl:text>
@@ -24420,7 +25143,35 @@ TODO: also MFColor.
 		}
 		return result.toString();</xsl:text>
 		</xsl:when>
+		<xsl:when test="(@type = 'SFNode')">
+			<xsl:text disable-output-escaping="yes"><![CDATA[if   (SFNode == null)
+             return DEFAULT_VALUE_STRING;
+        else if (SFNode instanceof X3DConcreteElement)
+             return ((X3DConcreteElement)SFNode).toStringX3D();
+        else if (SFNode instanceof CommentsBlock)
+             return ((CommentsBlock)SFNode).toStringX3D();
+		else
+        {
+            // just in case, not expected
+            System.err.println("*** [warning] SFNode.toString() not implemented for " + SFNode.getClass().getName());
+            return ""; // unimplemented method toString() for type SFNode
+        }]]></xsl:text>
+		</xsl:when>
+		<xsl:when test="(@type = 'MFNode')">
+			<xsl:text disable-output-escaping="yes"><![CDATA[if   (MFNode == null)
+             return DEFAULT_VALUE_STRING;
+        StringBuilder toStringBuilder = new StringBuilder();
+        for (org.web3d.x3d.sai.Core.X3DNode nextNode : MFNode)
+        {
+            toStringBuilder.append((new SFNode(nextNode)).toString());
+        }
+		return toStringBuilder.toString();]]></xsl:text>
+		</xsl:when>
 		<xsl:otherwise>
+            <xsl:message>
+                <xsl:text>*** [error] return "TODO"; // unimplemented method toString() for type </xsl:text>
+            <xsl:value-of select="@type"/>
+            </xsl:message>
 			<xsl:text>return "TODO"; // unimplemented method toString() for type </xsl:text>
             <xsl:value-of select="@type"/>
 		</xsl:otherwise>
@@ -24754,11 +25505,8 @@ TODO: also MFColor.
 					<xsl:if test="(starts-with(@type,'MF') and not(@type = 'MFImage')) and not(contains(@type, 'FMatrix'))">
 						<xsl:text disable-output-escaping="yes"><![CDATA[
 /**
-* <p>
-* Get an individual value from the existing field array.
-* </p><p>
+* Get a single value from the existing field array.
 * If the index is outside the bounds of the current array of data values, an ArrayIndexOutOfBoundsException is thrown.
-* </p>
 * @param index is position of selected value in current array]]></xsl:text>
 <xsl:choose>
 	<xsl:when test="($isSingletonType = 'true')">
@@ -24771,7 +25519,7 @@ TODO: also MFColor.
 	</xsl:otherwise>
 </xsl:choose>
 <xsl:text disable-output-escaping="yes"><![CDATA[
-* @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+* @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
 */
 /* @Override */
 public ]]></xsl:text>
@@ -24810,6 +25558,9 @@ public ]]></xsl:text>
                     <xsl:value-of select="$javaPrimitiveType"/>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:if test="$isArrayType">
+                <xsl:text>[]</xsl:text>
+            </xsl:if>
 			<xsl:text> destinationValue)</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
@@ -25177,7 +25928,12 @@ public ]]></xsl:text>
 * @param newValue provides new value to apply
 */
 /* @Override */
-public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text><![CDATA[ newValue) throws ArrayIndexOutOfBoundsException
+public void set1Value(int index, ]]></xsl:text>
+        <xsl:value-of select="$javaPrimitiveType"/>
+        <xsl:if test="$isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime') and not(@type = 'MFNode')">
+            <xsl:text>[]</xsl:text>
+        </xsl:if>
+        <xsl:text><![CDATA[ newValue) throws ArrayIndexOutOfBoundsException
 {
 	if (index < 0)
 	{
@@ -25239,7 +25995,9 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 		</xsl:when>
 		<xsl:when test="starts-with(@type, 'MF')"><!-- $tupleSize > 1 -->
 			<xsl:text>int offset = 0;
-	for (</xsl:text><xsl:value-of select="substring-before($javaPrimitiveType,'[]')"/><xsl:text> value : newValue)
+	for (</xsl:text>
+        <xsl:value-of select="$javaPrimitiveType"/>
+        <xsl:text> value : newValue)
 	{
 		</xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[index + offset] = value;
@@ -25250,9 +26008,12 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 			<xsl:text>// TODO copy or insert newValue to index position</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
-	<xsl:text><![CDATA[
+	<xsl:text>
 }
+</xsl:text>
 
+    <xsl:if test="not(@type = 'MFNode')">
+	<xsl:text><![CDATA[
 /**
 * Places new value(s) at the end of the existing value array, increasing the field length accordingly.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
@@ -25264,7 +26025,12 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 * @param newValue The newValue to append
 */
 /* @Override */
-public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text><![CDATA[ newValue)
+public void append(]]></xsl:text>
+        <xsl:value-of select="$javaPrimitiveType"/>
+        <xsl:if test="$isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime')">
+            <xsl:text>[]</xsl:text>
+        </xsl:if>
+        <xsl:text><![CDATA[ newValue)
 {]]></xsl:text>
 			<!-- newValue size check -->
 			<xsl:choose>
@@ -25340,9 +26106,10 @@ public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl
 			<xsl:text>
 }
 </xsl:text>
+            </xsl:if>
 			<xsl:if test="($fieldName = 'MFDouble') or ($fieldName = 'MFFloat') or ($fieldName = 'MFInt32') or
-						  ($fieldName = 'MFBool')   or ($fieldName = 'MFTime')  or ($fieldName = 'MFNode') or
-						  ($fieldName = 'MFString')">
+						  ($fieldName = 'MFBool')   or ($fieldName = 'MFTime')  or ($fieldName = 'MFString')">
+            <!-- TODO MFNode? -->
 			<xsl:text disable-output-escaping="yes"><![CDATA[/**
 * Appends another array at the end of the existing value array, increasing the field length accordingly.
 * <i>Warning:</i> newValue array length must correspond to tuple size for base type MFVec4f tuple size of <i>4</i>.
@@ -25397,6 +26164,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 				<xsl:value-of select="$fieldName"/>
 				<xsl:value-of select="$jsaiClassSuffix"/>
 			</xsl:variable>
+            
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 /**
 * Appends a new singleton typed value at the end of the existing value array, increasing the field length accordingly.
@@ -25407,13 +26175,16 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 				<xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 */
 public ]]></xsl:text>
-				<xsl:value-of select="$thisClassName"/><xsl:text> append(</xsl:text><xsl:value-of select="$javaSingletonType"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
+				<xsl:value-of select="$thisClassName"/><xsl:text> append(</xsl:text><xsl:value-of select="$javaSingletonType"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> newValue)
 {
-	append(newValue.getPrimitiveValue());
+	append(newValue</xsl:text>
+                    <xsl:if test="not($fieldName = 'MFNode')">
+                        <xsl:text>.getPrimitiveValue()</xsl:text>
+                    </xsl:if>
+                    <xsl:text>);
 	return this;
 }
-]]></xsl:text>
-
+</xsl:text>
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 /**
 * Appends a new ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text><![CDATA[ to the end of the existing value array, increasing the field length accordingly.
@@ -25425,13 +26196,29 @@ public ]]></xsl:text>
 				<xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 */
 public ]]></xsl:text>
-				<xsl:value-of select="$thisClassName"/><xsl:text> append(</xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
-{
-	append(newValue.getPrimitiveValue());
+				<xsl:value-of select="$thisClassName"/><xsl:text> append(</xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> newValue)
+{</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="not($fieldName = 'MFNode')">
+                        <xsl:text>
+    append(newValue.getPrimitiveValue());
+	return this;
+}</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>
+    // TODO fix MFNode
 	return this;
 }
-]]></xsl:text>
-
+                        
+public void append(org.web3d.x3d.sai.Core.X3DNode newValue)
+{
+    // TODO fix MFNode
+}
+</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+        
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 /**
 * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.]]></xsl:text>
@@ -25445,7 +26232,12 @@ public ]]></xsl:text>
 * @param newValue The newValue to insert
 */
 /* @Override */
-public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
+public void insertValue(int index, ]]></xsl:text>
+            <xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:if test="$isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime') and not(@type = 'MFNode')">
+                <xsl:text>[]</xsl:text>
+            </xsl:if>
+            <xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
 {
 	if (index < 0)
 	{
@@ -25519,7 +26311,9 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 		</xsl:when>
 		<xsl:when test="starts-with(@type, 'MF')"><!-- $tupleSize > 1 -->
 			<xsl:text>int offset = 0;
-	for (</xsl:text><xsl:value-of select="substring-before($javaPrimitiveType,'[]')"/><xsl:text> value : newValue)
+	for (</xsl:text>
+        <xsl:value-of select="$javaPrimitiveType"/>
+        <xsl:text> value : newValue)
 	{
 		</xsl:text>
 		<xsl:value-of select="$fieldName"/><xsl:text>[index + offset] = value;
@@ -25722,14 +26516,14 @@ public void setValue(long newValue)
 					<xsl:text><![CDATA[
 /**
  * <p>
- * Get an individual value from the existing field array.
+ * Get a single value from the existing field array.
  * </p><p>
  * If the index is outside the bounds of the current array of data values,
  * an ArrayIndexOutOfBoundsException is thrown.
  * </p>
  * @param index is position of selected value in current array
  * @return The selected value
- * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+ * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
  */
 /* @Override */
 public long get1JavaValue(int index)
@@ -25819,7 +26613,7 @@ public void setValue(long[] newValue)
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		int      width = SFImage[0];
-		int     height = getHeight();
+		int     height = SFImage[1];
 		if ((width < 0) || (height < 0))
 		{
 			String errorNotice = "*** Illegal negative value: width=" + width + ", height=" + height +
@@ -25844,7 +26638,7 @@ public void setValue(long[] newValue)
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		int      width = getWidth();
+		int      width = SFImage[0];
 		int     height = SFImage[1];
 		if ((width < 0) || (height < 0))
 		{
@@ -25961,8 +26755,8 @@ public void setValue(long[] newValue)
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		int      width = getWidth();
-		int     height = getHeight();
+		int      width = SFImage[0];
+		int     height = SFImage[1];
 		int components = getNumberComponents(); // includes error checks
 		destinationPixels = new int[SFImage.length];
 		if ((width == 0) || (height == 0) || (components == 0))
@@ -28721,14 +29515,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public boolean get1Value(int index);
 
@@ -28798,14 +29592,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @param valueDestination The array to be filled in with the selected current field value.
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public void get1Value(int index, float[] valueDestination);
 
@@ -28885,14 +29679,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @param valueDestination The array to be filled in with the selected current field value.
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public void get1Value(int index, float[] valueDestination);
 
@@ -28963,14 +29757,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public double get1Value(int index) throws ArrayIndexOutOfBoundsException;
 
@@ -29030,14 +29824,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public float get1Value(int index) throws ArrayIndexOutOfBoundsException;
 
@@ -29512,14 +30306,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
 	/**
 	 * <p>
-	 * Get an individual value from the existing field array.
+	 * Get a single value from the existing field array.
 	 * </p><p>
 	 * If the index is outside the bounds of the current array of data values,
 	 * an ArrayIndexOutOfBoundsException is thrown.
 	 * </p>
 	 * @param index is position of selected value in current array
 	 * @return The selected value
-	 * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+	 * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
 	 */
 	public int get1Value(int index) throws ArrayIndexOutOfBoundsException;
 
@@ -29647,7 +30441,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
 	/**
 	 * <p>
-	 * Get an individual value from the existing field array.
+	 * Get a single value from the existing field array.
 	 * </p>
 	 * <p>
 	 * If the index is outside the bounds of the current array of data values,
@@ -29655,7 +30449,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	 * </p>
 	 * @param index is position of selected value in current array
 	 * @return The selected value
-	 * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+	 * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
 	 */
 	public org.web3d.x3d.sai.Core.X3DNode get1Value(int index);
 
@@ -29725,14 +30519,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @param valueDestination The array to be filled in with the selected current field value.
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public void get1Value(int index, float[] valueDestination);
 
@@ -29802,14 +30596,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public String get1Value(int index);
 
@@ -29881,27 +30675,27 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
 	 * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public double get1Value(int index);
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
 	 * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @return The selected value
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public long get1JavaValue(int index);
 
@@ -30005,14 +30799,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @param valueDestination The array to be filled in with the selected current field value.
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public void get1Value(int index, double[] valueDestination);
 
@@ -30095,14 +30889,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * <p>
-     * Get an individual value from the existing field array.
+     * Get a single value from the existing field array.
      * </p><p>
      * If the index is outside the bounds of the current array of data values,
      * an ArrayIndexOutOfBoundsException is thrown.
      * </p>
      * @param index is position of selected value in current array
      * @param valueDestination The array to be filled in with the selected current field value.
-     * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
+     * @throws ArrayIndexOutOfBoundsException index outside bounds of current array.
      */
 	public void get1Value(int index, float[] valueDestination);
 
@@ -30591,13 +31385,11 @@ being generated. Otherwise, it shall use the set implementation.
     }
 
     /**
-     * Create an X3D player that can be used as an AWT component. The component
-     * returned is guaranteed to be an instance of X3DComponent.
-     *
-     * @param params - Parameters to control the look and feel.
+     * Create an X3D player that can be used as an AWT component.
+     * The component returned is guaranteed to be an instance of X3DComponent.
+     * @param params Parameters to control the look and feel.
      * @return The component browser initialised to be empty.
-     * @exception NotSupportedException The implementation does not support this
-     *    type of X3D player.
+     * @exception NotSupportedException The implementation does not support this type of X3D player.
      * @see X3DComponent
      */
 	public static X3DComponent createX3DComponent(Map<String, Object> params) throws NotSupportedException
@@ -30609,9 +31401,11 @@ being generated. Otherwise, it shall use the set implementation.
                 loadFactoryImpl();
 
             // comp = factory.createComponent(params);  // TODO fix incorrect method signature
-        } catch (NotSupportedException nse) {
+        } 
+        catch (NotSupportedException nse) 
+        {
             System.out.println("Tracing exception for debug:   Factory: " + factory);
-            nse.printStackTrace(System.out);
+            nse.printStackTrace(System.err);
             throw nse;
         }
         return comp;
@@ -32744,6 +33538,14 @@ package org.web3d.x3d.tests;
 					<xsl:text> </xsl:text>
 				</xsl:if>
 				<xsl:text>statement. </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="(@name = 'component') or (@name = 'connect') or (@name = 'head') or (@name = 'field') or (@name = 'field') or (@name = 'fieldValue') or (@name = 'unit')">
+                        <xsl:text>Note atypical lower-case capitalization for this class name. </xsl:text>
+                    </xsl:when>
+                    <xsl:when test="(@name = 'EXPORT') or (@name = 'IMPORT') or (@name = 'IS') or (@name = 'ROUTE') or (@name = 'X3D')">
+                        <xsl:text>Note atypical upper-case capitalization for this class name. </xsl:text>
+                    </xsl:when>
+                </xsl:choose>
 			</xsl:variable>
 			<xsl:variable name="x3dAbstractSpecificationRelativeUrl" select="substring-after(InterfaceDefinition/@specificationUrl,'Part01/')"/>
 			<xsl:variable name="componentName"                       select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
@@ -33079,9 +33881,9 @@ import javax.script.ScriptException;</xsl:text>
     }
 
     /**
-     *                                  Usage: <code>java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM] [-properties [propertiesFile]] [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]] [-canonical] [-validate] [-EXIFICIENT | -OpenEXI] | [-Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97 | -toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP] [-tofile [resultFile.*]] [-toImage [snapshotName.*]]</code>
+     *                                  Usage: <code>java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM] [-properties [propertiesFile]] [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]] [-canonical] [-validate] [-EXIFICIENT | -OpenEXI] | [-Schematron | -Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97 | -toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP] [-tofile [resultFile.*]] [-toImage [snapshotName.*]]</code>
      */
-    public  static final String USAGE      = "Usage: java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine\n       [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM]\n       [-properties [propertiesFile]]\n       [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]]\n       [-canonical] [-validate] [-EXIFICIENT | -OpenEXI]\n       [-Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97]\n       [-toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP]\n       [-tofile [resultFile.*]] [-toImage [snapshotName.*]]";
+    public  static final String USAGE      = "Usage: java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine\n       [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM]\n       [-properties [propertiesFile]]\n       [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]]\n       [-canonical] [-validate] [-EXIFICIENT | -OpenEXI]\n       [-Schematron | -Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97]\n       [-toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP]\n       [-tofile [resultFile.*]] [-toImage [snapshotName.*]]";
     /**
      *      Usage command-line switches with descriptions
      */
@@ -33109,6 +33911,7 @@ import javax.script.ScriptException;</xsl:text>
         "==================================#====== operations =========================" + "\n" +
         "-canonical                        # canonical XML output using X3D Canonicalization (c14n)" + "\n" +
         "-validate                         # validate correctness of loaded model" + "\n" +
+        "-Schematron                       # X3D Schematron diagnostics and Quality Assurance (QA)" + "\n" +
         "-Tidy                             # X3D-Tidy cleanup in .x3d (XML) format" + "\n" +
         "-toX3D                            # output in .x3d (XML) format" + "\n" +
         "-toXML                            # output in .xml (X3D) format" + "\n" +
@@ -33153,6 +33956,7 @@ import javax.script.ScriptException;</xsl:text>
     private static boolean convertToZIP             = false;
     private static boolean convertFromZIP           = false;
     private static boolean validateSwitch           = false;
+    private static boolean schematronSwitch         = false;
 
 	private static String  conversionExtension = new String();
 
@@ -33181,6 +33985,7 @@ import javax.script.ScriptException;</xsl:text>
 		convertToZIP             = false;
 		convertFromZIP           = false;
 		validateSwitch           = false;
+        schematronSwitch         = false;
 
 		conversionExtension  = new String();
 	}
@@ -33302,17 +34107,20 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					if ((args.length > i + 1) && !(args[i+1] == null) && !args[i+1].isEmpty() && !args[i+1].startsWith("-"))
 					{
-						 resultFileName     = args[i+1];
-						 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf("."));
-                         if (!resultFileName.contains("."))
-                         {
-                             resultFileNameRoot = resultFileName;
-                             System.out.println ("[warning]  \"" + resultFileName + "\" contains no period or filename extension");
-                         }
-						 System.out.println ("CommandLine parameter: \"" + args[i] + "\" \"" + args[i+1] + "\" for result file name root " + resultFileNameRoot);
-						 i++; // increment index, carefully!
+                        resultFileName     = args[i+1];
+                        if (resultFileName.contains("."))
+                        {
+                            resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf("."));
+                        }
+                        else
+                        {
+                            resultFileNameRoot = resultFileName;
+                            System.out.println ("[warning]  \"" + resultFileName + "\" contains no period or filename extension");
+                        }
+                        System.out.println ("CommandLine parameter: \"" + args[i] + "\" \"" + args[i+1] + "\" for result file name " + resultFileName);
+                        i++; // increment index, carefully!
 					}
-					else System.out.println ("parameter: \"" + args[i] + "\" for result file name root "+ resultFileNameRoot);
+					else System.out.println ("parameter: \"" + args[i] + "\" for result file name "+ resultFileName);
 					convertToFile = true;
 				}
 				else if (args[i].equalsIgnoreCase("-properties") || args[i].equalsIgnoreCase("-propertiesFile")) // optionally followed by propertiesFileName
@@ -33375,13 +34183,21 @@ import javax.script.ScriptException;</xsl:text>
 					conversionExtension = X3D.FILE_EXTENSION_MARKDOWN;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown");
 				}
+				else if (args[i].equalsIgnoreCase("-Schematron") || args[i].equalsIgnoreCase("-X3DSchematron") || args[i].equalsIgnoreCase("-X3D_Schematron") || args[i].equalsIgnoreCase("-X3D-Schematron"))
+				{
+				    /* X3D Schematron diagnostics */
+					clearPriorConversionSwitches(args[i]);
+					schematronSwitch = true;
+					conversionExtension = X3D.FILE_EXTENSION_TEXT;
+					System.out.println ("CommandLine parameter: \"" + args[i] + "\" to produce X3D Schematron diagnostics for .x3d model");
+				}
 				else if (args[i].equalsIgnoreCase("-tidy") || args[i].equalsIgnoreCase("-totidy") || args[i].equalsIgnoreCase("-x3dtidy") || args[i].equalsIgnoreCase("-tox3dtidy"))
 				{
 				    /* X3D-Tidy cleanup */
 					clearPriorConversionSwitches(args[i]);
 					convertToTidy = true;
 					conversionExtension = X3D.FILE_EXTENSION_X3D;
-					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing X3D-Tidy cleanup of .x3d");
+					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing X3D-Tidy cleanup of .x3d model");
 				}
 				else if (args[i].equalsIgnoreCase("-x3dv") || args[i].equalsIgnoreCase("-tox3dv") ||
 						 args[i].equalsIgnoreCase("-toClassicVRML") || args[i].equalsIgnoreCase("-ClassicVRML"))
@@ -33671,6 +34487,7 @@ import javax.script.ScriptException;</xsl:text>
 			(convertToHTML        && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML) &&
                                       !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML)))   ||
 			(convertToMarkdown    &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_MARKDOWN)) ||
+			(schematronSwitch     &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_TEXT))      ||
 			(convertToTidy        &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D))      ||
 			(convertToClassicVRML &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_CLASSICVRML)) ||
 			(convertToVRML97      &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_VRML97)) ||
@@ -33780,7 +34597,7 @@ import javax.script.ScriptException;</xsl:text>
                 }
                 catch (IOException exception)
                 {
-                    exception.printStackTrace();
+                    exception.printStackTrace(System.err);
                     throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + resultFileName + ", unable to save file: " + exception);
                 }
                 return;
@@ -33852,6 +34669,36 @@ import javax.script.ScriptException;</xsl:text>
                        fileStylesheetConversionToString(sourceFile, ConfigurationProperties.STYLESHEET_PYTHON));
                 ConfigurationProperties.setXsltEngine(presetXsltEngine);
                 return;
+            }
+            else if (schematronSwitch)
+            {
+                try
+                {
+//                  System.out.println("produce X3D Schematron diagnostics"); // debug
+                    String intermediateFileName = resultFileName + X3D.FILE_EXTENSION_SVRL;
+
+                    if (!convertToFile) System.out.println();
+
+                    System.out.println("First creating intermediate SVRL file using stylesheet " + ConfigurationProperties.STYLESHEET_X3DSCHEMATRON); // debug
+                    File intermediateFile = fileStylesheetConversion(sourceFile, ConfigurationProperties.STYLESHEET_X3DSCHEMATRON, intermediateFileName);
+                    System.out.println("   intermediate SVRL file " + intermediateFileName + " fileExists=" + intermediateFile.exists()); // debug
+
+                    System.out.println("... Next creating final report file using stylesheet " + ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT);      // debug
+                    if  (convertToFile)
+                    {
+                        resultFile = fileStylesheetConversion(intermediateFile,         ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT,            resultFileName);
+                        System.out.println("Resulting result file: " + resultFileName + " exists=" + resultFile.exists());
+                    }
+                    else
+                    {
+                        fileStylesheetConversionToString(intermediateFile, ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT);
+                    }
+                    return;
+                }
+                catch (Exception e) // just in case mysterious JAXP exceptions occur
+                {
+                    e.printStackTrace(System.err);
+                }
             }
             else if (convertToTidy)
             {
@@ -33971,6 +34818,14 @@ import javax.script.ScriptException;</xsl:text>
                              resultFile =       loadedX3dModel.toFileModelMetaMarkdown (resultFileName);
                         else System.out.println(loadedX3dModel.toStringModelMetaMarkdown());
                     }
+                    else if (schematronSwitch)
+                    {
+                        System.out.println("produce X3D Schematron diagnostics using X3D Schematron " + ConfigurationProperties.STYLESHEET_X3DSCHEMATORN + ":":");
+                        if (!convertToFile) System.out.println();
+                        if  (convertToFile)
+                             resultFile =       loadedX3dModel.toFileX3dSchematronReport (resultFileName);
+                        else System.out.println(loadedX3dModel.toStringX3dSchematronReport());
+                    }
                     else if (convertToTidy)
                     {
                         System.out.println("convert to version cleaned up by X3D Tidy " + ConfigurationProperties.STYLESHEET_X3DTIDY + ":":");
@@ -34052,7 +34907,7 @@ import javax.script.ScriptException;</xsl:text>
                     }
                     if (validateSwitch)
                     {
-						// note that validation already performed as part of prior conversions
+                        // note that validation already performed as part of prior conversions
                         String outputValidationText = loadedX3dModel.validate();
 
                         if (!convertToFile)
@@ -34101,7 +34956,7 @@ import javax.script.ScriptException;</xsl:text>
                             }
                             catch (IOException exception)
                             {
-                                exception.printStackTrace();
+                                exception.printStackTrace(System.err);
                                 throw new org.web3d.x3d.sai.X3DException(ERROR+"IOException for resultFileName " + resultFileName + ", unable to save file: " + exception);
                             }
                         }
@@ -34116,10 +34971,12 @@ import javax.script.ScriptException;</xsl:text>
                              System.out.println(ERROR+"file conversion unsuccessful!");
                     else if (validateSwitch)
                              System.out.println("model validation complete.");
+                    else if (schematronSwitch)
+                             System.out.println("X3D Schematron model diagnostics complete.");
                 }
                 catch (X3DException e)
                 {
-                    e.printStackTrace();
+                    e.printStackTrace(System.err);
                     System.out.println(ERROR+"TODO must fix model - problem handling local exception within CommandLine, exiting.");
                 //  return;
                 }
@@ -34384,7 +35241,8 @@ import javax.script.ScriptException;</xsl:text>
     private static void clearPriorConversionSwitches(String newCommand)
     {
         if (convertToVRML97 || convertToClassicVRML || convertToX3D    || convertToXML || convertToHTML  || convertToMarkdown ||
-            convertToTidy   || convertToJava        || convertToPython || convertToJSON || convertToJS  || convertToX3DOM || convertToX_ITE)
+            convertToTidy   || convertToJava        || convertToPython || convertToJSON || convertToJS  || convertToX3DOM || convertToX_ITE ||
+            schematronSwitch)
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
 
         convertToVRML97          = false;
@@ -34394,11 +35252,12 @@ import javax.script.ScriptException;</xsl:text>
         convertToHTML            = false;
         convertToMarkdown        = false;
         includeSubdirectoryPaths = true;  // model meta information, special switch for ModelExchange
+        schematronSwitch         = false;
         convertToTidy            = false;
         convertToJava            = false;
         convertToJS              = false;
         convertToJSON            = false;
-        convertToPython            = false;
+        convertToPython          = false;
         convertToX3DOM           = false;
         convertToX_ITE           = false;
     }
@@ -34457,7 +35316,7 @@ import javax.script.ScriptException;</xsl:text>
         catch (IOException ex)
         {
             errorNotice += "IOException: " + ex.getMessage();
-            ex.printStackTrace();
+            ex.printStackTrace(System.err);
         }
         if (!errorNotice.isEmpty())
             System.out.println (errorNotice);
@@ -34493,7 +35352,8 @@ import javax.script.ScriptException;</xsl:text>
 		}
         else if (!ConfigurationProperties.isStylesheetSupported(stylesheetName))
 		{
-			throw new org.web3d.x3d.sai.X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName not recognized;" +
+			throw new org.web3d.x3d.sai.X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName=" +
+                stylesheetName + " not recognized;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
         String expectedFileNameExtension = ConfigurationProperties.getExpectedOutputFileExtension(stylesheetName);
@@ -34505,9 +35365,11 @@ import javax.script.ScriptException;</xsl:text>
 		}
 		if (!((outputFileName.endsWith(expectedFileNameExtension)) || // some variations allowed
               (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML)) ||
-              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JSON))))
+              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JSON)) ||
+              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D)        && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_SVRL)) ||
+              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_TEXT)))) // text output always allowed since author might be debugging
 		{
-			throw new org.web3d.x3d.sai.X3DException("outputFileName " + outputFileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
+			throw new org.web3d.x3d.sai.X3DException("outputFileName \"" + outputFileName + "\" does not end with expected extension \"" + expectedFileNameExtension + "\"");
 		}
 
 		Path outputFilePath = Paths.get(outputFileName);
@@ -34649,7 +35511,7 @@ import javax.script.ScriptException;</xsl:text>
 //		}
 //		catch (IOException exception)
 //		{
-//			exception.printStackTrace();
+//			exception.printStackTrace(System.err);
 //			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + outputFilePath + ", unable to save file: " + exception);
 //		}
     }
@@ -34683,7 +35545,7 @@ import javax.script.ScriptException;</xsl:text>
         }
         catch (IOException ex)
         {
-            ex.printStackTrace();
+            ex.printStackTrace(System.err);
             String inputFileName = "[null]";
             if    (inputFile    != null)
                    inputFileName = inputFile.getPath();
@@ -34951,6 +35813,20 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	public static final String STYLESHEET_MODEL_META_TO_MARKDOWN   = "X3dModelMetaToMarkdown.xslt";
 
+	/** XSLT stylesheet to produce Quality Assurance (QA) diagnostics for X3D scene: <i>../lib/stylesheets/X3dToXhtml.xslt</i>
+	 * @see <a href="https://www.web3d.org/x3d/tools/schematron/X3dSchematron.html">X3D Schematron Validation and Quality Assurance (QA)</a>
+	 * @see <a href="../../../../../../lib/stylesheets/SvrlReportText.xslt" target="_blank">SvrlReportText.xslt</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutputSchematron.svrl" target="_blank">examples/HelloWorldProgramOutputSchematron.svrl</a>
+	 */
+	public static final String STYLESHEET_X3DSCHEMATRON_SVRLREPORT   = "SvrlReportText.xslt";
+
+	/** XSLT stylesheet to produce Quality Assurance (QA) diagnostics for X3D scene: <i>../lib/stylesheets/X3dToXhtml.xslt</i>
+	 * @see <a href="https://www.web3d.org/x3d/tools/schematron/X3dSchematron.html">X3D Schematron Validation and Quality Assurance (QA)</a>
+	 * @see <a href="../../../../../../lib/stylesheets/X3dSchematronValidityChecks.xslt" target="_blank">X3dTidy.xslt</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutputSchematron.txt" target="_blank">examples/HelloWorldProgramOutputSchematron.txt</a>
+	 */
+	public static final String STYLESHEET_X3DSCHEMATRON   = "X3dSchematronValidityChecks.xslt";
+
 	/** XSLT stylesheet to create X3D-Tidy cleaned-up version of X3D scene: <i>../lib/stylesheets/X3dToXhtml.xslt</i>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
 	 * @see <a href="../../../../../../lib/stylesheets/X3dTidy.xslt" target="_blank">X3dTidy.xslt</a>
@@ -35027,6 +35903,8 @@ showing default attribute values, and other custom settings.</p>
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DV_CLASSICVRML) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DOM) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X_ITE) ||
+               stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON) ||
+               stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DTIDY);
     }
     /**
@@ -35044,6 +35922,14 @@ showing default attribute values, and other custom settings.</p>
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_HTML_DOCUMENTATION))
         {
             expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
+        }
+        else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON))
+        {
+            expectedFileNameExtension = X3D.FILE_EXTENSION_SVRL;
+        }
+        else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DSCHEMATRON_SVRLREPORT))
+        {
+            expectedFileNameExtension = X3D.FILE_EXTENSION_TEXT;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DTIDY))
         {
@@ -35081,10 +35967,10 @@ showing default attribute values, and other custom settings.</p>
         {
             expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
         }
-        else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_COBWEB))
-        {
-            expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
-        }
+//      else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_COBWEB))
+//      {
+//          expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
+//      }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN))
         {
             expectedFileNameExtension = X3D.FILE_EXTENSION_MARKDOWN;
@@ -35318,7 +36204,7 @@ showing default attribute values, and other custom settings.</p>
 		catch (IOException ioe)
 		{
             System.out.println (ERROR_CONFIGURATION_X3DJSAIL + ": " + ioe.getMessage());
-            ioe.printStackTrace(); // further diagnosis needed
+            ioe.printStackTrace(System.err); // further diagnosis needed
 		}
 		System.out.print (getPropertiesFileName() + " includes " + loadedProperties.size());
 		if (loadedProperties.isEmpty())
@@ -35642,34 +36528,53 @@ showing default attribute values, and other custom settings.</p>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 
 	/** the <i>id</i> attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
-	private String htmlID = ID_DEFAULT_VALUE;
+	 * @see <a href="https://www.w3.org/MarkUp/Guide/Advanced.html">W3C Dave Raggett: Advanced HTML</a> */
+	private String htmlID = getHtmlIdDefault();
 
 	/** The <i>class</i> field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a>  */
 	private String cssClass = CLASS_DEFAULT_VALUE;
 
 	/** The <i>style</i> field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a>  */
 	private String cssStyle = STYLE_DEFAULT_VALUE;
 
-	/** SFString field named <i>id</i> for html has default value equal to an empty string. */
-	public static final String ID_DEFAULT_VALUE = "";
+	/** Private SFString field named <i>id</i> for html has default value equal to an empty string. */
+	private static final String ID_DEFAULT_VALUE = "";
 
-	/** SFString field named <i>class</i> for CSS has default value equal to an empty string. */
-	public static final String CLASS_DEFAULT_VALUE = "";
+	/** Private SSFString field named <i>class</i> for CSS has default value equal to an empty string. */
+	private static final String CLASS_DEFAULT_VALUE = "";
 
-	/** SFString field named <i>style</i> for CSS has default value equal to an empty string. */
-	public static final String STYLE_DEFAULT_VALUE = "";
+	/** Private SSFString field named <i>style</i> for CSS has default value equal to an empty string. */
+	private static final String STYLE_DEFAULT_VALUE = "";
+
+	/** Public SFString accessor for field named <i>id</i> for html has default value equal to an empty string.
+	 * @see <a href="https://www.w3.org/MarkUp/Guide/Advanced.html">W3C Dave Raggett: Advanced HTML</a>
+     * @return default HTML ID value */
+	public static final String getHtmlIdDefault() { return ID_DEFAULT_VALUE; }
+
+	/** Public SFString accessor for field named <i>class</i> for CSS has default value equal to an empty string.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
+     * @return default CSS class value */
+	public static final String getCssClassDefault() { return CLASS_DEFAULT_VALUE; }
+
+	/** Public SFString accessor for field named <i>style</i> for CSS has default value equal to an empty string.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
+     * @return default CSS style value */
+	public static final String getCssStyleDefault() { return STYLE_DEFAULT_VALUE; }
 
 	/** Initialize all member variables to default values. */
 	public void initialize()
 	{
 		setParent(null);
 		// no super to initialize, we are at the top of the hierarchy
-          htmlID =    ID_DEFAULT_VALUE;
-		cssClass = CLASS_DEFAULT_VALUE;
-		cssStyle = STYLE_DEFAULT_VALUE;
+          htmlID = getHtmlIdDefault();
+		cssClass = getCssClassDefault();
+		cssStyle = getCssStyleDefault();
 	}
 
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
@@ -35677,6 +36582,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param newValue is new value for the class field.
@@ -35688,7 +36594,7 @@ showing default attribute values, and other custom settings.</p>
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		cssClass = newValue;
 	}
-	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlID(newValue) instead.
+	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlId(newValue) instead.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
@@ -35700,7 +36606,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param newValue is new value for the id field.
 	 */
-	protected void setConcreteHtmlID(String newValue)
+	protected void setConcreteHtmlId(String newValue)
 	{
 		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA) #4
@@ -35712,6 +36618,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param newValue is new value for the style field.
@@ -35729,11 +36636,12 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @return value of class field
 	 */
-	public String getHtmlID()
+	public String getHtmlId()
 	{
 		return htmlID;
 	}
@@ -35743,6 +36651,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @return value of class field
@@ -35757,6 +36666,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @return value of style field
@@ -35978,11 +36888,11 @@ showing default attribute values, and other custom settings.</p>
 
 	// String constants for default field values match X3D Schema definitions
 
-	/** SFString field named <i>DEF</i> has default value equal to an empty string. */
-	public static final String DEF_DEFAULT_VALUE = "";
+	/** Private SFString field named <i>DEF</i> has default value equal to an empty string. */
+	private static final String DEF_DEFAULT_VALUE = "";
 
-	/** SFString field named <i>USE</i> has default value equal to an empty string. */
-	public static final String USE_DEFAULT_VALUE = "";
+	/** Private SFString field named <i>USE</i> has default value equal to an empty string. */
+	private static final String USE_DEFAULT_VALUE = "";
 
 	/**
          * Warning: containerFieldOverride describes a non-default (and quite possibly incorrect) field relationship of a node to its parent,
@@ -35998,8 +36908,8 @@ showing default attribute values, and other custom settings.</p>
 	{
 		setParent(null);
 		super.initialize();
-        DEF =   DEF_DEFAULT_VALUE;
-        USE =   USE_DEFAULT_VALUE;
+        DEF =   getDEFDefault();
+        USE =   getUSEDefault();
 	}
 
     private boolean hasNameField = false;
@@ -36046,6 +36956,12 @@ showing default attribute values, and other custom settings.</p>
 	{
 		return DEF;
 	}
+	/** Public SFString accessor for field named <i>DEF</i> has default value equal to an empty string.
+     * @return empty string */
+	public String getDEFDefault()
+	{
+		return DEF_DEFAULT_VALUE;
+	}
 	/**
 	 * Utility method to indicate whether this element has a <i>DEF</i> identifier.
 	 * <br><br>
@@ -36078,6 +36994,12 @@ showing default attribute values, and other custom settings.</p>
 	public String getUSE()
 	{
 		return USE;
+	}
+	/** Public SFString accessor for field named <i>USE</i> has default value equal to an empty string.
+     * @return empty string */
+	public String getUSEDefault()
+	{
+		return USE_DEFAULT_VALUE;
 	}
 	/**
 	 * Utility method to indicate whether this element has a <i>USE</i> reference to another previously defined element (which means other fields must be empty).
@@ -36153,6 +37075,7 @@ showing default attribute values, and other custom settings.</p>
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param cssClass is new value for the class field.
@@ -36171,13 +37094,14 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param htmlID is new value for the id field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
-	abstract public X3DConcreteNode setHtmlID(String htmlID);
+	abstract public X3DConcreteNode setHtmlId(String htmlID);
 
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The style attribute provides an inline block of CSS source for element styling, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/Style/Examples/011/firstcss">W3C CSS tutorial: Starting with HTML + CSS</a> 
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param cssStyle is new value for the class field.
@@ -36912,7 +37836,7 @@ import org.web3d.x3d.sai.X3DException;
                                             errorNotice += "\n   " + cnfe.getCause();
 					validationResult.append(errorNotice).append("\n");
 					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-					cnfe.printStackTrace();
+					cnfe.printStackTrace(System.err);
                     return null; // draconian parse
 				}
 				catch (IllegalAccessException iae)
@@ -36924,7 +37848,7 @@ import org.web3d.x3d.sai.X3DException;
                                             errorNotice += "\n   " + iae.getCause();
 					validationResult.append(errorNotice).append("\n");
 					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-					iae.printStackTrace();
+					iae.printStackTrace(System.err);
                     return null; // draconian parse
 				}
 				catch (InstantiationException ie)
@@ -36936,7 +37860,7 @@ import org.web3d.x3d.sai.X3DException;
                                             errorNotice += "\n   " + ie.getCause();
 					validationResult.append(errorNotice).append("\n");
 					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-					ie.printStackTrace();
+					ie.printStackTrace(System.err);
                     return null; // draconian parse
 				}
 				catch (Exception e)
@@ -36948,7 +37872,7 @@ import org.web3d.x3d.sai.X3DException;
                                             errorNotice += "\n   " + e.getCause();
 					validationResult.append(errorNotice).append("\n");
 					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-					e.printStackTrace();
+					e.printStackTrace(System.err);
                     return null; // draconian parse
 				}
 
@@ -37723,7 +38647,7 @@ import org.web3d.x3d.sai.X3DException;
 							errorNotice+= "    This error can also be caused by X3DLoaderDOM DOM omissions in X3DJSAIL. Please report mysterious problems, thank you." + "\n";
 							validationResult.append(errorNotice);
 							System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-							ex.printStackTrace(); // further diagnosis needed, DOM loader errors are tricky
+							ex.printStackTrace(System.err); // further diagnosis needed, DOM loader errors are tricky
 							continue;
 						}
 					}
@@ -37803,7 +38727,7 @@ import org.web3d.x3d.sai.X3DException;
 						   	    			         attributeName.substring(1); // setCamelCase
 					}
 					else if (attributeName.equals("id"))
-						     elementSetMethodName += "HtmlID";
+						     elementSetMethodName += "HtmlId";
 					else     elementSetMethodName += attributeName.substring(0,1).toUpperCase() +
 						   	    			         attributeName.substring(1); // setCamelCase
 
@@ -37900,7 +38824,7 @@ import org.web3d.x3d.sai.X3DException;
                                 {
                                     System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                                     if ((e.getMessage() == null) && (e.getCause() == null))
-                                         e.printStackTrace();
+                                         e.printStackTrace(System.err);
 								}
                             }
 							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<field>[])new Class[] { fieldClass }));
@@ -37917,7 +38841,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     errorNotice += "\n   " + cnfe.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-						cnfe.printStackTrace();
+						cnfe.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 					catch (IllegalAccessException iae)
@@ -37929,7 +38853,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     errorNotice += "\n   " + iae.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-						iae.printStackTrace();
+						iae.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 					catch (InstantiationException ie)
@@ -37941,7 +38865,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     errorNotice += "\n   " + ie.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-						ie.printStackTrace();
+						ie.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 					catch (InvocationTargetException ite)
@@ -37960,7 +38884,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     continue; // likely problem is regex checking of large attribute value, defer diagnosis and continue loading
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice + "\n"); // avoiding System.err due to redirection difficulties
-						ite.printStackTrace();
+						ite.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 					catch (NoSuchMethodException nsme)
@@ -37972,7 +38896,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     errorNotice += "\n   " + nsme.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-						nsme.printStackTrace();
+						nsme.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 					catch (Exception e)
@@ -37984,7 +38908,7 @@ import org.web3d.x3d.sai.X3DException;
                                                     errorNotice += "\n   " + e.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
-						e.printStackTrace();
+						e.printStackTrace(System.err);
 						return null; // draconian parse
 					}
 				}	// continue for each attribute until all are set
@@ -38750,7 +39674,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
         catch (IOException e)
         {
             outputBuilder.append(e.getMessage()).append("\n").append(e.getCause()).append("\n");
-            e.printStackTrace();
+            e.printStackTrace(System.err);
             throw new org.web3d.x3d.sai.InvalidExecutionContextException(command);
         }
         return outputBuilder.toString();
@@ -39230,7 +40154,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
         catch (IOException e)
         {
             outputBuilder.append(e.getMessage()).append("\n").append(e.getCause()).append("\n");
-            e.printStackTrace();
+            e.printStackTrace(System.err);
             throw new org.web3d.x3d.sai.InvalidExecutionContextException(command);
         }
         return outputBuilder.toString();
@@ -39520,7 +40444,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
         catch (IOException ioe)
         {
             String message = "Exception when trying to getPriorMeshLabTraceLogContents()\n" + ioe.getMessage();
-            ioe.printStackTrace();
+            ioe.printStackTrace(System.err);
             throw new org.web3d.x3d.sai.InvalidExecutionContextException(message);
         }
         return priorMeshLabTraceLog.toString();

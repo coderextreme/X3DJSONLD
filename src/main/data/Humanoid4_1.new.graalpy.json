@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 July 2025"
+            "@content":"09 August 2025"
           },
           {
             "@name":"generator",
@@ -674,7 +674,7 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_femoral_lateral_epicondyles_pt",
+                                      "@name":"l_femoral_lateral_epicondyles",
                                       "@DEF":"hanim_l_femoral_lateral_epicondyles_pt",
                                       "@translation":[0.1598,0.4967,0.0297],
                                       "-children":[
@@ -693,7 +693,7 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"l_femoral_medial_epicondyles_pt",
+                                      "@name":"l_femoral_medial_epicondyles",
                                       "@DEF":"hanim_l_femoral_medial_epicondyles_pt",
                                       "@translation":[0.0398,0.4946,0.0303],
                                       "-children":[
@@ -776,7 +776,7 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_femoral_lateral_epicondyles_pt",
+                                      "@name":"r_femoral_lateral_epicondyles",
                                       "@DEF":"hanim_r_femoral_lateral_epicondyles_pt",
                                       "@translation":[-0.1421,0.4992,0.031],
                                       "-children":[
@@ -795,7 +795,7 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"r_femoral_medial_epicondyles_pt",
+                                      "@name":"r_femoral_medial_epicondyles",
                                       "@DEF":"hanim_r_femoral_medial_epicondyles_pt",
                                       "@translation":[-0.0221,0.5014,0.0289],
                                       "-children":[
@@ -4920,7 +4920,7 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"spine_2_middle_back_pt",
+                                                  "@name":"spine_2_middle_back",
                                                   "@DEF":"hanim_spine_2_middle_back_pt",
                                                   "-children":[
                                                     { "TouchSensor":
@@ -6159,7 +6159,7 @@
                                                                                                                                   },
                                                                                                                                   { "HAnimSite":
                                                                                                                                     {
-                                                                                                                                      "@name":"l_clavicale_pt",
+                                                                                                                                      "@name":"l_clavicale",
                                                                                                                                       "@DEF":"hanim_l_clavicale_pt",
                                                                                                                                       "@translation":[0.0271,1.4943,0.0394],
                                                                                                                                       "-children":[
@@ -6280,7 +6280,7 @@
                                                                                                                                   },
                                                                                                                                   { "HAnimSite":
                                                                                                                                     {
-                                                                                                                                      "@name":"r_clavicale_pt",
+                                                                                                                                      "@name":"r_clavicale",
                                                                                                                                       "@DEF":"hanim_r_clavicale_pt",
                                                                                                                                       "@translation":[-0.0115,1.4943,0.04],
                                                                                                                                       "-children":[
@@ -7504,7 +7504,7 @@
                                                                                                                                               },
                                                                                                                                               { "HAnimSite":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"l_humeral_lateral_epicondyles_pt",
+                                                                                                                                                  "@name":"l_humeral_lateral_epicondyles",
                                                                                                                                                   "@DEF":"hanim_l_humeral_lateral_epicondyles_pt",
                                                                                                                                                   "@translation":[0.228,1.1482,-0.11],
                                                                                                                                                   "-children":[
@@ -7587,7 +7587,7 @@
                                                                                                                                                     },
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"l_humeral_medial_epicondyles_pt",
+                                                                                                                                                        "@name":"l_humeral_medial_epicondyles",
                                                                                                                                                         "@DEF":"hanim_l_humeral_medial_epicondyles_pt",
                                                                                                                                                         "@translation":[0.1735,1.1272,-0.1113],
                                                                                                                                                         "-children":[
@@ -9501,7 +9501,7 @@
                                                                                                                                               },
                                                                                                                                               { "HAnimSite":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"r_humeral_lateral_epicondyles_pt",
+                                                                                                                                                  "@name":"r_humeral_lateral_epicondyles",
                                                                                                                                                   "@DEF":"hanim_r_humeral_lateral_epicondyles_pt",
                                                                                                                                                   "@translation":[-0.2224,1.1517,-0.1033],
                                                                                                                                                   "-children":[
@@ -9584,7 +9584,7 @@
                                                                                                                                                     },
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"r_humeral_medial_epicondyles_pt",
+                                                                                                                                                        "@name":"r_humeral_medial_epicondyles",
                                                                                                                                                         "@DEF":"hanim_r_humeral_medial_epicondyles_pt",
                                                                                                                                                         "@translation":[-0.168,1.1298,-0.1062],
                                                                                                                                                         "-children":[

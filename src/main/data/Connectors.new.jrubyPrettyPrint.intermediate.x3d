@@ -260,7 +260,7 @@ function set_translation ()
     </ProtoDeclare>
     <NavigationInfo type='"FLY" "ANY"'/>
     <Background skyColor='0.2 0.2 0.2'/>
-    <OrthoViewpoint centerOfRotation='-3.13496 -4.19776 0' description='OthoViewpoint' position='-3.13496 -4.19776 10'/>
+    <OrthoViewpoint centerOfRotation='-3.13496 -4.19776 0' description='OthoViewpoint' fieldOfView='0 0 10 10' position='-3.13496 -4.19776 10'/>
     <Viewpoint description='Viewpoint'/>
     <Transform DEF='Connectors'>
       <ProtoInstance name='Route'>

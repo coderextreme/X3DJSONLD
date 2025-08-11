@@ -3570,11 +3570,11 @@
                 <Transform USE='l_knee_crease_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='l_hip-to-l_knee_crease'/>
-              <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles_pt' translation='0.039 0.41 -0.01'>
+              <HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles' translation='0.039 0.41 -0.01'>
                 <Transform USE='l_femoral_medial_epicondyles_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='l_hip-to-l_femoral_medial_epicondyles'/>
-              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles_pt' translation='0.127 0.41 -0.01'>
+              <HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles' translation='0.127 0.41 -0.01'>
                 <Transform USE='l_femoral_lateral_epicondyles_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='l_hip-to-l_femoral_lateral_epicondyles'/>
@@ -3835,11 +3835,11 @@
                 <Transform USE='r_knee_crease_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='r_hip-to-r_knee_crease'/>
-              <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles_pt' translation='-0.039 0.41 -0.01'>
+              <HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles' translation='-0.039 0.41 -0.01'>
                 <Transform USE='r_femoral_medial_epicondyles_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='r_hip-to-r_femoral_medial_epicondyles'/>
-              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles_pt' translation='-0.127 0.41 -0.01'>
+              <HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles' translation='-0.127 0.41 -0.01'>
                 <Transform USE='r_femoral_lateral_epicondyles_pt_SiteShape'/>
               </HAnimSite>
               <Shape USE='r_hip-to-r_femoral_lateral_epicondyles'/>
@@ -4133,11 +4133,11 @@
                   <!-- Shape USE='l2_Shape'/ -->
                   <Transform USE='vl2_JointShape'/>
                   <Shape USE='l2_Segment'/>
-                  <HAnimSite DEF='hanim_l_rib_10_pt' name='l_rib_10_pt' translation='0.09 1 0.04'>
+                  <HAnimSite DEF='hanim_l_rib_10_pt' name='l_rib_10' translation='0.09 1 0.04'>
                     <Transform USE='l_rib_10_pt_SiteShape'/>
                   </HAnimSite>
                   <Shape USE='vl2-to-l_rib_10'/>
-                  <HAnimSite DEF='hanim_r_rib_10_pt' name='r_rib_10_pt' translation='-0.09 1 0.04'>
+                  <HAnimSite DEF='hanim_r_rib_10_pt' name='r_rib_10' translation='-0.09 1 0.04'>
                     <Transform USE='r_rib_10_pt_SiteShape'/>
                   </HAnimSite>
                   <Shape USE='vl2-to-r_rib_10'/>
@@ -4374,7 +4374,7 @@
                                                               <!-- Shape USE='l_eyelid_Shape'/ -->
                                                               <Transform USE='l_eyelid_joint_JointShape'/>
                                                               <Shape USE='l_eyelid_Segment'/>
-                                                              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid_tip' translation='0 2.64 0'>
+                                                              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid' translation='0 2.64 0'>
                                                                 <Transform USE='l_eyelid_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='l_eyelid_joint-to-l_eyelid_tip'/>
@@ -4385,7 +4385,7 @@
                                                               <!-- Shape USE='r_eyelid_Shape'/ -->
                                                               <Transform USE='r_eyelid_joint_JointShape'/>
                                                               <Shape USE='r_eyelid_Segment'/>
-                                                              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid_tip' translation='0 2.68 0'>
+                                                              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid' translation='0 2.68 0'>
                                                                 <Transform USE='r_eyelid_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='r_eyelid_joint-to-r_eyelid_tip'/>
@@ -4396,7 +4396,7 @@
                                                               <!-- Shape USE='l_eyeball_Shape'/ -->
                                                               <Transform USE='l_eyeball_joint_JointShape'/>
                                                               <Shape USE='l_eyeball_Segment'/>
-                                                              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball_tip' translation='0 2.72 0'>
+                                                              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball' translation='0 2.72 0'>
                                                                 <Transform USE='l_eyeball_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='l_eyeball_joint-to-l_eyeball_tip'/>
@@ -4407,7 +4407,7 @@
                                                               <!-- Shape USE='r_eyeball_Shape'/ -->
                                                               <Transform USE='r_eyeball_joint_JointShape'/>
                                                               <Shape USE='r_eyeball_Segment'/>
-                                                              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball_tip' translation='0 2.76 0'>
+                                                              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball' translation='0 2.76 0'>
                                                                 <Transform USE='r_eyeball_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='r_eyeball_joint-to-r_eyeball_tip'/>
@@ -4418,7 +4418,7 @@
                                                               <!-- Shape USE='l_eyebrow_Shape'/ -->
                                                               <Transform USE='l_eyebrow_joint_JointShape'/>
                                                               <Shape USE='l_eyebrow_Segment'/>
-                                                              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow_tip' translation='0 2.8 0'>
+                                                              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow' translation='0 2.8 0'>
                                                                 <Transform USE='l_eyebrow_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='l_eyebrow_joint-to-l_eyebrow_tip'/>
@@ -4429,7 +4429,7 @@
                                                               <!-- Shape USE='r_eyebrow_Shape'/ -->
                                                               <Transform USE='r_eyebrow_joint_JointShape'/>
                                                               <Shape USE='r_eyebrow_Segment'/>
-                                                              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow_tip' translation='0 2.84 0'>
+                                                              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow' translation='0 2.84 0'>
                                                                 <Transform USE='r_eyebrow_tip_SiteShape'/>
                                                               </HAnimSite>
                                                               <Shape USE='r_eyebrow_joint-to-r_eyebrow_tip'/>
@@ -4472,7 +4472,7 @@
                                               <!-- Shape USE='l_clavicle_Shape'/ -->
                                               <Transform USE='l_sternoclavicular_JointShape'/>
                                               <Shape USE='l_clavicle_Segment'/>
-                                              <HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale_pt' translation='0.03 1.2 0.04'>
+                                              <HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale' translation='0.03 1.2 0.04'>
                                                 <Transform USE='l_clavicale_pt_SiteShape'/>
                                               </HAnimSite>
                                               <Shape USE='l_sternoclavicular-to-l_clavicale'/>
@@ -4504,11 +4504,11 @@
                                                   <!-- Shape USE='l_upperarm_Shape'/ -->
                                                   <Transform USE='l_shoulder_JointShape'/>
                                                   <Shape USE='l_upperarm_Segment'/>
-                                                  <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles_pt' translation='0.2 0.95 -0.03'>
+                                                  <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles' translation='0.2 0.95 -0.03'>
                                                     <Transform USE='l_humeral_lateral_epicondyles_pt_SiteShape'/>
                                                   </HAnimSite>
                                                   <Shape USE='l_shoulder-to-l_humeral_lateral_epicondyles'/>
-                                                  <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles_pt' translation='0.18 0.93 -0.03'>
+                                                  <HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles' translation='0.18 0.93 -0.03'>
                                                     <Transform USE='l_humeral_medial_epicondyles_pt_SiteShape'/>
                                                   </HAnimSite>
                                                   <Shape USE='l_shoulder-to-l_humeral_medial_epicondyles'/>
@@ -4757,7 +4757,7 @@
                                               <!-- Shape USE='r_clavicle_Shape'/ -->
                                               <Transform USE='r_sternoclavicular_JointShape'/>
                                               <Shape USE='r_clavicle_Segment'/>
-                                              <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale_pt' translation='-0.03 1.2 0.04'>
+                                              <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale' translation='-0.03 1.2 0.04'>
                                                 <Transform USE='r_clavicale_pt_SiteShape'/>
                                               </HAnimSite>
                                               <Shape USE='r_sternoclavicular-to-r_clavicale'/>
@@ -4789,11 +4789,11 @@
                                                   <!-- Shape USE='r_upperarm_Shape'/ -->
                                                   <Transform USE='r_shoulder_JointShape'/>
                                                   <Shape USE='r_upperarm_Segment'/>
-                                                  <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles_pt' translation='-0.2 0.95 -0.03'>
+                                                  <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles' translation='-0.2 0.95 -0.03'>
                                                     <Transform USE='r_humeral_lateral_epicondyles_pt_SiteShape'/>
                                                   </HAnimSite>
                                                   <Shape USE='r_shoulder-to-r_humeral_lateral_epicondyles'/>
-                                                  <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles_pt' translation='-0.18 0.93 -0.03'>
+                                                  <HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles' translation='-0.18 0.93 -0.03'>
                                                     <Transform USE='r_humeral_medial_epicondyles_pt_SiteShape'/>
                                                   </HAnimSite>
                                                   <Shape USE='r_shoulder-to-r_humeral_medial_epicondyles'/>

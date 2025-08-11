@@ -80,7 +80,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2025"
+            "@content":"09 August 2025"
           },
           {
             "@name":"generator",
@@ -96,7 +96,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":"\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
+              "@type":["EXAMINE","WALK","FLY","ANY"]
             }
           },
           { "Group":
@@ -119,7 +119,8 @@
                                 "-texture":
                                   { "PixelTexture":
                                     {
-                                      "@DEF":"RgbOpacityCheckerboard"
+                                      "@DEF":"RgbOpacityCheckerboard",
+                                      "@image":[2,2,4,-16776961,-65536,-65536,-16776961]
                                     }
                                   }
                               }
