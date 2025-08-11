@@ -42,7 +42,7 @@
             <Transform>
               <Shape USE='JointShape'/>
             </Transform>
-            <HAnimSite DEF='hanim_SEGMENT_FOR_Armature_tip' name='SEGMENT_FOR_Armature_tip'>
+            <HAnimSite DEF='hanim_SEGMENT_FOR_Armature_tip' name='SEGMENT_FOR_Armature'>
               <Transform>
                 <Shape USE='SiteShape'/>
               </Transform>
@@ -54,7 +54,7 @@
               <Transform translation='-2.0E-4 -0.1178 0.8174'>
                 <Shape USE='JointShape'/>
               </Transform>
-              <HAnimSite DEF='hanim_SEGMENT_FOR_sacrum_tip' name='SEGMENT_FOR_sacrum_tip'>
+              <HAnimSite DEF='hanim_SEGMENT_FOR_sacrum_tip' name='SEGMENT_FOR_sacrum'>
                 <Transform translation='-2.0E-4 -0.1178 0.8174'>
                   <Shape USE='SiteShape'/>
                 </Transform>
@@ -66,7 +66,7 @@
                 <Transform translation='-2.0E-4 -0.1178 0.6986'>
                   <Shape USE='JointShape'/>
                 </Transform>
-                <HAnimSite DEF='hanim_SEGMENT_FOR_pelvis_tip' name='SEGMENT_FOR_pelvis_tip'>
+                <HAnimSite DEF='hanim_SEGMENT_FOR_pelvis_tip' name='SEGMENT_FOR_pelvis'>
                   <Transform translation='-2.0E-4 -0.1178 0.6986'>
                     <Shape USE='SiteShape'/>
                   </Transform>
@@ -78,7 +78,7 @@
                   <Transform translation='0.0945 -0.1202 0.8181'>
                     <Shape USE='JointShape'/>
                   </Transform>
-                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_thigh_tip' name='SEGMENT_FOR_l_thigh_tip'>
+                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_thigh_tip' name='SEGMENT_FOR_l_thigh'>
                     <Transform translation='0.0945 -0.1202 0.8181'>
                       <Shape USE='SiteShape'/>
                     </Transform>
@@ -90,7 +90,7 @@
                     <Transform translation='0.0924 -0.1213 0.4003'>
                       <Shape USE='JointShape'/>
                     </Transform>
-                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_calf_tip' name='SEGMENT_FOR_l_calf_tip'>
+                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_calf_tip' name='SEGMENT_FOR_l_calf'>
                       <Transform translation='0.0924 -0.1213 0.4003'>
                         <Shape USE='SiteShape'/>
                       </Transform>
@@ -102,7 +102,7 @@
                       <Transform translation='0.0886 -0.1123 0.0869'>
                         <Shape USE='JointShape'/>
                       </Transform>
-                      <HAnimSite DEF='hanim_SEGMENT_FOR_l_talus_tip' name='SEGMENT_FOR_l_talus_tip'>
+                      <HAnimSite DEF='hanim_SEGMENT_FOR_l_talus_tip' name='SEGMENT_FOR_l_talus'>
                         <Transform translation='0.0886 -0.1123 0.0869'>
                           <Shape USE='SiteShape'/>
                         </Transform>
@@ -114,7 +114,7 @@
                         <Transform translation='0.0781 -0.097 0.0283'>
                           <Shape USE='JointShape'/>
                         </Transform>
-                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_navicular_tip' name='SEGMENT_FOR_l_navicular_tip'>
+                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_navicular_tip' name='SEGMENT_FOR_l_navicular'>
                           <Transform translation='0.0781 -0.097 0.0283'>
                             <Shape USE='SiteShape'/>
                           </Transform>
@@ -126,7 +126,7 @@
                           <Transform translation='0.0672 -0.0835 0.0235'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_1_tip' name='SEGMENT_FOR_l_cuneiform_1_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_1_tip' name='SEGMENT_FOR_l_cuneiform_1'>
                             <Transform translation='0.0672 -0.0835 0.0235'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -138,7 +138,7 @@
                             <Transform translation='0.0644 -0.0577 0.0147'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_1_tip' name='SEGMENT_FOR_l_metatarsal_1_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_1_tip' name='SEGMENT_FOR_l_metatarsal_1'>
                               <Transform translation='0.0644 -0.0577 0.0147'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -150,7 +150,7 @@
                               <Transform translation='0.0619 -0.0083 0.0059'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_1'>
                                 <Transform translation='0.0619 -0.0083 0.0059'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -162,7 +162,7 @@
                                 <Transform>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1'>
                                   <Transform>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -178,7 +178,7 @@
                           <Transform translation='0.0812 -0.0805 0.025'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_2_tip' name='SEGMENT_FOR_l_cuneiform_2_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_2_tip' name='SEGMENT_FOR_l_cuneiform_2'>
                             <Transform translation='0.0812 -0.0805 0.025'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -190,7 +190,7 @@
                             <Transform translation='0.08 -0.0608 0.0175'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_2_tip' name='SEGMENT_FOR_l_metatarsal_2_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_2_tip' name='SEGMENT_FOR_l_metatarsal_2'>
                               <Transform translation='0.08 -0.0608 0.0175'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -202,7 +202,7 @@
                               <Transform translation='0.0824 -0.004 0.0064'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_2'>
                                 <Transform translation='0.0824 -0.004 0.0064'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -214,7 +214,7 @@
                                 <Transform translation='0.0841 0.0121 0.0041'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_2'>
                                   <Transform translation='0.0841 0.0121 0.0041'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -226,7 +226,7 @@
                                   <Transform translation='0.0841 0.0216 0.0013'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_2'>
                                     <Transform translation='0.0841 0.0216 0.0013'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -243,7 +243,7 @@
                           <Transform translation='0.0928 -0.0821 0.0248'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_3_tip' name='SEGMENT_FOR_l_cuneiform_3_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_3_tip' name='SEGMENT_FOR_l_cuneiform_3'>
                             <Transform translation='0.0928 -0.0821 0.0248'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -255,7 +255,7 @@
                             <Transform translation='0.0944 -0.0625 0.0175'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_3_tip' name='SEGMENT_FOR_l_metatarsal_3_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_3_tip' name='SEGMENT_FOR_l_metatarsal_3'>
                               <Transform translation='0.0944 -0.0625 0.0175'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -267,7 +267,7 @@
                               <Transform translation='0.0963 -0.0065 0.0065'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_3'>
                                 <Transform translation='0.0963 -0.0065 0.0065'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -279,7 +279,7 @@
                                 <Transform translation='0.0987 0.0086 0.0034'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_3'>
                                   <Transform translation='0.0987 0.0086 0.0034'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -291,7 +291,7 @@
                                   <Transform translation='0.1002 0.0178 0.0013'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_3'>
                                     <Transform translation='0.1002 0.0178 0.0013'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -309,7 +309,7 @@
                         <Transform translation='0.0889 -0.1278 0.0494'>
                           <Shape USE='JointShape'/>
                         </Transform>
-                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_calcaneus_tip' name='SEGMENT_FOR_l_calcaneus_tip'>
+                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_calcaneus_tip' name='SEGMENT_FOR_l_calcaneus'>
                           <Transform translation='0.0889 -0.1278 0.0494'>
                             <Shape USE='SiteShape'/>
                           </Transform>
@@ -321,7 +321,7 @@
                           <Transform translation='0.1105 -0.0998 0.0267'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuboid_tip' name='SEGMENT_FOR_l_cuboid_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_cuboid_tip' name='SEGMENT_FOR_l_cuboid'>
                             <Transform translation='0.1105 -0.0998 0.0267'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -333,7 +333,7 @@
                             <Transform translation='0.1063 -0.0634 0.016'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_4_tip' name='SEGMENT_FOR_l_metatarsal_4_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_4_tip' name='SEGMENT_FOR_l_metatarsal_4'>
                               <Transform translation='0.1063 -0.0634 0.016'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -345,7 +345,7 @@
                               <Transform translation='0.1097 -0.0107 0.0058'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_4'>
                                 <Transform translation='0.1097 -0.0107 0.0058'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -357,7 +357,7 @@
                                 <Transform translation='0.114 0.0044 0.0037'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_4'>
                                   <Transform translation='0.114 0.0044 0.0037'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -369,7 +369,7 @@
                                   <Transform translation='0.1155 0.0118 8.0E-4'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_4'>
                                     <Transform translation='0.1155 0.0118 8.0E-4'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -385,7 +385,7 @@
                             <Transform translation='0.1206 -0.0671 0.0124'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_5_tip' name='SEGMENT_FOR_l_metatarsal_5_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_5_tip' name='SEGMENT_FOR_l_metatarsal_5'>
                               <Transform translation='0.1206 -0.0671 0.0124'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -397,7 +397,7 @@
                               <Transform translation='0.1239 -0.0153 0.0051'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_5'>
                                 <Transform translation='0.1239 -0.0153 0.0051'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -409,7 +409,7 @@
                                 <Transform translation='0.1262 -0.0077 0.0023'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_5'>
                                   <Transform translation='0.1262 -0.0077 0.0023'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -421,7 +421,7 @@
                                   <Transform translation='0.1271 0 0'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_5'>
                                     <Transform translation='0.1271 0 0'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -442,7 +442,7 @@
                   <Transform translation='-0.0948 -0.1202 0.8181'>
                     <Shape USE='JointShape'/>
                   </Transform>
-                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_thigh_tip' name='SEGMENT_FOR_r_thigh_tip'>
+                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_thigh_tip' name='SEGMENT_FOR_r_thigh'>
                     <Transform translation='-0.0948 -0.1202 0.8181'>
                       <Shape USE='SiteShape'/>
                     </Transform>
@@ -454,7 +454,7 @@
                     <Transform translation='-0.0928 -0.1213 0.4003'>
                       <Shape USE='JointShape'/>
                     </Transform>
-                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_calf_tip' name='SEGMENT_FOR_r_calf_tip'>
+                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_calf_tip' name='SEGMENT_FOR_r_calf'>
                       <Transform translation='-0.0928 -0.1213 0.4003'>
                         <Shape USE='SiteShape'/>
                       </Transform>
@@ -466,7 +466,7 @@
                       <Transform translation='-0.0886 -0.1123 0.0869'>
                         <Shape USE='JointShape'/>
                       </Transform>
-                      <HAnimSite DEF='hanim_SEGMENT_FOR_r_talus_tip' name='SEGMENT_FOR_r_talus_tip'>
+                      <HAnimSite DEF='hanim_SEGMENT_FOR_r_talus_tip' name='SEGMENT_FOR_r_talus'>
                         <Transform translation='-0.0886 -0.1123 0.0869'>
                           <Shape USE='SiteShape'/>
                         </Transform>
@@ -478,7 +478,7 @@
                         <Transform translation='-0.0781 -0.097 0.0283'>
                           <Shape USE='JointShape'/>
                         </Transform>
-                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_navicular_tip' name='SEGMENT_FOR_r_navicular_tip'>
+                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_navicular_tip' name='SEGMENT_FOR_r_navicular'>
                           <Transform translation='-0.0781 -0.097 0.0283'>
                             <Shape USE='SiteShape'/>
                           </Transform>
@@ -490,7 +490,7 @@
                           <Transform translation='-0.0672 -0.0835 0.0235'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_1_tip' name='SEGMENT_FOR_r_cuneiform_1_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_1_tip' name='SEGMENT_FOR_r_cuneiform_1'>
                             <Transform translation='-0.0672 -0.0835 0.0235'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -502,7 +502,7 @@
                             <Transform translation='-0.0644 -0.0577 0.0147'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_1_tip' name='SEGMENT_FOR_r_metatarsal_1_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_1_tip' name='SEGMENT_FOR_r_metatarsal_1'>
                               <Transform translation='-0.0644 -0.0577 0.0147'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -514,7 +514,7 @@
                               <Transform translation='-0.0619 -0.0083 0.0059'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1'>
                                 <Transform translation='-0.0619 -0.0083 0.0059'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -526,7 +526,7 @@
                                 <Transform>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1'>
                                   <Transform>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -542,7 +542,7 @@
                           <Transform translation='-0.0812 -0.0805 0.025'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_2_tip' name='SEGMENT_FOR_r_cuneiform_2_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_2_tip' name='SEGMENT_FOR_r_cuneiform_2'>
                             <Transform translation='-0.0812 -0.0805 0.025'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -554,7 +554,7 @@
                             <Transform translation='-0.08 -0.0608 0.0175'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_2_tip' name='SEGMENT_FOR_r_metatarsal_2_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_2_tip' name='SEGMENT_FOR_r_metatarsal_2'>
                               <Transform translation='-0.08 -0.0608 0.0175'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -566,7 +566,7 @@
                               <Transform translation='-0.0823 -0.004 0.0064'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2'>
                                 <Transform translation='-0.0823 -0.004 0.0064'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -578,7 +578,7 @@
                                 <Transform translation='-0.0841 0.0121 0.0041'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2'>
                                   <Transform translation='-0.0841 0.0121 0.0041'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -590,7 +590,7 @@
                                   <Transform translation='-0.0841 0.0216 0.0013'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2'>
                                     <Transform translation='-0.0841 0.0216 0.0013'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -607,7 +607,7 @@
                           <Transform translation='-0.0928 -0.0821 0.0248'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_3_tip' name='SEGMENT_FOR_r_cuneiform_3_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_3_tip' name='SEGMENT_FOR_r_cuneiform_3'>
                             <Transform translation='-0.0928 -0.0821 0.0248'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -619,7 +619,7 @@
                             <Transform translation='-0.0944 -0.0625 0.0175'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_3_tip' name='SEGMENT_FOR_r_metatarsal_3_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_3_tip' name='SEGMENT_FOR_r_metatarsal_3'>
                               <Transform translation='-0.0944 -0.0625 0.0175'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -631,7 +631,7 @@
                               <Transform translation='-0.0963 -0.0065 0.0065'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3'>
                                 <Transform translation='-0.0963 -0.0065 0.0065'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -643,7 +643,7 @@
                                 <Transform translation='-0.0987 0.0086 0.0034'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3'>
                                   <Transform translation='-0.0987 0.0086 0.0034'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -655,7 +655,7 @@
                                   <Transform translation='-0.1002 0.0178 0.0013'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3'>
                                     <Transform translation='-0.1002 0.0178 0.0013'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -673,7 +673,7 @@
                         <Transform translation='-0.0889 -0.1278 0.0494'>
                           <Shape USE='JointShape'/>
                         </Transform>
-                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_calcaneus_tip' name='SEGMENT_FOR_r_calcaneus_tip'>
+                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_calcaneus_tip' name='SEGMENT_FOR_r_calcaneus'>
                           <Transform translation='-0.0889 -0.1278 0.0494'>
                             <Shape USE='SiteShape'/>
                           </Transform>
@@ -685,7 +685,7 @@
                           <Transform translation='-0.1105 -0.0998 0.0267'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuboid_tip' name='SEGMENT_FOR_r_cuboid_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_cuboid_tip' name='SEGMENT_FOR_r_cuboid'>
                             <Transform translation='-0.1105 -0.0998 0.0267'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -697,7 +697,7 @@
                             <Transform translation='-0.1063 -0.0634 0.016'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_4_tip' name='SEGMENT_FOR_r_metatarsal_4_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_4_tip' name='SEGMENT_FOR_r_metatarsal_4'>
                               <Transform translation='-0.1063 -0.0634 0.016'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -709,7 +709,7 @@
                               <Transform translation='-0.1097 -0.0107 0.0058'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4'>
                                 <Transform translation='-0.1097 -0.0107 0.0058'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -721,7 +721,7 @@
                                 <Transform translation='-0.114 0.0044 0.0037'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4'>
                                   <Transform translation='-0.114 0.0044 0.0037'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -733,7 +733,7 @@
                                   <Transform translation='-0.1155 0.0118 8.0E-4'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4'>
                                     <Transform translation='-0.1155 0.0118 8.0E-4'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -749,7 +749,7 @@
                             <Transform translation='-0.1206 -0.0671 0.0124'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_5_tip' name='SEGMENT_FOR_r_metatarsal_5_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_5_tip' name='SEGMENT_FOR_r_metatarsal_5'>
                               <Transform translation='-0.1206 -0.0671 0.0124'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -761,7 +761,7 @@
                               <Transform translation='-0.1239 -0.0153 0.0051'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5'>
                                 <Transform translation='-0.1239 -0.0153 0.0051'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -773,7 +773,7 @@
                                 <Transform translation='-0.1262 -0.0077 0.0023'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5'>
                                   <Transform translation='-0.1262 -0.0077 0.0023'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -785,7 +785,7 @@
                                   <Transform translation='-0.1271 0 0'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5'>
                                     <Transform translation='-0.1271 0 0'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -807,7 +807,7 @@
                 <Transform translation='-2.0E-4 -0.1156 0.9169'>
                   <Shape USE='JointShape'/>
                 </Transform>
-                <HAnimSite DEF='hanim_SEGMENT_FOR_l5_tip' name='SEGMENT_FOR_l5_tip'>
+                <HAnimSite DEF='hanim_SEGMENT_FOR_l5_tip' name='SEGMENT_FOR_l5'>
                   <Transform translation='-2.0E-4 -0.1156 0.9169'>
                     <Shape USE='SiteShape'/>
                   </Transform>
@@ -819,7 +819,7 @@
                   <Transform translation='-2.0E-4 -0.1156 0.9412'>
                     <Shape USE='JointShape'/>
                   </Transform>
-                  <HAnimSite DEF='hanim_SEGMENT_FOR_l4_tip' name='SEGMENT_FOR_l4_tip'>
+                  <HAnimSite DEF='hanim_SEGMENT_FOR_l4_tip' name='SEGMENT_FOR_l4'>
                     <Transform translation='-2.0E-4 -0.1156 0.9412'>
                       <Shape USE='SiteShape'/>
                     </Transform>
@@ -831,7 +831,7 @@
                     <Transform translation='-2.0E-4 -0.1156 0.9574'>
                       <Shape USE='JointShape'/>
                     </Transform>
-                    <HAnimSite DEF='hanim_SEGMENT_FOR_l3_tip' name='SEGMENT_FOR_l3_tip'>
+                    <HAnimSite DEF='hanim_SEGMENT_FOR_l3_tip' name='SEGMENT_FOR_l3'>
                       <Transform translation='-2.0E-4 -0.1156 0.9574'>
                         <Shape USE='SiteShape'/>
                       </Transform>
@@ -843,7 +843,7 @@
                       <Transform translation='-2.0E-4 -0.1156 0.9738'>
                         <Shape USE='JointShape'/>
                       </Transform>
-                      <HAnimSite DEF='hanim_SEGMENT_FOR_l2_tip' name='SEGMENT_FOR_l2_tip'>
+                      <HAnimSite DEF='hanim_SEGMENT_FOR_l2_tip' name='SEGMENT_FOR_l2'>
                         <Transform translation='-2.0E-4 -0.1156 0.9738'>
                           <Shape USE='SiteShape'/>
                         </Transform>
@@ -855,7 +855,7 @@
                         <Transform translation='-2.0E-4 -0.1156 0.9911'>
                           <Shape USE='JointShape'/>
                         </Transform>
-                        <HAnimSite DEF='hanim_SEGMENT_FOR_l1_tip' name='SEGMENT_FOR_l1_tip'>
+                        <HAnimSite DEF='hanim_SEGMENT_FOR_l1_tip' name='SEGMENT_FOR_l1'>
                           <Transform translation='-2.0E-4 -0.1156 0.9911'>
                             <Shape USE='SiteShape'/>
                           </Transform>
@@ -867,7 +867,7 @@
                           <Transform translation='-2.0E-4 -0.1156 1.0145'>
                             <Shape USE='JointShape'/>
                           </Transform>
-                          <HAnimSite DEF='hanim_SEGMENT_FOR_t12_tip' name='SEGMENT_FOR_t12_tip'>
+                          <HAnimSite DEF='hanim_SEGMENT_FOR_t12_tip' name='SEGMENT_FOR_t12'>
                             <Transform translation='-2.0E-4 -0.1156 1.0145'>
                               <Shape USE='SiteShape'/>
                             </Transform>
@@ -879,7 +879,7 @@
                             <Transform translation='-2.0E-4 -0.1156 1.0381'>
                               <Shape USE='JointShape'/>
                             </Transform>
-                            <HAnimSite DEF='hanim_SEGMENT_FOR_t11_tip' name='SEGMENT_FOR_t11_tip'>
+                            <HAnimSite DEF='hanim_SEGMENT_FOR_t11_tip' name='SEGMENT_FOR_t11'>
                               <Transform translation='-2.0E-4 -0.1156 1.0381'>
                                 <Shape USE='SiteShape'/>
                               </Transform>
@@ -891,7 +891,7 @@
                               <Transform translation='-2.0E-4 -0.1157 1.0552'>
                                 <Shape USE='JointShape'/>
                               </Transform>
-                              <HAnimSite DEF='hanim_SEGMENT_FOR_t10_tip' name='SEGMENT_FOR_t10_tip'>
+                              <HAnimSite DEF='hanim_SEGMENT_FOR_t10_tip' name='SEGMENT_FOR_t10'>
                                 <Transform translation='-2.0E-4 -0.1157 1.0552'>
                                   <Shape USE='SiteShape'/>
                                 </Transform>
@@ -903,7 +903,7 @@
                                 <Transform translation='-2.0E-4 -0.1156 1.0699'>
                                   <Shape USE='JointShape'/>
                                 </Transform>
-                                <HAnimSite DEF='hanim_SEGMENT_FOR_t9_tip' name='SEGMENT_FOR_t9_tip'>
+                                <HAnimSite DEF='hanim_SEGMENT_FOR_t9_tip' name='SEGMENT_FOR_t9'>
                                   <Transform translation='-2.0E-4 -0.1156 1.0699'>
                                     <Shape USE='SiteShape'/>
                                   </Transform>
@@ -915,7 +915,7 @@
                                   <Transform translation='-2.0E-4 -0.1156 1.0845'>
                                     <Shape USE='JointShape'/>
                                   </Transform>
-                                  <HAnimSite DEF='hanim_SEGMENT_FOR_t8_tip' name='SEGMENT_FOR_t8_tip'>
+                                  <HAnimSite DEF='hanim_SEGMENT_FOR_t8_tip' name='SEGMENT_FOR_t8'>
                                     <Transform translation='-2.0E-4 -0.1156 1.0845'>
                                       <Shape USE='SiteShape'/>
                                     </Transform>
@@ -927,7 +927,7 @@
                                     <Transform translation='-2.0E-4 -0.1156 1.1002'>
                                       <Shape USE='JointShape'/>
                                     </Transform>
-                                    <HAnimSite DEF='hanim_SEGMENT_FOR_t7_tip' name='SEGMENT_FOR_t7_tip'>
+                                    <HAnimSite DEF='hanim_SEGMENT_FOR_t7_tip' name='SEGMENT_FOR_t7'>
                                       <Transform translation='-2.0E-4 -0.1156 1.1002'>
                                         <Shape USE='SiteShape'/>
                                       </Transform>
@@ -939,7 +939,7 @@
                                       <Transform translation='-2.0E-4 -0.1156 1.1131'>
                                         <Shape USE='JointShape'/>
                                       </Transform>
-                                      <HAnimSite DEF='hanim_SEGMENT_FOR_t6_tip' name='SEGMENT_FOR_t6_tip'>
+                                      <HAnimSite DEF='hanim_SEGMENT_FOR_t6_tip' name='SEGMENT_FOR_t6'>
                                         <Transform translation='-2.0E-4 -0.1156 1.1131'>
                                           <Shape USE='SiteShape'/>
                                         </Transform>
@@ -951,7 +951,7 @@
                                         <Transform translation='-2.0E-4 -0.1156 1.1286'>
                                           <Shape USE='JointShape'/>
                                         </Transform>
-                                        <HAnimSite DEF='hanim_SEGMENT_FOR_t5_tip' name='SEGMENT_FOR_t5_tip'>
+                                        <HAnimSite DEF='hanim_SEGMENT_FOR_t5_tip' name='SEGMENT_FOR_t5'>
                                           <Transform translation='-2.0E-4 -0.1156 1.1286'>
                                             <Shape USE='SiteShape'/>
                                           </Transform>
@@ -963,7 +963,7 @@
                                           <Transform translation='-2.0E-4 -0.1156 1.1439'>
                                             <Shape USE='JointShape'/>
                                           </Transform>
-                                          <HAnimSite DEF='hanim_SEGMENT_FOR_t4_tip' name='SEGMENT_FOR_t4_tip'>
+                                          <HAnimSite DEF='hanim_SEGMENT_FOR_t4_tip' name='SEGMENT_FOR_t4'>
                                             <Transform translation='-2.0E-4 -0.1156 1.1439'>
                                               <Shape USE='SiteShape'/>
                                             </Transform>
@@ -975,7 +975,7 @@
                                             <Transform translation='-2.0E-4 -0.1156 1.1623'>
                                               <Shape USE='JointShape'/>
                                             </Transform>
-                                            <HAnimSite DEF='hanim_SEGMENT_FOR_t3_tip' name='SEGMENT_FOR_t3_tip'>
+                                            <HAnimSite DEF='hanim_SEGMENT_FOR_t3_tip' name='SEGMENT_FOR_t3'>
                                               <Transform translation='-2.0E-4 -0.1156 1.1623'>
                                                 <Shape USE='SiteShape'/>
                                               </Transform>
@@ -987,7 +987,7 @@
                                               <Transform translation='-2.0E-4 -0.1157 1.1871'>
                                                 <Shape USE='JointShape'/>
                                               </Transform>
-                                              <HAnimSite DEF='hanim_SEGMENT_FOR_t2_tip' name='SEGMENT_FOR_t2_tip'>
+                                              <HAnimSite DEF='hanim_SEGMENT_FOR_t2_tip' name='SEGMENT_FOR_t2'>
                                                 <Transform translation='-2.0E-4 -0.1157 1.1871'>
                                                   <Shape USE='SiteShape'/>
                                                 </Transform>
@@ -999,7 +999,7 @@
                                                 <Transform translation='-2.0E-4 -0.1156 1.2109'>
                                                   <Shape USE='JointShape'/>
                                                 </Transform>
-                                                <HAnimSite DEF='hanim_SEGMENT_FOR_t1_tip' name='SEGMENT_FOR_t1_tip'>
+                                                <HAnimSite DEF='hanim_SEGMENT_FOR_t1_tip' name='SEGMENT_FOR_t1'>
                                                   <Transform translation='-2.0E-4 -0.1156 1.2109'>
                                                     <Shape USE='SiteShape'/>
                                                   </Transform>
@@ -1011,7 +1011,7 @@
                                                   <Transform translation='-2.0E-4 -0.1169 1.2368'>
                                                     <Shape USE='JointShape'/>
                                                   </Transform>
-                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_c7_tip' name='SEGMENT_FOR_c7_tip'>
+                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_c7_tip' name='SEGMENT_FOR_c7'>
                                                     <Transform translation='-2.0E-4 -0.1169 1.2368'>
                                                       <Shape USE='SiteShape'/>
                                                     </Transform>
@@ -1023,7 +1023,7 @@
                                                     <Transform translation='-2.0E-4 -0.1169 1.249'>
                                                       <Shape USE='JointShape'/>
                                                     </Transform>
-                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_c6_tip' name='SEGMENT_FOR_c6_tip'>
+                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_c6_tip' name='SEGMENT_FOR_c6'>
                                                       <Transform translation='-2.0E-4 -0.1169 1.249'>
                                                         <Shape USE='SiteShape'/>
                                                       </Transform>
@@ -1035,7 +1035,7 @@
                                                       <Transform translation='-2.0E-4 -0.1169 1.2613'>
                                                         <Shape USE='JointShape'/>
                                                       </Transform>
-                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_c5_tip' name='SEGMENT_FOR_c5_tip'>
+                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_c5_tip' name='SEGMENT_FOR_c5'>
                                                         <Transform translation='-2.0E-4 -0.1169 1.2613'>
                                                           <Shape USE='SiteShape'/>
                                                         </Transform>
@@ -1047,7 +1047,7 @@
                                                         <Transform translation='-2.0E-4 -0.1169 1.2737'>
                                                           <Shape USE='JointShape'/>
                                                         </Transform>
-                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_c4_tip' name='SEGMENT_FOR_c4_tip'>
+                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_c4_tip' name='SEGMENT_FOR_c4'>
                                                           <Transform translation='-2.0E-4 -0.1169 1.2737'>
                                                             <Shape USE='SiteShape'/>
                                                           </Transform>
@@ -1059,7 +1059,7 @@
                                                           <Transform translation='-2.0E-4 -0.1169 1.2865'>
                                                             <Shape USE='JointShape'/>
                                                           </Transform>
-                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_c3_tip' name='SEGMENT_FOR_c3_tip'>
+                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_c3_tip' name='SEGMENT_FOR_c3'>
                                                             <Transform translation='-2.0E-4 -0.1169 1.2865'>
                                                               <Shape USE='SiteShape'/>
                                                             </Transform>
@@ -1071,7 +1071,7 @@
                                                             <Transform translation='-2.0E-4 -0.1169 1.2982'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_c2_tip' name='SEGMENT_FOR_c2_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_c2_tip' name='SEGMENT_FOR_c2'>
                                                               <Transform translation='-2.0E-4 -0.1169 1.2982'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1083,7 +1083,7 @@
                                                               <Transform translation='-2.0E-4 -0.1169 1.3099'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_c1_tip' name='SEGMENT_FOR_c1_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_c1_tip' name='SEGMENT_FOR_c1'>
                                                                 <Transform translation='-2.0E-4 -0.1169 1.3099'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1095,7 +1095,7 @@
                                                                 <Transform translation='-2.0E-4 -0.1173 1.3041'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_skull_tip' name='SEGMENT_FOR_skull_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_skull_tip' name='SEGMENT_FOR_skull'>
                                                                   <Transform translation='-2.0E-4 -0.1173 1.3041'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1107,7 +1107,7 @@
                                                                   <Transform translation='0.0503 -0.0689 1.4157'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyelid_tip' name='SEGMENT_FOR_l_eyelid_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyelid_tip' name='SEGMENT_FOR_l_eyelid'>
                                                                     <Transform translation='0.0503 -0.0689 1.4157'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1120,7 +1120,7 @@
                                                                   <Transform translation='-0.0507 -0.0689 1.4157'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyelid_tip' name='SEGMENT_FOR_r_eyelid_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyelid_tip' name='SEGMENT_FOR_r_eyelid'>
                                                                     <Transform translation='-0.0507 -0.0689 1.4157'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1133,7 +1133,7 @@
                                                                   <Transform translation='0.0479 -0.0188 1.3963'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyeball_tip' name='SEGMENT_FOR_l_eyeball_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyeball_tip' name='SEGMENT_FOR_l_eyeball'>
                                                                     <Transform translation='0.0479 -0.0188 1.3963'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1146,7 +1146,7 @@
                                                                   <Transform translation='-0.0483 -0.0188 1.3963'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyeball_tip' name='SEGMENT_FOR_r_eyeball_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyeball_tip' name='SEGMENT_FOR_r_eyeball'>
                                                                     <Transform translation='-0.0483 -0.0188 1.3963'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1159,7 +1159,7 @@
                                                                   <Transform translation='0.0216 0.0051 1.4053'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyebrow_tip' name='SEGMENT_FOR_l_eyebrow_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_eyebrow_tip' name='SEGMENT_FOR_l_eyebrow'>
                                                                     <Transform translation='0.0216 0.0051 1.4053'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1172,7 +1172,7 @@
                                                                   <Transform translation='-0.0219 0.0051 1.4053'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyebrow_tip' name='SEGMENT_FOR_r_eyebrow_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_eyebrow_tip' name='SEGMENT_FOR_r_eyebrow'>
                                                                     <Transform translation='-0.0219 0.0051 1.4053'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1185,7 +1185,7 @@
                                                                   <Transform translation='-2.0E-4 -0.0865 1.3043'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_jaw_tip' name='SEGMENT_FOR_jaw_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_jaw_tip' name='SEGMENT_FOR_jaw'>
                                                                     <Transform translation='-2.0E-4 -0.0865 1.3043'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1206,7 +1206,7 @@
                                                   <Transform translation='0.1228 -0.1148 1.1833'>
                                                     <Shape USE='JointShape'/>
                                                   </Transform>
-                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_clavicle_tip' name='SEGMENT_FOR_l_clavicle_tip'>
+                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_clavicle_tip' name='SEGMENT_FOR_l_clavicle'>
                                                     <Transform translation='0.1228 -0.1148 1.1833'>
                                                       <Shape USE='SiteShape'/>
                                                     </Transform>
@@ -1218,7 +1218,7 @@
                                                     <Transform translation='0.0383 -0.1157 1.2001'>
                                                       <Shape USE='JointShape'/>
                                                     </Transform>
-                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_scapula_tip' name='SEGMENT_FOR_l_scapula_tip'>
+                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_scapula_tip' name='SEGMENT_FOR_l_scapula'>
                                                       <Transform translation='0.0383 -0.1157 1.2001'>
                                                         <Shape USE='SiteShape'/>
                                                       </Transform>
@@ -1230,7 +1230,7 @@
                                                       <Transform translation='0.1649 -0.1051 1.17'>
                                                         <Shape USE='JointShape'/>
                                                       </Transform>
-                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_l_upperarm_tip' name='SEGMENT_FOR_l_upperarm_tip'>
+                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_l_upperarm_tip' name='SEGMENT_FOR_l_upperarm'>
                                                         <Transform translation='0.1649 -0.1051 1.17'>
                                                           <Shape USE='SiteShape'/>
                                                         </Transform>
@@ -1242,7 +1242,7 @@
                                                         <Transform translation='0.1819 -0.1075 0.9202'>
                                                           <Shape USE='JointShape'/>
                                                         </Transform>
-                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_forearm_tip' name='SEGMENT_FOR_l_forearm_tip'>
+                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_l_forearm_tip' name='SEGMENT_FOR_l_forearm'>
                                                           <Transform translation='0.1819 -0.1075 0.9202'>
                                                             <Shape USE='SiteShape'/>
                                                           </Transform>
@@ -1254,7 +1254,7 @@
                                                           <Transform translation='0.1818 -0.1069 0.7157'>
                                                             <Shape USE='JointShape'/>
                                                           </Transform>
-                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_tip' name='SEGMENT_FOR_l_carpal_tip'>
+                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_tip' name='SEGMENT_FOR_l_carpal'>
                                                             <Transform translation='0.1818 -0.1069 0.7157'>
                                                               <Shape USE='SiteShape'/>
                                                             </Transform>
@@ -1266,7 +1266,7 @@
                                                             <Transform translation='0.1811 -0.0826 0.6975'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_trapezium_tip' name='SEGMENT_FOR_l_trapezium_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_trapezium_tip' name='SEGMENT_FOR_l_trapezium'>
                                                               <Transform translation='0.1811 -0.0826 0.6975'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1278,7 +1278,7 @@
                                                               <Transform translation='0.1803 -0.0759 0.684'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_1_tip' name='SEGMENT_FOR_l_metacarpal_1_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_1_tip' name='SEGMENT_FOR_l_metacarpal_1'>
                                                                 <Transform translation='0.1803 -0.0759 0.684'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1290,7 +1290,7 @@
                                                                 <Transform translation='0.1809 -0.0661 0.6642'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_1'>
                                                                   <Transform translation='0.1809 -0.0661 0.6642'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1302,7 +1302,7 @@
                                                                   <Transform translation='0.1825 -0.0522 0.6455'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_1_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_1'>
                                                                     <Transform translation='0.1825 -0.0522 0.6455'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1318,7 +1318,7 @@
                                                             <Transform translation='0.1811 -0.0935 0.6984'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_trapezoid_tip' name='SEGMENT_FOR_l_trapezoid_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_trapezoid_tip' name='SEGMENT_FOR_l_trapezoid'>
                                                               <Transform translation='0.1811 -0.0935 0.6984'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1330,7 +1330,7 @@
                                                               <Transform translation='0.1811 -0.0922 0.679'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_2_tip' name='SEGMENT_FOR_l_metacarpal_2_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_2_tip' name='SEGMENT_FOR_l_metacarpal_2'>
                                                                 <Transform translation='0.1811 -0.0922 0.679'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1342,7 +1342,7 @@
                                                                 <Transform translation='0.1836 -0.0868 0.6286'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_2'>
                                                                   <Transform translation='0.1836 -0.0868 0.6286'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1354,7 +1354,7 @@
                                                                   <Transform translation='0.1815 -0.0877 0.5983'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_2_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_2'>
                                                                     <Transform translation='0.1815 -0.0877 0.5983'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1366,7 +1366,7 @@
                                                                     <Transform translation='0.1805 -0.0885 0.5731'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_2_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_2'>
                                                                       <Transform translation='0.1805 -0.0885 0.5731'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1383,7 +1383,7 @@
                                                             <Transform translation='0.1809 -0.1067 0.7'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_capitate_tip' name='SEGMENT_FOR_l_capitate_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_capitate_tip' name='SEGMENT_FOR_l_capitate'>
                                                               <Transform translation='0.1809 -0.1067 0.7'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1395,7 +1395,7 @@
                                                               <Transform translation='0.1809 -0.1081 0.6772'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_3_tip' name='SEGMENT_FOR_l_metacarpal_3_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_3_tip' name='SEGMENT_FOR_l_metacarpal_3'>
                                                                 <Transform translation='0.1809 -0.1081 0.6772'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1407,7 +1407,7 @@
                                                                 <Transform translation='0.1835 -0.1058 0.6264'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_3'>
                                                                   <Transform translation='0.1835 -0.1058 0.6264'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1419,7 +1419,7 @@
                                                                   <Transform translation='0.1815 -0.1054 0.5947'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_3_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_3'>
                                                                     <Transform translation='0.1815 -0.1054 0.5947'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1431,7 +1431,7 @@
                                                                     <Transform translation='0.1805 -0.1056 0.5668'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_3_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_3'>
                                                                       <Transform translation='0.1805 -0.1056 0.5668'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1448,7 +1448,7 @@
                                                             <Transform translation='0.1809 -0.1276 0.6973'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_hamate_tip' name='SEGMENT_FOR_l_hamate_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_l_hamate_tip' name='SEGMENT_FOR_l_hamate'>
                                                               <Transform translation='0.1809 -0.1276 0.6973'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1460,7 +1460,7 @@
                                                               <Transform translation='0.1809 -0.1218 0.6777'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_4_tip' name='SEGMENT_FOR_l_metacarpal_4_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_4_tip' name='SEGMENT_FOR_l_metacarpal_4'>
                                                                 <Transform translation='0.1809 -0.1218 0.6777'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1472,7 +1472,7 @@
                                                                 <Transform translation='0.1835 -0.1233 0.6255'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_4'>
                                                                   <Transform translation='0.1835 -0.1233 0.6255'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1484,7 +1484,7 @@
                                                                   <Transform translation='0.1815 -0.1225 0.598'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_4_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_4'>
                                                                     <Transform translation='0.1815 -0.1225 0.598'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1496,7 +1496,7 @@
                                                                     <Transform translation='0.1805 -0.1217 0.5722'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_4_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_4'>
                                                                       <Transform translation='0.1805 -0.1217 0.5722'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1512,7 +1512,7 @@
                                                               <Transform translation='0.1815 -0.1347 0.6797'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_5_tip' name='SEGMENT_FOR_l_metacarpal_5_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_l_metacarpal_5_tip' name='SEGMENT_FOR_l_metacarpal_5'>
                                                                 <Transform translation='0.1815 -0.1347 0.6797'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1524,7 +1524,7 @@
                                                                 <Transform translation='0.1832 -0.1389 0.6295'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_5'>
                                                                   <Transform translation='0.1832 -0.1389 0.6295'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1536,7 +1536,7 @@
                                                                   <Transform translation='0.1815 -0.139 0.6124'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_5_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_5'>
                                                                     <Transform translation='0.1815 -0.139 0.6124'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1548,7 +1548,7 @@
                                                                     <Transform translation='0.1806 -0.1388 0.5938'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_5_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_5'>
                                                                       <Transform translation='0.1806 -0.1388 0.5938'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1570,7 +1570,7 @@
                                                   <Transform translation='-0.1231 -0.1148 1.1833'>
                                                     <Shape USE='JointShape'/>
                                                   </Transform>
-                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_clavicle_tip' name='SEGMENT_FOR_r_clavicle_tip'>
+                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_clavicle_tip' name='SEGMENT_FOR_r_clavicle'>
                                                     <Transform translation='-0.1231 -0.1148 1.1833'>
                                                       <Shape USE='SiteShape'/>
                                                     </Transform>
@@ -1582,7 +1582,7 @@
                                                     <Transform translation='-0.0387 -0.1157 1.2001'>
                                                       <Shape USE='JointShape'/>
                                                     </Transform>
-                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_scapula_tip' name='SEGMENT_FOR_r_scapula_tip'>
+                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_scapula_tip' name='SEGMENT_FOR_r_scapula'>
                                                       <Transform translation='-0.0387 -0.1157 1.2001'>
                                                         <Shape USE='SiteShape'/>
                                                       </Transform>
@@ -1594,7 +1594,7 @@
                                                       <Transform translation='-0.1649 -0.1051 1.17'>
                                                         <Shape USE='JointShape'/>
                                                       </Transform>
-                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_r_upperarm_tip' name='SEGMENT_FOR_r_upperarm_tip'>
+                                                      <HAnimSite DEF='hanim_SEGMENT_FOR_r_upperarm_tip' name='SEGMENT_FOR_r_upperarm'>
                                                         <Transform translation='-0.1649 -0.1051 1.17'>
                                                           <Shape USE='SiteShape'/>
                                                         </Transform>
@@ -1606,7 +1606,7 @@
                                                         <Transform translation='-0.1819 -0.1075 0.9202'>
                                                           <Shape USE='JointShape'/>
                                                         </Transform>
-                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_forearm_tip' name='SEGMENT_FOR_r_forearm_tip'>
+                                                        <HAnimSite DEF='hanim_SEGMENT_FOR_r_forearm_tip' name='SEGMENT_FOR_r_forearm'>
                                                           <Transform translation='-0.1819 -0.1075 0.9202'>
                                                             <Shape USE='SiteShape'/>
                                                           </Transform>
@@ -1618,7 +1618,7 @@
                                                           <Transform translation='-0.1818 -0.1069 0.7157'>
                                                             <Shape USE='JointShape'/>
                                                           </Transform>
-                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_tip' name='SEGMENT_FOR_r_carpal_tip'>
+                                                          <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_tip' name='SEGMENT_FOR_r_carpal'>
                                                             <Transform translation='-0.1818 -0.1069 0.7157'>
                                                               <Shape USE='SiteShape'/>
                                                             </Transform>
@@ -1630,7 +1630,7 @@
                                                             <Transform translation='-0.1811 -0.0826 0.6975'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezium_tip' name='SEGMENT_FOR_r_trapezium_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezium_tip' name='SEGMENT_FOR_r_trapezium'>
                                                               <Transform translation='-0.1811 -0.0826 0.6975'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1642,7 +1642,7 @@
                                                               <Transform translation='-0.1803 -0.0759 0.684'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_1_tip' name='SEGMENT_FOR_r_metacarpal_1_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_1_tip' name='SEGMENT_FOR_r_metacarpal_1'>
                                                                 <Transform translation='-0.1803 -0.0759 0.684'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1654,7 +1654,7 @@
                                                                 <Transform translation='-0.1808 -0.0661 0.6642'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1'>
                                                                   <Transform translation='-0.1808 -0.0661 0.6642'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1666,7 +1666,7 @@
                                                                   <Transform translation='-0.1825 -0.0522 0.6455'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_1_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_1'>
                                                                     <Transform translation='-0.1825 -0.0522 0.6455'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1682,7 +1682,7 @@
                                                             <Transform translation='-0.1811 -0.0935 0.6984'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezoid_tip' name='SEGMENT_FOR_r_trapezoid_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezoid_tip' name='SEGMENT_FOR_r_trapezoid'>
                                                               <Transform translation='-0.1811 -0.0935 0.6984'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1694,7 +1694,7 @@
                                                               <Transform translation='-0.1811 -0.0922 0.679'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_2_tip' name='SEGMENT_FOR_r_metacarpal_2_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_2_tip' name='SEGMENT_FOR_r_metacarpal_2'>
                                                                 <Transform translation='-0.1811 -0.0922 0.679'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1706,7 +1706,7 @@
                                                                 <Transform translation='-0.1835 -0.0868 0.6286'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2'>
                                                                   <Transform translation='-0.1835 -0.0868 0.6286'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1718,7 +1718,7 @@
                                                                   <Transform translation='-0.1815 -0.0877 0.5983'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_2_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_2'>
                                                                     <Transform translation='-0.1815 -0.0877 0.5983'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1730,7 +1730,7 @@
                                                                     <Transform translation='-0.1805 -0.0885 0.5731'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_2_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_2'>
                                                                       <Transform translation='-0.1805 -0.0885 0.5731'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1747,7 +1747,7 @@
                                                             <Transform translation='-0.1809 -0.1067 0.7'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_capitate_tip' name='SEGMENT_FOR_r_capitate_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_capitate_tip' name='SEGMENT_FOR_r_capitate'>
                                                               <Transform translation='-0.1809 -0.1067 0.7'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1759,7 +1759,7 @@
                                                               <Transform translation='-0.1809 -0.1081 0.6772'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_3_tip' name='SEGMENT_FOR_r_metacarpal_3_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_3_tip' name='SEGMENT_FOR_r_metacarpal_3'>
                                                                 <Transform translation='-0.1809 -0.1081 0.6772'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1771,7 +1771,7 @@
                                                                 <Transform translation='-0.1835 -0.1058 0.6264'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3'>
                                                                   <Transform translation='-0.1835 -0.1058 0.6264'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1783,7 +1783,7 @@
                                                                   <Transform translation='-0.1815 -0.1054 0.5947'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_3_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_3'>
                                                                     <Transform translation='-0.1815 -0.1054 0.5947'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1795,7 +1795,7 @@
                                                                     <Transform translation='-0.1805 -0.1056 0.5668'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_3_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_3'>
                                                                       <Transform translation='-0.1805 -0.1056 0.5668'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1812,7 +1812,7 @@
                                                             <Transform translation='-0.1809 -0.1276 0.6973'>
                                                               <Shape USE='JointShape'/>
                                                             </Transform>
-                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_hamate_tip' name='SEGMENT_FOR_r_hamate_tip'>
+                                                            <HAnimSite DEF='hanim_SEGMENT_FOR_r_hamate_tip' name='SEGMENT_FOR_r_hamate'>
                                                               <Transform translation='-0.1809 -0.1276 0.6973'>
                                                                 <Shape USE='SiteShape'/>
                                                               </Transform>
@@ -1824,7 +1824,7 @@
                                                               <Transform translation='-0.1809 -0.1218 0.6777'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_4_tip' name='SEGMENT_FOR_r_metacarpal_4_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_4_tip' name='SEGMENT_FOR_r_metacarpal_4'>
                                                                 <Transform translation='-0.1809 -0.1218 0.6777'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1836,7 +1836,7 @@
                                                                 <Transform translation='-0.1835 -0.1233 0.6255'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4'>
                                                                   <Transform translation='-0.1835 -0.1233 0.6255'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1848,7 +1848,7 @@
                                                                   <Transform translation='-0.1815 -0.1225 0.598'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_4_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_4'>
                                                                     <Transform translation='-0.1815 -0.1225 0.598'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1860,7 +1860,7 @@
                                                                     <Transform translation='-0.1805 -0.1217 0.5722'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_4_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_4'>
                                                                       <Transform translation='-0.1805 -0.1217 0.5722'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>
@@ -1876,7 +1876,7 @@
                                                               <Transform translation='-0.1814 -0.1347 0.6797'>
                                                                 <Shape USE='JointShape'/>
                                                               </Transform>
-                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_5_tip' name='SEGMENT_FOR_r_metacarpal_5_tip'>
+                                                              <HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_5_tip' name='SEGMENT_FOR_r_metacarpal_5'>
                                                                 <Transform translation='-0.1814 -0.1347 0.6797'>
                                                                   <Shape USE='SiteShape'/>
                                                                 </Transform>
@@ -1888,7 +1888,7 @@
                                                                 <Transform translation='-0.1832 -0.1389 0.6295'>
                                                                   <Shape USE='JointShape'/>
                                                                 </Transform>
-                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip'>
+                                                                <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5'>
                                                                   <Transform translation='-0.1832 -0.1389 0.6295'>
                                                                     <Shape USE='SiteShape'/>
                                                                   </Transform>
@@ -1900,7 +1900,7 @@
                                                                   <Transform translation='-0.1815 -0.139 0.6124'>
                                                                     <Shape USE='JointShape'/>
                                                                   </Transform>
-                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_5_tip'>
+                                                                  <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_5'>
                                                                     <Transform translation='-0.1815 -0.139 0.6124'>
                                                                       <Shape USE='SiteShape'/>
                                                                     </Transform>
@@ -1912,7 +1912,7 @@
                                                                     <Transform translation='-0.1806 -0.1388 0.5938'>
                                                                       <Shape USE='JointShape'/>
                                                                     </Transform>
-                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_5_tip'>
+                                                                    <HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_5'>
                                                                       <Transform translation='-0.1806 -0.1388 0.5938'>
                                                                         <Shape USE='SiteShape'/>
                                                                       </Transform>

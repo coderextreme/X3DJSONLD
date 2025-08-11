@@ -45,14 +45,6 @@
             "@content":"remove colors bleeding into camo"
           },
           {
-            "@name":"error",
-            "@content":"Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"
-          },
-          {
-            "@name":"warning",
-            "@content":"X3D Validator reports numerous warnings are present"
-          },
-          {
             "@name":"reference",
             "@content":"https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
           },
@@ -94,7 +86,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 July 2025"
+            "@content":"09 August 2025"
           },
           {
             "@name":"generator",
@@ -168,7 +160,7 @@
                                                         "@DEF":"camo",
                                                         "@repeatS":false,
                                                         "@repeatT":false,
-                                                        "@url":["images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
+                                                        "@url":["../resources/images/greenCamo.jpg","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
                                                       }
                                                     }
                                                 }
@@ -1347,6 +1339,7 @@
           },
           { "NavigationInfo":
             {
+              "@avatarSize":[0.15,1.53,0.75],
               "@speed":0.5,
               "@type":["EXAMINE"]
             }

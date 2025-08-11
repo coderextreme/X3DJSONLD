@@ -10,7 +10,7 @@
   </head>
   <Scene>
     <WorldInfo title='AllenBox.x3d'/>
-    <NavigationInfo speed='0.5' type='"EXAMINE"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
     <Transform DEF='Floor' scale='1 0.0125 1' translation='0 -0.0125 0'>
       <Shape>
         <Appearance>

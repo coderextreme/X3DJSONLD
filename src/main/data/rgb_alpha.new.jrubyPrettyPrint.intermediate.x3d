@@ -29,7 +29,7 @@
         <Shape>
           <Appearance>
             <Material/>
-            <PixelTexture DEF='RgbOpacityCheckerboard'/>
+            <PixelTexture DEF='RgbOpacityCheckerboard' image='2 2 4 -16776961 -65536 -65536 -16776961'/>
           </Appearance>
           <Box/>
         </Shape>

@@ -30,7 +30,7 @@
           <HAnimSegment name='sacrum'>
             <Shape DEF='JointVisualization'/>
             <Shape DEF='SegmentVisualization'/>
-            <HAnimSite DEF='a_feature01_tip' name='feature01_tip'>
+            <HAnimSite DEF='a_feature01_tip' name='feature01'>
               <Shape DEF='SiteVisualization'/>
             </HAnimSite>
           </HAnimSegment>

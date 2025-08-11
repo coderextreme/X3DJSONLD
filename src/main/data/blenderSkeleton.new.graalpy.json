@@ -30,7 +30,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 July 2025"
+            "@content":"09 August 2025"
           },
           {
             "@name":"generator",
@@ -186,7 +186,7 @@
                                   },
                                   { "HAnimSite":
                                     {
-                                      "@name":"SEGMENT_FOR_Armature_tip",
+                                      "@name":"SEGMENT_FOR_Armature",
                                       "@DEF":"hanim_SEGMENT_FOR_Armature_tip",
                                       "-children":[
                                         { "Transform":
@@ -238,7 +238,7 @@
                                         },
                                         { "HAnimSite":
                                           {
-                                            "@name":"SEGMENT_FOR_sacrum_tip",
+                                            "@name":"SEGMENT_FOR_sacrum",
                                             "@DEF":"hanim_SEGMENT_FOR_sacrum_tip",
                                             "-children":[
                                               { "Transform":
@@ -291,7 +291,7 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"SEGMENT_FOR_pelvis_tip",
+                                                  "@name":"SEGMENT_FOR_pelvis",
                                                   "@DEF":"hanim_SEGMENT_FOR_pelvis_tip",
                                                   "-children":[
                                                     { "Transform":
@@ -344,7 +344,7 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"SEGMENT_FOR_l_thigh_tip",
+                                                        "@name":"SEGMENT_FOR_l_thigh",
                                                         "@DEF":"hanim_SEGMENT_FOR_l_thigh_tip",
                                                         "-children":[
                                                           { "Transform":
@@ -397,7 +397,7 @@
                                                           },
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"SEGMENT_FOR_l_calf_tip",
+                                                              "@name":"SEGMENT_FOR_l_calf",
                                                               "@DEF":"hanim_SEGMENT_FOR_l_calf_tip",
                                                               "-children":[
                                                                 { "Transform":
@@ -450,7 +450,7 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"SEGMENT_FOR_l_talus_tip",
+                                                                    "@name":"SEGMENT_FOR_l_talus",
                                                                     "@DEF":"hanim_SEGMENT_FOR_l_talus_tip",
                                                                     "-children":[
                                                                       { "Transform":
@@ -503,7 +503,7 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"SEGMENT_FOR_l_navicular_tip",
+                                                                          "@name":"SEGMENT_FOR_l_navicular",
                                                                           "@DEF":"hanim_SEGMENT_FOR_l_navicular_tip",
                                                                           "-children":[
                                                                             { "Transform":
@@ -556,7 +556,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_l_cuneiform_1_tip",
+                                                                                "@name":"SEGMENT_FOR_l_cuneiform_1",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_l_cuneiform_1_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -609,7 +609,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_1_tip",
+                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_1",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_metatarsal_1_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -662,7 +662,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip",
+                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_1",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -713,7 +713,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip",
+                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_1",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -777,7 +777,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_l_cuneiform_2_tip",
+                                                                                "@name":"SEGMENT_FOR_l_cuneiform_2",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_l_cuneiform_2_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -830,7 +830,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_2_tip",
+                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_2",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_metatarsal_2_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -883,7 +883,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip",
+                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_2",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -936,7 +936,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip",
+                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_2",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -989,7 +989,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip",
+                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_2",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -1057,7 +1057,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_l_cuneiform_3_tip",
+                                                                                "@name":"SEGMENT_FOR_l_cuneiform_3",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_l_cuneiform_3_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -1110,7 +1110,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_3_tip",
+                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_3",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_metatarsal_3_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -1163,7 +1163,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip",
+                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_3",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -1216,7 +1216,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip",
+                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_3",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -1269,7 +1269,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip",
+                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_3",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -1340,7 +1340,7 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"SEGMENT_FOR_l_calcaneus_tip",
+                                                                          "@name":"SEGMENT_FOR_l_calcaneus",
                                                                           "@DEF":"hanim_SEGMENT_FOR_l_calcaneus_tip",
                                                                           "-children":[
                                                                             { "Transform":
@@ -1393,7 +1393,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_l_cuboid_tip",
+                                                                                "@name":"SEGMENT_FOR_l_cuboid",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_l_cuboid_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -1446,7 +1446,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_4_tip",
+                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_4",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_metatarsal_4_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -1499,7 +1499,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip",
+                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_4",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -1552,7 +1552,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip",
+                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_4",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -1605,7 +1605,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip",
+                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_4",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -1670,7 +1670,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_5_tip",
+                                                                                      "@name":"SEGMENT_FOR_l_metatarsal_5",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_metatarsal_5_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -1723,7 +1723,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip",
+                                                                                            "@name":"SEGMENT_FOR_l_tarsal_proximal_phalanx_5",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -1776,7 +1776,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip",
+                                                                                                  "@name":"SEGMENT_FOR_l_tarsal_middle_phalanx_5",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -1829,7 +1829,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip",
+                                                                                                        "@name":"SEGMENT_FOR_l_tarsal_distal_phalanx_5",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -1909,7 +1909,7 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"SEGMENT_FOR_r_thigh_tip",
+                                                        "@name":"SEGMENT_FOR_r_thigh",
                                                         "@DEF":"hanim_SEGMENT_FOR_r_thigh_tip",
                                                         "-children":[
                                                           { "Transform":
@@ -1962,7 +1962,7 @@
                                                           },
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"SEGMENT_FOR_r_calf_tip",
+                                                              "@name":"SEGMENT_FOR_r_calf",
                                                               "@DEF":"hanim_SEGMENT_FOR_r_calf_tip",
                                                               "-children":[
                                                                 { "Transform":
@@ -2015,7 +2015,7 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"SEGMENT_FOR_r_talus_tip",
+                                                                    "@name":"SEGMENT_FOR_r_talus",
                                                                     "@DEF":"hanim_SEGMENT_FOR_r_talus_tip",
                                                                     "-children":[
                                                                       { "Transform":
@@ -2068,7 +2068,7 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"SEGMENT_FOR_r_navicular_tip",
+                                                                          "@name":"SEGMENT_FOR_r_navicular",
                                                                           "@DEF":"hanim_SEGMENT_FOR_r_navicular_tip",
                                                                           "-children":[
                                                                             { "Transform":
@@ -2121,7 +2121,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_r_cuneiform_1_tip",
+                                                                                "@name":"SEGMENT_FOR_r_cuneiform_1",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_r_cuneiform_1_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -2174,7 +2174,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_1_tip",
+                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_1",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_metatarsal_1_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -2227,7 +2227,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip",
+                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_1",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -2278,7 +2278,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip",
+                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_1",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -2342,7 +2342,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_r_cuneiform_2_tip",
+                                                                                "@name":"SEGMENT_FOR_r_cuneiform_2",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_r_cuneiform_2_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -2395,7 +2395,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_2_tip",
+                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_2",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_metatarsal_2_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -2448,7 +2448,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip",
+                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_2",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -2501,7 +2501,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip",
+                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_2",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -2554,7 +2554,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip",
+                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_2",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -2622,7 +2622,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_r_cuneiform_3_tip",
+                                                                                "@name":"SEGMENT_FOR_r_cuneiform_3",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_r_cuneiform_3_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -2675,7 +2675,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_3_tip",
+                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_3",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_metatarsal_3_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -2728,7 +2728,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip",
+                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_3",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -2781,7 +2781,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip",
+                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_3",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -2834,7 +2834,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip",
+                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_3",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -2905,7 +2905,7 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"SEGMENT_FOR_r_calcaneus_tip",
+                                                                          "@name":"SEGMENT_FOR_r_calcaneus",
                                                                           "@DEF":"hanim_SEGMENT_FOR_r_calcaneus_tip",
                                                                           "-children":[
                                                                             { "Transform":
@@ -2958,7 +2958,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_r_cuboid_tip",
+                                                                                "@name":"SEGMENT_FOR_r_cuboid",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_r_cuboid_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -3011,7 +3011,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_4_tip",
+                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_4",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_metatarsal_4_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -3064,7 +3064,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip",
+                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_4",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -3117,7 +3117,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip",
+                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_4",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -3170,7 +3170,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip",
+                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_4",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -3235,7 +3235,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_5_tip",
+                                                                                      "@name":"SEGMENT_FOR_r_metatarsal_5",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_metatarsal_5_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -3288,7 +3288,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip",
+                                                                                            "@name":"SEGMENT_FOR_r_tarsal_proximal_phalanx_5",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -3341,7 +3341,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip",
+                                                                                                  "@name":"SEGMENT_FOR_r_tarsal_middle_phalanx_5",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -3394,7 +3394,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip",
+                                                                                                        "@name":"SEGMENT_FOR_r_tarsal_distal_phalanx_5",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -3477,7 +3477,7 @@
                                               },
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"SEGMENT_FOR_l5_tip",
+                                                  "@name":"SEGMENT_FOR_l5",
                                                   "@DEF":"hanim_SEGMENT_FOR_l5_tip",
                                                   "-children":[
                                                     { "Transform":
@@ -3530,7 +3530,7 @@
                                                     },
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"SEGMENT_FOR_l4_tip",
+                                                        "@name":"SEGMENT_FOR_l4",
                                                         "@DEF":"hanim_SEGMENT_FOR_l4_tip",
                                                         "-children":[
                                                           { "Transform":
@@ -3583,7 +3583,7 @@
                                                           },
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"SEGMENT_FOR_l3_tip",
+                                                              "@name":"SEGMENT_FOR_l3",
                                                               "@DEF":"hanim_SEGMENT_FOR_l3_tip",
                                                               "-children":[
                                                                 { "Transform":
@@ -3636,7 +3636,7 @@
                                                                 },
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"SEGMENT_FOR_l2_tip",
+                                                                    "@name":"SEGMENT_FOR_l2",
                                                                     "@DEF":"hanim_SEGMENT_FOR_l2_tip",
                                                                     "-children":[
                                                                       { "Transform":
@@ -3689,7 +3689,7 @@
                                                                       },
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"SEGMENT_FOR_l1_tip",
+                                                                          "@name":"SEGMENT_FOR_l1",
                                                                           "@DEF":"hanim_SEGMENT_FOR_l1_tip",
                                                                           "-children":[
                                                                             { "Transform":
@@ -3742,7 +3742,7 @@
                                                                             },
                                                                             { "HAnimSite":
                                                                               {
-                                                                                "@name":"SEGMENT_FOR_t12_tip",
+                                                                                "@name":"SEGMENT_FOR_t12",
                                                                                 "@DEF":"hanim_SEGMENT_FOR_t12_tip",
                                                                                 "-children":[
                                                                                   { "Transform":
@@ -3795,7 +3795,7 @@
                                                                                   },
                                                                                   { "HAnimSite":
                                                                                     {
-                                                                                      "@name":"SEGMENT_FOR_t11_tip",
+                                                                                      "@name":"SEGMENT_FOR_t11",
                                                                                       "@DEF":"hanim_SEGMENT_FOR_t11_tip",
                                                                                       "-children":[
                                                                                         { "Transform":
@@ -3848,7 +3848,7 @@
                                                                                         },
                                                                                         { "HAnimSite":
                                                                                           {
-                                                                                            "@name":"SEGMENT_FOR_t10_tip",
+                                                                                            "@name":"SEGMENT_FOR_t10",
                                                                                             "@DEF":"hanim_SEGMENT_FOR_t10_tip",
                                                                                             "-children":[
                                                                                               { "Transform":
@@ -3901,7 +3901,7 @@
                                                                                               },
                                                                                               { "HAnimSite":
                                                                                                 {
-                                                                                                  "@name":"SEGMENT_FOR_t9_tip",
+                                                                                                  "@name":"SEGMENT_FOR_t9",
                                                                                                   "@DEF":"hanim_SEGMENT_FOR_t9_tip",
                                                                                                   "-children":[
                                                                                                     { "Transform":
@@ -3954,7 +3954,7 @@
                                                                                                     },
                                                                                                     { "HAnimSite":
                                                                                                       {
-                                                                                                        "@name":"SEGMENT_FOR_t8_tip",
+                                                                                                        "@name":"SEGMENT_FOR_t8",
                                                                                                         "@DEF":"hanim_SEGMENT_FOR_t8_tip",
                                                                                                         "-children":[
                                                                                                           { "Transform":
@@ -4007,7 +4007,7 @@
                                                                                                           },
                                                                                                           { "HAnimSite":
                                                                                                             {
-                                                                                                              "@name":"SEGMENT_FOR_t7_tip",
+                                                                                                              "@name":"SEGMENT_FOR_t7",
                                                                                                               "@DEF":"hanim_SEGMENT_FOR_t7_tip",
                                                                                                               "-children":[
                                                                                                                 { "Transform":
@@ -4060,7 +4060,7 @@
                                                                                                                 },
                                                                                                                 { "HAnimSite":
                                                                                                                   {
-                                                                                                                    "@name":"SEGMENT_FOR_t6_tip",
+                                                                                                                    "@name":"SEGMENT_FOR_t6",
                                                                                                                     "@DEF":"hanim_SEGMENT_FOR_t6_tip",
                                                                                                                     "-children":[
                                                                                                                       { "Transform":
@@ -4113,7 +4113,7 @@
                                                                                                                       },
                                                                                                                       { "HAnimSite":
                                                                                                                         {
-                                                                                                                          "@name":"SEGMENT_FOR_t5_tip",
+                                                                                                                          "@name":"SEGMENT_FOR_t5",
                                                                                                                           "@DEF":"hanim_SEGMENT_FOR_t5_tip",
                                                                                                                           "-children":[
                                                                                                                             { "Transform":
@@ -4166,7 +4166,7 @@
                                                                                                                             },
                                                                                                                             { "HAnimSite":
                                                                                                                               {
-                                                                                                                                "@name":"SEGMENT_FOR_t4_tip",
+                                                                                                                                "@name":"SEGMENT_FOR_t4",
                                                                                                                                 "@DEF":"hanim_SEGMENT_FOR_t4_tip",
                                                                                                                                 "-children":[
                                                                                                                                   { "Transform":
@@ -4219,7 +4219,7 @@
                                                                                                                                   },
                                                                                                                                   { "HAnimSite":
                                                                                                                                     {
-                                                                                                                                      "@name":"SEGMENT_FOR_t3_tip",
+                                                                                                                                      "@name":"SEGMENT_FOR_t3",
                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_t3_tip",
                                                                                                                                       "-children":[
                                                                                                                                         { "Transform":
@@ -4272,7 +4272,7 @@
                                                                                                                                         },
                                                                                                                                         { "HAnimSite":
                                                                                                                                           {
-                                                                                                                                            "@name":"SEGMENT_FOR_t2_tip",
+                                                                                                                                            "@name":"SEGMENT_FOR_t2",
                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_t2_tip",
                                                                                                                                             "-children":[
                                                                                                                                               { "Transform":
@@ -4325,7 +4325,7 @@
                                                                                                                                               },
                                                                                                                                               { "HAnimSite":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"SEGMENT_FOR_t1_tip",
+                                                                                                                                                  "@name":"SEGMENT_FOR_t1",
                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_t1_tip",
                                                                                                                                                   "-children":[
                                                                                                                                                     { "Transform":
@@ -4378,7 +4378,7 @@
                                                                                                                                                     },
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"SEGMENT_FOR_c7_tip",
+                                                                                                                                                        "@name":"SEGMENT_FOR_c7",
                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_c7_tip",
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Transform":
@@ -4431,7 +4431,7 @@
                                                                                                                                                           },
                                                                                                                                                           { "HAnimSite":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"SEGMENT_FOR_c6_tip",
+                                                                                                                                                              "@name":"SEGMENT_FOR_c6",
                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_c6_tip",
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "Transform":
@@ -4484,7 +4484,7 @@
                                                                                                                                                                 },
                                                                                                                                                                 { "HAnimSite":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"SEGMENT_FOR_c5_tip",
+                                                                                                                                                                    "@name":"SEGMENT_FOR_c5",
                                                                                                                                                                     "@DEF":"hanim_SEGMENT_FOR_c5_tip",
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "Transform":
@@ -4537,7 +4537,7 @@
                                                                                                                                                                       },
                                                                                                                                                                       { "HAnimSite":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"SEGMENT_FOR_c4_tip",
+                                                                                                                                                                          "@name":"SEGMENT_FOR_c4",
                                                                                                                                                                           "@DEF":"hanim_SEGMENT_FOR_c4_tip",
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "Transform":
@@ -4590,7 +4590,7 @@
                                                                                                                                                                             },
                                                                                                                                                                             { "HAnimSite":
                                                                                                                                                                               {
-                                                                                                                                                                                "@name":"SEGMENT_FOR_c3_tip",
+                                                                                                                                                                                "@name":"SEGMENT_FOR_c3",
                                                                                                                                                                                 "@DEF":"hanim_SEGMENT_FOR_c3_tip",
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
@@ -4643,7 +4643,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_c2_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_c2",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_c2_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -4696,7 +4696,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_c1_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_c1",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_c1_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -4749,7 +4749,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_skull_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_skull",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_skull_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -4802,7 +4802,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyelid_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyelid",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_eyelid_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -4858,7 +4858,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyelid_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyelid",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_eyelid_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -4914,7 +4914,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyeball_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyeball",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_eyeball_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -4970,7 +4970,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyeball_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyeball",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_eyeball_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5026,7 +5026,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyebrow_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_eyebrow",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_eyebrow_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5082,7 +5082,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyebrow_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_eyebrow",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_eyebrow_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5138,7 +5138,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_jaw_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_jaw",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_jaw_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5218,7 +5218,7 @@
                                                                                                                                                     },
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"SEGMENT_FOR_l_clavicle_tip",
+                                                                                                                                                        "@name":"SEGMENT_FOR_l_clavicle",
                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_clavicle_tip",
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Transform":
@@ -5271,7 +5271,7 @@
                                                                                                                                                           },
                                                                                                                                                           { "HAnimSite":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"SEGMENT_FOR_l_scapula_tip",
+                                                                                                                                                              "@name":"SEGMENT_FOR_l_scapula",
                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_l_scapula_tip",
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "Transform":
@@ -5324,7 +5324,7 @@
                                                                                                                                                                 },
                                                                                                                                                                 { "HAnimSite":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"SEGMENT_FOR_l_upperarm_tip",
+                                                                                                                                                                    "@name":"SEGMENT_FOR_l_upperarm",
                                                                                                                                                                     "@DEF":"hanim_SEGMENT_FOR_l_upperarm_tip",
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "Transform":
@@ -5377,7 +5377,7 @@
                                                                                                                                                                       },
                                                                                                                                                                       { "HAnimSite":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"SEGMENT_FOR_l_forearm_tip",
+                                                                                                                                                                          "@name":"SEGMENT_FOR_l_forearm",
                                                                                                                                                                           "@DEF":"hanim_SEGMENT_FOR_l_forearm_tip",
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "Transform":
@@ -5430,7 +5430,7 @@
                                                                                                                                                                             },
                                                                                                                                                                             { "HAnimSite":
                                                                                                                                                                               {
-                                                                                                                                                                                "@name":"SEGMENT_FOR_l_carpal_tip",
+                                                                                                                                                                                "@name":"SEGMENT_FOR_l_carpal",
                                                                                                                                                                                 "@DEF":"hanim_SEGMENT_FOR_l_carpal_tip",
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
@@ -5483,7 +5483,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_trapezium_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_trapezium",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_trapezium_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -5536,7 +5536,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_1_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_1",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_metacarpal_1_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -5589,7 +5589,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_1",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -5642,7 +5642,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_1_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_1",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5707,7 +5707,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_trapezoid_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_trapezoid",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_trapezoid_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -5760,7 +5760,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_2_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_2",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_metacarpal_2_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -5813,7 +5813,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_2",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -5866,7 +5866,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_2_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_2",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -5919,7 +5919,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_2_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_2",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -5987,7 +5987,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_capitate_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_capitate",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_capitate_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -6040,7 +6040,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_3_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_3",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_metacarpal_3_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -6093,7 +6093,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_3",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -6146,7 +6146,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_3_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_3",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -6199,7 +6199,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_3_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_3",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -6267,7 +6267,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_hamate_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_l_hamate",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_l_hamate_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -6320,7 +6320,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_4_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_4",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_metacarpal_4_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -6373,7 +6373,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_4",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -6426,7 +6426,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_4_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_4",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -6479,7 +6479,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_4_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_4",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -6544,7 +6544,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_5_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_l_metacarpal_5",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_l_metacarpal_5_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -6597,7 +6597,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_l_carpal_proximal_phalanx_5",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -6650,7 +6650,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_5_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_l_carpal_middle_phalanx_5",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -6703,7 +6703,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_5_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_l_carpal_distal_phalanx_5",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -6786,7 +6786,7 @@
                                                                                                                                                     },
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"SEGMENT_FOR_r_clavicle_tip",
+                                                                                                                                                        "@name":"SEGMENT_FOR_r_clavicle",
                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_clavicle_tip",
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Transform":
@@ -6839,7 +6839,7 @@
                                                                                                                                                           },
                                                                                                                                                           { "HAnimSite":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"SEGMENT_FOR_r_scapula_tip",
+                                                                                                                                                              "@name":"SEGMENT_FOR_r_scapula",
                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_r_scapula_tip",
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "Transform":
@@ -6892,7 +6892,7 @@
                                                                                                                                                                 },
                                                                                                                                                                 { "HAnimSite":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"SEGMENT_FOR_r_upperarm_tip",
+                                                                                                                                                                    "@name":"SEGMENT_FOR_r_upperarm",
                                                                                                                                                                     "@DEF":"hanim_SEGMENT_FOR_r_upperarm_tip",
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "Transform":
@@ -6945,7 +6945,7 @@
                                                                                                                                                                       },
                                                                                                                                                                       { "HAnimSite":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"SEGMENT_FOR_r_forearm_tip",
+                                                                                                                                                                          "@name":"SEGMENT_FOR_r_forearm",
                                                                                                                                                                           "@DEF":"hanim_SEGMENT_FOR_r_forearm_tip",
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "Transform":
@@ -6998,7 +6998,7 @@
                                                                                                                                                                             },
                                                                                                                                                                             { "HAnimSite":
                                                                                                                                                                               {
-                                                                                                                                                                                "@name":"SEGMENT_FOR_r_carpal_tip",
+                                                                                                                                                                                "@name":"SEGMENT_FOR_r_carpal",
                                                                                                                                                                                 "@DEF":"hanim_SEGMENT_FOR_r_carpal_tip",
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
@@ -7051,7 +7051,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_trapezium_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_trapezium",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_trapezium_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -7104,7 +7104,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_1_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_1",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_metacarpal_1_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -7157,7 +7157,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_1",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -7210,7 +7210,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_1_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_1",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -7275,7 +7275,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_trapezoid_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_trapezoid",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_trapezoid_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -7328,7 +7328,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_2_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_2",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_metacarpal_2_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -7381,7 +7381,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_2",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -7434,7 +7434,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_2_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_2",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -7487,7 +7487,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_2_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_2",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -7555,7 +7555,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_capitate_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_capitate",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_capitate_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -7608,7 +7608,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_3_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_3",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_metacarpal_3_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -7661,7 +7661,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_3",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -7714,7 +7714,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_3_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_3",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -7767,7 +7767,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_3_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_3",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -7835,7 +7835,7 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_hamate_tip",
+                                                                                                                                                                                      "@name":"SEGMENT_FOR_r_hamate",
                                                                                                                                                                                       "@DEF":"hanim_SEGMENT_FOR_r_hamate_tip",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
@@ -7888,7 +7888,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_4_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_4",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_metacarpal_4_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -7941,7 +7941,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_4",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -7994,7 +7994,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_4_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_4",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -8047,7 +8047,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_4_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_4",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":
@@ -8112,7 +8112,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         { "HAnimSite":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_5_tip",
+                                                                                                                                                                                            "@name":"SEGMENT_FOR_r_metacarpal_5",
                                                                                                                                                                                             "@DEF":"hanim_SEGMENT_FOR_r_metacarpal_5_tip",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
@@ -8165,7 +8165,7 @@
                                                                                                                                                                                               },
                                                                                                                                                                                               { "HAnimSite":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip",
+                                                                                                                                                                                                  "@name":"SEGMENT_FOR_r_carpal_proximal_phalanx_5",
                                                                                                                                                                                                   "@DEF":"hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip",
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Transform":
@@ -8218,7 +8218,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     { "HAnimSite":
                                                                                                                                                                                                       {
-                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_5_tip",
+                                                                                                                                                                                                        "@name":"SEGMENT_FOR_r_carpal_middle_phalanx_5",
                                                                                                                                                                                                         "@DEF":"hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5_tip",
                                                                                                                                                                                                         "-children":[
                                                                                                                                                                                                           { "Transform":
@@ -8271,7 +8271,7 @@
                                                                                                                                                                                                           },
                                                                                                                                                                                                           { "HAnimSite":
                                                                                                                                                                                                             {
-                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_5_tip",
+                                                                                                                                                                                                              "@name":"SEGMENT_FOR_r_carpal_distal_phalanx_5",
                                                                                                                                                                                                               "@DEF":"hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5_tip",
                                                                                                                                                                                                               "-children":[
                                                                                                                                                                                                                 { "Transform":

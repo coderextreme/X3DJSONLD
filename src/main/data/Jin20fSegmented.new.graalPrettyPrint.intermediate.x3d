@@ -2191,7 +2191,7 @@
                                                           </HAnimSegment>
                                                           <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint' center='0.0505 1.42425 0.03294'>
                                                             <HAnimSegment DEF='hanim_l_eyelid' name='l_eyelid'>
-                                                              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid_tip' translation='0 2.64 0'>
+                                                              <HAnimSite DEF='hanim_l_eyelid_tip' name='l_eyelid' translation='0 2.64 0'>
                                                                 <TouchSensor description='HAnimSite l_eyelid_tip hanim_l_eyelid_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
@@ -2220,7 +2220,7 @@
                                                           </HAnimJoint>
                                                           <HAnimJoint DEF='hanim_r_eyelid_joint' name='r_eyelid_joint' center='-0.0505 1.42425 0.03294'>
                                                             <HAnimSegment DEF='hanim_r_eyelid' name='r_eyelid'>
-                                                              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid_tip' translation='0 2.68 0'>
+                                                              <HAnimSite DEF='hanim_r_eyelid_tip' name='r_eyelid' translation='0 2.68 0'>
                                                                 <TouchSensor description='HAnimSite r_eyelid_tip hanim_r_eyelid_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
@@ -2249,7 +2249,7 @@
                                                           </HAnimJoint>
                                                           <HAnimJoint DEF='hanim_l_eyeball_joint' name='l_eyeball_joint' center='0.048127 1.4049 0.08305'>
                                                             <HAnimSegment DEF='hanim_l_eyeball' name='l_eyeball'>
-                                                              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball_tip' translation='0 2.72 0'>
+                                                              <HAnimSite DEF='hanim_l_eyeball_tip' name='l_eyeball' translation='0 2.72 0'>
                                                                 <TouchSensor description='HAnimSite l_eyeball_tip hanim_l_eyeball_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
@@ -2278,7 +2278,7 @@
                                                           </HAnimJoint>
                                                           <HAnimJoint DEF='hanim_r_eyeball_joint' name='r_eyeball_joint' center='-0.04813 1.4049 0.08305'>
                                                             <HAnimSegment DEF='hanim_r_eyeball' name='r_eyeball'>
-                                                              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball_tip' translation='0 2.76 0'>
+                                                              <HAnimSite DEF='hanim_r_eyeball_tip' name='r_eyeball' translation='0 2.76 0'>
                                                                 <TouchSensor description='HAnimSite r_eyeball_tip hanim_r_eyeball_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
@@ -2307,7 +2307,7 @@
                                                           </HAnimJoint>
                                                           <HAnimJoint DEF='hanim_l_eyebrow_joint' name='l_eyebrow_joint' center='0.02175 1.4139 0.1069'>
                                                             <HAnimSegment DEF='hanim_l_eyebrow' name='l_eyebrow'>
-                                                              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow_tip' translation='0 2.8 0'>
+                                                              <HAnimSite DEF='hanim_l_eyebrow_tip' name='l_eyebrow' translation='0 2.8 0'>
                                                                 <TouchSensor description='HAnimSite l_eyebrow_tip hanim_l_eyebrow_tip'/>
                                                                 <Shape>
                                                                   <Appearance>
@@ -2336,7 +2336,7 @@
                                                           </HAnimJoint>
                                                           <HAnimJoint DEF='hanim_r_eyebrow_joint' name='r_eyebrow_joint' center='-0.02175 1.4139 0.10694'>
                                                             <HAnimSegment DEF='hanim_r_eyebrow' name='r_eyebrow'>
-                                                              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow_tip' translation='0 2.84 0'>
+                                                              <HAnimSite DEF='hanim_r_eyebrow_tip' name='r_eyebrow' translation='0 2.84 0'>
                                                                 <TouchSensor description='HAnimSite r_eyebrow_tip hanim_r_eyebrow_tip'/>
                                                                 <Shape>
                                                                   <Appearance>

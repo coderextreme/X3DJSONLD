@@ -12,8 +12,6 @@
     <meta content='9 January 2002' name='translated'/>
     <meta content='17 July 2025' name='modified'/>
     <meta content='remove colors bleeding into camo' name='TODO'/>
-    <meta content='Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported' name='error'/>
-    <meta content='X3D Validator reports numerous warnings are present' name='warning'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl' name='reference'/>
     <meta content='http://www.cyberware.com' name='reference'/>
     <meta content='AllenDuttonBlurryMotion.x3d' name='reference'/>
@@ -308,7 +306,7 @@
         <Viewpoint DEF='TopView' description='Top View' orientation='1 0 0 -1.5708' position='0 3.4495 0'/>
       </HAnimSite>
     </HAnimHumanoid>
-    <NavigationInfo speed='0.5' type='"EXAMINE"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
     <Group DEF='Interface'>
       <!-- <Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform> -->
       <Collision DEF='HUD'>

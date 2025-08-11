@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 July 2025"
+            "@content":"09 August 2025"
           },
           {
             "@name":"generator",
@@ -698,7 +698,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\"FLY\" \"ANY\""
+              "@type":["FLY","ANY"]
             }
           },
           { "Background":
@@ -710,6 +710,7 @@
             {
               "@centerOfRotation":[-3.13496,-4.19776,0],
               "@description":"OthoViewpoint",
+              "@fieldOfView":[0,0,10,10],
               "@position":[-3.13496,-4.19776,10]
             }
           },
