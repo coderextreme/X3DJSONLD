@@ -1,0 +1,284 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/Connectors.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:failed-assert test="(string-length($identifier)=0) or starts-with($identifier, 'http://') or starts-with($identifier, 'https://')" role="warning" location="/X3D/head">
+      <svrl:text>X3D/head/meta identifier (url) content should start with http:// or 'https:// </svrl:text>
+   </svrl:failed-assert>
+   <svrl:failed-assert test="(meta/@name='description')" role="info" location="/X3D/head">
+      <svrl:text>Missing X3D scene description in meta tag, should appear as &lt;meta name='description'
+         content='topic sentence plus good summary'/&gt; </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:failed-assert test="@point or (@USE) or //ROUTE[@toNode=$DEF] or boolean(IS/connect[@nodeField='point']) or (//ProtoDeclare/ProtoInterface/field/*[@DEF=$USE]) or comment()" role="warning" location="/X3D/Scene/ProtoDeclare[1]/ProtoBody/IndexedFaceSet/Coordinate">
+      <svrl:text>&lt;Coordinate DEF=''/&gt; contains no data in point array </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="FillProperties"/>
+   <svrl:fired-rule context="LineProperties"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="not(@type='SFBool') and $valueRequired and not(local-name(..)='ExternProtoDeclare') and not(@value)" role="error" location="/X3D/Scene/ProtoDeclare[3]/ProtoInterface/field">
+      <svrl:text>&lt;ProtoInterface name='' DEF=''&gt; &lt;field name='translation' value=''/&gt; field declaration is missing initialization value </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:successful-report test="(string-length(@description) = 0) and not(boolean(IS/connect/@nodeField='description')) and not(@USE) and ((local-name()='PlaneSensor'))" role="warning" location="/X3D/Scene/ProtoDeclare[3]/ProtoBody/Group/PlaneSensor">
+      <svrl:text>&lt;PlaneSensor DEF='PlaneSensor'/&gt; is missing description. Example: description='select and drag to move' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="Arc2D | ArcClose2D | Circle2D | Disk2D"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="Arc2D | ArcClose2D | Circle2D | Disk2D"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/ProtoDeclare[3]/ProtoBody/Script/field[1]">
+      <svrl:text>&lt;Script DEF=''&gt; &lt;field name='translation' accessType='inputOutput'/&gt; does not send output event via assignment statement translation=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="LineProperties"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="LineSet | PointSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="LineSet | PointSet"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="Background"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:successful-report test="(local-name()='OrthoViewpoint') and not((/X3D[@profile='Full']) or (/X3D/head/component[@name='Navigation'][number(@level) ge 3])) or (count(preceding::*[local-name()='OrthoViewpoint']) &gt; 0)" role="error" location="/X3D/Scene/Viewpoint">
+      <svrl:text>&lt;Viewpoint DEF=''/&gt; has 0 component statements with X3D profile='Full', but requires at least &lt;component name='Navigation' level='3'/&gt; or &lt;X3D profile='Full'/&gt;
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[2]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N1" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[3]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N1" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[4]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N1" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[5]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N2" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[6]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N3" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[6]/fieldValue[2]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N6" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[7]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N4" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[8]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N5" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[8]/fieldValue[2]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N7" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[9]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N6" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[10]/fieldValue[1]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N7" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[10]/fieldValue[2]/ProtoInstance">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N8" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[11]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N1" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[12]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N2" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[13]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N3" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[14]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N4" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[15]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N5" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[16]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N6" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[17]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N7" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:successful-report test="(string-length(@name) &gt; 0) and (string-length(@USE) &gt; 0)" role="error" location="/X3D/Scene/Transform/ProtoInstance[18]">
+      <svrl:text>&lt;ProtoInstance DEF="" USE="N8" name="Node"/&gt; includes unnecessary attribute name='' which is not permitted for ProtoInstance USE node </svrl:text>
+   </svrl:successful-report>
+</svrl:schematron-output>

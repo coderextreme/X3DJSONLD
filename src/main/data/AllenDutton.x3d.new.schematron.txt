@@ -1,0 +1,204 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;meta name='TODO' content='remove colors bleeding into camo'/&gt; [/X3D/head/meta[8], diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; version='2.0' with X3D version='4.0'
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimJoint)     
+within skeleton hierarchy        = 17[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSegment)   
+within skeleton hierarchy        = 16[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSite)      
+within HAnimHumanoid             = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimSite//Viewpoint)
+within skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(HAnimDisplacer) 
+within skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimJoint   USE='*'
+containerField = 'joints'/&gt;)     = 17[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSegment USE='*'
+containerField = 'segments'/&gt;)   = 16[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSite    USE='*'
+containerField = 'sites'/&gt;)      = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid'/&gt; node count(&lt;HAnimSite    DEF='*'
+name ends with '_view'/&gt;)        = 1[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.01
+-0.0204' and may not be in the right location (possibly parent HAnimJoint/center value
+was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has parent &lt;HAnimJoint DEF='hanim_sacroiliac'
+center='0 1.01 -0.0204'/&gt; that does not match child &lt;Transform DEF='' translation='0
+0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.122
+0.888271 -0.0693267' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_hip'
+center='0.122 0.888271 -0.0693267'/&gt; that does not match child &lt;Transform DEF='l_thigh_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.0738
+0.517 -0.0284' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_knee'
+center='0.0738 0.517 -0.0284'/&gt; that does not match child &lt;Transform DEF='l_calf_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_ankle' name='l_ankle'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='hanim_l_ankle' name='l_ankle'/&gt; is an HAnimJoint alias for 'l_talocrural',
+recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.0645
+0.0719 -0.048' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_ankle'
+center='0.0645 0.0719 -0.048'/&gt; that does not match child &lt;Transform DEF='l_foot_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; is not a recognized name
+for HAnim2 HAnimSegment [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'/&gt; is an HAnimSegment alias
+for 'l_talus', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.11
+0.892362 -0.0732533' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_hip'
+center='-0.11 0.892362 -0.0732533'/&gt; that does not match child &lt;Transform DEF='r_thigh_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.0699
+0.51 -0.0166' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_knee'
+center='-0.0699 0.51 -0.0166'/&gt; that does not match child &lt;Transform DEF='r_calf_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_ankle' name='r_ankle'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='hanim_r_ankle' name='r_ankle'/&gt; is an HAnimJoint alias for 'r_talocrural',
+recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.064
+0.0753 -0.0412' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_ankle'
+center='-0.064 0.0753 -0.0412'/&gt; that does not match child &lt;Transform DEF='r_foot_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; is not a recognized name
+for HAnim2 HAnimSegment [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'/&gt; is an HAnimSegment alias
+for 'r_talus', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_vl1' name='vl1'/&gt; has parent HAnimJoint name='humanoid_root'
+rather than expected parent name='vl2', recommend checking model [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_l1' name='l1'/&gt; has contained Transform/Shape, but child
+Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.00405 1.07
+-0.0275' and may not be in the right location (possibly parent HAnimJoint/center value
+was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l1' name='l1'/&gt; has parent &lt;HAnimJoint DEF='hanim_vl1' center='-0.00405
+1.07 -0.0275'/&gt; that does not match child &lt;Transform DEF='torso_adjust' translation='0
+0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder'/&gt; has parent HAnimJoint name='vl1'
+rather than expected parent name='l_acromioclavicular', recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.167
+1.36 -0.0518' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_shoulder'
+center='0.167 1.36 -0.0518'/&gt; that does not match child &lt;Transform DEF='l_upperarm_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.196
+1.07 -0.0518' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_elbow'
+center='0.196 1.07 -0.0518'/&gt; that does not match child &lt;Transform DEF='l_forearm_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_wrist' name='l_wrist'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='hanim_l_wrist' name='l_wrist'/&gt; is an HAnimJoint alias for 'l_radiocarpal',
+recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.213
+0.811 -0.0338' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_wrist'
+center='0.213 0.811 -0.0338'/&gt; that does not match child &lt;Transform DEF='l_hand_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_hand' name='l_hand'/&gt; is not a recognized name for HAnim2
+HAnimSegment [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder'/&gt; has parent HAnimJoint name='vl1'
+rather than expected parent name='r_acromioclavicular', recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.167
+1.36 -0.0458' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_shoulder'
+center='-0.167 1.36 -0.0458'/&gt; that does not match child &lt;Transform DEF='r_upperarm_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has contained Transform/Shape,
+but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.192
+1.07 -0.0498' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_elbow'
+center='-0.192 1.07 -0.0498'/&gt; that does not match child &lt;Transform DEF='r_forearm_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_wrist' name='r_wrist'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='hanim_r_wrist' name='r_wrist'/&gt; is an HAnimJoint alias for 'r_radiocarpal',
+recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='-0.217
+0.811 -0.0338' and may not be in the right location (possibly parent HAnimJoint/center
+value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_wrist'
+center='-0.217 0.811 -0.0338'/&gt; that does not match child &lt;Transform DEF='r_hand_adjust'
+translation='0 0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; is not a recognized name for HAnim2
+HAnimSegment [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_hand' name='r_hand'/&gt; is an HAnimSegment alias for 'r_carpal',
+recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_vc4' name='vc4'/&gt; has parent HAnimJoint name='vl1' rather than
+expected parent name='vc5', recommend checking model [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_c4' name='c4'/&gt; has contained Transform/Shape, but child
+Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.43 -0.0458'
+and may not be in the right location (possibly parent HAnimJoint/center value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_c4' name='c4'/&gt; has parent &lt;HAnimJoint DEF='hanim_vc4' center='0
+1.43 -0.0458'/&gt; that does not match child &lt;Transform DEF='neck_adjust' translation='0
+0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_skullbase' name='skullbase'/&gt; has parent HAnimJoint name='vc4'
+rather than expected parent name='vc1', recommend checking model [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_skull' name='skull'/&gt; has contained Transform/Shape, but
+child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0 1.4
+0' and may not be in the right location (possibly parent HAnimJoint/center value was
+changed but contained visualization geometry did not) [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_skull' name='skull'/&gt; has parent &lt;HAnimJoint DEF='hanim_skullbase'
+center='0 1.4 0'/&gt; that does not match child &lt;Transform DEF='skull_adjust' translation='0
+0 0'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_BoxMan_view' name='BoxMan_view'/&gt; contains 4 Viewpoints, more
+than one may be ambiguous [/X3D/Scene/HAnimHumanoid/HAnimSite, info]
+&lt;HAnimSite DEF='hanim_BoxMan_view' name='BoxMan_view'/&gt; is not a recognized name for
+HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimSite, info]

@@ -1,0 +1,41 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;ImageTexture DEF='backShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[1], warning]
+&lt;ImageTexture DEF='bottomShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[2], warning]
+&lt;ImageTexture DEF='frontShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[3], warning]
+&lt;ImageTexture DEF='leftShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[4], warning]
+&lt;ImageTexture DEF='rightShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[5], warning]
+&lt;ImageTexture DEF='topShader'/&gt; url array address(es) duplicate the url definition
+found in a preceding node,
+consider DEF/USE to reduce download delays and memory requirements for url content
+(url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"')
+[/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[6], warning]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[1], error]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[2], error]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[1], error]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[2], error]

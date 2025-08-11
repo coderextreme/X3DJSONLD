@@ -1,0 +1,343 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/shell/../data/bumpyx_itesliders.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:successful-report test="meta/@content[starts-with(.,'*enter')]" role="warning" location="/X3D/head">
+      <svrl:text>Update all meta tag(s) containing content='*enter new value...*' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Background"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/LayerSet/Layer[1]/Transform/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF=''/&gt; url array address(es) missing online http/https references (url='"../shaders/x_ite_flowers_chromatic.vs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/LayerSet/Layer[1]/Transform/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/LayerSet/Layer[1]/Transform/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF=''/&gt; url array address(es) missing online http/https references (url='"../shaders/x_ite.fs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/LayerSet/Layer[1]/Transform/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[3]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='a' accessType='inputOutput'/&gt; does not send output event via assignment statement a=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[4]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='b' accessType='inputOutput'/&gt; does not send output event via assignment statement b=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[5]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='c' accessType='inputOutput'/&gt; does not send output event via assignment statement c=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[6]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='d' accessType='inputOutput'/&gt; does not send output event via assignment statement d=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[7]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='pdelta' accessType='inputOutput'/&gt; does not send output event via assignment statement pdelta=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="parent::Script and not(../@url) and ((@accessType='outputOnly') or (@accessType='inputOutput')) and not(starts-with(@type,'MF')) and not(contains($CDATAblock,concat(' ',@name,'='))) and not(contains($CDATAblock,concat(' ',@name,' ='))) and not(contains($CDATAblock,concat(' ',@name,'['))) and not(contains($CDATAblock,concat(' ',@name,' [')))" role="warning" location="/X3D/Scene/LayerSet/Layer[1]/Script/field[8]">
+      <svrl:text>&lt;Script DEF='OrbitScript'&gt; &lt;field name='tdelta' accessType='inputOutput'/&gt; does not send output event via assignment statement tdelta=___; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="SurfaceEmitter | Viewport | VolumeEmitter | VolumePickSensor | WindPhysicsModel"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Text"/>
+   <svrl:fired-rule context="FontStyle"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:successful-report test="(string-length(@description) = 0) and not(boolean(IS/connect/@nodeField='description')) and not(@USE) and ((local-name()='PlaneSensor'))" role="warning" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Transform/Transform/PlaneSensor">
+      <svrl:text>&lt;PlaneSensor DEF='protoSensor'/&gt; is missing description. Example: description='select and drag to move' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Sensor') and not(local-name() = 'TimeSensor')" role="warning" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Transform/Transform/Transform[1]/TouchSensor">
+      <svrl:text>&lt;TouchSensor DEF='protoTS'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='protoTS' fromField='isActive/isOver/something_changed' toNode='SomeTargetDEFname' toField='set_enabled/set_something'/&gt;
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Text"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="FontStyle"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Script">
+      <svrl:text>&lt;Script DEF='protoValueTransformerScript'/&gt; url array address(es) missing online http/https references (url='"../javascripts/X3DUser.js"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $hasIS" role="error" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Script/field[1]">
+      <svrl:text>&lt;Script name='' DEF='protoValueTransformerScript'&gt; &lt;field name='protoScale' value='30'/&gt; field initialization not allowed when IS/connect is also defined </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $hasIS" role="error" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Script/field[3]">
+      <svrl:text>&lt;Script name='' DEF='protoValueTransformerScript'&gt; &lt;field name='protoParameterName' value='a'/&gt; field initialization not allowed when IS/connect is also defined </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and (@type='MFString') and not(starts-with(@value,'&#34;')) and not(ends-with(@value,'&#34;'))" role="error" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoDeclare/ProtoBody/Group/Script/field[7]">
+      <svrl:text>&lt;Script name='' DEF='protoValueTransformerScript'&gt; &lt;field name='protoText_changed' type='MFString' value='1.0'/&gt; must begin and end with "quote marks" "for each contained string" </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[1]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='sliderTranslation' value='0 0.7 0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[4]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='textString' value='"a="'/&gt; with defined type='MFString' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[5]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='parameterScale' value='30'/&gt; with defined type='SFFloat' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[1]/fieldValue[6]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='aPI'&gt; &lt;fieldValue name='parameterName' value='a'/&gt; with defined type='SFString' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[2]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='bPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[2]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='bPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[2]/fieldValue[5]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='bPI'&gt; &lt;fieldValue name='parameterScale' value='30'/&gt; with defined type='SFFloat' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[3]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='cPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[3]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='cPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[4]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='dPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[4]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='dPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[5]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='tdeltaPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[5]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='tdeltaPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[6]/fieldValue[2]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='pdeltaPI'&gt; &lt;fieldValue name='transformTranslation' value='0 0 0.1'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/LayerSet/LayoutLayer/ProtoInstance[6]/fieldValue[3]">
+      <svrl:text>&lt;ProtoInstance name='SliderProto' DEF='pdeltaPI'&gt; &lt;fieldValue name='sensorTranslation' value='0 0 0.0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/LayerSet/Layer[2]/Script">
+      <svrl:text>&lt;Script DEF='HumanoidScript'/&gt; url array address(es) missing online http/https references (url='"../javascripts/X3DAvatar.js"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Group"/>
+   <svrl:failed-assert test="*[not(local-name()='ExternProtoDeclare') and not(local-name()='ProtoDeclare') and not(local-name()='ROUTE')] or (string-length(@USE) &gt; 0) or (local-name(..)='LOD') or (local-name(..)='Switch') or comment() or ((local-name()='Group') and *[(local-name()='ExternProtoDeclare') or (local-name()='ProtoDeclare') or (local-name()='ROUTE')])" role="warning" location="/X3D/Scene/LayerSet/Layer[2]/Group">
+      <svrl:text>&lt;Group DEF='humanoidGroup'/&gt; element has no child node </svrl:text>
+   </svrl:failed-assert>
+</svrl:schematron-output>

@@ -1,0 +1,21 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+X3D/head/meta title (i.e. filename 'arcold.x3d') is expected at end of identifier
+(url) value [/X3D/head, warning]
+&lt;Script DEF='S1'&gt; &lt;field name='startnode' accessType='inputOutput'/&gt; must define function
+set_startnode (newValue) [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[1], error]
+&lt;Script DEF='S1'&gt; &lt;field name='startnode' accessType='inputOutput'/&gt; does not send
+output event via assignment statement startnode=___; [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[1], warning]
+&lt;Script DEF='S1'&gt; &lt;field name='endnode' accessType='inputOutput'/&gt; must define function
+set_endnode (newValue) [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[2], error]
+&lt;Script DEF='S1'&gt; &lt;field name='endnode' accessType='inputOutput'/&gt; does not send output
+event via assignment statement endnode=___; [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[2], warning]
+&lt;Script DEF='S1'&gt; &lt;field name='transnode' accessType='inputOutput'/&gt; must define function
+set_transnode (newValue) [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[3], error]
+&lt;Script DEF='S1'&gt; &lt;field name='transnode' accessType='inputOutput'/&gt; does not send
+output event via assignment statement transnode=___; [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[3], warning]
+&lt;Script DEF='S1'&gt; &lt;field name='rotscalenode' accessType='inputOutput'/&gt; must define
+function set_rotscalenode (newValue) [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[4], error]
+&lt;Script DEF='S1'&gt; &lt;field name='rotscalenode' accessType='inputOutput'/&gt; does not send
+output event via assignment statement rotscalenode=___; [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[4], warning]

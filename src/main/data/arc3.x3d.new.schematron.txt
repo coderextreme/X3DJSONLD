@@ -1,0 +1,13 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+X3D/head/meta title (i.e. filename 'arc3.x3d') is expected at end of identifier (url)
+value [/X3D/head, warning]
+&lt;Group USE='DECLpoint_G1_node'/&gt; node type must match node type of original &lt;Transform
+DEF='DECLpoint_G1_node'/&gt; [/X3D/Scene/Group/Script/field[1]/Group, error]
+&lt;Group USE='DECLpoint_G2_node'/&gt; node type must match node type of original &lt;Transform
+DEF='DECLpoint_G2_node'/&gt; [/X3D/Scene/Group/Script/field[2]/Group, error]
+&lt;Script DEF='DECLx3dconnector_connector1_S1'&gt; &lt;field name='position' accessType='inputOutput'/&gt;
+does not send output event via assignment statement position=___; [/X3D/Scene/Group/Script/field[3], warning]
+&lt;Script DEF='DECLx3dconnector_connector1_S1'&gt; &lt;field name='rotscale' accessType='inputOutput'/&gt;
+does not send output event via assignment statement rotscale=___; [/X3D/Scene/Group/Script/field[4], warning]

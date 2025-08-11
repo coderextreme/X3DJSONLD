@@ -1,0 +1,633 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; version='2.0' with X3D version='4.0'
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimJoint)           within
+skeleton hierarchy        = 18[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSegment)         within
+skeleton hierarchy        = 13[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSite)            within
+HAnimHumanoid             = 69[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSite//Viewpoint) within
+skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimDisplacer)       within
+skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimJoint   USE='*' containerField
+= 'joints'/&gt;)     = 18[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSegment USE='*' containerField
+= 'segments'/&gt;)   = 13[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSite    USE='*' containerField
+= 'sites'/&gt;)      = 69[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSite    DEF='*' name
+ends with '_view'/&gt;)        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;IndexedFaceSet DEF=''/&gt; missing colorIndex array for contained Color node [/X3D/Scene/HAnimHumanoid/Shape/IndexedFaceSet, error]
+&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0000 0.9149 0.0016' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_buttocks_standing_wall_contact_point' name='buttocks_standing_wall_contact_point'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_crotch' name='crotch'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_asis' name='l_asis'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_iliocristale' name='l_iliocristale'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_psis' name='l_psis'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[5], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[5]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[5]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_trochanterion' name='l_trochanterion'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[6], error]
+&lt;HAnimSite DEF='hanim_l_trochanterion' name='l_trochanterion'/&gt; is an HAnimSite alias
+for 'l_trochanterion', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[6], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[6]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[6]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_asis' name='r_asis'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[7], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[7]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[7]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_iliocristale' name='r_iliocristale'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[8], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[8]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[8]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_psis' name='r_psis'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[9], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[9]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[9]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_trochanterion' name='r_trochanterion'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[10], error]
+&lt;HAnimSite DEF='hanim_r_trochanterion' name='r_trochanterion'/&gt; is an HAnimSite alias
+for 'r_trochanterion', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[10], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[10]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[10]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0961 0.9124 -0.0001' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_femoral_lateral_epicondyles' name='l_femoral_lateral_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_l_femoral_lateral_epicondyles' name='l_femoral_lateral_epicondyles'/&gt;
+is an HAnimSite alias for 'l_femoral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_femoral_medial_epicondyles' name='l_femoral_medial_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2], error]
+&lt;HAnimSite DEF='hanim_l_femoral_medial_epicondyles' name='l_femoral_medial_epicondyles'/&gt;
+is an HAnimSite alias for 'l_femoral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_knee_crease' name='l_knee_crease'/&gt; has incomplete name that
+must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_suprapatella' name='l_suprapatella'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1040 0.4867 0.0308' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_lateral_malleolus' name='l_lateral_malleolus'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_medial_malleolus' name='l_medial_malleolus'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_tibiale' name='l_tibiale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_l_talus' name='l_talus'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1101 0.0656 -0.0736' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_talus' name='l_talus'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_talocrural'
+center='0.1101 0.0656 -0.0736'/&gt; that does not match child &lt;Transform DEF='' translation='0.08
+0.06 -0.025'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_l_calcaneus_posterior' name='l_calcaneus_posterior'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_sphyrion' name='l_sphyrion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2'/&gt; has
+parent HAnimJoint name='l_talocrural' rather than expected parent name='l_tarsometatarsal_2',
+recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0950 0.9171 0.0029' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_femoral_lateral_epicondyles' name='r_femoral_lateral_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_r_femoral_lateral_epicondyles' name='r_femoral_lateral_epicondyles'/&gt;
+is an HAnimSite alias for 'r_femoral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_femoral_medial_epicondyles' name='r_femoral_medial_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2], error]
+&lt;HAnimSite DEF='hanim_r_femoral_medial_epicondyles' name='r_femoral_medial_epicondyles'/&gt;
+is an HAnimSite alias for 'r_femoral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_knee_crease' name='r_knee_crease'/&gt; has incomplete name that
+must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_suprapatella' name='r_suprapatella'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0867 0.4913 0.0318' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_lateral_malleolus' name='r_lateral_malleolus'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_medial_malleolus' name='r_medial_malleolus'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_tibiale' name='r_tibiale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_r_talus' name='r_talus'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0801 0.0712 -0.0766' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_talus' name='r_talus'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_talocrural'
+center='-0.0801 0.0712 -0.0766'/&gt; that does not match child &lt;Transform DEF='' translation='-0.05
+0.06 -0.025'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_r_calcaneus_posterior' name='r_calcaneus_posterior'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_sphyrion' name='r_sphyrion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2'/&gt; has
+parent HAnimJoint name='r_talocrural' rather than expected parent name='r_tarsometatarsal_2',
+recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_l5' name='l5'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0028 1.0568 -0.0776' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_adams_apple' name='adams_apple'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_cervicale' name='cervicale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_acromion' name='l_acromion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_axilla_distal' name='l_axilla_distal'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_axilla_posterior_folds' name='l_axilla_posterior_folds'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[5], error]
+&lt;HAnimSite DEF='hanim_l_axilla_posterior_folds' name='l_axilla_posterior_folds'/&gt;
+is an HAnimSite alias for 'l_axilla_distal', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[5], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[5]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[5]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_axilla_proximal' name='l_axilla_proximal'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[6], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[6]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[6]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_chest_midsagittal_plane' name='l_chest_midsagittal_plane'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[7], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[7]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[7]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_clavicale' name='l_clavicale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[8], error]
+&lt;HAnimSite DEF='hanim_l_clavicale' name='l_clavicale'/&gt; is not a recognized name for
+HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[8], info]
+&lt;HAnimSite DEF='hanim_l_clavicale' name='l_clavicale'/&gt; is an HAnimSite alias for
+'l_clavicle', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[8], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[8]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[8]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_neck_base' name='l_neck_base'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[9], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[9]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[9]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_rib10' name='l_rib10'/&gt; has incomplete name that must have
+suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[10], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[10]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[10]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_thelion' name='l_thelion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[11], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[11]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[11]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_mesosternale' name='mesosternale'/&gt; has incomplete name that
+must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[12], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[12]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[12]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_navel' name='navel'/&gt; has incomplete name that must have suffix
+'_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[13], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[13]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[13]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_acromion' name='r_acromion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[14], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[14]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[14]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_axilla_distal' name='r_axilla_distal'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[15], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[15]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[15]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_axilla_posterior_folds' name='r_axilla_posterior_folds'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[16], error]
+&lt;HAnimSite DEF='hanim_r_axilla_posterior_folds' name='r_axilla_posterior_folds'/&gt;
+is an HAnimSite alias for 'r_axilla_distal', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[16], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[16]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[16]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_axilla_proximal' name='r_axilla_proximal'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[17], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[17]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[17]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_chest_midsagittal_plane' name='r_chest_midsagittal_plane'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[18], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[18]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[18]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_clavicale' name='r_clavicale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[19], error]
+&lt;HAnimSite DEF='hanim_r_clavicale' name='r_clavicale'/&gt; is not a recognized name for
+HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[19], info]
+&lt;HAnimSite DEF='hanim_r_clavicale' name='r_clavicale'/&gt; is an HAnimSite alias for
+'r_clavicle', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[19], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[19]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[19]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_neck_base' name='r_neck_base'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[20], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[20]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[20]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_rib10' name='r_rib10'/&gt; has incomplete name that must have
+suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[21], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[21]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[21]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_thelion' name='r_thelion'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[22], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[22]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[22]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_rear_center_midsagittal_plane' name='rear_center_midsagittal_plane'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[23], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[23]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[23]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_spine_1_middle_back' name='spine_1_middle_back'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[24], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[24]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[24]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_spine_2_middle_back' name='spine_2_middle_back'/&gt; has incomplete
+name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[25], error]
+&lt;HAnimSite DEF='hanim_spine_2_middle_back' name='spine_2_middle_back'/&gt; is not a recognized
+name for HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[25], info]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[25]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[25]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_substernale' name='substernale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[26], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[26]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[26]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_suprasternale' name='suprasternale'/&gt; has incomplete name that
+must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[27], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[27]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[27]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_waist_preferred_anterior' name='waist_preferred_anterior'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[28], error]
+&lt;HAnimSite DEF='hanim_waist_preferred_anterior' name='waist_preferred_anterior'/&gt;
+is an HAnimSite alias for 'waist_preferred_anterior', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[28], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[28]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[28]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_waist_preferred_posterior' name='waist_preferred_posterior'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[29], error]
+&lt;HAnimSite DEF='hanim_waist_preferred_posterior' name='waist_preferred_posterior'/&gt;
+is an HAnimSite alias for 'waist_preferred_posterior', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[29], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[29]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite[29]/Billboard/Shape, warning]
+&lt;HAnimJoint DEF='hanim_skullbase' name='skullbase'/&gt; has parent HAnimJoint name='vl5'
+rather than expected parent name='vc1', recommend checking model [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder'/&gt; has parent HAnimJoint name='vl5'
+rather than expected parent name='l_acromioclavicular', recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2029 1.4376 -0.0387' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_bideltoid' name='l_bideltoid'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_humeral_lateral_epicondyles' name='l_humeral_lateral_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[2], error]
+&lt;HAnimSite DEF='hanim_l_humeral_lateral_epicondyles' name='l_humeral_lateral_epicondyles'/&gt;
+is an HAnimSite alias for 'l_humeral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[2], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2014 1.1357 -0.0682' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_humeral_medial_epicondyles' name='l_humeral_medial_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_l_humeral_medial_epicondyles' name='l_humeral_medial_epicondyles'/&gt;
+is an HAnimSite alias for 'l_humeral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_olecranon' name='l_olecranon'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_radial_styloid' name='l_radial_styloid'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_l_radiale' name='l_radiale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]
+&lt;HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder'/&gt; has parent HAnimJoint name='vl5'
+rather than expected parent name='r_acromioclavicular', recommend checking model
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1907 1.4407 -0.0325' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_bideltoid' name='r_bideltoid'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[1], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_humeral_lateral_epicondyles' name='r_humeral_lateral_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[2], error]
+&lt;HAnimSite DEF='hanim_r_humeral_lateral_epicondyles' name='r_humeral_lateral_epicondyles'/&gt;
+is an HAnimSite alias for 'r_humeral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[2], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1949 1.1388 -0.0620' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_humeral_medial_epicondyles' name='r_humeral_medial_epicondyles'/&gt;
+has incomplete name that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_r_humeral_medial_epicondyles' name='r_humeral_medial_epicondyles'/&gt;
+is an HAnimSite alias for 'r_humeral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[1]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[1]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_olecranon' name='r_olecranon'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[2], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[2]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[2]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_radial_styloid' name='r_radial_styloid'/&gt; has incomplete name
+that must have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[3], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[3]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[3]/Billboard/Shape, warning]
+&lt;HAnimSite DEF='hanim_r_radiale' name='r_radiale'/&gt; has incomplete name that must
+have suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[4], error]
+&lt;TouchSensor DEF=''/&gt; has peer Billboard node which may make user selection of geometry
+difficult, consider
+superimposing additional transparent Shape geometry to assist selection [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[4]/TouchSensor, warning]
+&lt;Shape DEF=''/&gt; found without child Appearance node, or child Color node [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[4]/Billboard/Shape, warning]

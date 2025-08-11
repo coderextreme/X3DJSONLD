@@ -1,0 +1,286 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/shell/../data/bumpyfreewrlsliders.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:failed-assert test="(string-length($identifier)=0) or starts-with($identifier, 'http://') or starts-with($identifier, 'https://')" role="warning" location="/X3D/head">
+      <svrl:text>X3D/head/meta identifier (url) content should start with http:// or 'https:// </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Background"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/LayerSet/Layer/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/LayerSet/Layer/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="DISEntityManager"/>
+   <svrl:fired-rule context="DISEntityTypeMapping"/>
+   <svrl:successful-report test="parent::DISEntityManager and not(@containerField='mapping')" role="error" location="/X3D/Scene/LayerSet/Layer/DISEntityManager/DISEntityTypeMapping[1]">
+      <svrl:text>&lt;DISEntityTypeMapping DEF=''/&gt; containerField='children'incorrect, must be containerField='mapping'&gt; to match parent DISEntityManager' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="DISEntityTypeMapping"/>
+   <svrl:successful-report test="parent::DISEntityManager and not(@containerField='mapping')" role="error" location="/X3D/Scene/LayerSet/Layer/DISEntityManager/DISEntityTypeMapping[2]">
+      <svrl:text>&lt;DISEntityTypeMapping DEF=''/&gt; containerField='children'incorrect, must be containerField='mapping'&gt; to match parent DISEntityManager' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="DISEntityTypeMapping"/>
+   <svrl:successful-report test="parent::DISEntityManager and not(@containerField='mapping')" role="error" location="/X3D/Scene/LayerSet/Layer/DISEntityManager/DISEntityTypeMapping[3]">
+      <svrl:text>&lt;DISEntityTypeMapping DEF=''/&gt; containerField='children'incorrect, must be containerField='mapping'&gt; to match parent DISEntityManager' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="DISEntityTypeMapping"/>
+   <svrl:successful-report test="parent::DISEntityManager and not(@containerField='mapping')" role="error" location="/X3D/Scene/LayerSet/Layer/DISEntityManager/DISEntityTypeMapping[4]">
+      <svrl:text>&lt;DISEntityTypeMapping DEF=''/&gt; containerField='children'incorrect, must be containerField='mapping'&gt; to match parent DISEntityManager' </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Collision"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:failed-assert test="*[not(local-name()='ExternProtoDeclare') and not(local-name()='ProtoDeclare') and not(local-name()='ROUTE')] or (string-length(@USE) &gt; 0) or (local-name(..)='LOD') or (local-name(..)='Switch') or comment() or ((local-name()='Group') and *[(local-name()='ExternProtoDeclare') or (local-name()='ProtoDeclare') or (local-name()='ROUTE')])" role="warning" location="/X3D/Scene/LayerSet/Layer/Collision/Group">
+      <svrl:text>&lt;Group DEF='AvatarHolder'/&gt; element has no child node </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="Layer | LayerSet | Layout | LayoutGroup | LayoutLayer | LinePickSensor |                    PickableGroup | PointEmitter | PointPickSensor | PolylineEmitter | PrimitivePickSensor"/>
+   <svrl:fired-rule context="SurfaceEmitter | Viewport | VolumeEmitter | VolumePickSensor | WindPhysicsModel"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="TouchSensor | CylinderSensor | PlaneSensor | SphereSensor"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+</svrl:schematron-output>

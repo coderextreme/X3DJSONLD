@@ -1,0 +1,85 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/bub.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="Background"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+</svrl:schematron-output>

@@ -1,0 +1,728 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;Viewpoint DEF=''/&gt; centerOfRotation='0 0 0', consider setting centerOfRotation to
+value of sibling &lt;HAnimHumanoid DEF='' name='HumanoidRoot' center='0 0 0'/&gt; [/X3D/Scene/Viewpoint, warning]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; version='2.0' with X3D version='4.0'
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimJoint)           within
+skeleton hierarchy        = 146[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSegment)         within
+skeleton hierarchy        = 119[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSite)            within
+HAnimHumanoid             = 118[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimSite//Viewpoint) within
+skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(HAnimDisplacer)       within
+skeleton hierarchy        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimJoint   USE='*' containerField
+= 'joints'/&gt;)     = 146[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSegment USE='*' containerField
+= 'segments'/&gt;)   = 119[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSite    USE='*' containerField
+= 'sites'/&gt;)      = 118[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_HAnim' name='HAnim'/&gt; node count(&lt;HAnimSite    DEF='*' name
+ends with '_view'/&gt;)        = 0[/X3D/Scene/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/HAnimHumanoid, diagnostic]
+&lt;Coordinate DEF=''/&gt; contains no data in point array [/X3D/Scene/HAnimHumanoid/Coordinate, warning]
+&lt;HAnimSite DEF='hanim_l_trochanterion_pt' name='l_trochanterion_pt'/&gt; is an HAnimSite
+alias for 'l_trochanterion', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimSegment/HAnimSite[6], warning]
+&lt;HAnimSite DEF='hanim_r_trochanterion_pt' name='r_trochanterion_pt'/&gt; is an HAnimSite
+alias for 'r_trochanterion', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimSegment/HAnimSite[10], warning]
+&lt;HAnimSite DEF='hanim_waist_preferred_anterior_pt' name='waist_preferred_anterior_pt'/&gt;
+is an HAnimSite alias for 'waist_preferred_anterior', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimSegment/HAnimSite[12], warning]
+&lt;HAnimSite DEF='hanim_waist_preferred_posterior_pt' name='waist_preferred_posterior_pt'/&gt;
+is an HAnimSite alias for 'waist_preferred_posterior', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimSegment/HAnimSite[13], warning]
+&lt;HAnimSegment DEF='hanim_pelvis' name='pelvis'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0000 0.9149 0.0016' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_femoral_lateral_epicondyles_pt' name='l_femoral_lateral_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'l_femoral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[1], warning]
+&lt;HAnimSite DEF='hanim_l_femoral_medial_epicondyles_pt' name='l_femoral_medial_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'l_femoral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[2], warning]
+&lt;HAnimSite DEF='hanim_r_femoral_lateral_epicondyles_pt' name='r_femoral_lateral_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'r_femoral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[5], warning]
+&lt;HAnimSite DEF='hanim_r_femoral_medial_epicondyles_pt' name='r_femoral_medial_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'r_femoral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite[6], warning]
+&lt;HAnimSegment DEF='hanim_l_thigh' name='l_thigh'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0961 0.9124 -0.0001' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_calf' name='l_calf'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1040 0.4867 0.0308' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_talus' name='l_talus'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1101 0.0656 -0.0736' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_talus' name='l_talus'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_talocrural'
+center='0.1101 0.0656 -0.0736'/&gt; that does not match child &lt;Transform DEF='' translation='0.08
+0.06 -0.025'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_navicular' name='l_navicular'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.4715 0.0374 0.6807' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='2.9855 0.0311 1.2819' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='2.8635 0.0194 2.4285' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_metatarsal_phalanx_1_pt' name='l_metatarsal_phalanx_1_pt'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='2.7525 0.0077 4.6255' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_1_tip' name='l_tarsal_distal_phalanx_1_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_tarsal_proximal_phalanx_1' (meaning
+name='l_tarsal_proximal_phalanx_1_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_1_tip' name='l_tarsal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' name='l_tarsal_interphalangeal_1'/&gt;
+has a missing (or default zero) offset field: center='0 0 0' [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, error]
+&lt;HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.6105 0.0330 1.4168' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.5555 0.0232 2.2895' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.6595 0.0085 4.8125' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.7385 0.0054 5.5315' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_2_tip' name='l_tarsal_distal_phalanx_2_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_tarsal_middle_phalanx_2' (meaning
+name='l_tarsal_middle_phalanx_2_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_2_tip' name='l_tarsal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.1235 0.0328 1.3453' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimJoint DEF='hanim_l_tarsometatarsal_3' name='l_tarsometatarsal_3'/&gt; has a missing
+(or default zero) offset field: center='0 0 0' [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint, error]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0 0 0' in order to be in the right location
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'/&gt; has parent &lt;HAnimJoint
+DEF='hanim_l_tarsometatarsal_3' center='0 0 0'/&gt; that does not match child &lt;Transform
+DEF='' translation='4.1235 0.0328 1.3453'/&gt;, resulting in mismatched local coordinate
+system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.2795 0.0086 4.7055' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.3855 0.0044 5.3745' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_3_tip' name='l_tarsal_distal_phalanx_3_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_tarsal_middle_phalanx_3' (meaning
+name='l_tarsal_middle_phalanx_3_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_3_tip' name='l_tarsal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='3.9515 0.0653 -0.6895' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.9085 0.0353 0.5574' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.7245 0.0211 2.1725' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='4.8745 0.0076 4.5165' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='5.0655 0.0049 5.1895' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_4_tip' name='l_tarsal_distal_phalanx_4_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_tarsal_middle_phalanx_4' (meaning
+name='l_tarsal_middle_phalanx_4_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_4_tip' name='l_tarsal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='5.3615 0.0164 2.0085' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_metatarsal_phalanx_5_pt' name='l_metatarsal_phalanx_5_pt'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='5.5055 0.0067 4.3115' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='5.6085 0.0030 4.6485' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_5_tip' name='l_tarsal_distal_phalanx_5_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_tarsal_middle_phalanx_5' (meaning
+name='l_tarsal_middle_phalanx_5_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_tarsal_distal_phalanx_5_tip' name='l_tarsal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_thigh' name='r_thigh'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0950 0.9171 0.0029' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_calf' name='r_calf'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0867 0.4913 0.0318' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_talus' name='r_talus'/&gt; has contained Shape geometry, but
+needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0801 0.0712 -0.0766' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_talus' name='r_talus'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_talocrural'
+center='-0.0801 0.0712 -0.0766'/&gt; that does not match child &lt;Transform DEF='' translation='-0.05
+0.06 -0.025'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_navicular' name='r_navicular'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.4725 0.0374 0.6807' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-2.9855 0.0311 1.2819' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-2.8645 0.0194 2.4285' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-2.7535 0.0077 4.6255' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_1_tip' name='r_tarsal_distal_phalanx_1_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_tarsal_proximal_phalanx_1' (meaning
+name='r_tarsal_proximal_phalanx_1_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_1_tip' name='r_tarsal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' name='r_tarsal_interphalangeal_1'/&gt;
+has a missing (or default zero) offset field: center='0 0 0' [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, error]
+&lt;HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.6105 0.0330 1.4168' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.5565 0.0232 2.2895' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.6595 0.0085 4.8125' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.7385 0.0054 5.5315' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_2_tip' name='r_tarsal_distal_phalanx_2_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_tarsal_middle_phalanx_2' (meaning
+name='r_tarsal_middle_phalanx_2_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_2_tip' name='r_tarsal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.1245 0.0328 1.3453' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3'/&gt; has a missing
+(or default zero) offset field: center='0 0 0' [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint, error]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0 0 0' in order to be in the right location
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'/&gt; has parent &lt;HAnimJoint
+DEF='hanim_r_tarsometatarsal_3' center='0 0 0'/&gt; that does not match child &lt;Transform
+DEF='' translation='-4.1245 0.0328 1.3453'/&gt;, resulting in mismatched local coordinate
+system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.2795 0.0086 4.7055' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.3865 0.0044 5.3745' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_3_tip' name='r_tarsal_distal_phalanx_3_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_tarsal_middle_phalanx_3' (meaning
+name='r_tarsal_middle_phalanx_3_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_3_tip' name='r_tarsal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-3.9515 0.0653 -0.6895' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.9095 0.0353 0.5574' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.7255 0.0211 2.1725' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-4.8755 0.0076 4.5165' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-5.0655 0.0049 5.1895' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_4_tip' name='r_tarsal_distal_phalanx_4_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_tarsal_middle_phalanx_4' (meaning
+name='r_tarsal_middle_phalanx_4_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_4_tip' name='r_tarsal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-5.3615 0.0164 2.0085' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-5.5055 0.0067 4.3115' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-5.6085 0.0030 4.6485' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_5_tip' name='r_tarsal_distal_phalanx_5_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_tarsal_middle_phalanx_5' (meaning
+name='r_tarsal_middle_phalanx_5_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_tarsal_distal_phalanx_5_tip' name='r_tarsal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l5' name='l5'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0028 1.0568 -0.0776' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l4' name='l4'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0035 1.0925 -0.0787' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l3' name='l3'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0041 1.1276 -0.0796' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_spine_2_middle_back_pt' name='spine_2_middle_back_pt'/&gt; is not
+a recognized name for HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[3], info]
+&lt;HAnimSegment DEF='hanim_l2' name='l2'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0045 1.1546 -0.0800' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l1' name='l1'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0048 1.1912 -0.0805' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t12' name='t12'/&gt; has contained Shape geometry, but needs
+an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0051 1.2278 -0.0808' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t11' name='t11'/&gt; has contained Shape geometry, but needs
+an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0053 1.2679 -0.0810' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t10' name='t10'/&gt; has contained Shape geometry, but needs
+an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0056 1.2848 -0.0822' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t9' name='t9'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0057 1.3126 -0.0838' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t8' name='t8'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0057 1.3382 -0.0845' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t7' name='t7'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0058 1.3625 -0.0833' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t6' name='t6'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0059 1.3866 -0.0800' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t5' name='t5'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0060 1.4102 -0.0745' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t4' name='t4'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0061 1.4320 -0.0675' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t3' name='t3'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0062 1.4583 -0.0570' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t2' name='t2'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0063 1.4761 -0.0484' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_t1' name='t1'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0065 1.4951 -0.0387' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_axilla_posterior_folds_pt' name='l_axilla_posterior_folds_pt'/&gt;
+is an HAnimSite alias for 'l_axilla_distal', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[5], warning]
+&lt;HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale_pt'/&gt; is not a recognized
+name for HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[7], info]
+&lt;HAnimSite DEF='hanim_l_clavicale_pt' name='l_clavicale_pt'/&gt; is an HAnimSite alias
+for 'l_clavicle', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[7], warning]
+&lt;HAnimSite DEF='hanim_r_axilla_posterior_folds_pt' name='r_axilla_posterior_folds_pt'/&gt;
+is an HAnimSite alias for 'r_axilla_distal', recommend updating X3D model source
+[/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[10], warning]
+&lt;HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale_pt'/&gt; is not a recognized
+name for HAnim2 HAnimSite [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[12], info]
+&lt;HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale_pt'/&gt; is an HAnimSite alias
+for 'r_clavicle', recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[12], warning]
+&lt;HAnimSegment DEF='hanim_c7' name='c7'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5132 -0.0301' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c6' name='c6'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5357 -0.0143' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c5' name='c5'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5520 -0.0082' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c4' name='c4'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5662 -0.0084' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c3' name='c3'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5800 -0.0103' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c2' name='c2'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.5928 -0.0103' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_c1' name='c1'/&gt; has contained Shape geometry, but needs an
+intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0066 1.6144 -0.0034' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_nuchale_pt' name='nuchale_pt'/&gt; is an HAnimSite alias for 'nuchale',
+recommend updating X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[5], warning]
+&lt;HAnimSegment DEF='hanim_skull' name='skull'/&gt; has contained Shape geometry, but needs
+an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0044 1.6209 0.0236' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0820 1.4488 -0.0353' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_scapula' name='l_scapula'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.0962 1.4269 -0.0424' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'l_humeral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite[2], warning]
+&lt;HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2029 1.4376 -0.0387' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_humeral_medial_epicondyles_pt' name='l_humeral_medial_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'l_humeral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;HAnimSegment DEF='hanim_l_forearm' name='l_forearm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2014 1.1357 -0.0682' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal' name='l_carpal'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1984 0.8663 -0.0583' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal' name='l_carpal'/&gt; has parent &lt;HAnimJoint DEF='hanim_l_radiocarpal'
+center='0.1984 0.8663 -0.0583'/&gt; that does not match child &lt;Transform DEF='' translation='0.20
+0.85 -0.05'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='8.0485 0.9213 1.3235' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1924 0.8472 -0.0534' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1951 0.8226 0.0246' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_1_tip' name='l_carpal_distal_phalanx_1_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_carpal_proximal_phalanx_1' (meaning
+name='l_carpal_proximal_phalanx_1_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_1_tip' name='l_carpal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='8.0485 0.9225 0.8386' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_metacarpal_phalanx_2_pt' name='l_metacarpal_phalanx_2_pt'/&gt;
+is an HAnimSite alias for 'l_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1983 0.8024 -0.0280' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1983 0.7815 -0.0280' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2017 0.7363 -0.0248' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_2_tip' name='l_carpal_distal_phalanx_2_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_carpal_middle_phalanx_2' (meaning
+name='l_carpal_middle_phalanx_2_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_2_tip' name='l_carpal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;HAnimSegment DEF='hanim_l_capitate' name='l_capitate'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='8.0395 0.9246 0.2513' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_metacarpal_phalanx_3_pt' name='l_metacarpal_phalanx_3_pt'/&gt;
+is an HAnimSite alias for 'l_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1987 0.8029 -0.0530' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1987 0.7818 -0.0530' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.2013 0.7273 -0.0503' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_3_tip' name='l_carpal_distal_phalanx_3_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_carpal_middle_phalanx_3' (meaning
+name='l_carpal_middle_phalanx_3_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_3_tip' name='l_carpal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_hamate' name='l_hamate'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='8.0395 0.9210 -0.6795' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_metacarpal_phalanx_5_pt' name='l_metacarpal_phalanx_5_pt'/&gt;
+is an HAnimSite alias for 'l_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1956 0.8019 -0.0794' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1956 0.7815 -0.0794' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1973 0.7287 -0.0777' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_4_tip' name='l_carpal_distal_phalanx_4_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_carpal_middle_phalanx_4' (meaning
+name='l_carpal_middle_phalanx_4_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_4_tip' name='l_carpal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1925 0.8066 -0.1036' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1925 0.7866 -0.1036' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='0.1938 0.7452 -0.1024' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_5_tip' name='l_carpal_distal_phalanx_5_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='l_carpal_middle_phalanx_5' (meaning
+name='l_carpal_middle_phalanx_5_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_l_carpal_distal_phalanx_5_tip' name='l_carpal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0694 1.4600 -0.0330' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_scapula' name='r_scapula'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.0836 1.4281 -0.0401' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'r_humeral_lateral_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite[2], warning]
+&lt;HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1907 1.4407 -0.0325' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_humeral_medial_epicondyles_pt' name='r_humeral_medial_epicondyles_pt'/&gt;
+is an HAnimSite alias for 'r_humeral_medial_epicondyle', recommend updating X3D
+model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;HAnimSegment DEF='hanim_r_forearm' name='r_forearm'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1949 1.1388 -0.0620' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal' name='r_carpal'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1959 0.8694 -0.0521' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal' name='r_carpal'/&gt; has parent &lt;HAnimJoint DEF='hanim_r_radiocarpal'
+center='-0.1959 0.8694 -0.0521'/&gt; that does not match child &lt;Transform DEF='' translation='-0.20
+0.85 -0.05'/&gt;, resulting in mismatched local coordinate system [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-8.0515 0.9213 1.3235' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1899 0.8502 -0.0473' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1874 0.8256 0.0306' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_1_tip' name='r_carpal_distal_phalanx_1_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_carpal_proximal_phalanx_1' (meaning
+name='r_carpal_proximal_phalanx_1_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_1_tip' name='r_carpal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-8.0515 0.9225 0.8386' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_metacarpal_phalanx_2_pt' name='r_metacarpal_phalanx_2_pt'/&gt;
+is an HAnimSite alias for 'r_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1961 0.8055 -0.0218' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1961 0.7846 -0.0218' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1954 0.7393 -0.0185' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_2_tip' name='r_carpal_distal_phalanx_2_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_carpal_middle_phalanx_2' (meaning
+name='r_carpal_middle_phalanx_2_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_2_tip' name='r_carpal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite[1], warning]
+&lt;HAnimSegment DEF='hanim_r_capitate' name='r_capitate'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-8.0405 0.9246 0.2513' in order to be
+in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_metacarpal_phalanx_3_pt' name='r_metacarpal_phalanx_3_pt'/&gt;
+is an HAnimSite alias for 'r_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1972 0.8060 -0.0468' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1972 0.7849 -0.0468' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1950 0.7304 -0.0441' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_3_tip' name='r_carpal_distal_phalanx_3_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_carpal_middle_phalanx_3' (meaning
+name='r_carpal_middle_phalanx_3_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_3_tip' name='r_carpal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_hamate' name='r_hamate'/&gt; has contained Shape geometry,
+but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-8.0405 0.9210 -0.6795' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_metacarpal_phalanx_5_pt' name='r_metacarpal_phalanx_5_pt'/&gt;
+is an HAnimSite alias for 'r_metacarpal_phalanx_2', recommend updating X3D model
+source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1951 0.8049 -0.0732' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1951 0.7845 -0.0732' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1920 0.7318 -0.0716' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_4_tip' name='r_carpal_distal_phalanx_4_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_carpal_middle_phalanx_4' (meaning
+name='r_carpal_middle_phalanx_4_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_4_tip' name='r_carpal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'/&gt; has contained Shape
+geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1926 0.8096 -0.0975' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1926 0.7896 -0.0975' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'/&gt;
+has contained Shape geometry, but needs an intermediate Transform with translation
+value matching parent HAnimJoint/translation='-0.1902 0.7483 -0.0963' in order to
+be in the right location [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_5_tip' name='r_carpal_distal_phalanx_5_tip'/&gt;
+needs to match name of parent &lt;HAnimSegment name='r_carpal_middle_phalanx_5' (meaning
+name='r_carpal_middle_phalanx_5_tip') [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_r_carpal_distal_phalanx_5_tip' name='r_carpal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/HAnimHumanoid/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]

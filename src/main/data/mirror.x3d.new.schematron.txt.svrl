@@ -1,0 +1,136 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/mirror.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="TextureBackground"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[1]">
+      <svrl:text>&lt;ImageTexture DEF='backShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[2]">
+      <svrl:text>&lt;ImageTexture DEF='bottomShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[3]">
+      <svrl:text>&lt;ImageTexture DEF='frontShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[4]">
+      <svrl:text>&lt;ImageTexture DEF='leftShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[5]">
+      <svrl:text>&lt;ImageTexture DEF='rightShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="not(local-name()='Anchor') and not(parent::field) and not(parent::fieldValue) and not(ancestor::ProtoDeclare) and not(ancestor::ExternProtoDeclare) and (string-length($normalizedStringUrl) &gt; 0) and preceding::*[normalize-space(@url) = $normalizedStringUrl] and (count(preceding::*[local-name()=$nodeName][normalize-space(@url) = $normalizedStringUrl]) &gt; 0)" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedCubeMapTexture/ImageTexture[6]">
+      <svrl:text>&lt;ImageTexture DEF='topShader'/&gt; url array address(es) duplicate the url definition found in a preceding node,
+         consider DEF/USE to reduce download delays and memory requirements for url content
+         (url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader[1]/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader[2]/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Script"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+</svrl:schematron-output>
