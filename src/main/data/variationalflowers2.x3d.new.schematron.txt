@@ -1,0 +1,33 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+It is good practice to identify editor(s) used, for example &lt;meta name='generator'
+content='X3D-Edit, https://savage.nps.edu/X3D-Edit'/&gt; [/X3D/head, info]
+&lt;VariationPhysicsModel DEF=''/&gt; not handled correctly by X3D schematron rule, or else
+node name has unrecognized
+spelling that fails X3D DTD/Schema validation... [/X3D/Scene/Transform/ParticleSystem/VariationPhysicsModel, error]
+&lt;Sphere DEF=''/&gt; geometry node must have Shape node as parent [/X3D/Scene/Transform/ParticleSystem/Sphere, error]
+&lt;Appearance DEF=''/&gt; found outside of a parent Shape, ProtoBody, field or fieldValue
+element [/X3D/Scene/Transform/ParticleSystem/Appearance, error]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[1], info]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[2], info]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[3], info]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[4], info]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[5], info]
+&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references
+(url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png"') [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedCubeMapTexture/ImageTexture[6], info]
+&lt;ShaderPart DEF=''/&gt; url array address(es) missing online http/https references (url='"../shaders/x_ite_variations.vs"')
+[/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedShader/ShaderPart[1], info]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedShader/ShaderPart[1], error]
+&lt;ShaderPart DEF=''/&gt; url array address(es) missing online http/https references (url='"../shaders/commonnew.fs"')
+[/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedShader/ShaderPart[2], info]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/Transform/ParticleSystem/Appearance/ComposedShader/ShaderPart[2], error]
+&lt;Script DEF='Animate'&gt; &lt;field name='updaterate' accessType='inputOutput'/&gt; does not
+send output event via assignment statement updaterate=___; [/X3D/Scene/Transform/Script/field[5], warning]

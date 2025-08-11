@@ -1,0 +1,1181 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/Lily8Final.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="$profileLegal and (//Inline[not(MetadataString)][not(@USE)]) and not($fullProfile)" role="info" location="/X3D">
+      <svrl:text>&lt;X3D profile='Immersive'&gt; is satisfactory for this model - also ensure that child Inline models do not exceed
+         this profile/component combination, since this parent scene must have an equal or
+         higher combination </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:successful-report test="meta/@content[starts-with(.,'*enter')]" role="warning" location="/X3D/head">
+      <svrl:text>Update all meta tag(s) containing content='*enter new value...*' </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(meta/@name='identifier') and (string-length($title) &gt; 0) and not(contains($identifier, $title))" role="warning" location="/X3D/head">
+      <svrl:text>X3D/head/meta title (i.e. filename 'Lily8.x3dv') is expected at end of identifier (url) value </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta[(@name='error') or (@name='warning') or (@name='hint') or (@name='info') or starts-with(@name,'TODO')]"/>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/head/meta[2]">
+      <svrl:text>&lt;meta name='warning' content='Modeling work in progress, probably superceded'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="DirectionalLight | PointLight | SpotLight"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:failed-assert test="*[not(local-name()='ExternProtoDeclare') and not(local-name()='ProtoDeclare') and not(local-name()='ROUTE')] or (string-length(@USE) &gt; 0) or (local-name(..)='LOD') or (local-name(..)='Switch') or comment() or ((local-name()='Group') and *[(local-name()='ExternProtoDeclare') or (local-name()='ProtoDeclare') or (local-name()='ROUTE')])" role="warning" location="/X3D/Scene/Transform/Transform[1]">
+      <svrl:text>&lt;Transform DEF=''/&gt; element has no child node </svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Inline"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Transform[2]/Inline">
+      <svrl:text>&lt;Inline DEF=''/&gt; url array address(es) missing online http/https references (url='"JointCoordinateAxes.x3dv"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="HAnimHumanoid"/>
+   <svrl:successful-report test="(string-length(@DEF) &gt; 0) and (string-length(@name) &gt; 0) and not(contains(@DEF,concat('_',@name)))" role="error" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; DEF value does not contain correctly modified version of name value (for example,
+         DEF='myPrefix_nameValue' e.g. DEF='myPrefix_Lily_WS') - see HAnim section C.2 Humanoid, VRML Binding </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; version='2.0' with X3D version='4.0' </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>====================================================================================================================
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(HAnimJoint)           within skeleton hierarchy        = 54</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(HAnimSegment)         within skeleton hierarchy        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(HAnimSite)            within HAnimHumanoid             = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(HAnimSite//Viewpoint) within skeleton hierarchy        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(HAnimDisplacer)       within skeleton hierarchy        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(&lt;HAnimJoint   USE='*' containerField = 'joints'/&gt;)     = 54</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(&lt;HAnimSegment USE='*' containerField = 'segments'/&gt;)   = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(&lt;HAnimSite    USE='*' containerField = 'sites'/&gt;)      = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>&lt;HAnimHumanoid DEF='Lily' name='Lily_WS'/&gt; node count(&lt;HAnimSite    DEF='*' name ends with '_view'/&gt;)        = 0</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not(@USE) and true()" role="diagnostic" location="/X3D/Scene/Transform/Group/HAnimHumanoid">
+      <svrl:text>====================================================================================================================
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_metatarsophalangeal_2') and parent::HAnimJoint[not(@name='l_tarsometatarsal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2'/&gt; has parent HAnimJoint name='l_talocrural' rather than expected parent name='l_tarsometatarsal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_metatarsophalangeal_2') and parent::HAnimJoint[not(@name='r_tarsometatarsal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2'/&gt; has parent HAnimJoint name='r_talocrural' rather than expected parent name='r_tarsometatarsal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vl5') and parent::HAnimJoint[not(@name='humanoid_root')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_vl5' name='vl5'/&gt; has parent HAnimJoint name='sacroiliac' rather than expected parent name='humanoid_root', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vl2') and parent::HAnimJoint[not(@name='vl3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_vl2' name='vl2'/&gt; has parent HAnimJoint name='vl5' rather than expected parent name='vl3', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vt11') and parent::HAnimJoint[not(@name='vt12')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_vt11' name='vt11'/&gt; has parent HAnimJoint name='vl2' rather than expected parent name='vt12', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vt5') and parent::HAnimJoint[not(@name='vt6')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_vt5' name='vt5'/&gt; has parent HAnimJoint name='vt11' rather than expected parent name='vt6', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='vc4') and parent::HAnimJoint[not(@name='vc5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_vc4' name='vc4'/&gt; has parent HAnimJoint name='vt5' rather than expected parent name='vc5', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='skullbase') and parent::HAnimJoint[not(@name='vc1')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_skullbase' name='skullbase'/&gt; has parent HAnimJoint name='vc4' rather than expected parent name='vc1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_sternoclavicular') and parent::HAnimJoint[not(@name='vt1')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_sternoclavicular' name='l_sternoclavicular'/&gt; has parent HAnimJoint name='vt5' rather than expected parent name='vt1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_shoulder') and parent::HAnimJoint[not(@name='l_acromioclavicular')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_shoulder' name='l_shoulder'/&gt; has parent HAnimJoint name='l_sternoclavicular' rather than expected parent name='l_acromioclavicular', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpometacarpal_1') and parent::HAnimJoint[not(@name='l_midcarpal_1')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpometacarpal_1' name='l_carpometacarpal_1'/&gt; has parent HAnimJoint name='l_radiocarpal' rather than expected parent name='l_midcarpal_1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_proximal_interphalangeal_2') and parent::HAnimJoint[not(@name='l_metacarpophalangeal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_proximal_interphalangeal_2' name='l_carpal_proximal_interphalangeal_2'/&gt; has parent HAnimJoint name='l_radiocarpal' rather than expected parent name='l_metacarpophalangeal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_metacarpophalangeal_2') and parent::HAnimJoint[not(@name='l_carpometacarpal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_metacarpophalangeal_2' name='l_metacarpophalangeal_2'/&gt; has parent HAnimJoint name='l_carpal_proximal_interphalangeal_2' rather than expected parent name='l_carpometacarpal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_distal_interphalangeal_2') and parent::HAnimJoint[not(@name='l_carpal_proximal_interphalangeal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_distal_interphalangeal_2' name='l_carpal_distal_interphalangeal_2'/&gt; has parent HAnimJoint name='l_metacarpophalangeal_2' rather than expected parent name='l_carpal_proximal_interphalangeal_2', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_proximal_interphalangeal_3') and parent::HAnimJoint[not(@name='l_metacarpophalangeal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_proximal_interphalangeal_3' name='l_carpal_proximal_interphalangeal_3'/&gt; has parent HAnimJoint name='l_radiocarpal' rather than expected parent name='l_metacarpophalangeal_3', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_metacarpophalangeal_3') and parent::HAnimJoint[not(@name='l_carpometacarpal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_metacarpophalangeal_3' name='l_metacarpophalangeal_3'/&gt; has parent HAnimJoint name='l_carpal_proximal_interphalangeal_3' rather than expected parent name='l_carpometacarpal_3', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_distal_interphalangeal_3') and parent::HAnimJoint[not(@name='l_carpal_proximal_interphalangeal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_distal_interphalangeal_3' name='l_carpal_distal_interphalangeal_3'/&gt; has parent HAnimJoint name='l_metacarpophalangeal_3' rather than expected parent name='l_carpal_proximal_interphalangeal_3', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_proximal_interphalangeal_4') and parent::HAnimJoint[not(@name='l_metacarpophalangeal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_proximal_interphalangeal_4' name='l_carpal_proximal_interphalangeal_4'/&gt; has parent HAnimJoint name='l_radiocarpal' rather than expected parent name='l_metacarpophalangeal_4', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_metacarpophalangeal_4') and parent::HAnimJoint[not(@name='l_carpometacarpal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_metacarpophalangeal_4' name='l_metacarpophalangeal_4'/&gt; has parent HAnimJoint name='l_carpal_proximal_interphalangeal_4' rather than expected parent name='l_carpometacarpal_4', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_distal_interphalangeal_4') and parent::HAnimJoint[not(@name='l_carpal_proximal_interphalangeal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_distal_interphalangeal_4' name='l_carpal_distal_interphalangeal_4'/&gt; has parent HAnimJoint name='l_metacarpophalangeal_4' rather than expected parent name='l_carpal_proximal_interphalangeal_4', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_proximal_interphalangeal_5') and parent::HAnimJoint[not(@name='l_metacarpophalangeal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_proximal_interphalangeal_5' name='l_carpal_proximal_interphalangeal_5'/&gt; has parent HAnimJoint name='l_radiocarpal' rather than expected parent name='l_metacarpophalangeal_5', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_metacarpophalangeal_5') and parent::HAnimJoint[not(@name='l_carpometacarpal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_metacarpophalangeal_5' name='l_metacarpophalangeal_5'/&gt; has parent HAnimJoint name='l_carpal_proximal_interphalangeal_5' rather than expected parent name='l_carpometacarpal_5', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='l_carpal_distal_interphalangeal_5') and parent::HAnimJoint[not(@name='l_carpal_proximal_interphalangeal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_l_carpal_distal_interphalangeal_5' name='l_carpal_distal_interphalangeal_5'/&gt; has parent HAnimJoint name='l_metacarpophalangeal_5' rather than expected parent name='l_carpal_proximal_interphalangeal_5', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_sternoclavicular') and parent::HAnimJoint[not(@name='vt1')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_sternoclavicular' name='r_sternoclavicular'/&gt; has parent HAnimJoint name='vt5' rather than expected parent name='vt1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_shoulder') and parent::HAnimJoint[not(@name='r_acromioclavicular')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_shoulder' name='r_shoulder'/&gt; has parent HAnimJoint name='r_sternoclavicular' rather than expected parent name='r_acromioclavicular', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpometacarpal_1') and parent::HAnimJoint[not(@name='r_midcarpal_1')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpometacarpal_1' name='r_carpometacarpal_1'/&gt; has parent HAnimJoint name='r_radiocarpal' rather than expected parent name='r_midcarpal_1', recommend checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_proximal_interphalangeal_2') and parent::HAnimJoint[not(@name='r_metacarpophalangeal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_proximal_interphalangeal_2' name='r_carpal_proximal_interphalangeal_2'/&gt; has parent HAnimJoint name='r_radiocarpal' rather than expected parent name='r_metacarpophalangeal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_metacarpophalangeal_2') and parent::HAnimJoint[not(@name='r_carpometacarpal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_metacarpophalangeal_2' name='r_metacarpophalangeal_2'/&gt; has parent HAnimJoint name='r_carpal_proximal_interphalangeal_2' rather than expected parent name='r_carpometacarpal_2', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_distal_interphalangeal_2') and parent::HAnimJoint[not(@name='r_carpal_proximal_interphalangeal_2')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_distal_interphalangeal_2' name='r_carpal_distal_interphalangeal_2'/&gt; has parent HAnimJoint name='r_metacarpophalangeal_2' rather than expected parent name='r_carpal_proximal_interphalangeal_2', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_proximal_interphalangeal_3') and parent::HAnimJoint[not(@name='r_metacarpophalangeal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_proximal_interphalangeal_3' name='r_carpal_proximal_interphalangeal_3'/&gt; has parent HAnimJoint name='r_radiocarpal' rather than expected parent name='r_metacarpophalangeal_3', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_metacarpophalangeal_3') and parent::HAnimJoint[not(@name='r_carpometacarpal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_metacarpophalangeal_3' name='r_metacarpophalangeal_3'/&gt; has parent HAnimJoint name='r_carpal_proximal_interphalangeal_3' rather than expected parent name='r_carpometacarpal_3', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_distal_interphalangeal_3') and parent::HAnimJoint[not(@name='r_carpal_proximal_interphalangeal_3')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_distal_interphalangeal_3' name='r_carpal_distal_interphalangeal_3'/&gt; has parent HAnimJoint name='r_metacarpophalangeal_3' rather than expected parent name='r_carpal_proximal_interphalangeal_3', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_proximal_interphalangeal_4') and parent::HAnimJoint[not(@name='r_metacarpophalangeal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_proximal_interphalangeal_4' name='r_carpal_proximal_interphalangeal_4'/&gt; has parent HAnimJoint name='r_radiocarpal' rather than expected parent name='r_metacarpophalangeal_4', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_metacarpophalangeal_4') and parent::HAnimJoint[not(@name='r_carpometacarpal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_metacarpophalangeal_4' name='r_metacarpophalangeal_4'/&gt; has parent HAnimJoint name='r_carpal_proximal_interphalangeal_4' rather than expected parent name='r_carpometacarpal_4', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_distal_interphalangeal_4') and parent::HAnimJoint[not(@name='r_carpal_proximal_interphalangeal_4')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_distal_interphalangeal_4' name='r_carpal_distal_interphalangeal_4'/&gt; has parent HAnimJoint name='r_metacarpophalangeal_4' rather than expected parent name='r_carpal_proximal_interphalangeal_4', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_proximal_interphalangeal_5') and parent::HAnimJoint[not(@name='r_metacarpophalangeal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_proximal_interphalangeal_5' name='r_carpal_proximal_interphalangeal_5'/&gt; has parent HAnimJoint name='r_radiocarpal' rather than expected parent name='r_metacarpophalangeal_5', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_metacarpophalangeal_5') and parent::HAnimJoint[not(@name='r_carpometacarpal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_metacarpophalangeal_5' name='r_metacarpophalangeal_5'/&gt; has parent HAnimJoint name='r_carpal_proximal_interphalangeal_5' rather than expected parent name='r_carpometacarpal_5', recommend checking model
+         </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:successful-report test="$isHAnim2 and (@name='r_carpal_distal_interphalangeal_5') and parent::HAnimJoint[not(@name='r_carpal_proximal_interphalangeal_5')]" role="warning" location="/X3D/Scene/Transform/Group/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint">
+      <svrl:text>&lt;HAnimJoint DEF='Lily_r_carpal_distal_interphalangeal_5' name='r_carpal_distal_interphalangeal_5'/&gt; has parent HAnimJoint name='r_metacarpophalangeal_5' rather than expected parent name='r_carpal_proximal_interphalangeal_5', recommend
+         checking model </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="HAnimJoint"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Group/HAnimHumanoid/Shape/Appearance/ImageTexture">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"lily_2t_BaseColor.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="IndexedFaceSet | IndexedLineSet"/>
+   <svrl:fired-rule context="Coordinate"/>
+   <svrl:fired-rule context="TextureCoordinate"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[1]/OrientationInterpolator[15]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand010_neckRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand010_neckRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[1]/OrientationInterpolator[17]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand010_upper_bodyRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand010_upper_bodyRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[1]/OrientationInterpolator[23]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand010_vc6Yaw'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand010_vc6Yaw' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[1]/OrientationInterpolator[28]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand010_r_carpal_distal_interphalangeal_2Roll'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand010_r_carpal_distal_interphalangeal_2Roll' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[2]/OrientationInterpolator[17]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Run011_upper_bodyRotInterp_Lily_Run011'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Run011_upper_bodyRotInterp_Lily_Run011' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[2]/OrientationInterpolator[23]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Run011_vc6Yaw'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Run011_vc6Yaw' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[3]/OrientationInterpolator[16]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Turn012s_upper_bodyRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Turn012s_upper_bodyRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[3]/OrientationInterpolator[23]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Turn012_vc6Lily_Turn012'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Turn012_vc6Lily_Turn012' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[4]/OrientationInterpolator[20]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Walk013_l_acromioclavicularRoll'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Walk013_l_acromioclavicularRoll' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[4]/OrientationInterpolator[22]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Walk013_r_acromioclavicularRoll'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Walk013_r_acromioclavicularRoll' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[4]/OrientationInterpolator[25]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Walk013_vc6Yaw'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Walk013_vc6Yaw' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[6]/OrientationInterpolator[15]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand015_neckRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand015_neckRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[6]/OrientationInterpolator[17]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand015_upper_bodyRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand015_upper_bodyRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[6]/OrientationInterpolator[23]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand015_vc6Yaw'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand015_vc6Yaw' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[6]/OrientationInterpolator[28]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand015_r_carpal_distal_interphalangeal_2Roll'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand015_r_carpal_distal_interphalangeal_2Roll' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="Group"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[7]/OrientationInterpolator[15]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand016_neckRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand016_neckRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[7]/OrientationInterpolator[17]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand016_upper_bodyRotInterp'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand016_upper_bodyRotInterp' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="PositionInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[7]/OrientationInterpolator[23]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand016_vc6Yaw'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand016_vc6Yaw' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/Group[7]/OrientationInterpolator[28]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Stand016_r_carpal_distal_interphalangeal_2Roll'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand016_r_carpal_distal_interphalangeal_2Roll' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="TimeSensor"/>
+   <svrl:fired-rule context="ProximitySensor | VisibilitySensor | TransformSensor"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/OrientationInterpolator[2]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_Pitch2Interpolator'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Pitch2Interpolator' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and (contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/OrientationInterpolator[3]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_RotationInterpolator'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeTimeSensorDEFname'
+         fromField='fraction_changed' toNode='Lily_RotationInterpolator' toField='set_fraction'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/OrientationInterpolator[3]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_RotationInterpolator'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_RotationInterpolator' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/OrientationInterpolator[4]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_RollLeftFingers2'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_RollLeftFingers2' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="OrientationInterpolator"/>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and contains(local-name(),'Interpolator')" role="warning" location="/X3D/Scene/OrientationInterpolator[5]">
+      <svrl:text>&lt;OrientationInterpolator DEF='Lily_RollRightFingers2'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_RollRightFingers2' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[2]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Stand010FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Stand010FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[2]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Stand010FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand010FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[5]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Run011FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Run011FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[5]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Run011FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Run011FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[8]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Turn012FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Turn012FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[8]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Turn012FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Turn012FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[11]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Walk013FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Walk013FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[11]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Walk013FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Walk013FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[14]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Skip014FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Skip014FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[14]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Skip014FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Skip014FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[17]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Stand015FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Stand015FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="not( $touchSensorNoDEF or $touchSensorHasDescription or not(@DEF) or //ROUTE[@fromNode=$DEF] or (local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect) and not(contains(local-name(),'Interpolator')) and not(contains(local-name(),'Sensor'))" role="warning" location="/X3D/Scene/BooleanFilter[17]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Stand015FINALEBooleanFilter'/&gt; is missing ROUTE to send output events, for example &lt;ROUTE fromNode='Lily_Stand015FINALEBooleanFilter' fromField='value_changed' toNode='SomeTargetDEFname' toField='set_something'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="BooleanSequencer"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:successful-report test="((@DEF) and not(//ROUTE[@toNode=$DEF]) and not((local-name(..)='field') or (local-name(..)='fieldValue') or IS/connect)) and not(contains(local-name(),'Interpolator') or contains(local-name(),'Sequencer'))" role="warning" location="/X3D/Scene/BooleanFilter[20]">
+      <svrl:text>&lt;BooleanFilter DEF='Lily_Stand016FINALEBooleanFilter'/&gt; is missing ROUTE to receive input events, for example &lt;ROUTE fromNode='SomeProducerDEFname'
+         fromField='sometField_changed' toNode='Lily_Stand016FINALEBooleanFilter' toField='set_someField'/&gt; </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="BooleanFilter | BooleanTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="IntegerTrigger | TimeTrigger"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+   <svrl:fired-rule context="ROUTE | *[(upper-case(local-name()) = 'ROUTE')]"/>
+</svrl:schematron-output>

@@ -1,0 +1,14 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;meta name='TODO' content='Schematron rules, backed up by initialize() checks'/&gt; [/X3D/head/meta[6], diagnostic]
+&lt;Script DEF='CameraScript'&gt; &lt;field name='isActive' accessType='outputOnly'/&gt; does
+not send output event via assignment statement isActive=___; [/X3D/Scene/ProtoDeclare[1]/ProtoBody/Script/field[15], warning]
+&lt;Script DEF='CameraShotScript'&gt; &lt;field name='isActive' accessType='outputOnly'/&gt; does
+not send output event via assignment statement isActive=___; [/X3D/Scene/ProtoDeclare[2]/ProtoBody/Script/field[11], warning]
+&lt;Script DEF='CameraMovementScript'&gt; &lt;field name='isActive' accessType='outputOnly'/&gt;
+does not send output event via assignment statement isActive=___; [/X3D/Scene/ProtoDeclare[3]/ProtoBody/Script/field[11], warning]
+&lt;Script DEF='OfflineRenderScript'&gt; &lt;field name='progress' accessType='outputOnly'/&gt;
+does not send output event via assignment statement progress=___; [/X3D/Scene/ProtoDeclare[4]/ProtoBody/Script/field[7], warning]
+&lt;Script DEF='OfflineRenderScript'&gt; &lt;field name='renderCompleteTime' accessType='outputOnly'/&gt;
+does not send output event via assignment statement renderCompleteTime=___; [/X3D/Scene/ProtoDeclare[4]/ProtoBody/Script/field[8], warning]

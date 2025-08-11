@@ -1,0 +1,976 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+Correct url for X3D file should appear in &lt;meta name='identifier' content='https://someAddress/somePath/FileName.x3d'/&gt;
+[/X3D/head, warning]
+Missing X3D scene description in meta tag, should appear as &lt;meta name='description'
+content='topic sentence plus good summary'/&gt; [/X3D/head, info]
+&lt;Viewpoint DEF='CA_Camera'/&gt; is missing description which is important for accessibility
+and usability.  Example:
+description='initial view, rotate to examine object' [/X3D/Scene/Transform[4]/Viewpoint, warning]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; version='2.0' with X3D version='4.0'
+[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(HAnimJoint)     
+within skeleton hierarchy        = 147[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(HAnimSegment)   
+within skeleton hierarchy        = 147[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(HAnimSite)      
+within HAnimHumanoid             = 147[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(HAnimSite//Viewpoint)
+within skeleton hierarchy        = 0[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(HAnimDisplacer) 
+within skeleton hierarchy        = 0[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(&lt;HAnimJoint   USE='*'
+containerField = 'joints'/&gt;)     = 146[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(&lt;HAnimSegment USE='*'
+containerField = 'segments'/&gt;)   = 0[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(&lt;HAnimSite    USE='*'
+containerField = 'sites'/&gt;)      = 0[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; node count(&lt;HAnimSite    DEF='*'
+name ends with '_view'/&gt;)        = 0[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; has mismatched HAnimJoint  
+node counts, 147 within skeleton hierarchy and 146 USE nodes in joints field [/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; has mismatched HAnimSegment
+node counts, 147 within skeleton hierarchy and 0 USE nodes in segments field [/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='hanim_humanoid' name='humanoid'/&gt; has mismatched HAnimSite   
+node counts, 147 within skeleton hierarchy and 0 USE nodes in sites field [/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/Transform[5]/HAnimHumanoid, diagnostic]
+&lt;HAnimJoint DEF='hanim_Armature' name='Armature'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_Armature' name='SEGMENT_FOR_Armature'/&gt; has contained
+Transform/Shape, but child Transform/translation='0 0 0' does not match parent HAnimJoint/center='0.0
+0.0 0.0' and may not be in the right location (possibly parent HAnimJoint/center value
+was
+changed but contained visualization geometry did not) [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_Armature' name='SEGMENT_FOR_Armature'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_Armature_tip' name='SEGMENT_FOR_Armature_tip'/&gt;
+is not a recognized name for HAnim2 HAnimSite [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimSegment/HAnimSite, info]
+&lt;HAnimJoint DEF='hanim_sacrum' name='sacrum'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_sacrum' name='SEGMENT_FOR_sacrum'/&gt; is not a
+recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_pelvis' name='pelvis'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_pelvis' name='SEGMENT_FOR_pelvis'/&gt; is not a
+recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_thigh' name='l_thigh'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_thigh' name='SEGMENT_FOR_l_thigh'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_calf' name='l_calf'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_calf' name='SEGMENT_FOR_l_calf'/&gt; is not a
+recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_talus' name='l_talus'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_talus' name='SEGMENT_FOR_l_talus'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_navicular' name='l_navicular'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_navicular' name='SEGMENT_FOR_l_navicular'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_1' name='SEGMENT_FOR_l_cuneiform_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_1_tip' name='SEGMENT_FOR_l_cuneiform_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_1' name='SEGMENT_FOR_l_metatarsal_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_1_tip' name='SEGMENT_FOR_l_metatarsal_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'/&gt;
+has a missing (or default zero) offset field: center='0.0 0.0 0.0' [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, error]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1'/&gt;
+has contained Transform/Shape, but child Transform/translation='0 0 0' does not match
+parent HAnimJoint/center='0.0 0.0 0.0' and may not be in the right location (possibly
+parent HAnimJoint/center value was
+changed but contained visualization geometry did not) [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1'/&gt;
+has parent &lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_1' center='0.0 0.0 0.0'/&gt;
+that does not match child &lt;Transform DEF='' translation='0 0 0'/&gt;, resulting in mismatched
+local coordinate system [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_2' name='SEGMENT_FOR_l_cuneiform_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_2_tip' name='SEGMENT_FOR_l_cuneiform_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_2' name='SEGMENT_FOR_l_metatarsal_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_2_tip' name='SEGMENT_FOR_l_metatarsal_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2' name='SEGMENT_FOR_l_tarsal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2' name='SEGMENT_FOR_l_tarsal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_3' name='SEGMENT_FOR_l_cuneiform_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_cuneiform_3_tip' name='SEGMENT_FOR_l_cuneiform_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_3' name='SEGMENT_FOR_l_metatarsal_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_3_tip' name='SEGMENT_FOR_l_metatarsal_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3' name='SEGMENT_FOR_l_tarsal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_3' name='l_tarsal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3' name='SEGMENT_FOR_l_tarsal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_calcaneus' name='l_calcaneus'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_calcaneus' name='SEGMENT_FOR_l_calcaneus'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_cuboid' name='l_cuboid'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuboid' name='SEGMENT_FOR_l_cuboid'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_4' name='SEGMENT_FOR_l_metatarsal_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_4_tip' name='SEGMENT_FOR_l_metatarsal_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4' name='SEGMENT_FOR_l_tarsal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_4' name='l_tarsal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4' name='SEGMENT_FOR_l_tarsal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_5' name='SEGMENT_FOR_l_metatarsal_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_metatarsal_5_tip' name='SEGMENT_FOR_l_metatarsal_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_metatarsal_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5' name='SEGMENT_FOR_l_tarsal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_middle_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_5' name='l_tarsal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5' name='SEGMENT_FOR_l_tarsal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_tarsal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_thigh' name='r_thigh'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_thigh' name='SEGMENT_FOR_r_thigh'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_thigh_tip' name='SEGMENT_FOR_r_thigh_tip'/&gt; translation
+needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_calf' name='r_calf'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_calf' name='SEGMENT_FOR_r_calf'/&gt; is not a
+recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_calf_tip' name='SEGMENT_FOR_r_calf_tip'/&gt; translation
+needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_talus' name='r_talus'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_talus' name='SEGMENT_FOR_r_talus'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_talus_tip' name='SEGMENT_FOR_r_talus_tip'/&gt; translation
+needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_navicular' name='r_navicular'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_navicular' name='SEGMENT_FOR_r_navicular'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_navicular_tip' name='SEGMENT_FOR_r_navicular_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_1' name='SEGMENT_FOR_r_cuneiform_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_1_tip' name='SEGMENT_FOR_r_cuneiform_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_1_tip' name='SEGMENT_FOR_r_cuneiform_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_1' name='SEGMENT_FOR_r_metatarsal_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_1_tip' name='SEGMENT_FOR_r_metatarsal_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'/&gt;
+has a missing (or default zero) offset field: center='0.0 0.0 0.0' [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1'/&gt;
+has contained Transform/Shape, but child Transform/translation='0 0 0' does not match
+parent HAnimJoint/center='0.0 0.0 0.0' and may not be in the right location (possibly
+parent HAnimJoint/center value was
+changed but contained visualization geometry did not) [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1'/&gt;
+has parent &lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_1' center='0.0 0.0 0.0'/&gt;
+that does not match child &lt;Transform DEF='' translation='0 0 0'/&gt;, resulting in mismatched
+local coordinate system [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_2' name='SEGMENT_FOR_r_cuneiform_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_2_tip' name='SEGMENT_FOR_r_cuneiform_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_2_tip' name='SEGMENT_FOR_r_cuneiform_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_2' name='SEGMENT_FOR_r_metatarsal_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_2_tip' name='SEGMENT_FOR_r_metatarsal_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_3' name='SEGMENT_FOR_r_cuneiform_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_3_tip' name='SEGMENT_FOR_r_cuneiform_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuneiform_3_tip' name='SEGMENT_FOR_r_cuneiform_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_cuneiform_2', recommend updating X3D model
+source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_3' name='SEGMENT_FOR_r_metatarsal_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_3_tip' name='SEGMENT_FOR_r_metatarsal_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_calcaneus' name='r_calcaneus'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_calcaneus' name='SEGMENT_FOR_r_calcaneus'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_calcaneus_tip' name='SEGMENT_FOR_r_calcaneus_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_cuboid' name='r_cuboid'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuboid' name='SEGMENT_FOR_r_cuboid'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_cuboid_tip' name='SEGMENT_FOR_r_cuboid_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_4' name='SEGMENT_FOR_r_metatarsal_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_4_tip' name='SEGMENT_FOR_r_metatarsal_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_5' name='SEGMENT_FOR_r_metatarsal_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metatarsal_5_tip' name='SEGMENT_FOR_r_metatarsal_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_tarsal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l5' name='l5'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l5' name='SEGMENT_FOR_l5'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l4' name='l4'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l4' name='SEGMENT_FOR_l4'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l3' name='l3'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l3' name='SEGMENT_FOR_l3'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l2' name='l2'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l2' name='SEGMENT_FOR_l2'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l1' name='l1'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l1' name='SEGMENT_FOR_l1'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t12' name='t12'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t12' name='SEGMENT_FOR_t12'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t11' name='t11'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t11' name='SEGMENT_FOR_t11'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t10' name='t10'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t10' name='SEGMENT_FOR_t10'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t9' name='t9'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t9' name='SEGMENT_FOR_t9'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t8' name='t8'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t8' name='SEGMENT_FOR_t8'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t7' name='t7'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t7' name='SEGMENT_FOR_t7'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t6' name='t6'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t6' name='SEGMENT_FOR_t6'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t5' name='t5'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t5' name='SEGMENT_FOR_t5'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t4' name='t4'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t4' name='SEGMENT_FOR_t4'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t3' name='t3'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t3' name='SEGMENT_FOR_t3'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t2' name='t2'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t2' name='SEGMENT_FOR_t2'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_t1' name='t1'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_t1' name='SEGMENT_FOR_t1'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c7' name='c7'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c7' name='SEGMENT_FOR_c7'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c6' name='c6'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c6' name='SEGMENT_FOR_c6'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c5' name='c5'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c5' name='SEGMENT_FOR_c5'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c4' name='c4'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c4' name='SEGMENT_FOR_c4'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c3' name='c3'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c3' name='SEGMENT_FOR_c3'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c2' name='c2'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c2' name='SEGMENT_FOR_c2'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_c1' name='c1'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_c1' name='SEGMENT_FOR_c1'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_skull' name='skull'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_skull' name='SEGMENT_FOR_skull'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_eyelid' name='l_eyelid'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyelid' name='SEGMENT_FOR_l_eyelid'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_eyelid' name='r_eyelid'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyelid' name='SEGMENT_FOR_r_eyelid'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_eyelid_tip' name='SEGMENT_FOR_r_eyelid_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_l_eyeball' name='l_eyeball'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyeball' name='SEGMENT_FOR_l_eyeball'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_eyeball' name='r_eyeball'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyeball' name='SEGMENT_FOR_r_eyeball'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_eyeball_tip' name='SEGMENT_FOR_r_eyeball_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_l_eyebrow' name='l_eyebrow'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyebrow' name='SEGMENT_FOR_l_eyebrow'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_r_eyebrow' name='r_eyebrow'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[6], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyebrow' name='SEGMENT_FOR_r_eyebrow'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[6]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_eyebrow_tip' name='SEGMENT_FOR_r_eyebrow_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[6]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_jaw' name='jaw'/&gt; is not a recognized name for HAnim2 HAnimJoint
+[/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[7], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_jaw' name='SEGMENT_FOR_jaw'/&gt; is not a recognized
+name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[7]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_clavicle' name='l_clavicle'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_clavicle' name='SEGMENT_FOR_l_clavicle'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_scapula' name='l_scapula'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_scapula' name='SEGMENT_FOR_l_scapula'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_upperarm' name='l_upperarm'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_upperarm' name='SEGMENT_FOR_l_upperarm'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_forearm' name='l_forearm'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_forearm' name='SEGMENT_FOR_l_forearm'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal' name='l_carpal'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal' name='SEGMENT_FOR_l_carpal'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_trapezium' name='l_trapezium'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_trapezium' name='SEGMENT_FOR_l_trapezium'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_1' name='SEGMENT_FOR_l_metacarpal_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1' name='SEGMENT_FOR_l_carpal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_distal_phalanx_1' name='l_carpal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1' name='SEGMENT_FOR_l_carpal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_trapezoid' name='l_trapezoid'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_trapezoid' name='SEGMENT_FOR_l_trapezoid'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_2' name='SEGMENT_FOR_l_metacarpal_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2' name='SEGMENT_FOR_l_carpal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2' name='SEGMENT_FOR_l_carpal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_distal_phalanx_2' name='l_carpal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2' name='SEGMENT_FOR_l_carpal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_capitate' name='l_capitate'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_capitate' name='SEGMENT_FOR_l_capitate'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_3' name='SEGMENT_FOR_l_metacarpal_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3' name='SEGMENT_FOR_l_carpal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3' name='SEGMENT_FOR_l_carpal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_distal_phalanx_3' name='l_carpal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3' name='SEGMENT_FOR_l_carpal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_hamate' name='l_hamate'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_hamate' name='SEGMENT_FOR_l_hamate'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_4' name='SEGMENT_FOR_l_metacarpal_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4' name='SEGMENT_FOR_l_carpal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4' name='SEGMENT_FOR_l_carpal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_distal_phalanx_4' name='l_carpal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4' name='SEGMENT_FOR_l_carpal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_5' name='SEGMENT_FOR_l_metacarpal_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5' name='SEGMENT_FOR_l_carpal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_proximal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5' name='SEGMENT_FOR_l_carpal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_middle_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_l_carpal_distal_phalanx_5' name='l_carpal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5' name='SEGMENT_FOR_l_carpal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_l_carpal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'l_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_clavicle' name='r_clavicle'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_clavicle' name='SEGMENT_FOR_r_clavicle'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_clavicle_tip' name='SEGMENT_FOR_r_clavicle_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_scapula' name='r_scapula'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_scapula' name='SEGMENT_FOR_r_scapula'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_scapula_tip' name='SEGMENT_FOR_r_scapula_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_upperarm' name='r_upperarm'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_upperarm' name='SEGMENT_FOR_r_upperarm'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_upperarm_tip' name='SEGMENT_FOR_r_upperarm_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_forearm' name='r_forearm'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_forearm' name='SEGMENT_FOR_r_forearm'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_forearm_tip' name='SEGMENT_FOR_r_forearm_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal' name='r_carpal'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal' name='SEGMENT_FOR_r_carpal'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_tip' name='SEGMENT_FOR_r_carpal_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_trapezium' name='r_trapezium'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_trapezium' name='SEGMENT_FOR_r_trapezium'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezium_tip' name='SEGMENT_FOR_r_trapezium_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_1' name='SEGMENT_FOR_r_metacarpal_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_1_tip' name='SEGMENT_FOR_r_metacarpal_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_distal_phalanx_1' name='r_carpal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1' name='SEGMENT_FOR_r_carpal_distal_phalanx_1'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_1_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_1_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_trapezoid' name='r_trapezoid'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_trapezoid' name='SEGMENT_FOR_r_trapezoid'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_trapezoid_tip' name='SEGMENT_FOR_r_trapezoid_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_2' name='SEGMENT_FOR_r_metacarpal_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_2_tip' name='SEGMENT_FOR_r_metacarpal_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2' name='SEGMENT_FOR_r_carpal_middle_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_distal_phalanx_2' name='r_carpal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2' name='SEGMENT_FOR_r_carpal_distal_phalanx_2'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_2_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_2_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_capitate' name='r_capitate'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_capitate' name='SEGMENT_FOR_r_capitate'/&gt; is
+not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_capitate_tip' name='SEGMENT_FOR_r_capitate_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_3' name='SEGMENT_FOR_r_metacarpal_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_3_tip' name='SEGMENT_FOR_r_metacarpal_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3' name='SEGMENT_FOR_r_carpal_middle_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_distal_phalanx_3' name='r_carpal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3' name='SEGMENT_FOR_r_carpal_distal_phalanx_3'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_3_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_3_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_hamate' name='r_hamate'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_hamate' name='SEGMENT_FOR_r_hamate'/&gt; is not
+a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_hamate_tip' name='SEGMENT_FOR_r_hamate_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_4' name='SEGMENT_FOR_r_metacarpal_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_4_tip' name='SEGMENT_FOR_r_metacarpal_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4' name='SEGMENT_FOR_r_carpal_middle_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_distal_phalanx_4' name='r_carpal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4' name='SEGMENT_FOR_r_carpal_distal_phalanx_4'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_4_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_4_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'/&gt; is not a recognized
+name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2], warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_5' name='SEGMENT_FOR_r_metacarpal_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_metacarpal_5_tip' name='SEGMENT_FOR_r_metacarpal_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimSegment/HAnimSite, error]
+&lt;HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_proximal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5' name='SEGMENT_FOR_r_carpal_middle_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_middle_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_middle_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]
+&lt;HAnimJoint DEF='hanim_r_carpal_distal_phalanx_5' name='r_carpal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimJoint [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5' name='SEGMENT_FOR_r_carpal_distal_phalanx_5'/&gt;
+is not a recognized name for HAnim2 HAnimSegment [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment, warning]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_5_tip'/&gt;
+translation needs negative x when on left side [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5_tip' name='SEGMENT_FOR_r_carpal_distal_phalanx_5_tip'/&gt;
+contains an HAnimSegment alias for 'r_carpal_distal_phalanx_2', recommend updating
+X3D model source [/X3D/Scene/Transform[5]/HAnimHumanoid/HAnimJoint[1]/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimSegment/HAnimSite, warning]

@@ -1,0 +1,22 @@
+&lt;X3D profile='Full'&gt; definition is insufficient since nodes in scene have actual profile='Interactive'
+[/X3D, info]
+&lt;X3D profile='Full'&gt; definition is insufficient since nodes in scene have actual profile='CADInterchange'
+[/X3D, info]
+&lt;X3D profile='Full'&gt; definition is insufficient since nodes in scene have actual profile='MedicalInterchange'
+[/X3D, info]
+&lt;X3D profile='Full'&gt; is satisfactory for this model - also ensure that child Inline
+models do not exceed
+this profile/component combination, since this parent scene must have an equal or
+higher combination [/X3D, info]
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;meta name='info' content='This work presents an innovative solution of the spatial
+sound in X3DOM framework,
+that based on a combinational methodology. Specifically, we suggested the enrichment
+of X3DOM with spatial sound features, using both the X3D sound nodes and the structure
+of Web Audio API.'/&gt; [/X3D/head/meta[3], diagnostic]
+&lt;meta name='TODO' content='credit for audio files'/&gt; [/X3D/head/meta[8], diagnostic]
+&lt;Viewpoint DEF='Camera001'/&gt; description should be different than DEF, provide a descriptive
+phrase for description
+instead [/X3D/Scene/Viewpoint, hint]

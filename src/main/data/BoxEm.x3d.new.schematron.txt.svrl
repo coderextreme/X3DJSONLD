@@ -1,0 +1,78 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/data/BoxEm.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:successful-report test="(meta/@name='identifier') and (string-length($title) &gt; 0) and not(contains($identifier, $title))" role="warning" location="/X3D/head">
+      <svrl:text>X3D/head/meta title (i.e. filename 'BoxEm.x3d') is expected at end of identifier (url) value </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoDeclare"/>
+   <svrl:fired-rule context="ProtoInterface"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ProtoBody"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/ProtoDeclare[2]/ProtoBody/Transform/ProtoInstance[1]/fieldValue">
+      <svrl:text>&lt;ProtoInstance name='anyShape' DEF=''&gt; &lt;fieldValue name='xtranslation' value='0 0 0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="IS | *[(upper-case(local-name()) = 'IS')]"/>
+   <svrl:fired-rule context="connect | *[(lower-case(local-name()) = 'connect')]"/>
+   <svrl:fired-rule context="ProtoInstance"/>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:successful-report test="(string-length($value) &gt; 0) and $protoFound and (@value=(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $fieldValueName]/@value))" role="hint" location="/X3D/Scene/ProtoInstance/fieldValue[1]">
+      <svrl:text>&lt;ProtoInstance name='three' DEF='threepi'&gt; &lt;fieldValue name='ytranslation' value='0 0 0'/&gt; with defined type='SFVec3f' accessType='inputOutput' has default value and so this fieldValue is optional </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="fieldValue | *[(lower-case(local-name()) = 'fieldValue')]"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+</svrl:schematron-output>

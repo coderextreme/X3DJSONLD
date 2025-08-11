@@ -1,0 +1,335 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;meta name='info' content='Joe No Reservations 20200709 fix hier20161206 20161111
+20160720 20121221 20040109
+x3d/hanim'/&gt; [/X3D/head/meta[2], diagnostic]
+&lt;meta name='TODO' content='Record information about skin coordinates (found in comment
+at end of scene) as a
+structured MetadataSet containing MetadataString nodes'/&gt; [/X3D/head/meta[8], diagnostic]
+&lt;Viewpoint DEF='Scene_ISideView'/&gt; centerOfRotation='0 0.8 0' has mismatched Y-value
+height of 0.8 compared to position='2.6 0.5 0' which has Y-value height of 0.5[/X3D/Scene/Viewpoint[3], warning]
+&lt;Viewpoint DEF='Scene_BackView'/&gt; centerOfRotation='0 1.5 0' has mismatched Y-value
+height of 1.5 compared to position='0 2.5 -3' which has Y-value height of 2.5[/X3D/Scene/Viewpoint[4], warning]
+X3D/head/component name='H-Anim' is obsolete for X3D version='4.0', must use component
+name='HAnim' instead [/X3D/Scene/Group[1]/HAnimHumanoid, error]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; version='2.0' with X3D version='4.0'
+[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(HAnimJoint)           within
+skeleton hierarchy        = 94[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(HAnimSegment)         within
+skeleton hierarchy        = 1[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(HAnimSite)            within
+HAnimHumanoid             = 1[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(HAnimSite//Viewpoint) within
+skeleton hierarchy        = 1[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(HAnimDisplacer)       within
+skeleton hierarchy        = 1[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(&lt;HAnimJoint   USE='*' containerField
+= 'joints'/&gt;)     = 0[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(&lt;HAnimSegment USE='*' containerField
+= 'segments'/&gt;)   = 0[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(&lt;HAnimSite    USE='*' containerField
+= 'sites'/&gt;)      = 0[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; node count(&lt;HAnimSite    DEF='*' name
+ends with '_view'/&gt;)        = 0[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; has mismatched HAnimJoint    node counts,
+94 within skeleton hierarchy and 0 USE nodes in joints field [/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; has mismatched HAnimSegment  node counts,
+1 within skeleton hierarchy and 0 USE nodes in segments field [/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+&lt;HAnimHumanoid DEF='Joe_Human' name='Human'/&gt; has mismatched HAnimSite     node counts,
+1 within skeleton hierarchy and 0 USE nodes in sites field [/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+====================================================================================================================
+[/X3D/Scene/Group[1]/HAnimHumanoid, diagnostic]
+X3D/head/component name='H-Anim' is obsolete for X3D version='4.0', must use component
+name='HAnim' instead [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint, error]
+&lt;HAnimJoint DEF='Joe_HumanoidRoot' name='HumanoidRoot'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint, warning]
+X3D/head/component name='H-Anim' is obsolete for X3D version='4.0', must use component
+name='HAnim' instead [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimSegment, error]
+&lt;HAnimSegment DEF='Joe_sacrum' name='sacrum'/&gt; has parent HAnimJoint name='HumanoidRoot'
+rather than expected parent name='humanoid_root', recommend checking model [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimSegment, warning]
+X3D/head/component name='H-Anim' is obsolete for X3D version='4.0', must use component
+name='HAnim' instead [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='Joe_RootFront' name='RootFront'/&gt; has incomplete name that must have
+suffix '_tip' or '_view' or '_pt' appended,
+depending on function [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimSegment/HAnimSite, error]
+&lt;HAnimSite DEF='Joe_RootFront' name='RootFront'/&gt; is not a recognized name for HAnim2
+HAnimSite [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimSegment/HAnimSite, info]
+&lt;HAnimJoint DEF='Joe_sacroiliac' name='sacroiliac'/&gt; has parent HAnimJoint name='HumanoidRoot'
+rather than expected parent name='humanoid_root', recommend checking model [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_l_ankle' name='l_ankle'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ankle' name='l_ankle'/&gt; is an HAnimJoint alias for 'l_talocrural',
+recommend updating X3D model source
+[/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_subtalar' name='l_subtalar'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_subtalar' name='l_subtalar'/&gt; is an HAnimJoint alias for 'l_tarsometatarsal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_midtarsal' name='l_midtarsal'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_midtarsal' name='l_midtarsal'/&gt; is an HAnimJoint alias for
+'l_metatarsophalangeal_2', recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_metatarsal' name='l_metatarsal'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ankle' name='r_ankle'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ankle' name='r_ankle'/&gt; is an HAnimJoint alias for 'r_talocrural',
+recommend updating X3D model source
+[/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_subtalar' name='r_subtalar'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_subtalar' name='r_subtalar'/&gt; is an HAnimJoint alias for 'r_tarsometatarsal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_midtarsal' name='r_midtarsal'/&gt; is not a recognized name for
+HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_midtarsal' name='r_midtarsal'/&gt; is an HAnimJoint alias for
+'r_metatarsophalangeal_2', recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_metatarsal' name='r_metatarsal'/&gt; is not a recognized name
+for HAnim2 HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_metatarsal' name='r_metatarsal'/&gt; is an HAnimJoint alias for
+'r_tarsal_distal_interphalangeal_2', recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[1]/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_vl5' name='vl5'/&gt; has parent HAnimJoint name='HumanoidRoot' rather
+than expected parent name='humanoid_root', recommend checking model [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimDisplacer DEF='Joe_skull_tipTest' name='skull_tip_raiser_action'/&gt; DEF value
+does not contain correctly modified version of name value (for example,
+DEF='myPrefix_nameValue' e.g. DEF='myPrefix_skull_tip_raiser_action') - see HAnim
+section C.2 Humanoid, VRML Binding [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimDisplacer, error]
+&lt;HAnimJoint DEF='Joe_l_eyelid_joint'/&gt; has the same name='l_eyelid_joint' as a following
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_l_eyeball_joint'/&gt; has the same name='l_eyeball_joint' as a following
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_l_eyebrow_joint'/&gt; has the same name='l_eyebrow_joint' as a following
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_r_eyelid_joint'/&gt; has the same name='l_eyelid_joint' as a preceding
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimJoint DEF='Joe_r_eyelid_joint' name='l_eyelid_joint'/&gt; DEF value does not contain
+correctly modified version of name value (for example,
+DEF='myPrefix_nameValue' e.g. DEF='myPrefix_l_eyelid_joint') - see HAnim section C.2
+Humanoid, VRML Binding [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], error]
+&lt;HAnimJoint DEF='Joe_r_eyeball_joint'/&gt; has the same name='l_eyeball_joint' as a preceding
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimJoint DEF='Joe_r_eyeball_joint' name='l_eyeball_joint'/&gt; DEF value does not
+contain correctly modified version of name value (for example,
+DEF='myPrefix_nameValue' e.g. DEF='myPrefix_l_eyeball_joint') - see HAnim section
+C.2 Humanoid, VRML Binding [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], error]
+&lt;HAnimJoint DEF='Joe_r_eyebrow_joint'/&gt; has the same name='l_eyebrow_joint' as a preceding
+HAnimJoint node [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[6], warning]
+&lt;HAnimJoint DEF='Joe_r_eyebrow_joint' name='l_eyebrow_joint'/&gt; DEF value does not
+contain correctly modified version of name value (for example,
+DEF='myPrefix_nameValue' e.g. DEF='myPrefix_l_eyebrow_joint') - see HAnim section
+C.2 Humanoid, VRML Binding [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[6], error]
+&lt;HAnimJoint DEF='Joe_l_sternoclavicular' name='l_sternoclavicular'/&gt; has parent HAnimJoint
+name='vc7' rather than expected parent name='vt1', recommend checking model [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_l_wrist' name='l_wrist'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_wrist' name='l_wrist'/&gt; is an HAnimJoint alias for 'l_radiocarpal',
+recommend updating X3D model source
+[/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_thumb1' name='l_thumb1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_l_thumb1' name='l_thumb1'/&gt; is an HAnimJoint alias for 'l_carpometacarpal_1',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_l_thumb2' name='l_thumb2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_thumb2' name='l_thumb2'/&gt; is an HAnimJoint alias for 'l_metacarpophalangeal_1',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_thumb3' name='l_thumb3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_thumb3' name='l_thumb3'/&gt; is an HAnimJoint alias for 'l_carpal_interphalangeal_1',
+recommend updating X3D
+model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index0' name='l_index0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_l_index0' name='l_index0'/&gt; is an HAnimJoint alias for 'l_carpometacarpal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_l_index1' name='l_index1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index1' name='l_index1'/&gt; is an HAnimJoint alias for 'l_metacarpophalangeal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index2' name='l_index2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index2' name='l_index2'/&gt; is an HAnimJoint alias for 'l_carpal_proximal_interphalangeal_2',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index3' name='l_index3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_index3' name='l_index3'/&gt; is an HAnimJoint alias for 'l_carpal_distal_interphalangeal_2',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle0' name='l_middle0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_l_middle0' name='l_middle0'/&gt; is an HAnimJoint alias for 'l_carpometacarpal_3',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_l_middle1' name='l_middle1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle1' name='l_middle1'/&gt; is an HAnimJoint alias for 'l_metacarpophalangeal_3',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle2' name='l_middle2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle2' name='l_middle2'/&gt; is an HAnimJoint alias for 'l_carpal_proximal_interphalangeal_3',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle3' name='l_middle3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_middle3' name='l_middle3'/&gt; is an HAnimJoint alias for 'l_carpal_distal_interphalangeal_3',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring0' name='l_ring0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimJoint DEF='Joe_l_ring0' name='l_ring0'/&gt; is an HAnimJoint alias for 'l_carpometacarpal_4',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimJoint DEF='Joe_l_ring1' name='l_ring1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring1' name='l_ring1'/&gt; is an HAnimJoint alias for 'l_metacarpophalangeal_4',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring2' name='l_ring2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring2' name='l_ring2'/&gt; is an HAnimJoint alias for 'l_carpal_proximal_interphalangeal_4',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring3' name='l_ring3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_ring3' name='l_ring3'/&gt; is an HAnimJoint alias for 'l_carpal_distal_interphalangeal_4',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky0' name='l_pinky0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimJoint DEF='Joe_l_pinky0' name='l_pinky0'/&gt; is an HAnimJoint alias for 'l_carpometacarpal_5',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimJoint DEF='Joe_l_pinky1' name='l_pinky1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky1' name='l_pinky1'/&gt; is an HAnimJoint alias for 'l_metacarpophalangeal_5',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky2' name='l_pinky2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky2' name='l_pinky2'/&gt; is an HAnimJoint alias for 'l_carpal_proximal_interphalangeal_5',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky3' name='l_pinky3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_l_pinky3' name='l_pinky3'/&gt; is an HAnimJoint alias for 'l_carpal_distal_interphalangeal_5',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_sternoclavicular' name='r_sternoclavicular'/&gt; has parent HAnimJoint
+name='vc7' rather than expected parent name='vt1', recommend checking model [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_r_wrist' name='r_wrist'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_wrist' name='r_wrist'/&gt; is an HAnimJoint alias for 'r_radiocarpal',
+recommend updating X3D model source
+[/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_thumb1' name='r_thumb1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_r_thumb1' name='r_thumb1'/&gt; is an HAnimJoint alias for 'r_carpometacarpal_1',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1], warning]
+&lt;HAnimJoint DEF='Joe_r_thumb2' name='r_thumb2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_thumb2' name='r_thumb2'/&gt; is an HAnimJoint alias for 'r_metacarpophalangeal_1',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_thumb3' name='r_thumb3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_thumb3' name='r_thumb3'/&gt; is an HAnimJoint alias for 'r_carpal_interphalangeal_1',
+recommend updating X3D
+model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[1]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index0' name='r_index0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_r_index0' name='r_index0'/&gt; is an HAnimJoint alias for 'r_carpometacarpal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2], warning]
+&lt;HAnimJoint DEF='Joe_r_index1' name='r_index1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index1' name='r_index1'/&gt; is an HAnimJoint alias for 'r_metacarpophalangeal_2',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index2' name='r_index2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index2' name='r_index2'/&gt; is an HAnimJoint alias for 'r_carpal_proximal_interphalangeal_2',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index3' name='r_index3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_index3' name='r_index3'/&gt; is an HAnimJoint alias for 'r_carpal_distal_interphalangeal_2',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle0' name='r_middle0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_r_middle0' name='r_middle0'/&gt; is an HAnimJoint alias for 'r_carpometacarpal_3',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3], warning]
+&lt;HAnimJoint DEF='Joe_r_middle1' name='r_middle1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle1' name='r_middle1'/&gt; is an HAnimJoint alias for 'r_metacarpophalangeal_3',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle2' name='r_middle2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle2' name='r_middle2'/&gt; is an HAnimJoint alias for 'r_carpal_proximal_interphalangeal_3',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle3' name='r_middle3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_middle3' name='r_middle3'/&gt; is an HAnimJoint alias for 'r_carpal_distal_interphalangeal_3',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring0' name='r_ring0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimJoint DEF='Joe_r_ring0' name='r_ring0'/&gt; is an HAnimJoint alias for 'r_carpometacarpal_4',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4], warning]
+&lt;HAnimJoint DEF='Joe_r_ring1' name='r_ring1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring1' name='r_ring1'/&gt; is an HAnimJoint alias for 'r_metacarpophalangeal_4',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring2' name='r_ring2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring2' name='r_ring2'/&gt; is an HAnimJoint alias for 'r_carpal_proximal_interphalangeal_4',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring3' name='r_ring3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_ring3' name='r_ring3'/&gt; is an HAnimJoint alias for 'r_carpal_distal_interphalangeal_4',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[4]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky0' name='r_pinky0'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimJoint DEF='Joe_r_pinky0' name='r_pinky0'/&gt; is an HAnimJoint alias for 'r_carpometacarpal_5',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5], warning]
+&lt;HAnimJoint DEF='Joe_r_pinky1' name='r_pinky1'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky1' name='r_pinky1'/&gt; is an HAnimJoint alias for 'r_metacarpophalangeal_5',
+recommend updating X3D model
+source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky2' name='r_pinky2'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky2' name='r_pinky2'/&gt; is an HAnimJoint alias for 'r_carpal_proximal_interphalangeal_5',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky3' name='r_pinky3'/&gt; is not a recognized name for HAnim2
+HAnimJoint [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;HAnimJoint DEF='Joe_r_pinky3' name='r_pinky3'/&gt; is an HAnimJoint alias for 'r_carpal_distal_interphalangeal_5',
+recommend updating
+X3D model source [/X3D/Scene/Group[1]/HAnimHumanoid/HAnimJoint/HAnimJoint[2]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[3]/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint/HAnimJoint[5]/HAnimJoint/HAnimJoint/HAnimJoint, warning]
+&lt;ImageTexture DEF='JoeSkinImageTexture'/&gt; url array address(es) missing online http/https
+references (url='"bodytexture28.png"') [/X3D/Scene/Group[1]/HAnimHumanoid/Shape/Appearance/ImageTexture, info]
