@@ -13,6 +13,7 @@ import convertPlyToJson from '../node/convertPlyToJson.js';
 import createX3dToPlyConverter from '../node/convertX3dToPly.js';
 import fieldTypes from '../node/fieldTypes.js';
 import mapToMethod from '../node/mapToMethod.js';
+import { loadSchema } from '../node/loadValidate.js';
 import { DOMParser } from'@xmldom/xmldom';
 
 import { encodeJSON } from './exi.js';
@@ -109,23 +110,27 @@ async function processPendingXmlToJson() {
         if (jsonString) {
             // We have the JSON string, now parse it into an object to use for other conversions.
             const jsonObj = JSON.parse(jsonString);
+	    const sourceFileName = document.getElementById('currentFileName').textContent;
+	    loadSchema(jsonObj, sourceFileName, function() {
 
-            // Populate the JSON textarea with a prettified version.
-            $('#json').val(JSON.stringify(jsonObj, null, 2));
-    	    const sourceFileName = document.getElementById('currentFileName').textContent;
-	    let xmlString = "";
-	    let element = null;
-	    try {
-		[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
-		$('#xml').val(xmlString);
-	    } catch (e) {
-		$('#xml').val("Error converting JSON to XML: " + e.message);
-		return;
-	    }
+		    // Populate the JSON textarea with a prettified version.
+		    $('#json').val(JSON.stringify(jsonObj, null, 2));
+		    let xmlString = "";
+		    let element = null;
+		    try {
+			[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
+			$('#xml').val(xmlString);
+		    } catch (e) {
+			$('#xml').val("Error converting JSON to XML: " + e.message);
+			return;
+		    }
 
-            // Now, perform all other conversions that depend on the JSON object.
-            encodeJSON(); // JSON -> EXI
-    	    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+		    // Now, perform all other conversions that depend on the JSON object.
+		    encodeJSON(); // JSON -> EXI
+		    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+	    }, function(e) {
+		alert(e);
+	    });
         } else {
              throw new Error("X_ITE returned null/empty JSON string.");
         }
@@ -235,28 +240,35 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
     document.getElementById('currentFileName').textContent = sourceFileName;
     const baseFileName = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
     const jsonString = JSON.stringify(jsonObj, null, 2);
-    $('#json').val(jsonString);
 
-    let xmlString = "";
-    let element = null;
-    try {
-        [ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
-        $('#xml').val(xmlString);
-    } catch (e) {
-        $('#xml').val("Error converting JSON to XML: " + e.message);
-        return;
-    }
+    loadSchema(jsonObj, sourceFileName, async function() {
 
-    let effectiveUrlForX3dom = urlForX3dom;
-    if (!effectiveUrlForX3dom) {
-        const xmlBlob = new Blob([xmlString], { type: 'model/x3d+xml' });
-        effectiveUrlForX3dom = URL.createObjectURL(xmlBlob);
-    }
+	    $('#json').val(jsonString);
 
-    await displayInIframes(effectiveUrlForX3dom, xmlString);
+	    let xmlString = "";
+	    let element = null;
+	    try {
+		[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
+		$('#xml').val(xmlString);
+	    } catch (e) {
+		$('#xml').val("Error converting JSON to XML: " + e.message);
+		return;
+	    }
 
-    encodeJSON();
-    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+	    let effectiveUrlForX3dom = urlForX3dom;
+	    if (!effectiveUrlForX3dom) {
+		const xmlBlob = new Blob([xmlString], { type: 'model/x3d+xml' });
+		effectiveUrlForX3dom = URL.createObjectURL(xmlBlob);
+	    }
+
+	    await displayInIframes(effectiveUrlForX3dom, xmlString);
+
+	    encodeJSON();
+	    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+    }, function(e) {
+	alert(e);
+    });
+
 }
 
 export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
