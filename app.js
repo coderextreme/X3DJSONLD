@@ -8,7 +8,7 @@ import { dirname } from 'path';
 import path from 'path';
 import express from 'express';
 import fs from 'fs';
-import https from 'https';
+import http from 'http';
 import { glob, globSync } from 'glob';
 import { fileURLToPath } from 'url';
 import DOM2JSONSerializer from "./src/main/node/DOM2JSONSerializer.js";
@@ -402,13 +402,36 @@ app.get("*.x3dj", async function(req, res, next) {
 	}
 });
 
+import { Server as SocketIOServer } from "socket.io";
+import Multiplayer from "./Multiplayer.js"; 
 
-https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-  requestCert: false,
-  rejectUnauthorized: false
-}, app)
-.listen(port, '127.0.0.1', function () {
-  console.log('Example app listening on port', port, "! Go to https://localhost:"+port+"/src/main/html/main_viewer.html");
+const server = http.createServer(app);
+
+const io = new SocketIOServer(server, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"]
+    },
+    maxHttpBufferSize: 1e9,
+    pingTimeout: 60000,
+    transports: [ "polling", "websocket" ]
+});
+
+io.on("connection", (socket) => {
+    console.log("Socket.IO client connected successfully! SID:", socket.id);
+    socket.on("disconnect", () => {
+        console.log("Client disconnected.");
+    });
+});
+
+
+var metaServer = process.env.METASERVER || null;
+if (metaServer != null) {
+	var Client = require('node-rest-client').Client;
+	var client = new Client();
+}
+new Multiplayer(io, metaServer);
+
+server.listen(port, '127.0.0.1', function () {
+  console.log('Example app listening on port', port, "! Go to http://localhost:"+port+"/src/main/html/main_viewer.html");
 });
