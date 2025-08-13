@@ -1,0 +1,98 @@
+var initialFileData = [
+            { name: "NavigationInfo type (With EXAMINE)", files: [
+		"../data/AllenBox.json",
+		"../data/AllenDutton.json",
+		"../data/ball.json",
+		"../data/ballx3dom.json",
+		"../data/ballx_ite.json",
+		"../data/BoxEm.json",
+		"../data/BoxEm2.json",
+		"../data/bubble.json",
+		"../data/bubs.json",
+		"../data/bubs2.json",
+		"../data/bubs3.json",
+		"../data/bumpyfreewrljsonverse.json",
+		"../data/bumpyfreewrlsliders.json",
+		"../data/bumpyx_ite.json",
+		"../data/bumpyx_itesliders.json",
+		"../data/CameraPrototypes.json",
+		"../data/cgeparticleflowers.json",
+		"../data/fwparticleflowers.json",
+		"../data/gears.json",
+		"../data/geo.json",
+		"../data/indexedfaceset_pixeltexture_entire.x3d",
+		"../data/indexedfaceset_pixeltexture_part.x3d",
+		"../data/indexedfaceset_pixeltexture_plus.x3d",
+		"../data/indexedfaceset_pixeltexture_whole.x3d",
+		"../data/john.json",
+		"../data/john2.json",
+		"../data/john3.json",
+		"../data/jumpcut_loadurl.json",
+		"../data/Oxytocin.json",
+		"../data/particleballs.json",
+		"../data/particleflowers.json",
+		"../data/rgb_alpha.json",
+		"../data/rubik.json",
+		"../data/rubikFurnace.json",
+		"../data/rubikOnFire.json",
+		"../data/rubikPly.json",
+		"../data/SimpleShader.json",
+		"../data/ThreeDTexture.json",
+		"../data/variationalflowers.json",
+		"../data/variationalflowers2.json",
+		"../data/ViewFrustumExample.json"
+            ]},
+            { name: "Personal Files (index3dom.html)", files: [
+                "../personal/app.json", "../personal/asmallbox.json", "../personal/BoxEm.json", "../personal/ifscubeworks.json",
+                "../personal/pp3.json", "../personal/rubik.json", "../personal/rubikFurnace.json",
+		"../personal/rubikOnFire.json", "../data/rubikPly.json",
+                "../personal/app.x3d", "../personal/asmallbox.x3d", "../personal/BoxEm.x3d", "../personal/ifscubeworks.x3d",
+                "../personal/pp3.x3d", "../personal/rubik.x3d", "../personal/rubikFurnace.x3d",
+		"../personal/rubikOnFire.x3d", "../data/rubikPly.x3d"
+            ]},
+            { name: "STL Files (index3dom.html)", files: [
+                "../stl/cleat_clamp.stl", "../stl/example.stl", "../stl/UavBeehive.stl"
+            ]},
+            { name: "PLY Files (index3dom.html)", files: [
+                "../ply/Dodecahedron.ply", "../ply/example.ply", "../ply/Icosahedron.ply",
+                "../ply/IcosahedronSubdivisionLevel1.ply", "../ply/IcosahedronSubdivisionLevel2.ply",
+                "../ply/IcosahedronSubdivisionLevel3.ply", "../ply/IcosahedronSubdivisionLevel4.ply",
+                "../ply/IcosahedronSubdivisionLevel5.ply", "../ply/Octahedron.ply",
+                "../ply/OrigamiCrane.ply", "../ply/Tetrahedron.ply", "../ply/mobius.ply"
+            ]},
+            { name: "General Data (three.html / index.html)", files: [
+                "../data/mobius.json", "../data/AllenDutton.json", "../data/AllenBox.json",
+		"../data/app.json", "../data/arc.json",
+                "../data/sphereflowers.json",
+                "../data/arc2.x3d", "../data/ArchHalf.x3d", "../data/browser.x3d",
+                "../data/bubbles.x3d", "../data/bubble.x3d",
+                "../data/flower.x3d", "../data/flower3.x3d", "../data/flowers4.x3d", "../data/flowers7.x3d",
+                "../data/geobubbles.x3d", "../data/mirror.x3d", "../data/mirror2.x3d", "../data/MyBounce.x3d",
+		"../data/ObliqueStrategies.x3d", "../data/TextExamples.json"
+            ]},
+            { name: "X3D Examples Viewer (X3DExamplesViewer.html)", files: [
+                "../data/force.json",
+		"../data/SuperCobraLightsOn.json"
+            ]},
+            { name: "Proto Examples (proto.html)", files: [
+		"../data/ArtDecoExamples.json",
+		"../data/ArtDecoPrototypes.json",
+		"../data/asmallbox.json",
+		"../data/bub.json",
+		"../data/bubble.json",
+		"../data/bubs.json",
+		"../data/bubs2.json",
+		"../data/flowers.json",
+		"../data/flowers2.json",
+		"../data/force.json",
+		"../data/forcenode.json",
+		"../data/force_tidy.json",
+		"../data/fors.json",
+		"../data/fors2.json",
+		"../data/qq3.json",
+		"../data/x3dconnector.json",
+		"../data/x3dconnectorProto.json",
+		"../data/x3domflowers.json"
+            ]}
+        ];
+export default initialFileData;

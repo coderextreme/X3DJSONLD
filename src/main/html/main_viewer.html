@@ -165,6 +165,198 @@
     </style>
 </head>
 <body>
+    <script type="module" src="../node/ajv2020.js"></script>
+    <script type="module" src="../node/ajvAddFormats.js"></script>
+    <script type="module">
+      import { io } from '/node_modules/socket.io-client/dist/socket.io.esm.min.js';
+      import initialFileData from "./filedata.js";
+        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
+                 decodeJSON, prepareForX3DOMReload,
+                 setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
+        } from './master_loader.js';
+
+    // CORRECTED CONNECTION:
+    // 1. URL is just the server's base address.
+    // 2. The 'transports' option is removed to allow WebSocket upgrades.
+    let socket = io("http://localhost:3000", {
+        maxHttpBufferSize: 1e8,
+        pingTimeout: 60000
+    });
+
+    socket.on("connect", function() {
+        // Use console.log for cleaner debugging.
+        console.log("Socket.IO client connected successfully to the server!");
+    });
+
+        async function simulateFetchFilesFlatList(args) {
+            console.log("Simulating server fetch for pattern (flat list output):", args);
+            let allFilePaths = [];
+            function collectAllFilePathsRecursive(dataArray) {
+                dataArray[0][0].files.forEach(item => {
+                    if (item.files && Array.isArray(item.files)) {
+                        collectAllFilePathsRecursive(item.files);
+                    } else if (typeof item === 'string') {
+                        allFilePaths.push(item);
+                    }
+                });
+            }
+            collectAllFilePathsRecursive(args);
+
+            return Promise.resolve([...new Set(allFilePaths)]);
+        }
+
+        function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) {
+            const newHierarchicalData = [];
+            const filesProcessedForGrouping = new Set();
+
+            originalFullHierarchy.forEach(category => {
+                const newCategoryFiles = [];
+                if (category.files && Array.isArray(category.files)) {
+                    category.files.forEach(originalFilePath => {
+                        if (flatFilteredFiles.includes(originalFilePath) && !filesProcessedForGrouping.has(originalFilePath)) {
+                            newCategoryFiles.push(originalFilePath);
+                            filesProcessedForGrouping.add(originalFilePath);
+                        }
+                    });
+                }
+                if (newCategoryFiles.length > 0) {
+                    newHierarchicalData.push({
+                        name: category.name,
+                        files: newCategoryFiles
+                    });
+                }
+            });
+
+            const remainingUncategorized = flatFilteredFiles.filter(f => !filesProcessedForGrouping.has(f));
+            if (remainingUncategorized.length > 0) {
+                 newHierarchicalData.push({ name: "Other Matched Files (from Server Filter)", files: remainingUncategorized });
+            }
+            return newHierarchicalData;
+        }
+
+        function buildMenu(dataArray, parentUlElement) {
+            dataArray.forEach(item => {
+                const li = document.createElement('li');
+                if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
+                    li.classList.add('folder');
+                    const span = document.createElement('span');
+                    span.textContent = item.name;
+                    span.onclick = function() {
+                        li.classList.toggle('open');
+                        if (li.classList.contains('open')) li.classList.add('manually-opened');
+                        else li.classList.remove('manually-opened');
+                    };
+                    li.appendChild(span);
+
+                    const subUl = document.createElement('ul');
+                    buildMenu(item.files, subUl);
+                    li.appendChild(subUl);
+
+                } else if (typeof item === 'string') {
+                    const filePath = item;
+                    const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
+                    li.textContent = fileName;
+                    li.title = filePath;
+                    li.classList.add('file-item');
+                    li.onclick = function() {
+                        document.getElementById('currentFileName').textContent = filePath;
+                        loadX3DFile(filePath);
+                    };
+                }
+                parentUlElement.appendChild(li);
+            });
+        }
+	
+
+        function filterMenuTree() {
+            const filterText = document.getElementById('filterMenu').value.toLowerCase();
+            let menuContainer = document.getElementById('fileMenuContainer');
+            const items = menuContainer.querySelectorAll('.file-item');
+            items.forEach(item => {
+                const match = item.textContent.toLowerCase().includes(filterText) ||
+                              (item.title && item.title.toLowerCase().includes(filterText));
+                item.style.display = match ? '' : 'none';
+            });
+
+            menuContainer.querySelectorAll('.folder').forEach(folderElement => {
+                const subItems = folderElement.querySelectorAll('.file-item');
+                let hasVisibleChild = false;
+                subItems.forEach(subItem => {
+                    if (subItem.style.display !== 'none') hasVisibleChild = true;
+                });
+                folderElement.style.display = hasVisibleChild ? '' : 'none';
+                if (hasVisibleChild && filterText && !folderElement.classList.contains('manually-opened')) {
+                    folderElement.classList.add('open');
+                }
+            });
+        };
+
+        window.fetchAndUpdateHierarchicalMenu = async function(event) {
+            const pattern = event.target.value;
+	    console.log("Searching for", pattern);
+
+            if (!pattern && event.type === 'change') {
+        	let menuContainer = document.getElementById('fileMenuContainer');
+                menuContainer.innerHTML = '';
+                const topUl = document.createElement('ul');
+                menuContainer.appendChild(topUl);
+                buildMenu(initialFileData, topUl);
+                if (document.getElementById('filterMenu').value) filterMenuTree();
+                return;
+            }
+            if (!pattern && event.type !== 'change') return;
+
+            try {
+	    	socket.emit('clientsearch', pattern);
+		socket.on('serverresults', async function() {
+		        console.log("Got results", arguments);
+			const flatFilteredListFromServer = await simulateFetchFilesFlatList(arguments);
+			const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
+
+			let menuContainer = document.getElementById('fileMenuContainer');
+			menuContainer.innerHTML = '';
+			const topUl = document.createElement('ul');
+			menuContainer.appendChild(topUl);
+			buildMenu(newHierarchicalMenuData, topUl);
+
+			if (document.getElementById('filterMenu').value) filterMenuTree();
+		});
+
+            } catch (error) {
+                console.error("Error fetching or building menu:", error);
+        	let menuContainer = document.getElementById('fileMenuContainer');
+                menuContainer.innerHTML = `<li>Error loading file list: ${error.message}</li>`;
+            }
+        };
+
+        $(document).ready(function() {
+            const topUl = document.createElement('ul');
+            let menuContainer = document.getElementById('fileMenuContainer');
+            menuContainer.appendChild(topUl);
+            buildMenu(initialFileData, topUl);
+
+            setXITEIFrame(document.getElementById('xite_iframe_id'));
+            setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
+
+            document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
+
+            // Code Tabs Logic
+            $('.tab-bar .tab-button').on('click', function() {
+                var tabId = $(this).data('tab');
+
+                // Hide all tab panes and remove active class from buttons
+                $('.tab-pane').removeClass('active');
+                $('.tab-button').removeClass('active');
+
+                // Show the selected tab pane and add active class to the button
+                $('#tab-content-' + tabId).addClass('active');
+                $(this).addClass('active');
+            });
+
+
+            window.reloadX3DOM();
+        });
+	    </script>
     <div class="container">
         <div class="content-area">
             <div class="control-panel">
@@ -172,7 +364,7 @@
                     <tr>
                         <td>
                             Current File: <strong id="currentFileName">None</strong><br>
-                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event)" placeholder="e.g., *.json or personal/*">
+                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.json or personal/*">
                         </td>
                         <td>
                             X3DOM Version:
@@ -274,8 +466,6 @@
     </div>
 
     <!-- Module Scripts -->
-    <script type="module" src="../node/ajv2020.js"></script>
-    <script type="module" src="../node/ajvAddFormats.js"></script>
     <script type="module" src="../node/config.js"></script>
     <script type="module" src="../node/fieldTypes.js"></script>
     <script type="module" src="../node/X3DJSONLD.js"></script>
@@ -351,253 +541,6 @@
         };
 
 
-        const initialFileData = [
-            { name: "NavigationInfo type (With EXAMINE)", files: [
-		"../data/AllenBox.json",
-		"../data/AllenDutton.json",
-		"../data/ball.json",
-		"../data/ballx3dom.json",
-		"../data/ballx_ite.json",
-		"../data/BoxEm.json",
-		"../data/BoxEm2.json",
-		"../data/bubble.json",
-		"../data/bubs.json",
-		"../data/bubs2.json",
-		"../data/bubs3.json",
-		"../data/bumpyfreewrljsonverse.json",
-		"../data/bumpyfreewrlsliders.json",
-		"../data/bumpyx_ite.json",
-		"../data/bumpyx_itesliders.json",
-		"../data/CameraPrototypes.json",
-		"../data/cgeparticleflowers.json",
-		"../data/fwparticleflowers.json",
-		"../data/gears.json",
-		"../data/geo.json",
-		"../data/indexedfaceset_pixeltexture_entire.x3d",
-		"../data/indexedfaceset_pixeltexture_part.x3d",
-		"../data/indexedfaceset_pixeltexture_plus.x3d",
-		"../data/indexedfaceset_pixeltexture_whole.x3d",
-		"../data/john.json",
-		"../data/john2.json",
-		"../data/john3.json",
-		"../data/jumpcut_loadurl.json",
-		"../data/Oxytocin.json",
-		"../data/particleballs.json",
-		"../data/particleflowers.json",
-		"../data/rgb_alpha.json",
-		"../data/rubik.json",
-		"../data/rubikFurnace.json",
-		"../data/rubikOnFire.json",
-		"../data/rubikPly.json",
-		"../data/SimpleShader.json",
-		"../data/ThreeDTexture.json",
-		"../data/variationalflowers.json",
-		"../data/variationalflowers2.json",
-		"../data/ViewFrustumExample.json"
-            ]},
-            { name: "Personal Files (index3dom.html)", files: [
-                "../personal/app.json", "../personal/asmallbox.json", "../personal/BoxEm.json", "../personal/ifscubeworks.json",
-                "../personal/pp3.json", "../personal/rubik.json", "../personal/rubikFurnace.json",
-		"../personal/rubikOnFire.json", "../data/rubikPly.json",
-                "../personal/app.x3d", "../personal/asmallbox.x3d", "../personal/BoxEm.x3d", "../personal/ifscubeworks.x3d",
-                "../personal/pp3.x3d", "../personal/rubik.x3d", "../personal/rubikFurnace.x3d",
-		"../personal/rubikOnFire.x3d", "../data/rubikPly.x3d"
-            ]},
-            { name: "STL Files (index3dom.html)", files: [
-                "../stl/cleat_clamp.stl", "../stl/example.stl", "../stl/UavBeehive.stl"
-            ]},
-            { name: "PLY Files (index3dom.html)", files: [
-                "../ply/Dodecahedron.ply", "../ply/example.ply", "../ply/Icosahedron.ply",
-                "../ply/IcosahedronSubdivisionLevel1.ply", "../ply/IcosahedronSubdivisionLevel2.ply",
-                "../ply/IcosahedronSubdivisionLevel3.ply", "../ply/IcosahedronSubdivisionLevel4.ply",
-                "../ply/IcosahedronSubdivisionLevel5.ply", "../ply/Octahedron.ply",
-                "../ply/OrigamiCrane.ply", "../ply/Tetrahedron.ply", "../ply/mobius.ply"
-            ]},
-            { name: "General Data (three.html / index.html)", files: [
-                "../data/mobius.json", "../data/AllenDutton.json", "../data/AllenBox.json",
-		"../data/app.json", "../data/arc.json",
-                "../data/sphereflowers.json",
-                "../data/arc2.x3d", "../data/ArchHalf.x3d", "../data/browser.x3d",
-                "../data/bubbles.x3d", "../data/bubble.x3d",
-                "../data/flower.x3d", "../data/flower3.x3d", "../data/flowers4.x3d", "../data/flowers7.x3d",
-                "../data/geobubbles.x3d", "../data/mirror.x3d", "../data/mirror2.x3d", "../data/MyBounce.x3d",
-		"../data/ObliqueStrategies.x3d", "../data/TextExamples.json"
-            ]},
-            { name: "X3D Examples Viewer (X3DExamplesViewer.html)", files: [
-                "../data/force.json",
-		"../data/SuperCobraLightsOn.json"
-            ]},
-            { name: "Proto Examples (proto.html)", files: [
-		"../data/ArtDecoExamples.json",
-		"../data/ArtDecoPrototypes.json",
-		"../data/asmallbox.json",
-		"../data/bub.json",
-		"../data/bubble.json",
-		"../data/bubs.json",
-		"../data/bubs2.json",
-		"../data/flowers.json",
-		"../data/flowers2.json",
-		"../data/force.json",
-		"../data/forcenode.json",
-		"../data/force_tidy.json",
-		"../data/fors.json",
-		"../data/fors2.json",
-		"../data/qq3.json",
-		"../data/x3dconnector.json",
-		"../data/x3dconnectorProto.json",
-		"../data/x3domflowers.json"
-            ]}
-        ];
-
-        const menuContainer = document.getElementById('fileMenuContainer');
-
-        function buildMenu(dataArray, parentUlElement) {
-            dataArray.forEach(item => {
-                const li = document.createElement('li');
-                if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
-                    li.classList.add('folder');
-                    const span = document.createElement('span');
-                    span.textContent = item.name;
-                    span.onclick = function() {
-                        li.classList.toggle('open');
-                        if (li.classList.contains('open')) li.classList.add('manually-opened');
-                        else li.classList.remove('manually-opened');
-                    };
-                    li.appendChild(span);
-
-                    const subUl = document.createElement('ul');
-                    buildMenu(item.files, subUl);
-                    li.appendChild(subUl);
-
-                } else if (typeof item === 'string') {
-                    const filePath = item;
-                    const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
-                    li.textContent = fileName;
-                    li.title = filePath;
-                    li.classList.add('file-item');
-                    li.onclick = function() {
-                        document.getElementById('currentFileName').textContent = filePath;
-                        loadX3DFile(filePath);
-                    };
-                }
-                parentUlElement.appendChild(li);
-            });
-        }
-
-        function filterMenuTree() {
-            const filterText = document.getElementById('filterMenu').value.toLowerCase();
-            const items = menuContainer.querySelectorAll('.file-item');
-            items.forEach(item => {
-                const match = item.textContent.toLowerCase().includes(filterText) ||
-                              (item.title && item.title.toLowerCase().includes(filterText));
-                item.style.display = match ? '' : 'none';
-            });
-
-            menuContainer.querySelectorAll('.folder').forEach(folderElement => {
-                const subItems = folderElement.querySelectorAll('.file-item');
-                let hasVisibleChild = false;
-                subItems.forEach(subItem => {
-                    if (subItem.style.display !== 'none') hasVisibleChild = true;
-                });
-                folderElement.style.display = hasVisibleChild ? '' : 'none';
-                if (hasVisibleChild && filterText && !folderElement.classList.contains('manually-opened')) {
-                    folderElement.classList.add('open');
-                }
-            });
-        };
-
-        async function simulateFetchFilesFlatList(pattern) {
-            console.log("Simulating server fetch for pattern (flat list output):", pattern);
-            const isWildcard = pattern.includes('*');
-            let simplePattern = pattern.replace(/\*/g, '').toLowerCase();
-            let patternIsOnlyWildcard = (pattern === "*" || pattern === "*.*");
-
-            let allFilePaths = [];
-            function collectAllFilePathsRecursive(dataArray) {
-                dataArray.forEach(item => {
-                    if (item.files && Array.isArray(item.files)) {
-                        collectAllFilePathsRecursive(item.files);
-                    } else if (typeof item === 'string') {
-                        allFilePaths.push(item);
-                    }
-                });
-            }
-            collectAllFilePathsRecursive(initialFileData);
-
-            if (!pattern || patternIsOnlyWildcard) {
-                 return Promise.resolve([...new Set(allFilePaths)]);
-            }
-
-            const results = allFilePaths.filter(filePath => {
-                let p = filePath.toLowerCase();
-                if (isWildcard) {
-                    if (pattern.startsWith("*.")) { return p.endsWith(simplePattern.substring(1)); }
-                    if (pattern.endsWith("/*")) { return p.startsWith(simplePattern.substring(0, simplePattern.length - 1));}
-                }
-                return p.includes(simplePattern);
-            });
-            return Promise.resolve([...new Set(results)]);
-        }
-
-        function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) {
-            const newHierarchicalData = [];
-            const filesProcessedForGrouping = new Set();
-
-            originalFullHierarchy.forEach(category => {
-                const newCategoryFiles = [];
-                if (category.files && Array.isArray(category.files)) {
-                    category.files.forEach(originalFilePath => {
-                        if (flatFilteredFiles.includes(originalFilePath) && !filesProcessedForGrouping.has(originalFilePath)) {
-                            newCategoryFiles.push(originalFilePath);
-                            filesProcessedForGrouping.add(originalFilePath);
-                        }
-                    });
-                }
-                if (newCategoryFiles.length > 0) {
-                    newHierarchicalData.push({
-                        name: category.name,
-                        files: newCategoryFiles
-                    });
-                }
-            });
-
-            const remainingUncategorized = flatFilteredFiles.filter(f => !filesProcessedForGrouping.has(f));
-            if (remainingUncategorized.length > 0) {
-                 newHierarchicalData.push({ name: "Other Matched Files (from Server Filter)", files: remainingUncategorized });
-            }
-            return newHierarchicalData;
-        }
-
-        window.fetchAndUpdateHierarchicalMenu = async function(event) {
-            const pattern = event.target.value;
-
-            if (!pattern && event.type === 'change') {
-                menuContainer.innerHTML = '';
-                const topUl = document.createElement('ul');
-                menuContainer.appendChild(topUl);
-                buildMenu(initialFileData, topUl);
-                if (document.getElementById('filterMenu').value) filterMenuTree();
-                return;
-            }
-            if (!pattern && event.type !== 'change') return;
-
-            try {
-                const flatFilteredListFromServer = await simulateFetchFilesFlatList(pattern);
-                const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
-
-                menuContainer.innerHTML = '';
-                const topUl = document.createElement('ul');
-                menuContainer.appendChild(topUl);
-                buildMenu(newHierarchicalMenuData, topUl);
-
-                if (document.getElementById('filterMenu').value) filterMenuTree();
-
-            } catch (error) {
-                console.error("Error fetching or building menu:", error);
-                menuContainer.innerHTML = `<li>Error loading file list: ${error.message}</li>`;
-            }
-        };
-
         window.captureSnapshot = function() {
             const x3domIframeEl = getX3DOMIFrame();
             if (x3domIframeEl && x3domIframeEl.contentWindow) {
@@ -617,32 +560,6 @@
             }
         };
 
-        $(document).ready(function() {
-            const topUl = document.createElement('ul');
-            menuContainer.appendChild(topUl);
-            buildMenu(initialFileData, topUl);
-
-            setXITEIFrame(document.getElementById('xite_iframe_id'));
-            setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
-
-            document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
-
-            // Code Tabs Logic
-            $('.tab-bar .tab-button').on('click', function() {
-                var tabId = $(this).data('tab');
-
-                // Hide all tab panes and remove active class from buttons
-                $('.tab-pane').removeClass('active');
-                $('.tab-button').removeClass('active');
-
-                // Show the selected tab pane and add active class to the button
-                $('#tab-content-' + tabId).addClass('active');
-                $(this).addClass('active');
-            });
-
-
-            window.reloadX3DOM();
-        });
     </script>
 </body>
 </html>
