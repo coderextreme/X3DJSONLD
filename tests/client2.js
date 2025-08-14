@@ -27,11 +27,24 @@ async function dosearch(data) {
         console.log("-> Emitting clientactivename...");
         socket.emit('clientactivename', "SearchFeed");
 	var json = [];
-	let dirs = ['../src/main/Library/**', '../src/main/data/**','../src/main/personal/**', '../src/main/wrl/**', '../src/main/ply/**', '../src/main/stl/**'];
+	let dirs = ['../src/main/Library/**',
+		'../src/main/data/**',
+		'../src/main/personal/**',
+		'../src/main/wrl/**',
+		'../src/main/ply/**',
+		'../src/main/stl/**',
+		'../../www.web3d.org/x3d/content/examples/Basic/**',
+		'../../www.web3d.org/x3d/content/examples/ConformanceNist/**',
+		'../../www.web3d.org/x3d/content/examples/HumanoidAnimation/**',
+		'../../www.web3d.org/x3d/content/examples/Vrml2Sourcebook/**',
+		'../../www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/**',
+		'../../www.web3d.org/x3d/content/examples/X3dForWebAuthors/**'
+	];
 	for (let dir in dirs) {
-		for await (let file of glob(dirs[dir]+'/*'+data+'*')) {
+		for await (let file of glob(dirs[dir]+'/*'+data+'*.{x3d,json,stl,ply}')) {
 			file = file.replace(/\\/g, '/');
 			file = file.replace(/src[\/]main[\/]/, '');
+			file = file.replace(/\.\.[\/]\.\.[\/]www.web3d.org/, 'https://www.web3d.org');
 			// console.log("returning", file);
 			json.push(file);
 		}
