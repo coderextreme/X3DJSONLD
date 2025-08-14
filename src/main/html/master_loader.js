@@ -15,10 +15,7 @@ import fieldTypes from '../node/fieldTypes.js';
 import mapToMethod from '../node/mapToMethod.js';
 import { loadSchema } from '../node/loadValidate.js';
 import { DOMParser } from'@xmldom/xmldom';
-
 import { encodeJSON } from './exi.js';
-
-export { decodeJSON } from './exi.js';
 
 let x3domIframe = null;
 let xiteIframe = null;

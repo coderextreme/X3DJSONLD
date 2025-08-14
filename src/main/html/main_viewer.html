@@ -167,11 +167,12 @@
 <body>
     <script type="module" src="../node/ajv2020.js"></script>
     <script type="module" src="../node/ajvAddFormats.js"></script>
+    <script type="module" src="https://cdn.socket.io/4.8.1/socket.io.esm.min.js"></script>
     <script type="module">
-      import { io } from '/node_modules/socket.io-client/dist/socket.io.esm.min.js';
+      import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
       import initialFileData from "./filedata.js";
-        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 decodeJSON, prepareForX3DOMReload,
+      import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
+                 prepareForX3DOMReload,
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
 
@@ -179,6 +180,10 @@
     // 1. URL is just the server's base address.
     // 2. The 'transports' option is removed to allow WebSocket upgrades.
     let socket = io("http://localhost:3000", {
+	cors: {
+	      origin: "*",
+	      methods: ["GET", "POST"]
+	},
         maxHttpBufferSize: 1e8,
         pingTimeout: 60000
     });
@@ -192,15 +197,24 @@
             console.log("Simulating server fetch for pattern (flat list output):", args);
             let allFilePaths = [];
             function collectAllFilePathsRecursive(dataArray) {
-                dataArray[0][0].files.forEach(item => {
-                    if (item.files && Array.isArray(item.files)) {
-                        collectAllFilePathsRecursive(item.files);
-                    } else if (typeof item === 'string') {
-                        allFilePaths.push(item);
-                    }
-                });
+	        if (typeof dataArray.forEach !== 'undefined') {
+			dataArray.forEach(item => {
+			    if (item.files && Array.isArray(item.files)) {
+				collectAllFilePathsRecursive(item.files);
+			    } else if (typeof item === 'string') {
+				console.log("item", JSON.stringify(item));
+				allFilePaths.push(item);
+			    }
+			});
+		} else if (typeof dataArray === 'string') {
+			console.log("STRINGY", JSON.stringify(dataArray));
+			allFilePaths.push(dataArray);
+		} else {
+			console.log("NOT STRINGY", JSON.stringify(dataArray));
+            		collectAllFilePathsRecursive(dataArray[0]);
+		}
             }
-            collectAllFilePathsRecursive(args);
+            collectAllFilePathsRecursive(args[0]);
 
             return Promise.resolve([...new Set(allFilePaths)]);
         }
@@ -307,6 +321,7 @@
             if (!pattern && event.type !== 'change') return;
 
             try {
+	    	console.log("clientsearch", pattern);
 	    	socket.emit('clientsearch', pattern);
 		socket.on('serverresults', async function() {
 		        console.log("Got results", arguments);
@@ -483,11 +498,11 @@
     <script type="module" src="../node/Three2Serializer.js"></script>
     <script type="module" src="../node/DOM2JSONSerializer.js"></script>
     <script type="module" src="../node/loadValidate.js"></script>
-    <script type="module" src="./exi.js"></script>
 
     <script type="module">
+	import { decodeJSON } from './exi.js';
         import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 decodeJSON, prepareForX3DOMReload,
+                 prepareForX3DOMReload,
                  setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
         } from './master_loader.js';
 
