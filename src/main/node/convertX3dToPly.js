@@ -1,25 +1,27 @@
 /**
- * X3D to PLY Converter
+ * X3D to PLY Converter with Texture Support
  *
  * This script provides a function to convert X3D scene data (in JSON object format)
  * into the PLY 3D model format. It handles scene graph transformations, prototype expansion,
  * and tessellates primitive and NURBS geometry into triangle meshes with vertex colors.
  *
- * @version 5.2.1
- * @author AI Assistant, with final fix for Extrusion and HAnim transformation logic.
+ * @version 6.1.1
+ * @author AI Assistant, with fixes for texture URL fallback and variable scope.
  *
  * Features:
- * - A robust, single-pass recursive expander correctly resolves all ProtoDeclare and ProtoInstance nodes.
- * - Correctly handles nested prototypes and IS/connect value propagation with proper scope chaining.
- * - Correctly handles DEF/USE for node reuse by substituting the USE node with the DEF'd node's content.
- * - Handles diffuseColor and emissiveColor from Material nodes and Color nodes to produce colored PLY files.
- * - Traverses the entire scene graph recursively, correctly processing all children.
- * - Tessellates primitive shapes: Box, Sphere, Cylinder, Cone.
- * - Tessellates complex geometry: Extrusion, IndexedFaceSet.
- * - Tessellates LineSet and IndexedLineSet geometry.
- * - Tessellates NurbsPatchSurface geometry into a triangle mesh.
- * - Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices, ensuring no data loss or corruption.
- * - Outputs ASCII PLY format with vertex, face, and edge elements.
+ * - Asynchronous conversion process to handle image loading.
+ * - Processes ImageTexture nodes: loads JPG/PNG/GIF images from a list of fallback URLs,
+ *   decodes them using a canvas, and samples pixel data based on UV coordinates.
+ * - Caches loaded textures to avoid redundant downloads.
+ * - A robust, two-pass DEF/USE system for all node types.
+ * - Correctly applies per-Shape color from its local Appearance/Material node.
+ * - Traverses the entire scene graph recursively, correctly processing children in standard fields like `-children`, `-skeleton`, `-joints`, and `-layers`.
+ * - Tessellates primitive, complex, and NURBS geometry.
+ * - Correctly merges geometry from multiple Shape nodes by using a `baseIndex` offset for face indices.
+ * - Outputs ASCII PLY with per-vertex colors sampled from textures.
+ *
+ * NOTE: This script is designed to be run in a browser environment, as it
+ * requires the DOM (Image, Canvas) to process textures.
  */
 export default function createX3dToPlyConverter() {
 
@@ -65,6 +67,65 @@ export default function createX3dToPlyConverter() {
     const parseMFVec3f = v => { if (typeof v === 'string') return parseMFVec3f(parseNumArray(v)); if (Array.isArray(v) && typeof v[0] === 'number') {const r=[];for(let i=0;i<v.length;i+=3){r.push([v[i],v[i+1],v[i+2]])}return r} return v; };
     const parseMFRotation = v => { if (typeof v === 'string') return parseMFRotation(parseNumArray(v)); if (Array.isArray(v) && typeof v[0] === 'number') {const r=[];for(let i=0;i<v.length;i+=4){r.push([v[i],v[i+1],v[i+2],v[i+3]])}return r} return v; };
     const parseBool = v => (typeof v === 'string') ? v.toLowerCase() === 'true' : v;
+
+    let textureCache = {};
+    async function loadImageData(urls) {
+        if (!Array.isArray(urls)) urls = [urls]; // Ensure urls is an array
+        const validUrls = urls.filter(u => typeof u === 'string' && (u.toLowerCase().endsWith('.jpg') || u.toLowerCase().endsWith('.png') || u.toLowerCase().endsWith('.gif')));
+        if (validUrls.length === 0) return null;
+
+        const cacheKey = JSON.stringify(validUrls);
+        if (textureCache[cacheKey]) return textureCache[cacheKey];
+
+        const tryLoad = (index) => {
+            return new Promise((resolve) => {
+                if (index >= validUrls.length) {
+                    resolve(null);
+                    return;
+                }
+
+                const url = validUrls[index];
+                const img = new Image();
+                img.crossOrigin = "Anonymous";
+
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    resolve(imageData);
+                };
+
+                img.onerror = () => {
+                    console.error(`Failed to load texture: ${url}`);
+                    tryLoad(index + 1).then(resolve);
+                };
+                img.src = url;
+            });
+        };
+
+        const imageData = await tryLoad(0);
+        if (imageData) {
+            textureCache[cacheKey] = imageData;
+        }
+        return imageData;
+    }
+
+    function getColorFromTexture(imageData, uv) {
+        if (!imageData) return null;
+        const u = uv[0] - Math.floor(uv[0]);
+        const v = 1 - (uv[1] - Math.floor(uv[1]));
+
+        const x = Math.floor(u * (imageData.width - 1));
+        const y = Math.floor(v * (imageData.height - 1));
+
+        const i = (y * imageData.width + x) * 4;
+        const data = imageData.data;
+
+        return [data[i] / 255, data[i+1] / 255, data[i+2] / 255];
+    }
 
     function tessellateBox(node, options) {
 	    const size = node['@size'] ? parseSFVec3f(node['@size']) : [2, 2, 2];
@@ -285,8 +346,7 @@ export default function createX3dToPlyConverter() {
 	    return { vertices, faces };
     }
 
-    function tessellateNurbsPatchSurface(node, options) {
-        // Parse attributes from the NURBS node
+    function tessellateNurbsPatchSurface(node, options, defMap) {
         const uOrder = node['@uOrder'] ? parseInt(node['@uOrder'], 10) : 3;
         const vOrder = node['@vOrder'] ? parseInt(node['@vOrder'], 10) : 3;
         const uDimension = node['@uDimension'] ? parseInt(node['@uDimension'], 10) : 0;
@@ -295,13 +355,14 @@ export default function createX3dToPlyConverter() {
         const vKnot = node['@vKnot'] ? parseNumArray(node['@vKnot']) : [];
         const weights = node['@weight'] ? parseNumArray(node['@weight']) : null;
 
-        const controlPointsRaw = node['-controlPoint']?.Coordinate?.['@point'];
+        const controlPointContent = getResolvedContent(node['-controlPoint'], 'Coordinate', defMap);
+        const controlPointsRaw = controlPointContent?.['@point'];
+
         if (!controlPointsRaw || uDimension === 0 || vDimension === 0) {
             return { vertices: [], faces: [] };
         }
         const controlPoints = parseMFVec3f(controlPointsRaw);
 
-        // Validate necessary data
         if (controlPoints.length !== uDimension * vDimension ||
             uKnot.length !== uDimension + uOrder ||
             vKnot.length !== vDimension + vOrder) {
@@ -309,11 +370,9 @@ export default function createX3dToPlyConverter() {
             return { vertices: [], faces: [] };
         }
 
-        // Set tessellation resolution
         const uSteps = options.nurbsUSteps || 30;
         const vSteps = options.nurbsVSteps || 30;
 
-        // Helper to find the knot span for a given parameter value
         const findSpan = (n, p, u, U) => {
             if (u >= U[n + 1]) return n;
             if (u <= U[p]) return p;
@@ -326,7 +385,6 @@ export default function createX3dToPlyConverter() {
             return mid;
         };
 
-        // Compute the non-zero B-spline basis functions
         const basisFunctions = (span, u, p, U) => {
             const N = new Array(p + 1).fill(0);
             const left = new Array(p + 1).fill(0);
@@ -339,7 +397,7 @@ export default function createX3dToPlyConverter() {
                 let saved = 0.0;
                 for (let r = 0; r < j; r++) {
                     const denominator = right[r + 1] + left[j - r];
-                    let temp = N[r] / (denominator === 0 ? 1 : denominator); // Avoid division by zero
+                    let temp = N[r] / (denominator === 0 ? 1 : denominator);
                     N[r] = saved + right[r + 1] * temp;
                     saved = left[j - r] * temp;
                 }
@@ -348,7 +406,6 @@ export default function createX3dToPlyConverter() {
             return N;
         };
 
-        // Calculate a point on the NURBS surface for given (u,v) parameters
         const calcSurfacePoint = (u, v) => {
             const uDegree = uOrder - 1;
             const vDegree = vOrder - 1;
@@ -394,7 +451,6 @@ export default function createX3dToPlyConverter() {
         const uMin = uKnot[uDegree], uMax = uKnot[uDimension];
         const vMin = vKnot[vDegree], vMax = vKnot[vDimension];
 
-        // Generate vertices by evaluating the surface at grid points
         for (let i = 0; i <= vSteps; i++) {
             const v = vMin + (i / vSteps) * (vMax - vMin);
             for (let j = 0; j <= uSteps; j++) {
@@ -403,7 +459,6 @@ export default function createX3dToPlyConverter() {
             }
         }
 
-        // Generate faces from the vertex grid
         const faces = [];
         for (let i = 0; i < vSteps; i++) {
             for (let j = 0; j < uSteps; j++) {
@@ -420,54 +475,128 @@ export default function createX3dToPlyConverter() {
         return { vertices, faces };
     }
 
-    function processIndexedFaceSet(node) {
-	    const coordNode = node['-coord']?.Coordinate;
-	    if (!coordNode || !coordNode['@point']) return null;
-	    const points = parseMFVec3f(coordNode['@point']);
+    function processIndexedFaceSet(node, defMap) {
+	    const coordContent = getResolvedContent(node['-coord'], 'Coordinate', defMap);
+	    if (!coordContent || !coordContent['@point']) return { vertices: [], faces: [] };
+
+        const points = parseMFVec3f(coordContent['@point']);
 	    const coordIndex = parseNumArray(node['@coordIndex']);
         const isConvex = node['@convex'] === undefined || parseBool(node['@convex']);
 
         let vertexColors = null;
-	    const colorNode = node['-color']?.Color;
-	    if (colorNode && colorNode['@color']) {
-		    const colors = parseMFVec3f(colorNode['@color']);
-		    if (colors && colors.length > 0) {
-                vertexColors = colors;
+        const colorContent = getResolvedContent(node['-color'], 'Color', defMap);
+        const colors = (colorContent && colorContent['@color']) ? parseMFVec3f(colorContent['@color']) : null;
+
+        let texCoords = null;
+        let texCoordIndexRaw = null;
+        const texCoordContent = getResolvedContent(node['-texCoord'], 'TextureCoordinate', defMap);
+        if (texCoordContent && texCoordContent['@point']) {
+            texCoords = parseMFVec2f(texCoordContent['@point']);
+            if (node['@texCoordIndex']) {
+                texCoordIndexRaw = parseNumArray(node['@texCoordIndex']);
             }
-	    }
+        }
 
-	    const faces = [];
-	    let currentFace = [];
+        const faces = [];
+	    const facesTexCoordIndices = [];
+        let currentFace = [];
+        let currentTexIndices = [];
+        let rawIndexCounter = 0;
 
-        const processSingleFace = (faceIndices) => {
+        const processCurrentFace = (faceIndices, texIndices) => {
             if (faceIndices.length < 3) return;
-            if (isConvex) {
-                const v0 = faceIndices[0];
-                for (let i = 1; i < faceIndices.length - 1; i++) {
-                    faces.push([v0, faceIndices[i], faceIndices[i + 1]]);
+
+            const triangulate = (verts, tInd) => {
+                const v0 = verts[0];
+                const t0 = texCoords ? (texCoordIndexRaw ? tInd[0] : v0) : -1;
+                for (let i = 1; i < verts.length - 1; i++) {
+                    const v1 = verts[i];
+                    const t1 = texCoords ? (texCoordIndexRaw ? tInd[i] : v1) : -1;
+                    const v2 = verts[i + 1];
+                    const t2 = texCoords ? (texCoordIndexRaw ? tInd[i+1] : v2) : -1;
+                    faces.push([v0, v1, v2]);
+                    if (t0 !== -1) facesTexCoordIndices.push([t0, t1, t2]);
                 }
+            };
+
+            if (isConvex) {
+                triangulate(faceIndices, texIndices);
             } else {
-                faces.push(faceIndices);
+                // Non-convex triangulation can be complex. This is a basic fan triangulation.
+                // It assumes the first vertex is suitable as the center of the fan.
+                triangulate(faceIndices, texIndices);
             }
         };
 
 	    for (const index of coordIndex) {
 		    if (index === -1) {
-                processSingleFace(currentFace);
+                const texFace = texCoordIndexRaw ? currentTexIndices : currentFace;
+                processCurrentFace(currentFace, texFace);
 			    currentFace = [];
+                currentTexIndices = [];
 		    } else {
 			    currentFace.push(index);
+                if(texCoordIndexRaw) currentTexIndices.push(texCoordIndexRaw[rawIndexCounter]);
 		    }
+            rawIndexCounter++;
 	    }
-        processSingleFace(currentFace);
+        if (currentFace.length > 0) {
+            const texFace = texCoordIndexRaw ? currentTexIndices : currentFace;
+            processCurrentFace(currentFace, texFace);
+        }
 
-	    return { vertices: points, faces: faces, vertexColors: vertexColors };
+        if(colors) {
+            const colorIndexRaw = node['@colorIndex'] ? parseNumArray(node['@colorIndex']) : null;
+            const colorPerVertex = node['@colorPerVertex'] === undefined ? true : parseBool(node['@colorPerVertex']);
+            vertexColors = new Array(points.length).fill(null);
+
+            if (!colorPerVertex) { // color per face
+                let faceCounter = 0;
+                let currentFaceIndices = [];
+                for(const index of coordIndex) {
+                    if (index === -1) {
+                        const colorIdx = colorIndexRaw ? colorIndexRaw[faceCounter] : faceCounter;
+                        const faceColor = colors[colorIdx] || [1,1,1];
+                        for (const vertIdx of currentFaceIndices) {
+                           vertexColors[vertIdx] = faceColor;
+                        }
+                        faceCounter++;
+                        currentFaceIndices = [];
+                    } else {
+                       currentFaceIndices.push(index);
+                    }
+                }
+            } else { // color per vertex
+                 if(colorIndexRaw) {
+                     let rawIndexCounter = 0;
+                     for(const index of coordIndex) {
+                         if (index !== -1) {
+                            const colorIdx = colorIndexRaw[rawIndexCounter];
+                            vertexColors[index] = colors[colorIdx] || [1,1,1];
+                         }
+                         rawIndexCounter++;
+                     }
+                 } else {
+                    for(let i=0; i<points.length; i++) {
+                        vertexColors[i] = colors[i] || [1,1,1];
+                    }
+                 }
+            }
+        }
+
+	    return {
+            vertices: points,
+            faces,
+            vertexColors,
+            texCoords,
+            facesTexCoordIndices
+        };
     }
 
-    function processIndexedLineSet(node) {
-        const coordNode = node['-coord']?.Coordinate;
-        if (!coordNode || !coordNode['@point']) return null;
-        const points = parseMFVec3f(coordNode['@point']);
+    function processIndexedLineSet(node, defMap) {
+        const coordContent = getResolvedContent(node['-coord'], 'Coordinate', defMap);
+        if (!coordContent || !coordContent['@point']) return null;
+        const points = parseMFVec3f(coordContent['@point']);
 
         const coordIndexRaw = node['@coordIndex'];
         if (coordIndexRaw === undefined || coordIndexRaw === null) {
@@ -475,8 +604,8 @@ export default function createX3dToPlyConverter() {
         }
         const coordIndex = parseNumArray(coordIndexRaw);
 
-        const colorNode = node['-color']?.Color;
-        const colors = (colorNode && colorNode['@color']) ? parseMFVec3f(colorNode['@color']) : null;
+        const colorContent = getResolvedContent(node['-color'], 'Color', defMap);
+        const colors = (colorContent && colorContent['@color']) ? parseMFVec3f(colorContent['@color']) : null;
 
         const lines = [];
         const lineColors = [];
@@ -509,10 +638,10 @@ export default function createX3dToPlyConverter() {
         return { vertices: points, faces: lines, lineColors: (lineColors.length > 0 ? lineColors : null) };
     }
 
-    function processLineSet(node) {
-        const coordNode = node['-coord']?.Coordinate;
-        if (!coordNode || !coordNode['@point']) return null;
-        const points = parseMFVec3f(coordNode['@point']);
+    function processLineSet(node, defMap) {
+        const coordContent = getResolvedContent(node['-coord'], 'Coordinate', defMap);
+        if (!coordContent || !coordContent['@point']) return null;
+        const points = parseMFVec3f(coordContent['@point']);
 
         const vertexCountRaw = node['@vertexCount'];
         if (vertexCountRaw === undefined || vertexCountRaw === null) {
@@ -520,8 +649,8 @@ export default function createX3dToPlyConverter() {
         }
         const vertexCount = parseNumArray(vertexCountRaw);
 
-        const colorNode = node['-color']?.Color;
-        const colors = (colorNode && colorNode['@color']) ? parseMFVec3f(colorNode['@color']) : null;
+        const colorContent = getResolvedContent(node['-color'], 'Color', defMap);
+        const colors = (colorContent && colorContent['@color']) ? parseMFVec3f(colorContent['@color']) : null;
 
         const lines = [];
         const lineColors = [];
@@ -611,7 +740,46 @@ export default function createX3dToPlyConverter() {
         return newNode;
     }
 
-    function processNode(node, parentTransform, options, defMap, parentColor) {
+    function buildDefMap(obj, defMap) {
+        if (!obj || typeof obj !== 'object') return;
+        if (Array.isArray(obj)) {
+            obj.forEach(item => buildDefMap(item, defMap));
+            return;
+        }
+
+        const nodeKeys = Object.keys(obj).filter(k => !k.startsWith('@') && !k.startsWith('#'));
+        if (nodeKeys.length === 1) {
+            const nodeName = nodeKeys[0];
+            const nodeContent = obj[nodeName];
+            if (nodeContent && typeof nodeContent === 'object' && nodeContent['@DEF']) {
+                defMap[nodeContent['@DEF']] = obj;
+            }
+        }
+
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                buildDefMap(obj[key], defMap);
+            }
+        }
+    }
+
+    function getResolvedContent(wrapperNode, nodeName, defMap) {
+        if (!wrapperNode || !wrapperNode[nodeName]) return null;
+        let content = wrapperNode[nodeName];
+        if (content && content['@USE']) {
+            const useName = content['@USE'];
+            const defNodeWrapper = defMap[useName];
+            if (defNodeWrapper && defNodeWrapper[nodeName]) {
+                return defNodeWrapper[nodeName];
+            } else {
+                console.warn(`${nodeName} USE node '${useName}' not found.`);
+                return null;
+            }
+        }
+        return content;
+    }
+
+    async function processNode(node, parentTransform, options, defMap) {
         if (!node || typeof node !== 'object') return;
 
         const nodeName = Object.keys(node)[0];
@@ -619,13 +787,13 @@ export default function createX3dToPlyConverter() {
 
         const nodeContent = node[nodeName];
 
-        if (nodeContent['@DEF']) {
-            defMap[nodeContent['@DEF']] = node;
-        }
         if (nodeContent['@USE']) {
             const useName = nodeContent['@USE'];
             if (defMap[useName]) {
-                processNode(defMap[useName], parentTransform, options, defMap, parentColor);
+                const defNodeCopy = JSON.parse(JSON.stringify(defMap[useName]));
+                const defNodeName = Object.keys(defNodeCopy)[0];
+                if (defNodeCopy[defNodeName]) delete defNodeCopy[defNodeName]['@DEF'];
+                await processNode(defNodeCopy, parentTransform, options, defMap);
             } else {
                 console.warn(`USE node '${useName}' not found. Skipping.`);
             }
@@ -655,15 +823,26 @@ export default function createX3dToPlyConverter() {
              mat4.multiply(currentTransform, parentTransform, localTransform);
         }
 
-        let nodeColor = parentColor; // The color context for this node and its children.
         if (nodeName === 'Shape') {
-            const material = nodeContent['-appearance']?.Appearance?.['-material']?.Material;
-            if (material) {
-                // This shape's color is determined locally and does not affect the parent's color context.
-                if (material['@diffuseColor']) {
-                     nodeColor = parseSFColor(material['@diffuseColor']);
-                } else if (material['@emissiveColor']) {
-                     nodeColor = parseSFColor(material['@emissiveColor']);
+            let shapeColor = [1.0, 1.0, 1.0];
+            let textureData = null;
+
+            const appearanceContent = getResolvedContent(nodeContent['-appearance'], 'Appearance', defMap);
+            if (appearanceContent) {
+                const textureContent = getResolvedContent(appearanceContent['-texture'], 'ImageTexture', defMap);
+                if (textureContent && textureContent['@url']) {
+                    textureData = await loadImageData(textureContent['@url']);
+                }
+
+                if (!textureData) {
+                    const materialContent = getResolvedContent(appearanceContent['-material'], 'Material', defMap);
+                    if (materialContent) {
+                        if (materialContent['@diffuseColor']) {
+                            shapeColor = parseSFColor(materialContent['@diffuseColor']);
+                        } else if (materialContent['@emissiveColor']) {
+                            shapeColor = parseSFColor(materialContent['@emissiveColor']);
+                        }
+                    }
                 }
             }
 
@@ -678,56 +857,74 @@ export default function createX3dToPlyConverter() {
                     case 'Sphere': geoData = tessellateSphere(geoNode, options); break;
                     case 'Cylinder': geoData = tessellateCylinder(geoNode, options); break;
                     case 'Cone': geoData = tessellateCone(geoNode, options); break;
-                    case 'IndexedFaceSet': geoData = processIndexedFaceSet(geoNode); break;
-                    case 'IndexedLineSet': geoData = processIndexedLineSet(geoNode); isLineSet = true; break;
-                    case 'LineSet': geoData = processLineSet(geoNode); isLineSet = true; break;
+                    case 'IndexedFaceSet': geoData = processIndexedFaceSet(geoNode, defMap); break;
+                    case 'IndexedLineSet': geoData = processIndexedLineSet(geoNode, defMap); isLineSet = true; break;
+                    case 'LineSet': geoData = processLineSet(geoNode, defMap); isLineSet = true; break;
                     case 'Extrusion': geoData = tessellateExtrusion(geoNode, options); break;
-                    case 'NurbsPatchSurface': geoData = tessellateNurbsPatchSurface(geoNode, options); break;
+                    case 'NurbsPatchSurface': geoData = tessellateNurbsPatchSurface(geoNode, options, defMap); break;
                     default: break;
                 }
 
                 if (geoData && geoData.vertices.length > 0) {
                     const baseIndex = globalVertices.length;
 
-                    for (let i = 0; i < geoData.vertices.length; i++) {
-                        const v = geoData.vertices[i];
+                    const newVertices = [];
+                    for (const v of geoData.vertices) {
                         let tv = [0,0,0];
                         mat4.transformPoint(tv, v, currentTransform);
-                        globalVertices.push(tv);
-                        // Use local index 'i' to look up per-vertex color if available from geoData, otherwise use the shape's color.
-                        let vertexColor = (geoData.vertexColors && geoData.vertexColors[i]) || nodeColor;
-                        globalVertexColors.push(vertexColor);
+                        newVertices.push(tv);
                     }
+                    globalVertices.push(...newVertices);
+
+                    const newVertexColors = new Array(geoData.vertices.length).fill(shapeColor);
 
                     if (isLineSet) {
                          for (let i = 0; i < geoData.faces.length; i++) {
                             const line = geoData.faces[i].map(idx => idx + baseIndex);
                             globalEdges.push(line);
-                            const edgeColor = (geoData.lineColors && geoData.lineColors[i]) ? geoData.lineColors[i] : nodeColor;
+                            const edgeColor = (geoData.lineColors && geoData.lineColors[i]) ? geoData.lineColors[i] : shapeColor;
                             globalEdgeColors.push(edgeColor);
                         }
+                        globalVertexColors.push(...newVertexColors);
                     } else {
-                        for (const f of geoData.faces) {
-                            globalFaces.push(f.map(idx => idx + baseIndex));
+                        for (let i = 0; i < geoData.faces.length; i++) {
+                            const face = geoData.faces[i];
+                            const faceTexIndices = geoData.facesTexCoordIndices ? geoData.facesTexCoordIndices[i] : face;
+
+                            face.forEach((vertIndex, j) => {
+                                let color = shapeColor;
+                                if (textureData && geoData.texCoords && faceTexIndices) {
+                                    const uv = geoData.texCoords[faceTexIndices[j]];
+                                    if (uv) {
+                                        color = getColorFromTexture(textureData, uv) || shapeColor;
+                                    }
+                                } else if (geoData.vertexColors && geoData.vertexColors[vertIndex]) {
+                                    color = geoData.vertexColors[vertIndex];
+                                }
+                                newVertexColors[vertIndex] = color;
+                            });
+                            globalFaces.push(face.map(idx => idx + baseIndex));
                         }
+                        globalVertexColors.push(...newVertexColors);
                     }
                 }
             }
         }
 
-        // Recurse on scene graph children.
-        if (nodeContent['-children'] && Array.isArray(nodeContent['-children'])) {
-            for (const child of nodeContent['-children']) {
-                if (typeof child === 'object' && child !== null) {
-                    // Children inherit the color context from their parent node (e.g., a Group).
-                    // A Shape node's local color choice does not affect this, as it has no children.
-                    processNode(child, currentTransform, options, defMap, parentColor);
+        const childNodeFields = ['-children', '-skeleton', '-joints', '-layers'];
+        for (const fieldName of childNodeFields) {
+            if (nodeContent[fieldName] && Array.isArray(nodeContent[fieldName])) {
+                for (const child of nodeContent[fieldName]) {
+                    if (typeof child === 'object' && child !== null) {
+                        await processNode(child, currentTransform, options, defMap);
+                    }
                 }
             }
         }
     }
 
-    function convertX3dToPly(x3dData, options = {}) {
+    async function convertX3dToPly(x3dData, options = {}) {
+        textureCache = {};
         options.subdivisions = options.subdivisions || 24;
         if (typeof x3dData !== 'object' || !x3dData.X3D) {
             throw new Error("Invalid input. Must be a standard X3D JSON object.");
@@ -739,8 +936,10 @@ export default function createX3dToPlyConverter() {
             if (child.ProtoDeclare) { declarations[child.ProtoDeclare['@name']] = child.ProtoDeclare; }
         });
 
-        const defMap = {};
         const expandedScene = expand({ Scene: scene.Scene }, declarations, null);
+
+        const defMap = {};
+        buildDefMap(expandedScene, defMap);
 
         globalVertices = []; globalFaces = []; globalVertexColors = [];
         globalEdges = []; globalEdgeColors = [];
@@ -750,7 +949,7 @@ export default function createX3dToPlyConverter() {
 
         if (expandedScene.Scene && expandedScene.Scene['-children']) {
             for(const child of expandedScene.Scene['-children']) {
-                processNode(child, initialTransform, options, defMap, defaultColor);
+                await processNode(child, initialTransform, options, defMap);
             }
         }
 
