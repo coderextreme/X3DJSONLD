@@ -565,7 +565,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G1"
+        "@USE":"G1",
+        "@name":"point"
       }
     },
             }            "fieldValue":
@@ -576,7 +577,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G2"
+        "@USE":"G2",
+        "@name":"point"
       }
     },
             }            "fieldValue":
@@ -615,7 +617,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G1"
+        "@USE":"G1",
+        "@name":"point"
       }
     },
             }            "fieldValue":
@@ -626,7 +629,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G3"
+        "@USE":"G3",
+        "@name":"point"
       }
     },
             }            "fieldValue":
@@ -665,7 +669,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G1"
+        "@USE":"G1",
+        "@name":"point"
       }
     },
             }            "fieldValue":
@@ -676,7 +681,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"G4"
+        "@USE":"G4",
+        "@name":"point"
       }
     },
             }            "fieldValue":

@@ -1,0 +1,3461 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"Menu.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D scene with a Switch of Inlines controlled by a menu",
+        "@name":"description"
+      }
+    },
+    }    "Scene":
+    {
+        "Viewpoint":
+        {
+      {
+        "@position":"0 20 110"
+      }
+    },
+        "Group":
+        {
+            "Switch":
+            {
+      {
+        "@DEF":"SceneSwitcher",
+        "@whichChoice":"0"
+      }
+                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice0",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 0;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 0;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinBlink",
+        "@url":""../resources/JinBlink.x3d" "JinBlink.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 1;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 1;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinBrowLowerer",
+        "@url":""../resources/JinBrowLowerer.x3d" "JinBrowLowerer.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice2",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 2;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 2;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinCheekPuffer",
+        "@url":""../resources/JinCheekPuffer.x3d" "JinCheekPuffer.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice3",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 3;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 3;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinCheekRaiser",
+        "@url":""../resources/JinCheekRaiser.x3d" "JinCheekRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice4",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 4;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 4;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinChinRaiser",
+        "@url":""../resources/JinChinRaiser.x3d" "JinChinRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice5",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 5;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 5;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinDimpler",
+        "@url":""../resources/JinDimpler.x3d" "JinDimpler.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice6",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 6;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 6;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinEyesClosed",
+        "@url":""../resources/JinEyesClosed.x3d" "JinEyesClosed.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice7",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 7;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 7;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinInnerBrowRaiser",
+        "@url":""../resources/JinInnerBrowRaiser.x3d" "JinInnerBrowRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice8",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 8;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 8;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinJawDrop",
+        "@url":""../resources/JinJawDrop.x3d" "JinJawDrop.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice9",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 9;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 9;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLidDroop",
+        "@url":""../resources/JinLidDroop.x3d" "JinLidDroop.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice10",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 10;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 10;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLidTightener",
+        "@url":""../resources/JinLidTightener.x3d" "JinLidTightener.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice11",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 11;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 11;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipCornerDepressor",
+        "@url":""../resources/JinLipCornerDepressor.x3d" "JinLipCornerDepressor.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice12",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 12;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 12;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipCornerPuller",
+        "@url":""../resources/JinLipCornerPuller.x3d" "JinLipCornerPuller.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice13",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 13;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 13;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipFunneler",
+        "@url":""../resources/JinLipFunneler.x3d" "JinLipFunneler.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice14",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 14;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 14;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipPressor",
+        "@url":""../resources/JinLipPressor.x3d" "JinLipPressor.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice15",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 15;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 15;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipPuckerer",
+        "@url":""../resources/JinLipPuckerer.x3d" "JinLipPuckerer.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice16",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 16;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 16;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipsPart",
+        "@url":""../resources/JinLipsPart.x3d" "JinLipsPart.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice17",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 17;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 17;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipStretcher",
+        "@url":""../resources/JinLipStretcher.x3d" "JinLipStretcher.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice18",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 18;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 18;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipSuck",
+        "@url":""../resources/JinLipSuck.x3d" "JinLipSuck.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice19",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 19;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 19;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLipTightener",
+        "@url":""../resources/JinLipTightener.x3d" "JinLipTightener.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice20",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 20;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 20;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinLowerLipDepressor",
+        "@url":""../resources/JinLowerLipDepressor.x3d" "JinLowerLipDepressor.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice21",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 21;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 21;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinMouthStretch",
+        "@url":""../resources/JinMouthStretch.x3d" "JinMouthStretch.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice22",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 22;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 22;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinNasolabialDeepener",
+        "@url":""../resources/JinNasolabialDeepener.x3d" "JinNasolabialDeepener.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice23",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 23;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 23;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinNoseWrinkler",
+        "@url":""../resources/JinNoseWrinkler.x3d" "JinNoseWrinkler.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice24",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 24;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 24;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinOuterBrowRaiser",
+        "@url":""../resources/JinOuterBrowRaiser.x3d" "JinOuterBrowRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice25",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 25;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 25;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinSlit",
+        "@url":""../resources/JinSlit.x3d" "JinSlit.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice26",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 26;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 26;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinSquint",
+        "@url":""../resources/JinSquint.x3d" "JinSquint.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice27",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 27;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 27;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinUpperLidRaiser",
+        "@url":""../resources/JinUpperLidRaiser.x3d" "JinUpperLidRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice28",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 28;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 28;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinUpperLipRaiser",
+        "@url":""../resources/JinUpperLipRaiser.x3d" "JinUpperLipRaiser.x3d""
+      }
+    },
+                }                "Group":
+                {
+                    "Script":
+                    {
+      {
+        "@DEF":"Choice29",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;      function set_touchTime(value) {
+&quot;+
+&quot;          choice = 29;
+&quot;+
+&quot;      }
+&quot;+
+&quot;      function touchTime(value) {
+&quot;+
+&quot;          choice = 29;
+&quot;+
+&quot;      }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"touchTime",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"choice",
+        "@type":"SFInt32"
+      }
+    },
+                    }                    "Inline":
+                    {
+      {
+        "@DEF":"JinWink",
+        "@url":""../resources/JinWink.x3d" "JinWink.x3d""
+      }
+    },
+                }            }            "Transform":
+            {
+      {
+        "@translation":"48 63.4 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinBlink_Sensor",
+        "@description":"TSJinBlink"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinBlink""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinBlink_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice0"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice0",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 60.4 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinBrowLowerer_Sensor",
+        "@description":"TSJinBrowLowerer"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinBrowLowerer""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinBrowLowerer_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice1",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 57.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinCheekPuffer_Sensor",
+        "@description":"TSJinCheekPuffer"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinCheekPuffer""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinCheekPuffer_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice2"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice2",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 54.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinCheekRaiser_Sensor",
+        "@description":"TSJinCheekRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinCheekRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinCheekRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice3"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice3",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 51.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinChinRaiser_Sensor",
+        "@description":"TSJinChinRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinChinRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinChinRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice4"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice4",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 48.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinDimpler_Sensor",
+        "@description":"TSJinDimpler"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinDimpler""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinDimpler_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice5"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice5",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 45.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinEyesClosed_Sensor",
+        "@description":"TSJinEyesClosed"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinEyesClosed""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinEyesClosed_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice6"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice6",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 42.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinInnerBrowRaiser_Sensor",
+        "@description":"TSJinInnerBrowRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinInnerBrowRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinInnerBrowRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice7"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice7",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 39.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinJawDrop_Sensor",
+        "@description":"TSJinJawDrop"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinJawDrop""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinJawDrop_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice8"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice8",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 36.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLidDroop_Sensor",
+        "@description":"TSJinLidDroop"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLidDroop""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLidDroop_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice9"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice9",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 33.39999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLidTightener_Sensor",
+        "@description":"TSJinLidTightener"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLidTightener""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLidTightener_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice10"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice10",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 30.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipCornerDepressor_Sensor",
+        "@description":"TSJinLipCornerDepressor"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipCornerDepressor""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipCornerDepressor_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice11"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice11",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 27.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipCornerPuller_Sensor",
+        "@description":"TSJinLipCornerPuller"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipCornerPuller""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipCornerPuller_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice12"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice12",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 24.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipFunneler_Sensor",
+        "@description":"TSJinLipFunneler"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipFunneler""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipFunneler_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice13"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice13",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 21.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipPressor_Sensor",
+        "@description":"TSJinLipPressor"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipPressor""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipPressor_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice14"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice14",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 18.4 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipPuckerer_Sensor",
+        "@description":"TSJinLipPuckerer"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipPuckerer""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipPuckerer_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice15"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice15",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 15.399999999999997 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipsPart_Sensor",
+        "@description":"TSJinLipsPart"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipsPart""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipsPart_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice16"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice16",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 12.399999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipStretcher_Sensor",
+        "@description":"TSJinLipStretcher"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipStretcher""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipStretcher_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice17"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice17",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 9.399999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipSuck_Sensor",
+        "@description":"TSJinLipSuck"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipSuck""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipSuck_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice18"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice18",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 6.399999999999999 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLipTightener_Sensor",
+        "@description":"TSJinLipTightener"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLipTightener""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLipTightener_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice19"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice19",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 3.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinLowerLipDepressor_Sensor",
+        "@description":"TSJinLowerLipDepressor"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinLowerLipDepressor""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinLowerLipDepressor_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice20"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice20",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 0.399999999999995 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinMouthStretch_Sensor",
+        "@description":"TSJinMouthStretch"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinMouthStretch""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinMouthStretch_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice21"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice21",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -2.6000000000000085 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinNasolabialDeepener_Sensor",
+        "@description":"TSJinNasolabialDeepener"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinNasolabialDeepener""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinNasolabialDeepener_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice22"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice22",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -5.6000000000000085 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinNoseWrinkler_Sensor",
+        "@description":"TSJinNoseWrinkler"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinNoseWrinkler""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinNoseWrinkler_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice23"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice23",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -8.600000000000009 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinOuterBrowRaiser_Sensor",
+        "@description":"TSJinOuterBrowRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinOuterBrowRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinOuterBrowRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice24"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice24",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -11.600000000000009 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinSlit_Sensor",
+        "@description":"TSJinSlit"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinSlit""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinSlit_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice25"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice25",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -14.600000000000001 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinSquint_Sensor",
+        "@description":"TSJinSquint"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinSquint""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinSquint_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice26"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice26",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -17.6 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinUpperLidRaiser_Sensor",
+        "@description":"TSJinUpperLidRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinUpperLidRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinUpperLidRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice27"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice27",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -20.6 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinUpperLipRaiser_Sensor",
+        "@description":"TSJinUpperLipRaiser"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinUpperLipRaiser""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinUpperLipRaiser_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice28"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice28",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@translation":"48 -23.599999999999994 0"
+      }
+                "TouchSensor":
+                {
+      {
+        "@DEF":"JinWink_Sensor",
+        "@description":"TSJinWink"
+      }
+    },
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@string":""JinWink""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"2.4",
+        "@spacing":"1.2"
+      }
+    },
+                    }                }                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 1"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@coordIndex":"0 1 2 3 -1"
+      }
+                        "Coordinate":
+                        {
+    },
+                    }                }            }            "ROUTE":
+            {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"JinWink_Sensor",
+        "@toField":"touchTime",
+        "@toNode":"Choice29"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"choice",
+        "@fromNode":"Choice29",
+        "@toField":"whichChoice",
+        "@toNode":"SceneSwitcher"
+      }
+    },
+        }    }}

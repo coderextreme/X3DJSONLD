@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<X3D xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
 <head>        
         <meta name='title' content='arc.x3d'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
@@ -143,10 +143,10 @@ ecmascript:
     <ProtoInstance DEF='G4' name='point'/>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='G1'/>
+            <ProtoInstance USE='G1' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='G2'/>
+            <ProtoInstance USE='G2' name='point'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -155,10 +155,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector2'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='G1'/>
+            <ProtoInstance USE='G1' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='G3'/>
+            <ProtoInstance USE='G3' name='point'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -167,10 +167,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector3'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='G1'/>
+            <ProtoInstance USE='G1' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='G4'/>
+            <ProtoInstance USE='G4' name='point'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>

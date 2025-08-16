@@ -223,8 +223,8 @@ done
 echo Running graalpy code
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	GPY=`echo "$i" | sed -e "$DATATOGRAALPY" -e "$PERSONALTOGRAALPY" -e "$ROOTTOGRAALPY" -e "s/.${JSONEXT}/.py/"`
-	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.graalpy.x3d/"`
+	GPY=`echo "$i" | sed -e "$DATATOGRAALPY" -e "$PERSONALTOGRAALPY" -e "$ROOTTOGRAALPY" -e "s/\.${JSONEXT}/.py/"`
+	X3D=`echo "$i" | sed -e "s/\.${JSONEXT}/.new.graalpy.x3d/"`
 	echo "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY"
 	( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY") &
 	JOB_PID=$!
@@ -242,8 +242,8 @@ done
 echo Running python code
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	PY=`echo "$i" | sed -e "$DATATOPYTHON" -e "$PERSONALTOPYTHON" -e "$ROOTTOPYTHON" -e "s/.${JSONEXT}/.py/"`
-	X3D=`echo "$i" | sed -e "s/.${JSONEXT}/.new.python.x3d/"`
+	PY=`echo "$i" | sed -e "$DATATOPYTHON" -e "$PERSONALTOPYTHON" -e "$ROOTTOPYTHON" -e "s/\.${JSONEXT}/.py/"`
+	X3D=`echo "$i" | sed -e "s/\.${JSONEXT}/.new.python.x3d/"`
 	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
 	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 	echo "${PYTHON}" "$PY"

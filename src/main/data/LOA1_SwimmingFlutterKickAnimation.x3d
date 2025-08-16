@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='LOA1_SwimmingFlutterKickAnimation.x3d' name='title'/>
     <meta content='Humanoid animation prototype reusable by any Humanoid.' name='description'/>
@@ -8,9 +8,9 @@
     <meta content='13 December 2001' name='created'/>
     <meta content='23 May 2020' name='modified'/>
     <meta content='not yet tested, need to compare with NancyDivingExample interpolators' name='warning'/>
-    <meta content='http://www.HAnim.org' name='reference'/>
-    <meta content='http://HAnim.org/Models' name='reference'/>
-    <meta content='http://HAnim.org/Nodes' name='reference'/>
+    <meta content='https://www.HAnim.org' name='reference'/>
+    <meta content='https://HAnim.org/Models' name='reference'/>
+    <meta content='https://HAnim.org/Nodes' name='reference'/>
     <meta content='Swimming flutter kick Animation HAnim 2001' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' name='generator'/>

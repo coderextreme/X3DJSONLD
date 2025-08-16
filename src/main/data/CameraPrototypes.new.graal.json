@@ -52,7 +52,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+            "@content":"https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
           },
           {
             "@name":"generator",
@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"15 August 2025"
           },
           {
             "@name":"generator",

@@ -111,7 +111,7 @@ PythonSerializer.prototype = {
 			let Dwhole = [];
 			let TupleCount = 3;
                         for (let i=0; i < len(values); i+=TupleCount) {
-				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
 			console.log(Dwhole);
@@ -120,7 +120,7 @@ PythonSerializer.prototype = {
 			let Dwhole = [];
 			let TupleCount = 3;
                         for (let i=0; i < len(values); i+=TupleCount) {
-				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
 			console.log(Dwhole);
@@ -435,6 +435,7 @@ PythonSerializer.prototype = {
 					method === ".fontStyle" ||
 					method === ".fillProperties" ||
 					method === ".lineProperties" ||
+					method === ".textureProperties" ||
 					method === ".material" ||
 					method === ".geometry" ||
 					method === ".head" ||

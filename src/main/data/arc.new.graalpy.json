@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"15 August 2025"
           },
           {
             "@name":"generator",
@@ -429,6 +429,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G1"
                       }
                     }
@@ -439,6 +440,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G2"
                       }
                     }
@@ -463,6 +465,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G1"
                       }
                     }
@@ -473,6 +476,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G3"
                       }
                     }
@@ -497,6 +501,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G1"
                       }
                     }
@@ -507,6 +512,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"point",
                         "@USE":"G4"
                       }
                     }

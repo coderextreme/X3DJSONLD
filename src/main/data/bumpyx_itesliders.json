@@ -45,9 +45,6 @@
           },
           {
             "#comment":"<component name='DIS' level='2'></component>"
-          },
-          {
-            "#comment":"Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"
           }
         ],
         "meta": [
@@ -57,7 +54,7 @@
           },
           {
             "@name":"description",
-            "@content":"*enter description here, short-sentence summaries preferred*"
+            "@content":"*Bumpy flower with prototype sliders*"
           },
           {
             "@name":"creator",
@@ -77,7 +74,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"15 August 2025"
           },
           {
             "@name":"generator",
@@ -525,20 +522,20 @@
                                                   "-parts":[
                                                     { "ShaderPart":
                                                       {
-                                                        "@url":["../shaders/x_ite_flowers_chromatic.vs"],
+                                                        "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"],
                                                         "@type":"VERTEX"
                                                       }
                                                     },
                                                     { "ShaderPart":
                                                       {
-                                                        "@url":["../shaders/x_ite.fs"],
+                                                        "@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],
                                                         "@type":"FRAGMENT"
                                                       }
                                                     }
                                                   ],
                                                   "-children":[
                                                     {
-                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
                                                     }
                                                   ]
                                                 }
@@ -855,6 +852,7 @@
                                                   { "PlaneSensor":
                                                     {
                                                       "@DEF":"protoSensor",
+                                                      "@description":"Grab with mouse to adjst slider",
                                                       "@maxPosition":[1,0]
                                                     }
                                                   },
@@ -919,7 +917,7 @@
                                       },
                                       { "Script":
                                         {
-                                          "@url":["../javascripts/X3DUser.js"],
+                                          "@url":["../javascripts/X3DUser.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"],
                                           "@DEF":"protoValueTransformerScript",
                                           "@directOutput":true,
                                           "@mustEvaluate":true,
@@ -927,8 +925,7 @@
                                             {
                                               "@name":"protoScale",
                                               "@accessType":"inputOutput",
-                                              "@type":"SFFloat",
-                                              "@value":30
+                                              "@type":"SFFloat"
                                             },
                                             {
                                               "@name":"petNames",
@@ -938,8 +935,7 @@
                                             {
                                               "@name":"protoParameterName",
                                               "@accessType":"inputOutput",
-                                              "@type":"SFString",
-                                              "@value":"a"
+                                              "@type":"SFString"
                                             },
                                             {
                                               "@name":"shader",
@@ -1033,7 +1029,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1079,7 +1075,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1125,7 +1121,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1171,7 +1167,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1217,7 +1213,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1263,7 +1259,7 @@
                             },
                             {
                               "@name":"sensorTranslation",
-                              "@value":[0,0,0.0]
+                              "@value":[0,0,0]
                             },
                             {
                               "@name":"textString",
@@ -1300,19 +1296,15 @@
                         {
                           "@align":["LEFT","BOTTOM"],
                           "@offset":[-0.2,0.19],
-                          "@offsetUnits":["WORLD","WORLD"],
-                          "@scaleMode":["NONE","NONE"],
-                          "@size":[0.4,0.6],
-                          "@sizeUnits":["WORLD","WORLD"]
+                          "@size":[0.4,0.6]
                         }
                       },
-                    "-viewport":[
+                    "-viewport":
                       { "Viewport":
                         {
                           "@clipBoundary":[0,1,0,1]
                         }
                       }
-                    ]
                   }
                 },
                 { "Layer":
@@ -1329,7 +1321,7 @@
                       },
                       { "Script":
                         {
-                          "@url":["../javascripts/X3DAvatar.js"],
+                          "@url":["../javascripts/X3DAvatar.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"],
                           "@DEF":"HumanoidScript",
                           "@directOutput":true,
                           "@mustEvaluate":true
@@ -1337,7 +1329,13 @@
                       },
                       { "Group":
                         {
-                          "@DEF":"humanoidGroup"
+                          "@DEF":"humanoidGroup",
+                          "-children":[
+                            { "Group":
+                              {
+                              }
+                            }
+                          ]
                         }
                       }
                     ]

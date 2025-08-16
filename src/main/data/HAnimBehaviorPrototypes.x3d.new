@@ -1812,7 +1812,7 @@
 <ProtoInstance name="HAnimBodyBehaviorChooser" DEF="ChooserTest"><fieldValue name="HumanoidArray"><HAnimHumanoid name="DiamondManLOA-1" DEF="hanim_DiamondManLOA-1" version="2.0"></HAnimHumanoid>
 </fieldValue>
 <fieldValue name="whichBody" value="0"></fieldValue>
-<fieldValue name="hAnimBehaviorNodes"><ProtoInstance USE="BehaviorTest1"></ProtoInstance>
+<fieldValue name="hAnimBehaviorNodes"><ProtoInstance name="HAnimBehavior" USE="BehaviorTest1"></ProtoInstance>
 </fieldValue>
 <fieldValue name="enabledBehaviorsArray" value="true"></fieldValue>
 </ProtoInstance>
