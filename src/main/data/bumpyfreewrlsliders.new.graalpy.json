@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -1292,12 +1292,11 @@
                           "@offset":[-0.5,0]
                         }
                       },
-                    "-viewport":[
+                    "-viewport":
                       { "Viewport":
                         {
                         }
                       }
-                    ]
                   }
                 }
               ]
