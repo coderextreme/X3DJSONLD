@@ -6,7 +6,6 @@
   <head>
     <!-- <component name='Shape' level='4'></component> -->
     <!-- <component name='DIS' level='2'></component> -->
-    <!-- Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L -->
     <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
@@ -16,7 +15,7 @@
     <component name='Grouping' level='3'/>
     <component name='Core' level='1'/>
     <meta content='bumpyx_itesliders.x3d' name='title'/>
-    <meta content='*enter description here, short-sentence summaries preferred*' name='description'/>
+    <meta content='*Bumpy flower with prototype sliders*' name='description'/>
     <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
     <meta content='https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d' name='identifier'/>
     <meta content='PSPad, http://www.pspad.com/' name='generator'/>
@@ -98,7 +97,7 @@
               <Appearance>
                 <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                 <ComposedShader DEF='x_iteShader' language='GLSL'>
-                  <!-- TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
+                  <!-- TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
                   <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1 1.033'/>
                   <field name='cube' accessType='inputOnly' type='SFNode'>
                     <ComposedCubeMapTexture USE='texture'/>
@@ -112,8 +111,8 @@
                   <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
                   <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
                   <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs"'/>
-                  <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs"'/>
+                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
+                  <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
                 </ComposedShader>
                 <ComposedCubeMapTexture DEF='texture'>
                   <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -228,7 +227,7 @@ function initialize() {
                   <IS>
                     <connect nodeField='translation' protoField='sensorTranslation'/>
                   </IS>
-                  <PlaneSensor DEF='protoSensor' maxPosition='1 0'/>
+                  <PlaneSensor DEF='protoSensor' description='Grab with mouse to adjst slider' maxPosition='1 0'/>
                   <Transform>
                     <TouchSensor DEF='protoTS'/>
                   </Transform>
@@ -247,10 +246,10 @@ function initialize() {
                   </Transform>
                 </Transform>
               </Transform>
-              <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DUser.js"'>
-                <field name='protoScale' accessType='inputOutput' type='SFFloat' value='30.0'/>
+              <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DUser.js" "https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"'>
+                <field name='protoScale' accessType='inputOutput' type='SFFloat'/>
                 <field name='petNames' accessType='inputOutput' type='MFString'/>
-                <field name='protoParameterName' accessType='inputOutput' type='SFString' value='a'/>
+                <field name='protoParameterName' accessType='inputOutput' type='SFString'/>
                 <field name='shader' accessType='inputOutput' type='SFNode'/>
                 <field name='newTranslation' accessType='inputOnly' type='SFVec3f' value='1 1 1'/>
                 <field name='protoValue_changed' accessType='outputOnly' type='SFFloat' value='1.0'/>
@@ -345,8 +344,10 @@ function initialize() {
       </LayoutLayer>
       <Layer>
         <Viewpoint description='My Humanoids' fieldOfView='1.570796' position='0 1.75 80'/>
-        <Script DEF='HumanoidScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DAvatar.js"'/>
-        <Group DEF='humanoidGroup'/>
+        <Script DEF='HumanoidScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DAvatar.js" "https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"'/>
+        <Group DEF='humanoidGroup'>
+          <Group/>
+        </Group>
       </Layer>
     </LayerSet>
   </Scene>

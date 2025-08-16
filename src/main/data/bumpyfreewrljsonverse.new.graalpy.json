@@ -15,7 +15,7 @@
             "#comment":"<component name='Shape' level='4'></component>"
           },
           {
-            "#comment":"<component name='DIS' level='2'></component>"
+            "#comment":"Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"
           }
         ],
         "component": [
@@ -50,24 +50,84 @@
           {
             "@name":"Core",
             "@level":1
+          },
+          {
+            "@name":"DIS",
+            "@level":2
           }
         ],
         "meta": [
           {
             "@name":"title",
-            "@content":"bumpyx_itesliders.x3d"
+            "@content":"bumpyfreewrljsonverse.x3d"
           },
           {
             "@name":"description",
-            "@content":"*Bumpy flower with prototype sliders*"
+            "@content":"*enter description here, short-sentence summaries preferred*"
           },
           {
             "@name":"creator",
             "@content":"Doug Sanden, Christoph Valentin, John Carlson"
           },
           {
+            "@name":"translator",
+            "@content":"*if manually translating VRML-to-X3D, enter name of person translating here*"
+          },
+          {
+            "@name":"created",
+            "@content":"*enter date of initial version here*"
+          },
+          {
+            "@name":"translated",
+            "@content":"*enter date of translation here*"
+          },
+          {
+            "@name":"modified",
+            "@content":"*enter date of latest revision here*"
+          },
+          {
+            "@name":"version",
+            "@content":"*enter version here, if any*"
+          },
+          {
+            "@name":"reference",
+            "@content":"*enter reference citation or relative/online url here*"
+          },
+          {
+            "@name":"reference",
+            "@content":"*enter additional url/bibliographic reference information here*"
+          },
+          {
+            "@name":"requires",
+            "@content":"*enter reference resource here if required to support function, delivery, or coherence of content*"
+          },
+          {
+            "@name":"rights",
+            "@content":"*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"
+          },
+          {
+            "@name":"drawing",
+            "@content":"*enter drawing filename/url here*"
+          },
+          {
+            "@name":"MovingImage",
+            "@content":"*enter movie filename/url here*"
+          },
+          {
+            "@name":"photo",
+            "@content":"*enter photo filename/url here*"
+          },
+          {
+            "@name":"subject",
+            "@content":"*enter subject keywords here*"
+          },
+          {
+            "@name":"accessRights",
+            "@content":"*enter permission statements or url here*"
+          },
+          {
             "@name":"identifier",
-            "@content":"https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"
+            "@content":"*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"
           },
           {
             "@name":"generator",
@@ -94,12 +154,40 @@
     "Scene": {
         "-children":[
           {
+            "#comment":"basic nodes, which might be present in any scene"
+          },
+          { "NavigationInfo":
+            {
+              "@avatarSize":[0.25,1.75,0.75],
+              "@type":["EXAMINE"]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@ambientIntensity":0.2,
+              "@direction":[0,-1,0]
+            }
+          },
+          { "DirectionalLight":
+            {
+              "@ambientIntensity":0.2,
+              "@direction":[-1,-0.1,-1]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"My Overview",
+              "@fieldOfView":1.570796,
+              "@position":[0,1.75,60]
+            }
+          },
+          {
             "#comment":"LayerSet with two layers, navigation happens in layer 1"
           },
           { "LayerSet":
             {
               "@activeLayer":1,
-              "@order":[1,2,3],
+              "@order":[1,2],
               "-children":[
                 {
                   "#comment":"the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""
@@ -114,34 +202,6 @@
                     "@objectType":["ALL"],
                     "@pickable":true,
                     "-children":[
-                      {
-                        "#comment":"basic nodes, which might be present in any scene"
-                      },
-                      { "NavigationInfo":
-                        {
-                          "@avatarSize":[0.25,1.75,0.75],
-                          "@type":["EXAMINE"]
-                        }
-                      },
-                      { "DirectionalLight":
-                        {
-                          "@ambientIntensity":0.2,
-                          "@direction":[0,-1,0]
-                        }
-                      },
-                      { "DirectionalLight":
-                        {
-                          "@ambientIntensity":0.2,
-                          "@direction":[-1,-0.1,-1]
-                        }
-                      },
-                      { "Viewpoint":
-                        {
-                          "@description":"My Overview",
-                          "@fieldOfView":1.570796,
-                          "@position":[0,1.75,60]
-                        }
-                      },
                       {
                         "#comment":"this group contains the red/green/blue 3D crosshair"
                       },
@@ -350,7 +410,7 @@
                           "@DEF":"FlowerTransform",
                           "-children":[
                             {
-                              "#comment":"<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />"
+                              "#comment":"<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"
                             },
                             {
                               "#comment":"Images courtesy of Paul Debevec's Light Probe Image Gallery"
@@ -388,11 +448,11 @@
                                             "-shaders":[
                                               { "ComposedShader":
                                                 {
-                                                  "@DEF":"x_iteShader",
+                                                  "@DEF":"freewrlShader",
                                                   "@language":"GLSL",
                                                   "-children":[
                                                     {
-                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"
+                                                      "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                                     }
                                                   ],
                                                   "field": [
@@ -403,16 +463,10 @@
                                                       "@value":[0.98,1,1.033]
                                                     },
                                                     {
-                                                      "@name":"cube",
+                                                      "@name":"fw_textureCoordGenType",
                                                       "@accessType":"inputOnly",
-                                                      "@type":"SFNode",
-                                                      "-children":[
-                                                        { "ComposedCubeMapTexture":
-                                                          {
-                                                            "@USE":"texture"
-                                                          }
-                                                        }
-                                                      ]
+                                                      "@type":"SFInt32",
+                                                      "@value":0
                                                     },
                                                     {
                                                       "@name":"bias",
@@ -473,13 +527,13 @@
                                                     { "ShaderPart":
                                                       {
                                                         "@type":"VERTEX",
-                                                        "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+                                                        "@url":["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]
                                                       }
                                                     },
                                                     { "ShaderPart":
                                                       {
                                                         "@type":"FRAGMENT",
-                                                        "@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+                                                        "@url":["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"]
                                                       }
                                                     }
                                                   ]
@@ -493,37 +547,37 @@
                                                   "-backTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                                       }
                                                     },
                                                   "-bottomTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                                       }
                                                     },
                                                   "-frontTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                                       }
                                                     },
                                                   "-leftTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                                       }
                                                     },
                                                   "-rightTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                                       }
                                                     },
                                                   "-topTexture":
                                                     { "ImageTexture":
                                                       {
-                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                                        "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
                                                       }
                                                     }
                                                 }
@@ -607,37 +661,42 @@
 "",
 "ecmascript:",
 "function initialize() {",
-"     var resolution = 300;",
+"     var resolution = 100;",
 "     var theta = 0.0;",
 "     var phi = 0.0;",
 "     var delta = (2 * 3.141592653) / (resolution-1);",
 "     var crds = new MFVec3f();",
+"     var vecCount = 0;",
 "     for ( i = 0; i < resolution; i++) {",
 "     \tfor ( j = 0; j < resolution; j++) {",
 "\t\tvar rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);",
-"\t\tcrds.push(new SFVec3f(",
+"\t\tcrds[vecCount] = new SFVec3f(",
 "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
 "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
 "\t\t\trho * Math.sin(phi)",
-"\t\t));",
+"\t\t);",
+"\t\tvecCount++;",
 "\t\ttheta += delta;",
 "\t}",
 "\tphi += delta;",
 "     }",
 "     coordinates = crds;",
+"     // coordinates = new MFVec3f(...crds);",
 "",
 "",
 "     var cis = new MFInt32();",
+"     var intCount = 0;",
 "     for ( i = 0; i < resolution-1; i++) {",
 "     \tfor ( j = 0; j < resolution-1; j++) {",
-"\t     cis.push(i*resolution+j);",
-"\t     cis.push(i*resolution+j+1);",
-"\t     cis.push((i+1)*resolution+j+1);",
-"\t     cis.push((i+1)*resolution+j);",
-"\t     cis.push(-1);",
+"\t     cis[intCount++] = i*resolution+j;",
+"\t     cis[intCount++] = i*resolution+j+1;",
+"\t     cis[intCount++] = (i+1)*resolution+j+1;",
+"\t     cis[intCount++] = (i+1)*resolution+j;",
+"\t     cis[intCount++] = -1;",
 "\t}",
 "    }",
 "    coordIndexes = cis;",
+"    // coordIndexes = new MFInt32(...cis);",
 "}",
 "",
 ""
@@ -663,11 +722,67 @@
                       {
                         "#comment":"DIS multiuser facilities"
                       },
-                      {
-                        "#comment":"<DISEntityManager DEF='EntityManager' networkMode='networkReader' > <DISEntityTypeMapping category='77' specific='1' url='\"Leif8Final.x3d\"'/> <DISEntityTypeMapping category='77' specific='2' url='\"Lily8Final.x3d\"'/> </DISEntityManager>"
+                      { "DISEntityManager":
+                        {
+                          "@DEF":"EntityManager",
+                          "-children":[
+                            { "DISEntityTypeMapping":
+                              {
+                                "@category":77,
+                                "@specific":1,
+                                "@url":["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]
+                              }
+                            },
+                            { "DISEntityTypeMapping":
+                              {
+                                "@category":77,
+                                "@specific":2,
+                                "@url":["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]
+                              }
+                            },
+                            { "DISEntityTypeMapping":
+                              {
+                                "@category":77,
+                                "@specific":3,
+                                "@url":["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]
+                              }
+                            },
+                            { "DISEntityTypeMapping":
+                              {
+                                "@category":77,
+                                "@specific":4,
+                                "@url":["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]
+                              }
+                            }
+                          ]
+                        }
                       },
-                      {
-                        "#comment":"<ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/> <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/>"
+                      { "Collision":
+                        {
+                          "@enabled":false,
+                          "-proxy":
+                            { "Group":
+                              {
+                                "@DEF":"AvatarHolder"
+                              }
+                            }
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"addedEntities",
+                          "@fromNode":"EntityManager",
+                          "@toField":"addChildren",
+                          "@toNode":"AvatarHolder"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"removedEntities",
+                          "@fromNode":"EntityManager",
+                          "@toField":"removeChildren",
+                          "@toNode":"AvatarHolder"
+                        }
                       }
                     ]
                   }
@@ -802,11 +917,6 @@
                                   "@value":"a"
                                 },
                                 {
-                                  "@name":"petNames",
-                                  "@accessType":"inputOutput",
-                                  "@type":"MFString"
-                                },
-                                {
                                   "@name":"shaderNode",
                                   "@accessType":"inputOutput",
                                   "@type":"SFNode"
@@ -847,7 +957,6 @@
                                                   { "PlaneSensor":
                                                     {
                                                       "@DEF":"protoSensor",
-                                                      "@description":"Grab with mouse to adjst slider",
                                                       "@maxPosition":[1,0]
                                                     }
                                                   },
@@ -914,22 +1023,18 @@
                                           "@DEF":"protoValueTransformerScript",
                                           "@directOutput":true,
                                           "@mustEvaluate":true,
-                                          "@url":["../javascripts/X3DUser.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"],
                                           "field": [
                                             {
                                               "@name":"protoScale",
                                               "@accessType":"inputOutput",
-                                              "@type":"SFFloat"
-                                            },
-                                            {
-                                              "@name":"petNames",
-                                              "@accessType":"inputOutput",
-                                              "@type":"MFString"
+                                              "@type":"SFFloat",
+                                              "@value":30.0
                                             },
                                             {
                                               "@name":"protoParameterName",
                                               "@accessType":"inputOutput",
-                                              "@type":"SFString"
+                                              "@type":"SFString",
+                                              "@value":"a"
                                             },
                                             {
                                               "@name":"shader",
@@ -962,10 +1067,6 @@
                                                   "@protoField":"parameterScale"
                                                 },
                                                 {
-                                                  "@nodeField":"petNames",
-                                                  "@protoField":"petNames"
-                                                },
-                                                {
                                                   "@nodeField":"protoParameterName",
                                                   "@protoField":"parameterName"
                                                 },
@@ -974,7 +1075,39 @@
                                                   "@protoField":"shaderNode"
                                                 }
                                               ]
-                                          }
+                                          },
+                                          "#sourceCode":[
+"",
+"",
+"ecmascript:",
+"const newTranslation = function(Value) {",
+"\t'use strict';",
+"\tprotoValue_changed = Value.x * protoScale;",
+"\tprotoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));",
+"",
+"        var orientation = Value.x;",
+"",
+"        var ps = Browser.currentScene.getNamedNode(\"protoSensor\");",
+"        var t = Browser.currentScene.getNamedNode(\"protoTransform\");",
+"        var txt = Browser.currentScene.getNamedNode(\"protoText\");",
+"        if (shader) {",
+"            shader.getField(protoParameterName).setValue(orientation * protoScale);",
+"        }",
+"        if (txt) {",
+"            var stringField = txt.getField(\"string\");",
+"            var label = protoParameterName;",
+"            stringField.setValue(new MFString(label+\"=\"+(orientation * protoScale).toFixed(2)));",
+"        }",
+"        if (ps) {",
+"            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);",
+"        }",
+"        if (t) {",
+"            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);",
+"        }",
+"}",
+"",
+""
+]
                                         }
                                       },
                                       { "ROUTE":
@@ -1038,15 +1171,11 @@
                               "@value":"a"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1084,15 +1213,11 @@
                               "@value":"b"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1130,15 +1255,11 @@
                               "@value":"c"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm","yottzumm2","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1176,15 +1297,11 @@
                               "@value":"d"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm","yottzumm2","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1222,15 +1339,11 @@
                               "@value":"tdelta"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm2","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1268,15 +1381,11 @@
                               "@value":"pdelta"
                             },
                             {
-                              "@name":"petNames",
-                              "@value":["yottzumm2","group1-petname"]
-                            },
-                            {
                               "@name":"shaderNode",
                               "-children":[
                                 { "ComposedShader":
                                   {
-                                    "@USE":"x_iteShader"
+                                    "@USE":"freewrlShader"
                                   }
                                 }
                               ]
@@ -1298,40 +1407,6 @@
                         {
                         }
                       }
-                  }
-                },
-                { "Layer":
-                  {
-                    "@objectType":["ALL"],
-                    "@pickable":true,
-                    "-children":[
-                      { "Viewpoint":
-                        {
-                          "@description":"My Humanoids",
-                          "@fieldOfView":1.570796,
-                          "@position":[0,1.75,80]
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"HumanoidScript",
-                          "@directOutput":true,
-                          "@mustEvaluate":true,
-                          "@url":["../javascripts/X3DAvatar.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"]
-                        }
-                      },
-                      { "Group":
-                        {
-                          "@DEF":"humanoidGroup",
-                          "-children":[
-                            { "Group":
-                              {
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
                   }
                 }
               ]
